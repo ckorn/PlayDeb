@@ -1,15 +1,26 @@
 Source: redeclipse
-Section: unknown
-Priority: extra
+Section: games
+Priority: optional
 Maintainer: Arand Nash <ienorand@gmail.com>
-Build-Depends: debhelper (>= 7.0.50~)
+Build-Depends: debhelper (> 7.0.50~),
+        libsdl1.2-dev,
+        libsdl-mixer1.2-dev,
+        libsdl-image1.2-dev
 Standards-Version: 3.8.4
-Homepage: <insert the upstream URL, if relevant>
-#Vcs-Git: git://git.debian.org/collab-maint/redeclipse.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/redeclipse.git;a=summary
+Homepage: http://www.redeclipse.net
 
 Package: redeclipse
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: ${shlibs:Depends}, ${misc:Depends}, redeclipse-data (= ${source:Version})
+Description: Single-player and multi-player first-person ego-shooter
+ A single-player and multi-player first-person ego-shooter, built as a
+ total conversion of Cube Engine 2, which lends itself toward a balanced
+ gameplay, with a general theme of agility in a variety of environments.
+
+Package: redeclipse-server
+Architecture: any
+Description: Single-player and multi-player first-person ego-shooter - server
+
+Package: redeclipse-data
+Architecture: all
+Description: Single-player and multi-player first-person ego-shooter - data
