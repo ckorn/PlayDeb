@@ -1,14 +1,16 @@
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -170,10 +170,10 @@
+@@ -170,10 +170,12 @@
  endif
  
  install-client: client
 -	cp reclient ../bin/reclient$(PLATFORM_SUFFIX)
++	mkdir -p $(DESTDIR)/usr/games
 +	cp reclient $(DESTDIR)/usr/games/reclient$(PLATFORM_SUFFIX)
  
  install-server: server
 -	cp reserver ../bin/reserver$(PLATFORM_SUFFIX)
++	mkdir -p $(DESTDIR)/usr/games
 +	cp reserver $(DESTDIR)/usr/games/reserver$(PLATFORM_SUFFIX)
  endif
  
