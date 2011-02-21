@@ -1,15 +1,17 @@
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -170,10 +170,10 @@
+@@ -170,10 +170,12 @@
  endif
  
  install-client: client
 -	cp reclient ../bin/reclient$(PLATFORM_SUFFIX)
-+	cp --parent reclient $(DESTDIR)/usr/bin/reclient$(PLATFORM_SUFFIX)
++	mkdir -p $(DESTDIR)/usr/bin/
++	cp reclient $(DESTDIR)/usr/bin/reclient$(PLATFORM_SUFFIX)
  
  install-server: server
 -	cp reserver ../bin/reserver$(PLATFORM_SUFFIX)
-+	cp --parent reserver $(DESTDIR)/usr/bin/reserver$(PLATFORM_SUFFIX)
++	mkdir -p $(DESTDIR)/usr/bin/
++	cp reserver $(DESTDIR)/usr/bin/reserver$(PLATFORM_SUFFIX)
  endif
  
  install: install-client install-server
