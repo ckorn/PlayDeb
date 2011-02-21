@@ -5,4 +5,4 @@ Icon=redeclipse
 Exec=/usr/games/reclient
 Terminal=false
 Type=Application
-Categories=Game;Action;
+Categories=Games;ActionGame;
