@@ -1,6 +1,13 @@
 redeclipse for Debian
 ---------------------
 
-<possible notes regarding this package - if none, delete this file>
+This packaging does probably not comply with policy standards.
 
- -- Arand Nash <ienorand@gmail.com>  Sat, 19 Feb 2011 03:22:03 +0000
+    TODO:
+    * debian/copyright needs inclusion of all copyright notices for content in
+      the data/ directory
+    * The ENet network library might be appropriate to split off to a separate
+      package?
+    * If at any point inclusion in Debian Main is desirable, there are a
+      whole lot in the data/ directory which are still "non-free" e.g. the
+      theme music, logo, etc. which are exclusively to RE and not DFSG 
