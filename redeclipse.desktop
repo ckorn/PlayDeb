@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Red Ecplipse
+Comment=First Person Shooter using the Cube 2 engine
+Icon=redeclipse
+Exec=/usr/games/redeclipse
+Terminal=false
+Type=Application
+Categories=Game;ActionGame;
