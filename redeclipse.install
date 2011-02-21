@@ -1,2 +1,3 @@
-debian/redeclipse.xpm usr/share/pixmaps/
 src/reclient usr/games/
+debian/redeclipse.xpm usr/share/pixmaps/
+debian/redeclipse.desktop usr/share/applications
