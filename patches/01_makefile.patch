@@ -5,11 +5,11 @@
  
  install-client: client
 -	cp reclient ../bin/reclient$(PLATFORM_SUFFIX)
-+	cp reclient /usr/bin/reclient$(PLATFORM_SUFFIX)
++	cp reclient $(DESTDIR)/usr/bin/reclient$(PLATFORM_SUFFIX)
  
  install-server: server
 -	cp reserver ../bin/reserver$(PLATFORM_SUFFIX)
-+	cp reserver /usr/bin/reserver$(PLATFORM_SUFFIX)
++	cp reserver $(DESTDIR)/usr/bin/reserver$(PLATFORM_SUFFIX)
  endif
  
  install: install-client install-server
