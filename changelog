@@ -1,5 +1,5 @@
-redeclipse (0.90+1688-1) unstable; urgency=low
+redeclipse (0.90+svn1688-1) unstable; urgency=low
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 
- -- Arand Nash <ienorand@gmail.com>  Sat, 19 Feb 2011 03:22:03 +0000
+ -- Arand Nash <ienorand@gmail.com>  Mon, 21 Feb 2011 13:24:21 +0000
