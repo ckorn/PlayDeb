@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Red Eclipse
-Comment=First Person Shooter using the Cube 2 engine
-Icon=redeclipse
-Exec=/usr/games/reclient
-Terminal=false
-Type=Application
-Categories=Games;ActionGame;
