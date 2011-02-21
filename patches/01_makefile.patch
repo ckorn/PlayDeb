@@ -5,13 +5,13 @@
  
  install-client: client
 -	cp reclient ../bin/reclient$(PLATFORM_SUFFIX)
++	install -D $(DESTDIR)/usr/games/reclient$(PLATFORM_SUFFIX)
 +	mkdir -p $(DESTDIR)/usr/games
-+	cp reclient $(DESTDIR)/usr/games/reclient$(PLATFORM_SUFFIX)
++	cp reclient $(DESTDIR)/usr/games
  
  install-server: server
 -	cp reserver ../bin/reserver$(PLATFORM_SUFFIX)
-+	mkdir -p $(DESTDIR)/usr/games
-+	cp reserver $(DESTDIR)/usr/games/reserver$(PLATFORM_SUFFIX)
++	install -D $(DESTDIR)/usr/games/reserver$(PLATFORM_SUFFIX)
  endif
  
  install: install-client install-server
