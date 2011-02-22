@@ -1,2 +1,0 @@
-?package(redeclipse):needs="X11" section="Games/ActionGames"\
-  title="redeclipse" icon="redeclipse.xpm" command="/usr/games/reclient"
