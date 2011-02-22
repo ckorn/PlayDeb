@@ -4,6 +4,9 @@ redeclipse
 Redeclipse is currently a moving target with frequent changes breaking the main multiplay server.
 
 
+The original Redeclipse source is set up for in-place compiling and installing, hence "make install" only copies new binaries within the source directory
+
+
 This package uses quilt to manage all modifications to the upstream
 source.  Changes are stored in the source package as diffs in
 debian/patches and applied during the build.

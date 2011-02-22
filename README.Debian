@@ -1,13 +1,17 @@
 redeclipse for Debian
 ---------------------
 
-This packaging does probably not comply with policy standards.
+debian/patches/01_makefile.patch
+ This is used simply to set a path which is guaranteed to work, the
+ install process still copies from src/* because of the .install files
+ used for menu items, this seems like something which could be done prettier.
 
-    TODO:
-    * debian/copyright needs inclusion of all copyright notices for content in
-      the data/ directory
-    * The ENet network library might be appropriate to split off to a separate
-      package?
-    * If at any point inclusion in Debian Main is desirable, there are a
-      whole lot in the data/ directory which are still "non-free" e.g. the
-      theme music, logo, etc. which are exclusively to RE and not DFSG 
+TODO:
+* debian/copyright needs inclusion of all copyright notices for content in
+  the data/ directory
+* The ENet network library might be appropriate to split off to a separate
+  package?
+* This will likely go in non-free or contrib/non-free at the moment, there
+  is a BY-SA-NC license for some of the data/, and the licenses are
+  conflicting with the added general usage statements it seems. So some
+  clarification there would be useful.
