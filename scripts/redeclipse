@@ -1,4 +1,4 @@
 #!/bin/sh
 RE_OPTIONS="-h${HOME}/.redeclipse -rinit.cfg"
-cd /usr/games
-exec ./reclient ${RE_OPTIONS} "$@"
+cd /usr/share/games/redeclipse
+exec /usr/games/reclient ${RE_OPTIONS} "$@"
