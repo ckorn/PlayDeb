@@ -6,12 +6,12 @@ Build-Depends: debhelper (>= 7.0.50~),
         libsdl1.2-dev,
         libsdl-mixer1.2-dev,
         libsdl-image1.2-dev
-Standards-Version: 3.8.4
+Standards-Version: 3.9.1
 Homepage: http://www.redeclipse.net
 
 Package: redeclipse
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, redeclipse-data (= ${source:Version})
+Depends: ${misc:Depends}, redeclipse-data (= ${source:Version})
 Description: Single-player and multi-player first-person ego-shooter
  A single-player and multi-player first-person ego-shooter, built as a
  total conversion of Cube Engine 2, which lends itself toward a balanced
@@ -19,10 +19,14 @@ Description: Single-player and multi-player first-person ego-shooter
 
 Package: redeclipse-server
 Architecture: any
-Depends:
-Description: Single-player and multi-player first-person ego-shooter - server
+Depends: ${misc:Depends}
+Description: Server for Redeclipse FPS
+ Dedicated server for the single- and multi-player first-person ego-shooter
+ Redeclipse
 
 Package: redeclipse-data
 Architecture: all
-Depends:
-Description: Single-player and multi-player first-person ego-shooter - data
+Depends: ${misc:Depends}
+Description: Data for Redeclipse
+ Graphics, models etc. for the single- and multi-player first-person
+ ego-shooter Redeclipse
