@@ -11,7 +11,7 @@ Homepage: http://www.redeclipse.net
 
 Package: redeclipse
 Architecture: any
-Depends: ${misc:Depends}, redeclipse-data (= ${source:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, redeclipse-data (= ${source:Version})
 Description: Single-player and multi-player first-person ego-shooter
  A single-player and multi-player first-person ego-shooter, built as a
  total conversion of Cube Engine 2, which lends itself toward a balanced
@@ -19,14 +19,14 @@ Description: Single-player and multi-player first-person ego-shooter
 
 Package: redeclipse-server
 Architecture: any
-Depends: ${misc:Depends}
+Depends:
 Description: Server for Redeclipse FPS
  Dedicated server for the single- and multi-player first-person ego-shooter
  Redeclipse
 
 Package: redeclipse-data
 Architecture: all
-Depends: ${misc:Depends}
+Depends:
 Description: Data for Redeclipse
  Graphics, models etc. for the single- and multi-player first-person
  ego-shooter Redeclipse
