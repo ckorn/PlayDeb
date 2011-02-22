@@ -1,5 +1,11 @@
+redeclipse (0.90+svn1748-ppa1) maverick; urgency=low
+
+  * Changelog for ubuntu ppa 
+
+ -- Arand Nash <ienorand@gmail.com>  Tue, 22 Feb 2011 17:43:55 +0000
+
 redeclipse (0.90+svn1748-1) unstable; urgency=low
 
   * Initial release
 
- -- Arand Nash <ienorand@gmail.com>  Tue, 22 Feb 2011 16:57:05 +0000
+ -- Arand Nash <ienorand@gmail.com>  Tue, 22 Feb 2011 17:43:42 +0000
