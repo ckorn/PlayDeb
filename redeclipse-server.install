@@ -1,1 +1,2 @@
 src/reserver usr/games
+debian/scripts/redeclipse-server /usr/games
