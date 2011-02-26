@@ -22,6 +22,8 @@ redeclipse \- Single-player and multi-player first-person ego-shooter
 .RB [ \-g\fP\fIlogfile\fP ]
 .SH DESCRIPTION
 Redeclipse is a single-player and multi-player first-person ego-shooter, built as a total conversion of Cube Engine 2, which lends itself toward a balanced gameplay, with a general theme of agility in a variety of environments.
+
+Redeclipse reads init.cfg and config.cfg from homedir and pkgdir, server does the same but for servinit.cfg and servexec.cfg, it seems that only reclient accepts the -r flag to point to separate init.cfg:s ...
 .SH OPTIONS
 .TP
 .BR \-k
