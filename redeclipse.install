@@ -1,4 +1,4 @@
-src/reclient usr/games
+src/reclient usr/lib/redeclipse
 debian/scripts/redeclipse usr/games
 debian/redeclipse.xpm usr/share/pixmaps
 debian/redeclipse.desktop usr/share/applications
