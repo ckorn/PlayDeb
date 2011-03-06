@@ -272,6 +272,7 @@ Specific files in the data/textures/ directory
     emblem.png, logo.png
         Created by Luckystrike-Rx for Red Eclipse
         Copyright (C) 2010 Red Eclipse Team
+
         Use of any logos, trademarks, or other advertising/promotional material
         for Red Eclipse are free to use without consent, when used in
         conjunction with a Red Eclipse article, comment, review, or
@@ -336,8 +337,55 @@ Files in the data/sounds/ambience/ directory:
 
         Attribution-ShareAlike 3.0
 
+Files in the data/sounds/player/ directory:
+
+######
+
+    Varying sound effects based on a variety of CC licensed material from
+    Gabriele "Blindabuser" Magurno,
+    and Quinton "quin" Reeves modified with permission.
+
+    Original License Text:
+
+        ---------------------------------------------------------
+        BLINDABUSER'S FREE SOUND FX FOR SAUERBRATEN - [ www.magurno.com ]
+        ---------------------------------------------------------
+
+        (...)
+
+        NOTE: These sounds FX have been created using free (public domain)
+        sounds from:
+
+        http://www.therecordist.com/
+        http://www.pacdv.com
+        http://www.coolastudios.com
+        http://freesound.iua.upf.edu/ (aust_paul)
+
+    This software is released under a Creative Commons license:
+
+    Attribution-NonCommercial 3.0 Unported
+
+
+Files in the data/sounds/ directory:
+
+    All files in this directory, unless otherwise specified, are released under
+    the Creative Commons license:
+
+        Attribution-ShareAlike 3.0
+
+Files in the data/sounds/sfx/ directory:
+
+    All sounds in this directory are original works by Quinton "quin" Reeves,
+    Alex "blackshoe" Anguix and Derek "JoJo" Stegall
+    Files in this directory are released under the Creative Commons license:
+
+        Attribution-ShareAlike 3.0
+
+
 Red Eclipse logos, trademarks, or other advertising/promotional material in the
 src/install/ and src/site/ directories:
+
+    Copyright (C) 2010 Red Eclipse Team
 
     Use of any logos, trademarks, or other advertising/promotional material for
     Red Eclipse are free to use without consent, when used in conjunction with
