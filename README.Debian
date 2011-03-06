@@ -7,6 +7,7 @@ debian/patches/01_makefile.patch
  used for menu items, this seems like something which could be done prettier.
 
 TODO:
+* Write manpage for client and server
 * debian/copyright has inclusion of all copyright notices for content in
   the data/ directory, the is not mention of wheter copyright information about
   the author is available. There are also a few shortcuts, e.g. left a link
