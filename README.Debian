@@ -7,11 +7,11 @@ debian/patches/01_makefile.patch
  used for menu items, this seems like something which could be done prettier.
 
 TODO:
-* debian/copyright needs inclusion of all copyright notices for content in
-  the data/ directory
+* debian/copyright has inclusion of all copyright notices for content in
+  the data/ directory, the is not mention of wheter copyright information about
+  the author is available. There are also a few shortcuts, e.g. left a link
+  to CC-BY as sufficient information and stripped the license text.
 * The ENet network library might be appropriate to split off to a separate
   package?
-* This will likely go in non-free or contrib/non-free at the moment, there
-  is a BY-SA-NC license for some of the data/, and the licenses are
-  conflicting with the added general usage statements it seems. So some
-  clarification there would be useful.
+* Similar to sauerbraten, the client and server may fit in contrib, wheras the
+  data is non-free.
