@@ -19,14 +19,14 @@ Description: Single-player and multi-player first-person ego-shooter
 
 Package: redeclipse-server
 Architecture: any
-Depends:
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Server for Redeclipse FPS
  Dedicated server for the single- and multi-player first-person ego-shooter
  Redeclipse
 
 Package: redeclipse-data
 Architecture: all
-Depends:
+Depends: ${misc:Depends}
 Description: Data for Redeclipse
  Graphics, models etc. for the single- and multi-player first-person
  ego-shooter Redeclipse
