@@ -9,7 +9,7 @@ debian/patches/01_makefile.patch
 TODO:
 * Write manpage for client and server
 * debian/copyright has inclusion of all copyright notices for content in
-  the data/ directory, the is not mention of wheter copyright information about
+  the data/ directory, the is not mention of whether copyright information about
   the author is available. There are also a few shortcuts, e.g. left a link
   to CC-BY as sufficient information and stripped the license text.
 * The ENet network library might be appropriate to split off to a separate
