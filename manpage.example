@@ -1,117 +1,225 @@
-.\" In .TH, FOO should be all caps, SECTION should be 1-8, maybe w/ subsection
-.\" other parms are allowed: see man(7), man(1)
-.\"
-.\" This template provided by Tom Christiansen <tchrist@jhereg.perl.com>.
-.\" 
-.TH REDECLIPSE 6 
-.SH REDECLIPSE
-redeclipse \- Single-player and multi-player first-person ego-shooter
+.TH RECLIENT 6 
+
+.SH RECLIENT
+Red Eclipse \- Single-player and multi-player first-person ego-shooter
+
 .SH SYNOPSIS
-.B redeclipse
-.RB [ \-k ]
-.RB [ \-v ]
+.B reclient
+.RB [ \-dw\fP\fIwidth\fP ]
+.RB [ \-dh\fP\fIheight\fP ]
+.RB [ \-dd\fP\fIdepth\fP ]
+.RB [ \-dc\fP\fIdepth\fP ]
+.RB [ \-da\fP\fIsamples\fP ]
+.RB [ \-dv\fP\fR{0|1}\fP ]
+.RB [ \-ds\fP\fIbits\fP ]
+.RB [ \-du\fP\fR{0..3}\fP ]
+.RB [ \-k\fP\fR{0|1}\fP ]
+.RB [ \-h\fP\fIhomedir\fP ]
+.RB [ \-p\fP\fIpackagedir\fP ]
+.RB [ \-v\fP\fR{0..4}\fP ]
+.RB [ \-r\fP\fIscriptname\fP ]
+.RB [ \-x\fP\fIscriptname\fP ]
+.RB [ \-o\fP\fIsauerdir\fP ]
+.RB [ \-ss\fP\fIservertype\fP ]
+.RB [ \-g\fP\fIlogfile\fP ]
+.P
+.RB [
 .RB [ \-su\fP\fIserveruprate\fP ]
 .RB [ \-si\fP\fIserverip\fP ]
 .RB [ \-sm\fP\fIservermaster\fP ]
-.RB [ \-ss\fP\fIservertype\fP ]
-.RB [ \-sp\fP\fIserverport\fP ]
 .RB [ \-sa\fP\fIservermasterport\fP ]
-.RB [ \-h\fP\fIhomedir\fP ]
-.RB [ \-o\fP\fIoctadir\fP ]
-.RB [ \-p\fP\fIpackagedir\fP ]
-.RB [ \-g\fP\fIlogfile\fP ]
-.SH DESCRIPTION
-Redeclipse is a single-player and multi-player first-person ego-shooter, built as a total conversion of Cube Engine 2, which lends itself toward a balanced gameplay, with a general theme of agility in a variety of environments.
+.RB [ \-sl\fP\fIdefaultmap\fP ]
+.RB [ \-sp\fP\fIserverport\fP ]
+.RB [ \-sP\fP\fIadminpass\fP ]
+.RB [ \-sk\fP\fIjoinpass\fP ]
+.RB ]
 
-Redeclipse reads init.cfg and config.cfg from homedir and pkgdir, server does the same but for servinit.cfg and servexec.cfg, it seems that only reclient accepts the -r flag to point to separate init.cfg:s ...
+.SH DESCRIPTION
+Red Eclipse is a single-player and multi-player first-person ego-shooter, built as a total conversion of Cube Engine 2, which lends itself toward a balanced gameplay, with a general theme of agility in a variety of environments.
+
+The recommended way to change the settings of the client are to edit the config.cfg and init.cfg files. Examples are available in /usr/share/games/redeclipse/data/examples, most options apply to both the client and the server.
+
+.I Warning:
+Many of command-line options options will be stored in the init.cfg if used.
+
 .SH OPTIONS
 .TP
-.BR \-k
-no idea what this does
+.BR \-dw\fP\fIwidth\fP
+Sets screen width to 
+.I width\fP\fR\.\fP
+If height not specified, also sets height to width * 3/4. min is 320.
+.IP
+This configuration is stored in init.cfg
+
 .TP
-.B \-v
-Verbose output - does this actually do anything?
+.BR \-dh\fP\fIheight\fP
+Sets screen height to
+.I height\fP\fR\.\fP
+If width not specified, also sets width to height * 4/3. min is 320.
+.IP
+This configuration is stored in init.cfg
+
 .TP
-.BR \-su
-no idea what this does with
-.I serveruprate
+.BR \-dd\fP\fIdepth\fP
+Sets z-buffer depth to
+.I depth\fP\fR\.\fP
+.IP
+This configuration is stored in init.cfg
+
 .TP
-.BR \-si
-Set server IP address to
-.I serverip
+.BR \-dc\fP\fIdepth\fP
+Sets colour depth (bits per pixel) to
+.I depth\fP\fR\.\fP
+.IP
+This configuration is stored in init.cfg
+
 .TP
-.BR \-sm
-no idea what this does with
-.I servermaster
+.BR \-da\fP\fIsamples\fP
+Sets full-scene anti-aliasing (FSAA) to
+.I samples
+samples.
+.IP
+This configuration is stored in init.cfg
+
 .TP
-.BR \-sl
-no idea what this does with
-.I serverload
+.BR \-dv\fP\fR{0|1}\fP
+Turns vertical sync on or off. 0 to disable, 1 to enable. Defaults to 0.
+.IP
+This configuration is stored in init.cfg
+
 .TP
-.BR \-ss
-no idea what this does with
-.I serverload
+.BR \-ds\fP\fIbits\fP
+Sets stencil buffer bits to
+.I bits\fP\fR\.\fP
+.IP
+This configuration is stored in init.cfg
+
 .TP
-.BR \-sp
-Set server port to
-.I serverport
+.BR \-ds\fP\fR{0..3}\fP
+Set shader quality. 0 for none, 1 for shaders with fastest quality, max is 3. Defaults to 1 where hardware supports it. 
+.IP
+This configuration is stored in init.cfg
+
 .TP
-.BR \-sa
-Set server master port to
-.I servermasterport
+.BR \-k\fP\fR{0|1}\fP
+Enables or disables kid mode, which reduces blood and death effects somewhat. 0 to disable, 1 to enable.
+
 .TP
-.BR \-h
-Reads and saves game configuration to
-.I homedir
+.BR \-h\fP\fIhomedir\fP
+Sets your home directory to
+.I homedir\fP\fR\.\fP
+If set, the engine will look for files in your home directory as well as the normal installation directory. However, all files will be written to your home directory, instead of the normal installation directory. 
+
 .TP
-.BR \-o
-no idea what this does with
-.I octodir
+.BR \-p\fP\fIpackagedir\fP
+Includes the data files found in
+.I packagedir\fP\fR\.\fP
+Can be used for adding additional mods. Packages will be loaded in the order specified. By default reclient only inludes data files in the current working directory.
+
+
 .TP
-.BR \-p
-Add
-.I packagedir
-to the directories scanned for game data
+.BR \-v\fP\fR{0..4}\fP
+Sets verbosity. This affects how much information is printed to the console. 0 is the least verbose, 4 is the most verbose. 
+.IP
+This configuration is stored in init.cfg
+
 .TP
-.BR \-g
+.BR \-r\fP\fIscriptname\fP
+Executes the specified init script before OpenGL and various libraries are initialized. If no file specified, executes init.cfg. This setting also causes an init.cfg file to be written out when the game exits to save various hardware settings. 
+
+.TP
+.BR \-x\fP\fIscriptname\fP
+Executes script
+.I scriptname
+once the engine has started up and initialized the game. 
+
+.TP
+.BR \-o\fP\fIsauerdir\fP
+Sets the path to your Sauerbraten directory. If Red Eclipse can find your Sauerbraten directory, you can load and play Sauerbraten maps from withing Red Eclipse. 
+
+.TP
+.BR \-ss\fP\fR{0..3}\fP
+Sets server type. 0 for local only, 1 for private, 2 for public, 3 for dedicated. Defaults to 1. 
+
+.TP
+.BR \-g\fP\fIlogfile\fP
 Output log to
-.I logfile
-.SH "RETURN VALUE"
-What the program or function returns if successful.
-.SH ERRORS
-Return codes, either exit status or errno settings.
+.I logfile\fP\fR\.\fP
+
+.TP
+.BR \-su\fP\fIserveruprate\fP
+Sets upstream rate to
+.I serveruprate\fP\fR\.\fP
+Do not set this unless you know what you are doing, it should normally be left out. 
+.IP
+This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
+
+.TP
+.BR \-si\fP\fIserverip\fP
+Binds to the ip address
+.I serverip\fP\fR\.\fP
+Only needed for machines with more than one interface.
+.IP
+This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
+
+.TP
+.BR \-sm\fP\fIservermaster\fP
+uses
+.I servermaster
+as the master server.
+.IP
+This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
+
+.TP
+.BR \-sa\fP\fIservermasterport\fP
+Contacts the master server using port
+.I servermasterport\fP\fR\.\fP
+.IP
+This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
+
+.TP
+.BR \-sl\fP\fIdefaultmap\fP
+Sets default map to
+.I defaultmap\fP\fR\.\fP
+.IP
+This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
+
+.TP
+.BR \-sp\fP\fIserverport\fP
+sets the server port to
+.I serverport\fP\fR\.\fP
+(Presumably these two are the game data and information ports for the server.) 
+.IP
+This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
+
+.TP
+.BR \-sP\fP\fIadminpass\fP
+Sets the admin password to
+.I adminpass\fP\fR\.\fP
+.IP
+This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
+
+.TP
+.BR \-sk\fP\fIjoinpass\fP
+Sets the join password to
+.I joinpass\fP\fR\.\fP
+Users must know the password before they can connect. 
+.IP
+This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
+
 .SH EXAMPLES
-Give some example uses of the program.
-.SH ENVIRONMENT
-Environment variables this program might care about.
-.SH FILES
-All files used by the program.
-Typical usage is like this:
-.br
-.nf
-.\" set tabstop to longest possible filename, plus a wee bit
-.ta \w'/usr/lib/perl/getopts.pl   'u
-\fI/usr/man\fR	default man tree
-\fI/usr/man/man*/*.*\fR	unformatted (nroff source) man pages
-.SH NOTES
-Miscellaneous commentary.
-.SH CAVEATS
-Things to take special care with, sometimes called WARNINGS.
-.SH DIAGNOSTICS
-All the possible error messages the program can print out,
-what they mean, and how to correct them if applicable.
-.SH BUGS
-Things that are broken or just don't work quite right.
-.SH RESTRICTIONS
-Bugs you don't plan to fix. :-)
+.PP
+.B reclient -p/usr/share/games/redeclipse/data
+.RS 4
+Load data files in /usr/share/games/redeclipse/data
+.RE
+
 .SH AUTHOR
-Who wrote it (or AUTHORS if multiple).
+This manpage was written by Arand Nash <ienorand@gmail.com>
+
 .SH HISTORY
-Programs derived from other sources sometimes have this.
+Red Eclipse is based on the Cube 2 engine.
+
 .SH "SEE ALSO"
-.\" Always quote multiple words for .SH
-Other man pages to check out, like
-.BR man (1),
-.BR man (7),
-.BR mandb (8),
-.BR catman (8).
+.BR redeclipse (6),
+.BR reserver (6).
