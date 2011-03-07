@@ -1,39 +1,86 @@
 .TH REDECLIPSE 6 
-
 .SH REDECLIPSE
 Red Eclipse \- Single-player and multi-player first-person ego-shooter
-
 .SH SYNOPSIS
 .B redeclipse
-.RB [ \-dw\fP\fIwidth\fP ]
-.RB [ \-dh\fP\fIheight\fP ]
-.RB [ \-dd\fP\fIdepth\fP ]
-.RB [ \-dc\fP\fIdepth\fP ]
-.RB [ \-da\fP\fIsamples\fP ]
-.RB [ \-dv\fP\fR{0|1}\fP ]
-.RB [ \-ds\fP\fIbits\fP ]
-.RB [ \-du\fP\fR{0..3}\fP ]
-.RB [ \-k\fP\fR{0|1}\fP ]
-.RB [ \-h\fP\fIhomedir\fP ]
-.RB [ \-p\fP\fIpackagedir\fP ]
-.RB [ \-v\fP\fR{0..4}\fP ]
-.RB [ \-r\fP\fIscriptname\fP ]
-.RB [ \-x\fP\fIscriptname\fP ]
-.RB [ \-o\fP\fIsauerdir\fP ]
-.RB [ \-ss\fP\fIservertype\fP ]
-.RB [ \-g\fP\fIlogfile\fP ]
-.P
-.RB [
-.RB [ \-su\fP\fIserveruprate\fP ]
-.RB [ \-si\fP\fIserverip\fP ]
-.RB [ \-sm\fP\fIservermaster\fP ]
-.RB [ \-sa\fP\fIservermasterport\fP ]
-.RB [ \-sl\fP\fIdefaultmap\fP ]
-.RB [ \-sp\fP\fIserverport\fP ]
-.RB [ \-sP\fP\fIadminpass\fP ]
-.RB [ \-sk\fP\fIjoinpass\fP ]
-.RB ]
-
+[
+.BI \-dw width
+]
+[
+.BI \-dh height
+]
+[
+.BI \-dd depth
+]
+[
+.BI \-dc depth
+]
+[
+.BI \-da samples
+]
+[
+.BR \-dv {0|1}
+]
+[
+.BI \-ds bits
+]
+[
+.BR \-du {0..3}
+]
+[
+.BR \-k {0|1}
+]
+[
+.BI \-h homedir
+]
+[
+.BI \-p packagedir
+]
+[
+.BR \-v {0..4}
+]
+[
+.BI \-r scriptname
+]
+[
+.BI \-x scriptname
+]
+[
+.BI \-o sauerdir
+]
+[
+.BI \-ss servertype
+]
+[
+.BI \-g logfile
+]
+.PP
+[
+[
+.BI \-su serveruprate
+]
+[
+.BI \-si serverip
+]
+[
+.BI \-sm servermaster
+]
+[
+.BI \-sa servermasterport
+]
+[
+.BI \-sl defaultmap
+]
+[
+.BI \-sp serverport
+]
+[
+.BI \-sP adminpass
+]
+[
+.BI \-sk joinpass
+]
+]
 .SH DESCRIPTION
 Red Eclipse is a single-player and multi-player first-person ego-shooter, built as a total conversion of Cube Engine 2, which lends itself toward a balanced gameplay, with a general theme of agility in a variety of environments.
 .PP
@@ -42,175 +89,153 @@ is a script which executes
 .BR reclient (6)
 using the "-p/usr/share/games/redeclipse/data" and "-r" options, it will accept any additional options.
 .PP
-The recommended way to change the settings of the client are to edit the config.cfg and init.cfg files. Examples are available in /usr/share/games/redeclipse/data/examples, most options apply to both the client and the server.
+The recommended way to change the settings of the client are to edit the config.cfg and init.cfg files. Examples are available in
+.IR /usr/share/games/redeclipse/data/examples ,
+most options apply to both the client and the server.
 .PP
 .I Warning:
 Many of command-line options options will be stored in the init.cfg if used.
-
-.SH OPTIONS
+H OPTIONS
 .TP
-.BR \-dw\fP\fIwidth\fP
-Sets screen width to 
-.I width\fP\fR\.\fP
+.BI \-dw width
+Sets screen width to
+.IR width .
 If height not specified, also sets height to width * 3/4. min is 320.
 .IP
 This configuration is stored in init.cfg
-
 .TP
-.BR \-dh\fP\fIheight\fP
+.BI \-dh height
 Sets screen height to
-.I height\fP\fR\.\fP
+.IR height .
 If width not specified, also sets width to height * 4/3. min is 320.
 .IP
 This configuration is stored in init.cfg
-
 .TP
-.BR \-dd\fP\fIdepth\fP
+.BI \-dd depth
 Sets z-buffer depth to
-.I depth\fP\fR\.\fP
+.IR depth .
 .IP
 This configuration is stored in init.cfg
-
 .TP
-.BR \-dc\fP\fIdepth\fP
+.BI \-dc depth
 Sets colour depth (bits per pixel) to
-.I depth\fP\fR\.\fP
+.IR depth .
 .IP
 This configuration is stored in init.cfg
-
 .TP
-.BR \-da\fP\fIsamples\fP
+.BI \-da samples
 Sets full-scene anti-aliasing (FSAA) to
 .I samples
 samples.
 .IP
 This configuration is stored in init.cfg
-
 .TP
-.BR \-dv\fP\fR{0|1}\fP
+.BR \-dv {0|1}
 Turns vertical sync on or off. 0 to disable, 1 to enable. Defaults to 0.
 .IP
 This configuration is stored in init.cfg
-
 .TP
-.BR \-ds\fP\fIbits\fP
+.BI \-ds bits
 Sets stencil buffer bits to
-.I bits\fP\fR\.\fP
+.IR bits .
 .IP
 This configuration is stored in init.cfg
-
 .TP
-.BR \-ds\fP\fR{0..3}\fP
-Set shader quality. 0 for none, 1 for shaders with fastest quality, max is 3. Defaults to 1 where hardware supports it. 
+.BR \-ds {0..3}
+Set shader quality. 0 for none, 1 for shaders with fastest quality, max is 3. Defaults to 1 where hardware supports it.
 .IP
 This configuration is stored in init.cfg
-
 .TP
-.BR \-k\fP\fR{0|1}\fP
+.BR \-k {0|1}
 Enables or disables kid mode, which reduces blood and death effects somewhat. 0 to disable, 1 to enable.
-
 .TP
-.BR \-h\fP\fIhomedir\fP
+.BI \-h homedir
 Sets your home directory to
-.I homedir\fP\fR\.\fP
-If set, the engine will look for files in your home directory as well as the normal installation directory. However, all files will be written to your home directory, instead of the normal installation directory. 
-
+.IR homedir .
+If set, the engine will look for files in your home directory as well as the normal installation directory. However, all files will be written to your home directory, instead of the normal installation directory.
 .TP
-.BR \-p\fP\fIpackagedir\fP
+.BI \-p packagedir
 Includes the data files found in
-.I packagedir\fP\fR\.\fP
-Can be used for adding additional mods. Packages will be loaded in the order specified. By default redeclipse only inludes data files in /usr/share/games/redeclipse/data and in the current working directory.
-
+.IR packagedir .
+Can be used for adding additional mods. Packages will be loaded in the order specified. By default redeclipse only inludes data files in
+.I /usr/share/games/redeclipse/data/
+and in the current working directory.
 .TP
-.BR \-v\fP\fR{0..4}\fP
-Sets verbosity. This affects how much information is printed to the console. 0 is the least verbose, 4 is the most verbose. 
+.BR \-v {0..4}
+Sets verbosity. This affects how much information is printed to the console. 0 is the least verbose, 4 is the most verbose.
 .IP
 This configuration is stored in init.cfg
-
 .TP
-.BR \-r\fP\fIscriptname\fP
-Executes the specified init script before OpenGL and various libraries are initialized. If no file specified, executes init.cfg. This setting also causes an init.cfg file to be written out when the game exits to save various hardware settings. 
-
+.BI \-r scriptname
+Executes the specified init script before OpenGL and various libraries are initialized. If no file specified, executes init.cfg. This setting also causes an init.cfg file to be written out when the game exits to save various hardware settings.
 .TP
-.BR \-x\fP\fIscriptname\fP
+.BI \-x scriptname
 Executes script
 .I scriptname
-once the engine has started up and initialized the game. 
-
+once the engine has started up and initialized the game.
 .TP
-.BR \-o\fP\fIsauerdir\fP
-Sets the path to your Sauerbraten directory. If Red Eclipse can find your Sauerbraten directory, you can load and play Sauerbraten maps from withing Red Eclipse. 
-
+.BI \-o sauerdir
+Sets the path to your Sauerbraten directory. If Red Eclipse can find your Sauerbraten directory, you can load and play Sauerbraten maps from withing Red Eclipse.
 .TP
-.BR \-ss\fP\fR{0..3}\fP
-Sets server type. 0 for local only, 1 for private, 2 for public, 3 for dedicated. Defaults to 1. 
-
+.BR \-ss {0..3}
+Sets server type. 0 for local only, 1 for private, 2 for public, 3 for dedicated. Defaults to 1.
 .TP
-.BR \-g\fP\fIlogfile\fP
+.BI \-g logfile
 Output log to
-.I logfile\fP\fR\.\fP
-
+.IR logfile .
 .TP
-.BR \-su\fP\fIserveruprate\fP
+.BI \-su serveruprate
 Sets upstream rate to
-.I serveruprate\fP\fR\.\fP
-Do not set this unless you know what you are doing, it should normally be left out. 
+.IR serveruprate .
+Do not set this unless you know what you are doing, it should normally be left out.
 .IP
 This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
-
 .TP
-.BR \-si\fP\fIserverip\fP
+.BI \-si serverip
 Binds to the ip address
-.I serverip\fP\fR\.\fP
+.IR serverip .
 Only needed for machines with more than one interface.
 .IP
 This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
-
 .TP
-.BR \-sm\fP\fIservermaster\fP
+.BI \-sm servermaster
 uses
 .I servermaster
 as the master server.
 .IP
 This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
-
 .TP
-.BR \-sa\fP\fIservermasterport\fP
+.BI \-sa servermasterport
 Contacts the master server using port
-.I servermasterport\fP\fR\.\fP
+.IR servermasterport .
 .IP
 This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
-
 .TP
-.BR \-sl\fP\fIdefaultmap\fP
+.BI \-sl defaultmap
 Sets default map to
-.I defaultmap\fP\fR\.\fP
+.IR defaultmap .
 .IP
 This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
-
 .TP
-.BR \-sp\fP\fIserverport\fP
+.BI \-sp serverport
 sets the server port to
-.I serverport\fP\fR\.\fP
-(Presumably these two are the game data and information ports for the server.) 
+.IR serverport .
+(Presumably these two are the game data and information ports for the server.)
 .IP
 This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
-
 .TP
-.BR \-sP\fP\fIadminpass\fP
+.BI \-sP adminpass
 Sets the admin password to
-.I adminpass\fP\fR\.\fP
+.IR adminpass .
 .IP
 This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
-
 .TP
-.BR \-sk\fP\fIjoinpass\fP
+.BI \-sk joinpass
 Sets the join password to
-.I joinpass\fP\fR\.\fP
-Users must know the password before they can connect. 
+.IR joinpass .
+Users must know the password before they can connect.
 .IP
 This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
-
 .SH EXAMPLES
 .PP
 .B redeclipse -p$HOME/mod/data
