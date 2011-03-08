@@ -29,7 +29,8 @@ Red Eclipse and Cube 2 source code in the src/ directory:
 
     http://www.opensource.org/licenses/zlib-license.php
 
-    This software is provided 'as-is', without any express or implied warranty.     In no event will the authors be held liable for any damages arising from
+    This software is provided 'as-is', without any express or implied warranty.
+    In no event will the authors be held liable for any damages arising from
     the use of this software. Permission is granted to anyone to use this
     software for any purpose, including commercial applications, and to alter
     it and redistribute it freely, subject to the following restrictions:
@@ -108,10 +109,12 @@ Sky/Cloud boxes created by SkiingPenguins found in the data/penguins/ directory:
 Files in the data/skyboxes/ directory:
 
     "gradient" by Quinton Reeves
-        This set is in the public domain, it was created using the gradient fill        tool in GIMP.
+        This set is in the public domain, it was created using the gradient fill
+        tool in GIMP.
 
     "stars" by Quinton Reeves
-        This set is in the public domain, it was created with Starbox 1.9 by            Alex Grigny de Castro from the included xgStars.txt.
+        This set is in the public domain, it was created with Starbox 1.9 by
+        Alex Grigny de Castro from the included xgStars.txt.
 
     "sunsetflat" by LedIris (07/08/2009)
         ZLIB License; Four things that made this skybox; 1:Tarragen 2, 2:Me,
