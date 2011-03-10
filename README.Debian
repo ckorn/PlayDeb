@@ -1,18 +1,32 @@
 redeclipse for Debian
 ---------------------
 
-debian/patches/01_makefile.patch
+debian/patches/01_makefile.patch:
  This is used simply to set a path which is guaranteed to work, the
  install process still copies from src/* because of the .install files
  used for menu items, this seems like something which could be done prettier.
 
+Notes on the license and consequent packaging oddities:
+ The Red Eclipse license only allows redistribution of all game data,
+ (including bits which otherwise are not redistributable) if the only change
+ done to the tarball is recompression "using different archival formats
+ suitable for your OS (zip/tgz/deb/dmg)"
+ Because of this, the redeclipse-data binary package includes everything
+ from the original "tarball" (svn repo, as is the case here), _including_ the
+ source code, precompiled binaries etc.
+ 
+ The redeclipse and redeclipse-server binary packages gets by under the
+ license of the source (Zlib) and enet ("MIT"/Expat). I have also created a
+ new icon (GPLv3) since converting any of the redeclipse icon bases into an
+ xpm is disallowed as per the license.
+
+ Similar to the icon using the trademark "Red Eclipse" is probably disallowed
+ unless in conjunction with the "unchanged tarball", but this is ignored for
+ now.
+
 TODO:
-* Write manpage for client and server
-* debian/copyright has inclusion of all copyright notices for content in
-  the data/ directory, the is not mention of whether copyright information about
-  the author is available. There are also a few shortcuts, e.g. left a link
-  to CC-BY as sufficient information and stripped the license text.
+* Write manpage for server
 * The ENet network library might be appropriate to split off to a separate
   package?
-* Similar to sauerbraten, the client and server may fit in contrib, wheras the
-  data is non-free.
+* Bug upstream about licensing, which may in practice not correspond to their
+  intent.
