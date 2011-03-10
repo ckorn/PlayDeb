@@ -1,402 +1,635 @@
-This work was packaged by:
+Format: http://ppa.launchpad.net/arand/redeclipse/ubuntu/pool/main/r/redeclipse
+Upstream-Name: Red Eclipse
+Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
+                  Lee "Eihrul" Salzman <lsalzman@gmail.com>
+Source: https://redeclipse.svn.sourceforge.net
+Disclaimer: This package is not part of Debian due to its license, which is
+            incompatibe with the Debian Free Software Guidelines (DFSG).
 
-    Arand Nash <ienorand@gmail.com> on Mon, 21 Feb 2011 19:20:30 +0000
-
-It was downloaded from
-https://redeclipse.svn.sourceforge.net/svnroot/redeclipse/
-
-Upstream Authours:
-
-    Quinton "Quin" Reeves <qreeves@gmail.com>
-    Lee "Eihrul" Salzman <lsalzman@gmail.com>
-
+Files: *
 Copyright:
+License:
+ Limited rights are granted to redistribute or recompress the entire
+ distribution using different archival formats suitable for your OS
+ (zip/tgz/deb/dmg), any changes beyond that require explicit permission from
+ the developers.
 
-    Red Eclipse, Copyright (C) 2009-2011 Quinton Reeves, Lee Salzman
+ Use of any logos, trademarks, or other advertising/promotional material for
+ Red Eclipse are free to use without consent, when used in conjunction with
+ a Red Eclipse article, comment, review, or advertisement; regardless of the
+ media featured in said material. Use for any other reason is strictly
+ prohibited without express written consent of Red Eclipse.
 
-    Cube Engine 2, Copyright (C) 2001-2011 Wouter van Oortmerssen,
-    Lee Salzman, Mike Dysart, Robert Pointon, and Quinton Reeves
+Files: src/*
+Copyright: Copyright (C) 2009-2011 Quinton Reeves, Lee Salzman
+           Copyright (C) 2001-2011 Wouter van Oortmerssen, Lee Salzman,
+           Mike Dysart, Robert Pointon, and Quinton Reeves
+License: Zlib
 
-    Enet network library, Copyright (c) 2002-2011 Lee Salzman
+ Red Eclipse is based on Cube Engine 2, both of which are covered under the ZLIB
+ license, you may use the source code so long as you obey this license.
 
-Red Eclipse and Cube 2 source code in the src/ directory:
+ Red Eclipse, Copyright (C) 2009-2011 Quinton Reeves, Lee Salzman 
+ Cube Engine 2, Copyright (C) 2001-2011 Wouter van Oortmerssen, Lee Salzman,
+ Mike Dysart, Robert Pointon, and Quinton Reeves
+ http://www.opensource.org/licenses/zlib-license.php
 
-    Red Eclipse is based on Cube Engine 2, both of which are covered under
-    the ZLIB license. You may use the source code so long as you obey this
-    license. This software is Open Source Initiative approved Open Source
-    Software. Open Source Initiative Approved is a trademark of the Open
-    Source Initiative.
+ This software is provided 'as-is', without any express or implied warranty.
+ In no event will the authors be held liable for any damages arising from
+ the use of this software. Permission is granted to anyone to use this
+ software for any purpose, including commercial applications, and to alter
+ it and redistribute it freely, subject to the following restrictions:
 
-    http://www.opensource.org/licenses/zlib-license.php
+ * The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+ * Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+ * This notice may not be removed or altered from any source distribution. 
 
-    This software is provided 'as-is', without any express or implied warranty.
-    In no event will the authors be held liable for any damages arising from
-    the use of this software. Permission is granted to anyone to use this
-    software for any purpose, including commercial applications, and to alter
-    it and redistribute it freely, subject to the following restrictions:
+ The license covers the source code, the included enet network library is
+ covered by an MIT-style license, which is however compatible with the above
+ license for all practical purposes.
 
-    * The origin of this software must not be misrepresented; you must not
-      claim that you wrote the original software. If you use this software
-      in a product, an acknowledgment in the product documentation would be
-      appreciated but is not required.
-    * Altered source versions must be plainly marked as such, and must not be
-      misrepresented as being the original software.
-    * This notice may not be removed or altered from any source distribution.
+Files: src/enet/*
+Copyright: Expat
 
-Included ENet library in the src/enet/ directory:
+ Copyright (c) 2002-2010 Lee Salzman
 
-    The license covers the source code, the included enet network library is
-    covered by an MIT-style license, which is however compatible with the
-    above license for all practical purposes.
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the
+ Software is furnished to do so, subject to the following conditions:
 
-    Copyright (c) 2002-2010 Lee Salzman
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
 
-    Permission is hereby granted, free of charge, to any person obtaining a
-    copy of this software and associated documentation files (the "Software"),
-    to deal in the Software without restriction, including without limitation
-    the rights to use, copy, modify, merge, publish, distribute, sublicense,
-    and/or sell copies of the Software, and to permit persons to whom the
-    Software is furnished to do so, subject to the following conditions:
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.
 
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
+Files: src/redeclipse.ico src/install/large.gif
+       src/redeclipse.ico src/install/small.gif src/site/*
+Copyright: UNKNOWN
+License:
+ Use of any logos, trademarks, or other advertising/promotional material
+ for Red Eclipse are free to use without consent, when used in conjunction with
+ a Red Eclipse article, comment, review, or advertisement; regardless of the
+ media featured in said material. Use for any other reason is strictly
+ prohibited without express written consent of Red Eclipse.
 
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-    DEALINGS IN THE SOFTWARE.
+Files: data/*
+Copyright: Copyright 2009-2011 Red Eclipse Team
+License: CC-BY-SA
+ In the absence of an explicit license, content is considered to be covered by
+ the CC-BY-SA license, you may use the content in Red Eclipse so long as you
+ obey individual licensing criteria. This does not apply to the Red Eclipse
+ logo or other trademarks unique to the project.
 
-Game media under the data/ directory:
+ Red Eclipse, Copyright (C) 2009-2011 Red Eclipse Team
+ Creative Commons Attribution ShareAlike 3.0 License (CC-BY-SA)
+ http://creativecommons.org/licenses/by-sa/3.0/
+Comment: See debian/licenses/cc-by-sa for the full license text.
 
-    Limited rights are granted to redistribute or recompress the entire
-    distribution using different archival formats suitable for your OS
-    (zip/tgz/deb/dmg), any changes beyond that require explicit permission from
-    the developers.
+Files: data/jwin/*
+Copyright: Copyright JWindecker <jacobwindecker@hotmail.com>
+License: CC-BY
+ Skyboxes by JWindecker.
+ This is under the Creative-Commons-BY licence, feel free to edit/modify to
+ your needs as long as I get credit for the orgional, and this readme is
+ packed with it.
 
-    In the absence of an explicit license, content is considered to be covered
-    by the CC-BY-SA license: 
+ Contact:  jacobwindecker@hotmail.com
+Comment: See debian/licenses/cc-by for the full license text.
 
-    Red Eclipse, Copyright (C) 2009-2011 Red Eclipse Team
-    Creative Commons Attribution ShareAlike 3.0 License (CC-BY-SA)
-    http://creativecommons.org/licenses/by-sa/3.0/
-
-Skyboxes by JWindecker found in the data/jwin/ directory:
-
-    Skyboxes by JWindecker.
-    This is under the Creative-Commons-BY licence, feel free to edit/modify to
-    your needs as long as I get credit for the orgional, and this readme is
-    packed with it.
-
-    Contact:  jacobwindecker@hotmail.com
-
-Files in the data/appleflap/ directory:
-
+Files: data/appleflap/*
+Copyright: Copyright UNKNOWN
+License: CC-BY-SA
     All files in this folder are licensed under CC-BY-SA.
-
-Sky/Cloud boxes created by SkiingPenguins found in the data/penguins/ directory:
-
-    Sky/Cloud boxes created by SkiingPenguins (skiing_penguins@yahoo.com)
-    Harmony Skybox, August 7, 2009, Originally created for the first person
-    shooter Cube 2: Sauerbraten
-    This readme must always be included with the skybox files.
-
-    Released under the Creative Commons BY-SA License
-    http://creativecommons.org/licenses/by-sa/3.0/
-
-Files in the data/skyboxes/ directory:
-
-    "gradient" by Quinton Reeves
-        This set is in the public domain, it was created using the gradient fill
-        tool in GIMP.
-
-    "stars" by Quinton Reeves
-        This set is in the public domain, it was created with Starbox 1.9 by
-        Alex Grigny de Castro from the included xgStars.txt.
-
-    "sunsetflat" by LedIris (07/08/2009)
-        ZLIB License; Four things that made this skybox; 1:Tarragen 2, 2:Me,
-        3:Boredom, 4:Being Sick :(
-
-    "dusk01" by Pieter Verhoeven
-        CC-BY-SA 3.0 license.
-
-    "skyhigh" by Pieter Verhoeven
-        CC-BY-SA 3.0 license.
-
-Files in the data/particles directory:
-
-    bullet.png, energy.png
-        Public domain sources
-
-    blob.png, scorch.png
-        (C) 2007-2008 Marcus "makkE" Biel, Sauerbraten Engine
-        http://www.cubeengine.com/
-
-    smoke.png, and explosion.png
-        Created by RaZgRiZ Made with Filter Forge II Beta 3
-        Licensed publicly for everyone to use and modify as long as the author
-        is credited for the original work.
-
-    entity.png, fire.png, lightning.png, hint.png, mflare.png, sflare.png,
-    spark.png
-        Created by Quinton Reeves, released into the public domain
-
-    blood.png
-        Created by FischKopF, source: http://www.quadropolis.us/node/2693
-        "Feel free to edit, claim it's yours, use it in own projects"
-
-    muzzle.png, plasma.png, spark.png
-        Created by Luckystrike-Rx
-
-    snow.png, stain.png
-        Created by Hirato for Sandbox
-
-TRaK4, TRaK6, and TRaK7 texture set in the data/trak/trak4, data/trak/trak6 and
-data/trak/trak7/ directories:
-
-    By Georges 'TRaK' Grondin
-    drognin@gmail.com
-    http://trak.mercenariesguild.net
-
-    Some source material is borrowed from cgtextures.com. Specifically, the
-    kitchen and kitchen1.tga files. Also, cheers, to keres for providing the
-    wood base texture for those two textures.
-    ------------------
-
-    The pack is released under the terms of CC-by 3.0.
-    See http://creativecommons.org/licenses/by/3.0/ for info on cc-by
-
-TRaK5 texture pack in the data/trak/trak5 directory:
-
-    ---------------------
-    TRaK5 texture pack
-    ---------------------
-     By Georges 'TRaK' Grondin
-     http://trak.mercenariesguild.net/
-     drognin at gmail dot com
-    ---------------------
-
-    Base texture sources:
-      http://www.burningwell.org/
-      http://www.bencloward.com/resources_textures.shtml
-    This pack does NOT use any material from CGtextures.com
-
-    ---------------------
-     LICENSE  ("MIT license")
-    If you wish to use these textures under a different license, please contact
-    me.
-    --------------------
-
-    TRaK5 texture pack Copyright (c) 2009 Georges 'TRaK' Grondin
-     http://trak.mercenariesguild.net/
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to
-    deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-    IN THE SOFTWARE.
-
-Files in the in the data/models/weapons/plasma/ and data/models/weapons/flamer/
-directories:
-
-    Plasmarrr gun by Mike Ledger ( mikeplus[i] )
-
-    http://creativecommons.org/licenses/by-sa/3.0/au/
-
-Files in the data/models/projs/gibs, data/models/projs/debris, directory:
-
-    Files in this folder:
-
-    by "makkE"
-    Markus Bekel
-    e-mail: makk_e@web.de
-
-    These files have been licensed under a the
-    "Creative Commons Deed / Attribution Non-commercial Share-Alike
-    ( at-nc-sa )"
-
-Files in the in the data/models/actors/turret/ directory:
-
-    Turret by Mike Ledger ( mikeplus[i] )
-
-    http://creativecommons.org/licenses/by-sa/3.0/au/
-
-Files in the in the data/mayhem/ directory:
-
-    flame skybox by Mayhem  Licensed under CC-BY-SA
-        I used Bryce 6 to create this skybox along with textures from various
-        free download sites.
-        Enjoy!
-
-    h2s skybox by Mayhem  Licensed under CC-BY-SA
-        I used Bryce 6 to create this skybox along with textures from various
-        free download sites.
-        Enjoy!
-
-    scorched skybox by Mayhem  Licensed under CC-BY-SA
-        I used Bryce 6 to create this skybox along with textures from various
-        free download sites.
-        Enjoy!
-
-The font file data/fonts/akashi.ttf:
-
-    http://www.tenbytwenty.com/
-
-    License Agreement
-
-    By downloading any product from Ten by Twenty, you agree to the following:
-
-        * All products remain property of Ten by Twenty.
-        * Products may be used by the licensee in any personal or commercial
-          projects (royalty-free).
-        * Products may not be resold or redistributed.
-        * Wordpress themes may be edited and developed for individual use, but
-          credit links must remain in place and adapted themes may not be
-          reditributed.
-
-Specific files in the data/textures/ directory
-
-    emblem.png, logo.png
-        Created by Luckystrike-Rx for Red Eclipse
-        Copyright (C) 2010 Red Eclipse Team
-
-        Use of any logos, trademarks, or other advertising/promotional material
-        for Red Eclipse are free to use without consent, when used in
-        conjunction with a Red Eclipse article, comment, review, or
-        advertisement; regardless of the media featured in said material. Use
-        for any other reason is strictly prohibited without express written
-        consent of Red Eclipse.
-
-    wait.png
-        Created from http://commons.wikimedia.org/wiki/File:Stop_hand_grey.svg
-        Released under the Creative Commons Attribution ShareAlike 3.0 License
-        http://creativecommons.org/licenses/by-sa/3.0/
-
-    dead.png, dominated.png, dominating.png, flag.png
-        Created from images located at http://www.openclipart.org/
-        Released as Public Domain Royalty Free Clipart
-
-    zoom.png
-        Created by Theso (johniwas@gmail.com),
-        http://www.quadropolis.us/node/2680
-        Use it however you wish, but credit would be greatly appreciated.
-
-    lava.jpg
-        Created by RaZgRiZ Made with Filter Forge II Beta 3
-        Licensed publicly for everyone to use and modify as long as the author
-        is credited for the original work.
-
-Files in the data/torley/ directory:
-
-    This work is licensed under a Creative Commons Attribution 3.0 United States
-    License: http://creativecommons.org/licenses/by/3.0/us/
- 
-    The files have been recompressed, renamed and normal/spec/depth-mapped for
-    use in Red Eclipse
-
-Files in the data/sounds/ambience/morph directory:
-
-    Q009's (morph) ambient sound pack
-
-    Released under the Creative Commons BY License
-    http://creativecommons.org/licenses/by/3.0/
-
-Files in the data/sounds/ambience/ directory:
-
-    wind                        Original recording by "Bahutan"
-    fire_light                  Original recording by "Slanesh"
-    hum                         Original recording by "Therac 25"
-    night_crickets,creek        Original recording by "RHumphries"
-    forest,cycadas              Original recording by "dobroide"
-    river, cavedrip             Original recording by "acclivity"
-    frogs, forestflies          Original recording by "oyes"
-    water                       Original recording by "ignotus"
-    waterfall                   Original recording by "Corsica_S
-    distant_cars                Original recording by "fresco" and "WIM"
-
-    These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
-    Downloaded from: http://freesound.iua.upf.edu/
-
-    All other sounds in this directory are original works by Quinton "quin"
-    Reeves, and Alex "blackshoe" Anguix
-
-    Files in this directory are released under the Creative Commons license:
-
-        Attribution-ShareAlike 3.0
-
-Files in the data/sounds/player/ directory:
-
-######
-
-    Varying sound effects based on a variety of CC licensed material from
-    Gabriele "Blindabuser" Magurno,
-    and Quinton "quin" Reeves modified with permission.
-
-    Original License Text:
-
-        ---------------------------------------------------------
-        BLINDABUSER'S FREE SOUND FX FOR SAUERBRATEN - [ www.magurno.com ]
-        ---------------------------------------------------------
-
-        (...)
-
-        NOTE: These sounds FX have been created using free (public domain)
-        sounds from:
-
-        http://www.therecordist.com/
-        http://www.pacdv.com
-        http://www.coolastudios.com
-        http://freesound.iua.upf.edu/ (aust_paul)
-
-    This software is released under a Creative Commons license:
-
-    Attribution-NonCommercial 3.0 Unported
-
-
-Files in the data/sounds/ directory:
-
-    All files in this directory, unless otherwise specified, are released under
-    the Creative Commons license:
-
-        Attribution-ShareAlike 3.0
-
-Files in the data/sounds/sfx/ directory:
-
-    All sounds in this directory are original works by Quinton "quin" Reeves,
-    Alex "blackshoe" Anguix and Derek "JoJo" Stegall
-    Files in this directory are released under the Creative Commons license:
-
-        Attribution-ShareAlike 3.0
-
-
-Red Eclipse logos, trademarks, or other advertising/promotional material in the
-src/install/ and src/site/ directories:
-
-    Copyright (C) 2010 Red Eclipse Team
-
-    Use of any logos, trademarks, or other advertising/promotional material for
-    Red Eclipse are free to use without consent, when used in conjunction with
-    a Red Eclipse article, comment, review, or advertisement; regardless of the
-    media featured in said material. Use for any other reason is strictly
-    prohibited without express written consent of Red Eclipse.
-
-The Debian packaging is:
-    Copyright (C) 2011 Arand Nash <ienorand@gmail.com>
-and is licensed under the GPL version 3,
-see `/usr/share/common-licenses/GPL-3'.
+Comment: See debian/licenses/cc-by-sa for the full license text.
+
+Files: data/penguins/*
+Copyright: Copyright 2009 SkiingPenguins <skiing_penguins@yahoo.com>
+License: CC-BY-SA
+ Sky/Cloud boxes created by SkiingPenguins (skiing_penguins@yahoo.com)
+ Harmony Skybox, August 7, 2009, Originally created for the first person
+ shooter Cube 2: Sauerbraten
+ This readme must always be included with the skybox files.
+
+ Released under the Creative Commons BY-SA License
+ http://creativecommons.org/licenses/by-sa/3.0/
+Comment: See debian/licenses/cc-by-sa for the full license text.
+
+Files: data/skyboxes/gradient* data/skyboxes/stars*
+License: public-domain
+ "gradient" by Quinton Reeves
+     This set is in the public domain, it was created using the gradient fill
+     tool in GIMP.
+
+ "stars" by Quinton Reeves
+     This set is in the public domain, it was created with Starbox 1.9 by
+     Alex Grigny de Castro from the included xgStars.txt.
+
+Files: data/skyboxes/sunsetflat*
+Copyright: Copyright 2009 LedIris
+License: Zlib
+ "sunsetflat" by LedIris (07/08/2009)
+     ZLIB License; Four things that made this skybox; 1:Tarragen 2, 2:Me,
+     3:Boredom, 4:Being Sick :(
+     This software is provided 'as-is', without any express or implied warranty.
+     In no event will the authors be held liable for any damages arising from
+     the use of this software. Permission is granted to anyone to use this
+     software for any purpose, including commercial applications, and to alter
+     it and redistribute it freely, subject to the following restrictions:
+     * The origin of this software must not be misrepresented; you must not
+       claim that you wrote the original software. If you use this software in
+       a product, an acknowledgment in the product documentation would be
+       appreciated but is not required.
+     * Altered source versions must be plainly marked as such, and must not be
+       misrepresented as being the original software.
+     * This notice may not be removed or altered from any source distribution. 
+
+Files: data/skyboxes/dusk01* data/skyboxes/skyhigh*
+Copyright: Copyright Pieter Verhoeven
+License: CC-BY-SA
+ "dusk01" by Pieter Verhoeven
+     CC-BY-SA 3.0 license.
+
+ "skyhigh" by Pieter Verhoeven
+     CC-BY-SA 3.0 license.
+Comment: See debian/licenses/cc-by-sa for the full license text.
+
+Files: data/particles/bullet.png data/particles/energy.png
+License: public-domain
+ Public domain sources
+
+Files: data/particles/blob.png data/particles/scorch.png
+Copyright: Copyright (C) 2007-2008 Marcus "makkE" Biel
+License:
+ (C) 2007-2008 Marcus "makkE" Biel, Sauerbraten Engine
+ http://www.cubeengine.com/
+
+Files: data/particles/smoke.png data/particles/explosion.png
+Copyright: Copyright RaZgRiZ
+License:
+ Created by RaZgRiZ Made with Filter Forge II Beta 3
+ Licensed publicly for everyone to use and modify as long as the author is
+ credited for the original work.
+
+Files: data/particles/entity.png data/particles/fire.png
+       data/particles/lightning.png data/particles/hint.png
+       data/particles/mflare.png data/particles/sflare.png
+       data/particles/spark.png 
+License: public-domain
+ Created by Quinton Reeves, released into the public domain
+
+Files: data/particles/blood.png
+Copyright: Copyright FischKopF
+ Created by FischKopF, source: http://www.quadropolis.us/node/2693
+ "Feel free to edit, claim it's yours, use it in own projects"
+
+Files: data/particles/muzzle.png data/particles/plasma.png
+       data/particles/spark.png
+Copyright: Copyright Luckystrike-Rx
+License:
+ Created by Luckystrike-Rx
+
+Files: data/particles/snow.png data/particles/stain.png
+Copyright: Luckystrike-Rx
+License: Copyright Hirato
+ Created by Hirato for Sandbox
+
+Files: data/trak/trak4/* data/trak/trak6/* data/trak/trak7/*
+Copyright: Copyright Georges 'TRaK' Grondin <drognin@gmail.com>
+License: CC-BY
+ By Georges 'TRaK' Grondin
+ drognin@gmail.com
+ http://trak.mercenariesguild.net
+ --------------------
+ Some source material is borrowed from cgtextures.com. Specifically, the kitchen
+ and kitchen1.tga files. Also, cheers, to keres for providing the wood base
+ texture for those two textures.
+ ------------------
+
+ The pack is released under the terms of CC-by 3.0.
+ See http://creativecommons.org/licenses/by/3.0/ for info on cc-by
+
+ The .psd source files for this set are available from my website and are under
+ the same license.
+Comment: See debian/licenses/cc-by for the full license text.
+
+Files: data/trak/trak5/*
+Copyright: Copyright (c) 2009 Georges 'TRaK' Grondin
+           http://trak.mercenariesguild.net/
+License: Expat
+ TRaK5 texture pack Copyright (c) 2009 Georges 'TRaK' Grondin
+ http://trak.mercenariesguild.net/
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+
+Files: data/models/weapons/plasma/* data/models/weapons/flamer/*
+Copyright: Copyright Mike Ledger ( mikeplus[i] )
+License: CC-BY-SA
+ Plasmarrr gun by Mike Ledger ( mikeplus[i] )
+
+ http://creativecommons.org/licenses/by-sa/3.0/au/
+Comment: See debian/licenses/cc-by-sa for the full license text.
+
+Files: data/models/projs/gibs/* data/models/projs/debris/*
+Copyright: Copyright Markus Bekel <makk_e@web.de>
+License: CC-BY-NC-SA
+ by "makkE"
+ Markus Bekel
+ e-mail: makk_e@web.de
+
+ These files have been licensed under a the
+ "Creative Commons Deed / Attribution Non-commercial Share-Alike ( at-nc-sa )"
+Comment: See debian/licenses/cc-by-nc-sa for the full license text.
+
+Files: data/models/actors/turret/*
+Copyright: Copyright Mike Ledger ( mikeplus[i] )
+license: CC-BY-SA
+ Turret by Mike Ledger ( mikeplus[i] )
+
+ http://creativecommons.org/licenses/by-sa/3.0/au/
+Comment: See debian/licenses/cc-by-sa for the full license text.
+
+Files: data/mayhem/*
+Copyright: Copyright Mayhem
+License: CC-BY-SA
+ flame skybox by Mayhem  Licensed under CC-BY-SA
+
+ h2s skybox by Mayhem  Licensed under CC-BY-SA
+
+ scorched skybox by Mayhem  Licensed under CC-BY-SA
+Comment: See debian/licenses/cc-by-sa for the full license text.
+
+Files: data/fonts/akashi.ttf
+Copyright: Copyright Ten by Twenty http://www.tenbytwenty.com/
+ http://www.tenbytwenty.com/
+
+ License Agreement
+
+ By downloading any product from Ten by Twenty, you agree to the following:
+
+     * All products remain property of Ten by Twenty.
+     * Products may be used by the licensee in any personal or commercial
+       projects (royalty-free).
+     * Products may not be resold or redistributed.
+     * Wordpress themes may be edited and developed for individual use, but
+       credit links must remain in place and adapted themes may not be
+       reditributed.
+
+Files: data/textures/emblem.png data/textures/logo.png
+Copyright: Copyright (C) 2010 Red Eclipse Team
+License:
+ Created by Luckystrike-Rx for Red Eclipse
+ Copyright (C) 2010 Red Eclipse Team
+ Use of any logos, trademarks, or other advertising/promotional material
+ for Red Eclipse are free to use without consent, when used in conjunction with
+ a Red Eclipse article, comment, review, or advertisement; regardless of the
+ media featured in said material. Use for any other reason is strictly
+ prohibited without express written consent of Red Eclipse.
+
+Files: data/textures/wait.png
+Copyright: Copyright UNKNOWN
+License: CC-BY-SA
+ Created from http://commons.wikimedia.org/wiki/File:Stop_hand_grey.svg
+ Released under the Creative Commons Attribution ShareAlike 3.0 License
+ http://creativecommons.org/licenses/by-sa/3.0/
+Comment: See debian/licenses/cc-by-nc-sa for the full license text.
+
+Files: data/textures/dead.png data/textures/dominated.png
+       data/textures/dominating.png data/textures/flag.png
+License: public-domain
+ Created from images located at http://www.openclipart.org/
+ Released as Public Domain Royalty Free Clipart
+
+Files: data/textures/zoom.png
+Copyright: Copyright Theso <johniwas@gmail.com>
+License:
+ Created by Theso (johniwas@gmail.com),
+ http://www.quadropolis.us/node/2680
+ Use it however you wish, but credit would be greatly appreciated.
+
+Files: data/textures/lava.jpg
+Copyright: RaZgRiZ
+License:
+ Created by RaZgRiZ Made with Filter Forge II Beta 3
+ Licensed publicly for everyone to use and modify as long as the author
+ is credited for the original work.
+
+Files: data/torley/*
+Copyright: Copyright UNKNOWN
+License: CC-BY
+ This work is licensed under a Creative Commons Attribution 3.0 United States
+ License: http://creativecommons.org/licenses/by/3.0/us/
+
+ The files have been recompressed, renamed and normal/spec/depth-mapped for
+ use in Red Eclipse
+Comment: See debian/licenses/cc-by for the full license text.
+
+Files: data/sounds/*
+Copyright: UNKNOWN
+License: CC-BY-SA and additional EULA
+ All files in this directory, unless otherwise specified, are released under the
+ Creative Commons license:
+
+     Attribution-ShareAlike 3.0
+
+ You are free:
+
+     * to Share  to copy, distribute and transmit the work
+     * to Remix  to adapt the work
+
+ Under the following conditions:
+
+     * Attribution. You must attribute the work in the manner specified by the
+       author or licensor (but not in any way that suggests that they endorse
+       you or your use of the work).
+     * Noncommercial. You may not use this work for commercial purposes.
+     * For any reuse or distribution, you must make clear to others the license
+       terms of this work.
+     * Any of the above conditions can be waived if you get permission from the
+       copyright holder.
+     * Nothing in this license impairs or restricts the author's moral rights.
+
+ Full license (legal code) can be found at:
+ http://creativecommons.org/licenses/by-nc/3.0/legalcode
+
+ ADDITIONAL END USER LICENSE AGREEMENT:
+
+ IMPORTANT-READ CAREFULLY: This End-User License Agreement ("EULA") is a legal
+ agreement between you (either an individual or a single entity) and Gabriele
+ Magurno ("Gabriele Magurno") for the software identified above, which includes
+ computer software and may include associated media, printed materials, and
+ "online" or electronic documentation (collectively, "SOFTWARE"). By installing,
+ copying, or otherwise using the SOFTWARE, you agree to be bound by the terms
+ of this EULA. If you do not agree to the terms of this EULA, do not install,
+ copy or otherwise use the SOFTWARE.
+ DISCLAIMER OF WARRANTIES.  To the maximum extent permitted by applicable law,
+ Gabriele Magurno provide the SOFTWARE AS IS AND WITH ALL FAULTS, and hereby
+ disclaim all warranties and conditions, either express, implied or statutory,
+ including, but not limited to, any (if any) implied warranties or conditions
+ of merchantability, of fitness for a particular purpose, of lack of viruses,
+ of accuracy or completeness of responses, of results, and of lack of negligence
+ or lack of workmanlike effort, all with regard to the SOFTWARE, and the
+ provision of or failure to provide Support Services.  ALSO, THERE IS NO
+ WARRANTY OR CONDITION OF TITLE, QUIET ENJOYMENT, QUIET POSSESSION,
+ CORRESPONDENCE TO DESCRIPTION OR NON-INFRINGEMENT, WITH REGARD TO THE SOFTWARE.
+ THE ENTIRE RISK AS TO THE QUALITY OF OR ARISING OUT OF USE OR PERFORMANCE OF
+ THE SOFTWARE AND SUPPORT SERVICES, IF ANY, REMAINS WITH YOU.
+ EXCLUSION OF INCIDENTAL, CONSEQUENTIAL AND CERTAIN OTHER DAMAGES. TO THE
+ MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL Gabriele Magurno
+ BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES
+ WHATSOEVER (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS OR
+ CONFIDENTIAL OR OTHER INFORMATION, FOR BUSINESS INTERRUPTION, FOR PERSONAL
+ INJURY, FOR LOSS OF PRIVACY, FOR FAILURE TO MEET ANY DUTY INCLUDING OF GOOD
+ FAITH OR OF REASONABLE CARE, FOR NEGLIGENCE, AND FOR ANY OTHER PECUNIARY OR
+ OTHER LOSS WHATSOEVER) ARISING OUT OF OR IN ANY WAY RELATED TO THE USE OF OR
+ INABILITY TO USE THE SOFTWARE, THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT
+ SERVICES, OR OTHERWISE UNDER OR IN CONNECTION WITH ANY PROVISION OF THIS EULA,
+ EVEN IN THE EVENT OF THE FAULT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY,
+ BREACH OF CONTRACT OR BREACH OF WARRANTY OF Gabriele Magurno, AND EVEN IF
+ Gabriele Magurno OR ANY SUPPLIER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGES.
+ LIMITATION OF LIABILITY AND REMEDIES. Notwithstanding any damages that you
+ might incur for any reason whatsoever (including, without limitation, all
+ damages referenced above and all direct or general damages), the entire
+ liability of Gabriele Magurno under any provision of this EULA and your
+ exclusive remedy for all of the foregoing shall be limited to U.S.$0.00.
+Comment: See debian/licenses/cc-by-sa for the full license text of the
+         CC-BY-SA
+
+Files: data/sounds/ambience/*
+Copyright: Copyright Quinton "quin" Reeves, Alex "blackshoe" Anguix
+License: CC-BY-SA
+ All other sounds in this directory are original works by Quinton "quin" Reeves,
+ and Alex "blackshoe" Anguix
+
+ Files in this directory are released under the Creative Commons license:
+
+     Attribution-ShareAlike 3.0
+Comment: See debian/licenses/cc-by-sa for the full license text.
+
+Files data/sounds/ambience/morph/*
+Copyright: Copyright Q009
+License: CC-BY
+ Q009's (morph) ambient sound pack
+
+ Released under the Creative Commons BY License
+ http://creativecommons.org/licenses/by/3.0/
+Comment: See debian/licenses/cc-by for the full license text.
+
+Files: data/sounds/ambience/wind.ogg
+Copyright: Copyright Bahutan
+License: Creative Commons Sampling Plus 1.0 License.
+ wind                        Original recording by "Bahutan"
+
+ These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
+ Downloaded from: http://freesound.iua.upf.edu/
+Comment: See debian/licenses/cc-sampling+ for the full license text.
+
+Files: data/sounds/ambience/firelight.ogg
+Copyright: Copyright Slanesh
+License: Creative Commons Sampling Plus 1.0 License.
+ fire_light                  Original recording by "Slanesh"
+
+ These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
+ Downloaded from: http://freesound.iua.upf.edu/
+Comment: See debian/licenses/cc-sampling+ for the full license text.
+
+Files: data/sounds/ambience/hum.ogg
+Copyright: Copyright Therac 25
+License: Creative Commons Sampling Plus 1.0 License.
+ hum                         Original recording by "Therac 25"
+
+ These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
+ Downloaded from: http://freesound.iua.upf.edu/
+Comment: See debian/licenses/cc-sampling+ for the full license text.
+
+Files: data/sounds/ambience/nightcrickets.ogg data/sounds/ambience/creek.ogg
+Copyright: Copyright RHumphries
+License: Creative Commons Sampling Plus 1.0 License.
+ night_crickets,creek        Original recording by "RHumphries"
+
+ These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
+ Downloaded from: http://freesound.iua.upf.edu/
+Comment: See debian/licenses/cc-sampling+ for the full license text.
+
+Files: data/sounds/ambience/forest1.ogg data/sounds/ambience/forest2.ogg
+       data/sounds/ambience/forest3.ogg data/sounds/ambience/cycadas.ogg
+Copyright: Copyright dobroide
+License: Creative Commons Sampling Plus 1.0 License.
+ forest,cycadas              Original recording by "dobroide"
+
+ These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
+ Downloaded from: http://freesound.iua.upf.edu/
+Comment: See debian/licenses/cc-sampling+ for the full license text.
+
+Files: data/sounds/ambience/river.ogg data/sounds/ambience/cavedrip.ogg
+Copyright: Copyright acclivity
+License: Creative Commons Sampling Plus 1.0 License.
+ river, cavedrip             Original recording by "acclivity"
+
+ These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
+ Downloaded from: http://freesound.iua.upf.edu/
+Comment: See debian/licenses/cc-sampling+ for the full license text.
+
+Files: data/sounds/ambience/frogs.ogg data/sounds/ambience/forestflies.ogg
+Copyright: Copyright oyes
+License: Creative Commons Sampling Plus 1.0 License.
+ frogs, forestflies          Original recording by "oyes"
+
+ These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
+ Downloaded from: http://freesound.iua.upf.edu/
+Comment: See debian/licenses/cc-sampling+ for the full license text.
+
+Files: data/sounds/ambience/waterfall*
+Copyright: Copyright ignotus
+License: Creative Commons Sampling Plus 1.0 License.
+ waterfall                   Original recording by "Corsica_S
+
+ These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
+ Downloaded from: http://freesound.iua.upf.edu/
+Comment: See debian/licenses/cc-sampling+ for the full license text.
+
+Files: data/sounds/ambience/distant_cars.ogg
+Copyright: fresco, WIM
+License: Creative Commons Sampling Plus 1.0 License.
+ distant_cars                Original recording by "fresco" and "WIM"
+
+ These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
+ Downloaded from: http://freesound.iua.upf.edu/
+Comment: See debian/licenses/cc-sampling+ for the full license text.
+
+Files: data/sounds/player/*
+Copyright: CopyrightGabriele "Blindabuser" Magurno, Quinton "quin" Reeves
+License: CC-BY-NC and additional EULA
+ Varying sound effects based on a variety of CC licensed material from Gabriele
+ "Blindabuser" Magurno, and Quinton "quin" Reeves modified with permission.
+
+ Original License Text:
+
+     ---------------------------------------------------------
+     BLINDABUSER'S FREE SOUND FX FOR SAUERBRATEN - [ www.magurno.com ]
+     ---------------------------------------------------------
+     Content:
+
+     1. 35 original sound effects in *.wav format.
+     2. readme.txt (this file).
+
+     NOTE: These sounds FX have been created using free (public domain) sounds
+     from:
+
+     http://www.therecordist.com/
+     http://www.pacdv.com
+     http://www.coolastudios.com
+     http://freesound.iua.upf.edu/ (aust_paul)
+
+ This software is released under a Creative Commons license:
+
+ Attribution-NonCommercial 3.0 Unported
+
+ You are free:
+
+     * to Share  to copy, distribute and transmit the work
+     * to Remix  to adapt the work
+
+ Under the following conditions:
+
+     * Attribution. You must attribute the work in the manner specified by the
+       author or licensor (but not in any way that suggests that they endorse
+       you or your use of the work).
+     * Noncommercial. You may not use this work for commercial purposes.
+     * For any reuse or distribution, you must make clear to others the license
+       terms of this work.
+     * Any of the above conditions can be waived if you get permission from the
+        copyright holder.
+     * Nothing in this license impairs or restricts the author's moral rights.
+
+ Full license (legal code) can be found at:
+ http://creativecommons.org/licenses/by-nc/3.0/legalcode
+
+ ADDITIONAL END USER LICENSE AGREEMENT:
+
+ IMPORTANT-READ CAREFULLY: This End-User License Agreement ("EULA") is a legal
+ agreement between you (either an individual or a single entity) and Gabriele
+ Magurno ("Gabriele Magurno") for the software identified above, which includes
+ computer software and may include associated media, printed materials, and
+ "online" or electronic documentation (collectively, "SOFTWARE"). By installing,
+ copying, or otherwise using the SOFTWARE, you agree to be bound by the terms
+ of this EULA. If you do not agree to the terms of this EULA, do not install,
+ copy or otherwise use the SOFTWARE.
+ DISCLAIMER OF WARRANTIES.  To the maximum extent permitted by applicable law,
+ Gabriele Magurno provide the SOFTWARE AS IS AND WITH ALL FAULTS, and hereby
+ disclaim all warranties and conditions, either express, implied or statutory,
+ including, but not limited to, any (if any) implied warranties or conditions
+ of merchantability, of fitness for a particular purpose, of lack of viruses,
+ of accuracy or completeness of responses, of results, and of lack of negligence
+ or lack of workmanlike effort, all with regard to the SOFTWARE, and the
+ provision of or failure to provide Support Services.  ALSO, THERE IS NO
+ WARRANTY OR CONDITION OF TITLE, QUIET ENJOYMENT, QUIET POSSESSION,
+ CORRESPONDENCE TO DESCRIPTION OR NON-INFRINGEMENT, WITH REGARD TO THE SOFTWARE.
+ THE ENTIRE RISK AS TO THE QUALITY OF OR ARISING OUT OF USE OR PERFORMANCE OF
+ THE SOFTWARE AND SUPPORT SERVICES, IF ANY, REMAINS WITH YOU.
+ EXCLUSION OF INCIDENTAL, CONSEQUENTIAL AND CERTAIN OTHER DAMAGES. TO THE
+ MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL Gabriele Magurno
+ BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES
+ WHATSOEVER (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS OR
+ CONFIDENTIAL OR OTHER INFORMATION, FOR BUSINESS INTERRUPTION, FOR PERSONAL
+ INJURY, FOR LOSS OF PRIVACY, FOR FAILURE TO MEET ANY DUTY INCLUDING OF GOOD
+ FAITH OR OF REASONABLE CARE, FOR NEGLIGENCE, AND FOR ANY OTHER PECUNIARY OR
+ OTHER LOSS WHATSOEVER) ARISING OUT OF OR IN ANY WAY RELATED TO THE USE OF OR
+ INABILITY TO USE THE SOFTWARE, THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT
+ SERVICES, OR OTHERWISE UNDER OR IN CONNECTION WITH ANY PROVISION OF THIS EULA,
+ EVEN IN THE EVENT OF THE FAULT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY,
+ BREACH OF CONTRACT OR BREACH OF WARRANTY OF Gabriele Magurno, AND EVEN IF
+ Gabriele Magurno OR ANY SUPPLIER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGES.
+ LIMITATION OF LIABILITY AND REMEDIES. Notwithstanding any damages that you
+ might incur for any reason whatsoever (including, without limitation, all
+ damages referenced above and all direct or general damages), the entire
+ liability of Gabriele Magurno under any provision of this EULA and your
+ exclusive remedy for all of the foregoing shall be limited to U.S.$0.00.
+Comment: See debian/licenses/cc-by-nc for the full license text of the
+         CC-BY-NC license.
+
+Files: data/sounds/sfx/*
+Copyright: Copyright Quinton "quin" Reeves, Alex "blackshoe" Anguix,
+           Derek "JoJo" Stegall
+License: CC-BY-SA
+ All sounds in this directory are original works by Quinton "quin" Reeves,
+ Alex "blackshoe" Anguix and Derek "JoJo" Stegall
+ Files in this directory are released under the Creative Commons license:
+
+     Attribution-ShareAlike 3.0
+Comment: See debian/licenses/cc-by-sa for the full license text.
+
+Files: debian/*
+Copyright: Copyright (C) 2011 Arand Nash <ienorand@gmail.com>
+License: GPL-3+
+ This package was debianized by Arand Nash and is licensed under the GPL
+ version 3, see `/usr/share/common-licenses/GPL-3'.
