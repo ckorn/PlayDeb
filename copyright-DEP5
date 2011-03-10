@@ -9,7 +9,6 @@ Disclaimer: This package is not part of Debian due to its license, which is
 Files: *
 Copyright:
 License:
-
  Limited rights are granted to redistribute or recompress the entire
  distribution using different archival formats suitable for your OS
  (zip/tgz/deb/dmg), any changes beyond that require explicit permission from
@@ -116,16 +115,16 @@ License: CC-BY-SA
     All files in this folder are licensed under CC-BY-SA.
 Comment: See debian/licenses/cc-by-sa for the full license text.
 
-Files: data/penguins
+Files: data/penguins/*
 Copyright: Copyright 2009 SkiingPenguins <skiing_penguins@yahoo.com>
 License: CC-BY-SA
-    Sky/Cloud boxes created by SkiingPenguins (skiing_penguins@yahoo.com)
-    Harmony Skybox, August 7, 2009, Originally created for the first person
-    shooter Cube 2: Sauerbraten
-    This readme must always be included with the skybox files.
+ Sky/Cloud boxes created by SkiingPenguins (skiing_penguins@yahoo.com)
+ Harmony Skybox, August 7, 2009, Originally created for the first person
+ shooter Cube 2: Sauerbraten
+ This readme must always be included with the skybox files.
 
-    Released under the Creative Commons BY-SA License
-    http://creativecommons.org/licenses/by-sa/3.0/
+ Released under the Creative Commons BY-SA License
+ http://creativecommons.org/licenses/by-sa/3.0/
 Comment: See debian/licenses/cc-by-sa for the full license text.
 
 Files: data/skyboxes/gradient* data/skyboxes/stars*
@@ -160,11 +159,11 @@ License: Zlib
 Files: data/skyboxes/dusk01* data/skyboxes/skyhigh*
 Copyright: Copyright Pieter Verhoeven
 License: CC-BY-SA
-    "dusk01" by Pieter Verhoeven
-        CC-BY-SA 3.0 license.
+ "dusk01" by Pieter Verhoeven
+     CC-BY-SA 3.0 license.
 
-    "skyhigh" by Pieter Verhoeven
-        CC-BY-SA 3.0 license.
+ "skyhigh" by Pieter Verhoeven
+     CC-BY-SA 3.0 license.
 Comment: See debian/licenses/cc-by-sa for the full license text.
 
 Files: data/particles/bullet.png data/particles/energy.png
@@ -174,9 +173,8 @@ License: public-domain
 Files: data/particles/blob.png data/particles/scorch.png
 Copyright: Copyright (C) 2007-2008 Marcus "makkE" Biel
 License:
-    blob.png, scorch.png
-        (C) 2007-2008 Marcus "makkE" Biel, Sauerbraten Engine
-        http://www.cubeengine.com/
+ (C) 2007-2008 Marcus "makkE" Biel, Sauerbraten Engine
+ http://www.cubeengine.com/
 
 Files: data/particles/smoke.png data/particles/explosion.png
 Copyright: Copyright RaZgRiZ
