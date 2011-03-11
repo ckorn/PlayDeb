@@ -12,6 +12,9 @@
 %:
 	dh $@ --sourcedirectory=src
 
+override_dh_shlibdeps:
+	dh_shlibdeps --exclude=/usr/lib/redeclipse/bin
+
 # We can't do this due to current license regaring icon...
 # override_dh_auto_build:
 #	convert -shave 8x8 -resize 32x32 src/site/bits/favicon.png debian/redeclipse.xpm	
