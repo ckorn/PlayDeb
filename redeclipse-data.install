@@ -1,11 +1,1 @@
 data usr/share/games/redeclipse
-bin usr/lib/redeclipse
-license.txt /usr/share/games/redeclipse
-readme.txt /usr/share/games/redeclipse
-redeclipse.bat /usr/share/games/redeclipse
-redeclipse.sh /usr/share/games/redeclipse
-redeclipse.sh /usr/share/games/redeclipse
-server.bat /usr/share/games/redeclipse
-server.sh /usr/share/games/redeclipse
-src /usr/share/games/redeclipse
-todo.txt /usr/share/games/redeclipse
