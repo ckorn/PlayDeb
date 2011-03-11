@@ -12,7 +12,6 @@
 %:
 	dh $@ --sourcedirectory=src
 
-
 override_dh_auto_build:
 	convert -shave 8x8 -resize 32x32 src/site/bits/favicon.png debian/redeclipse.xpm	
 	dh_auto_build
