@@ -96,7 +96,7 @@ License: CC-BY-SA
  Red Eclipse, Copyright (C) 2009-2011 Red Eclipse Team
  Creative Commons Attribution ShareAlike 3.0 License (CC-BY-SA)
  http://creativecommons.org/licenses/by-sa/3.0/
-Comment: See debian/licenses/cc-by-sa for the full license text.
+Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: data/jwin/*
 Copyright: Copyright JWindecker <jacobwindecker@hotmail.com>
@@ -107,13 +107,13 @@ License: CC-BY
  packed with it.
 
  Contact:  jacobwindecker@hotmail.com
-Comment: See debian/licenses/cc-by for the full license text.
+Comment: See ./licenses/cc-by for the full license text.
 
 Files: data/appleflap/*
 Copyright: Copyright UNKNOWN
 License: CC-BY-SA
     All files in this folder are licensed under CC-BY-SA.
-Comment: See debian/licenses/cc-by-sa for the full license text.
+Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: data/penguins/*
 Copyright: Copyright 2009 SkiingPenguins <skiing_penguins@yahoo.com>
@@ -125,7 +125,7 @@ License: CC-BY-SA
 
  Released under the Creative Commons BY-SA License
  http://creativecommons.org/licenses/by-sa/3.0/
-Comment: See debian/licenses/cc-by-sa for the full license text.
+Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: data/skyboxes/gradient* data/skyboxes/stars*
 License: public-domain
@@ -164,7 +164,7 @@ License: CC-BY-SA
 
  "skyhigh" by Pieter Verhoeven
      CC-BY-SA 3.0 license.
-Comment: See debian/licenses/cc-by-sa for the full license text.
+Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: data/particles/bullet.png data/particles/energy.png
 License: public-domain
@@ -223,7 +223,7 @@ License: CC-BY
 
  The .psd source files for this set are available from my website and are under
  the same license.
-Comment: See debian/licenses/cc-by for the full license text.
+Comment: See ./licenses/cc-by for the full license text.
 
 Files: data/trak/trak5/*
 Copyright: Copyright (c) 2009 Georges 'TRaK' Grondin
@@ -255,7 +255,7 @@ License: CC-BY-SA
  Plasmarrr gun by Mike Ledger ( mikeplus[i] )
 
  http://creativecommons.org/licenses/by-sa/3.0/au/
-Comment: See debian/licenses/cc-by-sa for the full license text.
+Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: data/models/projs/gibs/* data/models/projs/debris/*
 Copyright: Copyright Markus Bekel <makk_e@web.de>
@@ -266,7 +266,7 @@ License: CC-BY-NC-SA
 
  These files have been licensed under a the
  "Creative Commons Deed / Attribution Non-commercial Share-Alike ( at-nc-sa )"
-Comment: See debian/licenses/cc-by-nc-sa for the full license text.
+Comment: See ./licenses/cc-by-nc-sa for the full license text.
 
 Files: data/models/actors/turret/*
 Copyright: Copyright Mike Ledger ( mikeplus[i] )
@@ -274,7 +274,7 @@ license: CC-BY-SA
  Turret by Mike Ledger ( mikeplus[i] )
 
  http://creativecommons.org/licenses/by-sa/3.0/au/
-Comment: See debian/licenses/cc-by-sa for the full license text.
+Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: data/mayhem/*
 Copyright: Copyright Mayhem
@@ -284,7 +284,7 @@ License: CC-BY-SA
  h2s skybox by Mayhem  Licensed under CC-BY-SA
 
  scorched skybox by Mayhem  Licensed under CC-BY-SA
-Comment: See debian/licenses/cc-by-sa for the full license text.
+Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: data/fonts/akashi.ttf
 Copyright: Copyright Ten by Twenty http://www.tenbytwenty.com/
@@ -319,7 +319,7 @@ License: CC-BY-SA
  Created from http://commons.wikimedia.org/wiki/File:Stop_hand_grey.svg
  Released under the Creative Commons Attribution ShareAlike 3.0 License
  http://creativecommons.org/licenses/by-sa/3.0/
-Comment: See debian/licenses/cc-by-nc-sa for the full license text.
+Comment: See ./licenses/cc-by-nc-sa for the full license text.
 
 Files: data/textures/dead.png data/textures/dominated.png
        data/textures/dominating.png data/textures/flag.png
@@ -349,7 +349,7 @@ License: CC-BY
 
  The files have been recompressed, renamed and normal/spec/depth-mapped for
  use in Red Eclipse
-Comment: See debian/licenses/cc-by for the full license text.
+Comment: See ./licenses/cc-by for the full license text.
 
 Files: data/sounds/*
 Copyright: UNKNOWN
@@ -420,7 +420,7 @@ License: CC-BY-SA and additional EULA
  damages referenced above and all direct or general damages), the entire
  liability of Gabriele Magurno under any provision of this EULA and your
  exclusive remedy for all of the foregoing shall be limited to U.S.$0.00.
-Comment: See debian/licenses/cc-by-sa for the full license text of the
+Comment: See ./licenses/cc-by-sa for the full license text of the
          CC-BY-SA
 
 Files: data/sounds/ambience/*
@@ -432,7 +432,7 @@ License: CC-BY-SA
  Files in this directory are released under the Creative Commons license:
 
      Attribution-ShareAlike 3.0
-Comment: See debian/licenses/cc-by-sa for the full license text.
+Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files data/sounds/ambience/morph/*
 Copyright: Copyright Q009
@@ -441,7 +441,7 @@ License: CC-BY
 
  Released under the Creative Commons BY License
  http://creativecommons.org/licenses/by/3.0/
-Comment: See debian/licenses/cc-by for the full license text.
+Comment: See ./licenses/cc-by for the full license text.
 
 Files: data/sounds/ambience/wind.ogg
 Copyright: Copyright Bahutan
@@ -450,7 +450,7 @@ License: Creative Commons Sampling Plus 1.0 License.
 
  These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
  Downloaded from: http://freesound.iua.upf.edu/
-Comment: See debian/licenses/cc-sampling+ for the full license text.
+Comment: See ./licenses/cc-sampling+ for the full license text.
 
 Files: data/sounds/ambience/firelight.ogg
 Copyright: Copyright Slanesh
@@ -459,7 +459,7 @@ License: Creative Commons Sampling Plus 1.0 License.
 
  These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
  Downloaded from: http://freesound.iua.upf.edu/
-Comment: See debian/licenses/cc-sampling+ for the full license text.
+Comment: See ./licenses/cc-sampling+ for the full license text.
 
 Files: data/sounds/ambience/hum.ogg
 Copyright: Copyright Therac 25
@@ -468,7 +468,7 @@ License: Creative Commons Sampling Plus 1.0 License.
 
  These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
  Downloaded from: http://freesound.iua.upf.edu/
-Comment: See debian/licenses/cc-sampling+ for the full license text.
+Comment: See ./licenses/cc-sampling+ for the full license text.
 
 Files: data/sounds/ambience/nightcrickets.ogg data/sounds/ambience/creek.ogg
 Copyright: Copyright RHumphries
@@ -477,7 +477,7 @@ License: Creative Commons Sampling Plus 1.0 License.
 
  These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
  Downloaded from: http://freesound.iua.upf.edu/
-Comment: See debian/licenses/cc-sampling+ for the full license text.
+Comment: See ./licenses/cc-sampling+ for the full license text.
 
 Files: data/sounds/ambience/forest1.ogg data/sounds/ambience/forest2.ogg
        data/sounds/ambience/forest3.ogg data/sounds/ambience/cycadas.ogg
@@ -487,7 +487,7 @@ License: Creative Commons Sampling Plus 1.0 License.
 
  These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
  Downloaded from: http://freesound.iua.upf.edu/
-Comment: See debian/licenses/cc-sampling+ for the full license text.
+Comment: See ./licenses/cc-sampling+ for the full license text.
 
 Files: data/sounds/ambience/river.ogg data/sounds/ambience/cavedrip.ogg
 Copyright: Copyright acclivity
@@ -496,7 +496,7 @@ License: Creative Commons Sampling Plus 1.0 License.
 
  These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
  Downloaded from: http://freesound.iua.upf.edu/
-Comment: See debian/licenses/cc-sampling+ for the full license text.
+Comment: See ./licenses/cc-sampling+ for the full license text.
 
 Files: data/sounds/ambience/frogs.ogg data/sounds/ambience/forestflies.ogg
 Copyright: Copyright oyes
@@ -505,7 +505,7 @@ License: Creative Commons Sampling Plus 1.0 License.
 
  These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
  Downloaded from: http://freesound.iua.upf.edu/
-Comment: See debian/licenses/cc-sampling+ for the full license text.
+Comment: See ./licenses/cc-sampling+ for the full license text.
 
 Files: data/sounds/ambience/waterfall*
 Copyright: Copyright ignotus
@@ -514,7 +514,7 @@ License: Creative Commons Sampling Plus 1.0 License.
 
  These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
  Downloaded from: http://freesound.iua.upf.edu/
-Comment: See debian/licenses/cc-sampling+ for the full license text.
+Comment: See ./licenses/cc-sampling+ for the full license text.
 
 Files: data/sounds/ambience/distant_cars.ogg
 Copyright: fresco, WIM
@@ -523,7 +523,7 @@ License: Creative Commons Sampling Plus 1.0 License.
 
  These works are licensed: http://creativecommons.org/licenses/sampling+/1.0/
  Downloaded from: http://freesound.iua.upf.edu/
-Comment: See debian/licenses/cc-sampling+ for the full license text.
+Comment: See ./licenses/cc-sampling+ for the full license text.
 
 Files: data/sounds/player/*
 Copyright: CopyrightGabriele "Blindabuser" Magurno, Quinton "quin" Reeves
@@ -614,7 +614,7 @@ License: CC-BY-NC and additional EULA
  damages referenced above and all direct or general damages), the entire
  liability of Gabriele Magurno under any provision of this EULA and your
  exclusive remedy for all of the foregoing shall be limited to U.S.$0.00.
-Comment: See debian/licenses/cc-by-nc for the full license text of the
+Comment: See ./licenses/cc-by-nc for the full license text of the
          CC-BY-NC license.
 
 Files: data/sounds/sfx/*
@@ -626,7 +626,7 @@ License: CC-BY-SA
  Files in this directory are released under the Creative Commons license:
 
      Attribution-ShareAlike 3.0
-Comment: See debian/licenses/cc-by-sa for the full license text.
+Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: debian/*
 Copyright: Copyright (C) 2011 Arand Nash <ienorand@gmail.com>
