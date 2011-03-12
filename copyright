@@ -256,17 +256,6 @@ License: CC-BY-SA
  http://creativecommons.org/licenses/by-sa/3.0/au/
 Comment: See ./licenses/cc-by-sa for the full license text.
 
-Files: data/models/projs/gibs/* data/models/projs/debris/*
-Copyright: Copyright Markus Bekel <makk_e@web.de>
-License: CC-BY-NC-SA
- by "makkE"
- Markus Bekel
- e-mail: makk_e@web.de
-
- These files have been licensed under a the
- "Creative Commons Deed / Attribution Non-commercial Share-Alike ( at-nc-sa )"
-Comment: See ./licenses/cc-by-nc-sa for the full license text.
-
 Files: data/models/actors/turret/*
 Copyright: Copyright Mike Ledger ( mikeplus[i] )
 license: CC-BY-SA
