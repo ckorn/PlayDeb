@@ -6,7 +6,17 @@ debian/patches/01_makefile.patch:
  install process still copies from src/* because of the .install files
  used for menu items, this seems like something which could be done prettier.
 
-TODO:
-* Write manpage for server
-* The ENet network library might be appropriate to split off to a separate
-  package?
+Copyright and packaging:
+ Special permission has been granted to me (Arand Nash) to package Red Eclipse
+ in my PPA: https://launchpad.net/~arand/+archive/redeclipse
+ This includes permission to:
+ * Redistribute Red Eclipse split into seperate binary packages.
+ * Redistribute Red Eclipse with modifications in the binary packages, namely:
+   - Debian packaging data.
+   - New compiled binaries.
+   - Removal of data not used for installation.
+   - Reorganisation of files into install locations.
+ * To use the name "Red Eclipse" and the Red Eclipse logo in conjuction with
+   redistribution of these packages.
+ * To convert the src/site/bits/favicon.png file to a .xpm file for use in the
+   client binary package, to supply a gnome-menu icon.
