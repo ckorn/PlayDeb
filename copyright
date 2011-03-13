@@ -307,7 +307,7 @@ License: CC-BY-SA
  Created from http://commons.wikimedia.org/wiki/File:Stop_hand_grey.svg
  Released under the Creative Commons Attribution ShareAlike 3.0 License
  http://creativecommons.org/licenses/by-sa/3.0/
-Comment: See ./licenses/cc-by-nc-sa for the full license text.
+Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: data/textures/dead.png data/textures/dominated.png
        data/textures/dominating.png data/textures/flag.png
