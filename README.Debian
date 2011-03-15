@@ -10,7 +10,7 @@ Copyright and packaging:
  Special permission has been granted to me (Arand Nash) to package Red Eclipse
  in my PPA: https://launchpad.net/~arand/+archive/redeclipse
  This includes permission to:
- * Redistribute Red Eclipse split into seperate binary packages.
+ * Redistribute Red Eclipse split into separate binary packages.
  * Redistribute Red Eclipse with modifications in the binary packages, namely:
    - Debian packaging data.
    - New compiled binaries.
