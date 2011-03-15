@@ -18,5 +18,5 @@ Copyright and packaging:
    - Reorganisation of files into install locations.
  * To use the name "Red Eclipse" and the Red Eclipse logo in conjuction with
    redistribution of these packages.
- * To convert the src/site/bits/favicon.png file to a .xpm file for use in the
-   client binary package, to supply a gnome-menu icon.
+ * To resize the src/site/bits/favicon.png for use in the client binary package,
+   to supply a gnome-menu icon.
