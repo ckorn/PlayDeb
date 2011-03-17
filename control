@@ -18,16 +18,25 @@ Description: Single-player and multi-player first-person ego-shooter
  total conversion of Cube Engine 2, which lends itself toward a balanced
  gameplay, with a general theme of agility in a variety of environments.
 
+Package: redeclipse-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: ${misc:Depends}, redeclipse (= ${binary:Version})
+Description: Debug symbols for Red Eclipse FPS
+ Debugging symbols for the single-player and multi-player first-person
+ ego-shooter Red Eclipse.
+
 Package: redeclipse-server
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Server for Redeclipse FPS
+Description: Server for Red Eclipse FPS
  Dedicated server for the single- and multi-player first-person ego-shooter
- Redeclipse
+ Red Eclipse.
 
 Package: redeclipse-data
 Architecture: all
 Depends: ${misc:Depends}
-Description: Data for Redeclipse
- Graphics, models etc. for the single- and multi-player first-person
- ego-shooter Redeclipse
+Description: Data for Red Eclipse
+ Graphics, models, maps, etc. for the single- and multi-player first-person
+ ego-shooter Red Eclipse.
