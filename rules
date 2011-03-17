@@ -15,3 +15,9 @@
 override_dh_auto_build:
 	convert -shave 4x4 -resize 32x32 src/site/bits/favicon.png debian/redeclipse.png	
 	dh_auto_build
+
+override_dh_strip:
+	dh_strip -predeclipse --dbg-package=redeclipse-dbg
+
+override_dh_clean:
+	dh_clean debian/redeclipse.png
