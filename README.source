@@ -11,6 +11,17 @@ This package uses quilt to manage all modifications to the upstream
 source.  Changes are stored in the source package as diffs in
 debian/patches and applied during the build.
 
+To configure quilt to use debian/patches instead of patches, you want
+either to export QUILT_PATCHES=debian/patches in your environment
+or use this snippet in your ~/.quiltrc:
+
+    for where in ./ ../ ../../ ../../../ ../../../../ ../../../../../; do
+        if [ -e ${where}debian/rules -a -d ${where}debian/patches ]; then
+                export QUILT_PATCHES=debian/patches
+                break
+        fi
+    done
+
 To get the fully patched source after unpacking the source package, cd to
 the root level of the source package and run:
 
