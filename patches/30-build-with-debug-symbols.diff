@@ -1,0 +1,9 @@
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -1,5 +1,5 @@
+ #CXXFLAGS= -ggdb3
+-CXXFLAGS= -O3 -fomit-frame-pointer
++CXXFLAGS= -O3 -fomit-frame-pointer -g
+ override CXXFLAGS+= -Wall -fsigned-char
+ 
+ PLATFORM= $(shell uname -s)
