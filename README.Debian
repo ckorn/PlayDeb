@@ -20,3 +20,13 @@ Copyright and packaging:
    redistribution of these packages.
  * To resize the src/site/bits/favicon.png for use in the client binary package,
    to supply a gnome-menu icon.
+
+Bug reporting:
+ If the redeclipse engine crashes on your system, please install the 
+ redeclipse-dbg package to generate a backtrace of the crash.
+ To generate a backtrace open a terminal and change to the directory 
+ /usr/lib/games/redeclipse by the command "cd /usr/lib/games/redeclipse". 
+ Then run "gdb ./reclient" and type "run -h"$HOME/.redeclipse -r -df0" at 
+ the gdb prompt.
+ Once redeclipse has crashed, type "bt" to obtain the backtrace. Please attach 
+ the output when you are reporting a bug about crashes.
