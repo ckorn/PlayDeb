@@ -22,4 +22,4 @@ override_dh_strip:
 	dh_strip
 
 override_dh_clean:
-	dh_clean debian/redeclipse.png bin/reclient_native bin/reserver_native
+	dh_clean debian/redeclipse.png debian/redeclipse.xpm bin/reclient_native bin/reserver_native
