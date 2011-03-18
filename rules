@@ -14,7 +14,6 @@
 
 override_dh_auto_build:
 	convert -shave 4x4 -resize 32x32 src/site/bits/favicon.png debian/redeclipse.png	
-	touch $@
 	dh_auto_build
 
 override_dh_strip:

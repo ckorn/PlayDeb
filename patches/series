@@ -1,2 +1,2 @@
-20-fix-clean-target.diff
-30-build-with-debug-symbols.diff
+10-fix-clean-target.diff
+20-build-with-debug-symbols.diff
