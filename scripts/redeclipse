@@ -1,3 +1,5 @@
 #!/bin/sh
-RE_OPTIONS=" -p/usr/share/games/redeclipse/data -r"
-exec /usr/lib/games/redeclipse/reclient ${RE_OPTIONS} "$@"
+
+RE_OPTIONS="-r"
+cd /usr/lib/games/redeclipse
+exec ./reclient ${RE_OPTIONS} "$@"

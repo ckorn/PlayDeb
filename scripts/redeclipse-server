@@ -1,3 +1,4 @@
 #!/bin/sh
-RE_OPTIONS=" -p/usr/share/games/redeclipse/data"
-exec /usr/lib/games/redeclipse/reserver ${RE_OPTIONS} "$@"
+RE_OPTIONS=""
+cd usr/lib/games/redeclipse
+exec ./reserver ${RE_OPTIONS} "$@"
