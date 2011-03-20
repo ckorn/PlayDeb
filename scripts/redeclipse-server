@@ -1,4 +1,4 @@
 #!/bin/sh
 RE_OPTIONS=""
-cd usr/lib/games/redeclipse
+cd /usr/lib/games/redeclipse
 exec ./reserver ${RE_OPTIONS} "$@"
