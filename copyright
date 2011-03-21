@@ -619,9 +619,28 @@ Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: debian/*
 Copyright: Copyright (C) 2011 Arand Nash <ienorand@gmail.com>
-License: Zlib, Custom
+License: Custom, Zlib
  This package was debianized by Arand Nash, the packaging is licensed under the
- Zlib license: version 3 or later, see `/usr/share/common-licenses/GPL-3'.
+ Zlib license:
+
+ This software is provided 'as-is', without any express or implied
+ warranty. In no event will the authors be held liable for any damages
+ arising from the use of this software.
+
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+
+    1. The origin of this software must not be misrepresented; you must not
+    claim that you wrote the original software. If you use this software
+    in a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+
+    2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original software.
+
+    3. This notice may not be removed or altered from any source
+    distribution.
 
  This does not include the name "Red Eclipse" used in the debian packaging which
  falls under a separate license:
@@ -632,5 +651,13 @@ License: Zlib, Custom
  the game; regardless of the media featured in said material. Use for any other
  reason is strictly prohibited without express written consent of Red Eclipse.
 
- In this case the binary packages and the debian.tar.gz are to be considered
- part of "the game".
+ In this case the resulting binary packages and the debian.tar.gz are to be
+ considered separate instances of "the game" and are redistributable along with
+ the "Red Eclipse" name under the following terms:
+
+ Limited rights are granted to redistribute or recompress the entire
+ distribution using different archival formats suitable for your OS
+ (zip/tgz/deb/dmg), any changes beyond that require explicit permission from
+ the developers.
+
+ If the "Red Eclipse" name is not used, the packaging falls completely under the Zlib license above.
