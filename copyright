@@ -17,7 +17,8 @@ License:
  Use of any logos, trademarks, or other advertising/promotional material for
  Red Eclipse are free to use without consent, when used in conjunction with
  a Red Eclipse article, comment, review, advertisement, or redistribution of
- the game; regardless of the media featured in said material. Use for any other reason is strictly prohibited without express written consent of Red Eclipse.
+ the game; regardless of the media featured in said material. Use for any other
+ reason is strictly prohibited without express written consent of Red Eclipse.
 
 Files: src/*
 Copyright: Copyright (C) 2009-2011 Quinton Reeves, Lee Salzman
@@ -618,6 +619,18 @@ Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: debian/*
 Copyright: Copyright (C) 2011 Arand Nash <ienorand@gmail.com>
-License: GPL-3+
- This package was debianized by Arand Nash and is licensed under the GPL
- version 3, see `/usr/share/common-licenses/GPL-3'.
+License: Zlib, Custom
+ This package was debianized by Arand Nash, the packaging is licensed under the
+ Zlib license: version 3 or later, see `/usr/share/common-licenses/GPL-3'.
+
+ This does not include the name "Red Eclipse" used in the debian packaging which
+ falls under a separate license:
+
+ Use of any logos, trademarks, or other advertising/promotional material for
+ Red Eclipse are free to use without consent, when used in conjunction with
+ a Red Eclipse article, comment, review, advertisement, or redistribution of
+ the game; regardless of the media featured in said material. Use for any other
+ reason is strictly prohibited without express written consent of Red Eclipse.
+
+ In this case the binary packages and the debian.tar.gz are to be considered
+ part of "the game".
