@@ -195,17 +195,6 @@ Copyright: Copyright FischKopF
  Created by FischKopF, source: http://www.quadropolis.us/node/2693
  "Feel free to edit, claim it's yours, use it in own projects"
 
-Files: data/particles/muzzle.png data/particles/plasma.png
-       data/particles/spark.png
-Copyright: Copyright Luckystrike-Rx
-License:
- Created by Luckystrike-Rx
-
-Files: data/particles/snow.png data/particles/stain.png
-Copyright: Luckystrike-Rx
-License: Copyright Hirato
- Created by Hirato for Sandbox
-
 Files: data/trak/trak4/* data/trak/trak6/* data/trak/trak7/*
 Copyright: Copyright Georges 'TRaK' Grondin <drognin@gmail.com>
 License: CC-BY
