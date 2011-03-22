@@ -205,7 +205,6 @@
 ./data/mayhem/scorched_lf.jpg
 ./data/mayhem/scorched_rt.jpg
 ./data/mayhem/scorched_up.jpg
-grep: ../bin/redeclipse.app/Contents/Frameworks/SDL_mixer.framework/Frameworks: No such file or directory
 ./src/enet/aclocal.m4
 ./src/enet/config.guess
 ./src/enet/config.sub
@@ -257,7 +256,6 @@ grep: ../bin/redeclipse.app/Contents/Frameworks/SDL_mixer.framework/Frameworks: 
 ./src/include/SDL_types.h
 ./src/include/SDL_version.h
 ./src/include/SDL_video.h
-./src/include/wcompat.h
 ./src/include/wincompat.h
 ./src/include/zconf.h
 ./src/include/zlib.h
