@@ -20,12 +20,14 @@ Copyright and packaging:
    redistribution of these packages.
  * To modify the file  src/site/bits/favicon.png for use in the client binary
    package, to supply menu icons.
+ * To redistribute the packaged work under the same terms as that of the
+   original license.
 
 Bug reporting:
  If the redeclipse engine crashes on your system, please install the 
  redeclipse-dbg package to generate a backtrace of the crash.
  To generate a backtrace open a terminal and change to the directory 
- /usr/lib/games/redeclipse by the command "cd /usr/lib/games/redeclipse". 
+ /usr/lib/games/redeclipse using the command "cd /usr/lib/games/redeclipse". 
  Then run "gdb ./reclient" and type "run -r -df0" at the gdb prompt.
  Once redeclipse has crashed, type "bt" to obtain the backtrace. Please attach 
  the output when you are reporting a bug about crashes.
