@@ -167,14 +167,9 @@ License: CC-BY-SA
 Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: data/particles/bullet.png data/particles/energy.png
+       data/particles/blob.png data/particles/scorch.png
 License: public-domain
  Public domain sources
-
-Files: data/particles/blob.png data/particles/scorch.png
-Copyright: Copyright (C) 2007-2008 Marcus "makkE" Biel
-License:
- (C) 2007-2008 Marcus "makkE" Biel, Sauerbraten Engine
- http://www.cubeengine.com/
 
 Files: data/particles/smoke.png data/particles/explosion.png
 Copyright: Copyright RaZgRiZ
