@@ -259,7 +259,7 @@ Comment: See ./licenses/cc-by-sa for the full license text.
 
 Files: data/models/actors/turret/*
 Copyright: Copyright Mike Ledger ( mikeplus[i] )
-license: CC-BY-SA
+License: CC-BY-SA
  Turret by Mike Ledger ( mikeplus[i] )
 
  http://creativecommons.org/licenses/by-sa/3.0/au/
@@ -342,7 +342,7 @@ Comment: See ./licenses/cc-by for the full license text.
 
 Files: data/sounds/*
 Copyright: UNKNOWN
-License: CC-BY-NC and additional EULA
+License: CC-BY-SA and additional EULA
  All files in this directory, unless otherwise specified, are released under the
  Creative Commons license:
 
@@ -409,8 +409,8 @@ License: CC-BY-NC and additional EULA
  damages referenced above and all direct or general damages), the entire
  liability of Gabriele Magurno under any provision of this EULA and your
  exclusive remedy for all of the foregoing shall be limited to U.S.$0.00.
-Comment: See ./licenses/cc-by-nc for the full license text of the
-         CC-BY-NC
+Comment: See ./licenses/cc-by-sa for the full license text of the
+         CC-BY-SA
 
 Files: data/sounds/ambience/*
 Copyright: Copyright Quinton "quin" Reeves, Alex "blackshoe" Anguix
