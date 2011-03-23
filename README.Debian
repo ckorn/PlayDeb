@@ -1,10 +1,8 @@
 redeclipse for Debian
 ---------------------
 
-debian/patches/01_makefile.patch:
- This is used simply to set a path which is guaranteed to work, the
- install process still copies from src/* because of the .install files
- used for menu items, this seems like something which could be done prettier.
+TODO:
+ * Document all copyright from debian/unnincluded_copyrights
 
 Copyright and packaging:
  Special permission has been granted to me (Arand Nash) to package Red Eclipse
@@ -20,8 +18,8 @@ Copyright and packaging:
    redistribution of these packages.
  * To modify the file  src/site/bits/favicon.png for use in the client binary
    package, to supply menu icons.
- * To redistribute the packaged work under the same terms as that of the
-   original license.
+ * To redistribute the packaged work under similar terms as that of the
+   original license, see debian/copyright.
 
 Bug reporting:
  If the redeclipse engine crashes on your system, please install the 
