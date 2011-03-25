@@ -748,10 +748,10 @@ License: Custom, Zlib
  be considered separate instances of "the game" and are redistributable along
  with the "Red Eclipse" name under the following terms:
 
- Limited rights are granted to redistribute or recompress the entire
- distribution using different archival formats suitable for your OS
- (zip/tgz/deb/dmg), any changes beyond that require explicit permission from
- the developers.
+ Limited rights are granted to redistribute and/or recompress the entire
+ distribution using different archival/binary formats suitable for your OS
+ (zip/tgz/deb/dmg), any changes beyond that require explicit permission from the
+ developers.
 
- If the "Red Eclipse" name is removed from the packaging, the debian.tar.gz
- falls completely under the Zlib license.
+ If the "Red Eclipse" name is removed, the contents of debian/* falls completely
+ under the Zlib license.
