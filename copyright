@@ -438,7 +438,8 @@ License: CC-BY-SA
  scorched skybox by Mayhem  Licensed under CC-BY-SA
 Comment: See ./licenses/cc-by-sa for the full license text.
 
-Files: data/fonts/akashi.ttf
+Files: data/fonts/akashi.ttf data/fonts/default.png data/fonts/emphasis.png
+       data/fonts/radar.png data/fonts/sub.png data/fonts/super.png
 Copyright: Copyright Ten by Twenty http://www.tenbytwenty.com/
  http://www.tenbytwenty.com/
 
@@ -453,6 +454,7 @@ Copyright: Copyright Ten by Twenty http://www.tenbytwenty.com/
      * Wordpress themes may be edited and developed for individual use, but
        credit links must remain in place and adapted themes may not be
        reditributed.
+Notes: *.png files are generated from akashi.ttf using ttf2font
 
 Files: data/textures/emblem.png data/textures/logo.png
 Copyright: Copyright (C) 2010 Red Eclipse Team
