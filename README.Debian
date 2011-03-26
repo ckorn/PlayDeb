@@ -24,6 +24,10 @@ Copyright and packaging:
    original license, see debian/copyright.
 
 Bug reporting:
+ Please report all bugs seen using this package initially to arand
+ <ienorand@gmail.com> in order to filter out bugs related to packaging from bugs
+ in the actual upstream software.
+
  If the redeclipse engine crashes on your system, please install the 
  redeclipse-dbg package to generate a backtrace of the crash.
  To generate a backtrace open a terminal and change to the directory 
