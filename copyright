@@ -223,7 +223,8 @@ License:
 
 Files: src/redeclipse.ico src/install/large.gif
        src/redeclipse.ico src/install/small.gif src/site/*
-Copyright: Copyright UNKNOWN
+       data/textures/emblem.png data/textures/logo.png
+Copyright: Copyright Copyright (C) 2010 Red Eclipse Team
 License:
  Use of any logos, trademarks, or other advertising/promotional material
  for Red Eclipse are free to use without consent, when used in conjunction with
@@ -320,17 +321,6 @@ License:
        credit links must remain in place and adapted themes may not be
        reditributed.
 Comment: *.png files are generated from akashi.ttf using ttf2font
-
-Files: data/textures/emblem.png data/textures/logo.png
-Copyright: Copyright (C) 2010 Red Eclipse Team
-License:
- Created by Luckystrike-Rx for Red Eclipse
- Copyright (C) 2010 Red Eclipse Team
- Use of any logos, trademarks, or other advertising/promotional material
- for Red Eclipse are free to use without consent, when used in conjunction with
- a Red Eclipse article, comment, review, or advertisement; regardless of the
- media featured in said material. Use for any other reason is strictly
- prohibited without express written consent of Red Eclipse.
 
 Files: data/textures/wait.png
 Copyright: Copyright 2008 Kaneiderdaniel
