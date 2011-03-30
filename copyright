@@ -7,7 +7,7 @@ Disclaimer: This package is not part of Debian due to its license, which is
             incompatibe with the Debian Free Software Guidelines (DFSG).
 
 Files: *
-Copyright:
+Copyright: Copyright (C) 2009-2011 Red Eclipse Team
 License:
  Limited rights are granted to redistribute and/or recompress the entire
  distribution using different archival/binary formats suitable for your OS
@@ -240,7 +240,7 @@ Copyright: Copyright JWindecker <jacobwindecker@hotmail.com>
 License: CC-BY
 
 Files: data/appleflap/*
-Copyright: Copyright UNKNOWN
+Copyright: Copyright Jeroen "appleflap" Boukens
 License: CC-BY-SA
 
 Files: data/penguins/*
@@ -333,7 +333,9 @@ License:
  prohibited without express written consent of Red Eclipse.
 
 Files: data/textures/wait.png
-Copyright: Copyright UNKNOWN
+Copyright: Copyright 2008 Kaneiderdaniel
+           (http://commons.wikimedia.org/wiki/User:Kaneiderdaniel)
+           Copyright (C) 2010 Red Eclipse Team
 License: CC-BY-SA
 
 Files: data/textures/dead.png data/textures/dominated.png
@@ -355,7 +357,8 @@ License:
  is credited for the original work.
 
 Files: data/torley/*
-Copyright: Copyright UNKNOWN
+Copyright: Copyright 2007-2008 Torley Linden
+           Copyright 2010 Red Eclipse Team
 License: CC-BY
 
 Files: data/sounds/ambience/*
@@ -363,7 +366,7 @@ Copyright: Copyright Quinton "quin" Reeves, Alex "blackshoe" Anguix
 License: CC-BY-SA
 
 Files data/sounds/ambience/morph/*
-Copyright: Copyright Q009
+Copyright: Copyright Slawek "Q009" Blauciak
 License: CC-BY
 
 Files: data/sounds/ambience/wind.ogg
