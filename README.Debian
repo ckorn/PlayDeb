@@ -28,10 +28,10 @@ Bug reporting:
  <ienorand@gmail.com> in order to filter out bugs related to packaging from bugs
  in the actual upstream software.
 
- If the redeclipse engine crashes on your system, please install the 
+ If the redeclipse engine crashes on your system, please install the
  redeclipse-dbg package to generate a backtrace of the crash.
- To generate a backtrace open a terminal and change to the directory 
- /usr/lib/games/redeclipse using the command "cd /usr/lib/games/redeclipse". 
+ To generate a backtrace open a terminal and change to the directory
+ /usr/lib/games/redeclipse using the command "cd /usr/lib/games/redeclipse".
  Then run "gdb ./reclient" and type "run -r -df0" at the gdb prompt.
- Once redeclipse has crashed, type "bt" to obtain the backtrace. Please attach 
+ Once redeclipse has crashed, type "bt" to obtain the backtrace. Please attach
  the output when you are reporting a bug about crashes.

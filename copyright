@@ -273,7 +273,7 @@ License:
 Files: data/particles/entity.png data/particles/fire.png
        data/particles/lightning.png data/particles/hint.png
        data/particles/mflare.png data/particles/sflare.png
-       data/particles/spark.png 
+       data/particles/spark.png
 License: public-domain
 
 Files: data/particles/blood.png

@@ -1,8 +1,5 @@
-redeclipse 
+redeclipse
 ----------
-
-Redeclipse is currently a moving target with frequent changes breaking the main multiplay server.
-
 
 The original Redeclipse source is set up for in-place compiling and installing, hence "make install" only copies new binaries within the source directory
 
