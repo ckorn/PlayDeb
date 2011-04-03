@@ -46,13 +46,19 @@ reclient \- client for the Red Eclipse FPS game
 .BI \-r scriptname
 ]
 [
-.BI \-x scriptname
+.BI \-x "command(s)"
 ]
 [
 .BI \-o sauerdir
 ]
 [
 .BI \-ss servertype
+]
+[
+.BI \-sm servermaster
+]
+[
+.BI \-sa servermasterport
 ]
 [
 .BI \-g logfile
@@ -64,12 +70,6 @@ reclient \- client for the Red Eclipse FPS game
 ]
 [
 .BI \-si serverip
-]
-[
-.BI \-sm servermaster
-]
-[
-.BI \-sa servermasterport
 ]
 [
 .BI \-sl defaultmap
@@ -87,12 +87,14 @@ reclient \- client for the Red Eclipse FPS game
 .SH DESCRIPTION
 Red Eclipse is a single-player and multi-player first-person ego-shooter, built as a total conversion of Cube Engine 2, which lends itself toward a balanced gameplay, with a general theme of agility in a variety of environments.
 .PP
+The redeclipse client starts a local private server upon launch which it uses to connect to, hence many of the server options are accepted by the reclient binary as well.
+.PP
 The recommended way to change the settings of the client are to edit the config.cfg and init.cfg files. Examples are available in
 .IR /usr/share/games/redeclipse/data/examples/ ,
-most options apply to both the client and the server.
+.SH CAVEATS:
+The local client server will by default read the config files servinit.cfg and servexec.cfg from the $HOME directory. To separate the client and the dedicated server the -h option can be used on either to specify a separate location to read config files from.
 .PP
-.I Warning:
-Many of command-line options options will be stored in the init.cfg if used.
+Many of these options will, if used, be permanently saved in the init.cfg.
 .SH OPTIONS
 .TP
 .BI \-dw width
@@ -155,7 +157,7 @@ Enables or disables kid mode, which reduces blood and death effects somewhat. 0 
 .BI \-h homedir
 Sets your home directory to
 .IR homedir .
-If set, the engine will look for files in your home directory as well as the normal installation directory. However, all files will be written to your home directory, instead of the normal installation directory. 
+If set, the engine will look for files in your home directory as well as the normal installation directory. However, all files will be written to your home directory, instead of the normal installation directory. Defaults to the $HOME varialbe.
 .TP
 .BI \-p packagedir
 Includes the data files found in
@@ -168,12 +170,11 @@ Sets verbosity. This affects how much information is printed to the console. 0 i
 This configuration is stored in init.cfg
 .TP
 .BI \-r scriptname
-Executes the specified init script before OpenGL and various libraries are initialized. If no file specified, executes init.cfg. This setting also causes an init.cfg file to be written out when the game exits to save various hardware settings. 
+Executes the specified init script before OpenGL and various libraries are initialized. If no file specified, executes init.cfg. 
 .TP
-.BI \-x scriptname
-Executes script
-.I scriptname
-once the engine has started up and initialized the game. 
+.BI \-x "\(dqcommand 1; command 2; ...\(dq"
+.
+Executes a list of commands once the engine has started up and initialized the game. 
 .TP
 .BI \-o sauerdir
 Sets the path to your Sauerbraten directory. If Red Eclipse can find your Sauerbraten directory, you can load and play Sauerbraten maps from withing Red Eclipse. 
@@ -181,6 +182,15 @@ Sets the path to your Sauerbraten directory. If Red Eclipse can find your Sauerb
 .BR \-ss {0..3}
 Sets server type. 0 for local only, 1 for private, 2 for public, 3 for dedicated. Defaults to 1. 
 .TP
+.BI \-sm servermaster
+Connects to
+.I servermaster
+to get the list of available servers. May also use this setting if the local client server is configured to be public?
+.TP
+.BI \-sa servermasterport
+Contacts the master server using port
+.IR servermasterport .
+.IP
 .BI \-g logfile
 Output log to
 .IR logfile .
@@ -196,19 +206,6 @@ This option is accepted by the client, however it is probably not meant to be us
 Binds to the ip address
 .IR serverip .
 Only needed for machines with more than one interface.
-.IP
-This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
-.TP
-.BI \-sm servermaster
-uses
-.I servermaster
-as the master server.
-.IP
-This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
-.TP
-.BI \-sa servermasterport
-Contacts the master server using port
-.IR servermasterport .
 .IP
 This option is accepted by the client, however it is probably not meant to be used and it is unclear if it has any effect.
 .TP
@@ -242,6 +239,15 @@ This option is accepted by the client, however it is probably not meant to be us
 .RS 4
 Includes data from the specified directory
 .RE
+.B reclient -h$HOME/reclient_configs/
+.RS 4
+Reads and writes the configuration files to the specified directory instead of $HOME
+.RE
+.B reclient -x"mode 7; trialweapon 0; map hinder"
+.RS 4
+Sets game mode to time trial, trialmode weapon to empty hands, and starts a game on the map "hinder".
+.RE
+
 .SH AUTHOR
 This manpage was written by Arand Nash <ienorand@gmail.com>
 .SH HISTORY
