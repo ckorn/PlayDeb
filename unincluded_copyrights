@@ -361,12 +361,17 @@ data/jojo/windowstile04_g.png
 data/jojo/redcliff_dn.png
 data/jojo/city_ft.png
 data/jojo/sand01.png
+data/jojo/container01_n.png
+data/jojo/container01.png
 data/jojo/windowstile03_n.png
 data/jojo/windowstile03lit.png
+data/jojo/container02_n.png
 data/jojo/redcliff_rt.png
 data/jojo/grey25.png
+data/jojo/container03_n.png
 data/jojo/windowstile_z.png
 data/jojo/redcliff_lf.png
+data/jojo/container02.png
 data/jojo/windowstile_s.png
 data/jojo/duct.png
 data/jojo/redcliff_bk.png
@@ -375,4 +380,5 @@ data/jojo/bathtile02.png
 data/jojo/bathtile02_z.png
 data/jojo/windowstile02_s.png
 data/jojo/duct_s.png
+data/jojo/container03.png
 src/docs/resources/50red.png
