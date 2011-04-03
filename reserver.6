@@ -13,7 +13,7 @@ reserver \- server for the Red Eclipse FPS game
 .BR \-v {0..4}
 ]
 [
-.BI \-x scriptname
+.BI \-x "command(s)"
 ]
 [
 .BI \-o sauerdir
@@ -65,18 +65,17 @@ Includes the data files found in
 Can be used for adding additional mods. Packages will be loaded in the order specified. By default reserver only inludes data files in the current working directory.
 .TP
 .BR \-v {0..4}
-Sets verbosity. This affects how much information is printed to the console. 0 is the least verbose, 4 is the most verbose. 
+Sets verbosity. This affects how much information is printed to the console. 0 is the least verbose, 4 is the most verbose.
 .TP
-.BI \-x scriptname
-Executes script
-.I scriptname
-once the engine has started up and initialized the game. 
+.BI \-x "\(dqcommand 1; command 2; ...\(dq"
+.
+Executes a list of commands once the engine has started up and initialized the game.
 .TP
 .BI \-o sauerdir
-Sets the path to your Sauerbraten directory. If Red Eclipse can find your Sauerbraten directory, you can load and play Sauerbraten maps from withing Red Eclipse. 
+Sets the path to your Sauerbraten directory. If Red Eclipse can find your Sauerbraten directory, you can load and play Sauerbraten maps from withing Red Eclipse.
 .TP
 .BR \-ss {0..3}
-Sets server type. 0 for local only, 1 for private, 2 for public, 3 for dedicated. Defaults to 1. 
+Sets server type. 0 for local only, 1 for private, 2 for public, 3 for dedicated. Defaults to 1.
 .TP
 .BI \-g logfile
 Output log to
@@ -85,7 +84,7 @@ Output log to
 .BI \-su serveruprate
 Sets upstream rate to
 .IR serveruprate .
-Do not set this unless you know what you are doing, it should normally be left out. 
+Do not set this unless you know what you are doing, it should normally be left out.
 .TP
 .BI \-sc maxclients
 Sets the maximum number of clients to
@@ -120,7 +119,7 @@ Sets the admin password to
 .BI \-sk joinpass
 Sets the join password to
 .IR joinpass .
-Users must know the password before they can connect. 
+Users must know the password before they can connect.
 .SH EXAMPLES
 .B reserver -p/usr/share/games/redeclipse/data -ss0 -slbath
 .RS 4
