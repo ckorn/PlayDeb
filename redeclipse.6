@@ -1,4 +1,4 @@
-.TH REDECLIPSE 6 
+.TH REDECLIPSE 6
 .SH NAME
 redeclipse \- script to launch the Red Eclipse FPS game client
 .SH SYNOPSIS
@@ -46,10 +46,16 @@ redeclipse \- script to launch the Red Eclipse FPS game client
 .BI \-r scriptname
 ]
 [
-.BI \-x scriptname
+.BI \-x "command(s)"
 ]
 [
 .BI \-o sauerdir
+]
+[
+.BI \-sm servermaster
+]
+[
+.BI \-sa servermasterport
 ]
 [
 .BI \-g logfile
@@ -62,12 +68,14 @@ is a script which executes
 .BR reclient (6)
 from the /usr/lib/games/redeclipse directory using the "-r" option, it will accept any additional options.
 .PP
-The recommended way to change the settings of the client are to edit the config.cfg and init.cfg files. Examples are available in
-.IR /usr/share/games/redeclipse/data/examples ,
-most options apply to both the client and the server.
+The redeclipse client starts a local private server upon launch which it uses to connect to, hence many of the server options are accepted by the redeclipse client as well.
 .PP
-.I Warning:
-Many of command-line options options will be stored in the init.cfg if used.
+The recommended way to change the settings of the client are to edit the config.cfg and init.cfg files. Examples are available in
+.IR /usr/share/games/redeclipse/data/examples/ ,
+.SH CAVEATS:
+The local client server will by default read the config files servinit.cfg and servexec.cfg from the $HOME directory. To separate the client and the dedicated server the -h option can be used on either to specify a separate location to read config files from.
+.PP
+Many of these options will, if used, be permanently saved in the init.cfg.
 .SH OPTIONS
 .TP
 .BI \-dw width
@@ -130,7 +138,7 @@ Enables or disables kid mode, which reduces blood and death effects somewhat. 0 
 .BI \-h homedir
 Sets your home directory to
 .IR homedir .
-If set, the engine will look for files in your home directory as well as the normal installation directory. However, all files will be written to your home directory, instead of the normal installation directory.
+If set, the engine will look for files in your home directory as well as the normal installation directory. However, all files will be written to your home directory, instead of the normal installation directory. Defaults to the $HOME varialbe.
 .TP
 .BI \-p packagedir
 Includes the data files found in
@@ -145,16 +153,24 @@ Sets verbosity. This affects how much information is printed to the console. 0 i
 This configuration is stored in init.cfg
 .TP
 .BI \-r scriptname
-Executes the specified init script before OpenGL and various libraries are initialized. If no file specified, executes init.cfg. This setting also causes an init.cfg file to be written out when the game exits to save various hardware settings.
+Executes the specified init script before OpenGL and various libraries are initialized. If no file specified, executes init.cfg.
 .TP
-.BI \-x scriptname
-Executes script
-.I scriptname
-once the engine has started up and initialized the game.
+.BI \-x "\(dqcommand 1; command 2; ...\(dq"
+.
+Executes a list of commands once the engine has started up and initialized the game.
 .TP
 .BI \-o sauerdir
 Sets the path to your Sauerbraten directory. If Red Eclipse can find your Sauerbraten directory, you can load and play Sauerbraten maps from withing Red Eclipse.
 .TP
+.BI \-sm servermaster
+Connects to
+.I servermaster
+to get the list of available servers. May also use this setting if the local client server is configured to be public?
+.TP
+.BI \-sa servermasterport
+Contacts the master server using port
+.IR servermasterport .
+.IP
 .BI \-g logfile
 Output log to
 .IR logfile .
@@ -163,6 +179,14 @@ Output log to
 .B redeclipse -p$HOME/mod/data
 .RS 4
 Load data from an additional directory.
+.RE
+.B redeclipse -h$HOME/reclient_configs/
+.RS 4
+Reads and writes the configuration files to the specified directory instead of $HOME
+.RE
+.B redeclipse -x"mode 7; trialweapon 0; map hinder"
+.RS 4
+Sets game mode to time trial, trialmode weapon to empty hands, and starts a game on the map "hinder".
 .RE
 
 .SH AUTHOR
