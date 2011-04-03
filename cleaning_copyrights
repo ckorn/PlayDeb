@@ -1,0 +1,7 @@
+find . -iname *.jpg | xargs grep -irl copyright
+
+for i in $(find . -iname *.jpg | xargs grep -irl copyright); do jhead -purejpg $i; done
+
+for i in $(find . -iname *.png); do if [ -n "$(identify -verbose "$i" | grep 'Profile.*bytes')" ]; then echo $i; fi; done | sed s/^..//
+
+for i in $(git show debian:debian/unincluded_copyrights | egrep '.*\.png'); do echo mogrify -strip $i; mogrify -strip $i; done
