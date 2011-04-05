@@ -87,13 +87,18 @@ reclient \- client for the Red Eclipse FPS game
 .SH DESCRIPTION
 Red Eclipse is a single-player and multi-player first-person ego-shooter, built as a total conversion of Cube Engine 2, which lends itself toward a balanced gameplay, with a general theme of agility in a variety of environments.
 .PP
-The redeclipse client starts a local private server upon launch which it uses to connect to, hence many of the server options are accepted by the reclient binary as well.
-.PP
-The recommended way to change the settings of the client are to edit the config.cfg and init.cfg files. Examples are available in
+The recommended way to change the settings of the client are to edit the
+.I config.cfg
+and
+.I init.cfg
+files. Examples are available in
 .IR /usr/share/games/redeclipse/data/examples/ ,
-.SH CAVEATS:
-The local client server will by default read the config files servinit.cfg and servexec.cfg from the $HOME directory. To separate the client and the dedicated server the -h option can be used on either to specify a separate location to read config files from.
 .PP
+The redeclipse client starts a local loopback server upon launch which it uses to connect to, hence many of the server options are accepted by the redeclipse binary as well, to edit the specific settings related to the loopback server, use the
+.I localexec.cfg
+and
+.IR localinit.cfg .
+.SH CAVEATS
 Many of these options will, if used, be permanently saved in the init.cfg.
 .SH OPTIONS
 .TP
@@ -157,7 +162,7 @@ Enables or disables kid mode, which reduces blood and death effects somewhat. 0 
 .BI \-h homedir
 Sets your home directory to
 .IR homedir .
-If set, the engine will look for files in your home directory as well as the normal installation directory. However, all files will be written to your home directory, instead of the normal installation directory. Defaults to the $HOME varialbe.
+If set, the engine will look for files in your home directory as well as the normal installation directory. However, all files will be written to your home directory, instead of the normal installation directory. Defaults to the $HOME variable.
 .TP
 .BI \-p packagedir
 Includes the data files found in
