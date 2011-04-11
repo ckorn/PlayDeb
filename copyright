@@ -375,8 +375,7 @@ Files: data/sounds/ambience/nightcrickets.ogg data/sounds/ambience/creek.ogg
 Copyright: Copyright RHumphries
 License: Creative Commons Sampling Plus 1.0 License
 
-Files: data/sounds/ambience/forest1.ogg data/sounds/ambience/forest2.ogg
-       data/sounds/ambience/forest3.ogg data/sounds/ambience/cycadas.ogg
+Files: data/sounds/ambience/forest* data/sounds/ambience/cycadas.ogg
 Copyright: Copyright dobroide
 License: Creative Commons Sampling Plus 1.0 License
 
@@ -385,11 +384,15 @@ Copyright: Copyright acclivity
 License: Creative Commons Sampling Plus 1.0 License
 
 Files: data/sounds/ambience/frogs.ogg data/sounds/ambience/forestflies.ogg
-Copyright: Copyright oyes
+Copyright: Copyright Sébastien "oyes"
+License: Creative Commons Sampling Plus 1.0 License
+
+Files: data/sounds/ambience/water.ogg
+Copyright: Copyright ignotus
 License: Creative Commons Sampling Plus 1.0 License
 
 Files: data/sounds/ambience/waterfall*
-Copyright: Copyright ignotus
+Copyright: Copyright Corsica_S
 License: Creative Commons Sampling Plus 1.0 License
 
 Files: data/sounds/ambience/distant_cars.ogg
