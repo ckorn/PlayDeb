@@ -1,4 +1,13 @@
 #!/bin/sh
+for arg
+do
+    if [ "$arg" = --help ]
+    then
+       exec man redeclipse
+    fi
+done
+
 RE_OPTIONS=""
 cd /usr/lib/games/redeclipse
-exec ./reserver ${RE_OPTIONS} "$@"
+exec ./reserver ${RE_OPTIONS} ${1+"$@"}
+# ${1+"$@"} is a portability hack, keyword "wrapper script"
