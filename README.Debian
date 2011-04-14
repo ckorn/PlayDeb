@@ -2,9 +2,7 @@ redeclipse for Debian
 ---------------------
 
 TODO:
- * Document all copyright from debian/unnincluded_copyrights
-   - Images remain to be fixed either by removing colour profile or documenting.
-   - Else all items needed for a linux tarball are documented.
+ * Make it build using Debian-packaged enet and remove enet from package.
 
 Copyright and packaging:
  Special permission has been granted to me (Arand Nash) to package Red Eclipse
