@@ -60,6 +60,9 @@ redeclipse \- script to launch the Red Eclipse FPS game client
 [
 .BI \-g logfile
 ]
+[
+.B \-\-help
+]
 .SH DESCRIPTION
 Red Eclipse is a single-player and multi-player first-person ego-shooter, built as a total conversion of Cube Engine 2, which lends itself toward a balanced gameplay, with a general theme of agility in a variety of environments.
 .PP
@@ -177,10 +180,13 @@ to get the list of available servers. May also use this setting if the local cli
 .BI \-sa servermasterport
 Contacts the master server using port
 .IR servermasterport .
-.IP
+.TP
 .BI \-g logfile
 Output log to
 .IR logfile .
+.TP
+.B \-\-help
+Display this manpage
 .SH EXAMPLES
 .PP
 .B redeclipse -p$HOME/mod/data
