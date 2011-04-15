@@ -321,6 +321,7 @@ License:
        credit links must remain in place and adapted themes may not be
        reditributed.
 Comment: *.png files are generated from akashi.ttf using ttf2font
+         available from http://quadropolis.us/node/1375
 
 Files: data/textures/wait.png
 Copyright: Copyright 2008 Kaneiderdaniel
