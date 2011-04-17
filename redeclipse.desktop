@@ -1,8 +1,19 @@
 [Desktop Entry]
-Name=Red Eclipse
-Comment=First Person Shooter using the Cube 2 engine
-Icon=redeclipse
-Exec=/usr/games/redeclipse
-Terminal=false
 Type=Application
+Version=1.1
+Name=Red Eclipse
+Name[es]=Eclipse rojo
+Name[gl]=Eclipse vermello
+Name[sv]=Röd Eklips
+GenericName=First-person shooter game
+GenericName[es]=Juego de tiros en primera persona
+GenericName[gl]=Xogo de tiros en primeira persoa
+GenericName[sv]=Förstapersonsskjutare
+Comment=First-person shooter with agile gameplay and built-in editor
+Comment[es]=Juego de tiros en primera persona con editor incorporado
+Comment[gl]=Xogo de tiros en primeira persoa con editor incorporado
+Comment[se]=Förstapersonsskjutare med rörlig spelstil och inbyggd baneditor
+Icon=redeclipse
+TryExec=redeclipse
+Exec=redeclipse
 Categories=Game;ActionGame;
