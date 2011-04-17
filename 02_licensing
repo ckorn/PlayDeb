@@ -1,0 +1,77 @@
+* ICC colour profiles of jpegs/pngs
+  - Is it ok to strip these?
+    + jhead -purejpg
+    + mogrify -strip
+
+* sampling+
+
+* Enet has a lot of GPL2+/FSF-free, Would it be possible to redistribute these
+  items under Expat instead, as per the libtool/autoconf license exception, it
+  would make things much neater.
+
+* Font (currently breaking it's stated license)
+  - Generated font png:s (unclear what can be done with them: "used in project
+    for free", what does that mean?)
+    + Would the author be willing to relicense/clarify this?
+  - Are the other fonts CC-BY-SA RE-Team? (As would be implied by current
+    license setup.)
+    + Would it be possible to use these instead of the akashi font to get rid of
+      that licensing issue?
+  - Alternatively using a completely different, free font
+
+* src/include/wincompat.h is ARR, do you have permission to distribute this
+  file? And what the heck is it for anyways?
+
+* Is it ok to strip these from the tarballs we distribute (don't need to bother
+  about all the embedded licenses)?:
+  src/include
+  src/lib
+  src/install	(only in svn)
+  src/excode	(only in svn)
+  bin/[selection]
+  few more bits...
+  - It would be even better if they were stripped from the Linux/BSD tarball
+    completely, since it makes little sense to keep it there ;)
+
+Wishlist:
+
+* Relicense under something like this:
+
+ Limited rights are granted to:
+ * Redistribute verbatim copies of the entire distribution.
+ * Redistribute modified versions, plainly marked as such, of the entire
+   distribution which may be:
+   - Recompressed using different archival formats (zip/tgz/deb/dmg/...).
+   - Reorganised in order to conform to the organisation scheme of a target OS
+     (including splitting the distribution into parts {e.g. -client -server
+     -data}).
+   - Stripped of items which are not relevant to the target OS.
+   - Accompanied by patches for the purpose of modifying the program at build
+     time.
+   - Recompiled, possibly using patches modifying the program at build time,
+     for the target OS.
+ Any changes beyond this will result in a modified version which:
+ * Must conform to all individual licenses for the material included.
+ * Is NOT to be considered the Red Eclipse Project.
+
+ The Red Eclipse trademarks (name, logos, advertising/promotional material, or
+ modified versions thereof) may be used by anyone to refer to the Red Eclipse
+ Project, but does not indicate endorsement by the project.
+ Use for any other reason is strictly prohibited without express written consent
+ of the Red Eclipse Team.
+
+
+
+
+
+
+ Limited rights are granted to use the Red Eclipse logos, trademarks, or other
+ advertising/promotional material:
+    * When used in conjunction with a Red Eclipse article, comment, review, or
+      advertisement, regardless of the media featured in said material.
+    * In conjunction with redistribution of the game, provided it is done
+      according to the terms above.
+
+* Alternatively find a way to apply a popular license to the whole project.
+
+* Allow for the logo and name to be used also under above terms.
