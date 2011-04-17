@@ -15,12 +15,12 @@ Copyright and packaging:
    - Reorganisation of files into install locations.
  * To use the name "Red Eclipse" and the Red Eclipse logo in conjuction with
    redistribution of these packages.
- * To modify the file  src/site/bits/favicon.png for use in the client binary
-   package, to supply menu icons.
+ * To modify the Red Eclipse logo for use in the client binary package, to
+   supply menu icons.
  * To redistribute the packaged work under similar terms as that of the
    original license, see debian/copyright.
 
-Don't use stand-alone enet:
+DON'T USE STAND-ALONE ENET:
 15:47 < arand> Hmm, enet 1.3.1 made it into testing... I need to figure out how
                to make RE build without embedded enet in a sane way...
 15:50 < eihrul_> don't
