@@ -1,5 +1,5 @@
 Source: redeclipse
-Section: games
+Section: non-free/games
 Priority: optional
 Maintainer: Arand Nash <ienorand@gmail.com>
 Build-Depends: debhelper (>= 7.0.50~),
@@ -18,7 +18,7 @@ Description: Single-player and multi-player first-person ego-shooter
  gameplay, with a general theme of agility in a variety of environments.
 
 Package: redeclipse-dbg
-Section: debug
+Section: non-free/debug
 Priority: extra
 Architecture: any
 Depends: ${misc:Depends}, redeclipse (= ${binary:Version})
