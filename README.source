@@ -1,7 +1,8 @@
 redeclipse
 ----------
 
-The original Redeclipse source is set up for in-place compiling and installing, hence "make install" only copies new binaries within the source directory
+The original Red Eclipse source is set up for in-place compiling and installing,
+hence "make install" only copies new binaries within the source directory
 
 
 This package uses quilt to manage all modifications to the upstream
