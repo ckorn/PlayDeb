@@ -4,6 +4,9 @@ Feature Requests:
   or rebinding...
 * Make it possible to stop RE from creating the folder in the homedir, logically
   using -h
+* Don't allow melee-whenever-touching by continuously holding down the [q] key,
+  make it only activate melee a certain period [~< 1s?] after key is pressed,
+  then turn inactive.
 
 * Using K before you have reached the first checkpoint doesn't reset timer
   - Use home instead
