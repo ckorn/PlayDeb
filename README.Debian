@@ -1,7 +1,14 @@
 redeclipse for Debian
 ---------------------
 
-TODO:
+The Files: src/include/* src/xcode/* src/lib/* src/site/* bin/* redeclipse.bat
+           server.bat data/fonts/akashi.ttf src/dpiaware.manifest
+           src/redeclipse.cbp src/redeclipse.rc
+Were all removed from the Debian source package.
+The header files here are already shipped within other Debian packages, or are
+unecessary on GNU/Linux.
+Other files are similarly unecessary, and some have a license with questionable
+terms of distribution.
 
 Copyright and packaging:
  Special permission has been granted to me (Arand Nash) to package Red Eclipse
