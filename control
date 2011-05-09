@@ -2,10 +2,8 @@ Source: redeclipse
 Section: non-free/games
 Priority: optional
 Maintainer: Arand Nash <ienorand@gmail.com>
-Build-Depends: debhelper (>= 7.0.50~),
- libsdl-mixer1.2-dev,
- libsdl-image1.2-dev,
- imagemagick
+Build-Depends: debhelper (>= 7.0.50~), libsdl1.2-dev, libsdl-image1.2-dev,
+ libsdl-mixer1.2-dev, libx11-dev, libgl1-mesa-dev, zlib1g-dev, imagemagick
 Standards-Version: 3.9.1
 Homepage: http://www.redeclipse.net
 
