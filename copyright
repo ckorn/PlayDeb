@@ -1,10 +1,11 @@
-Format: http://ppa.launchpad.net/arand/redeclipse/ubuntu/pool/main/r/redeclipse
+Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=174
 Upstream-Name: Red Eclipse
 Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
                   Lee "Eihrul" Salzman <lsalzman@gmail.com>
 Source: https://redeclipse.svn.sourceforge.net
-Disclaimer: This package is not part of Debian due to its license, which is
-            incompatibe with the Debian Free Software Guidelines (DFSG).
+Disclaimer:
+ This package is not part of Debian due to its license, which is incompatibe with
+ the Debian Free Software Guidelines (DFSG).
 
 Files: *
 Copyright: Copyright (C) 2009-2011 Red Eclipse Team
