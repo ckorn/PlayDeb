@@ -1,13 +1,6 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
-# Sample debian/rules that uses debhelper.
-# This file was originally written by Joey Hess and Craig Small.
-# As a special exception, when this file is copied by dh-make into a
-# dh-make output file, you may use that output file without restriction.
-# This special exception was added by Craig Small in version 0.37 of dh-make.
-
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+export DH_OPTIONS
 
 %:
 	dh $@ --sourcedirectory=src
@@ -36,13 +29,14 @@ get-orig-source:
 	rm -rf $(DIR)
 	svn -q export -r $(REV) $(URL) $(DIR)
 	( \
-		cd $(DIR)
-		rm -rf src/include/
-		rm -rf src/xcode/
-		rm -rf src/lib/
-		rm -rf src/site/
-		rm -rf bin/
-		rm -f data/fonts/akashi.ttf
+		cd $(DIR) ;\
+		rm -rf src/include/ ;\
+		rm -rf src/xcode/ ;\
+		rm -rf src/lib/ ;\
+		rm -rf src/site/ ;\
+		rm -rf bin/ ;\
+		rm -f data/fonts/akashi.ttf ;\
+	)
 	GZIP=--best tar -cz --owner root --group root --mode a+rX \
-		-f $(TARBALL) $(DIR)
+		-f $(TARBALL) $(DIR) ;\
 	rm -rf $(DIR)
