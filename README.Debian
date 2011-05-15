@@ -5,8 +5,8 @@ The Files: src/include/* src/xcode/* src/lib/* src/site/* bin/*
            data/fonts/akashi.ttf
 Were all removed from the Debian source package.
 The header files here are already shipped within other Debian packages, or are
-unecessary on GNU/Linux.
-Other files are similarly unecessary, and some have a license with questionable
+unnecessary on GNU/Linux.
+Other files are similarly unnecessary, and some have a license with questionable
 terms of distribution.
 
 Copyright and packaging:
