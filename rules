@@ -22,3 +22,23 @@ override_dh_strip:
 
 override_dh_clean:
 	dh_clean debian/redeclipse.png debian/redeclipse.xpm bin/reclient_native bin/reserver_native
+
+URL="https://redeclipse.svn.sourceforge.net/svnroot/redeclipse"
+REV="$(shell dpkg-parsechangelog | sed -rne 's,^Version: .*[+~]svn([0-9]+).*,\1,p')"
+VER="$(shell dpkg-parsechangelog | sed -rne 's,^Version: ([^-]+).*,\1,p')"
+DIR="redeclipse-$(VER).orig"
+TARBALL="$(DIR).tar.gz"
+get-orig-source:
+	rm -rf $(DIR)
+	svn -q export -r $(REV) $(URL) $(DIR)
+	( \
+		cd $(DIR)
+		rm -rf src/include/
+		rm -rf src/xcode/
+		rm -rf src/lib/
+		rm -rf src/site/
+		rm -rf bin/
+		rm -f data/fonts/akashi.ttf
+	GZIP=--best tar -cz --owner root --group root --mode a+rX \
+		-f $(TARBALL) $(DIR)
+	rm -rf $(DIR)
