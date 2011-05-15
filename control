@@ -4,13 +4,13 @@ Priority: optional
 Maintainer: Arand Nash <ienorand@gmail.com>
 Build-Depends: debhelper (>= 7.0.50~), libsdl1.2-dev, libsdl-image1.2-dev,
  libsdl-mixer1.2-dev, libx11-dev, libgl1-mesa-dev, zlib1g-dev, imagemagick
-Standards-Version: 3.9.1
+Standards-Version: 3.9.2
 Homepage: http://www.redeclipse.net
 
 Package: redeclipse
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, redeclipse-data (= ${source:Version})
-Description: Single-player and multi-player first-person ego-shooter
+Depends: ${shlibs:Depends}, ${misc:Depends}, redeclipse-data
+Description: single-player and multi-player first-person ego-shooter
  A single-player and multi-player first-person ego-shooter, built as a
  total conversion of Cube Engine 2, which lends itself toward a balanced
  gameplay, with a general theme of agility in a variety of environments.
@@ -19,21 +19,38 @@ Package: redeclipse-dbg
 Section: non-free/debug
 Priority: extra
 Architecture: any
-Depends: ${misc:Depends}, redeclipse (= ${binary:Version})
-Description: Debug symbols for Red Eclipse FPS
- Debugging symbols for the single-player and multi-player first-person
- ego-shooter Red Eclipse.
+Depends: ${shlibs:Depends}, ${misc:Depends}, redeclipse (= ${binary:Version})
+Description: debug symbols for the Red Eclipse FPS game
+ A single-player and multi-player first-person ego-shooter, built as a
+ total conversion of Cube Engine 2, which lends itself toward a balanced
+ gameplay, with a general theme of agility in a variety of environments.
+ .
+ This package contains the debugging symbols for Red Eclipse
 
 Package: redeclipse-server
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Server for Red Eclipse FPS
+Depends: ${shlibs:Depends}, ${misc:Depends}, redeclipse-data
+Suggests: redeclipse
+Description: server for the Red Eclipse FPS game
+ A single-player and multi-player first-person ego-shooter, built as a
+ total conversion of Cube Engine 2, which lends itself toward a balanced
+ gameplay, with a general theme of agility in a variety of environments.
  Dedicated server for the single- and multi-player first-person ego-shooter
  Red Eclipse.
+ .
+ This package contains the dedicated server binaries for Red Eclipse
 
 Package: redeclipse-data
 Architecture: all
 Depends: ${misc:Depends}
-Description: Data for Red Eclipse
+Recommends: redeclipse | redeclipse-server
+Description: data for the Red Eclipse FPS game
+ A single-player and multi-player first-person ego-shooter, built as a
+ total conversion of Cube Engine 2, which lends itself toward a balanced
+ gameplay, with a general theme of agility in a variety of environments.
  Graphics, models, maps, etc. for the single- and multi-player first-person
  ego-shooter Red Eclipse.
+ .
+ This package contains the data content, e.g. maps, models, textures, sounds,
+ etc. for Red Eclipse
+
