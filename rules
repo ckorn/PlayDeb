@@ -14,6 +14,7 @@
 
 override_dh_auto_build:
 	convert -resize 48x48 'src/redeclipse.ico[2]' debian/redeclipse.png
+	convert 'src/redeclipse.ico[1]' debian/redeclipse.xpm
 	dh_auto_build
 
 override_dh_strip:
