@@ -10,8 +10,8 @@ override_dh_auto_build:
 	convert 'src/redeclipse.ico[1]' debian/redeclipse.xpm
 	dh_auto_build
 
-override_dh_auto_install:
-	dh_auto_install -- --exclude="license.txt"
+override_dh_install:
+	dh_install --exclude="license.txt"
 
 override_dh_strip:
 	dh_strip -predeclipse --dbg-package=redeclipse-dbg
