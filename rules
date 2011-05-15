@@ -17,9 +17,6 @@ override_dh_strip:
 	dh_strip -predeclipse --dbg-package=redeclipse-dbg
 	dh_strip
 
-override_dh_clean:
-	dh_clean debian/redeclipse.png debian/redeclipse.xpm bin/reclient_native bin/reserver_native
-
 URL="https://redeclipse.svn.sourceforge.net/svnroot/redeclipse"
 REV="$(shell dpkg-parsechangelog | sed -rne 's,^Version: .*[+~]svn([0-9]+).*,\1,p')"
 VER="$(shell dpkg-parsechangelog | sed -rne 's,^Version: ([^-]+).*,\1,p')"
