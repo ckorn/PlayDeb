@@ -1,9 +1,8 @@
 redeclipse for Debian
 ---------------------
 
-The Files: src/include/* src/xcode/* src/lib/* src/site/* bin/* redeclipse.bat
-           server.bat data/fonts/akashi.ttf src/dpiaware.manifest
-           src/redeclipse.cbp src/redeclipse.rc
+The Files: src/include/* src/xcode/* src/lib/* src/site/* bin/*
+           data/fonts/akashi.ttf
 Were all removed from the Debian source package.
 The header files here are already shipped within other Debian packages, or are
 unecessary on GNU/Linux.

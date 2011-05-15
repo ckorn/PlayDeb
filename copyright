@@ -3,9 +3,15 @@ Upstream-Name: Red Eclipse
 Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
                   Lee "Eihrul" Salzman <lsalzman@gmail.com>
 Source: https://redeclipse.svn.sourceforge.net
+ The files src/include/* src/xcode/* src/lib/* src/site/* bin/*
+ data/fonts/akashi.ttf were all removed from the Debian source package.
+ The header files here are already shipped within other Debian packages, or are
+ unecessary on GNU/Linux.
+ Other files are similarly unecessary, and some have a license with questionable
+ terms of distribution.
 Disclaimer:
- This package is not part of Debian due to its license, which is incompatibe with
- the Debian Free Software Guidelines (DFSG).
+ This package is not part of Debian due to its license, which is incompatibe
+ with the Debian Free Software Guidelines (DFSG).
 
 Files: *
 Copyright: Copyright (C) 2009-2011 Red Eclipse Team
