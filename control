@@ -35,8 +35,6 @@ Description: server for the Red Eclipse FPS game
  A single-player and multi-player first-person ego-shooter, built as a
  total conversion of Cube Engine 2, which lends itself toward a balanced
  gameplay, with a general theme of agility in a variety of environments.
- Dedicated server for the single- and multi-player first-person ego-shooter
- Red Eclipse.
  .
  This package contains the dedicated server binaries for Red Eclipse
 
@@ -48,9 +46,6 @@ Description: data for the Red Eclipse FPS game
  A single-player and multi-player first-person ego-shooter, built as a
  total conversion of Cube Engine 2, which lends itself toward a balanced
  gameplay, with a general theme of agility in a variety of environments.
- Graphics, models, maps, etc. for the single- and multi-player first-person
- ego-shooter Red Eclipse.
  .
  This package contains the data content, e.g. maps, models, textures, sounds,
  etc. for Red Eclipse
-
