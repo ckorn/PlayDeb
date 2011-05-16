@@ -23,10 +23,13 @@ git tag $PPA_VERSION
 
 git-buildpackage -j2 -us -uc --git-debian-branch=ppa_clean --git-upstream-branch=clean
 sudo dpkg -i ../redeclipse*"$PPA_VERSION"*.deb
-git-buildpackage clean --git-debian-branch=ppa_clean --git-upstream-branch=clean; quilt pop -a
-# git reset --hard && git clean -df
+
+# git-buildpackage clean --git-debian-branch=ppa_clean --git-upstream-branch=clean; quilt pop -a
+git reset --hard && git clean -df
 git-buildpackage -j2 -sa -S --git-debian-branch=ppa_clean --git-upstream-branch=clean
 dput resvn ../redeclipse_"$PPA_VERSION"_source.changes
+
+sed 's/version_to_copy_from/"$PPA_VERSION"/' "$HOME/utv/lp-promote-ppa" | python - arand/redeclipse arand/redeclipse
 
 
 ==IMAGE CLEANING==
