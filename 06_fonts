@@ -1,0 +1,21 @@
+./ttf2font Selfism\ Bold.otf -g3 -d4 -o1
+
+./ttf2font Selfism\ Bold.otf -nemphasis -g3 -d4 -o1
+
+./ttf2font Selfism\ Bold.otf -nradar -g3 -d1 -o1
+
+./ttf2font Selfism\ Bold.otf -nsub -g3 -d4 -o1
+
+./ttf2font Selfism\ Bold.otf -nsuper -g3 -d5 -o1
+
+./ttf2font CPMono_v07\ Plain.otf -nsuper -g3 -d3 -o1
+
+./ttf2font CPMono_v07\ Plain.otf -ncommand -g3 -d3 -o1
+
+./ttf2font CPMono_v07\ Plain.otf -nconsole -g3 -d3 -o1
+
+./ttf2font CPMono_v07\ Plain.otf -nconsub -g3 -d1 -o1
+
+http://www.sonntag.nl/seiten/free/selfism/selfism.htm
+
+http://www.fontspace.com/liquitype/cp-mono
