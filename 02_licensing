@@ -26,8 +26,8 @@
   about all the embedded licenses)?:
   src/include
   src/lib
-  src/install	(only in svn)
-  src/excode	(only in svn)
+  src/install/win	(only in svn)
+  src/excode		(only in svn)
   bin/[selection]
   few more bits...
   - It would be even better if they were stripped from the Linux/BSD tarball
@@ -36,6 +36,8 @@
 Wishlist:
 
 * Relicense under something like this:
+
+ The Red Eclipse Project is Copyright:2010-2011 Quinton "quin" Reeves
 
  Limited rights are granted to:
  * Redistribute verbatim copies of the entire distribution.
@@ -52,7 +54,9 @@ Wishlist:
      for the target OS.
  Any changes beyond this will result in a modified version which:
  * Must conform to all individual licenses for the material included.
- * Is NOT to be considered the Red Eclipse Project (i.e. cannot use trademarks).
+ * Is NOT to be considered the Red Eclipse Project and may not use the Red Eclipse trademarks.
+
+ The Red Eclipse trademarks are Copyright (C) 2010-2011 Red Eclipse Team
 
  The Red Eclipse trademarks (name, logos, advertising/promotional material, or
  modified versions thereof) may be used by anyone to refer to the Red Eclipse
