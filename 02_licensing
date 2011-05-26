@@ -37,24 +37,25 @@ Wishlist:
 
 * Relicense under something like this:
 
- The Red Eclipse Project is Copyright:2010-2011 Quinton "quin" Reeves
+ The Red Eclipse Project is Copyright: 2010-2011 Quinton "quin" Reeves
+                                       2010-2011 Lee "eihrul" Salzman
 
  Limited rights are granted to:
- * Redistribute verbatim copies of the entire distribution.
+ * Redistribute verbatim copies of the entire Red Eclipse Project.
  * Redistribute modified versions, plainly marked as such, of the entire
-   distribution which may be:
+   Red Eclipse Project which may be:
    - Recompressed using different archival formats (zip/tgz/deb/dmg/...).
    - Reorganised in order to conform to the organisation scheme of a target OS
-     (including splitting the distribution into parts {e.g. -client -server
-     -data}).
+     (including splitting the content of the Red Eclipse Project into parts).
    - Stripped of items which are not relevant to the target OS.
-   - Accompanied by patches for the purpose of modifying the program at build
-     time.
-   - Recompiled, possibly using patches modifying the program at build time,
-     for the target OS.
+   - Accompanied by patches for the purpose of modifying the Red Eclipse Project
+     at build time.
+   - Recompiled, possibly using patches modifying the Red Eclipse Project at
+     build time, for the target OS.
  Any changes beyond this will result in a modified version which:
  * Must conform to all individual licenses for the material included.
- * Is NOT to be considered the Red Eclipse Project and may not use the Red Eclipse trademarks.
+ * Is NOT to be considered the Red Eclipse Project and may not use the Red
+   Eclipse trademarks.
 
  The Red Eclipse trademarks are Copyright (C) 2010-2011 Red Eclipse Team
 
