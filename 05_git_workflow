@@ -51,7 +51,7 @@ export REPO_DIR="$HOME/utv/repository"
 mkdir "$BACKUP_DIR"
 cd "$BACKUP_DIR"
 git init --bare
-git clone --mirror file://"$REPO_DIR"
+git clone --mirror "$REPO_DIR"
 cd "$REPO_DIR"
 git remote add --mirror seagate "$BACKUP_DIR"
 git push seagate
@@ -62,12 +62,12 @@ git push seagate
 export BACKUP_DIR="/media/seagate/utv/backup-git"
 export REPO_DIR="$HOME/utv/repository"
 
-git clone file://"$BACKUP_DIR" "$REPO_DIR"
+git clone "$BACKUP_DIR" "$REPO_DIR"
 cd "$REPO_DIR"
 for i in $(git branch -a | grep origin); do git checkout -b $(echo "$i" | sed 's#.*origin\/\(.*\)#\1#') "$i"; done
 
 # Alternatively
-git clone --mirror file://"$BACKUP_DIR" "$REPO_DIR"/.git
+git clone --mirror "$BACKUP_DIR" "$REPO_DIR"/.git
 cd "$REPO_DIR"
 git config --bool core.bare false                                         # (2)
 git checkout master
