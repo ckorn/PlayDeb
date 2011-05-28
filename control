@@ -2,7 +2,7 @@ Source: redeclipse
 Section: non-free/games
 Priority: optional
 Maintainer: Arand Nash <ienorand@gmail.com>
-Build-Depends: debhelper (>= 7.0.50~), libsdl1.2-dev, libsdl-image1.2-dev,
+Build-Depends: debhelper (>= 8, libsdl1.2-dev, libsdl-image1.2-dev,
  libsdl-mixer1.2-dev, libx11-dev, libgl1-mesa-dev, zlib1g-dev, imagemagick
 Standards-Version: 3.9.2
 Homepage: http://www.redeclipse.net
@@ -41,7 +41,7 @@ Description: server for the Red Eclipse FPS game
 Package: redeclipse-data
 Architecture: all
 Depends: ${misc:Depends}
-Recommends: redeclipse | redeclipse-server
+Recommends: redeclipse, redeclipse-server
 Description: data for the Red Eclipse FPS game
  A single-player and multi-player first-person ego-shooter, built as a
  total conversion of Cube Engine 2, which lends itself toward a balanced
