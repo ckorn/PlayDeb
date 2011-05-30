@@ -241,19 +241,23 @@ License:
 
 Files: data/*
 Copyright: Copyright 2009-2011 Red Eclipse Team
-License: CC-BY-SA
+License: CC-BY-SA-3.0
 
 Files: data/jwin/*
 Copyright: Copyright JWindecker <jacobwindecker@hotmail.com>
-License: CC-BY
+License: CC-BY-3.0
 
 Files: data/appleflap/*
 Copyright: Copyright Jeroen "appleflap" Boukens
-License: CC-BY-SA
+License: CC-BY-SA-3.0
 
 Files: data/penguins/*
 Copyright: Copyright 2009 SkiingPenguins <skiing_penguins@yahoo.com>
-License: CC-BY-SA
+License: CC-BY-SA-3.0
+
+Files: data/crosshairs/*
+Copyright: 2011 fluxord <fluxord> at <yahoo.com>
+License: CC-BY-SA-3.0
 
 Files: data/skyboxes/gradient* data/skyboxes/stars*
 License: public-domain
@@ -264,7 +268,7 @@ License: Zlib
 
 Files: data/skyboxes/dusk01* data/skyboxes/skyhigh*
 Copyright: Copyright Pieter Verhoeven
-License: CC-BY-SA
+License: CC-BY-SA-3.0
 
 Files: data/particles/bullet.png data/particles/energy.png
        data/particles/blob.png data/particles/scorch.png
@@ -291,7 +295,7 @@ License:
 
 Files: data/trak/trak4/* data/trak/trak6/* data/trak/trak7/*
 Copyright: Copyright Georges 'TRaK' Grondin <drognin@gmail.com>
-License: CC-BY
+License: CC-BY-3.0
 
 Files: data/trak/trak5/*
 Copyright: Copyright (c) 2009 Georges 'TRaK' Grondin
@@ -300,15 +304,15 @@ License: Expat
 
 Files: data/models/weapons/plasma/* data/models/weapons/flamer/*
 Copyright: Copyright Mike Ledger ( mikeplus[i] )
-License: CC-BY-SA
+License: CC-BY-SA-3.0
 
 Files: data/models/actors/turret/*
 Copyright: Copyright Mike Ledger ( mikeplus[i] )
-License: CC-BY-SA
+License: CC-BY-SA-3.0
 
 Files: data/mayhem/*
 Copyright: Copyright Mayhem
-License: CC-BY-SA
+License: CC-BY-SA-3.0
 
 Files: data/fonts/akashi.ttf data/fonts/default.png data/fonts/emphasis.png
        data/fonts/radar.png data/fonts/sub.png data/fonts/super.png
@@ -334,7 +338,7 @@ Files: data/textures/wait.png
 Copyright: Copyright 2008 Kaneiderdaniel
            (http://commons.wikimedia.org/wiki/User:Kaneiderdaniel)
            Copyright (C) 2010 Red Eclipse Team
-License: CC-BY-SA
+License: CC-BY-SA-3.0
 
 Files: data/textures/dead.png data/textures/dominated.png
        data/textures/dominating.png data/textures/flag.png
@@ -357,15 +361,15 @@ License:
 Files: data/torley/*
 Copyright: Copyright 2007-2008 Torley Linden
            Copyright 2010 Red Eclipse Team
-License: CC-BY
+License: CC-BY-3.0
 
 Files: data/sounds/ambience/*
 Copyright: Copyright Quinton "quin" Reeves, Alex "blackshoe" Anguix
-License: CC-BY-SA
+License: CC-BY-SA-3.0
 
 Files data/sounds/ambience/morph/*
 Copyright: Copyright Slawek "Q009" Blauciak
-License: CC-BY
+License: CC-BY-3.0
 
 Files: data/sounds/ambience/wind.ogg
 Copyright: Copyright Bahutan
@@ -479,7 +483,7 @@ License: Expat
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  DEALINGS IN THE SOFTWARE.
 
-License: CC-BY
+License: CC-BY-3.0
  THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
  COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY
  COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS
@@ -745,7 +749,7 @@ License: CC-BY
      rights are deemed to be included in the License; this License is not
      intended to restrict the license of any rights under applicable law.
 
-License: CC-BY-SA
+License: CC-BY-SA-3.0
  THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
  COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY
  COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS
