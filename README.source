@@ -9,57 +9,26 @@ This package uses quilt to manage all modifications to the upstream
 source.  Changes are stored in the source package as diffs in
 debian/patches and applied during the build.
 
-To configure quilt to use debian/patches instead of patches, you want
-either to export QUILT_PATCHES=debian/patches in your environment
-or use this snippet in your ~/.quiltrc:
+On Debian systems with quilt installed, further documentation is available in
+`/usr/share/doc/quilt/README.source'
 
-    for where in ./ ../ ../../ ../../../ ../../../../ ../../../../../; do
-        if [ -e ${where}debian/rules -a -d ${where}debian/patches ]; then
-                export QUILT_PATCHES=debian/patches
-                break
-        fi
-    done
 
-To get the fully patched source after unpacking the source package, cd to
-the root level of the source package and run:
+DON'T USE STAND-ALONE ENET:
+15:47 < arand> Hmm, enet 1.3.1 made it into testing... I need to figure out how
+               to make RE build without embedded enet in a sane way...
+15:50 < eihrul_> don't
+15:50 < eihrul_> build with enet included in RE
+15:50 < arand> Is there a large diff?
+15:50 < eihrul_> not currently, but there has been in the past and may be in
+                 the future
+15:51 <@Hirato> so you can choose, have the debian security guys hate you, or
+                the rest of the community hate you :P
+15:51 < arand> Pretty much yea..
+15:52 < arand> Fun fun
+15:55 < eihrul_> the debian security guys don't understand what enet is
+15:55 < eihrul_> it is a part of the sauerbraten engine
+15:55 < eihrul_> the fact that it has also been isolated and release as a
+                 separate library for the benefit of others is irrelevant
+15:57 < arand> Ok, well I at least have some arguments when asked then... I
+               guess
 
-    quilt push -a
-
-The last patch listed in debian/patches/series will become the current
-patch.
-
-To add a new set of changes, first run quilt push -a, and then run:
-
-    quilt new <patch>
-
-where <patch> is a descriptive name for the patch, used as the filename in
-debian/patches.  Then, for every file that will be modified by this patch,
-run:
-
-    quilt add <file>
-
-before editing those files.  You must tell quilt with quilt add what files
-will be part of the patch before making changes or quilt will not work
-properly.  After editing the files, run:
-
-    quilt refresh
-
-to save the results as a patch.
-
-Alternately, if you already have an external patch and you just want to
-add it to the build system, run quilt push -a and then:
-
-    quilt import -P <patch> /path/to/patch
-    quilt push -a
-
-(add -p 0 to quilt import if needed). <patch> as above is the filename to
-use in debian/patches.  The last quilt push -a will apply the patch to
-make sure it works properly.
-
-To remove an existing patch from the list of patches that will be applied,
-run:
-
-    quilt delete <patch>
-
-You may need to run quilt pop -a to unapply patches first before running
-this command.

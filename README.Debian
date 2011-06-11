@@ -1,50 +1,6 @@
 redeclipse for Debian
 ---------------------
 
-The Files: src/include/* src/xcode/* src/lib/* src/site/* bin/*
-           data/fonts/akashi.ttf
-Were all removed from the Debian source package.
-The header files here are already shipped within other Debian packages, or are
-unnecessary on GNU/Linux.
-Other files are similarly unnecessary, and some have a license with questionable
-terms of distribution.
-
-Copyright and packaging:
- Special permission has been granted to me (Arand Nash) to package Red Eclipse
- in my PPA: https://launchpad.net/~arand/+archive/redeclipse
- This includes permission to:
- * Redistribute Red Eclipse split into separate binary packages.
- * Redistribute Red Eclipse with modifications in the binary packages, namely:
-   - Debian packaging data.
-   - New compiled binaries.
-   - Removal of data not used for installation.
-   - Reorganisation of files into install locations.
- * To use the name "Red Eclipse" and the Red Eclipse logo in conjuction with
-   redistribution of these packages.
- * To modify the Red Eclipse logo for use in the client binary package, to
-   supply menu icons.
- * To redistribute the packaged work under similar terms as that of the
-   original license, see debian/copyright.
-
-DON'T USE STAND-ALONE ENET:
-15:47 < arand> Hmm, enet 1.3.1 made it into testing... I need to figure out how
-               to make RE build without embedded enet in a sane way...
-15:50 < eihrul_> don't
-15:50 < eihrul_> build with enet included in RE
-15:50 < arand> Is there a large diff?
-15:50 < eihrul_> not currently, but there has been in the past and may be in
-                 the future
-15:51 <@Hirato> so you can choose, have the debian security guys hate you, or
-                the rest of the community hate you :P
-15:51 < arand> Pretty much yea..
-15:52 < arand> Fun fun
-15:55 < eihrul_> the debian security guys don't understand what enet is
-15:55 < eihrul_> it is a part of the sauerbraten engine
-15:55 < eihrul_> the fact that it has also been isolated and release as a
-                 separate library for the benefit of others is irrelevant
-15:57 < arand> Ok, well I at least have some arguments when asked then... I
-               guess
-
 Bug reporting:
  Please report all bugs seen using this package initially to arand
  <ienorand@gmail.com> in order to filter out bugs related to packaging from bugs
