@@ -17,11 +17,11 @@ override_dh_strip:
 	dh_strip -predeclipse --dbg-package=redeclipse-dbg
 	dh_strip
 
-URL="https://redeclipse.svn.sourceforge.net/svnroot/redeclipse"
-REV="$(shell dpkg-parsechangelog | sed -rne 's,^Version: .*[+~]svn([0-9]+).*,\1,p')"
-VER="$(shell dpkg-parsechangelog | sed -rne 's,^Version: ([^-]+).*,\1,p')"
-DIR="redeclipse-$(VER).orig"
-TARBALL="$(DIR).tar.gz"
+URL=https://redeclipse.svn.sourceforge.net/svnroot/redeclipse
+REV=$(shell dpkg-parsechangelog | sed -rne 's,^Version: .*[+~]svn([0-9]+).*,\1,p')
+VER=$(shell dpkg-parsechangelog | sed -rne 's,^Version: ([^-]+).*,\1,p')
+DIR=redeclipse-$(VER).orig
+TARBALL=redeclipse_$(VER).orig.tar.gz
 get-orig-source:
 	rm -rf $(DIR)
 	svn -q export -r $(REV) $(URL) $(DIR)

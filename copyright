@@ -39,7 +39,7 @@ License:
  * To modify the Red Eclipse logo for use in the client binary package, to
    supply menu icons.
  * To redistribute the packaged work under similar terms as that of the
-   original license, see debian/copyright.
+   original license, see above.
 
 Files: src/*
 Copyright: Copyright (C) 2009-2011 Quinton Reeves, Lee Salzman

@@ -3,4 +3,4 @@
   icon="/usr/share/pixmaps/redeclipse.xpm" \
   title="Red Eclipse" \
   longtitle="Single-player and multi-player first-person ego-shooter" \
-  command="redeclipse"
+  command="/usr/games/redeclipse"

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Version=1.1
+Version=1.0
 Name=Red Eclipse
 Name[es]=Eclipse rojo
 Name[gl]=Eclipse vermello
@@ -14,6 +14,5 @@ Comment[es]=Juego de tiros en primera persona con editor incorporado
 Comment[gl]=Xogo de tiros en primeira persoa con editor incorporado
 Comment[se]=Förstapersonsskjutare med rörlig spelstil och inbyggd baneditor
 Icon=redeclipse
-TryExec=redeclipse
-Exec=redeclipse
+Exec=/usr/games/redeclipse
 Categories=Game;ActionGame;
