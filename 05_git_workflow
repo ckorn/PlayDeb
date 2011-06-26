@@ -14,19 +14,19 @@ git checkout debian_clean
 git merge clean
 git merge debian
 
-git checkout ppa_clean
+git checkout ppa_svn_clean
 git merge debian_clean
 
-git-dch --release --auto --new-version=$PPA_VERSION --debian-branch=ppa_clean
+git-dch --release --auto --new-version=$PPA_VERSION --debian-branch=ppa_svn_clean
 git commit -am "Changelog for r$VERSION PPA release"
 git tag $PPA_VERSION
 
-git-buildpackage -j2 -us -uc --git-debian-branch=ppa_clean --git-upstream-branch=clean
-sudo dpkg -i ../redeclipse*"$PPA_VERSION"*.deb
+git-buildpackage -j2 -us -uc --git-debian-branch=ppa_svn_clean --git-upstream-branch=clean
+sudo dpkg -i ../redeclipse-svn*"$PPA_VERSION"*.deb
 
-# git-buildpackage clean --git-debian-branch=ppa_clean --git-upstream-branch=clean; quilt pop -a
+# git-buildpackage clean --git-debian-branch=ppa_svn_clean --git-upstream-branch=clean; quilt pop -a
 git reset --hard && git clean -df
-git-buildpackage -j2 -sa -S --git-debian-branch=ppa_clean --git-upstream-branch=clean
+git-buildpackage -j2 -sa -S --git-debian-branch=ppa_svn_clean --git-upstream-branch=clean
 dput resvn ../redeclipse_"$PPA_VERSION"_source.changes
 
 pushd $HOME/utv/hydrazine; sed '89s/spph.source_package_version/"'"$PPA_VERSION"'"/' $HOME/utv/hydrazine/lp-promote-ppa | python - arand/redeclipse arand/redeclipse; popd
