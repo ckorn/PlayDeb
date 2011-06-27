@@ -29,7 +29,7 @@ git reset --hard && git clean -df
 git-buildpackage -j2 -sa -S --git-debian-branch=ppa_svn_clean --git-upstream-branch=clean
 dput resvn ../redeclipse_"$PPA_VERSION"_source.changes
 
-pushd $HOME/utv/hydrazine; sed '89s/spph.source_package_version/"'"$PPA_VERSION"'"/' $HOME/utv/hydrazine/lp-promote-ppa | python - arand/redeclipse arand/redeclipse; popd
+pushd $HOME/utv/hydrazine; sed '89s/spph.source_package_version/"'"$PPA_VERSION"'"/' $HOME/utv/hydrazine/lp-promote-ppa | python - -s redeclipse-svn arand/redeclipse arand/redeclipse; popd
 
 ==IMAGE CLEANING==
 
