@@ -3,7 +3,7 @@
 git checkout svn
 git svn rebase
 export VERSION=$(git svn info | sed -n 's/Last\ Changed\ Rev:\ \([0-9]*\)/\1/p')
-export PPA_VERSION=1.01+svn$VERSION-ppa1
+export PPA_VERSION=1.1+svn$VERSION-ppa1
 
 git checkout clean
 git merge svn
