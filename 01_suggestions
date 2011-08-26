@@ -1,13 +1,6 @@
 Feature Requests:
-* Use RE_DIR=$(dirname $0) in script to allow executing script from anywhere
 * Neither ~ nor / seems to work properly on a non US keyboard, t does though,
   or rebinding...
-* Make it possible to stop RE from creating the folder in the homedir, logically
-  using -h
-* Don't allow melee-whenever-touching by continuously holding down the [q] key,
-  make it only activate melee a certain period [~< 1s?] after key is pressed,
-  then turn inactive.
-
 * Using K before you have reached the first checkpoint doesn't reset timer
   - Use home instead
 
@@ -22,6 +15,15 @@ Features Requsted:
     http://forum.freegamedev.net/viewtopic.php?f=53&t=1331
 * Don't use the sword in time trial
   - Empty hands looked gayer
+* Don't allow melee-whenever-touching by continuously holding down the [q] key,
+  make it only activate melee a certain period [~< 1s?] after key is pressed,
+  then turn inactive.
+  - https://sourceforge.net/apps/trac/redeclipse/ticket/28
+* Make it possible to stop RE from creating the folder in the homedir, logically
+  using -h
+  - https://sourceforge.net/apps/trac/redeclipse/ticket/29
+* Use RE_DIR=$(dirname $0) in script to allow executing script from anywhere
+  - https://sourceforge.net/apps/trac/redeclipse/ticket/30
 
 Features Implemented:
 * Make is so that the local client server does not parse servinit and servexec
