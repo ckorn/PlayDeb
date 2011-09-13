@@ -4,8 +4,8 @@ Description: Use system Enet instead of bundled version
 Origin: http://gitorious.org/chakra-packages/games/commit/1aae10c597cf09a281d47570e43c8892531cd9bf
 Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
 
---- Makefile.old	2011-07-31 21:38:04.000000000 +0200
-+++ Makefile	2011-07-31 21:50:43.000000000 +0200
+--- a/src/Makefile	2011-07-31 21:38:04.000000000 +0200
++++ b/src/Makefile	2011-07-31 21:50:43.000000000 +0200
 @@ -5,7 +5,7 @@
  PLATFORM= $(shell uname -s)
  PLATFORM_SUFFIX=_native
