@@ -385,45 +385,122 @@ Files data/sounds/ambience/morph/*
 Copyright: Copyright Slawek "Q009" Blauciak
 License: CC-BY-3.0
 
-Files: data/sounds/ambience/wind.ogg
-Copyright: Copyright Bahutan
-License: Creative Commons Sampling Plus 1.0 License
+Files: data/sounds/ambience/water.ogg
+Copyright: Copyright Paul Hertz ("ignotus")
+           <http://www.freesound.org/usersViewSingle.php?id=13366>
+License: CC-BY-SA
+Comment:
+ This sound originate a sample found at:
+ http://www.freesound.org/samplesViewSingle.php?id=14779
+ .
+ Special permission for relicensing under CC-BY-SA have been granted by the
+ author.
 
-Files: data/sounds/ambience/firelight.ogg
-Copyright: Copyright Slanesh
-License: Creative Commons Sampling Plus 1.0 License
+Files: data/sounds/ambience/wind.ogg
+Copyright: Copyright Batuhan Bozkurt
+           <http://www.freesound.org/usersViewSingle.php?id=60547>
+License: CC-BY-SA
+Comment:
+ This sound originate a sample found at:
+ http://www.freesound.org/samplesViewSingle.php?id=17735
+ .
+ Special permission for relicensing under CC-BY-SA have been granted by the
+ author.
 
 Files: data/sounds/ambience/hum.ogg
-Copyright: Copyright Therac 25
-License: Creative Commons Sampling Plus 1.0 License
+Copyright: Copyright 2006 Therac-25
+           <http://www.freesound.org/usersViewSingle.php?id=173825>
+License: CC-BY-SA
+Comment:
+ This sound originate from a sample found at:
+ http://www.freesound.org/samplesViewSingle.php?id=25322
+ .
+ Special permission for relicensing under CC-BY-SA have been granted by the
+ author.
 
-Files: data/sounds/ambience/nightcrickets.ogg data/sounds/ambience/creek.ogg
-Copyright: Copyright RHumphries
-License: Creative Commons Sampling Plus 1.0 License
+Files: data/sounds/ambience/river.ogg
+Copyright: Copyright 2005 Mike "Acclivity" of Freesound.org
+           <http://www.freesound.org/usersViewSingle.php?id=37876>
+License: CC-BY-SA
+Comment:
+ This sound originate from a sample found at:
+ http://www.freesound.org/samplesViewSingle.php?id=13553
+ .
+ Special permission for relicensing under CC-BY-SA have been granted by the
+ author.
 
-Files: data/sounds/ambience/forest* data/sounds/ambience/cycadas.ogg
-Copyright: Copyright dobroide
-License: Creative Commons Sampling Plus 1.0 License
-
-Files: data/sounds/ambience/river.ogg data/sounds/ambience/cavedrip.ogg
-Copyright: Copyright acclivity
-License: Creative Commons Sampling Plus 1.0 License
-
-Files: data/sounds/ambience/frogs.ogg data/sounds/ambience/forestflies.ogg
-Copyright: Copyright Sébastien "oyes"
-License: Creative Commons Sampling Plus 1.0 License
-
-Files: data/sounds/ambience/water.ogg
-Copyright: Copyright ignotus
-License: Creative Commons Sampling Plus 1.0 License
-
-Files: data/sounds/ambience/waterfall*
-Copyright: Copyright Corsica_S
-License: Creative Commons Sampling Plus 1.0 License
+Files: data/sounds/ambience/cavedrip.ogg
+Copyright: Copyright 2006 Mike "Acclivity" of Freesound.org
+           <http://www.freesound.org/usersViewSingle.php?id=37876>
+           Copyright 2006 Dob "dobroide" Roide
+           <http://www.freesound.org/usersViewSingle.php?id=8043>
+License: CC-BY-SA
+Comment:
+ This sound originate from samples found at:
+ http://www.freesound.org/samplesViewSingle.php?id=25879
+ http://www.freesound.org/samplesViewSingle.php?id=26266
+ .
+ Special permission for relicensing under CC-BY-SA have been granted by the
+ authors.
 
 Files: data/sounds/ambience/distant_cars.ogg
-Copyright: fresco, WIM
-License: Creative Commons Sampling Plus 1.0 License
+Copyright: Copyright 2006 fresco
+           <http://www.freesound.org/usersViewSingle.php?id=26333>
+           Copyright 2007 WIM
+           <http://www.freesound.org/usersViewSingle.php?id=22241>
+License: CC-BY
+Comment:
+ This sound originate from samples found at:
+ http://www.freesound.org/samplesViewSingle.php?id=34522
+ http://www.freesound.org/samplesViewSingle.php?id=34523
+ http://www.freesound.org/samplesViewSingle.php?id=26173
+ .
+ Special permission for relicensing under CC-BY have been granted by the
+ authors.
+
+Files: data/sounds/ambience/nightcrickets.ogg data/sounds/ambience/creek.ogg
+Copyright: Copyright 2005 Richard "RHumphries" Humphries
+           <http://www.freesound.org/usersViewSingle.php?id=1112>
+License: CC-BY-SA
+Comment:
+ These sounds originate from samples found at:
+ http://www.freesound.org/samplesViewSingle.php?id=1056
+ http://www.freesound.org/samplesViewSingle.php?id=7152
+ .
+ Special permission for relicensing under CC-BY-SA have been granted by the
+ author.
+
+Files: waterfall*.ogg
+Copyright: Copyright 2007 Tim "Corsica_S" Kahn
+           <http://www.freesound.org/usersViewSingle.php?id=7037>
+License: CC-BY-SA
+Comment:
+ These sounds originate from samples found at:
+ http://www.freesound.org/samplesViewSingle.php?id=28657
+ http://www.freesound.org/samplesViewSingle.php?id=28656
+ http://www.freesound.org/samplesViewSingle.php?id=28659
+ .
+ Special permission for relicensing under CC-BY-SA have been granted by the
+ author.
+
+Files: forest*.ogg cycadas.ogg
+Copyright: Copyright 2005, 2007 Dob "dobroide" Roide
+           <http://www.freesound.org/usersViewSingle.php?id=8043>
+License:
+ Provided that you mention (somewhere, somehow) that the original samples are
+ archived at freesound.org you are granted permission to modify/use, even
+ commercially. It's the only prerequisite I impose.
+ .
+ Furthermore, providing a link to the original samples at freesound may be
+ helpful to other developers, but this is just a personal opinion, not a
+ prerequisite.
+ .
+ The original samples are archived at freesound.org, specifically:
+ http://www.freesound.org/samplesViewSingle.php?id=34580
+ http://www.freesound.org/samplesViewSingle.php?id=7292
+Comment:
+ Special permission for relicensing under above license have been granted by
+ the author.
 
 Files: data/maps/darkness* data/maps/mist* data/maps/nova* data/maps/panic*
        data/maps/processing* data/maps/tranquility*
