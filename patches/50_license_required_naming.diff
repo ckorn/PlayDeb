@@ -1,0 +1,11 @@
+--- a/src/engine/engine.h
++++ b/src/engine/engine.h
+@@ -5,7 +5,7 @@
+ 
+ #define ENG_VERSION         110
+ #define ENG_NAME            "Red Eclipse"
+-#define ENG_RELEASE         "Supernova Edition"
++#define ENG_RELEASE         "Supernova Edition [arand-PPA Respin]"
+ #define ENG_URL             "www.redeclipse.net"
+ #ifdef WIN32
+ #define ENG_PLATFORM        "win"
