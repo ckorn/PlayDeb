@@ -1,0 +1,40 @@
+Redeclipse,
+enginge free, content mainly CC-licensed
+origin from bloodfrontier with a majority of content freeware-licensed
+
+Lead dev, quinton seems to agree with option 4.
+
+? Does it seem like a reasonable license in your eyes?
+
+? Any particular improvements you think of?
+
+? What kind of scope does the ""
+
+? Registration is unlikely in our case, is that something to take into consideration?
+
+? Are there any other examples you could point at for licenses of this kind?
+
+? Do you know anything of the trademark talks of gnome/sflc/debian? Should one wait for that?
+
+? Debian uses a rather restrictive version?
+
+
+Information given:
+
+http://www.softwarefreedom.org/resources/2008/foss-primer.html#x1-600005
+http://wiki.documentfoundation.org/TradeMark_Policy
+http://svncorp.org/legal/trademark-policy.html
+
+Recompression only clause is very ambiguous, may require relicensing, needs removal.
+
+"Substantially unmodified" is a useful buzzword.
+
+Preferable to use sections like:
+* permitted use
+* non-permitted use
+
+Separate trademark from copyright, maybe:
+Source code
+Object code
+Images, logos (Possibly merged with above)
+Trademark Policy (possibly in a separate document)
