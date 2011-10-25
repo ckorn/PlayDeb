@@ -8,6 +8,5 @@ do
 done
 
 RE_OPTIONS="-r"
-cd /usr/lib/games/redeclipse
+cd /usr/lib/games/redeclipse || exit 1
 exec ./reclient ${RE_OPTIONS} ${1+"$@"}
-# ${1+"$@"} is a portability hack, keyword "wrapper script"
