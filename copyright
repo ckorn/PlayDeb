@@ -6,7 +6,7 @@ Source: https://redeclipse.svn.sourceforge.net
  The folders src/include/ src/xcode/ src/lib/ src/site/ bin/ and the file
  data/fonts/akashi.ttf were all removed from the source.
  The header files here are already shipped within other Debian packages, or are
- unecessary on GNU/Linux, and the font is not distributable.
+ unnecessary on GNU/Linux, and the font is not distributable.
 Disclaimer:
  This package is not part of Debian due to its license, which is incompatibe
  with the Debian Free Software Guidelines (DFSG).
@@ -34,7 +34,7 @@ License:
    - New compiled binaries.
    - Removal of data not used for installation.
    - Reorganisation of files into install locations.
- * To use the name "Red Eclipse" and the Red Eclipse logo in conjuction with
+ * To use the name "Red Eclipse" and the Red Eclipse logo in conjunction with
    redistribution of these packages.
  * To modify the Red Eclipse logo for use in the client binary package, to
    supply menu icons.
@@ -381,7 +381,7 @@ Files: data/sounds/ambience/*
 Copyright: Copyright Quinton "quin" Reeves, Alex "blackshoe" Anguix
 License: CC-BY-SA-3.0
 
-Files data/sounds/ambience/morph/*
+Files: data/sounds/ambience/morph/*
 Copyright: Copyright Slawek "Q009" Blauciak
 License: CC-BY-3.0
 
