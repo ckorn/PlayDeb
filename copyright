@@ -274,6 +274,7 @@ Copyright: 2011 fluxord <fluxord> at <yahoo.com>
 License: CC-BY-SA-3.0
 
 Files: data/skyboxes/gradient* data/skyboxes/stars*
+Copyright: Quinton Reeves <qreeves@gmail.com>
 License: public-domain
  "gradient" by Quinton Reeves
      This set is in the public domain, it was created using the gradient fill
@@ -298,6 +299,7 @@ Files: data/particles/bullet.png data/particles/energy.png
        data/particles/entity.png data/particles/lightning.png
        data/particles/hint.png data/particles/mflare.png
        data/particles/sflare.png data/particles/spark.png
+Copyright: Quinton Reeves <qreeves@gmail.com>
 License: public-domain
  bullet.png, energy.png, scorch.png, blob.png
      Public domain sources
@@ -367,6 +369,7 @@ License: CC-BY-SA-3.0
 
 Files: data/textures/dead.png data/textures/dominated.png
        data/textures/dominating.png data/textures/flag.png
+Copyright: Quinton Reeves <qreeves@gmail.com>
 License: public-domain
  dead.png, dominated.png, dominating.png, flag.png
      Created from images located at http://www.openclipart.org/
