@@ -10,6 +10,6 @@
  install-server: server
 -	cp reserver ../bin/reserver$(PLATFORM_SUFFIX)
 +	install -D reserver ../bin/reserver$(PLATFORM_SUFFIX)
- endif
  
- install: install-client install-server
+ shared/cube2font.o: shared/cube2font.c
+ 	$(CXX) $(CXXFLAGS) -c -o $@ $< `freetype-config --cflags`
