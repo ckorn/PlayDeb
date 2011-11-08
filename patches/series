@@ -1,4 +1,5 @@
-10-fix-clean-target.diff
-20-build-with-debug-symbols.diff
-30-fix-install-target.diff
-50_license_required_naming.diff
+fix-clean-target.diff
+build-with-debug-symbols.diff
+fix-install-target.diff
+license-required-naming.diff
+windowed-by-default.diff
