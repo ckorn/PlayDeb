@@ -66,9 +66,9 @@ Description: data for the Red Eclipse FPS game
  etc. for Red Eclipse
 
 Package: redeclipse-cube2font
-Section: graphics
+Section: non-free/graphics
 Architecture: any
-Depends: ${shlib:Debends}, ${misc:Depends}
+Depends: ${shlib:Depends}, ${misc:Depends}
 Description: utility program for creating font bitmaps for Cube Engine games
  cube2font is a utility program designed to create font bitmaps for Cube
  Engine games, it works by taking a Truetype font and building it into a
