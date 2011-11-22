@@ -5,10 +5,10 @@
 	dh $@ --sourcedirectory=src
 
 override_dh_auto_clean:
+	dh_auto_clean
 	make -C src/enet/ distclean
 	rm -rf src/cube2font
 	rm -rf src/cube2font.o
-	dh_auto_clean
 
 override_dh_auto_build:
 	convert -resize 48x48 'src/redeclipse.ico[2]' debian/redeclipse.png
