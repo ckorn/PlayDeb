@@ -39,6 +39,20 @@ Description: server for the Red Eclipse FPS game
  .
  This package contains the dedicated server binaries for Red Eclipse
 
+Package: redeclipse-server-dbg
+Section: non-free/debug
+Priority: extra
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ redeclipse-server (= ${binary:Version})
+Description: debug symbols for the Red Eclipse dedicated server
+ A single-player and multi-player first-person ego-shooter, built as a
+ total conversion of Cube Engine 2, which lends itself toward a balanced
+ gameplay, with a general theme of agility in a variety of environments.
+ .
+ This package contains the debugging symbols for the Red Eclipse dedicated
+ server
+
 Package: redeclipse-data
 Architecture: all
 Depends: ${misc:Depends}
