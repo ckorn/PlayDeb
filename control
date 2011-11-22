@@ -15,8 +15,6 @@ Description: single-player and multi-player first-person ego-shooter
  A single-player and multi-player first-person ego-shooter, built as a
  total conversion of Cube Engine 2, which lends itself toward a balanced
  gameplay, with a general theme of agility in a variety of environments.
- .
- This version of Red Eclipse has been modified for Debian.
 
 Package: redeclipse-dbg
 Section: non-free/debug
@@ -27,8 +25,6 @@ Description: debug symbols for the Red Eclipse FPS game
  A single-player and multi-player first-person ego-shooter, built as a
  total conversion of Cube Engine 2, which lends itself toward a balanced
  gameplay, with a general theme of agility in a variety of environments.
- .
- This version of Red Eclipse has been modified for Debian.
  .
  This package contains the debugging symbols for Red Eclipse
 
@@ -41,8 +37,6 @@ Description: server for the Red Eclipse FPS game
  total conversion of Cube Engine 2, which lends itself toward a balanced
  gameplay, with a general theme of agility in a variety of environments.
  .
- This version of Red Eclipse has been modified for Debian.
- .
  This package contains the dedicated server binaries for Red Eclipse
 
 Package: redeclipse-data
@@ -54,7 +48,14 @@ Description: data for the Red Eclipse FPS game
  total conversion of Cube Engine 2, which lends itself toward a balanced
  gameplay, with a general theme of agility in a variety of environments.
  .
- This version of Red Eclipse has been modified for Debian.
- .
  This package contains the data content, e.g. maps, models, textures, sounds,
  etc. for Red Eclipse
+
+Package: redeclipse-cube2font
+Architecture: any
+Depends: ${misc:Depends}
+Description: utility program for creating font bitmaps for Cube Engine games
+ cube2font is a utility program designed to create font bitmaps for Cube
+ Engine games, it works by taking a Truetype font and building it into a
+ set of coordinates in an image. cube2font is an improved version of the
+ previous TTF2Font, supporting a much larger range of characters.
