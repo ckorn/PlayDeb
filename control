@@ -52,6 +52,7 @@ Description: data for the Red Eclipse FPS game
  etc. for Red Eclipse
 
 Package: redeclipse-cube2font
+Section: graphics
 Architecture: any
 Depends: ${shlib:Debends}, ${misc:Depends}
 Description: utility program for creating font bitmaps for Cube Engine games
