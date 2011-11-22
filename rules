@@ -8,7 +8,7 @@ export DH_OPTIONS
 override_dh_auto_build:
 	convert -resize 48x48 'src/redeclipse.ico[2]' debian/redeclipse.png
 	convert 'src/redeclipse.ico[1]' debian/redeclipse.xpm
-	dh_auto_build -- all
+	dh_auto_build -- client server cube2font
 
 override_dh_install:
 	dh_install --exclude="license.txt"
