@@ -1,6 +1,5 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
-export DH_OPTIONS
 
 %:
 	dh $@ --sourcedirectory=src
@@ -15,6 +14,7 @@ override_dh_install:
 
 override_dh_strip:
 	dh_strip -predeclipse --dbg-package=redeclipse-dbg
+	dh_strip -predeclipse-server --dbg-package=redeclipse-server-dbg
 	dh_strip
 
 URL=https://redeclipse.svn.sourceforge.net/svnroot/redeclipse
