@@ -1,0 +1,85 @@
+.TH CUBE2FONT 1 "2011-11-07" "" "cube2font Manual"
+.SH NAME
+cube2font \- Utility program designed to create font bitmaps for Cube Engine games
+.SH SYNOPSIS
+.B cube2font
+.I infile outfile border pad offset advance charwidth charheight texwidth texheight
+.SH DESCRIPTION
+cube2font is a utility program designed to create font bitmaps for Cube Engine games, it works by taking a Truetype font and building it into a set of coordinates in an image. cube2font is an improved version of the previous TTF2Font, supporting a much larger range of characters.
+.PP
+The program outputs one or more PNG images containing a grid of characters, so-called "texes", and an accompanying config file in plaintext, which lists the character coordinates in the images.
+.PP
+To use them in a cube game, it is convenient to generate them using e.g.
+.B data/fonts/fontname
+as the
+.I outfile
+parameter, and then change the font name in the resulting config file to just "fontname".
+.SH PARAMETERS
+.TP
+.I infile
+.br
+Path to input file in truetype format.
+.TP
+.I outfile
+Sets the output font name, and is also used as an output filename template: A number and the .png extension will be appended to the texes, and a .cfg extension to the coordinate file.
+.TP
+.I border
+.br
+Size of black border around each character, in pixels, on the texes.
+.TP
+.I pad
+.br
+Added padding around characters, in pixels, on the texes, to prevent them "bleeding" into neighbouring characters.
+.TP
+.I offset
+.br
+Added spacing to the left of each character, in pixels, when they are rendered ingame. If exaggerated it would look something like this:
+.br
+.IP
+|   A|   B|
+.TP
+.I advance
+.br
+Added spacing to the right of each character, in pixels, when they are rendered ingame. If exaggerated it would look something like this:
+.br
+.IP
+|A   |B   |
+.TP
+.I charwidth
+.br
+Width of generated characters on the texes.
+.TP
+.I charheight
+.br
+Height of generated characters on the texes.
+.TP
+.I texwidth
+.br
+Width of generated texes.
+.TP
+.I texheight
+.br
+Height of generated texes.
+.SH EXAMPLES
+.B cube2font default.ttf data/fonts/default 3 19 1 1 49 49 512 512
+.RS 4
+Generates a font with a 3 pixel black border, an additional 19 pixels of space around characters, one pixel of extra spacing at both sides when displayed ingame, a character size of 49x49 pixels, and a tex size of 512x512 pixels.
+.PP
+This would normally generate the files
+.br
+.B data/fonts/default.cfg
+.br
+.B data/fonts/default0.png
+.br
+.B data/fonts/default1.png
+.br
+.B data/fonts/default2.png
+.br
+and set the font name to "data/fonts/default" (which would need to be changed).
+.RE
+.SH AUTHORS
+cube2font was created by Lee "eihrul" Salzman.
+.PP
+This manual page was written by Martin Erik Werner
+.br
+<martinerikwerner@gmail.com>
