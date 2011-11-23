@@ -1,5 +1,8 @@
-redeclipse (1.01+svn2617-1) unstable; urgency=low
+redeclipse (1.2-1) unstable; urgency=low
 
   * Initial release (Closes: #626161)
+  * debian/patches/build-with-debug-symbols.patch: added
+  * debian/patches/windowed-by-default.patch: added
+  * added manual pages for redeclipse[-server] and cube2font
 
- -- Arand Nash <ienorand@gmail.com>  Tue, 22 Feb 2011 17:43:42 +0000
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Wed, 23 Nov 2011 02:30:06 +0100
