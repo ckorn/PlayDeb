@@ -378,7 +378,7 @@ License:
  The "akashi" typeface (available from http://www.tenbytwenty.com/akashi.php) is
  made available for free by the author.
 Comment: *.png files are generated from akashi.ttf using ttf2font
-         available from http://quadropolis.us/node/1375
+         available from https://github.com/ienorand/TTF2Font
 
 Files: data/textures/wait.png
 Copyright: Copyright 2008 Kaneiderdaniel
