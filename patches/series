@@ -1,3 +1,2 @@
-build-with-debug-symbols.diff
-license-required-naming.diff
-windowed-by-default.diff
+build-with-debug-symbols.patch
+windowed-by-default.patch
