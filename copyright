@@ -3,13 +3,14 @@ Upstream-Name: Red Eclipse
 Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
                   Lee "Eihrul" Salzman <lsalzman@gmail.com>
 Source: https://redeclipse.svn.sourceforge.net
- The folders src/include/ src/xcode/ src/lib/ src/site/ bin/ and the file
- data/fonts/akashi.ttf were all removed from the source.
+ The folders src/include/ src/xcode/ src/lib/ src/site/ bin/ were all removed
+ from the source.
  The header files here are already shipped within other Debian packages, or are
- unnecessary on GNU/Linux, and the font is not distributable.
+ unnecessary on GNU/Linux.
 Disclaimer:
- This package is not part of Debian due to its license, which is incompatibe
- with the Debian Free Software Guidelines (DFSG).
+ This package is not part of Debian due to some of the game data not being in
+ "the preferred format for modification" (e.g. pre-rendered music) which would
+ be required by the Debian Free Software Guidelines (DFSG).
 
 Files: *
 Copyright: Copyright (C) 2009-2011 Red Eclipse Team
@@ -358,6 +359,24 @@ License:
      * Wordpress themes may be edited and developed for individual use, but
        credit links must remain in place and adapted themes may not be
        reditributed.
+ .
+ Clarification:
+ .
+ I ("Arand") contacted Ed Merrit (of Ten by Twenty) via email, requesting a
+ clarification for the font license and received this response:
+
+ > Hi Arand,
+ >
+ > Basically, you can use the fonts for whatever you like, the only restriction
+   being that:
+ > If the font is a "paid" one, rather than a free one, you should not make the
+   .ttf file available to the public.
+ > Other than that I'm happy for you use the font however you like.
+ >
+ > Ed
+
+ The "akashi" typeface (available from http://www.tenbytwenty.com/akashi.php) is
+ made available for free by the author.
 Comment: *.png files are generated from akashi.ttf using ttf2font
          available from http://quadropolis.us/node/1375
 
