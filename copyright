@@ -3,28 +3,24 @@ Upstream-Name: Red Eclipse
 Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
                   Lee "Eihrul" Salzman <lsalzman@gmail.com>
 Source: https://redeclipse.svn.sourceforge.net
- The folders src/include/ src/xcode/ src/lib/ src/site/ bin/ were all removed
+ The folders src/include/ src/xcode/ src/lib/ bin/ were all removed
  from the source.
  The header files here are already shipped within other Debian packages, or are
  unnecessary on GNU/Linux.
 
-Files: *
-Copyright: Copyright 2009-2011 Red Eclipse Team
-License: CC-BY-SA-3.0
-
-Files: src/*
-Copyright: Copyright (C) 2009-2011 Quinton Reeves, Lee Salzman
-           Copyright (C) 2001-2011 Wouter van Oortmerssen, Lee Salzman,
+Files: * data/*.cfg data/examples/*
+Copyright: 2009-2011 Quinton Reeves, Lee Salzman
+           2001-2011 Wouter van Oortmerssen, Lee Salzman,
            Mike Dysart, Robert Pointon, and Quinton Reeves
 License: Zlib
 
 Files: src/enet/*
-Copyright: Copyright (c) 2002-2011 Lee Salzman
+Copyright: 2002-2011 Lee Salzman
 License: Expat
 
 Files: src/enet/aclocal.m4
-Copyright: Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004,
-           2005, 2006, 2007, 2008, 2009  Free Software Foundation, Inc.
+Copyright: 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006,
+           2007, 2008, 2009  Free Software Foundation, Inc.
 License:
  This file is free software; the Free Software Foundation
  gives unlimited permission to copy and/or distribute it,
@@ -37,8 +33,8 @@ License:
 
 Files: src/enet/config.guess src/enet/config.sub src/enet/depcomp
        src/enet/missing
-Copyright: Copyright (C) 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000,
-           2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
+Copyright: 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
+           2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
            Free Software Foundation, Inc.
 License: GPL-2+
  This file is free software; you can redistribute it and/or modify it
@@ -65,8 +61,8 @@ License: GPL-2+
  can be found in the file `/usr/share/common-licenses/GPL-2'.
 
 Files: src/enet/configure
-Copyright: Copyright (C) 1992, 1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001,
-           2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
+Copyright: 1992, 1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001, 2002, 2003,
+           2004, 2005, 2006, 2007, 2008, 2009, 2010
            Free Software Foundation, Inc.
 License: custom and GPL-2+
  This configure script is free software; the Free Software Foundation
@@ -100,7 +96,7 @@ License: custom and GPL-2+
  can be found in the file `/usr/share/common-licenses/GPL-2'.
 
 Files: src/enet/install-sh
-Copyright: Copyright (C) 1994 X Consortium
+Copyright: 1994 X Consortium
 License: custom and public-domain
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to
@@ -127,8 +123,8 @@ License: custom and public-domain
  FSF changes to this file are in the public domain.
 
 Files: src/enet/ltmain.sh
-Copyright: Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005,
-           2006, 2007 2008 Free Software Foundation, Inc.
+Copyright: 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007
+           2008 Free Software Foundation, Inc.
 License: GPL-2+
  This is free software; see the source for copying conditions.  There is NO
  warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -158,15 +154,15 @@ License: GPL-2+
  can be found in the file `/usr/share/common-licenses/GPL-2'.
 
 Files: src/enet/m4/*
-Copyright: Copyright (C) 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
+Copyright: 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
 License:
  This file is free software; the Free Software Foundation gives
  unlimited permission to copy and/or distribute it, with or without
  modifications, as long as this notice is preserved.
 
 Files: src/enet/m4/libtool.m4
-Copyright: Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005,
-           2006, 2007, 2008 Free Software Foundation, Inc.
+Copyright: 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007,
+           2008 Free Software Foundation, Inc.
 License: custom, GPL-2+
  This file is free software; the Free Software Foundation gives
  unlimited permission to copy and/or distribute it, with or without
@@ -200,9 +196,8 @@ License: custom, GPL-2+
  can be found in the file `/usr/share/common-licenses/GPL-2'.
 
 Files: src/enet/Makefile.in
-Copyright: Copyright (C) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
-           2003, 2004, 2005, 2006, 2007, 2008, 2009
-           Free Software Foundation, Inc.
+Copyright: 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004,
+           2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
 License:
  This Makefile.in is free software; the Free Software Foundation
  gives unlimited permission to copy and/or distribute it,
@@ -213,16 +208,20 @@ License:
  even the implied warranty of MERCHANTABILITY or FITNESS FOR A
  PARTICULAR PURPOSE.
 
+Files: data/*
+Copyright: 2009-2011 Red Eclipse Team
+License: CC-BY-SA-3.0
+
 Files: data/jwin/*
-Copyright: Copyright JWindecker <jacobwindecker@hotmail.com>
+Copyright: JWindecker <jacobwindecker@hotmail.com>
 License: CC-BY-3.0
 
 Files: data/appleflap/*
-Copyright: Copyright Jeroen "appleflap" Boukens
+Copyright: Jeroen "appleflap" Boukens
 License: CC-BY-SA-3.0
 
 Files: data/penguins/*
-Copyright: Copyright 2009 SkiingPenguins <skiing_penguins@yahoo.com>
+Copyright: 2009 SkiingPenguins <skiing_penguins@yahoo.com>
 License: CC-BY-SA-3.0
 
 Files: data/crosshairs/*
@@ -243,11 +242,11 @@ License: public-domain
      July 26th, 2008) which is Red Eclipse's birthday.
 
 Files: data/skyboxes/sunsetflat*
-Copyright: Copyright 2009 LedIris
+Copyright: 2009 LedIris
 License: Zlib
 
 Files: data/skyboxes/dusk01* data/skyboxes/skyhigh*
-Copyright: Copyright Pieter Verhoeven
+Copyright: Pieter Verhoeven
 License: CC-BY-SA-3.0
 
 Files: data/particles/bullet.png data/particles/energy.png
@@ -264,97 +263,64 @@ License: public-domain
      Created by Quinton Reeves, released into the public domain
 
 Files: data/particles/smoke.png data/particles/explosion.png
-Copyright: Copyright RaZgRiZ
+Copyright: RaZgRiZ
 License:
  Created by RaZgRiZ Made with Filter Forge II Beta 3
  Licensed publicly for everyone to use and modify as long as the author is
  credited for the original work.
 
 Files: data/particles/blood.png
-Copyright: Copyright FischKopF
+Copyright: FischKopF
 License:
  Created by FischKopF, source: http://www.quadropolis.us/node/2693
  "Feel free to edit, claim it's yours, use it in own projects"
 
 Files: data/trak/trak4/* data/trak/trak6/* data/trak/trak7/*
-Copyright: Copyright Georges 'TRaK' Grondin <drognin@gmail.com>
+Copyright: Georges 'TRaK' Grondin <drognin@gmail.com>
 License: CC-BY-3.0
 
 Files: data/trak/trak5/*
-Copyright: Copyright (c) 2009 Georges 'TRaK' Grondin
+Copyright: 2009 Georges 'TRaK' Grondin
            http://trak.mercenariesguild.net/
 License: Expat
 
 Files: data/models/weapons/plasma/* data/models/weapons/flamer/*
-Copyright: Copyright Mike Ledger ( mikeplus[i] )
+Copyright: Mike Ledger ( mikeplus[i] )
 License: CC-BY-SA-3.0
 
 Files: data/models/actors/turret/*
-Copyright: Copyright Mike Ledger ( mikeplus[i] )
+Copyright: Mike Ledger ( mikeplus[i] )
 License: CC-BY-SA-3.0
 
 Files: data/mayhem/*
-Copyright: Copyright Mayhem
+Copyright: Mayhem
 License: CC-BY-SA-3.0
 
-Files: data/fonts/akashi.ttf data/fonts/default.png data/fonts/emphasis.png
-       data/fonts/radar.png data/fonts/sub.png data/fonts/super.png
-Copyright: Copyright Ten by Twenty http://www.tenbytwenty.com/
-License:
- http://www.tenbytwenty.com/
- .
- License Agreement
- .
- By downloading any product from Ten by Twenty, you agree to the following:
- .
-     * All products remain property of Ten by Twenty.
-     * Products may be used by the licensee in any personal or commercial
-       projects (royalty-free).
-     * Products may not be resold or redistributed.
-     * Wordpress themes may be edited and developed for individual use, but
-       credit links must remain in place and adapted themes may not be
-       reditributed.
- .
- Clarification:
- .
- I ("Arand") contacted Ed Merrit (of Ten by Twenty) via email, requesting a
- clarification for the font license and received this response:
+Files: data/fonts/*.ttf
+Copyright: 2011, Jonas Hecksher, Playtypes, e-types AS (e-types.com)
+License: OFL-1.1
+Comment:
+ Reserved Font Names "Play", "Playtype", "Playtype Sans".
 
- > Hi Arand,
- >
- > Basically, you can use the fonts for whatever you like, the only restriction
-   being that:
- > If the font is a "paid" one, rather than a free one, you should not make the
-   .ttf file available to the public.
- > Other than that I'm happy for you use the font however you like.
- >
- > Ed
+Files: data/fonts/*.png
+Copyright: 2011, Jonas Hecksher, Playtypes, e-types AS (e-types.com)
+           2011, Red Eclipse Team
+License: OFL-1.1
+Comment:
+ Reserved Font Names "Play", "Playtype", "Playtype Sans".
 
- The "akashi" typeface (available from http://www.tenbytwenty.com/akashi.php) is
- made available for free by the author.
-Comment: *.png files are generated from akashi.ttf using ttf2font
-         available from https://github.com/ienorand/TTF2Font
-
-Files: data/textures/wait.png
-Copyright: Copyright 2008 Kaneiderdaniel
-           (http://commons.wikimedia.org/wiki/User:Kaneiderdaniel)
-           Copyright (C) 2010 Red Eclipse Team
-License: CC-BY-SA-3.0
-
-Files: data/textures/dead.png data/textures/dominated.png
-       data/textures/dominating.png data/textures/flag.png
-Copyright: Quinton Reeves <qreeves@gmail.com>
-License: public-domain
- dead.png, dominated.png, dominating.png, flag.png
-     Created from images located at http://www.openclipart.org/
-     Released as Public Domain Royalty Free Clipart
-
-Files: data/textures/zoom.png
-Copyright: Copyright Theso <johniwas@gmail.com>
-License:
- Created by Theso (johniwas@gmail.com),
- http://www.quadropolis.us/node/2680
- Use it however you wish, but credit would be greatly appreciated.
+Files: src/site/bits/redeclipse-large.png src/site/bits/redeclipse-regular.png
+       src/site/bits/redeclipse-small.png src/site/bits/relogo*
+       src/site/bits/sprite.png src/site/bits/wallpaper*
+       data/textures/bloodbath.png data/textures/carnage.png
+       data/textures/critical.png data/textures/dominate.png
+       data/textures/firstblood.png data/textures/headshot.png
+       data/textures/logo.png data/textures/massacre.png data/textures/multi.png
+       data/textures/revenge.png data/textures/slaughter.png
+       data/textures/triple.png
+Copyright: Ed Merrit, Ten by Twenty, <http://www.tenbytwenty.com/>
+           2011, Red Eclipse Team
+License: Akashi-Font and CC-BY-SA-3.0
 
 Files: data/textures/lava.jpg
 Copyright: RaZgRiZ
@@ -364,20 +330,20 @@ License:
  is credited for the original work.
 
 Files: data/torley/*
-Copyright: Copyright 2007-2008 Torley Linden
-           Copyright 2010 Red Eclipse Team
+Copyright: 2007-2008 Torley Linden
+           2010 Red Eclipse Team
 License: CC-BY-3.0
 
 Files: data/sounds/ambience/*
-Copyright: Copyright Quinton "quin" Reeves, Alex "blackshoe" Anguix
+Copyright: Quinton "quin" Reeves, Alex "blackshoe" Anguix
 License: CC-BY-SA-3.0
 
 Files: data/sounds/ambience/morph/*
-Copyright: Copyright Slawek "Q009" Blauciak
+Copyright: Slawek "Q009" Blauciak
 License: CC-BY-3.0
 
 Files: data/sounds/ambience/water.ogg
-Copyright: Copyright Paul Hertz ("ignotus")
+Copyright: Paul Hertz ("ignotus")
            <http://www.freesound.org/usersViewSingle.php?id=13366>
 License: CC-BY-SA-3.0
 Comment:
@@ -388,7 +354,7 @@ Comment:
  author.
 
 Files: data/sounds/ambience/wind.ogg
-Copyright: Copyright Batuhan Bozkurt
+Copyright: Batuhan Bozkurt
            <http://www.freesound.org/usersViewSingle.php?id=60547>
 License: CC-BY-SA-3.0
 Comment:
@@ -399,7 +365,7 @@ Comment:
  author.
 
 Files: data/sounds/ambience/hum.ogg
-Copyright: Copyright 2006 Therac-25
+Copyright: 2006 Therac-25
            <http://www.freesound.org/usersViewSingle.php?id=173825>
 License: CC-BY-SA-3.0
 Comment:
@@ -410,7 +376,7 @@ Comment:
  author.
 
 Files: data/sounds/ambience/river.ogg
-Copyright: Copyright 2005 Mike "Acclivity" of Freesound.org
+Copyright: 2005 Mike "Acclivity" of Freesound.org
            <http://www.freesound.org/usersViewSingle.php?id=37876>
 License: CC-BY-SA-3.0
 Comment:
@@ -421,9 +387,9 @@ Comment:
  author.
 
 Files: data/sounds/ambience/cavedrip.ogg
-Copyright: Copyright 2006 Mike "Acclivity" of Freesound.org
+Copyright: 2006 Mike "Acclivity" of Freesound.org
            <http://www.freesound.org/usersViewSingle.php?id=37876>
-           Copyright 2006 Dob "dobroide" Roide
+           2006 Dob "dobroide" Roide
            <http://www.freesound.org/usersViewSingle.php?id=8043>
 License: CC-BY-SA-3.0
 Comment:
@@ -435,9 +401,9 @@ Comment:
  authors.
 
 Files: data/sounds/ambience/distant_cars.ogg
-Copyright: Copyright 2006 fresco
+Copyright: 2006 fresco
            <http://www.freesound.org/usersViewSingle.php?id=26333>
-           Copyright 2007 WIM
+           2007 WIM
            <http://www.freesound.org/usersViewSingle.php?id=22241>
 License: CC-BY-3.0
 Comment:
@@ -450,7 +416,7 @@ Comment:
  authors.
 
 Files: data/sounds/ambience/nightcrickets.ogg data/sounds/ambience/creek.ogg
-Copyright: Copyright 2005 Richard "RHumphries" Humphries
+Copyright: 2005 Richard "RHumphries" Humphries
            <http://www.freesound.org/usersViewSingle.php?id=1112>
 License: CC-BY-SA-3.0
 Comment:
@@ -462,7 +428,7 @@ Comment:
  author.
 
 Files: waterfall*.ogg
-Copyright: Copyright 2007 Tim "Corsica_S" Kahn
+Copyright: 2007 Tim "Corsica_S" Kahn
            <http://www.freesound.org/usersViewSingle.php?id=7037>
 License: CC-BY-SA-3.0
 Comment:
@@ -475,7 +441,7 @@ Comment:
  author.
 
 Files: forest*.ogg cycadas.ogg
-Copyright: Copyright 2005, 2007 Dob "dobroide" Roide
+Copyright: 2005, 2007 Dob "dobroide" Roide
            <http://www.freesound.org/usersViewSingle.php?id=8043>
 License:
  Provided that you mention (somewhere, somehow) that the original samples are
@@ -495,12 +461,12 @@ Comment:
 
 Files: data/maps/darkness* data/maps/mist* data/maps/nova* data/maps/panic*
        data/maps/processing* data/maps/tranquility*
-Copyright: Copyright (C) 2009-2011 Derek Ponicki
-           Copyright (C) 2010-2011 Derek Ponicki
+Copyright:  2009-2011 Derek Ponicki
+            2010-2011 Derek Ponicki
 License: Zlib
 
 Files: debian/*
-Copyright: Copyright (C) 2011 Arand Nash <ienorand@gmail.com>
+Copyright: 2011 Martin Erik Werner <martinerikwerner@gmail.com>
 License: Zlib
 
 License: Zlib
@@ -541,6 +507,127 @@ License: Expat
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  DEALINGS IN THE SOFTWARE.
+
+License: Akashi-Font
+ http://www.tenbytwenty.com/
+ .
+ License Agreement
+ .
+ By downloading any product from Ten by Twenty, you agree to the following:
+ .
+     * All products remain property of Ten by Twenty.
+     * Products may be used by the licensee in any personal or commercial
+       projects (royalty-free).
+     * Products may not be resold or redistributed.
+     * Wordpress themes may be edited and developed for individual use, but
+       credit links must remain in place and adapted themes may not be
+       reditributed.
+ .
+ Clarification:
+ .
+ I ("Arand") contacted Ed Merrit (of Ten by Twenty) via email, requesting a
+ clarification for the font license and received this response:
+
+ > Hi Arand,
+ >
+ > Basically, you can use the fonts for whatever you like, the only restriction
+   being that:
+ > If the font is a "paid" one, rather than a free one, you should not make the
+   .ttf file available to the public.
+ > Other than that I'm happy for you use the font however you like.
+ >
+ > Ed
+
+ The "akashi" typeface (available from http://www.tenbytwenty.com/akashi.php) is
+ made available for free by the author.
+
+License: OFL-1.1
+ -----------------------------------------------------------
+ SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+ -----------------------------------------------------------
+ .
+ PREAMBLE
+ The goals of the Open Font License (OFL) are to stimulate worldwide
+ development of collaborative font projects, to support the font creation
+ efforts of academic and linguistic communities, and to provide a free and
+ open framework in which fonts may be shared and improved in partnership
+ with others.
+ .
+ The OFL allows the licensed fonts to be used, studied, modified and
+ redistributed freely as long as they are not sold by themselves. The
+ fonts, including any derivative works, can be bundled, embedded, 
+ redistributed and/or sold with any software provided that any reserved
+ names are not used by derivative works. The fonts and derivatives,
+ however, cannot be released under any other type of license. The
+ requirement for fonts to remain under this license does not apply
+ to any document created using the fonts or their derivatives.
+ .
+ DEFINITIONS
+ "Font Software" refers to the set of files released by the Copyright
+ Holder(s) under this license and clearly marked as such. This may
+ include source files, build scripts and documentation.
+ .
+ "Reserved Font Name" refers to any names specified as such after the
+ copyright statement(s).
+ .
+ "Original Version" refers to the collection of Font Software components as
+ distributed by the Copyright Holder(s).
+ .
+ "Modified Version" refers to any derivative made by adding to, deleting,
+ or substituting -- in part or in whole -- any of the components of the
+ Original Version, by changing formats or by porting the Font Software to a
+ new environment.
+ .
+ "Author" refers to any designer, engineer, programmer, technical
+ writer or other person who contributed to the Font Software.
+ .
+ PERMISSION & CONDITIONS
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of the Font Software, to use, study, copy, merge, embed, modify,
+ redistribute, and sell modified and unmodified copies of the Font
+ Software, subject to the following conditions:
+ .
+ 1) Neither the Font Software nor any of its individual components,
+ in Original or Modified Versions, may be sold by itself.
+ .
+ 2) Original or Modified Versions of the Font Software may be bundled,
+ redistributed and/or sold with any software, provided that each copy
+ contains the above copyright notice and this license. These can be
+ included either as stand-alone text files, human-readable headers or
+ in the appropriate machine-readable metadata fields within text or
+ binary files as long as those fields can be easily viewed by the user.
+ .
+ 3) No Modified Version of the Font Software may use the Reserved Font
+ Name(s) unless explicit written permission is granted by the corresponding
+ Copyright Holder. This restriction only applies to the primary font name as
+ presented to the users.
+ .
+ 4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+ Software shall not be used to promote, endorse or advertise any
+ Modified Version, except to acknowledge the contribution(s) of the
+ Copyright Holder(s) and the Author(s) or with their explicit written
+ permission.
+ .
+ 5) The Font Software, modified or unmodified, in part or in whole,
+ must be distributed entirely under this license, and must not be
+ distributed under any other license. The requirement for fonts to
+ remain under this license does not apply to any document created
+ using the Font Software.
+ .
+ TERMINATION
+ This license becomes null and void if any of the above conditions are
+ not met.
+ .
+ DISCLAIMER
+ THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+ OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+ COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+ DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 License: CC-BY-3.0
  THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
