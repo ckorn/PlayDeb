@@ -1,4 +1,4 @@
 bin/reclient_native
 bin/reserver_native
 src/cube2font
-src/cube2font.o
+src/shared/cube2font.o
