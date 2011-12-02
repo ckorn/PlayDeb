@@ -1,5 +1,4 @@
 #!/usr/bin/make -f
-# -*- makefile -*-
 
 %:
 	dh $@ --sourcedirectory=src
@@ -8,12 +7,8 @@ override_dh_auto_clean:
 	dh_auto_clean
 	make -C src clean-enet
 	make -C src/enet/ distclean
-	rm -rf src/cube2font
-	rm -rf src/cube2font.o
 
 override_dh_auto_build:
-	convert -resize 48x48 'src/redeclipse.ico[2]' debian/redeclipse.png
-	convert 'src/redeclipse.ico[1]' debian/redeclipse.xpm
 	dh_auto_build -- client server cube2font
 
 override_dh_strip:
@@ -22,6 +17,18 @@ override_dh_strip:
 	dh_strip
 
 override_dh_install:
+	convert 'src/redeclipse.ico[0]' \
+		debian/redeclipse/usr/share/icons/hicolor/16x16/redeclipse.png
+	convert 'src/redeclipse.ico[1]' \
+		debian/redeclipse/usr/share/icons/hicolor/32x32/redeclipse.png
+	convert 'src/redeclipse.ico[1]' \
+		debian/redeclipse /usr/share/pixmaps/redeclipse.xpm
+	convert -resize 48x48 'src/redeclipse.ico[2]' \
+		debian/redeclipse/usr/share/icons/hicolor/48x48/redeclipse.png
+	convert 'src/redeclipse.ico[2]' \
+		debian/redeclipse/usr/share/icons/hicolor/64x64/redeclipse.png
+	convert 'src/redeclipse.ico[3]' \
+		debian/redeclipse/usr/share/icons/hicolor/128x128/redeclipse.png
 	dh_install --exclude="license.txt"
 
 URL=https://redeclipse.svn.sourceforge.net/svnroot/redeclipse
