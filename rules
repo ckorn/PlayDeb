@@ -10,10 +10,10 @@ override_dh_auto_clean:
 
 override_dh_auto_build:
 	install -d debian/tmp/usr/share/icons/hicolor/16x16/apps \
-			debian/tmp/usr/share/icons/hicolor/32x32/apps
-			debian/tmp/usr/share/icons/hicolor/48x48/apps
-			debian/tmp/usr/share/icons/hicolor/64x64/apps
-			debian/tmp/usr/share/icons/hicolor/128x128/apps
+			debian/tmp/usr/share/icons/hicolor/32x32/apps \
+			debian/tmp/usr/share/icons/hicolor/48x48/apps \
+			debian/tmp/usr/share/icons/hicolor/64x64/apps \
+			debian/tmp/usr/share/icons/hicolor/128x128/apps \
 			debian/tmp/usr/share/pixmaps
 	convert 'src/redeclipse.ico[0]' \
 		debian/tmp/usr/share/icons/hicolor/16x16/apps/redeclipse.png
