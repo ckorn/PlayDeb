@@ -9,6 +9,7 @@ override_dh_auto_clean:
 	make -C src/enet/ distclean
 
 override_dh_auto_build:
+	dh_auto_build -- client server cube2font
 	install -d debian/tmp/usr/share/icons/hicolor/16x16/apps \
 			debian/tmp/usr/share/icons/hicolor/32x32/apps \
 			debian/tmp/usr/share/icons/hicolor/48x48/apps \
@@ -27,7 +28,6 @@ override_dh_auto_build:
 		debian/tmp/usr/share/icons/hicolor/64x64/apps/redeclipse.png
 	convert 'src/redeclipse.ico[3]' \
 		debian/tmp/usr/share/icons/hicolor/128x128/apps/redeclipse.png
-	dh_auto_build -- client server cube2font
 
 override_dh_strip:
 	dh_strip -predeclipse --dbg-package=redeclipse-dbg
