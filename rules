@@ -9,6 +9,18 @@ override_dh_auto_clean:
 	make -C src/enet/ distclean
 
 override_dh_auto_build:
+	convert 'src/redeclipse.ico[0]' \
+		debian/tmp/usr/share/icons/hicolor/16x16/apps/redeclipse.png
+	convert 'src/redeclipse.ico[1]' \
+		debian/tmp/usr/share/icons/hicolor/32x32/apps/redeclipse.png
+	convert 'src/redeclipse.ico[1]' \
+		debian/tmp/usr/share/pixmaps/redeclipse.xpm
+	convert -resize 48x48 'src/redeclipse.ico[2]' \
+		debian/tmp/usr/share/icons/hicolor/48x48/apps/redeclipse.png
+	convert 'src/redeclipse.ico[2]' \
+		debian/tmp/usr/share/icons/hicolor/64x64/apps/redeclipse.png
+	convert 'src/redeclipse.ico[3]' \
+		debian/tmp/usr/share/icons/hicolor/128x128/apps/redeclipse.png
 	dh_auto_build -- client server cube2font
 
 override_dh_strip:
@@ -17,18 +29,6 @@ override_dh_strip:
 	dh_strip
 
 override_dh_install:
-	convert 'src/redeclipse.ico[0]' \
-		debian/redeclipse/usr/share/icons/hicolor/16x16/redeclipse.png
-	convert 'src/redeclipse.ico[1]' \
-		debian/redeclipse/usr/share/icons/hicolor/32x32/redeclipse.png
-	convert 'src/redeclipse.ico[1]' \
-		debian/redeclipse/usr/share/pixmaps/redeclipse.xpm
-	convert -resize 48x48 'src/redeclipse.ico[2]' \
-		debian/redeclipse/usr/share/icons/hicolor/48x48/redeclipse.png
-	convert 'src/redeclipse.ico[2]' \
-		debian/redeclipse/usr/share/icons/hicolor/64x64/redeclipse.png
-	convert 'src/redeclipse.ico[3]' \
-		debian/redeclipse/usr/share/icons/hicolor/128x128/redeclipse.png
 	dh_install --exclude="license.txt"
 
 URL=https://redeclipse.svn.sourceforge.net/svnroot/redeclipse
