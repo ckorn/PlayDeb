@@ -22,7 +22,7 @@ override_dh_install:
 	convert 'src/redeclipse.ico[1]' \
 		debian/redeclipse/usr/share/icons/hicolor/32x32/redeclipse.png
 	convert 'src/redeclipse.ico[1]' \
-		debian/redeclipse /usr/share/pixmaps/redeclipse.xpm
+		debian/redeclipse/usr/share/pixmaps/redeclipse.xpm
 	convert -resize 48x48 'src/redeclipse.ico[2]' \
 		debian/redeclipse/usr/share/icons/hicolor/48x48/redeclipse.png
 	convert 'src/redeclipse.ico[2]' \
