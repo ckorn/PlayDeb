@@ -31,7 +31,6 @@ Description: debug symbols for the Red Eclipse FPS game
 Package: redeclipse-server
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: redeclipse
 Description: server for the Red Eclipse FPS game
  A single-player and multi-player first-person ego-shooter, built as a
  total conversion of Cube Engine 2, which lends itself toward a balanced
@@ -56,7 +55,7 @@ Description: debug symbols for the Red Eclipse dedicated server
 Package: redeclipse-data
 Architecture: all
 Depends: ${misc:Depends}
-Enhances: redeclipse, redeclipse-server
+Enhances: redeclipse-server
 Description: data for the Red Eclipse FPS game
  A single-player and multi-player first-person ego-shooter, built as a
  total conversion of Cube Engine 2, which lends itself toward a balanced
