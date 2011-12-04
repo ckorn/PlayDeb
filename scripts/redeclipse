@@ -9,4 +9,4 @@ done
 
 RE_OPTIONS="-r"
 cd /usr/lib/games/redeclipse || exit 1
-exec ./reclient ${RE_OPTIONS} ${1+"$@"}
+exec ./redeclipse ${RE_OPTIONS} ${1+"$@"}

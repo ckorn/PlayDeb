@@ -38,6 +38,10 @@ override_dh_prep:
 	dh_prep --exclude=debian/tmp
 
 override_dh_install:
+	install -D bin/reclient_native \
+			debian/tmp/usr/lib/games/redeclipse/redeclipse
+	install -D bin/reserver_native \
+			debian/tmp/usr/lib/games/redeclipse/redeclipse-server
 	dh_install --exclude="license.txt"
 
 URL=https://redeclipse.svn.sourceforge.net/svnroot/redeclipse
