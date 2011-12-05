@@ -1,2 +1,3 @@
-build-with-debug-symbols.patch
 windowed-by-default.patch
+build-with-debug-symbols.patch
+fix-install-target.patch
