@@ -44,21 +44,23 @@ override_dh_install:
 			debian/tmp/usr/lib/games/redeclipse/redeclipse-server
 	dh_install --exclude="license.txt"
 
-URL=https://redeclipse.svn.sourceforge.net/svnroot/redeclipse
-REV=$(shell dpkg-parsechangelog | sed -rne 's,^Version: .*[+~]svn([0-9]+).*,\1,p')
-VER=$(shell dpkg-parsechangelog | sed -rne 's,^Version: ([^-]+).*,\1,p')
+overrride_dh_builddeb:
+	dh_builddeb -Zxz
+
+VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
 DIR=redeclipse-$(VER).orig
-TARBALL=redeclipse_$(VER).orig.tar.gz
+TAR=redeclipse_$(VER).orig.tar.xz
 get-orig-source:
+	uscan --noconf --force-download --download-current-version --destdir=.
 	rm -rf $(DIR)
-	svn -q export -r $(REV) $(URL) $(DIR)
-	cd $(DIR)
+	tar -xf redeclipse_$(VER).orig.tar.bz2
+	mv redeclipse/ $(DIR)
 	rm -rf $(DIR)/src/include/
 	rm -rf $(DIR)/src/xcode/
 	rm -rf $(DIR)/src/lib/
 	rm -rf $(DIR)/src/site/
 	rm -rf $(DIR)/bin/
-	rm -f $(DIR)/data/fonts/akashi.ttf
-	GZIP=--best tar -cz --owner root --group root --mode a+rX \
-		-f $(TARBALL) $(DIR)
+	find $(DIR)/data/ -mindepth 1 -not -wholename "*examples*" -delete
+	XZ_OPT=-9 tar -cJ --owner root --group root --mode a+rX \
+		-f $(TAR) $(DIR)
 	rm -rf $(DIR)
