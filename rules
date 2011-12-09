@@ -5,8 +5,7 @@
 
 override_dh_auto_clean:
 	dh_auto_clean
-	make -C src clean-enet
-	make -C src/enet/ distclean
+	dh_auto_clean --sourcedirectory=src/enet
 
 override_dh_auto_build:
 	dh_auto_build -- client server cube2font
