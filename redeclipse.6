@@ -1,26 +1,4 @@
-.ig
-This manual page is Copyright (C) 2011 Arand Nash <ienorand@gmail.com>
-It is released under the MIT Expat License:
-
- Permission is hereby granted, free of charge, to any person obtaining a
- copy of this software and associated documentation files (the "Software"),
- to deal in the Software without restriction, including without limitation
- the rights to use, copy, modify, merge, publish, distribute, sublicense,
- and/or sell copies of the Software, and to permit persons to whom the
- Software is furnished to do so, subject to the following conditions:
- .
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
- .
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- DEALINGS IN THE SOFTWARE.
-..
-.TH REDECLIPSE 6
+.TH REDECLIPSE 6 2011-12-10 "Red Eclipse 1.2" "Red Eclipse Manual"
 .SH NAME
 redeclipse \- script to launch the Red Eclipse FPS game client
 .SH SYNOPSIS
@@ -86,8 +64,6 @@ redeclipse \- script to launch the Red Eclipse FPS game client
 .B \-\-help
 ]
 .SH DESCRIPTION
-This version of Red Eclipse has been modified for Debian.
-.PP
 Red Eclipse is a single-player and multi-player first-person ego-shooter, built as a total conversion of Cube Engine 2, which lends itself toward a balanced gameplay, with a general theme of agility in a variety of environments.
 .PP
 .B redeclipse
@@ -101,28 +77,31 @@ The recommended way to change the settings of the client are to edit the
 .I config.cfg
 and
 .I init.cfg
-files. Examples are available in
-.IR /usr/share/games/redeclipse/data/examples/
+files in the home directory. Examples are available in
+.IR /usr/share/doc/redeclipse/examples/
 .PP
-The redeclipse client starts a local loopback server upon launch which it uses to connect to, hence many of the server options are accepted by the redeclipse binary as well, to edit the specific settings related to the loopback server, use the
+The redeclipse client starts a local loopback server upon launch which it uses to connect to for singleplayer, hence many of the server options are accepted by the redeclipse binary as well (see
+.BR redeclipse-server (6)).
+To edit the specific settings related to the loopback server, use the
 .I localexec.cfg
 and
-.IR localinit.cfg .
+.I localinit.cfg
+files in the home directory.
 .SH CAVEATS:
-Many of these options will, if used, be permanently saved in the init.cfg.
+Many of these options will, if used, be permanently saved in the init.cfg file.
 .SH OPTIONS
 .TP
 .BI \-dw width
 Sets screen width to
 .IR width .
-If height not specified, also sets height to width * 3/4. min is 320.
+If height not specified, also sets height to 3/4 of width. min is 320.
 .IP
 This configuration is stored in init.cfg
 .TP
 .BI \-dh height
 Sets screen height to
 .IR height .
-If width not specified, also sets width to height * 4/3. min is 320.
+If width not specified, also sets width to 4/3 of height. min is 320.
 .IP
 This configuration is stored in init.cfg
 .TP
@@ -167,31 +146,33 @@ Set shader quality. 0 for none, 1 for shaders with fastest quality, max is 3. De
 This configuration is stored in init.cfg
 .TP
 .BR \-k {0|1}
-Enables or disables kid mode, which reduces blood and death effects somewhat. 0 to disable, 1 to enable.
+Enables or disables kid mode, which reduces blood and death effects somewhat. 1 enables reduced gore, defaults to 0.
 .TP
 .BI \-h homedir
 Sets your home directory to
 .IR homedir .
-If set, the engine will look for files in your home directory as well as the normal installation directory. However, all files will be written to your home directory, instead of the normal installation directory. Defaults to $HOME/.redeclipse/
+Red Eclipse will look for files in this directory in addition the normal installation directory. All user files will be written to the home directory. Defaults to $HOME/.redeclipse/
 .TP
 .BI \-p packagedir
 Includes the data files found in
 .IR packagedir .
-Can be used for adding additional mods. Packages will be loaded in the order specified. By default redeclipse only inludes data files in
-.I /usr/share/games/redeclipse/data/
-and in the current working directory.
+Can be used for adding additional mods. Packages will be loaded in the order specified. By default redeclipse only inludes data files in its working directory
+.IR /usr/share/games/redeclipse/data/ ,
+and in the
+.I temp
+subdirectory of the home directory.
 .TP
 .BR \-v {0..4}
-Sets verbosity. This affects how much information is printed to the console. 0 is the least verbose, 4 is the most verbose.
+Sets verbosity. This affects how much information is printed to the console. 0 is the least verbose, 4 is the most verbose, defaults to 0.
 .IP
 This configuration is stored in init.cfg
 .TP
 .BI \-r scriptname
-Executes the specified init script before OpenGL and various libraries are initialized. If no file specified, executes init.cfg.
+Executes the specified init script before OpenGL and various libraries are initialized. If no file specified, executes init.cfg in the home directory.
 .TP
 .BI \-x "\(dqcommand 1; command 2; ...\(dq"
 .
-Executes a list of commands once the engine has started up and initialized the game.
+Executes a list of commands once Red Eclipse has started up.
 .TP
 .BI \-o sauerdir
 Sets the path to your Sauerbraten directory. If Red Eclipse can find your Sauerbraten directory, you can load and play Sauerbraten maps from withing Red Eclipse.
@@ -228,7 +209,7 @@ Sets game mode to time trial, trialmode weapon to empty hands, and starts a game
 .SH AUTHORS
 Red Eclipse's main developers are Quinton "quin" Reeves and Lee "eihrul" Salzman
 .PP
-This manpage was written by Arand Nash <ienorand@gmail.com>
+This manual page was written by Martin Erik Werner <martinerikwerner@gmail.com> for the Debian project (and may be used by others).
 .SH HISTORY
 Red Eclipse was forked as a continuation of the game Bloodfrontier, which in turn was based on the Cube2 engine and the Sauerbraten game. Red Eclipse and Sauerbraten are now developed in parallel.
 .SH "SEE ALSO"
