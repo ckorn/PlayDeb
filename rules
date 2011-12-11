@@ -8,7 +8,7 @@ override_dh_auto_clean:
 	dh_auto_clean --sourcedirectory=src/enet
 
 override_dh_auto_build:
-	dh_auto_build -- client server cube2font
+	dh_auto_build -- client server
 	install -d debian/tmp/usr/share/icons/hicolor/16x16/apps \
 			debian/tmp/usr/share/icons/hicolor/32x32/apps \
 			debian/tmp/usr/share/icons/hicolor/48x48/apps \
