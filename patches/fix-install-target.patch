@@ -1,3 +1,10 @@
+Description: Fail-safe install target
+ The standard install target fails if the bin/ directory does not exist, using
+ install instead of cp makes sure it is created before copying.
+Forwarded: https://sourceforge.net/apps/trac/redeclipse/ticket/75
+Author: Martin Erik Werner <martinerikwerner@gmail.com>
+Last-Update: 2011-12-13
+
 --- a/src/Makefile
 +++ b/src/Makefile
 @@ -170,10 +170,10 @@

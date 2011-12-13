@@ -1,3 +1,12 @@
+Description: Start in windowed mode by default
+ Debian Games team has a preference for games starting in windoed mode, since
+ fullscreen SDL will capture all keyboard input and make the user unable to
+ escape via alt-tab, change volume, or exit sanely in the case of the
+ application locking up.
+Forwarded: not-needed
+Author: Martin Erik Werner <martinerikwerner@gmail.com>
+Last-Update: 2011-12-13
+
 --- a/src/engine/main.cpp
 +++ b/src/engine/main.cpp
 @@ -245,7 +245,7 @@

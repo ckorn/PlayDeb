@@ -1,3 +1,10 @@
+Description: Build with debug symbols
+ In order to create -dbg packages on Debian we need to build with the debug
+ flag.
+Forwarded: not-needed
+Author: Martin Erik Werner <martinerikwerner@gmail.com>
+Last-Update: 2011-12-13
+
 --- a/src/Makefile
 +++ b/src/Makefile
 @@ -1,5 +1,5 @@
