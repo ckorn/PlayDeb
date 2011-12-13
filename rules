@@ -1,65 +1,26 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@ --sourcedirectory=src
-
-override_dh_auto_clean:
-	dh_auto_clean
-	dh_auto_clean --sourcedirectory=src/enet
-
-override_dh_auto_build:
-	dh_auto_build -- client server
-	install -d debian/tmp/usr/share/icons/hicolor/16x16/apps \
-			debian/tmp/usr/share/icons/hicolor/32x32/apps \
-			debian/tmp/usr/share/icons/hicolor/48x48/apps \
-			debian/tmp/usr/share/icons/hicolor/64x64/apps \
-			debian/tmp/usr/share/icons/hicolor/128x128/apps \
-			debian/tmp/usr/share/pixmaps
-	convert 'src/redeclipse.ico[0]' \
-		debian/tmp/usr/share/icons/hicolor/16x16/apps/redeclipse.png
-	convert 'src/redeclipse.ico[1]' \
-		debian/tmp/usr/share/icons/hicolor/32x32/apps/redeclipse.png
-	convert 'src/redeclipse.ico[1]' \
-		debian/tmp/usr/share/pixmaps/redeclipse.xpm
-	convert -resize 48x48 'src/redeclipse.ico[2]' \
-		debian/tmp/usr/share/icons/hicolor/48x48/apps/redeclipse.png
-	convert 'src/redeclipse.ico[2]' \
-		debian/tmp/usr/share/icons/hicolor/64x64/apps/redeclipse.png
-	convert 'src/redeclipse.ico[3]' \
-		debian/tmp/usr/share/icons/hicolor/128x128/apps/redeclipse.png
-
-override_dh_strip:
-	dh_strip -predeclipse --dbg-package=redeclipse-dbg
-	dh_strip -predeclipse-server --dbg-package=redeclipse-server-dbg
-	dh_strip
-
-override_dh_prep:
-	dh_prep --exclude=debian/tmp
+	dh $@
 
 override_dh_install:
-	install -D bin/reclient_native \
-			debian/tmp/usr/lib/games/redeclipse/redeclipse
-	install -D bin/reserver_native \
-			debian/tmp/usr/lib/games/redeclipse/redeclipse-server
 	dh_install --exclude="license.txt"
 
 overrride_dh_builddeb:
 	dh_builddeb -Zxz
 
 VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
-DIR=redeclipse-$(VER).orig
-TAR=redeclipse_$(VER).orig.tar.xz
+DIR=redeclipse-data-$(VER).orig
+TAR=redeclipse-data_$(VER).orig.tar.xz
 get-orig-source:
 	uscan --noconf --force-download --download-current-version --destdir=.
 	rm -rf $(DIR)
-	tar -xf redeclipse_$(VER).orig.tar.bz2
+	tar -xf redeclipse-data_$(VER).orig.tar.bz2
 	mv redeclipse/ $(DIR)
-	rm -rf $(DIR)/src/include/
-	rm -rf $(DIR)/src/xcode/
-	rm -rf $(DIR)/src/lib/
-	rm -rf $(DIR)/src/site/
 	rm -rf $(DIR)/bin/
-	find $(DIR)/data/ -mindepth 1 -not -wholename "*examples*" -delete
+	rm -f redeclipse.sh server.sh redeclipse-bst server.bat
+	rm -rf $(DIR)/data/examples/
+	find $(DIR)/src -mindepth 1 -not -wholename "*site*" -delete
 	XZ_OPT=-9 tar -cJ --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
 	rm -rf $(DIR)

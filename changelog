@@ -1,11 +1,6 @@
-redeclipse (1.2-1) unstable; urgency=low
+redeclipse-data (1.2-1) unstable; urgency=low
 
   * Initial release (Closes: #626161)
-  * debian/patches/:
-    - windowed-by-default.patch: added
-    - build-with-debug-symbols.patch: added
-    - fix-install-target.patch: added
   * Build-depends on separate cube2font and fonts-play
-  * Added manual pages for redeclipse[-server]
 
- -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 11 Dec 2011 23:09:24 +0100
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 13 Dec 2011 14:23:04 +0100
