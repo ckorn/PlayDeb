@@ -32,7 +32,9 @@ get-orig-source:
 	rm -rf $(DIR)/bin/
 	cd $(DIR) && rm -f redeclipse.sh server.sh redeclipse-bst server.bat
 	rm -rf $(DIR)/data/examples/
-	rm -f $(DIR)/data/fonts/large* $(DIR)/data/fonts/small*
+	rm -f $(DIR)/data/fonts/large*
+	rm -f $(DIR)/data/fonts/small*
+	rm -f $(DIR)/data/fonts/*.ttf
 	find $(DIR)/src -mindepth 1 -not -wholename "*site*" -delete
 	XZ_OPT=-9 tar -cJ --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
