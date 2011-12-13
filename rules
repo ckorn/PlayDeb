@@ -3,6 +3,17 @@
 %:
 	dh $@
 
+override_dh_build:
+	install -d debian/tmp/usr/share/games/redeclipse-data/data/fonts/
+	cd debian/tmp/usr/share/games/redeclipse-data/data/fonts/ && \
+		cube2font /usr/share/fonts/truetype/fonts-play/Play-Bold.ttf \
+			small 3 15 1 1 40 40 512 512 0 0 fonts/ \
+		cube2font /usr/share/fonts/truetype/fonts-play/Play-Bold.ttf \
+			large 3 14 1 1 56 56 512 512 0 0 fonts/
+
+override_dh_prep:
+	dh_prep --exclude=debian/tmp
+
 override_dh_install:
 	dh_install --exclude="license.txt"
 
@@ -20,6 +31,7 @@ get-orig-source:
 	rm -rf $(DIR)/bin/
 	rm -f redeclipse.sh server.sh redeclipse-bst server.bat
 	rm -rf $(DIR)/data/examples/
+	rm -f $(DIR)/data/fonts/large* $(DIR)/data/fonts/small*
 	find $(DIR)/src -mindepth 1 -not -wholename "*site*" -delete
 	XZ_OPT=-9 tar -cJ --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
