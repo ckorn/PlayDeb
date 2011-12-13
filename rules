@@ -6,9 +6,9 @@
 override_dh_auto_build:
 	install -d debian/tmp/usr/share/games/redeclipse-data/data/fonts/
 	cd debian/tmp/usr/share/games/redeclipse-data/data/fonts/ && \
-		cube2font /usr/share/fonts/truetype/fonts-play/Play-Bold.ttf \
+		cube2font /usr/share/fonts/truetype/play/Play-Bold.ttf \
 			small 3 15 1 1 40 40 512 512 0 0 fonts/ \
-		cube2font /usr/share/fonts/truetype/fonts-play/Play-Bold.ttf \
+		cube2font /usr/share/fonts/truetype/play/Play-Bold.ttf \
 			large 3 14 1 1 56 56 512 512 0 0 fonts/
 	dh_auto_build
 
