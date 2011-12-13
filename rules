@@ -41,7 +41,7 @@ override_dh_install:
 			debian/tmp/usr/lib/games/redeclipse/redeclipse
 	install -D bin/reserver_native \
 			debian/tmp/usr/lib/games/redeclipse/redeclipse-server
-	dh_install --exclude="license.txt"
+	dh_install
 
 overrride_dh_builddeb:
 	dh_builddeb -Zxz

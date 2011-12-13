@@ -22,21 +22,14 @@ Priority: extra
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, redeclipse (= ${binary:Version})
 Description: debug symbols for the Red Eclipse FPS game
- A single-player and multi-player first-person ego-shooter, built as a
- total conversion of Cube Engine 2, which lends itself toward a balanced
- gameplay, with a general theme of agility in a variety of environments.
- .
- This package contains the debugging symbols for Red Eclipse
+ This package contains the debugging symbols for the Red Eclipse FPS game.
 
 Package: redeclipse-server
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: server for the Red Eclipse FPS game
- A single-player and multi-player first-person ego-shooter, built as a
- total conversion of Cube Engine 2, which lends itself toward a balanced
- gameplay, with a general theme of agility in a variety of environments.
- .
- This package contains the dedicated server binaries for Red Eclipse
+ This package contains the dedicated server binaries for the Red Eclipse FPS
+ game.
 
 Package: redeclipse-server-dbg
 Section: debug
@@ -45,21 +38,5 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
  redeclipse-server (= ${binary:Version})
 Description: debug symbols for the Red Eclipse dedicated server
- A single-player and multi-player first-person ego-shooter, built as a
- total conversion of Cube Engine 2, which lends itself toward a balanced
- gameplay, with a general theme of agility in a variety of environments.
- .
- This package contains the debugging symbols for the Red Eclipse dedicated
- server
-
-Package: redeclipse-data
-Architecture: all
-Depends: ${misc:Depends}
-Enhances: redeclipse-server
-Description: data for the Red Eclipse FPS game
- A single-player and multi-player first-person ego-shooter, built as a
- total conversion of Cube Engine 2, which lends itself toward a balanced
- gameplay, with a general theme of agility in a variety of environments.
- .
- This package contains the data content, e.g. maps, models, textures, sounds,
- etc. for Red Eclipse
+ This package contains the debugging symbols for the dedicated server of the
+ Red Eclipse FPS game.
