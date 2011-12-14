@@ -3,20 +3,22 @@ Description: Fail-safe install target
  install instead of cp makes sure it is created before copying.
 Forwarded: https://sourceforge.net/apps/trac/redeclipse/ticket/75
 Author: Martin Erik Werner <martinerikwerner@gmail.com>
-Last-Update: 2011-12-13
+Last-Update: 2011-12-14
 
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -170,10 +170,10 @@
+@@ -171,10 +171,12 @@
  endif
  
  install-client: client
 -	cp reclient ../bin/reclient$(PLATFORM_SUFFIX)
-+	install -D reclient ../bin/reclient$(PLATFORM_SUFFIX)
++	install -d ../bin
++	install -m 755 reclient ../bin/reclient$(PLATFORM_SUFFIX)
  
  install-server: server
 -	cp reserver ../bin/reserver$(PLATFORM_SUFFIX)
-+	install -D reserver ../bin/reserver$(PLATFORM_SUFFIX)
++	install -d ../bin
++	install -m 755 reserver ../bin/reserver$(PLATFORM_SUFFIX)
  
  shared/cube2font.o: shared/cube2font.c
  	$(CXX) $(CXXFLAGS) -c -o $@ $< `freetype-config --cflags`

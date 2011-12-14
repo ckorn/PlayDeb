@@ -9,7 +9,7 @@ Last-Update: 2011-12-13
 
 --- a/src/engine/main.cpp
 +++ b/src/engine/main.cpp
-@@ -245,7 +245,7 @@
+@@ -246,7 +246,7 @@
  #endif
  }
  
