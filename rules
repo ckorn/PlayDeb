@@ -44,7 +44,7 @@ override_dh_install:
 	dh_install
 
 overrride_dh_builddeb:
-	dh_builddeb -Zxz
+	dh_builddeb -- -Zxz
 
 VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
 DIR=redeclipse-$(VER).orig
