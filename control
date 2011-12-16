@@ -28,8 +28,9 @@ Package: redeclipse-server
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: server for the Red Eclipse FPS game
- This package contains the dedicated server binaries for the Red Eclipse FPS
- game.
+ This package contains the dedicated server for the Red Eclipse FPS game, it
+ also includes some example scripts for configuring the server. It contains no
+ init integration.
 
 Package: redeclipse-server-dbg
 Section: debug
