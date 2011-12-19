@@ -58,6 +58,7 @@ get-orig-source:
 	rm -rf $(DIR)/src/xcode/
 	rm -rf $(DIR)/src/lib/
 	rm -rf $(DIR)/src/site/
+	rm -rf $(DIR)/src/install/win/
 	rm -rf $(DIR)/bin/
 	find $(DIR)/data/ -mindepth 1 -not -wholename "*examples*" -delete
 	XZ_OPT=-9 tar -cJ --owner root --group root --mode a+rX \
