@@ -1,0 +1,163 @@
+From e15c93c32fac6a0a5103c629fbebe5b83f8c9169 Mon Sep 17 00:00:00 2001
+From: Martin Erik Werner <martinerikwerner@gmail.com>
+Date: Mon, 19 Dec 2011 18:19:06 +0100
+Subject: [PATCH] Adapt manpages
+
+Adapt manpages to the way the scripts and paths are set up in Debian
+---
+ src/install/nix/redeclipse-server.6 |   26 +++++++++++++++-----------
+ src/install/nix/redeclipse.6        |   35 ++++++++++++++++++++---------------
+ 2 files changed, 35 insertions(+), 26 deletions(-)
+
+diff --git a/src/install/nix/redeclipse-server.6 b/src/install/nix/redeclipse-server.6
+index cea5517..ad8216a 100644
+--- a/src/install/nix/redeclipse-server.6
++++ b/src/install/nix/redeclipse-server.6
+@@ -1,8 +1,8 @@
+ .TH REDECLIPSE-SERVER 6 2011-12-10 "Red Eclipse 1.2" "Red Eclipse Manual"
+ .SH NAME
+-server.sh \- script to launch the server for the Red Eclipse FPS game
++redeclipse-server \- script to launch the server for the Red Eclipse FPS game
+ .SH SYNOPSIS
+-.B ./server.sh
++.B redeclipse-server
+ [
+ .BI \-h homedir
+ ]
+@@ -54,13 +54,15 @@ server.sh \- script to launch the server for the Red Eclipse FPS game
+ .SH DESCRIPTION
+ Red Eclipse is a single-player and multi-player first-person ego-shooter, built as a total conversion of Cube Engine 2, which lends itself toward a balanced gameplay, with a general theme of agility in a variety of environments.
+ .PP
+-.B server.sh
+-is a script which executes the Red Eclipse dedicated server located in the
+-.I bin
+-subdirectory (relative to the location of server.sh) It will accept any additional options.
++.B redeclipse-server
++is a script which executes
++.BR redeclipse-server
++from the
++.I /usr/lib/games/redeclipse
++directory, it will accept any additional options.
+ .PP
+-The recommended way to change the settings of the server is to create and edit the files servexec.cfg and servinit.cfg files in your home directory. Examples are available in the directory
+-.IR data/examples
++The recommended way to change the settings of the server is to create and edit the files servexec.cfg and servinit.cfg files in your home directory. Examples are available in
++.IR /usr/share/doc/redeclipse/examples/
+ .SH OPTIONS
+ .TP
+ .BI \-h homedir
+@@ -71,7 +73,9 @@ This is where servinit.cfg and servexec.cfg are read from, it defaults to $HOME/
+ .BI \-p packagedir
+ Includes the data files found in
+ .IR packagedir .
+-Can be used for adding additional mods. Packages will be loaded in the order specified. By default redeclipse-server only inludes data files in the working directory and in the subdirecory
++Can be used for adding additional mods. Packages will be loaded in the order specified. By default redeclipse-server only inludes data files in the working directory
++.I /usr/share/games/redeclipse/data
++and in the subdirecory
+ .I temp
+ of the home directory.
+ .TP
+@@ -138,11 +142,11 @@ Users must know the password before they can connect.
+ .B \-\-help
+ Display this manpage
+ .SH EXAMPLES
+-.B ./server.sh -p$HOME/mod/data -ss0 -slbath -sPpass
++.B redeclipse-server -p$HOME/mod/data -ss0 -slbath -sPpass
+ .RS 4
+ Loads data from an additional directory, sets the server type to local (LAN), sets the default map to "bath" and sets the admin password to "pass"
+ .RE
+-.B ./server.sh -h$HOME/redeclipse-server_configs/
++.B redeclipse-server -h$HOME/redeclipse-server_configs/
+ .RS 4
+ Reads and writes the configuration files to the specified directory instead of $HOME/.redeclipse/
+ .RE
+diff --git a/src/install/nix/redeclipse.6 b/src/install/nix/redeclipse.6
+index 873c33b..daa4620 100644
+--- a/src/install/nix/redeclipse.6
++++ b/src/install/nix/redeclipse.6
+@@ -1,8 +1,8 @@
+ .TH REDECLIPSE 6 2011-12-10 "Red Eclipse 1.2" "Red Eclipse Manual"
+ .SH NAME
+-redeclipse.sh \- script to launch the Red Eclipse FPS game client
++redeclipse \- script to launch the Red Eclipse FPS game client
+ .SH SYNOPSIS
+-.B ./redeclipse.sh
++.B redeclipse
+ [
+ .BI \-dw width
+ ]
+@@ -66,12 +66,12 @@ redeclipse.sh \- script to launch the Red Eclipse FPS game client
+ .SH DESCRIPTION
+ Red Eclipse is a single-player and multi-player first-person ego-shooter, built as a total conversion of Cube Engine 2, which lends itself toward a balanced gameplay, with a general theme of agility in a variety of environments.
+ .PP
+-.B redeclipse.sh
+-is a script which executes the Red Eclipse binary located in the
+-.I bin
+-subdirectory (relative to the location of redelipse.sh)
+-.br
+-It passes the "\-r" option to the client binary by default, and accepts any additional arguments
++.B redeclipse
++is a script which executes
++.BR redeclipse
++from the
++.I /usr/lib/games/redeclipse
++directory using the "\-r" option, it will accept any additional options.
+ .PP
+ The recommended way to change the settings of the client are to edit the
+ .I config.cfg
+@@ -79,14 +79,14 @@ and
+ .I init.cfg
+ files in the home directory.
+ .PP
+-The Red Eclipse client starts a local loopback server upon launch which it uses to connect to for singleplayer, hence many of the server options are accepted by the reclient binary as well (see
+-.BR server (6)).
++The redeclipse client starts a local loopback server upon launch which it uses to connect to for singleplayer, hence many of the server options are accepted by the redeclipse binary as well (see
++.BR redeclipse-server (6)).
+ To edit the specific settings related to the loopback server, use the
+ .I localexec.cfg
+ and
+ .I localinit.cfg
+ files in the home directory.
+-.SH CAVEATS:
++.SH CAVEATS
+ Many of these options will, if used, be permanently saved in the init.cfg file.
+ .SH OPTIONS
+ .TP
+@@ -155,7 +155,9 @@ Red Eclipse will look for files in this directory in addition the normal install
+ .BI \-p packagedir
+ Includes the data files found in
+ .IR packagedir .
+-Can be used for adding additional mods. Packages will be loaded in the order specified. By default redeclipse only inludes data files in its working directory and in the
++Can be used for adding additional mods. Packages will be loaded in the order specified. By default redeclipse only inludes data files in its working directory
++.IR /usr/share/games/redeclipse/data/ ,
++and in the
+ .I temp
+ subdirectory of the home directory.
+ .TP
+@@ -186,17 +188,20 @@ Contacts the master server using port
+ .BI \-g logfile
+ Output log to
+ .IR logfile .
++.TP
++.B \-\-help
++Display this manpage
+ .SH EXAMPLES
+ .PP
+-.B ./redeclipse.sh -p$HOME/mod/data
++.B redeclipse -p$HOME/mod/data
+ .RS 4
+ Load data from an additional directory.
+ .RE
+-.B ./redeclipse.sh -h$HOME/redeclipse_configs/
++.B redeclipse -h$HOME/redeclipse_configs/
+ .RS 4
+ Reads and writes the configuration files to the specified directory instead of $HOME/.redeclipse/
+ .RE
+-.B ./redeclipse.sh -x"mode 7; trialweapon 0; map hinder"
++.B redeclipse -x"mode 7; trialweapon 0; map hinder"
+ .RS 4
+ Sets game mode to time trial, trialmode weapon to empty hands, and starts a game on the map "hinder".
+ .RE
+-- 
+1.7.7.3
+

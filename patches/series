@@ -1,2 +1,3 @@
 windowed-by-default.patch
 build-with-debug-symbols.patch
+adapt-manpages.patch
