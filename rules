@@ -48,7 +48,7 @@ overrride_dh_builddeb:
 
 VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
 DIR=redeclipse-$(VER).orig
-TAR=redeclipse_$(VER).orig.tar.xz
+TAR=redeclipse_$(VER).orig.tar.bz2
 get-orig-source:
 	uscan --noconf --force-download --download-current-version --destdir=.
 	rm -rf $(DIR)
@@ -61,6 +61,6 @@ get-orig-source:
 	rm -rf $(DIR)/src/install/win/
 	rm -rf $(DIR)/bin/
 	find $(DIR)/data/ -mindepth 1 -not -wholename "*examples*" -delete
-	XZ_OPT=-9 tar -cJ --owner root --group root --mode a+rX \
+	BZIP2="-9" tar -cj --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
 	rm -rf $(DIR)
