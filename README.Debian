@@ -1,7 +1,6 @@
 redeclipse for Debian
 ---------------------
 
-
 Debugging:
 
  Client:
@@ -21,3 +20,5 @@ Debugging:
  Then run "gdb ./redeclipse-server" and type "run" at the gdb prompt.
  Once the redeclipse server has crashed, type "bt" to obtain the backtrace.
  Please attach the output when you are reporting a bug about crashes.
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 20 Dec 2011 18:13:13 +0100

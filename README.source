@@ -14,3 +14,5 @@ Reason for not using stand-alone Enet:
 The developer of Enet and co-developer of Red Eclipse, Lee "eihrul" Salzman, has
 strongly stated that Red Eclipse should NOT use a stand-alone Enet since it is a
 part of the game engine; it differs from the stand-alone Enet.
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 20 Dec 2011 18:11:57 +0100
