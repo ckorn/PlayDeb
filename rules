@@ -23,7 +23,7 @@ overrride_dh_builddeb:
 
 VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
 DIR=redeclipse-data-$(VER).orig
-TAR=redeclipse-data_$(VER).orig.tar.xz
+TAR=redeclipse-data_$(VER).orig.tar.bz2
 get-orig-source:
 	uscan --noconf --force-download --download-current-version --destdir=.
 	rm -rf $(DIR)
@@ -36,6 +36,6 @@ get-orig-source:
 	rm -f $(DIR)/data/fonts/small*
 	rm -f $(DIR)/data/fonts/*.ttf
 	find $(DIR)/src -mindepth 1 -not -wholename "*site*" -delete
-	XZ_OPT=-9 tar -cJ --owner root --group root --mode a+rX \
+	BZIP2="-9" tar -cj --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
 	rm -rf $(DIR)
