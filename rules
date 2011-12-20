@@ -25,12 +25,12 @@ VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
 DIR=redeclipse-data-$(VER).orig
 TAR=redeclipse-data_$(VER).orig.tar.xz
 get-orig-source:
-	uscan --noconf --force-download --download-current-version --destdir=.
+#	uscan --noconf --force-download --download-current-version --destdir=.
 	rm -rf $(DIR)
 	tar -xf redeclipse-data_$(VER).orig.tar.bz2
 	mv redeclipse/ $(DIR)
 	rm -rf $(DIR)/bin/
-	cd $(DIR) && rm -f redeclipse.sh server.sh redeclipse-bst server.bat
+	cd $(DIR) && rm -f redeclipse.sh server.sh redeclipse.bat server.bat
 	rm -rf $(DIR)/data/examples/
 	rm -f $(DIR)/data/fonts/large*
 	rm -f $(DIR)/data/fonts/small*

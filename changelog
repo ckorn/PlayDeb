@@ -1,6 +1,6 @@
-redeclipse-data (1.2-1) unstable; urgency=low
+redeclipse-data (1.2~review-1) UNRELEASED; urgency=low
 
   * Initial release (Closes: #651752)
   * Build-depends on separate cube2font and fonts-play
 
- -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 13 Dec 2011 15:48:42 +0100
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 20 Dec 2011 18:24:47 +0100
