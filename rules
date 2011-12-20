@@ -36,6 +36,14 @@ get-orig-source:
 	rm -f $(DIR)/data/fonts/small*
 	rm -f $(DIR)/data/fonts/*.ttf
 	find $(DIR)/src -mindepth 1 -not -wholename "*site*" -delete
+	# CGTextures license is questionable,
+	# these textures are currently not in use anyways
+	rm -f $(DIR)/data/trak/trak4/kitchen*
+	cd $(DIR)/data/trak/trak4 && \
+		ln -s plaster3.jpg kitchen.jpg; \
+		ln -s plaster3.jpg kitchen1.jpg; \
+		ln -s plaster3_nm.jpg kitchen_nm.jpg; \
+		ln -s plaster3_s.jpg kitchen_s.jpg
 	BZIP2="-9" tar -cj --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
 	rm -rf $(DIR)
