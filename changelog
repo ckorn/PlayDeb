@@ -4,7 +4,6 @@ redeclipse (1.2-1) unstable; urgency=low
   * debian/patches/:
     - windowed-by-default.patch: added
     - build-with-debug-symbols.patch: added
-    - fix-install-target.patch: added
   * Added manual pages for redeclipse[-server]
 
- -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 11 Dec 2011 23:09:24 +0100
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 20 Dec 2011 18:15:30 +0100
