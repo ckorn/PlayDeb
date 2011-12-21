@@ -52,7 +52,8 @@ TAR=redeclipse_$(VER).orig.tar.bz2
 get-orig-source:
 	uscan --noconf --force-download --download-current-version --destdir=.
 	rm -rf $(DIR)
-	tar -xf redeclipse_$(VER).orig.tar.bz2
+	tar -xf $(TAR)
+	rm -f $(TAR)
 	mv redeclipse/ $(DIR)
 	rm -rf $(DIR)/src/include/
 	rm -rf $(DIR)/src/xcode/
