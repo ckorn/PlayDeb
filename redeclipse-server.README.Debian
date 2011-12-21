@@ -1,0 +1,13 @@
+redeclipse for Debian
+---------------------
+
+Debugging:
+ If the redeclipse server crashes on your system, please install the
+ redeclipse-server-dbg package to generate a backtrace of the crash.
+ To generate a backtrace open a terminal and change to the directory
+ /usr/lib/games/redeclipse using the command "cd /usr/lib/games/redeclipse".
+ Then run "gdb ./redeclipse-server" and type "run" at the gdb prompt.
+ Once the redeclipse server has crashed, type "bt" to obtain the backtrace.
+ Please attach the output when you are reporting a bug about crashes.
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Wed, 21 Dec 2011 12:05:18 +0100
