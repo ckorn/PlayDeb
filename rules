@@ -27,7 +27,8 @@ TAR=redeclipse-data_$(VER).orig.tar.bz2
 get-orig-source:
 	uscan --noconf --force-download --download-current-version --destdir=.
 	rm -rf $(DIR)
-	tar -xf redeclipse-data_$(VER).orig.tar.bz2
+	tar -xf $(TAR)
+	rm -f $(TAR)
 	mv redeclipse/ $(DIR)
 	rm -rf $(DIR)/bin/
 	cd $(DIR) && rm -f redeclipse.sh server.sh redeclipse.bat server.bat
@@ -35,7 +36,7 @@ get-orig-source:
 	rm -f $(DIR)/data/fonts/large*
 	rm -f $(DIR)/data/fonts/small*
 	rm -f $(DIR)/data/fonts/*.ttf
-	find $(DIR)/src -mindepth 1 -not -wholename "*site*" -delete
+	rm -rf (DIR)/src/
 	# CGTextures license is questionable,
 	# these textures are currently not in use anyways
 	rm -f $(DIR)/data/trak/trak4/kitchen*
