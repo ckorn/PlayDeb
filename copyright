@@ -11,10 +11,10 @@ License: Red-Eclipse
  Red Eclipse is based on Cube Engine 2, both of which are covered under the ZLIB
  license, you may use the source code so long as you obey this license.
  .
-     Red Eclipse, Copyright (C) 2009-2011 Quinton Reeves, Lee Salzman 
+     Red Eclipse, Copyright (C) 2009-2011 Quinton Reeves, Lee Salzman
      Cube Engine 2, Copyright (C) 2001-2011 Wouter van Oortmerssen, Lee Salzman,
          Mike Dysart, Robert Pointon, and Quinton Reeves
-     http://www.opensource.org/licenses/zlib-license.php 
+     http://www.opensource.org/licenses/zlib-license.php
  .
  This software is provided 'as-is', without any express or implied warranty.
  In no event will the authors be held liable for any damages arising from
@@ -28,7 +28,7 @@ License: Red-Eclipse
          appreciated but is not required.
      * Altered source versions must be plainly marked as such, and must not be
          misrepresented as being the original software.
-     * This notice may not be removed or altered from any source distribution. 
+     * This notice may not be removed or altered from any source distribution.
  .
  The license covers the source code, shells scripts, and related config files.
  The included enet network library is covered by an MIT-style license, which
@@ -62,17 +62,6 @@ Copyright: 2011, The Document Foundation
            2006, 2007, 2008, Software Freedom Law Center, Inc.
            2011, the Red Eclipse Team
 License: CC-BY-SA-3.0
-
-Files: src/site/bits/redeclipse-large.png src/site/bits/redeclipse-regular.png
-       src/site/bits/redeclipse-small.png src/site/bits/relogo*
-       src/site/bits/sprite.png src/site/bits/wallpaper*
-Copyright: Ed Merrit, Ten by Twenty, <http://www.tenbytwenty.com/>
-           2011, Red Eclipse Team
-License: Akashi-Font and CC-BY-SA-3.0 and Mark-Policy
-
-Files: src/site/bits/emblem.jpg src/site/bits/emicon.png src/site/bits/favicon.*
-Copyright: 2011, Red Eclipse Team
-License: CC-BY-SA-3.0 and Mark-Policy
 
 Files: data/*.cfg
 Copyright: 2009-2011 Quinton Reeves, Lee Salzman
@@ -427,7 +416,7 @@ License: OFL-1.1
  .
  The OFL allows the licensed fonts to be used, studied, modified and
  redistributed freely as long as they are not sold by themselves. The
- fonts, including any derivative works, can be bundled, embedded, 
+ fonts, including any derivative works, can be bundled, embedded,
  redistributed and/or sold with any software provided that any reserved
  names are not used by derivative works. The fonts and derivatives,
  however, cannot be released under any other type of license. The
