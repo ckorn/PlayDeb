@@ -1,9 +1,9 @@
-usr/lib/games/redeclipse/redeclipse
-debian/scripts/redeclipse usr/games
 debian/redeclipse.desktop usr/share/applications
+debian/scripts/redeclipse usr/games
+usr/lib/games/redeclipse/redeclipse
+usr/share/icons/hicolor/128x128/apps/redeclipse.png
 usr/share/icons/hicolor/16x16/apps/redeclipse.png
 usr/share/icons/hicolor/32x32/apps/redeclipse.png
-usr/share/pixmaps/redeclipse.xpm
 usr/share/icons/hicolor/48x48/apps/redeclipse.png
 usr/share/icons/hicolor/64x64/apps/redeclipse.png
-usr/share/icons/hicolor/128x128/apps/redeclipse.png
+usr/share/pixmaps/redeclipse.xpm
