@@ -49,6 +49,9 @@ License: Red-Eclipse
  .
  The use of trademarks unique to the Red Eclipse project are in addition
  governed by the Red Eclipse Mark Policy (see trademark.txt).
+Disclaimer:
+ This package is not part of Debian due to missing "sources" for artwork, audio,
+ models, etc.
 
 Files: *
 Copyright: 2009-2011 Red Eclipse Team
