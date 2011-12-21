@@ -1,5 +1,5 @@
 Source: redeclipse
-Section: games
+Section: contrib/games
 Priority: optional
 Uploaders: Martin Erik Werner <martinerikwerner@gmail.com>
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
@@ -17,7 +17,7 @@ Description: single-player and multi-player first-person ego-shooter
  gameplay, with a general theme of agility in a variety of environments.
 
 Package: redeclipse-dbg
-Section: debug
+Section: contrib/debug
 Priority: extra
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, redeclipse (= ${binary:Version})
@@ -33,7 +33,7 @@ Description: server for the Red Eclipse FPS game
  init integration.
 
 Package: redeclipse-server-dbg
-Section: debug
+Section: contrib/debug
 Priority: extra
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
