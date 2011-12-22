@@ -5,6 +5,11 @@ Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
 Source: https://redeclipse.svn.sourceforge.net
  All sourcecode-related items have been removed from the source package, they
  are shipped in the redeclipse source package instead.
+ .
+ In addition, the files data/trak/trak4/kitchen* have been replaced with links
+ to the corresponding files data/trak/trak4/plaster3*, since they use source
+ material from CGtextures, whose license and terms of use are extremely iffy,
+ these textures are currently not in use in the game.
 License: Red-Eclipse
  THE RED ECLIPSE LICENSE
  .
