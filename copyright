@@ -308,21 +308,11 @@ Comment:
 Files: forest*.ogg cycadas.ogg
 Copyright: 2005, 2007 Dob "dobroide" Roide
            <http://www.freesound.org/usersViewSingle.php?id=8043>
-License:
- Provided that you mention (somewhere, somehow) that the original samples are
- archived at freesound.org you are granted permission to modify/use, even
- commercially. It's the only prerequisite I impose.
- .
- Furthermore, providing a link to the original samples at freesound may be
- helpful to other developers, but this is just a personal opinion, not a
- prerequisite.
- .
- The original samples are archived at freesound.org, specifically:
+License: CC-BY
+Comment:
+ These sounds originate from samples found at:
  http://www.freesound.org/samplesViewSingle.php?id=34580
  http://www.freesound.org/samplesViewSingle.php?id=7292
-Comment:
- Special permission for relicensing under above license have been granted by
- the author.
 
 Files: data/maps/darkness* data/maps/mist* data/maps/nova* data/maps/panic*
        data/maps/processing* data/maps/tranquility*
