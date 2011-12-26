@@ -7,9 +7,7 @@ override_dh_auto_build:
 	install -d debian/tmp/usr/share/games/redeclipse/data/fonts/
 	cd debian/tmp/usr/share/games/redeclipse/data/fonts/ && \
 		cube2font /usr/share/fonts/truetype/play/Play-Bold.ttf \
-			small 3 15 1 1 40 40 512 512 0 0 fonts/; \
-		cube2font /usr/share/fonts/truetype/play/Play-Bold.ttf \
-			large 3 14 1 1 56 56 512 512 0 0 fonts/
+			play 4 15 1 1 54 54 512 512 0 0 fonts/; \
 	dh_auto_build
 
 override_dh_prep:
@@ -33,8 +31,7 @@ get-orig-source:
 	rm -rf $(DIR)/bin/
 	cd $(DIR) && rm -f redeclipse.sh server.sh redeclipse.bat server.bat
 	rm -rf $(DIR)/data/examples/
-	rm -f $(DIR)/data/fonts/large*
-	rm -f $(DIR)/data/fonts/small*
+	rm -f $(DIR)/data/fonts/play*
 	rm -f $(DIR)/data/fonts/*.ttf
 	rm -rf (DIR)/src/
 	# CGTextures license is questionable,
