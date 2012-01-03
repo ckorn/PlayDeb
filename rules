@@ -8,25 +8,10 @@ override_dh_auto_clean:
 	dh_auto_clean --sourcedirectory=src/enet
 
 override_dh_auto_build:
-	dh_auto_build -- client server
-	install -d debian/tmp/usr/share/icons/hicolor/16x16/apps \
-			debian/tmp/usr/share/icons/hicolor/32x32/apps \
-			debian/tmp/usr/share/icons/hicolor/48x48/apps \
-			debian/tmp/usr/share/icons/hicolor/64x64/apps \
-			debian/tmp/usr/share/icons/hicolor/128x128/apps \
-			debian/tmp/usr/share/pixmaps
-	convert 'src/redeclipse.ico[0]' \
-		debian/tmp/usr/share/icons/hicolor/16x16/apps/redeclipse.png
-	convert 'src/redeclipse.ico[1]' \
-		debian/tmp/usr/share/icons/hicolor/32x32/apps/redeclipse.png
+	dh_auto_build -- client server icons
+	install -d debian/tmp/usr/share/pixmaps
 	convert 'src/redeclipse.ico[1]' \
 		debian/tmp/usr/share/pixmaps/redeclipse.xpm
-	convert -resize 48x48 'src/redeclipse.ico[2]' \
-		debian/tmp/usr/share/icons/hicolor/48x48/apps/redeclipse.png
-	convert 'src/redeclipse.ico[2]' \
-		debian/tmp/usr/share/icons/hicolor/64x64/apps/redeclipse.png
-	convert 'src/redeclipse.ico[3]' \
-		debian/tmp/usr/share/icons/hicolor/128x128/apps/redeclipse.png
 
 override_dh_strip:
 	dh_strip -predeclipse --dbg-package=redeclipse-dbg
@@ -36,12 +21,10 @@ override_dh_strip:
 override_dh_prep:
 	dh_prep --exclude=debian/tmp
 
-override_dh_install:
-	install -D bin/reclient_native \
-			debian/tmp/usr/lib/games/redeclipse/redeclipse
-	install -D bin/reserver_native \
-			debian/tmp/usr/lib/games/redeclipse/redeclipse-server
-	dh_install
+override_dh_auto_install:
+	dh_auto_install -- prefix=/usr games=/games gamesbin=/games \
+		system-install-client system-install-server \
+		system-install-docs system-install-menus
 
 overrride_dh_builddeb:
 	dh_builddeb -- -Zxz
