@@ -33,7 +33,7 @@ get-orig-source:
 	rm -rf $(DIR)/data/examples/
 	rm -f $(DIR)/data/fonts/play*
 	rm -f $(DIR)/data/fonts/*.ttf
-	rm -rf (DIR)/src/
+	rm -rf $(DIR)/src/
 	# CGTextures license is questionable,
 	# these textures are currently not in use anyways
 	rm -f $(DIR)/data/trak/trak4/kitchen*
