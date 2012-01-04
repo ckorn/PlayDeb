@@ -40,7 +40,7 @@ get-orig-source:
 	cd $(DIR)/data/trak/trak4 && \
 		ln -s plaster3.jpg kitchen.jpg; \
 		ln -s plaster3.jpg kitchen1.jpg; \
-		ln -s plaster3_nm.jpg kitchen_nm.jpg; \
+		ln -s plaster3_nm.png kitchen_nm.png; \
 		ln -s plaster3_s.jpg kitchen_s.jpg
 	BZIP2="-9" tar -cj --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
