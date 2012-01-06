@@ -27,7 +27,7 @@ Package: redeclipse-dbg
 Section: contrib/debug
 Priority: extra
 Architecture: any
-Depends: redeclipse (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Depends: redeclipse (= ${binary:Version}), ${misc:Depends}
 Description: debug symbols for the Red Eclipse FPS game
  This package contains the debugging symbols for the Red Eclipse FPS game.
 
@@ -43,10 +43,7 @@ Package: redeclipse-server-dbg
 Section: contrib/debug
 Priority: extra
 Architecture: any
-Depends:
- redeclipse-server (= ${binary:Version}),
- ${misc:Depends},
- ${shlibs:Depends}
+Depends: redeclipse-server (= ${binary:Version}), ${misc:Depends}
 Description: debug symbols for the Red Eclipse dedicated server
  This package contains the debugging symbols for the dedicated server of the
  Red Eclipse FPS game.
