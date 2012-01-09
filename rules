@@ -9,22 +9,19 @@ override_dh_auto_clean:
 
 override_dh_auto_build:
 	dh_auto_build -- client server icons
-	install -d debian/tmp/usr/share/pixmaps
-	convert 'src/redeclipse.ico[1]' \
-		debian/tmp/usr/share/pixmaps/redeclipse.xpm
 
 override_dh_strip:
 	dh_strip -predeclipse --dbg-package=redeclipse-dbg
 	dh_strip -predeclipse-server --dbg-package=redeclipse-server-dbg
 	dh_strip
 
-override_dh_prep:
-	dh_prep --exclude=debian/tmp
-
 override_dh_auto_install:
 	dh_auto_install -- prefix=/usr games=/games gamesbin=/games \
 		system-install-client system-install-server \
 		system-install-docs system-install-menus
+	install -d debian/tmp/usr/share/pixmaps
+	convert 'src/redeclipse.ico[1]' \
+		debian/tmp/usr/share/pixmaps/redeclipse.xpm
 
 overrride_dh_builddeb:
 	dh_builddeb -- -Zxz
