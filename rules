@@ -23,7 +23,7 @@ override_dh_auto_install:
 	convert 'src/redeclipse.ico[1]' \
 		debian/tmp/usr/share/pixmaps/redeclipse.xpm
 
-overrride_dh_builddeb:
+override_dh_builddeb:
 	dh_builddeb -- -Zxz
 
 VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')

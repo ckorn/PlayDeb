@@ -17,6 +17,7 @@ Homepage: http://www.redeclipse.net
 
 Package: redeclipse
 Architecture: any
+Pre-Depends: dpkg (>= 1.15.6~)
 Depends: redeclipse-data, ${misc:Depends}, ${shlibs:Depends}
 Description: single-player and multi-player first-person ego-shooter
  A single-player and multi-player first-person ego-shooter, built as a
@@ -27,12 +28,14 @@ Package: redeclipse-dbg
 Section: contrib/debug
 Priority: extra
 Architecture: any
+Pre-Depends: dpkg (>= 1.15.6~)
 Depends: redeclipse (= ${binary:Version}), ${misc:Depends}
 Description: debug symbols for the Red Eclipse FPS game
  This package contains the debugging symbols for the Red Eclipse FPS game.
 
 Package: redeclipse-server
 Architecture: any
+Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: server for the Red Eclipse FPS game
  This package contains the dedicated server for the Red Eclipse FPS game, it
@@ -43,6 +46,7 @@ Package: redeclipse-server-dbg
 Section: contrib/debug
 Priority: extra
 Architecture: any
+Pre-Depends: dpkg (>= 1.15.6~)
 Depends: redeclipse-server (= ${binary:Version}), ${misc:Depends}
 Description: debug symbols for the Red Eclipse dedicated server
  This package contains the debugging symbols for the dedicated server of the
