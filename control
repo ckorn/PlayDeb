@@ -14,6 +14,8 @@ Build-Depends:
  zlib1g-dev
 Standards-Version: 3.9.2
 Homepage: http://www.redeclipse.net
+Vcs-Git: git://git.debian.org/pkg-games/redeclipse.git
+Vcs-Browser: http://git.debian.org/?p=pkg-games/redeclipse.git;a=summary
 
 Package: redeclipse
 Architecture: any
