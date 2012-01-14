@@ -6,6 +6,8 @@ Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Build-Depends: cube2font, debhelper (>= 8), fonts-play
 Standards-Version: 3.9.2
 Homepage: http://www.redeclipse.net
+Vcs-Git: git://git.debian.org/pkg-games/redeclipse-data.git
+Vcs-Browser: http://git.debian.org/?p=pkg-games/redeclipse-data.git;a=summary
 
 Package: redeclipse-data
 Architecture: all
