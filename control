@@ -3,15 +3,14 @@ Section: contrib/games
 Priority: optional
 Uploaders: Martin Erik Werner <martinerikwerner@gmail.com>
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
-Build-Depends:
- debhelper (>= 8),
- imagemagick,
- libgl1-mesa-dev,
- libsdl-image1.2-dev,
- libsdl-mixer1.2-dev,
- libsdl1.2-dev,
- libx11-dev,
- zlib1g-dev
+Build-Depends: debhelper (>= 8),
+               imagemagick,
+               libgl1-mesa-dev,
+               libsdl-image1.2-dev,
+               libsdl-mixer1.2-dev,
+               libsdl1.2-dev,
+               libx11-dev,
+               zlib1g-dev
 Standards-Version: 3.9.2
 Homepage: http://www.redeclipse.net
 Vcs-Git: git://git.debian.org/pkg-games/redeclipse.git
@@ -20,7 +19,9 @@ Vcs-Browser: http://git.debian.org/?p=pkg-games/redeclipse.git;a=summary
 Package: redeclipse
 Architecture: any
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: redeclipse-data, ${misc:Depends}, ${shlibs:Depends}
+Depends: redeclipse-data (>= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: single-player and multi-player first-person ego-shooter
  A single-player and multi-player first-person ego-shooter, built as a
  total conversion of Cube Engine 2, which lends itself toward a balanced
