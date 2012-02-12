@@ -1,0 +1,31 @@
+Debugging and bug reporting advices:
+
+
+When reporting bugs on the Red Eclipse server, please try to reproduce the bugs
+using a clean configuration, you can do this temoprarily by opening a terminal
+and running
+
+  redeclipse-server -h/tmp/recfg
+
+
+If the Red Eclipse server crashes on your system, please include a backtrace with your bug report. First install the redeclipse-dbg package and open a terminal and run
+
+  cd /usr/lib/games/redeclipse
+  gdb ./redeclipse-server
+
+Once at the gdb prompt, start the Red Eclipse server via
+
+  run -h/tmp/recfg
+
+Once the Red Eclipse server has crashed, type
+
+  bt full
+
+to obtain the backtrace. Please attach the output when you are reporting a bug
+about crashes.
+
+Also, please include the log messages leading up to the crash, you can set
+maximum log verbosity by running
+
+  redeclipse-server -h/tmp/recfg -v4
+
