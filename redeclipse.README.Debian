@@ -1,6 +1,11 @@
 redeclipse for Debian
 ---------------------
 
+Reporting bugs:
+If you are reporting bugs on Red Eclipse, please include information about the
+make and driver of your graphics card, obtainable via
+  $ glxinfo | grep ^OpenGL.
+
 Debugging:
  If the redeclipse engine crashes on your system, please install the
  redeclipse-dbg package to generate a backtrace of the crash.
