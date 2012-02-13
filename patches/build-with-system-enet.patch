@@ -4,8 +4,8 @@ Description: Use system Enet instead of bundled version
 Origin: http://gitorious.org/chakra-packages/games/commit/1aae10c597cf09a281d47570e43c8892531cd9bf
 Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
 
---- a/src/Makefile	2011-07-31 21:38:04.000000000 +0200
-+++ b/src/Makefile	2011-07-31 21:50:43.000000000 +0200
+--- a/src/Makefile
++++ b/src/Makefile
 @@ -5,7 +5,7 @@
  PLATFORM= $(shell uname -s)
  PLATFORM_SUFFIX=_native
@@ -24,7 +24,7 @@ Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
  endif
  ifeq ($(PLATFORM),Linux)
  CLIENT_LIBS+= -lrt
-@@ -92,7 +92,7 @@
+@@ -93,7 +93,7 @@
  SERVER_LIBS= -mwindows -Llib -lzdll -lenet -lws2_32 -lwinmm
  else
  SERVER_INCLUDES= -DSTANDALONE -DMASTERSERVER -DIRC $(INCLUDES)
@@ -33,7 +33,7 @@ Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
  endif
  SERVER_OBJS= \
  	shared/crypto-standalone.o \
-@@ -157,13 +157,13 @@
+@@ -158,13 +158,13 @@
  	$(STRIP) ../bin/reserver.exe
  endif
  else
