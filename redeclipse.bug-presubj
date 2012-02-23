@@ -20,7 +20,7 @@ report. First install the redeclipse-dbg package and open a terminal and run
 
 Once at the gdb prompt, start Red Eclipse via
 
-  run -r -df0 -h/tmp/recfg
+  run -h/tmp/recfg -r -df0
 
 Once Red Eclipse has crashed, type
 
