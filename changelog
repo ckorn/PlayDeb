@@ -4,8 +4,9 @@ redeclipse (1.2-2) unstable; urgency=low
     - Fix icon size and location, cherry-picked from upstream SVN
   * Standards-Version 3.9.3
     - Set final copyright Format: link
+  * Instruct to use -h before -r in reportbug instrutions
 
- -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 25 Feb 2012 14:01:06 +0100
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 26 Feb 2012 00:20:12 +0100
 
 redeclipse (1.2-1) unstable; urgency=low
 
