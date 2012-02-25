@@ -11,19 +11,17 @@ git-svn-id: https://redeclipse.svn.sourceforge.net/svnroot/redeclipse@3614 2cd6a
  src/system-install.mk |   12 ++++++++++--
  1 files changed, 10 insertions(+), 2 deletions(-)
 
-diff --git a/src/system-install.mk b/src/system-install.mk
-index 1d316b4..f157ecf 100644
 --- a/src/system-install.mk
 +++ b/src/system-install.mk
 @@ -1,6 +1,7 @@
- GZIPPER=gzip
+ GZIP=gzip
  
  ICONS= \
 +	install/nix/redeclipse_x16.png \
  	install/nix/redeclipse_x32.png \
  	install/nix/redeclipse_x48.png \
  	install/nix/redeclipse_x64.png \
-@@ -19,12 +20,15 @@ mandir=$(DESTDIR)$(prefix)/share/man
+@@ -19,12 +20,15 @@
  menudir=$(DESTDIR)$(prefix)/share/applications
  icondir=$(DESTDIR)$(prefix)/share/icons/hicolor
  
@@ -41,7 +39,7 @@ index 1d316b4..f157ecf 100644
  install/nix/redeclipse_x64.png: redeclipse.ico
  	convert 'redeclipse.ico[2]' $@
  
-@@ -85,6 +89,7 @@ system-install-docs: $(MANPAGES)
+@@ -85,6 +89,7 @@
  
  system-install-menus: icons
  	install -d $(menudir)
@@ -49,7 +47,7 @@ index 1d316b4..f157ecf 100644
  	install -d $(icondir)/32x32/apps
  	install -d $(icondir)/48x48/apps
  	install -d $(icondir)/64x64/apps
-@@ -95,6 +100,8 @@ system-install-menus: icons
+@@ -95,6 +100,8 @@
  		-e 's,@REDECLIPSE@,$(redeclipse),g' \
  		install/nix/redeclipse.desktop.am > \
  		$(menudir)/$(redeclipse).desktop
@@ -58,7 +56,7 @@ index 1d316b4..f157ecf 100644
  	install -m644 install/nix/redeclipse_x32.png \
  		$(icondir)/32x32/apps/$(redeclipse).png
  	install -m644 install/nix/redeclipse_x48.png \
-@@ -134,6 +141,7 @@ system-uninstall-docs:
+@@ -134,6 +141,7 @@
  
  system-uninstall-menus:
  	@rm -fv $(menudir)/$(redeclipse).desktop
@@ -66,6 +64,3 @@ index 1d316b4..f157ecf 100644
  	@rm -fv $(icondir)/32x32/apps/$(redeclipse).png
  	@rm -fv $(icondir)/48x48/apps/$(redeclipse).png
  	@rm -fv $(icondir)/64x64/apps/$(redeclipse).png
--- 
-1.7.9
-
