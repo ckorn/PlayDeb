@@ -1,3 +1,10 @@
+redeclipse (1.2-2) UNRELEASED; urgency=low
+
+  * debian/patches/backported-fix-icon-sizes.patch
+    - Fix icon size and location, cherry-picked from upstream SVN
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 25 Feb 2012 03:45:37 +0100
+
 redeclipse (1.2-1) unstable; urgency=low
 
   * Initial release (Closes: #626161)
