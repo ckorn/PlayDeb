@@ -12,7 +12,7 @@ Build-Depends: debhelper (>= 8),
                libsdl1.2-dev,
                libx11-dev,
                zlib1g-dev
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 Homepage: http://www.redeclipse.net
 Vcs-Git: git://git.debian.org/pkg-games/redeclipse.git
 Vcs-Browser: http://git.debian.org/?p=pkg-games/redeclipse.git;a=summary
