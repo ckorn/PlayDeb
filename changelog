@@ -1,3 +1,14 @@
+redeclipse (1.2-3) UNRELEASED; urgency=low
+
+  * Unversion lib dependencies
+    - libgl1-mesa-dev     -> libgl-dev
+    - libsdl-image1.2-dev -> libsdl-image-dev
+    - libsdl-mixer1.2-dev -> libsdl-mixer-dev
+    - libsdl1.2-dev       -> libsdl-dev
+    - lib1g-dev           -> libz-dev
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 26 Feb 2012 22:14:25 +0100
+
 redeclipse (1.2-2) unstable; urgency=low
 
   * debian/patches/backported-fix-icon-sizes.patch
