@@ -8,8 +8,8 @@ Build-Depends: debhelper (>= 8),
                libenet-dev,
                libgl-dev,
                libsdl-dev,
-               libsdl1.2-image-dev,
-               libsdl1.2-mixer-dev,
+               libsdl-image1.2-dev,
+               libsdl-mixer1.2-dev,
                libx11-dev,
                libz-dev
 Standards-Version: 3.9.3
