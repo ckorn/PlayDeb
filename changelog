@@ -1,11 +1,11 @@
 redeclipse (1.2-3) UNRELEASED; urgency=low
 
-  * Unversion lib dependencies
-    - libgl1-mesa-dev     -> libgl-dev
-    - libsdl1.2-dev       -> libsdl-dev
-    - lib1g-dev           -> libz-dev
+  * Add unversion lib dependency alternatives
+    - libgl1-mesa-dev | libgl-dev
+    - libsdl1.2-dev | libsdl-dev
+    - lib1g-dev | libz-dev
 
- -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 27 Feb 2012 00:46:25 +0100
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 27 Feb 2012 13:53:19 +0100
 
 redeclipse (1.2-2) unstable; urgency=low
 
