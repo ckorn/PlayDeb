@@ -1,3 +1,10 @@
+redeclipse-data (1.2-2) UNRELEASED; urgency=low
+
+  * Standards-Version 3.9.3
+    - Set final DEP-5 Format: link
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 27 Feb 2012 14:46:35 +0100
+
 redeclipse-data (1.2-1) unstable; urgency=low
 
   * Initial release (Closes: #651752)
