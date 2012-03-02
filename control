@@ -23,10 +23,19 @@ Pre-Depends: dpkg (>= 1.15.6~)
 Depends: redeclipse-data (>= ${source:Upstream-Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Description: single-player and multi-player first-person ego-shooter
- A single-player and multi-player first-person ego-shooter, built as a
- total conversion of Cube Engine 2, which lends itself toward a balanced
- gameplay, with a general theme of agility in a variety of environments.
+Description: multiplayer FPS game based on Cube2
+ A single-player and multi-player first-person ego-shooter, built on Cube
+ Engine 2, which lends itself toward a balanced gameplay, completely at the
+ control of map makers, while maintaining a general theme of agility in a
+ variety of environments.
+ .
+ Features:
+ * Balanced gameplay, with a general theme of agility in a variety of
+   environments
+ * Parkour, impulse boosts, dashing, sliding, and other tricks
+ * Favourite gamemodes with tons of mutators and variables
+ * Available for Windows, Linux/BSD and Mac OSX
+ * Builtin editor lets you create your own maps cooperatively online
 
 Package: redeclipse-dbg
 Section: contrib/debug
