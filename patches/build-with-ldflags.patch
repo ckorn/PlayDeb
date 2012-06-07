@@ -1,0 +1,34 @@
+Description: Build with LDFLAGS
+ Append $(LDFLAGS) to client server and cube2font targets.
+Author: Martin Erik Werner <martinerikwerner@gmail.com>
+
+Forwarded: no
+Last-Update: 2012-06-07
+
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -159,13 +159,13 @@
+ endif
+ else
+ client: $(CLIENT_OBJS)
+-	$(CXX) $(CXXFLAGS) -o reclient $(CLIENT_OBJS) $(CLIENT_LIBS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o reclient $(CLIENT_OBJS) $(CLIENT_LIBS)
+ ifneq (,$(STRIP))
+ 	$(STRIP) reclient
+ endif
+ 
+ server: $(SERVER_OBJS)
+-	$(CXX) $(CXXFLAGS) -o reserver $(SERVER_OBJS) $(SERVER_LIBS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o reserver $(SERVER_OBJS) $(SERVER_LIBS)
+ ifneq (,$(STRIP))
+ 	$(STRIP) reserver
+ endif
+@@ -182,7 +182,7 @@
+ 	$(CXX) $(CXXFLAGS) -c -o $@ $< `freetype-config --cflags`
+ 
+ cube2font: shared/cube2font.o
+-	$(CXX) $(CXXFLAGS) -o cube2font shared/cube2font.o `freetype-config --libs` -lz -lpng
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o cube2font shared/cube2font.o `freetype-config --libs` -lz -lpng
+ 
+ install-cube2font: cube2font
+ 	install -d ../bin

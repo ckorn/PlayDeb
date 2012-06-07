@@ -1,4 +1,4 @@
 windowed-by-default.patch
-build-with-debug-symbols.patch
 build-with-system-enet.patch
 backported-fix-icon-sizes.patch
+build-with-ldflags.patch

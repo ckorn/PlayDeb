@@ -3,7 +3,7 @@ Section: contrib/games
 Priority: optional
 Uploaders: Martin Erik Werner <martinerikwerner@gmail.com>
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
-Build-Depends: debhelper (>= 8),
+Build-Depends: debhelper (>= 9),
                imagemagick,
                libenet-dev,
                liblg1-mesa-dev | libgl-dev,
