@@ -30,12 +30,12 @@ Description: multiplayer FPS game based on Cube2
  variety of environments.
  .
  Features:
- * Balanced gameplay, with a general theme of agility in a variety of
-   environments
- * Parkour, impulse boosts, dashing, sliding, and other tricks
- * Favourite gamemodes with tons of mutators and variables
- * Available for Windows, Linux/BSD and Mac OSX
- * Builtin editor lets you create your own maps cooperatively online
+  * Balanced gameplay, with a general theme of agility in a variety of
+    environments
+  * Parkour, impulse boosts, dashing, sliding, and other tricks
+  * Favourite gamemodes with tons of mutators and variables
+  * Available for Windows, Linux/BSD and Mac OSX
+  * Builtin editor lets you create your own maps cooperatively online
 
 Package: redeclipse-dbg
 Section: contrib/debug
