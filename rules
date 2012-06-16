@@ -22,7 +22,9 @@ override_dh_strip:
 	dh_strip
 
 override_dh_auto_install:
-	dh_auto_install -- prefix=/usr games=/games gamesbin=/games \
+	dh_auto_install -- \
+		CXXFLAGS="$(CXXFLAGS)" \
+		prefix=/usr games=/games gamesbin=/games \
 		system-install-client system-install-server \
 		system-install-docs system-install-menus
 	install -d debian/tmp/usr/share/pixmaps
