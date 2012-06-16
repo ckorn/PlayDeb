@@ -11,8 +11,8 @@ override_dh_auto_clean:
 override_dh_auto_build:
 	dh_auto_build -- \
 		CPPFLAGS="$(CPPFLAGS)" \
-		CFLAGS="$(CFLAGS)" \
-		CXXFLAGS="$(CXXFLAGS)" \
+		CFLAGS="$(CFLAGS) $(CPPFLAGS)" \
+		CXXFLAGS="$(CXXFLAGS) $(CPPFLAGS)" \
 		LDFLAGS="$(LDFLAGS)" \
 		client server icons
 
