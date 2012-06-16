@@ -6,7 +6,6 @@ redeclipse (1.2-3) UNRELEASED; urgency=low
     - lib1g-dev | libz-dev
   * Enable hardening build flags
     - dh compat level 9
-    - Add DEB_BUILD_MAINT_OPTIONS = hardening=+all
     - Added build-with-ldflags.patch:
       Patch which appends $(LDFLAGS) to all end-targets
     - Removed build-with-debug-symbols.patch:
