@@ -1,3 +1,9 @@
+redeclipse (1.2+svn3755) UNRELEASED; urgency=low
+
+  * New upstream development snapshot
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 03 Jul 2012 00:02:38 +0200
+
 redeclipse (1.2-3) UNRELEASED; urgency=low
 
   * Add unversion lib dependency alternatives
