@@ -48,6 +48,7 @@ get-orig-source:
 	rm -rf $(DIR)/src/lib/
 	rm -rf $(DIR)/src/install/win/
 	rm -rf $(DIR)/bin/
+	rm -rf $(DIR)/bin64/
 	find $(DIR)/data/ -mindepth 1 -not -wholename "*examples*" -delete
 	BZIP2="-9" tar -cj --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
