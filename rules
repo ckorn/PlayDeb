@@ -31,6 +31,9 @@ override_dh_auto_install:
 	convert 'src/redeclipse.ico[1]' \
 		debian/tmp/usr/share/pixmaps/redeclipse.xpm
 
+overrride_dh_compress:
+	dh_compress --exclude=.cfg
+
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
 
