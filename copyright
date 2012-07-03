@@ -59,19 +59,22 @@ Copyright: 2009-2011 Quinton Reeves, Lee Salzman
            Mike Dysart, Robert Pointon, and Quinton Reeves
 License: Zlib
 
+Files: guidelines.txt
+Copyright: 2011-2012, the Red Eclipse Team
+License: CC-BY-SA-3.0
+
 Files: trademark.txt
 Copyright: 2011, The Document Foundation
-           2006, 2007, 2008, Software Freedom Law Center, Inc.
+           2006-2008, Software Freedom Law Center, Inc.
            2011, the Red Eclipse Team
 License: CC-BY-SA-3.0
 
 Files: src/enet/*
-Copyright: 2002-2011 Lee Salzman
+Copyright: 2002-2012 Lee Salzman
 License: Expat
 
 Files: src/enet/aclocal.m4
-Copyright: 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006,
-           2007, 2008, 2009  Free Software Foundation, Inc.
+Copyright: 1996-2012  Free Software Foundation, Inc.
 License:
  This file is free software; the Free Software Foundation
  gives unlimited permission to copy and/or distribute it,
@@ -84,9 +87,7 @@ License:
 
 Files: src/enet/config.guess src/enet/config.sub src/enet/depcomp
        src/enet/missing
-Copyright: 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
-           2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
-           Free Software Foundation, Inc.
+Copyright: 1992-2012 Free Software Foundation, Inc.
 License: GPL-2+
  This file is free software; you can redistribute it and/or modify it
  under the terms of the GNU General Public License as published by
@@ -112,9 +113,7 @@ License: GPL-2+
  can be found in the file `/usr/share/common-licenses/GPL-2'.
 
 Files: src/enet/configure
-Copyright: 1992, 1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001, 2002, 2003,
-           2004, 2005, 2006, 2007, 2008, 2009, 2010
-           Free Software Foundation, Inc.
+Copyright: 1992-2012 Free Software Foundation, Inc.
 License: custom and GPL-2+
  This configure script is free software; the Free Software Foundation
  gives unlimited permission to copy, distribute and modify it.
@@ -174,8 +173,7 @@ License: custom and public-domain
  FSF changes to this file are in the public domain.
 
 Files: src/enet/ltmain.sh
-Copyright: 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007
-           2008 Free Software Foundation, Inc.
+Copyright: 1996-2008 Free Software Foundation, Inc.
 License: GPL-2+
  This is free software; see the source for copying conditions.  There is NO
  warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -205,15 +203,14 @@ License: GPL-2+
  can be found in the file `/usr/share/common-licenses/GPL-2'.
 
 Files: src/enet/m4/*
-Copyright: 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
+Copyright: 2004-2009 Free Software Foundation, Inc.
 License:
  This file is free software; the Free Software Foundation gives
  unlimited permission to copy and/or distribute it, with or without
  modifications, as long as this notice is preserved.
 
 Files: src/enet/m4/libtool.m4
-Copyright: 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007,
-           2008 Free Software Foundation, Inc.
+Copyright: 1996-2011 Free Software Foundation, Inc.
 License: custom, GPL-2+
  This file is free software; the Free Software Foundation gives
  unlimited permission to copy and/or distribute it, with or without
@@ -247,8 +244,8 @@ License: custom, GPL-2+
  can be found in the file `/usr/share/common-licenses/GPL-2'.
 
 Files: src/enet/Makefile.in
-Copyright: 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004,
-           2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+Copyright: 1994-2011
+           Free Software Foundation, Inc.
 License:
  This Makefile.in is free software; the Free Software Foundation
  gives unlimited permission to copy and/or distribute it,
