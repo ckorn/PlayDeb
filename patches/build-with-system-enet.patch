@@ -6,7 +6,7 @@ Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
 
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -5,7 +5,7 @@
+@@ -9,7 +9,7 @@
  PLATFORM= $(shell uname -s)
  PLATFORM_SUFFIX=_native
  
@@ -15,8 +15,8 @@ Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
  
  STRIP=
  ifeq (,$(findstring -g,$(CXXFLAGS)))
-@@ -22,7 +22,7 @@
- CLIENT_LIBS= -mwindows -Llib -lSDL -lSDL_image -lSDL_mixer -lzdll -lopengl32 -lenet -lws2_32 -lwinmm
+@@ -33,7 +33,7 @@
+ CLIENT_LIBS= -mwindows -static-libgcc -static-libstdc++ -L$(WINBIN) -L$(WINLIB) -lSDL -lSDL_image -lSDL_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
  else
  CLIENT_INCLUDES= -DINTERFACE -DIRC $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
 -CLIENT_LIBS= -Lenet/.libs -lenet -L/usr/X11R6/lib -lX11 `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
@@ -24,8 +24,8 @@ Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
  endif
  ifeq ($(PLATFORM),Linux)
  CLIENT_LIBS+= -lrt
-@@ -93,7 +93,7 @@
- SERVER_LIBS= -mwindows -Llib -lzdll -lenet -lws2_32 -lwinmm
+@@ -104,7 +104,7 @@
+ SERVER_LIBS= -mwindows -static-libgcc -static-libstdc++ -L$(WINBIN) -L$(WINLIB) -lzlib1 -lenet -lws2_32 -lwinmm
  else
  SERVER_INCLUDES= -DSTANDALONE -DMASTERSERVER -DIRC $(INCLUDES)
 -SERVER_LIBS= -Lenet/.libs -lenet -lz
@@ -33,19 +33,19 @@ Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
  endif
  SERVER_OBJS= \
  	shared/crypto-standalone.o \
-@@ -158,13 +158,13 @@
- 	$(STRIP) ../bin/reserver.exe
+@@ -169,13 +169,13 @@
+ 	$(STRIP) ../bin/$(APPSERVER).exe
  endif
  else
 -client: libenet $(CLIENT_OBJS)
 +client: $(CLIENT_OBJS)
- 	$(CXX) $(CXXFLAGS) -o reclient $(CLIENT_OBJS) $(CLIENT_LIBS)
+ 	$(CXX) $(CXXFLAGS) -o $(APPCLIENT) $(CLIENT_OBJS) $(CLIENT_LIBS)
  ifneq (,$(STRIP))
- 	$(STRIP) reclient
+ 	$(STRIP) $(APPCLIENT)
  endif
  
 -server: libenet $(SERVER_OBJS)
 +server: $(SERVER_OBJS)
- 	$(CXX) $(CXXFLAGS) -o reserver $(SERVER_OBJS) $(SERVER_LIBS)
+ 	$(CXX) $(CXXFLAGS) -o $(APPSERVER) $(SERVER_OBJS) $(SERVER_LIBS)
  ifneq (,$(STRIP))
- 	$(STRIP) reserver
+ 	$(STRIP) $(APPSERVER)
