@@ -6,6 +6,4 @@ Section: Games/Action
 
 Format: Text
 Files: /usr/share/doc/redeclipse/readme.txt.gz
-
-Format: Text
 Files: /usr/share/doc/redeclipse/guidelines.txt.gz
