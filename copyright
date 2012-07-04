@@ -60,13 +60,13 @@ Copyright: 2009-2011 Quinton Reeves, Lee Salzman
 License: Zlib
 
 Files: guidelines.txt
-Copyright: 2011-2012, the Red Eclipse Team
+Copyright: 2011-2012 Red Eclipse Team
 License: CC-BY-SA-3.0
 
 Files: trademark.txt
 Copyright: 2011, The Document Foundation
            2006-2008, Software Freedom Law Center, Inc.
-           2011, the Red Eclipse Team
+           2011-2012 Red Eclipse Team
 License: CC-BY-SA-3.0
 
 Files: src/enet/*
@@ -257,7 +257,7 @@ License:
  PARTICULAR PURPOSE.
 
 Files: src/redeclipse.ico
-Copyright: 2011, Red Eclipse Team
+Copyright: 2011 Red Eclipse Team
 License: CC-BY-SA-3.0 and Mark-Policy
 
 Files: debian/*
