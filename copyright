@@ -5,19 +5,14 @@ Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
 Source: https://redeclipse.svn.sourceforge.net
  All sourcecode-related items have been removed from the source package, they
  are shipped in the redeclipse source package instead.
- .
- In addition, the files data/trak/trak4/kitchen* have been replaced with links
- to the corresponding files data/trak/trak4/plaster3*, since they use source
- material from CGtextures, whose license and terms of use are extremely iffy,
- these textures are currently not in use in the game.
 License: Red-Eclipse
  THE RED ECLIPSE LICENSE
  .
  Red Eclipse is based on Cube Engine 2, both of which are covered under the ZLIB
  license, you may use the source code so long as you obey this license.
  .
-     Red Eclipse, Copyright (C) 2009-2011 Quinton Reeves, Lee Salzman
-     Cube Engine 2, Copyright (C) 2001-2011 Wouter van Oortmerssen, Lee Salzman,
+     Red Eclipse, Copyright (C) 2009-2012 Quinton Reeves, Lee Salzman
+     Cube Engine 2, Copyright (C) 2001-2012 Wouter van Oortmerssen, Lee Salzman,
          Mike Dysart, Robert Pointon, and Quinton Reeves
      http://www.opensource.org/licenses/zlib-license.php
  .
@@ -48,7 +43,7 @@ License: Red-Eclipse
  the CC-BY-SA license, you may use the content in Red Eclipse so long as you
  obey individual licensing criteria.
  .
-     Red Eclipse, Copyright (C) 2009-2011 Red Eclipse Team
+     Red Eclipse, Copyright (C) 2009-2012 Red Eclipse Team
      Creative Commons Attribution ShareAlike 3.0 License (CC-BY-SA)
      See cc-by-sa.txt or http://creativecommons.org/licenses/by-sa/3.0/
  .
@@ -59,17 +54,17 @@ Disclaimer:
  models, etc.
 
 Files: *
-Copyright: 2009-2011 Red Eclipse Team
+Copyright: 2009-2012 Red Eclipse Team
 License: CC-BY-SA-3.0
 
 Files: trademark.txt
 Copyright: 2011, The Document Foundation
            2006, 2007, 2008, Software Freedom Law Center, Inc.
-           2011, the Red Eclipse Team
+           2011-2012 Red Eclipse Team
 License: CC-BY-SA-3.0
 
 Files: data/*.cfg
-Copyright: 2009-2011 Quinton Reeves, Lee Salzman
+Copyright: 2009-2012 Quinton Reeves, Lee Salzman
 License: Zlib
 
 Files: data/jwin/*
@@ -81,7 +76,7 @@ Copyright: Jeroen "appleflap" Boukens
 License: CC-BY-SA-3.0
 
 Files: data/penguins/*
-Copyright: 2009 skiingpenguins <roy153roy153@yahoo.com>
+Copyright: 2009, 2012 skiingpenguins <roy153roy153@yahoo.com>
 License: CC-BY-SA-3.0
 
 Files: data/crosshairs/*
@@ -167,7 +162,7 @@ Files: data/textures/lava.jpg
 Copyright: RaZgRiZ
 License:
  Created by RaZgRiZ Made with Filter Forge II Beta 3
- Licensed publicly for everyone to use, modifyi and distribute as long as the
+ Licensed publicly for everyone to use, modify and distribute as long as the
  author is credited for the original work.
 
 Files: data/textures/bloodbath.png data/textures/carnage.png
@@ -320,14 +315,13 @@ Comment:
  http://www.freesound.org/samplesViewSingle.php?id=34580
  http://www.freesound.org/samplesViewSingle.php?id=7292
 
-Files: data/maps/darkness* data/maps/mist* data/maps/nova* data/maps/panic*
-       data/maps/processing* data/maps/tranquility*
-Copyright:  2009-2011 Derek Ponicki
-            2010-2011 Derek Ponicki
+Files: data/maps/biolytic* data/maps/darkness* data/maps/mist* data/maps/nova*
+       data/maps/panic* data/maps/processing* data/maps/tranquility*
+Copyright:  2009-2012 Derek Ponicki
 License: Zlib
 
 Files: debian/*
-Copyright: 2011 Martin Erik Werner <martinerikwerner@gmail.com>
+Copyright: 2011-2012 Martin Erik Werner <martinerikwerner@gmail.com>
 License: Zlib
 
 License: Zlib
