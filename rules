@@ -39,12 +39,13 @@ override_dh_builddeb:
 
 VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
 DIR=redeclipse-$(VER).orig
-TAR=redeclipse_$(VER).orig.tar.bz2
+UTAR=redeclipse_$(VER).orig.tar.bz2
+TAR=redeclipse_$(VER).orig.tar.xz
 get-orig-source:
 	uscan --noconf --force-download --download-current-version --destdir=.
 	rm -rf $(DIR)
-	tar -xf $(TAR)
-	rm -f $(TAR)
+	tar -xf $(UTAR)
+	rm -f $(UTAR)
 	mv redeclipse/ $(DIR)
 	rm -rf $(DIR)/src/include/
 	rm -rf $(DIR)/src/xcode/
@@ -54,6 +55,6 @@ get-orig-source:
 	rm -rf $(DIR)/bin/
 	rm -rf $(DIR)/bin64/
 	find $(DIR)/data/ -mindepth 1 -not -wholename "*examples*" -delete
-	BZIP2="-9" tar -cj --owner root --group root --mode a+rX \
+	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
 	rm -rf $(DIR)
