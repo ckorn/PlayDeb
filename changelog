@@ -1,6 +1,7 @@
 redeclipse-data (1.2+svn3755-1) UNRELEASED; urgency=low
 
   * New upstream development snapshot
+  * XZ compression for orig tarball
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 03 Jul 2012 23:44:56 +0200
 
