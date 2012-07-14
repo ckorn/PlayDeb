@@ -1,9 +1,9 @@
-redeclipse (1.2+svn3755-1) UNRELEASED; urgency=low
+redeclipse (1.2+svn3759-1) UNRELEASED; urgency=low
 
   * New upstream development snapshot
   * XZ compression for orig tarball
 
- -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 03 Jul 2012 00:02:38 +0200
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 14 Jul 2012 17:43:35 +0200
 
 redeclipse (1.2-3) UNRELEASED; urgency=low
 
