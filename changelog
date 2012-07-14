@@ -1,4 +1,4 @@
-redeclipse-data (1.2+svn3755-1) UNRELEASED; urgency=low
+redeclipse-data (1.2+svn3759-1) UNRELEASED; urgency=low
 
   * New upstream development snapshot
   * XZ compression for orig tarball
