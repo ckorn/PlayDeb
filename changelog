@@ -10,7 +10,7 @@ redeclipse (1.2-3) UNRELEASED; urgency=low
       Patch which appends $(LDFLAGS) to all end-targets
     - Removed build-with-debug-symbols.patch:
       Now handled in d/rules instead
-
+  * Enable parallel build
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 27 Feb 2012 13:53:19 +0100
 
