@@ -39,13 +39,13 @@ Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
  else
 -client: libenet $(CLIENT_OBJS)
 +client: $(CLIENT_OBJS)
- 	$(CXX) $(CXXFLAGS) -o $(APPCLIENT) $(CLIENT_OBJS) $(CLIENT_LIBS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(APPCLIENT) $(CLIENT_OBJS) $(CLIENT_LIBS)
  ifneq (,$(STRIP))
  	$(STRIP) $(APPCLIENT)
  endif
  
 -server: libenet $(SERVER_OBJS)
 +server: $(SERVER_OBJS)
- 	$(CXX) $(CXXFLAGS) -o $(APPSERVER) $(SERVER_OBJS) $(SERVER_LIBS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(APPSERVER) $(SERVER_OBJS) $(SERVER_LIBS)
  ifneq (,$(STRIP))
  	$(STRIP) $(APPSERVER)
