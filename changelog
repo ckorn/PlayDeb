@@ -4,6 +4,7 @@ redeclipse (1.2+svn3759-1) UNRELEASED; urgency=low
   * XZ compression for orig tarball
   * No more icon conversion in build
     - Drop ImageMagick build-dependency
+  * Dropped debian/patches/build-with-ldflags.patch, upstreamed
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 14 Jul 2012 17:43:35 +0200
 
