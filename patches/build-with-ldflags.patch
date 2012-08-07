@@ -1,9 +1,9 @@
 Description: Build with LDFLAGS
  Append $(LDFLAGS) to client server and cube2font targets.
-Author: Martin Erik Werner <martinerikwerner@gmail.com>
+Author: Martin Erik Werner ("arand") <martinerikwerner@gmail.com>
 
-Forwarded: no
-Last-Update: 2012-06-07
+Forwarded: yes, https://sourceforge.net/apps/trac/redeclipse/changeset/3783
+Last-Update: 2012-08-07
 
 --- a/src/Makefile
 +++ b/src/Makefile
