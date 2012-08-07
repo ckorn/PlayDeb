@@ -1,3 +1,10 @@
+redeclipse (1.2-2.1) unstable; urgency=high
+
+  * Add debian/patches/security-text-command-fix.patch
+    - File access security fix (Closes: #684143)
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 27 Feb 2012 13:53:19 +0100
+
 redeclipse (1.2-2) unstable; urgency=low
 
   * debian/patches/backported-fix-icon-sizes.patch
