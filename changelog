@@ -1,4 +1,4 @@
-redeclipse (1.2-2.1) unstable; urgency=high
+redeclipse (1.2-3) unstable; urgency=high
 
   * Add debian/patches/security-text-command-fix.patch
     - File access security fix (Closes: #684143)
