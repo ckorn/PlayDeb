@@ -1,4 +1,4 @@
-redeclipse (1.2-3) UNRELEASED; urgency=low
+redeclipse (1.2-3) unstable; urgency=low
 
   * Add unversioned lib dependency alternatives
     - libgl1-mesa-dev | libgl-dev
