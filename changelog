@@ -1,4 +1,4 @@
-redeclipse (1.2-3) unstable; urgency=high
+redeclipse (1.2-4) UNRELEASED; urgency=low
 
   * Add unversioned lib dependency alternatives
     - libgl1-mesa-dev | libgl-dev
@@ -11,6 +11,11 @@ redeclipse (1.2-3) unstable; urgency=high
     - Removed build-with-debug-symbols.patch:
       Now handled in d/rules instead
   * Enable parallel build
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 07 Aug 2012 21:18:04 +0200
+
+redeclipse (1.2-3) unstable; urgency=high
+
   * Add debian/patches/security-text-command-fix.patch
     - File access security fix (Closes: #684143)
 

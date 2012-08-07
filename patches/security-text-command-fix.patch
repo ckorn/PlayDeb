@@ -3,8 +3,17 @@ From: eihrul <eihrul@2cd6abe5-5779-42d9-9038-cec04ae5ff40>
 Date: Sun, 22 Jul 2012 21:22:55 +0000
 Subject: [PATCH] text command fix
 Comment:
- This patch fixes a file access security issue which could allow a remote
- attacker access local files by transmitting map script files.
+ Game maps can in cube2-engine games be transmitted either from server
+ to client or from client to client, which includes a config file
+ (mapname.cfg) which is in "cubescript" format, this makes it possible
+ for an attacker to send a malign script via a new map (which must be
+ chosen by admin on a server, or created in cooperative editing mode). A
+ script like this could trivially read/write to any files which the user
+ running the client has access to (it is executed when the client loads
+ the map).
+ .
+ This patch stops "textedit" commands being able to be run in map-run
+ scripts, thus disabling the ability to read/write to user files.
 
 git-svn-id: https://redeclipse.svn.sourceforge.net/svnroot/redeclipse@3764 2cd6abe5-5779-42d9-9038-cec04ae5ff40
 ---
