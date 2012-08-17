@@ -31,8 +31,28 @@ mv debian/copyright-temp debian/copyright-new
 awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: data\//' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
+# Remove record for "Akashi-Font" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: Akashi-Font$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove record for "OFL-1.1" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: OFL-1.1$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove record for "CC-BY-3.0" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC-BY-3.0$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove record for "CC-BY-SA-3.0-AU" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC-BY-SA-3.0-AU$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove record for "CC-BY-3.0-US" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC-BY-3.0-US$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
 # Add marker for inserting Enet chunk
-sed 'N;s/^\nLicense:\ Zlib$/\nINSERT_ENET_HERE\n\nLicense:\ ZLib/' -i debian/copyright-new
+sed 'N;s/^\nLicense:\ Zlib$/\nINSERT_ENET_HERE\n\nLicense:\ Zlib/' -i debian/copyright-new
 
 # Enet chunk
 cat <<"EOF" > debian/enet-license-temp
@@ -222,8 +242,22 @@ License:
  but WITHOUT ANY WARRANTY, to the extent permitted by law; without
  even the implied warranty of MERCHANTABILITY or FITNESS FOR A
  PARTICULAR PURPOSE.
+
+INSERT_DEBIAN_HERE
 EOF
 
 # Insert Enet chunk
-sed '/INSERT_ENET_HERE/r debian/enet-license-temp' -i debian/copyright-new
+sed -e '/INSERT_ENET_HERE/r debian/enet-license-temp' -e '/INSERT_ENET_HERE/d' -i debian/copyright-new
 rm debian/enet-license-temp
+
+# Debian chunk
+cat <<EOF > debian/debian-license-temp
+Files: debian/*
+Copyright: 2011 Martin Erik Werner <martinerikwerner@gmail.com>
+License: Zlib
+EOF
+
+# Insert Debian chunk
+sed -e '/INSERT_DEBIAN_HERE/r debian/enet-license-temp' -e '/INSERT_DEBIAN_HERE/d' -i debian/copyright-new
+rm debian/debian-license-temp
+
