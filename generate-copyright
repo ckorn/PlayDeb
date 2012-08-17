@@ -56,6 +56,11 @@ sed 'N;s/^\nLicense:\ Zlib$/\nINSERT_ENET_HERE\n\nLicense:\ Zlib/' -i debian/cop
 
 # Enet chunk
 cat <<"EOF" > debian/enet-license-temp
+EOF
+
+# Insert Enet chunk
+ed -s debian/copyright-new << "EOF"
+/INSERT_ENET_HERE/c
 Files: src/enet/*
 Copyright: 2002-2012 Lee Salzman
 License: Expat
@@ -244,20 +249,17 @@ License:
  PARTICULAR PURPOSE.
 
 INSERT_DEBIAN_HERE
+.
+w
 EOF
 
-# Insert Enet chunk
-sed -e '/INSERT_ENET_HERE/r debian/enet-license-temp' -e '/INSERT_ENET_HERE/d' -i debian/copyright-new
-rm debian/enet-license-temp
-
 # Debian chunk
-cat <<EOF > debian/debian-license-temp
+ed -s debian/copyright-new <<EOF
+/INSERT_DEBIAN_HERE/c
 Files: debian/*
 Copyright: 2011 Martin Erik Werner <martinerikwerner@gmail.com>
 License: Zlib
+.
+w
 EOF
-
-# Insert Debian chunk
-sed -e '/INSERT_DEBIAN_HERE/r debian/enet-license-temp' -e '/INSERT_DEBIAN_HERE/d' -i debian/copyright-new
-rm debian/debian-license-temp
 
