@@ -51,7 +51,7 @@ get-orig-source:
 	rm -rf $(DIR)/src/install/win/
 	rm -rf $(DIR)/bin/
 	rm -rf $(DIR)/bin64/
-	find $(DIR)/data/ -mindepth 1 -not -wholename "*examples*" -delete
+	rm -rf $(DIR)/data/
 	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
 	rm -rf $(DIR)
