@@ -8,7 +8,7 @@ redeclipse (1.2+svn3759-1) UNRELEASED; urgency=low
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 14 Jul 2012 17:43:35 +0200
 
-redeclipse (1.2-3) UNRELEASED; urgency=low
+redeclipse (1.2-4) UNRELEASED; urgency=low
 
   * Add unversion lib dependency alternatives
     - libgl1-mesa-dev | libgl-dev
@@ -20,7 +20,14 @@ redeclipse (1.2-3) UNRELEASED; urgency=low
       Patch which appends $(LDFLAGS) to all end-targets
     - Removed build-with-debug-symbols.patch:
       Now handled in d/rules instead
+  * Enable paralell build
 
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 27 Feb 2012 13:53:19 +0100
+
+redeclipse (1.2-3) unstable; urgency=high
+
+  * Add debian/patches/security-text-command-fix.patch
+    - File access security fix (Closes: #684143)
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 27 Feb 2012 13:53:19 +0100
 
