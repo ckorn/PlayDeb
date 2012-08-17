@@ -47,6 +47,8 @@ License: Red-Eclipse
      Creative Commons Attribution ShareAlike 3.0 License (CC-BY-SA)
      See cc-by-sa.txt or http://creativecommons.org/licenses/by-sa/3.0/
  .
+ For a license breakdown of all content in Red Eclipse, see all-licenses.txt.
+ .
  The use of trademarks unique to the Red Eclipse project are in addition
  governed by the Red Eclipse Mark Policy (see trademark.txt).
 Disclaimer:
@@ -54,18 +56,45 @@ Disclaimer:
  models, etc.
 
 Files: *
-Copyright: 2009-2012 Red Eclipse Team
+Copyright: 2009-2012, Red Eclipse Team
 License: CC-BY-SA-3.0
 
-Files: trademark.txt
+Files: doc/trademark.txt
 Copyright: 2011, The Document Foundation
-           2006, 2007, 2008, Software Freedom Law Center, Inc.
-           2011-2012 Red Eclipse Team
+           2006-2008, Software Freedom Law Center, Inc.
+           2011-2012, Red Eclipse Team
 License: CC-BY-SA-3.0
 
-Files: data/*.cfg
-Copyright: 2009-2012 Quinton Reeves, Lee Salzman
+Files: doc/examples/*
+Copyright: 2011-2012, Red Eclipse Team
 License: Zlib
+
+Files: doc/man/cube2font.1 doc/man/redeclipse.6.am
+       doc/man/redeclipse-server.6.am
+Copyright: 2011-2012, Martin Erik "arand" Werner <martinerikwerner@gmail.com>
+License: ZLib
+
+Files: data/maps/biolytic* data/maps/darkness* data/maps/mist* data/maps/nova*
+       data/maps/panic* data/maps/oneiroi* data/maps/processing*
+       data/maps/tranquility*
+Copyright: 2009-2012, Derek "favorito" Ponicki <favorito.redeclipse@gmail.com>
+License: Zlib
+
+Files: data/maps/ares* data/maps/canals* data/maps/conflict*
+Copyright: 2011-2012, Ulukai <jonathan.denil@gmail.com>
+License: CC-BY-SA-3.0
+
+Files: data/maps/fourplex* data/maps/pumpstation* data/maps/starlibido*
+Copyright: 2012 D.a.M.i.E.n. <daymeenn@gmail.com>,
+License: CC-BY-SA-3.0
+
+Files: data/maps/neodrive* data/maps/hawk*
+Copyright: 2012, Kirill "TristamK" Kolesnikov <tristamk@bk.ru>
+License: CC-BY-SA-3.0
+
+Files: data/maps/industrial*
+Copyright: 2012, John_III <snaginneb@yahoo.com>
+License: CC-BY-SA-3.0
 
 Files: data/jwin/*
 Copyright: JWindecker <jacobwindecker@hotmail.com>
@@ -76,11 +105,11 @@ Copyright: Jeroen "appleflap" Boukens
 License: CC-BY-SA-3.0
 
 Files: data/penguins/*
-Copyright: 2009, 2012 skiingpenguins <roy153roy153@yahoo.com>
+Copyright: 2009, 2012, skiingpenguins <roy153roy153@yahoo.com>
 License: CC-BY-SA-3.0
 
 Files: data/crosshairs/*
-Copyright: 2011 fluxord <fluxord> at <yahoo.com>
+Copyright: 2011, fluxord <fluxord> at <yahoo.com>
 License: CC-BY-SA-3.0
 
 Files: data/skyboxes/gradient* data/skyboxes/stars*
@@ -97,10 +126,10 @@ License: public-domain
      July 26th, 2008) which is Red Eclipse's birthday.
 
 Files: data/skyboxes/sunsetflat*
-Copyright: 2009 LedIris
+Copyright: 2009, LedIris
 License: Zlib
 
-Files: data/skyboxes/dusk01* data/skyboxes/skyhigh*
+Files: data/skyboxes/skyhigh*
 Copyright: Pieter Verhoeven
 License: CC-BY-SA-3.0
 
@@ -116,6 +145,10 @@ License: public-domain
  .
  entity.png, lightning.png, hint.png, mflare.png, sflare.png, spark.png
      Created by Quinton Reeves, released into the public domain
+
+Files: data/skyboxes/interstellar* data/skyboxes/miramar*
+       data/skyboxes/stormydays*
+Copyright: Jockum "hipshot" Skoglund <hipshot@zfight.com>
 
 Files: data/particles/smoke.png data/particles/explosion.png
 Copyright: RaZgRiZ
@@ -136,7 +169,7 @@ Copyright: Georges 'TRaK' Grondin <drognin@gmail.com>
 License: CC-BY-3.0
 
 Files: data/trak/trak5/*
-Copyright: 2009 Georges 'TRaK' Grondin
+Copyright: 2009, Georges 'TRaK' Grondin
            http://trak.mercenariesguild.net/
 License: Expat
 
@@ -189,8 +222,8 @@ Copyright: 2011, Red Eclipse Team
 License: CC-BY-SA-3.0 and Mark-Policy
 
 Files: data/torley/*
-Copyright: 2007-2008 Torley Linden
-           2010 Red Eclipse Team
+Copyright: 2007-2008, Torley Linden
+           2010, Red Eclipse Team
 License: custom and CC-BY-3.0-US
  All Torley Textures are 512x512 in (lossless) PNG format and seamlessly tiling.
  Use 'em almost however you want — just don't resell as-is — and let me know if
@@ -231,7 +264,7 @@ Comment:
  author.
 
 Files: data/sounds/ambience/hum.ogg
-Copyright: 2006 Therac-25
+Copyright: 2006, Therac-25
            <http://www.freesound.org/usersViewSingle.php?id=173825>
 License: CC-BY-SA-3.0
 Comment:
@@ -242,7 +275,7 @@ Comment:
  author.
 
 Files: data/sounds/ambience/river.ogg
-Copyright: 2005 Mike "Acclivity" of Freesound.org
+Copyright: 2005, Mike "Acclivity" of Freesound.org
            <http://www.freesound.org/usersViewSingle.php?id=37876>
 License: CC-BY-SA-3.0
 Comment:
@@ -253,7 +286,7 @@ Comment:
  author.
 
 Files: data/sounds/ambience/cavedrip.ogg
-Copyright: 2006 Mike "Acclivity" of Freesound.org
+Copyright: 2006, Mike "Acclivity" of Freesound.org
            <http://www.freesound.org/usersViewSingle.php?id=37876>
            2006 Dob "dobroide" Roide
            <http://www.freesound.org/usersViewSingle.php?id=8043>
@@ -267,7 +300,7 @@ Comment:
  authors.
 
 Files: data/sounds/ambience/distant_cars.ogg
-Copyright: 2006 fresco
+Copyright: 2006, fresco
            <http://www.freesound.org/usersViewSingle.php?id=26333>
            2007 WIM
            <http://www.freesound.org/usersViewSingle.php?id=22241>
@@ -282,7 +315,7 @@ Comment:
  authors.
 
 Files: data/sounds/ambience/nightcrickets.ogg data/sounds/ambience/creek.ogg
-Copyright: 2005 Richard "RHumphries" Humphries
+Copyright: 2005, Richard "RHumphries" Humphries
            <http://www.freesound.org/usersViewSingle.php?id=1112>
 License: CC-BY-SA-3.0
 Comment:
@@ -293,8 +326,8 @@ Comment:
  Special permission for relicensing under CC-BY-SA-3.0 have been granted by the
  author.
 
-Files: waterfall*.ogg
-Copyright: 2007 Tim "Corsica_S" Kahn
+Files: data/sounds/ambience/waterfall*.ogg
+Copyright: 2007, Tim "Corsica_S" Kahn
            <http://www.freesound.org/usersViewSingle.php?id=7037>
 License: CC-BY-SA-3.0
 Comment:
@@ -306,19 +339,14 @@ Comment:
  Special permission for relicensing under CC-BY-SA-3.0 have been granted by the
  author.
 
-Files: forest*.ogg cycadas.ogg
-Copyright: 2005, 2007 Dob "dobroide" Roide
+Files: data/sounds/ambience/forest*.ogg data/sounds/ambience/cycadas.ogg
+Copyright: 2005, 2007, Dob "dobroide" Roide
            <http://www.freesound.org/usersViewSingle.php?id=8043>
 License: CC-BY-3.0
 Comment:
  These sounds originate from samples found at:
  http://www.freesound.org/samplesViewSingle.php?id=34580
  http://www.freesound.org/samplesViewSingle.php?id=7292
-
-Files: data/maps/biolytic* data/maps/darkness* data/maps/mist* data/maps/nova*
-       data/maps/panic* data/maps/processing* data/maps/tranquility*
-Copyright:  2009-2012 Derek Ponicki
-License: Zlib
 
 Files: debian/*
 Copyright: 2011-2012 Martin Erik Werner <martinerikwerner@gmail.com>
@@ -1614,7 +1642,7 @@ License: Mark-Policy
             substantial modification.
  .
    Example: You may modify the laser beams to be green instead of purple, but if
-            you change all the weapon models into fresh fruits. this counts as a
+            you change all the weapon models into fresh fruits, this counts as a
             substantial modification.
  .
  2. To identify Red Eclipse as a distinct component of a software offering.
@@ -1687,3 +1715,4 @@ License: Mark-Policy
  If you currently have a product that is using the Red Eclipse marks in a way
  that don't follow this policy, don't panic. Let us know, and we'll work it out,
  as described above.
+

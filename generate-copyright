@@ -36,7 +36,8 @@ awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: src\//' debian/copyright
 mv debian/copyright-temp debian/copyright-new
 
 # Add marker for inserting Debian chunk
-sed 'N;s/^\nLicense:\ Zlib$/\nINSERT_DEBIAN_HERE\n\nLicense:\ Zlib/' -i debian/copyright-new
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 ~ /^License: Zlib$/ { print "INSERT_DEBIAN_HERE" } { print }' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
 
 # Debian chunk
 ed -s debian/copyright-new <<EOF
