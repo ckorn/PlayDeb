@@ -14,8 +14,8 @@ License: Red-Eclipse
  Red Eclipse is based on Cube Engine 2, both of which are covered under the ZLIB
  license, you may use the source code so long as you obey this license.
  .
-     Red Eclipse, Copyright (C) 2009-2011 Quinton Reeves, Lee Salzman
-     Cube Engine 2, Copyright (C) 2001-2011 Wouter van Oortmerssen, Lee Salzman,
+     Red Eclipse, Copyright (C) 2009-2012 Quinton Reeves, Lee Salzman
+     Cube Engine 2, Copyright (C) 2001-2012 Wouter van Oortmerssen, Lee Salzman,
          Mike Dysart, Robert Pointon, and Quinton Reeves
      http://www.opensource.org/licenses/zlib-license.php
  .
@@ -46,28 +46,44 @@ License: Red-Eclipse
  the CC-BY-SA license, you may use the content in Red Eclipse so long as you
  obey individual licensing criteria.
  .
-     Red Eclipse, Copyright (C) 2009-2011 Red Eclipse Team
+     Red Eclipse, Copyright (C) 2009-2012 Red Eclipse Team
      Creative Commons Attribution ShareAlike 3.0 License (CC-BY-SA)
      See cc-by-sa.txt or http://creativecommons.org/licenses/by-sa/3.0/
+ .
+ For a license breakdown of all content in Red Eclipse, see all-licenses.txt.
  .
  The use of trademarks unique to the Red Eclipse project are in addition
  governed by the Red Eclipse Mark Policy (see trademark.txt).
 
 Files: *
-Copyright: 2009-2012 Quinton Reeves, Lee Salzman
-           2001-2012 Wouter van Oortmerssen, Lee Salzman,
-           Mike Dysart, Robert Pointon, and Quinton Reeves
+Copyright: 2009-2012, Red Eclipse Team
+License: CC-BY-SA-3.0
+
+Files: src/*
+Copyright: 2009-2012, Quinton Reeves, Lee Salzman
+           2001-2012, Wouter van Oortmerssen, Lee Salzman, Mike Dysart,
+           Robert Pointon, Quinton Reeves
 License: Zlib
 
-Files: guidelines.txt
-Copyright: 2011-2012 Red Eclipse Team
-License: CC-BY-SA-3.0
-
-Files: trademark.txt
+Files: doc/trademark.txt
 Copyright: 2011, The Document Foundation
            2006-2008, Software Freedom Law Center, Inc.
-           2011-2012 Red Eclipse Team
+           2011-2012, Red Eclipse Team
 License: CC-BY-SA-3.0
+
+Files: src/redeclipse.ico src/install/nix/redeclipse*.png
+Copyright: 2011, Red Eclipse Team
+License: CC-BY-SA-3.0 and Mark-Policy
+
+Files: src/system-install.mk src/dist.mk src/install/nix/redeclipse.am
+       src/install/nix/redeclipse.desktop.am doc/examples/*
+Copyright: 2012, Red Eclipse Team
+License: Zlib
+
+Files: doc/man/cube2font.1 doc/man/redeclipse.6.am
+       doc/man/redeclipse-server.6.am
+Copyright: 2011-2012, Martin Erik "arand" Werner <martinerikwerner@gmail.com>
+License: ZLib
 
 Files: src/enet/*
 Copyright: 2002-2012 Lee Salzman
@@ -256,13 +272,6 @@ License:
  even the implied warranty of MERCHANTABILITY or FITNESS FOR A
  PARTICULAR PURPOSE.
 
-Files: src/redeclipse.ico
-Copyright: 2011 Red Eclipse Team
-License: CC-BY-SA-3.0 and Mark-Policy
-
-Files: debian/*
-Copyright: 2011 Martin Erik Werner <martinerikwerner@gmail.com>
-License: Zlib
 
 License: Zlib
  This software is provided 'as-is', without any express or implied
@@ -727,3 +736,4 @@ License: Mark-Policy
  If you currently have a product that is using the Red Eclipse marks in a way
  that don't follow this policy, don't panic. Let us know, and we'll work it out,
  as described above.
+
