@@ -52,11 +52,8 @@ awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC-BY-3.0-US$/' debian
 mv debian/copyright-temp debian/copyright-new
 
 # Add marker for inserting Enet chunk
-sed 'N;s/^\nLicense:\ Zlib$/\nINSERT_ENET_HERE\n\nLicense:\ Zlib/' -i debian/copyright-new
-
-# Enet chunk
-cat <<"EOF" > debian/enet-license-temp
-EOF
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 ~ /^License: Zlib$/ { print "INSERT_ENET_HERE" } { print }' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
 
 # Insert Enet chunk
 ed -s debian/copyright-new << "EOF"
@@ -257,7 +254,7 @@ EOF
 ed -s debian/copyright-new <<EOF
 /INSERT_DEBIAN_HERE/c
 Files: debian/*
-Copyright: 2011 Martin Erik Werner <martinerikwerner@gmail.com>
+Copyright: 2011-2012 Martin Erik Werner <martinerikwerner@gmail.com>
 License: Zlib
 .
 w

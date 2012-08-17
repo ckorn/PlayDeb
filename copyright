@@ -76,8 +76,12 @@ Copyright: 2011, Red Eclipse Team
 License: CC-BY-SA-3.0 and Mark-Policy
 
 Files: src/system-install.mk src/dist.mk src/install/nix/redeclipse.am
-       src/install/nix/redeclipse.desktop.am doc/examples/*
-Copyright: 2012, Red Eclipse Team
+       src/install/nix/redeclipse.desktop.am
+Copyright: 2011-2012, Red Eclipse Team
+License: Zlib
+
+Files: doc/examples/*
+Copyright: 2011-2012, Red Eclipse Team
 License: Zlib
 
 Files: doc/man/cube2font.1 doc/man/redeclipse.6.am
@@ -273,7 +277,7 @@ License:
  PARTICULAR PURPOSE.
 
 Files: debian/*
-Copyright: 2011 Martin Erik Werner <martinerikwerner@gmail.com>
+Copyright: 2011-2012 Martin Erik Werner <martinerikwerner@gmail.com>
 License: Zlib
 
 License: Zlib
