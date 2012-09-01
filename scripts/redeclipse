@@ -7,6 +7,6 @@ do
     fi
 done
 
-RE_OPTIONS="-r"
+RE_OPTIONS=""
 cd /usr/lib/games/redeclipse || exit 1
 exec ./redeclipse ${RE_OPTIONS} ${1+"$@"}

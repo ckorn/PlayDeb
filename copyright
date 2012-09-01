@@ -14,8 +14,8 @@ License: Red-Eclipse
  Red Eclipse is based on Cube Engine 2, both of which are covered under the ZLIB
  license, you may use the source code so long as you obey this license.
  .
-     Red Eclipse, Copyright (C) 2009-2011 Quinton Reeves, Lee Salzman
-     Cube Engine 2, Copyright (C) 2001-2011 Wouter van Oortmerssen, Lee Salzman,
+     Red Eclipse, Copyright (C) 2009-2012 Quinton Reeves, Lee Salzman
+     Cube Engine 2, Copyright (C) 2001-2012 Wouter van Oortmerssen, Lee Salzman,
          Mike Dysart, Robert Pointon, and Quinton Reeves
      http://www.opensource.org/licenses/zlib-license.php
  .
@@ -46,32 +46,55 @@ License: Red-Eclipse
  the CC-BY-SA license, you may use the content in Red Eclipse so long as you
  obey individual licensing criteria.
  .
-     Red Eclipse, Copyright (C) 2009-2011 Red Eclipse Team
+     Red Eclipse, Copyright (C) 2009-2012 Red Eclipse Team
      Creative Commons Attribution ShareAlike 3.0 License (CC-BY-SA)
      See cc-by-sa.txt or http://creativecommons.org/licenses/by-sa/3.0/
+ .
+ For a license breakdown of all content in Red Eclipse, see all-licenses.txt.
  .
  The use of trademarks unique to the Red Eclipse project are in addition
  governed by the Red Eclipse Mark Policy (see trademark.txt).
 
 Files: *
-Copyright: 2009-2011 Quinton Reeves, Lee Salzman
-           2001-2011 Wouter van Oortmerssen, Lee Salzman,
-           Mike Dysart, Robert Pointon, and Quinton Reeves
-License: Zlib
-
-Files: trademark.txt
-Copyright: 2011, The Document Foundation
-           2006, 2007, 2008, Software Freedom Law Center, Inc.
-           2011, the Red Eclipse Team
+Copyright: 2009-2012, Red Eclipse Team
 License: CC-BY-SA-3.0
 
+Files: src/*
+Copyright: 2009-2012, Quinton Reeves, Lee Salzman
+           2001-2012, Wouter van Oortmerssen, Lee Salzman, Mike Dysart,
+           Robert Pointon, Quinton Reeves
+License: Zlib
+
+Files: doc/trademark.txt
+Copyright: 2011, The Document Foundation
+           2006-2008, Software Freedom Law Center, Inc.
+           2011-2012, Red Eclipse Team
+License: CC-BY-SA-3.0
+
+Files: src/redeclipse.ico src/install/nix/redeclipse*.png
+Copyright: 2011, Red Eclipse Team
+License: CC-BY-SA-3.0 and Mark-Policy
+
+Files: src/system-install.mk src/dist.mk src/install/nix/redeclipse.am
+       src/install/nix/redeclipse.desktop.am
+Copyright: 2011-2012, Red Eclipse Team
+License: Zlib
+
+Files: doc/examples/*
+Copyright: 2011-2012, Red Eclipse Team
+License: Zlib
+
+Files: doc/man/cube2font.1 doc/man/redeclipse.6.am
+       doc/man/redeclipse-server.6.am
+Copyright: 2011-2012, Martin Erik "arand" Werner <martinerikwerner@gmail.com>
+License: ZLib
+
 Files: src/enet/*
-Copyright: 2002-2011 Lee Salzman
+Copyright: 2002-2012 Lee Salzman
 License: Expat
 
 Files: src/enet/aclocal.m4
-Copyright: 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006,
-           2007, 2008, 2009  Free Software Foundation, Inc.
+Copyright: 1996-2012  Free Software Foundation, Inc.
 License:
  This file is free software; the Free Software Foundation
  gives unlimited permission to copy and/or distribute it,
@@ -84,9 +107,7 @@ License:
 
 Files: src/enet/config.guess src/enet/config.sub src/enet/depcomp
        src/enet/missing
-Copyright: 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
-           2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
-           Free Software Foundation, Inc.
+Copyright: 1992-2012 Free Software Foundation, Inc.
 License: GPL-2+
  This file is free software; you can redistribute it and/or modify it
  under the terms of the GNU General Public License as published by
@@ -112,9 +133,7 @@ License: GPL-2+
  can be found in the file `/usr/share/common-licenses/GPL-2'.
 
 Files: src/enet/configure
-Copyright: 1992, 1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001, 2002, 2003,
-           2004, 2005, 2006, 2007, 2008, 2009, 2010
-           Free Software Foundation, Inc.
+Copyright: 1992-2012 Free Software Foundation, Inc.
 License: custom and GPL-2+
  This configure script is free software; the Free Software Foundation
  gives unlimited permission to copy, distribute and modify it.
@@ -174,8 +193,7 @@ License: custom and public-domain
  FSF changes to this file are in the public domain.
 
 Files: src/enet/ltmain.sh
-Copyright: 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007
-           2008 Free Software Foundation, Inc.
+Copyright: 1996-2008 Free Software Foundation, Inc.
 License: GPL-2+
  This is free software; see the source for copying conditions.  There is NO
  warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -205,15 +223,14 @@ License: GPL-2+
  can be found in the file `/usr/share/common-licenses/GPL-2'.
 
 Files: src/enet/m4/*
-Copyright: 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
+Copyright: 2004-2009 Free Software Foundation, Inc.
 License:
  This file is free software; the Free Software Foundation gives
  unlimited permission to copy and/or distribute it, with or without
  modifications, as long as this notice is preserved.
 
 Files: src/enet/m4/libtool.m4
-Copyright: 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007,
-           2008 Free Software Foundation, Inc.
+Copyright: 1996-2011 Free Software Foundation, Inc.
 License: custom, GPL-2+
  This file is free software; the Free Software Foundation gives
  unlimited permission to copy and/or distribute it, with or without
@@ -247,8 +264,8 @@ License: custom, GPL-2+
  can be found in the file `/usr/share/common-licenses/GPL-2'.
 
 Files: src/enet/Makefile.in
-Copyright: 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004,
-           2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+Copyright: 1994-2011
+           Free Software Foundation, Inc.
 License:
  This Makefile.in is free software; the Free Software Foundation
  gives unlimited permission to copy and/or distribute it,
@@ -259,12 +276,8 @@ License:
  even the implied warranty of MERCHANTABILITY or FITNESS FOR A
  PARTICULAR PURPOSE.
 
-Files: src/redeclipse.ico
-Copyright: 2011, Red Eclipse Team
-License: CC-BY-SA-3.0 and Mark-Policy
-
 Files: debian/*
-Copyright: 2011 Martin Erik Werner <martinerikwerner@gmail.com>
+Copyright: 2011-2012 Martin Erik Werner <martinerikwerner@gmail.com>
 License: Zlib
 
 License: Zlib
@@ -657,7 +670,7 @@ License: Mark-Policy
             substantial modification.
  .
    Example: You may modify the laser beams to be green instead of purple, but if
-            you change all the weapon models into fresh fruits. this counts as a
+            you change all the weapon models into fresh fruits, this counts as a
             substantial modification.
  .
  2. To identify Red Eclipse as a distinct component of a software offering.
@@ -730,3 +743,4 @@ License: Mark-Policy
  If you currently have a product that is using the Red Eclipse marks in a way
  that don't follow this policy, don't panic. Let us know, and we'll work it out,
  as described above.
+
