@@ -11,8 +11,6 @@ redeclipse (1.3.1-1) experimental; urgency=low
     - lib1g-dev | libz-dev
   * Enable hardening build flags
     - dh compat level 9
-    - Added build-with-ldflags.patch:
-      Patch which appends $(LDFLAGS) to all end-targets
     - Removed build-with-debug-symbols.patch:
       Now handled in d/rules instead
   * Enable paralell build
