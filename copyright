@@ -149,6 +149,7 @@ License: public-domain
 Files: data/skyboxes/interstellar* data/skyboxes/miramar*
        data/skyboxes/stormydays*
 Copyright: Jockum "hipshot" Skoglund <hipshot@zfight.com>
+License: CC-BY-3.0
 
 Files: data/particles/smoke.png data/particles/explosion.png
 Copyright: RaZgRiZ
