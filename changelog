@@ -1,11 +1,11 @@
-redeclipse-data (1.3.1) experimental; urgency=low
+redeclipse-data (1.3.1-1) experimental; urgency=low
 
   * New upstream development snapshot
   * XZ compression for orig tarball
   * Standards-Version 3.9.3
     - Set final DEP-5 Format: link
 
- -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 27 Feb 2012 14:46:35 +0100
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 01 Sep 2012 21:11:53 +0200
 
 redeclipse-data (1.2-1) unstable; urgency=low
 
