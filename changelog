@@ -1,15 +1,10 @@
-redeclipse (1.2+svn3759-1) UNRELEASED; urgency=low
+redeclipse (1.3) experimental; urgency=low
 
-  * New upstream development snapshot
+  * New upstream release
   * XZ compression for orig tarball
   * No more icon conversion in build
     - Drop ImageMagick build-dependency
   * Dropped debian/patches/build-with-ldflags.patch, upstreamed
-
- -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 14 Jul 2012 17:43:35 +0200
-
-redeclipse (1.2-4) UNRELEASED; urgency=low
-
   * Add unversion lib dependency alternatives
     - libgl1-mesa-dev | libgl-dev
     - libsdl1.2-dev | libsdl-dev
@@ -21,8 +16,9 @@ redeclipse (1.2-4) UNRELEASED; urgency=low
     - Removed build-with-debug-symbols.patch:
       Now handled in d/rules instead
   * Enable paralell build
+  * debian/copyright now generated from upstream equivalent
 
- -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 27 Feb 2012 13:53:19 +0100
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 01 Sep 2012 11:29:00 +0200
 
 redeclipse (1.2-3) unstable; urgency=high
 
