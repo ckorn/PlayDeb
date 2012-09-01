@@ -92,7 +92,7 @@ Files: data/maps/neodrive* data/maps/hawk*
 Copyright: 2012, Kirill "TristamK" Kolesnikov <tristamk@bk.ru>
 License: CC-BY-SA-3.0
 
-Files: data/maps/industrial*
+Files: data/maps/industrial* data/maps/isolation* data/maps/keystone2k*
 Copyright: 2012, John_III <snaginneb@yahoo.com>
 License: CC-BY-SA-3.0
 
