@@ -15,26 +15,26 @@ Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
  
  STRIP=
  ifeq (,$(findstring -g,$(CXXFLAGS)))
-@@ -33,7 +33,7 @@
- CLIENT_LIBS= -mwindows -static-libgcc -static-libstdc++ -L$(WINBIN) -L$(WINLIB) -lSDL -lSDL_image -lSDL_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
+@@ -42,7 +42,7 @@
+ CLIENT_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lSDL -lSDL_image -lSDL_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
  else
- CLIENT_INCLUDES= -DINTERFACE -DIRC $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
+ CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
 -CLIENT_LIBS= -Lenet/.libs -lenet -L/usr/X11R6/lib -lX11 `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
 +CLIENT_LIBS= -lenet -L/usr/X11R6/lib -lX11 `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
  endif
  ifeq ($(PLATFORM),Linux)
  CLIENT_LIBS+= -lrt
-@@ -104,7 +104,7 @@
- SERVER_LIBS= -mwindows -static-libgcc -static-libstdc++ -L$(WINBIN) -L$(WINLIB) -lzlib1 -lenet -lws2_32 -lwinmm
+@@ -113,7 +113,7 @@
+ SERVER_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lzlib1 -lenet -lws2_32 -lwinmm
  else
- SERVER_INCLUDES= -DSTANDALONE -DMASTERSERVER -DIRC $(INCLUDES)
+ SERVER_INCLUDES= -DSTANDALONE $(INCLUDES)
 -SERVER_LIBS= -Lenet/.libs -lenet -lz
 +SERVER_LIBS= -lenet -lz
  endif
  SERVER_OBJS= \
  	shared/crypto-standalone.o \
-@@ -169,13 +169,13 @@
- 	$(STRIP) ../bin/$(APPSERVER).exe
+@@ -178,13 +178,13 @@
+ 	$(STRIP) $(WINBIN)/$(APPSERVER).exe
  endif
  else
 -client: libenet $(CLIENT_OBJS)
