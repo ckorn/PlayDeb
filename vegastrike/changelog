@@ -1,3 +1,9 @@
+vegastrike (0.5.1~r1-1~getdeb2) quantal; urgency=low
+
+  * Rebuild for quantal
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Oct 2012 15:25:14 +0200
+
 vegastrike (0.5.1~r1-1~getdeb1) precise; urgency=low
 
   * New upstream version (LP: #1038859)

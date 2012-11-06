@@ -1,6 +1,7 @@
 Source: atanks
 Section: games
 Priority: optional
+Uploaders: Mark Purcell <msp@debian.org>
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: debhelper (>= 9),
                liballegro-dev | liballegro4.2-dev

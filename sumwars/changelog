@@ -1,3 +1,9 @@
+sumwars (0.5.6-1~getdeb2) quantal; urgency=low
+
+  * Rebuild for quantal
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Oct 2012 15:12:35 +0200
+
 sumwars (0.5.6-1~getdeb1) precise; urgency=low
 
   * New upstream version (LP: #1009105)

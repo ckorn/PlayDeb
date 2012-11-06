@@ -16,7 +16,7 @@ Build-Depends: debhelper (>= 9),
                libcegui-mk2-dev (>= 0.7.0),
                liblua5.1-0-dev,
                libxrandr-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://www.sumwars.org/
 Vcs-Svn: http://sumwars.svn.sourceforge.net/svnroot/sumwars/trunk
 Vcs-Browser: http://sumwars.svn.sourceforge.net/viewvc/sumwars/

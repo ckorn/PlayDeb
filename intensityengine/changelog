@@ -1,3 +1,9 @@
+intensityengine (1.1.6-1~getdeb6~quantal) quantal; urgency=low
+
+  * Rebuild for quantal
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Oct 2012 12:52:43 +0200
+
 intensityengine (1.1.6-1~getdeb5~precise) precise; urgency=low
 
   * Rebuild for precise.

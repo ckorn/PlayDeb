@@ -1,8 +1,0 @@
-version=2
-# Site/Directory        Pattern                                                       Version Script
-
-## stable branch
-http://sf.net/wesnoth/  wesnoth-([\d]+\.[\d]*[02468](?:\.[\d\.]*)?)\.tar\.(?:bz2|gz)  debian uupdate
-
-## everything (like, useful for development branch :))
-#http://sf.net/wesnoth/  wesnoth-([\d.a]+)\.tar\.(?:bz2|gz)  debian uupdate

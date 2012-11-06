@@ -1,3 +1,4 @@
+Remove invalid tests.
 Index: raydium-0.0svn20100207/configure
 ===================================================================
 --- raydium-0.0svn20100207.orig/configure	2010-02-07 20:36:18.966855688 +0100

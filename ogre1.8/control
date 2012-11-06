@@ -16,8 +16,8 @@ Build-Depends: debhelper (>= 9),
                doxygen,
                graphviz,
                libois-dev,
-               libboost1.48-all-dev
-Standards-Version: 3.9.3
+               libboost-all-dev
+Standards-Version: 3.9.4
 Section: libs
 Homepage: http://www.ogre3d.org
 
@@ -32,7 +32,7 @@ Depends: ${misc:Depends},
          libogrertshadersystem1.8 (= ${binary:Version}),
          libfreetype6-dev,
          libxaw7-dev,
-         libboost1.48-all-dev,
+         libboost-all-dev,
          libzzip-dev
 Description: Object-oriented Graphics Rendering Engine (development files)
  Ogre is a scene-oriented, flexible 3D engine written in C++ designed

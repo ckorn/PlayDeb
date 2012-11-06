@@ -1,3 +1,9 @@
+ogre1.8 (1.8.1-1~getdeb3) quantal; urgency=low
+
+  * Rebuild for quantal
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Oct 2012 14:44:54 +0200
+
 ogre1.8 (1.8.1-1~getdeb2) precise; urgency=low
 
   * Build with ogre property

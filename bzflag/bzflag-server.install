@@ -1,8 +1,0 @@
-usr/share/man/man5/bzw.5
-usr/share/man/man6/bzadmin.6
-usr/share/man/man6/bzfs.6
-usr/games/bzfs
-usr/games/bzadmin
-misc/maps/*.bzw			usr/share/doc/bzflag-server
-misc/copyplugindocs		usr/share/doc/bzflag-server
-usr/lib/games/bzflag/*.so	usr/lib/games/bzflag-server

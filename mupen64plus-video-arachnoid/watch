@@ -1,4 +1,0 @@
-version=3
-opts="dversionmangle=s/\+.*//" \
-http://bitbucket.org/wahrhaft/mupen64plus-video-arachnoid/downloads/ \
-	/wahrhaft/mupen64plus-video-arachnoid/downloads/mupen64plus-video-arachnoid-src-(.*).tar.gz

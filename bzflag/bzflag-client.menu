@@ -1,7 +1,0 @@
-?package(bzflag-client):\
- needs="X11"\
- hints="3D,first-person"\
- section="Games/Action"\
- title="bzflag"\
- icon="/usr/share/pixmaps/bzflag-32x32.xpm"\
- command="/usr/games/bzflag"

@@ -1,8 +1,12 @@
 #!/usr/bin/make -f
 %:
-	dh --with quilt $@
+	dh $@
 
 override_dh_auto_clean:
 	dh_auto_clean
 	rm -rf raydium/php raydium/ode
 	rm -f configure.conf configure.log raydium-config
+
+override_dh_install:
+	[ ! -d debian/tmp/lib ] || mv debian/tmp/lib debian/tmp/usr/
+	dh_install --list-missing

@@ -1,3 +1,4 @@
+Add $DESTDIR support to install.
 Index: raydium-0.0svn20100207/install.sh
 ===================================================================
 --- raydium-0.0svn20100207.orig/install.sh	2010-02-07 20:20:20.276880587 +0100

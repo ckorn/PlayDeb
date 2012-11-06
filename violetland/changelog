@@ -1,3 +1,9 @@
+violetland (0.4.3-1~getdeb2~quantal) quantal; urgency=low
+
+  * Rebuild for quantal
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Oct 2012 15:29:00 +0200
+
 violetland (0.4.3-1~getdeb1~oneiric) oneiric; urgency=low
 
   * New upstream version

@@ -1,0 +1,63 @@
+Add missing headers.
+Fixes http://code.google.com/p/dolphin-emu/issues/detail?id=5392
+Index: dolphin-emu-3.0/Source/Core/Common/Src/CDUtils.cpp
+===================================================================
+--- dolphin-emu-3.0.orig/Source/Core/Common/Src/CDUtils.cpp	2011-06-24 01:11:12.000000000 +0200
++++ dolphin-emu-3.0/Source/Core/Common/Src/CDUtils.cpp	2012-10-13 22:10:48.564162196 +0200
+@@ -20,6 +20,7 @@
+ 
+ #ifdef __linux__
+ #include <linux/cdrom.h>
++#include <unistd.h>
+ #endif
+ 
+ #ifdef _WIN32
+Index: dolphin-emu-3.0/Source/Core/Common/Src/FileUtil.cpp
+===================================================================
+--- dolphin-emu-3.0.orig/Source/Core/Common/Src/FileUtil.cpp	2011-06-24 01:11:12.000000000 +0200
++++ dolphin-emu-3.0/Source/Core/Common/Src/FileUtil.cpp	2012-10-13 22:10:48.564162196 +0200
+@@ -33,6 +33,7 @@
+ #include <dirent.h>
+ #include <errno.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ #endif
+ 
+ #if defined(__APPLE__)
+Index: dolphin-emu-3.0/Source/Core/AudioCommon/Src/Mixer.cpp
+===================================================================
+--- dolphin-emu-3.0.orig/Source/Core/AudioCommon/Src/Mixer.cpp	2011-06-24 01:11:12.000000000 +0200
++++ dolphin-emu-3.0/Source/Core/AudioCommon/Src/Mixer.cpp	2012-10-13 22:10:48.564162196 +0200
+@@ -15,7 +15,7 @@
+ // Official SVN repository and contact information can be found at
+ // http://code.google.com/p/dolphin-emu/
+ 
+-
++#include <unistd.h>
+ #include "Atomic.h"
+ #include "Mixer.h"
+ #include "AudioCommon.h"
+Index: dolphin-emu-3.0/Source/Core/VideoCommon/Src/AVIDump.cpp
+===================================================================
+--- dolphin-emu-3.0.orig/Source/Core/VideoCommon/Src/AVIDump.cpp	2011-06-24 01:11:12.000000000 +0200
++++ dolphin-emu-3.0/Source/Core/VideoCommon/Src/AVIDump.cpp	2012-10-13 22:48:28.520094968 +0200
+@@ -207,6 +207,7 @@
+ #include <libavcodec/avcodec.h>
+ #include <libavformat/avformat.h>
+ #include <libswscale/swscale.h>
++#include <libavutil/mathematics.h>
+ }
+ 
+ AVFormatContext *s_FormatContext = NULL;
+Index: dolphin-emu-3.0/Source/Core/Core/Src/IPC_HLE/WII_IPC_HLE_Device_net.cpp
+===================================================================
+--- dolphin-emu-3.0.orig/Source/Core/Core/Src/IPC_HLE/WII_IPC_HLE_Device_net.cpp	2011-06-24 01:11:12.000000000 +0200
++++ dolphin-emu-3.0/Source/Core/Core/Src/IPC_HLE/WII_IPC_HLE_Device_net.cpp	2012-10-13 22:10:48.564162196 +0200
+@@ -58,6 +58,7 @@
+ #include <sys/ioctl.h>
+ #include <netinet/in.h>
+ #include <net/if.h>
++#include <unistd.h>
+ #else
+ #include <sys/types.h>
+ #include <sys/socket.h>

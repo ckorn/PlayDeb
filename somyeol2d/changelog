@@ -1,3 +1,9 @@
+somyeol2d (0.0.0+110606-1~getdeb3) quantal; urgency=low
+
+  * Rebuild for quantal
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Oct 2012 15:05:09 +0200
+
 somyeol2d (0.0.0+110606-1~getdeb2) oneiric; urgency=low
 
   * Fix debian/watch file

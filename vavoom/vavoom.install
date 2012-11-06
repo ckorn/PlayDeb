@@ -1,8 +1,0 @@
-debian/vavoom-doom-shareware.desktop				usr/share/applications
-debian/vavoom-heretic-shareware.desktop				usr/share/applications
-debian/vavoom-hexen-demo.desktop				usr/share/applications
-debian/vavoom-strife-demo.desktop				usr/share/applications
-debian/doom-logo.xpm						usr/share/pixmaps
-debian/tux-b2f.xpm						usr/share/pixmaps
-debian/scripts/*						usr/games
-debian/*.autodlrc						usr/share/games/vavoom

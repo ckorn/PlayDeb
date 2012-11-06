@@ -1,5 +1,0 @@
-wesnoth-BRANCH-data: extra-license-file usr/share/games/wesnoth/BRANCH/data/COPYING.txt
-wesnoth-BRANCH-data: symlink-should-be-relative usr/share/games/wesnoth/BRANCH/fonts/DejaVuSans.ttf /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf
-wesnoth-BRANCH-data: symlink-should-be-relative usr/share/games/wesnoth/BRANCH/fonts/wqy-zenhei.ttc /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc
-wesnoth-BRANCH-data: package-contains-broken-symlink usr/share/games/wesnoth/BRANCH/fonts/DejaVuSans.ttf usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf
-wesnoth-BRANCH-data: package-contains-broken-symlink usr/share/games/wesnoth/BRANCH/fonts/wqy-zenhei.ttc usr/share/fonts/truetype/wqy/wqy-zenhei.ttc

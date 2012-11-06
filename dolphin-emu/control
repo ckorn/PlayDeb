@@ -3,14 +3,14 @@ Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Original-Maintainer: Glenn Rice <glennricster@gmail.com>
-Build-Depends: debhelper (>= 7.0.50),
+Build-Depends: debhelper (>= 9),
                cmake,
                libao-dev,
                libasound2-dev,
                libavcodec-dev,
                libavformat-dev,
                libbluetooth-dev,
-               libglew1.5-dev,
+               libglew-dev,
                libgtk2.0-dev,
                liblzo2-dev,
                libopenal-dev,
@@ -29,12 +29,15 @@ Build-Depends: debhelper (>= 7.0.50),
                portaudio19-dev,
                wx2.8-headers,
                zlib1g-dev
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 Homepage: http://www.dolphin-emu.com
 
 Package: dolphin-emu
 Architecture: any
-Depends: nvidia-cg-toolkit (>= 2.2), ${shlibs:Depends}, ${misc:Depends}, dolphin-emu-data (= ${source:Version})
+Depends: nvidia-cg-toolkit (>= 2.2),
+         ${shlibs:Depends},
+         ${misc:Depends},
+         dolphin-emu-data (= ${source:Version})
 Description: Gamecube, Wii and Triforce emulator
  Dolphin is a Gamecube and Wii emulator. Most games run
  perfectly or with minor bugs. Games are playable at HD
@@ -49,7 +52,8 @@ Package: dolphin-emu-dbg
 Section: debug
 Priority: extra
 Architecture: any
-Depends: ${misc:Depends}, dolphin-emu (= ${binary:Version})
+Depends: ${misc:Depends},
+         dolphin-emu (= ${binary:Version})
 Description: Gamecube, Wii and Triforce emulator (debugging symbols)
  Dolphin is a Gamecube and Wii emulator. Most games run
  perfectly or with minor bugs. Games are playable at HD

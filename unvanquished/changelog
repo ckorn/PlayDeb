@@ -1,14 +1,20 @@
-unvanquished (0.8.0-1~getdeb2) precise; urgency=low
+unvanquished (0.8.0-1~getdeb3~quantal) quantal; urgency=low
 
   * Create missing library links (LP: #1072375)
 
  -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 30 Oct 2012 16:16:56 +0100
 
-unvanquished (0.8.0-1~getdeb1) precise; urgency=low
+unvanquished (0.8.0-1~getdeb2~quantal) quantal; urgency=low
 
   * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Oct 2012 16:25:39 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Oct 2012 16:35:13 +0200
+
+unvanquished (0.7.0-1~getdeb2) quantal; urgency=low
+
+  * Rebuild for quantal
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Oct 2012 15:17:43 +0200
 
 unvanquished (0.7.0-1~getdeb1) precise; urgency=low
 

@@ -1,3 +1,9 @@
+vdrift (20120722-1~getdeb2) quantal; urgency=low
+
+  * Rebuild for quantal
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Oct 2012 15:19:13 +0200
+
 vdrift (20120722-1~getdeb1) precise; urgency=low
 
   * New upstream version

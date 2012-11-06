@@ -1,3 +1,9 @@
+jngl (0.9.5-1~getdeb3) quantal; urgency=low
+
+  * Rebuild for quantal
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Oct 2012 13:10:03 +0200
+
 jngl (0.9.5-1~getdeb2) oneiric; urgency=low
 
   * Remove debian/watch file

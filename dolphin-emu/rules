@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 %:
-	dh --parallel --fail-missing $@
+	dh $@ --parallel
 
 #DOLPHIN_WC_REVISION=git rev-parse HEAD
 #DOLPHIN_WC_DESCRIBE=git describe --always --long --dirty (remove hash)
@@ -21,6 +21,9 @@ override_dh_auto_configure:
 override_dh_auto_install:
 	dh_auto_install
 	find $(CURDIR)/debian/tmp -type d -empty -delete
+
+override_dh_install:
+	dh_install --fail-missing
 
 override_dh_strip:
 	dh_strip --dbg-package=dolphin-emu-dbg

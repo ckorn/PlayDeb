@@ -1,4 +1,4 @@
-atanks (5.7-1~getdeb1) precise; urgency=low
+atanks (5.7-1~getdeb2~quantal) quantal; urgency=low
 
   * New upstream version
     - Added new tank type, the Mini, provided by Daniel.
@@ -7,45 +7,34 @@ atanks (5.7-1~getdeb1) precise; urgency=low
       makes menu entries on the Options menu static variables.
       Closes Debian bug #691107.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 27 Oct 2012 13:16:32 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 27 Oct 2012 13:16:46 +0200
 
-atanks (5.6-1~getdeb1) precise; urgency=low
+atanks (5.6-1~getdeb2) quantal; urgency=low
 
-  * New upstream version
-    - Updated icon file and COPYING file. Thanks to
-      Cristian for pointing out the problems with these files.
+  * Rebuild for quantal
 
-    - Code clean-up to make game safer without threads/sockets.
-      Try to avoid memory errors in networked games.
-      Atanks now builds cleanly with clang++ compiler.
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Oct 2012 12:27:31 +0200
 
-    - Code clean-up to allow Atanks to compile on Windows.
-      We check to make sure pthread code is not included
-      where THREADS is not defined.
+atanks (5.5-1) unstable; urgency=low
 
-    - Removed unneeded parameter from Tank class's
-      applyPhysics function. Was causing compiler warnings.
+  * New upstream release
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 19 Sep 2012 21:07:14 +0200
+ -- Mark Purcell <msp@debian.org>  Wed, 20 Jun 2012 22:37:50 +1000
 
-atanks (5.5-1~getdeb1) precise; urgency=low
+atanks (5.4-1) unstable; urgency=low
 
-  * New upstream version
-      - Fixed typos in makefiles in src directory.
-      Thanks to Ville for submitting this patch.
+  * New upstream release 
+  * Switch to Maintainer: Debian Games Team 
+    <pkg-games-devel@lists.alioth.debian.org>
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 22 May 2012 18:37:58 +0200
+ -- Mark Purcell <msp@debian.org>  Sat, 14 Apr 2012 14:36:09 +1000
 
-atanks (5.4-1~getdeb1) lucid; urgency=low
+atanks (5.3-1) unstable; urgency=low
 
-  * New upstream version
-    - Updated Portuguese language files in text folder.
-    - Updated menu file with new Portuguese translation.
-      (Thanks ot Jose for providing the new translations.)
-    - Applied src/Makefile patch from Gentoo build process.
-      (Thanks to Michael Sterrett for providing this patch.)
+  * New upstream release
+  * Drop 20_link_with_pthread.patch - encorporated upstream
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 15 Apr 2012 18:15:18 +0200
+ -- Mark Purcell <msp@debian.org>  Thu, 23 Feb 2012 20:47:06 +1100
 
 atanks (5.2-1) unstable; urgency=low
 

@@ -2,16 +2,25 @@ Source: cuby
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50), libraydium-dev,
- libglew1.5-dev, mesa-common-dev, libglu1-mesa-dev,
- libopenal-dev, libalut-dev, libvorbis-dev, x11proto-core-dev,
- libjpeg62-dev 
-Standards-Version: 3.8.4
+Build-Depends: debhelper (>= 9),
+               libraydium-dev,
+               libglew-dev,
+               mesa-common-dev,
+               libglu1-mesa-dev,
+               libopenal-dev,
+               libalut-dev,
+               libvorbis-dev,
+               x11proto-core-dev,
+               libjpeg62-dev,
+               libv4l-dev
+Standards-Version: 3.9.3
 Homepage: http://cuby.sourceforge.net/
 
 Package: cuby
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, cuby-data (= ${source:Version})
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         cuby-data (= ${source:Version})
 Description: Cubic puzzle game
  Cubic puzzle game using Raydium 3D Game Engine.
 

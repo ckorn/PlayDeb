@@ -1,3 +1,0 @@
-version=3
-opts="dversionmangle=s/\+dfsg\d+$//g,uversionmangle=s/rc/~rc/" \
-http://sf.net/supertuxkart/supertuxkart-(\d.*)-src\.tar\.bz2

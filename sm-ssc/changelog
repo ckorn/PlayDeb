@@ -1,3 +1,9 @@
+sm-ssc (5~alpha3-1~getdeb2) quantal; urgency=low
+
+  * Rebuild for quantal
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Oct 2012 14:58:29 +0200
+
 sm-ssc (5~alpha3-1~getdeb1) precise; urgency=low
 
   * New upstream version

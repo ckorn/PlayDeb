@@ -76,7 +76,7 @@ Build-Depends: debhelper (>= 9),
                libavformat-dev,
                libopenal-dev
 Homepage: http://vegastrike.sourceforge.net/
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 
 Package: vegastrike
 Architecture: any

@@ -1,5 +1,0 @@
-wesnoth-BRANCH-core: manpage-locale-dir-country-specific usr/share/man/en_GB/man6/wesnoth-BRANCH-nolog.6.gz
-wesnoth-BRANCH-core: manpage-locale-dir-country-specific usr/share/man/en_GB/man6/wesnoth-BRANCH-smallgui.6.gz
-wesnoth-BRANCH-core: manpage-locale-dir-country-specific usr/share/man/en_GB/man6/wesnoth-BRANCH.6.gz
-wesnoth-BRANCH-core: manpage-locale-dir-country-specific usr/share/man/en_GB/man6/wesnoth-BRANCH_editor.6.gz
-wesnoth-BRANCH-core: diversion-for-unknown-file usr/share/man/*/man6/wesnoth.6.gz postinst:25

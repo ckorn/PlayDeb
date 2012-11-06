@@ -1,0 +1,4 @@
+version=3
+opts="dversionmangle=s/(.*)/2005-09-21/" \
+http://raydium.org/data.php \
+    (?:.*/)?raydium-([\d-]+)\.tar\.(?:gz|xz|bz2)

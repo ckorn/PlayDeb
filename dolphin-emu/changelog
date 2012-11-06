@@ -1,3 +1,9 @@
+dolphin-emu (3.0-1~getdeb3) quantal; urgency=low
+
+  * Rebuild for quantal
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 13 Oct 2012 20:50:02 +0200
+
 dolphin-emu (3.0-1~getdeb2) oneiric; urgency=low
 
   * Update debian/watch file
