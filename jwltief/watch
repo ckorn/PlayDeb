@@ -1,0 +1,4 @@
+version=3
+opts="dversionmangle=s/.*/19/" \
+http://games.aleva.com.br/jwltief/ \
+    (?:.*/)download\.php\?a=([\d]+)

@@ -1,0 +1,18 @@
+bloodfrontier (0.85-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version 
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Thu, 10 Dec 2009 21:29:00 +0000
+
+bloodfrontier (0.80-1~getdeb2) jaunty; urgency=low
+
+  * Rebuild for jaunty 
+
+ -- janito <janito@abs.getdeb.net>  Wed, 04 Nov 2009 17:41:24 +0000
+
+bloodfrontier (0.80-1~getdeb1) intrepid; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Thu, 26 Feb 2009 19:02:54 +0000
+

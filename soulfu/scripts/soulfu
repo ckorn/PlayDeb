@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ -d $HOME/.config/soulfu -a /usr/lib/games/soulfu/soulfu -nt $HOME/.config/soulfu ] ; then
+	rm -rf $HOME/.config/soulfu.bak
+	mv $HOME/.config/soulfu $HOME/.config/soulfu.bak
+fi
+
+if [ ! -d $HOME/.config/soulfu ] ; then
+	mkdir $HOME/.config/soulfu
+	cd $HOME/.config/soulfu
+	ln -s /usr/lib/games/soulfu/soulfu
+	ln -s /usr/share/games/soulfu/datafile.sdf
+	cp /usr/share/games/soulfu/CONFIG.DAT .
+fi
+
+cd $HOME/.config/soulfu
+./soulfu

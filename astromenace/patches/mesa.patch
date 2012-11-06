@@ -1,0 +1,14 @@
+Add compatibility for mesa.
+Index: astromenace-1.3.0/AstroMenaceSource/Core/RendererInterface/RendererInterface.h
+===================================================================
+--- astromenace-1.3.0.orig/AstroMenaceSource/Core/RendererInterface/RendererInterface.h	2012-10-20 18:05:37.000000000 +0200
++++ astromenace-1.3.0/AstroMenaceSource/Core/RendererInterface/RendererInterface.h	2012-10-22 20:26:18.722852847 +0200
+@@ -37,7 +37,7 @@
+ #include "../Base.h"
+ #include "../Math/Math.h"
+ #include "../Texture/Texture.h"
+-
++#define PFNGLCLIENTACTIVETEXTUREPROC PFNGLACTIVETEXTUREPROC
+ 
+ 
+ struct eCoverageModes

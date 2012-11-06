@@ -1,0 +1,19 @@
+Index: capitan-sevilla-1.0.3/extra/capitan.desktop
+===================================================================
+--- capitan-sevilla-1.0.3.orig/extra/capitan.desktop	2009-11-20 23:17:51.360105497 +0100
++++ capitan-sevilla-1.0.3/extra/capitan.desktop	2009-11-20 23:20:13.050081061 +0100
+@@ -1,11 +1,8 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+-Name=Captain 'S' The Remake
+-Comment=Save Seville from the evil Torrebruno
+-Exec=capitan
+-Icon=capitan.png
++Name=Capitan Sevilla
++Exec=/usr/games/capitan-sevilla
++Icon=capitan-sevilla
+ Terminal=false
+ Type=Application
+ Categories=Application;Game;ArcadeGame;
+ StartupNotify=false
+-

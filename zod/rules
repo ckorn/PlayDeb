@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	rm -f zod_src/*.o zod_launcher_src/zod_launcher zod_src/zod
+
+override_dh_auto_build:
+	make -C zod_launcher_src
+	make -C zod_src
+
+override_dh_install:
+	dh_install
+	find debian -name Thumbs.db -delete
+	find debian -type d -empty -delete

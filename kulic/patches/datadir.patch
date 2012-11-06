@@ -1,0 +1,91 @@
+Index: kulic-1.1/src/GMAP.cpp
+===================================================================
+--- kulic-1.1.orig/src/GMAP.cpp	2009-12-26 21:08:16.964473894 +0100
++++ kulic-1.1/src/GMAP.cpp	2009-12-26 21:08:37.764500052 +0100
+@@ -445,7 +445,7 @@
+ 	if ((m_music = load_wav(s)) == NULL) {
+ 		sprintf(s, "/usr/local/share/kulic/maps/map%d.wav", mapa);
+ 		if ((m_music = load_wav(s)) == NULL) {
+-			sprintf(s, "/usr/share/kulic/maps/map%d.wav", mapa);
++			sprintf(s, "/usr/share/games/kulic/maps/map%d.wav", mapa);
+ 			m_music = load_wav(s);
+ 		}
+ 	}
+Index: kulic-1.1/src/GMenuBack.cpp
+===================================================================
+--- kulic-1.1.orig/src/GMenuBack.cpp	2009-12-26 21:08:54.976963977 +0100
++++ kulic-1.1/src/GMenuBack.cpp	2009-12-26 21:09:05.004466485 +0100
+@@ -44,7 +44,7 @@
+ 	if (ini.hudba)
+ 		if ((m_dat = load_datafile("sfx/menu.dat")) == NULL)
+ 			if ((m_dat = load_datafile("/usr/local/share/kulic/sfx/menu.dat")) == NULL)
+-				m_dat = load_datafile("/usr/share/kulic/sfx/menu.dat");
++				m_dat = load_datafile("/usr/share/games/kulic/sfx/menu.dat");
+ 
+ 	
+ 	
+Index: kulic-1.1/src/GRUN.cpp
+===================================================================
+--- kulic-1.1.orig/src/GRUN.cpp	2009-12-26 21:11:19.434487619 +0100
++++ kulic-1.1/src/GRUN.cpp	2009-12-26 21:11:28.974493269 +0100
+@@ -280,7 +280,7 @@
+ 	fonts = load_datafile("gfx/view/fonts.dat");
+ 	if (fonts == NULL) 
+ 		if ((fonts = load_datafile("/usr/local/share/kulic/gfx/view/fonts.dat")) == NULL)
+-			if ((fonts = load_datafile("/usr/share/kulic/gfx/view/fonts.dat")) == NULL) {
++			if ((fonts = load_datafile("/usr/share/games/kulic/gfx/view/fonts.dat")) == NULL) {
+ 				cerr << "chybi fonts.dat" << endl;
+ 				return false;
+ 			}
+Index: kulic-1.1/src/GSShoots.cpp
+===================================================================
+--- kulic-1.1.orig/src/GSShoots.cpp	2009-12-26 21:09:27.316990864 +0100
++++ kulic-1.1/src/GSShoots.cpp	2009-12-26 21:09:46.594468010 +0100
+@@ -25,7 +25,7 @@
+ 	if (!ini.zvuky) return true;
+ 	if((m_soundsatd = load_datafile("sfx/shoots.dat")) == NULL) 
+ 		if((m_soundsatd = load_datafile("/usr/local/share/kulic/sfx/shoots.dat")) == NULL) 
+-			if((m_soundsatd = load_datafile("/usr/share/kulic/sfx/shoots.dat")) == NULL) 
++			if((m_soundsatd = load_datafile("/usr/share/games/kulic/sfx/shoots.dat")) == NULL) 
+ 				return true;
+ 
+ 	for (int i = 0; i < MAX_SAMPLES; i++)
+Index: kulic-1.1/src/HGFX.cpp
+===================================================================
+--- kulic-1.1.orig/src/HGFX.cpp	2009-12-26 21:10:40.294487531 +0100
++++ kulic-1.1/src/HGFX.cpp	2009-12-26 21:10:48.584494548 +0100
+@@ -46,7 +46,7 @@
+ 		bmp = load_bitmap(filename2, pal);
+ 		
+ 		if (bmp == NULL) {
+-			sprintf(filename2, "/usr/share/kulic/%s", filename);
++			sprintf(filename2, "/usr/share/games/kulic/%s", filename);
+ 			bmp = load_bitmap(filename2, pal);
+ 		}
+ 	}
+Index: kulic-1.1/src/HLIGHTS.cpp
+===================================================================
+--- kulic-1.1.orig/src/HLIGHTS.cpp	2009-12-26 21:11:49.874488026 +0100
++++ kulic-1.1/src/HLIGHTS.cpp	2009-12-26 21:11:58.214469058 +0100
+@@ -701,7 +701,7 @@
+ 		bmp = load_bitmap(filename2, pal);
+ 		
+ 		if (bmp == NULL) {
+-			sprintf(filename2, "/usr/share/kulic/%s", filename);
++			sprintf(filename2, "/usr/share/games/kulic/%s", filename);
+ 			bmp = load_bitmap(filename2, pal);
+ 		}
+ 	}
+Index: kulic-1.1/src/main.cc
+===================================================================
+--- kulic-1.1.orig/src/main.cc	2009-12-26 21:07:45.514467563 +0100
++++ kulic-1.1/src/main.cc	2009-12-26 21:07:51.924466913 +0100
+@@ -63,7 +63,7 @@
+ 	// prohledani map
+ 	run.m_maps = run.SearchForMaps("");
+ 	    int m2 = run.SearchForMaps("/usr/local/share/kulic/");
+-	    int m3 = run.SearchForMaps("/usr/share/kulic/");
++	    int m3 = run.SearchForMaps("/usr/share/games/kulic/");
+ 	if (m2 > run.m_maps) run.m_maps = m2; 
+ 	if (m3 > run.m_maps) run.m_maps = m3; 
+ 		

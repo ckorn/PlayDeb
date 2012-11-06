@@ -1,0 +1,4 @@
+src/deadlycobra				usr/lib/games/deadlycobra
+debian/scripts/deadlycobra		usr/games
+debian/deadlycobra.desktop		usr/share/applications
+debian/deadlycobra.xpm			usr/share/pixmaps

@@ -1,0 +1,3 @@
+debian/scripts/stone-soup				usr/games
+debian/stone-soup.xpm					usr/share/pixmaps
+debian/stone-soup.desktop				usr/share/applications

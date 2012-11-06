@@ -1,0 +1,24 @@
+Source: irrlamb
+Section: games
+Priority: optional
+Maintainer: João Pinto <joao.pinto@getdeb.net>
+Uploaders: Marco Rodrigues <gothicx@sapo.pt>
+Build-Depends: cdbs, debhelper (>= 5), scons, libboost-filesystem-dev, liblua5.1-0-dev, 
+ libglu1-mesa-dev, libxxf86vm-dev, libxext-dev, libboost-date-time-dev,
+ libirrlicht-dev, libsqlite3-dev
+Standards-Version: 3.9.2
+Homepage: http://code.google.com/p/irrlamb/
+
+Package: irrlamb
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, irrlamb-data (= ${source:Version})
+Description: 3D Physics Game
+ 3D game that involves a lot of physics and frustrating gameplay.
+
+Package: irrlamb-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: 3D Physics Game - data files
+ 3D game that involves a lot of physics and frustrating gameplay.
+ .
+ (This package contains the data files)

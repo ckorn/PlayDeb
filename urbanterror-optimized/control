@@ -1,0 +1,26 @@
+Source: urbanterror-optimized
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 5.0.51~), libsdl1.2-dev (>= 1.2.13),
+ pkg-config, libcurl4-openssl-dev, libopenal-dev, libftgl-dev,
+ libfreetype6-dev
+Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/urbanterror
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/urbanterror/?op=log
+Homepage: http://www.www0.org/w/Optimized_executable;_builds_of_ioq3_engine_for_urt
+Standards-Version: 3.9.1
+
+Package: urbanterror-optimized
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, urbanterror-data (>= 4.1),
+ libcurl3
+Conflicts: urbanterror
+Suggests: urbanterror-server
+Description: Optimized Urban Terror client binary
+ This package contains the optimized client binary for UrbanTerror.
+ .
+ Urban Terror could best be described as a Hollywood tactical shooter; it is
+ realism based to a certain extent (environments/weapons/player models), but
+ also goes by the motto "fun over realism" (fast gameplay and lots of action).
+ This combination of reality and action results in a very unique, enjoyable and
+ addictive game.

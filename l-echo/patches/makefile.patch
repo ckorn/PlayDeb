@@ -1,0 +1,10 @@
+Index: l-echo-0.4.3/Makefile
+===================================================================
+--- l-echo-0.4.3.orig/Makefile	2009-10-17 23:01:30.664429346 +0200
++++ l-echo-0.4.3/Makefile	2009-10-17 23:03:07.980421156 +0200
+@@ -1,4 +1,4 @@
+-CXXFLAGS = -I./ -DSTRICT_MEM  -DDEBUG -DTIXML_USE_STL -DUSE_IK -DUSE_PUGIXML -g3 -Wall
++CXXFLAGS = -I./ -DSTRICT_MEM  -DDEBUG -DTIXML_USE_STL -DUSE_IK -DUSE_PUGIXML -g3 -Wall -Wl,--as-needed
+ LINUX_LDFLAGS = -lalut -lopenal -lGL -lGLU -lglut -lpthread
+ WINDOWS_LDFLAGS = -lalut -lopenal glut32.lib -lGL -lGLU
+ MACOSX_LDFLAGS =  -framework OpenGL -framework GLUT -framework OpenAL 

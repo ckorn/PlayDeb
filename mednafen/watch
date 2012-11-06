@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/-wip//" \
+    http://sf.net/mednafen/mednafen-(\d+.*)\.tar\.bz2

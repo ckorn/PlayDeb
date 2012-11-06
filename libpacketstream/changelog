@@ -1,0 +1,5 @@
+libpacketstream (0.1.4-1~getdeb1) jaunty; urgency=low
+
+  * Initial release.
+
+ -- Christoph Korn <c_korn@gmx.de>  Mon, 19 Oct 2009 22:37:16 +0200

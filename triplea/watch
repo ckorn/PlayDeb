@@ -1,0 +1,3 @@
+version=3
+opts=uversionmangle=s/_/./g \
+http://sf.net/triplea/triplea_(.+)_source_code_only\.zip debian jh_repack

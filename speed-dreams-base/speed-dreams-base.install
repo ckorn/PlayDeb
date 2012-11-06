@@ -1,0 +1,4 @@
+usr/games
+usr/lib*
+debian/speed-dreams.desktop usr/share/applications
+debian/speed-dreams.xpm     usr/share/pixmaps

@@ -1,0 +1,14 @@
+Index: capitan-sevilla-1.0.3/Makefile
+===================================================================
+--- capitan-sevilla-1.0.3.orig/Makefile	2009-11-20 22:53:02.990079091 +0100
++++ capitan-sevilla-1.0.3/Makefile	2009-11-20 22:56:10.060082791 +0100
+@@ -1,7 +1,7 @@
+ 
+ CC = g++
+-CFLAGS = -g3 -Iinclude -Isrc/include
+-LDFLAGS = -Llib -lalogg `allegro-config --libs` -lalfont -lpng -lz
++CFLAGS = -g3 -Iinclude -Isrc/include -Idependencies/alfont/include -Idependencies/alogg/include
++LDFLAGS = -Llib -lalogg `allegro-config --libs` -lalfont -lpng -lz -Ldependencies/alfont/lib/linux -Ldependencies/alogg/lib/linux
+ 
+ PACKAGE = Capitan
+ VERSION = 1.0

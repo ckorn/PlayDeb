@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+%:
+	dh $@ 
+
+# Don't use cmake. It also tries to copy the debian directory.
+override_dh_auto_configure:
+
+override_dh_auto_install:
+	for f in $$(ls -1) ; \
+	  do if [ -d $$f -a $$f != "debian" ]; then \
+	       cp -a $$f debian/stuntrally-tracks/usr/share/games/stuntrally/tracks ; \
+	     fi ; \
+	done 

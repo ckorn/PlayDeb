@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/.*/20100418/" \
+    ftp://ftp.snt.utwente.nl/pub/games/urbanterror/iourbanterror/source/complete/ioUrbanTerrorSource_(.*)\.zip

@@ -1,0 +1,52 @@
+# A '#' at the beginning of a line means the rest of the line is a comment.
+#
+# Some options MUST be set in this file, other options can be toggled while
+# playing.  For a list of options available see the <opthelp.> file.
+#
+# If you want to customize the configuration, you should copy this file
+# (/etc/vulture/vulture-nethackrc) to ~/.vulture-nethackrc and modify that
+#
+# To change the configuration, comment out the unwanted lines, and
+# uncomment the configuration you want.
+
+# Use the vulture window port
+OPTIONS=windowtype:vulture
+
+# *** OPTIONS ***
+# Some options to set personal preferences.  Uncomment and change these to
+# suit your personal preference.  If several people are to use the same
+# configuration, options like these should not be set.
+#
+#OPTIONS=name:Janet,role:Valkyrie,race:Human,gender:female,align:lawful
+#OPTIONS=dogname:Fido,catname:Morris,fruit:guava
+#OPTIONS=horsename:Silver
+#OPTIONS=autopickup,pickup_types:$"=/!?+
+#OPTIONS=packorder:")[%?+/=!(*0_`
+#OPTIONS=scores:10 top/2 around/own
+#OPTIONS=nolegacy,noverbose
+
+# verbose help messages make no sense for vulture
+OPTIONS=noverbose
+
+OPTIONS=toptenwin
+
+#
+# General options.  You might also set "silent" so as not to attract
+# the boss's attention.
+OPTIONS=time,number_pad,lit_corridor,rest_on_space,nomail
+
+# If you want to get rid of "use #quit to quit..." use:
+OPTIONS=suppress_alert:3.3.1
+#
+
+#
+#HACKDIR=c:\games\nethack
+# 
+# Note: Under MSDOS ports HACKDIR defaults to the location 
+#       of the NetHack.exe file. Setting HACKDIR above will override that.
+#
+#   LEVELS and SAVE default to HACKDIR
+#
+#LEVELS=c:\games\nethack\bones
+#SAVE=c:\games\nethack\bones
+

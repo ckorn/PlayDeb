@@ -1,0 +1,3 @@
+version=3
+http://sourceforge.net/projects/brikx/files/Brikx/ \
+    (?:.*/)?projects/brikx/files/Brikx/([\d\.]+)/

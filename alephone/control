@@ -1,0 +1,51 @@
+Source: alephone
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9), autotools-dev,
+               libsdl1.2-dev,
+               libsdl-net1.2-dev,
+               libsdl-image1.2-dev,
+               libmad0-dev,
+               libboost1.46-dev,
+               libvorbis-dev,
+               zlib1g-dev,
+               libasound2-dev,
+               libspeexdsp-dev,
+               libspeex-dev,
+               libsmpeg-dev,
+               libsdl-ttf2.0-dev,
+               libpng12-dev,
+               libzzip-dev,
+               libgnustep-gui-dev,
+               libglew1.6-dev,
+               libreadline6-dev,
+               libexpat1-dev
+Standards-Version: 3.9.3
+Homepage: http://marathon.sourceforge.net/
+
+Package: alephone
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         ttf-alephone (= ${source:Version})
+Description: Continuation of Bungie's Marathon 2 game engine
+ Aleph One is the open source continuation of Bungie's Marathon 2
+ game engine. Available for Mac OS X, Windows, and Linux,
+ Aleph One supports Marathon 2 and Marathon Infinity natively,
+ and Marathon through a fan-made conversion.
+ .
+ Many third party scenarios and net maps are also available.
+
+Package: ttf-alephone
+Architecture: all
+Depends: ${misc:Depends}
+Description: Continuation of Bungie's Marathon 2 game engine (font package)
+ Aleph One is the open source continuation of Bungie's Marathon 2
+ game engine. Available for Mac OS X, Windows, and Linux,
+ Aleph One supports Marathon 2 and Marathon Infinity natively,
+ and Marathon through a fan-made conversion.
+ .
+ Many third party scenarios and net maps are also available.
+ .
+ (This package contains the font files.)

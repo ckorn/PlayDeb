@@ -1,0 +1,29 @@
+This package was debianized by:
+
+    Joao Pinto <joao.pinto@getdeb.net> on Thu, 23 Jul 2009 18:56:31 +0100
+
+It was downloaded from:
+
+    http://www.braingames.getput.com/goonies/default.asp
+
+Upstream Authors:
+
+	Original game 1986 by Konami, remake  2006 - 2009 Brain Games
+
+Copyright:
+
+	Original game 1986 by Konami, remake  2006 - 2009 Brain Games
+
+License:
+
+
+	TBD
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL-3'.
+
+The Debian packaging is:
+
+    Copyright C) 2009, Joao Pinto <joao.pinto@getdeb.net>
+
+and is licensed under the GPL, see above.

@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /usr/share/games/gondola
+./run_game.py $@

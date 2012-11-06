@@ -1,0 +1,91 @@
+the-powder-toy (77.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version (LP: #994965)
+    Version 74.2 
+    Fix bug where Ice won't melt
+    Improve appearance of BCOL
+    Allow Walls to be used to protect PIPE
+
+    Version 74.1 
+    Icon for Force Elements
+    Allow DEST to be used with clone elements
+
+    Version 74.0 
+    Fixes for Triangle brush and minor electron bug
+    Debug lines for WiFi, Portal and Soap
+    Fusion for H2 at high temperature+high pressure
+    Ambient heat and Newtonian Gravity in Quick Options menu.
+    Smudge tool
+    Speed improvements for particle drawing
+    FRAY (Move other particles) and Force elements section
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 05 May 2012 14:03:35 +0200
+
+the-powder-toy (71.3-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #929945)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 26 Feb 2012 11:05:34 +0100
+
+the-powder-toy (52.0-1~getdeb2) lucid; urgency=low
+
+  * Remove debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 Nov 2011 15:47:13 +0100
+
+the-powder-toy (52.0-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 13 Jul 2011 19:06:11 +0200
+
+the-powder-toy (50.6-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 16 Jun 2011 15:30:48 +0200
+
+the-powder-toy (50.5-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 15 Jun 2011 16:07:11 +0200
+
+the-powder-toy (47.4-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 18 Apr 2011 18:00:14 +0200
+
+the-powder-toy (47.3-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    o Enhanced visual effects for Portals
+    o Glow now has more stimuli (Green: Pressure, Blue: Movement, Red: Heat)
+    o Python console (Unavailable in current beta)
+    o Fixed issue where you appear to be logged in but aren't.
+    o Changes to Quartz (Grows like crystal when exposed to salt water)
+    o Singularity explodes upon death
+    o Save ID shown after saving and on Open Dialog
+    o Rearrangement of some elements
+      (Photons in Radioactive, Thunder in Explosive, etc)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 10 Apr 2011 14:50:20 +0200
+
+the-powder-toy (46.4-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Mar 2011 12:14:27 +0100
+
+the-powder-toy (45.2-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 17 Feb 2011 16:05:07 +0100
+
+the-powder-toy (44.7-1~getdeb1) lucid; urgency=low
+
+  * Initial release (LP: #621777)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 19 Dec 2010 14:38:46 +0100

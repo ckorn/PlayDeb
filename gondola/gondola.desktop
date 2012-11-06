@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Gondola
+Comment=Play the Gondola puzlle game.
+Exec=gondola
+Icon=gondola
+Terminal=false
+Type=Application
+Categories=Game;LogicGame;

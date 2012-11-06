@@ -1,0 +1,14 @@
+Use OGRE_PLUGIN_DIR as variable because it can be set from debian/rules.
+Index: sumwars-0.5.6/src/config.h.in
+===================================================================
+--- sumwars-0.5.6.orig/src/config.h.in	2012-03-04 19:37:09.000000000 +0100
++++ sumwars-0.5.6/src/config.h.in	2012-06-12 15:44:26.685930624 +0200
+@@ -17,7 +17,7 @@
+ #   define SUMWARS_OGRE_PLUGIN_DIR "@OGRE_PLUGIN_DIR_DBG@"
+ #	define SUMWARS_DEBUG_POSTFIX "@CMAKE_DEBUG_POSTFIX@"
+ #else
+-#   define SUMWARS_OGRE_PLUGIN_DIR "@OGRE_PLUGIN_DIR_REL@"
++#   define SUMWARS_OGRE_PLUGIN_DIR "@OGRE_PLUGIN_DIR@"
+ #	define SUMWARS_DEBUG_POSTFIX ""
+ #endif
+ 

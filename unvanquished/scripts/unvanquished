@@ -1,0 +1,6 @@
+#! /bin/sh
+
+sed -i -e 's/^bind \\/bind BACKSLASH/' ~/.Unvanquished/*/*.cfg
+
+cd /usr/lib/games/unvanquished
+exec ./unvanquished +set fs_libpath "$PWD" +set fs_basepath /usr/share/games/unvanquished +reset protocol "$@"

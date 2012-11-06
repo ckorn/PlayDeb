@@ -1,0 +1,5 @@
+version=3
+opts=\
+downloadurlmangle=s|.*[?]name=(.*?)&.*|http://vertris.googlecode.com/files/$1|,\
+filenamemangle=s|[^/]+[?]name=(.*?)&.*|$1| \
+http://code.google.com/p/vertris/downloads/detail[?]name=vertris-([\d\.]+)\.tar\.bz2&.*

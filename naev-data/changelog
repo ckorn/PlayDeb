@@ -1,0 +1,47 @@
+naev-data (0.5.3-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 15 Apr 2012 11:33:17 +0200
+
+naev-data (0.5.2-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 26 Mar 2012 17:18:36 +0200
+
+naev-data (0.5.1-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 11 Mar 2012 11:49:24 +0100
+
+naev-data (0.5.0-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 06 Jun 2011 18:29:57 +0200
+
+naev-data (0.4.2-1~getdeb3) lucid; urgency=low
+
+  * Fixed debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Jul 2010 21:17:11 +0200
+
+naev-data (0.4.2-1~getdeb2) lucid; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 08 Apr 2010 14:37:53 +0200
+
+naev-data (0.4.2-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 08 Apr 2010 14:37:36 +0200
+
+naev-data (0.4.0-1~getdeb1) jaunty; urgency=low
+
+  * Initial release.
+
+ -- Christoph Korn <c_korn@gmx.de>  Tue, 22 Sep 2009 17:37:12 +0200

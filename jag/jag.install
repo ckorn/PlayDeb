@@ -1,0 +1,3 @@
+bin/jag usr/games
+debian/jag.xpm usr/share/pixmaps
+debian/jag.desktop usr/share/applications

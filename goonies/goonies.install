@@ -1,0 +1,4 @@
+goonies usr/share/games/goonies
+debian/scripts/goonies usr/games
+build/linux/goonies.desktop usr/share/applications
+build/linux/goonies.png usr/share/pixmaps

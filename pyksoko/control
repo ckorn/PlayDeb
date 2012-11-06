@@ -1,0 +1,28 @@
+Source: pyksoko
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50)
+Standards-Version: 3.9.1
+Homepage: http://pyksokoban.sourceforge.net
+
+Package: pyksoko
+Architecture: all
+Depends: ${misc:Depends}, python-pyglet (>= 1.1.2),
+ python-pygame (>= 1.8)
+Recommends: pyksoko-music
+Description: Logic game with KDE sokoban skin based on sokoban
+ A clone of the sokoban game with the skin
+ of the KSokoban game who was shipped  with KDE 3.5.x.
+ You don't need KDE dependencies for it.
+ There is also a modern  warehouse skin and
+ the design is based around a warehouse.
+ The game has over 5000 Levels.
+ .
+ "Sokoban" is japanese for "warehouse keeper".
+ The player tries to push crates to their proper
+ locations in a warehouse.
+ .
+ Crates cannot be pulled or stepped over and the
+ player needs to avoid pushing crates into dead ends
+ or allowing crates to block movement in the warehouse.

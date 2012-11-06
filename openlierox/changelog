@@ -1,0 +1,12 @@
+openlierox (0.58~rc3-1~getdeb1) karmic; urgency=low
+
+  * New upstream version
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 16:57:21 +0100
+
+openlierox (0.58~rc1-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #510635)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 21 Jan 2010 14:28:52 +0100

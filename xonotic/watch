@@ -1,0 +1,3 @@
+version=3
+http://www.xonotic.org/download/ \
+    (?:.*/)?xonotic-([\d\.]+)\.zip

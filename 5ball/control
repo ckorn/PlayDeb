@@ -1,0 +1,28 @@
+Source: 5ball
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 6), autotools-dev,
+ libgtk2.0-dev, libglib2.0-dev, automake
+Standards-Version: 3.9.1
+Homepage: http://www.pcbypaul.com/software/5ball.shtml
+
+Package: 5ball
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A simple logic game
+ 5ball is a simple logic game. The goal of the game is to make the
+ maximum number of lines with balls of the same color. A line is
+ made of five balls. Each time you don't do a line, extra balls
+ appear on the grid. You loose when the grid is full.
+ .
+ This is a logic game, lining up 5 balls of like color to get them
+ off a grid, to keep the grid from filling up. Requires 1024x768
+ or better screen resolution.
+ .
+ It looks a lot like klines, but with bigger balls. 5ball is
+ actually a modification of gtkBalls (a game similar to klines but
+ with several features giving it loads of potential -- but somewhat
+ lacking in the UI department.) All the other 'Lines' games I have
+ tried were too small on a decent screen. This one is big and the
+ chicks think it's sexy. Yeah.

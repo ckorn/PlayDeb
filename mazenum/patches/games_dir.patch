@@ -1,0 +1,33 @@
+Game files go to /usr/share/games
+Index: mazenum-0.1/setup.py
+===================================================================
+--- mazenum-0.1.orig/setup.py	2012-04-18 19:00:21.886950594 +0200
++++ mazenum-0.1/setup.py	2012-04-18 19:00:30.586950334 +0200
+@@ -33,10 +33,10 @@
+ 		package_dir = {'mazenum': 'mazenum'},
+ 		scripts = ['bin/mazenum'],
+ 		data_files = [
+-			('share/mazenum/', ['android-icon.png'] ),
+-			('share/mazenum/fonts', glob('fonts/*')),
+-			('share/mazenum/sfx', glob('sfx/*')),		
+-			('share/mazenum/gfx', glob('gfx/*.png')),
++			('share/games/mazenum/', ['android-icon.png'] ),
++			('share/games/mazenum/fonts', glob('fonts/*')),
++			('share/games/mazenum/sfx', glob('sfx/*')),		
++			('share/games/mazenum/gfx', glob('gfx/*.png')),
+ 			('share/applications', ['data/mazenum.desktop']),
+ 			('share/pixmaps', ['data/mazenum-icon.png'])
+ 		],
+Index: mazenum-0.1/mazenum/game.py
+===================================================================
+--- mazenum-0.1.orig/mazenum/game.py	2012-04-18 19:00:44.278949928 +0200
++++ mazenum-0.1/mazenum/game.py	2012-04-18 19:00:49.058949787 +0200
+@@ -47,7 +47,7 @@
+ TARGET_FPS = 30
+ 
+ DEBUG = False
+-resources.DATA_DIR = "/usr/share/mazenum"
++resources.DATA_DIR = "/usr/share/games/mazenum"
+     
+ class Game:
+ 	COLUMNS = 8

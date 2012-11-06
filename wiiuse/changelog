@@ -1,0 +1,25 @@
+wiiuse (0.12-1~getdeb2) lucid; urgency=low
+
+  * debian/control: make libwiiuse-dev depend on
+    libbluetooth-dev (LP: #771574)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 27 Apr 2011 18:07:09 +0200
+
+wiiuse (0.12-1~getdeb1) lucid; urgency=low
+
+  * Upload to getdeb
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 29 Apr 2010 12:59:42 +0200
+
+wiiuse (0.13-0ubuntu1~karmic) karmic; urgency=low
+
+  * Applied changes from dolphin-emu code
+  * Put windows and macosx files back into tarball to be proper
+
+ -- Glenn Rice <glennricster@gmail.com>  Sat, 10 Apr 2010 17:43:52 -0500
+
+wiiuse (0.12-2ubuntu1~karmic) karmic; urgency=low
+
+  * Initial release
+
+ -- Glenn Rice <glennricster@gmail.com>  Thu, 07 Jan 2010 10:09:01 -0600

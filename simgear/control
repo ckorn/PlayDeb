@@ -1,0 +1,57 @@
+Source: simgear
+Section: libs
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Ove Kaaven <ovek@arcticnet.no>
+Build-Depends: debhelper (>= 9),
+               libx11-dev,
+               libxext-dev,
+               libxi-dev,
+               libice-dev,
+               libsm-dev,
+               libxt-dev,
+               libxmu-dev,
+               libgl1-mesa-dev | libgl-dev,
+               libglu1-mesa-dev | xlibmesa-glu-dev | libglu-dev,
+               freeglut3-dev | libglut3-dev,
+               zlib1g-dev,
+               libjpeg62-dev | libjpeg-dev,
+               libboost-dev,
+               libplib-dev (>= 1.8.5),
+               libopenscenegraph-dev (>= 3.0.0),
+               libopenal-dev,
+               libalut-dev,
+               autotools-dev,
+               cmake,
+               libsvn-dev,
+               libapr1-dev
+Standards-Version: 3.9.3
+Homepage: http://www.simgear.org/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-fgfs/simgear/trunk/
+Vcs-Svn: svn://svn.debian.org/pkg-fgfs/simgear/trunk/
+
+Package: simgear2.8.0
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Conflicts: simgear0
+Description: Simulator Construction Gear -- shared libraries
+ SimGear is a collection of libraries useful for constructing
+ simulation and visualization applications such as FlightGear
+ or TerraGear.
+ .
+ This package contains the shared libraries.
+
+Package: simgear-dev
+Architecture: all
+Section: devel
+Depends: libplib-dev,
+         libopenscenegraph-dev,
+         libc6-dev,
+         ${misc:Depends}
+Description: Simulator Construction Gear -- development files
+ SimGear is a collection of libraries useful for constructing
+ simulation and visualization applications such as FlightGear
+ or TerraGear.
+ .
+ This package contains the headers and static libraries.

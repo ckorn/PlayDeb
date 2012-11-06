@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+ifeq ($(DEB_BUILD_ARCH),amd64)
+	OGRE_DIR:=-DOGRE_PLUGIN_DIR:STRING=/usr/lib/x86_64-linux-gnu/OGRE-1.7.4
+else
+	OGRE_DIR:=-DOGRE_PLUGIN_DIR:STRING=/usr/lib/i386-linux-gnu/OGRE-1.7.4
+endif
+
+%:
+	dh $@ --buildsystem=cmake --parallel
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_BUILD_TYPE:STRING="Release" \
+		-DSUMWARS_NO_TINYXML:BOOL=ON \
+		-DSUMWARS_NO_ENET:BOOL=ON \
+		-DSUMWARS_BUILD_TOOLS:BOOL=OFF \
+		-DSUMWARS_EXECUTABLE_DIR:STRING="games" \
+		-DSUMWARS_SHARE_DIR:STRING="share/games/sumwars" \
+		$(OGRE_DIR)
+
+override_dh_auto_install:
+	dh_auto_install
+
+	rm -fv debian/tmp/usr/share/games/sumwars/resources/gui/fonts/DejaVu*.ttf
+	rm -fv debian/tmp/usr/share/games/sumwars/resources/particles/{scale_particles,create_ogre_1_6_particles}
+	rm -fv debian/tmp/usr/share/games/sumwars/resources/gui/imagesets/License.txt
+
+override_dh_install:
+	dh_install --list-missing

@@ -1,0 +1,10 @@
+legends/lindedicated			usr/lib/games/legends
+legends/LinLegends			usr/lib/games/legends
+legends/libogg.so.0			usr/lib/games/legends
+legends/libopenal.so			usr/lib/games/legends
+legends/libSDL-1.2.so.0			usr/lib/games/legends
+legends/libSDL-1.3.so.0			usr/lib/games/legends
+legends/libvorbis.so.0			usr/lib/games/legends
+debian/legends.png			usr/share/pixmaps
+debian/scripts/legends			usr/games
+debian/legends.desktop			usr/share/applications

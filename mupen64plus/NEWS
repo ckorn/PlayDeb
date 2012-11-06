@@ -1,0 +1,57 @@
+mupen64plus (1.99.4+1) unstable; urgency=low
+
+  mupen64plus was converted from a complete monolithic emulator to a modular
+  architecture [1] to create a more portable core. Therefore, the core is now a
+  library and not a GUI with included emulation cores. The mupen64plus
+  distribution only provides some basic plugins, a reference console frontend
+  and the core library.
+
+  Additional third party frontends [2] are necessary to get a GUI or special
+  functionality like configuration dialogs. Otherwise the new configuration
+  registry file "$HOME"/.mupen64plus/mupen64plus.cfg has to be edited by hand
+  to change the settings.
+
+  The input plugin provides an auto-configuration of input devices to help the
+  users getting their joysticks and gamepads to work without editing the
+  configuration registry. Many joysticks aren't known yet, but it is still
+  possible to change the settings manually [3]. It is recommended to forward
+  the new settings to the mupen64plus developers to get them included in future
+  releases.
+
+  Old settings aren't converted to the new configuration registry, but old
+  savestates from mupen64plus >= 1.5+dfsg1-2 should work without any problems.
+  Pre-2.0 plugins aren't supported by the emulation core due to a complete
+  changed plugin api.
+
+  [1] http://www.emutalk.net/threads/50098-New-release-Mupen64Plus-v1.99.1
+  [2] http://code.google.com/p/mupen64plus/wiki/ThirdPartyPlugins
+  [3] http://code.google.com/p/mupen64plus/wiki/ControllerSetup
+
+ -- Sven Eckelmann <sven@narfation.org>  Sun, 24 Jul 2011 13:54:44 +0200
+
+mupen64plus (1.5+dfsg1-2) unstable; urgency=low
+
+  The used paths in which mupen64plus saves its data for every user was
+  changed to be compliant to the XDG Base Directory Specification[1].
+
+  To use the previously generated configuration and data files, they must be
+  moved to the new directories. mupen64plus.conf has to be adjusted slightly
+  to point to find the new directory to save the rombrowser cache.
+  This can be done in some simple steps, but be sure that you have a backup
+  of the files inside $HOME/.mupen64plus
+
+  # mkdir -p "$HOME"/.config/mupen64plus/
+  # mkdir -p "$HOME"/.local/share/mupen64plus/
+  # mkdir -p "$HOME"/.cache/mupen64plus/
+  # mv "$HOME"/.mupen64plus/*.conf "$HOME"/.mupen64plus/*.cfg \
+       "$HOME"/.mupen64plus/*.ini "$HOME"/.config/mupen64plus/
+  # mv "$HOME"/.mupen64plus/save "$HOME"/.mupen64plus/screenshots \
+       "$HOME"/.mupen64plus/hires_texture "$HOME"/.mupen64plus/texture_dump \
+       "$HOME"/.local/share/mupen64plus/
+  # mv "$HOME"/.mupen64plus/rombrowser.cache "$HOME"/.cache/mupen64plus/
+  # sed -i "s/.*RomCacheFile\\s*=.*//" \
+           "$HOME"/.config/mupen64plus/mupen64plus.conf
+
+  [1] http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
+
+ -- Sven Eckelmann <sven@narfation.org>  Tue, 01 Sep 2009 00:18:45 +0200

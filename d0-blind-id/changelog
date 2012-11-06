@@ -1,0 +1,11 @@
+d0-blind-id (0.5.0-1~getdeb2) precise; urgency=low
+
+  * Fix debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 03 Nov 2012 22:16:08 +0100
+
+d0-blind-id (0.5.0-1~getdeb1) precise; urgency=low
+
+  * Initial release (LP: #992131)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 07 May 2012 19:13:45 +0200

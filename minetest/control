@@ -1,0 +1,76 @@
+Source: minetest
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Michael Gilbert <mgilbert@debian.org>
+Build-Depends: debhelper (>= 9),
+               cmake,
+               libbz2-dev,
+               imagemagick,
+               libpng-dev,
+               libjpeg8-dev,
+               libjthread-dev,
+               libxxf86vm-dev,
+               libgl1-mesa-dev,
+               libirrlicht-dev (>= 1.7.0),
+               libsqlite3-dev,
+               libopenal-dev,
+               liblua5.2-dev,
+               libreadline6-dev,
+               libvorbis-dev,
+               libicu-dev
+Standards-Version: 3.9.3
+Homepage: http://c55.me/minetest
+Vcs-Git: git://git.debian.org/git/pkg-games/minetest.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-games/minetest.git
+
+Package: minetest
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         minetest-common (= ${source:Version})
+Description: InfiniMiner/Minecraft-inspired open game world
+ minetest-c55 is a minecraft-inspired game written from scratch and licensed
+ under the GPL (version 2 or later). It supports both survival and creative
+ modes along with multiplayer support, dynamic lighting, and an "infinite" map
+ generator.
+
+Package: minetest-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: ${misc:Depends},
+         minetest (= ${binary:Version}),
+         minetest-server (= ${binary:Version})
+Description: InfiniMiner/Minecraft-inspired open game world debugging symbols
+ minetest-c55 is a minecraft-inspired game written from scratch and licensed
+ under the GPL (version 2 or later). It supports both survival and creative
+ modes along with multiplayer support, dynamic lighting, and an "infinite" map
+ generator.
+ .
+ These are the debugging symbols in case something goes wrong.
+
+Package: minetest-server
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         minetest-common (= ${source:Version})
+Description: InfiniMiner/Minecraft-inspired open game world server
+ minetest-c55 is a minecraft-inspired game written from scratch and licensed
+ under the GPL (version 2 or later). It supports both survival and creative
+ modes along with multiplayer support, dynamic lighting, and an "infinite" map
+ generator.
+ .
+ This is the minetest server package.
+
+Package: minetest-common
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: minetest (<< 0.3.1+dfsg-3)
+Description: InfiniMiner/Minecraft-inspired open game world common files
+ minetest-c55 is a minecraft-inspired game written from scratch and licensed
+ under the GPL (version 2 or later). It supports both survival and creative
+ modes along with multiplayer support, dynamic lighting, and an "infinite" map
+ generator.
+ .
+ These are the files used by both client and server packages.

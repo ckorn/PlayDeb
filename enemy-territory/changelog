@@ -1,0 +1,38 @@
+enemy-territory (2.60b+pb2.213-1~getdeb2) precise; urgency=low
+
+  * Fix SDL path (LP: #996082)
+    Thanks to Konrad Materka for the patch!
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 07 May 2012 21:14:39 +0200
+
+enemy-territory (2.60b+pb2.213-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (Updated punkbuster to v 2.213)
+  * Switch to dpkg-source 3.0 (quilt) format
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Wed, 07 Apr 2010 23:22:41 +0100
+
+enemy-territory (2.60b-1~getdeb3) karmic; urgency=low
+
+  [ bojo42 ]
+  * Integrated sdl audio fix from http://nullkey.ath.cx/et-sdl-sound/.
+  * Small fix to the desktop file.
+
+  [ Christoph Korn ]
+  * Fixes (LP: #504229).
+    Thanks.
+  * Comment dh_strip in debian/rules to make PB happy.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 07 Jan 2010 18:43:21 +0100
+
+enemy-territory (2.60b-1~getdeb2) jaunty; urgency=low
+
+  * Fix runlevel.
+
+ -- Christoph Korn <c_korn@gmx.de>  Sun, 25 Oct 2009 01:08:19 +0200
+
+enemy-territory (2.60b-1~getdeb1) jaunty; urgency=low
+
+  * Initial release (LP: #375067)
+
+ -- Christoph Korn <c_korn@gmx.de>  Fri, 23 Oct 2009 17:58:58 +0200

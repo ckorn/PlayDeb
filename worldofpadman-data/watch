@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/-/~/" \
+http://sf.net/worldofpadman/wop-1.5.x-to-(.*)-patch-unified\.zip

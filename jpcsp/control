@@ -1,0 +1,42 @@
+Source: jpcsp
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libgl1-mesa-glx,
+               libxcursor1,
+               libxrandr2,
+               openjdk-6-jre-headless
+Standards-Version: 3.9.3
+Homepage: http://jpcsp.org
+
+Package: jpcsp
+Architecture: any
+Depends: ${misc:Depends},
+         openjdk-6-jre | sun-java6-jre,
+         fontconfig,
+         jpcsp-data (= ${source:Version})
+Description: Java PSP emulator
+ Jpcsp is a PlayStation Portable emulator for PC, started
+ by shadow (the same great person that made PCSX & PCSX2)
+ and joined by a great team.
+ Jpcsp is the first PSP emulator written in Java, allowing
+ to play your PSP games on a PC. 
+ .
+ The project is still a beta release, but currently
+ more than 70 games are already playable.
+
+Package: jpcsp-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Java PSP emulator (data package)
+ Jpcsp is a PlayStation Portable emulator for PC, started
+ by shadow (the same great person that made PCSX & PCSX2)
+ and joined by a great team.
+ Jpcsp is the first PSP emulator written in Java, allowing
+ to play your PSP games on a PC. 
+ .
+ The project is still a beta release, but currently
+ more than 70 games are already playable.
+ .
+ (This package contains the data files)

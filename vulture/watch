@@ -1,0 +1,3 @@
+version=3
+http://www.darkarts.co.za/vulture/downloads \
+    (?:.*/)?vulture-([\d\.]+)\.7z

@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	# Add here commands to clean up after the build process.
+	$(MAKE) -C nethack spotless || /bin/true
+	$(MAKE) -C slashem spotless || /bin/true
+	$(MAKE) -C unnethack spotless || /bin/true
+	find nethack/ -name Makefile -delete
+	find slashem/ -name Makefile -delete
+	find unnethack/ -name Makefile -delete
+	rm -f nethack/win/vulture slashem/win/vulture unnethack/win/vulture
+	
+	# this file may be created during parallel make, remove it
+	rm -f vulture/vulture
+
+override_dh_auto_build:
+	# build vulture-nethack
+	cd nethack && sh sys/unix/setup.sh 1
+	cd nethack/win && ln -s ../../vulture/ vulture
+	$(MAKE) -C nethack all
+
+	# build vulture-slashem
+	cd slashem && sh sys/unix/setup.sh 1
+	cd slashem/win && ln -s ../../vulture/ vulture
+	$(MAKE) -C slashem all
+
+	# build vulture-unnethack
+	cd unnethack && sh sys/unix/setup.sh 1
+	cd unnethack/win && ln -s ../../vulture/ vulture
+	$(MAKE) -C unnethack all
+
+# Everything's done by the install scripts.
+override_dh_auto_install:

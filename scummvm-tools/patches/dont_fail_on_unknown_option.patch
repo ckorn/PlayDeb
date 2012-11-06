@@ -1,0 +1,16 @@
+An unrecognised option really is no reason to start whining.
+Index: scummvm-tools-1.4.0/configure
+===================================================================
+--- scummvm-tools-1.4.0.orig/configure	2011-11-03 19:13:41.000000000 +0100
++++ scummvm-tools-1.4.0/configure	2011-11-10 20:03:26.950470088 +0100
+@@ -282,9 +282,8 @@
+ 
+ # Show an error about an unknown option
+ option_error() {
+-	echo "error: unrecognised option: $ac_option
++	echo "warning: unrecognised option: $ac_option
+ Try \`$0 --help' for more information." >&2
+-	exit 1
+ }
+ 
+ 

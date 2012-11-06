@@ -1,0 +1,11 @@
+bombic (0.0.1-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 15:26:23 +0100
+
+bombic (0.0.1-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #500506)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 Dec 2009 00:26:10 +0100

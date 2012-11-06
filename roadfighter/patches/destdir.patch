@@ -1,0 +1,44 @@
+Index: roadfighter-1.0.1269/build/linux/Makefile
+===================================================================
+--- roadfighter-1.0.1269.orig/build/linux/Makefile	2010-02-09 23:00:42.291451261 +0100
++++ roadfighter-1.0.1269/build/linux/Makefile	2010-02-09 23:01:23.128951244 +0100
+@@ -38,7 +38,7 @@
+ 
+ CC = g++
+ CFLAGS = -g3 -O3 `sdl-config --cflags` -I/usr/X11R6/include
+-LDFLAGS = `sdl-config --libs` -L/usr/X11R6/lib/ -lSDL_image -lSDL_mixer -lSDL_sound -lSDL_ttf
++LDFLAGS = `sdl-config --libs` -L/usr/X11R6/lib/ -lSDL_image -lSDL_mixer -lSDL_ttf
+ RM = rm -f
+ CP = cp -r
+ MD = mkdir -p
+@@ -62,18 +62,21 @@
+ 
+ install: all
+ 	@$(ECHO) " o Creating install directory $(BINDIR)"
+-	@$(MD) "$(BINDIR)"
++	@$(MD) "$(DESTDIR)/$(BINDIR)"
+ 	@$(ECHO) " o Installing game and data to $(BINDIR)"
+-	@$(CP) "$(EXE)" $(DATA) "$(BINDIR)"
++	@$(CP) $(DATA) "$(DESTDIR)/$(BINDIR)"
++	@$(MD) "$(DESTDIR)/usr/lib/games/roadfighter"
++	@$(CP) "$(EXE)" "$(DESTDIR)/usr/lib/games/roadfighter"
+ 	@$(ECHO) " o Creating startup script $(STARTUP)"
+-	@$(MD) "$(GAMEDIR)"
+-	@$(ECHO) "cd \"$(BINDIR)\"; ./$(EXE); cd -" >"$(STARTUP)"
+-	@$(CHMOD) 755 "$(STARTUP)"
++	@$(MD) "$(DESTDIR)/$(GAMEDIR)"
++	@$(ECHO) "#!/bin/sh" >"$(DESTDIR)/$(STARTUP)"
++	@$(ECHO) "cd \"$(BINDIR)\"; ./$(EXE); cd -" >>"$(DESTDIR)/$(STARTUP)"
++	@$(CHMOD) 755 "$(DESTDIR)/$(STARTUP)"
+ 	@$(ECHO) " o Creating application menu entry"
+-	@$(MD) "$(ICNDIR)"
+-	@$(CP) "$(EXTRADIR)/$(ICON)" "$(ICNDIR)"
+-	@$(MD) "$(APPDIR)"
+-	@$(CP) "$(EXTRADIR)/$(DESKTOP)" "$(APPDIR)"
++	@$(MD) "$(DESTDIR)/$(ICNDIR)"
++	@$(CP) "$(EXTRADIR)/$(ICON)" "$(DESTDIR)/$(ICNDIR)"
++	@$(MD) "$(DESTDIR)/$(APPDIR)"
++	@$(CP) "$(EXTRADIR)/$(DESKTOP)" "$(DESTDIR)/$(APPDIR)"
+ 	@$(ECHO) ""
+ 
+ uninstall:

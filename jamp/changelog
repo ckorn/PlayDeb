@@ -1,0 +1,12 @@
+jamp (1.0.1-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Sun, 16 Aug 2009 22:49:45 +0000
+
+jamp (1.0-1~getdeb1) intrepid; urgency=low
+
+  * Initial release (Closes LP: #335945)
+
+ -- Christoph Korn <c_korn@gmx.de>  Sat, 28 Feb 2009 19:13:32 +0100
+

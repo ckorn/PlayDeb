@@ -1,0 +1,4 @@
+version=3
+opts="uversionmangle=s/(\d)(\d)/$1\.$2\.0/" \
+http://www.viewizard.com/download.php \
+    (?:.*/)?amenace(\d+)\.exe

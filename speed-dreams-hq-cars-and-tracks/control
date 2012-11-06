@@ -1,0 +1,20 @@
+Source: speed-dreams-hq-cars-and-tracks
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: http://speed-dreams.sourceforge.net/
+
+Package: speed-dreams-hq-cars-and-tracks
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: speed-dreams-data (<= 2.0.0~b1)
+Replaces: speed-dreams-data (<= 2.0.0~b1)
+Description: Opensource Motorsport Sim (extra data package)
+ Speed Dreams is a fork of the famous open racing car simulator
+ TORCS, aiming to implement exciting new features, cars, tracks
+ and AI opponents to make a more enjoyable game for the player,
+ as well as constantly improving visual and physics realism.
+ .
+ This package contains extra data files.

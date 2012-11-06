@@ -1,0 +1,7 @@
+source/darkplaces/darkplaces-glx		usr/lib/games/xonotic
+source/darkplaces/darkplaces-sdl		usr/lib/games/xonotic
+xonotic-linux-glx.sh				usr/share/games/xonotic
+xonotic-linux-sdl.sh				usr/share/games/xonotic
+debian/xonotic.png				usr/share/pixmaps
+debian/xonotic.desktop				usr/share/applications
+debian/scripts/xonotic				usr/games

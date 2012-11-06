@@ -1,0 +1,63 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# This has to be exported to make some magic below work.
+export DH_OPTIONS
+DEBIAN_DIR:=$(shell echo ${MAKEFILE_LIST} | awk '{print $$1}' | xargs dirname)
+DEB_SOURCE_PACKAGE:=$(shell dpkg-parsechangelog | grep Source |cut -f2 -d" ")
+VERSION:=$(shell dpkg-parsechangelog | grep Version | cut -d" " -f2|cut -d"-" -f1)
+UVERSION:=$(shell echo $(VERSION) | sed -r 's/\.//')
+TMPDIR:=$(shell mktemp -dp./)
+
+
+get-orig-source:
+	cd ${DEBIAN_DIR}/..
+	uscan --force-download --no-symlink
+	unzip ../UrbanTerror_$(UVERSION)_FULL.zip -d $(TMPDIR)
+	cd $(TMPDIR)/UrbanTerror/q3ut4; \
+	tar -c --exclude .svn --exclude .svnignore * |\
+	gzip --best -c - > \
+	../../../../${DEB_SOURCE_PACKAGE}_$(VERSION).orig.tar.gz
+	rm ../UrbanTerror_${UVERSION}_FULL.zip 
+	rm -rf ${TMPDIR}
+
+build:
+	# Nothing to do
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean
+	rm -rf tmp.*
+
+install: install-indep
+install-indep:
+	dh_testdir
+	dh_testroot
+	dh_clean -k -i
+	dh_installdirs -i -Xtmp
+	dh_installdebconf
+
+	### Data files	
+	dh_install -Xdebian -Xtmp -X"QIIIA Game Source (SDK) License.doc" '*' usr/share/games/urbanterror/q3ut4
+	dh_install -i
+
+
+# Build architecture independant packages using the common target.
+binary-indep: install-indep
+	dh_testdir -i
+	dh_testroot -i
+	dh_installchangelogs -i
+	dh_installdocs -i
+	dh_md5sums -i
+	dh_gencontrol -i
+	dh_builddeb -i
+
+# Build architecture dependant packages using the common target.
+binary-arch:
+	# Nothing to do
+
+binary: binary-indep
+.PHONY: build clean binary-indep binary-arch binary install install-indep

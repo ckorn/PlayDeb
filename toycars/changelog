@@ -1,0 +1,18 @@
+toycars (0.3.10-1~getdeb2) lucid; urgency=low
+
+  * Add menu entries for editors (LP: #709596)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 04 Feb 2011 21:46:16 +0100
+
+toycars (0.3.10-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Thu, 06 Aug 2009 17:04:01 +0000
+
+toycars (0.3.3-1~getdeb1) feisty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Sat, 05 May 2007 20:53:50 +0000
+

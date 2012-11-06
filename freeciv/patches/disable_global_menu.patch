@@ -1,0 +1,19 @@
+Description: Disable global menus to workaround bug with 'ubuntu-local'
+Author: Michael Terry <michael.terry@canonical.com>
+Bug-Ubuntu: https://launchpad.net/bugs/743265
+
+Index: freeciv-2.3.2/client/gui-gtk-2.0/gui_main.c
+===================================================================
+--- freeciv-2.3.2.orig/client/gui-gtk-2.0/gui_main.c	2012-04-14 17:51:53.370527814 +0200
++++ freeciv-2.3.2/client/gui-gtk-2.0/gui_main.c	2012-04-14 17:52:03.750527505 +0200
+@@ -1527,6 +1527,10 @@
+   /* GTK withdraw gtk options. Process GTK arguments */
+   gtk_init(&argc, &argv);
+ 
++  /* Disable Ubuntu global menus as a temporary workaround for bug
++     https://launchpad.net/bugs/743265 */
++  g_setenv("UBUNTU_MENUPROXY", "", TRUE);
++
+   /* Load resources */
+   gtk_rc_parse_string(fallback_resources);
+ 

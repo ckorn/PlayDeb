@@ -1,0 +1,836 @@
+stendhal (1.04-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    *world*
+    - Mine Town Revival Weeks!
+    - Semos and the Mine Town are decorated for the celebrations
+    - new paper chase quest which leads players all over the world
+    - Ketteh now gets help from the guards, if players without any clothes(!)
+    ignore her warning
+    - jail exit is straight to outside the cell
+
+    *client*
+    - replaced the separate menu buttons with one large menu 
+    - HP bar of ignored players is drawn in full color to make them visible
+    at night
+    - chat spam filter takes the length of the messages into account
+
+    *fixes*
+    - webstart client now uses a styled font (e. g. for the quest log)
+    - fixed players becoming invisible because of broken attack target
+    reference
+    - trading stack items properly
+    - map fixes
+
+    *website*
+    - added a little pumpkin
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 23 Oct 2012 18:23:16 +0200
+
+stendhal (1.03-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    *world*
+    - Ados Botanical Gardens
+    - new lamps
+    - journal for merchants
+    - map layering and collisions fixes
+    - new blend mode for enabling lighting in any zone
+
+    *fixes*
+    - don't accidently pick the first item on click spam on an item which was
+    used up
+    - fixed return from adventure island into the wall
+
+    *internal*
+    - creates selenium test for the stendhal website
+    - actions use item paths where applicable
+
+    *website*
+    - email-address can now be changed
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 13 Sep 2012 22:03:38 +0200
+
+stendhal (1.02-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    1.02
+    *world*
+    - clocks around the world show the server time
+    - vampires change their appearance depending on their attack status
+    - boy guardian in Semos Road East warns new player who miss a shield
+    - reduce Starkad's cost for lower level creatures and increase for higher
+    level
+    - ninjas use shurikens for ranged attack
+    - more dragons breath fire
+    - lamps and lights effects added to ados market, gnome village,
+    catacombs, haunted house, amazon island and more
+    - zone colouring added to hell, new dreamscape map, maze (randomised),
+    adventure island, afterlife, drow tunnels, rat city
+    - semos temple and tavern upstairs maps reworked
+    - new npc food seller and signs for ados market
+
+    *client*
+    - fancy tutorial speech bubbles
+    - nicer look of the attack circles
+    - slash commands have tab completion, suggestions of close matches for
+    misstyped commands
+    - a second splitter between the left panel and the game screen
+    - added textual description to the karma bar tooltip
+    - away and grumpy indicators show the reason in their tooltips
+    - the client gets ranged attack information from the server instead of
+    trying to
+      guess which attacks are ranged
+    - quit dialog gets keyboard focus so that it is possible to exit the game
+    without a mouse
+    - improved key handling and font sizes on Mac
+    - refined money and cheese sprites
+
+    *fixes*
+    - automatic walking behind a slow creature or npc will now properly try
+    to find the way around it
+    - lucky charms are bound to the player at loot time
+    - fixed removal of choking, away and grumpy icons that failed to be
+    removed under certain conditions
+    - make killer bees less dangerous(!)
+    - various NPC, quest and map fixes
+
+    *code*
+    - added script for adding/removing/alter/list of NPC's transitions.
+    - creatures can have different nature for ranged attacks than in melee
+    - events can trigger animations
+    - some dependency cleanup
+
+
+    1.01.1
+    *fixes*
+    - fixed slow processing of sound data causing lag on zone change and on
+    spawning of sound aware creatures
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 08 Aug 2012 18:38:38 +0200
+
+stendhal (1.01-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    *world*
+    - Venethiel teaches players about Haizen's maze
+    - Will warns players leaving Semos city 
+    - reworked Fado hotel restaurant 
+    - more creature descriptions added
+    - moved Semos city wall into the city
+    - Monogenes is now next to the bird station in Semos city
+    - Users can grab items bound to them even if they are under another
+    player
+    - Player bound items do not move under pushed player, unless they belong
+    to the said player
+    - Mixed creature fighting profiles. Used mainly for dragons, who will
+    attack at a distance if they can't get close to player
+    - killer bees are a new creature in fado forest
+    - Zinnia, Calla, Lobelia and Periwinkle hint which nearby quests you
+    still need to start (that fit your level) 
+
+    *other*
+    - added /profile <name> to open the webprofile of a character
+    - reworked the in-game spam protection
+    - admin command (*) inspect includes Java class name
+
+    *website*
+    - Navigation box shows number of unread messages after login
+    - Statistics on number of active accounts and characters
+
+    *client*
+    - private messages are shown in their own tab in addition to the main
+    chat log
+    - new images for cherub and golden trees
+    - users can reorder items in bag and chests
+    - prefer user owned items when trying dragging from under other players
+    - added a new outfit
+
+    *note to forks*
+    - UpdateSigner now looks for a parameter keystore.update-alias instead of
+    keystore.alias
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 06 Jul 2012 19:45:45 +0200
+
+stendhal (1.00-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * lots of testing
+    * nice descriptions for many NPCs
+    * fixed map bugs
+    * added social buttons to website 
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 22 May 2012 18:59:14 +0200
+
+stendhal (0.99-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    *world*
+
+    - bridal outfit includes a veil
+    - admin names are anonymised in support answer
+    - many more outside zones with lighting
+    - producers npcs tell the player how long a task will take before
+    starting it
+    - scroll eraser which cleans empty scrolls as a rare drop from some
+    wizards
+    - Inactive: New achievements for the weekly item quest
+    - outfit image improvements, more depth and differentiation of some
+    duplicates
+    - allow pushing of players with items under them by moving the items with
+    the player
+    - alternative dreamscape map (on rotation)
+    - introducing new NPC Marie-Henri in Ados library
+    - dry grass at mountain areas
+    - include ATK and DEF to the player strenght calculation when checking if
+    attacking is allowed
+    - corpse owner timer of protected corpses is restarted when the corpse is
+    moved
+
+    *fixes*
+    - allow Supplies for Phalk to be continued if the special armor or cloak
+    was accidentally sold
+
+    *client*
+    - Animated blends are much faster than before
+    - A menu item for taking screenshots
+    - Bleach mode supports colored light
+    - Blend layers can use any available blend mode
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 23 Feb 2012 22:26:36 +0100
+
+stendhal (0.98-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    *client*
+
+    - Zones can be colored according to hour, and otherwise
+    - Outfit dialog resets to current outfit, when opened
+    - Three new outfits available
+    - Relative zone danger level is shown below the map
+
+    *world*
+
+    - Garlic grows in the Kalavan City Gardens
+    - Introducing new NPC Rachel in Ados bank
+    - Kalavan City houses and Athor holiday apartments have usable tables now
+    - Fado hotel beergarden style changed a bit
+    - Reworked Ados interiors in some houses
+    - Ados Bank got more bank chests
+    - Semos and Ados mountain got more vegetation
+    - Semos Mine Town Revival weeks ended
+    - Athor cocktail bar got a new style
+    - Ortiv Milquetoast interior reworked
+    - Semos mine maps at level -2 got a new ground style
+    - New achievements for the weekly item quest
+    - New Guess Kills quest in Nalwor City with new NPC, Crearid
+
+    *fixes*
+
+    - Farmer achievement can be reached due to garlic grower implementation
+    - stop player vs player attack if either player move into a protection
+      zone
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 04 Dec 2011 14:30:04 +0100
+
+stendhal (0.97-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    0.97
+    * Revival Weeks*
+    - Faiumonis inhabitans are excited for the Mine Town Revival Weeks
+    already and decorated Semos City and the Mine Town area
+    - Caroline finally found her way to the Mine Town for selling snacks and
+    drinks
+    - NPCs and games have been moved in relation to the former years 
+
+    *world*
+    - More Semos NPCs help players now if they need some advise of what to do
+    next
+    - The duration of special outfits is now based on online time
+    - More minimum levels for items
+
+    - Semos inhabitants decided to open the new palisade wall a bit and added
+    a new way to the south and west
+    - Semos city tavern/INN owners rebuild their front garden and made it
+    quite comfortable
+    - New playground next to Plink at Semos_Plains_n
+    - Creatures of Kikareukin changed their environment on level 4 and 5
+    - Some mountain maps in Semos and Ados mountains changed their look
+    - Semos Mine Town map has a new look: the tower is gone and a new miner
+    hut built up
+
+    - New achievements active: mainio armor set "Excellent Stuff", harvest
+    vegetables and become a "Farmer"
+
+    *website*
+    - New coloured outfits can be seen on the website
+
+    *client*
+    - Outfit parts can be coloured
+    - Dialogs can be closed by pressing ESC
+    - Buddies can be invited to group directly from the buddy list
+    - Other players can be invited to group via right click menu
+
+    *fixes*
+    - Fixed descriptions for Ketteh Wehoh
+    - Fixed quest history for MedicineForTad and mentions new place of Tad in
+    Semos Village
+    - Fixed some spaces which went into Tads dialogue
+    - Fixed missing collision in Semos ciy with rebuilding the palisade wall
+    - Blood on gates can't block these anymore
+    - Login dialog gets re-enabled after a failed login
+    - Players can not attack others from protected areas
+    - Working on some maps fixed layer errors
+    - Decreased number of sheep to eight in Semos city (they were starving
+    before)
+
+    *internal code changes*
+    - table itemid was replaced with table item.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 11 Nov 2011 19:11:20 +0100
+
+stendhal (0.96-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    *world*
+    - Barbarus moved his work place a bit closer to the Mines entrance
+      and reduced the pick price to 400 money each
+    - Haunchy Meatoch is really thankful for the help he gets each time
+      from players and gives them some XP now
+    - various animal pens have gates now. Also wolves in the park are
+      behind a gate
+    - Semos has a palisade wall now to protect the city against the
+      creatures outside
+    - there is a nice new beer garden infront of the Fado hotel
+
+    *website*
+    - added an interactive Atlas to the website
+    - improvements to the arianne.sourceforge.net website including
+      an rss feed
+
+    *client*
+    - support and tutorial textboxes stay on top
+    - Atlas command now focuses on the current position
+    - added Beginner's guide to help menu
+    - healing messages don't spam the chat log anymore (but can be
+      enabled in the setting dialog)
+    - "where" command in the group menu
+
+    *fixes*
+    - fixed kill enemy army quest (load again + added madaram archer
+      and windwalker to kill-list)
+    - harold now understands plural words properly
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 27 Aug 2011 15:01:50 +0200
+
+stendhal (0.95-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    - rewrote the updater so that it will not break onces
+      a year anymore because the certificate expires
+    - on Unix/Linux the home folder now defaults to
+      $HOME/.config/stendhal for new installs
+    - improved the best player score for low level players:
+      http://stendhalgame.org/wiki/Fixing_RP_Score_2011
+
+    * Marauroa*
+    - updated to Marauroa 3.8.7 which greatly improves server
+      side performance
+
+    *client*
+    - text boxes are now attached to the bottom of the screen
+    - renamed the stendhal-FULL-0.xx.zip to stendhal-0.xx.zip. 
+      the extra client without sound made sense a long time ago
+      when the full client had twice the size of the soundless client.
+
+    *world*
+    - John and Jane on Athor island have a disrupted holiday
+    - Andy, at Ados cemetery, seeks revenge
+    - Harold pays owed earnings instantly on start of dialogue
+
+    *fixes*
+    - fixed not showing zone achievements
+    - fixed webstart which did not work on the most recent
+      OpenJDK version (Ubuntu 11.04, SuSE)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 15 Jul 2011 23:00:10 +0200
+
+stendhal (0.94-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    - new achievements active: interior zones, DM points, completed quests,
+      red armor set
+    - increased time for expired items and earnings on the market at Harold
+    - over-eating clears the food list and makes the player sick, instead of
+      killing them
+    - empty corpses are not automatically inspected
+    - NPCs who await a specific response (e.g. for a question) have a special
+      icon
+
+    *bugfixes*
+    - fixed right clicking on sources, fishing spots, etc.
+    - On Mac cmd+dragging opens the item split window
+    - client error log now works in the webstart client, too
+    - a number of small map fixes
+
+    *admin*
+    - added new zone int_abstract_admin_investigation for investigation of
+      account issues
+    - added new zone int_abstract_server_down for operating Stendhal on a
+      read only database copy
+
+    *website*
+    - achievements on character pages now have a mouse over box
+    - nicer layout for chat logs and log selection
+    - improved performance of Recent Events page
+    - improved performance of pages with many images
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 07 Jun 2011 17:04:09 +0200
+
+stendhal (0.93-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    *world*
+    - added ghost hound (rare) to Semos mountain cemetery
+    - Imorgen and her mother Mircea moved into a house in Fado forest
+    - deathmatch creature spawn time dependent on player level and
+    (inversely) on number of players in ring
+    - get fresh water at some hidden new springs
+    - Kill Enemy Army quest history with more detail and records number of
+    completions
+    - Xhiphin Zohos is thirsty and asks for water 
+    - decorated Semos for Easter
+    - Easter Bunny drops small easter eggs as he walks
+
+    *features*
+    - Easter Bunny launchable via script
+    - corpse auto inspect mode in settings panel
+    - inspected corpses auto close when empty
+    - corpse window title is the dead creature / player
+    - corpses cannot be thrown far by other players if they're protected
+
+    *website*
+    - new rankings for best player and hall of fame using achievements
+    - My & My Friends view shows true rankings
+    - support for special achievements from one off events
+
+    *fixes*
+    - Ambers way changed a bit for holding her back from Aldrin
+    - Jef answers to all keywords now he has information for
+    - death penalty rounded before application and reported as suitable
+    precision to player
+    - daily/weekly quests are restarted immediately when aborted
+    - daily monster quest creature to kill can't be requested again by Mayor
+    if it was aborted this time
+    - fix buying daisies seeds
+    - improvements in understanding item names when talking with
+    merchandizers, e.g. "solid plate shields"
+    - fixed "porcino" singular and made NPC parser understand (some)
+    misspelled words like "porcinis"
+    - non-exact answer matching in the fishermans license quiz
+    - recognise the expressions "ice cream" and "teddy bear"
+    - fix display texts for "ice cream"
+    - Alrak and Pequod give the bobbin/oil directly when saying 'make' (as
+    well as 'remind') if item is ready
+    - fix a memory hole in the market
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 13 Apr 2011 18:12:48 +0200
+
+stendhal (0.92-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    *features*
+    - achievements system with notification in game of reached achievement
+    and website integration
+    - group system for sharing loots and chatting
+    - show Production activity in the Travel Log
+
+    *world*
+    - sheep growing quest from Nishiya
+    - Help Jef by finding his mom, Amber, in a new quest
+    - Caroline moved into her refurbished house in Ados 
+    - the required item to collect (if chosen from a list) is displayed in
+    more quest histories
+    - message about where you died, on death
+    - sound on level up
+    - configurable archer range: orc spearman can throw further
+    - damage type of the arrows is used for archer players
+    - player killers pay more to get healed by NPCs
+    - NPCs who can list what produced items are available in the world.
+    Katerina and Alice Farmer are examples
+
+    *client*
+    - character selection screen has a grid layout
+    - settings dialog for sound, clickmode, decorative fonts
+    - a GUI to aid group management
+    - better multi-monitor behaviour
+
+    *fixes*
+    - numerous small gui code fixes
+    - all defined achievements can now be reached
+    - simplified chest syncing to remove flicker
+    - NPC conversation with improved and unified responses of producers and
+    merchandisers
+    - improved server side performance by changing Creature.getArea() to not
+    create lots and lots of short lived objects
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 26 Feb 2011 18:19:47 +0100
+
+stendhal (0.91-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #706925)
+    *world*
+    - full health bonus when you level up
+    - support answers via postman are orange
+    - Caroline (daughter of Fritz) is at Ados market
+    - greeting of NPCs by name
+    - NPCs can hear at different distances (e.g. you need to get
+      closer to Harold but you can be further from the DM assistant)
+    - Stefan and Damon attend the Fado hotel
+    - progress log which opens in a separate window, giving
+      detailed information about open and closed quests
+    - quest to help Anastasia's sick son
+
+    *fixes*
+    - add buddies only once to the buddy list and display
+      their canonical name
+    - removing buddies who weren't on your list gives
+      correct message
+    - Herbs for Carmen quest simplified
+    - word list improvements
+    - NPC text matching improvements
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 24 Jan 2011 23:22:16 +0100
+
+stendhal (0.90-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    0.90
+
+    *world*
+    - quest for Ortiv Milquetoast in Kirdneh River House
+    - Gaston, a Rat chef in Rat City bakery that will prepare the best crepes
+    suzette au chocolate in town
+    - Erna lends kitchen equipment
+    - Karl sells sacks, Philomena sells butter
+    - Elisabeth and her mother Carey found their way to Kirdneh
+    - quest Chocolate For Elisabeth on Kirdneh playground
+    - Semos is decorated for Christmas
+    - Santa is visiting (and can now be made to leave after Christmas on
+    time)
+    - changed corpse protection logic to be fairer
+    - Katerina and Jynath both heal at same price (they compromised on price,
+    to have two locations of equally cheap healing)
+
+    *fixes*
+    - Wikipedian follows redirects
+    - positioning of entities to fix character position, attacking circles,
+    creature placement errors
+    - vaults and adventure island correctly flagged as interior zones so
+    players shouldn't land in the wrong zone
+    - fixed some fish sources in amazon
+    - 70% of FindBugs warnings and most of all Eclipse warnings fixed
+    - all tests now pass using the Eclipse JUnit plugin
+
+
+
+    0.89
+
+    *features*
+    - quantity selector for control-drop
+    - corpses have resistance
+    - scrolls can be labelled with /markscroll command
+    - corpses have loot protection to anyone but the defender of the hits for
+    a short time after death
+
+    *world*
+    - Eheneumniranin, a half-elf that lost his memories. He harvests the
+    grain field in ados forest farm area
+    - Gertha and Martha in Kalavan city gardens, they'll bake delicious apple
+    and cherry pies
+    - Wrviliza, a kobold barmaid in Wo'fol bar, she also provide new drinks
+    (mild and strong koboldish torcibud)
+    - Kormic, a kobold regular in Wo'fol bar
+    - Uncle Dag in Ados market, he runs a distillery stand there and produces
+    fierywater
+    - quest in Wo'fol (the reward is V.S.O.P. koboldish torcibud)
+    - artichoke, garlic, mandragora (a magical herb) and zantedeschia (a
+    flower) and cane fields are growing in Faiumoni
+    - hen nests spawn eggs
+    - new types of empty bottles
+    - sickles can be used to harvest sugar cane
+    - a new fish-source on Amazon island
+    - red lionfish can be sold on the Athor ferry
+    - ados swamp and surroundings have a new landscape
+    - Bobby, a small boy in Fado, waits for some visitors
+    - scrying orbs around the deathmatch arena
+    - dead gnarled and twisted trees and bushes in the Orcs pit
+
+    *code*
+    - fixed calculation of player ages (it assumed that a second was 3*300ms)
+    - all NPCs defined with a zone configurator (standardisation across code)
+    - old style quests refactored to use standard conditions and actions
+    - drawing of the ground layers sped up
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 11 Dec 2010 19:58:50 +0100
+
+stendhal (0.89-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    *features*
+    - quantity selector for control-drop
+    - corpses have resistance
+    - scrolls can be labelled with /markscroll command
+    - cancel client download if the user closes the
+      progress bar window and confirms the dialog
+
+    *world*
+    - Eheneumniranin, a half-elf that lost his memories.
+      He harvests the grain field in ados forest farm area
+    - Gertha and Martha in Kalavan city gardens, they'll
+      bake delicious apple and cherry pies
+    - Wrviliza, a kobold barmaid in Wo'fol bar, she also
+      provide new drinks (mild and strong koboldish torcibud)
+    - Kormic, a kobold regular in Wo'fol bar
+    - Uncle Dag in Ados market, he runs a distillery
+      stand there and produces fierywater
+    - Gaston, a Rat chef in Rat City bakery 
+    - quest in Wo'fol (the reward is V.S.O.P. koboldish torcibud)
+    - artichoke, garlic, mandragora (a magical herb) and
+      zantedeschia (a flower) and cane fields are growing in Faiumoni
+    - hen nests spawn eggs
+    - new types of empty bottles
+    - sickles can be used to harvest sugar cane
+    - a new fish-source on Amazon island
+    - red lionfish can be sold on the Athor ferry
+    - ados swamp and surroundings has a new landscape
+    - Bobby, a small boy in Fado, waits for some visitors
+    - scrying orbs around the deathmatch arena
+    - dead gnarled and twisted trees and bushes in the Orcs pit
+
+    *code*
+    - fixed calculation of player ages (it assumed that a second was 3*300ms)
+    - all NPCs defined with a zone configurator (standardisation across code)
+    - old style quests refactored to use standard conditions and actions
+    - drawing of the ground layers sped up
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 24 Nov 2010 23:25:16 +0100
+
+stendhal (0.88-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    *features*
+    - right click on a player to start trading with them using a GUI
+    - corpse and chest windows raise themselves if one with an already open
+    window is inspected
+    - buddies are sorted first by online status, then by name
+    - don't reset to townhall on minor releases
+    - deathmatch assistant announces completion and player can directly claim
+    victory
+
+    *world*
+    - new NPC Andy in Ados near the church
+    - new NPC Haunchy Meatoch on Ados market with a new quest
+    - new NPC Florence Boullabaisse on Ados market who will make a tasty Fish
+    Soup for you
+    - new NPC Fritz on Ados market
+    - new NPC Barbarus in Semos Mine
+    - new NPC Ortiv Milquetoast in Kirdneh River House with a new quest
+    - new fish soup maker on Ados market (Florence Boullabaisse)
+    - new music in Orril Castle
+    - new items fish soup, garlic, grilled steak, coal, pick, red lionfish
+    - coal sources for extracting coal
+    - added garlic to Sues sales list
+    - new game for Semos Mine Town Revival Weeks: 9 switches
+
+    *website*
+    - animated/large NPCs like tomi and vulcanus now have an image
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 05 Nov 2010 20:34:56 +0100
+
+stendhal (0.87.1-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (just keeping you up to date :)
+    - fixed issue making client unresponsive for Windows users
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 15 Sep 2010 18:33:44 +0200
+
+stendhal (0.87-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    *world*
+    - NPCs have an 'ear' icon when they are attending a player
+    - private messages can't be sent to an /away player - use postman
+    - players returning from /away automatically get stored postman
+      messages sent to them
+    - own pets and sheep drawn on minimap
+    - hoeing NPC in Semos Plains North East
+    - added new NPC Marla to Ados
+    - added some new descriptions to NPCs
+
+    *website*
+    - read postman messages to and from your characters
+    - redesign character page layout, with equipment arranged like in
+      stendhal client
+    - 'Recent Events' shows what has been happening in the world
+    - added mouse over tips for items and monsters
+
+    *client*
+    - Game screen ported to swing
+    - Drag and drop drawn to a layer above everything
+    - Bag, character, keyring and settings moved out of the game screen
+
+    *code*
+    - improved performance of pathfinder
+    - use external program for twitter access instead of disabled http
+      basic auth API
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 14 Sep 2010 18:56:30 +0200
+
+stendhal (0.86.1-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    *world*
+    - new quest at the wizards tower in semos mountain
+    - new music by semos dungeon, in semos and ados townhall, semos temple,
+    ados church and in the forest
+    - new sounds on the athor ship, in the ados sewers, at the ados city
+    haven and some minor additions
+    - Ados and Fado churches ring their bells at full and half hours
+    - initial Hayunn dialog/tutorial streamlined and improved
+    - Diogenes tells you about postman, he recently remembered that used to
+    be his job
+    - a sign at the flowers field which shows the meaning of these flowers
+    - marked path from semos to ados city and to the athor ferry pier on ados
+    coast
+    - new npc added to ados market, who buys blue shield 
+    - Simon in Ados church offers helpful guidance
+    - blackjack max stake raised to 400
+    - bakers want more button mushrooms
+
+    * client
+    - attack targets drawn as circles
+    - settings panel uses icons and is always visible
+    - new help menus for settings panel
+    - "Remove account" button moved next to the account list
+    - right click and ignore a player, or right click and unignore an already
+    ignored player
+    - /storemessage <player> <message> for using postman
+    - karma scale bar (activated by asking Sarzina)
+
+    *bugfixes*
+    - walkblocker tables have proper resistance
+    - Mac OSX cmd key mapping
+    - getting an amulet when killing thing
+
+    *code*
+    - portals can do actions 
+    - Messages from NPCs to offline players for postman can be stored in a
+    table (without postman online)
+    - SBoxLayout supports alignment and padding
+    - support messages will get sent using postman if the player was offline
+    - postman uses an admin action to store messages in table
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 03 Aug 2010 23:13:01 +0200
+
+stendhal (0.85-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Jul 2010 19:21:57 +0200
+
+stendhal (0.83-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    *features*
+    - Rat City extended
+    - Find the Rat Children quest
+    - some creatures have attack strategy choosing weakest opponent (e.g.
+    dragons, military commanders, bosses)
+    - Zynn Iwuhos has some maps on display in the library
+    - Tab completion for online nick names works now without /who called
+    before
+    - orc spearman creature
+    - /atlas /faq and /manual commands to open useful pages in browser
+    - Harold tweets trades, the official stendhal server uses
+    http://twitter.com/stendhaltrade
+    - magical damage types of weapons (fire, ice ...)
+    - resistance/vulnerability of creatures to magical weapons (fire, ice,
+    ...)
+    - attack sweeps look different depending on the attack type
+    - Haizen's maze has music near the exit
+    - Plan a new route when a player following a path hits another entity
+    - single click for most actions and contextual mouse cursors (use
+    /clickmode if you prefer doubeclick)
+    - sub-zone teleport restrictions
+    - NPCs can respond to emote actions
+    - fertile ground inside houses
+    - zone changing using mouse is possible
+    - a family of NPCs holidaying in Ados
+    - more rats and zones for the Pied Piper quest
+
+    *bugfixes*
+    - archer behaviour
+    - zero value offers supported at market
+    - Monogenes easier to use
+    - kill spiders and dark elves quests check you killed creatures from
+    those relevant areas
+    - recover automatically from corrupted cache files
+    - ghosts have low hp like intended
+    - turns walking along a path are now smooth
+    - using a portal from distance walks the player to the portal
+    - the client can cope better with differing tile sizes
+
+    *code*
+    - creatures xml split into smaller parts
+    - attacks are now events
+    - signs can show an image instead of 'You read: ' text, or a description
+
+    *website*
+    - new domain stendhalgame.org
+    - rss feeds
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 05 May 2010 21:14:22 +0200
+
+stendhal (0.82.1-1~getdeb3) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 08 Apr 2010 14:15:20 +0200
+
+stendhal (0.81.2-1~getdeb1) karmic; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 07 Mar 2010 00:17:38 +0100
+
+stendhal (0.81.1-1~getdeb1) karmic; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 17:59:40 +0100
+
+stendhal (0.79.1-1~getdeb3) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 17:51:29 +0100
+
+stendhal (0.79.1-1~getdeb2) karmic; urgency=low
+
+  * Fix (LP: #503441)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 05 Jan 2010 19:24:13 +0100
+
+stendhal (0.79.1-1~getdeb1) karmic; urgency=low
+
+  * New upstream version (LP: #503155)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 05 Jan 2010 01:23:44 +0100
+
+stendhal (0.76-1~getdeb1) jaunty; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <c_korn@gmx.de>  Sun, 30 Aug 2009 18:27:25 +0200

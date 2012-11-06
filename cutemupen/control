@@ -1,0 +1,18 @@
+Source: cutemupen
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libqt4-dev,
+               libmupen64plus-dev (>= 1.99.5-6),
+               zlib1g-dev
+Standards-Version: 3.9.3
+Homepage: http://sourceforge.net/userapps/mediawiki/vknecht/index.php?title=CuteMupen
+
+Package: cutemupen
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: GUI front-end for Mupen64Plus N64 emulator
+ A Qt GUI front-end for the cross-platform
+ Mupen64Plus N64 emulator.

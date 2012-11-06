@@ -1,0 +1,19 @@
+The executable is called differently.
+Index: xonotic-0.6.0/xonotic-linux-glx.sh
+===================================================================
+--- xonotic-0.6.0.orig/xonotic-linux-glx.sh	2012-03-08 17:13:24.000000000 +0100
++++ xonotic-0.6.0/xonotic-linux-glx.sh	2012-03-10 12:23:05.121159135 +0100
+@@ -12,12 +12,7 @@
+   *)		mode="glx" ;;
+ esac
+ 
+-case "$(uname -m)" in
+-  x86_64)	arch="linux64" ;;
+-  *)		arch="linux32" ;;
+-esac
+-
+-xonotic="xonotic-${arch}-${mode}"
++xonotic="darkplaces-${mode}"
+ 
+ set -- ./${xonotic} "${@}"
+ 

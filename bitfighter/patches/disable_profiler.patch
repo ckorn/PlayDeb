@@ -1,0 +1,13 @@
+Disable the profiler for releases.
+Index: bitfighter-0.0.017b/zap/robot.cpp
+===================================================================
+--- bitfighter-0.0.017b.orig/zap/robot.cpp	2012-05-10 07:07:06.000000000 +0200
++++ bitfighter-0.0.017b/zap/robot.cpp	2012-05-11 18:24:00.734507097 +0200
+@@ -38,7 +38,6 @@
+ #include "ClientInfo.h"
+ #include "ServerGame.h"
+ 
+-#include "../lua/luaprofiler-2.0.2/src/luaprofiler.h"      // For... the profiler!
+ #include "BotNavMeshZone.h"      // For BotNavMeshZone class definition
+ #include "luaUtil.h"
+ #include "oglconsole.h"

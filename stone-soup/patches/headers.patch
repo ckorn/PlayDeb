@@ -1,0 +1,23 @@
+Always include curses.h. Else functions are not found.
+Index: stone-soup-0.10.2/source/libunix.cc
+===================================================================
+--- stone-soup-0.10.2.orig/source/libunix.cc	2012-04-14 23:36:19.777913044 +0200
++++ stone-soup-0.10.2/source/libunix.cc	2012-04-14 23:36:30.161912734 +0200
+@@ -50,16 +50,7 @@
+ #endif
+ 
+ #include <time.h>
+-
+-// Its best if curses comes at the end (name conflicts with Solaris). -- bwr
+-#ifndef CURSES_INCLUDE_FILE
+-    #ifndef _XOPEN_SOURCE_EXTENDED
+-    #define _XOPEN_SOURCE_EXTENDED
+-    #endif
+-    #include <curses.h>
+-#else
+-    #include CURSES_INCLUDE_FILE
+-#endif
++#include <curses.h>
+ 
+ // Globals holding current text/backg. colors
+ static short FG_COL = WHITE;

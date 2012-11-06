@@ -1,0 +1,55 @@
+Index: ascal-0.1.1/ascal.desktop.in
+===================================================================
+--- ascal-0.1.1.orig/ascal.desktop.in	2009-11-22 14:10:32.939804832 +0100
++++ ascal-0.1.1/ascal.desktop.in	2009-11-22 14:10:33.139791853 +0100
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ _Name=Ascal
+ _Comment=A type of Draughts
+ TryExec=ascal
+Index: ascal-0.1.1/src/gui.cpp
+===================================================================
+--- ascal-0.1.1.orig/src/gui.cpp	2009-11-22 14:10:32.969802840 +0100
++++ ascal-0.1.1/src/gui.cpp	2009-11-22 14:10:33.139791853 +0100
+@@ -21,6 +21,7 @@
+ #include "shareddata.hpp"
+ #include "config.h"
+ #include <string>
++#include <libintl.h>
+ 
+ gui::gui(shareddata *newData): GuiBoard() {
+ 	//clean, cleaner - pointer ;)
+Index: ascal-0.1.1/src/gui_board.cpp
+===================================================================
+--- ascal-0.1.1.orig/src/gui_board.cpp	2009-11-22 14:10:32.949809452 +0100
++++ ascal-0.1.1/src/gui_board.cpp	2009-11-22 14:10:33.139791853 +0100
+@@ -20,6 +20,7 @@
+ #include <math.h>
+ #include "helper.h"
+ #include <stack>
++#include <libintl.h>
+ 
+ 
+ gui_board::gui_board()   {
+@@ -307,6 +308,8 @@
+ 
+ ko_t gui_board::find_circle(int field) const {
+ 	ko_t ko; //the calculated coordinates
++	ko.x = 0;
++	ko.y = 0;
+ 	
+ 	//you should draw the board for yourself to understand this!
+ 	/* Okay here is one... ;)	
+Index: ascal-0.1.1/src/board.cpp
+===================================================================
+--- ascal-0.1.1.orig/src/board.cpp	2009-11-22 14:11:00.582306359 +0100
++++ ascal-0.1.1/src/board.cpp	2009-11-22 14:11:58.249783888 +0100
+@@ -19,6 +19,7 @@
+ #include "ourmove.hpp"
+ #include "helper.h"
+ #include "math.h"
++#include <stdlib.h>
+ 
+ 
+ board::board()

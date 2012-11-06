@@ -1,0 +1,28 @@
+Source: opentyrian
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), libsdl-net1.2-dev,
+ libsdl1.2-dev
+Standards-Version: 3.8.4
+Homepage: http://code.google.com/p/opentyrian/
+
+Package: opentyrian
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, opentyrian-data (= ${source:Version})
+Description: Open-source port of the DOS shoot-em-up Tyrian
+ Tyrian is an arcade-style vertical scrolling shooter.
+ The story is set in 20,031 where you play as Trent
+ Hawkins, a skilled fighter-pilot employed to fight
+ Microsol and save the galaxy.
+
+Package: opentyrian-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Open-source port of the DOS shoot-em-up Tyrian (data files)
+ Tyrian is an arcade-style vertical scrolling shooter.
+ The story is set in 20,031 where you play as Trent
+ Hawkins, a skilled fighter-pilot employed to fight
+ Microsol and save the galaxy.
+ .
+ (This package contains the data files)

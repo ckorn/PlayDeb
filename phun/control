@@ -1,0 +1,22 @@
+Source: phun
+Section: games
+Priority: optional
+Maintainer: Joao Pinto <joao.pinto@getdeb.net>
+Build-Depends: cdbs, debhelper (>= 5), bzip2,
+ sharutils
+Standards-Version: 3.9.3
+Homepage: http://www.phunland.com/wiki/Home
+
+Package: phun
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, zenity,
+ libsdl1.2debian,
+ libsdl-image1.2,
+ libpng12-0,
+ libpng3,
+ libglu1-mesa,
+ libxmu6
+Description: 2D physics sandbox!
+ Phun is a free game like 2D physics sandbox where you can play with physics 
+ like never before. The playful synergy of science and art is novel, and makes 
+ Phun as educational as it is entertaining.

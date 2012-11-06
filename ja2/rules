@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	find . -iname "*.o" -delete
+	find . -iname "*.d" -delete
+	rm -f ja2
+
+override_dh_auto_build:
+	dh_auto_build -- LNG=ENGLISH PREFIX=/usr

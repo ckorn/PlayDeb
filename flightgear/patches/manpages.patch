@@ -1,0 +1,70 @@
+N:    This manual page seems to contain a hyphen where a minus sign was
+N:    intended. By default, "-" chars are interpreted as hyphens (U+2010) by
+N:    groff, not as minus signs (U+002D). Since options to programs use minus
+N:    signs (U+002D), this means for example in UTF-8 locales that you cannot
+N:    cut and paste options, nor search for them easily. The Debian groff
+N:    package currently forces "-" to be interpreted as a minus sign due to
+N:    the number of manual pages with this problem, but this is a
+N:    Debian-specific modification and hopefully eventually can be removed.
+N:    
+N:    "-" must be escaped ("\-") to be interpreted as minus. If you really
+N:    intend a hyphen (normally you don't), write it as "\(hy" to emphasise
+N:    that fact. See groff(7) and especially groff_char(7) for details.
+Index: flightgear-2.4.0/man/fgfs.1.in
+===================================================================
+--- flightgear-2.4.0.orig/man/fgfs.1.in	2011-08-21 17:25:31.262618324 +0200
++++ flightgear-2.4.0/man/fgfs.1.in	2011-08-21 17:27:31.192618364 +0200
+@@ -47,7 +47,7 @@
+ Specify starting postion by airport ID.
+ .TP
+ .BI "--altitude=" "value"
+-Specify starting altitude (in feet unless --units-meters specified).
++Specify starting altitude (in feet unless \-\-units-meters specified).
+ .TP
+ .BI "--atc610x"
+ Enable atc610x interface.
+@@ -275,7 +275,7 @@
+ Specify heading or yaw angle (degrees).
+ .TP
+ .BR "--help" ", " "-h"
+-Show a brief help message.  Use --verbose,-v for a full listing of options.
++Show a brief help message.  Use \-\-verbose,\-v for a full listing of options.
+ .TP
+ .BI "--httpd=" "port"
+ Start an HTTP server on the specified port.
+@@ -371,7 +371,7 @@
+ Open an IO connection using the PVE (Provision Entertainment) protocol.
+ .TP
+ .B "--random-wind"
+-Randomize initial wind parameters.  See also: --wind.
++Randomize initial wind parameters.  See also: \-\-wind.
+ .TP
+ .BI "--ray=" "medium" "," "direction" "," "hz" "," "options" "," "..."
+ Open an IO connection to a "RayWoodworth" motion chair.
+@@ -429,7 +429,7 @@
+ .TP
+ .BI "--uBody=" "value"
+ Specify velocity along the body X axis (feet per second unless
+---units-meters specified).
++\-\-units-meters specified).
+ .TP
+ .B "--units-feet"
+ Use feet instead of meters.  Affects other options as well as the
+@@ -441,7 +441,7 @@
+ .TP
+ .BI "--vBody=" "value"
+ Specify velocity along the body Y axis (feet per second unless
+---units-meters specified).
++\-\-units-meters specified).
+ .TP
+ .BI "--vc=" "knots"
+ Specify initial airspeed (knots).
+@@ -465,7 +465,7 @@
+ .TP
+ .BI "--wBody=" "value"
+ Specify velocity along the body Z axis (feet per second unless
+---units-meters specified).
++\-\-units-meters specified).
+ .TP
+ .BI "--wind=" "DIR@SPEED"
+ Specify wind coming from DIR (degrees) at SPEED (knots).  Values may be

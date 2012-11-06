@@ -1,0 +1,5 @@
+debian/scripts/ja2			usr/games
+config.template				usr/share/games/ja2
+ja2					usr/lib/games/ja2
+ja2-stracciatella.desktop		usr/share/applications
+debian/ja2.png				usr/share/pixmaps

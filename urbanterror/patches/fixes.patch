@@ -1,0 +1,28 @@
+Index: urbanterror-20100418/ioq3-urt/code/client/cl_console.c
+===================================================================
+--- urbanterror-20100418.orig/ioq3-urt/code/client/cl_console.c	2010-04-24 17:14:03.217597908 +0200
++++ urbanterror-20100418/ioq3-urt/code/client/cl_console.c	2010-04-24 17:14:21.020086426 +0200
+@@ -82,7 +82,9 @@
+ 	Con_ClearNotify ();
+ 	Key_SetCatcher( Key_GetCatcher( ) ^ KEYCATCH_CONSOLE );
+ 
++#ifdef _WIN32
+ 	clu.SDL_EnableKeyRepeatWin(); //ioq3-urt: replenish the repeat/interval values for keyboard
++#endif
+ }
+ 
+ /*
+Index: urbanterror-20100418/ioq3-urt/code/client/cl_keys.c
+===================================================================
+--- urbanterror-20100418.orig/ioq3-urt/code/client/cl_keys.c	2010-04-24 17:14:46.717596022 +0200
++++ urbanterror-20100418/ioq3-urt/code/client/cl_keys.c	2010-04-24 17:14:58.837639636 +0200
+@@ -1387,7 +1387,9 @@
+ 		Key_ClearStates( );
+ 
+ 	keyCatchers = catcher;
++#ifdef _WIN32
+ 	clu.keyboard_done = qfalse;
++#endif
+ }
+ 
+ // This must not exceed MAX_CMD_LINE

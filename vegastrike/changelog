@@ -1,0 +1,70 @@
+vegastrike (0.5.1~r1-1~getdeb1) precise; urgency=low
+
+  * New upstream version (LP: #1038859)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 20 Aug 2012 17:57:24 +0200
+
+vegastrike (0.5.1.r1-2) stable; urgency=low
+  
+  * Fix music (upstream r13352-r13354)
+  * Remove bogus ffmpeg dependencies: not built with ffmpeg
+  
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Tue, 10 Apr 2012 22:08:33 -0300
+
+vegastrike (0.5.1.r1-1) stable; urgency=low
+
+  * Fix dependencies for ubuntu 11.10
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Wed, 04 Apr 2012 13:25:20 -0300
+
+vegastrike (0.5.1.r1-1) stable; urgency=low
+
+  * 0.5.1.r1-1 Release
+    * Fixed: MIP loading on rectangular textures
+    * Fixed: tumbling capships while docking
+    * Issues #3487109, #2531359, #2808586, #2812869, #2879873, 
+      #2929602 fixed
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Sun, 01 Apr 2012 12:34:50 -0300
+
+vegastrike (0.5.1.beta2-1) stable; urgency=low
+
+  * 0.5.1.beta2-1 Release
+    * Intel MESA DRI fixes
+    * Fixed beam weapons
+    * Fixed repair bot levels
+    * Cargo mules - allow cargo inside fleet vessels
+    * Offline Vertex de-duplication by mesh_tool
+    * Fixed "-d" option, supporting alternate data dirs
+    * Set correct unit for cargo on vdu manifest. 
+      Should be m^3 for cubic meters, not m^2.
+    * Some smaller fixes and enhancements and code cleanup
+    * Patches #3211661, #3250877, #3353864, #3353868, #3376191, 
+      #3376207, #3373653, #3373650, #3372844, #3373595, #3373583, 
+      #3438260, #3372847, #3372846, #3372837, #3372839, #3372494,
+      #3372591, #3372832, #2121764 applied
+    * Issues #3211697, #3315526, #3413675, #3413685, #3434184,
+      #3440480, #3440493, #3441556, #3311033, #3462191, #3325181,
+      #3191110, #3473367, #3325177 fixed
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Mon, 30 Jan 2012 16:53:43 -0300
+
+vegastrike (0.5.1.beta1-3) stable; urgency=low
+
+  * Install binaries in /usr/games
+  * Add SDL dependency for full joystick support
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Thu, 17 Mar 2011 19:21:50 -0300
+
+vegastrike (0.5.1.beta1-2) stable; urgency=low
+
+  * 0.5.1.beta1-2 Release
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Tue, 08 Mar 2011 14:43:02 -0300
+
+vegastrike (0.5.1.beta1-1) stable; urgency=low
+
+  * 0.5.1.beta1 Release
+  * Fidex module search path ordering so that mod modules take precedence over system modules
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Sun, 27 Feb 2011 14:56:06 -0300

@@ -1,0 +1,28 @@
+Description: Enable experimental support for link-time optimization
+Author: Sven Eckelmann <sven@narfation.org>
+
+---
+diff --git a/projects/unix/Makefile b/projects/unix/Makefile
+index c74791097d57f8de43eb562629fbb3ed0ebe585e..6c46a762ac54d23c5f4ba5bf59cc0eac6f7e4ebb 100644
+--- a/projects/unix/Makefile
++++ b/projects/unix/Makefile
+@@ -236,6 +236,7 @@ targets:
+ 	@echo "    DESTDIR=path   == path to prepend to all installation paths (only for packagers)"
+ 	@echo "  Debugging Options:"
+ 	@echo "    DEBUG=1        == add debugging symbols to application binary"
++	@echo "    LTO=1         == enable experimental build with link-time optimization"
+ 	@echo "    V=1            == show verbose compiler output"
+ 
+ all: $(TARGET)
+@@ -258,6 +259,11 @@ uninstall:
+ CFLAGS += -MD
+ -include $(OBJECTS:.o=.d)
+ 
++ifeq ($(LTO), 1)
++  CFLAGS += -flto
++  LDFLAGS += -fuse-linker-plugin -fwhole-program $(CFLAGS)
++endif
++
+ # standard build rules
+ $(OBJDIR)/%.o: $(SRCDIR)/%.c
+ 	$(COMPILE.c) -o $@ $<

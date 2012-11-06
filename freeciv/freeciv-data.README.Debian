@@ -1,0 +1,54 @@
+freeciv for Debian
+------------------
+
+Changing the look of GTK clients:
+
+To change the look of many of the widgets in the GTK2 client, you can use a
+customized ~/.freeciv.rc-2.0 file. Freeciv will also look for
+~/.freeciv.rc-2.0.$LANG if you have a locale set in your environment.
+
+You'll find a sample file in  /usr/share/games/freeciv/freeciv.rc-2.0.
+Note that this file isn't a global configuration file and is completely
+ignored by the Freeciv client.
+
+ -- Jordi Mallach <jordi@debian.org>, Mon, 21 Apr 2003 19:35:57 +0200
+
+Xaw3D notes:
+
+Freeciv does not work with replacement libraries for the Athena widget
+sets, such as Xaw3D and neXtaw.  (Debian packages xaw3dg and nextawg).
+
+Now there is a separate binary package (freeciv-client-xaw3d) which runs under
+xaw3dg. You might want to try it.
+
+One of the authors, Peter Joachim Unold, said this about the xaw problem:
+
+> Anyway there's no simple fix, because the problem is that I've subclassed
+> the Command widget, to produce something that also can hold a pixmap(instead
+> of just a b/w bitmap or a text). However it's not possible to subclass in a
+> way, which works under all incarnations of libxaw:
+> 
+> This is class of the pixcomm widget:
+> 
+> typedef struct _PixcommandClassRec {
+>   CoreClassPart             core_class;
+>   SimpleClassPart           simple_class;
+>   LabelClassPart            label_class;
+>   CommandClassPart          command_class;
+>   PixcommClassPart          pixcomm_class;
+> } PixcommClassRec;
+> 
+> A version which ran under libxaw3d, would need other fields, as xaw3d's 
+> Label widget is "derived" from different "subclasses". The xaw3d author
+> mentions this too.
+> 
+> Anyway I first realised this after I had made and used the widget all
+> over the program. Now afterwards, I'm just disappointed by Intrinsics
+> programming. Any Intrinsics manual will tell you how powerful subclassing 
+> is but in reality it's useless, unless you subclass from Core direct.
+> One day I'll fix it.
+> 
+>  best regards
+>   Peter
+
+ -- Richard Braakman <dark@xs4all.nl>, Mon, 17 Nov 1997 11:53:25 +0100

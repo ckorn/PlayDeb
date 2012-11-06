@@ -1,0 +1,38 @@
+xye (0.12.1-1~getdeb1~precise) precise; urgency=low
+
+  * Rebuild for precise.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 02 Apr 2012 20:16:52 +0200
+
+xye (0.11.2+dfsg-2) unstable; urgency=low
+
+  * Replaced using "rm" in debian/rules by adding patch
+    debian/patches/copyright.diff.  Closes: #645404.
+
+ -- Bart Martens <bartm@debian.org>  Sat, 15 Oct 2011 18:12:58 +0200
+
+xye (0.11.2+dfsg-1) unstable; urgency=low
+
+  * Repackaged the upstream tarball to remove a few files.  Closes: #645288.
+
+ -- Bart Martens <bartm@debian.org>  Fri, 14 Oct 2011 23:02:30 +0200
+
+xye (0.11.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright: Updated.
+
+ -- Bart Martens <bartm@debian.org>  Thu, 13 Oct 2011 21:14:33 +0200
+
+xye (0.11.1-2) unstable; urgency=low
+
+  * debian/control: xye depends on xye-data.  Closes: #644855.
+  * debian/control: xye-data is architecture "all".
+
+ -- Bart Martens <bartm@debian.org>  Sun, 09 Oct 2011 22:34:57 +0200
+
+xye (0.11.1-1) unstable; urgency=low
+
+  * Initial release.  Closes: #644699.
+
+ -- Bart Martens <bartm@debian.org>  Thu, 06 Oct 2011 21:07:09 +0200

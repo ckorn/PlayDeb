@@ -1,0 +1,48 @@
+Index: 5ball-0.43/Makefile.in
+===================================================================
+--- 5ball-0.43.orig/Makefile.in	2009-09-27 12:49:07.548444100 +0200
++++ 5ball-0.43/Makefile.in	2009-09-27 12:51:56.365436171 +0200
+@@ -581,13 +581,13 @@
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(datadir)/5ball
+-	$(mkinstalldirs) /var/lib/games
++	$(mkinstalldirs) $(DESTDIR)/usr/games
+ 	$(INSTALL_DATA) COPYING $(DESTDIR)$(datadir)/5ball
+ 
+ install-data-hook:
+-	if [ ! -f /var/lib/games/5ball-scores ]; then touch /var/lib/games/5ball-scores; fi
+-	if [ "${UID}" = 0 ]; then chgrp games /var/lib/games/5ball-scores; fi
+-	chmod 0664 /var/lib/games/5ball-scores
++	if [ ! -f $(DESTDIR)/usr/share/games/5ball/5ball-scores ]; then touch $(DESTDIR)/usr/share/games/5ball/5ball-scores; fi
++	if [ "${UID}" = 0 ]; then chgrp games $(DESTDIR)/usr/share/games/5ball/5ball-scores; fi
++
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+Index: 5ball-0.43/src/child.c
+===================================================================
+--- 5ball-0.43.orig/src/child.c	2009-09-27 12:49:07.564438522 +0200
++++ 5ball-0.43/src/child.c	2009-09-27 12:51:45.556468562 +0200
+@@ -42,7 +42,7 @@
+         size_t sz;
+   	sigset_t sset;
+ 	struct flock lockinfo;
+-        gchar *score_file_full = g_strconcat("/var/lib/games/5ball-scores", NULL);
++        gchar *score_file_full = g_strconcat("/usr/share/games/5ball/5ball-scores", NULL);
+ 
+         while(1) {
+         	FD_ZERO(&rfds);
+Index: 5ball-0.43/src/scoreboard.c
+===================================================================
+--- 5ball-0.43.orig/src/scoreboard.c	2009-09-27 12:49:07.576443540 +0200
++++ 5ball-0.43/src/scoreboard.c	2009-09-27 12:51:45.560471096 +0200
+@@ -100,7 +100,7 @@
+ 
+         memset(b, 0, sizeof(struct score_board) * 10);
+ 
+-  	if(!(fp = fopen("/var/lib/games/5ball-scores", "r"))) {
++  	if(!(fp = fopen("/usr/share/games/5ball/5ball-scores", "r"))) {
+ 		return FALSE;
+         }
+ 

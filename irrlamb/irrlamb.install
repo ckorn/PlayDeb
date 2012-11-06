@@ -1,0 +1,3 @@
+irrlamb usr/share/games/irrlamb
+debian/irrlamb.xpm usr/share/pixmaps
+debian/irrlamb.desktop usr/share/applications

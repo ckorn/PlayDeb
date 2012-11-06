@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+%:
+	dh --with quilt $@
+
+override_dh_auto_build:
+	$(MAKE) -C sources
+
+override_dh_auto_clean:
+	$(MAKE) -C sources clean
+	rm -f stransball2

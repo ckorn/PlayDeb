@@ -1,0 +1,27 @@
+galaxy (2.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    + Replaced deprecated GTK functions with new versions.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 02 Nov 2012 20:11:37 +0100
+
+galaxy (2.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    2012.02.01  v.2.1
+    + Galaxy was converted to use GTK3 and Cairo. It will no longer
+      build or install on older Linux distros lacking these libraries.
+    + RPM packages are built using Fedora and rpmbuild instead of alien.
+
+    2011.10.20  v.2.0
+    + Graphics code was revised to get around Ubuntu-11.10 Compiz problems.
+    + Code cleanup for compiler warnings from GCC 4.6 (Ubuntu 11.10).
+    + DEB package is now made by dkpg and RPM is made from DEB via alien.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 22 Oct 2012 20:54:39 +0200
+
+galaxy (1.8-1~getdeb1) jaunty; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <c_korn@gmx.de>  Tue, 23 Jun 2009 10:24:25 +0200

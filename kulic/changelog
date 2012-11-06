@@ -1,0 +1,9 @@
+kulic (1.1-1~getdeb1) karmic; urgency=low
+
+  [ Bernard ]
+  * Initial release
+
+  [ Christoph Korn ]
+  * Upload to getdeb (LP: #500510)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 26 Dec 2009 20:53:38 +0100

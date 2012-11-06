@@ -1,0 +1,6 @@
+#! /usr/bin/make -f
+%:
+	dh ${@}
+
+override_dh_auto_configure:
+	 ALIENARENA_HOMEDIR=.config/alien-arena dh_auto_configure -- --datadir=/usr/share/games

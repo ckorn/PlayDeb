@@ -1,0 +1,31 @@
+Index: build.xml
+===================================================================
+--- build.xml	(revision 3092)
++++ build.xml	(working copy)
+@@ -246,6 +246,26 @@
+         </tar>
+     </target>
+ 
++    <!-- A target that builds a 'source' package in the Debian 
++	 of the term, stripped of all potential legal/building 
++	 problems, such as jars without sources and already built jars,
++	 as those cause problems and are unnecessary for a distribution.
++    -->
++    <target name="tarDistBundle" unless="skip.dist.source" depends="initDist,prepareSourceFiles">
++        <tar destfile="${freecol.release.dir}/${freecol.release.name}-dist-src.tar.bz2" compression="bzip2">
++            <tarfileset dir="${freecol.release.dir}/source/${freecol.name}" 
++			prefix="${freecol.release.name}"
++			includes="**"
++			excludes="build/**, test/lib/**" />
++	    <tarfileset dir="${basedir}" includes="data/**" 
++			prefix="${freecol.release.name}"
++			excludes="**/.svn/**, data/fonts/Plakat-Fraktur.ttf" 
++			/>
++
++	    <!-- We remove test/lib because there is junit.jar there -->
++        </tar>
++    </target>
++
+     <target name="zipSourceBundle" unless="skip.dist.source" depends="initDist,prepareSourceFiles">
+         <zip destfile="${freecol.release.dir}/${freecol.release.name}-src.zip">
+             <fileset dir="${freecol.release.dir}/base" includes="${freecol.name}/**"/>

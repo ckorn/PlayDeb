@@ -1,0 +1,165 @@
+grfcodec (6.0.1-1~getdeb2) precise; urgency=low
+
+  * Fix debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 02 Nov 2012 20:40:46 +0100
+
+grfcodec (6.0.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    - NFORenum specific changes:
+      - Data file updates
+        - Action 0 station property 1A.
+        - Action 2 global variables 06, 0B..0F, 13..16, 1E, 21, 22.
+        - Action 2 train variables 4C, 61, 62.
+        - Action 2 road vehicle variables 4B, 4C, 61, 62.
+        - Action 2 ship variables 4B, 4C.
+        - Action 2 aircraft variables 4B, 4C.
+        - Action 5 type 15.
+        - Callback 15F.
+      - Add RPN calculations; the RPN expression is replaced by the
+      calculated value.
+    - GRFcodec specific changes:
+      - Fix reading/writing the size value for pseudo sprites so pseudo
+      sprites actually work with container v2.
+      - Reject pseudo sprites that are too large for container v1 when not
+      compiling v2.
+      - Do not write incomplete sprites when the maximum height of output
+      images is limited.
+      - Fix reading incorrect graphics when multiple graphics are provided
+      for a sprite and writing a GRF container version 1 GRF and the y
+      position decreases.
+      - Fix decoding of regular encoded 32bpp sprites.
+      - Print appropiate error message when trying to decode unsupported
+      colour depth formats.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 23 Sep 2012 13:47:32 +0200
+
+grfcodec (6.0.1-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 23 Sep 2012 13:47:13 +0200
+
+grfcodec (6.0.0-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    - NFO version 32 for supporting GRF container version 2.
+    - GRF container version 2 with bigger sprites and multiple images (bit
+    depth and zoom level) for real sprites.
+    - GRFID now has a command line option to create the (OpenTTD) MD5
+    checksum of a NewGRF. For GRF container version 2 NewGRFs this means the
+    MD5 checksum of the header and data sections.
+    - GRFCodec specific changes:
+      - Command line option -n that determines the best compression for
+      sprites during compilation. This could improve compression
+    - NFORenum specific changes:
+      - Data file updates
+        - Action 0 airport property 11.
+        - Action 0 railtype properties 1C and 1D.
+        - Action 0 aircraft property 1F.
+        - Action 0 cargo property 1D.
+        - Action 2 railtype variable 44.
+        - Action 4 language ID 0x3D (Australian).
+        - Action 5 type 17/97.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 06 Mar 2012 20:03:26 +0100
+
+grfcodec (5.1.3-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    - GRFCodec specific changes:
+      - Fix creation of PNG as some versions of libpng would see the
+      generated PNG as corrupt.
+    - NFORenum specific changes:
+      - Data file updates
+        - Action 0 train property 2B.
+        - Action 0 road vehicle properties 22 and 23.
+        - Action 0 ship properties 1D.
+        - Action 0 aircraft property 1C.
+        - Action 0 railtype property 1B.
+        - Action 2 callback 15E.
+        - Action 2 vehicle variable 4B.
+        - Action 8 GRF version 8.
+        - Action D patch variable 14.
+      - Support for font size 3 (monospaced font).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 25 Feb 2012 17:10:01 +0100
+
+grfcodec (5.1.2-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+   - NFORenum specific changes:
+     - Data file updates
+       - Action 3 canals ID 8.
+       - Action 5 type 15 takes 0xA2 sprites.
+       - Action 5 types 84, 85, 86, 88, 89, 8A, 8B, 8F, 90, 91, 92 and 93
+     - Support the advanced sprite layout in action2.
+     - Fix action 14 palette checking on BE machines.
+     - Disable warning 209 when checking action 0 raw ('l') data.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 09 Oct 2011 13:43:59 +0200
+
+grfcodec (5.1.1-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 12 May 2011 18:41:22 +0200
+
+grfcodec (1.0.0+debian1-2) unstable; urgency=low
+
+  * [148a2e3] Add big-endian-fix.patch, fixing grfcodec on s390.
+    (Closes: #596056)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Fri, 10 Sep 2010 18:20:12 +0200
+
+grfcodec (1.0.0+debian1-1) unstable; urgency=low
+
+  * [30caa6a] Repackaged upstream source, to remove a duplicate file (which
+    the lenny version of tar --keep-old-files doesn't like.
+  * [331d12b] Update watch file to upstream's new versioning scheme.
+  * [28b6b51] Mangle the +debian suffix in the watch file.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Mon, 23 Aug 2010 14:45:52 +0200
+
+grfcodec (1.0.0-1) unstable; urgency=low
+
+  * [bdf9657] New upstream release 1.0.0.
+  * [fd3f79e] Remove svn version mangling, upstream uses sane versioning
+    again.
+  * [8893585] Remove our manpages, upstream now provides them.
+  * [d023444] Bump Standards-Version to 3.9.1, no changes required.
+  * [911d6fe] Remove optional-upx.patch, which was included upstream.
+  * [5441697] Update upstream homepage.
+  * [bffa177] Build-Depend on libboost-dev, it is now required.
+  * [05e2298] Don't point users to the upstream homepage for docs.
+  * [various] Update packaging for upstream build system changes.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 19 Aug 2010 16:00:12 +0200
+
+grfcodec (0.9.10+svn2306-1) unstable; urgency=low
+
+  * [60e6925] New upstream release 0.9.10+svn2306.
+  * [61f5b99] Add optional-upx.patch, making upx compression optional.
+  * [d9464d5] Disable UPX binary compression, it is not available on all
+    platforms. (Closes: #576374)
+  * [27f8520] Don't Build-Depend on upx anymore.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Sun, 04 Apr 2010 14:11:22 +0200
+
+grfcodec (0.9.10+svn2294-1) unstable; urgency=low
+
+  * [af496d7] New upstream release 0.9.10+svn2294.
+  * [51e47c9] Remove patch gcc-4.4-compile-fixes, which was imported
+    upstream.
+  * [1f37c17] Update the watch file to the new upstream url scheme.
+  * [9c8d66d] Add some copyright holders I missed. - thanks to Alexander
+    Reichle-Schmehl
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 11 Mar 2010 17:20:42 +0100
+
+grfcodec (0.9.10+svn2247-1) unstable; urgency=low
+
+  * Initial release (Closes: #565392)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Mon, 01 Feb 2010 12:42:13 +0100

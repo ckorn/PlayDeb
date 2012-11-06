@@ -1,0 +1,17 @@
+annchienta (0.0r903-1~getdeb3~natty) natty; urgency=low
+
+  * Rebuild for natty because of python2.7 transition.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 21 Apr 2011 22:01:30 +0200
+
+annchienta (0.0r903-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 10 Mar 2010 14:38:30 +0100
+
+annchienta (0.0r903-1~getdeb1) jaunty; urgency=low
+
+  * Initial release.
+
+ -- Christoph Korn <c_korn@gmx.de>  Fri, 23 Oct 2009 14:13:11 +0200

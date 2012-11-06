@@ -1,0 +1,3 @@
+usr
+packaging/linux/hicolor		usr/share/icons
+packaging/linux/openra.desktop	usr/share/applications

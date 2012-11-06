@@ -1,0 +1,17 @@
+Source: vegastrike-music
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9)
+Homepage: http://vegastrike.sourceforge.net/
+Standards-Version: 3.9.3
+ 
+Package: vegastrike-music
+Architecture: all
+Depends: ${misc:Depends}
+Description: Music for Vega Strike
+ Music for Vega Strike, a GPL 3D OpenGL Action RPG space sim that allows
+ a player to trade and bounty hunt. This archive contains the music files
+ necessary to hear music in VegaStrike. These files are *not* essential to
+ play the game.
+

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ -d $HOME/.config/stransball2 -a /usr/share/games/stransball2 -nt $HOME/.config/stransball2 ] ; then
+	rm -rf $HOME/.config/stransball2.bak
+	mv $HOME/.config/stransball2 $HOME/.config/stransball2.bak
+fi
+
+if [ ! -d $HOME/.config/stransball2 ] ; then
+	cp -a /usr/share/games/stransball2 $HOME/.config/stransball2
+	rm $HOME/.config/stransball2/stransball2
+	ln -s /usr/share/games/stransball2/stransball2 $HOME/.config/stransball2/stransball2
+fi
+
+cd $HOME/.config/stransball2
+./stransball2

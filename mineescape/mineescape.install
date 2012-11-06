@@ -1,0 +1,3 @@
+graphics sounds *.py *.bin *.png		usr/share/games/mineescape
+debian/scripts/mineescape			usr/games
+debian/mineescape.desktop			usr/share/applications

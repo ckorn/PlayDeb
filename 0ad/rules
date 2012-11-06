@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	find binaries/system/ -type f -not -name readme.txt -delete
+	[ ! -f libraries/enet/src/Makefile ] || $(MAKE) -C libraries/enet/src distclean
+	rm -f libraries/enet/lib/*.so
+	$(MAKE) -C libraries/fcollada/src clean
+	rm -f libraries/fcollada/lib/*.a
+	rm -rf libraries/nvtt/src/build
+	rm -f libraries/nvtt/lib/*.so
+	rm -rf libraries/spidermonkey/include-unix libraries/spidermonkey/js-1.8.5
+	rm -rf libraries/spidermonkey/lib/*.so
+	rm -f libraries/spidermonkey/.already-built
+	rm -f build/premake/premake4/bin/release/premake4
+	rm -rf build/premake/premake4/build/gmake.unix/obj
+	rm -f build/premake/.gccmachine.tmp build/premake/.gccver.tmp
+	rm -rf build/workspaces/gcc
+	rm -rf build/workspaces/codeblocks
+	find source -iname "test_*.cpp" -not -iname "test_setup.cpp" -not -path "*/disabled_tests/*" -delete
+	rm -f source/ps/tests/stub_impl_hack.cpp
+
+
+override_dh_auto_build:
+	cd build/workspaces && \
+	./update-workspaces.sh -j6
+	CONFIG=Release dh_auto_build -D build/workspaces/gcc --parallel
+
+	# Test the binaries
+	cd binaries/system/ && \
+	./test
+
+override_dh_makeshlibs:
+	dh_makeshlibs -Xlibmozjs185-ps -Xlibenet

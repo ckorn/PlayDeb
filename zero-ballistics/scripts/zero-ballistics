@@ -1,0 +1,22 @@
+#!/bin/sh
+
+PADSP=
+
+if [ -e /usr/bin/padsp ] ; then
+    PADSP=/usr/bin/padsp
+fi
+
+if [ ! -d $HOME/.config/zero-ballistics ] ; then
+	mkdir -p $HOME/.config/zero-ballistics
+	cp -a /usr/share/games/zero-ballistics/* $HOME/.config/zero-ballistics/
+	cp -a /usr/lib/games/zero-ballistics/shared_libs $HOME/.config/zero-ballistics/
+	cp -a /usr/lib/games/zero-ballistics/tank.x86 $HOME/.config/zero-ballistics/
+fi
+
+cd $HOME/.config/zero-ballistics
+
+#if [ -e /usr/lib32/mesa/ ] ; then
+#	LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/lib32/mesa/
+#fi
+
+LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$(pwd)/shared_libs $PADSP ./tank.x86 $@

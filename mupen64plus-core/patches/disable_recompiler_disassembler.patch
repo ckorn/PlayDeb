@@ -1,0 +1,36 @@
+Description: Disable the disassembler of the recompiled code
+ The interface of libopcode.so and libbfd.so is not stable and therefore not
+ allowed to use in Debian. The libopcode.a and libbfd.a don't provide PIC
+ object files and therefore cannot be linked to the PIC shared object.
+ .
+ This part of the debugging interface can be disabled because their is no known
+ user interface that has support for it.
+Author: Sven Eckelmann <sven@narfation.org>
+
+---
+diff --git a/projects/unix/Makefile b/projects/unix/Makefile
+index 919355785628c10cdcf6ffc6787f882279db69af..3a5f5497280d92ab86f15706e2ae057da94d34a3 100644
+--- a/projects/unix/Makefile
++++ b/projects/unix/Makefile
+@@ -376,7 +376,7 @@ ifeq ($(DEBUGGER), 1)
+ 	$(SRCDIR)/debugger/dbg_decoder.c \
+ 	$(SRCDIR)/debugger/dbg_memory.c \
+ 	$(SRCDIR)/debugger/dbg_breakpoints.c
+-  LDLIBS += -lopcodes -lbfd
++#  LDLIBS += -lopcodes -lbfd
+ endif
+ 
+ # generate a list of object files to build, make a temporary directory for them
+diff --git a/src/debugger/dbg_memory.c b/src/debugger/dbg_memory.c
+index 5925daa78119c6b7892a238eb203d2517d140178..ef2f16375d735291370900cddec9549df4e01e8c 100644
+--- a/src/debugger/dbg_memory.c
++++ b/src/debugger/dbg_memory.c
+@@ -33,7 +33,7 @@
+ #include "r4300/ops.h"
+ #include "main/rom.h"
+ 
+-#if !defined(NO_ASM) && (defined(__i386__) || defined(__x86_64__))
++#if !defined(NO_ASM) && (defined(__i386__) || defined(__x86_64__)) && 0
+ 
+ #include <dis-asm.h>
+ #include <stdarg.h>

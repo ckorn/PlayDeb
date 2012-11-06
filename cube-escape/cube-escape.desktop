@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=cube-escape
+Exec=/usr/games/cube-escape
+Icon=cube-escape
+Terminal=false
+Type=Application
+Categories=Game;

@@ -1,0 +1,15 @@
+Set the game directory statically because /proc/self/exe points to the executable directory
+being in /usr/lib/games/pax-britannica
+Index: pax-britannica-0.0.0+git20110714/dokidoki-support/minlua.c
+===================================================================
+--- pax-britannica-0.0.0+git20110714.orig/dokidoki-support/minlua.c	2011-07-14 19:08:11.549214850 +0200
++++ pax-britannica-0.0.0+git20110714/dokidoki-support/minlua.c	2011-07-14 19:08:26.459214855 +0200
+@@ -144,7 +144,7 @@
+         }
+     }
+ 
+-    char *dir = dirname(buffer);
++    char *dir = "/usr/share/games/pax-britannica";
+ 
+     int success = chdir(dir);
+     if(success == 0)

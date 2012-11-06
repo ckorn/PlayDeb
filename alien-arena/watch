@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/_/./g;s/\-.*$//g,dversionmangle=s/\+dfsg$//g" \
+http://icculus.org/alienarena/Files/alienarena-(.*)\-*.tar.gz

@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_configure:
+	case "$(DEB_BUILD_ARCH)" in \
+		i386) ./configure --disable-ccachetest --prefix=/usr --bindir=/usr/games --libdir=/usr/lib/games/bzflag --datadir=/usr/share/games --host=i486-pc-linux-gnu --enable-robots --enable-bzadmin --enable-client ;; \
+		amd64) CFLAGS=-m64 CXXFLAGS=-m64 ./configure --bindir=/usr/games --libdir=/usr/lib/games/bzflag --datadir=/usr/share/games --disable-ccachetest --prefix=/usr --enable-robots --enable-bzadmin --enable-client ;; \
+		*) ./configure --disable-ccachetest --prefix=/usr --bindir=/usr/games --libdir=/usr/lib/games/bzflag --datadir=/usr/share/games --enable-robots --enable-bzadmin --enable-client ;; \
+	esac 
+
+override_dh_install:
+	dh_install --list-missing
+	cp misc/bzfquery.pl debian/bzflag-server/usr/games/bzfquery
+
+override_dh_installchangelogs:
+	dh_installchangelogs ChangeLog

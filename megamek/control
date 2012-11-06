@@ -1,0 +1,21 @@
+Source: megamek
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 6),
+ openjdk-6-jdk | sun-java6-jdk, ant
+Standards-Version: 3.8.0
+Homepage: http://megamek.sourceforge.net/
+
+Package: megamek
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, openjdk-6-jre | sun-java6-jre, fontconfig
+Description: Networked Java clone of BattleTech
+ MegaMek is a networked Java clone of BattleTech, a
+ turn-based sci-fi boardgame for 2+ players. Fight
+ using giant robots on a hex-based map.
+ . 
+ One player hosts a game and the rest of the players
+ connect. The connecting players can connect from
+ anywhere with a TCP/IP connection to the host,
+ including the same computer.

@@ -1,0 +1,42 @@
+Source: d0-blind-id
+Section: libs
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 8),
+               dh-autoreconf,
+               libssl-dev,
+               libtommath-dev,
+               libgmp-dev
+Standards-Version: 3.9.3
+Homepage: https://github.com/divVerent/d0_blind_id
+
+Package: libd0-blind-id0
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: library for user identification using RSA blind signatures
+ d0_blind_id is an implementation of RSA "blind signatures",
+ Diffie-Hellmann key exchange and Schnorr identification. It can be used
+ by the DarkPlaces game engine (as used in Xonotic) to perform anonymous
+ registration with a central server, providing cryptographic identities
+ which are used in Xonotic for access control on individual game servers.
+ .
+ This implementation has not been audited independently, and is not
+ currently recommended for non-game uses.
+
+Package: libd0-blind-id0-dev
+Architecture: any
+Section: libdevel
+Depends: ${misc:Depends},
+         libd0-blind-id0 (= ${binary:Version})
+Description: library for user identification using RSA blind signatures (headers)
+ d0_blind_id is an implementation of RSA "blind signatures",
+ Diffie-Hellmann key exchange and Schnorr identification. It can be used
+ by the DarkPlaces game engine (as used in Xonotic) to perform anonymous
+ registration with a central server, providing cryptographic identities
+ which are used in Xonotic for access control on individual game servers.
+ .
+ This implementation has not been audited independently, and is not
+ currently recommended for non-game uses.
+ .
+ (This package contains the development files)

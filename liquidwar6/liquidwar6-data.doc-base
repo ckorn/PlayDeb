@@ -1,0 +1,10 @@
+Document: liquidwar6
+Title: Liquid War 6 documentation
+Author: Christian Mauduit
+Abstract: This is Liquid War 6 complete documentation.
+Section: Games/Strategy
+
+Format: HTML
+Index: /usr/share/doc/liquidwar6/html/index.html
+Files: /usr/share/doc/liquidwar6/html/*.html
+

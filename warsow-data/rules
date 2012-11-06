@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean
+	[ ! -f build-stamp ] || rm build-stamp
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_install basewsw usr/share/games/warsow
+	find debian/warsow-data/usr/share/games/warsow -name .svn -type d -exec rm -rf {} \; || /bin/true
+
+binary-arch:
+#Nothing to do for binary-arch
+
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs -Xlicense.txt -Xgnu.txt
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

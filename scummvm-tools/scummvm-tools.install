@@ -1,0 +1,3 @@
+convert_dxa.sh			usr/share/scummvm-tools
+debian/scummvm-tools.desktop	usr/share/applications
+debian/scummvm-tools.png	usr/share/pixmaps

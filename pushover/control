@@ -1,0 +1,31 @@
+Source: pushover
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50~), autotools-dev,
+ zlib1g-dev, libsdl1.2-dev, libsdl-mixer1.2-dev,
+ libsdl-ttf2.0-dev, libpng12-dev, liblua5.1-0-dev
+Standards-Version: 3.9.1
+Homepage: http://pushover.sourceforge.net/
+
+Package: pushover
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, pushover-data (= ${source:Version})
+Description: Clone of the PC puzzle game pushover
+ Pushover is a fun puzzle game originally published
+ by Ocean in 1992. In this game you control an ant
+ that can walk along platforms that are connected
+ with ladders. On those platforms are dominos that
+ need to fall according to some rules.
+
+Package: pushover-data
+Architecture: all
+Depends: ${misc:Depends}, ttf-freefont
+Description: Clone of the PC puzzle game pushover (data files)
+ Pushover is a fun puzzle game originally published
+ by Ocean in 1992. In this game you control an ant
+ that can walk along platforms that are connected
+ with ladders. On those platforms are dominos that
+ need to fall according to some rules.
+ .
+ (This package contains the data files)

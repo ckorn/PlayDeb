@@ -1,0 +1,12 @@
+Remove the encoding.
+Index: gelide-0.1.5/data/gelide.desktop.in
+===================================================================
+--- gelide-0.1.5.orig/data/gelide.desktop.in	2011-03-27 16:08:08.539622999 +0200
++++ gelide-0.1.5/data/gelide.desktop.in	2011-03-27 16:08:12.039623001 +0200
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Version=
+-Encoding=UTF-8
+ Name=Gelide
+ _Comment=Manage and play your roms
+ Exec=gelide

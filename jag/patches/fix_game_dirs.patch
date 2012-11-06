@@ -1,0 +1,30 @@
+Install data in the correct directory.
+Index: jag-0.3.2/Game.pro
+===================================================================
+--- jag-0.3.2.orig/Game.pro	2012-03-02 23:50:16.000000000 +0100
++++ jag-0.3.2/Game.pro	2012-10-23 18:19:55.502870780 +0200
+@@ -5,9 +5,9 @@
+     opengl
+ unix: {
+     TARGET = ./bin/jag
+-    target.path = /usr/local/bin/
++    target.path = /usr/games/
+     INSTALLS += target
+-    datas.path = /usr/local/games/jag
++    datas.path = /usr/share/games/jag
+     datas.files = data
+     INSTALLS += datas
+     LIBS += -lXrandr
+Index: jag-0.3.2/main.cpp
+===================================================================
+--- jag-0.3.2.orig/main.cpp	2012-03-03 16:19:11.000000000 +0100
++++ jag-0.3.2/main.cpp	2012-10-23 18:19:55.502870780 +0200
+@@ -37,7 +37,7 @@
+   // on X11, we'll check if data directory exists locally first
+ #ifdef Q_WS_X11
+   if (!QDir(resourcePath).exists())
+-    resourcePath = "/usr/local/games/jag/data/";
++    resourcePath = "/usr/share/games/jag/data/";
+ #endif
+ 
+   if (!QDir(resourcePath).exists()) {

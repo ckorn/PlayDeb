@@ -1,0 +1,5 @@
+nazghul (0.7.0-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #497974)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 19 Jan 2010 21:33:19 +0100

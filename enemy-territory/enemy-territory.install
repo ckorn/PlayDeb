@@ -1,0 +1,9 @@
+debian/scripts/*			usr/games
+debian/enemy-territory.desktop		usr/share/applications
+debian/et-sdl-sound.so			usr/share/games/enemy-territory
+pb					usr/share/games/enemy-territory
+et					usr/share/games/enemy-territory
+et.x86					usr/share/games/enemy-territory
+etded.x86				usr/share/games/enemy-territory
+openurl.sh				usr/share/games/enemy-territory
+ET.xpm					usr/share/pixmaps

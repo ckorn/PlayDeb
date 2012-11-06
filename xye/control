@@ -1,0 +1,32 @@
+Source: xye
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, libsdl1.2-dev, libsdl-image1.2-dev, libsdl-ttf2.0-dev
+Standards-Version: 3.9.2
+Homepage: http://xye.sourceforge.net/
+
+Package: xye
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, xye-data (= ${source:Version})
+Description: puzzle game - get all the gems in the room
+ Xye is a puzzle game in which the objective is to help a character that looks
+ like a green circle to get all the gems in the room. This is, of course, not as
+ easy as it sounds, Xye must solve all sorts of puzzles while at the same time
+ avoiding all sorts of traps and beasts.
+ .
+ Xye is similar to other puzzle games like sokoban or boulderdash, yet it also
+ includes some arcade elements.
+ .
+ Xye is a derivative of a classic windows game called Kye, which is the base of
+ the gameplay experience and visual elements. Xye is able to play level files
+ that were made for Kye and Sokoban. It is also able to play custom .xye files,
+ a richer level format that allows the new objects and features, you can make
+ these levels by hand or by using the built-in editor that comes with the game.
+
+Package: xye-data
+Architecture: all
+Depends: ${misc:Depends}, ttf-dejavu-core
+Description: puzzle game - get all the gems in the room
+ This package contains the data files for the game Xye.
+

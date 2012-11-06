@@ -1,0 +1,27 @@
+This package was debianized by Bernard <bernard@alderan.cz> on
+Wed, 23 Dec 2009 00:04:00 +0100.
+
+It was downloaded from http://hippo.nipax.cz
+
+Upstream Authors:
+
+    Bernard Lidicky bernard@alderan.cz
+    Bernard Lidicky 2zdeny@seznam.cz
+
+Copyright:
+
+    Copyright (C) 2009 Bernard Lidicky
+    Copyright (C) 2009 Zdenek Boswart
+
+License:
+
+    licensed under the GPL version 3
+
+The Debian packaging is:
+
+    Copyright (C) 2009 Bernard <bernard@alderan.cz>
+
+and is licensed under the GPL version 3, 
+see `/usr/share/common-licenses/GPL-3'.
+
+

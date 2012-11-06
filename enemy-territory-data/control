@@ -1,0 +1,14 @@
+Source: enemy-territory-data
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 6)
+Standards-Version: 3.8.3
+
+Package: enemy-territory-data
+Architecture: all
+Description: Free multiplayer FPS (data package)
+ Wolfenstein: Enemy Territory is a free multiplayer
+ FPS set during World War II.
+ .
+ (This package contains the data files.)

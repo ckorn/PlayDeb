@@ -1,0 +1,15 @@
+Source: gens
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), autotools-dev,
+ libgtk2.0-dev, libsdl1.2-dev, linux-libc-dev,
+ zlib1g-dev, mesa-common-dev, nasm
+Standards-Version: 3.8.4
+Homepage: http://www.gens.me/
+
+Package: gens
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Sega Genesis / Sega CD / Sega 32X emulator
+ Gens is a win32/unix Sega Genesis / Sega CD / Sega 32X emulator.

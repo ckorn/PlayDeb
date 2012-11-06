@@ -1,0 +1,11 @@
+cuby (0.4-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 15:48:19 +0100
+
+cuby (0.4-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #463986)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 07 Feb 2010 20:42:06 +0100

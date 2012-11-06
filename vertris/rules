@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+  
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+makebuilddir/vertris::
+	cmake CMakeLists.txt
+	make
+
+install/vertris::
+	install -d $(CURDIR)/debian/vertris/usr/games
+	install -m755 debian/vertris.sh $(CURDIR)/debian/vertris/usr/games/vertris
+
+clean::
+	rm -f Makefile CMakeCache.txt cmake_install.cmake dist/vertris 
+	rm -rf src/CMakeFiles
+	rm -rf CMakeFiles

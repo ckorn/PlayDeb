@@ -1,0 +1,3 @@
+include.patch
+lua_linker.patch
+gamedir.patch

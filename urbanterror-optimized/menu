@@ -1,0 +1,3 @@
+?package(urbanterror):needs="X11" section="Games/Action"\
+  icon="/usr/share/pixmaps/urbanterror.xpm" \
+  title="Urban Terror" command="/usr/games/urbanterror --quiet"

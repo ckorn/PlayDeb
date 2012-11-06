@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Vulture-SLASH'em
+GenericName=
+Comment=Dungeons and dragons inspired role play game
+Comment[de_DE]=Rollenspiel im Sinne von Dungeons und Dragons
+Icon=vulture-slashem
+Exec=/usr/games/vulture-slashem
+Terminal=false
+Categories=Application;Game;

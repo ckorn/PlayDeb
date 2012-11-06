@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /usr/lib/games/0ad/system/
+./pyrogenesis "$@"

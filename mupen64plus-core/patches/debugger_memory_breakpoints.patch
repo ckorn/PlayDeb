@@ -1,0 +1,143 @@
+Description: Fix off-by-one error of memory in memory debugger
+Origin: upstream, https://bitbucket.org/richard42/mupen64plus-core/changeset/bc378bd0fac2
+
+---
+diff --git a/src/debugger/dbg_breakpoints.c b/src/debugger/dbg_breakpoints.c
+index 34929bb9a54f8f4a349f16a7a745cce4ce846365..a297580f9b96fd96d20c3367f99cc4d0fa72a0e8 100644
+--- a/src/debugger/dbg_breakpoints.c
++++ b/src/debugger/dbg_breakpoints.c
+@@ -74,13 +74,13 @@ void enable_breakpoint( int bpt)
+     
+     if(BPT_CHECK_FLAG((*curBpt), BPT_FLAG_READ)) {
+         for(bptAddr = curBpt->address; bptAddr <= (curBpt->endaddr | 0xFFFF); bptAddr+=0x10000)
+-            if(lookup_breakpoint((uint32) bptAddr & 0xFFFF0000, 0xFFFF, BPT_FLAG_ENABLED | BPT_FLAG_READ) == -1)
++            if(lookup_breakpoint((uint32) bptAddr & 0xFFFF0000, 0x10000, BPT_FLAG_ENABLED | BPT_FLAG_READ) == -1)
+                 activate_memory_break_read((uint32) bptAddr);
+     }
+ 
+     if(BPT_CHECK_FLAG((*curBpt), BPT_FLAG_WRITE)) {
+         for(bptAddr = curBpt->address; bptAddr <= (curBpt->endaddr | 0xFFFF); bptAddr+=0x10000)
+-            if(lookup_breakpoint((uint32) bptAddr & 0xFFFF0000, 0xFFFF, BPT_FLAG_ENABLED | BPT_FLAG_WRITE) == -1)
++            if(lookup_breakpoint((uint32) bptAddr & 0xFFFF0000, 0x10000, BPT_FLAG_ENABLED | BPT_FLAG_WRITE) == -1)
+                 activate_memory_break_write((uint32) bptAddr);
+     }
+     
+@@ -96,13 +96,13 @@ void disable_breakpoint( int bpt )
+ 
+     if(BPT_CHECK_FLAG((*curBpt), BPT_FLAG_READ)) {
+         for(bptAddr = curBpt->address; bptAddr <= ((unsigned long)(curBpt->endaddr | 0xFFFF)); bptAddr+=0x10000)
+-            if(lookup_breakpoint((uint32) bptAddr & 0xFFFF0000, 0xFFFF, BPT_FLAG_ENABLED | BPT_FLAG_READ) == -1)
++            if(lookup_breakpoint((uint32) bptAddr & 0xFFFF0000, 0x10000, BPT_FLAG_ENABLED | BPT_FLAG_READ) == -1)
+                 deactivate_memory_break_read((uint32) bptAddr);
+     }
+ 
+     if(BPT_CHECK_FLAG((*curBpt), BPT_FLAG_WRITE)) {
+         for(bptAddr = curBpt->address; bptAddr <= ((unsigned long)(curBpt->endaddr | 0xFFFF)); bptAddr+=0x10000)
+-            if(lookup_breakpoint((uint32) bptAddr & 0xFFFF0000, 0xFFFF, BPT_FLAG_ENABLED | BPT_FLAG_WRITE) == -1)
++            if(lookup_breakpoint((uint32) bptAddr & 0xFFFF0000, 0x10000, BPT_FLAG_ENABLED | BPT_FLAG_WRITE) == -1)
+                 deactivate_memory_break_write((uint32) bptAddr);
+     }
+ 
+@@ -124,7 +124,7 @@ void remove_breakpoint_by_num( int bpt )
+ 
+ void remove_breakpoint_by_address( uint32 address )
+ {
+-    int bpt = lookup_breakpoint( address, 0, 0 );
++    int bpt = lookup_breakpoint( address, 1, 0 );
+     if(bpt==-1)
+     {
+         DebugMessage(M64MSG_ERROR, "Tried to remove Nonexistant breakpoint %x!", address);
+@@ -151,7 +151,7 @@ void replace_breakpoint_num( int bpt, breakpoint* copyofnew )
+ int lookup_breakpoint( uint32 address, uint32 size, uint32 flags)
+ {
+     int i;
+-    uint64 endaddr = ((uint64)address) + ((uint64)size);
++    uint64 endaddr = ((uint64)address) + ((uint64)size) - 1;
+     
+     for( i=0; i < g_NumBreakpoints; i++)
+     {
+@@ -176,7 +176,7 @@ int lookup_breakpoint( uint32 address, uint32 size, uint32 flags)
+ 
+ int check_breakpoints( uint32 address )
+ {
+-    return lookup_breakpoint( address, 0, BPT_FLAG_ENABLED | BPT_FLAG_EXEC );
++    return lookup_breakpoint( address, 1, BPT_FLAG_ENABLED | BPT_FLAG_EXEC );
+ }
+ 
+ 
+diff --git a/src/memory/memory.c b/src/memory/memory.c
+index f002fc3a71682cb9ab2760fac5880fd3c23e154a..97fb9c202051adf444a57c9d83216a2782cd898c 100644
+--- a/src/memory/memory.c
++++ b/src/memory/memory.c
+@@ -1165,7 +1165,7 @@ void update_SP(void)
+                         for (j=start; j<=end; j++)
+                         {
+ #ifdef DBG
+-                            if (lookup_breakpoint(0x80000000 + j * 0x10000, 0xFFFF,
++                            if (lookup_breakpoint(0x80000000 + j * 0x10000, 0x10000,
+                                                   BPT_FLAG_ENABLED |  BPT_FLAG_READ ) != -1)
+                             {
+                                 readmem[0x8000+j] = read_rdram_break;
+@@ -1182,7 +1182,7 @@ void update_SP(void)
+                                 readmemd[0xa000+j] = read_rdramd;
+ #ifdef DBG
+                             }
+-                            if (lookup_breakpoint(0xa0000000 + j * 0x10000, 0xFFFF,
++                            if (lookup_breakpoint(0xa0000000 + j * 0x10000, 0x10000,
+                                                   BPT_FLAG_ENABLED |  BPT_FLAG_READ ) != -1)
+                             {
+                                 readmem[0xa000+j] = read_rdram_break;
+@@ -1199,7 +1199,7 @@ void update_SP(void)
+                                 readmemd[0x8000+j] = read_rdramd;
+ #ifdef DBG
+                             }
+-                            if (lookup_breakpoint(0x80000000 + j * 0x10000, 0xFFFF,
++                            if (lookup_breakpoint(0x80000000 + j * 0x10000, 0x10000,
+                                                   BPT_FLAG_ENABLED |  BPT_FLAG_WRITE ) != -1)
+                             {
+                                 writemem[0x8000+j] = write_rdram_break;
+@@ -1216,7 +1216,7 @@ void update_SP(void)
+                                 writememd[0x8000+j] = write_rdramd;
+ #ifdef DBG
+                             }
+-                            if (lookup_breakpoint(0xa0000000 + j * 0x10000, 0xFFFF,
++                            if (lookup_breakpoint(0xa0000000 + j * 0x10000, 0x10000,
+                                                   BPT_FLAG_ENABLED |  BPT_FLAG_WRITE ) != -1)
+                             {
+                                 writemem[0xa000+j] = write_rdram_break;
+@@ -1276,7 +1276,7 @@ void update_SP(void)
+                         for (j=start; j<=end; j++)
+                         {
+ #ifdef DBG
+-                            if (lookup_breakpoint(0x80000000 + j * 0x10000, 0xFFFF,
++                            if (lookup_breakpoint(0x80000000 + j * 0x10000, 0x10000,
+                                                   BPT_FLAG_ENABLED |  BPT_FLAG_READ ) != -1)
+                             {
+                                 readmem[0x8000+j] = read_rdramFB_break;
+@@ -1293,7 +1293,7 @@ void update_SP(void)
+                                 readmemd[0xa000+j] = read_rdramFBd;
+ #ifdef DBG
+                             }
+-                            if (lookup_breakpoint(0xa0000000 + j * 0x10000, 0xFFFF,
++                            if (lookup_breakpoint(0xa0000000 + j * 0x10000, 0x10000,
+                                                   BPT_FLAG_ENABLED |  BPT_FLAG_READ ) != -1)
+                             {
+                                 readmem[0xa000+j] = read_rdramFB_break;
+@@ -1310,7 +1310,7 @@ void update_SP(void)
+                                 readmemd[0x8000+j] = read_rdramFBd;
+ #ifdef DBG
+                             }
+-                            if (lookup_breakpoint(0x80000000 + j * 0x10000, 0xFFFF,
++                            if (lookup_breakpoint(0x80000000 + j * 0x10000, 0x10000,
+                                                   BPT_FLAG_ENABLED |  BPT_FLAG_WRITE ) != -1)
+                             {
+                                 writemem[0x8000+j] = write_rdramFB_break;
+@@ -1327,7 +1327,7 @@ void update_SP(void)
+                                 writememd[0x8000+j] = write_rdramFBd;
+ #ifdef DBG
+                             }
+-                            if (lookup_breakpoint(0xa0000000 + j * 0x10000, 0xFFFF,
++                            if (lookup_breakpoint(0xa0000000 + j * 0x10000, 0x10000,
+                                                   BPT_FLAG_ENABLED |  BPT_FLAG_WRITE ) != -1)
+                             {
+                                 writemem[0xa000+j] = write_rdramFB_break;

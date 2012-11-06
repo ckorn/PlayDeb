@@ -1,0 +1,205 @@
+Index: toycars-0.3.10/toycars_track_editor/src/TrackView.cxx
+===================================================================
+--- toycars-0.3.10.orig/toycars_track_editor/src/TrackView.cxx	2011-02-04 21:54:26.195753003 +0100
++++ toycars-0.3.10/toycars_track_editor/src/TrackView.cxx	2011-02-04 22:02:58.915753003 +0100
+@@ -87,7 +87,7 @@
+ }
+ 
+ //{jpg,png,bmp,pnm,pbm,pgm,ppm}
+-Fl_Image* loadImage(const char *filename)
++Fl_Image* loadImage(char *filename)
+ {
+    char *suffix = strrchr(filename, '.');
+    if (suffix == NULL)
+@@ -349,7 +349,7 @@
+    free(temp);
+ }
+ 
+-void TrackView::loadMap(const char *fullFilename)
++void TrackView::loadMap(char *fullFilename)
+ {
+ 	char filename[1024];
+    char *temp;
+@@ -878,7 +878,7 @@
+    }
+ }
+ 
+-void TrackView::resetImportImageDialog(const char *filename)
++void TrackView::resetImportImageDialog(char *filename)
+ {
+    Fl_Image *img = loadImage(filename);
+    if (img == NULL)
+@@ -899,7 +899,7 @@
+    return c1[0] == c2[0] && c1[1] == c2[1] && c1[2] == c2[2];
+ }
+ 
+-void TrackView::importImage(const char *fullFilename)
++void TrackView::importImage(char *fullFilename)
+ {
+ 	Fl_Image	*img;
+ 	unsigned short width, height, bpp, pad_bytes;
+@@ -954,7 +954,7 @@
+ }
+ 
+ // installs map into user data directory
+-void TrackView::installMap(const char *name)
++void TrackView::installMap(char *name)
+ {
+ #ifdef WIN32
+    fl_alert("Unfortunately this is unsupported on Windows at this time.\nYou may still install maps manually by saving them to a folder and placing it inside the data\\tracks directory and editing the tracklist.xml file.");
+@@ -962,7 +962,7 @@
+ #else
+    char fullname[1024];
+    char trackname[256];
+-   const char kTracklistName[64] = "/tracks/tracklist.xml";
++   char kTracklistName[64] = "/tracks/tracklist.xml";
+    char *temp;
+    
+    // first we uninstall the named track
+@@ -1031,7 +1031,7 @@
+ 
+ // uninstall track from user data directory.
+ // nb: doesn't remove track data itself, only remove entry from tracklist xml file.
+-void TrackView::uninstallMap(const char *name)
++void TrackView::uninstallMap(char *name)
+ {
+ #ifdef WIN32
+    fl_alert("Unfortunately this is unsupported on Windows at this time.\nYou may still uninstall maps manually by removing them from the data\\tracks directory and editing the tracklist.xml file.");
+Index: toycars-0.3.10/toycars_track_editor/src/TrackView.h
+===================================================================
+--- toycars-0.3.10.orig/toycars_track_editor/src/TrackView.h	2011-02-04 21:57:31.745753000 +0100
++++ toycars-0.3.10/toycars_track_editor/src/TrackView.h	2011-02-04 22:01:38.175753003 +0100
+@@ -37,11 +37,11 @@
+ public:
+    
+    void newMap(int w, int h);
+-   void loadMap(const char *fullFilename);
+-   void importImage(const char *fullFilename);
++   void loadMap(char *fullFilename);
++   void importImage(char *fullFilename);
+    void saveMap(const char *fullFilename);
+-   void installMap(const char *name);
+-   void uninstallMap(const char *name);
++   void installMap(char *name);
++   void uninstallMap(char *name);
+    
+    TrackView(int x,int y,int w,int h,const char *l=0);
+    ~TrackView();
+@@ -59,7 +59,7 @@
+    void setSign(SignType s) { sign = s; if (signs) signs->setFrame(s); }
+    void setUI(TrackEditorUI *inUI) { ui = inUI; }
+    
+-   void resetImportImageDialog(const char *filename);
++   void resetImportImageDialog(char *filename);
+    
+    void setHorizScrollFrac(double x);
+    void setVertScrollFrac(double x);
+Index: toycars-0.3.10/toycars_track_editor/src/TrackEditorUI.cxx
+===================================================================
+--- toycars-0.3.10.orig/toycars_track_editor/src/TrackEditorUI.cxx	2011-02-04 22:04:44.315752998 +0100
++++ toycars-0.3.10/toycars_track_editor/src/TrackEditorUI.cxx	2011-02-04 22:05:40.125753003 +0100
+@@ -36,7 +36,7 @@
+ void TrackEditorUI::cb_import_i(Fl_Menu_*, void*) {
+   if (!check_save()) return;
+ 
+-  const char *newfile = fl_file_chooser("Import Image File?", "*.{jpg,png,bmp,pnm,pbm,pgm,ppm}", NULL);
++  char *newfile = fl_file_chooser("Import Image File?", "*.{jpg,png,bmp,pnm,pbm,pgm,ppm}", NULL);
+   if (newfile != NULL) {
+      trackView->resetImportImageDialog(newfile);
+      importImageDialog->show();
+@@ -6978,7 +6978,7 @@
+ }
+ 
+ void TrackEditorUI::cb_OK1_i(Fl_Return_Button*, void*) {
+-  try { trackView->importImage(importImageBox->getFilename()); }
++  try { trackView->importImage((char*)importImageBox->getFilename()); }
+ catch (ScException e) {
+    e.printMsg();
+    fl_alert("Failed to import file %s\n", importImageBox->getFilename());
+Index: toycars-0.3.10/toycars_vehicle_editor/src/VehicleObject.cpp
+===================================================================
+--- toycars-0.3.10.orig/toycars_vehicle_editor/src/VehicleObject.cpp	2011-02-04 22:09:35.095752999 +0100
++++ toycars-0.3.10/toycars_vehicle_editor/src/VehicleObject.cpp	2011-02-04 22:10:49.835752998 +0100
+@@ -518,7 +518,7 @@
+ }
+ 
+ // installs map into user data directory
+-void VehicleObject::installVehicle(const char *name)
++void VehicleObject::installVehicle(char *name)
+ {
+ #ifdef WIN32
+    fl_alert("Unfortunately this is unsupported on Windows at this time.\nYou may still install vehicles manually by saving them to a folder and placing it inside the data\\cars directory and editing the carslist.xml file.");
+@@ -598,7 +598,7 @@
+ 
+ // uninstall car from user data directory.
+ // nb: doesn't remove car data itself, only remove entry from carslist xml file.
+-void VehicleObject::uninstallVehicle(const char *name)
++void VehicleObject::uninstallVehicle(char *name)
+ {
+ #ifdef WIN32
+    fl_alert("Unfortunately this is unsupported on Windows at this time.\nYou may still uninstall vehicles manually by removing them from the data\\cars directory and editing the carslist.xml file.");
+@@ -606,7 +606,7 @@
+ #else
+    char fullname[1024];
+    char carname[256];
+-   const char kCarslistName[64] = "/cars/carslist.xml";
++   char kCarslistName[64] = "/cars/carslist.xml";
+    char *temp;
+    
+    // chop off any .xml suffix
+@@ -675,4 +675,4 @@
+    system(str);
+    */
+ #endif
+-}
+\ No newline at end of file
++}
+Index: toycars-0.3.10/toycars_vehicle_editor/src/VehicleObject.h
+===================================================================
+--- toycars-0.3.10.orig/toycars_vehicle_editor/src/VehicleObject.h	2011-02-04 22:10:12.625753001 +0100
++++ toycars-0.3.10/toycars_vehicle_editor/src/VehicleObject.h	2011-02-04 22:11:04.245753002 +0100
+@@ -31,8 +31,8 @@
+    void reset();
+    void loadVehicle(const char *filename);
+    void saveVehicle(const char *filename);
+-   void installVehicle(const char *name);
+-   void uninstallVehicle(const char *name);
++   void installVehicle(char *name);
++   void uninstallVehicle(char *name);
+    
+    void loadSpriteFromDataDir(const char *name);
+    void loadWheelSpriteFromDataDir(const char *name);
+Index: toycars-0.3.10/toycars_vehicle_editor/src/LoadSpriteFromImage.cpp
+===================================================================
+--- toycars-0.3.10.orig/toycars_vehicle_editor/src/LoadSpriteFromImage.cpp	2011-02-04 22:12:40.595753003 +0100
++++ toycars-0.3.10/toycars_vehicle_editor/src/LoadSpriteFromImage.cpp	2011-02-04 22:13:13.175753003 +0100
+@@ -21,7 +21,7 @@
+ #include <string.h>
+ 
+ //{jpg,png,bmp,pnm,pbm,pgm,ppm}
+-Fl_Image* loadImage(const char *filename)
++Fl_Image* loadImage(char *filename)
+ {
+    char *suffix = strrchr(filename, '.');
+    if (suffix == NULL)
+@@ -80,7 +80,7 @@
+       ScThrowErr("Unsupported image type");
+ }
+ 
+-ScSprite *loadSpriteFromImage(const char *filename, int framewidth, int frameheight, SearchDirectories *dirs)
++ScSprite *loadSpriteFromImage(char *filename, int framewidth, int frameheight, SearchDirectories *dirs)
+ {
+    Fl_Image *img;
+    ScPixelData data;
+Index: toycars-0.3.10/toycars_vehicle_editor/src/LoadSpriteFromImage.h
+===================================================================
+--- toycars-0.3.10.orig/toycars_vehicle_editor/src/LoadSpriteFromImage.h	2011-02-04 22:13:18.155752999 +0100
++++ toycars-0.3.10/toycars_vehicle_editor/src/LoadSpriteFromImage.h	2011-02-04 22:13:22.085753000 +0100
+@@ -16,6 +16,6 @@
+ #include "ScSprite.h"
+ #include "SearchDirectories.h"
+ 
+-ScSprite *loadSpriteFromImage(const char *filename, int framewidth, int frameheight, SearchDirectories *dirs = NULL);
++ScSprite *loadSpriteFromImage(char *filename, int framewidth, int frameheight, SearchDirectories *dirs = NULL);
+ 
+ #endif

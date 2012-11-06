@@ -1,0 +1,54 @@
+Description: Print function pointer using %p instead of %x
+Origin: upstream, https://bitbucket.org/richard42/mupen64plus-core/changeset/3fe78796a127
+Author: Sven Eckelmann <sven@narfation.org>
+
+---
+diff --git a/src/debugger/dbg_memory.c b/src/debugger/dbg_memory.c
+index ef2f16375d735291370900cddec9549df4e01e8c..b2c8b63d50dd3b5ad0aa9746d0619e6801a70272 100644
+--- a/src/debugger/dbg_memory.c
++++ b/src/debugger/dbg_memory.c
+@@ -436,7 +436,7 @@ int get_memory_type(uint32 addr){
+   else if((readfunc == read_mi) || (readfunc == read_mi_break))
+     return MEM_MI;
+   else
+-    DebugMessage(M64MSG_ERROR, "Unknown memory type in debugger get_memory_type(): %x", readfunc);
++    DebugMessage(M64MSG_ERROR, "Unknown memory type in debugger get_memory_type(): %p", readfunc);
+   return MEM_NOMEM;
+ }
+ 
+@@ -558,7 +558,7 @@ void activate_memory_break_read(uint32 addr) {
+         readmemd[addr >> 16] = read_romd_break;
+    }
+    else
+-        DebugMessage(M64MSG_ERROR, "Unknown memory type in debugger activate_memory_break_read(): %x", readfunc);
++        DebugMessage(M64MSG_ERROR, "Unknown memory type in debugger activate_memory_break_read(): %p", readfunc);
+ }
+ 
+ void deactivate_memory_break_read(uint32 addr) {
+@@ -679,7 +679,7 @@ void deactivate_memory_break_read(uint32 addr) {
+         readmemd[addr >> 16] = read_romd;
+     }
+     else
+-        DebugMessage(M64MSG_ERROR, "Unknown memory type in debugger deactivate_memory_break_read(): %x", readfunc);
++        DebugMessage(M64MSG_ERROR, "Unknown memory type in debugger deactivate_memory_break_read(): %p", readfunc);
+ }
+ 
+ void activate_memory_break_write(uint32 addr) {
+@@ -806,7 +806,7 @@ void activate_memory_break_write(uint32 addr) {
+         writememd[addr >> 16] = write_nothingd_break;
+    }
+    else
+-        DebugMessage(M64MSG_ERROR, "Unknown memory type in debugger activate_memory_break_write(): %x", writefunc);
++        DebugMessage(M64MSG_ERROR, "Unknown memory type in debugger activate_memory_break_write(): %p", writefunc);
+ }
+ 
+ void deactivate_memory_break_write(uint32 addr) {
+@@ -933,7 +933,7 @@ void deactivate_memory_break_write(uint32 addr) {
+         writememd[addr >> 16] = write_nothingd;
+     }
+     else
+-        DebugMessage(M64MSG_ERROR, "Unknown memory type in debugger deactivate_memory_break_write(): %x", writefunc);
++        DebugMessage(M64MSG_ERROR, "Unknown memory type in debugger deactivate_memory_break_write(): %p", writefunc);
+ }
+ 
+ /* Following are the breakpoint functions for memory access calls.  See debugger/memory.h

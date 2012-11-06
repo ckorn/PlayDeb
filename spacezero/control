@@ -1,0 +1,48 @@
+Source: spacezero
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libopenal-dev,
+               libalut-dev,
+               libgtk2.0-dev,
+               libglib2.0-dev,
+               libvorbis-dev
+Standards-Version: 3.9.3
+Homepage: http://spacezero.sourceforge.net/
+
+Package: spacezero
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         spacezero-data (= ${source:Version})
+Description: 2D multiplayer space combat
+ SpaceZero is a 2D space combat, multiplayer
+ (two players by now) net game. 
+ .
+ The objective is to conquest the space, defeating all enemies. 
+ .
+ At starting point you have only one ship and one planet,
+ but you have money to buy more ships to conquest more planets. 
+ .
+ All the ships can be controlled by the computer (automatic mode) or by
+ the player (manual mode). You can easily change among your ships
+ controlling all of them independly.
+
+Package: spacezero-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: 2D multiplayer space combat (data package)
+ SpaceZero is a 2D space combat, multiplayer
+ (two players by now) net game. 
+ .
+ The objective is to conquest the space, defeating all enemies. 
+ .
+ At starting point you have only one ship and one planet,
+ but you have money to buy more ships to conquest more planets. 
+ .
+ All the ships can be controlled by the computer (automatic mode) or by
+ the player (manual mode). You can easily change among your ships
+ controlling all of them independly.
+ .
+ (This package contains the data files)

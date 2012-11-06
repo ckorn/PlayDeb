@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Vavoom - Heretic
+Comment=Heretic Shareware launcher, will automatically download the needed data-files
+Exec=heretic-shareware
+Icon=tux-b2f
+Terminal=false
+Type=Application
+Categories=Game;ActionGame;

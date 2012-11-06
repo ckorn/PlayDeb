@@ -1,0 +1,33 @@
+Source: zero-ballistics
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libc6-i386 [amd64],
+               lib32stdc++6 [amd64],
+               ia32-libs [amd64],
+               libglu1-mesa [i386],
+               libgl1-mesa-glx [i386],
+               libjpeg62 [i386]
+Standards-Version: 3.9.3
+Homepage: http://www.zeroballistics.com
+
+Package: zero-ballistics
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         zero-ballistics-data (= ${source:Version})
+Description: First person shooter tank combat
+ Zero Ballistics is a unique blend of first
+ person shooter and tank combat, focusing
+ on multiplayer gaming exclusively.
+
+Package: zero-ballistics-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: First person shooter tank combat (data package)
+ Zero Ballistics is a unique blend of first
+ person shooter and tank combat, focusing
+ on multiplayer gaming exclusively.
+ .
+ (This package contains the data files)

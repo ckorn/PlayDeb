@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --bindir=/usr/games
+
+override_dh_install:
+	dh_install
+	rm debian/battleship/usr/share/doc/battleship/ChangeLog
+	rm debian/battleship/usr/share/doc/battleship/COPYING
+	rm debian/battleship/usr/share/doc/battleship/INSTALL
+	rm debian/battleship/usr/share/doc/battleship/NEWS

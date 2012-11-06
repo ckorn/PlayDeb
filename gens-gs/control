@@ -1,0 +1,42 @@
+Source: gens-gs
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               autotools-dev,
+               automake1.10,
+               pkg-config,
+               nasm (>= 2.05.01),
+               libsdl1.2-dev,
+               libglib2.0-dev (>= 2.4.0),
+               libgtk2.0-dev (>= 2.4.0),
+               mesa-common-dev,
+               libgl1-mesa-dev,
+               zlib1g-dev,
+               libpng12-dev
+Standards-Version: 3.9.3
+Homepage: http://segaretro.org/Gens/GS
+
+Package: gens-gs
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         gens-gs-data (= ${source:Version})
+Conflicts: gens
+Replaces: gens
+Description: Sega Genesis, Sega CD, and Sega 32X emulator
+ Gens/GS is a version of Gens maintained by GerbilSoft.
+ The main goal of Gens/GS is to clean up the source code
+ and combine features from various forks of Gens,
+ as well as improving portability to other platforms.
+
+Package: gens-gs-data
+Architecture: i386
+Depends: ${misc:Depends}
+Description: Sega Genesis, Sega CD, and Sega 32X emulator (data package)
+ Gens/GS is a version of Gens maintained by GerbilSoft.
+ The main goal of Gens/GS is to clean up the source code
+ and combine features from various forks of Gens,
+ as well as improving portability to other platforms.
+ .
+ (This package contains the data files)

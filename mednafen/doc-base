@@ -1,0 +1,9 @@
+Document: mednafen
+Title: Mednafen General Documentation
+Author: The Mednafen Team
+Abstract: Documentation for the Mednafen multi-system emulator.
+Section: Emulators
+
+Format: HTML
+Index: /usr/share/doc/mednafen/mednafen.html
+Files: /usr/share/doc/mednafen/*.html

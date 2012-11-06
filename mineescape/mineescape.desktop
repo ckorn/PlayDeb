@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Mine Escape
+Exec=mineescape
+Icon=mineescape
+Terminal=false
+Type=Application
+Categories=Game;

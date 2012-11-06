@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DWITH_FREETYPE2:string="ON"
+
+override_dh_auto_install:
+	dh_auto_install
+	mv debian/tmp/usr/CorsixTH/CorsixTH debian/corsix-th/usr/lib/games/corsix-th/
+	rm debian/tmp/usr/CorsixTH/LICENSE.txt
+	rm debian/tmp/usr/CorsixTH/CorsixTH.ico
+	[ ! -d debian/corsix-th-data/usr/share/games/corsix-th ] || mv debian/tmp/usr/CorsixTH/* debian/corsix-th-data/usr/share/games/corsix-th

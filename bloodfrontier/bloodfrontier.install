@@ -1,0 +1,4 @@
+src/bfclient usr/share/games/bloodfrontier
+debian/scripts/bloodfrontier usr/games
+debian/bloodfrontier.xpm usr/share/pixmaps
+debian/bloodfrontier.desktop usr/share/applications

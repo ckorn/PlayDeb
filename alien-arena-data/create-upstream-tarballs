@@ -1,0 +1,3 @@
+#! /bin/sh
+echo "Use the scripts/create-upstream-tarballs script available in the alien-arena"
+echo "source package to get the original alien-arena-data_X.XX.orig.tar.gz file."

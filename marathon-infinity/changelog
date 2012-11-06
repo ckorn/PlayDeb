@@ -1,0 +1,11 @@
+marathon-infinity (20120514-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 17 May 2012 11:56:48 +0200
+
+marathon-infinity (20120128-1~getdeb1) oneiric; urgency=low
+
+  * Initial release (LP: #899693)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 12 Mar 2012 21:07:28 +0100

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mkdir -p $HOME/.config/stendhal
+cd /usr/share/games/stendhal
+java -jar stendhal-starter.jar $@

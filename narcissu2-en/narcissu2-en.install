@@ -1,0 +1,8 @@
+debian/narcissu2-en.desktop		usr/share/applications
+debian/narcissu2-en.xpm			usr/share/pixmaps
+debian/scripts/narcissu2-en		usr/games
+data/arc1.nsa				usr/share/games/narcissu2-en
+data/arc.nsa				usr/share/games/narcissu2-en
+data/cursor0.bmp			usr/share/games/narcissu2-en
+data/nar01.mpg				usr/share/games/narcissu2-en
+debian/0.utf				usr/share/games/narcissu2-en

@@ -1,0 +1,39 @@
+Define installation directory.
+Index: spacezero-0.83.18/Makefile
+===================================================================
+--- spacezero-0.83.18.orig/Makefile	2012-09-26 19:17:16.000000000 +0200
++++ spacezero-0.83.18/Makefile	2012-09-26 19:20:04.404186920 +0200
+@@ -1,20 +1,20 @@
+ CC = gcc 
+ #CC= i586-mingw32msvc-cc
+ BINDIR= ./bin
+-DATADIR= ./dat
+-SOUNDDIR= $(DATADIR)/sounds
++DATADIR= /usr/share/games/spacezero/
++SOUNDDIR= ./dat/sounds
+ SRCPATH= ./src/
+ 
+-CONFIGDIR=$(HOME)/.spacezero
++CONFIGDIR=$(HOME)/.config/spacezero
+ RECORDFILE=$(CONFIGDIR)/record
+ 
+ 
+ # The binary executable will be copied in the next directory.
+-INSTALL_DIR=/usr/local/bin
++INSTALL_DIR=`pwd`/debian/spacezero/usr/lib/games/spacezero/
+ 
+ # All data files will be copied in the next directory.
+ # tar.gz 
+-INSTALL_DATA_DIR=/usr/local/share/spacezero
++INSTALL_DATA_DIR=`pwd`/debian/spacezero-data/usr/share/games/spacezero/
+ # DEB pkg 
+ #INSTALL_DATA_DIR=/usr/share/spacezero
+ 
+@@ -62,6 +62,7 @@
+ 	-if [ ! -d $(INSTALL_DATA_DIR) ] ; then mkdir -p $(INSTALL_DATA_DIR); fi
+ 	-if [ ! -d $(INSTALL_DATA_DIR)/sounds/ ] ; then mkdir -p $(INSTALL_DATA_DIR)/sounds/; fi
+ 	cp $(SOUNDDIR)/* $(INSTALL_DATA_DIR)/sounds/
++	chmod -x $(INSTALL_DATA_DIR)/sounds/*
+ 	cp $(PROGRAMA) $(INSTALL_DIR)
+ 
+ uninstall:

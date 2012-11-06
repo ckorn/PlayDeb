@@ -1,0 +1,45 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+
+export JAVA_HOME=/usr/lib/jvm/default-java
+
+# Put depended upon jars in here
+# Somehow this line caused triplea to not find the main class anymore:
+# https://sourceforge.net/tracker/index.php?func=detail&aid=3542652&group_id=44492&atid=439737
+#export CLASSPATH=/usr/share/java/commons-httpclient.jar:/usr/share/java/commons-logging.jar:/usr/share/java/commons-codec.jar:/usr/share/java/substance.jar:/usr/share/java/laf-widget.jar
+
+%:
+	dh $@ --with javahelper
+
+override_dh_install:
+	cp run-server.sh triplea-server
+	cp triplea_unix.sh triplea
+	dh_install
+	-rm triplea-server triplea
+
+override_dh_clean:
+	find debian -name *.png -delete
+	dh_clean
+
+override_jh_depends:
+	jh_depends -j
+
+override_dh_installchangelogs:
+	dh_installchangelogs changelog.txt
+
+override_dh_auto_configure:
+	dh_auto_configure
+	convert icons/triplea_icon.png -resize 48x48 debian/icons/48x48/apps/triplea.png
+	convert icons/triplea_icon.png -resize 64x64 debian/icons/64x64/apps/triplea.png
+	convert icons/triplea_icon.png -resize 72x72 debian/icons/72x72/apps/triplea.png
+	convert icons/triplea_icon.png -resize 96x96 debian/icons/96x96/apps/triplea.png
+	convert icons/triplea_icon.png -resize 128x128 debian/icons/128x128/apps/triplea.png
+	convert icons/triplea_icon.png -resize 192x192 debian/icons/192x192/apps/triplea.png
+	cp icons/triplea_icon.png debian/icons/256x256/apps/triplea.png
+	#convert icons/triplea_icon.png -resize 32x32 debian/triplea.xpm
+
+
+
+get-orig-source:
+	uscan --rename --repack --download-current-version

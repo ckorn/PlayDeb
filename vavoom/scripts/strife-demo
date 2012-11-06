@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e
+
+if [ ! -f ~/.vavoom/strife-demo/strife0.wad ]; then
+  set +e
+  /usr/share/autodl/AutoDL.py /usr/share/games/vavoom/strife.autodlrc
+  STATUS=$?
+  set -e
+  # status 2 means download was ok, but the user choice not to start the game
+  if [ "$STATUS" = "0" -o  "$STATUS" = "2" ]; then
+    cd ~/.vavoom/strife-demo
+    unzip -u -L strife11.zip strife0.wad
+    rm strife11.zip
+  fi
+  if [ "$STATUS" != "0" ]; then
+    exit $STATUS
+  fi
+fi
+
+exec /usr/games/vavoom -iwaddir ~/.vavoom/strife-demo -strife "$@"

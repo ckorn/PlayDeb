@@ -1,0 +1,185 @@
+Description: Remove unused dependency to GLU
+ The OpenGL Utility Library was only used in a dead code path and can be
+ removed without loosing any functionality.
+Author: Sven Eckelmann <sven@narfation.org>
+
+---
+diff --git a/projects/msvc9/GraphicsPlugin.vcproj b/projects/msvc9/GraphicsPlugin.vcproj
+index ef34ea6b467bd96422ee218664cb49c5c3376011..72aa48485e72e2e8d11fc58385c7a2a1beea3a9a 100755
+--- a/projects/msvc9/GraphicsPlugin.vcproj
++++ b/projects/msvc9/GraphicsPlugin.vcproj
+@@ -64,7 +64,7 @@
+ 			/>
+ 			<Tool
+ 				Name="VCLinkerTool"
+-				AdditionalDependencies="opengl32.lib glu32.lib"
++				AdditionalDependencies="opengl32.lib"
+ 				OutputFile="mupen64plus-video-arachnoid.dll"
+ 				LinkIncremental="2"
+ 				GenerateDebugInformation="true"
+@@ -143,7 +143,7 @@
+ 			/>
+ 			<Tool
+ 				Name="VCLinkerTool"
+-				AdditionalDependencies="opengl32.lib glu32.lib"
++				AdditionalDependencies="opengl32.lib"
+ 				OutputFile="mupen64plus-video-arachnoid.dll"
+ 				LinkIncremental="1"
+ 				GenerateDebugInformation="true"
+diff --git a/projects/unix/Makefile b/projects/unix/Makefile
+index 2ff6a0d4e712860c8016bdc981f8d8edb59aaf80..d6f73a11e784a6a7a5c6a32ad2eaa9e4c8e83243 100755
+--- a/projects/unix/Makefile
++++ b/projects/unix/Makefile
+@@ -120,12 +120,9 @@ else
+   ifeq ($(shell pkg-config --modversion gl 2>/dev/null),)
+     $(error No OpenGL development libraries found!)
+   endif
+-  ifeq ($(shell pkg-config --modversion glu 2>/dev/null),)
+-    $(error No OpenGL utility development libraries found!)
+-  endif
+ 
+-  CFLAGS += -pthread $(shell pkg-config --cflags gl glu)
+-  LDLIBS += -pthread $(shell pkg-config --libs gl glu)
++  CFLAGS += -pthread $(shell pkg-config --cflags gl)
++  LDLIBS += -pthread $(shell pkg-config --libs gl)
+ endif
+ ifeq ($(OS), LINUX)
+   LDLIBS += -ldl 
+diff --git a/src/GraphicsPlugin.cpp b/src/GraphicsPlugin.cpp
+index 1afc14e9c0b39e9f4cdb06ed781e5538951985eb..959c8f467237dc01bc65151f0c9b7e0e3dc99f6a 100755
+--- a/src/GraphicsPlugin.cpp
++++ b/src/GraphicsPlugin.cpp
+@@ -309,89 +309,6 @@ void renderRedBox(float x, float y, float z, float width, float height,  float l
+     glEnd();
+ }
+ 
+-void GraphicsPlugin::_motionBlur()
+-{
+-        glMatrixMode(GL_PROJECTION);                    
+-        glLoadIdentity();                                    
+-        gluPerspective(45.0f,(GLfloat)800.0f/(GLfloat)600.0f, .5f ,150.0f);
+-
+-        glMatrixMode(GL_MODELVIEW);
+-        glLoadIdentity();
+-        gluLookAt(0, 0, 10,     0, 0, 0,     0, 1, 0);        
+-
+-        ////Render new stuff to the motion blur texture
+-        if ( animate(50) )
+-        {
+-            //Render to frame buffer
+-//            framebuffer01.beginRendering();
+-            {
+-                renderMotionBlur();
+-                
+-                glMatrixMode(GL_PROJECTION);                    
+-                glLoadIdentity();                                    
+-                gluPerspective(45.0f,(GLfloat)800.0f/(GLfloat)600.0f, .5f ,150.0f);
+-
+-                glMatrixMode(GL_MODELVIEW);
+-                glLoadIdentity();
+-                gluLookAt(0, 0, 10,     0, 0, 0,     0, 1, 0);    
+-
+-                renderRedBox(0, 0, 0,    1, 5, 1);
+-                //m_displayListParser->processDisplayList();
+-
+-        
+-            }
+-            glFlush();
+-           // framebuffer01.endRendering();
+-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    
+-        }
+-
+-        //glDisable(GL_BLEND);
+-        //glEnable(GL_DEPTH_TEST);
+-
+-        //renderMotionBlur();
+-        //renderTriangle();
+-
+-        renderMotionBlur();
+-
+-     //   glMatrixMode(GL_PROJECTION);                        
+-        //glLoadIdentity();                                    
+-        //gluPerspective(45.0f,(GLfloat)800.0f/(GLfloat)600.0f, .5f ,150.0f);
+-
+-     //   glMatrixMode(GL_MODELVIEW);
+-     //   glLoadIdentity();
+-        //gluLookAt(0, 0, 10,     0, 0, 0,     0, 1, 0);        
+-
+-        //renderRedBox(0, 0, 0,    1, 5, 1);
+-
+-        m_rdp.triggerInterrupt();
+-        m_rsp.triggerInterrupt();
+-        
+-
+-        //Render new stuff to frame buffer
+-        //framebuffer02.beginRendering();
+-        {
+-      //      m_displayListParser->processDisplayList();  
+-      //      RSP::getSingleton().reset();
+-      //      RDP::getSingleton().reset();
+-
+-      //      glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    
+-      //      glDisable(GL_BLEND);
+-      //      glEnable(GL_DEPTH_TEST);
+-      //      glDisable(GL_ALPHA_TEST);
+-            //m_displayListParser->processDisplayList();
+-        }
+-        //glFlush();
+-        //framebuffer02.endRendering();
+-        //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    
+-
+-        //Blend old stuff and new stuff      
+-
+-        //framebuffer02.render2();
+-        
+-        //FrameBuffer::getSingleton().render();
+-
+-}
+-
+ //-----------------------------------------------------------------------------
+ // ProcessDisplayList
+ //-----------------------------------------------------------------------------
+@@ -448,18 +365,7 @@ void GraphicsPlugin::processDisplayList()
+         m_rsp.reset();
+         m_rdp.reset();
+         m_openGLMgr.setCullMode(false, true);
+-
+-
+-        if ( false )
+-        {
+-            _motionBlur();
+-        }
+-        else 
+-        {
+-            m_displayListParser->processDisplayList();
+-            
+-        }
+-        
++        m_displayListParser->processDisplayList();
+     }
+ 
+         //Clear Screen?
+diff --git a/src/OpenGLManager.h b/src/OpenGLManager.h
+index 380a8c3b9129d08ace98ad289213e647351a9094..3359cf231208100adf0a1084cce3e0b1d501a141 100755
+--- a/src/OpenGLManager.h
++++ b/src/OpenGLManager.h
+@@ -26,7 +26,6 @@
+ //OpenGL includes
+ #include "m64p.h"
+ #include "OpenGL.h"
+-#include <GL/glu.h>
+ 
+ //*****************************************************************************
+ //* OpenGL Manager Class                                                        
+diff --git a/src/texture/ImageFormatSelector.cpp b/src/texture/ImageFormatSelector.cpp
+index 716368e9a512630a38bb6588a84d7b17790a985f..8d705966eea932875b5d179b4b300c364ac36ff0 100755
+--- a/src/texture/ImageFormatSelector.cpp
++++ b/src/texture/ImageFormatSelector.cpp
+@@ -32,7 +32,6 @@
+ #include "GBIDefs.h"
+ #include "m64p.h"
+ #include "OpenGL.h"
+-#include <GL/glu.h>
+ #include "Memory.h"
+ 
+ #ifndef GL_EXT_packed_pixels

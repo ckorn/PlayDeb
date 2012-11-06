@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=uxTank
+Exec=uxtank
+Icon=uxtank
+Comment=Destroy the other tanks or they will destroy you
+Terminal=false
+Type=Application
+Categories=Application;Game;ArcadeGame;

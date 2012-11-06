@@ -1,0 +1,40 @@
+Index: 8kingdoms-1.1.0/ai/MapAnalyzer/mapanalyzer.cpp
+===================================================================
+--- 8kingdoms-1.1.0.orig/ai/MapAnalyzer/mapanalyzer.cpp	2009-09-13 18:13:00.116472030 +0200
++++ 8kingdoms-1.1.0/ai/MapAnalyzer/mapanalyzer.cpp	2009-09-13 18:13:03.640506790 +0200
+@@ -9,6 +9,8 @@
+ */
+ 
+ #include "ai/MapAnalyzer/mapanalyzer.h"
++#include <limits.h>
++#include <cstring>
+ using namespace World;
+ 
+ namespace ai_ns
+Index: 8kingdoms-1.1.0/ai/Strategizer/attacks.cpp
+===================================================================
+--- 8kingdoms-1.1.0.orig/ai/Strategizer/attacks.cpp	2009-09-13 18:13:00.144470981 +0200
++++ 8kingdoms-1.1.0/ai/Strategizer/attacks.cpp	2009-09-13 18:13:03.640506790 +0200
+@@ -9,6 +9,8 @@
+ */
+ 
+ #include "ai/Strategizer/attacks.h"
++#include <limits.h>
++#include <cstring>
+ 
+ using namespace World;
+ 
+Index: 8kingdoms-1.1.0/gui/engine/Effects.cpp
+===================================================================
+--- 8kingdoms-1.1.0.orig/gui/engine/Effects.cpp	2009-09-13 18:13:06.753471628 +0200
++++ 8kingdoms-1.1.0/gui/engine/Effects.cpp	2009-09-13 18:13:19.000472077 +0200
+@@ -23,6 +23,9 @@
+ #include <assert.h>
+ #include <stdlib.h>
+ 
++#include <limits.h>
++#include <cstring>
++
+ using namespace std;
+ 
+ namespace gui{

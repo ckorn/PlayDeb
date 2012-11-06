@@ -1,0 +1,16 @@
+Source: capitalism
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50~), libqt4-dev
+Standards-Version: 3.9.1
+Homepage: http://www.linux-ecke.de/Capitalism/
+
+Package: capitalism
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Play Monopoly like games online
+ Capitalism is a client for the online server monopd.
+ You can play Monopoly like games with it online.
+ Capitalism is build with Qt4, so it runs on all
+ important Operating Systems.

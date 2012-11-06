@@ -1,0 +1,37 @@
+This work was packaged for Debian by:
+
+    bojo42 <bojo42@gmail.com> on Sat, 14 Aug 2010 16:50:03 +0200
+
+It was downloaded from http://alpha.uhasselt.be/Research/Algebra
+
+Upstream Author(s):
+
+    Michel Van den Bergh <michel.vandenbergh@uhasselt.be>
+
+    Animation subroutine contributed by
+    Jesse Weinstein <jessw@netwood.net>
+
+Copyright:
+
+    Copyright (C) 2004-2007 Michel Van den Bergh & Jesse Weinstein
+
+License:
+
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License version 2 as
+    published by the Free Software Foundation.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    On Debian systems, the complete text of the GNU General Public
+    License can be found in /usr/share/common-licenses/GPL-2 file.
+
+The Debian packaging is:
+
+    Copyright (C) 2010 bojo42 <bojo42@gmail.com>
+
+and is licensed under the GPL version 2 or later, 
+see `/usr/share/common-licenses/GPL'.

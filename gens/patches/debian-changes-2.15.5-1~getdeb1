@@ -1,0 +1,57 @@
+Description: Upstream changes introduced in version 2.15.5-1~getdeb1
+ This patch has been created by dpkg-source during the package build.
+ Here's the last changelog entry, hopefully it gives details on why
+ those changes were made:
+ .
+ gens (2.15.5-1~getdeb1) lucid; urgency=low
+ .
+   * Initial release (LP: #561819)
+ .
+ The person named in the Author field signed this changelog entry.
+Author: Christoph Korn <christoph.korn@getdeb.net>
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/561819
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- gens-2.15.5.orig/src/gens/util/file/save.c
++++ gens-2.15.5/src/gens/util/file/save.c
+@@ -1943,11 +1943,11 @@ Save_Config (char *File_Name)
+   sprintf (Str_Tmp, "%d", Country);
+   WritePrivateProfileString ("CPU", "Country", Str_Tmp, Conf_File);
+   sprintf (Str_Tmp, "%d", Country_Order[0]);
+-  WritePrivateProfileString ("CPU", "Prefered Country 1", Str_Tmp, Conf_File);
++  WritePrivateProfileString ("CPU", "Preferred Country 1", Str_Tmp, Conf_File);
+   sprintf (Str_Tmp, "%d", Country_Order[1]);
+-  WritePrivateProfileString ("CPU", "Prefered Country 2", Str_Tmp, Conf_File);
++  WritePrivateProfileString ("CPU", "Preferred Country 2", Str_Tmp, Conf_File);
+   sprintf (Str_Tmp, "%d", Country_Order[2]);
+-  WritePrivateProfileString ("CPU", "Prefered Country 3", Str_Tmp, Conf_File);
++  WritePrivateProfileString ("CPU", "Preferred Country 3", Str_Tmp, Conf_File);
+ 
+   sprintf (Str_Tmp, "%d", SegaCD_Accurate);
+   WritePrivateProfileString ("CPU",
+@@ -2425,11 +2425,11 @@ Load_Config (char *File_Name, void *Game
+ 
+   Country = GetPrivateProfileInt ("CPU", "Country", -1, Conf_File);
+   Country_Order[0] =
+-    GetPrivateProfileInt ("CPU", "Prefered Country 1", 0, Conf_File);
++    GetPrivateProfileInt ("CPU", "Preferred Country 1", 0, Conf_File);
+   Country_Order[1] =
+-    GetPrivateProfileInt ("CPU", "Prefered Country 2", 1, Conf_File);
++    GetPrivateProfileInt ("CPU", "Preferred Country 2", 1, Conf_File);
+   Country_Order[2] =
+-    GetPrivateProfileInt ("CPU", "Prefered Country 3", 2, Conf_File);
++    GetPrivateProfileInt ("CPU", "Preferred Country 3", 2, Conf_File);
+ 
+   SegaCD_Accurate =
+     GetPrivateProfileInt ("CPU",

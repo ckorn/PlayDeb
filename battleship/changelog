@@ -1,0 +1,17 @@
+battleship (0.47-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 18 Sep 2012 18:17:50 +0200
+
+battleship (0.45-1~getdeb1) precise; urgency=low
+
+  * New upstream version (LP: #1021491)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 06 Jul 2012 21:25:37 +0200
+
+battleship (0.45-1-0ubuntu1~precise) precise; urgency=low
+
+  * minor changes on end dialog
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 06 Jul 2012 21:25:35 +0200

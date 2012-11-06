@@ -1,0 +1,27 @@
+Just some typos.
+Index: worldofpadman-1.5.4~beta/code/botlib/l_script.c
+===================================================================
+--- worldofpadman-1.5.4~beta.orig/code/botlib/l_script.c	2011-07-27 12:50:31.467754081 +0200
++++ worldofpadman-1.5.4~beta/code/botlib/l_script.c	2011-07-27 12:50:54.807754089 +0200
+@@ -220,7 +220,7 @@
+ 	{
+ 		if (script->punctuations[i].n == num) return script->punctuations[i].p;
+ 	} //end for
+-	return "unkown punctuation";
++	return "unknown punctuation";
+ } //end of the function PunctuationFromNum
+ //===========================================================================
+ //
+Index: worldofpadman-1.5.4~beta/code/game/g_utils.c
+===================================================================
+--- worldofpadman-1.5.4~beta.orig/code/game/g_utils.c	2011-07-27 12:50:38.647754083 +0200
++++ worldofpadman-1.5.4~beta/code/game/g_utils.c	2011-07-27 12:51:19.317754097 +0200
+@@ -729,7 +729,7 @@
+ 		default:
+ 			// Should never happen, since we use award_t
+ 			// Unless someone extends it and forgets to edit this function :)
+-			name = "unkown";
++			name = "unknown";
+ 			break;
+ 	}
+ 

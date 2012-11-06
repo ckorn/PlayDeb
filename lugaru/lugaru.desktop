@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Lugaru
+Exec=/usr/games/lugaru
+Icon=lugaru
+Terminal=false
+Type=Application
+Categories=Game;

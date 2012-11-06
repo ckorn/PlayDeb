@@ -1,0 +1,31 @@
+jag (0.3.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    - added Italian translation (thanks to Franco Rebora)
+    - added Dutch translation (thanks to Bart Van Loy)
+    - added French translation (thanks to Tutur)
+
+    - added "Learning ABC" level pack (thanks to APC aka
+      Andrey Pohilko, http://apc.kg)
+
+    - improvements:
+        - extended display settings (multi monitor recognition)
+        - dynamic help loading
+        - added menu icons
+        - compiled with Qt 4.7.2
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 23 Oct 2012 18:42:46 +0200
+
+jag (0.3.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 10 Mar 2010 18:50:58 +0100
+
+jag (0.2.5-1~getdeb1) jaunty; urgency=low
+
+  * Initial release (LP: #394271)  
+  * Convert zip file to tar.gz
+  * Created watch file.
+
+ -- Leo Albert Jackson Jr <lajjr@yahoo.com>  Thu, 27 Aug 2009 21:59:27 -0400

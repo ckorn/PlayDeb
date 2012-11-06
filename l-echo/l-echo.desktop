@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=l-echo
+Exec=/usr/games/l-echo
+Terminal=false
+Type=Application
+Categories=Game;

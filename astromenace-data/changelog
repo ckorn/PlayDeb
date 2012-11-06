@@ -1,0 +1,11 @@
+astromenace-data (1.2.0-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 15:16:42 +0100
+
+astromenace-data (1.2.0-1~getdeb1) jaunty; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <c_korn@gmx.de>  Sun, 25 Oct 2009 23:27:32 +0100

@@ -1,0 +1,14 @@
+Libs go after the objects needing them.
+Index: nether-0.53/build/linux/Makefile
+===================================================================
+--- nether-0.53.orig/build/linux/Makefile	2012-09-20 19:25:22.000000000 +0200
++++ nether-0.53/build/linux/Makefile	2012-09-20 20:24:03.035431390 +0200
+@@ -38,7 +38,7 @@
+ 	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ $(EXE): $(OBJS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
++	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
+ 	@$(STRIP) $@
+ 	@$(ECHO) " o If there are no errors, the game compiled succesfully"
+ 

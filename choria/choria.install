@@ -1,0 +1,4 @@
+debian/scripts/choria			usr/games
+debian/choria.png			usr/share/pixmaps
+debian/choria.desktop			usr/share/applications
+choria					usr/lib/games/choria

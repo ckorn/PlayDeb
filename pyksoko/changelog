@@ -1,0 +1,5 @@
+pyksoko (0.3.3-1~getdeb1) lucid; urgency=low
+
+  * Initial release (LP: #716387)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 10 Feb 2011 16:31:10 +0100

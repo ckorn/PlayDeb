@@ -1,0 +1,11 @@
+racer (1.1.64-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #500508)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 13 Jan 2010 14:11:08 +0100
+
+racer (1.1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Bernard Lidicky <bernard@alderan.cz>  Wed, 23 Dec 2009 00:04:00 +0100

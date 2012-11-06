@@ -1,0 +1,4 @@
+version=3
+opts="uversionmangle=s/(\d)(\d)(\d)/$1\.$2\.$3/" \
+http://www.syntensity.com/toplevel/download/ \
+    http://www.moddb.com/downloads/syntensity-([\d]+)

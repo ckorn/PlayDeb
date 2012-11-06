@@ -1,0 +1,22 @@
+Source: robombs
+Section: games
+Priority: optional
+Maintainer: Matthias Klumpp <matthias@nlinux.org>
+Build-Depends: cdbs, debhelper (>= 7), libc6, libx11-6, libxrender1, libxxf86vm1,
+ libxcb1, libxdmcp6, libopenal1, libxcursor1, libxrandr2
+Standards-Version: 3.8.2
+Homepage: http://jpct.de/robombs.game/
+
+Package: robombs
+Architecture: amd64 i386
+Depends: ${misc:Depends}, libopenal1, openjdk-6-jre | sun-java6-jre | java2-common | java-common, fontconfig
+Description: A free Bomberman inspired multiplayer game in 3D
+ Robombs is a free Bomberman inspired multiplayer game in 3D.
+ It takes the basic concept of Bomberman and transfers it
+ into the 3rd dimension.
+ It's free, fun, easy to grasp and a nice addition to your next LAN-party.
+ Albeit it has been designed as a multiplayer game, it also offers a basic
+ singleplayer mode for you to have a little bombing fun even when none
+ of your friends is available. It has been designed for LAN play.
+ It may work over the internet too, but it hasn't
+ been optimized for this mode.

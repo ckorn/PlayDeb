@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Nikki and the Robots
+GenericName=cute platformer and level editor
+Comment=Control robots, collect batteries and find all the switches!!!
+Exec=nikki
+Icon=nikki
+Terminal=false
+Type=Application
+Categories=Game;AdventureGame;
+StartupNotify=false

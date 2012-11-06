@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ ! -d $HOME/.config/the-powder-toy ] ; then
+	mkdir -p $HOME/.config/the-powder-toy
+	cd $HOME/.config/the-powder-toy
+	ln -s /usr/lib/games/the-powder-toy/powder
+fi
+
+cd $HOME/.config/the-powder-toy
+
+# Executable was named powder-sse before.
+# So be sure the link exists.
+if [ ! -e ./powder ] ; then
+	ln -s /usr/lib/games/the-powder-toy/powder
+fi
+
+./powder $@

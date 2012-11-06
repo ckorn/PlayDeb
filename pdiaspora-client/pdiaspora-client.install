@@ -1,0 +1,4 @@
+pdiaspora				usr/lib/games/pdiaspora
+debian/scripts/pdiaspora		usr/games
+debian/*.desktop			usr/share/applications
+debian/*.xpm				usr/share/pixmaps

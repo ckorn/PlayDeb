@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Violetland
+Exec=/usr/games/violetland
+Icon=violetland
+Terminal=false
+Type=Application
+Categories=Game;

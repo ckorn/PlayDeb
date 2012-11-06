@@ -1,0 +1,20 @@
+#!/bin/sh
+# Needed to make symlinks/shortcuts work.
+# the binaries must run with correct working directory
+cd "/usr/share/games/enemy-territory/"
+
+# Specify needed libaries for the current architecture
+SYS_ARCH=`dpkg --print-architecture`
+if [ "$SYS_ARCH" = "i386" ]; then
+	export ETSDL_SDL_LIB="libSDL-1.2.so.0"
+elif [ "$SYS_ARCH" = "amd64" ]; then
+	export ETSDL_SDL_LIB="/usr/lib/i386-linux-gnu/libSDL-1.2.so.0"
+else
+	echo "Unsupported architecture or dpkg --print-architecture doesn't work."
+fi
+
+# Specify SDL Driver, usally not needed as it should be preset by the system
+#export SDL_AUDIODRIVER="alsa"		# alsa, pulse, esd ...
+
+# Start ET
+LD_PRELOAD="./et-sdl-sound.so" ./et.x86 $*

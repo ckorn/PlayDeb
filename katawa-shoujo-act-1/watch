@@ -1,0 +1,3 @@
+version=3
+http://katawa-shoujo.com/download.php \
+    (?:.*/)?(?:.*)katawa_shoujo_act1_v([\d\.]+)_(?:.*)linux-x86(?:.*)\.tar\.bz2

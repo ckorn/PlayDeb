@@ -1,0 +1,39 @@
+Source: worldofpadman
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 5.0.51~), libsdl1.2-dev (>= 1.2.13),
+ libvorbis-dev (>= 1.2.0), libopenal-dev (>= 1.0.0.8),
+ libtheora-dev
+Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/worldofpadman
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/worldofpadman/?op=log
+Homepage: http://www.worldofpadman.com/
+Standards-Version: 3.9.1
+
+Package: worldofpadman
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, worldofpadman-data (>= 1.2),
+ libcurl3
+Suggests: worldofpadman-server
+Description: World of Padman client binary
+ This package contains the client binary for World of Padman.
+ .
+ World of Padman is a comic-style, ioQuake3-based first person shooter.
+ It is based on the Padman comic strip created by the professional cartoon
+ artist Andreas 'ENTE' (German for "Duck") Endres, who is also the current
+ project leader. World of Padman features a number of gametypes, ranging
+ from the traditional Tournament, Free For All and Team Deathmatch, to the
+ unique Spray Your Color, Big Balloon, and Last Pad Standing.
+
+Package: worldofpadman-server
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, worldofpadman-data (>= 1.2)
+Description: World of Padman dedicated server binary
+ This package contains the dedicated server for World of Padman.
+ .
+ World of Padman is a comic-style, ioQuake3-based first person shooter.
+ It is based on the Padman comic strip created by the professional cartoon
+ artist Andreas 'ENTE' (German for "Duck") Endres, who is also the current
+ project leader. World of Padman features a number of gametypes, ranging
+ from the traditional Tournament, Free For All and Team Deathmatch, to the
+ unique Spray Your Color, Big Balloon, and Last Pad Standing.

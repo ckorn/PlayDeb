@@ -1,0 +1,2 @@
+version=3
+http://sf.net/pyfa/pyfa-([\d\.]+)-src\.tar\.(?:gz|bz2|xz)

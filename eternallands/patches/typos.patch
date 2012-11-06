@@ -1,0 +1,71 @@
+Just some correction of spelling mistakes.
+Index: eternallands-1.9.3/cal.c
+===================================================================
+--- eternallands-1.9.3.orig/cal.c	2012-02-05 01:56:13.000000000 +0100
++++ eternallands-1.9.3/cal.c	2012-02-23 21:30:31.609652500 +0100
+@@ -277,7 +277,7 @@
+ 				delay+=cal_action_blending_delay;
+ 		}
+ 	}else{
+-		//we starting from unkown state (prev anim == -1)
++		//we starting from unknown state (prev anim == -1)
+ 		//so we add some delay to blend into new state
+ 		if(anim.duration>0.0f)
+ 			delay=anim.duration;
+Index: eternallands-1.9.3/translate.c
+===================================================================
+--- eternallands-1.9.3.orig/translate.c	2012-02-05 01:56:13.000000000 +0100
++++ eternallands-1.9.3/translate.c	2012-02-23 21:30:31.613652500 +0100
+@@ -1168,7 +1168,7 @@
+ 	add_xml_identifier(video,"safemode",safemode_str,"Video mode %s without a stencil buffer is not available\nTrying the safemode (640x480x32) Full Screen (no stencil)",sizeof(safemode_str));
+ 	add_xml_identifier(video,"nosdl",no_sdl_str,"Couldn't initialize SDL",sizeof(no_sdl_str));
+ 	add_xml_identifier(video,"nohwstencil",no_hardware_stencil_str,"Couldn't find a hardware accelerated stencil buffer.\nShadows are not available.",sizeof(no_hardware_stencil_str));
+-	add_xml_identifier(video,"depth",suggest_24_or_32_bit,"Hint: Try a 32 BPP resolution (if you are under XWindows, set your screen display to 24 or 32 bpp).",sizeof(suggest_24_or_32_bit));
++	add_xml_identifier(video,"depth",suggest_24_or_32_bit,"Hint: Try a 32 BPP resolution (if you are under X, set your screen display to 24 or 32 bpp).",sizeof(suggest_24_or_32_bit));
+ 	add_xml_identifier(video,"glmode",fail_opengl_mode,"Couldn't set GL mode",sizeof(fail_opengl_mode));
+ 	add_xml_identifier(video,"swstencil",stencil_falls_back_on_software_accel,"Hmm... This mode seems to fall back in software 'acceleration'.\nTrying to disable the stencil buffer.",sizeof(stencil_falls_back_on_software_accel));
+ 	add_xml_identifier(video,"last_try",last_chance_str,"Hmm... No luck without a stencil buffer either...\nLet's try one more thing...",sizeof(last_chance_str));
+@@ -1187,7 +1187,7 @@
+ 	add_xml_identifier(video,"fbodrawbuffererror",fbo_draw_buffer_error,"Framebuffer: draw buffer error",sizeof(fbo_draw_buffer_error));
+ 	add_xml_identifier(video,"fboreadbuffererror",fbo_read_buffer_error,"Framebuffer: read buffer error",sizeof(fbo_read_buffer_error));
+ 	add_xml_identifier(video,"fbounsupportedfromaterror",fbo_unsupported_fromat_error,"Framebuffer: unsupported format error",sizeof(fbo_unsupported_fromat_error));
+-	add_xml_identifier(video,"fbounknownerror",fbo_unknown_error,"Framebuffer: unkown error %d",sizeof(fbo_unknown_error));
++	add_xml_identifier(video,"fbounknownerror",fbo_unknown_error,"Framebuffer: unknown error %d",sizeof(fbo_unknown_error));
+ 	add_xml_identifier(video,"fbosupportedfromat",fbo_supported_format,"Frame buffer format: %s, depth bits: %d, stencil bits: %d is supported",sizeof(fbo_supported_format));
+ 	add_xml_identifier(video,"extnotfoundemulit",gl_ext_not_found_emul_it,"Couldn't find the %s extension, emulating it...",sizeof(gl_ext_not_found_emul_it));
+ 	add_xml_identifier(video,"invalid",invalid_video_mode,"Stop playing with the configuration file and select valid modes!",sizeof(invalid_video_mode));
+Index: eternallands-1.9.3/engine/logging.cpp
+===================================================================
+--- eternallands-1.9.3.orig/engine/logging.cpp	2012-02-05 01:56:13.000000000 +0100
++++ eternallands-1.9.3/engine/logging.cpp	2012-02-23 21:30:31.613652500 +0100
+@@ -70,7 +70,7 @@
+ 				case llt_debug_verbose:
+ 					return "Debug";
+ 				default:
+-					return "Unkown";
++					return "Unknown";
+ 			}
+ 		}
+ 
+Index: eternallands-1.9.3/sendvideoinfo.cpp
+===================================================================
+--- eternallands-1.9.3.orig/sendvideoinfo.cpp	2012-02-05 01:56:13.000000000 +0100
++++ eternallands-1.9.3/sendvideoinfo.cpp	2012-02-23 21:30:31.613652500 +0100
+@@ -60,7 +60,7 @@
+ 		std::string name;
+ 		int value;
+ 
+-		NODE_NAME_CHECK(extension_element, "extention");
++		NODE_NAME_CHECK(extension_element, "extension");
+ 
+ 		cur_node = get_node_element_children(extension_element);
+ 
+@@ -85,7 +85,7 @@
+ 	{
+ 		xmlNodePtr cur_node;
+ 
+-		NODE_NAME_CHECK(extensions_element, "extentions");
++		NODE_NAME_CHECK(extensions_element, "extensions");
+ 
+ 		for (cur_node = get_node_element_children(extensions_element); cur_node != 0;
+ 			cur_node = get_next_element_node(cur_node))

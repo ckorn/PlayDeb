@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Cuby
+Exec=/usr/games/cuby
+Icon=cuby
+Terminal=false
+Type=Application
+Categories=Game;

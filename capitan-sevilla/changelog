@@ -1,0 +1,5 @@
+capitan-sevilla (1.0.3-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #446364)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 20 Nov 2009 22:31:20 +0100

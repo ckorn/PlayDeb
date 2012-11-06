@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Somyeol2D
+Comment=Casual Game - Save the Somyeols
+Comment[de]=Rette die Somyeols
+Exec=somyeol2d
+Icon=somyeol2d
+Terminal=true
+Type=Application
+Categories=Game;
+StartupNotify=false

@@ -1,0 +1,36 @@
+#!/bin/sh
+
+USAGE="Alien Arena client wrapper
+This script is Debian specific, it is *NOT* part of the source distribution!
+Usage: alien-arena [OPTION] [PARAMETERS]...
+
+ -h, --help      Display this help
+ -q, --quiet     Disable console output
+ [PARAMETERS]    Pass internal parameters to the client
+
+More information on using this script can be found in the alien-arena(6) man page."
+
+QUIET=0
+
+case "$1" in
+	-h|--help)
+		echo "${USAGE}"
+		exit 0
+		;;
+	-q|--quiet)
+		QUIET=1
+		shift
+		;;
+esac
+
+# Ready to rumble!
+export COR_GAME="$HOME/.config/alien-arena"
+mkdir -p $COR_GAME
+if [ -h $COR_GAME/data1 ] ; then
+	rm -f $COR_GAME/data1
+fi
+if [ ${QUIET} = 1 ]; then
+	exec /usr/lib/games/alien-arena/alienarena "$@" >/dev/null 2>&1
+else
+	exec /usr/lib/games/alien-arena/alienarena "$@"
+fi

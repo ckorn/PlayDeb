@@ -1,0 +1,431 @@
+:: :: Client Features
+
+:: OpenAL audio system:
+
+The OpenAL audio module is enabled by default, to disable it you can use UI
+or cvar s_module (0 = sound off, 1 = qf module, 2 = open module).
+
+If loading of the OpenAL sound system doesn't succeed for some reason, the
+traditional system will be used instead. Most common reason for a failure
+is missing a OpenAL.dll. You can try downloading OpenAL installer for Windows:
+http://developer.creative.com/articles/article.asp?cat=1&sbcat=31&top=38&aid=46
+
+:: Graphical settings:
+
+- cg_pickup_flash <0 or 1> - default: 1
+Enables or disables the bright screen flash when picking up items.
+
+- cg_damage_blend <0 or 1> - default: 1
+Enable or disable flashing screen red when you get hit.
+
+- cg_damage_kick <0 or 1> - default: 0
+Toggles whether your screen will shake when you receive damage.
+
+- cg_shadows <0, 1, 2 or 3> - default: 1
+Controls showing of model shadows. Value 0 disables them altogether. Value 1
+enabled new pretty fast blob shadows. Using value 2 enables stencil shadows
+(requires r_stencilbits 8 for good looking shadows). Using value 3 enables
+shadow mapping for complex games objects like players and flags and stecil
+shadows for other objects.
+
+- cg_showSelfShadow <0 or 1> - default: 0
+Controls whether your own shadow should be drawn.
+
+- cg_showBloodTrail <0, 1 or 2> - default: 1
+Toggles the display of blood effects when hit by a weapon or damaged by the
+world. Using value 2 enables this effect, but doesn't show the blood orginating
+from yourself.
+
+:: Weapon stats:
+
+If you look at the scoreboard while playing, you will see a list of your weapon
+stats. In addition to this, there is command for showing more accurate stats in
+the console and a variable to hide stats from scoreboard.
+
+- /stats
+Shows your (or the player's you're chasing) weapon accuracy stats.
+
+- cg_scoreboardStats <0 or 1> - default: 1
+Toggles showing of scoreboard stats in the scoreboard.
+
+:: Showing of player names and teammates armor and health:
+
+There are now few nice ways to identify the players around you. You can even
+see the health and armor of your teammates just by looking at them. These
+features are on by default, but if you prefer not to see players' names you can
+turn them of by using following settings:
+
+- cg_showPlayerNames <0 or 1> - default: 1
+Whether to shows everyone's, who is close enough, name next to their feet on
+your screen.
+
+- cg_showPointedPlayer <0 or 1> - default: 1
+If this option is enabled, then the player's name who you're pointing at is
+showed over his head. Also if this player happens to be your teammate you see
+his health and armor under his name.
+
+:: Font system:
+
+You can specify what font to use some different parts of the game, with the
+following variables:
+
+- con_fontSystemSmall <font name> - default: "bitstream_10"
+Sets the default small sized font to be used.
+
+- con_fontSystemMedium <font name> - default: "bitstream_12"
+Sets the default medium sized font to be used.
+
+- con_fontSystemBig <font name> - default: "virtue_16"
+Sets the default big sized font to be used.
+
+- cg_scoreboardFont <font name> - default: "virtue_10"
+Sets the font to be used for most of the text in scoreboard.
+
+- cg_scoreboardWidthScale <positive number> - default: 1.0
+Controls how much scoreboards width is made bigger or smaller.
+
+:: Voice commands:
+
+You have the ability to communicate with your teammates and enemies using
+voice commands. In the menu there is possibility to bind different messages to
+different keys. The following two commands are used to generate these voice
+messages:
+
+- /vsay <voice token> <message>
+Sends voice message specified by the token to everybody on the server. It will
+be accompanied with chat message, that you can also specify. If you don't
+specify any message a default one will be used. To get list of all the possible
+voice tokens use this command without any arguments.
+
+- /vsay_team <voice token> <message>
+Sends voice message specified by the token to your teammates. It will be
+accompanied with team chat message, that you can also specify, all the normal
+say_team chat token can be used also in this message. If you don't specify any
+message a default one will be used.
+
+- cg_voiceChats <0 or 1> - default: 1
+Whether to play voice messages at all.
+
+- cg_volume_voicechats <0.0 - 2.0> - default: 1.0
+Controls the relative volume of voice messages.
+
+:: Setting player model, skin and color:
+
+You can set model, skin and color for each team in the game (players, alpha,
+beta, delta, gamma). It does not depend on whether the team is your team or
+enemy team, but rather you set the values for each invidual team. Later, you
+can force your team to always be appear as the alpha team, in which case the
+enemy team in two team games will always appear as the beta team. These
+settings can be easily set from the UI, but here is a list of variables anyway.
+
+- cg_team[TEAM]model <model name> - default: ""
+For every team there is a cvar named like this (for example cg_teamREDmodel).
+If set to anything else than "" the model of all the players in this team will
+be forced to the one specified.
+
+- cg_team[TEAM]skin <skin name> - default: "default"
+For every team there is a cvar named like this (for example cg_teamREDskin).
+If set to anything else than "" the skin of all the players in this team will
+be forced to the one specified.
+
+- cg_team[TEAM]color <red green blue> - default: ""
+For every team there is a cvar named like this (for example cg_teamREDcolor).
+If set to anything else than "" the color of all the players in this team will
+be forced to the one specified.
+
+- cg_forceMyTeamAlpha <0 or 1> - default: 0
+Switches your team's looks with Alpha team's looks. This makes the your team
+appear as Alpha team and the real Alpha team appear as your real team.
+
+- cg_forceTeamPlayersTeamBeta <0 or 1> - default: 1
+Forces team Players to appear like team Beta.
+
+Team aspects can of course still be controlled from the UI.
+
+:: Timeout system:
+
+You can call a timeout when playing Warsow. This pauses game for some time,
+allowing you to take that important phone call and after that continue playing
+like nothing had happened. All servers might not allow timeouts, or only allow
+certain amount per game. There are few commands for this purpose:
+
+- /timeout
+Starts a timeout. This pause will last three minutes unless timein is called
+before that.
+
+- /timein
+Resumes game when in timeout. There will be five second countdown first.
+Note that only the person or team who called the timeout can call timein.
+
+- /callvote timeout
+If the vote passes timeout begins. This can be used even if you or your team
+doesn't have any timeouts left.
+
+- /callvote timein
+If the vote passes timein is called. This can be used even if you didn't call
+the timeout.
+
+- /callvote maxtimeouts <unlimited or a number>
+Changes the number of timeouts a player, or a team in teambased gametypes, can
+use in one game.
+
+:: Automatic downloading:
+
+It's possible to automatically download missing maps from the web or directly
+from the server. This feature is enabled by default, you don't need to do
+anything. Two config variables allow you to control it:
+
+- cl_downloads <0 or 1> - default: 1
+Whether to allow automatic downloading at all.
+Both from the web and directly from the server.
+
+- cl_downloads_from_web <0 or 1> - default: 1
+Enable or disable downloading from URLs provided by the server.
+
+:: Serverside demos:
+
+By default 0.2 servers record server side multiview demos of the matches
+played. You can list the available demos with 'demolist' command and download a
+demo with 'demoget' command. Unfortunately there is no proper download progress
+bar at the moment, but you can use 'downloadstatus' command to see how the
+download is coming along. The 'downloadcancel' command can be used to abort
+downloading.
+
+:: High resolution timer for Windows:
+
+An enhanced timing system is available on win32 client. This code is activated
+using a command line option (-hwtimer) and uses windows high resolution timers.
+By default it is not activated as it may cause some lags on some computers. To
+try it create a shortcut to warsow.exe and add -hwtimer to it or create a batch
+file. Alternatively, it can be controlled by a dynvar:
+
+- sys_hwtimer <0 or 1> - default: 1
+Whether to use the high resolution timer.
+
+:: Misc settings and commands:
+
+- in_minmsecs <milliseconds> - default: 5
+Defaults the minimum amount of time to wait before asking for new input data.
+
+- /cointoss
+Can be used in prewar or timeout to 'toss a coin'
+
+- /toggleready
+Changes your state between ready and not ready
+
+- /+scores
+Can be bound to a key to view scoreboard when that key is being pressed
+
+- /showserverip
+Displays the IP of the server you are currently connected to
+
+:: Graphic settings
+
+Since 0.4 a lot of renderer improvements have been made, these renderer improvements
+range from adding real time reflections to bump mapping. Here are the variables that
+can turn a feature on/off.
+
+- r_portalmaps <0 or 1> - default: 1
+Enables the real time reflections in water and some teleporters.
+
+- r_portalmaps_maxtexsize <x-axis resolution> - default: 800
+Controls what size the portalmaps textures can be, higher means more quality. 0 means
+automatic resizing, providing maximum available quality.
+
+- cg_shadows <0 to 3> - default: 1
+Controls the way the shadows are being drawn.
+0: no shadows (more performant)
+1: simple shadows
+2: stencil shadows
+3: shadow maps
+
+- r_shadows_self_shadow <0 or 1> - default: 0
+Controls if self shadowing is enabled for shadow mapping.
+
+- r_shadows_pcf <0 or 2 or 3> - default: 0
+Controls the quality of percentage closer filtering for shadow mapping.
+
+- r_shadows_maxtexsize <x-axis resolution> - default: 0
+Same as r_portalmaps_maxtexsize.
+
+- gl_ext_glsl <0 or 1> - default: 1
+Master cvar for all the new renderer features. Setting this to 0 is the equivalent of
+playing with 0.3.
+
+- gl_ext_glsl_branching <0 or 1> - default: 1
+Enables or disables conditional branching for GLSL shaders.
+
+- gl_ext_glsl_no_half_types <0 or 1> - default: 0
+Setting this to 0 means adding support for the nvidia "half" types. Only works on 
+the geforce 6 and 7 series.
+
+- r_lighting_deluxemapping <0 or 1> - default: 1
+Controls the bumpmapping (deluxemapping) feature.
+
+- r_lighting_diffuse2heightmap <0 or 1> - default: 0
+Controls automatic building of heightmaps/normalmaps from dissusemaps when the former
+are unavailable.
+
+- r_lighting_models_follow_deluxe <0 or 1> - default: 1
+If set to 1 per-pixel lighting will be available for game objects even if map wasn't 
+compiled with deluxemaps.
+
+- r_lighting_bumpscale <0 to 255> - default: 8
+Controls the intensity of the bumpmaps.
+
+- r_lighting_specular <0 or 1> - default: 1
+Controls if lights are to be "shattered" on reflection.
+
+- r_lighting_glossintensity <0 to 255> - default: 2
+
+
+- r_lighting_glossexponent <...> - default: 48
+
+
+- r_offsetmapping <0 or 1 or 2 or (1+2)> - default: 2
+Controls the offset mapping. 1 enables offset mapping for world surfaces and game objects,
+2 for polygons (decals), 3 for both.
+
+- r_offsetmapping_scale <0 to 1> - default: 0.02
+Controls the offset mapping scaling factor.
+
+- r_offset_reliefmapping <0 or 1> - default: 0
+Controls the reliefmapping.
+
+- cg_outlineworld <0 or 1> - default: 1
+Adds the cartoon outlines to the maps.
+
+- r_outlines_world <...> - default: 2.5
+Controls the outlines offset for world surfaces.
+
+- r_outlines_scale
+Controls the global scaling factor for cartoon outlines.
+
+- r_outlines_cutoff
+Controls the distance at which outlines aren't drawn anymore.
+
+- r_occlusion_queries <0 or 1 or 2 or (1+2)> - default: 2
+Controls if occlusion queries should be used to minize the overdraw of completely
+occluded objects. 1 enables occlusion queries for md3 and skm models, 2 - for shadow maps,
+3 - for both categories.
+
+- r_occlusion_queries_finish <0 or 1> - default: 1
+Controls whether the CPU should "wait" until video card finishes rendering all occlusion
+surfaces to start issuing queries.
+
+:: New development variables and commands
+
+- glslprogramlist
+Prints into console the list of registered GLSL programs.
+
+- glslprogramdump
+Dumps default GLSL program strings into files in gamedir/programs directory.
+
+- r_speeds <0 to 4>
+In 0.4 r_speed has been promoted to a HUD element, meaning it doesn't flood the console 
+anymore. ;) The output is displayed on the middle right of your screen. Possible values
+for this variable are:
+
+0: no stats are displayed
+1: standard map stats are displayed (vertscount, triscount, flushes, locks)
+2: mark leaves (msec), world node (msec), farcip (distance)
+3: polys (msec), entities (msec), sort (msec), draw (msec)
+4: surface/shader inspector mode, enables r_showtris mode for surface infront of viewer 
+and displays its shader name
+
+- shaderdump [name]
+Dumps into console contents of precached shader and filename it can be found in. Name of 
+the shader to look up for is passed as an argument. If no argument is passed and r_speeds 
+is set to 4, shader name by default is set to the output of r_speeds.
+
+:: The matchmaker
+
+For more info on the matchmaker, see the matchmaker.txt file.
+
+
+:: :: Server features
+
+:: Mathes:
+
+Server console command "match" may be used by administrators to control the flow of matches.
+This command accepts one parameter with three valid values:
+
+- match restart
+This command sends the match into intermission (aka postmatch) as if a timelimit/scorelimit
+was hit.
+
+- match advance
+This command sends the match into intermission and advances the game to the next queued map.
+
+- match status
+This command is an alias for 'status'.
+
+:: Timeout system:
+
+As described above, clients can now call timeouts while in game. Server can
+control how many timeouts per game are allowed with the following cvar:
+
+- g_maxtimeouts <number>
+This sets the number of timeouts each player, or a team in teambased gametypes,
+can use per one game. If set to -1 unlimited number of timeouts is allowed.
+Note that this cvar can be changed with callvote (to disable this callvote use
+g_disable_vote_maxtimeouts 1).
+
+:: Automatic downloading:
+
+It's possible to allow clients download missing maps from the server or from
+URLs provided by the server. By default the server allows downloading directly,
+but doesn't provide any URLs. Following variables can be used to customize this
+behaviour:
+
+- sv_uploads <0 or 1> - default: 1
+Whether allow uploading at all. Both from the server or from URLs.
+
+- sv_uploads_from_server <0 or 1> - default: 1
+Enable or disable uploading directly from the server.
+
+- sv_uploads_baseurl <URL> - default: "" (empty string)
+Controls the URL sent to clients for webdownloading. This base value will have
+a slash (/) and the filename (map_wdm1.pk3) appended to it, before it's send to
+client. Use "" to disable sending of the URLs.
+
+:: Challengers queue:
+
+Duel and midair gametypes allows for using challengers queue. This means that
+after duel has been playing winner stays in and first player from challengers
+queue replaces his opponent. Following cvar can be used to re-enable old
+behaviour.
+
+- g_challengers <0 or 1> - default: 1
+Whether to use challengers queue in duel and midair gametypes.
+
+:: Console logging changes:
+
+With these variables you can control writing of the server logfile. By default
+log named "wswconsole.log" is written.
+
+- logconsole <filename> - default: "wswconsole.log"
+Sets the filename where to log console message. Use "" to disable logging.
+
+- logconsole_append <0 or 1> - default: 1
+Whether the append to the end of the old file if it exists, instead of
+deleting it.
+
+- logconsole_flush <0 or 1> - default: 0
+Enabling this make Warsow flush console file after every printed line. This
+takes much more resources, but ensures that you get last in the log if the game
+crashes.
+
+- logconsole_timestamp <0 or 1> - default: 0
+Enabling this prepends each line written to the logfile with a timestamp.
+The format used for the timestamp is ISO 8601.
+
+:: Multiview clients:
+
+As of 0.4, clients (e. g. Warsow TV servers) can receive multiview data
+from the gameserver.
+
+- sv_maxmvclients <0 to x> - default: 2
+Amount of clients allowed to receive multiview data. Ever client receiving
+multiview consumes a lot of additional bandwidth, so do not increase the value
+of this cvar if you do not know what you are doing!

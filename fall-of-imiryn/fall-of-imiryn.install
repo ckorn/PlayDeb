@@ -1,0 +1,14 @@
+assets				usr/share/games/fall-of-imiryn
+battle				usr/share/games/fall-of-imiryn
+images				usr/share/games/fall-of-imiryn
+locations			usr/share/games/fall-of-imiryn
+main.py				usr/share/games/fall-of-imiryn
+masks				usr/share/games/fall-of-imiryn
+music				usr/share/games/fall-of-imiryn
+save				usr/share/games/fall-of-imiryn
+sounds				usr/share/games/fall-of-imiryn
+sprites				usr/share/games/fall-of-imiryn
+src				usr/share/games/fall-of-imiryn
+tiles				usr/share/games/fall-of-imiryn
+debian/scripts/fall-of-imiryn	usr/games
+debian/fall-of-imiryn.desktop	usr/share/applications

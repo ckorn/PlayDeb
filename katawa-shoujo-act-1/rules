@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --with python2
+
+override_dh_auto_build:
+	dh_auto_build
+	cp "Katawa Shoujo Act 1.py" katawa-shoujo-act-1.py
+
+override_dh_install:
+	dh_install
+	rm debian/katawa-shoujo-act-1/usr/share/games/katawa-shoujo-act-1/game/VL-PGothic-license/LICENSE \
+	   debian/katawa-shoujo-act-1/usr/share/games/katawa-shoujo-act-1/game/VL-PGothic-license/LICENSE.en \
+	   debian/katawa-shoujo-act-1/usr/share/games/katawa-shoujo-act-1/renpy/LICENSE.txt
+	cp debian/ui-strings-DE.rpyc debian/katawa-shoujo-act-1/usr/share/games/katawa-shoujo-act-1/game/DE/ui-strings-DE.rpyc

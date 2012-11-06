@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+# Not using dpkg-architecture to keep in sync with tremulous's Makefile
+Q3ARCH=$(shell uname -m | sed -e s/i.86/x86/ | sed -e s/alpha/axp/)
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	cp build/release-linux-$(Q3ARCH)/tremulous.$(Q3ARCH) build/release-linux-$(Q3ARCH)/tremfusion
+	cp build/release-linux-$(Q3ARCH)/tremded.$(Q3ARCH) build/release-linux-$(Q3ARCH)/tremded

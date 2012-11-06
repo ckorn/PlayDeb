@@ -1,0 +1,56 @@
+Source: stuntrally
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               cmake (>= 2.6),
+               pkg-config,
+               libogre1.8-dev (>= 1.8.1),
+               libmygui-dev (>= 3.2.0),
+               libois-dev,
+               libsdl-dev,
+               libogg-dev,
+               libvorbis-dev,
+               libfreeimage-dev,
+               libbullet-dev,
+               libenet-dev,
+               libxcursor-dev
+Build-Conflicts: libogre-dev
+Standards-Version: 3.9.3
+Homepage: http://code.google.com/p/vdrift-ogre
+
+Package: stuntrally
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         stuntrally-data (= ${source:Version}),
+         stuntrally-tracks (>= 1.8),
+         libfreeimage3,
+         libzzip-0-13,
+         libogremain1.8,
+         libogrepaging1.8,
+         libogreproperty1.8,
+         libogrertshadersystem1.8,
+         libogreterrain1.8
+Description: Rally game with stunt elements
+ Rally game with Stunt elements, based on VDrift and OGRE.
+
+Package: stuntrally-data
+Architecture: all
+Depends: ${misc:Depends}, ttf-bitstream-vera
+Description: Rally game with stunt elements (data package)
+ Rally game with Stunt elements, based on VDrift and OGRE.
+ .
+ (This package includes data files required by the game.)
+
+Package: stuntrally-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: ${misc:Depends},
+         stuntrally (= ${binary:Version})
+Description: Rally game with stunt elements (debug)
+ Rally game with Stunt elements, based on VDrift and OGRE.
+ .
+ (This package includes the debugging symbols)
+

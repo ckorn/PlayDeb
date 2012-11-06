@@ -1,0 +1,17 @@
+qjoypad (4.1.0-1~getdeb1) karmic; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 10 Mar 2010 12:57:41 +0100
+
+qjoypad (4.0.0-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 10 Mar 2010 12:52:52 +0100
+
+qjoypad (4.0.0-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #505231)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 09 Jan 2010 19:55:01 +0100

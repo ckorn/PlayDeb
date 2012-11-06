@@ -1,0 +1,13 @@
+Just a typo.
+Index: stone-soup-0.11.0/source/package.cc
+===================================================================
+--- stone-soup-0.11.0.orig/source/package.cc	2012-09-30 23:25:31.000000000 +0200
++++ stone-soup-0.11.0/source/package.cc	2012-10-01 19:34:28.625699318 +0200
+@@ -85,7 +85,6 @@
+   : n_users(0), dirty(false), aborted(false)
+ {
+     dprintf("package: initializing file=\"%s\" rw=%d\n", file, writeable);
+-    ASSERT(writeable || !empty);
+     filename = file;
+     rw = writeable;
+ 

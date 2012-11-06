@@ -1,0 +1,32 @@
+icons/wesnoth-icon.png /usr/share/icons/hicolor/64x64/apps
+icons/wesnoth_editor-icon.png /usr/share/icons/hicolor/64x64/apps
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/*.cfg
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/COPYING.txt
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/ai
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/campaigns/tutorial
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/core/*.cfg
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/core/README
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/core/editor
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/core/encyclopedia
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/core/images
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/core/macros
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/core/sounds
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/core/terrain-graphics
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/core/units
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/gui
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/hardwired
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/languages
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/lua
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/multiplayer
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/test
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/themes
+debian/tmp/usr/share/games/wesnoth/BRANCH/fonts/Andagii.ttf
+debian/tmp/usr/share/games/wesnoth/BRANCH/images
+debian/tmp/usr/share/games/wesnoth/BRANCH/sounds
+debian/tmp/usr/share/games/wesnoth/BRANCH/locale/*/LC_MESSAGES/wesnoth-editor.mo
+debian/tmp/usr/share/games/wesnoth/BRANCH/locale/*/LC_MESSAGES/wesnoth-lib.mo
+debian/tmp/usr/share/games/wesnoth/BRANCH/locale/*/LC_MESSAGES/wesnoth-multiplayer.mo
+debian/tmp/usr/share/games/wesnoth/BRANCH/locale/*/LC_MESSAGES/wesnoth-tutorial.mo
+debian/tmp/usr/share/games/wesnoth/BRANCH/locale/*/LC_MESSAGES/wesnoth-units.mo
+debian/tmp/usr/share/games/wesnoth/BRANCH/locale/*/LC_MESSAGES/wesnoth.mo
+debian/tmp/usr/share/games/wesnoth/BRANCH/locale/*/LC_MESSAGES/wesnoth-anl.mo

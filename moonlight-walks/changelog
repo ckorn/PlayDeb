@@ -1,0 +1,5 @@
+moonlight-walks (2.0-1~getdeb1) precise; urgency=low
+
+  * Initial release (LP: #883792)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 07 Jul 2012 13:21:12 +0200

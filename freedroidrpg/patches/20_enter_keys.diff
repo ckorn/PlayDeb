@@ -1,0 +1,36 @@
+Add the KP Enter key to the list of enter keys.
+Index: freedroidrpg-0.15/src/input.c
+===================================================================
+--- freedroidrpg-0.15.orig/src/input.c	2012-02-26 13:25:28.840065497 +0100
++++ freedroidrpg-0.15/src/input.c	2012-02-26 13:26:10.520064258 +0100
+@@ -192,7 +192,7 @@
+ int EnterPressed()
+ {
+ 	SDL_PumpEvents();
+-	return ((key_state_array[SDLK_RETURN]));
++	return ((key_state_array[SDLK_RETURN] || key_state_array[SDLK_KP_ENTER]));
+ }
+ 
+ int EscapePressed()
+Index: freedroidrpg-0.15/src/text.c
+===================================================================
+--- freedroidrpg-0.15.orig/src/text.c	2012-02-26 13:25:36.976065255 +0100
++++ freedroidrpg-0.15/src/text.c	2012-02-26 13:26:48.088063139 +0100
+@@ -179,7 +179,7 @@
+ 			Terminate(EXIT_SUCCESS, TRUE);
+ 			break;
+ 		case SDL_KEYDOWN:
+-			if (e.key.keysym.sym == SDLK_SPACE || e.key.keysym.sym == SDLK_RETURN || e.key.keysym.sym == SDLK_ESCAPE)
++			if (e.key.keysym.sym == SDLK_SPACE || e.key.keysym.sym == SDLK_RETURN || e.key.keysym.sym == SDLK_KP_ENTER || e.key.keysym.sym == SDLK_ESCAPE)
+ 				goto wait_click_and_out;
+ 			break;
+ 		case SDL_MOUSEBUTTONDOWN:
+@@ -608,7 +608,7 @@
+ 
+ 		key = getchar_raw(NULL);
+ 
+-		if (key == SDLK_RETURN) {
++		if (key == SDLK_RETURN || key == SDLK_KP_ENTER) {
+ 			// Display the image again so both buffers are in sync
+ 			// useful for GL drivers that do true pageflipping (win32, nvidia 173.x, ...)
+ 			if (use_open_gl) {

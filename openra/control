@@ -1,0 +1,47 @@
+Source: openra
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               mono-gmcs,
+               cli-common-dev (>= 0.8),
+               libgl1-mesa-dev,
+               libsdl1.2-dev,
+               libsdl-gfx1.2-dev,
+               libsdl-image1.2-dev,
+               libsdl-mixer1.2-dev,
+               libsdl-net1.2-dev,
+               libsdl-ttf2.0-dev,
+               libsmpeg-dev,
+               libopenal-dev,
+               libalut-dev
+Standards-Version: 3.9.3
+Homepage: http://openra.res0l.net/
+
+Package: openra
+Architecture: all
+Depends: ${misc:Depends},
+         ${cli:Depends},
+         libcg,
+         ttf-freefont,
+         ttf-openra (= ${source:Version})
+Description: Open-source implementation of the Red Alert engine
+ OpenRA is a Libre/Free Real Time Strategy game engine
+ supporting early Westwood games like Command & Conquer
+ and Command & Conquer: Red Alert.
+ .
+ Distributed mods include a reimagining and updating of
+ both the Red Alert and Command & Conquer multiplayer games.
+
+Package: ttf-openra
+Architecture: all
+Depends: ${misc:Depends}
+Description: Open-source implementation of the Red Alert engine (fonts)
+ OpenRA is a Libre/Free Real Time Strategy game engine
+ supporting early Westwood games like Command & Conquer
+ and Command & Conquer: Red Alert.
+ .
+ Distributed mods include a reimagining and updating of
+ both the Red Alert and Command & Conquer multiplayer games.
+ .
+ (This package contains the fonts).

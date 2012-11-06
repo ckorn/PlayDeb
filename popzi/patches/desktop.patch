@@ -1,0 +1,11 @@
+Encoding is deprecated.
+Index: popzi-0.1/data/popzi.desktop
+===================================================================
+--- popzi-0.1.orig/data/popzi.desktop	2012-03-11 13:21:32.508258484 +0100
++++ popzi-0.1/data/popzi.desktop	2012-03-11 13:21:42.724258180 +0100
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Popzi
+ Comment=Group and pop the objects
+ Exec=popzi

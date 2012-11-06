@@ -1,0 +1,6 @@
+bin				usr/share/games/snowstorm
+lib				usr/share/games/snowstorm
+secondlife			usr/share/games/snowstorm
+debian/scripts/snowstorm	usr/games
+debian/snowstorm.png		usr/share/pixmaps
+debian/snowstorm.desktop	usr/share/applications

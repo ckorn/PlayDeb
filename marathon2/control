@@ -1,0 +1,44 @@
+Source: marathon2
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: http://marathon.sourceforge.net/
+
+Package: marathon2
+Architecture: all
+Depends: ${misc:Depends},
+         alephone,
+         ttf-alephone,
+         ttf-marathon2 (= ${source:Version})
+Description: Marathon 2: Durandal
+ Fresh from your triumph on the starship Marathon, you are seized
+ by the rogue computer Durandal to do his bidding in a distant
+ part of the galaxy. Within the ruins of an ancient civilization,
+ you must seek the remnants of a lost clan and uncover their
+ long-buried secrets. Battle opponents ancient and terrible, with
+ sophisticated weapons and devious strategies, all the while
+ struggling to escape the alien nightmare...
+ .
+ This release of Marathon 2: Durandal includes the classic graphics,
+ and revamped high-definition textures and monsters from the
+ Xbox Live Arcade edition.
+
+Package: ttf-marathon2
+Architecture: all
+Depends: ${misc:Depends}
+Description: Marathon 2: Durandal (font package)
+ Fresh from your triumph on the starship Marathon, you are seized
+ by the rogue computer Durandal to do his bidding in a distant
+ part of the galaxy. Within the ruins of an ancient civilization,
+ you must seek the remnants of a lost clan and uncover their
+ long-buried secrets. Battle opponents ancient and terrible, with
+ sophisticated weapons and devious strategies, all the while
+ struggling to escape the alien nightmare...
+ .
+ This release of Marathon 2: Durandal includes the classic graphics,
+ and revamped high-definition textures and monsters from the
+ Xbox Live Arcade edition.
+ .
+ (This package contains the font files).

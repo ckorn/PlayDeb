@@ -1,0 +1,100 @@
+.TH WORLDOFPADMAN-SERVER 6 "December 31 , 2007"
+.SH NAME
+worldofpadman-server \- World of Padman dedicated server
+.SH SYNOPSIS
+.B worldofpadman-server
+[\-h|\-\-help] [\-q|\-\-quiet] [+set \fIoption\fP \fIvalue\fP]...
+.SH DESCRIPTION
+.PP
+This manual page documents briefly the
+.B worldofpadman-server
+command.
+.PP
+\fBworldofpadman-server\fP is the World of Padman dedicated server. It is a multiplayer network game.
+.SH OPTIONS
+Options passed to the wrapper script:
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Display a short help summary
+.TP
+\fB\-q\fR, \fB\-\-quiet\fR
+Disable all console output
+.PP
+Options passed to the World of Padman binary by the +set parameter
+.br
+(Note that this is not a full list!)
+.PP
+\fBcapturelimit\fR <value>
+.PP
+\fBdedicated\fR <bool>
+.PP
+\fBfraglimit\fR <value>
+.PP
+\fBfs_basepath\fR <string>
+.PP
+\fBfs_game\fR <value>
+.PP
+\fBg_allowVote\fR <bool>
+.PP
+\fBg_banIPs\fR <IP address>
+.PP
+\fBg_doWarmup\fR <bool>
+.PP
+\fBg_friendlyFire\fR <bool>
+.PP
+\fBg_gametype\fR <bool>
+.PP
+\fBg_gravity\fR <value>
+.PP
+\fBg_inactivity\fR <value>
+.PP
+\fBg_maxGameClients\fR <value>
+.PP
+\fBg_motd\fR <string>
+.PP
+\fBg_needpass\fR <bool>
+.PP
+\fBg_password\fR <string>
+.PP
+\fBg_quadfactor\fR <value>
+.PP
+\fBg_weaponrespawn\fR <value>
+.PP
+\fBnet_ip\fR <IP adress>
+.PP
+\fBnet_port\fR <value>
+.PP
+\fBnet_qport\fR <value>
+.PP
+\fBnextmap\fR <string>
+.PP
+\fBsv_allowDownload\fR <bool>
+.PP
+\fBsv_floodProtect\fR <bool>
+.PP
+\fBsv_fps\fR <value>
+.PP
+\fBsv_hostname\fR <string>
+.PP
+\fBsv_maxclients\fR <value>
+.PP
+\fBsv_maxPing\fR <value>
+(Measured in milliseconds)
+.PP
+\fBsv_minPing\fR <value>
+(Measured in milliseconds)
+.PP
+\fBsv_pure\fR <bool>
+.PP
+\fBtimelimit\fR <value>
+(Measured in minutes)
+.BR
+.SH SEE ALSO
+.BR worldofpadman (6)
+.br
+.SH AUTHOR
+The World of Padman dedicated server is based off the GPL ioQuake3 engine; wop-engine, maintained by WoP-Team
+.PP
+This manual page was written by Jack "jscinoz" Coulter <jscinoz@gmail.com> for the Ubuntu project (but may be used by others). It is largely based off the manual page written by Bruno "Fuddl" Kleinert <fuddl@gmx.de> for the Debian project. Permission is granted to copy, distribute and/or modify this document under the terms of the GNU General Public License, Version 2 any later version published by the Free Software Foundation.
+.PP
+On Debian systems, the complete text of the GNU General Public License can be found in /usr/share/common-licenses/GPL-2.

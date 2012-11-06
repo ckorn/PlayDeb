@@ -1,0 +1,3 @@
+debian/scripts/spacezero		usr/games
+debian/spacezero.png			usr/share/pixmaps
+debian/spacezero.desktop		usr/share/applications

@@ -1,0 +1,14 @@
+Fix the linker according to lua5.1
+Index: pax-britannica-0.0.0+git20110714/dokidoki-support/Makefile
+===================================================================
+--- pax-britannica-0.0.0+git20110714.orig/dokidoki-support/Makefile	2011-07-14 18:40:42.489214299 +0200
++++ pax-britannica-0.0.0+git20110714/dokidoki-support/Makefile	2011-07-14 18:41:11.929214309 +0200
+@@ -5,7 +5,7 @@
+ TARGET=$(NAME)
+ CFLAGS=-Wall -O2 -DMEMARRAY_USE_OPENGL \
+ 	   $(PLATFORM_CFLAGS) $(EXTRA_CFLAGS)
+-LDFLAGS=$(STATIC_LINK) -llua -lglfw \
++LDFLAGS=$(STATIC_LINK) -llua5.1 -lglfw \
+ 		$(DYNAMIC_LINK) $(PLATFORM_LDFLAGS) $(EXTRA_LDFLAGS)
+ CC=gcc
+ 

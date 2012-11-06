@@ -1,0 +1,5 @@
+ja2 (0.12.1-1~getdeb1) precise; urgency=low
+
+  * Initial release (LP: #257546)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 13 Aug 2012 18:12:05 +0200

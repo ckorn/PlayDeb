@@ -1,0 +1,14 @@
+This include is buggy and can be replaced with the fix string.
+Index: pax-britannica-0.0.0+git20110714/dokidoki-support/minlua.c
+===================================================================
+--- pax-britannica-0.0.0+git20110714.orig/dokidoki-support/minlua.c	2011-07-14 18:39:28.419214273 +0200
++++ pax-britannica-0.0.0+git20110714/dokidoki-support/minlua.c	2011-07-14 18:40:00.219214285 +0200
+@@ -42,7 +42,7 @@
+     // each night I pray that I might one day happen upon a less disgusting way
+     // of doing this
+     #ifdef EXTRA_LOADERS
+-    #include EXTRA_LOADERS
++    #include "../extra_loaders.h"
+     #endif
+     
+     lua_pop(L, 2);

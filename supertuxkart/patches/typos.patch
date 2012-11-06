@@ -1,0 +1,27 @@
+Just a few typos.
+Index: supertuxkart-0.7.3/src/addons/news_manager.cpp
+===================================================================
+--- supertuxkart-0.7.3.orig/src/addons/news_manager.cpp	2011-11-02 01:04:09.000000000 +0100
++++ supertuxkart-0.7.3/src/addons/news_manager.cpp	2011-12-16 19:23:45.084063649 +0100
+@@ -250,7 +250,7 @@
+ 
+ // ----------------------------------------------------------------------------
+ /** Checks if the given condition list are all fulfilled.
+- *  The conditions must be seperated by ";", and each condition
++ *  The conditions must be separated by ";", and each condition
+  *  must be of the form "type comp version".
+  *  Type must be 'stkversion'
+  *  comp must be one of "<", "=", ">"
+Index: supertuxkart-0.7.3/src/tinygettext/po_parser.cpp
+===================================================================
+--- supertuxkart-0.7.3.orig/src/tinygettext/po_parser.cpp	2011-11-02 01:04:11.000000000 +0100
++++ supertuxkart-0.7.3/src/tinygettext/po_parser.cpp	2011-12-16 19:23:45.084063649 +0100
+@@ -173,7 +173,7 @@
+   else
+   {
+     if (pedantic)
+-      warning("keyword and string must be seperated by a single space");
++      warning("keyword and string must be separated by a single space");
+ 
+     for(;;)
+     {

@@ -1,0 +1,5 @@
+src/Emuselect/Emuselect.gambas		usr/share/games/emuselect
+src/Emuselect/*.png			usr/share/games/emuselect
+src/Emuselect/emuselect.png		usr/share/pixmaps
+debian/emuselect.desktop		usr/share/applications
+debian/scripts/emuselect		usr/games

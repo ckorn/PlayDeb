@@ -1,0 +1,5 @@
+soulfu (1.5-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #510639)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 21 Jan 2010 21:26:10 +0100

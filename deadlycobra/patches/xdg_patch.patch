@@ -1,0 +1,194 @@
+Index: deadlycobra-0.7.0/src/XDGPath.h
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ deadlycobra-0.7.0/src/XDGPath.h	2009-11-09 01:31:23.682341976 +0100
+@@ -0,0 +1,10 @@
++class XDGPath
++{
++
++private:
++    char*  appname;
++public:
++    XDGPath(char* appname);
++    char* create_config_dir(void);
++};
++
+Index: deadlycobra-0.7.0/src/main.cc
+===================================================================
+--- deadlycobra-0.7.0.orig/src/main.cc	2009-11-09 01:31:19.994844404 +0100
++++ deadlycobra-0.7.0/src/main.cc	2009-11-09 01:31:51.902324268 +0100
+@@ -34,6 +34,8 @@
+ #include "enemy.h"
+ #include "game.h"
+ #include "define.h"
++#include <limits.h>
++#include "XDGPath.h"
+ //#define DEBUG_MAIN
+ //#define SHOWALL
+ 
+@@ -635,13 +637,22 @@
+ //use 0,0 to retrieve results of the data file
+ void DC_High_Score(int doupdate, int score, int mode) {
+ 	FILE * pFile;
+-	if(mode==LONGEST) { pFile = fopen ("data2","r+"); }
+-	else pFile = fopen ("data","r+");
++	char* app_config_dir;
++	char data_file_path[PATH_MAX];
++	XDGPath xdgpath = XDGPath("deadlycobra");
++	app_config_dir = xdgpath.create_config_dir();
++	if(mode==LONGEST) {
++		snprintf(data_file_path, sizeof(data_file_path), "%s/data2", app_config_dir);
++		pFile = fopen (data_file_path,"r+");
++	}else{
++		snprintf(data_file_path, sizeof(data_file_path), "%s/data", app_config_dir);
++		pFile = fopen (data_file_path,"r+");
++	}
+ 	if(doupdate==1) { fprintf (pFile, "%i %s", score, "HighScore"); }
+ 	rewind (pFile);
+ 	fscanf (pFile, "%i", &f);
+ 	fscanf (pFile, "%s", str);
+-	fclose (pFile);	
++	fclose (pFile);
+ }
+ 
+ //Reads the snap count from the data1 file.  
+@@ -649,12 +660,17 @@
+ //use 0,0 to retrieve results on the data1 file
+ void DC_Snap_Count(int doupdate, int snapcount) {
+ 	FILE * pFile;
+-	pFile = fopen ("data1","r+");
++	char* app_config_dir;
++	char data_file_path[PATH_MAX];
++	XDGPath xdgpath = XDGPath("deadlycobra");
++	app_config_dir = xdgpath.create_config_dir();
++	snprintf(data_file_path, sizeof(data_file_path), "%s/data1", app_config_dir);
++	pFile = fopen (data_file_path,"r+");
+ 	if (doupdate == 1) { fprintf (pFile, "%i %s", snapcount, "Snap"); }
+ 	rewind (pFile);
+ 	fscanf (pFile, "%i", &g);
+ 	fscanf (pFile, "%s", str);
+-	fclose (pFile);	
++	fclose (pFile);
+ }
+ 
+ //Resets all game variables
+@@ -881,10 +897,13 @@
+ 	while(true) {
+ 		SDL_WaitEvent(&event);
+ 		if(keys[SDLK_F12]) { 
+-			char snap_file[20];
++			char snap_file[PATH_MAX];
+ 			DeadlyCobra.Set_Snap(DeadlyCobra.Get_Snap() + 1);
+ 			if(DeadlyCobra.Get_Snap()>=999) { DeadlyCobra.Set_Snap(0); }
+-			sprintf(snap_file, "snaps/snap%d.bmp", DeadlyCobra.Get_Snap());
++			char* app_config_dir;
++			XDGPath xdgpath = XDGPath("deadlycobra");
++			app_config_dir = xdgpath.create_config_dir();
++			snprintf(snap_file, sizeof(snap_file), "%s/snaps/snap%d.bmp", app_config_dir, DeadlyCobra.Get_Snap());
+ 			SDL_SaveBMP(screen, snap_file);
+ 			DC_Snap_Count(1,DeadlyCobra.Get_Snap());
+ 		}
+@@ -973,7 +992,7 @@
+ 	}
+ }
+ void handleKey(SDL_KeyboardEvent key) {
+-	char snap_file[20];
++	char snap_file[PATH_MAX];
+ 	switch(key.keysym.sym) {
+ 		case SDLK_ESCAPE:
+ 			DC_Draw(quit,180,150);
+@@ -1017,7 +1036,10 @@
+ 		case SDLK_F12:
+ 			DeadlyCobra.Set_Snap(DeadlyCobra.Get_Snap() + 1);
+ 			if(DeadlyCobra.Get_Snap()>=999) { DeadlyCobra.Set_Snap(0); }
+-			sprintf(snap_file, "snaps/snap%d.bmp", DeadlyCobra.Get_Snap());
++			char* app_config_dir;
++			XDGPath xdgpath = XDGPath("deadlycobra");
++			app_config_dir = xdgpath.create_config_dir();
++			snprintf(snap_file, sizeof(snap_file), "%s/snaps/snap%d.bmp", app_config_dir, DeadlyCobra.Get_Snap());
+ 			SDL_SaveBMP(screen, snap_file);
+ 			DC_Snap_Count(1,DeadlyCobra.Get_Snap());
+ 			break;
+Index: deadlycobra-0.7.0/src/XDGPath.cc
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ deadlycobra-0.7.0/src/XDGPath.cc	2009-11-09 01:31:23.692326205 +0100
+@@ -0,0 +1,78 @@
++/*
++ *  xdg utils
++ *  Copyright (C) 2009
++ *
++ *  					Joao Pinto (joao.pinto@getdeb.net)
++ *
++ *  This program is free software; you can redistribute it and/or modify
++ *  it under the terms of the GNU General Public License as published by
++ *  the Free Software Foundation; either version 2 of the License, or
++ *  (at your option) any later version.
++ *
++ *  This program is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *  GNU General Public License for more details.
++ *
++ *  You should have received a copy of the GNU General Public License
++ *  along with this program; if not, write to the Free Software
++ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++ *
++ */
++
++/**
++ *  Helper class to work with XDG paths
++ */
++
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <sys/stat.h>
++#include <limits.h>
++#include "XDGPath.h"
++
++static void recursive_mkdir(const char *dir) {
++    char tmp[PATH_MAX];
++    char *p = NULL;
++    size_t len;
++    snprintf(tmp, sizeof(tmp),"%s",dir);
++    len = strlen(tmp);
++    if(tmp[len - 1] == '/')
++        tmp[len - 1] = 0;
++
++    for(p = tmp + 1; *p; p++)
++        if(*p == '/') {
++            *p = 0;
++            mkdir(tmp, S_IRWXU);
++            *p = '/';
++        }
++        mkdir(tmp, S_IRWXU);
++}
++
++XDGPath::XDGPath(char* appname)
++{
++    this->appname = strdup(appname);
++}
++
++char* XDGPath::create_config_dir(void)
++{
++    static char config_dir[PATH_MAX];
++    static char app_config_dir[PATH_MAX];
++
++    char *xdg_config_home = getenv("XDG_CONFIG_HOME");
++    if(xdg_config_home)
++        strncpy(config_dir, xdg_config_home, sizeof(config_dir));
++    else {
++        char* home_dir = getenv("HOME");
++        if(home_dir == NULL) {
++            printf("$HOME not defined");
++            exit(2);
++        }
++        strncpy(config_dir, home_dir, sizeof(config_dir));
++    }
++    snprintf(app_config_dir, sizeof(app_config_dir), "%s/.config/%s", \
++        config_dir, this->appname);
++    recursive_mkdir(app_config_dir);
++    return app_config_dir;
++}
++

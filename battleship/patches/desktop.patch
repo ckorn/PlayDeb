@@ -1,0 +1,11 @@
+Encoding is deprecated.
+Index: battleship-0.45/battleship.desktop
+===================================================================
+--- battleship-0.45.orig/battleship.desktop	2009-11-21 21:45:40.000000000 +0100
++++ battleship-0.45/battleship.desktop	2012-07-06 21:52:16.831096422 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Battleship
+ Name[de]=Schiffe versenken
+ Comment=Instead of firing blindly you get hints about the ships' positions.

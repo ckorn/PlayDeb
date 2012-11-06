@@ -1,0 +1,160 @@
+Use debug channel 1.
+Index: freedroidrpg-0.15/src/graphics.c
+===================================================================
+--- freedroidrpg-0.15.orig/src/graphics.c	2012-02-26 13:28:54.872059369 +0100
++++ freedroidrpg-0.15/src/graphics.c	2012-02-26 13:42:25.444035256 +0100
+@@ -608,16 +608,16 @@
+ 	// Since we want to use openGl, it might be good to check the OpenGL vendor string
+ 	// provided by the graphics driver.  Let's see...
+ 	//
+-	fprintf(stderr, "\n-OpenGL--------------------------------------------------------------------------");
+-	fprintf(stderr, "\nVendor     : %s", glGetString(GL_VENDOR));
++	DebugPrintf(1, "\n-OpenGL--------------------------------------------------------------------------");
++	DebugPrintf(1, "\nVendor     : %s", glGetString(GL_VENDOR));
+ 	open_gl_check_error_status(__FUNCTION__);
+-	fprintf(stderr, "\nRenderer   : %s", glGetString(GL_RENDERER));
++	DebugPrintf(1, "\nRenderer   : %s", glGetString(GL_RENDERER));
+ 	open_gl_check_error_status(__FUNCTION__);
+-	fprintf(stderr, "\nVersion    : %s", glGetString(GL_VERSION));
++	DebugPrintf(1, "\nVersion    : %s", glGetString(GL_VERSION));
+ 	open_gl_check_error_status(__FUNCTION__);
+-	fprintf(stderr, "\nExtensions : %s", glGetString(GL_EXTENSIONS));
++	DebugPrintf(1, "\nExtensions : %s", glGetString(GL_EXTENSIONS));
+ 	open_gl_check_error_status(__FUNCTION__);
+-	fprintf(stderr, "\n\n");
++	DebugPrintf(1, "\n\n");
+ #endif
+ };				// void safely_show_open_gl_driver_info ( void )
+ 
+@@ -712,11 +712,11 @@
+ 		GameConfig.next_time_height_of_screen = GameConfig.screen_height;
+ 		break;
+ 	default:
+-		DebugPrintf(-4, "\nTesting if color depth %d bits is available... ", vid_bpp);
++		DebugPrintf(1, "\nTesting if color depth %d bits is available... ", vid_bpp);
+ 		if (video_mode_ok_check_result == vid_bpp) {
+-			DebugPrintf(-4, "YES.");
++			DebugPrintf(1, "YES.");
+ 		} else {
+-			DebugPrintf(-4, "NO! \nThe closest we will get is %d bits per pixel.", video_mode_ok_check_result);
++			DebugPrintf(1, "NO! \nThe closest we will get is %d bits per pixel.", video_mode_ok_check_result);
+ 			/*
+ 			   ErrorMessage ( __FUNCTION__  , "\
+ 			   SDL reported, that the video mode mentioned \nabove is not supported UNDER THE COLOR DEPTH MENTIONED ABOVE!\n\
+@@ -743,7 +743,7 @@
+ 		SDL_GL_GetAttribute(SDL_GL_BLUE_SIZE, &blue_size);
+ 		SDL_GL_GetAttribute(SDL_GL_ALPHA_SIZE, &alpha_size);
+ 		SDL_GL_GetAttribute(SDL_GL_DEPTH_SIZE, &depth_size);
+-		fprintf(stderr, "\n\nvideo mode set (bpp=%d RGBA=%d%d%d%d depth=%d)",
++		DebugPrintf(1, "\n\nvideo mode set (bpp=%d RGBA=%d%d%d%d depth=%d)",
+ 			buffer_size, red_size, green_size, blue_size, alpha_size, depth_size);
+ 	}
+ 
+@@ -791,7 +791,7 @@
+ 	// NOTE:  This has got NOTHING to do with OpenGL and OpenGL venour or the like yet...
+ 	//
+ 	if (SDL_VideoDriverName(vid_driver, 80)) {
+-		DebugPrintf(-4, "\nVideo system type: %s.", vid_driver);
++		DebugPrintf(1, "\nVideo system type: %s.", vid_driver);
+ 	} else {
+ 		fprintf(stderr, "Video driver seems not to exist or initialization failure!\nError code: %s\n", SDL_GetError());
+ 		Terminate(EXIT_FAILURE, FALSE);
+@@ -805,7 +805,7 @@
+ 
+ 	// We note the screen resolution used.
+ 	//
+-	DebugPrintf(-4, "\nUsing screen resolution %d x %d.\n", GameConfig.screen_width, GameConfig.screen_height);
++	DebugPrintf(1, "\nUsing screen resolution %d x %d.\n", GameConfig.screen_width, GameConfig.screen_height);
+ 
+ 	// We query the available video configuration on this system.
+ 	//
+Index: freedroidrpg-0.15/src/init.c
+===================================================================
+--- freedroidrpg-0.15.orig/src/init.c	2012-02-26 13:28:33.368060007 +0100
++++ freedroidrpg-0.15/src/init.c	2012-02-26 13:34:15.180049839 +0100
+@@ -1025,6 +1025,9 @@
+                     [-l character-name | --load=character-name] \n\
+                     [-r Y | --resolution=Y]  Y = 99 lists hardcoded resolutions. \n\
+                           Y may also be of the form 'WxH' e.g. '800x600'\n\
++";
++
++char report_bugs_string[] = "\
+ \n\
+ Please report bugs either by entering them into the bug tracker\n\
+ on our website at:\n\n\
+@@ -1090,6 +1093,7 @@
+ 		case 'h':
+ 		case '?':
+ 			printf("%s",usage_string);
++			DebugPrintf( 1, report_bugs_string );
+ 			exit(0);
+ 			break;
+ 
+@@ -1150,6 +1154,13 @@
+ 					if (resolution_code >= 0 && resolution_code < nb_res) {
+ 						GameConfig.screen_width = hard_resolutions[resolution_code].xres;
+ 						GameConfig.screen_height = hard_resolutions[resolution_code].yres;
++					} else if( resolution_code == 99 ) {
++						printf( "Available resolution codes:\n" );
++						int i;
++						for (i = 0; i < nb_res; ++i) {
++							printf( "\t%d = %s\n", i, screen_resolutions[i].comment);
++						}
++						exit( 0 );
+ 					} else {
+ 						fprintf(stderr, "\nresolution code received: %d\n", resolution_code);
+ 						char *txt = (char *)malloc((nb_res * 128 + 1) * sizeof(char));
+@@ -1485,7 +1496,7 @@
+ 	// We mention the version of FreedroidRPG, so that debug reports
+ 	// are easier to assign to the different versions of the game.
+ 	//
+-	DebugPrintf(-4, "\nHello, this is FreedroidRPG, version %s.", VERSION);
++	DebugPrintf(1, "\nHello, this is FreedroidRPG, version %s.", VERSION);
+ 
+ 	set_signal_handlers();
+ 
+Index: freedroidrpg-0.15/src/main.c
+===================================================================
+--- freedroidrpg-0.15.orig/src/main.c	2012-02-26 13:29:02.632059138 +0100
++++ freedroidrpg-0.15/src/main.c	2012-02-26 13:43:09.620033941 +0100
+@@ -430,7 +430,7 @@
+ 				if (!strcmp(curShip.AllLevels[i]->Levelname, "Town"))
+ 					continue;
+ 
+-				DebugPrintf(-10, "\nNow respawning all bots on level : %d. ", i);
++				DebugPrintf(1, "\nNow respawning all bots on level : %d. ", i);
+ 				Me.time_since_last_visit_or_respawn[i] = 0;
+ 
+ 				respawn_level(i);
+Index: freedroidrpg-0.15/src/misc.c
+===================================================================
+--- freedroidrpg-0.15.orig/src/misc.c	2012-02-26 13:28:42.820059726 +0100
++++ freedroidrpg-0.15/src/misc.c	2012-02-26 13:39:38.248040230 +0100
+@@ -651,7 +651,7 @@
+ 				DebugPrintf(1, "\nfind_file could not succeed with LOCAL path: %s.", File_Path);
+ 			else {
+ 				if (!silent) {
+-					DebugPrintf(-4, "The file name was: %s.\n", fname);
++					DebugPrintf(1, "The file name was: %s.\n", fname);
+ 					ErrorMessage(__FUNCTION__, "File not found ", NO_NEED_TO_INFORM, IS_WARNING_ONLY);
+ 				}
+ 				return 1;
+@@ -1201,15 +1201,15 @@
+  */
+ void Terminate(int exit_code, int save_config)
+ {
+-	printf("\n---------------------------------------------------------------------------------");
+-	printf("\nTermination of freedroidRPG initiated... ");
++	DebugPrintf( 1, "\n---------------------------------------------------------------------------------");
++	DebugPrintf( 1, "\nTermination of freedroidRPG initiated... ");
+ 
+ 	// We save the config file in any case.
+ 
+ 	if (save_config)
+ 		SaveGameConfig();
+ 
+-	printf("Thank you for playing freedroidRPG.\n\n");
++	DebugPrintf( 1, "Thank you for playing freedroidRPG.\n\n");
+ 	SDL_Quit();
+ 
+ 	// Finally, especially on win32 systems, we should open an editor with

@@ -1,0 +1,102 @@
+#!/usr/bin/make -f
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# Needed for cross-compiling.
+DEB_HOST_GNU_TYPE=$(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+
+# Needed for deleting a directory when running rules clean after a build
+DPKG_ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+# nostrip option implies noopt as well for this package.
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+   DEBUG = NO
+else
+   DEBUG = YES
+endif
+
+VERSION := 1.02
+
+# Needed for deleting directory created when running rules clean twice on
+# x86_64 and other architectures.
+UNAME_ARCH=$(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
+
+# This is used convert files to be patched from dos to unix EOL convention.
+from-dos:
+	dh_testdir
+	fromdos -e warsow-$(VERSION)-src/source/gameshared/q_shared.h
+	#fromdos -e warsow_0.50_src/source/client/cl_main.c
+	touch fromdos-stamp
+
+patch: from-dos
+
+build: patch build-stamp
+build-stamp:
+	dh_testdir
+	cd warsow-$(VERSION)-src/source && $(MAKE) CFLAGS="-O0" LOCALBASE=/usr DEBUG_BUILD=$(DEBUG) \
+		CC=$(DEB_HOST_GNU_TYPE)-gcc LD=$(DEB_HOST_GNU_TYPE)-gcc
+	touch build-stamp
+
+clean: clean-patched to-dos
+clean-patched:
+	dh_testdir
+	dh_testroot
+	cd warsow-$(VERSION)-src/source && $(MAKE) clean
+	cd warsow-$(VERSION)-src/libsrcs/angelscript/angelSVN/sdk/angelscript/projects/gnuc && \
+	  $(MAKE) clean
+	rm -rf warsow-$(VERSION)-src/source/build warsow-0.6-src/source/release \
+		warsow-$(VERSION)-src/source/build$(UNAME_ARCH) \
+		warsow-$(VERSION)-src/source/build$(DPKG_ARCH) \
+		warsow-$(VERSION)-src/source/release/
+	[ ! -f warsow128x128.png ] || rm warsow128x128.png
+	[ ! -f 0.4_renderer_changes.png ] || rm 0.4_renderer_changes.png
+	dh_clean
+	[ ! -f build-stamp ] || rm build-stamp
+
+# Reverses from-dos target
+to-dos:
+	dh_testdir
+	todos -e warsow-$(VERSION)-src/source/gameshared/q_shared.h
+	#todos -e warsow_0.50_src/source/client/cl_main.c
+	[ ! -f fromdos-stamp ] || rm fromdos-stamp
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	uudecode debian/warsow128x128.png.uu
+	uudecode debian/documentation/0.4_renderer_changes.png.uu
+	dh_install
+
+binary-indep:
+#Nothing to be done for binary-indep
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs debian/documentation/changelog.txt
+	dh_installdocs
+	dh_link -pwarsow usr/lib/games/warsow/basewsw/cgame_$(UNAME_ARCH).so usr/share/games/warsow/basewsw/cgame_$(UNAME_ARCH).so
+	dh_link -pwarsow usr/lib/games/warsow/basewsw/game_$(UNAME_ARCH).so usr/share/games/warsow/basewsw/game_$(UNAME_ARCH).so
+	dh_link -pwarsow usr/lib/games/warsow/basewsw/ui_$(UNAME_ARCH).so usr/share/games/warsow/basewsw/ui_$(UNAME_ARCH).so
+	dh_link -pwarsow usr/lib/games/warsow/libs usr/share/games/warsow/libs
+	dh_installmenu
+	dh_installman -pwarsow debian/warsow.6
+	dh_installman -pwarsow-server debian/warsow-server.6 \
+		debian/warsowtv-server.6
+#ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	dh_strip
+#endif
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+get-orig-source:
+	$(dir $_)warsow-get-orig-source
+
+binary: binary-arch
+.PHONY: build binary-indep binary-arch binary install clean

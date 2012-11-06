@@ -1,0 +1,4 @@
+version=3
+opts="uversionmangle=s/\.dev-/~/" \
+https://github.com/celeron55/minetest/tags \
+    (?:.*/)archive/(.*)(?:\.tar\.gz|\.tar\.bz2|\.tar\.xz)

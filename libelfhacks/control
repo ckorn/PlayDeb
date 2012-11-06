@@ -1,0 +1,27 @@
+Source: libelfhacks
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 6), cmake
+Standards-Version: 3.8.3
+Section: libs
+Homepage: http://nullkey.ath.cx/git/elfhacks/
+
+Package: libelfhacks-dev
+Section: libdevel
+Architecture: any
+Depends: libelfhacks0 (= ${binary:Version})
+Description: Library for various ELF run-time hacks (header files)
+ This is a library for various ELF run-time hacks.
+ .
+ It is used by glc.
+ .
+ (This package contains the header files)
+
+Package: libelfhacks0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Library for various ELF run-time hacks
+ This is a library for various ELF run-time hacks.
+ .
+ It is used by glc.

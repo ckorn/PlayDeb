@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=intensityengine
+Categories=GNOME;Application;Game
+Name=Syntensity
+Comment=Create and Play Multiplayer 3D Games
+Icon=intensityengine

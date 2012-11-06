@@ -1,0 +1,13 @@
+bin/ usr/share/games/robombs
+data/ usr/share/games/robombs
+rbicon.png usr/share/games/robombs
+lib/jpct/ usr/share/games/robombs/lib
+lib/lwjgl-2.0rc2/jar/ usr/share/games/robombs/lib/lwjgl-2.0rc2
+lib/lwjgl-2.0rc2/native/linux/libjinput-linux64.so usr/share/games/robombs/lib/lwjgl-2.0rc2/native/linux
+lib/lwjgl-2.0rc2/native/linux/libjinput-linux.so usr/share/games/robombs/lib/lwjgl-2.0rc2/native/linux
+lib/lwjgl-2.0rc2/native/linux/liblwjgl64.so usr/share/games/robombs/lib/lwjgl-2.0rc2/native/linux
+lib/lwjgl-2.0rc2/native/linux/liblwjgl.so usr/share/games/robombs/lib/lwjgl-2.0rc2/native/linux
+botnames.txt usr/share/games/robombs
+Robombs.sh usr/share/games/robombs
+debian/scripts/robombs usr/games
+debian/robombs.desktop usr/share/applications

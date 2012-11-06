@@ -1,0 +1,43 @@
+Source: smokinguns
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 6), mesa-common-dev,
+ libglu1-mesa-dev, x11proto-core-dev, libx11-dev,
+ x11proto-xf86dga-dev, x11proto-xf86vidmode-dev,
+ linux-libc-dev, libvorbis-dev, scons,
+ libopenal-dev, nasm, libxxf86dga-dev, quilt,
+ libxext-dev, libxxf86vm-dev, valgrind,
+ pkg-config, libspeex-dev, libspeexdsp-dev,
+ libnewlib-dev, libfreetype6-dev,
+ libcurl4-openssl-dev, libsdl1.2-dev
+Standards-Version: 3.9.1
+Homepage: http://www.smokin-guns.net/
+
+Package: smokinguns
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, smokinguns-data (= ${source:Version}), libgl1-mesa-glx
+Description: Quake 3 engine based "Old West's" game
+ Smokin' Guns is intended to be a semi-realistic
+ simulation of the "Old West's" great atmosphere & was
+ developed on Id Software's Quake III Arena Engine.
+
+Package: smokinguns-server
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, smokinguns (>= ${source:Version})
+Description: Quake 3 engine based "Old West's" game (server package)
+ Smokin' Guns is intended to be a semi-realistic
+ simulation of the "Old West's" great atmosphere & was
+ developed on Id Software's Quake III Arena Engine.
+ .
+ This package contains the server binary.
+
+Package: smokinguns-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Quake 3 engine based "Old West's" game (data package)
+ Smokin' Guns is intended to be a semi-realistic
+ simulation of the "Old West's" great atmosphere & was
+ developed on Id Software's Quake III Arena Engine.
+ .
+ This package contains the data files.

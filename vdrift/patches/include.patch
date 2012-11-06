@@ -1,0 +1,13 @@
+Add missing include
+Index: vdrift-20120722/src/carcontrolmap_local.cpp
+===================================================================
+--- vdrift-20120722.orig/src/carcontrolmap_local.cpp	2012-07-21 17:03:21.000000000 +0200
++++ vdrift-20120722/src/carcontrolmap_local.cpp	2012-07-24 20:18:58.101427506 +0200
+@@ -6,6 +6,7 @@
+ #include <iomanip>
+ #include <algorithm>
+ #include <cmath>
++#include <SDL/SDL_keyboard.h>
+ 
+ /// ramps the start value to the end value using rate button_ramp.
+ /// if button_ramp is zero, infinite rate is assumed.

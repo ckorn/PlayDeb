@@ -1,0 +1,26 @@
+Source: magicassistant
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               unzip,
+               libfontconfig1 (>= 2.8.0),
+               libfreetype6 (>= 2.2.1),
+               libx11-6,
+               libxext6,
+               libxrender1,
+               openjdk-6-jre,
+               openjdk-6-jdk
+Standards-Version: 3.9.3
+Homepage: http://sourceforge.net/apps/mediawiki/mtgbrowser/index.php?title=Main_Page
+
+Package: magicassistant
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         openjdk-6-jre | java2-common | java-common
+Description: Helper for "Magic: the Gathering" (MTG) players
+ Magic Assistant is an application that helps
+ "Magic: the Gathering" (MTG) players in different
+ activities related to the game: currently
+ contains Card Organizer and Tournament Organizer.

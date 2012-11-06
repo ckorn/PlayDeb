@@ -1,0 +1,11 @@
+warsow-data for Debian
+======================
+
+The warsow-data package for Debian is derived from the upstream binary-only
+distribution. Precompiled binaries are stripped from the upstream tarball. The
+directories basewsw and docs are kept unmodified in this package.
+
+You may notice, that some .pk3 zip archives contain precompiled binaries, like
+game_i386.so and so on. Do not report bugs about this, the package maintainers
+can't do anything here, because of restrictions by the upstream license. See
+/usr/share/doc/warsow-data/copyright for the license.

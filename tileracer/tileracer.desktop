@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=TileRacer
+Comment=Drive your car
+Exec=tileracer
+Icon=tileracer
+Terminal=false
+Type=Application
+Categories=Game;
+StartupNotify=true

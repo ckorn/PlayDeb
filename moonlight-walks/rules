@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --with python2
+
+override_dh_install:
+	dh_install
+	rm debian/moonlight-walks/usr/share/games/moonlight-walks/renpy/LICENSE.txt

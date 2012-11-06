@@ -1,0 +1,4 @@
+usr/share/games/lugaru/lugaru		usr/lib/games/lugaru
+debian/scripts/lugaru			usr/games
+debian/lugaru.png			usr/share/pixmaps
+debian/lugaru.desktop			usr/share/applications

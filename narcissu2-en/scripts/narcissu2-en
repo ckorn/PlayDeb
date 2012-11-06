@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /usr/games/ponscr --root /usr/share/games/narcissu2-en "$@"

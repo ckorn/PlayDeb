@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.4
+Name=FlightGear Launch Control
+Exec=fgrun
+Terminal=false
+Categories=Game;Simulation;
+Comment=Launch FlightGear via FGRun
+

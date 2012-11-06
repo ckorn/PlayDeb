@@ -1,0 +1,2 @@
+version=3
+http://sf.net/speed-dreams/speed-dreams-src-base-([\d\.]+)(?:-r[\d]+)?\.tar\.(?:xz|gz|bz2)

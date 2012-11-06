@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Vulture-UnNetHack
+GenericName=
+Comment=Dungeons and dragons inspired role play game
+Comment[de_DE]=Rollenspiel im Sinne von Dungeons und Dragons
+Icon=vulture-unnethack
+Exec=/usr/games/vulture-unnethack
+Terminal=false
+Categories=Application;Game;

@@ -1,0 +1,4 @@
+soulfu				usr/lib/games/soulfu
+debian/soulfu.xpm		usr/share/pixmaps
+debian/soulfu.desktop		usr/share/applications
+debian/scripts/soulfu		usr/games

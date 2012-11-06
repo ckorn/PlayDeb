@@ -1,0 +1,4 @@
+Phun				usr/share/games
+debian/scripts/phun		usr/games
+debian/phun.desktop		usr/share/applications
+debian/hungarian-language/*	usr/share/games/Phun/data/language

@@ -1,0 +1,93 @@
+Index: fall-of-imiryn-0.0r903/main.py
+===================================================================
+--- fall-of-imiryn-0.0r903.orig/main.py	2009-10-23 15:05:58.493422365 +0200
++++ fall-of-imiryn-0.0r903/main.py	2009-10-23 15:06:40.381415251 +0200
+@@ -1,5 +1,6 @@
+ #!/usr/bin/python
+ import sys
++import os
+ 
+ # Add the source directory to the path so we can
+ # import modules from it.
+@@ -12,7 +13,7 @@
+ import annchienta
+ 
+ # Fire up the engine.
+-annchienta.init("save")
++annchienta.init(os.getenv("HOME") + "/.fall-of-imiryn/save")
+ 
+ engine = annchienta.getEngine()
+ 
+@@ -99,9 +100,9 @@
+ 
+         else:
+ 
+-            loadFile = "save/new.xml"
+-            if menuItem.getName() == "load" and engine.isValidFile("save/save.xml"):
+-                loadFile = "save/save.xml"
++            loadFile = os.getenv("HOME") + "/.fall-of-imiryn/save/new.xml"
++            if menuItem.getName() == "load" and engine.isValidFile(os.getenv("HOME") + "/.fall-of-imiryn/save/save.xml"):
++                loadFile = os.getenv("HOME") + "/.fall-of-imiryn/save/save.xml"
+ 
+             partyManager.load( loadFile )
+             mapManager.run()
+Index: fall-of-imiryn-0.0r903/locations/common/crystal.py
+===================================================================
+--- fall-of-imiryn-0.0r903.orig/locations/common/crystal.py	2009-10-23 15:06:59.408415402 +0200
++++ fall-of-imiryn-0.0r903/locations/common/crystal.py	2009-10-23 15:07:22.504416006 +0200
+@@ -2,6 +2,7 @@
+ import MenuItem, Menu
+ import PartyManager
+ import SceneManager
++import os
+ 
+ cacheManager = annchienta.getCacheManager()
+ sound = cacheManager.getSound('sounds/crystal.ogg')
+@@ -25,7 +26,7 @@
+ ans = menu.pop()
+ if ans is not None:
+     if ans.name == "save":
+-        partyManager.save( "save/save.xml" )
++        partyManager.save( os.getenv("HOME") + "/.fall-of-imiryn/save/save.xml" )
+         sceneManager.text("The progress in your travels has been recorded.")
+ 
+ sceneManager.quitDialog()
+Index: fall-of-imiryn-0.0r903/locations/fleet/minigame.py
+===================================================================
+--- fall-of-imiryn-0.0r903.orig/locations/fleet/minigame.py	2009-10-23 15:07:39.105450699 +0200
++++ fall-of-imiryn-0.0r903/locations/fleet/minigame.py	2009-10-23 15:08:14.989415424 +0200
+@@ -1,5 +1,6 @@
+ import annchienta
+ import PartyManager, SceneManager
++import os
+ 
+ class GameObject:
+ 
+@@ -209,7 +210,7 @@
+ 
+     # Save first
+     sceneManager.text( "Info: Your game was saved automatically.", None )
+-    partyManager.save( "save/save.xml" )
++    partyManager.save( os.getenv("HOME") + "/.fall-of-imiryn/save/save.xml" )
+ 
+     game = Game()
+     game.run()
+Index: fall-of-imiryn-0.0r903/src/onUpdate.py
+===================================================================
+--- fall-of-imiryn-0.0r903.orig/src/onUpdate.py	2009-10-23 15:08:40.385415759 +0200
++++ fall-of-imiryn-0.0r903/src/onUpdate.py	2009-10-23 15:09:01.757415897 +0200
+@@ -1,4 +1,5 @@
+ import annchienta
++import os
+ 
+ engine = annchienta.getEngine()
+ inputManager = annchienta.getInputManager()
+@@ -24,7 +25,7 @@
+ if inputManager.keyTicked( annchienta.SDLK_s ):
+     import PartyManager
+     partyManager = PartyManager.getPartyManager()
+-    partyManager.save( "save/save.xml" )
++    partyManager.save( os.getenv("HOME") + "/.fall-of-imiryn/save/save.xml" )
+ 
+ if ( inputManager.buttonTicked(1) or inputManager.cancelKeyTicked() ) and inputManager.getInputMode() is annchienta.InteractiveMode:
+ 

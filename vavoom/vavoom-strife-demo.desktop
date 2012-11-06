@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Vavoom - Strife
+Comment=Strife Demo launcher, will automatically download the needed data-files
+Exec=strife-demo
+Icon=tux-b2f
+Terminal=false
+Type=Application
+Categories=Game;ActionGame;

@@ -1,0 +1,23 @@
+urbanterror-data (4.1.1-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #706594)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 26 Mar 2011 20:53:56 +0100
+
+urbanterror-data (4.1-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Mon, 10 Aug 2009 17:07:36 +0000
+
+urbanterror-data (4.1-0ubuntu6) hardy; urgency=low
+
+  * Don't use LZMA, only 20mb saved for double processing time.
+
+ -- Jack Coulter <jscinoz@gmail.com>  Sun, 18 May 2008 11:21:26 +1000
+
+urbanterror-data (4.1-0) hardy; urgency=low
+
+  * Initial release (Closes: #468325)
+
+ -- Jack Coulter <jscinoz@gmail.com>  Tue, 08 Apr 2008 11:28:26 +1000

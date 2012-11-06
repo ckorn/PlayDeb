@@ -1,0 +1,655 @@
+triplea (1.6.1.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    Changes for 1.6.1.2
+
+    * Fixed bug in Paratroopers code, causing paratrooper attacks in coast
+    territories on maps with scrambling to never actually take the territory.
+    (veqryn)
+    * Creating a simple Ping method inside of the Chat Controller, that will
+    ping all computers once every minute, hopefully improving everyone's
+    connections. (Sean Bridges & veqryn)
+    * Allowing people to hold SHIFT down while their mouse is over a
+    territory in order to keep that territory in the Territory Panel, no
+    matter where they move their mouse afterwards. (frigoref)
+    * Changed EndTurnDelegate so that Units Changing Ownership, and Hitpoint
+    Repair, will still happen even if you have lost your capital. (veqryn)
+    * Getting MooreAI to submerge subs if only enemy air is left. (hakon)
+    * Fixing "Edit Unit Bombing Damage" for maps that use territory based
+    damage, such as ww2v3. (veqryn)
+    * Allowing new option for the Play By Email / Play By Forum poster, to
+    "Include Overall Dice Statistics" in the post/email. (veqryn)
+    * Improving the menu "GAME -> SHOW DICE STATS" to give information per
+    player, as well as totals. (veqryn)
+    * Getting engine to record if the dice thrown is in Combat or not, for
+    the dice statistics. (veqryn)
+    * Getting engine to record which player is rolling dice for the dice
+    statistics. (veqryn)
+    * Adding scroll bars to edit place unit panel and non-tabbed purchase
+    unit panel. (veqryn)
+    * Fixing non-serialization error when attempting to save the game after a
+    successful aa gun roll, but before selecting casualties. (veqryn)
+    * Improved bombing result display to show ignored dice if there are any,
+    and improving history panel to show the rolls for each target unit.
+    (veqryn)
+    * Fixed integer array error in Strategy Bombing with Heavy Bombers,
+    causing the second half of all rolls to not be rolled, thereby defaulting
+    to one each. (veqryn)
+    * Fixed null pointer for undoing a placement made by UK in global 1940
+    maps, caused by the new no-air-checking delegate [players will need to
+    update their 1940 maps though]. (veqryn)
+    * Creating framework for TripleA to use proxies to connect to the
+    internet. Allowing map downloading, PBEM/PBF, and dice servers to use a
+    proxy. (veqryn)
+    * Improving "Draw Territory Borders On Top" so that it will automatically
+    switch to "medium" if you are on "low/default" and are zooming, and
+    switch back once you stop zooming out. (veqryn)
+    * Changing lobby moderator ban/mute options to make more sense, by only
+    giving 3 options: name only, everything, or cancel. (veqryn) 
+    * Adding a backup lobby properties location on the tripleawarclub, in
+    addition to the one on sourceforge. (veqryn)
+    * Fixed null pointer error in MovePanel.selectEndPoint when clicking to
+    move a unit to a territory with no connections. (veqryn)
+
+
+    Changes for 1.6.1.1
+
+    * Fixing in loading old engine jars caused by odd pathnames. (veqryn)
+    * Made AA Guns appear in battle, then disappear after firing if they
+    could not participate any further. (veqryn)
+    * Fixed bug causing stacked aa guns to all fire with the attack power of
+    the most powerful aa gun in the group. (veqryn)
+    * Fixed some math bugs in low luck picking of aa casualties for maps with
+    non-standard aa guns. (veqryn)
+    * Made massive updates to 1.5.2.1 and 1.6 so that they can work as 'old'
+    jars and be run from 1.6.1.1 or future versions. (veqryn)
+    * Disallowing starting of games if game data is null. (veqryn)
+    * Allowing hosts to load an old savegame, causing old engine to join
+    lobby and host directly, if they have the jar to run it. (veqryn)
+    * Allowing members in online lobby to join games hosted by older versions
+    of triplea, if they have the jar to run it. (veqryn)
+    * Adding game version (GV), and engine version (EV), columns to lobby.
+    (veqryn)
+    * Fixing many bugs in the handling of command line arguments. (veqryn)
+    * Adding Passworded (PW) column to lobby. (veqryn)
+    * Making game notes non-modal (doesn't stop all action til closed) and
+    making it always on top so that you can read it while you play. (veqryn)
+    * Fixing movement validation to allow submarines that are transports to
+    carry land units through other ships. (veqryn)
+    * Forcing default map selection when TripleA starts to avoid the last
+    file path uri used if it is not within the user's triplea folder or the
+    program's folder. (veqryn)
+    * Fixing bug with connections being lost during end of Air Battles,
+    resulting in a game that can not continue. (veqryn)
+    * Made xml exporter also add original territory owner as occupiedTerrOf
+    until such a time as we can just use originalOwner. (veqryn)
+    * Fixed bug causing land units carried by air units (paratroopers tech)
+    to blitz unoccupied enemy territories on route if going behind enemy
+    lines. (veqryn)
+    * Fixing bug preventing renamed hardcoded techs from working properly.
+    (veqryn)
+    * Fixing some errors with Sliding Tiles game, Tic Tac Toe, and Kings
+    Table. (veqryn)
+    * Cleanup and abstraction of some AI classes and constructors and
+    superclasses. (veqryn)
+    * Fixed string index out of bounds error with notifications, and also
+    forced them to shorten for the history event record, to 150 characters if
+    needed by removing all html code then truncating the string. (veqryn)
+    * Fixed issue with moving of old fighters to a new carrier by making sure
+    it only used the producer territory. (veqryn)
+    * Updating build to include old jars. Updating framework to ignore micro
+    version numbers, so that 1.5.2.1 will also load 1.5.2.0 savegames, etc.
+    (veqryn)
+    * Created dialog to ask user if they want to load an old savegame.  Fixed
+    framework so that it can load any old savegame if it can find an old
+    engine to match. And added 1.6.0.0 jar engine. (veqryn)
+    * Including old 1.5.2.1 jar file with slight modifications, so that
+    1.6.1.1 can play 1.5.2.1 savegames by simply running them with 1.5.2.1,
+    but as a separate application. (veqryn)
+    * Creating framework for loading older savegames using older included jar
+    files. (veqryn)
+    * Fixing some errors with command line options, and abstracting some game
+    running utilities. (veqryn)
+    * Fixing display error in old paratroopers tech that caused the land unit
+    to appear to die with the air unit even after it has landed and survived
+    any aa fire. (veqryn)
+    * Making sure technology still has an effect even if it is not in a
+    player's tech frontier. (veqryn)
+    * Make sure the game chooser menu is cleared from memory after closed.
+    (veqryn)
+    * Created method to maintain savegame compatibility between 1.6.1 and
+    1.6.1.1 with regards to techs. (veqryn)
+    * Removing static instances of all hardcoded Technologies. Everything now
+    done with locally created instances per game data. (veqryn)
+    * Changed choose how "best dice roll" / "LHTR heavy bombers" works with
+    Low Luck on, so that it will add a bonus equal to the number of dice
+    sides divided by 6. (veqryn)
+    * Fixing scrambling again, so that even an amphibious assault on an
+    undefended (blitzable) land territory, from an undefended sea zone, will
+    still trigger scrambling. (veqryn)
+    * Removed game stopping message about unlimited purchases, whenever a
+    unit or item cost so little that you can buy more than 10000 of it.
+    (veqryn)
+    * Fixed errors in build.xml for java included version and mac version.
+    (veqryn)
+    * Fixed null pointer error in Dynamix AI. (veqryn)
+    * Fixed bug in freePlacementCapacity when placing land units in a
+    territory that previously placed sea units in a sea zone bordering more
+    than one land producer. (veqryn)
+    * Increasing max memory from 512mb to 640mb, and up to 768mb for online
+    games. (veqryn)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 29 Sep 2012 21:25:53 +0200
+
+triplea (1.6.1.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * Rewriting build file and including META-INF, hopefully fixing issue
+    with Gmail play-by-email emailer on linux machines. (rain)
+    * Changing trigger property changes to use "-reset-" instead of clear.
+    Can now be used with any attachment option. (veqryn)
+    * Creating a reset method for every single attachment property. These can
+    now be used to return a property to its default value. (veqryn)
+    * Fixing some bugs introduced into AI with the factory switch. (veqryn)
+    * Fixing null pointer error in Easy AI purchasing algorithm for getting
+    costs of units. (veqryn)
+    * Changing maxDamage to default to 2 instead of -1. This is for bombing
+    type damage, and it acts as either a multiplier of territory value or as
+    a hard set number depending on canProduceXUnits. (veqryn)
+    * Fixing AIs to no longer use isFactory, and instead use things like
+    canProduceUnits, etc. (veqryn)
+    * Abstracting isFactory setting and matches to use the component parts.
+    (veqryn)
+    * Deleting unit attachment, "isFactory", but keeping the setter so that
+    old xml's will not break. 
+        setting isFactory now just sets: canBeDamaged, isInfrastructure,
+        canProduceUnits, isConstruction, constructionType = "factory",
+        maxConstructionsPerTypePerTerr = 1,
+        constructionsPerTerrPerTypePerTurn = 1. (veqryn)
+    * Created new game option, "Submarines Prevent Unescorted Amphibious
+    Assaults", that prevent unescorted transports from conducting amphibious
+    assaults. (veqryn)
+    * Created new game option, "Kamikaze Suicide Attacks Only Where Battles
+    Are", and implemented it. (veqryn)
+    * Fixed bug where land units would disappear when conquering a sea zone.
+    (veqryn)
+    * Making kamikaze and interceptor dialogs non-modal so user can move
+    around map while choosing. Again, saving during the dialog then reloading
+    might have odd effects. (veqryn)
+    * Making scramble dialog non-modal so that the user can move the map
+    around before choosing what to scramble. Note that saving the game while
+    in the middle of scrambling can result in weird effects, so it is not
+    recommended. (veqryn)
+    * Undoing update to java Substance 7.1, in order to maintain
+    compatibility with Java 5. (veqryn)
+    * Created edit option to change the amount of unit bombing damage on any
+    and all units which can be damaged by bombing. (veqryn)
+    * Created edit option to change the amount of unit hitpoint damage on any
+    and all units which can take more than 1 point of hit damage. (veqryn)
+    * Created edit option to remove technology from a player, except that
+    shipyards and industrial technology can never be removed, and any
+    technology that uses triggers is pointless to remove and removing will
+    not undo their effect. (veqryn)
+    * Created edit option to add technology to a player. (veqryn)
+    * Adding methods to ensure that any power sharing technology (like
+    British to UK Pacific) will still roll for war bonds even if its capital
+    is taken, so long as the shared power is not able to have the warbonds
+    technologies. (veqryn)
+    * Allowing additional nations to share the cost of technology, and
+    creating a good user interface that dynamically adjusts to show how much
+    is being paid by each nation. (veqryn)
+    * Created an option in Play-By-Forum and Play-By-Email to send the move
+    summary after the combat move phase, in addition to the summary at the
+    end of the turn. This is to help with OOL and scrambling orders. (veqryn)
+    * Abstracted EndTurnPanel into AbstractForumPosterPanel, then created
+    MoveForumPosterPanel. (veqryn)
+    * Created new game option, "Remove All Tech Tokens At End Of Turn", which
+    will remove tech tokens after each tech roll. (veqryn)
+    * Make savegames for long games, games with many players, and games with
+    many battles, much smaller. (veqryn)
+    * Changing how Battle Records get added and removed from game data
+    through the Change Factory to be more memory efficient. (veqryn)
+    * Adding an option for "None" to the list of territory effects. (veqryn)
+    * Added List to Battle Calc so that you can manually select one or more
+    territory effects, hold down shift to select more than one. List will
+    automatically fill with starting territory's effects. (veqryn)
+    * Fixed battle calc to make it try to use the territory that we select.
+    (veqryn)
+    * Fixing bug in Battle Calculator where damaged units got turned into
+    healthy units before each battle was calculated. (veqryn)
+    * Fixed null pointer error in triggerSupportChange caused by having a
+    hashmap of an attachment class, inside of another attachment class, then
+    deserializing this (loading a savegame), resulting in the hashmap being
+    resolved before all its keys are, giving the wrong hashcodes to those
+    keys. (veqryn)
+    * Updating java Substance to 7.1, and adding 14 more skins. (veqryn)
+    * Updated embedded Java JRE for windows executable version to Java 6
+    update 33. (veqryn)
+    * Added a drawing method and menu option to have territory borders drawn
+    a second time on top of the map. (veqryn)
+    * Changing IDrawable calls to use highest level of graphics rendering
+    available. (veqryn)
+    * Fixing game selector model to no longer return to default game if we
+    have trouble loading the uri of previous xml, and will instead try to
+    pick by name first. (veqryn)
+    * Added new sounds for air, sea, and land battles, rockets, politics, and
+    tech. (veqryn)
+    * Fixed issue where fighters moving alone were not asked if they want to
+    escort. (veqryn)
+    * Made DefaultAttachment extend GameDataComponent. (veqryn)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 11 Jul 2012 19:59:39 +0200
+
+triplea (1.6.0.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * Fixing Global 1940 bugs, and getting it to use Technology completely.
+    (veqryn)
+
+    * Allowed downloading of multiple maps/games in one go, by holding down
+    CTRL while selecting maps in the "Download Games" dialog screen, and out
+    of date maps will show up in bold, and maps up-to-date will show in
+    italics. (ddurham)
+
+    * Created new rules attachment option, "switch", which allows either
+    "true" or "false", thereby giving all conditions a memory function.
+    (veqryn)
+
+    * Fixed bug where dependents of an air transport were not dying when the
+    air transport was hit by AA fire, in the case where the air transports
+    could fly deep into enemy territory and flew over an AA gun. (veqryn)
+
+    * Fixed parsing error in player attachment options: placementLimit,
+    movementLimit, attackingLimit. (veqryn)
+
+    * Fixed fatal error in HistoryLog, caused by clearing an array that
+    potentially gets accessed later at a specific index number, from doing an
+    edit during a movement phase then doing an undo later. (veqryn)
+
+    * Created new game option, "Subs Can End NonCombat Move With Enemies",
+    which allows submarines to end their noncombat movement in a sea zone
+    containing any enemy units. (veqryn)
+
+    * Added information on which units are doing the bomber to the question
+    about what should each bomber bomb. (veqryn)
+
+    * Fixed error from trying to undo a battle move created using another
+    player's units, using edit mode. (veqryn)
+
+    * Fixed null pointer exception when not selecting the target for a bomber
+    after an air battle is finished. (veqryn)
+
+    * Allowed interceptors and escorts to benefit from attackRolls and
+    defenseRolls and their bonuses. (veqryn)
+
+    * Created new delegate, NoAirCheckPlaceDelegate, which does everything
+    the normal "PlaceDelegate" does, but does not kill any aircraft at the
+    end of the phase. (veqryn)
+
+    * Fixed issue with not being able to blitz through units owned by a power
+    to which you were neutral with. (veqryn)
+
+    * Allowed loading of transports in Sea Zones where all enemies just
+    became hostile this turn due to politics. (veqryn)
+
+    * Fixed issue with loading transports in the same sea zone where a
+    transport was previously unload in a previous phase. (veqryn)
+
+    * Fixed issue with having multiple support attachment affecting the same
+    group of units. The order of preference is now: highest bonus support
+    first, then lowest number of supported types to highest number of types.
+    (veqryn)
+
+    * Created new techAbilityAttachment option, "bombingBonus", which will
+    add additional damage after all dice are rolled, per unit. (veqryn)
+
+    * Created new techAbilityAttachment option, "defenseRollsBonus", which
+    adds additional defense rolls. (veqryn)
+
+    * Created new techAbilityAttachment option, "attackRollsBonus", which
+    adds additional attack rolls. (veqryn)
+
+    * Created new UnitAttachment option, "chooseBestRoll", which controls
+    whether we select the best dice or use all the dice rolled, when there is
+    more than one die rolled. (veqryn)
+
+    * Created new UnitAttachment option, "defenseRolls", which controls the
+    number of defense rolls a unit has, so long as their defense is greater
+    than zero. (veqryn)
+
+    * Created new UnitAttachment option, "attackRolls", which controls the
+    number of attack rolls a unit has, so long as their attack is greater
+    than zero. (veqryn)
+
+    * Abstracted Heavy Bombers technology. (veqryn)
+
+    * Changed History Writer setRenderData to be part of a new event, instead
+    of being a separate method. Also fixed some display issues with event and
+    child messages. (veqryn)
+
+    * Created new techAbilityAttachment, "airborneTargettedByAA", which is
+    set by the attacker, controlling which airborne units are subject to AA
+    gun fire and by what AA gun types. (veqryn)
+
+    * Fixing error message for when a game xml is not correctly formed. Also
+    preventing errors from being thrown until we check the version number.
+    (veqryn)
+
+    * Deleted "GivesPUsDelegate". (veqryn)
+
+    * Finished airborne movement delegate, and technology. (veqryn)
+
+    * Created new techAbilityAttachment, "airborneBases", which turns on the
+    new airborne tech. (veqryn)
+
+    * Created new techAbilityAttachment, "airborneDistance", which turns on
+    the new airborne tech. (veqryn)
+
+    * Created new techAbilityAttachment, "airborneTypes", which turns on the
+    new airborne tech. (veqryn)
+
+    * Created new techAbilityAttachment, "airborneCapacity", which turns on
+    the new airborne tech. (veqryn)
+
+    * Created new techAbilityAttachment, "airborneForces", which turns on the
+    new airborne tech. (veqryn)
+
+    * Created new game option, "Airborne Attacks Only In Enemy Territories",
+    to help control different behavior for airborne tech. (veqryn)
+
+    * Created new game option, "Airborne Attacks Only In Existing Battles",
+    to help control different behavior for airborne tech. (veqryn)
+
+    * Created Validation for Airborne movement. (veqryn)
+
+    * Created AbstractMoveDelegate and abstracted MoveDelegate into it. 
+    Created SpecialMoveDelegate to extend it, for use with new
+    Paratroopers/Airborne tech. (veqryn)
+
+    * Fixed error preventing AI Flat Income Bonus from happening unless the
+    Percentage Bonus was also set. (veqryn)
+
+    * Fixed repair panel to correctly set the max for each unit. (veqryn)
+
+    * Fixed error with displaying discounts for repairing. Also fixed that
+    you may not be able to repair with all your money if you had a discount.
+    (veqryn)
+
+    * Fixed null pointer error from having Edit Mode on while AA guns fire.
+    (veqryn)
+
+    * Started coding for new paratrooper tech, to be called Airborne Forces.
+    (veqryn)
+
+    * Fixed blockade zones so that they never do more damage than the
+    combined total of their neighboring territories, even if there are
+    multiple sea zones blockading a single or set of territories. (veqryn)
+
+    * Allowed createsResourcesList to have negative values as well as
+    positive values. (veqryn)
+
+    * Created new Unit Attachment option, "bombingTargets", which allows the
+    unit to only target specific other units for rockets and strategic
+    bombing. (veqryn)
+
+    * Disallowed Bombardment from any sea zone that had a kamikaze suicide
+    attack. (veqryn)
+
+    * Fixed failing unit tests. (veqryn)
+
+    * Expanded Tech delegate UI element to use helpPayTechCost. (veqryn)
+
+    * Created new PlayerAttachment option, "helpPayTechCost", which will
+    allow other players to help pay the cost of technology. (veqryn)
+
+    * Created new PlayerAttachment option, "shareTechnology", which will
+    automatically give all technology to other players during tech activation
+    phase. (veqryn)
+
+    * Changed priority of AA casualty choosing system to: chooseAACasualties
+    -> isRollAAIndividually -> isRandomAACasualties. This means that "choose
+    aa" overrides all, while "roll aa individually" will only override
+    "random aa". (veqryn)
+
+    * Allowed "unitAbilitiesGained" to give "canBlitz" and "canBombard".
+    (veqryn)
+
+    * Created new techAbilityAttachment, "unitAbilitiesGained", which allows
+    units to gain abilities when technology is discovered. (veqryn)
+
+    * Created new techAbilityAttachment, "rocketNumberPerTerritory", which
+    controls the maximum number of dice to be rolled per territory. (veqryn)
+
+    * Created new techAbilityAttachment, "rocketDistance", which controls the
+    maximum distance rockets can travel. (veqryn)
+
+    * Created new techAbilityAttachment, "rocketDiceNumber", which controls
+    the number of dice each rocket rolls. (veqryn)
+
+    * Created new RelationshipTypeAttachment option, "rocketsCanFlyOver",
+    which allows rockets to fly over by default. (veqryn)
+
+    * Created new techAbilityAttachment, "warBondDiceNumber", which controls
+    how many dice get rolled for war bonds. (veqryn)
+
+    * Created new techAbilityAttachment, "warBondDiceSides", which controls
+    how large the dice are which are rolled to determine the war bonds bonus.
+    (veqryn)
+
+    * Created new techAbilityAttachment, "repairDiscount", which controls the
+    discount to repairing given by any technology. (veqryn)
+
+    * Created new techAbilityAttachment,
+    "minimumTerritoryValueForProductionBonus", which controls the minimum
+    value of a territory that a factory units must be in to receive the
+    production bonus. (veqryn)
+
+    * Created new techAbilityAttachment, "productionBonus", which controls
+    the bonus given to production by any technology. (veqryn)
+
+    * Created new techAbilityAttachment, "airDefenseBonus", which controls
+    the bonus given to interceptors defense by any technology. (veqryn)
+
+    * Created new techAbilityAttachment, "airAttackBonus", which controls the
+    bonus given to escorts attack by any technology. (veqryn)
+
+    * Created new techAbilityAttachment, "radarBonus", which controls the
+    bonus to radar AA attack given by any technology. (veqryn)
+
+    * Created new techAbilityAttachment, "defenseBonus", which controls the
+    defense bonus given by any technology. (veqryn)
+
+    * Created new techAbilityAttachment, "attackBonus", which controls the
+    attack bonus given by any technology. (veqryn)
+
+    * Fixed error with "Should not be adding battle record for player ...",
+    which was caused by creating a battle using edit mode for a player who's
+    turn has passed already. (veqryn)
+
+    * Fixed error with Low Luck AA guns when the dice side is different than
+    6. Was trying to roll zero random dice. (veqryn)
+
+    * Fixed issue with not being able to move through submarines during
+    noncombat if they were on top of convoy zones. (veqryn)
+
+    * Created new game option, "Convoy Blockades Roll Dice For Cost", which
+    will now allow dice to be thrown for all blockade damage. (veqryn)
+
+    * Allowed multiple airbases in a single territory to stack for their max
+    scrambling number total. (veqryn)
+
+    * Allowed defenseless attackers to be able to retreat if they can,
+    instead of being forced to die. (veqryn)
+
+    * Possible fix for "Record Battle Statistics" occuring multiple times.
+    (veqryn)
+
+    * Allowed all defending or attacking units to die, when there are none
+    left who are capable of throwing dice. (veqryn)
+
+    * Fixed issue with maxScrambleCount not keeping track of scrambles for
+    different sea zones by the same land territory. (veqryn)
+
+    * Semi-Fixed issue with not being able to retreat from a scrambled air
+    defense. You can now retreat anywhere that does not have enemies. User
+    should know where they came from and make legal move. (veqryn) 
+
+    * Fixed issue with unloaded ground units not dying or being removed, even
+    if their transports die from a scrambled air defense. (veqryn)
+
+    * Disallowed any unloading of ground units to a friendly territory,
+    during combat move, if we have scrambling or kamikazes turned on.
+    (veqryn)
+
+    * Fixed issue with "Scramble To Any Amphibious Assault" not working at
+    all. (veqryn)
+
+    * Created new game option, "Use Bombing Max Dice Sides And Bonus", which
+    will control the unit attachment options: "bombingMaxDieSides" and
+    "bombingBonus". (veqryn)
+
+    * Stopped "Low Luck for Bombing and Territory Damage" from controlling
+    "bombingMaxDieSides" and "bombingBonus", and made it create a Low Luck
+    situation on top of whatever dice sides and bonus the map uses. (veqryn)
+
+    * Fixing comparison method in weak ai. (veqryn)
+
+    * Allowed users to download maps even if they come with triplea. (veqryn)
+    
+
+    * Fixed Null pointer errors in Turn Summary Poster, and also fixed up
+    Politics to display better in the turn summary with indents. Also stopped
+    the poster from showing certain things like: game loaded, recording
+    battle statistics, and giving bonus movement. (veqryn)
+
+    * Fixed a ton of lock not held errors that had resulted from new
+    technology code. (veqryn)
+
+    * Fixed Economy panel so that it would change when you click back through
+    history. (tao nie)
+
+    * Created new techAbilityAttachment, "movementBonus", which controls the
+    bonus to movement that is received from any technology. Also created
+    default attachment for Long Range Air, which will now be set to give +2
+    movement to all air units, that are air units at the start of the game.
+    (veqryn)
+
+    * Created framework for interpreting TechAbilityAttachment's, and also
+    setting of default attachments for hardcoded technologies. (veqryn) 
+
+    * Created new type of attachment, TechAbilityAttachment, which will
+    control how all technologies work. (veqryn)
+
+    * Refactored TechAdvance and GenericTechAdvance to extend
+    NamedAttachable, that way they can eventually have attachments. (veqryn)
+
+    * Fixed bug where a NonFighting battle was attempting to add the result
+    as a child in the history panel, without creating the event first.
+    (veqryn)
+
+    * Fixed bug preventing Moore AI from placing Transport type sea units
+    whenever it did not buy non-transport sea units. (veqryn)
+
+    * Clearing all cached data for AIs once a game has been left. (veqryn)
+
+    * Clearing cached data for Dynamix AI once a game has been left.
+    (frigoref)
+
+    * Fixed issue with battles showing who won twice in the history panel.
+    (veqryn)
+
+    * Moved BattleRecord to its own class, and having BattleRecord,
+    BattleRecords, and BattleResults all extend GameDataComponent. (veqryn)
+
+    * Possibly fixed the problems with Edit Mode, by fixing a previous
+    refactoring that switched two variables up. (veqryn)
+
+    * Possibly fixed the problems with Edit Mode, by abstracting
+    BasePersistentDelegate and separating EditDelegate from BaseDelegate.
+    (veqryn)
+
+    * Generating Serial IDs for all classes that may need them. (veqryn)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 14 Jun 2012 13:04:16 +0200
+
+triplea (1.5.2.1-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version
+    * Updated 1940 test xml to allow Axis powers to declare war on Americans
+    separately, and for Americans to declare war on each Axis power
+    separately. (veqryn)
+
+    * Fixed null pointer error in Dynamix AI's determining of where to put a
+    factory. (veqryn)
+
+    * Having the default loaded game be loaded separately from the game
+    chooser list, and putting the loading of the list into a separate thread.
+    (veqryn & frigoref)
+
+    * Removing game chooser list from memory when we start a game, or join a
+    game, or join the lobby. (veqryn & frigoref)
+
+    * Removed restriction of not being able to land in land territories with
+    pending battles (there is still a restriction of course on who owns the
+    territory, and whether it was conquered this turn or not). (veqryn) 
+
+    * Fixing possible error with using overridden placement delegates that
+    were not triplea placement delegates, like using twoIfBySea place
+    delegates. (frigoref)
+
+    * Fixing bug where a territory that was taken without a fight, could
+    still trigger a scrambling, with the wrong player selecting who
+    scrambles. (veqryn)
+
+    * Allowing air to end their movement over sea zones containing enemy
+    units, if you own or will place a carrier there. (veqryn)
+
+    * Disallowing new usernames for lobby if they match case insensitive an
+    existing user, instead of checking only case sensitive. (veqryn)
+
+    * Speeding up lobby login process. (frigoref & veqryn)
+
+    * More fixes for sea placement and requiresUnits placement. (veqryn)
+
+    * Prevented units with "requiresUnits" from being placed by territories
+    not containing the required units, and also prevented them from being
+    moved around by the "free-up-space" methods. (veqryn)
+
+    * Fixed many small rare bugs in AbstractPlaceDelegate. (veqryn)
+
+    * Changing look of main screen, and adding tool tips for all buttons.
+    (veqryn)
+
+    * Fixed possible Null Pointer error for maps with a production frontier
+    of null rules. (veqryn)
+
+    * Fixed possible IllegalStateException in Air Battles. (veqryn)
+
+    * Allowed "Edit Moving" of units not owned by you, to create a battle by
+    the unit's owner. (veqryn)
+
+    * Fixed 'uses' for 'when' based triggers to be used up right after they
+    are used, while triggers without when set get 'used up' at the end of
+    each round that they are used in. (veqryn)
+
+    * Fixed Air Battle to only allow aircraft capable of intercepting into
+    the battle, instead of also allowing infrastructure too. (veqryn)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 14 Apr 2012 20:12:44 +0200
+
+triplea (1.3.2.2-2) unstable; urgency=low
+
+  * Enabled "Set look and feel" option from menu. Thanks to Jerome Robert
+    (Closes: #648716)
+    - Recommends: substance, liblaf-plugin-java, liblaf-widget-java and
+      removed substance from B-D. triplea will run without recommended
+      packages, but will throw an error if you try to "Set look and feel".
+      Play resumes normally after error.
+
+ -- Scott Howard <showard@debian.org>  Mon, 14 Nov 2011 21:45:33 -0500
+
+triplea (1.3.2.2-1) unstable; urgency=low
+
+  * Initial release. (Closes: #648444) (LP: #126069)
+
+ -- Scott Howard <showard@debian.org>  Fri, 11 Nov 2011 21:40:11 -0500

@@ -1,0 +1,3 @@
+version=3
+http://hedgewars.org/download.html \
+    (?:.*/)?hedgewars-src-([\d\.]+)(?:-.*)?\.tar\.(?:bz2|xz|gz)

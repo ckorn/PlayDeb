@@ -1,0 +1,67 @@
+Source: warsow
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Gonéri Le Bouder <goneri@rulezlan.org>, Bruno "Fuddl" Kleinert <fuddl@gmx.de>, Andres Mejia <mcitadel@gmail.com>
+Build-Depends: debhelper (>= 9),
+               tofrodos,
+               sharutils,
+               libopenal-dev,
+               libjpeg-dev,
+               libxrandr-dev,
+               libvorbis-dev,
+               libsdl-dev,
+               libz-dev,
+               libxxf86vm-dev,
+               libxxf86dga-dev,
+               libxinerama-dev,
+               libcurl4-gnutls-dev | libcurl3-gnutls-dev,
+               libfreetype6-dev,
+               libtheora-dev
+Standards-Version: 3.9.3
+Homepage: http://www.warsow.net/
+Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/warsow
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/warsow/?op=log
+
+Package: warsow
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         warsow-data (>= 1.02)
+Description: fast paced 3D first person shooter
+ Warsow is a fast paced first person shooter consisting of cel-shaded
+ cartoon-like graphics with dark, flashy and dirty textures. Warsow is based on
+ the E-novel "Chasseur de bots" ("Bots hunter" in English) by Fabrice Demurger.
+ Warsow's codebase is built upon Qfusion, an advanced modification of the Quake
+ II engine.
+ .
+ This package installs the client to play Warsow.
+
+Package: warsow-dbg
+Architecture: any
+Priority: extra
+Section: debug
+Depends: ${misc:Depends},
+         warsow (= ${binary:Version})
+Description: fast paced 3D first person shooter (debug symbols)
+ Warsow is a fast paced first person shooter consisting of cel-shaded
+ cartoon-like graphics with dark, flashy and dirty textures. Warsow is based on
+ the E-novel "Chasseur de bots" ("Bots hunter" in English) by Fabrice Demurger.
+ Warsow's codebase is built upon Qfusion, an advanced modification of the Quake
+ II engine.
+ .
+ This package contains the debugging symbols.
+
+Package: warsow-server
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         warsow-data (>= 1.02)
+Description: Server and TV server for the Warsow 3D first person shooter
+ Warsow is a fast paced first person shooter consisting of cel-shaded
+ cartoon-like graphics with dark, flashy and dirty textures. Warsow is based on
+ the E-novel "Chasseur de bots" ("Bots hunter" in English) by Fabrice Demurger.
+ Warsow's codebase is built upon Qfusion, an advanced modification of the Quake
+ II engine.
+ .
+ This package installs the standalone server and TV server for Warsow.

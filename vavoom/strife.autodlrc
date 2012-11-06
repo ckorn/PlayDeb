@@ -1,0 +1,25 @@
+[MESSAGELIST]
+[MESSAGE]
+	[TITLE]Please click 'Accept' to allow internet access.[/TITLE]
+	[TEXT]In order to play Strife, a Rogue Entertainment game, the original Strife datafiles are needed.
+
+Click Accept, to download the demo version of the Strife datafiles, which can be freely downloaded from the internet.
+
+If you posess the full version you can use that instead, by using the following command: "vavoom -strife -iwaddir <dir>". Where <dir> is a directory containing the datafiles of the full version.
+
+Please click Accept to allow access to the internet to download the necessary datafiles.[/TEXT]
+[/MESSAGE]
+[/MESSAGELIST]
+
+[FILELIST]
+[FILE]
+	[FILENAME]strife11.zip[/FILENAME]
+	[MD5]972070afb30c96fc3c69d954dfab2424[/MD5]
+	[PATH]$HOME/.vavoom/strife-demo[/PATH]
+	[MIRRORS]
+		[URL]ftp://ftp.fu-berlin.de/pc/msdos/games/idgames/roguestuff/strife11.zip[/URL]
+		[URL]http://downloads.planetmirror.com/pub/idgames/roguestuff/strife11.zip[/URL]
+		[URL]ftp://archives.3dgamers.com/pub/games/strife/strife11.zip[/URL]
+	[/MIRRORS]
+[/FILE]
+[/FILELIST]

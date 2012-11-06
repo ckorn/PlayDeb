@@ -1,0 +1,91 @@
+.TH ALLEGRO 1 "8 June 2003" Version 4.0.3
+.SH NAME
+allegro-config - script to get information about the installed version of Allegro
+.SH SYNOPSIS
+.B allegro-config
+[\-\-prefix\fI[=DIR]\fP] [\-\-exec\-prefix\fI[=DIR]\fP] [\-\-version] [\-\-libs] [\-\-cflags] [\-\-static] [\-\-shared] [\-\-env] [release|debug|profile]
+.SH DESCRIPTION
+.PP
+\fIallegro-config\fP is a tool that is used to configure to determine
+the compiler and linker flags that should be used to compile
+and link programs that use the \fIAllegro\fP library. It is intended to
+be used on Unix systems instead of the simple "-lalleg" call.
+.
+.SH EXAMPLE
+.l
+\fIgcc -o mygame mygame.o `allegro-config --libs`\fP
+.PP
+\fIallegro-config\fP will insert arguments needed to link into the
+command line.
+.
+.SH OPTIONS
+.l
+\fIallegro-config\fP accepts the following options:
+.TP 8
+.B  \-\-version
+Print the currently installed version of \fIAllegro\fP on the standard output.
+.TP 8
+.B  \-\-libs
+Print the linker flags that are necessary to link an \fIAllegro\fP program.
+.TP 8
+.B  \-\-cflags
+Print the compiler flags that are necessary to compile an \fIAllegro\fP program.
+.TP 8
+.B  \-\-prefix=PREFIX
+If specified, use PREFIX instead of the installation prefix that \fIAllegro\fP
+was built with when computing the output for the \-\-cflags and
+\-\-libs options. This option is also used for the exec prefix
+if \-\-exec\-prefix was not specified. This option must be specified
+before any \-\-libs or \-\-cflags options.
+.TP 8
+.B  \-\-exec\-prefix=PREFIX
+If specified, use PREFIX instead of the installation exec prefix that
+\fIAllegro\fP was built with when computing the output for the \-\-cflags
+and \-\-libs options.  This option must be specified before any
+\-\-libs or \-\-cflags options.
+.TP 8
+.B  \-\-static
+Like \-\-libs, but always print the linker flags needed to get a statically
+linked executable.
+.TP 8
+.B  \-\-shared
+Like \-\-libs, but always print the linker flags needed to get an
+executable linked against shared libs.
+.TP 8
+.B  \-\-env
+Print some needed environment variables in the way needed in shell
+scripts. Output may be loaded into your environment using
+
+BASH#>\ eval\ \`allegro\-config\ \-\-env`
+.TP
+.B release
+This will use the optimized Allegro library which you should use when
+you are compiling for a release.
+.TP
+.B debug
+This will add extra debug info into your programs, useful to find out
+where your program crashed or simply to debug it (names of functions
+are seen). You may choose this option while developing a program.
+.TP
+.B profile
+This may be used when you want to profile your program - i.e. measure
+the speeds of various function calls.
+.SH SEE ALSO
+.BR allegro-dev-tools (1)
+.br
+The
+.BR allegro
+info entry
+.SH COPYRIGHT
+This manual page was   written   by   Eduard   Bloch <blade@debian.org>,
+for the Debian GNU/Linux  system  (but may be used by others). It is
+heavily based on a similar manpage for gtk-config, written by Owen
+Taylor. His notice:
+
+Copyright \(co  1998 Owen Taylor
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose and without fee is hereby granted,
+provided that the above copyright notice appear in all copies and that
+both that copyright notice and this permission notice appear in
+supporting documentation.

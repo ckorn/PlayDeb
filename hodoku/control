@@ -1,0 +1,24 @@
+Source: hodoku
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               ant,
+               ant-optional,
+               openjdk-6-jdk
+Standards-Version: 3.9.3
+Homepage: http://hodoku.sourceforge.net/en/index.php
+
+Package: hodoku
+Architecture: all
+Depends: ${misc:Depends},
+         openjdk-6-jre | sun-java6-jre,
+         fontconfig
+Conflicts: hoduko
+Replaces: hoduko
+Description: Sudoku generator/solver/trainer/analyzer
+ Sudoku generator/solver/analyzer written in Java
+ (English and German). Lots of human style techniques
+ (singles, subsets, LCs, fish, wings, uniqueness,
+ coloring, chains, ALS), powerful analyzer
+ (manage multiple solutions for one sudoku).

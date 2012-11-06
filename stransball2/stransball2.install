@@ -1,0 +1,4 @@
+stransball2						usr/lib/games/stransball2
+*.cfg demos graphics high maps replays sound		usr/share/games/stransball2
+debian/scripts/stransball2				usr/games
+debian/stransball2.desktop				usr/share/applications

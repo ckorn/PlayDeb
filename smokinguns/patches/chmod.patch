@@ -1,0 +1,13 @@
+Index: smokinguns-1.0/stable/code/Construct
+===================================================================
+--- smokinguns-1.0.orig/stable/code/Construct	2009-08-17 15:52:13.341272010 +0200
++++ smokinguns-1.0/stable/code/Construct	2009-08-17 15:53:25.400465919 +0200
+@@ -352,7 +352,7 @@
+   system("mkdir qvmtools 2>/dev/null");
+   if (@_[0] eq 'q3lcc')
+   {
+-    system("cd ../lcc ; " . $MAKE . " all ; cp /tmp/lcc ../code/qvmtools/q3lcc ; cp /tmp/rcc ../code/qvmtools/q3rcc ; cp /tmp/cpp ../code/qvmtools/q3cpp");
++    system("cd ../lcc && " . $MAKE . " all && cp /tmp/lcc ../code/qvmtools/q3lcc && chmod +x ../code/qvmtools/q3lcc && cp /tmp/rcc ../code/qvmtools/q3rcc && chmod +x ../code/qvmtools/q3rcc && cp /tmp/cpp ../code/qvmtools/q3cpp && chmod +x ../code/qvmtools/q3cpp");
+   }
+   elsif (@_[0] eq 'q3asm')
+   {

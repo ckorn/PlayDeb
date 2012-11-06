@@ -1,0 +1,9 @@
+Document: triplea
+Title: Gentoo Manual
+Author: Iron Cross, Ali Ibrahim, Naiby, Sean Bridges
+Abstract: Readme and manual for TripleA
+Section: Games/Strategy
+
+Format: HTML
+Index: /usr/share/doc/triplea/readme.html
+Files: /usr/share/doc/triplea/doc/*

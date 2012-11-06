@@ -1,0 +1,65 @@
+Index: 8kingdoms-1.1.0/world/world_server.cpp
+===================================================================
+--- 8kingdoms-1.1.0.orig/world/world_server.cpp	2009-09-13 18:19:19.592471444 +0200
++++ 8kingdoms-1.1.0/world/world_server.cpp	2009-09-13 18:19:20.116469680 +0200
+@@ -2032,7 +2032,7 @@
+ 
+               for (int i = 0; i < MAX_PLAYERS; i++)
+               {
+-                if (game_start_disconnections[i] == ((int) p)) 
++                if (game_start_disconnections[i] == ((uintptr_t) p)) 
+                 {
+                   game_start_disconnections[i] = 0;
+                   break;
+@@ -2043,7 +2043,7 @@
+             else if (world_server->state == WSS_GAME_STARTED) 
+             {
+               // Hra jiz bezi, tedy doslo k znovu pripojeni    
+-              int client_id = (int)p;
++              int client_id = (uintptr_t)p;
+               for (TPlayerIterator it = world_server->world.players.begin(); it != world_server->world.players.end(); it++) 
+               {
+                 int temp=it->second->data().client_data.oldclient_id;
+@@ -2099,7 +2099,7 @@
+               // Az skonci nahravani hry, odpojeni klienta se vyresi dodatecne
+               for (int i = 0; i < MAX_PLAYERS; i++) 
+                 if (game_start_disconnections[i] == 0) 
+-                  game_start_disconnections[i] = (int)p;
++                  game_start_disconnections[i] = (uintptr_t)p;
+               break;
+             }
+             else if (world_server->state < WSS_GAME_STARTED) {
+@@ -2110,7 +2110,7 @@
+             }
+             else if (world_server->state == WSS_GAME_STARTED) {
+               // Hra jiz bezi    
+-              int client_id = (int)p;
++              int client_id = (uintptr_t)p;
+               for (TPlayerIterator it = world_server->world.players.begin(); it != world_server->world.players.end(); it++) {
+                 if (it->second->data().client_data.client_id == client_id) {
+                   // odpojil se hrac it->first
+Index: 8kingdoms-1.1.0/net/server.cpp
+===================================================================
+--- 8kingdoms-1.1.0.orig/net/server.cpp	2009-09-13 18:19:19.576470037 +0200
++++ 8kingdoms-1.1.0/net/server.cpp	2009-09-13 18:19:20.116469680 +0200
+@@ -415,7 +415,7 @@
+   #ifdef WIN32 
+     int sin_size = sizeof(struct sockaddr_in); // Windows chteji do accept int
+   #else
+-    size_t sin_size = sizeof(struct sockaddr_in);
++    socklen_t sin_size = sizeof(struct sockaddr_in);
+   #endif
+ 
+     int s;
+Index: 8kingdoms-1.1.0/common/TCL/tcl_struct.cpp
+===================================================================
+--- 8kingdoms-1.1.0.orig/common/TCL/tcl_struct.cpp	2009-09-13 18:22:40.208496735 +0200
++++ 8kingdoms-1.1.0/common/TCL/tcl_struct.cpp	2009-09-13 18:22:44.532508447 +0200
+@@ -6,6 +6,7 @@
+ */
+ 
+ #include <stdio.h>
++#include <cstring>
+ #include "common/compatibility.h"
+ #include "common/types.h"
+ #include "tcl_struct.h"

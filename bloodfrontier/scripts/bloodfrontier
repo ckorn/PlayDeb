@@ -1,0 +1,4 @@
+#!/bin/sh
+BF_OPTIONS="-h${HOME}/.bloodfrontier -rinit.cfg"
+cd /usr/share/games/bloodfrontier
+exec ./bfclient ${BF_OPTIONS} "$@"

@@ -1,0 +1,54 @@
+Source: goollie
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 7.0.50),
+ cmake, libmagick++-dev, libsdl-image1.2-dev,
+ libsdl-mixer1.2-dev, python-all-dev, libc6-dev-i386 [amd64],
+ libtuxcap-dev, python-support
+Standards-Version: 3.9.3
+Homepage: http://www.tweeler.com/goollie_linux.html
+
+Package: goollie
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, goollie-data (= ${source:Version})
+Description: Go Ollie!
+ Ollie the Oligocheata is a worm on a mission.
+ .
+ He is on a mission to bring mouse controlled
+ platforming fun to everyone! 
+ .
+ Go Ollie is a free Linux game with beautifully
+ rendered scenes and animations.
+ .
+ The latest in innovative mouse controlled platform
+ gaming featuring a unique fusion of platform and match
+ three gaming mechanics.
+ .
+ Two gameplay modes: 
+ Story Mode with over 60 individual levels each with
+ three different objectives.
+ Fast and furious action game with unlimited
+ re-playability and high score table.
+
+Package: goollie-data
+Depends: ${misc:Depends}
+Architecture: all
+Description: Go Ollie! (data files)
+ Ollie the Oligocheata is a worm on a mission.
+ .
+ He is on a mission to bring mouse controlled
+ platforming fun to everyone! 
+ .
+ Go Ollie is a free Linux game with beautifully
+ rendered scenes and animations.
+ .
+ The latest in innovative mouse controlled platform
+ gaming featuring a unique fusion of platform and match
+ three gaming mechanics.
+ .
+ Two gameplay modes: 
+ Story Mode with over 60 individual levels each with
+ three different objectives.
+ Fast and furious action game with unlimited
+ re-playability and high score table.

@@ -1,0 +1,14 @@
+Just typos.
+Index: ponscripter-20111009/src/ScriptParser.cpp
+===================================================================
+--- ponscripter-20111009.orig/src/ScriptParser.cpp	2011-12-04 12:56:38.910543226 +0100
++++ ponscripter-20111009/src/ScriptParser.cpp	2011-12-04 12:57:11.774542250 +0100
+@@ -441,7 +441,7 @@
+ 
+ rgb_t ScriptParser::readColour(const char* buf)
+ {
+-    if (buf[0] != '#') errorAndExit("readColour: no preceeding #.");
++    if (buf[0] != '#') errorAndExit("readColour: no preceding #.");
+     return rgb_t(convHexToDec(buf[1]) << 4 | convHexToDec(buf[2]),
+ 		  convHexToDec(buf[3]) << 4 | convHexToDec(buf[4]),
+ 		  convHexToDec(buf[5]) << 4 | convHexToDec(buf[6]));

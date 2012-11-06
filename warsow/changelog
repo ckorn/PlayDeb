@@ -1,0 +1,249 @@
+warsow (1.02-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Oct 2012 14:32:07 +0200
+
+warsow (1.01-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 10 Oct 2012 20:59:40 +0200
+
+warsow (1.0-1~getdeb2) precise; urgency=low
+
+  * Update debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 24 Sep 2012 22:03:32 +0200
+
+warsow (1.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 28 Jul 2012 13:08:18 +0200
+
+warsow (0.70-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 02 Jun 2012 14:31:45 +0200
+
+warsow (0.62-1~getdeb2) lucid; urgency=low
+
+  * debian/rules: Build with -O0 to prevent
+    crash on map load. (LP: #792566)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 04 Jun 2011 14:00:58 +0200
+
+warsow (0.62-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 01 May 2011 13:02:18 +0200
+
+warsow (0.61-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 19 Mar 2011 18:14:44 +0100
+
+warsow (0.60-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #703758)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 17 Jan 2011 19:51:42 +0100
+
+warsow (0.50-1~getdeb3) karmic; urgency=low
+
+  * Fixed debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 13:29:21 +0100
+
+warsow (0.50-1~getdeb2) karmic; urgency=low
+
+  * Rebuild for Karmic, because of libkrb53 removal
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Fri, 30 Oct 2009 23:03:42 +0000
+
+warsow (0.50-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version.
+
+ -- Christoph Korn <c_korn@gmx.de>  Tue, 01 Sep 2009 19:51:13 +0200
+
+warsow (0.42.dfsg1-1) unstable; urgency=low
+
+  [ Andres Mejia ]
+  * New upstream release. Closes: #461659
+  * Remove gnu.txt and license.txt from documentation.
+  * Renamed warsow-tarball.sh to warsow-get-orig-source.
+    + Modified script to make it more maintainable.
+  * Use 'exit 1' when exiting from error in warsow and warsow-server script.
+  * Rewrote package descriptions.
+  * Remove XS- prefix from Vcs entries.
+  * Fixed bad Vcs-Svn link.
+  * Bumped Standards-Version to 3.7.3.
+  * Don't use libcurl{4,3}-openssl-dev in Build-Depends. libcurl gnutls
+    packages are enough.
+  * Fixed debian/rules to not use '-f' option when removing files.
+  * Removed Encoding field from desktop file.
+  * Edited English description in desktop and menu file.
+  * No longer renaming upstream changelog.
+  * Modifying patch for upstream Makefile to show all options used for
+    compiling and linking.
+  * Add 'nostrip' option.
+  * Fix problem with downloading maps. Closes: #458758
+    + Thanks Eric DÉCORNOD.
+  * Taking out GL and DRI checks from warsow script. Such a check should be
+    implemented directly in the game.
+    + Closes: #455387
+    + Closes: #455388
+    + Closes: #454156
+  * Added watchfile.
+  * Fixed copyright to say who really debianized this package.
+  * Added get-orig-source in debian/rules.
+  * map_download.diff patch no longer needed.
+  * Including TV server binary along with server package.
+  * Fixed manual pages.
+  * Disable update notifications by default. Closes: #466265
+
+  [ Gonéri Le Bouder ]
+  * Update the copyright file
+
+ -- Andres Mejia <mcitadel@gmail.com>  Mon, 21 Apr 2008 00:26:49 -0400
+
+warsow (0.32.dfsg-1) unstable; urgency=low
+
+  [ Andres Mejia ]
+  * New upstream release. (Closes: 440476)
+  * Adding script to download and create orig tarball.
+  * Added Homepage field in source stanza that will soon be supported.
+  * Updated copyright file to describe what is and isn't included from upstream
+    tarball.
+  * Documentation from warsow upstream binary tarball will be included in
+    debian/documentation.
+  * Bumped install files to install from warsow-0.32/* directories.
+  * Using libjpeg-dev instead of libjpeg62-dev.
+  * Using libsdl-dev instead of libsdl1.2-dev.
+  * Using libz-dev instead of zlib1g-dev.
+  * Removing libxext-dev and libx11-dev. They are dependencies of
+    libxinerama-dev.
+  * Removing battleye patch and fix_off_by_one patch. They are no longer
+    needed.
+  * Updated patches.
+  * Changed warsow.xpm to more recent icon.
+  * Included warsow128x128.png icon.
+    + Using sharutils to hold png icon.
+    + desktop file will use new icon.
+  * Adding a warsow.docs and warsow-server.docs files for both packages.
+
+ -- Andres Mejia <mcitadel@gmail.com>  Tue, 04 Sep 2007 15:25:16 -0400
+
+
+warsow (0.31.dfsg-6) unstable; urgency=low
+
+  [ Andres Mejia ]
+  * Added two checks in warsow client wrapper script.
+    + Thanks Gonéri Le Bouder.
+    + Adds check for direct rendering and texture requirement for warsow.
+    + Added dependency of mesa-utils.
+    + (Closes: 435468)
+
+  [ Alexander Schmehl ]
+  * adding dependency on xbase-clients to warsow, since the wrapper scripts
+    uses xmessage
+  * Adding missing second space to Homepage semi-header as recommended by
+    developer reference
+
+ -- Andres Mejia <mcitadel@gmail.com>  Tue, 07 Aug 2007 15:34:08 +0200
+
+warsow (0.31.dfsg-5) unstable; urgency=low
+
+  [ Andres Mejia ]
+  * Modified patch "fix_different_archs.diff".
+    + Included line for Debian powerpc64 port.
+    + Fixed powerpc CPUSTRING and ARCH to reflect uname -m output.
+    + (Closes: 433671)
+    + Fixed hppa CPUSTRING and ARCH to reflect uname -m on build machine.
+
+ -- Andres Mejia <mcitadel@gmail.com>  Mon, 30 Jul 2007 23:14:04 -0400
+
+warsow (0.31.dfsg-4) unstable; urgency=low
+
+  [ Andres Mejia ]
+  * Fixed patch "fix_different_archs.diff".
+    + Needed "defined" instead of "define".
+    + (Closes: 435260)
+
+ -- Andres Mejia <mcitadel@gmail.com>  Mon, 30 Jul 2007 12:49:12 -0400
+
+warsow (0.31.dfsg-3) unstable; urgency=low
+
+  [ Andres Mejia ]
+  * Modified debian/rules.
+    + Setting up patch/unpatch targets to use quilt
+    + Now uses same uname commands found in Makefile BASE_ARCH variable for
+      naming shared objects.
+  * Modified makefile_modifications patch.
+    + BASE_ARCH changed from using dpkg-architecture to uname (Closes: 434131)
+  * Fixing FTBFS in ia64 (Closes: #433590)
+  * Fix off by one error for big endian systems (Thanks Michel Dänzer).
+    + (Closes: #433671)
+    + Also fix bug with powerpc not loading correct module (same bug).
+    + Also added fix for other architectures.
+  * Changed from using dpatch to using quilt.
+  * Added extra build-depends package "tofrodos".
+    + Was needed to patch some files that had DOS carraige return.
+    + Modified debian/rules to use fromdos/todos utilities.
+  * Took out build-depends of libssl-dev since it isn't needed.
+  * Added patch to disable use of BattlEye.
+    + Also disables displaying battleye servers by default.
+    + This should fix error when running server binaries.
+  * Added some comments about SVN.
+    + Added XS-Vcs-Svn for SVN link.
+    + Added XS-Vcs-Browser for web browsable SVN link.
+  * Took out build-deps of libidn11-dev and libkrb5-dev. They will be provided
+    by libcurl*-dev.
+
+ -- Andres Mejia <mcitadel@gmail.com>  Thu, 26 Jul 2007 14:22:46 -0400
+
+warsow (0.31.dfsg-2) unstable; urgency=low
+
+  [ Andres Mejia ]
+  * Still initial release (Closes: #375430)
+  * Deleting unneeded directories from orig tarball.
+    + Explained in detail in debian/copyright.
+  * Modified debian/copyright.
+    + Explained why certain directories are deleted.
+    + Listed directories that are deleted.
+    + Including section titled Copyright and License.
+  * Taking out Suggests line for warsow-battleye.
+    + There's no Battleye packages in Debian yet.
+  * Modified debian/rules.
+    + Renamed Q2ARCH to a more clear variable DPKG_ARCH.
+    + Added UNAME_ARCH, used when running rules clean twice.
+  * Added other changes made by team in SVN.
+    + Changes that were added are below. They are from Eddy Petrișor and
+      Jon Dowland.
+
+ -- Andres Mejia <mcitadel@gmail.com>  Sun, 15 Jul 2007 17:59:06 -0400
+
+warsow (0.31.dfsg-1) unstable; urgency=low
+
+  [ Eddy Petrișor ]
+  * added encoding to the desktop file
+  * some fixes to the Romanian translation of the comment in the desktop file
+
+  [ Jon Dowland ]
+  * update menu section to "Games/Action" for menu policy transition.
+    Thanks Linas Žvirblis.
+
+  [ Gonéri Le Bouder ]
+  * Initial release (Closes: #375430)
+
+  [ Andres Mejia ]
+  * Modified scripts for warsow and warsow server binaries.
+  * Added patch to modify makefile.
+  * Added README.Debian file.
+
+ -- Jon Dowland <jon@alcopop.org>  Thu, 12 Jul 2007 12:08:15 +0100

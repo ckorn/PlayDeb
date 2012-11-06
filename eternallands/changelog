@@ -1,0 +1,30 @@
+eternallands (1.9.3-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #935990)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 23 Feb 2012 21:28:11 +0100
+
+eternallands (1.9.2-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #799817)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 22 Jun 2011 14:38:15 +0200
+
+eternallands (1.9.1-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 08 Jan 2011 14:06:50 +0100
+
+eternallands (1.9.0-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 08 Apr 2010 18:28:37 +0200
+
+eternallands (1.9.0-1ubuntu6) lucid; urgency=low
+
+  * 1.9.0 Release
+  * Minor fix for 3d-marks
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Thu, 01 Apr 2010 17:15:44 +0100

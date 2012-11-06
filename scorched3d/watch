@@ -1,0 +1,3 @@
+version=3
+opts="dversionmangle=s/dfsg(.?\d+)?$//" \
+http://sf.net/scorched3d/ Scorched3D-([\d.a-z]+)-src\.tar\.gz

@@ -1,0 +1,33 @@
+#!/bin/sh
+# postrm script for wesnoth-1.10-core
+# Copyright 2010 by Gerfried Fuchs <rhonda@debian.at>
+# Licensed under WTFPLv2
+
+set -e
+
+divert_oldfiles()
+{
+	# programs
+	for i in wesnoth wesnoth-nolog wesnoth-smallgui wesnoth-editor; do 
+		dpkg-divert --remove --package wesnoth-1.10-core \
+			--rename /usr/games/$i 2>/dev/null || true
+	done
+
+	# manpages
+	for i in ca_ES@valencia cs da de en_GB es et fi fr gl hu it ja \
+		lt nl pl sk sr sr@latin sv tr zh_CN zh_TW; do
+		dpkg-divert --remove --package wesnoth-1.10-core \
+			--rename /usr/share/man/$i/man6/wesnoth.6.gz 2>/dev/null || true
+	done
+}
+
+
+case "$1" in
+	purge|remove)
+		divert_oldfiles
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0

@@ -1,0 +1,35 @@
+Index: smokinguns-1.0/stable/code/botlib/l_precomp.c
+===================================================================
+--- smokinguns-1.0.orig/stable/code/botlib/l_precomp.c	2010-12-22 20:24:41.104005001 +0100
++++ smokinguns-1.0/stable/code/botlib/l_precomp.c	2010-12-22 20:25:07.534005000 +0100
+@@ -949,7 +949,7 @@
+ 		if ((*ptr == '\\' || *ptr == '/') &&
+ 				(*(ptr+1) == '\\' || *(ptr+1) == '/'))
+ 		{
+-			strcpy(ptr, ptr+1);
++			memmove(ptr, ptr+1, strlen(ptr));
+ 		} //end if
+ 		else
+ 		{
+Index: smokinguns-1.0/stable/code/botlib/l_script.c
+===================================================================
+--- smokinguns-1.0.orig/stable/code/botlib/l_script.c	2010-12-22 20:25:19.804004999 +0100
++++ smokinguns-1.0/stable/code/botlib/l_script.c	2010-12-22 20:26:05.564004999 +0100
+@@ -1119,7 +1119,7 @@
+ {
+ 	if (*string == '\"')
+ 	{
+-		strcpy(string, string+1);
++		memmove(string, string+1, strlen(string));
+ 	} //end if
+ 	if (string[strlen(string)-1] == '\"')
+ 	{
+@@ -1136,7 +1136,7 @@
+ {
+ 	if (*string == '\'')
+ 	{
+-		strcpy(string, string+1);
++		memmove(string, string+1, strlen(string));
+ 	} //end if
+ 	if (string[strlen(string)-1] == '\'')
+ 	{

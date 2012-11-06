@@ -1,0 +1,11 @@
+mazenum (0.1-1~getdeb2) precise; urgency=low
+
+  * Remove debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 20 Sep 2012 19:03:24 +0200
+
+mazenum (0.1-1~getdeb1) lucid; urgency=low
+
+  * Upload to GetDeb
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 11 Mar 2012 13:01:09 +0100

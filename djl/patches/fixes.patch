@@ -1,0 +1,17 @@
+Index: djl-1.2.20/djl/libs/SOAPpy/GSIServer.py
+===================================================================
+--- djl-1.2.20.orig/djl/libs/SOAPpy/GSIServer.py	2010-01-23 20:34:08.052567556 +0100
++++ djl-1.2.20/djl/libs/SOAPpy/GSIServer.py	2010-01-23 20:34:50.220068282 +0100
+@@ -42,11 +42,11 @@
+ #
+ ################################################################################
+ """
++from __future__ import nested_scopes
+ 
+ ident = '$Id: GSIServer.py,v 1.5 2005/02/15 16:32:22 warnes Exp $'
+ from version import __version__
+ 
+-from __future__ import nested_scopes
+ 
+ #import xml.sax
+ import re

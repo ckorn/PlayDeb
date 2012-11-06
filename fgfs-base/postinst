@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+if [ -d /usr/share/FlightGear ]; then
+  # the user seem to have manually added scenery to the old location
+  echo Moving /usr/share/FlightGear to /usr/share/games/flightgear...
+  cp -a /usr/share/FlightGear/* /usr/share/games/flightgear
+  rm -rf /usr/share/FlightGear
+fi
+
+[ -e /usr/share/games/flightgear/Timezone ] || ln -sTf /usr/share/zoneinfo /usr/share/games/flightgear/Timezone
+
+#DEBHELPER#

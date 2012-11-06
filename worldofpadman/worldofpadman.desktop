@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=World of Padman
+Exec=worldofpadman
+Icon=worldofpadman
+Comment=Play World of Padman; a comic-style, fast paced, first person shooter.
+Terminal=false
+Type=Application
+Categories=Application;Game;ArcadeGame;

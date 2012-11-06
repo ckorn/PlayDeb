@@ -1,0 +1,11 @@
+popzi (0.1-1~getdeb1) lucid; urgency=low
+
+  * Upload to GetDeb (LP: #951606O)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 11 Mar 2012 13:01:09 +0100
+
+popzi (0.1-1) precise; urgency=low
+
+  * Initial release 
+
+ -- João Pinto <joao.pinto@osgameseed.org>  Thu, 08 Mar 2012 22:28:18 +0000

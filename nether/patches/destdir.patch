@@ -1,0 +1,37 @@
+Install into $DESTDIR.
+Index: nether-0.53/build/linux/Makefile
+===================================================================
+--- nether-0.53.orig/build/linux/Makefile	2010-02-09 22:40:05.841449547 +0100
++++ nether-0.53/build/linux/Makefile	2010-02-09 22:40:45.708953890 +0100
+@@ -48,19 +48,21 @@
+ 
+ install: all
+ 	@$(ECHO) " o Creating install directory $(BINDIR)"
+-	@$(MD) "$(BINDIR)"
++	@$(MD) "$(DESTDIR)/$(BINDIR)"
+ 	@$(ECHO) " o Installing game and data to $(BINDIR)"
+-	@$(CP) "$(EXE)" $(DATA) "$(BINDIR)"
++	@$(CP) $(DATA) "$(DESTDIR)/$(BINDIR)"
++	@$(MD) "$(DESTDIR)/usr/lib/games/nether"
++	@$(CP) "$(EXE)" "$(DESTDIR)/usr/lib/games/nether"
+ 	@$(ECHO) " o Creating startup script $(STARTUP)"
+-	@$(MD) "$(GAMEDIR)"
+-	@$(ECHO) "#!/bin/sh" >"$(STARTUP)"
+-	@$(ECHO) "cd \"$(BINDIR)\"; ./$(EXE); cd -" >>"$(STARTUP)"
+-	@$(CHMOD) 755 "$(STARTUP)"
++	@$(MD) "$(DESTDIR)/$(GAMEDIR)"
++	@$(ECHO) "#!/bin/sh" >"$(DESTDIR)/$(STARTUP)"
++	@$(ECHO) "cd \"$(BINDIR)\"; ./$(EXE); cd -" >>"$(DESTDIR)/$(STARTUP)"
++	@$(CHMOD) 755 "$(DESTDIR)/$(STARTUP)"
+ 	@$(ECHO) " o Creating application menu entry"
+-	@$(MD) "$(ICNDIR)"
+-	@$(CP) "$(EXTRADIR)/$(ICON)" "$(ICNDIR)"
+-	@$(MD) "$(APPDIR)"
+-	@$(CP) "$(EXTRADIR)/$(DESKTOP)" "$(APPDIR)"
++	@$(MD) "$(DESTDIR)/$(ICNDIR)"
++	@$(CP) "$(EXTRADIR)/$(ICON)" "$(DESTDIR)/$(ICNDIR)"
++	@$(MD) "$(DESTDIR)/$(APPDIR)"
++	@$(CP) "$(EXTRADIR)/$(DESKTOP)" "$(DESTDIR)/$(APPDIR)"
+ 	@$(ECHO) ""
+ 
+ uninstall:

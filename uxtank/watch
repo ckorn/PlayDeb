@@ -1,0 +1,3 @@
+version=3
+http://sites.google.com/site/uxtank/home \
+    (?:.*/)?uxtank([\d\.]+)\.tgz

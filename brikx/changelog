@@ -1,0 +1,30 @@
+brikx (0.4.5-1~getdeb2) lucid; urgency=low
+
+  * Fix debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 Nov 2011 14:52:20 +0100
+
+brikx (0.4.5-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 09 Apr 2010 20:48:57 +0200
+
+brikx (0.4.1-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Mon, 03 Aug 2009 15:49:07 +0000
+
+brikx (0.4.0b-2~getdeb1) gutsy; urgency=low
+
+  * Packaged by GetDeb.net
+
+ -- Marco Rodrigues <gothicx@sapo.pt>  Sun, 28 Oct 2007 10:53:26 +0000
+
+brikx (0.4.0b-1~getdeb1) feisty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Mon, 11 Jun 2007 20:46:06 +0000
+

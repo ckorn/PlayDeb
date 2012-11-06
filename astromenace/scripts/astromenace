@@ -1,0 +1,63 @@
+#!/bin/bash
+
+myDataDir=/usr/share/games/astromenace
+
+if [ ! -d $HOME/.config/astromenace ]; then
+	mkdir -p $HOME/.config/astromenace
+	pushd $HOME/.config/astromenace > /dev/null
+
+#	myLocale=`echo $LANG`
+#	case $myLocale in
+#		de*)
+##			german menu is "empty"
+##			ln -s $myDataDir/gamelang_de.vfs gamelang.vfs
+#			ln -s $myDataDir/gamelang_en.vfs gamelang.vfs
+#			ln -s $myDataDir/DATA_DE .
+#			;;
+#		ru*)
+##			german menu is "empty"
+##			ln -s $myDataDir/gamelang_de.vfs gamelang.vfs
+#			ln -s $myDataDir/gamelang_en.vfs gamelang.vfs
+#			ln -s $myDataDir/DATA_RU .
+#			;;
+#		*)
+#			ln -s $myDataDir/gamelang_en.vfs gamelang.vfs
+#			ln -s $myDataDir/DATA_EN .
+#			;;
+#	esac
+
+	ln -s $myDataDir/gamedata.vfs .
+#	ln -s $myDataDir/DATA_BASE .
+#	ln -s $myDataDir/DATA .
+
+	popd > /dev/null
+fi
+#if [ ! -e $HOME/.astromenace/DATA ]; then
+#	pushd $HOME/.astromenace > /dev/null
+#		ln -s $myDataDir/DATA .
+#	podp > /dev/null
+#fi
+
+#	--mode=N - set the game windows mode and resolution (forced)
+#	where N is number from 0 till 17:
+#	Fullscreen modes
+#		0: 640x480x16
+#		1: 640x480x24
+#		2: 800x600x16
+#		3: 800x600x24
+#		4: 1024x768x16
+#		5: 1024x768x24
+#		6: 1280x1024x16
+#		7: 1280x1024x24
+#		8: 1400x1050x16
+#		9: 1400x1050x24
+#		10: 1600x1200x16
+#		11: 1600x1200x24
+#	Windowed modes
+#		12: 640x480
+#		13: 800x600
+#		14: 1024x768
+#		15: 1280x1024
+#		16: 1400x1050
+#		17: 1600x1200
+/usr/lib/games/astromenace/AstroMenace --dir=$HOME/.config/astromenace --mode=14 $@

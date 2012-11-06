@@ -1,0 +1,62 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+#export DH_VERBOSE=1
+
+build: build-stamp
+build-stamp:
+	mkdir build
+	cd build; cmake -DCMAKE_SKIP_BUILD_RPATH=true -DCMAKE_INSTALL_PREFIX=/usr ..; $(MAKE)
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -rf build
+	rm -rf debian/tmp
+	dh_clean
+
+install: install-stamp
+install-stamp:
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+	cd build; $(MAKE) install DESTDIR=../debian/tmp
+
+	# Fix some stuff to not conflict with the official package.
+	cd debian/tmp/usr/bin ; rm colormap dat dat2c dat2s exedat grabber \
+	  pack pat2dat rgbmap textconv
+
+	dh_install --sourcedir=debian/tmp
+
+binary-indep: install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs
+	dh_installman
+	dh_link
+	dh_compress
+	dh_fixperms
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary-arch: install
+	dh_testdir
+	dh_testroot
+	dh_strip -pliballeg4.4 -pliballeg4.4-dev 
+	dh_installchangelogs -pliballeg4.4 -pliballeg4.4-dev 
+	dh_installdocs -pliballeg4.4 -pliballeg4.4-dev 
+	dh_installman -pliballeg4.4 -pliballeg4.4-dev 
+	dh_link -pliballeg4.4 -pliballeg4.4-dev 
+	dh_compress -pliballeg4.4 -pliballeg4.4-dev 
+	dh_fixperms -pliballeg4.4 -pliballeg4.4-dev 
+	dh_makeshlibs -pliballeg4.4 -V "liballeg4.4 (>= 4.4.2-1)"
+	dh_installdeb -pliballeg4.4 -pliballeg4.4-dev 
+	dh_shlibdeps -pliballeg4.4 -pliballeg4.4-dev 
+	dh_gencontrol -pliballeg4.4 -pliballeg4.4-dev 
+	dh_md5sums -pliballeg4.4 -pliballeg4.4-dev 
+	dh_builddeb -pliballeg4.4 -pliballeg4.4-dev 
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+if [ ! -d $HOME/.fall-of-imiryn ] ; then
+	mkdir $HOME/.fall-of-imiryn
+	cp -a /usr/share/games/fall-of-imiryn/save $HOME/.fall-of-imiryn/
+fi
+
+cd /usr/share/games/fall-of-imiryn
+python main.py

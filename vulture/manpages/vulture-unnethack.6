@@ -1,0 +1,89 @@
+.TH VULTURE-UNNETHACK 6 "March 2011"
+.SH NAME
+vulture-unnethack \- play unnethack using a mouse-driven isometric graphical interface
+.SH SYNOPSIS
+.B vulture-unnethack
+[\-d \fIdirectory\fR] [\-n] [\-p \fIprofession (role)\fR] [\-r \fIrace\fR] [\-D] [\-X] [\-u \fIplayername\fR]
+
+.B vulture-unnethack
+[\-d \fIdirectory\fR] \-s [\-v] [\-p \fIprofession (role)\fR] [\-r \fIrace\fR] [\fIplayer_name\fR] [\fIOPTION\fR]
+
+.SH DESCRIPTION
+Vulture 2.2.100 is an enhanced, highly graphical window port (user
+interface) for UnNetHack 3.5.3. It adds a lot of eye candy and multimedia to the
+game while keeping the original gameplay of UnNetHack.
+
+Here's a brief list of features:
+
+High-res, 32-bit isometric graphics with real-time lighting 
+
+Customizable digitized sound effects 
+
+Symphonic soundtracks
+
+Mouse-driven interface (keyboard play also works)
+
+HTML manual 
+
+Command-line options are the same as UnNetHack:
+
+.TP
+\fB\-d\fR \fIdirectory\fR
+Use the given directory as the playground. Help files, top scorers and saved games are stored in this directory.
+This must be the first argument, if specified.
+.TP
+\fB\-n\fR
+Suppress news from the administrator.
+.TP
+\fB\-p\fR \fIprofession\fR
+Set your character's profession.
+.TP
+\fB\-r\fR \fIrace\fR
+Set your character's race.
+.TP
+\fB\-D\fR
+Start the game in wizard mode. You cannot switch to a normal game while
+wizard mode is active, and your score will not be listed in the top scores.
+You need to be root to enter wizard mode. Normal users will get explore mode instead.
+.TP
+\fB\-X\fR
+Start the game in explore mode. You cannot switch to a normal game while
+explore mode is active, and your score will not be listed in the top scores.
+.TP
+\fB\-u\fR \fIplayer_name\fR
+Set your character's name.
+.TP
+\fB\-s\fR
+Display top scores for the current version of NetHack, filtered by
+professions, races or player names if specified.
+.TP
+\fB\-v\fR
+Display top scores for all versions. Should immediately follow \fB-s\fR.
+
+.SH "AUTHORS"
+
+Daniel Thaler, <daniel@dthaler.de>
+
+Clive Crous, <clive@crous.co.za>
+
+Based on Falcon's Eye by:
+Jaakko Peltonen, <jaakko dot peltonen at hut dot fi>
+
+.SH "REPORTING BUGS"
+
+Report Vulture-specific bugs to Clive Crous and
+NetHack bugs to <nethack-bugs@nethack.org>.
+
+.SH "SEE ALSO"
+
+NetHack is documented in \fBnethack(6)\fR.
+
+The full documentation for Vulture is maintained in HTML at
+/usr/share/doc/vulture/manual/index.html
+
+The Vulture project page is http://darkarts.co.za/project/vulture
+
+The NetHack project page is http://www.nethack.org
+
+The UnNetHack project page is http://sourceforge.net/apps/trac/unnethack/
+

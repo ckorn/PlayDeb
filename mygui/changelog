@@ -1,0 +1,54 @@
+mygui (3.2.0-1~getdeb4) precise; urgency=low
+
+  * Rebuild against OGRE with property.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 08 Sep 2012 13:07:59 +0200
+
+mygui (3.2.0-1~getdeb3) precise; urgency=low
+
+  * Rebuild against OGRE 1.8
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 05 Sep 2012 18:15:19 +0200
+
+mygui (3.2.0-1~getdeb2) oneiric; urgency=low
+
+  * Rebuild against new ogre.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 14 Apr 2012 16:24:50 +0200
+
+mygui (3.2.0-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 26 Feb 2012 16:19:55 +0100
+
+mygui (3.0.1-1~getdeb4~oneiric) oneiric; urgency=low
+
+  * Rebuild for oneiric
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 26 Oct 2011 19:04:39 +0200
+
+mygui (3.0.1-1~getdeb3) lucid; urgency=low
+
+  * Rebuild against new Ogre.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 17 May 2011 15:27:21 +0200
+
+mygui (3.0.1-1~getdeb2) lucid; urgency=low
+
+  * debian/control: Make libmygui-dev depend on 
+    our libogre1.7-dev instead of libogre-dev
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 09 Apr 2011 16:24:08 +0200
+
+mygui (3.0.1-1~getdeb1) lucid; urgency=low
+
+  * Upload to GetDeb
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 08 Apr 2011 19:29:56 +0200
+
+mygui (3.0.1-0~ogredev6) maverick; urgency=low
+
+  * Fixed mygui-tools dependency
+
+ -- Andrew Fenn <andrewfenn@gmail.com>  Sat, 26 Mar 2011 12:56:19 +0700

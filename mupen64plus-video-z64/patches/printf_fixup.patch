@@ -1,0 +1,43 @@
+Description: Add printf-format attribute
+ The compiler needs to get more information for function declaration to
+ help to find printf specific format attacks.
+Forwarded: not-needed
+Author: Sven Eckelmann <sven@narfation.org>
+
+---
+diff --git a/src/rdp.h b/src/rdp.h
+index bbad3fd0ae694ed9c39bebd0fee890007c042500..6d21b1e77b4815671ec609d51bfb030f92f40b9f 100644
+--- a/src/rdp.h
++++ b/src/rdp.h
+@@ -247,7 +247,7 @@ int rdp_dasm(uint32_t * rdp_cmd_data, int rdp_cmd_cur, int length, char *buffer)
+ void rdp_process_list(void);
+ int rdp_store_list(void);
+ 
+-void rdp_log(m64p_msg_level level, const char *msg, ...);
++void rdp_log(m64p_msg_level level, const char *msg, ...) __attribute__ ((format (printf, 2, 3)));
+ 
+ #ifdef RDP_DEBUG
+ 
+@@ -258,6 +258,7 @@ extern int rdp_dump;
+ 
+ #define DUMP if (!rdp_dump) ; else LOG
+ 
++static void LOG(const char * s, ...) __attribute__ ((format (printf, 1, 2)));
+ static void LOG(const char * s, ...)
+ {
+     va_list ap;
+diff --git a/src/rgl_debugger.cpp b/src/rgl_debugger.cpp
+index 3a55ea260bbaf8e1b4d9d586417ddc81c5d2148e..0be955f0572cf6726e0a451ea1edec329c388dc6 100644
+--- a/src/rgl_debugger.cpp
++++ b/src/rgl_debugger.cpp
+@@ -174,8 +174,8 @@ void gglPrint(int x, int y, const char * text)
+ 
+     //printf("%s\n", text);
+ }
+-
+-void gglPrintf(int x, int y, const char * s, ...)
++static void gglPrintf(int x, int y, const char * s, ...) __attribute__ ((format (printf, 1, 2)));
++static void gglPrintf(int x, int y, const char * s, ...)
+ {
+     char buf[1024];
+     va_list ap;

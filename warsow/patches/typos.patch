@@ -1,0 +1,36 @@
+Just happens :)
+Index: warsow-1.02/warsow-1.02-src/source/client/cl_serverlist.c
+===================================================================
+--- warsow-1.02.orig/warsow-1.02-src/source/client/cl_serverlist.c	2012-09-17 15:38:49.000000000 +0200
++++ warsow-1.02/warsow-1.02-src/source/client/cl_serverlist.c	2012-10-10 21:21:52.741498106 +0200
+@@ -298,7 +298,7 @@
+ 	requeststring = va( cmdname );
+ 
+ 	// send a broadcast packet
+-	Com_DPrintf( "quering %s...\n", server );
++	Com_DPrintf( "querying %s...\n", server );
+ 
+ 	if( NET_StringToAddress( server, &adr ) )
+ 	{
+@@ -673,7 +673,7 @@
+ 
+ 		Netchan_OutOfBandPrint( socket, &adr, requeststring );
+ 
+-		Com_DPrintf( "quering %s...%s: %s\n", master, NET_AddressToString( &adr), requeststring );
++		Com_DPrintf( "querying %s...%s: %s\n", master, NET_AddressToString( &adr), requeststring );
+ 	}
+ 	else
+ 	{
+Index: warsow-1.02/warsow-1.02-src/source/client/cl_sound.c
+===================================================================
+--- warsow-1.02.orig/warsow-1.02-src/source/client/cl_sound.c	2012-04-30 10:18:54.000000000 +0200
++++ warsow-1.02/warsow-1.02-src/source/client/cl_sound.c	2012-10-10 21:21:52.741498106 +0200
+@@ -169,7 +169,7 @@
+ 	}
+ 
+ 	if( verbose )
+-		Com_Printf( "Initialization of %s succesful\n", name );
++		Com_Printf( "Initialization of %s successful\n", name );
+ 
+ 	return qtrue;
+ }

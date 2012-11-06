@@ -1,0 +1,38 @@
+This package was debianized by Matthias Klumpp <matthias@nlinux.org> on
+Fri, 06 Feb 2009 18:45:22 +0100.
+
+It was downloaded from http://jpct.de/robombs.game/download/
+
+Copyright:
+
+ Copyright (c) 2008 by Egon Olsen
+
+License:
+
+ Robombs:
+  Please note that the sources contain some third party sources (the packages that are not labeled “robombs…”).
+  Other licenses may apply for these sources.
+  For my sources, do whatever you like with them.
+
+ jPCT:
+  The use of jPCT is free of charge for personal and commercial use.
+  Redistribution in binary form is permitted provided that the 
+  following conditions are met:
+ 
+  1. The class structure and the classes themselves as they are included
+     in the JAR file that comes with this distribution of jPCT must stay intact.
+     It is not allowed to decompile the class-files and/or replace the orginal
+     files with modified versions until this permission is explicitly granted
+     by the author.
+  2. The JAR-file may be decompressed and the class-files may be stored in other 
+     formats/JAR-files as long as 1.) is fulfilled. If jPCT is distributed as part
+     of another project, it is allowed to obfuscate the class-files together with
+     the rest of the project-files if you feel that this is required to protect 
+     your intellectual property. 
+  3. It is not required to mention the use of jPCT in your project, albeit it would
+     be nice doing so. If you do, it is required to mention the jPCT webpage
+     at http://www.jpct.net
+
+    
+The Debian packaging is copyright 2009, Matthias Klumpp <matthias@nlinux.org> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL-3'.

@@ -1,0 +1,59 @@
+Source: mygui
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: cmake,
+               doxygen,
+               graphviz,
+               debhelper (>= 9),
+               libogre1.8-dev (>= 1.8.1),
+               uuid-dev,
+               libfreetype6-dev,
+               libois-dev,
+               pkg-config,
+               libfreeimage-dev,
+               libgtk2.0-dev
+Build-Conflicts: libogre-dev
+Standards-Version: 3.9.3
+Section: libs
+Homepage: http://mygui.info
+
+Package: libmygui-dev
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         libmygui3 (= ${binary:Version}),
+         libogre1.8-dev,
+         uuid-dev
+Description: Fast, simple and flexible GUI (headers)
+ MyGUI is a library for creating Graphical User Interfaces
+ (GUIs) for games and 3D applications.
+ The main goals of MyGUI are:
+ speed, flexibility and ease of use.
+ .
+ (This package contains the development files)
+
+Package: libmygui3
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: Fast, simple and flexible GUI
+ MyGUI is a library for creating Graphical User Interfaces
+ (GUIs) for games and 3D applications.
+ The main goals of MyGUI are:
+ speed, flexibility and ease of use.
+
+Package: libmygui3-dbg
+Section: debug
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         libmygui3 (= ${binary:Version})
+Description: Fast, simple and flexible GUI (debug)
+ MyGUI is a library for creating Graphical User Interfaces
+ (GUIs) for games and 3D applications.
+ The main goals of MyGUI are:
+ speed, flexibility and ease of use.
+ .
+ (This package contains the debugging version of the MyGUI library.)

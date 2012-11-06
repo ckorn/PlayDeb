@@ -1,0 +1,48 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Makefile to build the openttd debian package.
+
+# Use debhelper default for all targets (but some are overridden below).
+%:
+	dh $@
+
+DEB_HOST_GNU_TYPE=$(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE=$(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+ifneq ($(DEB_HOST_GNU_TYPE),$(DEB_BUILD_GNU_TYPE))
+CROSS= --build $(DEB_BUILD_GNU_TYPE) --host $(DEB_HOST_GNU_TYPE)
+endif
+
+# Pass custom options to configure. Since it's not autoconf but a custom
+# script, some of the option names are slightly different. We also need
+# to be explicit about the dependencies, in case we're not running in a
+# clean build root.
+override_dh_auto_configure:
+	./configure $(CROSS) --prefix-dir=/usr --install-dir=debian/tmp --without-allegro --with-zlib --with-sdl --with-png --with-freetype --with-fontconfig --with-icu --with-liblzo2 --with-liblzma --without-iconv --disable-strip CFLAGS="$(CFLAGS) -g" LDFLAGS="$(LDFLAGS) -Wl,-as-needed"
+
+# Do some extra installation
+override_dh_auto_install:
+	$(MAKE) install DO_NOT_INSTALL_CHANGELOG=1 DO_NOT_INSTALL_LICENSE=1
+
+	# Install the wrapper and make it executable
+	install -d debian/openttd/usr/share/games/openttd/
+	install -m755 debian/openttd-wrapper debian/openttd/usr/share/games/openttd/
+
+override_dh_installchangelogs:
+	dh_installchangelogs changelog.txt
+
+override_dh_auto_build:
+	# Remove the prebuilt grf files, so they get rebuilt from source
+	rm -f bin/data/*.grf
+	# Make nforenum store its temporary files in the current
+	# directory instead of in $(HOME).
+	make NFORENUM="nforenum -D$(CURDIR)"
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf $(CURDIR)/.nforenum
+	rm -rf bin/lang bin/openttd src/rev.cpp bin/data/openttd.32.bmp
+
+# Don't do testing. Because the OpenTTD Makefile always does dependency
+# generation (even on invalid targets), dh_auto_test thinks there is a
+# "test" target, while there isn't.
+override_dh_auto_test:

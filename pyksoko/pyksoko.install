@@ -1,0 +1,4 @@
+pyksoko			usr/games
+data *.dat* *.py 	usr/share/games/pyKsoko
+debian/pyksoko.png	usr/share/pixmaps
+debian/pyksoko.desktop	usr/share/applications

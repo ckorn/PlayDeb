@@ -1,0 +1,36 @@
+Source: bloodfrontier
+Section: games
+Priority: optional
+Maintainer: Joao Pinto <joao.pinto@getdeb.net>
+Build-Depends: cdbs, debhelper (>= 7),
+	libsdl1.2-dev, 
+	libsdl-image1.2-dev,
+	libsdl-mixer1.2-dev
+Standards-Version: 3.8.0
+Homepage: http://www.bloodfrontier.com/
+
+Package: bloodfrontier
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, bloodfrontier-data (= ${source:Version})
+Description: Single-player and multi-player first-person shooter game
+ Built as a total conversion of Cube Engine 2, which lends itself toward a 
+ balanced gameplay, completely at the control of map makers, while maintaining 
+ a general theme of tactics and low gravity. 
+ In a true open source "by the people for the people" nature, it tries to work 
+ closely with the gaming and open source communities to provide a better 
+ overall experience, taking all sorts of feedback from your average player, to 
+ your seasoned developer, aiming to create a story-driven game environment 
+ that is flexible, fun, easy to use, and pleasing to the eye. 
+
+Package: bloodfrontier-server
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Single-player and multi-player first-person shooter game - server
+ 
+
+Package: bloodfrontier-data
+Architecture: all
+Description: Single-player and multi-player first-person shooter game - data
+  
+
+

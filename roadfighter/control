@@ -1,0 +1,30 @@
+Source: roadfighter
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), quilt,
+ freeglut3-dev, mesa-common-dev, libsdl1.2-dev,
+ libsdl-mixer1.2-dev, libsdl-image1.2-dev,
+ libsdl-ttf2.0-dev
+Standards-Version: 3.8.4
+Homepage: http://www.braingames.getput.com
+
+Package: roadfighter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, roadfighter-data (= ${source:Version})
+Description: Car racing game
+ The game is divided in 6 stages. In every stage, the goal is to
+ reach the checkpoint before your car runs out of fuel. Easy?
+ It may sound like it, but there are many obstacles between your
+ car and the checkpoints!
+
+Package: roadfighter-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Car racing game (data package)
+ The game is divided in 6 stages. In every stage, the goal is to
+ reach the checkpoint before your car runs out of fuel. Easy?
+ It may sound like it, but there are many obstacles between your
+ car and the checkpoints!
+ .
+ (This package contains the data files)

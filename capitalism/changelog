@@ -1,0 +1,5 @@
+capitalism (0.5.1-1~getdeb1) lucid; urgency=low
+
+  * Initial release (LP: #732836)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 11 Mar 2011 19:51:37 +0100

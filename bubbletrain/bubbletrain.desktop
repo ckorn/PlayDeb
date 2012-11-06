@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Bubble Train
+Comment=Play the bubble train
+Exec=bubbletrain
+Categories=Game;LogicGame;
+Icon=bubbletrain

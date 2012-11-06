@@ -1,0 +1,43 @@
+#!/bin/sh
+# Adapted from Tremulous and Nexuiz launch scripts
+BINARY=/usr/lib/games/worldofpadman/wopded
+BASE_PATH=/usr/share/games/worldofpadman
+CVARS="+set fs_basepath ${BASE_PATH}"
+QUIET=0
+EXCUSE="\
+World of Padman server wrapper\n\
+This script is Debian specific, it is *NOT* part of the source distribution!\n\
+Usage: worldofpadman-server [OPTION]...\n\
+\n\
+ -h, --help\t\tDisplay this help\n\
+ -q, --quiet\t\tDisable console output\n\
+ +<internal command>\tPass commands to the engine\n"
+
+# World of Padman binaries don't understand "regular" command line parameters.
+# Let's catch them here, to avoid accidentally launching the binary.
+
+while [ "$1" != "" ]; do {
+	if [ ${1:0:1} = "+" ]; then
+		break;
+	fi
+	case "$1" in
+		-h|--help)
+			echo ${EXCUSE}
+			exit 0
+			;;
+		-q|--quiet)
+			QUIET=1
+			;;
+	esac
+	shift
+}; done
+
+# Ready to rumble!
+
+if [ ${QUIET} -eq 1 ]; then
+	exec ${BINARY} ${CVARS} +set ttycon 0 $* >/dev/null 2>&1
+else
+	exec ${BINARY} ${CVARS} $*
+fi
+
+exit $?

@@ -1,0 +1,18 @@
+vertris (0.3.2-1~getdeb3) lucid; urgency=low
+
+  * Fix debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Jul 2010 21:29:43 +0200
+
+vertris (0.3.2-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 17:27:34 +0100
+
+vertris (0.3.2-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Sun, 26 Jul 2009 08:30:37 +0000
+

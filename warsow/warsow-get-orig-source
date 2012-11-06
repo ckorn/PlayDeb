@@ -1,0 +1,92 @@
+#! /bin/sh
+
+# This script will download the upstream tarball that contains the content of
+# the warsow package and create an orig tarball of it.
+
+# Some variables to ease maintanence of this script
+WARSOW_VERSION="0.50.dfsg1"
+WARSOW_TARBALL="warsow_0.50_sdk.zip"
+WARSOW_TARBALL_CHECKSUM="94c9bb2a48ac6f2687b38809e003f3b9"
+
+USAGE="\
+warsow orig tarball download script\n\
+This script will generate an orig tarball that's distributed through Debian.\n\
+Usage: warsow-get-orig-source [OPTION]\n\
+\n\
+ -h, --help                 Display this text\n\
+--keep-upstream             Don't delete the upstream source tarball\n\
+--keep-orig-dir             Don't delete the orig directory\n"
+
+while [ "$#" -gt "0" ]
+do
+    case "$1" in
+        -h|--help)
+            echo -e "${USAGE}"
+            exit 1
+            ;;
+        --keep-upstream-tarball)
+            KEEP_UPSTREAM_TARBALL=1
+            shift
+            ;;
+        --keep-orig-dir)
+            KEEP_ORIG_DIR=1
+            shift
+            ;;
+    esac
+done
+
+# List of mirrors to use
+MIRROR1=http://data.rodix.free.fr/warsow/files
+MIRROR2=http://www.speltips.org/~web1_mans/files
+
+if [ ! -f $WARSOW_TARBALL ] ; then
+    # Try each mirror until sucessful, else exit with an error
+    wget -c $MIRROR1/$WARSOW_TARBALL || \
+    wget -c $MIRROR2/$WARSOW_TARBALL || \
+    { echo "Could not download upstream source" ; exit 1 ; }
+fi
+
+# Verify the checksum
+echo -n "Verifying MD5 checksum..."
+COMPUTED_CHECKSUM=`md5sum $WARSOW_TARBALL | cut -d ' ' -f 1`
+echo "done."
+
+if [ $WARSOW_TARBALL_CHECKSUM != $COMPUTED_CHECKSUM ] ; then
+    echo "Checksum verification failed. Checksum was $COMPUTED_CHECKSUM
+Expected checksum $WARSOW_TARBALL_CHECKSUM"
+    exit 1
+else
+    echo "Checksum verified. Checksum is $COMPUTED_CHECKSUM."
+fi
+
+# Prepare the warsow orig tarball
+if [ ! -d warsow-$WARSOW_VERSION ]; then
+    echo "Extracting $WARSOW_TARBALL"
+    unzip -qq -d warsow-$WARSOW_VERSION $WARSOW_TARBALL
+else
+    echo "Already found extracted warsow-$WARSOW_VERSION directory. Please remove or move warsow-$WARSOW_VERSION and also warsow_$WARSOW_VERSION.orig.tar.gz."
+    exit 1
+fi
+
+# Components removed from upstream tarball.
+rm -r warsow-$WARSOW_VERSION/mapping warsow-$WARSOW_VERSION/modelling \
+	warsow-$WARSOW_VERSION/other
+rm -r warsow-$WARSOW_VERSION/warsow_0.50_src/libsrcs
+rm -r warsow-$WARSOW_VERSION/warsow_0.50_src/source/win32
+
+# Create the tarball
+if [ ! -f warsow_$WARSOW_VERSION.orig.tar.gz ]; then
+    echo "Creating orig tarball."
+    tar -czf warsow_$WARSOW_VERSION.orig.tar.gz warsow-$WARSOW_VERSION/
+    if [ -z $KEEP_UPSTREAM_TARBALL ]; then
+        echo "Removing upstream tarball"
+        rm -f $WARSOW_TARBALL
+    fi
+    if [ -z $KEEP_ORIG_DIR ]; then
+        echo "Removing orig directory"
+        rm -rf warsow-$WARSOW_VERSION/
+    fi
+else
+    echo "Already found warsow_$WARSOW_VERSION.orig.tar.gz. Please remove or move warsow-$WARSOW_VERSION and also warsow_$WARSOW_VERSION.orig.tar.gz."
+    exit 1
+fi

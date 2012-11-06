@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=Caph
+Exec=/usr/games/caph
+Terminal=false
+Type=Application
+Categories=Game;

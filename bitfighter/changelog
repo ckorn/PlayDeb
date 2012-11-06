@@ -1,0 +1,77 @@
+bitfighter (0.0.017b-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 11 May 2012 18:23:12 +0200
+
+bitfighter (0.0.017a-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 14 Apr 2012 17:40:42 +0200
+
+bitfighter (0.0.017-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 31 Mar 2012 13:24:13 +0200
+
+bitfighter (0.0.016-1~getdeb2) lucid; urgency=low
+
+  * Update debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 25 Feb 2012 22:24:41 +0100
+
+bitfighter (0.0.016-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 16 Feb 2012 19:08:56 +0100
+
+bitfighter (0.0.015a-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 28 Apr 2011 18:21:16 +0200
+
+bitfighter (0.0.015-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 17 Feb 2011 15:13:34 +0100
+
+bitfighter (0.0.014a-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 11 Dec 2010 19:15:12 +0100
+
+bitfighter (0.0.013e-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 28 Oct 2010 20:07:03 +0200
+
+bitfighter (0.0.013b-1~getdeb2) lucid; urgency=low
+
+  * New upstream version (LP: #643377)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 12 Sep 2010 17:24:20 +0200
+
+bitfighter (0.0.012c-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Jul 2010 21:53:16 +0200
+
+bitfighter (0.0.012a-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 10 Mar 2010 16:00:09 +0100
+
+bitfighter (0.0.012a-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #511210)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 22 Jan 2010 16:42:10 +0100

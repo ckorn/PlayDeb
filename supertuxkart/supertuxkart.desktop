@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Supertuxkart
+GenericName=Supertuxkart
+GenericName[ro_RO]=Supertuxcart
+Icon=supertuxkart
+Comment=a kart racing game
+Comment[fr_FR]=un jeu de karting
+Comment[ro_RO]=un joc de curse cu carturi
+Comment[de_DE]=ein Kart-Rennspiel
+Exec=supertuxkart
+Terminal=false
+StartupNotify=false
+Type=Application
+Categories=Game;ActionGame;Simulation;SportsGame;3DGraphics;

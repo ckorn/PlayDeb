@@ -1,0 +1,5 @@
+debian/opensonic.desktop			usr/share/applications
+debian/opensonic.xpm				usr/share/pixmaps
+debian/scripts/opensonic			usr/games
+usr/share/games
+usr/lib/games

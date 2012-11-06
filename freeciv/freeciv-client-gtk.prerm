@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+update-alternatives --remove freeciv /usr/games/freeciv-gtk2
+
+# Unregister the GGZ module
+ggz-config --remove --modfile=/usr/share/ggz/modules/freeciv/civclient.dsc
+
+#DEBHELPER#

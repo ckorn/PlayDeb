@@ -1,0 +1,11 @@
+sm-ssc (5~alpha3-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 23 Sep 2012 14:16:58 +0200
+
+sm-ssc (1.1-1~getdeb1) maverick; urgency=low
+
+  * Initial release (LP: #691264)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 18 Dec 2010 22:15:28 +0100

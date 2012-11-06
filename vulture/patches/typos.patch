@@ -1,0 +1,38 @@
+Just some typos.
+Index: vulture-2.3.67/slashem/src/cmd.c
+===================================================================
+--- vulture-2.3.67.orig/slashem/src/cmd.c	2011-08-01 21:49:36.827543398 +0200
++++ vulture-2.3.67/slashem/src/cmd.c	2011-08-01 21:50:00.967543405 +0200
+@@ -2975,7 +2975,7 @@
+     Sprintf(buf, "Trap: %s", lev->mem_trap ?
+ 	    defsyms[trap_to_defsym(lev->mem_trap)].explanation : "none");
+     putstr(win, 0, buf);
+-    Sprintf(buf, "Backgroud: %s", defsyms[lev->mem_bg].explanation);
++    Sprintf(buf, "Background: %s", defsyms[lev->mem_bg].explanation);
+     putstr(win, 0, buf);
+     putstr(win, 0, "");
+     glyph = glyph_at(cc.x, cc.y);
+Index: vulture-2.3.67/slashem/src/gypsy.c
+===================================================================
+--- vulture-2.3.67.orig/slashem/src/gypsy.c	2011-08-01 21:51:06.757543428 +0200
++++ vulture-2.3.67/slashem/src/gypsy.c	2011-08-01 21:51:21.977543433 +0200
+@@ -431,7 +431,7 @@
+ 					pline_The("moon is waning tonight.");
+ 					break;
+ 				default:
+-					impossible("wierd moonphase %d", flags.moonphase);
++					impossible("weird moonphase %d", flags.moonphase);
+ 					break;
+ 			}
+ 			break;
+--- vulture-2.3.67.orig/vulture/vulture_main.cpp
++++ vulture-2.3.67/vulture/vulture_main.cpp
+@@ -140,7 +140,7 @@ void vulture_init_nhwindows(int *argcp, 
+ 	vulture_chdir_to_datadir(argv[0]);
+ 
+ 	if (!vulture_init_graphics())
+-		panic("could not initalize graphic mode");
++		panic("could not initialize graphic mode");
+ 
+ #ifdef PCMUSIC
+ 	vulture_pcmusic_init();

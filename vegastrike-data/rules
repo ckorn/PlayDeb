@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_install:
+	# clean up the "home" folder
+	rm -rf `cat Version.txt`/*_sector || :
+	
+	# remove unneeded "builtin" python modules
+	rm -rf modules/builtin || :
+	
+	set -e && \
+	for i in `cat Version.txt` ; do \
+	  dh_install "$$i" usr/share/games/vegastrike ; \
+	done
+
+override_dh_installdocs:
+	dh_installdocs documentation
+
+override_dh_install:
+	dh_install
+	find debian/vegastrike-data/usr/share/games/vegastrike -type f -iname Makefile.am -delete
+	find debian/vegastrike-data/usr/share/games/vegastrike -type d -empty -delete
+	find debian/vegastrike-data/usr/share/games/vegastrike -type f -exec chmod -x {} \;

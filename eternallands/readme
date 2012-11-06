@@ -1,0 +1,64 @@
+How to build a package:
+
+Read the guides or at least install the necessary packages as detailed here:
+
+http://www.debian.org/doc/maint-guide/index.en.html
+https://wiki.ubuntu.com/PackagingGuide/Complete
+
+
+Set-up your ~/.bachrc so the package scripts known who you are:
+e.g. 
+export DEBFULLNAME='Paul Broadhead' 
+export DEBEMAIL='pjbroad@twinmoons.clara.co.uk'
+
+
+If you're going to sign the package make sure you have keys set-up:
+https://help.ubuntu.com/community/GnuPrivacyGuardHowto
+
+
+Now we're ready:
+
+Set the version number
+	
+	elver="1.9.0"
+	packagename="eternallands"
+
+Checkout a clean version of the client
+
+	cvs -d:pserver:anonymous@cvs.elc.berlios.de:/cvsroot/elc login 
+
+	cvs -z3 -d:pserver:anonymous@cvs.elc.berlios.de:/cvsroot/elc co elc
+	
+Make an original source tar ball:
+
+	cd elc
+	bash pkgfiles/maketarball ${packagename} ${elver}
+	cd ..
+	
+Setup a temp directory for the build:
+	
+	tmpdir=$( mktemp -d)
+	mv ${packagename}-${elver}.tar.gz $tmpdir
+	mv ${packagename}-debian-${elver}.tar.gz $tmpdir
+	cd $tmpdir
+
+Unpack the tarball then rename it as the original:
+	
+	tar xfz ${packagename}-${elver}.tar.gz
+	mv ${packagename}-${elver}.tar.gz ${packagename}_${elver}.orig.tar.gz
+	
+Move into package directory:
+
+	cd ${packagename}-${elver}/
+
+Unpack the debian files
+	tar xfz ../${packagename}-debian-${elver}.tar.gz
+	[ "$packagename" != "eternallands" ] && mv debian/eternallands.install debian/${packagename}.install
+	
+Make any modifications required then update the changelog:
+
+	dch -i
+	
+Build the package:
+
+	debuild

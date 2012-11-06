@@ -1,0 +1,3 @@
+version=3
+http://www.neechin.net/narcissu2/140/narcissu-2-download-page \
+    (?:.*/)?Narcissu_2_Eng_v([\d\.]+)_script_%5BAll_platforms%5D\.zip

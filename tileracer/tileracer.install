@@ -1,0 +1,4 @@
+release_linux lib_linux usr/share/games/tileracer
+debian/scripts/tileracer usr/games
+debian/tileracer.xpm usr/share/pixmaps
+debian/tileracer.desktop usr/share/applications

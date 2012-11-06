@@ -1,0 +1,1360 @@
+openttd (1.2.3-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    - Change: [NewGRF] Set the reference brightness of 32bpp mask recolouring
+    to 128 (r24610)
+    - Fix: Configure script did not properly handle _BUILD flags during
+    reconfigure (r24601)
+    - Fix: Configure script failed to detect libfontconfig 2.10 as newer than
+    2.3 (r24598)
+    - Fix: When fontconfig is not available, the bootstrap download crashed
+    [FS#5336] (r24597)
+    - Fix: Crash when a gamescript provided too many parameters to a GSText
+    object [FS#5333] (r24593)
+    - Fix: [Script] API documentation mistakes/omissions (r24584)
+    - Fix: Do not add duplicates to the ban list [FS#5308] (r24580)
+    - Fix: Draw the window resize sprite bottom-aligned [FS#5324] (r24577)
+    - Fix: Vehicle list at buoys did no longer work [FS#5319] (r24576)
+    - Fix: [Windows] Do not cast away const in OS specific code (r24572,
+    r24571)
+    - Fix: Naming of bundles was somewhat broken (r24569)
+    - Fix: Non-train vehicle lists were not resorted when vehicles were
+    renamed [FS#5261] (r24567)
+    - Fix: Stop both price and payment inflation if either of them has
+    reached MAX_INFLATION (r24565)
+    - Fix: Limiting the inflation did not quite work [FS#5312] (r24564)
+    - Fix: Do not show profit from refits as cost in the refit window
+    [FS#5297] (r24544)
+    - Fix: Do not limit to reading one UDP packet per game loop (r24532)
+    - Fix: Max script chance was too big (r24531)
+    - Fix: [NewGRF] RandomAction 84 should interpret register 100 as signed
+    (r24528)
+    - Fix: [OSX] Some compile problems in mac-only code [FS#5296] (r24524)
+    - Fix: The gender of an industry name is defined by the industry-type
+    part of the name, not by the town-name part, even if it comes first
+    (r24523, r24522)
+    - Fix: GStexts were compiled incompletely when containing certain string
+    codes (r24516, r24515)
+    - Fix: The mousewheel did not work in the build waypoint window [FS#5285]
+    (r24507)
+    - Fix: [NewGRF] Airport variables 60 to 65 and 69 used the wrong cargo
+    translation table for translations (r24506)
+    - Fix: Do not show the global goals as company goals for spectators
+    (r24500)
+    - Fix: Clarify description of command line option -n (r24485)
+    - Fix: Do not call RebuildSubsidisedSourceAndDestinationCache() before
+    subsidy savegame conversion is finished [FS#5232] (r24482)
+    - Fix: Trains were unable to reverse in stations when using NPF (r24479)
+    - Fix: The --xxx yyy format (instead of --xxx=yyy) for configure did not
+    work (r24471)
+    - Fix: --prefix was not accepted by configure (r24470)
+    - Fix: Changing auto-refit for a 'goto station' order was inadvertently
+    modifying the full load state [FS#5264] (r24457)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 02 Nov 2012 20:44:22 +0100
+
+openttd (1.2.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    1.2.2 (2012-08-16)
+    ------------------------------------------------------------------------
+    (None)
+
+
+    1.2.2-RC1 (2012-08-01)
+    ------------------------------------------------------------------------
+    - Fix: In some cases ships could be covered with land [CVE-2012-3436]
+    [FS#5254] (r24449, r24439)
+    - Fix: Copy constructor and assignment operator cannot be implicit
+    template specialisations [FS#5255] (r24448)
+    - Fix: Make (non-refittable) vehicles with invalid default cargo
+    unavailable [FS#5256] (r24438)
+    - Fix: CFLAGS/CXXFLAGS ignored for helper binaries (r24432, r24429,
+    r24427, r24365)
+    - Fix: [Windows] Unbreak NewGRF MD5 sum calculation. Macros and side
+    effects do not mix, especially if there is some obscure '#define min' in
+    a windows header that nobody thinks of [FS#5231] (r24416)
+    - Fix: Disallow removing roadtypes from bridges when not dragging in
+    bridge direction [FS#5221] (r24414)
+    - Fix: Draw wires under low bridges if the bridge is transparent, not if
+    the wire is transparent (r24403)
+    - Fix: Station properties 11 and 14 were combined incorrectly [FS#5243]
+    (r24402)
+    - Fix: [Windows] Changing resolution did not resize the window (r24394)
+    - Fix: Use the 'all vehicles' group for the autoreplace window from the
+    vehicle list [FS#5239] (r24392)
+    - Fix: Do not consider not finding a particular base set critical; just
+    load a different one and display an in-game error later on [FS#5233]
+    (r24388)
+    - Fix: Make IsInDepot() functions behave consistent across vehicle types
+    and add IsChainInDepot instead, if that is what shall be checked
+    [FS#5188] (r24384)
+    - Fix: Call Vehicle::IsStoppedInDepot only for the first vehicle in a
+    chain (i.e. primary vehicle or free wagon) (r24382)
+    - Fix: Do not resize the object GUI when selecting objects. Rather clip
+    the object name (r24379)
+    - Fix: ReInit could crash for windows with NWidgetMatrix widgets
+    [FS#5218] (r24378)
+    - Fix: [NewGRF] Extended action A1 did not work correctly [FS#5227]
+    (r24369, r24361)
+    - Fix: [NewGRF] Ship-specific 80+x variables were missing for unknown
+    reason [FS#5224] (r24360)
+    - Fix: When airport construction was denied due to noise, the error
+    message named the wrong town (r24354)
+    - Fix: [NoAI] A TileIndex is not a station id, so do not use it as one
+    [FS#5215] (r24353)
+    - Fix: When highlighting the drop position for vehicles in depots, make
+    space for all articulated parts (r24352)
+    - Fix: Short vehicles were not properly positioned at the cursor when
+    dragging for RTL languages (r24351)
+    - Fix: EQUALSIZE widget containers within EQUALSIZE containers were
+    initialised with wrong sizes (r24346)
+    - Fix: The cursor in the company password window was not blinking due to
+    wrong magic constants (r24335)
+    - Fix: [NewGRF] Change the length of 8/8 roadvehicles in vehicle lists to
+    32 pixels; this is in fact the correct length as can be seen in corners
+    for short articulated parts following each other [FS#2553] (r24332)
+    - Fix: [NewGRF] Group vehicles in the purchase list properly by source
+    GRF, but also consider engine GRFID overrides [FS#4254] (r24330, r24321)
+    - Fix: Make the AI settings window behave more like the other settings
+    window by closing the query window whenever selecting a different row
+    (r24315)
+    - Fix: Editing NewGRF parameters using the query window showed wrong
+    values, if there was no direct relation between parameter index and
+    parameter register (r24314)
+    - Fix: Center object previews in 1- and 2-view selectors based on the
+    4-view selector layout [FS#5057] (r24299)
+    - Fix: Increase the left and right margins of the text in the yes/no
+    query window (r24293)
+    - Fix: [NewGRF] GetReverseCargoTranslation() was unnecessary complicated
+    and also returned the wrong thing for cargos not present in the
+    translation table (r24273)
+    - Fix: [NewGRF] Load cargo- and railtype-translation during both
+    reservation and activation stage. That way they can be selected using
+    Action7 depending on present cargo- or railtypes (r24272)
+    - Fix: Use the same colour scheme for the script selection window as in
+    other comparable windows (r24268)
+    - Fix: Make the oilrig-vehicle list accessible to spectators and colour
+    its caption neutrally grey [FS#5126] (r24260)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 17 Aug 2012 16:38:22 +0200
+
+openttd (1.2.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    1.2.1 (2012-06-01)
+    ------------------------------------------------------------------------
+    - Fix: [Script] ScriptTown::GetGrowthRate() returned wrong values after
+    usage of SetGrowthRate() (r24302)
+
+
+    1.2.1-RC1 (2012-05-16)
+    ------------------------------------------------------------------------
+    - Fix: Change the unit of the sprite-cache size setting from megabytes to
+    megapixels, so it depends on the blitter being used. Also increase it
+    from 64 to 128, and change the name in the cfg file, so everyone gets the
+    new default [FS#5162] (r24252)
+    - Fix: Do not immediately display error messages from parsing the cfg
+    file, but schedule them for displaying after the GUI is prepared for it
+    [FS#5154] (r24250, r24249, r24248, r24247)
+    - Fix: Dereferencing uninitialised pointer causing a crash [FS#5159]
+    (r24224)
+    - Fix: Lag counters were not properly reset when switching states making
+    it possible to get disconnected for lagging when you were not lagging
+    [FS#5166] (r24221)
+    - Fix: Adopt ICU version detection to also deal with the new versioning
+    scheme since ICU 49 [FS#5182] (r24220)
+    - Fix: Immediately do the cargo payment on vehicle crashes instead of
+    when they are cleared [FS#5152] (r24219)
+    - Fix: The confirmation window to abort world generation was hidden
+    during world generation, so actually you could not abort it [FS#5159]
+    (r24214)
+    - Fix: If a company is taken over or bankrupts, transfer exclusive
+    transport rights to the new owner respectively cancel them (r24204)
+    - Fix: Make the engine name not overdraw the engine count in the
+    autoreplace GUI (r24203)
+    - Fix: Make the size of the details in the autoreplace GUI match more the
+    size of the details in the purchase list (r24202)
+    - Fix: Mark group list dirty when setting/clearing autoreplace for an
+    engine type [FS#5170] (r24201)
+    - Fix: Invalidate build vehicle windows every month, in case they need
+    resorting due to changed reliabilities [FS#5149] (r24200)
+    - Fix: If you consider a settings to potentially cause desyncs via
+    NewGRFs and thus disallow changing it in network games, you should
+    probably also sync it to clients (r24193, r24191)
+    - Fix: Use default value when reading an invalid setting value [FS#5153]
+    (r24192, r24146)
+    - Fix: [Windows] When going to fullscreen and back, restore to the
+    resolution you were, not to the fullscreen resolution (r24189)
+    - Fix: [Windows] When changing the basics of a window (fullscreen,
+    8bpp/32bpp), and a window already exists, it was forced out of maximize
+    mode, and its resolution/position was reset, often causing unwanted
+    side-effects [FS#5151] (r24188)
+    - Fix: Town radii were not updated immediatelly after
+    construction/destruction of houses, resulting in desyncs [FS#5169]
+    (r24183)
+    - Fix: The population of a town was computed incorrectly for overridden
+    houses when loading a game (r24182, r24181, r24179)
+    - Fix: The object name from property A was not displayed in the object
+    GUI [FS#5110] (r24178)
+    - Fix: The arctic 'shops and offices' used the 'church' sprite in one of
+    its four views [FS#5148] (r24177)
+    - Fix: The object GUI did not draw objects when all objects of a class
+    are disabled (r24176)
+    - Fix: If you spent hard work on finding an available object ID, you
+    should probably also use it instead of always 0 (r24159)
+    - Fix: Town producing no cargo at all could spawn passenger subsidies
+    (r24158)
+    - Fix: The music volume was set too early during startup causing it to be
+    not set correctly (r24155)
+    - Fix: [Squirrel] Crash when trying to create an array with negative size
+    [FS#5160] (r24153)
+    - Fix: [NoAI] Do not return the last 'cached' speed of vehicles when they
+    are stopped/crashed [FS#5157] (r24152)
+    - Fix: [Script] Typo in script documentation (r24151)
+    - Fix: Glass-sprite of bubble-generator was not drawn anymore for
+    completely constructed tiles [FS#5143] (r24107)
+    - Fix: Conflicting strategies for resizing the main toolbar and statusbar
+    after resizing the main window [FS#5136] (r24089)
+    - Fix: Significantly reduce the area that is redrawn for text effects
+    [FS#5103] (r24068)
+    - Fix: Do not redraw up to 25% of the map when making a new vehicle
+    visible for the first time (r24067)
+    - Fix: Do not redraw the text effect when nothing changed (r24066)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 01 Jun 2012 18:42:47 +0200
+
+openttd (1.2.0-1~getdeb3~precise) precise; urgency=low
+
+  * New upstream version
+    1.2.0 (2012-04-15)
+    ------------------------------------------------------------------------
+    - Fix: When starting GS or AI, always use the settings of the game, not
+    the new-game settings [FS#5142] (r24108)
+    - Fix: Provide translated comments in the desktop file without language
+    name postfix (r24100)
+    - Fix: Cloning orders of aircraft with limited range failed [FS#5131]
+    (r24086)
+
+
+    1.2.0-RC4 (2012-04-01)
+    ------------------------------------------------------------------------
+    - Fix: Reversing trains while they were entering or leaving a depot could
+    lead to stuck trains [FS#5093] (r24078, r24071)
+    - Fix: The 'last joined' server was not properly selected anymore
+    [FS#5098] (r24070)
+    - Fix: Immediately start querying the last joined server instead of
+    waiting for the requery loop [FS#5097] (r24069, r24062)
+    - Fix: Make the full snowedness level of houses the same as roads and
+    rails [FS#5121] (r24064)
+    - Fix: With certain versions of GCC and compiler flags the compiler could
+    reorder some code badly causing the 32bpp depot flag not working
+    [FS#5125] (r24063)
+    - Fix: Do not freeze aircraft mid-flight when skipping to an out-of-range
+    destination [FS#5123] (r24060)
+    - Fix: Wrong numbering of string parameters causing wrong capacities to
+    be shown [FS#5124] (r24058)
+    - Fix: Crash when timetabling a maximum travel speed of 0 [FS#5111]
+    (r24053)
+    - Fix: [NewGRF] Imported GRF sounds were inserted into the wrong slots
+    [FS#5107] (r24052)
+    - Fix: [NewGRF] Realsprites inside the action 11 block were not skipped
+    correctly (r24050)
+    - Fix: Improve error messages for the placement restrictions of banks,
+    water towers and toy shops [FS#5095] (r24040)
+
+
+    1.2.0-RC3 (2012-03-18)
+    ------------------------------------------------------------------------
+    - Feature: Allow display of baseset textfiles (r24037)
+    - Feature: Increase the station class limit from 32 to 256 (r24031)
+    - Fix: After opening a text window with the monospaced font, all other
+    text started glitching (r24038)
+    - Fix: [NoAI] Reset 'is random' status of temporary variable during
+    saveload as it is not always written to when loading an AI which means it
+    wouldd be taking the 'is random' setting of another AI (r24033)
+    - Fix: [NoAI] Make AIEngine::IsArticulated return true if the articulated
+    callback flag is set, do not try to run the callback (r24029)
+    - Fix: Pass cases down into the list of cargos [FS#5090] (r24024, r24023,
+    r24022)
+
+
+    1.2.0-RC2 (2012-03-04)
+    ------------------------------------------------------------------------
+    - Fix: [Script] AI used in names in API for GSOrder [FS#5088] (r24006)
+    - Fix: Improve rounding when converting display speeds to internal speeds
+    [FS#5079] (r23995)
+    - Fix: Also reset the font glyph cache when switching blitters (r23992,
+    r23987)
+    - Fix: [NewGRF] Also display the cargo subtype for vehicles which have no
+    capacity, but a subtype [FS#5076] (r23991)
+    - Fix: Zero the offsets of disabled zoomlevels, so they do not influence
+    offset calculations (r23989)
+    - Fix: Invalid reads when scaling an odd-sized sprite smaller (r23986)
+    - Fix: Inconsistent quit/abandon/exit game/scenario/editor strings
+    [FS#5074] (r23985)
+    - Fix: Fix the order of lights on the helipad [FS#5082] (r23984)
+    - Fix: Tarred heightmaps would not be found [FS#5083] (r23983)
+    - Fix: Do not load a game during UpdateWindows as that might trigger
+    changing the blitter which triggers re-entrant locking (r23980, r23977)
+    - Fix: [SDL] Palette update was done too late making switching from 8bpp
+    -> 32bpp look ugly (r23978)
+    - Fix: Sprites of different zoom levels were not always padded correctly
+    to a common size (r23976)
+    - Fix: Also save the maximum travel speed for the current vehicle order
+    (r23973)
+
+
+    1.2.0-RC1 (2012-02-19)
+    ------------------------------------------------------------------------
+    - Feature: [NewGRF] Customisable tunnel portals for rail types (r23952)
+    - Feature: Timetabled maximum travel speeds for non-flying vehicles
+    (r23947)
+    - Feature: Readme/licence/changelog viewer for AI and game scripts
+    [FS#5047] (r23936)
+    - Feature: [NewGRF] 32bpp sprites in GRFs (r23897)
+    - Feature: [NewGRF] Support for RealSprites with multiple zoom levels
+    (r23890)
+    - Feature: [NewGRF] Support for container version 2 (r23887)
+    - Fix: Refittability should never depend on the current capacity of a
+    vehicle [FS#5070] (r23965)
+    - Fix: Do not look for missing sprites twice during startup [FS#5072]
+    (r23963)
+    - Fix: [Script] Infinite recursion within a script was not caught
+    properly, so they could cause crashes of OpenTTD instead of the AI
+    [FS#5068] (r23962)
+    - Fix: [NewGRF] Make the properties for always/never refittable cargo
+    types not behave incremental, but reset them on reassignment (r23960)
+    - Fix: [Network] Do not allow chat messages from pre-active clients. As
+    they have not got the savegame yet, they will not have the interface to
+    send them either (r23958)
+    - Fix: [Network] Allow sending chat to pre-active clients as the clients
+    start accepting once they send 'map ok' to the server, which is the same
+    moment we change their status to pre-active [FS#4990] (r23957)
+    - Fix: When the population of a town changes the town view might even
+    have to change size due to different cargo requirements [FS#5062]
+    (r23953)
+    - Fix: [NoGo] Never show GSGoal::Question() to spectators [FS#5063]
+    (r23950)
+    - Fix: Better rounding when converting internal speed to displayed speed
+    (r23945)
+    - Fix: Also list DEITY signs in the signlist in the scenario editor
+    [FS#5061] (r23943)
+    - Fix: Infrastructure cache of standard road stops would get messed up
+    when buying a company with them (r23942)
+    - Fix: Scale infrastructure cost of rail tracks by the total number of
+    all tracks and not independently for each rail type (r23931)
+    - Fix: [Script] Do not close the parameter window when a script starts
+    [FS#4944] (r23930)
+    - Fix: Do not accelerate, for smoke purposes, when you reached the
+    track's maximum speed [FS#5053]
+    - Fix: 32bpp animated blitter was optimised a bit too far regarding not
+    needing to update the colour mapping when (re)initialising the palette
+    [FS#5056] (r23927)
+    - Fix: [NoGo] Some news messages would cause an assertion to be triggered
+    due to a missing proper location for the viewport of the news message, so
+    only allow building when valid data for the viewport is provided or no
+    viewport is used [FS#5054] (r23924)
+    - Fix: Consider only the middle tile of a lock for lock-infrastructure
+    costs. The other two tiles may be owned by other companies. Also do not
+    count the middle tile of a lock as canal, independent of whether it is
+    build on ground or river slope (r23920)
+    - Fix: [NewGRF] When determining the first refittable cargotype according
+    to CTT order, do not rely on the GRF assigning the refit_mask property.
+    Also check for GRFs setting the default_cargo or refittable-cargo-classes
+    or -types properties (r23916)
+    - Fix: [NewGRF] Do not test validity of cargobits using a mask of
+    cargoslots (r23914)
+    - Fix: [NewGRF] When testing whether a engine shall only carry the
+    default cargo, check ctt_include_mask for being empty before applying
+    cargo translation (r23912)
+    - Fix: [SDL] Handle the SDL_VIDEOEXPOSE event to solve issues with SDL
+    1.3 (r23910)
+    - Fix: [SDL] Fix keyboard-related segfault when compiling against SDL 1.3
+    (r23909)
+    - Fix: [Makefile] Make sure bin/baseset/openttd.32.bmp is removed on make
+    clean (r23908)
+    - Fix: [Makefile] Let "make clean --dry-run" not delete Makefiles
+    (r23907)
+    - Fix: [Windows installer] OpenMSX got downloaded to and extracted in the
+    wrong (non-existent) folder [FS#5045] (r23905)
+    - Fix: Memory leak everytime one clicked a savegame in the load GUI
+    (r23901)
+    - Fix: [NewGRF] It was not possible to import sounds from a NewGRF later
+    in the load order (r23883)
+    - Remove: PNG sprite loader; use 32bpp sprites in a NewGRF (r23898)
+
+
+    1.2.0-beta4 (2012-02-04)
+    ------------------------------------------------------------------------
+    - Feature: [NewGRF] Give NewGRF defined level crossings and rail depots
+    access to the townzone (r23866)
+    - Feature: [NewGRF] New algorithm (activated via an engine flag) to
+    determine the capacity of vehicles. This allows vehicles to better
+    control the capacity for cargotypes which they know; and let cargo
+    NewGRFs influence the capacity for cargos the vehicle NewGRF does not
+    know, but which the vehicle is refittable to due to cargo classes
+    (r23861)
+    - Feature: [NewGRF] Add cargo property 1D to set the capacity multipliers
+    when refitting vehicles, which do not use callback 15 (r23860)
+    - Feature: Allow command line options -e and -g to be combined to load
+    saves/scenarios directly into SE (r23839)
+    - Feature: [NoGo] Allow querying orders of vehicles [FS#4994] (r23837)
+    - Change: Do not let towns (ever) remove objects [FS#5001, FS#5002]
+    (r23842)
+    - Change: Make signs placed in scenario editor belong to the GS. That way
+    they are always shown in game and are not editable [FS#4999] (r23835)
+    - Fix: Generate industry subsidies again [FS#5039] (r23876)
+    - Fix: [NoGo/NoAI] Scripts with a bad comparator could lock up OpenTTD
+    [FS#5004] (r23870)
+    - Fix: Make the colour of the dropdown items for opening the vehicle list
+    for which the company has no vehicles looking less horrid [FS#5020]
+    (r23867)
+    - Fix: Railtype overlays were drawn 'only transparent' on invisible
+    bridges (r23864)
+    - Fix: Inserting conditional orders for ships checked the wrong orders
+    wrt. maximum distance (r23859)
+    - Fix: Out of bounds read for slowdown parameter caused desync when
+    railtype >= 4, vehicles were fast, and the original acceleration model
+    was used [FS#5007] (r23855)
+    - Fix: Infrastructure cache could get out of sync when overbuilding a
+    drive through road stop (r23851)
+    - Fix: When the network is lagging, you try to copy a vehicle's order but
+    accidentally create a station order and then copy the vehicle's order
+    (before the first command is executed) one could trigger an assertion
+    from the pool [FS#5008] (r23849)
+    - Fix: When removing road or tram from a tram+road stop, the owner of the
+    road stop's cache was updated instead of the owner of the removed
+    infrastructure (r23847)
+    - Fix: Infrastructure count for stations was not updated properly on
+    company takeover. And do not count buoys while loading a game either
+    (r23844)
+    - Fix: Clear NewGRF vehicle cache when their owner changes (r23841)
+    - Fix: Assertion got hit when destroing a dock when a ship was loading
+    [FS#5000] (r23838)
+    - Fix: If a vehicle is not refittable to any cargo in the CTT, then pick
+    the first refittable cargoslot (r23836)
+
+
+    1.2.0-beta3 (2012-01-21)
+    ------------------------------------------------------------------------
+    - Feature: [NoGo] Allow to chose the goal question window's title from a
+    (small) set of options [FS#4992] (r23827)
+    - Feature: [NewGRF] Enhance some fatal NewGRF errors with the
+    spritenumber that caused the problem (r23809)
+    - Fix: Loading empty GS strings/translations failed [FS#4996] (r23829)
+    - Fix: Return early from SlString() for empty strings, before doing
+    invalid things which surprisingly do not break everything. (r23828)
+    - Fix: The detailed performance rating window showed the cargo count of
+    the current quarter instead of the last quarter like the tooltip says
+    [FS#4972] (r23826)
+    - Fix: Removal of towns with 0 population failed during map generation
+    [FS#4951] (r23819)
+    - Fix: [Network] Desync due to different NewGRF version at client and
+    server [FS#4962] (r23817)
+    - Fix: [NewGRF] Textstack was not properly used when storing parameters
+    for the error message window [FS#4969] (r23803)
+    - Fix: Game lobby gui not updated when new company information becomes
+    available [FS#4968] (r23802)
+    - Fix: Reading the UTF-8 BOM from AI/GS files on big-endian machines
+    failed (r23801)
+    - Fix: Move 'refitable to' text above custom newgrf text in build vehicle
+    gui [FS#4958] (r23792)
+    - Fix: [NewGRF] Resize text panel for parameter description if it does
+    not fit in 4 lines [FS#4960] (r23791)
+    - Fix: [NewGRF] While we can only show one error per NewGRF, fatal errors
+    should always disable the GRF. Also give those errors precedence over
+    other information (r23789)
+    - Fix: [NewGRF] Failure to load newgrf files that use action 0 general
+    prop 15 with a missing language file (r23788)
+    - Fix: Crash due to genders used for station name in hangar string of
+    Italian translation [FS#4965] (r23782)
+    - Fix: Under certain circumstances, e.g. a single invalid order, trying
+    to determine the next order state could end up in an infinite loop
+    [FS#4964] (r23781)
+    - Fix: [Network] Missing naming of some errors[FS#4963] (r23780)
+    - Fix: Trim all control codes and the likes from strings being passed
+    into the AI. If the AI would be displaying them later we would be showing
+    those control codes as question marks [FS#4957] (r23778)
+    - Fix: Hide the PCX screenshot format from the options window, if a 32bpp
+    blitter is used (r23775)
+    - Fix: [NewGRF] Update all cached train properties if a train vehicle
+    enters a new railtype (r23773)
+
+
+    1.2.0-beta2 (2012-01-07)
+    ------------------------------------------------------------------------
+    - Feature: [NewGRF] Allow read-only display of NewGRF parameters, if GRF
+    list may not be edited (r23760)
+    - Feature: [NewGRF] Alternate rail type label list (r23758)
+    - Feature: Make the default secondary sort method for the server list the
+    number of clients instead of the name (r23710)
+    - Feature: Try harder to sort text instead of fancy characters in the
+    server names (r23709)
+    - Feature: Make a distinction between fully zoomed in and default zoomed
+    in screenshots [FS#4916] (r23695)
+    - Feature: Add ability to adjust brightness of colour after remapping for
+    32bpp sprites (r23670)
+    - Feature: [GS] GSGoal::Question(), to ask a question to a(ll)
+    company(ies). It can contain random text, and at most 3 buttons from a
+    collection of 17 (r23731)
+    - Feature: Australian translation (r23730)
+    - Fix: Make default timeouts for certain network states lower and
+    configurable [CVE-2012-0049] [FS#4955] (r23764)
+    - Fix: Check whether a water tile is really empty when overbuilding it
+    with an object [FS#4956] (r23763)
+    - Fix: The check for duplicate town names was not really working
+    [FS#4951] (r23759)
+    - Fix: Missing locking causing crash is extreme case when being in the MP
+    lobby [FS#4938] (r23752)
+    - Fix: [Win32] Work around a possible deadlock when initialising threaded
+    drawing (r23749)
+    - Fix: Make vehicle variables A8 and A9 always return 0. Returning
+    cur_image is a potential desyncer due to Action1 in static NewGRFs
+    (r23748)
+    - Fix: Also set 'info' to NULL if 'instance' dies (for both AI and GS);
+    avoids invalid memory reads (r23746)
+    - Fix: If autorefit fails, count the vehicle capacity nevertheless, if it
+    is already carrying the right thing (r23745)
+    - Fix: [NewGRF] Check the version of the right GRF [FS#4923] (r23744)
+    - Fix: [NewGRF] Call CB 15E for all vehicles before actually executing
+    any refit [FS#4906] (r23743)
+    - Fix: Cheating to different climates messes things even more up than
+    changing NewGRFs in-game so it was removed [FS#4939] (r23733)
+    - Fix: When cheating into another company, the SignList was not updated
+    [FS#4942] (r23728)
+    - Fix: Reading memory of a temporary (already deconstructed) object is
+    invalid (r23721)
+    - Fix: [Script] Show the script debug window also when the game script
+    crashes [FS#4935] (r23720)
+    - Fix: Extraction of music packs failed [FS#4930] (r23719)
+    - Fix: [AI] Rescanai caused crash when the AI settings of an AI was
+    opened [FS#4936] (r23718)
+    - Fix: Ships going to wrong dock location when moving the dock while the
+    game is paused [FS#4927] (r23717)
+    - Fix: The amount of goals was too low [FS#4928] (r23699)
+    - Fix: Hardcode the original defaults for loading old savegames if they
+    could totally mess with the game's behaviour [FS#4859] (r23693)
+    - Fix: Infrastructure count of canals/locks/ship depots was not updated
+    properly when a company went into bankruptcy or was taken over [FS#4921]
+    (r23686)
+    - Fix: When fitting another engine the cargo capacity of wagons could
+    become lower, causing them to contain more than they should. This caused
+    the cargo transfer from the replaced parts to put even more stuff in the
+    already full wagon. Prevent this from happening by reducing the amount of
+    cargo in the vehicle to the capacity when moving vehicles/wagons around,
+    or when autoreplacing [FS#4912] (r23683)
+    - Fix: Vehicle numbers got misaccounted when autoreplacing failed due to
+    length checks [FS#4914] (r23681)
+    - Fix: [AI] Prevent removal of the (AI) company the local player is in
+    [FS#4915] (r23680)
+    - Fix: [Script] Close the editbox of settings when changing an AI, to
+    avoid invalid memory read/write (r23678)
+    - Fix: [Script] Invalidate AI Parameters window when changing AI
+    [FS#4909] (r23677)
+    - Fix: When removing road stops the wrong tile was checked for updating
+    the infrastructure cache [FS#4913] (r23676)
+    - Fix: [Script] The 'Configure' button in the 'AI / Game Configuration'
+    window did not get enabled when activating a GameScript (r23668)
+
+
+    1.2.0-beta1 (2011-12-24)
+    ------------------------------------------------------------------------
+    - Feature: Ability to run a game script; a script that controls some of
+    the logic of the game, e.g. to implement goals or tutorials (r23637)
+    - Feature: Allow to place locks also on river rapids and restore rivers,
+    if locks are deleted [FS#4872] (r23512)
+    - Feature: Aircraft ranges (r23504)
+    - Feature: Configurable linewidth in plots (r23497, r22292)
+    - Feature: Add 'view website' button to the online content and NewGRF
+    windows (r23495, r23492)
+    - Feature: [NewGRF] Action14 node INFO->URL_ to add an url (r23494)
+    - Feature: When looking for missing content, automatically select it so
+    you can easily start the download [FS#4827] (r23468)
+    - Feature: Automatically close the online content window after confirming
+    the download with 'ok' [FS#4827] (r23467)
+    - Feature: Add 'find missing content online' button to 'load savegame'
+    and 'find network game' windows [FS#4827] (r23465)
+    - Feature: [NoAI] AIStation.GetStationCoverageRadius(StationID) (r23453)
+    - Feature: Infrastructure maintenance costs (r23415)
+    - Feature: Allow to create subsidies for any combination of source and
+    destination types (r23408)
+    - Feature: Diagonal dragging the rail conversion tool when pressing CTRL
+    [FS#4841] (r23338)
+    - Feature: Add ability to zoom in to 2x and 4x level (r23316)
+    - Feature: Settings to restrict viewport zoom levels (r23314)
+    - Feature: An economy.fund_buildingssetting, to disallow funding
+    buildings (r23303)
+    - Feature: [NoAI] AITown::GetCargoGoal and AITown::GetGrowthRate to query
+    statistics about a town regarding its growing (r23302)
+    - Feature: Show on the GUI when a town grows and what the requirements
+    for growing are (r23300)
+    - Feature: [NewGRF] Properties to always include/exclude cargo types from
+    the refit mask (r23291)
+    - Feature: A monospaced sprite font for the readme reader (r23288,
+    r23274)
+    - Feature: Attempt to show a window for downloading the base graphics set
+    if it is missing (r23244)
+    - Feature: In-game (translatable) readme.txt reader [FS#4780] (r23182,
+    r23178)
+    - Feature: [NoAI] AICONFIG_AI_DEVELOPER flags to hide AI settings unless
+    gui.ai_developer_tools is enabled (r23169)
+    - Feature: Always draw fences around field tiles [FS#1824] (r23168)
+    - Feature: Support for NewGRF version 8 (r23159)
+    - Feature: [NewGRF] Patch/setting variable 14: get the maximum height of
+    the map (r23158)
+    - Feature: [NewGRF] Road vehicle property 23 to shorten vehicles without
+    callback usage (r23149)
+    - Feature: [NewGRF] Allow passing 32bit parameters to 60+x variables
+    (using var 7B). Currently most useful for vehicle var 60 (r23138)
+    - Feature: [NoAI] AICargoList_StationAccepting [FS#3799] (r23134)
+    - Feature: [NewGRF] Property for the rail type name (r23129)
+    - Feature: [NoAI] Allow AIs to query the amount of remaining operations
+    for the current tick (r23118)
+    - Feature: [NewGRF] Ambient sound effect callback (r23114)
+    - Feature: Auto-refitting of vehicles during loading at a station when
+    the vehicle allows it (r23089, r23087)
+    - Feature: [NewGRF] Callback to change refit cost depending on old and
+    new cargo type (r23086)
+    - Feature: [NewGRF] Use variable 10 to enable vehicle GRFs to draw
+    different sprites on the map and in various GUIs (r23080)
+    - Feature: [NewGRF] House callback 0x148 (r23072)
+    - Feature: [NewGRF] House variable 0x64 (r23070)
+    - Feature: [NewGRF] Long date of last service for vehicles, also
+    available in the purchase list (r23068)
+    - Feature: A -q command line option to read a savegame, write some
+    general info and exit (r23065)
+    - Feature: [NewGRF] stringscodes 9A 19 and 9A 20 to print 'short volume'
+    and 'short weight' respectively (r23063)
+    - Feature: [NewGRF] Allow use of NewGRF text stack during callback 23
+    (r23040)
+    - Feature: Support company colour for the airports' runways [FS#4797]
+    (r23010)
+    - Feature: [NewGRF] Allow to use offsets for all types of action5 except
+    sea shores [FS#4795] (r23004)
+    - Feature: [NewGRF] Action2 variable 0x62 to get curvature/position
+    difference to the n-th vehicle in vehicle chain [FS#2521] (r22998)
+    - Feature: [NewGRF] Allow access to other vehicles in the vehicle chain
+    in VarAction 2 (r22997)
+    - Feature: Display autoreplace status in group GUI (r22985)
+    - Feature: Display profit icons for groups in the group GUI (r22984)
+    - Feature: Display the number of vehicles in the group GUI also for the
+    ALL and DEFAULT groups (r22983)
+    - Feature: Allow road corners on steep slopes (r22968)
+    - Feature: Allow depots, standard road stops and airports on steep slopes
+    (r22960)
+    - Feature: [NewGRF] Allow Action4 to change text IDs 0x00D1 to 0x00E0 for
+    feature 48 (r22954)
+    - Feature: [NewGRF] Extended Action1 format to define arbitrary spriteset
+    IDs (r22926)
+    - Feature: [NewGRF] Allow referencing spritesets from different Action1
+    in a single Action2 (r22925)
+    - Feature: Allow towns to build bridges over canals and rivers (r22899)
+    - Feature: Resize the tree build gui to according to tree size (r22862)
+    - Feature: Conditional order depending on remaining lifetime of a vehicle
+    (r22858)
+    - Feature: [NewGRF] Allow replacing depot sprites without having to
+    provide rail overlays (r22854)
+    - Feature: Display separate ocean and canal speeds in the ship purchase
+    list, if they differ (r22850)
+    - Feature: [NewGRF] Bits 8-31 in station variable 43 (r22848)
+    - Feature: [NewGRF] Also age wagons and articulated parts (r22816)
+    - Feature: [YAPF] Take canal/ocean speed fraction of ships into account
+    (r22801)
+    - Feature: Progress bar for scanning NewGRFs (r22797)
+    - Feature: [NewGRF] Stringcodes for printing 0-based dates, unsigned
+    words in power units (r22779, r22778)
+    - Feature: River generation (r22767)
+    - Feature: [NoAI] AITile::GetTownAuthority() (r22764)
+    - Feature: [NewGRF] Implement feature 04 property 18 bit 5 (r22746)
+    - Feature: [NewGRF] Per vehicle custom cargo ageing period (r22713)
+    - Feature: Display option to hide competitors' signs and station names
+    [FS#4701] (r22708)
+    - Feature: Add a menu entry for the sprite bounding box debuging feature
+    in the help menu and enable bounding boxes only in conjunction with the
+    NewGRF developer tools (r22675)
+    - Feature: [NewGRF] Provide random bits in var 0x10 for callback 0x3B in
+    all cases [FS#4690] (r22673)
+    - Feature: Do not spawn explosion effects when bulldozing in paused mode.
+    They block the view (r22670)
+    - Feature: [NewGRF] Support for the land slope check callback for
+    stations (r22659)
+    - Feature: [NewGRF] Custom error messages for object callback 0x157
+    (r22658)
+    - Feature: [NewGRF] More default error messages for the industry shape
+    and location callbacks (r22657)
+    - Feature: [NewGRF] Add water class to the 'land info of nearby tiles'
+    vars (r22655)
+    - Feature: [NewGRF] Support for ship props 14/15 (ocean/canal speed
+    fraction) (r22639)
+    - Feature: [NoAI] Add several functions to AICompany to find out
+    performance information (r22584)
+    - Feature: [NewGRF] Persistent storage for towns (r22569)
+    - Feature: [NewGRF] Support for station variable 0x69 (r22543)
+    - Feature: [NewGRF] Advanced sprite layouts with register modifiers
+    (r22518)
+    - Feature: Save heightmap in scenario editor (r22514)
+    - Feature: Make the transparency options for industries also affect the
+    effect vehicles created by industries [FS#4625] (r22506)
+    - Feature: [NewGRF] Implement variable 18 for custom station foundations
+    (r22453)
+    - Feature: [NewGRF] When NewGRFs are disabled via Action E or due to GRM
+    failure, also display an error in the GUI (r22444)
+    - Feature: [NewGRF] Allow to filter by town of the current industry when
+    using industry variable 0x68 [FS#4591] (r22434)
+    - Feature: An advanced setting to specify the default palette to use for
+    NewGRFs without action 14 palette information; this makes the default
+    choice independent from the used base graphics (r22417)
+    - Feature: Sort the items in the currency dropdown; separate the 'Custom'
+    item with a horizontal line from the rest (r22312)
+    - Feature: Separate default and NewGRF-supplied townnames with a
+    horizontal line and only sort them within these groups (r22312)
+    - Feature: [NewGRF] Allow docks to feature company colour (r22293)
+    - Feature: Apply the same inflation to the initial loan as to the maximum
+    loan. Note that this is no change to the economy; it only saves players
+    some clicks when starting companies in later years (r22253)
+    - Feature: [NewGRF] Make var 0x48 available in CB 0x15C (r22231)
+    - Change: [Win32] Move painting the window and doing palette animation
+    into a separate thread (r23482)
+    - Change: [SDL] Move 32bpp-anim palette animation to the draw thread
+    instead of the single threaded bit of the game loop. This causes a
+    speedup of up to 15% when animation is turned on with the 32bpp-anim
+    blitter (r23451)
+    - Change: Make the company GUI somewhat smaller if there are no
+    shareholders (r23424)
+    - Change: [NewGRF v8] Allow translating multiple languages with Action 13
+    (r23391)
+    - Change: Bring Squirrel to 2.2.5; besides some nice bug fixes, it mostly
+    solves the sort() issues (r23383)
+    - Change: Move the 'default' overrides out of the base set in order to
+    ensure they all use the same values (r23232)
+    - Change: Different directories for base sets and newgrfs. So data to
+    base set or newgrf, and gm to base set (r23219)
+    - Change: [NewGRF v8] Do not override rail type prop 1B with prop 09
+    (r23166)
+    - Change: [NewGRF v8] Format of extra callback info for callback 144
+    (r23157)
+    - Change: [NewGRF v8] Use height level units in var 8A of callback 28
+    (r23155)
+    - Change: [NewGRF v8] Use height level units in nearby tile info
+    variables (r23154)
+    - Change: [NewGRF v8] Use height level units in variable 20/A0 (r23153)
+    - Change: [NewGRF v8] Snow line height table uses values between 0x00 and
+    0xFF independent of number of height levels (r23152)
+    - Change: [NewGRF v8] Deprecate callback 11 and 12, and use callback 36
+    instead (r23151, r23150)
+    - Change: [NewGRF v8] Unify the return values of boolean callbacks, and
+    check the results for validity (r23147)
+    - Change: [NewGRF v8] Make callback 22 return a probability to use
+    instead of property 18 (r23146)
+    - Change: [NewGRF v8] Determine the 'first' refittable cargo of vehicles
+    using the cargo ordering from the cargo translation table (r23145)
+    - Change: [NewGRF v8] Consider the 'default cargotype' properties as
+    indices into the cargo translation table (r23144)
+    - Change: [NewGRF v8] Return the translated cargobit in vehicle var 42
+    (r23143)
+    - Change: [NewGRF v8] Unify the return values of callbacks returning D0xx
+    texts (r23142)
+    - Change: [NewGRF v8] Invert result bit 10 of callbacks 149 and 157 to
+    make them consistent with other slope check callbacks (r23141)
+    - Change: [NewGRF v8] Do no longer apply base cost fallbacks (r23139)
+    - Change: [NewGRF v8] New result format for callback 16 (r23137)
+    - Change: [NewGRF v8] Deprecate old-style callback results 0xFF??
+    (r23136)
+    - Change: Open the query string window centered as it (almost) always
+    requires your attention [FS#4825] (r23130)
+    - Change: [NewGRF] Enforce that the default cargo type of a vehicle is
+    one of the refittable cargos in case of refittable engines (r23077)
+    - Change: Use the currency -> euro conversion rate for currencies that
+    have been replaced with the euro, so when the switch happens the
+    conversion rate at that point is roughly that of the real world
+    conversion rate (r23056)
+    - Change: Disable palette animation for pixels with alpha, as the alpha
+    and previous colour information will be lost when the palette is animated
+    (r23016)
+    - Change: More suitable default news settings instead of everything on
+    'full' (r22897)
+    - Change: Always use the DOS palette for drawing, remove the '-i' option
+    for palette selection (r22419)
+    - Change: Make YAPF the default pathfinder for ships, do not discourage
+    players from using it anymore (r22352)
+    - Change: Remove pixel limiter for query strings (r22343)
+    - Fix: Dates cut off in the message history [FS#4896] (r23643)
+    - Fix: Fix transparency for steel mill, colour translations in some
+    arctic buildings and a wrongly replaced sprites [FS#4892] (r23639)
+    - Fix: Draw PBS reservations also for bridges and tunnels with railtype
+    overlays (r23586, r23584)
+    - Fix: Add missing characters for certain languages and the large font
+    [FS#4870] (r23582)
+    - Fix: Extending a path reservation starting at a partially reserved rail
+    station could fail [FS#4888] (r23564)
+    - Fix: [NoAI] ScriptSign::BuildSign() returned wrong result if the sign
+    name was too long [FS#4886] (r23516)
+    - Fix: Drawing of newspaper headlines used different padding than the
+    initial sizing of the window [FS#4884] (r23509)
+    - Fix: [Squirrel] Provide a proper error message when the _cmp
+    meta-function does not return an integer (r23496)
+    - Fix: Make autoreplace, autorenew, cloning and autorefit check all
+    articulated parts of a vehicle to find a shared cargo subtype (r23487)
+    - Fix: In case you already have orders, ignore the vehicles when adding
+    an extra order [FS#4770] (r23484)
+    - Fix: Replace OS error messages with internal error messages when that
+    is possible [FS#4594] (r23480)
+    - Fix: Clear the backed up orders of a removed station as well, otherwise
+    one could create orders to a station that was never in the original
+    backupped orders. For example a road vehicle trying to go to a buoy
+    [FS#4876] (r23464)
+    - Fix: Do not assume all industries that cut trees have tile (0,0) and
+    wait until all tiles of an industry are completed before starting to cut
+    trees (r23458)
+    - Fix: Mark company window dirty when moving a rail engine creates or
+    deletes a train (r23454)
+    - Fix: Some airport functions did not take the layout into account
+    resulting in wrong noise levels or nearests towns [FS#4764] (r23441)
+    - Fix: Perform checks for NFORenum/GRFCodec in configure, including a
+    version check so a proper error can be given when a too old GRFCodec or
+    NFORenum is used [FS#4867] (r23438)
+    - Fix: Recolouring of some animated colours from the Windows (=least
+    consistent) palette went wrong [FS#4868] (r23433)
+    - Fix: Prevent windows to be resized beyond the bounds of the (main)
+    window [FS#4842] (r23429)
+    - Fix: [NoAI] The AIEvent.ET_COMPANY_NEW was only triggered if a company
+    named itself, which seems like a very odd place to do so. Trigger it when
+    the company is created instead (r23398)
+    - Fix: Bring some more order in the ordering of the windows, e.g. do not
+    let a save or load dialog get hidden by a news message [FS#4709] (r23336)
+    - Fix: Road vehicle purchase info failed to display vehicles carrying no
+    cargo [FS#4820] (r23334)
+    - Fix: Abort building/moving HQ when clicking on the button again, just
+    like when building rail, stations, etc [FS#4851] (r23331)
+    - Fix: Change the centre of train vehicles to depend on the vehicle
+    length instead of being fixed at 4/8th of the original vehicle length to
+    make sure shortened vehicles do not block tiles they should not block
+    [FS#2379,FS#3569] (r23290)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 15 Apr 2012 18:43:44 +0200
+
+openttd (1.1.5-1~getdeb1~precise) precise; urgency=low
+
+  * Rebuild for precise
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 03 Apr 2012 18:59:05 +0200
+
+openttd (1.1.4-1) unstable; urgency=low
+
+  * [9f68818] New upstream release 1.1.4.
+  * [8779d75] Require grfcodec >= 5.1.2.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Tue, 06 Dec 2011 15:01:37 +0100
+
+openttd (1.1.3-1) unstable; urgency=low
+
+  * [4d74263] New upstream release 1.1.3. Fixes three security issues:
+    - CVE-2011-3341 (Denial of service via improperly validated commands)
+    - CVE-2011-3342 (Buffer overflows in savegame loading)
+    - CVE-2011-3343 (Multiple buffer overflows in validation of external data)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Fri, 16 Sep 2011 15:12:38 +0200
+
+openttd (1.1.2-1) unstable; urgency=low
+
+  * [6a2923c] New upstream release 1.1.2.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Sun, 21 Aug 2011 11:42:13 +0200
+
+openttd (1.1.1-1) unstable; urgency=low
+
+  * [275d525] New upstream release 1.1.1.
+  * [e031058] Add support for lzma-compressed savegames.
+  * [8658e0f] Recommend openttd-opengfx >= 0.3.2, OpenTTD will not run with
+    older versions.
+  * [ec059f2] Remove patch for CVE-2010-4168, it was included in 1.0.5.
+  * [2fd255d] No longer depend on nforenum.
+  * [b43c10f] Bump Standards-Version to 3.9.2, no changes required.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 04 Aug 2011 23:22:46 +0200
+
+openttd (1.0.4-3) unstable; urgency=high
+
+  * [0b3fd35] Make sure the CVE 2010-4168 patch actually applies.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Fri, 19 Nov 2010 09:56:36 +0100
+
+openttd (1.0.4-2) unstable; urgency=high
+
+  * [31f64cb] Add patch for CVE-2010-4168. (Closes: #603752)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 18 Nov 2010 21:45:54 +0100
+
+openttd (1.0.4-1) unstable; urgency=low
+
+  * [0303577] New upstream release 1.0.4.
+  * [ac0e0c9] Build-depend on grfcodec and nforenum, openttd ships grf
+    sources now.
+  * [ae70a98] Rebuild the grf files instead of using the prebuilt
+    versions. (Closes: #595738)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Tue, 14 Sep 2010 18:58:34 +0200
+
+openttd (1.0.3-2) unstable; urgency=low
+
+  * [04a8646] Don't suggest freepats, since timidity recommends it now.
+  * [4d36395] Recommend openttd-openmsx.
+  * [34c1754] Recommend timidy instead of suggesting it.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Wed, 01 Sep 2010 09:15:26 +0200
+
+openttd (1.0.3-1) unstable; urgency=high
+
+  * [581c91e] New upstream release 1.0.3. This release fixes CVE-2010-2534.
+  * [9051ead] Bump standards version to 3.9.1.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Tue, 03 Aug 2010 22:28:49 +0200
+
+openttd (1.0.2-1) unstable; urgency=low
+
+  * [00c4efe] New upstream release 1.0.2.
+  * [c7b38fd] Break older openttd versions instead of Conflicting with
+    them.
+  * [36bd61f] Bump standards version to 3.9.0.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 01 Jul 2010 08:14:02 +0200
+
+openttd (1.0.1-1) unstable; urgency=high
+
+  * [6efdf17] New upstream release 1.0.1. This release fixes CVE-2010-0401,
+    CVE-2010-0402 and CVE-2010-0406.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Sat, 01 May 2010 17:02:36 +0200
+
+openttd (1.0.0-2) unstable; urgency=low
+
+  * [07bda20] Fix Replaces clause of openttd-data. (Closes: #576960)
+  * [cfecf6a] Let openttd-data conflict with (the non-split) openttd <<
+    0.7.5-2.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 08 Apr 2010 20:58:42 +0200
+
+openttd (1.0.0-1) unstable; urgency=low
+
+  * [30a2162] New upstream release 1.0.0. (Closes: #570104)
+  * [102698a] Make openttd-wrapper work with older mktemp versions.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Fri, 02 Apr 2010 23:36:21 +0200
+
+openttd (1.0.0~rc3-2) unstable; urgency=low
+
+  * [279c5ef] Recommend openttd-opengfx and suggest openttd-opensfx.
+  * [9330ad7] Update README.Debian concerning music files.
+  * [07bde24] Move openttd from contrib to main. (Closes: #560810)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 18 Mar 2010 13:16:32 +0100
+
+openttd (1.0.0~rc3-1) unstable; urgency=low
+
+  * [412d153] New upstream release 1.0.0~rc3.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 18 Mar 2010 10:09:33 +0100
+
+openttd (1.0.0~rc2-1) unstable; urgency=low
+
+  * [9c99af4] New upstream release 1.0.0~rc2.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 04 Mar 2010 12:22:28 +0100
+
+openttd (1.0.0~rc1-1) unstable; urgency=low
+
+  * [fe4eb51] New upstream release 1.0.0~rc1.
+  * [6aa2be0] Note that the embedded md5 implementation has a different
+    license.
+  * [39eb336] Remove lintian override for empty gm directory.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Fri, 19 Feb 2010 13:00:53 +0100
+
+openttd (1.0.0~beta4-1) unstable; urgency=low
+
+  * [6718224] New upstream release 1.0.0~beta4.
+  * [7b0fa8d] Remove some more docs that we don't want in the package.
+  * [bb9d744] Use liblzo2 instead of an embedded minilzo version.
+  * [949c06b] Explicitly disable iconv support.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Fri, 19 Feb 2010 12:59:27 +0100
+
+openttd (0.7.5-4) unstable; urgency=low
+
+  * [174d0b1] Don't use deprecated < in Replaces.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Mon, 15 Feb 2010 00:35:33 +0100
+
+openttd (0.7.5-3) unstable; urgency=low
+
+  * [d12fc5a] Make openttd-data replace openttd (< 0.7.5-2).
+    (Closes: #569679)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Sun, 14 Feb 2010 16:56:31 +0100
+
+openttd (0.7.5-2) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * [fbab21d] Switch to source format 3.0 (quilt).
+  * [85c0c7d] No longer check for (and complain about missing) datafiles
+    on installation and upgrades. (Closes: #524651, 562574)
+  * [827eb61] Split the architecture independent data into openttd-data.
+    (Closes: #492462)
+  * [6fbd9c7] Update README.Debian.
+  * [76a5148] Support cross compilation. (Closes: #550951)
+  * [2005bf8] Simplify the rules file, make debhelper do more stuff.
+  * [fc0500e] Remove some configure arguments.
+  * [8ca38bb] Explicitly enable or disable all of the dependencies.
+  * [e38fb3e] Let the upstream Makefile install documentation.
+  * [5954fcf] Update the watch file to the new upstream url scheme.
+  * [7249594] Fix typo in copyright file.
+  * [660fb61] Bump the Standards-Version to 3.8.4, with no changes
+    required.
+  * [f94ab89] Move the packaging git repository to git.debian.org.
+
+ -- Jordi Mallach <jordi@debian.org>  Tue, 09 Feb 2010 21:40:24 +0100
+
+openttd (0.7.5-1) unstable; urgency=high
+
+  * [cdcb73a] Imported Upstream version 0.7.5. This release fixes
+    CVE-2009-4007.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 24 Dec 2009 00:55:45 +0100
+
+openttd (0.7.4-1) unstable; urgency=low
+
+  * [a2c297b0] Imported Upstream version 0.7.4
+  * [0232a645] Make Debian-specific patches executable.
+  * [76be04b] Switch the Debian packaging to git.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Tue, 15 Dec 2009 22:11:52 +0100
+
+openttd (0.7.3-1) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release
+  * Use printf instead of echo -en in openttd-wrapper to make it POSIX
+    compatible (Closes: #547758).
+  * Remove three patches that are now included in upstream.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 01 Oct 2009 22:52:59 +0200
+
+openttd (0.7.2-1) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release
+  * Bump Standards-Version to 3.8.3, with no changes required.
+  * Clean up the rules file a bit and add some lintian overrides.
+  * Explain why openttd is in contrib (Closes: #539381).
+  * Add the DM-Upload-Allowed control field.
+  * Re-add dpatch infrastructure.
+  * Fix the copyright file, since upstream only allows GPLv2, not later
+    versions.
+  * Add a section to the copyright file on the different license used by the
+    "Squirrel" programming language, which is shipped with OpenTTD since
+     0.7.0.
+  * Backport upstream r17226, which removes the deprecated Encoding entry from
+    the .desktop file.
+  * Add a wrapper script for openttd, which captures any stderr output and
+    displays it when openttd returns an error code (Closes: #533557).
+  * Recommend x11-utils, since we use xmessage for displaying errors. Don't
+    depend on it, since openttd will still run fine without it, you just won't
+    see any errors.
+  * Backport upstream r17227 and r17229, which prevents terminal escape codes
+    from ending up in the captured error output.
+  * Backport upstream r17240, which improves stderr output when files are
+    missing or corrupt.
+
+ -- Jordi Mallach <jordi@debian.org>  Fri, 21 Aug 2009 15:27:26 +0200
+
+openttd (0.7.1-1) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release.
+  * Link against libicu to enable right-to-left language support.
+
+ -- Jordi Mallach <jordi@debian.org>  Tue, 09 Jun 2009 21:46:28 +0200
+
+openttd (0.7.0-1) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release.
+  * Remove Debian specific desktop file, upstream provides one now.
+  * Add debian/watch file.
+
+  [ Jordi Mallach ]
+  * Bump Standards-Version to 3.8.1, with no changes required.
+  * Move to debhelper compat 7. Bump Build-Depends accordingly.
+  * Use dh_prep.
+  * Add "set -e" to config script.
+  * Remove a few extra doc files that get installed by upstream Makefile.
+  * Add more complete copyright information.
+
+ -- Jordi Mallach <jordi@debian.org>  Wed, 15 Apr 2009 18:22:10 +0200
+
+openttd (0.6.3-1) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release.
+
+  [ Jordi Mallach ]
+  * Add Spanish Debconf template translation, after fixing its corrupted
+    encoding (thanks, Germana Oliveira, closes: #499214).
+
+ -- Jordi Mallach <jordi@debian.org>  Thu, 02 Oct 2008 16:59:03 +0200
+
+openttd (0.6.2-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixes remote crash vulnerability CVE-2008-3547. Closes: #493714
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Fri, 08 Aug 2008 11:07:05 +0200
+
+openttd (0.6.2~rc2-1) experimental; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release.
+
+  [ Jordi Mallach ]
+  * Fix typo in README.Debian (lintian).
+  * Remove dpatch build-dep and the empty debian/patches dir.
+  * Don't ignore possible "make distclean" errors.
+
+ -- Jordi Mallach <jordi@debian.org>  Sat, 26 Jul 2008 01:35:30 +0200
+
+openttd (0.6.2~rc1-1) experimental; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release.
+
+ -- Jordi Mallach <jordi@debian.org>  Thu, 24 Jul 2008 16:09:57 +0200
+
+openttd (0.6.1-1) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release.
+  * Remove no_install_personal.dpatch, it is included upstream now.
+
+ -- Jordi Mallach <jordi@debian.org>  Thu, 05 Jun 2008 00:47:36 +0200
+
+openttd (0.6.0-2) unstable; urgency=low
+
+  [ Jordi Mallach ]
+  * Rename XS-Vcs-* to the official Vcs-* fields.
+
+  [ Matthijs Kooijman ]
+  * Don't install anything into ~ during make install, this prevented
+    successful builds on some architectures. Fix imported from upstream.
+  * Put the homepage in its own Homepage field instead of in the description.
+  * Bump Standards-Version to 3.7.3
+
+ -- Jordi Mallach <jordi@debian.org>  Thu, 03 Apr 2008 00:07:10 +0200
+
+openttd (0.6.0-1) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release:
+    - Adds note about font-configuration for non-latin languages.
+      Closes: #462604
+  * Add .desktop file, provided by Andrea Colangelo.
+    Closes: #460073
+  * Add Finnish Debconf translation, provided by Esko Arajärvi.
+    Closes: #456956
+
+  [ Jordi Mallach ]
+  * Fixes and improvements for the .desktop file according to the spec.
+
+ -- Jordi Mallach <jordi@debian.org>  Wed, 02 Apr 2008 14:04:40 +0200
+
+openttd (0.5.3-1) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release
+
+ -- Jordi Mallach <jordi@debian.org>  Tue, 18 Sep 2007 12:05:28 +0200
+
+openttd (0.5.2-1) unstable; urgency=low
+
+  [ Jordi Mallach ]
+  * New upstream release.
+  * Debconf translation updates:
+    - Catalan.
+
+  [ Christian Perrier ]
+  * Debconf templates and debian/control reviewed by the debian-l10n-
+    english team as part of the Smith review project.
+    Closes: #422183, #419096.
+  * Debconf translation updates:
+    - Swedish. Closes: #422780
+    - Basque. Closes: #422786
+    - Czech. Closes: #422809
+    - Galician. Closes: #422831
+    - German. Closes: #422908
+    - Tamil. Closes: #423079
+    - Russian. Closes: #423224
+    - Portuguese. Closes: #423413
+    - French. Closes: #424436
+    - Brazilian Portuguese. Closes: #425585
+    - Dutch. Closes: #425707
+
+ -- Jordi Mallach <jordi@debian.org>  Sat, 02 Jun 2007 06:24:34 +0200
+
+openttd (0.5.1-1) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release
+  * Add German and Swedish translations (Closes: #420258, #419097)
+  * Remove bogus fuzzy mark from the Catalan translation
+
+  [ Jordi Mallach ]
+  * debian/control: add XS-Vcs-Svn and XS-Vcs-Browser fields.
+
+ -- Jordi Mallach <jordi@debian.org>  Mon, 23 Apr 2007 21:03:06 +0200
+
+openttd (0.5.0-2) unstable; urgency=low
+
+  * Upload to Debian.
+
+ -- Jordi Mallach <jordi@debian.org>  Sun, 11 Mar 2007 14:12:37 +0100
+
+openttd (0.5.0-1) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release
+
+  [ Jordi Mallach ]
+  * Depend on ${misc:Depends}, not debconf directly.
+
+ -- Jordi Mallach <jordi@debian.org>  Thu,  8 Mar 2007 15:34:54 +0100
+
+openttd (0.5.0~rc5-1) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * New upstream release
+  * Compile with freetype and fontconfig support.
+
+  [ Jordi Mallach ]
+  * Convert debconf templates to podebconf.
+  * Add a Catalan translation.
+  * Minor packaging cleanups.
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Mon, 12 Feb 2007 09:25:41 +0100
+
+openttd (0.5.0~rc4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Thu, 18 Jan 2007 21:17:28 +0100
+
+openttd (0.5.0~rc3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Thu, 18 Jan 2007 20:21:04 +0100
+
+openttd (0.5.0~rc2-1) unstable; urgency=low
+
+  * New upstream release
+  * Removed fix for empty scenarios dir, openttd Makefile now properly handles
+    this.
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Sun, 31 Dec 2006 12:24:37 +0100
+
+openttd (0.5.0~rc1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Fri, 22 Dec 2006 11:03:46 +0100
+
+openttd (0.4.8-1) unstable; urgency=low
+
+  * New upstream release
+  * Bump standards version to 3.7.2
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Mon, 14 Aug 2006 16:28:50 +0200
+
+openttd (0.4.7-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Mon, 27 Mar 2006 23:40:00 +0200
+
+openttd (0.4.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove old terminal messages and make sure that debconf is always called.
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Wed,  8 Mar 2006 23:57:35 +0100
+
+openttd (0.4.5-1) unstable; urgency=low
+
+  * New upstream release
+  * Bump Standards-Version to 3.6.2
+  * s/timdity/timidity/ in README.Debian.
+  * Use debconf for prompting instead of terminal.
+  * Fix makefile to create icon dir if necessary.
+  * Fix syntax error in manpage.
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Wed,  1 Feb 2006 01:56:39 +0100
+
+openttd (0.4.0.1-5) unstable; urgency=low
+
+  * Fixed capitalization of menu item.
+  * Install xpm icon to /usr/share/pixmaps and don't install png icon, since
+    it is not used.
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Thu, 22 Sep 2005 10:35:09 +0200
+
+openttd (0.4.0.1-4) unstable; urgency=low
+
+  * Changelog was distributed twice.
+  * Put openttd in contrib.
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Mon, 19 Sep 2005 23:49:18 +0200
+
+openttd (0.4.0.1-3) unstable; urgency=low
+
+  * Clarified installing instructions in README.Debian
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Thu, 16 Jun 2005 03:51:13 +0200
+
+openttd (0.4.0.1-2) unstable; urgency=low
+
+  * Added Suggests: timidity, freepats
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Thu, 16 Jun 2005 03:34:03 +0200
+
+openttd (0.4.0.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Mon, 23 May 2005 13:04:24 +0200
+
+openttd (0.4.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Mon, 16 May 2005 00:16:17 +0200
+
+openttd (0.3.6-1) unstable; urgency=low
+
+  * New upstream release
+  * Modifed Makefile to install xpm icon and scenarios in /usr/share/games/openttd/
+  * Added openttd.32.xpm, openttd.64.xpm was too big
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Tue, 25 Jan 2005 19:21:08 +0100
+
+openttd (0.3.5-2) unstable; urgency=low
+
+  * Fixed some lintian warnings.
+  * Added openttd.64.xpm (icon for menu).
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Mon, 27 Dec 2004 01:51:36 +0100
+
+openttd (0.3.5-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Matthijs Kooijman <m.kooijman@student.utwente.nl>  Fri, 24 Dec 2004 02:58:47 +0100
+

@@ -1,0 +1,4 @@
+jbrickshooter.jar jbrickshooter.png usr/share/games/jbrickshooter
+debian/scripts/jbrickshooter usr/games
+debian/jbrickshooter.xpm usr/share/pixmaps
+debian/jbrickshooter.desktop usr/share/applications

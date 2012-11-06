@@ -1,0 +1,57 @@
+This package was debianized by:
+
+    Christoph Korn <christoph.korn@getdeb.net> on Sun, 08 Nov 2009 23:11:41 +0100
+
+It was downloaded from:
+
+    http://deadlycobra.sourceforge.net/
+
+Upstream Authors:
+
+    Devel Team for DeadlyCobra
+    (http://deadlycobra.sourceforge.net)
+
+    Lead Designer:
+    outbak - outbak@users.sourceforge.net
+
+    Graphics:
+    Dr Zaius X11 - drzaiusx11@users.sourceforge.net
+
+    Music:
+    Cem Kaan - cemkaan@users.sourceforge.net
+
+    Code Submission:
+    Mr Noonan - mrnoonan@users.sourceforge.net
+
+    src/XDGPath.*:
+    Joao Pinto <joao.pinto@getdeb.net>
+
+Copyright:
+
+    Copyright (C) 2004 Devel Team for DeadlyCobra
+
+License:
+
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this package; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU General
+Public License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+The Debian packaging is:
+
+    Copyright (C) 2009 Christoph Korn <christoph.korn@getdeb.net>
+
+and is licensed under the GPL version 3, 
+see `/usr/share/common-licenses/GPL-3'.

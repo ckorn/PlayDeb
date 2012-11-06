@@ -1,0 +1,81 @@
+bsnes (091-1~getdeb2) precise; urgency=low
+
+  * Build purify executable
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 14 Sep 2012 18:18:29 +0200
+
+bsnes (091-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 10 Aug 2012 18:06:16 +0200
+
+bsnes (090-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 07 Aug 2012 17:54:25 +0200
+
+bsnes (089-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 23 Jun 2012 12:33:40 +0200
+
+bsnes (088-1~getdeb2~precise) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 25 Apr 2012 18:22:31 +0200
+
+bsnes (087-1~getdeb1~precise) precise; urgency=low
+
+  * Rebuild for precise.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 02 Apr 2012 19:17:49 +0200
+
+bsnes (0.084-1) unstable; urgency=low
+
+  [ Tobias Hansen ]
+  * New upstream release.
+  * Remove optimization flags not available on alpha.
+
+  [ Gonéri Le Bouder ]
+  * Add: DM-Upload-Allowed: yes
+
+ -- Tobias Hansen <tobias.han@gmx.de>  Wed, 09 Nov 2011 23:55:12 +0100
+
+bsnes (0.083-2) unstable; urgency=low
+
+  * Properly detect endianness on all architectures. (Closes: #645710)
+  * Escape minuses in man pages.
+
+ -- Tobias Hansen <tobias.han@gmx.de>  Tue, 18 Oct 2011 02:11:24 +0200
+
+bsnes (0.083-1) unstable; urgency=low
+
+  * New upstream release.
+  * Create symlinks instead of copying files in startscript. (Closes: #642348)
+  * Fix FTBFS on kfreebsd due to enabled ALSA and missing check for 
+    __FreeBSD_kernel__. (Closes: #640912)
+  * Add Build-Depends: gcc (>= 4.6), because building with gcc 4.5 causes a bug.
+  * Mention update-alternatives in package description.
+  * Add bugfix for snespurify crashing when scanning a broken zip file.
+  * Main license changed to GPL-3.
+  * Mention new functionality in snespurify man page.
+  * Build with -O1 + flags from -O3 instead of -O3.
+
+ -- Tobias Hansen <tobias.han@gmx.de>  Sun, 16 Oct 2011 00:45:33 +0200
+
+bsnes (0.081-2) unstable; urgency=low
+
+  * New upstream release.
+  * Fix FTBFS due to hardwired gcc-4.5. (Closes: #637694)
+
+ -- Tobias Hansen <tobias.han@gmx.de>  Sat, 13 Aug 2011 23:36:22 +0200
+
+bsnes (0.080-1) unstable; urgency=low
+
+  * Initial release (Closes: #598968)
+
+ -- Tobias Hansen <tobias.han@gmx.de>  Fri, 05 Aug 2011 14:02:01 +0200

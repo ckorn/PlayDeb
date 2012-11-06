@@ -1,0 +1,11 @@
+djl (1.2.20-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 15:51:18 +0100
+
+djl (1.2.20-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #510634)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 23 Jan 2010 20:19:58 +0100

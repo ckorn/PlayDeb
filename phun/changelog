@@ -1,0 +1,51 @@
+phun (5.28-1~getdeb6~precise) precise; urgency=low
+
+  * Rebuild for precise.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 06 Apr 2012 11:42:15 +0200
+
+phun (5.28-1~getdeb5~natty) natty; urgency=low
+
+  * debian/control: Add runtime depends on libpng3
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 21 Apr 2011 19:34:23 +0200
+
+phun (5.28-1~getdeb4) lucid; urgency=low
+
+  * Add a link to libpng12.so.0 called
+    libpng.so.3.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 24 Apr 2010 18:18:54 +0200
+
+phun (5.28-1~getdeb3) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 17:13:00 +0100
+
+phun (5.28-1~getdeb2) karmic; urgency=low
+
+  * Added hungarian language.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 31 Dec 2009 15:27:37 +0100
+
+phun (5.28-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version
+    - Provide 64bits binaries for the amd64 version
+    - App contents are copied to ~/config/phun/version to allow scene saving
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Mon, 06 Jul 2009 18:34:48 +0000
+
+phun (4.22-0~getdeb1) hardy; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Fri, 22 Aug 2008 18:29:34 +0000
+
+phun (0.0.3.5-1~getdeb1) hardy; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Tue, 01 Apr 2008 12:35:13 +0000
+

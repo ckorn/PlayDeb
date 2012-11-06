@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+  
+ARCH=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+DEB_DH_SHLIBDEPS_ARGS_ALL := -X phun
+
+makebuilddir/phun::
+ifeq ($(ARCH),amd64)
+	tar xvf Phun*linux64.tgz
+else
+	tar xvf Phun*linux32.tgz
+endif
+	cd debian && uudecode hungarian-language.tar.gz.uue && \
+	tar xzf hungarian-language.tar.gz
+
+clean::
+	rm -rf Phun
+	rm -rf debian/hungarian-language debian/hungarian-language.tar.gz
+	rm -f *.cdbs-config_list

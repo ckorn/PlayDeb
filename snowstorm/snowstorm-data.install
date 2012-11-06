@@ -1,0 +1,8 @@
+app_settings			usr/share/games/snowstorm
+character			usr/share/games/snowstorm
+etc				usr/share/games/snowstorm
+fonts				usr/share/games/snowstorm
+res-sdl				usr/share/games/snowstorm
+skins				usr/share/games/snowstorm
+*.txt				usr/share/games/snowstorm
+*.json				usr/share/games/snowstorm

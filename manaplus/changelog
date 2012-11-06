@@ -1,0 +1,1116 @@
+manaplus (1:1.2.10.28-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: some ARM fixes.
+    fix: open/close sounds for some windows.
+    fix: texture memory usage.
+    add: extend theming.
+    add: some changes for android support.
+    add: mobile OpenGL backend.
+    add: jewelry by Hal9000 (incomplete)
+    add: info button with information about selected theme.
+    add: option to disable/enable screensaver.
+    add: OpenGL logging support.
+    add: new cursor types.
+    add: new cursor images. (by Hal9000)
+    add: cursor selection for different items, monsters, npcs.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 31 Oct 2012 19:12:30 +0100
+
+manaplus (1:1.2.10.14-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: monsters particle effects attacks.
+    fix: chat window resize cursor.
+    fix: popups sizes.
+    fix: chat logs command line paramter.
+    fix: shortcuts while buy dialog is open.
+    add: texture atlases support.
+    add: improve draw speed.
+    add: some OpenGL extensions support.
+    add: sound effects for open/close windows.
+    add: extend theming.
+    add: additinal monster attack particle effects.
+    add: imporve map draw in fast OpenGL mode.
+    add: set additional OpenGL settings from video detection.
+    add: double click in buy/sell dialogs.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Oct 2012 15:58:02 +0200
+
+manaplus (1:1.2.9.30-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: minimap size with long map name.
+    fix: possible crash.
+    fix: empty space between screen buttons.
+    add: improved speed.
+    add: extend theming.
+    add: double click in npc dialog.
+    add: monsters offset sort parameters.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 30 Sep 2012 12:15:00 +0200
+
+manaplus (1:1.2.9.20-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 23 Sep 2012 13:50:47 +0200
+
+manaplus (1:1.2.9.16-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: non cycle player select.
+    fix: color in equipment window.
+    fix: fix hair color palete switching (evol).
+    fix: horizontal lines draw in software mode.
+    fix: navigation commands.
+    fix: partial items load in player selection dialog.
+    fix: on the fly resize in windows in software mode.
+    fix: cmake install action.
+    add: extend theming.
+    add: improve OpenGL speed.
+    add: show question dialog before opening urls.
+    add: improved inventory look.
+    add: improved speed.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 16 Sep 2012 15:22:31 +0200
+
+manaplus (1:1.2.9.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    2013-09-02 New release 1.2.9.2
+    fix: show special message in window header while doing video test.
+    fix: possible fix non standard update ports on windows.
+    add: show clickable update links in news window.
+    add: re-enable add special chars in chat by char codes.
+    Example: test&33;
+    add: extend replace/reorder sprites.
+    add: extend theme colors.
+    add: improve OpenGL draw speed.
+    add: improve perfomance.
+
+    2012-08-19 New release 1.2.8.19
+    fix: enable italian translation.
+    fix: remember checkbox in login dialog.
+    fix: background in buy/sell dialogs.
+    fix: possible crash.
+    add: extend theming.
+    add: extend outfits to 4x4 cells and add equip button.
+    add: connect button to edit server dialog.
+    add: units separator.
+    by default space is separator.
+    add: sounds for new/complete quests.
+    add: hightlight gms in online list with color and letters (GM).
+    add: enable best video mode autodetection under linux.
+    add: enable FBO under windows.
+    add: npc cycle select.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 02 Sep 2012 11:48:16 +0200
+
+manaplus (1:1.2.8.5-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    2012-08-05 New release 1.2.8.5
+    fix: colors in speech buuble.
+    fix: emote shortcuts default size.
+    fix: radio button images in wood theme.
+    fix: guild bot message delay.
+    fix: unassign key action.
+    add: open urls in browser.
+    add: chat command /url LINK
+    put url link in chat.
+    add: chat command /openurl LINK
+    open url in browser.
+    add: equipment button in inventory.
+    add: key for disable full screen mode.
+    add: support for images in npc menu.
+    add: new font dejavu serif condensed.
+    add: extend background theming.
+    add: quests window (evol only).
+
+    2012-07-22 New release 1.2.7.22
+    fix: allow moving with opened buy/sell dialogs by mouse.
+    fix: not allow moving with opened storage window.
+    add: changed themes storing.
+    add: enable by default pickup particle messages.
+    add: removed emote popup window.
+    add: audio fallback from unsupported modes.
+    add: dye type A. Same with S but also using alpha channel.
+    add: close button for npc dialog while it show menu.
+    add: some new swords to auto equip list.
+    add: mode "(B) attack range - 1".
+    add: show level in experience bar popup.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 05 Aug 2012 00:43:14 +0200
+
+manaplus (1:1.2.7.8-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: allow enter in qestion mark.
+    fix: crashes with corrupted data.
+    fix: sime memory leaks.
+    add: basic support for eathena stable.
+    add: maps without client data (without tmx).
+    add: special npc font. (by default 13px size)
+    add: increase npc window default size.
+    add: popup menu option all except 1.
+    add: npc avatars (for evol only).
+    add: floor item attribute for max pixel offset.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 08 Jul 2012 12:33:01 +0200
+
+manaplus (1:1.2.6.24-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 24 Jun 2012 11:34:17 +0200
+
+manaplus (1:1.2.5.27-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: tips translations.
+    fix: joystick repeat key presses.
+    fix: minimap show/hide on windows.
+    fix: dehardcode some old paths.
+    add: button detect best video mode (windows only).
+    add: autodetect best video mode at first start.
+    add: disable by default autofix position.
+    add: prevent from healing enemies.
+    add: option to hide nick for erased players.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 May 2012 11:30:02 +0200
+
+manaplus (1:1.2.5.12-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: keys for Next chat line/previous chat line.
+    fix: autologin from command line.
+    fix: move shortcuts windows.
+    add: timeout option between connections to servers.
+    add: pickup filter.
+    add: replace obsolete opengl code.
+    add: custom autorepeat for some actions.
+    add; option for auto attack next target if attack was not cancelled.
+    Disabled by default.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 14 May 2012 18:27:32 +0200
+
+manaplus (1:1.2.4.29-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: bluring setting apply.
+    fix: split long lines in kill stats window.
+    fix: actions translation.
+    fix: vsync setting.
+    fix: improved in game visible position calculation.
+    add: keyboard repeat setting.
+    add: split input settings to tabs.
+    add: separate configurable shorcuts for emotes, shorcuts, move to target.
+    add: deharcode gui input keys.
+    add: improve keyboard handling in some dialogs.
+    add: autoclean configuration file from old keys.
+    add: option to center window on screen (windows, osx).
+    add: audio frequency and channels options to audio tab.
+    add: particle physics setting. (normal by default).
+    add: for OpenGL add option to enable/disable texture compression.
+    add: for OpenGL add option to enable/disable rectangular textures
+         support.
+    add: in debug window add LPS counter near FPS.
+    add: write to log OpenGL info.
+    add: support for server independent updates.
+    add: improve perfomance.
+    add: update mplus font.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 02 May 2012 18:21:55 +0200
+
+manaplus (1:1.2.4.15-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    fix: cancel update fix.
+    fix: multiple conflicts between windows and game keys.
+    fix: random crash in chat update.
+    fix: possible crash after connecting to game.
+    fix: assign keys before connecting to game.
+    fix: cmake build flags.
+    add: proxy support for download updates.
+    add: change autohide buttons to three state
+         (hide/show/hide in small resolution).
+    add: show client version in game window header.
+    add: clear in drops window context menu.
+    add: improve fill rectange speed in software mode.
+    add: option for enable disable textures blurring.
+         by default enabled.
+    add: allow assign 3 keys or joystick buttons to any action.
+    add: unselect item inventory if it was added to other windows.
+    add: extend sdl unknown keys for usage in any actions.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 14 Apr 2012 20:44:17 +0200
+
+manaplus (1:1.2.3.18-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    fix: minimaps scrolling with moving camera.
+    fix: context menu in outfits window.
+    fix: shortcuts creation in windows portable version.
+    fix: volume in afk mode if was disconnect from server.
+    add: many update hosts. (evol only)
+    add: dye mode S.
+    add: support for unknown for SDL keys bindings.
+    add: basic skills actions.
+    add: allow add skills to shortcuts bar.
+    add: per race equipment sprites.
+    add: remove second "equip" button.
+    add: neutral other gender.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 20 Mar 2012 19:11:07 +0100
+
+manaplus (1:1.2.3.4-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    fix: loading client data translations.
+    fix: display translated xp+job messages.
+    fix: default paramters value.
+    fix: last frame delay in dead sprite actions.
+    fix: don't show errors for missing emotes.
+    fix: drawing big minimaps.
+    fix: ignore shortcuts keys in npc menu and in inventory.
+    fix: npc menu keyboard navigation.
+    fix: default npc dialog size.
+    fix: some copyrights.
+    fix: possible crashes.
+    add: visual settings page.
+    add: option to grab input.
+    add: move some settings and new to page visual in settings.
+    add: different sound effects for different messages.
+    can be configured in audio settings page.
+    add: resize minimaps.
+    add: context menu for minimaps.
+    add: gdb to windows build.
+    add: show latest client version in update news.
+    add: option for for creating screenshots with FBO.
+    If enable, can fix opengl screenshots issue.
+    add: update liberation fonts.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 04 Mar 2012 17:39:27 +0100
+
+manaplus (1:1.2.2.19-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    2012-02-19 New release 1.2.2.19
+    add: client data translations (items, etc).
+    add: increased max value for drop counter from 9 to 30.
+    add: chat command /setdrop N. to set drop counter from scripts.
+    add: hide map layers feature.
+    add: show gms with green color in online list (evol server).
+    add: relative position for floor items (item drops).
+    add: option to enable/disable grouping friends in online list.
+    add: enable chat logging by default.
+    add: set default max chat lines to 40.
+    add: update windows libs.
+    add: center game on screen in windows and osx.
+    add: race name to status and debug windows.
+    add: update liberation and mplus fonts.
+
+    2012-02-05 New release 1.2.2.5
+    ManaPlus:
+    fix: particle font in japan localisation.
+    fix: some untranslated strings.
+    fix: possible crash after switching servers.
+    fix: option "attack range" in evol server.
+    fix: drop counter with enabled "buggy servers protection".
+    fix: empty custom update server.
+    add: request client language from server. (evol server)
+    add: moving camera by npc commands. (evol server)
+    add: evol branding in windows installer.
+    add: extended online list. (evol server)
+    add: redesign char creation dialog.
+    add: resize window from video settings tab.
+    add: option to enable/disable window resize.
+    add: option to show/hide window frame border.
+    add: 3 new emotes by (Nina O'Reilly)
+    add: support for 48 emotes.
+    add: redesign servers list dialog, using new server editor.
+    add: increase login dialog size.
+    add: use translation for description in servers dialog.
+
+    Mana:
+    fix: infinite character selection with command line parameter --character
+    add: resize update window.
+    add: separate server editor.
+    add: possible improve loading images/music.
+    add: game window resize.
+
+    2012-01-22 New release 1.2.1.22
+    fix: bad update hosts handling.
+    fix: possible crashes.
+    fix: player name checking in logging.
+    fix: default shortcuts window size.
+    fix: player and mob hp bar in evol server.
+    fix: mouse pickup logic.
+    fix: adding double attributes to status window.
+    fix: ambient layer drawing in safe opengl mode.
+    add: increase resize and moving areas in shortcut window and other
+    similar windows.
+    add: friends tab in social window.
+    add: load all servers from list in server dialog.
+
+    2012-01-08 New release 1.2.1.8
+    fix: -s command line parameter.
+    fix: restore GL_PACK_ALIGNMENT after creating screenshots in opengl modes
+    fix: rare crash with reconnecting to different servers.
+    fix: color for /me messages in wood theme.
+    fix: crash in char autocomplete if no active tab in chat window.
+    fix: bold chat/npc text correction.
+    add: allow close npc dialog if script stopped with error.
+    add: clear outfit option in outfits context menu.
+    add: ability to test graphics and sound perfomance and stability.
+    Shortcut ManaPlus (test). Need close all other ManaPlus instances.
+    add: chat command /dumpt to dump last test values.
+    add: addiitional checks for unsecure chars combinations in players nicks.
+    add: allow use item replacment with empty from value.
+    This mean replace from any value.
+    add: remove "> Next" message from npc dialogs.
+
+    2011-12-25 New release 1.1.12.25
+    fix: increasing log file if client disconnected from network.
+    fix: memory leak in evol online list.
+    fix: enter some chars in inventory input box.
+    fix: some rare used packets.
+    fix: dont load move type from configuration file.
+    fix: create char dialog size.
+    fix: wrong auto adjusting perfomance after sleep mode.
+    add: last login time in char selection dialog.
+    add: update mplus font.
+    add: move target cursors to themes.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 23 Feb 2012 22:36:05 +0100
+
+manaplus (1:1.1.12.11-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    fix: draw damage part on hp bar.
+    fix: recursive directory creation on windows.
+    fix: text colors in wood theme.
+    fix: talk to npc key delay.
+    add: polish translation (Derpella).
+    add: server side online list (evol only).
+    add: copy any line from chat to clipboard.
+    add: use two clipboard in xserver.
+    add: gm commands autocomplete for gms.
+    add: to combined menus floor items.
+    add: variables for replacment in chat messages.
+    <PLAYER> - target or nearest player nick.
+    <MONSTER> - target or nearest monster name.
+    <PEOPLE> - comma separated list of visible players (except self).
+    <PARTY> - all party members (except self).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 11 Dec 2011 12:48:05 +0100
+
+manaplus (1:1.1.11.27-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    fix: show enemy relation in online list.
+    fix: dead monsters and floor items poisition.
+    fix: file name conflicts between skins and client
+         data files.
+    add: update ru and es translations.
+    add: change chat log save path to yyyy-mm/dd/file.log.
+    add: support for incomplete replace tag for items for
+         compotability with future version of mana.
+    add: background images for equipment window.
+    add: whisper player name in autocomplete list.
+    add: show yellow bar mode changes in debug chat tab.
+    add: limits for hair color and style for char creation dialog.
+    add: different animations depend on monster hp (only for evol).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 Nov 2011 16:29:16 +0100
+
+manaplus (1:1.1.11.12-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    fix: hide death message on reconnect.
+    fix: stop move after open npc dialog.
+    fix: disable incomplete hr, hy translations.
+    fix: self player ignore.
+    fix: double network error dialog.
+    fix: joystick support.
+    fix: random key press loses.
+    add: pseudo away.
+    Command: /pseudoaway text
+    add: enemy relation. (no any ignore, but mark player as enemy)
+    add: option for attack players in pvp "Switch pvp attack". Default key
+    not assigned
+    add: interface language selection.
+    Settings / Theme / Language.
+    add: Bold text type in chat. (To enable command ##B, to disable ##b)
+    Example: ##Bbold##b text.
+    add: update mplus fonts.
+    add: joystick selection, option for joystick usage only in active game.
+    add: enable joystick hat (if exists).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 15 Nov 2011 16:21:09 +0100
+
+manaplus (1:1.1.10.30-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    2011-10-30 New release 1.1.10.30
+    ManaPlus:
+    fix: disable autofix position for archer mode.
+    fix; hide password from packets log.
+    fix: replace tags without item id in items.xml.
+    fix: protect trades from some kind of abusing.
+    add: chat commands to use server side ignore for whispers:
+    Commands: /serverignoreall and /serverunignoreall
+    add: command for dump graphics and some other settings to chat.
+    Command: /dumpg
+
+    2011-10-16 New release 1.1.10.16
+    ManaPlus:
+    fix: particle effects Y position.
+    fix: resize in some dialogs.
+    fix: codeblocks project file.
+    fix: global messages sound highlight.
+    fix: last character selection with space in login dialog.
+    fix: fps if network error.
+    add: move to target mode for archers/mages.
+    add: blacklist relation.
+    add: reading real monsters attack range (in evol only).
+    add: option to show hide MVP messages.
+    add: update mplus fonts.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 10 Nov 2011 18:56:36 +0100
+
+manaplus (1:1.1.10.2-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    fix: inactive state.
+    fix: hide inventory filter if window too small.
+    fix: mouse selection.
+    fix: speed in targeting monsters.
+    fix: move to target in attack range.
+    add: comment for spells/commands.
+    add: split keyboard keys to groups.
+    add: chat or other windows scrolling with dragging mouse.
+    add: limits for stop attack packet.
+    add: show current experience after max level (for tmw after 99 level).
+    add: untarget key. it not stop attack but remove selection from
+         current target.
+    add: amount field in buy dialog.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 02 Oct 2011 12:01:43 +0200
+
+manaplus (1:1.1.9.18-1~getdeb1) lucid; urgency=low
+
+  * Upload to PlayDeb (LP: #852889)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Sep 2011 18:37:47 +0200
+
+manaplus (1:1.1.9.18-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 17 Sep 2011 17:40:22 +0300
+
+manaplus (1:1.1.9.4-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 03 Sep 2011 04:16:26 +0300
+
+manaplus (1:1.1.8.21-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 20 Aug 2011 18:12:28 +0300
+
+manaplus (1:1.1.8.7-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 06 Aug 2011 16:28:50 +0300
+
+manaplus (1:1.1.7.24-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 23 Jul 2011 16:15:59 +0300
+
+manaplus (1:1.1.7.10-1lucid) unstable; urgency=low
+
+  * New upstream release.
+  * Small lintian fixes.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 09 Jul 2011 03:43:21 +0300
+
+manaplus (1:1.1.6.26-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 25 Jun 2011 18:53:54 +0300
+
+manaplus (1:1.1.6.12-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 11 Jun 2011 19:48:35 +0300
+
+manaplus (1:1.1.5.29-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 28 May 2011 18:56:40 +0300
+
+manaplus (1:1.1.5.15-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 14 May 2011 19:34:07 +0300
+
+manaplus (1:1.1.5.1-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 30 Apr 2011 21:55:57 +0300
+
+manaplus (1:1.1.4.17-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 16 Apr 2011 22:04:49 +0300
+
+manaplus (1:1.1.4.3-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 02 Apr 2011 19:38:18 +0300
+
+manaplus (1:1.1.3.30-1lucid) unstable; urgency=low
+
+  * New upstream release.
+  * Fixed license, authors, news and different package info.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 19 Mar 2011 04:38:59 +0200
+
+mana-4144 (1.1.git-1.1.3.6-1lucid) unstable; urgency=low
+
+  * New upstream release.
+  * fix: remove extra spaces from chat commands.
+  * fix: possible fix for pasting from clipboard in X system.
+  * fix: partially opacity in extended minimaps.
+  * add: add to trade items in item context menu.
+  * add: tabs to spells window.
+  * add: check already downloaded files intergrity.
+  * add: pink theme (Freya).
+  * add: updated pt_BR translation some lines from mana client (Freya).
+  * add: updated russian translation.
+  * add: update dejavu fonts.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 05 Mar 2011 22:16:57 +0200
+
+mana-4144 (1.1.git-1.1.2.20-1lucid) unstable; urgency=low
+
+  * New upstream release.
+  * fix: stop/start playung music after changing option.
+  * add: show/hide buttons in top right corner.
+  * right click on buttons open menu.
+  * add: show/hide bars in top right corner.
+  * right click on bars open menu.
+  * add: extended minimaps (Ben Longbons).
+  * add: npc gender. (only for extended servers)
+  * add: hiding equipment sprites by attributes (need support in client data).
+  * add: weight notice dialogs not modal and auto hiding after 10 seconds.
+  * add: show amount in pickup particles.
+  * add: new bars Weight bar, Inventory slots bar, Money bar, Arrows bar.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 20 Feb 2011 05:40:33 +0200
+
+mana-4144 (1.1.git-1.1.2.6-1lucid) unstable; urgency=low
+
+  * New upstream release.
+  * fix: crashes.
+  * fix: close npc dialogs in different actions like change character/server or network error.
+  * fix: dont show random navigation point with coord 0,0.
+  * fix: update item amount in sell dialog.
+  * add: japanese fonts mplus 1p regular and mplus 1p bold.
+  * add: option to enable/disable players popups.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 05 Feb 2011 21:58:18 +0200
+
+mana-4144 (1.1.git-1.1.1.30-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 30 Jan 2011 00:24:28 +0200
+
+mana-4144 (1.1.git-1.1.1.16-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Fri, 14 Jan 2011 17:33:11 +0200
+
+mana-4144 (1.1.git-1.1.1.9-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 09 Jan 2011 02:55:55 +0200
+
+mana-4144 (1.0.git-1.0.12.26-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Fri, 24 Dec 2010 18:55:07 +0200
+
+mana-4144 (1.0.git-1.0.12.12-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 11 Dec 2010 15:59:38 +0200
+
+mana-4144 (1.0.git-1.0.11.28-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 28 Nov 2010 05:45:05 +0200
+
+mana-4144 (1.0.git-1.0.11.13-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 13 Nov 2010 16:31:17 +0200
+
+mana-4144 (1.0.git-1.0.10.31-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 31 Oct 2010 02:23:42 +0300
+
+mana-4144 (1.0.git-1.0.10.19-1lucid) unstable; urgency=high
+
+  * New upstream release.
+  * Critical fix.
+
+ -- Andrei Karas <akaras@inbox.ru>  Tue, 19 Oct 2010 02:46:21 +0300
+
+mana-4144 (1.0.git-1.0.10.17-1lucid) unstable; urgency=low
+
+  * New upstream release.
+  * Add deps ont tmwcetki-keyring package.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 16 Oct 2010 15:56:18 +0300
+
+mana-4144 (1.0.git-1.0.10.5-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Tue, 05 Oct 2010 20:11:29 +0300
+
+mana-4144 (1.0.git-1.0.10.4-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 03 Oct 2010 22:23:21 +0300
+
+mana-4144 (1.0.git-1.0.10.3-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 02 Oct 2010 17:13:36 +0300
+
+mana-4144 (1.0.git-1.0.9.19-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 19 Sep 2010 00:07:42 +0300
+
+mana-4144 (1.0.git-1.0.9.12-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 11 Sep 2010 18:47:19 +0300
+
+mana-4144 (1.0.git-1.0.9.4-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 04 Sep 2010 15:07:23 +0300
+
+mana-4144 (1.0.git-1.0.8.29-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 29 Aug 2010 04:00:39 +0300
+
+mana-4144 (1.0.git-1.0.8.15-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 15 Aug 2010 02:03:07 +0300
+
+mana-4144 (1.0.git-1.0.8.3-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Mon, 02 Aug 2010 23:39:20 +0300
+
+mana-4144 (1.0.git-1.0.8.1-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 01 Aug 2010 00:33:28 +0300
+
+mana-4144 (1.0.git-1.0.7.18-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 17 Jul 2010 15:09:43 +0300
+
+mana-4144 (1.0.git-1.0.7.5-2lucid) unstable; urgency=low
+
+  * Replace Recommended mumble to Suggested mumble.
+
+ -- Andrei Karas <akaras@inbox.ru>  Mon, 05 Jul 2010 19:50:39 +0300
+
+mana-4144 (1.0.git-1.0.7.4-2lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 04 Jul 2010 20:03:05 +0300
+
+mana-4144 (1.0.git-1.0.7.4-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 04 Jul 2010 15:45:50 +0300
+
+mana-4144 (1.0.git-1.0.6.21-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Mon, 21 Jun 2010 04:04:49 +0300
+
+mana-4144 (1.0.git-1.0.6.20-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 19 Jun 2010 13:52:18 +0300
+
+mana-4144 (1.0.git-1.0.5.30-2lucid) unstable; urgency=low
+
+  * Check version fix.
+
+ -- Andrei Karas <akaras@inbox.ru>  Mon, 31 May 2010 17:33:15 +0300
+
+mana-4144 (1.0.git-1.0.5.30-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 30 May 2010 18:37:35 +0300
+
+mana-4144 (1.0.git-1.0.5.23-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 23 May 2010 14:09:32 +0300
+
+mana-4144 (1.0.git-1.0.5.1-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 01 May 2010 15:07:38 +0300
+
+mana-4144 (1.0.git-1.0.4.25-1lucid) unstable; urgency=low
+
+  * New upstream release.
+  * Most path renamed from mana to manaplus.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 25 Apr 2010 17:37:00 +0300
+
+mana-4144 (1.0.git-1.0.4.14-1lucid) unstable; urgency=high
+
+  * New upstream release.
+  * Trying avoid server bugs.
+
+ -- Andrei Karas <akaras@inbox.ru>  Tue, 13 Apr 2010 23:33:01 +0300
+
+mana-4144 (1.0.git-1.0.3.21-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 21 Mar 2010 16:34:00 +0200
+
+mana-4144 (1.0.git-1.0.3.8-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Mon, 08 Mar 2010 02:49:27 +0200
+
+mana-4144 (1.0.git-1.0.2.28-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 28 Feb 2010 16:11:12 +0200
+
+mana-4144 (1.0.git-1.0.2.23-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Tue, 23 Feb 2010 23:42:50 +0200
+
+mana-4144 (1.0.git-1.0.2.7-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 06 Feb 2010 05:02:52 +0200
+
+mana-4144 (1.0.git-1.0.1.17-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 17 Jan 2010 18:45:26 +0200
+
+mana-4144 (1.0.git-0.12-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 02 Jan 2010 16:28:34 +0200
+
+mana-4144 (1.0.git-0.11-1lucid) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sun, 13 Dec 2009 14:15:29 +0200
+
+mana-4144 (1.0.git-0.10-1lucid) unstable; urgency=low
+
+  * New upstream release.
+  * Fixing localisation problems.
+
+ -- Andrei Karas <akaras@inbox.ru>  Sat, 28 Nov 2009 19:11:39 +0200
+
+mana-4144 (1.0.git-0.9-1) unstable; urgency=low
+
+  * tmw rebrended to mana.
+  * Include 4144's patches.
+
+ -- Andrei Karas <akaras@inbox.ru>  Tue, 10 Nov 2009 16:36:01 +0200
+
+tmw (0.0.29.1-1) unstable; urgency=low
+
+  * New upstream release.
+    - Drop debian/tmw.xpm and use the one from upstream.
+  * Merge 0.0.29-1~bpo50+1 changelog.
+  * Remove NEWS from tmw.docs and add it as upstream changelog. This also fixes
+    a lintian warning.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Wed, 10 Jun 2009 13:42:43 +0200
+
+tmw (0.0.29-1~bpo50+1) lenny-backports; urgency=low
+
+  * Rebuild for lenny-backports.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 25 May 2009 18:44:32 +0200
+
+tmw (0.0.29-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fix typo in get-orig-source target.
+  * Refer in debian/copyright to the GPL-2 file instead of GPL.
+  * Add my own copyright for the Debian packaging.
+  * Merge 0.0.28.1-1~bpo50+1 changelog.
+  * Install tmw.desktop from the upstream source.
+  * Update to compat 7.
+  * Use the tmw.menu file from upstream.
+  * Remove deprecated dh_desktop call.
+  * Rewrote parts of the debian/rules to use $(MAKE) install instead of
+    grepping again and again with new releases new files and directories.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Thu, 14 May 2009 11:35:10 +0200
+
+tmw (0.0.28.1-3) unstable; urgency=low
+
+  * Bump Standards-Version to 3.8.1 (no changes needed).
+  * Change section of tmw-dbg to debug.
+  * Change my email address.
+  * Remove DM-Upload-Allowed control field.
+  * Rebuild against physfs 2.0.0.
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Mon, 20 Apr 2009 19:40:36 +0200
+
+tmw (0.0.28.1-2) unstable; urgency=low
+
+  * Rebuild against physfs 1.0.1.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Wed,  4 Mar 2009 13:59:28 +0200
+
+tmw (0.0.28.1-1~bpo50+1) lenny-backports; urgency=low
+
+  * Rebuild for lenny-backports.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Tue, 17 Feb 2009 18:25:37 +0200
+
+tmw (0.0.28.1-1) unstable; urgency=low
+
+  * New upstream release.
+    - Symlink to the dejavu fonts and depend on it instead of using the
+      embedded one.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Thu, 12 Feb 2009 20:03:15 +0200
+
+tmw (0.0.28-1) unstable; urgency=low
+
+  * New upstream release.
+    - Add new build dependency libsdl-ttf2.0-dev.
+    - Add new usr/share/games/tmw/data/fonts files.
+  * Add get-orig-source target.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Mon, 26 Jan 2009 12:48:33 +0200
+
+tmw (0.0.27-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixes GCC 4.4 FTBFS.
+      Closes: #504967
+    - The upstream ChangeLog is not used anymore. Removing it from the docs.
+  * Add missing ${misc:Depends}. Thanks lintian.
+  * Corrected date of the last upload.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Sun,  7 Dec 2008 19:21:11 +0200
+
+tmw (0.0.26-2) unstable; urgency=low
+
+  * Uploading to unstable.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Mon,  1 Sep 2008 09:53:10 +0200
+
+tmw (0.0.26-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Fri, 29 Aug 2008 22:11:40 +0200
+
+tmw (0.0.25-1) experimental; urgency=low
+
+  * New upstream release.
+    Uploading to experimental, Lenny is frozen.
+  * Removed useless debhelper call.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Thu, 31 Jul 2008 19:28:00 +0200
+
+tmw (0.0.24.1+svn4436-1) unstable; urgency=low
+
+  * New svn snapshot.
+  * Fixed spelling error in last changelog entry.
+  * Updated build depends.
+  * Updated Standards-Version to 3.8.0 (no changes needed).
+  * Fixed categorie in tmw.desktop.
+  * Added DM-Upload-Allowed control field.
+  * Removed recommend from tmw-data on tmw-music, tmw does it also.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Sun, 20 Jul 2008 11:59:44 +0100
+
+tmw (0.0.24.1-1) unstable; urgency=low
+
+  * New upstream release.
+    - Drop 01-fix-gcc4.3-ftbfs.dpatch, merged in upstream.
+    - Adjusted tmw-data.install file. Some directorys in data/graphics has been
+      removed.
+  * Removed dpatch.
+  * Install the manpage with dh_installman.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Mon,  7 Apr 2008 18:19:44 +0100
+
+tmw (0.0.24-3) unstable; urgency=low
+
+  * Included again dpatch for the 01-fix-gcc4.3-ftbfs.dpatch.
+    Closes: #462420
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Thu, 20 Mar 2008 20:42:00 +0100
+
+tmw (0.0.24-2) unstable; urgency=low
+
+  * Cleaned debian/tmw.desktop file. It should now appear in the
+    KDE and Gnome menus.
+    Closes: #458242
+  * Rewritten long and short descriptions of the packages.
+  * Removed dpatch, because it is not needed in the last two builds.
+  * Removed not needed build depends on autotools-dev and dpkg-dev.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Wed,  2 Jan 2008 10:00:00 +0100
+
+tmw (0.0.24-1) unstable; urgency=low
+
+  * New upstream release.
+    - Removed debian/tmw.6 manpage, because it is in upstream now.
+    - Removed 01-set-gl-texture-zero and 02-guichan_0.7 patches,
+      because they are fixed in the current upstream release.
+  * Wrapped configure script options line to a more human readable
+    format.
+  * Bumped Standards-Version to 3.7.3.
+  * Changed description in debian/tmw.menu, it is now called as an
+    adventure instead of an arcade game.
+  * Removed the ugly hyphen in the description of debian/tmw.desktop.
+  * Removed now useless calls of dh_link and dh_installman in
+    debian/rules.
+  * Removed debian/tmw-data.docs, because the NEWS and AUTHORS file
+    is already in the tmw package.
+  * Removed deprecated encoding flag from debian/tmw.desktop.
+  * Added debian/watch file.
+  * Added homepage field to debian/control and removed the one from
+    the long descriptions.
+  * Added a break to the long description of tmw-data. It looks now
+    really better.
+  * Added the tmw-dbg package, which provides the debugging symbols.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Mon, 24 Dec 2007 17:10:00 +0100
+
+tmw (0.0.23-3) unstable; urgency=low
+
+  * Added missing files data/graphics/images/ambient/*.png to
+    release.
+    Closes: #439861
+  * Added guichan_0.7 patch to build tmw against guichan 0.7.1.
+  * debian/control: Changed guichan version to libguichan2 and
+    changed build dependencie from libcurl3-dev to libcurl4-gnutls-dev.
+  * debian/tmw.menu: Corrected menu entry categorie to Games/Adventure.
+    Thanks lintian.
+  * Fixed clean rule. Thanks lintian.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Thu,  6 Sep 2007 18:36:00 +0100
+
+tmw (0.0.23-2) unstable; urgency=low
+
+  * Added set-gl-texture-zero patch to set GL texture index
+    to zero when an image uses the SDL backend.
+    Closes: #427915
+  * debian/control: Removed dependencie of tmw-data to tmw.
+    Closes: #427920
+  * debian/control: Set tmw as recommends to tmw-data.
+  * debian/control: Added dpatch to the build dependencies.
+  * debian/control: Changed guichan version to libguichan1.
+    Closes: #435065
+  * debian/tmw.docs: Added upstream ChangeLog to package.
+  * debian/rules: Removed now unneeded '--with-opengl'
+    configure flag.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Wed,  20 Jun 2007 08:55:12 +0100
+
+tmw (0.0.23-1) unstable; urgency=low
+
+  * Uploaded tmw to unstable.
+    Closes: #418725, #423275
+  * New upstream release.
+  * debian/rules: No longer needed the tmw-icon rename
+    hack. Upstream renamed the icon files.
+  * debian/tmw.xpm: Added xpm icon file, because upstream
+    has forgotten it in the newest release.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Mon,  5 Jun 2007 21:05:36 +0100
+
+tmw (0.0.22.2-1) experimental; urgency=low
+
+  * Initial release.
+  * Uploading to experimental because we need libguichan0-dev (>= 0.6.1).
+  * src/main.cpp:
+     Moved tmw-icon.png to /usr/share/icons/tmw.png.
+
+ -- Patrick Matthäi <patrick.matthaei@web.de>  Tue,  6 Mar 2007 09:08:21 +0100

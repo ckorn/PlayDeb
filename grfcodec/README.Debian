@@ -1,0 +1,10 @@
+grfcodec for Debian
+-------------------
+
+grfcodec is a set of tools for working with the GRF files used by the
+Transport Tycoon Deluxe, TTDPatch and OpenTTD games.
+
+To get started with grfcodec, have a look at the documentation in
+/usr/share/doc/grfcodec/ and the manpages.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 24 Dec 2009 11:09:08 +0100

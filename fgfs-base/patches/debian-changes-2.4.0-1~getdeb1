@@ -1,0 +1,38 @@
+Description: Upstream changes introduced in version 2.4.0-1~getdeb1
+ This patch has been created by dpkg-source during the package build.
+ Here's the last changelog entry, hopefully it gives details on why
+ those changes were made:
+ .
+ fgfs-base (2.4.0-1~getdeb1) natty; urgency=low
+ .
+   * New upstream version
+ .
+ The person named in the Author field signed this changelog entry.
+Author: Christoph Korn <christoph.korn@getdeb.net>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+Index: flightgear-data-2.8.0/preferences.xml
+===================================================================
+--- flightgear-data-2.8.0.orig/preferences.xml	2012-08-16 16:19:37.000000000 +0200
++++ flightgear-data-2.8.0/preferences.xml	2012-08-17 17:46:38.665092913 +0200
+@@ -55,7 +55,7 @@
+ 			<units>feet</units>
+ 			<save-on-exit type="bool" userarchive="y">true</save-on-exit>
+ 			<restore-defaults type="bool">false</restore-defaults>
+-			<browser-app write="n">firefox -new-tab "%u"</browser-app>
++			<browser-app write="n">sensible-browser "%u"</browser-app>
+ 			<!--  help viewer; only used under Unix -->
+ 			<terminal-ansi-colors type="bool">true</terminal-ansi-colors>
+ 			<season type="string" preserve="y">summer</season>

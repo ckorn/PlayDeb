@@ -1,0 +1,4 @@
+l-echo						usr/share/games/l-echo
+n-echo_template/apps				usr/share/games/l-echo
+debian/scripts/l-echo				usr/games
+debian/l-echo.desktop				usr/share/applications

@@ -1,0 +1,8 @@
+usr/share/games/legends/common			usr/lib/games/legends/common
+usr/share/games/legends/legends			usr/lib/games/legends/legends
+usr/share/games/legends/show			usr/lib/games/legends/show
+usr/share/games/legends/default.keybinds.txt	usr/lib/games/legends/default.keybinds.txt
+usr/share/games/legends/legends.ico		usr/lib/games/legends/legends.ico
+usr/share/games/legends/legends_icon32.png	usr/lib/games/legends/legends_icon32.png
+usr/share/games/legends/linux.txt		usr/lib/games/legends/linux.txt
+usr/share/games/legends/main.cs			usr/lib/games/legends/main.cs

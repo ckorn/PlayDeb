@@ -1,0 +1,23 @@
+cube-escape (0.8-1~getdeb3) lucid; urgency=low
+
+  * Fix debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Jul 2010 21:04:05 +0200
+
+cube-escape (0.8-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 15:44:13 +0100
+
+cube-escape (0.8-1~getdeb1) karmic; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 19 Jan 2010 22:51:18 +0100
+
+cube-escape (0.5-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #478623)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 08 Nov 2009 21:04:56 +0100

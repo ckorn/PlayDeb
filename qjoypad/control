@@ -1,0 +1,21 @@
+Source: qjoypad
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), linux-libc-dev, libqt4-dev,
+ libx11-dev, x11proto-core-dev, x11proto-xext-dev, qt4-qmake,
+ libxtst-dev
+Standards-Version: 3.8.4
+Homepage: http://qjoypad.sourceforge.net/
+
+Package: qjoypad
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Keystroke and mouse emulation with joystick or gamepad
+ Qjoypad is a simple Linux/QT program that let's you emulate keystrokes
+ and the mouse with a joystick or gamepad. This is useful for gaming
+ when you want to configure the controller your own way rather than how
+ the programmers set it up. It is also very useful if you have a second
+ display such as a television and you want to fast forward or rewind through
+ videos. You can use a gamepad as a remote control and for browsing through
+ files.

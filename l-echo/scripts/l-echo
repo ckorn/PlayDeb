@@ -1,0 +1,3 @@
+#!/bin/sh -e
+cd /usr/share/games/l-echo
+./l-echo

@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_build:
+	gcc -o cuby `raydium-config --includes` `raydium-config --cflags` `raydium-config --libs` cuby.c
+
+override_dh_auto_clean:
+	rm -f cuby

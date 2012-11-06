@@ -1,0 +1,15 @@
+Add missing typedefs.
+Index: bitfighter-0.0.012c/openal/alctypes.h
+===================================================================
+--- bitfighter-0.0.012c.orig/openal/alctypes.h	2010-07-22 19:47:39.419360948 +0200
++++ bitfighter-0.0.012c/openal/alctypes.h	2010-07-22 19:48:01.839362441 +0200
+@@ -35,6 +35,9 @@
+ /** ALC 8bit unsigned byte. */
+ typedef unsigned char ALCubyte;
+ 
++/** ALC 8bit char. */
++typedef unsigned char ALCchar;
++
+ /** ALC 16bit signed short integer type. */
+ typedef short ALCshort;
+ 

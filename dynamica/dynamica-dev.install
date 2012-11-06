@@ -1,0 +1,6 @@
+Extras/BulletColladaConverter/*.h			usr/include/bullet/BulletColladaConverter
+Extras/BulletColladaConverter/*.a			usr/lib
+Extras/COLLADA_DOM/include/*				usr/include/bullet/COLLADA_DOM
+Extras/COLLADA_DOM/*.a					usr/lib
+Extras/LibXML/include/libxml				usr/include/bullet/LibXML
+Extras/LibXML/*.a					usr/lib

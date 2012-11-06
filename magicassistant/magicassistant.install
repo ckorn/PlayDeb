@@ -1,0 +1,4 @@
+magicassistant				usr/share
+debian/magicassistant.png		usr/share/pixmaps
+debian/magicassistant.desktop		usr/share/applications
+debian/scripts/magicassistant		usr/games

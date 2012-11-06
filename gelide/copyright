@@ -1,0 +1,28 @@
+This package was debianized by Nikil Mehta <nikil.mehta@gmail.com> on
+Fri, 28 Aug 2009 14:16:17 -0700.
+
+It was downloaded from:
+  http://gelide.sourceforge.net/index.php?sect=downloads&lang=en
+
+Upstream Author:
+
+	Juan Ángel Moreno Fernandez <jamf@users.sourceforge.net>
+
+Copyright:
+
+    Copyright (C) 2008 - 2010 Juan Ángel Moreno Fernández
+
+License:
+
+   This program is free software; you can redistribute it and/or modify it
+   under the terms of the GNU General Public License as published by the
+   Free Software Foundation; either version 3, or (at your option) any later
+   version.
+
+On Debian GNU/Linux systems, the complete text of the GNU General Public 
+License version 3 can be found in /usr/share/common-licenses/GPL-3.
+
+
+
+The Debian packaging is Copyright (C) 2009, Nikil Mehta <nikil.mehta@gmail.com> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL-3'.

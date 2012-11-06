@@ -1,0 +1,17 @@
+Remove deprecated Encoding.
+Index: vbam-1.8.0.1001/src/gtk/gvbam.desktop
+===================================================================
+--- vbam-1.8.0.1001.orig/src/gtk/gvbam.desktop	2011-02-25 04:11:01.000000000 +0100
++++ vbam-1.8.0.1001/src/gtk/gvbam.desktop	2011-02-26 11:13:25.532089999 +0100
+@@ -1,10 +1,9 @@
+ [Desktop Entry]
+ Version=1.0
+-Encoding=UTF-8
+ Type=Application
+ Name=VBA-M
+ GenericName=GameBoy Advance Emulator
+-Comment=Nindendo GameBoy Advance Emulator
++Comment=Nintendo GameBoy Advance Emulator
+ Exec=gvbam
+ Icon=vbam
+ Categories=Application;Game;Emulator;GTK

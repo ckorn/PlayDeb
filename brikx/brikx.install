@@ -1,0 +1,3 @@
+src/brikx usr/games
+debian/brikx.xpm usr/share/pixmaps
+debian/brikx.desktop usr/share/applications

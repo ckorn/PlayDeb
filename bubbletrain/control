@@ -1,0 +1,36 @@
+Source: bubbletrain
+Section: games
+Priority: optional
+Maintainer: Joao Pinto <joao.pinto@getdeb.net>
+Build-Depends: cdbs, debhelper (>= 7),
+  libsdl1.2-dev,
+  libsdl-mixer1.2-dev,
+  libsdl-image1.2-dev,
+  libxml2-dev
+Standards-Version: 3.8.3
+Homepage: http://dwarfcity.co.uk/games/bubbletrain.php
+
+Package: bubbletrain
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, 
+    bubbletrain-data (= ${source:Version})
+Description: Bubble train game
+ Bubble Train as the name suggests is a train of bubbles travelling along a 
+ track where the last carriage is the driving force instead of the front one.
+ The bubbles come streaming along the track trying to reach the end of the line.
+ You are equipped with a bubble firing cannon, where you fire bubbles into 
+ the trains. When there are 3 or more carriages of the same colour they explode 
+ and the train shrinks. So you must blow up all of the carriages in all of the 
+ trains before any train reaches the end of its track.
+
+Package: bubbletrain-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Bubble train game - Data files
+ Bubble Train as the name suggests is a train of bubbles travelling along a 
+ track where the last carriage is the driving force instead of the front one.
+ The bubbles come streaming along the track trying to reach the end of the line.
+ You are equipped with a bubble firing cannon, where you fire bubbles into 
+ the trains. When there are 3 or more carriages of the same colour they explode 
+ and the train shrinks. So you must blow up all of the carriages in all of the 
+ trains before any train reaches the end of its track.

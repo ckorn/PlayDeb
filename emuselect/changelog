@@ -1,0 +1,24 @@
+emuselect (0.2.2-1~getdeb1) lucid; urgency=low
+
+  * Upload to GetDeb (LP: #770335)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 30 Apr 2011 19:04:24 +0200
+
+emuselect (0.2.2-1) unstable; urgency=low
+
+  * More Preset and Configuration development. Development testing complete.
+
+ -- Tim Ricketts <tim@tmrcomputing.co.uk>  Sat, 23 Apr 2011 12:00:00 +0000
+
+emuselect (0.2.2-1) unstable; urgency=low
+
+  * Developed Presets, and simple configuration.
+
+ -- Tim Ricketts <tim@tmrcomputing.co.uk>  Thu, 21 Apr 2011 12:00:00 +0000
+
+emuselect (0.2.2-1) unstable; urgency=low
+
+  * Initial release: Simple Presentation from .erl script.
+
+ -- Tim Ricketts <tim@tmrcomputing.co.uk>  Thu, 14 Apr 2011 12:00:00 +0000
+

@@ -1,0 +1,45 @@
+irrlamb (0.1.0-1~getdeb3) oneiric; urgency=low
+
+  * Update debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 25 Feb 2012 22:46:38 +0100
+
+irrlamb (0.1.0-1~getdeb2~natty) natty; urgency=low
+
+  * Rebuild for natty because of libirrlicht
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 22 Apr 2011 11:21:50 +0200
+
+irrlamb (0.1.0-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+  * Switch to dpkg-source 3.0 (quilt) format
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Sat, 10 Apr 2010 23:01:47 +0100
+
+irrlamb (0.0.5-2~getdeb1) gutsy; urgency=low
+
+  * Packaged by GetDeb.net
+
+ -- Marco Rodrigues <gothicx@sapo.pt>  Sat, 27 Oct 2007 13:47:34 +0000
+
+irrlamb (0.0.5-1~getdeb1) feisty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Sun, 09 Sep 2007 21:48:37 +0000
+
+irrlamb (0.0.4-1~getdeb1) feisty; urgency=low
+
+  * New upstream version
+  * Added libboost-date-time-dev to build deps
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Mon, 09 Jul 2007 22:52:23 +0000
+
+irrlamb (0.0.3-1~getdeb1) feisty; urgency=low
+
+  * New upstream version
+  * Create log file on /tmp
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Fri, 22 Jun 2007 20:01:49 +0000
+

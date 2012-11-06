@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Choria
+Icon=choria
+Exec=/usr/games/choria
+Terminal=false
+Type=Application
+Categories=Game;

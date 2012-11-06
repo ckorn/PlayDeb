@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Xonotic
+Exec=xonotic
+Icon=xonotic
+Terminal=false
+Type=Application
+Categories=Game;

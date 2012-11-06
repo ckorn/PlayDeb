@@ -1,0 +1,11 @@
+zod (2011-09-06-1~getdeb2) precise; urgency=low
+
+  * Rebuild for precise (LP: #1058033)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 28 Sep 2012 19:48:07 +0200
+
+zod (2011-09-06-1~getdeb1) lucid; urgency=low
+
+  * Initial release (LP: #844560)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 08 Sep 2011 20:47:55 +0200

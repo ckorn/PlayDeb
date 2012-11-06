@@ -1,0 +1,47 @@
+Source: legends
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50~), ia32-libs [amd64],
+ libc6-i386 [amd64], libogg0 [i386], libopenal1 [i386],
+ libsdl1.2debian-all [i386], libvorbis0a [i386]
+Standards-Version: 3.9.1
+Homepage: http://legendsthegame.net
+
+Package: legends
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, legends-data (= ${source:Version})
+Description: Fast-paced FPS online multiplayer game
+ Legends is a fast-paced first-person-perspective
+ online multiplayer game released as freeware.
+ The game is designed to take advantage of the
+ beautiful environments available from the Torque
+ engine it is based on, while still offering the
+ breakneck pacing and variety of styles available
+ from such classics as Quake and Tribes. 
+ .
+ Gameplay is not the strafe-strafe-jump-strafe
+ -shoot-strafe-run-like-hell style a
+ lot of games espouse; the addition of a jetpack
+ adds a third dimension of mobility that makes skill,
+ forethought, and restraint necessities to winning.
+
+Package: legends-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Fast-paced FPS online multiplayer game (data package)
+ Legends is a fast-paced first-person-perspective
+ online multiplayer game released as freeware.
+ The game is designed to take advantage of the
+ beautiful environments available from the Torque
+ engine it is based on, while still offering the
+ breakneck pacing and variety of styles available
+ from such classics as Quake and Tribes. 
+ .
+ Gameplay is not the strafe-strafe-jump-strafe
+ -shoot-strafe-run-like-hell style a
+ lot of games espouse; the addition of a jetpack
+ adds a third dimension of mobility that makes skill,
+ forethought, and restraint necessities to winning.
+ .
+ (This package contains the data files)

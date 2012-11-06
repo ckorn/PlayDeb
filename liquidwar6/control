@@ -1,0 +1,35 @@
+Source: liquidwar6
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50~), autotools-dev, guile-1.8-dev, libpng12-dev,
+ libjpeg62-dev, libsdl1.2-dev, libsdl-mixer1.2-dev, libltdl-dev,
+ libsdl-image1.2-dev, libsdl-ttf2.0-dev, libreadline6-dev,
+ libexpat1-dev, libcurl4-openssl-dev, libsqlite3-dev,
+ texinfo, libcsound64-dev, graphviz
+Homepage: http://www.gnu.org/s/liquidwar6/
+Standards-Version: 3.9.1
+
+Package: liquidwar6
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, liquidwar6-data (= ${source:Version})
+Description: Unique multiplayer wargame 
+ Liquid War 6 is a unique multiplayer wargame. Your army is a blob of
+ liquid and you have to try and eat your opponents. Rules are very
+ simple yet original, they have been invented by Thomas Colcombet. It
+ is possible to play alone against the computer but the game is really
+ designed to be played with friends, on a single computer, on a LAN, or
+ on Internet.
+
+Package: liquidwar6-data
+Architecture: all
+Depends: ${misc:Depends}, ttf-freefont
+Description: Unique multiplayer wargame (data package)
+ Liquid War 6 is a unique multiplayer wargame. Your army is a blob of
+ liquid and you have to try and eat your opponents. Rules are very
+ simple yet original, they have been invented by Thomas Colcombet. It
+ is possible to play alone against the computer but the game is really
+ designed to be played with friends, on a single computer, on a LAN, or
+ on Internet.
+ .
+ (This package contains the data files)

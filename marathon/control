@@ -1,0 +1,41 @@
+Source: marathon
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: http://marathon.sourceforge.net/
+
+Package: marathon
+Architecture: all
+Depends: ${misc:Depends},
+         alephone,
+         ttf-marathon (= ${source:Version})
+Description: Conversion of the original Bungie Studio's "M1A1" game
+ Alien forces have boarded the interstellar
+ colony ship Marathon. The situation is dire.
+ As a security officer onboard, it is your duty
+ to defend the ship and its crew.
+ .
+ Experience the start of Bungie's iconic trilogy
+ with Marathon. This release is a meticulous conversion
+ of the original game to the Aleph One engine,
+ with many details and battles restored that were
+ missing from the earlier "M1A1" release.
+
+Package: ttf-marathon
+Architecture: all
+Depends: ${misc:Depends}
+Description: Marathon (font package)
+ Alien forces have boarded the interstellar
+ colony ship Marathon. The situation is dire.
+ As a security officer onboard, it is your duty
+ to defend the ship and its crew.
+ .
+ Experience the start of Bungie's iconic trilogy
+ with Marathon. This release is a meticulous conversion
+ of the original game to the Aleph One engine,
+ with many details and battles restored that were
+ missing from the earlier "M1A1" release.
+ .
+ (This package contains the font files).

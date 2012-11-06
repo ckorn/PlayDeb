@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_install:
+	dh_install
+	cp icon.png debian/mineescape/usr/share/pixmaps/mineescape.png
+	rm debian/mineescape/usr/share/games/mineescape/graphics/DejaVuSans.ttf
+	rm debian/mineescape/usr/share/games/mineescape/graphics/DejaVuSans-Bold.ttf

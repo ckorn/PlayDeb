@@ -1,0 +1,43 @@
+Source: gemrb
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               cmake,
+               libsdl1.2-dev,
+               libpng12-dev,
+               zlib1g-dev,
+               libsdl-mixer1.2-dev,
+               libvorbis-dev,
+               python-dev,
+               libopenal-dev,
+               libgstreamer0.10-dev
+Standards-Version: 3.9.3
+Homepage: http://gemrb.sourceforge.net
+
+Package: gemrb
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         gemrb-data (= ${source:Version}),
+         python
+Description: Implementation of Bioware's Infinity Engine
+ GemRB (Game engine made with pre-Rendered Background) is a portable
+ open-source implementation of Bioware's Infinity Engine. 
+ .
+ It was written to support pseudo-3D role playing games based
+ on the Dungeons & Dragons ruleset (Baldur's Gate and
+ Icewind Dale series, Planescape: Torment).
+
+Package: gemrb-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Implementation of Bioware's Infinity Engine (data package)
+ GemRB (Game engine made with pre-Rendered Background) is a portable
+ open-source implementation of Bioware's Infinity Engine. 
+ .
+ It was written to support pseudo-3D role playing games based
+ on the Dungeons & Dragons ruleset (Baldur's Gate and
+ Icewind Dale series, Planescape: Torment).
+ .
+ (This package contains the data files)

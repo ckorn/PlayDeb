@@ -1,0 +1,55 @@
+Source: xonotic
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50~),
+              zlib1g-dev,
+              libsdl1.2-dev,
+              libmodplug-dev,
+              libasound2-dev,
+              linux-libc-dev,
+              libjpeg62-dev,
+              x11proto-core-dev,
+              libogg-dev,
+              libvorbis-dev,
+              libx11-dev,
+              mesa-common-dev,
+              libxpm-dev,
+              libxext-dev,
+              x11proto-xf86dga-dev,
+              libxxf86vm-dev,
+              libfftw3-dev,
+              libglu1-mesa-dev,
+              libxxf86dga-dev,
+              libd0-blind-id0-dev
+Standards-Version: 3.9.3
+Homepage: http://www.xonotic.org/
+
+Package: xonotic
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         xonotic-data (= ${source:Version}),
+         libd0-blind-id0
+Description: Fast-paced first-person shooter
+ Xonotic is a free (GPL), fast-paced first-person shooter that
+ works on Windows, OS X and Linux. The project is geared towards
+ providing addictive arena shooter gameplay which is all spawned
+ and driven by the community itself. Xonotic is a direct successor
+ of the Nexuiz project with years of development between them,
+ and it aims to become the best possible open-source FPS
+ (first-person-shooter) of its kind.
+
+Package: xonotic-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Fast-paced first-person shooter (data package)
+ Xonotic is a free (GPL), fast-paced first-person shooter that
+ works on Windows, OS X and Linux. The project is geared towards
+ providing addictive arena shooter gameplay which is all spawned
+ and driven by the community itself. Xonotic is a direct successor
+ of the Nexuiz project with years of development between them,
+ and it aims to become the best possible open-source FPS
+ (first-person-shooter) of its kind.
+ .
+ (This package contains the data files)

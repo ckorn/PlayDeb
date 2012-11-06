@@ -1,0 +1,11 @@
+rejoystick (0.8.1-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 10 Mar 2010 12:48:11 +0100
+
+rejoystick (0.8.1-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #504312)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 07 Jan 2010 16:59:49 +0100

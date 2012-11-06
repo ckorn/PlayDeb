@@ -1,0 +1,75 @@
+Shit happens.
+Index: flightgear-2.8.0/src/Airports/runways.hxx
+===================================================================
+--- flightgear-2.8.0.orig/src/Airports/runways.hxx	2012-08-16 16:20:54.000000000 +0200
++++ flightgear-2.8.0/src/Airports/runways.hxx	2012-08-17 17:26:49.001128303 +0200
+@@ -78,7 +78,7 @@
+   { return _isReciprocal; }
+ 
+   /**
+-   * Get the runway begining point - this is syntatic sugar, equivalent to
++   * Get the runway beginning point - this is syntatic sugar, equivalent to
+    * calling pointOnCenterline(0.0);
+    */
+   SGGeod begin() const;
+Index: flightgear-2.8.0/src/Instrumentation/gps.cxx
+===================================================================
+--- flightgear-2.8.0.orig/src/Instrumentation/gps.cxx	2012-08-16 16:20:54.000000000 +0200
++++ flightgear-2.8.0/src/Instrumentation/gps.cxx	2012-08-17 17:26:49.001128303 +0200
+@@ -673,7 +673,7 @@
+ 
+   if (_ref_navaid) {
+     _ref_navaid_set = true;
+-    SG_LOG(SG_INSTR, SG_INFO, "GPS code set explict ref-navaid:" << _ref_navaid->ident());
++    SG_LOG(SG_INSTR, SG_INFO, "GPS code set explicit ref-navaid:" << _ref_navaid->ident());
+     _ref_navaid_id_node->setStringValue(_ref_navaid->ident().c_str());
+     _ref_navaid_name_node->setStringValue(_ref_navaid->name().c_str());
+     FGNavRecord* vor = (FGNavRecord*) _ref_navaid.ptr();
+@@ -855,7 +855,7 @@
+ {
+   _inTurn = true;
+   _turnSequenced = false;
+-  SG_LOG(SG_INSTR, SG_INFO, "begining turn");
++  SG_LOG(SG_INSTR, SG_INFO, "beginning turn");
+ }
+ 
+ void GPS::endTurn()
+Index: flightgear-2.8.0/src/Systems/electrical.cxx
+===================================================================
+--- flightgear-2.8.0.orig/src/Systems/electrical.cxx	2012-08-16 16:20:53.000000000 +0200
++++ flightgear-2.8.0/src/Systems/electrical.cxx	2012-08-17 17:26:49.001128303 +0200
+@@ -638,7 +638,7 @@
+         }
+         // cout << s << "  input_volts = " << volts << endl;
+     } else {
+-        SG_LOG( SG_SYSTEMS, SG_ALERT, "unkown node type" );
++        SG_LOG( SG_SYSTEMS, SG_ALERT, "unknown node type" );
+     }
+ 
+     int i;
+Index: flightgear-2.8.0/tests/alcinfo.cxx
+===================================================================
+--- flightgear-2.8.0.orig/tests/alcinfo.cxx	2012-08-16 16:20:53.000000000 +0200
++++ flightgear-2.8.0/tests/alcinfo.cxx	2012-08-17 17:26:49.001128303 +0200
+@@ -145,7 +145,7 @@
+    if ((error = alGetError()) != AL_NO_ERROR)
+       printf("Error #%x: %s\n", error, alGetString(error));
+    else if (!s)
+-      printf("Quering AL_VERSION returned NULL pointer!\n");
++      printf("Querying AL_VERSION returned NULL pointer!\n");
+    else
+       printf("OpenAL version string: %s\n", s);
+ 
+Index: flightgear-2.8.0/src/AIModel/AIFlightPlanCreatePushBack.cxx
+===================================================================
+--- flightgear-2.8.0.orig/src/AIModel/AIFlightPlanCreatePushBack.cxx	2012-08-16 16:20:55.000000000 +0200
++++ flightgear-2.8.0/src/AIModel/AIFlightPlanCreatePushBack.cxx	2012-08-17 17:26:49.001128303 +0200
+@@ -83,7 +83,7 @@
+                 pushBackWaypoint(wpt);
+             }
+             //cerr << "Success : GateId = " << gateId << endl;
+-            SG_LOG(SG_AI, SG_WARN, "Warning: Succesfully found a parking for a " <<
++            SG_LOG(SG_AI, SG_WARN, "Warning: Successfully found a parking for a " <<
+                    aircraftType <<
+                    " of flight type " << fltType <<
+                    " of airline     " << airline <<

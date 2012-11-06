@@ -1,0 +1,8 @@
+alien-arena (7.33-1) unstable; urgency=high
+
+  The configuration directory has been moved to '~/.config/alien-arena' to adhere
+  to the latest freedesktop standards.  You will need to move your existing
+  configuration files located in ~/.alien-arena to retain your current settings.
+
+ -- Michael Gilbert <michael.s.gilbert@gmail.com>  Sun, 17 Jan 2010 16:56:23 -0500
+

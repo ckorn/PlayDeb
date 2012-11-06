@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Stepmania-ssc
+GenericName=Rhythm and dance game
+TryExec=sm-ssc
+Exec=sm-ssc
+Terminal=false
+Icon=sm-ssc
+Type=Application
+Categories=Application;Game;ArcadeGame
+Comment=A cross-platform rhythm video game.

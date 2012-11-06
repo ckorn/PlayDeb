@@ -1,0 +1,52 @@
+Source: mednafen
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Stephen Kitt <steve@sk2.org>
+Build-Depends: debhelper (>= 9),
+               autotools-dev,
+               x11proto-core-dev,
+               libgl1-mesa-dev | libgl-dev, zlib1g-dev | libz-dev,
+               libsdl1.2-dev,
+               libsamplerate0-dev,
+               libsdl-net1.2-dev,
+               libcdio-dev,
+               libsndfile1-dev | libsndfile-dev,
+               libasound2-dev [linux-any],
+               libjack-dev
+Build-Conflicts: autoconf2.13
+Standards-Version: 3.9.3
+Homepage: http://mednafen.sourceforge.net
+Vcs-Git: git://git.debian.org/git/pkg-games/mednafen.git
+Vcs-Browser: http://git.debian.org/?p=pkg-games/mednafen.git
+DM-Upload-Allowed: yes
+
+Package: mednafen
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Provides: nes-emulator
+Description: multi-platform emulator, including NES, GB/A, Lynx, PC Engine
+ Mednafen is a command-line driven emulator for many different systems. It 
+ has full support for OpenGL and SDL graphics, network play, remappable input
+ configuration, joystick and keyboard support, save states, game rewinding,
+ GSF playback, and screenshots.
+ .
+ The systems supported by Mednafen are:
+    * Atari Lynx
+    * GameBoy
+    * GameBoy Color
+    * GameBoy Advance
+    * NES
+    * PC Engine (TurboGrafx 16)
+    * PC-FX
+    * SuperGrafx
+    * NeoGeo Pocket, NeoGeo Pocket Color
+    * WonderSwan
+ .
+ Hardware emulated by Mednafen includes:
+    * NES gamepad, Zapper, PowerPad
+    * Four-Score, Famicom multiplayer adapter
+    * Arkanoid, HyperShot, Space Shadow, Mahjong controllers
+    * Oeka Kids tablet, Quiz King buzzers, Family Trainer, Barcode World
+    * Game Genie

@@ -1,0 +1,10 @@
+dejavu-font.patch
+printf_fixup.patch
+floatingpoint_config.patch
+debugger_memory_breakpoints.patch
+rjump_gcc47.patch
+debugger_api.patch
+disable_recompiler_disassembler.patch
+unused_bdslot.patch
+printf_function_pointer.patch
+gcc_lto.patch

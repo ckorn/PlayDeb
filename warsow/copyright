@@ -1,0 +1,73 @@
+This package was debianized by the Debian Games team on
+Sat, 24 Jun 2006 22:50:33 +0200
+
+The actual maintainer is the Debian Games Team:
+http://wiki.debian.org/Games/Development
+
+It was downloaded from http://www.warsow.net
+The upstream source for this package is the warsow sdk tarball.
+
+Certain documents from the warsow binary tarball were included with this
+package. They are located under debian/documentation. Also, certain directories
+from the upstream tarball were removed as they were packages already included
+in the Debian archive.
+
+Copyright and License:
+
+Copyright (C) 1995-1998 Mark Adler
+Copyright (C) 1997-2001 Id Software, Inc.
+Copyright (C) 1997-2004 Sam Lantinga
+Copyright (C) 2000 Jeff Teunissen <d2deek@pmail.net>
+Copyright (C) 2001-2006, William Joseph.
+Copyright (c) 2001 Robert Beml
+Copyright (C) 2002-2007 Victor Luchits
+Copyright (c) 2003 mudGE Entertainment
+Copyright (c) 2005 Brendan Burns
+Copyright (c) 2005 Andreas Schneider
+Copyright (C) 2006 Warsow Team
+Copyright (C) 2006-2007 Pekka ("Medar") Lampila
+Copyright (C) 2006 Damien Deville ("Pb")
+Copyright (C) 2006 German Garcia Fernandez ("Jal")
+Copyright (C) 2007 Daniel Lindenfelser
+Copyright (C) 2007 Will Franklin
+Copyright (C) 2006-2007  Christophe Devine
+Copyright (C) Forest Hale
+Copyright (C) 2006-2007 German Garcia
+Copyright (C) 2005 Stuart Dalton (badcdev@gmail.com)
+
+   This package is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This package is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this package; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+warsow_0.50_src/source/qcommon/md5.c
+warsow_0.50_src/source/qcommon/md5.h
+Copyright (C) 1999, 2000, 2002 Aladdin Enterprises.  All rights reserved.
+
+   This software is provided 'as-is', without any express or implied
+   warranty.  In no event will the authors be held liable for any damages
+   arising from the use of this software.
+
+   Permission is granted to anyone to use this software for any purpose,
+   including commercial applications, and to alter it and redistribute it
+   freely, subject to the following restrictions:
+
+   1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+   2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+   3. This notice may not be removed or altered from any source distribution.
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL-2'.

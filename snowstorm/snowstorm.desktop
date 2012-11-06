@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Snowstorm
+Comment=Play your virtual identity on SecondLife 
+Exec=snowstorm
+Icon=snowstorm
+Terminal=false
+Type=Application
+Categories=Application;Network;

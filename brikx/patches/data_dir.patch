@@ -1,0 +1,14 @@
+Set the data dir to the installation directory.
+Index: brikx-0.4.5/src/brikx.h
+===================================================================
+--- brikx-0.4.5.orig/src/brikx.h	2011-11-27 14:46:18.190498811 +0100
++++ brikx-0.4.5/src/brikx.h	2011-11-27 14:46:41.262498125 +0100
+@@ -71,7 +71,7 @@
+ #define IsWeak(a)       ((a)==TILE_WALL || (a)==TILE_RIGHT || (a)==TILE_LEFT || (a)==TILE_PEAK || (a)==TILE_PRIORRIGHT || (a)==TILE_PRIORLEFT)
+ #define IsRYB(a)        ((a)>=TILE_FIRST && (a)<=TILE_FIRST+2)
+ 
+-#define DIR_DATA        "data/"
++#define DIR_DATA        "/usr/share/games/brikx/data/"
+ #define DIR_LEVEL       DIR_DATA"levels/"
+ #define DIR_MUSIC       DIR_DATA"music/"
+ #define DIR_SOUND       DIR_DATA"sounds/"

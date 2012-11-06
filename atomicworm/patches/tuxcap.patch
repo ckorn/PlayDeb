@@ -1,0 +1,13 @@
+Index: atomicworm-019/src/main.cpp
+===================================================================
+--- atomicworm-019.orig/src/main.cpp	2009-09-13 23:49:42.493581288 +0200
++++ atomicworm-019/src/main.cpp	2009-09-13 23:50:01.556474414 +0200
+@@ -22,7 +22,7 @@
+     OTHER DEALINGS IN THE SOFTWARE.
+ */
+ 
+-#include "PycapApp.h"
++#include <tuxcap/PycapApp.h>
+ 
+ using namespace Sexy;
+ 

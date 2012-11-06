@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/_/\./" \
+http://www.phunland.com/download/Phun_(?:beta_)([\d_]+)_.*\.tgz

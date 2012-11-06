@@ -1,0 +1,36 @@
+vdrift (20120722-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 24 Jul 2012 19:59:20 +0200
+
+vdrift (20111022-1~getdeb2~precise) precise; urgency=low
+
+  * Rebuild for precise
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 06 Apr 2012 14:28:09 +0200
+
+vdrift (20111022-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 15 Nov 2011 17:03:33 +0100
+
+vdrift (20100630-1~getdeb2) lucid; urgency=low
+
+  * debian/patches/opengl.patch: Replace glGenerateMipmap
+    with glGenerateMipmapEXT (LP: #824472)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 11 Aug 2011 19:18:14 +0200
+
+vdrift (20100630-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #606096)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 24 Jul 2010 22:12:47 +0200
+
+vdrift (20090615-1~getdeb1) jaunty; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <c_korn@gmx.de>  Mon, 10 Aug 2009 14:23:11 +0200

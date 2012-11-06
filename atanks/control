@@ -1,0 +1,37 @@
+Source: atanks
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               liballegro-dev | liballegro4.2-dev
+Homepage: http://atanks.sourceforge.net/
+Vcs-Svn: svn://svn.debian.org/pkg-allegro/atanks/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-allegro/atanks/?op=log
+Standards-Version: 3.9.3
+
+
+Package: atanks
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         atanks-data (= ${source:Version})
+Description: tank-battling game
+ Atomic tanks is a multi-player game in which you attempt to destroy
+ other tanks while trying to protect your own. You earn money for
+ destroying other tanks; with this money you can buy upgrades and better
+ weapons for your tank.
+ .
+ This game is similar Scorched Earth or the Worms series of games.
+
+Package: atanks-data
+Depends: ${misc:Depends}
+Architecture: all
+Description: data files for Atomic tanks
+ Atomic tanks is a multi-player game in which you attempt to destroy
+ other tanks while trying to protect your own. You earn money for
+ destroying other tanks; with this money you can buy upgrades and better
+ weapons for your tank.
+ .
+ This game is similar Scorched Earth or the Worms series of games.
+ .
+ This package holds the data files needed for Atomic tanks.

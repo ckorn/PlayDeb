@@ -1,0 +1,21 @@
+Source: eternallands-music
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 6),
+ unzip
+Standards-Version: 3.9.1
+Homepage: http://www.eternal-lands.com
+
+Package: eternallands-music
+Architecture: all
+Depends: ${misc:Depends}, eternallands (>=1.9.1) | eternallands-rc (>=1.9.1),
+ eternallands-data (>=1.9.1) | eternallands-rc-data (>=1.9.1)
+Description: Music package for Eternal Lands, a free MMORPG
+ Eternal Lands is a FREE MMORPG (massively multi-player online role playing
+ game). From the website: The game is now in Beta stage, but that doesn't mean
+ it's incomplete. It's currently fully playable and we are constantly working on
+ adding more things to do, more items to make, monsters to fight, and also
+ improving the current systems. If you want to help us in any way, take a look
+ in our forums and there you can post your ideas/suggestions, or perhaps even
+ get involved with programming or map making which we can always use help with!

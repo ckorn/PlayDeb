@@ -1,0 +1,14 @@
+Use the PNG instead of the ico.
+Index: ja2-0.12.1/ja2-stracciatella.desktop
+===================================================================
+--- ja2-0.12.1.orig/ja2-stracciatella.desktop	2007-08-07 19:02:42.000000000 +0200
++++ ja2-0.12.1/ja2-stracciatella.desktop	2012-08-13 18:20:29.798805848 +0200
+@@ -4,7 +4,7 @@
+ Comment=An enhanced port of Jagged Alliance 2 to SDL
+ Exec=ja2
+ TryExec=ja2
+-Icon=jagged2.ico
++Icon=ja2
+ Type=Application
+ Categories=Game;StrategyGame;RolePlaying;
+ Version=1.0

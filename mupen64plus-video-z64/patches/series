@@ -1,0 +1,4 @@
+printf_fixup.patch
+gcc_lto.patch
+uninitialized_restorefbid.patch
+mixed_signedness.patch

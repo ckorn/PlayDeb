@@ -1,0 +1,48 @@
+diff -Nur -x '*.orig' -x '*~' gondola-1.1/gamelib/ingame_menu.py gondola-1.1.new/gamelib/ingame_menu.py
+--- gondola-1.1/gamelib/ingame_menu.py	2008-12-23 17:56:22.000000000 +0000
++++ gondola-1.1.new/gamelib/ingame_menu.py	2009-07-06 10:51:22.096473535 +0100
+@@ -24,7 +24,8 @@
+         self.close()
+ 
+     def submit_highscore(self, name):
+-        fp = open("settings.json")
++	settings_dir = "%s/.config/gondola" % os.environ['HOME']
++        fp = open("%s/settings.json" % settings_dir)
+         settings = simplejson.load(fp)
+         fp.close()
+ 
+@@ -45,7 +46,7 @@
+                 settings["awards"][self.ui.map.mapname] = self.award
+ 
+         out = simplejson.dumps(settings, sort_keys=False, indent=4)
+-        fp = open("settings.json", "w")
++        fp = open("%s/settings.json" % settings_dir, "w")
+         fp.write(out)
+         fp.close()
+ 
+diff -Nur -x '*.orig' -x '*~' gondola-1.1/gamelib/menu.py gondola-1.1.new/gamelib/menu.py
+--- gondola-1.1/gamelib/menu.py	2009-01-02 21:12:38.000000000 +0000
++++ gondola-1.1.new/gamelib/menu.py	2009-07-06 10:48:51.904997036 +0100
+@@ -40,9 +40,11 @@
+ 
+         self.x = self.gui_view.width/2 - 1024/2
+         self.y = self.gui_view.height/2 - 768/2
+-
++	self.settings_dir = "%s/.config/gondola" % os.environ['HOME']
++	if not os.path.isdir(self.settings_dir):
++		os.makedirs(self.settings_dir)
+         try:
+-            fp = open("settings.json")
++            fp = open("%s/settings.json" % self.settings_dir)
+             self.settings = simplejson.load(fp)
+             fp.close()
+         except IOError:
+@@ -274,7 +276,7 @@
+         self.settings["selected_map"] = self.selected_map
+         self.settings["fullscreen"] = self.window.fullscreen
+         out = simplejson.dumps(self.settings, sort_keys=False, indent=4)
+-        fp = open("settings.json", "w")
++        fp = open("%s/settings.json" % self.settings_dir, "w")
+         fp.write(out)
+         fp.close()
+ 

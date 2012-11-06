@@ -1,0 +1,111 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+PLATFORM=$(shell uname|sed -e s/_.*//|tr '[:upper:]' '[:lower:]')
+ARCH=$(shell uname -m | sed -e s/i.86/i386/)
+BR=build/release-$(PLATFORM)-$(ARCH)
+DEBIAN_DIR:=$(shell echo ${MAKEFILE_LIST} | awk '{print $$1}' | xargs dirname)
+DEB_SOURCE_PACKAGE:=$(shell dpkg-parsechangelog | grep Source |cut -f2 -d" ")
+VERSION:=$(shell dpkg-parsechangelog | grep Version | cut -d" " -f2|cut -d"-" -f1)
+UVERSION:=$(shell echo $(VERSION) | sed -r 's/([0-9]{4})([0-9]{2})([0-9]{2})/\1_\2_\3/')
+
+
+CFLAGS = -Wall -g
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+
+build: build-arch
+build-arch: build-arch-stamp
+build-arch-stamp:
+	dh_testdir
+
+	cd ioq3-urt ; $(MAKE) V=1 USE_LOCAL_HEADERS=0
+
+	touch $@	
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -rf build-stamp build-arch-stamp configure-stamp ioq3-urt/build \
+	ioUrbanTerror
+
+	dh_clean 
+
+install: install-indep install-arch
+
+
+install-indep:
+	dh_testdir
+	dh_testroot
+	dh_clean -k -a
+	dh_installdirs -a
+	dh_install -a
+	dh_icons -a
+
+install-arch: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k -s
+	dh_installdirs -s
+	dh_icons -s
+
+	cp ioq3-urt/$(BR)/ioquake3.$(ARCH) ioUrbanTerror
+#	cp ioq3-urt/$(BR)/ioUrTded.$(ARCH) ioUrTded
+
+	dh_install -purbanterror-optimized debian/urbanterror.desktop usr/share/applications
+	dh_install -purbanterror-optimized debian/urbanterror.xpm usr/share/pixmaps
+	dh_install -purbanterror-optimized -m755 debian/scripts/urbanterror usr/games
+	dh_install -purbanterror-optimized ioUrbanTerror usr/lib/games/urbanterror
+	dh_install -purbanterror-optimized ioq3-urt/q3ut4/glsl usr/share/games/urbanterror/q3ut4
+	dh_install -purbanterror-optimized ioq3-urt/q3ut4/scripts usr/share/games/urbanterror/q3ut4
+	dh_install -purbanterror-optimized ioq3-urt/q3ut4/textures usr/share/games/urbanterror/q3ut4
+	dh_installman -purbanterror-optimized debian/urbanterror.6
+	dh_installchangelogs -purbanterror-optimized ioq3-urt/ChangeLog
+
+#	dh_installman -purbanterror-server debian/urbanterror-server.6
+#	dh_installchangelogs -purbanterror-server ioq3-urt/ChangeLog
+#	dh_install -purbanterror-server -m755 debian/scripts/urbanterror-server usr/games
+#	dh_install -purbanterror-server ioUrTded usr/lib/games/urbanterror
+
+	dh_install -s
+
+
+# Build architecture-independent files here.
+binary-indep: install-indep
+	$(MAKE) -f debian/rules DH_OPTIONS=-i binary-common
+
+# Build architecture-dependent files here.
+binary-arch: build-arch install-arch
+	$(MAKE) -f debian/rules DH_OPTIONS=-a binary-common
+
+# Build architecture-dependent files here.
+binary-common:
+	dh_testdir
+	dh_testroot
+	dh_installdocs
+	dh_installmenu
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+
+binary: binary-arch binary-indep
+.PHONY: build clean binary-indep binary-arch binary install install-indep install-arch

@@ -1,0 +1,29 @@
+Source: nazghul
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), autotools-dev,
+ libsdl-image1.2-dev, libsdl1.2-dev, libpng12-dev,
+ libsdl-mixer1.2-dev
+Standards-Version: 3.8.3
+Homepage: http://myweb.cableone.net/gmcnutt/nazghul.html
+
+Package: nazghul
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, nazghul-data (= ${source:Version})
+Description: Computer role-playing game (CRPG) engine
+ Nazghul is a computer role-playing game (CRPG) engine. Obviously,
+ the emphasis is not on graphics or first-person squad-based stealth
+ action. If you like roguelikes or the top-down, 2d, turn-based CRPG's
+ that disappeared in the early 90's then this is for you.
+
+Package: nazghul-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Computer role-playing game (CRPG) engine (data package)
+ Nazghul is a computer role-playing game (CRPG) engine. Obviously,
+ the emphasis is not on graphics or first-person squad-based stealth
+ action. If you like roguelikes or the top-down, 2d, turn-based CRPG's
+ that disappeared in the early 90's then this is for you.
+ .
+ (This package contains the data files)

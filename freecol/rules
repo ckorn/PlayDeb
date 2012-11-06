@@ -1,0 +1,44 @@
+#!/usr/bin/make -f
+
+# debian/rules file for building freecol
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+VERSION = $(shell dpkg-parsechangelog | egrep '^Version' | \
+	sed -r 's/Version:\s*//' | sed -r 's/^[0-9]+://' | \
+	sed -r 's/(\.dfsg)?-[0-9.]+//')
+
+# export JITC_PROCESSOR_TYPE=6
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/javahelper.mk
+include /usr/share/cdbs/1/class/ant.mk
+
+arch = $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+JAVA_HOME_DIRS       := /usr/lib/jvm/java-7-openjdk-$(arch) \
+	/usr/lib/jvm/java-6-openjdk-$(arch) /usr/lib/jvm/java-6-openjdk
+ANT_HOME             := /usr/share/ant
+DEB_JARS             := ant-launcher ant-nodeps \
+	miglayout commons-cli cortado
+DEB_ANT_COMPILER     := modern
+DEB_ANT_BUILD_TARGET := package online-manual print-manual
+DEB_BUILDDIR         := .
+DEB_ANT_BUILDFILE    := build.xml
+DEB_ANT_CLEAN_TARGET := clean
+# Override build classpath
+ANT_OPTS             := -Dbuild.sysclasspath=only
+
+LIBERATION_FONTS     := LiberationSerif-Bold.ttf LiberationSerif-BoldItalic.ttf LiberationSerif-Italic.ttf LiberationSerif-Regular.ttf 
+
+# Refrain from installing those files
+DEB_DH_INSTALL_ARGS  = $(patsubst %,-X%, $(LIBERATION_FONTS)) 
+
+DEB_DH_LINK_freecol  = $(foreach file, $(LIBERATION_FONTS), usr/share/fonts/truetype/liberation/$(file) usr/share/games/freecol/base/resources/fonts/$(file))
+
+binary-post-install/ttf-freecol::
+	mkdir -p debian/ttf-freecol/usr/share/fonts/truetype/ttf-freecol/
+	# Create own ttf package. Move files into ttf package
+	mv data/base/resources/fonts/Imperator.ttf debian/ttf-freecol/usr/share/fonts/truetype/ttf-freecol/
+	mv data/base/resources/fonts/ShadowedBlack.ttf debian/ttf-freecol/usr/share/fonts/truetype/ttf-freecol/

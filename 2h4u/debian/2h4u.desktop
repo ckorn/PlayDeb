@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=2H4U
+Version=1.0
+Comment=Too Hard For You
+Exec=2h4u
+Terminal=false
+Type=Application
+Categories=Game;
+StartupNotify=true
+Icon=2h4u

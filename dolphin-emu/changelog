@@ -1,0 +1,72 @@
+dolphin-emu (3.0-1~getdeb2) oneiric; urgency=low
+
+  * Update debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 25 Feb 2012 22:43:25 +0100
+
+dolphin-emu (3.0-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 25 Oct 2011 20:36:52 +0200
+
+dolphin-emu (0.0.0.0+svn7258-1~getdeb2~oneiric) oneiric; urgency=low
+
+  * Rebuild for oneiric
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 25 Oct 2011 20:25:06 +0200
+
+dolphin-emu (0.0.0.0+svn7258-1~getdeb1) maverick; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 Feb 2011 12:45:11 +0100
+
+dolphin-emu (0.0.0.0+svn7251-1~getdeb1) maverick; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 26 Feb 2011 21:38:25 +0100
+
+dolphin-emu (0.0.0.0+svn5419-1~getdeb2) maverick; urgency=low
+
+  * Rebuild for maverick
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 24 Oct 2010 15:58:44 +0200
+
+dolphin-emu (0.0.0.0+svn5419-1~getdeb1) lucid; urgency=low
+
+  * Upload to getdeb (LP: #570393)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 28 Apr 2010 21:43:55 +0200
+
+dolphin-emu (1.0+svn5394-0ubuntu1~karmic) karmic; urgency=low
+
+  * New SVN Release
+
+ -- Glenn Rice <glennricster@gmail.com>  Wed, 21 Apr 2010 23:05:57 -0500
+
+dolphin-emu (1.0+svn5321-0ubuntu1~karmic) karmic; urgency=low
+
+  * New SVN Release
+
+ -- Glenn Rice <glennricster@gmail.com>  Sat, 10 Apr 2010 18:41:30 -0500
+
+dolphin-emu (1.0+svn5300-0ubuntu1~karmic) karmic; urgency=low
+
+  * New SVN Release
+
+ -- Glenn Rice <glennricster@gmail.com>  Fri, 09 Apr 2010 06:27:52 -0500
+
+dolphin-emu (1.0+svn5210-0ubuntu1~karmic) karmic; urgency=low
+
+  * New SVN Release
+
+ -- Glenn Rice <glennricster@gmail.com>  Wed, 17 Mar 2010 14:09:35 -0500
+
+dolphin-emu (1.0+svn5192-0ubuntu1~karmic) karmic; urgency=low
+
+  * Initial SVN Release
+
+ -- Glenn Rice <glennricster@gmail.com>  Sat, 13 Mar 2010 08:15:10 -0600
+

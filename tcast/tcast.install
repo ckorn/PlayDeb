@@ -1,0 +1,9 @@
+common				usr/share/games/tcast
+game				usr/share/games/tcast
+renpy				usr/share/games/tcast
+*.png				usr/share/games/tcast
+*.jpg				usr/share/games/tcast
+TCAST.py			usr/share/games/tcast
+debian/scripts/tcast		usr/games
+debian/tcast.png		usr/share/pixmaps
+debian/tcast.desktop		usr/share/applications

@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_test:
+override_dh_auto_install:
+	chmod -x Themes/_fallback/Languages/pl.ini \
+	         "Themes/default/Graphics/LifeMeterBattery lives/_lives 1x10.png" \
+	         Themes/default/Languages/pl.ini \
+	         "Themes/default/Graphics/LifeMeterBattery lives/default.lua"
+
+override_dh_clean:
+	dh_clean
+	rm -f src/ver.cpp
+
+override_dh_auto_configure:
+	chmod +x ./configure
+	dh_auto_configure

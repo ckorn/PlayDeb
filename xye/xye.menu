@@ -1,0 +1,4 @@
+?package(xye):needs="X11" \
+  section="Games/Puzzles"\
+  title="puzzle game - get all the gems in the room" \
+  command="/usr/games/xye"

@@ -1,0 +1,81 @@
+Source: manaplus
+Section: games
+Priority: optional
+Homepage: http://manaplus.evolonline.org/
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libcurl4-gnutls-dev,
+               libgl1-mesa-dev,
+               libguichan-dev (>= 0.8.1),
+               libsdl1.2-dev,
+               libsdl-image1.2-dev,
+               libsdl-net1.2-dev,
+               libsdl-mixer1.2-dev,
+               libphysfs-dev,
+               libpng12-dev,
+               libxml2-dev,
+               zlib1g-dev,
+               libsdl-ttf2.0-dev,
+               libsdl-gfx1.2-dev
+Standards-Version: 3.9.3
+
+Package: manaplus
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         manaplus-data (= ${source:Version}),
+         xsel
+Recommends: manaplus-music,
+            manaplus-themes
+Suggests: mumble
+Replaces: mana-4144
+Description: Extended client for The Mana World and similar servers
+ ManaPlus is extended client for Evol Online, The Mana World and similar
+ servers based on eAthena fork.
+ As a 2D style game, Evol Online aims to create a friendly environment where.
+ people can escape reality and interact with others while enjoying themselves.
+ through a fantasy style game.
+ The Mana World (TMW) is a serious effort to create an innovative free and.
+ open source MMORPG. TMW uses 2D graphics and aims to create a large and.
+ diverse interactive world.
+ More info here: http://manaplus.evolonline.org/
+
+Package: manaplus-dbg
+Section: debug
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends},
+         manaplus (= ${binary:Version})
+Replaces: mana-4144-dbg
+Description: Extended client for TMW and similar servers (debugging symbols)
+ ManaPlus is extended client for Evol Online, The Mana World and similar
+ servers based on eAthena fork.
+ As a 2D style game, Evol Online aims to create a friendly environment where.
+ people can escape reality and interact with others while enjoying themselves.
+ through a fantasy style game.
+ The Mana World (TMW) is a serious effort to create an innovative free and.
+ open source MMORPG. TMW uses 2D graphics and aims to create a large and.
+ diverse interactive world.
+ More info here: http://manaplus.evolonline.org/
+ .
+ This package provides debugging symbols for the manaplus package.
+
+Package: manaplus-data
+Architecture: all
+Depends: ${misc:Depends},
+         ttf-dejavu-core,
+         ttf-liberation,
+         ttf-mplus
+Recommends: manaplus
+Replaces: mana-4144-data
+Description: Extended client for TMW and similar servers (data files)
+ ManaPlus is extended client for Evol Online, The Mana World and similar
+ servers based on eAthena fork.
+ As a 2D style game, Evol Online aims to create a friendly environment where.
+ people can escape reality and interact with others while enjoying themselves.
+ through a fantasy style game.
+ The Mana World (TMW) is a serious effort to create an innovative free and.
+ open source MMORPG. TMW uses 2D graphics and aims to create a large and.
+ diverse interactive world.
+ .
+ This package contains the data files.

@@ -1,0 +1,11 @@
+sumwars (0.5.6-1~getdeb1) precise; urgency=low
+
+  * New upstream version (LP: #1009105)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 06 Jun 2012 17:17:34 +0200
+
+sumwars (0.5.5~svn-r2653-1) unstable; urgency=low
+
+  * Initial release (Closes: #597857).
+
+ -- Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>  Tue, 1 Nov 2011 10:07:08 +0100

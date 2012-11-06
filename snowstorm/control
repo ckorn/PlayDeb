@@ -1,0 +1,43 @@
+Source: snowstorm
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libfreetype6,
+               libfontconfig1,
+               libx11-6,
+               libxrender1,
+               libgl1-mesa-glx,
+               libatk1.0-0,
+               libgtk2.0-0,
+               libgdk-pixbuf2.0-0,
+               libxinerama1,
+               libpango1.0-0,
+               libglu1-mesa,
+               libsm6,
+               libice6,
+               chrpath
+Standards-Version: 3.9.3
+Homepage: http://wiki.secondlife.com/wiki/Project_Snowstorm
+
+Package: snowstorm
+Architecture: i386
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         snowstorm-data (= ${source:Version})
+Description: New viewer for Second Life (i386 only)
+ Snowstorm is the name of a new viewer
+ (in development) for Second Life.
+ .
+ (This package contains the executables)
+
+Package: snowstorm-data
+Architecture: all
+Depends: ${misc:Depends},
+         ttf-dejavu-core,
+         ttf-dejavu-extra
+Description: New viewer for Second Life (data package)
+ Snowstorm is the name of a new viewer
+ (in development) for Second Life.
+ .
+ (This package contains the data files)

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ ! -d $HOME/.config/bofh ] ; then
+	mkdir -p $HOME/.config/bofh
+fi
+
+cd /usr/lib/games/bofh
+DIR_USERCFG=$HOME/.config/bofh
+DIR_SCORE=$HOME/.config/bofh
+export DIR_USERCFG
+export DIR_SCORE
+./bofh $@

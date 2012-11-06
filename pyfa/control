@@ -1,0 +1,19 @@
+Source: pyfa
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               python | python-all | python-dev | python-all-dev
+Standards-Version: 3.9.3
+Homepage: http://pyfa.sourceforge.net/
+
+Package: pyfa
+Architecture: all
+Depends: ${python:Depends},
+         ${misc:Depends},
+         python-gtk2,
+         python-glade2
+Description: Python Fitting Assistant for the EVE-Online SciFi MMORPG
+ pyfa is the Python Fitting Assistant,
+ a standalone application to create fittings
+ for the EVE-Online SciFi MMORPG.

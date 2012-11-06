@@ -1,0 +1,5 @@
+l-echo (0.4.3-1~getdeb1) jaunty; urgency=low
+
+  * Initial release (LP: #336976)
+
+ -- Christoph Korn <c_korn@gmx.de>  Sat, 17 Oct 2009 22:47:48 +0200

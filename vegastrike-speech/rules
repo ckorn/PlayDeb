@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_install:
+	find communications/sounds -type f -exec dh_install {} usr/share/games/vegastrike \;
+	find sounds -type f -exec dh_install {} usr/share/games/vegastrike \;
+
+	find debian/vegastrike-speech/usr/share/games/vegastrike -type f -exec chmod -x {} \;

@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/^svn/0\.0r/" \
+http://sf.net/annchienta/annchienta-(.*)-src\.tar\.gz

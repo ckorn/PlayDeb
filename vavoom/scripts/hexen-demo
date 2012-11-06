@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e
+
+if [ ! -f ~/.vavoom/hexen-demo/hexen.wad ]; then
+  set +e
+  /usr/share/autodl/AutoDL.py /usr/share/games/vavoom/hexen.autodlrc
+  STATUS=$?
+  set -e
+  # status 2 means download was ok, but the user choice not to start the game
+  if [ "$STATUS" = "0" -o  "$STATUS" = "2" ]; then
+    cd ~/.vavoom/hexen-demo
+    unzip -u -L hexndemo.zip hexen.wad
+    rm hexndemo.zip
+  fi
+  if [ "$STATUS" != "0" ]; then
+    exit $STATUS
+  fi
+fi
+
+exec /usr/games/vavoom -iwaddir ~/.vavoom/hexen-demo -hexen "$@"

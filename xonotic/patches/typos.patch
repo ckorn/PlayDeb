@@ -1,0 +1,14 @@
+Just a typo.
+Index: xonotic-0.6.0/source/darkplaces/cmd.c
+===================================================================
+--- xonotic-0.6.0.orig/source/darkplaces/cmd.c	2012-03-10 12:39:42.453129467 +0100
++++ xonotic-0.6.0/source/darkplaces/cmd.c	2012-03-10 12:40:52.605127381 +0100
+@@ -1433,7 +1433,7 @@
+ 			l = (int)strlen(com_token) + 1;
+ 			if (cmd_tokenizebufferpos + l > CMD_TOKENIZELENGTH)
+ 			{
+-				Con_Printf("Cmd_TokenizeString: ran out of %i character buffer space for command arguements\n", CMD_TOKENIZELENGTH);
++				Con_Printf("Cmd_TokenizeString: ran out of %i character buffer space for command arguments\n", CMD_TOKENIZELENGTH);
+ 				break;
+ 			}
+ 			memcpy (cmd_tokenizebuffer + cmd_tokenizebufferpos, com_token, l);

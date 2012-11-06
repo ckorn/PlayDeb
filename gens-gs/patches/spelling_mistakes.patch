@@ -1,0 +1,28 @@
+--- gens-gs-2.16.7.orig/src/gens/util/file/config_file.cpp
++++ gens-gs-2.16.7/src/gens/util/file/config_file.cpp
+@@ -292,9 +292,9 @@ int Config::save(const string& filename)
+ 	
+ 	// Country codes.
+ 	cfg.writeInt("CPU", "Country", Country);
+-	cfg.writeInt("CPU", "Prefered Country 1", Country_Order[0]);
+-	cfg.writeInt("CPU", "Prefered Country 2", Country_Order[1]);
+-	cfg.writeInt("CPU", "Prefered Country 3", Country_Order[2]);
++	cfg.writeInt("CPU", "Preferred Country 1", Country_Order[0]);
++	cfg.writeInt("CPU", "Preferred Country 2", Country_Order[1]);
++	cfg.writeInt("CPU", "Preferred Country 3", Country_Order[2]);
+ 	
+ 	// CPU options.
+ 	cfg.writeInt("CPU", "Perfect synchro between main and sub CPU (Sega CD)", SegaCD_Accurate);
+@@ -656,9 +656,9 @@ int Config::load(const string& filename,
+ 	
+ 	// Country codes.
+ 	Country = cfg.getInt("CPU", "Country", -1);
+-	Country_Order[0] = cfg.getInt("CPU", "Prefered Country 1", 0);
+-	Country_Order[1] = cfg.getInt("CPU", "Prefered Country 2", 1);
+-	Country_Order[2] = cfg.getInt("CPU", "Prefered Country 3", 2);
++	Country_Order[0] = cfg.getInt("CPU", "Preferred Country 1", 0);
++	Country_Order[1] = cfg.getInt("CPU", "Preferred Country 2", 1);
++	Country_Order[2] = cfg.getInt("CPU", "Preferred Country 3", 2);
+ 	Check_Country_Order();
+ 	
+ 	// CPU options.

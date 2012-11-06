@@ -1,0 +1,3 @@
+pax-britannica			usr/lib/games/pax-britannica
+debian/scripts/pax-britannica	usr/games
+debian/pax-britannica.desktop	usr/share/applications

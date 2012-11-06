@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+DEB_FIXPERMS_EXCLUDE := /usr/games
+  
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/autotools.mk
+
+common-binary-post-install-arch::
+#	install -m755 src/data/high.dat $(CURDIR)/debian/brikx/var/games/brikx.scores.orig
+#	install -m755 src/data/config $(CURDIR)/debian/brikx/var/games/brikx.config.orig
+#	chown root:games debian/brikx/usr/games/brikx
+#	chmod g+s debian/brikx/usr/games/brikx

@@ -1,0 +1,27 @@
+Just happens :)
+Index: spacezero-0.83.18/src/data.c
+===================================================================
+--- spacezero-0.83.18.orig/src/data.c	2012-09-19 17:57:39.000000000 +0200
++++ spacezero-0.83.18/src/data.c	2012-09-26 19:23:30.992180771 +0200
+@@ -429,7 +429,7 @@
+   n=strlen(cad);
+   if(n>32)n=32; /* max of log messages */
+ 
+-  if(mode==1){ /* check if is recently added => dont add*/
++  if(mode==1){ /* check if is recently added => don't add*/
+     m=0;
+     list=hlist->next;
+     while(list!=NULL){
+Index: spacezero-0.83.18/src/spacezero.c
+===================================================================
+--- spacezero-0.83.18.orig/src/spacezero.c	2012-09-25 09:25:44.000000000 +0200
++++ spacezero-0.83.18/src/spacezero.c	2012-09-26 19:23:30.992180771 +0200
+@@ -1820,7 +1820,7 @@
+   navcontrol=TRUE;
+   if(key->order.state==TRUE)navcontrol=FALSE;
+   
+-  /* in map view dont control the ship*/ 
++  /* in map view don't control the ship*/ 
+   if(gdraw.map==TRUE){
+     key->accel.state=key->turnleft.state=key->turnright.state=key->fire.state=FALSE;
+     key->automode.state=key->manualmode.state=FALSE;

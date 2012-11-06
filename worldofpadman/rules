@@ -1,0 +1,98 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+DEBIAN_DIR:=$(shell echo ${MAKEFILE_LIST} | awk '{print $$1}' | xargs dirname)
+DEB_SOURCE_PACKAGE:=$(shell dpkg-parsechangelog | grep Source |cut -f2 -d" ")
+VERSION:=$(shell dpkg-parsechangelog | grep Version | cut -d" " -f2|cut -d"-" -f1)
+TMPDIR:=$(shell mktemp -dp./)
+
+CFLAGS = -Wall -g
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+
+
+get-orig-source:
+	cd ${DEBIAN_DIR}/..
+	uscan --force-download --no-symlink
+	cd $(TMPDIR); \
+	tar -xvvjf ../../wopengine_src-$(VERSION).tar.bz2; \
+	tar -cvvz --exclude .svn --exclude .svnignore * > \
+	../../${DEB_SOURCE_PACKAGE}_$(VERSION).orig.tar.gz
+	rm ../wopengine_src-$(VERSION).tar.bz2
+	rm -rf ${TMPDIR}
+
+build: build-arch
+build-arch: build-arch-stamp
+build-arch-stamp:
+	dh_testdir
+	BUILD_GAME_SO=0 BUILD_GAME_QVM=0 $(MAKE) $(BUILD_FLAGS) # We don't need these
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f wop-engine wopded *.so
+	$(MAKE) clean
+	dh_clean 
+
+install: install-arch
+
+install-arch: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs -s
+	dh_icons -s
+
+	cp build/release*/wop.* wop-engine
+	cp build/release*/wopded.* wopded
+	cp build/release*/*.so .
+
+	dh_installman -pworldofpadman debian/worldofpadman.6
+	dh_installchangelogs -pworldofpadman
+
+	dh_installman -pworldofpadman-server debian/worldofpadman-server.6
+	dh_installchangelogs -pworldofpadman-server
+
+	dh_install -s
+
+
+# Build architecture-independent files here.
+binary-indep:
+	$(MAKE) -f debian/rules DH_OPTIONS=-i binary-common
+
+# Build architecture-dependent files here.
+binary-arch: build-arch install-arch
+	$(MAKE) -f debian/rules DH_OPTIONS=-s binary-common
+
+# Build architecture-dependent files here.
+binary-common:
+	dh_testdir
+	dh_testroot
+	dh_installdocs
+	dh_installmenu
+	dh_installchangelogs debian/changelog.txt
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+
+binary: binary-arch binary-indep
+.PHONY: build clean binary-indep binary-arch binary install install-arch

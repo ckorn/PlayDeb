@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Marathon 2
+Exec=/usr/games/marathon2
+Icon=/usr/share/pixmaps/marathon2.png
+Terminal=false
+Type=Application
+Categories=Game;

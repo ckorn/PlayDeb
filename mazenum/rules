@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --with python2
+
+override_dh_auto_install:
+	dh_auto_install
+	# how do I tell setup.py where to install the script?
+	mv debian/mazenum/usr/bin debian/mazenum/usr/games

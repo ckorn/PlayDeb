@@ -1,0 +1,45 @@
+Source: deadlycobra
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), autotools-dev,
+ libsdl1.2-dev, libsdl-image1.2-dev, libsdl-mixer1.2-dev,
+ quilt
+Standards-Version: 3.8.4
+Homepage: http://deadlycobra.sourceforge.net
+
+Package: deadlycobra
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, deadlycobra-data (= ${source:Version})
+Description: Similar to the classic Nibbles(tm) game
+ Deadly Cobra is an SDL-based game similar in gameplay to
+ the classic Nibbles(tm) game. It was originally designed
+ to compete in No Starch Press's game cometition, but has
+ continued to evolve and grow beyond the December 1st,
+ 2001 deadline.
+
+Package: deadlycobra-dbg
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, deadlycobra (= ${binary:Version})
+Priority: extra
+Section: debug
+Description: Similar to the classic Nibbles(tm) game (debugging symbols)
+ Deadly Cobra is an SDL-based game similar in gameplay to
+ the classic Nibbles(tm) game. It was originally designed
+ to compete in No Starch Press's game cometition, but has
+ continued to evolve and grow beyond the December 1st,
+ 2001 deadline.
+ .
+ (This package contains the debugging symbols)
+
+Package: deadlycobra-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Similar to the classic Nibbles(tm) game (data files)
+ Deadly Cobra is an SDL-based game similar in gameplay to
+ the classic Nibbles(tm) game. It was originally designed
+ to compete in No Starch Press's game cometition, but has
+ continued to evolve and grow beyond the December 1st,
+ 2001 deadline.
+ .
+ (This package contains the data files)

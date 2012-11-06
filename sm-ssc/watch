@@ -1,0 +1,4 @@
+version=3
+opts="dversionmangle=s/~/-/" \
+http://code.google.com/p/sm-ssc/downloads/list \
+    (?:.*/)?stepmania-SM(.*)-src\.tar\.(?:bz2|xz|gz)

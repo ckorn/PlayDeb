@@ -1,0 +1,5 @@
+cbuild/src/client/Intensity_CClient			usr/lib/games/intensityengine/build
+cbuild/src/server/Intensity_CServer			usr/lib/games/intensityengine/build
+debian/scripts/intensityengine				usr/games
+debian/intensityengine.desktop				usr/share/applications
+debian/intensityengine.png				usr/share/pixmaps

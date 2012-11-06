@@ -1,0 +1,4 @@
+version=3
+opts="uversionmangle=s/Playable//;s/Beta/0\.0\.0~beta/" \
+http://code.google.com/p/corsix-th/downloads/list \
+    (?:.*/)?CorsixTH-([^-]+)(?:-Source|-Sourze)\.tar\.(?:gz|bz2|xz)

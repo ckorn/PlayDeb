@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=TripleA
+Comment=Turn based strategy game
+TryExec=triplea
+Exec=triplea
+Icon=triplea
+Categories=Game;StrategyGame;BoardGame;

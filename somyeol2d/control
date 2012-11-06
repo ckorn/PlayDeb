@@ -1,0 +1,18 @@
+Source: somyeol2d
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50~), python-all-dev,
+ unrtf
+Standards-Version: 3.9.2
+Homepage: http://www.somyeol.com/
+
+Package: somyeol2d
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, python-tk,
+ libjngl0.9.5
+Description: Casual game
+ Somyeol2D is a casual game. Somyeols are an almost extinct
+ alien species. In Somyeol2D you have to rescue them. 
+ You're controlling all of them at once. There are several
+ different types of Somyeols which behave differently.

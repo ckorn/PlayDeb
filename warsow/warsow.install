@@ -1,0 +1,8 @@
+warsow-1.02-src/source/release/warsow_bin		usr/lib/games/warsow
+warsow-1.02-src/source/release/libs			usr/lib/games/warsow
+warsow-1.02-src/source/release/basewsw			usr/lib/games/warsow
+debian/scripts/campaign.txt				usr/lib/games/warsow
+debian/scripts/warsow					usr/games
+debian/warsow.xpm					usr/share/pixmaps
+warsow128x128.png					usr/share/pixmaps
+debian/warsow.desktop					usr/share/applications

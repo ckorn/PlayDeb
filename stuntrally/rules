@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+%:
+	dh $@ -B$(CURDIR)/build-tree --parallel
+
+override_dh_auto_configure:
+	mkdir -p $(CURDIR)/build-tree
+	cd $(CURDIR)/build-tree; \
+	 PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/lib/OGRE1.8/pkgconfig/ cmake .. \
+	 -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
+	 -DCMAKE_INSTALL_PREFIX:STRING="/usr" \
+	 -DCMAKE_C_FLAGS:STRING="$(CFLAGS)" \
+	 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+
+override_dh_auto_install:
+	dh_auto_install
+	mkdir -p debian/tmp/usr/lib/games/stuntrally
+	mv debian/tmp/usr/bin/* debian/tmp/usr/lib/games/stuntrally/
+	rmdir debian/tmp/usr/bin
+
+	rm debian/tmp/usr/share/games/stuntrally/fonts/Vera.ttf
+	rm debian/tmp/usr/share/games/stuntrally/fonts/VeraMono.ttf
+	rm debian/tmp/usr/share/games/stuntrally/trees/_model_license.txt
+
+override_dh_install:
+	dh_install --list-missing
+
+override_dh_strip:
+	dh_strip --dbg-package=stuntrally-dbg
+
+override_dh_shlibdeps:
+	dh_shlibdeps -l/usr/lib/OGRE1.8/OGRE:/usr/lib/OGRE1.8 --dpkg-shlibdeps-params=--ignore-missing-info

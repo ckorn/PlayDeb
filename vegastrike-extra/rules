@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+%:
+	dh $@ 
+
+override_dh_install:
+	dh_install
+	find debian/vegastrike-extra/usr/share/games/vegastrike -type f -exec chmod -x {} \;

@@ -1,0 +1,4 @@
+debian/tmp/usr/include/OGRE1.8/*
+debian/tmp/usr/lib/OGRE1.8/pkgconfig/*
+debian/tmp/usr/lib/OGRE1.8/OGRE/cmake/*
+debian/tmp/usr/lib/OGRE1.8/libOgre*.so

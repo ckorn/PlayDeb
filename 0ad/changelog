@@ -1,0 +1,102 @@
+0ad (0.0.0+r11863~alpha-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 15 May 2012 19:31:50 +0200
+
+0ad (0.0.0+r11339~alpha-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 14 Mar 2012 17:48:57 +0100
+
+0ad (0.0.0+r10803~alpha-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 26 Jan 2012 19:21:34 +0100
+
+0ad (0.0.0+r10288~alpha-1~getdeb1) natty; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 17 Sep 2011 15:22:06 +0200
+
+0ad (0.0.0+r09786~alpha-1~getdeb1) natty; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 08 Jul 2011 20:23:07 +0200
+
+0ad (0.0.0+r09530~alpha-1~getdeb1) natty; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 17 May 2011 17:30:12 +0200
+
+0ad (0.0.0+r09049~alpha-1~getdeb1) natty; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 22 Apr 2011 17:48:00 +0200
+
+0ad (0.0.0+r08832~alpha-1~getdeb1) maverick; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 12 Dec 2010 15:39:37 +0100
+
+0ad (0.0.0+r07732~pre-alpha-1~getdeb2) maverick; urgency=low
+
+  * Rebuild for maverick
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 24 Oct 2010 12:53:15 +0200
+
+0ad (0.0.0+r07732~pre-alpha-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #604236)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 23 Jul 2010 20:08:13 +0200
+
+0ad (0.0.0+r07539~pre-alpha-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #556356)
+    Added new unit movement system, for precise pathfinding and obstacle
+    avoidance.
+    Added training queues in buildings.
+    Added units to the minimap.
+    Added initial audio integration with gameplay code.
+    Gameplay fixes in projectile models and population bonuses.
+    Graphics fixes in unit outline shapes and animation synchronisation.
+    For modders and developers: Added automatic RNG validation of entity
+    template XML files; Added documentation of entity template XML file
+    format.
+    Fixed compatibility bugs with Windows x64 and with OS X.
+    Various other changes and bug fixes and optimisations - see the SVN log.
+       http://trac.wildfiregames.com/log?rev=7539&stop_rev=7420
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 12 May 2010 18:54:51 +0200
+
+0ad (0.0.0+r07419~pre-alpha-1~getdeb1) karmic; urgency=low
+
+  * New upstream version (LP: #543277)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 01 Apr 2010 12:58:44 +0200
+
+0ad (0.0.0+r07413~pre-alpha-1~getdeb2) lucid; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 01 Apr 2010 12:42:48 +0200
+
+0ad (0.0.0+r07413~pre-alpha-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #543277)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 29 Mar 2010 23:33:09 +0200
+
+0ad (0svn7029-1~getdeb1) jaunty; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <c_korn@gmx.de>  Wed, 22 Jul 2009 01:15:05 +0200

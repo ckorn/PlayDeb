@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Somyeol2D - Level Editor
+Comment=Level Editor for Somyeol2D
+Comment[de]=Level Editor für Somyeol2D
+Exec=somyeol2d-editor
+Icon=somyeol2d-editor
+Terminal=true
+Type=Application
+Categories=Game;
+StartupNotify=false

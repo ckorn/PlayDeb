@@ -1,0 +1,24 @@
+Source: goonies
+Section: games
+Priority: optional
+Maintainer: Joao Pinto <joao.pinto@getdeb.net>
+Build-Depends: cdbs, debhelper (>= 7),
+	libsdl1.2-dev,
+	libsdl-image1.2-dev,
+	libsdl-mixer1.2-dev
+Standards-Version: 3.8.0
+Homepage: http://www.braingames.getput.com/goonies/default.asp
+
+Package: goonies
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, goonies-data (= ${source:Version})
+Description: remake of the 8 bit classic game 'The Goonies'
+ This game was made by Konami in 1986. There were both a NES version and an
+ MSX version of the game; this remake is based on the MSX version.
+
+Package: goonies-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: remake of the 8 bit classic game 'The Goonies'
+ This game was made by Konami in 1986. There were both a NES version and an 
+ MSX version of the game; this remake is based on the MSX version. 

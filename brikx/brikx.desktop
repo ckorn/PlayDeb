@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Brikx
+Comment=Puzzle Game
+Exec=brikx
+Terminal=false
+Type=Application
+Categories=Game;
+StartupNotify=true
+Icon=brikx

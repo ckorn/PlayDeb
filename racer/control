@@ -1,0 +1,17 @@
+Source: racer
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 7), liballegro4.2-dev,
+ libjpeg62-dev
+Standards-Version: 3.8.3
+Homepage: http://hippo.nipax.cz
+
+Package: racer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Cars racing game
+ A computer game with racing cars. The game is in 2D.
+ Offeres several tracks and different cars. Also career
+ is available.
+ 

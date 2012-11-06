@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+#  This file is part of warsow Debian package.
+#
+#  Copyright (C) 2006 Gonéri Le Bouder
+#
+#  Author: Gonéri Le Bouder <goneri@rulezlan.org>
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+PARAMS="+set fs_basepath /usr/share/games/warsow +set fs_usehomedir 1"
+HELP="\
+Warsow server wrapper\n\
+This script is Debian specific, it is *NOT* part of the source distribution!\n\
+Usage: warsow-server [OPTION] [+<internal command> <option> [<value>]] ...\n\
+\n\
+ -h, --help              Display this text\n\
+ +<internal command> ... Pass engine commands to the binary\n"
+
+case "$1" in
+	-h|--help)
+		echo -e ${HELP}
+		exit 1
+		;;
+esac
+
+exec /usr/lib/games/warsow/wsw_server_bin $PARAMS "$@"

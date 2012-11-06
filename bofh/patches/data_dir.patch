@@ -1,0 +1,147 @@
+The game has to find its data files and write config and highscore in the user directory.
+We do this by defining an environment variable.
+Index: bofh-0.0.0.0+20110602/src/bofh.c
+===================================================================
+--- bofh-0.0.0.0+20110602.orig/src/bofh.c	2011-06-02 12:56:32.375485927 +0200
++++ bofh-0.0.0.0+20110602/src/bofh.c	2011-06-02 15:00:54.515488422 +0200
+@@ -562,7 +562,12 @@
+ 
+ void loadconfig(void)
+ {
+-	FILE *handle = fopen(DIR_USERCFG "/bofh.cfg", "rb");
++	char *dir_usercfg = malloc(1024);
++	char *env_dir_usercfg = getenv("DIR_USERCFG");
++	strcpy(dir_usercfg, env_dir_usercfg);
++	strcat( dir_usercfg, "/bofh.cfg" );
++	printf("User's config directory: %s \n", dir_usercfg );
++	FILE *handle = fopen( dir_usercfg, "rb");
+ 	if (!handle) return;
+ 	fread(&sightline, sizeof sightline, 1, handle);
+ 	fread(&screenmode, sizeof screenmode, 1, handle);
+@@ -592,11 +597,17 @@
+ 	fread(&mousenextweap, sizeof mousenextweap, 1, handle);
+ 	fread(&mousesens,   sizeof mousesens,   1, handle);
+ 	fclose(handle);
++	free(dir_usercfg);
+ }
+ 
+ void saveconfig(void)
+ {
+-	FILE *handle = fopen(DIR_USERCFG "/bofh.cfg", "wb");
++	char *dir_usercfg = malloc(1024);
++	char *env_dir_usercfg = getenv("DIR_USERCFG");
++	strcpy(dir_usercfg, env_dir_usercfg);
++	strcat( dir_usercfg, "/bofh.cfg" );
++	printf("User's config directory: %s \n", dir_usercfg );
++	FILE *handle = fopen(dir_usercfg, "wb");
+ 	if (!handle) return;
+ 	fwrite(&sightline, sizeof sightline, 1, handle);
+ 	fwrite(&screenmode, sizeof screenmode, 1, handle);
+@@ -626,6 +637,7 @@
+ 	fwrite(&mouseprevweap, sizeof mouseprevweap, 1, handle);
+ 	fwrite(&mousesens,   sizeof mousesens,   1, handle);
+ 	fclose(handle);
++	free(dir_usercfg);
+ }
+ 
+ int menu(void)
+Index: bofh-0.0.0.0+20110602/src/bofh.h
+===================================================================
+--- bofh-0.0.0.0+20110602.orig/src/bofh.h	2011-06-02 12:52:57.785485853 +0200
++++ bofh-0.0.0.0+20110602/src/bofh.h	2011-06-02 12:56:19.435485921 +0200
+@@ -12,12 +12,8 @@
+ #include "endian.h"
+ 
+ /* The makefile can override these if desired.  */
+-#ifndef DIR_DATA
+-# define DIR_DATA "data"
+-# define DIR_MISSIONS "missions"
+-# define DIR_USERCFG "."
+-# define DIR_SCORE "."
+-#endif
++#define DIR_DATA "/usr/share/games/bofh/data"
++#define DIR_MISSIONS "/usr/share/games/bofh/missions"
+ 
+ #define MUSIC_MAIN 0
+ #define MUSIC_HISCORE 1
+Index: bofh-0.0.0.0+20110602/src/hiscore.c
+===================================================================
+--- bofh-0.0.0.0+20110602.orig/src/hiscore.c	2011-06-02 12:56:38.125485928 +0200
++++ bofh-0.0.0.0+20110602/src/hiscore.c	2011-06-02 14:52:26.125488252 +0200
+@@ -98,7 +98,12 @@
+ 
+ void loadhiscore(void)
+ {
+-        int fd = open(DIR_SCORE "/bofh.hsc", O_RDONLY);
++	char *dir_score = malloc(1024);
++	char* env_dir_score = getenv("DIR_SCORE");
++	strcpy(dir_score, env_dir_score);
++	strcat( dir_score, "/bofh.hsc" );
++	printf("Score directory: %s \n", dir_score );
++        int fd = open(dir_score, O_RDONLY);
+         if (fd != -1)
+         {
+ #ifndef __WIN32__
+@@ -112,6 +117,7 @@
+                         merge_from_file(fd);
+                 close(fd);      /* releases the lock */
+         }
++	free(dir_score);
+ }
+ 
+ void savehiscore(void)
+@@ -134,7 +140,12 @@
+          * 3. Personal installation.  The user should have a
+          * reasonable umask.
+          */
+-        int fd = open(DIR_SCORE "/bofh.hsc", O_RDWR | O_CREAT,
++	char *dir_score = malloc(1024);
++	char* env_dir_score = getenv("DIR_SCORE");
++	strcpy(dir_score, env_dir_score);
++	strcat( dir_score, "/bofh.hsc" );
++	printf("Score directory: %s \n", dir_score );
++        int fd = open(dir_score, O_RDWR | O_CREAT,
+ #ifndef __WIN32__
+                       S_IRUSR | S_IRGRP | S_IROTH
+                       | S_IWUSR | S_IWGRP | S_IWOTH);
+@@ -157,4 +168,5 @@
+                 }
+                 close(fd);      /* releases the lock */
+         }
++	free(dir_score);
+ }
+Index: bofh-0.0.0.0+20110602/src/bofhedit.c
+===================================================================
+--- bofh-0.0.0.0+20110602.orig/src/bofhedit.c	2011-06-02 14:12:17.125487446 +0200
++++ bofh-0.0.0.0+20110602/src/bofhedit.c	2011-06-02 14:36:41.245487937 +0200
+@@ -2058,6 +2058,7 @@
+                 case ACTOR_INSTRUCTIONS:
+  		frame = SPRI_INSTRUCT;
+                 gfx_drawsprite(xp, yp, frame);
++
+  		break;
+ 
+                 case ACTOR_GRENADE:
+@@ -3194,8 +3195,12 @@
+ int initstuff(void)
+ {
+   int c;
+-
+-  FILE *handle = fopen(DIR_USERCFG "/bofh.cfg", "rb");
++  char *dir_usercfg = malloc(1024);
++  char *env_dir_usercfg = getenv("DIR_USERCFG");
++  strcpy(dir_usercfg, env_dir_usercfg);
++  strcat( dir_usercfg, "/bofh.cfg" );
++  printf("User's config directory: %s \n", dir_usercfg );
++  FILE *handle = fopen( dir_usercfg, "rb");
+   win_fullscreen = 1;
+   if (handle)
+   {
+@@ -3206,6 +3211,7 @@
+     fread(&win_fullscreen, sizeof win_fullscreen, 1, handle);
+     fclose(handle);
+   }
++  free(dir_usercfg);
+ 
+   kbd_init();
+   if (!win_openwindow("BOFH Editor", NULL)) return 0;

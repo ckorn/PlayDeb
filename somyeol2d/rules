@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_install:
+	find data -type f -exec chmod -x {} \;
+	find img -type f -exec chmod -x {} \;
+	find sound -type f -exec chmod -x {} \;
+	find *.py -type f -exec chmod -x {} \;
+
+override_dh_auto_build:
+	unrtf --text changelog.rtf > changelog
+	dh_auto_build
+
+override_dh_clean:
+	dh_clean changelog

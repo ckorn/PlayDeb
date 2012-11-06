@@ -1,0 +1,3 @@
+?package(worldofpadman):needs="X11" section="Games/Action"\
+  icon="/usr/share/pixmaps/worldofpadman32.xpm" \
+  title="World of Padman" command="/usr/games/worldofpadman --quiet"

@@ -1,0 +1,21 @@
+Source: nether
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               freeglut3-dev,
+               mesa-common-dev,
+               libsdl1.2-dev,
+               libsdl-mixer1.2-dev,
+               libgl1-mesa-swx11-dev
+Standards-Version: 3.9.3
+Homepage: http://www.braingames.getput.com/
+
+Package: nether
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Remake of the very first real-time strategy game
+ Design your own robots, destroy enemy robots, gather
+ resources and conquor enemy warbases in this classic
+ first ever RTS game. 

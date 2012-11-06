@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Stendhal
+Exec=/usr/games/stendhal
+Icon=stendhal
+Terminal=false
+Type=Application
+Categories=Game;

@@ -1,0 +1,11 @@
+atomicworm (0.19-1~getdeb2) maverick; urgency=low
+
+  * Rebuild against the offical libtux library.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 11 Dec 2010 14:19:57 +0100
+
+atomicworm (0.19-1~getdeb1) jaunty; urgency=low
+
+  * Initial release (LP: #298690)
+
+ -- Christoph Korn <c_korn@gmx.de>  Sun, 13 Sep 2009 22:37:31 +0200

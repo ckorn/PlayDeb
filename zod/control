@@ -1,0 +1,46 @@
+Source: zod
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libsdl-image1.2-dev,
+               libsdl-ttf2.0-dev,
+               libsdl-mixer1.2-dev,
+               libmysqlclient-dev,
+               libwxgtk2.8-dev
+Standards-Version: 3.9.3
+Homepage: http://zod.sourceforge.net/
+
+Package: zod
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         zod-data (= ${source:Version})
+Description: Remake of the 1996 game Z by the Bitmap Brothers
+ In Z you were a commander under General Zod in his attempt
+ to conquer the universe. Your team, Brad and Allan, went
+ from site to site and planet to planet pushing back the
+ Blue forces while getting bitched at by General Zod.
+ In the Zod Engine the doors are opened up so that you can
+ play all the levels and make new levels the way you've
+ always wanted to. The Zod Engine is more then just a
+ remake of Z however, it is a fully commercially supported
+ online game that is perpetually running at all times.
+ Players can connect and disconnect at any time.
+
+Package: zod-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Remake of the 1996 game Z by the Bitmap Brothers (data package)
+ In Z you were a commander under General Zod in his attempt
+ to conquer the universe. Your team, Brad and Allan, went
+ from site to site and planet to planet pushing back the
+ Blue forces while getting bitched at by General Zod.
+ In the Zod Engine the doors are opened up so that you can
+ play all the levels and make new levels the way you've
+ always wanted to. The Zod Engine is more then just a
+ remake of Z however, it is a fully commercially supported
+ online game that is perpetually running at all times.
+ Players can connect and disconnect at any time.
+ .
+ (This package contains data files)

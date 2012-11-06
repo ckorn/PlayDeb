@@ -1,0 +1,3 @@
+version=3
+http://code.google.com/p/mupen64plus/downloads/list \
+    (?:.*/)?mupen64plus-bundle-src-([\d\.]+)\.tar\.gz

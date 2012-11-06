@@ -1,0 +1,3 @@
+debian/tmp/usr/games/freeciv-gtk2
+debian/tmp/usr/share/applications/freeciv-gtk.desktop
+debian/tmp/usr/share/ggz/modules/freeciv/civclient.dsc

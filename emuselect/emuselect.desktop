@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Emuselect ROMLauncher
+Comment=Emuselect RomLauncher Small, simple application to launch Emulators/ROMs. Preconfigured to launch PCSX-Reloaded, ZSNES, GVBA and DGen Roms.
+Exec=emuselect
+Icon=emuselect
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Amusement;Emulator;Game;

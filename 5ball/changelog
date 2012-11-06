@@ -1,0 +1,17 @@
+5ball (0.43-1~getdeb3) lucid; urgency=low
+
+  * Dead upstream. Remove debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 01 May 2011 12:16:35 +0200
+
+5ball (0.43-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 19:25:24 +0100
+
+5ball (0.43-1~getdeb1) jaunty; urgency=low
+
+  * Initial release (LP: #337953)
+
+ -- Christoph Korn <c_korn@gmx.de>  Sun, 27 Sep 2009 11:35:08 +0200

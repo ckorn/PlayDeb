@@ -1,0 +1,5 @@
+mineescape (1.0-1~getdeb1) lucid; urgency=low
+
+  * Initial release (LP: #612218)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 18 Sep 2010 00:11:06 +0200

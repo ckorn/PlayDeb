@@ -1,0 +1,60 @@
+Description: Various changes to the upstream makefiles
+
+* Don't strip binaries in Makefile.
+* Install in /usr/games, not /usr/bin.
+* Install cheats.bml into /usr/share/games/bsnes/, not ~/.config/bsnes.
+* Name bsnes.png and bsnes.desktop explicitly.
+* Include ALSA audio backend only on Linux.
+
+Origin: http://anonscm.debian.org/gitweb/?p=pkg-games/bsnes.git;a=tree;f=debian/patches
+
+Index: bsnes-090/bsnes/Makefile
+===================================================================
+--- bsnes-090.orig/bsnes/Makefile	2012-08-06 23:39:32.000000000 +0200
++++ bsnes-090/bsnes/Makefile	2012-08-07 17:58:49.195691904 +0200
+@@ -17,7 +17,7 @@
+ c       := $(compiler) -std=gnu99
+ cpp     := $(subst cc,++,$(compiler)) -std=gnu++0x
+ flags   := -I. -O3 -fomit-frame-pointer
+-link    := -s
++link    := 
+ objects := libco
+ 
+ # profile-guided optimization mode
+Index: bsnes-090/bsnes/target-ethos/Makefile
+===================================================================
+--- bsnes-090.orig/bsnes/target-ethos/Makefile	2012-08-06 23:20:35.000000000 +0200
++++ bsnes-090/bsnes/target-ethos/Makefile	2012-08-07 17:59:58.807691310 +0200
+@@ -16,8 +16,11 @@
+ # platform
+ ifeq ($(platform),x)
+   ruby := video.glx video.xv video.sdl
+-  ruby += audio.alsa audio.openal audio.oss audio.pulseaudio audio.pulseaudiosimple audio.ao
++  ruby += audio.openal audio.oss audio.pulseaudio audio.pulseaudiosimple audio.ao
+   ruby += input.sdl input.x
++  ifneq ($(findstring Linux,$(uname)),)
++    ruby += audio.alsa
++  endif
+ else ifeq ($(platform),osx)
+   ruby :=
+   ruby += audio.openal
+@@ -80,14 +83,11 @@
+ 	@echo Please do not run make install as root.
+ 	@echo The installer needs to know your home directory to install important files.
+ else ifeq ($(platform),x)
+-	sudo install -D -m 755 out/$(name) $(DESTDIR)$(prefix)/bin/$(name)
+-	sudo install -D -m 644 data/$(name).png $(DESTDIR)$(prefix)/share/pixmaps/$(name).png
+-	sudo install -D -m 644 data/$(name).desktop $(DESTDIR)$(prefix)/share/applications/$(name).desktop
+-
+-	mkdir -p ~/.config/$(name)
+-	cp -R profile/* ~/.config/$(name)
+-	cp data/cheats.xml ~/.config/$(name)/cheats.xml
+-	chmod -R 777 ~/.config/$(name)
++	install -D -m 755 out/$(name) $(DESTDIR)$(prefix)/games/$(name)
++	install -D -m 644 data/bsnes.png $(DESTDIR)$(prefix)/share/pixmaps/bsnes.png
++	install -D -m 644 data/bsnes.desktop $(DESTDIR)$(prefix)/share/applications/bsnes.desktop
++	install -D -m 644 data/cheats.xml $(DESTDIR)$(prefix)/share/games/bsnes/cheats.xml
++	cp -R profile/* $(DESTDIR)$(prefix)/share/games/bsnes/profile/
+ endif
+ 
+ uninstall:

@@ -1,0 +1,111 @@
+Fix paths.
+Index: mygui-3.2.0/CMake/InstallResources.cmake
+===================================================================
+--- mygui-3.2.0.orig/CMake/InstallResources.cmake	2012-02-22 22:27:34.000000000 +0100
++++ mygui-3.2.0/CMake/InstallResources.cmake	2012-09-05 18:12:04.334308375 +0200
+@@ -41,7 +41,7 @@
+ 			set(MYGUI_NO_PLUGIN_OGRE_DIRECTX "#")
+ 		endif ()
+ 	elseif (UNIX)
+-		set(MYGUI_PLUGIN_DIR "/usr/lib/OGRE")
++		set(MYGUI_PLUGIN_DIR "/usr/lib/OGRE1.8")
+ 		set(MYGUI_NO_PLUGIN_OGRE_DIRECTX "#")
+ 	endif()
+ endif ()
+@@ -51,7 +51,7 @@
+ 	if (WIN32)
+ 		set(MYGUI_MEDIA_DIR "../../Media")
+ 	elseif (UNIX)
+-		set(MYGUI_MEDIA_DIR "../share/MYGUI/Media")
++		set(MYGUI_MEDIA_DIR "/usr/share/MYGUI/media")
+ 	else ()
+ 		set(MYGUI_MEDIA_DIR "../../Media")
+ 	endif ()
+@@ -78,12 +78,16 @@
+ 	endif ()
+ 	
+ 	install_file (resources.xml)
+-	if (MYGUI_RENDERSYSTEM EQUAL 2)
++	if (MYGUI_RENDERSYSTEM EQUAL 2 AND NOT UNIX)
+ 		install_file (plugins.cfg)
+ 	endif ()
+ else ()
+ 
+-	set(MYGUI_MEDIA_DIR "${MYGUI_SOURCE_DIR}/Media")
++	if (UNIX)
++		set(MYGUI_MEDIA_DIR "/usr/share/MYGUI/media")
++	else()
++		set(MYGUI_MEDIA_DIR "${MYGUI_SOURCE_DIR}/Media")   
++	endif ()
+ 
+ 	if (WIN32)
+ 		# create resources.xml
+@@ -91,7 +95,7 @@
+ 		configure_file(${MYGUI_TEMPLATES_DIR}/resources.xml.in ${MYGUI_BINARY_DIR}/bin/release/resources.xml)
+ 		configure_file(${MYGUI_TEMPLATES_DIR}/resources.xml.in ${MYGUI_BINARY_DIR}/bin/relwithdebinfo/resources.xml)
+ 		configure_file(${MYGUI_TEMPLATES_DIR}/resources.xml.in ${MYGUI_BINARY_DIR}/bin/minsizerel/resources.xml)
+-		if (MYGUI_RENDERSYSTEM EQUAL 2)
++		if (MYGUI_RENDERSYSTEM EQUAL 2 AND NOT UNIX)
+ 			# create plugins.cfg
+ 			configure_file(${MYGUI_TEMPLATES_DIR}/plugins_d.cfg.in ${MYGUI_BINARY_DIR}/bin/debug/plugins.cfg)
+ 			configure_file(${MYGUI_TEMPLATES_DIR}/plugins.cfg.in ${MYGUI_BINARY_DIR}/bin/release/plugins.cfg)
+Index: mygui-3.2.0/Common/Base/Ogre/BaseManager.cpp
+===================================================================
+--- mygui-3.2.0.orig/Common/Base/Ogre/BaseManager.cpp	2012-02-22 22:28:14.000000000 +0100
++++ mygui-3.2.0/Common/Base/Ogre/BaseManager.cpp	2012-09-05 18:12:36.890307400 +0200
+@@ -46,9 +46,9 @@
+ 		mSceneManager(nullptr),
+ 		mWindow(nullptr),
+ 		mExit(false),
+-		mPluginCfgName("plugins.cfg"),
+-		mResourceXMLName("resources.xml"),
+-		mResourceFileName("MyGUI_Core.xml"),
++		mPluginCfgName("/etc/OGRE1.8/plugins.cfg"),
++		mResourceXMLName("/usr/share/MYGUI/resources.xml"),
++		mResourceFileName(Ogre::String(getenv("HOME"))+"/.mygui/MyGUI_Core.xml"),
+ 		mNode(nullptr)
+ 	{
+ 		#if MYGUI_PLATFORM == MYGUI_PLATFORM_APPLE
+@@ -70,7 +70,7 @@
+ 			pluginsPath = mResourcePath + mPluginCfgName;
+ 		#endif
+ 
+-		mRoot = new Ogre::Root(pluginsPath, mResourcePath + "ogre.cfg", mResourcePath + "Ogre.log");
++		mRoot = new Ogre::Root(pluginsPath, Ogre::String(getenv("HOME"))+"/.mygui/ogre.cfg", "");
+ 
+ 		setupResources();
+ 
+Index: mygui-3.2.0/Common/Base/Ogre/BaseManager.h
+===================================================================
+--- mygui-3.2.0.orig/Common/Base/Ogre/BaseManager.h	2012-02-22 22:28:14.000000000 +0100
++++ mygui-3.2.0/Common/Base/Ogre/BaseManager.h	2012-09-05 18:10:25.000000000 +0200
+@@ -9,6 +9,7 @@
+ 
+ #include <Ogre.h>
+ #include <MyGUI.h>
++#include <stdlib.h>
+ #include "Base/StatisticInfo.h"
+ #include "Base/InputFocusInfo.h"
+ 
+Index: mygui-3.2.0/Media/CMakeLists.txt
+===================================================================
+--- mygui-3.2.0.orig/Media/CMakeLists.txt	2012-02-22 22:27:34.000000000 +0100
++++ mygui-3.2.0/Media/CMakeLists.txt	2012-09-05 18:10:25.000000000 +0200
+@@ -6,7 +6,7 @@
+ if (WIN32)
+   set(MYGUI_MEDIA_PATH "Media")
+ elseif (UNIX)
+-  set(MYGUI_MEDIA_PATH "share/MYGUI/Media")
++  set(MYGUI_MEDIA_PATH "share/MYGUI/media")
+ elseif (APPLE)
+   # TODO
+ endif ()
+Index: mygui-3.2.0/Tools/CMakeLists.txt
+===================================================================
+--- mygui-3.2.0.orig/Tools/CMakeLists.txt	2012-02-22 22:28:26.000000000 +0100
++++ mygui-3.2.0/Tools/CMakeLists.txt	2012-09-05 18:10:25.000000000 +0200
+@@ -1,4 +1,3 @@
+-add_subdirectory(FontViewer)
+ add_subdirectory(ImageSetViewer)
+ add_subdirectory(LayoutEditor)
+ add_subdirectory(SkinEditor)

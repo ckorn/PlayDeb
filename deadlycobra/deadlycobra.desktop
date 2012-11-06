@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Deadly Cobra
+Exec=/usr/games/deadlycobra
+Icon=deadlycobra
+Terminal=false
+Type=Application
+Categories=Game;

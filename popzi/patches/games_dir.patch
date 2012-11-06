@@ -1,0 +1,37 @@
+Game files go to /usr/share/games
+Index: popzi-0.1/setup.py
+===================================================================
+--- popzi-0.1.orig/setup.py	2012-03-11 13:07:35.972283369 +0100
++++ popzi-0.1/setup.py	2012-03-11 13:08:58.800280905 +0100
+@@ -33,12 +33,12 @@
+ 		package_dir = {'popzi': 'popzi'},
+ 		scripts = ['bin/popzi'],
+ 		data_files = [
+-			('share/popzi/', ['android-icon.png'] ),
+-			('share/popzi/fonts', glob('fonts/*')),
+-			('share/popzi/sfx', glob('sfx/*')),			
+-			('share/popzi/gfx/buttons', glob('gfx/buttons/*')),
+-			('share/popzi/gfx/themes/fruits', glob('gfx/themes/fruits/*')),
+-			('share/popzi/gfx/themes/marbles', glob('gfx/themes/marbles/*')),			
++			('share/games/popzi/', ['android-icon.png'] ),
++			('share/games/popzi/fonts', glob('fonts/*')),
++			('share/games/popzi/sfx', glob('sfx/*')),			
++			('share/games/popzi/gfx/buttons', glob('gfx/buttons/*')),
++			('share/games/popzi/gfx/themes/fruits', glob('gfx/themes/fruits/*')),
++			('share/games/popzi/gfx/themes/marbles', glob('gfx/themes/marbles/*')),			
+ 			('share/applications', ['data/popzi.desktop']),
+ 			('share/pixmaps', ['data/popzi-icon.png'])
+ 		],
+Index: popzi-0.1/popzi/game.py
+===================================================================
+--- popzi-0.1.orig/popzi/game.py	2012-03-11 13:19:02.676262941 +0100
++++ popzi-0.1/popzi/game.py	2012-03-11 13:19:06.904262814 +0100
+@@ -55,7 +55,7 @@
+ FALLING_INTERVAL = 33
+ POPPING_INTERVAL = 33
+ 
+-resources.DATA_DIR = "/usr/share/popzi"
++resources.DATA_DIR = "/usr/share/games/popzi"
+ 
+ try:
+     import android

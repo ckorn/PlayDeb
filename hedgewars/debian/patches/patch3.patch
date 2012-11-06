@@ -1,0 +1,767 @@
+diff -Nur hedgewars-src-0.9.18/CMakeLists.txt hedgewars-src-0.9.18_2/CMakeLists.txt
+--- hedgewars-src-0.9.18/CMakeLists.txt	2012-10-31 21:48:12.000000000 +0100
++++ hedgewars-src-0.9.18_2/CMakeLists.txt	2012-11-02 18:41:54.000000000 +0100
+@@ -55,6 +55,8 @@
+ 
+ option(BUILD_ENGINE_LIBRARY "Enable hwengine library [default: off]" OFF)
+ option(ANDROID "Enable Android build [default: off]" OFF)
++
++option(NOAUTOUPDATE "Disable OS X Sparkle update checking" OFF)
+ option(CROSSAPPLE "Enable OSX when not on OSX [default: off]" OFF)
+ 
+ 
+diff -Nur hedgewars-src-0.9.18/cmake_modules/FindSparkle.cmake hedgewars-src-0.9.18_2/cmake_modules/FindSparkle.cmake
+--- hedgewars-src-0.9.18/cmake_modules/FindSparkle.cmake	2012-07-31 21:29:31.000000000 +0200
++++ hedgewars-src-0.9.18_2/cmake_modules/FindSparkle.cmake	2012-11-02 18:41:54.000000000 +0100
+@@ -24,14 +24,14 @@
+ endif ()
+ 
+ if (SPARKLE_FOUND)
+-   if (NOT Sparkle_FIND_QUIETLY)
++   if (NOT SPARKLE_FIND_QUIETLY)
+       message(STATUS "Found Sparkle: ${SPARKLE_LIBRARY}")
+    endif ()
+ else ()
+-   if (Sparkle_FIND_REQUIRED)
++   if (SPARKLE_FIND_REQUIRED)
+       message(FATAL_ERROR "Could NOT find Sparkle framework")
+    else ()
+-      if (NOT Sparkle_FIND_QUIETLY)
++      if (NOT SPARKLE_FIND_QUIETLY)
+          message(STATUS "Could NOT find Sparkle framework, autoupdate feature will be disabled")
+       endif()
+    endif ()
+diff -Nur hedgewars-src-0.9.18/gameServer/Actions.hs hedgewars-src-0.9.18_2/gameServer/Actions.hs
+--- hedgewars-src-0.9.18/gameServer/Actions.hs	2012-10-31 21:48:12.000000000 +0100
++++ hedgewars-src-0.9.18_2/gameServer/Actions.hs	2012-11-02 18:41:55.000000000 +0100
+@@ -62,6 +62,7 @@
+     | ModifyRoom (RoomInfo -> RoomInfo)
+     | ModifyServerInfo (ServerInfo -> ServerInfo)
+     | AddRoom B.ByteString B.ByteString
++    | SendUpdateOnThisRoom
+     | CheckRegistered
+     | ClearAccountsCache
+     | ProcessAccountInfo AccountInfo
+@@ -319,6 +320,16 @@
+     io $ removeRoom rnc ri
+ 
+ 
++processAction SendUpdateOnThisRoom = do
++    Just clId <- gets clientIndex
++    proto <- client's clientProto
++    rnc <- gets roomsClients
++    ri <- io $ clientRoomM rnc clId
++    rm <- io $ room'sM rnc id ri
++    chans <- liftM (map sendChan) $! sameProtoClientsS proto
++    processAction $ AnswerClients chans ("ROOM" : "UPD" : name rm : roomInfo (name rm) rm)
++
++
+ processAction UnreadyRoomClients = do
+     ri <- clientRoomA
+     roomPlayers <- roomClientsS ri
+@@ -348,6 +359,7 @@
+                 }
+             )
+         : UnreadyRoomClients
++        : SendUpdateOnThisRoom
+         : answerRemovedTeams
+ 
+ 
+diff -Nur hedgewars-src-0.9.18/gameServer/HWProtoInRoomState.hs hedgewars-src-0.9.18_2/gameServer/HWProtoInRoomState.hs
+--- hedgewars-src-0.9.18/gameServer/HWProtoInRoomState.hs	2012-10-29 07:10:05.000000000 +0100
++++ hedgewars-src-0.9.18_2/gameServer/HWProtoInRoomState.hs	2012-11-02 18:41:55.000000000 +0100
+@@ -72,6 +72,7 @@
+                 [Warning "restricted"]
+             else
+                 [ModifyRoom (\r -> r{teams = teams r ++ [newTeam ci clNick r teamColor]}),
++                SendUpdateOnThisRoom,
+                 ModifyClient (\c -> c{teamsInGame = teamsInGame c + 1, clientClan = Just teamColor}),
+                 AnswerClients clChan ["TEAM_ACCEPTED", tName],
+                 AnswerClients othChans $ teamToNet $ newTeam ci clNick rm teamColor,
+@@ -106,6 +107,7 @@
+                 [ProtocolError "Not team owner!"]
+             else
+                 [RemoveTeam tName,
++                SendUpdateOnThisRoom,
+                 ModifyClient
+                     (\c -> c{
+                         teamsInGame = teamsInGame c - 1,
+@@ -194,6 +196,7 @@
+                         }
+                     )
+                 , AnswerClients chans ["RUN_GAME"]
++                , SendUpdateOnThisRoom
+                 , AnswerClients chans $ "CLIENT_FLAGS" : "+g" : nicks
+                 , ModifyRoomClients (\c -> c{isInGame = True})
+                 ]
+diff -Nur hedgewars-src-0.9.18/hedgewars/uLand.pas hedgewars-src-0.9.18_2/hedgewars/uLand.pas
+--- hedgewars-src-0.9.18/hedgewars/uLand.pas	2012-10-17 22:26:20.000000000 +0200
++++ hedgewars-src-0.9.18_2/hedgewars/uLand.pas	2012-11-02 18:41:54.000000000 +0100
+@@ -405,6 +405,7 @@
+ procedure MakeFortsMap;
+ var tmpsurf: PSDL_Surface;
+ begin
++ResizeLand(4096,2048);
+ MaxHedgehogs:= 32;
+ // For now, defining a fort is playable area as 3072x1200 - there are no tall forts.  The extra height is to avoid triggering border with current code, also if user turns on a border, it will give a bit more maneuvering room.
+ playHeight:= 1200;
+diff -Nur hedgewars-src-0.9.18/QTfrontend/hedgewars.qrc.depends hedgewars-src-0.9.18_2/QTfrontend/hedgewars.qrc.depends
+--- hedgewars-src-0.9.18/QTfrontend/hedgewars.qrc.depends	1970-01-01 01:00:00.000000000 +0100
++++ hedgewars-src-0.9.18_2/QTfrontend/hedgewars.qrc.depends	2012-11-02 18:41:54.000000000 +0100
+@@ -0,0 +1,149 @@
++<RCC>
++    <qresource prefix="/">
++        <file alias="Ammos.png">../share/hedgewars/Data/Graphics/AmmoMenu/Ammos.png</file>
++        <file>res/css/qt.css</file>
++        <file>res/css/chat.css</file>
++        <file>res/css/christmas.css</file>
++        <file>res/css/easter.css</file>
++        <file>res/css/birthday.css</file>
++        <file>res/hh25x25.png</file>
++        <file>res/hh25x25grey.png</file>
++        <file>res/ammopic.png</file>
++        <file>res/ammopicgrey.png</file>
++        <file>res/ammopicbox.png</file>
++        <file>res/ammopicboxgrey.png</file>
++        <file>res/ammopicdelay.png</file>
++        <file>res/ammopicdelaygrey.png</file>
++        <file>res/infinity.png</file>
++        <file>res/infinitygrey.png</file>
++        <file>res/botlevels/0.png</file>
++        <file>res/botlevels/1.png</file>
++        <file>res/botlevels/2.png</file>
++        <file>res/botlevels/3.png</file>
++        <file>res/botlevels/4.png</file>
++        <file>res/botlevels/5.png</file>
++        <file>res/botlevels/net0.png</file>
++        <file>res/botlevels/net1.png</file>
++        <file>res/botlevels/net2.png</file>
++        <file>res/botlevels/net3.png</file>
++        <file>res/botlevels/net4.png</file>
++        <file>res/botlevels/net5.png</file>
++        <file>res/bonus.png</file>
++        <file>res/Hedgehog.png</file>
++        <file>res/net.png</file>
++        <file>res/About.png</file>
++        <file>res/SimpleGame.png</file>
++        <file>res/Campaign.png</file>
++        <file>res/Multiplayer.png</file>
++        <file>res/Trainings.png</file>
++        <file>res/Background.png</file>
++        <file>res/BackgroundChristmas.png</file>
++        <file>res/BackgroundEaster.png</file>
++        <file>res/BackgroundBirthday.png</file>
++        <file>res/Exit.png</file>
++        <file>res/HedgewarsTitle.png</file>
++        <file>res/LocalPlay.png</file>
++        <file>res/NetworkPlay.png</file>
++        <file>res/Settings.png</file>
++        <file>res/dropdown.png</file>
++        <file>res/new.png</file>
++        <file>res/edit.png</file>
++        <file>res/delete.png</file>
++        <file>res/checked.png</file>
++        <file>res/unchecked.png</file>
++        <file>res/graphicsicon.png</file>
++        <file>res/miscicon.png</file>
++        <file>res/Load.png</file>
++        <file>res/Save.png</file>
++        <file>res/Record.png</file>
++        <file>res/Videos.png</file>
++        <file>res/weaponsicon.png</file>
++        <file>res/teamicon.png</file>
++        <file>res/panelbg.png</file>
++        <file>res/lightbulb_on.png</file>
++        <file>res/lightbulb_off.png</file>
++        <file>res/spin_up.png</file>
++        <file>res/spin_down.png</file>
++        <file>res/PlaySound.png</file>
++        <file>res/hh_small.png</file>
++        <file>res/btnDisabled.png</file>
++        <file>res/btnForts@2x.png</file>
++        <file>res/btnBorder@2x.png</file>
++        <file>res/btnInvulnerable@2x.png</file>
++        <file>res/btnLaserSight@2x.png</file>
++        <file>res/btnLowGravity@2x.png</file>
++        <file>res/btnResetHealth@2x.png</file>
++        <file>res/btnTeamsDivide@2x.png</file>
++        <file>res/btnSolid@2x.png</file>
++        <file>res/btnVampiric@2x.png</file>
++        <file>res/btnKarma@2x.png</file>
++        <file>res/btnArtillery@2x.png</file>
++        <file>res/btnRandomOrder@2x.png</file>
++        <file>res/btnKing@2x.png</file>
++        <file>res/btnPlaceHog@2x.png</file>
++        <file>res/btnSharedAmmo@2x.png</file>
++        <file>res/btnDisableGirders@2x.png</file>
++        <file>res/btnDisableLandObjects@2x.png</file>
++        <file>res/btnAISurvival@2x.png</file>
++        <file>res/btnInfAttack@2x.png</file>
++        <file>res/btnResetWeps@2x.png</file>
++        <file>res/btnPerHogAmmo@2x.png</file>
++        <file>res/btnNoWind@2x.png</file>
++        <file>res/btnMoreWind@2x.png</file>
++        <file>res/btnTagTeam@2x.png</file>
++        <file>res/btnBottomBorder@2x.png</file>
++        <file>res/iconBox.png</file>
++        <file>res/iconHealth.png</file>
++        <file>res/iconSuddenDeath.png</file>
++        <file>res/iconDamage.png</file>
++        <file>res/iconTime.png</file>
++        <file>res/iconMine.png</file>
++        <file>res/iconDud.png</file>
++        <file>res/iconRope.png</file>
++        <file>res/dice.png</file>
++        <file>res/Star.png</file>
++        <file>res/Flake.png</file>
++        <file>res/Egg.png</file>
++        <file>res/Confetti.png</file>
++        <file>res/file_save.png</file>
++        <file>res/file_demo.png</file>
++        <file>res/addfriend.png</file>
++        <file>res/remfriend.png</file>
++        <file>res/ignore.png</file>
++        <file>res/unignore.png</file>
++        <file>res/follow.png</file>
++        <file>res/info.png</file>
++        <file>res/kick.png</file>
++        <file>res/lock.png</file>
++        <file>res/unlock.png</file>
++        <file>res/StatsMedal1.png</file>
++        <file>res/StatsMedal2.png</file>
++        <file>res/StatsMedal3.png</file>
++        <file>res/StatsMedal4.png</file>
++        <file>res/StatsR.png</file>
++        <file>res/StatsH.png</file>
++        <file>res/StatsD.png</file>
++        <file>res/StatsBestKiller.png</file>
++        <file>res/StatsBestShot.png</file>
++        <file>res/StatsHedgehogsKilled.png</file>
++        <file>res/StatsMostSelfDamage.png</file>
++        <file>res/StatsSelfKilled.png</file>
++        <file>res/StatsSkipped.png</file>
++        <file>res/mapRandom.png</file>
++        <file>res/mapMaze.png</file>
++        <file>res/mapMissing.png</file>
++        <file>res/mapCustom.png</file>
++        <file>res/mapMission.png</file>
++        <file>res/chat/friend.png</file>
++        <file>res/chat/ignore.png</file>
++        <file>res/chat/lamp.png</file>
++        <file>res/chat/hedgehog.png</file>
++        <file>res/chat/hedgehog_gray.png</file>
++        <file>res/chat/roomadmin.png</file>
++        <file>res/chat/roomadmin_gray.png</file>
++        <file>res/chat/serveradmin.png</file>
++        <file>res/chat/serveradmin_gray.png</file>
++        <file>res/chat/lamp_off.png</file>
++        <file>res/chat/ingame.png</file>
++    </qresource>
++</RCC>
+diff -Nur hedgewars-src-0.9.18/QTfrontend/hwform.cpp hedgewars-src-0.9.18_2/QTfrontend/hwform.cpp
+--- hedgewars-src-0.9.18/QTfrontend/hwform.cpp	2012-11-01 17:52:27.000000000 +0100
++++ hedgewars-src-0.9.18_2/QTfrontend/hwform.cpp	2012-11-02 18:41:55.000000000 +0100
+@@ -100,7 +100,6 @@
+ #ifdef __APPLE__
+ #include "M3Panel.h"
+ #ifdef SPARKLE_ENABLED
+-#define SPARKLE_APPCAST_URL "http://www.hedgewars.org/download/appcast.xml"
+ #include "SparkleAutoUpdater.h"
+ #endif
+ #endif
+@@ -152,7 +151,7 @@
+ #ifdef SPARKLE_ENABLED
+     AutoUpdater* updater;
+ 
+-    updater = new SparkleAutoUpdater(SPARKLE_APPCAST_URL);
++    updater = new SparkleAutoUpdater();
+     if (updater && config->isAutoUpdateEnabled())
+         updater->checkForUpdates();
+ #endif
+diff -Nur hedgewars-src-0.9.18/QTfrontend/main.cpp.orig hedgewars-src-0.9.18_2/QTfrontend/main.cpp.orig
+--- hedgewars-src-0.9.18/QTfrontend/main.cpp.orig	1970-01-01 01:00:00.000000000 +0100
++++ hedgewars-src-0.9.18_2/QTfrontend/main.cpp.orig	2012-11-02 18:41:54.000000000 +0100
+@@ -0,0 +1,289 @@
++/*
++ * Hedgewars, a free turn based strategy game
++ * Copyright (c) 2004-2012 Andrey Korotaev <unC0Rr@gmail.com>
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; version 2 of the License
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, write to the Free Software
++ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
++ */
++
++#include "HWApplication.h"
++
++#include <QTranslator>
++#include <QLocale>
++#include <QMessageBox>
++#include <QPlastiqueStyle>
++#include <QRegExp>
++#include <QMap>
++#include <QSettings>
++#include <QStringListModel>
++#include <QDate>
++
++#include "hwform.h"
++#include "hwconsts.h"
++#include "newnetclient.h"
++
++#include "DataManager.h"
++
++#ifdef _WIN32
++#include <Shlobj.h>
++#endif
++#ifdef __APPLE__
++#include "CocoaInitializer.h"
++#endif
++
++
++//Determines the day of easter in year
++//from http://aa.usno.navy.mil/faq/docs/easter.php,adapted to C/C++
++QDate calculateEaster(long year)
++{
++    int c, n, k, i, j, l, m, d;
++
++    c = year/100;
++    n = year - 19*(year/19);
++    k = (c - 17)/25;
++    i = c - c/4 - (c - k)/3 + 19*n + 15;
++    i = i - 30*(i/30);
++    i = i - (i/28)*(1 - (i/28)*(29/(i + 1))*((21 - n)/11));
++    j = year + year/4 + i + 2 - c + c/4;
++    j = j - 7*(j/7);
++    l = i - j;
++    m = 3 + (l + 40)/44;
++    d = l + 28 - 31*(m / 4);
++
++    return QDate(year, m, d);
++}
++
++//Checks season and assigns it to the variable season in "hwconsts.h"
++void checkSeason()
++{
++    QDate date = QDate::currentDate();
++
++    //Christmas?
++    if (date.month() == 12 && date.day() >= 24
++            && date.day() <= 26)
++        season = SEASON_CHRISTMAS;
++    //Hedgewars birthday?
++    else if (date.month() == 10 && date.day() == 31)
++    {
++        season = SEASON_HWBDAY;
++        years_since_foundation = date.year() - 2004;
++    }
++    //Easter?
++    else if (calculateEaster(date.year()) == date)
++        season = SEASON_EASTER;
++    else
++        season = SEASON_NONE;
++}
++
++bool checkForDir(const QString & dir)
++{
++    QDir tmpdir;
++    if (!tmpdir.exists(dir))
++        if (!tmpdir.mkdir(dir))
++        {
++            QMessageBox directoryMsg(QApplication::activeWindow());
++            directoryMsg.setIcon(QMessageBox::Warning);
++            directoryMsg.setWindowTitle(QMessageBox::tr("Main - Error"));
++            directoryMsg.setText(QMessageBox::tr("Cannot create directory %1").arg(dir));
++            directoryMsg.setWindowModality(Qt::WindowModal);
++            directoryMsg.exec();
++            return false;
++        }
++    return true;
++}
++
++int main(int argc, char *argv[])
++{
++    HWApplication app(argc, argv);
++
++    app.setAttribute(Qt::AA_DontShowIconsInMenus,false);
++
++    QStringList arguments = app.arguments();
++    QMap<QString, QString> parsedArgs;
++    {
++        QList<QString>::iterator i = arguments.begin();
++        while(i != arguments.end())
++        {
++            QString arg = *i;
++
++            QRegExp opt("--(\\S+)=(.+)");
++            if(opt.exactMatch(arg))
++            {
++                parsedArgs[opt.cap(1)] = opt.cap(2);
++                i = arguments.erase(i);
++            }
++            else
++            {
++                ++i;
++            }
++        }
++    }
++
++    if(parsedArgs.contains("data-dir"))
++    {
++        QFileInfo f(parsedArgs["data-dir"]);
++        if(!f.exists())
++        {
++            qWarning() << "WARNING: Cannot open DATA_PATH=" << f.absoluteFilePath();
++        }
++        *cDataDir = f.absoluteFilePath();
++        custom_data = true;
++    }
++
++    if(parsedArgs.contains("config-dir"))
++    {
++        QFileInfo f(parsedArgs["config-dir"]);
++        *cConfigDir = f.absoluteFilePath();
++        custom_config = true;
++    }
++
++    app.setStyle(new QPlastiqueStyle);
++
++    QDateTime now = QDateTime::currentDateTime();
++    srand(now.toTime_t());
++    rand();
++
++    Q_INIT_RESOURCE(hedgewars);
++
++    qRegisterMetaType<HWTeam>("HWTeam");
++
++    bindir->cd("bin"); // workaround over NSIS installer
++
++    if(cConfigDir->length() == 0)
++        cfgdir->setPath(cfgdir->homePath());
++    else
++        cfgdir->setPath(*cConfigDir);
++
++    if(cConfigDir->length() == 0)
++    {
++#ifdef __APPLE__
++        checkForDir(cfgdir->absolutePath() + "/Library/Application Support/Hedgewars");
++        cfgdir->cd("Library/Application Support/Hedgewars");
++#elif defined _WIN32
++        char path[1024];
++        if(!SHGetFolderPathA(0, CSIDL_PERSONAL, NULL, 0, path))
++        {
++            cfgdir->cd(path);
++            checkForDir(cfgdir->absolutePath() + "/Hedgewars");
++            cfgdir->cd("Hedgewars");
++        }
++        else // couldn't retrieve documents folder? almost impossible, but in case fall back to classic path
++        {
++            checkForDir(cfgdir->absolutePath() + "/.hedgewars_0.9.18");
++            cfgdir->cd(".hedgewars");
++        }
++#else
++        checkForDir(cfgdir->absolutePath() + "/.hedgewars_0.9.18");
++        cfgdir->cd(".hedgewars_0.9.18");
++#endif
++    }
++
++    if (checkForDir(cfgdir->absolutePath()))
++    {
++        // alternative loading/lookup paths
++        checkForDir(cfgdir->absolutePath() + "/Data");
++
++        // config/save paths
++        checkForDir(cfgdir->absolutePath() + "/Demos");
++        checkForDir(cfgdir->absolutePath() + "/Saves");
++        checkForDir(cfgdir->absolutePath() + "/Screenshots");
++        checkForDir(cfgdir->absolutePath() + "/Teams");
++        checkForDir(cfgdir->absolutePath() + "/Logs");
++        checkForDir(cfgdir->absolutePath() + "/Videos");
++        checkForDir(cfgdir->absolutePath() + "/VideoTemp");
++    }
++
++    datadir->cd(bindir->absolutePath());
++    datadir->cd(*cDataDir);
++    if(!datadir->cd("hedgewars/Data"))
++    {
++        QMessageBox missingMsg(QApplication::activeWindow());
++        missingMsg.setIcon(QMessageBox::Critical);
++        missingMsg.setWindowTitle(QMessageBox::tr("Main - Error"));
++        missingMsg.setText(QMessageBox::tr("Failed to open data directory:\n%1\n\n"
++                                           "Please check your installation!").
++                                            arg(datadir->absolutePath()+"/hedgewars/Data"));
++        missingMsg.setWindowModality(Qt::WindowModal);
++        missingMsg.exec();
++        return 1;
++    }
++
++    DataManager & dataMgr = DataManager::instance();
++
++    QTranslator Translator;
++    {
++        QSettings settings(cfgdir->absolutePath() + "/hedgewars.ini", QSettings::IniFormat);
++        QString cc = settings.value("misc/locale", QString()).toString();
++        if(cc.isEmpty())
++            cc = QLocale::system().name();
++
++        // load locale file into translator
++        Translator.load(
++            dataMgr.findFileForRead(
++                QString("Locale/hedgewars_" + cc)
++            )
++        );
++        app.installTranslator(&Translator);
++    }
++
++#ifdef _WIN32
++    // Win32 registry setup (used for xfire detection etc. - don't set it if we're running in "portable" mode with a custom config dir)
++    if(!custom_config)
++    {
++        QSettings registry_hklm("HKEY_LOCAL_MACHINE", QSettings::NativeFormat);
++        registry_hklm.setValue("Software/Hedgewars/Frontend", bindir->absolutePath().replace("/", "\\") + "\\hedgewars.exe");
++        registry_hklm.setValue("Software/Hedgewars/Path", bindir->absolutePath().replace("/", "\\"));
++    }
++#endif
++#ifdef __APPLE__
++    // this creates the autoreleasepool that prevents leaking
++    CocoaInitializer initializer;
++#endif
++
++    QString style = "";
++    QString fname;
++
++    checkSeason();
++    //For each season, there is an extra stylesheet
++    //Todo: change background for easter and birthday
++    //(simply replace res/BackgroundBirthday.png and res/BackgroundEaster.png
++    //with an appropriate background
++    switch (season)
++    {
++        case SEASON_CHRISTMAS :
++            fname = "christmas.css";
++            break;
++        case SEASON_EASTER :
++            fname = "easter.css";
++            break;
++        case SEASON_HWBDAY :
++            fname = "birthday.css";
++            break;
++        default :
++            fname = "qt.css";
++    }
++
++    // load external stylesheet if there is any
++    QFile extFile(dataMgr.findFileForRead("css/" + fname));
++
++    QFile resFile(":/res/css/" + fname);
++
++    QFile & file = (extFile.exists() ? extFile : resFile);
++
++    if (file.open(QIODevice::ReadOnly | QIODevice::Text))
++        style.append(file.readAll());
++
++    app.form = new HWForm(NULL, style);
++    app.form->show();
++    return app.exec();
++}
+Binärdateien hedgewars-src-0.9.18/QTfrontend/res/BackgroundBirthday.png and hedgewars-src-0.9.18_2/QTfrontend/res/BackgroundBirthday.png sind verschieden.
+diff -Nur hedgewars-src-0.9.18/QTfrontend/res/css/birthday.css hedgewars-src-0.9.18_2/QTfrontend/res/css/birthday.css
+--- hedgewars-src-0.9.18/QTfrontend/res/css/birthday.css	2012-10-31 21:48:12.000000000 +0100
++++ hedgewars-src-0.9.18_2/QTfrontend/res/css/birthday.css	2012-11-02 18:41:54.000000000 +0100
+@@ -21,7 +21,7 @@
+ background-image: url(":/res/BackgroundBirthday.png");
+ background-position: bottom center;
+ background-repeat: repeat-x;
+-background-color: black;
++background-color: #100308;
+ }
+ 
+ * {
+diff -Nur hedgewars-src-0.9.18/QTfrontend/SparkleAutoUpdater.h hedgewars-src-0.9.18_2/QTfrontend/SparkleAutoUpdater.h
+--- hedgewars-src-0.9.18/QTfrontend/SparkleAutoUpdater.h	2012-07-31 21:29:31.000000000 +0200
++++ hedgewars-src-0.9.18_2/QTfrontend/SparkleAutoUpdater.h	2012-11-02 18:41:55.000000000 +0100
+@@ -12,10 +12,11 @@
+ class SparkleAutoUpdater : public AutoUpdater
+ {
+     public:
+-        SparkleAutoUpdater(const QString& url);
++        SparkleAutoUpdater();
+         ~SparkleAutoUpdater();
+ 
+         void checkForUpdates();
++        void checkForUpdatesNow();
+ 
+     private:
+         class Private;
+diff -Nur hedgewars-src-0.9.18/QTfrontend/SparkleAutoUpdater.mm hedgewars-src-0.9.18_2/QTfrontend/SparkleAutoUpdater.mm
+--- hedgewars-src-0.9.18/QTfrontend/SparkleAutoUpdater.mm	2012-07-31 21:29:31.000000000 +0200
++++ hedgewars-src-0.9.18_2/QTfrontend/SparkleAutoUpdater.mm	2012-11-02 18:41:55.000000000 +0100
+@@ -29,15 +29,12 @@
+         SUUpdater* updater;
+ };
+ 
+-SparkleAutoUpdater::SparkleAutoUpdater(const QString& aUrl)
++SparkleAutoUpdater::SparkleAutoUpdater()
+ {
+     d = new Private;
+ 
+     d->updater = [SUUpdater sharedUpdater];
+     [d->updater retain];
+-
+-    NSURL* url = [NSURL URLWithString:[NSString stringWithUTF8String:aUrl.toUtf8().data()]];
+-    [d->updater setFeedURL:url];
+ }
+ 
+ SparkleAutoUpdater::~SparkleAutoUpdater()
+@@ -50,3 +47,8 @@
+ {
+     [d->updater checkForUpdatesInBackground];
+ }
++
++void SparkleAutoUpdater::checkForUpdatesNow()
++{
++    [d->updater checkForUpdates:NULL];
++}
+diff -Nur hedgewars-src-0.9.18/QTfrontend/ui/widget/about.cpp hedgewars-src-0.9.18_2/QTfrontend/ui/widget/about.cpp
+--- hedgewars-src-0.9.18/QTfrontend/ui/widget/about.cpp	2012-10-29 07:10:05.000000000 +0100
++++ hedgewars-src-0.9.18_2/QTfrontend/ui/widget/about.cpp	2012-11-02 18:41:54.000000000 +0100
+@@ -88,7 +88,7 @@
+         "Android netplay, portability abstraction: Simeon Maxein &lt;<a href=\"mailto:smaxein@googlemail.com\">smaxein@googlemail.com</a>&gt;<br>"
+         "WebGL port, some pas2c and GLES2 work: Meng Xiangyun &lt;<a href=\"mailto:xymengxy@gmail.com\">xymengxy@gmail.com</a>&gt;<br>"
+         "Video recording: Stepan Podoskin &lt;<a href=\"mailto:stepik-777@mail.ru\">stepik-777@mail.ru</a>&gt;<br>"
+-        "Campaign support, first campaign: Szabolcs Orbàn &lt;<a href=\"mailto:szabibibi@gmail.com\">szabibibi@gmail.com</a>&gt;<br>"
++        "Campaign support, first campaign: Szabolcs Orb&agrave;n &lt;<a href=\"mailto:szabibibi@gmail.com\">szabibibi@gmail.com</a>&gt;<br>"
+         "</p><h2>" +
+ 
+         QLabel::tr("Art:") + "</h2>"
+diff -Nur hedgewars-src-0.9.18/QTfrontend/ui/widget/chatwidget.cpp hedgewars-src-0.9.18_2/QTfrontend/ui/widget/chatwidget.cpp
+--- hedgewars-src-0.9.18/QTfrontend/ui/widget/chatwidget.cpp	2012-10-17 22:26:19.000000000 +0200
++++ hedgewars-src-0.9.18_2/QTfrontend/ui/widget/chatwidget.cpp	2012-11-02 18:41:54.000000000 +0100
+@@ -532,9 +532,9 @@
+     QString hlRegExp("^(.* )?%1[^-a-z0-9_]*( .*)?$");
+     QRegExp whitespace("\\s");
+ 
+-    m_highlights.append(QRegExp(hlRegExp.arg(m_userNick)));
++    m_highlights.append(QRegExp(hlRegExp.arg(m_userNick.toLower())));
+ 
+-    QFile file(cfgdir->absolutePath() + "/" + m_userNick + "_highlight.txt");
++    QFile file(cfgdir->absolutePath() + "/" + m_userNick.toLower() + "_highlight.txt");
+ 
+     if (file.exists() && (file.open(QIODevice::ReadOnly | QIODevice::Text)))
+     {
+@@ -554,7 +554,7 @@
+             file.close();
+     }
+ 
+-    QFile file2(cfgdir->absolutePath() + "/" + m_userNick + "_hlregexp.txt");
++    QFile file2(cfgdir->absolutePath() + "/" + m_userNick.toLower() + "_hlregexp.txt");
+ 
+     if (file2.exists() && (file2.open(QIODevice::ReadOnly | QIODevice::Text)))
+     {
+diff -Nur hedgewars-src-0.9.18/share/hedgewars/Data/Locale/it.txt hedgewars-src-0.9.18_2/share/hedgewars/Data/Locale/it.txt
+--- hedgewars-src-0.9.18/share/hedgewars/Data/Locale/it.txt	2012-10-29 07:10:06.000000000 +0100
++++ hedgewars-src-0.9.18_2/share/hedgewars/Data/Locale/it.txt	2012-11-02 18:41:54.000000000 +0100
+@@ -442,7 +442,7 @@
+ ; the misspelled "Beethoven" is intentional (-> to beat)
+ 03:43=La mortale sonata di Beathoven!
+ 03:44=Il meglio prima del 1923
+-03:45=Arma Scientifica (beta)
++03:45=Arma Scientifica
+ 03:46=Arma da Fuoco (quello vero!)
+ 03:47=Arma da Lancio
+ 03:48=E' tempo di martellate!
+@@ -451,9 +451,9 @@
+ 03:51=Terreno al 100%
+ 03:52=NON USATO
+ 03:53=TARDIS Modello 40
+-03:54=Kit di costruzione
++03:54=(Arma in sviluppo)
+ 03:55=Utilità di costruzione
+-03:56=Arma da congelamento di massa
++03:56=(Arma in sviluppo)
+ 03:57=Ecco il grande chef!
+ 
+ ; Weapon Descriptions (use | as line breaks)
+Binärdateien hedgewars-src-0.9.18/share/hedgewars/Data/Maps/Eyes/preview.png and hedgewars-src-0.9.18_2/share/hedgewars/Data/Maps/Eyes/preview.png sind verschieden.
+Binärdateien hedgewars-src-0.9.18/share/hedgewars/Data/Maps/Plane/preview.png and hedgewars-src-0.9.18_2/share/hedgewars/Data/Maps/Plane/preview.png sind verschieden.
+Binärdateien hedgewars-src-0.9.18/share/hedgewars/Data/Themes/Bamboo/Flake.png and hedgewars-src-0.9.18_2/share/hedgewars/Data/Themes/Bamboo/Flake.png sind verschieden.
+Binärdateien hedgewars-src-0.9.18/share/hedgewars/Data/Themes/Bath/Girder.png and hedgewars-src-0.9.18_2/share/hedgewars/Data/Themes/Bath/Girder.png sind verschieden.
+Binärdateien hedgewars-src-0.9.18/share/hedgewars/Data/Themes/Sheep/SkyL.png and hedgewars-src-0.9.18_2/share/hedgewars/Data/Themes/Sheep/SkyL.png sind verschieden.
+diff -Nur hedgewars-src-0.9.18/share/Info.plist.in hedgewars-src-0.9.18_2/share/Info.plist.in
+--- hedgewars-src-0.9.18/share/Info.plist.in	2012-07-31 21:29:33.000000000 +0200
++++ hedgewars-src-0.9.18_2/share/Info.plist.in	2012-11-02 18:41:54.000000000 +0100
+@@ -23,7 +23,7 @@
+ 	<key>CFBundleShortVersionString</key>
+ 	<string>${HEDGEWARS_VERSION}</string>
+ 	<key>NSHumanReadableCopyright</key>
+-	<string>Copyright © 2004-2011, Hedgewars Project</string>
++	<string>Copyright © 2004-2012, Hedgewars Project</string>
+ 	<key>NSAppleScriptEnabled</key>
+ 	<false/>
+ 	<key>LSRequiresNativeExecution</key>
+@@ -47,11 +47,14 @@
+ 	<string>${minimum_macosx_version}</string>
+ 	<key>SUPublicDSAKeyFile</key>
+ 	<string>dsa_pub.pem</string>
++	<key>SUFeedURL</key>
++	<string>http://www.hedgewars.org/download/appcast.xml</string>
+ 	<key>CFBundleLocalizations</key>
+ 	<array>
+ 		<string>ar</string>
+ 		<string>bg</string>
+ 		<string>cs</string>
++		<string>da</string>
+ 		<string>de</string>
+ 		<string>el</string>
+ 		<string>en</string>
+@@ -63,14 +66,16 @@
+ 		<string>it</string>
+ 		<string>ja</string>
+ 		<string>ko</string>
++		<string>lt</string>
+ 		<string>nl</string>
+ 		<string>pl</string>
+ 		<string>pt_BR</string>
+ 		<string>pt_PT</string>
++		<string>ro</string>
+ 		<string>ru</string>
+ 		<string>sk</string>
+ 		<string>sv</string>
+-		<string>tr</string>
++		<string>tr_TR</string>
+ 		<string>uk</string>
+ 		<string>zh_CN</string>
+ 		<string>zh_TW</string>
+diff -Nur hedgewars-src-0.9.18/tools/cmake_uninstall.cmake hedgewars-src-0.9.18_2/tools/cmake_uninstall.cmake
+--- hedgewars-src-0.9.18/tools/cmake_uninstall.cmake	1970-01-01 01:00:00.000000000 +0100
++++ hedgewars-src-0.9.18_2/tools/cmake_uninstall.cmake	2012-11-02 18:41:54.000000000 +0100
+@@ -0,0 +1,22 @@
++IF(NOT EXISTS "/home/nemo/hg/hedgewars/0.9.18/tools/../install_manifest.txt")
++  MESSAGE(FATAL_ERROR "Cannot find install manifest: \"/home/nemo/hg/hedgewars/0.9.18/tools/../install_manifest.txt\"")
++ENDIF(NOT EXISTS "/home/nemo/hg/hedgewars/0.9.18/tools/../install_manifest.txt")
++
++FILE(READ "/home/nemo/hg/hedgewars/0.9.18/tools/../install_manifest.txt" files)
++STRING(REGEX REPLACE "\n" ";" files "${files}")
++FOREACH(file ${files})
++  MESSAGE(STATUS "Uninstalling \"$ENV{DESTDIR}${file}\"")
++  IF(EXISTS "$ENV{DESTDIR}${file}")
++    EXEC_PROGRAM(
++      "/usr/bin/cmake" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
++      OUTPUT_VARIABLE rm_out
++      RETURN_VALUE rm_retval
++      )
++    IF(NOT "${rm_retval}" STREQUAL 0)
++      MESSAGE(FATAL_ERROR "Problem when removing \"$ENV{DESTDIR}${file}\"")
++    ENDIF(NOT "${rm_retval}" STREQUAL 0)
++  ELSE(EXISTS "$ENV{DESTDIR}${file}")
++    MESSAGE(STATUS "File \"$ENV{DESTDIR}${file}\" does not exist.")
++  ENDIF(EXISTS "$ENV{DESTDIR}${file}")
++ENDFOREACH(file)
++

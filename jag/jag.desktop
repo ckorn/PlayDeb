@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Exec=jag
+Name=JAG2.0
+Comment=JAG2.0 2D Game.
+Icon=jag
+Type=Application
+Categories=Game
+StartupNotify=false

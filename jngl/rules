@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_configure:
+	scons python=1
+
+override_dh_install:
+	mv python/libjngl.so python/jngl.so
+	dh_install

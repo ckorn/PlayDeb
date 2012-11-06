@@ -1,0 +1,16 @@
+Index: urbanterror-optimized-20101225/ioq3-urt/Makefile
+===================================================================
+--- urbanterror-optimized-20101225.orig/ioq3-urt/Makefile	2010-12-30 21:36:24.147899006 +0100
++++ urbanterror-optimized-20101225/ioq3-urt/Makefile	2010-12-30 21:37:11.327899006 +0100
+@@ -306,8 +306,9 @@
+ 
+   BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
+     -pipe -DUSE_ICON
+-  CLIENT_CFLAGS = $(SDL_CFLAGS)
+-  SERVER_CFLAGS =
++  CLIENT_CFLAGS = $(SDL_CFLAGS) -I/usr/include/freetype2
++  SERVER_CFLAGS = $(SDL_CFLAGS)
++  BOTCFLAGS = $(SDL_CFLAGS)
+ 
+   ifeq ($(USE_OPENAL),1)
+     CLIENT_CFLAGS += -DUSE_OPENAL

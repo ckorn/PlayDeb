@@ -1,0 +1,74 @@
+naev (0.5.3-1~getdeb3~precise) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 15 Apr 2012 11:26:10 +0200
+
+naev (0.5.2-1~getdeb2~precise) precise; urgency=low
+
+  * Rebuild for precise.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 04 Apr 2012 19:01:58 +0200
+
+naev (0.5.2-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 26 Mar 2012 17:13:57 +0200
+
+naev (0.5.1-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version (LP: #951711)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 11 Mar 2012 11:43:37 +0100
+
+naev (0.5.0-1~getdeb3~oneiric) oneiric; urgency=low
+
+  * Rebuild for oneiric
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 25 Oct 2011 21:29:05 +0200
+
+naev (0.5.0-1~getdeb2~natty) natty; urgency=low
+
+  * New upstream version (LP: #793232)
+    * Better visuals
+    * Much larger systems and galaxy
+    * Mouse interactivity
+    * New GUI
+    * New tutorial
+    * Weapon sets
+    * Heat replaces accuracy
+    * Loads Oodles of new content
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 06 Jun 2011 17:42:54 +0200
+
+naev (0.4.2-1~getdeb3) lucid; urgency=low
+
+  * Rebuild for lucid and maverick
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 29 Oct 2010 18:39:45 +0200
+
+naev (0.4.2-1~getdeb1) karmic; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 19:35:25 +0100
+
+naev (0.4.0-1~getdeb3) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 19:30:32 +0100
+
+naev (0.4.0-1~getdeb2) karmic; urgency=low
+
+  * Compiling libvobis 1.2.3 for karmic
+    and rebuilding. (LP: #487111)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 23 Nov 2009 16:43:09 +0100
+
+naev (0.4.0-1~getdeb1) jaunty; urgency=low
+
+  * Initial release (LP: #427675)
+
+ -- Christoph Korn <c_korn@gmx.de>  Tue, 22 Sep 2009 16:02:12 +0200

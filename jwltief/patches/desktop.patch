@@ -1,0 +1,23 @@
+Encoding is deprecated.
+Start the executable we place under usr/games
+Index: jwltief-1.5.1/usr/share/applications/jwltief.desktop
+===================================================================
+--- jwltief-1.5.1.orig/usr/share/applications/jwltief.desktop	2011-10-25 16:29:24.000000000 +0200
++++ jwltief-1.5.1/usr/share/applications/jwltief.desktop	2012-02-26 00:36:10.688033999 +0100
+@@ -1,14 +1,12 @@
+ [Desktop Entry]
+ Type=Application
+-Version=1.5.0
+-Encoding=UTF-8
+ Name=Jwltief
+ GenericName=A Mouse Game
+ GenericName[pt]=Um Jogo de Mouse
+ Comment=Control a thief with your mouse and collect jewels
+ Comment[pt]=Controle um ladrão com o mouse e colete jóias
+-Icon=jwltief.png
+-Exec=/usr/share/games/jwltief/launch.sh
++Icon=jwltief
++Exec=jwltief
+ Terminal=false
+ StartupNotify=false
+ Categories=Application;Game;ArcadeGame

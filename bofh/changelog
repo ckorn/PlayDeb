@@ -1,0 +1,5 @@
+bofh (0.0.0.0+20110602-1~getdeb1) lucid; urgency=low
+
+  * Initial release (LP: #790413)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 02 Jun 2011 12:33:50 +0200

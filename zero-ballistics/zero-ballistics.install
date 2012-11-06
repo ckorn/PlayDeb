@@ -1,0 +1,5 @@
+shared_libs tank.x86		usr/lib/games/zero-ballistics
+debian/libjpeg.so.62		usr/lib/games/zero-ballistics/shared_libs
+debian/scripts/zero-ballistics	usr/games
+debian/zero-ballistics.desktop	usr/share/applications
+debian/zero-ballistics.png	usr/share/pixmaps

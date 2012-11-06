@@ -1,0 +1,47 @@
+05 september 2005
+
+New command:
+- demoavi <demo name>
+New variables:
+- cl_demoavi_fps <value>
+- cl_demoavi_sccissor "1|0"
+
+
+Command - demoavi <demo name>
+----------------------
+Will play a demo, and automaticly export the img files into your screenshots/AVI directory in your basewsw folder. 
+If, while playing a demo, demoavi command is used with no <demo name> provided, it will toggle screenshot exporting state.
+
+
+Cvar - cl_demoavi_fps <value>
+-------------------------
+This variable will set how fast imgs will be written to your hard drive. 
+We recommend keeping this lower than 30, for the sake of not having 700megs-10 minute video files. If you set this to 25, your video file will have 25 fps as well.
+
+
+Cvar - cl_demoavi_scissor "1|0"
+----------------------------
+Quote from the config guide:
+  
+  "cg_viewSize "40-100"
+describes how big you want the actual view of the game to be (has nothing to do with fov)
+if you set this to 40, 40% of your screen will be used to draw the game, the rest will be
+filled with some background texture (remember the old doom games?) "
+
+When you set "cl_demoavi_scissor 0" this value will be ignored, and will export an img of the intire screen
+(when you have set cg_viewsize, it'll also export the borders).
+when you set "cl_demoavi_scissor 1" the cg_viewsize value will be used, and the exported imgs will be smaller than your screensize.
+We recommend keeping this to 0 & also having "cg_viewsize 100"
+
+
+Tips:
+
+- r_screenshot_jpeg "1|0"
+--------------------------
+1: Screenshots will be written as JPEG's
+0: Screenshots will be written as tga's 
+
+
+- r_screenshot_jpeg_quality "85"
+---------------------------------
+It defines the quality of the JPG img's.

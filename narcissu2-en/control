@@ -1,0 +1,15 @@
+Source: narcissu2-en
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.1
+Homepage: http://www.neechin.net/narcissu/
+
+Package: narcissu2-en
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ponscripter
+Description: Japanese visual novel game
+ Free japanese visual novel game, translated into English.
+ This package includes both Narcissu and
+ Narcissu: Side 2nd.

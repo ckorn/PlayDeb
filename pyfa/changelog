@@ -1,0 +1,5 @@
+pyfa (0.9-1~getdeb2) precise; urgency=low
+
+  * Initial release (LP: #1057950)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 29 Sep 2012 15:47:46 +0200

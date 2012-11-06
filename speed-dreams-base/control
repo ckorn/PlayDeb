@@ -1,0 +1,53 @@
+Source: speed-dreams-base
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               autotools-dev,
+               cmake,
+               mesa-common-dev,
+               freeglut3-dev,
+               libplib-dev,
+               libopenal-dev,
+               libalut-dev,
+               libxi-dev,
+               libxmu-dev,
+               libxxf86vm-dev,
+               libxrender-dev,
+               libxrandr-dev,
+               zlib1g-dev,
+               libpng12-dev,
+               libenet-dev,
+               libsdl1.2-dev,
+               libjpeg62-dev | libjpeg8-dev,
+               chrpath
+Standards-Version: 3.9.3
+Homepage: http://speed-dreams.sourceforge.net/
+
+Package: speed-dreams-base
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         speed-dreams-base-data (= ${source:Version})
+Breaks: speed-dreams (<= 2.0.0~b1)
+Replaces: speed-dreams (<= 2.0.0~b1)
+Description: Opensource Motorsport Sim
+ Speed Dreams is a fork of the famous open racing car simulator
+ TORCS, aiming to implement exciting new features, cars, tracks
+ and AI opponents to make a more enjoyable game for the player,
+ as well as constantly improving visual and physics realism.
+ .
+ This package contains the game binaries.
+
+Package: speed-dreams-base-data
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: speed-dreams-data (<= 2.0.0~b1)
+Replaces: speed-dreams-data (<= 2.0.0~b1)
+Description: Opensource Motorsport Sim (data package)
+ Speed Dreams is a fork of the famous open racing car simulator
+ TORCS, aiming to implement exciting new features, cars, tracks
+ and AI opponents to make a more enjoyable game for the player,
+ as well as constantly improving visual and physics realism.
+ .
+ This package contains the base data files.

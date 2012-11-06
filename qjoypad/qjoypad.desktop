@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=QJoyPad
+Exec=/usr/games/qjoypad
+Icon=/usr/share/pixmaps/qjoypad/gamepad2-24x24.png
+Terminal=false
+Type=Application
+Categories=Game;Utility;

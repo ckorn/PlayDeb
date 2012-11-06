@@ -1,0 +1,17 @@
+pdiaspora-client (1.3.2~beta-1~getdeb3) lucid; urgency=low
+
+  * Fix crash by checking for a positive number (LP: #576476)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 18 May 2010 19:42:17 +0200
+
+pdiaspora-client (1.3.2~beta-1~getdeb2) lucid; urgency=low
+
+  * Enable debugging symbols.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 08 May 2010 22:41:11 +0200
+
+pdiaspora-client (1.3.2~beta-1~getdeb1) lucid; urgency=low
+
+  * Initial release (LP: #487843)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 02 May 2010 16:34:04 +0200

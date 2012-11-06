@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+build/jvgs::
+	cmake CMakeLists.txt
+	make
+
+clean::
+	-make clean
+	-find . -type d -name CMakeFiles -exec rm -rf {} \;
+	find . -name cmake_install.cmake -exec rm -f {} \;
+	find . -name CMakeCache.txt -exec rm -f {} \;
+	find . -name Makefile -exec rm -f {} \;

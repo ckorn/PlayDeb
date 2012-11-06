@@ -1,0 +1,6 @@
+build/release-*/tremfusion		usr/lib/games/tremfusion
+build/release-*/base/*.so		usr/lib/games/tremfusion/base
+debian/scripts/tremfusion		usr/games
+debian/tremfusion.desktop		usr/share/applications
+debian/tremfusion.png			usr/share/pixmaps
+debian/z-tremfusion-menu-0.99r3.pk3	usr/share/games/tremfusion/base

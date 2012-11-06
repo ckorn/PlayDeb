@@ -1,0 +1,4 @@
+misc-makefile-changes.patch
+snespurify-dont-crash-on-bad-zip-files.patch
+reduce-optimization.patch
+detect-endianness.patch

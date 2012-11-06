@@ -1,0 +1,45 @@
+Source: sumwars
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+DM-Upload-Allowed: yes
+Build-Depends: debhelper (>= 9),
+               cmake (>= 2.6),
+               libphysfs-dev (>= 2.0),
+               libtinyxml-dev (>= 2.6),
+               libalut-dev,
+               libopenal-dev,
+               libvorbis-dev,
+               libenet-dev,
+               libogre-dev (>= 1.7.0),
+               libois-dev,
+               libcegui-mk2-dev (>= 0.7.0),
+               liblua5.1-0-dev,
+               libxrandr-dev
+Standards-Version: 3.9.3
+Homepage: http://www.sumwars.org/
+Vcs-Svn: http://sumwars.svn.sourceforge.net/svnroot/sumwars/trunk
+Vcs-Browser: http://sumwars.svn.sourceforge.net/viewvc/sumwars/
+
+Package: sumwars
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         sumwars-data (= ${source:Version}),
+         ttf-dejavu-core (>= 2.33)
+Description: Summoning Wars action role-playing game
+ Summoning Wars is an open source role-playing game, featuring both a
+ single-player and a multiplayer mode for about 2 to 8 players.
+ .
+ This package contains the binary.
+
+Package: sumwars-data
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: sumwars (= ${source:Version})
+Description: Summoning Wars action role-playing game, data files
+ Summoning Wars is an open source role-playing game, featuring both a
+ single-player and a multiplayer mode for about 2 to 8 players.
+ .
+ This package contains data needed by the binaries (game data, GUI
+ elements, sound, ...).

@@ -1,0 +1,144 @@
+:: :: Query protocols for Warsow 0.3
+
+:: General
+
+These protocols are either very similar to protocols used by various Quake
+games, or even exactly the same. Masterservers are not specific for Warsow,
+they run on dpmaster software and also support other games.
+
+In this document C styled string definitions are used, they are displayed
+inside double quotes ("). When a text inside lesser than and greater than signs
+is used inside this kind of string, it means custom content that will be
+specified later.
+
+All queries are done by sending UDP packet to the server or masterserver.
+These packets are marked to be connectionless (not part of in-game
+communication) packets by first four bytes of the message. These bytes are to
+have all bits sets. So these 4 byte header should be "\xFF\xFF\xFF\xFF". All
+response packet are also UDP packets with the same header.
+
+:: Master server
+
+Masters servers keep list of public Warsow servers. You can fetch this list by
+using following messages.
+
+Requesting:
+"getservers Warsow 9 <flags>"
+
+Here Warsow is the name of the application and 9 is the protocol number.
+The protocol number of Warsow is likely to increase in next major release.
+
+Allowed flags are "full" and "empty". These control whether to include servers
+that are full or empty. So sending a message without any flags returns neither
+full or empty servers.
+
+Response:
+"getserversResponse\\<list of servers>\\EOT\0\0\0"
+
+The actual list of server is made of IPv4 addresses. For each server there is 4
+bytes for the actual IP address and 2 bytes for the port number. These bytes
+are big endian oriented.
+
+:: Info (short)
+
+This is a short string with the most interesting information about the game
+server.
+
+Requesting:
+"info 9 <flags>"
+
+9 is the protocol number.
+The protocol number of Warsow is likely to increase in next major release.
+
+Allowed flags are "full" and "empty". These control whether the server should
+respond if it is full or empty. Sending a message without any flags means that
+the server will only reply if it has players, but is not full.
+
+Reply:
+"info\n<list of key-value pairs>\\EOT"
+
+Here the list of key-value pairs is in following format:
+"\\key1\\value1\\key2\\value2"
+...and so on.
+
+List of keys and values sent by Warsow version 0.4:
+
+n       hostname
+m       map name
+u       "%02i/%02i", number of clients, maximum number of clients
+g       "%5s", gametype name
+s       server skill level: 1, 2 or 3 (easy, normal or hard)
+p       password needed: 0 or 1
+b       "%2i", number of bots in game
+ig      instagib enabled: 0 or 1
+mm      whether server can be used as matchmaking server
+
+If b, p or be value is missing, the value is quaranteed to be 0.
+In the future new key value pairs maybe be added.
+
+:: Info (long)
+
+This is longer string that has all the information the server is giving out
+about it's status.
+
+Requesting:
+"getinfo <string>"
+
+If string is specified it will be echoed by server in it's response.
+
+Reply:
+"infoResponse\n<status string>\n<player list>\\challenge\\<string>"
+
+String is the parameter given to the getinfo request.
+
+Status string is list of key-value pairs in the follow format:
+"\\key1\\value1\\key2\\value2"
+...and so on.
+
+Both keys and values have maximum length of 64 characters.
+
+List of keys and values sent by Warsow version 0.11:
+sv_hostname             the name of the server
+sv_maxclients           maximum amount of clients allowed on the server
+mapname                 the name of the current map
+g_match_time            current time of the match, see below for details
+g_match_score           current score in the match, see below for details
+dmflags                 this will be removed soon
+gamedate                time when game module was build
+gamename                name specified by game module
+sv_pps                  number of server frames per second
+protocol                protocol number
+sv_cheats               0 or 1, whether cheats are allowed
+version                 version of the server executable
+sv_skilllevel           1, 2 or 3, server skill level, easy, normal or hard
+fs_gamedir              current mod directory used by the server
+g_gametype              gametype currently in use at the server
+bots                    number of bots in the server
+clients                 number of clients (including bots) in the server
+g_needpass              0 or 1, whether password is required to enter the server
+g_gametypes_available   list of voteable gametypes using space as delimeter,
+                        or empty of callvoting gametypes is disabled
+g_antilag               0 or 1, whether antilag is enabled on this server
+sv_pure                 0 or 1, whether this server requires pure data
+
+This list is subject to change even more in the future.
+
+g_match_time:
+Can be "Warmup" or "Finished" if not in playtime.
+When in playtime and timelimit is not set:
+"%02i:%02i <flags>", mins gone, secs gone
+When in playtime and timelimit is set:
+"%02i:%02i / %02i:%02i <flags>", mins gone, secs gone, timelimit mins, tl secs
+Possible flags are "overtime", "suddendeath" and "(in timeout)".
+
+g_match_score:
+Only set in teambased gametypes and in gametype. Format is:
+"Red: %i Blue: %i Green: %i Yellow: %i", red score, blue score, ...
+Teams that are not in the game don't show up in this list.
+
+Player list has the following format:
+"%i %i \"%s\" %i\n", score, ping, name, team number
+This is repeated for each player.
+Connecting players have ping of -9999.
+Team numbers are as follows: 0 = spectator, 1 = players (non teambased),
+2 = red, 3 = blue, 4 = green, 5 = yellow

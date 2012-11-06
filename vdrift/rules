@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	find . -iname "*.o" -type f -delete
+	rm -f .sconsign.dblite build/vdrift
+	rm -rf .sconf_temp
+
+override_dh_auto_configure:
+
+override_dh_auto_build:
+	scons release=1
+
+override_dh_auto_install:
+	scons install prefix=/usr destdir=$(CURDIR)/debian/tmp bindir=games
+	find $(CURDIR)/debian/tmp/usr/share/games/vdrift -type f -exec chmod -x {} \;
+
+override_dh_install:
+	dh_install --sourcedir=$(CURDIR)/debian/tmp --list-missing

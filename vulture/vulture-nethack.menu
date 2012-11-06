@@ -1,0 +1,4 @@
+?package(vulture-nethack):needs="X11" section="Games/Adventure"\
+  title="Vulture's Eye" \
+  	icon="/usr/share/pixmaps/vulture-nethack.xpm" \
+	command="/usr/games/vulture-nethack"

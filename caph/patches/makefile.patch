@@ -1,0 +1,45 @@
+Index: caph-0.0+091231/src/build
+===================================================================
+--- caph-0.0+091231.orig/src/build	2010-01-12 19:24:58.948578034 +0100
++++ caph-0.0+091231/src/build	2010-01-12 19:25:51.708608815 +0100
+@@ -1,20 +1,16 @@
+ #!/bin/sh
+ 
+-test "$CFLAGS"	|| CFLAGS='-Wall -O3 -ffast-math -pipe -g3'
+-
+-CFLAGS+=$(sdl-config --cflags | sed 's/^/\ /')
+-CFLAGS+=$(pkg-config --cflags libgl | sed 's/^/\ /')
+-CFLAGS+=$(pkg-config --cflags libpng | sed 's/^/\ /')
+-
+-LFLAGS+=' -lm'
+-LFLAGS+=$((sdl-config --libs || echo '-lSDL') | sed 's/^/\ /')
+-LFLAGS+=$((pkg-config --libs libgl || echo '-lGL') | sed 's/^/\ /')
+-LFLAGS+=$((pkg-config --libs libpng || echo '-lpng') | sed 's/^/\ /')
++CFLAGS='-Wall -O3 -ffast-math -pipe -g3'
++CFLAGS="$CFLAGS -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT"
++CFLAGS="$CFLAGS -I/usr/include/libpng12"
++
++LFLAGS=' -lm -lGL'
++LFLAGS="$LFLAGS -L/usr/lib -lSDL"
++LFLAGS="$LFLAGS -lpng12"
+ 
+ export CFLAGS LFLAGS
+ 
+ ./mkgen		|| exit
+ make clean all	|| exit
+-strip caph
+ cp caph ../bin/
+ 
+Index: caph-0.0+091231/src/mkgen
+===================================================================
+--- caph-0.0+091231.orig/src/mkgen	2010-01-12 19:24:58.968579310 +0100
++++ caph-0.0+091231/src/mkgen	2010-01-12 19:24:59.208604531 +0100
+@@ -8,7 +8,7 @@
+ 
+ test "$CC"	|| CC='gcc'
+ 
+-CFLAGS+=' -I../include -std=c99 -D_XOPEN_SOURCE=600 -D_OPENGL'
++CFLAGS="$CFLAGS -I../include -std=c99 -D_XOPEN_SOURCE=600 -D_OPENGL"
+ 
+ SRC=$(find $SCANDIRS -maxdepth 1 -name '*.c' | sed 's/\.\///' | sort)
+ OBJ=$(echo $SRC | sed 's/\.c/\.o/g')

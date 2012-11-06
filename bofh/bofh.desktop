@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=BOFH: Servers Under Siege
+Exec=bofh
+Terminal=false
+Type=Application
+Categories=Game;

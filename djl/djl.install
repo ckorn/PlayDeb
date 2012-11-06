@@ -1,0 +1,4 @@
+djl					usr/share/games
+debian/scripts/djl			usr/games
+debian/djl.xpm				usr/share/pixmaps
+debian/djl.desktop			usr/share/applications

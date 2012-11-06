@@ -1,0 +1,32 @@
+Source: wiiuse
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 7), pkg-config,
+ libbluetooth-dev, libtool
+Standards-Version: 3.9.1
+Section: libs
+Homepage: http://www.wiiuse.net
+
+Package: libwiiuse
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: The wiimote C library
+ Wiiuse is a library written in C that connects with
+ several Nintendo Wii wiimotes. Supports motion sensing,
+ IR tracking, nunchuk, classic controller, and the
+ Guitar Hero 3 controller. Single threaded and
+ nonblocking makes a light weight and clean API.
+
+Package: libwiiuse-dev
+Section: libdevel
+Architecture: any
+Depends: libwiiuse (= ${binary:Version}), ${misc:Depends}, libbluetooth-dev
+Description: The wiimote C library (header files)
+ Wiiuse is a library written in C that connects with
+ several Nintendo Wii wiimotes. Supports motion sensing,
+ IR tracking, nunchuk, classic controller, and the
+ Guitar Hero 3 controller. Single threaded and
+ nonblocking makes a light weight and clean API.
+ .
+ (This package contains the header files)

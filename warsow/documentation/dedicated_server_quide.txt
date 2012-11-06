@@ -1,0 +1,81 @@
+:: :: :: Dedicated server quide
+
+:: Running one server
+
+If you only want to run one server on your computer, things will be easy. The
+only thing you really need to do, is customize dedicated_server.cfg to fit your
+needs. Here is how:
+
+1) Open dedicated_autoexec.cfg
+
+2) At the top of the page you will see line: set sv_hostname "warsow server"
+
+This sets the hostname of your server, the name everyone sees when they see
+your server. You will want to use something little more personal than
+"warsow server", so come up with a good informative name, and replace
+"warsow server" with it.
+
+3) Few lines down in the config file, you will notice settings like sv_public,
+   password and sv_skilllevel
+
+These control various aspect of your server. If sv_public is set to 1, like it
+is on default. Your server will show up on public server list, the one you see
+when pressing "join game" in Warsow's main menu. So if you aren't making a
+server that's meant to be public, change the 1 on sv_public line to 0.
+
+Note, that even if you set sv_public to 0, anyone can still join your server.
+To control that, you can set a value for the password variable. If you for
+example set password to "salasana", then everyone joining your server will be
+asked for password and if they won't reply with "salasana" they will not get
+in. Do not mix this variable with rcon_password, that is used for remotely
+controlling the server.
+
+The third variable, sv_skilllevel, is used to specify for what level of players
+your server is intended to. Valid values are 0, 1 and 2. Here 0 means easy, 1
+normal and 2 hard.
+
+4) Scroll all the way down to the end of dedicated_autoexec.cfg. There are many
+   lines that begin with exec or //exec
+
+Here you can specify the type of your server, using one of prebuilt templates.
+To pick the server type, just remove the two dashes // from the start of the
+template's line you want to use, and add those two dashes in front of the line
+that didn't have them.  Available templates are:
+
+- All Around (default)
+Supports all gametypes, that can be changed with voting. Starts in TDM mode.
+
+- FFA
+Public dm server config. Running with many maps changing randomly. Most voting
+disabled. This server allows eight players at once.
+
+- Duel
+Small server for duel only, allows three players at once. Also allows midair
+and instagib gametypes.
+
+- Duel & Quad
+Five player server, where you can play duels or quads (2 vs 2 team games).
+Starts in duel mode.
+
+- TDM
+Server for playing only TDM. There is room for twelve players.
+
+- CTF
+Server for playing only CTF. There is room for twelve players.
+
+- TDM & CTF
+Server that allows playing both TDM and CTF. Server starts in TDM mode, but it
+can be changed with voting.
+
+- CA
+Server for playing Clan Arena. There is room for sixteen players.
+
+5) Save and close dedicated_autoexec.cfg
+
+6) Start the server
+
+Windows:
+Double click wsw_server.exe
+
+Linux:
+Start wsw_server executable.

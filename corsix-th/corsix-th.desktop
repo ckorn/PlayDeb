@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=CorsixTH
+Exec=/usr/games/corsix-th
+Comment=A Theme Hospital Clone
+Icon=corsix-th
+Type=Application
+Terminal=false
+StartupNotify=true
+Categories=Game;StrategyGame;

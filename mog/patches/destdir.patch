@@ -1,0 +1,36 @@
+Index: mog-0.63.1548/build/linux/Makefile
+===================================================================
+--- mog-0.63.1548.orig/build/linux/Makefile	2010-02-09 23:30:01.721468621 +0100
++++ mog-0.63.1548/build/linux/Makefile	2010-02-09 23:31:05.348952130 +0100
+@@ -52,19 +52,21 @@
+ 
+ install: all
+ 	@$(ECHO) " o Creating install directory $(BINDIR)"
+-	@$(MD) "$(BINDIR)"
++	@$(MD) "$(DESTDIR)/$(BINDIR)"
+ 	@$(ECHO) " o Installing game and data to $(BINDIR)"
+-	@$(CP) "$(EXE)" $(DATA) "$(BINDIR)"
++	@$(CP) $(DATA) "$(DESTDIR)/$(BINDIR)"
++	@$(MD) "$(DESTDIR)/usr/lib/games/mog"
++	@$(CP) "$(EXE)" "$(DESTDIR)/usr/lib/games/mog"
+ 	@$(ECHO) " o Creating startup script $(STARTUP)"
+-	@$(MD) "$(GAMEDIR)"
+-	@$(ECHO) "#!/bin/sh" >"$(STARTUP)"
+-	@$(ECHO) "cd \"$(BINDIR)\" && ./$(EXE); cd -" >>"$(STARTUP)"
+-	@$(CHMOD) 755 "$(STARTUP)"
++	@$(MD) "$(DESTDIR)/$(GAMEDIR)"
++	@$(ECHO) "#!/bin/sh" >"$(DESTDIR)/$(STARTUP)"
++	@$(ECHO) "cd \"$(BINDIR)\" && ./$(EXE); cd -" >>"$(DESTDIR)/$(STARTUP)"
++	@$(CHMOD) 755 "$(DESTDIR)/$(STARTUP)"
+ 	@$(ECHO) " o Creating application menu entry"
+-	@$(MD) "$(ICNDIR)"
+-	@$(CP) "$(EXTRADIR)/$(ICON)" "$(ICNDIR)"
+-	@$(MD) "$(APPDIR)"
+-	@$(CP) "$(EXTRADIR)/$(DESKTOP)" "$(APPDIR)"
++	@$(MD) "$(DESTDIR)/$(ICNDIR)"
++	@$(CP) "$(EXTRADIR)/$(ICON)" "$(DESTDIR)/$(ICNDIR)"
++	@$(MD) "$(DESTDIR)/$(APPDIR)"
++	@$(CP) "$(EXTRADIR)/$(DESKTOP)" "$(DESTDIR)/$(APPDIR)"
+ 	@$(ECHO) ""
+ 
+ uninstall:

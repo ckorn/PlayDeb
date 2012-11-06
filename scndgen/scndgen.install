@@ -1,0 +1,5 @@
+debian/scripts/scndgen			usr/games
+debian/scndgen.png			usr/share/pixmaps
+debian/scndgen.desktop			usr/share/applications
+*.jar					usr/share/games/scndgen
+scndgen/debian/lib/sqlitejdbc-v056.jar	usr/share/games/scndgen

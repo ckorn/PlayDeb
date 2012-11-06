@@ -1,0 +1,3 @@
+version=3
+http://tron.homeunix.org/ja2/ \
+   (?:.*/)?ja2-([\d\.]+)-source\.tar\.bz2

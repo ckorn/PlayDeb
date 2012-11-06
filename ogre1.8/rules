@@ -1,0 +1,81 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# shared library versions, option 1
+version=1.8.1
+major=1.8.1
+OGRE_VERSION=1.8.1
+
+builddir/Makefile:
+	dh_testdir
+	# Add here commands to configure the package.
+	mkdir -p builddir
+	cd builddir && cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_SHARED_LINKER_FLAGS="$(LDFLAGS) -Wl,--as-needed -Wl,-z,defs" \
+	 -DCMAKE_CXX_FLAGS_RELWITHDEBINFO="$(CXXFLAGS)" -DCMAKE_BUILD_TYPE="RelWithDebInfo" -DCMAKE_SKIP_RPATH=ON \
+	 -DOGRE_INSTALL_DOCS=ON -DOGRE_BUILD_SAMPLES=FALSE -DOGRE_LIB_DIRECTORY=lib/OGRE1.8
+
+build: build-stamp
+build-stamp:  builddir/Makefile
+	dh_testdir
+
+	# Add here commands to compile the package.
+	$(MAKE) -C builddir -j10
+
+	touch $@
+
+reverse-build-setup:
+	dh_testdir
+
+clean: 
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp 
+
+	# Add here commands to clean up after the build process.
+	rm -rf builddir
+
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep  
+	dh_installdirs
+	# Add here commands to install the package into debian/tmp
+	$(MAKE) -C builddir DESTDIR=$(CURDIR)/debian/tmp install
+	install -d debian/tmp/usr/include/OGRE1.8
+	mv debian/tmp/usr/include/OGRE debian/tmp/usr/include/OGRE1.8/
+	install -d debian/tmp/etc/OGRE1.8
+	install -m 644 debian/extras/plugins.cfg debian/tmp/etc/OGRE1.8
+
+	rm -rf debian/tmp/usr/bin
+	rm -rf debian/tmp/usr/share
+
+binary-indep: install
+
+# Build architecture-dependent files here.
+binary-arch: install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs Docs/ChangeLog.html
+	dh_installdocs
+	dh_installexamples
+	dh_install --fail-missing
+	dh_installman
+	dh_link
+	dh_strip -plibogremain1.8 --dbg-package=libogremain1.8-dbg
+	dh_strip -plibogrepaging1.8 --dbg-package=libogrepaging1.8-dbg
+	dh_strip -plibogreproperty1.8 --dbg-package=libogreproperty1.8-dbg
+	dh_strip -plibogrertshadersystem1.8 --dbg-package=libogrertshadersystem1.8-dbg
+	dh_strip -plibogreterrain1.8 --dbg-package=libogreterrain1.8-dbg
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs -XOgre
+	dh_installdeb
+	dh_shlibdeps -l$(CURDIR)/debian/tmp/usr/lib/OGRE1.8:$(CURDIR)/debian/tmp/usr/lib/OGRE1.8/OGRE --dpkg-shlibdeps-params=--ignore-missing-info
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install 

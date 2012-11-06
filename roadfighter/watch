@@ -1,0 +1,3 @@
+version=3
+http://www.braingames.getput.com/roadf/default.asp \
+    (?:.*/)roadfighter\.src_([\d\.]+)\.tgz

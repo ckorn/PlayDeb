@@ -1,0 +1,4 @@
+version=3
+
+http://bitbucket.org/richard42/mupen64plus-video-rice/downloads/ \
+	/richard42/mupen64plus-video-rice/downloads/mupen64plus-video-rice-src-(.*).tar.gz

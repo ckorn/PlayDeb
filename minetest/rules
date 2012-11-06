@@ -1,0 +1,85 @@
+#!/usr/bin/make -f
+
+# upstream version
+version=$(shell uscan --report-status | head -2 | tail -1 | cut -d' ' -f7 | cut -d, -f1)
+tmpdir:=$(shell mktemp -d)
+wrkdir:=$(shell pwd)
+
+# parallel building
+parallel=$(shell echo $$DEB_BUILD_OPTIONS | grep parallel > /dev/null && echo -j$$(test -f /proc/cpuinfo && cat /proc/cpuinfo | grep ^processor | wc -l || echo 1))
+
+# build-hardening flags
+export DEB_BUILD_MAINT_OPTIONS="hardening=+all"
+
+# file names
+sources=$(shell find . -name *.cpp)
+headers=$(shell find . -name *.h)
+dfsgremovals=.gitignore \
+	     .gitattributes \
+	     .hg_archival \
+	     .hg_archival.txt \
+	     .hgignore \
+	     .hgtags \
+	     fontlucida.png \
+	     jthread \
+	     sqlite
+cleanremovals= bin \
+	       CMakeFiles \
+	       src/CMakeFiles \
+	       CMakeCache.txt \
+	       CPackConfig.cmake \
+	       CPackSourceConfig.cmake \
+	       Makefile \
+	       cmake_install.cmake \
+	       old/Makefile.bak \
+	       src/Makefile \
+	       src/cmake_config.h \
+	       src/cmake_install.cmake \
+	       locale \
+	       install_manifest.txt \
+	       minetest.xpm \
+	       minetest.svg \
+	       minetest.png \
+               src/lua/build/CMakeFiles \
+               src/lua/build/liblua.a
+
+override_dh_auto_clean:
+	dh_clean
+	sed -e s/jthread\:\:JMutex/JMutex/g -e s/jthread\:\:JThread/JThread/g \
+	    -i ${sources} ${headers}
+	rm -rf ${cleanremovals}
+
+override_dh_auto_configure:
+	CFLAGS="${CFLAGS}" \
+	    LDFLAGS="${LDFLAGS}" \
+	    CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" \
+	    cmake -DCMAKE_INCLUDE_PATH=/usr/include/jthread -DCMAKE_INSTALL_PREFIX=/usr .
+
+override_dh_auto_build:
+	sed -e s/JMutex/jthread\:\:JMutex/g -e s/JThread/jthread\:\:JThread/g \
+	    -i ${sources} ${headers}
+	make VERBOSE=1 ${parallel}
+	cp misc/minetest-icon-24x24.png minetest.png
+	cp misc/minetest-icon.svg minetest.svg
+	convert minetest.png minetest.xpm
+
+override_dh_strip:
+	dh_strip --dbg-package=minetest-dbg
+
+override_dh_install:
+	dh_install
+	rm -rf debian/minetest-common/usr/share/applications
+
+get-orig-source:
+	uscan --force-download && mv ../${version} ${tmpdir} || true
+	cd ${tmpdir} && \
+	    tar xf ${version} && rm -f ${version} && \
+	    for file in ${dfsgremovals}; do \
+	        find . -name $$file -execdir rm -rf {} \; 2>/dev/null || true; \
+		done && \
+	    tar czf ${wrkdir}/../minetest_${version}+dfsg.orig.tar.gz *
+	rm -rf ${tmpdir}
+	@echo "successfully created new tarball: ../minetest_${version}+dfsg.orig.tar.gz"
+
+%:
+	dh ${@} 

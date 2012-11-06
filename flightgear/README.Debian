@@ -1,0 +1,11 @@
+Flight Gear for Debian
+----------------------
+
+Start Flight Gear with fgfs.
+
+Additional scenery is available at http://www.flightgear.org/.
+The tile files should be unpacked into /usr/share/games/FlightGear/Scenery.
+The scenery files include a SharedModels.tgz, which may have extra/updated
+models used in some scenery tiles. Unpack this into /usr/share/games/FlightGear.
+
+ -- Ove Kaaven <ovek@arcticnet.no>

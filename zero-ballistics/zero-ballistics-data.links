@@ -1,0 +1,5 @@
+usr/share/games/zero-ballistics/data			usr/lib/games/zero-ballistics/data
+usr/share/games/zero-ballistics/config_client.xml	usr/lib/games/zero-ballistics/config_client.xml
+usr/share/games/zero-ballistics/config_common.xml	usr/lib/games/zero-ballistics/config_common.xml
+usr/share/games/zero-ballistics/config_server.xml	usr/lib/games/zero-ballistics/config_server.xml
+usr/share/games/zero-ballistics/ranking.pub		usr/lib/games/zero-ballistics/ranking.pub

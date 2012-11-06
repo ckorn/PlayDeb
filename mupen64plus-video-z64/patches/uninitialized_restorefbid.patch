@@ -1,0 +1,17 @@
+Description: Workaround wrong gcc warning about uninitialized variable
+Author: Sven Eckelmann <sven@narfation.org>
+
+---
+diff --git a/src/rgl.cpp b/src/rgl.cpp
+index 275bba1c2fe8d0e9412d9ab3b7bc19ddc81f277f..c074457467879a58c7e59613a2a79c9cff0eef55 100644
+--- a/src/rgl.cpp
++++ b/src/rgl.cpp
+@@ -369,7 +369,7 @@ void rglPrepareFramebuffer(rglRenderBuffer_t & buffer)
+     if (buffer.area.xh == 8192)
+         return;
+ 
+-    GLuint restoreId = 0, restoreFbid;
++    GLuint restoreId = 0, restoreFbid = 0;
+     float d2 = -1;
+     float d = 0;
+     float restoreW = buffer.width+d2, restoreH = buffer.height+d2;

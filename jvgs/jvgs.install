@@ -1,0 +1,3 @@
+src/jvgs usr/lib/jvgs
+debian/scripts/jvgs usr/games
+debian/jvgs.desktop usr/share/applications

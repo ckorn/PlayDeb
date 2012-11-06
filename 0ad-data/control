@@ -1,0 +1,20 @@
+Source: 0ad-data
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: http://wildfiregames.com/0ad/
+
+Package: 0ad-data
+Architecture: all
+Depends: ${misc:Depends}, ttf-dejavu-core, tex-gyre
+Description: War/economy strategy game (data files)
+ Historically based Real Time Strategy game focusing
+ on the years 500 B.C. to 500 A.D.
+ .
+ In short, it is a war/economy strategy game allowing
+ you to recreate or rewrite the ancient history of western
+ civilisations.
+ .
+ (This package contains the data files)

@@ -1,0 +1,18 @@
+#!/bin/sh
+# Copyright (C) 2009-2010 Gerfried Fuchs <rhonda@debian.at>
+# Licenced under WTFPLv2
+
+set -ex
+
+BRANCH=$(dpkg-parsechangelog | grep "^Version:" | cut -d" " -f2 | cut -d. -f1,2 | cut -d: -f2 | cut -d- -f1 | sed -e 's/[a-z].*//')
+BRANODOT=$(echo $BRANCH | tr -d .)
+
+if head -1 debian/control | grep -v "^Source: wesnoth-$BRANCH" >/dev/null ; then \
+	for i in debian/*.in debian/patches/*.in; do
+		new=$(basename $i .in | sed -e s/BRANCH/$BRANCH/)
+		dir=$(dirname $i)
+		cp $i $dir/$new
+		sed -i -e "s/BRANCH/$BRANCH/g"   $dir/$new
+		sed -i -e "s/BRANODOT/$BRANODOT/g" $dir/$new
+	done
+fi

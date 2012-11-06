@@ -1,0 +1,109 @@
+eternallands-data (1.9.3-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 23 Feb 2012 21:38:20 +0100
+
+eternallands-data (1.9.2-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 22 Jun 2011 16:59:13 +0200
+
+eternallands-data (1.9.1-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 08 Jan 2011 14:22:30 +0100
+
+eternallands-data (1.9.0-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 08 Apr 2010 17:50:58 +0200
+
+eternallands-data (1.8.0-1~getdeb1) jaunty; urgency=low
+
+  * Initial release.
+
+ -- Christoph Korn <c_korn@gmx.de>  Thu, 22 Oct 2009 23:33:47 +0200
+
+eternallands-data (1.8.0-0ubuntu4) karmic; urgency=low
+
+  * Karmic build
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Fri, 02 Oct 2009 23:22:15 +0100
+
+eternallands-data (1.8.0-0ubuntu3) intrepid; urgency=low
+
+  * Intrepid build
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Wed, 07 Jan 2009 22:18:08 +0000
+
+eternallands-data (1.8.0-0ubuntu2) hardy; urgency=low
+
+  * Hardy build
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Wed, 07 Jan 2009 22:16:21 +0000
+
+eternallands-data (1.8.0-0ubuntu1) gutsy; urgency=low
+
+  * Gutsy Build
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Wed, 07 Jan 2009 21:49:03 +0000
+
+eternallands-data (1.7.0-0) unstable; urgency=low
+
+  * 1.7.0 release
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Sun, 13 Jul 2008 20:51:12 +0100
+
+eternallands-data (1.6.0-7) unstable; urgency=low
+
+  * Packaging file: Yet more recovery from install/uninstall errors.
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Thu, 26 Jun 2008 23:37:56 +0100
+
+eternallands-data (1.6.0-6) unstable; urgency=low
+
+  * Packaging file: More recovery from install/uninstall errors.
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Wed, 25 Jun 2008 21:33:51 +0100
+
+eternallands-data (1.6.0-5) unstable; urgency=low
+
+  * Packaging change: remove downloads from cashe if the md5sum fails
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Tue, 24 Jun 2008 21:29:17 +0100
+
+eternallands-data (1.6.0-4) unstable; urgency=low
+
+  * Packaging change: download data archives rather than include in package.
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Sun, 22 Jun 2008 17:42:58 +0100
+
+eternallands-data (1.6.0-3) unstable; urgency=low
+
+  * build for debain lenny using CVS packaging files
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Sun, 15 Jun 2008 18:14:00 +0100
+
+eternallands-data (1.6.0-2) unstable; urgency=low
+
+  * rewrote package files removing special Makefile
+  * fixed most lintian warnings
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Sat, 31 May 2008 17:30:58 +0100
+
+eternallands-data (1.6.0-1.1) unstable; urgency=low
+
+  * Set #browser in el.ini to x-www-browser 
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Sun, 25 May 2008 19:31:15 +0100
+
+eternallands-data (1.6.0-1) unstable; urgency=low
+
+  * Based on 1.6.0 released art work and updates.
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Sat, 17 May 2008 02:22:33 +0100
+

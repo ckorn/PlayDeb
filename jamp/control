@@ -1,0 +1,16 @@
+Source: jamp
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>=6),
+ mesa-common-dev, libglu1-mesa-dev, libsdl-image1.2-dev,
+ libsdl-mixer1.2-dev, libsdl1.2-dev
+Standards-Version: 3.8.0
+Homepage: http://perre.noud.ch/jamp/
+
+Package: jamp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Game using a physics engine
+ In JAMP the player is a squirrel in a ball which has
+ to go through obstacles to finish the game. 

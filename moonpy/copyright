@@ -1,0 +1,66 @@
+This package was debianized by:
+
+    Christoph Korn <christoph.korn@getdeb.net> on Tue, 09 Mar 2010 18:48:27 +0100
+
+It was downloaded from:
+
+    http://code.google.com/p/tether/downloads/list
+
+Upstream Author(s):
+
+    Primary Contributors to project tether are:
+    Kevin Clement <Donkyhotay> (Project Maintainer, Lead Developer)
+    Isaac Carroll <Zaak> (Code support, Bugfixing)
+    Jon Handy <Mightily> (Bugtesting, Sound Effects)
+    David Carroll <GildedBear> (graphics - Mystic Pyramids)
+    Stijn De Wachter <stijndw1337> (graphics - NiceCone)
+    Nils Ingvarsson <ArchAngel> (Music)
+    Mollie Clement <mlc4ctr> (Voice Acting)
+    
+    
+    Special thanks to the OpenRTS team who's open
+    sourced code and graphics gave MoonPy a much
+    needed jumpstart.
+    
+    The people who contributed to OpenRTS were:
+    
+    Project founder and developer:
+    Andreas Røsdal <andrearo AT stud.ntnu.no>
+    
+    Graphics from Hard Vacuum:
+    Daniel Cook <daniel.cook AT lostgarden.com>
+    
+    Graphics: 
+    Oliver Stannus <oliver.stannus AT gmail.com>
+
+Copyright:
+
+    Copyright (C) 2010 Kevin Clement
+    Isaac Carroll
+        Jon Handy
+        David Carroll
+        Daniel Carroll
+
+License:
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+On Debian systems, the complete text of the GNU General
+Public License version 3 can be found in `/usr/share/common-licenses/GPL-3'.
+
+The Debian packaging is:
+
+    Copyright (C) 2010 Christoph Korn <christoph.korn@getdeb.net>
+
+and is licensed under the GPL version 3, see above.

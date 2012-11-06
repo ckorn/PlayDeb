@@ -1,0 +1,13 @@
+smokinguns (1.0-1~getdeb2) lucid; urgency=low
+
+  * Fix 64bit problem with strcpy making the game crash
+    (LP: #602625)
+    - Thanks to Mike Chelen for finding the patch!
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 22 Dec 2010 20:21:30 +0100
+
+smokinguns (1.0-1~getdeb1) jaunty; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <c_korn@gmx.de>  Mon, 17 Aug 2009 13:10:36 +0200

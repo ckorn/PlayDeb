@@ -1,0 +1,23 @@
+Source: galaxy
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 9),
+               libgtk-3-dev
+Standards-Version: 3.9.3
+Homepage: http://www.kornelix.com/galaxy.html
+
+Package: galaxy
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Stellar Simulation
+ Galaxy is a free Linux computer program which simulates
+ the motion of stars under the influence of gravity.
+ Create a field of random stars to begin with, then watch
+ the stars move as they are accelerated by their mutual
+ gravitational attractions. You can vary the number of
+ stars and the strength of gravity. Watch how the
+ attractive forces accelerate individual stars and send
+ them careening in new directions. Watch how large
+ groups of stars develop into interesting patterns over
+ time, such as clusters and spiral arms.

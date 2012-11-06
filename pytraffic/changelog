@@ -1,0 +1,5 @@
+pytraffic (2.5.4-1~getdeb1) lucid; urgency=low
+
+  * Initial release (LP: #618667)
+
+ -- bojo42 <bojo42@gmail.com>  Mon, 16 Aug 2010 15:10:54 +0200

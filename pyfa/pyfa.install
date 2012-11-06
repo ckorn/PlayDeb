@@ -1,0 +1,6 @@
+debian/scripts/pyfa		usr/games
+debian/pyfa.png			usr/share/pixmaps
+debian/pyfa.desktop		usr/share/applications
+gui				usr/share/games/pyfa
+model				usr/share/games/pyfa
+launch.py			usr/share/games/pyfa

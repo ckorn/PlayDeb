@@ -1,0 +1,64 @@
+Index: raydium-0.0svn20100207/install.sh
+===================================================================
+--- raydium-0.0svn20100207.orig/install.sh	2010-02-07 20:20:20.276880587 +0100
++++ raydium-0.0svn20100207/install.sh	2010-02-07 20:21:35.039385377 +0100
+@@ -14,31 +14,31 @@
+ 
+ # Raydium headers
+ echo "- Raydium headers"
+-$INSTALL -d "$INCLUDES/raydium"
+-$INSTALL -d "$INCLUDES/raydium/headers"
+-$INSTALL -m 644 raydium/*.h "$INCLUDES/raydium"
+-$INSTALL -m 644 raydium/headers/* "$INCLUDES/raydium/headers"
+-ln -s "index.h" "$INCLUDES/raydium/index.c" 2> /dev/null
++$INSTALL -d "$DESTDIR/$INCLUDES/raydium"
++$INSTALL -d "$DESTDIR/$INCLUDES/raydium/headers"
++$INSTALL -m 644 raydium/*.h "$DESTDIR/$INCLUDES/raydium"
++$INSTALL -m 644 raydium/headers/* "$DESTDIR/$INCLUDES/raydium/headers"
++ln -s "index.h" "$DESTDIR/$INCLUDES/raydium/index.c" 2> /dev/null
+ 
+ # ODE headers
+ echo "- (inner) ODE headers"
+-$INSTALL -d "$INCLUDES/raydium/ode/include/ode"
+-$INSTALL -m 644 raydium/ode/include/ode/* "$INCLUDES/raydium/ode/include/ode"
++$INSTALL -d "$DESTDIR/$INCLUDES/raydium/ode/include/ode"
++$INSTALL -m 644 raydium/ode/include/ode/* "$DESTDIR/$INCLUDES/raydium/ode/include/ode"
+ 
+ # PHP headers
+ echo "- (inner) PHP headers"
+-$INSTALL -d "$INCLUDES/raydium/php"
+-find raydium/php -name "*.h" -exec cp --parents {} "$INCLUDES" \;
++$INSTALL -d "$DESTDIR/$INCLUDES/raydium/php"
++find raydium/php -name "*.h" -exec cp --parents {} "$DESTDIR/$INCLUDES" \;
+ 
+ # Raydium libs
+ echo "- Raydium libs"
+-$INSTALL -d "$LIBS"
+-cp -P libray* "$LIBS"
++$INSTALL -d "$DESTDIR/$LIBS"
++cp -P libray* "$DESTDIR/$LIBS"
+ 
+ # rayphp
+ echo "- RayPHP scripts"
+-$INSTALL -d "$SHARE/rayphp"
+-$INSTALL -m 644 rayphp/* "$SHARE/rayphp" 2> /dev/null
++$INSTALL -d "$DESTDIR/$SHARE/rayphp"
++$INSTALL -m 644 rayphp/* "$DESTDIR/$SHARE/rayphp" 2> /dev/null
+ 
+ # raydium-config
+ echo "- raydium-config"
+@@ -76,10 +76,10 @@
+ exit 1
+ '
+ echo "$file" >> "$tmp"
+-$INSTALL -d "$BINS"
+-$INSTALL -m 755 "$tmp" "$BINS"
++$INSTALL -d "$DESTDIR/$BINS"
++$INSTALL -m 755 "$tmp" "$DESTDIR/$BINS"
+ 
+ # Shouldn't we add docs & READMEs ?
+ # ...
+ 
+-echo "done."
+\ No newline at end of file
++echo "done."

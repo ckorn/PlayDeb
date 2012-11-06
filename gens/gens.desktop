@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Gens
+Exec=/usr/games/gens
+Icon=gens
+Terminal=false
+Type=Application
+Categories=Game;

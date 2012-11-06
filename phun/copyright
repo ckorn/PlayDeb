@@ -1,0 +1,20 @@
+This package was debianized by Joao Pinto <joao.pinto@getdeb.net> on
+Tue, 01 Apr 2008 12:35:11 +0000.
+
+It was downloaded from http://phun.cs.umu.se/wiki/Download
+
+Upstream Author: 
+Copyright: 
+	Emil Ernerfeldt (aka emilk). Contact: phungame@gmail.com
+
+License:
+
+
+Phun is free for non-commercial use. You may use it freely for education if cred
+it is given to www.phun.at.
+Use Phun at your own risk! It comes with no warranty, and it can be quite addict
+ive!
+
+
+The Debian packaging is (C) 2008, Joao Pinto <joao.pinto@getdeb.net> and
+is licensed under the GPL, see above.

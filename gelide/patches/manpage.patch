@@ -1,0 +1,14 @@
+Change the manpage section according to the file extension.
+Index: gelide-0.1.5/help/gelide.1
+===================================================================
+--- gelide-0.1.5.orig/help/gelide.1	2011-03-27 16:06:47.179623006 +0200
++++ gelide-0.1.5/help/gelide.1	2011-03-27 16:06:54.459623000 +0200
+@@ -1,7 +1,7 @@
+ .\" Gelide manpage.
+ .\" Copyright © 2008 - 2010 Juan Ángel Moreno Fernández
+ .\"
+-.TH Gelide "19" "October 2008" "" ""
++.TH Gelide "1" "October 2008" "" ""
+ .SH NAME
+ Gelide \- A multi system and multi emulator frontend for GNU/Linux
+ 

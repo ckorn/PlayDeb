@@ -1,0 +1,15 @@
+Disable update notifications by default
+===================================================================
+Index: warsow-1.0/warsow-1.0-src/source/client/cl_main.c
+===================================================================
+--- warsow-1.0.orig/warsow-1.0-src/source/client/cl_main.c	2012-05-30 18:54:45.000000000 +0200
++++ warsow-1.0/warsow-1.0-src/source/client/cl_main.c	2012-06-02 14:19:27.869696763 +0200
+@@ -1939,7 +1939,7 @@
+ 	cl_downloads_from_web =	Cvar_Get( "cl_downloads_from_web", "1", CVAR_ARCHIVE );
+ 	cl_downloads_from_web_timeout = Cvar_Get( "cl_downloads_from_web_timeout", "600", CVAR_ARCHIVE );
+ 	cl_download_allow_modules = Cvar_Get( "cl_download_allow_modules_" APP_VERSION_STR_MAJORMINOR, "1", CVAR_ARCHIVE );
+-	cl_checkForUpdate =	Cvar_Get( "cl_checkForUpdate", "1", CVAR_ARCHIVE );
++	cl_checkForUpdate =	Cvar_Get( "cl_checkForUpdate", "0", CVAR_ARCHIVE );
+ 
+ 	//
+ 	// userinfo

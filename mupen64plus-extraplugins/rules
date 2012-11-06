@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_build:
+	dh_auto_build -Dmupen64plus-rsp-z64/projects/unix
+	dh_auto_build -Dmupen64plus-video-arachnoid/projects/unix
+	dh_auto_build -Dmupen64plus-video-glide64/projects/unix
+	dh_auto_build -Dmupen64plus-video-z64/projects/unix
+
+override_dh_auto_clean:
+	dh_auto_clean -Dmupen64plus-rsp-z64/projects/unix
+	dh_auto_clean -Dmupen64plus-video-arachnoid/projects/unix
+	dh_auto_clean -Dmupen64plus-video-glide64/projects/unix
+	dh_auto_clean -Dmupen64plus-video-z64/projects/unix
+
+override_dh_auto_install:
+	dh_auto_install -Dmupen64plus-rsp-z64/projects/unix -- PREFIX=/usr
+	dh_auto_install -Dmupen64plus-video-arachnoid/projects/unix -- PREFIX=/usr
+	dh_auto_install -Dmupen64plus-video-glide64/projects/unix -- PREFIX=/usr
+	dh_auto_install -Dmupen64plus-video-z64/projects/unix -- PREFIX=/usr

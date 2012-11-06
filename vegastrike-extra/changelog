@@ -1,0 +1,31 @@
+vegastrike-extra (0.5.1~r1-1~getdeb1) precise; urgency=low
+
+  * New upstream version (LP: #1038859)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 20 Aug 2012 17:41:47 +0200
+
+vegastrike-extra (0.5.1.r1-1) stable; urgency=low
+
+  * 0.5.1.r1-1 Release
+    * Compatibility with beta2 core data
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Sun, 01 Apr 2012 12:34:50 -0300
+
+vegastrike-extra (0.5.1.beta2-1) stable; urgency=low
+ 
+  * 0.5.1.beta2-1 Release
+    * Compatibility with beta2 core data  
+ 
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Mon, 30 Jan 2012 16:53:43 -0300
+ 
+vegastrike-extra (0.5.1.beta1-3) stable; urgency=low
+ 
+  * Move data files to /usr/share/games
+ 
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Fri, 18 Mar 2011 18:28:35 -0300
+ 
+vegastrike-extra (0.5.1.beta1-1) stable; urgency=low
+
+  * 0.5.1.beta1 Release
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Sun, 27 Feb 2011 14:56:06 -0300

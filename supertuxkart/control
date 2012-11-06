@@ -1,0 +1,62 @@
+Source: supertuxkart
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Gonéri Le Bouder <goneri@rulezlan.org>,
+ Sam Hocevar (Debian packages) <sam+deb@zoy.org>,
+ Alexander Reichle-Schmehl <tolimar@debian.org>,
+ Christoph Egger <christoph@debian.org>
+Build-Depends: debhelper (>= 7.0.0~),
+ libirrlicht1.8-dev (>> 1.7),
+ autotools-dev,
+ libsdl-ttf2.0-dev,
+ libsdl-image1.2-dev,
+ docbook-to-man,
+ libopenal-dev,
+ libalut-dev,
+ libmikmod2-dev,
+ libvorbis-dev,
+ automake,
+ libtool,
+ libcurl3-dev
+Standards-Version: 3.9.1
+Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/supertuxkart/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/supertuxkart/?op=log
+Homepage: http://supertuxkart.sf.net/
+
+Package: supertuxkart
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, supertuxkart-data (= ${source:Version})
+Description: kart racing game
+ SuperTuxKart is an enhanced version of TuxKart, the kart racing game
+ originally done by Steve Baker, featuring Tux and a bunch of his friends.
+ SuperTuxKart is the work of the GotM run for TuxKart at  happypenguin.org. Due
+ to some disagreements that happened in that time this fork of TuxKart was
+ done.
+ .
+ SuperTuxKart features include:
+  - new characters
+  - new tracks
+  - a completely new user interface
+  - some smaller graphical improvements (skidmarks, smoke, animated wheels,
+    etc.)
+
+Package: supertuxkart-data
+Architecture: all
+Suggests: supertuxkart
+Depends: ${misc:Depends}
+Description: data for the supertuxkart kart racing game
+ SuperTuxKart is an enhanced version of TuxKart, the kart racing game
+ originally done by Steve Baker, featuring Tux and a bunch of his friends.
+ SuperTuxKart is the work of the GotM run for TuxKart at  happypenguin.org. Due
+ to some disagreements that happened in that time this fork of TuxKart was
+ done.
+ .
+ SuperTuxKart features include:
+  - new characters
+  - new tracks
+  - a completely new user interface
+  - some smaller graphical improvements (skidmarks, smoke, animated wheels,
+    etc.)
+ .
+ This package contains data files for the game supertuxkart.

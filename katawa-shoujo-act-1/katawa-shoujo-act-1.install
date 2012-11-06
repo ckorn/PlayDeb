@@ -1,0 +1,7 @@
+common					usr/share/games/katawa-shoujo-act-1
+game					usr/share/games/katawa-shoujo-act-1
+renpy					usr/share/games/katawa-shoujo-act-1
+katawa-shoujo-act-1.py			usr/share/games/katawa-shoujo-act-1
+debian/scripts/katawa-shoujo-act-1	usr/games
+debian/katawa-shoujo-act-1.png		usr/share/pixmaps
+debian/katawa-shoujo-act-1.desktop	usr/share/applications

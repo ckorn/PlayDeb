@@ -1,0 +1,45 @@
+goollie (1.3-1~getdeb6~precise) precise; urgency=low
+
+  * Rebuild for precise
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 04 Apr 2012 19:56:16 +0200
+
+goollie (1.3-1~getdeb5) oneiric; urgency=low
+
+  * Remove debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 Nov 2011 15:27:05 +0100
+
+goollie (1.3-1~getdeb4) maverick; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 24 Oct 2010 19:40:13 +0200
+
+goollie (1.3-1~getdeb3) maverick; urgency=low
+
+  * Rebuild for maverick
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 24 Oct 2010 19:38:02 +0200
+
+goollie (1.3-1~getdeb2) lucid; urgency=low
+
+  * Upload to lucid
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 09 Apr 2010 21:10:57 +0200
+
+goollie (1.3-1~getdeb1) jaunty; urgency=low
+
+  * Spanish translation
+  * Keyboard shortcuts for powerups
+  * linear texture filtering when 3D accelerated
+  * game play improvements
+
+ -- Christoph Korn <c_korn@gmx.de>  Sun, 14 Jun 2009 21:08:01 +0200
+
+goollie (1.1-1~getdeb1) intrepid; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <c_korn@gmx.de>  Mon, 22 Dec 2008 21:33:10 +0100
+

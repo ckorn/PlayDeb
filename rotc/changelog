@@ -1,0 +1,41 @@
+rotc (5.3-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 31 Mar 2012 13:43:32 +0200
+
+rotc (5.2-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version (LP: #940694)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 25 Feb 2012 11:45:52 +0100
+
+rotc (5-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 17 Dec 2011 14:36:11 +0100
+
+rotc (4-1~getdeb1) natty; urgency=low
+
+  * New upstream version (LP: #802097)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 26 Jun 2011 11:38:44 +0200
+
+rotc (3-1~getdeb1) maverick; urgency=low
+
+  * New upstream version (LP: #771469)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 27 Apr 2011 20:37:23 +0200
+
+rotc (2-1~getdeb1) maverick; urgency=low
+
+  * New upstream version (LP: #731524)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 26 Mar 2011 14:42:15 +0100
+
+rotc (1.11-1~getdeb1) maverick; urgency=low
+
+  * Initial release (LP: #685122)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 13 Dec 2010 22:13:09 +0100

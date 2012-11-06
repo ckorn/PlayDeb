@@ -1,0 +1,4 @@
+version=3
+opts="uversionmangle=s/(\d)(\d)/$1\.$2/" \
+http://www.braingames.getput.com/stransball2/default.asp \
+    (?:.*/)stransball2-v([\d]+)-source\.zip

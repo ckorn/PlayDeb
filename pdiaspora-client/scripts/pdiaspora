@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ ! -d $HOME/.config/pdiaspora ] ; then
+	cp -a /usr/share/games/pdiaspora $HOME/.config/pdiaspora
+	cp /usr/lib/games/pdiaspora/pdiaspora $HOME/.config/pdiaspora/pdiaspora
+fi
+
+cd $HOME/.config/pdiaspora
+./pdiaspora $@

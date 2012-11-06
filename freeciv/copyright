@@ -1,0 +1,57 @@
+This is the Debian GNU/Linux prepackaged version of freeciv.
+
+Freeciv was first packaged for Debian by Karl Sackett <krs@debian.org>, on
+Tue, 1 Apr 1997 10:37:50 -0600.
+Richard Braakman <dark@xs4all.nl> took over the package at version 1.0k-1, on
+6 Nov 1997 21:46:14 +0100.
+Lalo Martins <lalo@webcom.com> then took over at version 1.6.3-1, on
+Sat, 20 Jun 1998 05:58:41 -0300.
+Jules Bean <jules@debian.org> became Freeciv's new maintainer at
+version 1.11.4-1, on Sat, 12 Aug 2000 21:25:48 +0100.
+
+Jordi Mallach <jordi@sindominio.net> has been maintaining Freeciv packages
+since Tue, 21 Jan 2003 14:56:48 +0100, when version 1.14.0 was released.
+
+Freeciv has been maintained by the Debian Games Team since
+Thu Dec 4 23:05:24 2008 -0500, starting with 2.1.5-3.
+
+Other people have helped Freeciv in the past, outstanding
+Torsten Landschoff <torsten@debian.org> and
+Filip Van Raemdonck <mechanix@debian.org>.
+
+The freeciv sources were obtained from:
+
+	ftp://ftp.freeciv.org/freeciv/stable/
+
+For more information see:
+
+	http://www.freeciv.org/
+
+Freeciv is Copyright (C) 1996 by A. Kjeldberg, L. Gregersen, and P. Unold.
+
+Freeciv is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2, or (at your option) any
+later version.
+
+Freeciv is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License version 2
+with your Debian GNU/Linux system as /usr/share/common-licenses/GPL-2,
+or with the freeciv source package as the file COPYING.
+
+If not, write to the Free Software Foundation, Inc., 51 Franklin Street,
+Fifth Floor, Boston, MA 02110-1301 USA
+
+Some parts of the code in client/gui-sdl/graphics.h,
+client/gui-sdl/SDL_rotozoom.c and client/gui-sdl/SDL_rotozoom.h come from
+SDL_gfx-2.0, which is licenced under the LGPL.
+The complete text of the GNU Lesser General Public License version 2.1 can
+be found in /usr/share/common-licenses/LGPL-2.1.
+
+OpenQuartz (OpenQuartz.sourceforge.net) material is licensed under the GPL.
+Paroxysm material is in the public domain and is distributed by OpenQuartz
+too.

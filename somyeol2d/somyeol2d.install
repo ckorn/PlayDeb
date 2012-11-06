@@ -1,0 +1,7 @@
+debian/scripts/somyeol2d		usr/games
+debian/scripts/somyeol2d-editor		usr/games
+debian/somyeol2d.desktop		usr/share/applications
+debian/somyeol2d-editor.desktop		usr/share/applications
+debian/somyeol2d.png			usr/share/pixmaps
+debian/somyeol2d-editor.png		usr/share/pixmaps
+*.py data img sound			usr/share/games/somyeol2d

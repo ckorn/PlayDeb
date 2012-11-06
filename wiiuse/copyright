@@ -1,0 +1,24 @@
+This package was debianized by Glenn Rice <glennricster@gmail.com> on
+Thu, 7 Jan 2010 08:04:19 -0500.
+
+It was downloaded from http://www.wiiuse.net/
+
+Upstream Author:
+
+    Michael Laforest <thepara@gmail.com>
+
+Copyright:
+
+    Copyright (C) 2009 under the GPL
+
+License:
+
+    GNU Public License
+
+The Debian packaging is:
+
+    Copyright (C) 2010 Glenn Rice <glennricster@gmail.com>
+
+and is licensed under the GPL version 3, 
+see `/usr/share/common-licenses/GPL-3'.
+

@@ -1,0 +1,28 @@
+This work was packaged for Debian by:
+
+    Christoph Korn <christoph.korn@getdeb.net> on Sun, 02 May 2010 16:34:04 +0200
+
+It was downloaded from http://sourceforge.net/projects/pdiaspora/files/
+
+Upstream Authors:
+
+    Nightsoft <freaknigh@hotmail.com>
+
+Copyright:
+
+    Copyright (C) 2009 Nightsoft
+
+License:
+
+    License and Rights: Full licensing and Rights available at www.nighsoft.net.
+    If licensing and rights not available at www.nighsoft.net, then all the following apply as bulleted:
+      -all rights reserved.
+      -you can not modify source code in this file.
+      -you can compile and use this source code.
+
+The Debian packaging is:
+
+    Copyright (C) 2010 Christoph Korn <christoph.korn@getdeb.net>
+
+and is licensed under the GPL version 3, 
+see `/usr/share/common-licenses/GPL-3'.

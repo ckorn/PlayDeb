@@ -1,0 +1,57 @@
+Description: debianization for launch-server script
+Index: alien-arena/Tools/LinuxScripts/launch-server
+===================================================================
+--- alien-arena.orig/Tools/LinuxScripts/launch-server	2011-03-13 14:04:12.000000000 -0400
++++ alien-arena/Tools/LinuxScripts/launch-server	2011-03-13 14:34:47.000000000 -0400
+@@ -1,9 +1,14 @@
+ #! /bin/sh
+ #
++
++### This script has been patched from it's original source for
++# distribution to Debian systems. The original script can be viewed and
++# checked out from SVN.
++
+ # AA Server Cron Job (originally TeamSpeak Cron Job)
+ #
+-# Usage: launch-server <configfile>
+-# EG:    launch-server ctf.cfg
++# Usage: alien-arena-server -s <configfile>
++# EG:    alien-arena-server -s ctf.cfg
+ #
+ # Author: Chris Childers
+ # E-Mail: Chris@darkstarllc.com
+@@ -11,6 +16,7 @@
+ # Modified by: Tony Jackson
+ # Updated for Alien Arena 2011
+ # 2010-12-04 FIXME: could benefit from some documentation.
++# Debian patch by: Andres Mejia <mcitadel@gmail.com>
+ #
+ # Set the port number in the .cfg if running multiple servers.
+ # Script checks the existance of the cfg file before launching.
+@@ -22,12 +28,12 @@
+ if [ $COR_GAME ] ; then
+ aadir=$COR_GAME
+ else
+-aadir=~/.codered
++aadir=$HOME/.config/alien-arena
+ fi
+ 
+ ### Set your AA Binary Name or command string ($1 is the argument
+ ### passed to the script)
+-aabin="crx-ded +set game arena +exec $1"
++aabin="/usr/lib/games/alian-arena/crx-ded +set game arena +exec $1"
+ 
+ ########## you probably don't need to change anything below here 
+ ##########
+@@ -43,7 +49,10 @@
+ exit 0
+ fi
+ else
+-echo "Usage: launch-server <configfile>"
++echo "Usage: alien-arena-server -s <configfile>\n\
++<configfile> must be specified.\n\
++<configfile> can be placed inside $HOME/.config/alien-arena and\n\
++specified by its basename, or it can be specified by its full path.\n\n"
+ exit 0
+ fi
+ 

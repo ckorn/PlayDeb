@@ -1,0 +1,7 @@
+?package(minetest):\
+        needs="x11" \
+        section="Games/Adventure" \
+        command="/usr/games/minetest" \
+        title="Minetest" \
+        icon="/usr/share/icons/hicolor/24x24/apps/minetest.xpm" \
+        longtitle="Minetest: minecraft/infiniminer game"

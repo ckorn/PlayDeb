@@ -1,0 +1,51 @@
+This work was packaged for Debian by:
+
+    Christoph Korn <christoph.korn@getdeb.net> on Sat, 18 Sep 2010 00:11:06 +0200
+
+It was downloaded from:
+
+    http://sites.google.com/site/sipygames/downloads
+
+Upstream Author:
+
+    sipiatti@gmail.com
+
+Copyright:
+
+    Copyright (C) 2009 sipiatti@gmail.com
+
+License:
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+On Debian systems, the complete text of the GNU General
+Public License version 3 can be found in `/usr/share/common-licenses/GPL-3'.
+
+The Debian packaging is:
+
+    Copyright (C) 2010 Christoph Korn <christoph.korn@getdeb.net>
+
+and is licensed under the GPL version 3, see above.
+
+sounds/alarm.ogg - original: soundbible.com "Industrial Alarm" by Mike Koenig CCA3 http://creativecommons.org/licenses/by/3.0/
+sounds/clock_tick.ogg - original: freesounds.org "Grandfather Clock" by digifish http://creativecommons.org/licenses/sampling+/1.0/
+sounds/step.ogg - original: freesounds.org "Walking on Gravel" by digifish http://creativecommons.org/licenses/sampling+/1.0/
+sounds/boom.ogg - self made, free to use
+sounds/step.ogg - original: freesounds.org "Chamber steps" by Robinhood76 http://creativecommons.org/licenses/sampling+/1.0/
+sounds/win.ogg - original: soundsnap.com "Logo happy chords" by BLASTWAVEFX_26694 http://www.soundsnap.com/licence
+sounds/buzzer.ogg - original: freesounds.org "buzzer" by guitarguy1985 http://creativecommons.org/licenses/sampling+/1.0/
+sounds/putflag.ogg - original: freesounds.org "Mandrill_Striking_Rock" by Benboncan http://creativecommons.org/licenses/sampling+/1.0/
+sounds/drop.ogg - original: freesounds.org "Fight shout man" by Robinhood76 http://creativecommons.org/licenses/sampling+/1.0/
+sounds/impact.ogg - original: freesounds.org "heavy_crate_smash" by Srehpog http://creativecommons.org/licenses/sampling+/1.0/
+sounds/digbot.ogg - original: freesounds.org "rewind robot toy unwinding" by soundplusdesign http://creativecommons.org/licenses/sampling+/1.0/

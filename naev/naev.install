@@ -1,0 +1,4 @@
+src/naev				usr/lib/games/naev
+debian/naev.desktop			usr/share/applications
+debian/naev.xpm				usr/share/pixmaps
+debian/scripts/naev			usr/games

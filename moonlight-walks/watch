@@ -1,0 +1,3 @@
+version=3
+http://www.bishoujo.us/moonlight/ \
+    (?:.*/)?moonlight-([\d\.]+)-linux-x86\.tar\.bz2

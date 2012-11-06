@@ -1,0 +1,10 @@
+Linux client use sdl as default sound wrapper.
+
+Q: How can I specify what driver (oss...alsa) to use with these SDL games?
+A: export SDL_AUDIODRIVER=dsp, other relevant options are:
+    - alsa
+    - artsc (Analog Realtime Synthesizer)
+    - disk (goes to sdlaudio.raw in cwd)
+    - dma (OSS /dev/dsp dma)
+    - esd (Enlightenment Sound Daemon)
+    - nas (Network Audio System)

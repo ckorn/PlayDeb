@@ -1,0 +1,5 @@
+wesnoth-1.10-core: manpage-locale-dir-country-specific usr/share/man/en_GB/man6/wesnoth-1.10-nolog.6.gz
+wesnoth-1.10-core: manpage-locale-dir-country-specific usr/share/man/en_GB/man6/wesnoth-1.10-smallgui.6.gz
+wesnoth-1.10-core: manpage-locale-dir-country-specific usr/share/man/en_GB/man6/wesnoth-1.10.6.gz
+wesnoth-1.10-core: manpage-locale-dir-country-specific usr/share/man/en_GB/man6/wesnoth-1.10_editor.6.gz
+wesnoth-1.10-core: diversion-for-unknown-file usr/share/man/*/man6/wesnoth.6.gz postinst:25

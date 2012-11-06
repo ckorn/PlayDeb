@@ -1,0 +1,11 @@
+deadlycobra (0.7.0-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 15:40:36 +0100
+
+deadlycobra (0.7.0-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #478679)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 08 Nov 2009 23:11:41 +0100

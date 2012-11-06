@@ -1,0 +1,49 @@
+Index: atomicworm-019/CMakeModules/FindImageMagickLib.cmake
+===================================================================
+--- atomicworm-019.orig/CMakeModules/FindImageMagickLib.cmake	2009-09-14 00:38:07.201508331 +0200
++++ atomicworm-019/CMakeModules/FindImageMagickLib.cmake	2009-09-14 00:38:08.824486803 +0200
+@@ -36,6 +36,7 @@
+   "[HKEY_LOCAL_MACHINE\\SOFTWARE\\ImageMagick\\Current;BinPath]/include"
+   /usr/local/include
+   /usr/include
++  /usr/include/ImageMagick
+   /opt/net/gcc41/ImageMagick/include
+   /opt/net/gcc33/ImageMagick/include
+   )
+@@ -69,7 +70,7 @@
+ 
+ 
+ FIND_LIBRARY(IMAGEMAGICKLIB_C_LIBRARY
+-  NAMES Magick CORE_RL_magick_ CORE_DB_magick_ 
++  NAMES Magick CORE_RL_magick_ CORE_DB_magick_ MagickCore
+   PATHS ${IMAGEMAGICKLIB_POSSIBLE_LIBRARY_PATHS} )
+ #MESSAGE("DBG IMAGEMAGICKLIB_C_LIBRARY=${IMAGEMAGICKLIB_C_LIBRARY}")
+ 
+Index: atomicworm-019/src/CMakeLists.txt
+===================================================================
+--- atomicworm-019.orig/src/CMakeLists.txt	2009-09-14 00:38:07.181504182 +0200
++++ atomicworm-019/src/CMakeLists.txt	2009-09-14 00:38:19.488506590 +0200
+@@ -12,7 +12,7 @@
+ -lpthread
+ -lz
+ -lutil
+-libtuxcap.so.3.3)
++-ltuxcap)
+ 
+ SET_TARGET_PROPERTIES(${CurrentExe}
+                              PROPERTIES
+Index: atomicworm-019/CMakeLists.txt
+===================================================================
+--- atomicworm-019.orig/CMakeLists.txt	2009-09-14 00:38:07.221471273 +0200
++++ atomicworm-019/CMakeLists.txt	2009-09-14 00:38:08.824486803 +0200
+@@ -1,8 +1,8 @@
+ PROJECT(atomicworm)
+ 	
+ SET (CMAKE_BUILD_TYPE RELEASE)
+-SET(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG -O3 -m32")
+-SET(CMAKE_C_FLAGS_RELEASE "-DNDEBUG -O3 -m32")
++SET(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG -O3")
++SET(CMAKE_C_FLAGS_RELEASE "-DNDEBUG -O3")
+ 
+ SET(CMAKE_MODULE_PATH "${atomicworm_SOURCE_DIR}/CMakeModules" )
+ 

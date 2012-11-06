@@ -1,0 +1,12 @@
+autodownloader (0.3.0-1~getdeb1) karmic; urgency=low
+
+  * Upload to getdeb for karmic.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 31 Dec 2009 23:18:57 +0100
+
+autodownloader (0.3.0-0~getdeb1) hardy; urgency=low
+
+  * Initial release.
+
+ -- Christoph Korn <c_korn@gmx.de>  Sat, 06 Sep 2008 23:46:51 +0200
+

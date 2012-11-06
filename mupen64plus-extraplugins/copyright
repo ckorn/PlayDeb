@@ -1,0 +1,46 @@
+This work was packaged for Debian by:
+
+    Christoph Korn <christoph.korn@getdeb.net> on Tue, 05 Apr 2011 20:20:58 +0200
+
+It was downloaded from:
+
+    http://code.google.com/p/mupen64plus/downloads/list
+
+Upstream Authors:
+
+    ziggy
+    Kristofer Karlsson, Rickard Niklasson
+    Dave2001
+
+Copyright:
+
+    Copyright (C) 2007  ziggy
+    Copyright (C) 2007 Kristofer Karlsson, Rickard Niklasson
+    Copyright (c) 2002  Dave2001
+
+License:
+
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>
+
+On Debian systems, the complete text of the GNU General
+Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+The Debian packaging is:
+
+    Copyright (C) 2011 Christoph Korn <christoph.korn@getdeb.net>
+
+you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.

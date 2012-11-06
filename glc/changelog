@@ -1,0 +1,17 @@
+glc (0.5.7-1~getdeb3~oneiric) oneiric; urgency=low
+
+  * Remove debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 Nov 2011 15:15:02 +0100
+
+glc (0.5.7-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 16:14:45 +0100
+
+glc (0.5.7-1~getdeb1) jaunty; urgency=low
+
+  * Initial release (LP: #455460)
+
+ -- Christoph Korn <c_korn@gmx.de>  Mon, 19 Oct 2009 22:19:29 +0200

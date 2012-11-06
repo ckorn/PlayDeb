@@ -1,0 +1,26 @@
+Index: urbanterror-20100418/ioq3-urt/code/botlib/be_aas_main.c
+===================================================================
+--- urbanterror-20100418.orig/ioq3-urt/code/botlib/be_aas_main.c	2010-04-24 17:36:22.850098971 +0200
++++ urbanterror-20100418/ioq3-urt/code/botlib/be_aas_main.c	2010-04-24 17:36:32.007590697 +0200
+@@ -219,7 +219,7 @@
+ 		//save the AAS file
+ 		if (AAS_WriteAASFile(aasworld.filename))
+ 		{
+-			botimport.Print(PRT_MESSAGE, "%s written succesfully\n", aasworld.filename);
++			botimport.Print(PRT_MESSAGE, "%s written successfully\n", aasworld.filename);
+ 		} //end if
+ 		else
+ 		{
+Index: urbanterror-20100418/ioq3-urt/code/botlib/l_script.c
+===================================================================
+--- urbanterror-20100418.orig/ioq3-urt/code/botlib/l_script.c	2010-04-24 17:54:27.307597618 +0200
++++ urbanterror-20100418/ioq3-urt/code/botlib/l_script.c	2010-04-24 17:54:39.817586318 +0200
+@@ -220,7 +220,7 @@
+ 	{
+ 		if (script->punctuations[i].n == num) return script->punctuations[i].p;
+ 	} //end for
+-	return "unkown punctuation";
++	return "unknown punctuation";
+ } //end of the function PunctuationFromNum
+ //===========================================================================
+ //

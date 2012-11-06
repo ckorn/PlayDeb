@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Vavoom - Hexen
+Comment=Hexen Demo launcher, will automatically download the needed data-files
+Exec=hexen-demo
+Icon=tux-b2f
+Terminal=false
+Type=Application
+Categories=Game;ActionGame;

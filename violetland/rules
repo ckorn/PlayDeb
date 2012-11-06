@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+%:
+	dh --parallel $@
+
+override_dh_clean:
+	dh_clean changelog
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DCMAKE_INSTALL_PREFIX=/usr -DDATA_INSTALL_DIR=/usr/share/games/violetland
+
+override_dh_auto_install:
+	dh_auto_install
+	mv debian/tmp/usr/bin debian/tmp/usr/games
+
+override_dh_install:
+	cp CHANGELOG changelog
+	dh_install --list-missing
+	# We put the fonts in a seperate directory
+	[ ! -d debian/violetland-data/usr/share/games/violetland/fonts ] || rm -r debian/violetland-data/usr/share/games/violetland/fonts

@@ -1,0 +1,12 @@
+jvgs (0.5-1~getdeb2) lucid; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 05 Jan 2011 18:50:53 +0100
+
+jvgs (0.5-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+  * Switch to dpkg-source 3.0 (quilt) format
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Tue, 04 Jan 2011 20:12:16 +0000

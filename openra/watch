@@ -1,0 +1,3 @@
+version=3
+https://github.com/OpenRA/OpenRA/tags \
+    (?:.*/)?archive/release-([\d\.]+)(?:\.tar\.gz|\.tar\.bz2|\.tar\.xz)

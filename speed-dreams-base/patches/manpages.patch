@@ -1,0 +1,113 @@
+Hyphon used as minus.
+Index: speed-dreams-base-2.0.0/doc/man/sd2-accc.6
+===================================================================
+--- speed-dreams-base-2.0.0.orig/doc/man/sd2-accc.6	2012-02-26 11:58:48.000000000 +0100
++++ speed-dreams-base-2.0.0/doc/man/sd2-accc.6	2012-05-14 19:09:22.632466804 +0200
+@@ -3,7 +3,7 @@
+ .LP
+ sd2-accc \- Speed Dreams 2 multi-layer generator for tracks
+ .SH SYNOPSIS
+-\fBsd2-accc\fP [option] <input .ac file> < output .acc file> [dist] [-order order-string]
++\fBsd2\-accc\fP [option] <input .ac file> < output .acc file> [dist] [\-order order\-string]
+ .SH DESCRIPTION
+ sd2-accc is intended to add multi-texturing to the track models
+ built in the native Ac3d file format.
+@@ -39,7 +39,7 @@
+ ac3d to ac3d with triangles no split and extended ac3d file output (normals normals)
+ .TP
+ .B +shad
+-ac3d to ac3d with triangles, create a new ac3d file used for track shading\n   vertical mapping of a single texture
++ac3d to ac3d with triangles, create a new ac3d file used for track shading vertical mapping of a single texture
+ .TP
+ .B -order order-string
+ only used with \fB+es\fP , \fB+s\fP and \fB+et\fP \fIorderstring\fP is the order of the objects during the save for example: \fIHB;OB;OBM\fP is the names of the objet separate by a semicolon for imported NFS cars the object name \fIHB\fP must be used instead of: \fIHB\fP
+Index: speed-dreams-base-2.0.0/doc/man/sd2-menuview.6
+===================================================================
+--- speed-dreams-base-2.0.0.orig/doc/man/sd2-menuview.6	2012-02-26 12:24:00.000000000 +0100
++++ speed-dreams-base-2.0.0/doc/man/sd2-menuview.6	2012-05-14 19:11:07.012463699 +0200
+@@ -2,11 +2,11 @@
+ .SH NAME
+ sd2-menuview \- Menu viewer for Speed Dreams 2
+ .SH SYNOPSIS
+-\fBsd2-menuview\fP  [-v|--version] [-h|--help]
+-              [-l|--localdir <dir path>] [-L|--libdir <dir path>]
+-              [-B|--bindir <dir path>] [-D|--datadir <dir path>]
+-              [-e|--tracelevel <integer>] [-t|--tracestream stdout|stderr|<file name>]
+-              [-m|--hardmouse]
++\fBsd2-menuview\fP  [\-v|\-\-version] [\-h|\-\-help]
++              [\-l|\-\-localdir <dir path>] [\-L|\-\-libdir <dir path>]
++              [\-B|\-\-bindir <dir path>] [\-D|\-\-datadir <dir path>]
++              [\-e|\-\-tracelevel <integer>] [\-t|\-\-tracestream stdout|stderr|<file name>]
++              [\-m|\-\-hardmouse]
+               menu-file
+ 
+ .SH DESCRIPTION
+Index: speed-dreams-base-2.0.0/doc/man/sd2-nfsperf.6
+===================================================================
+--- speed-dreams-base-2.0.0.orig/doc/man/sd2-nfsperf.6	2012-02-26 12:28:21.000000000 +0100
++++ speed-dreams-base-2.0.0/doc/man/sd2-nfsperf.6	2012-05-14 19:11:45.040462569 +0200
+@@ -4,7 +4,7 @@
+ sd2-nfsperf \- Car Specifications Converter from 'Need for Speed' to Speed Dreams 2
+ .SH SYNOPSIS
+ .LP
+-\fBsd2-nfsperf\fP [-c category.xml] [-i <input carp.txt>] [-o output carp.xml]
++\fBsd2-nfsperf\fP [\-c category.xml] [\-i <input carp.txt>] [\-o output carp.xml]
+ .SH DESCRIPTION
+ This manual describes the Car Specifications Converter application that is shipped with Speed Dreams 2.
+ .SH OPTIONS
+Index: speed-dreams-base-2.0.0/doc/man/sd2-trackgen.6
+===================================================================
+--- speed-dreams-base-2.0.0.orig/doc/man/sd2-trackgen.6	2012-02-26 11:59:34.000000000 +0100
++++ speed-dreams-base-2.0.0/doc/man/sd2-trackgen.6	2012-05-14 19:12:23.912461411 +0200
+@@ -4,7 +4,7 @@
+ sd2-trackgen \- Speed Dreams 2 terrain generator for tracks
+ .SH SYNOPSIS
+ .LP
+-\fBsd2-trackgen\fP -c category -n name [-a] [-m] [-s] [-S] [-E <n> [-H <nb>]]
++\fBsd2\-trackgen\fP \-c category \-n name [\-a] [\-m] [\-s] [\-S] [\-E <n> [\-H <nb>]]
+ .SH DESCRIPTION
+ .TP
+ This manual describes the track terrain generator that is shipped with Speed Dreams 2.
+Index: speed-dreams-base-2.0.0/doc/man/speed-dreams-2.6
+===================================================================
+--- speed-dreams-base-2.0.0.orig/doc/man/speed-dreams-2.6	2012-02-26 12:26:45.000000000 +0100
++++ speed-dreams-base-2.0.0/doc/man/speed-dreams-2.6	2012-05-14 19:13:46.592458952 +0200
+@@ -2,12 +2,12 @@
+ .SH NAME
+ speed-dreams-2 \- High-quality 3D racing cars simulator game based on Open GL
+ .SH SYNOPSIS
+-\fBspeed-dreams-2\fP  [-v|--version] [-h|--help]
+-                [-l|--localdir <dir path>] [-L|--libdir <dir path>]
+-                [-B|--bindir <dir path>] [-D|--datadir <dir path>]
+-                [-e|--tracelevel <integer>] [-t|--tracestream stdout|stderr|<file name>]
+-                [-m|--hardmouse]
+-                [-s|--startrace <race name> [-x|--textonly] ]
++\fBspeed-dreams-2\fP  [\-v|\-\-version] [\-h|\-\-help]
++                [\-l|\-\-localdir <dir path>] [\-L|\-\-libdir <dir path>]
++                [\-B|\-\-bindir <dir path>] [\-D|\-\-datadir <dir path>]
++                [\-e|\-\-tracelevel <integer>] [\-t|\-\-tracestream stdout|stderr|<file name>]
++                [\-m|\-\-hardmouse]
++                [\-s|\-\-startrace <race name> [\-x|\-\-textonly] ]
+ 
+ .SH DESCRIPTION
+ Speed Dreams is a Motorsport Simulator featuring high-quality 3D graphics
+@@ -57,7 +57,7 @@
+ \fB-x\fP, \fB--textonly\fP
+ Run the specified race without any GUI (suitable for a headless computer)
+ .br
+-Note: Can't be used without -s/--startrace.
++Note: Can't be used without \-s/\-\-startrace.
+ .TP
+ \fB-m\fP, \fB--hardmouse\fP
+ Use hardware mouse cursor
+@@ -75,8 +75,8 @@
+ Note: May be disabled if CMake option 'OPTION_DEBUG' is not true at build time)
+ .SH EXAMPLES
+ speed-dreams-2
+-speed-dreams-2 -s quickrace
+-speed-dreams-2 -x -s practice
++speed-dreams-2 \-s quickrace
++speed-dreams-2 \-x \-s practice
+ .SH LICENSE
+ Speed Dreams 2 is licensed under the GNU General Public License, version 2 or later.
+ .SH COPYRIGHT

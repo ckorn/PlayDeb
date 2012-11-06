@@ -1,0 +1,26 @@
+#!/bin/sh -e
+
+if [ ! -d $HOME/.config/megamek ] ; then
+	cp -a /usr/share/games/megamek $HOME/.config/
+else
+	if [ /usr/share/games/megamek/MegaMek.jar -nt $HOME/.config/megamek/MegaMek.jar ] ; then
+		rm -rf $HOME/.config/megamek/MegaMek.jar
+		rm -rf $HOME/.config/megamek/lib
+		rm -rf $HOME/.config/megamek/data
+		rm -rf $HOME/.config/megamek/docs
+		rm -rf $HOME/.config/megamek/l10n
+		rm -rf $HOME/.config/megamek/mmconf
+		rm -rf $HOME/.config/megamek/*.txt
+
+		cp -a /usr/share/games/megamek/MegaMek.jar $HOME/.config/megamek/
+		cp -a /usr/share/games/megamek/lib $HOME/.config/megamek/
+		cp -a /usr/share/games/megamek/data $HOME/.config/megamek/
+		cp -a /usr/share/games/megamek/docs $HOME/.config/megamek/
+		cp -a /usr/share/games/megamek/l10n $HOME/.config/megamek/
+		cp -a /usr/share/games/megamek/mmconf $HOME/.config/megamek/
+		cp -a /usr/share/games/megamek/*.txt $HOME/.config/megamek/
+	fi
+fi
+
+cd $HOME/.config/megamek
+java -jar MegaMek.jar

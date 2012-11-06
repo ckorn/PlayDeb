@@ -1,0 +1,28 @@
+Source: jvgs
+Section: games
+Priority: optional
+Maintainer: Joao Pinto <joao.pinto@getdeb.net>
+Build-Depends: cdbs, debhelper (>= 7), cmake, swig,
+ libsdl1.2-dev, libsdl-mixer1.2-dev, liblua5.1-0-dev
+Standards-Version: 3.9.1
+Homepage: http://jvgs.sourceforge.net/
+
+Package: jvgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, jvgs-data (= ${source:Version})
+Description: minimalistic platform game
+ JVGS is an open source platform game that is not like the others.
+ It is build on simple line structures loaded from svg files,
+ giving the whole game a "sketched" and minimalistic look.
+ Levels can be made with simple xml and lua files.
+
+Package: jvgs-data
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: minimalistic platform game - data
+ JVGS is an open source platform game that is not like the others.
+ It is build on simple line structures loaded from svg files,
+ giving the whole game a "sketched" and minimalistic look.
+ Levels can be made with simple xml and lua files.
+ .
+ (This package contains the data files)

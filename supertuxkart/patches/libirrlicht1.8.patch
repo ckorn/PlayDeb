@@ -1,0 +1,31 @@
+We use different names and directories for libirrlicht1.8 to not conflict with
+the official packages.
+Index: supertuxkart-0.7.3/configure.ac
+===================================================================
+--- supertuxkart-0.7.3.orig/configure.ac	2011-11-13 23:56:22.000000000 +0100
++++ supertuxkart-0.7.3/configure.ac	2011-12-16 19:22:58.964065021 +0100
+@@ -200,7 +200,7 @@
+    # check in /usr
+    echo " in /usr/ : "
+    
+-   CPPFLAGS="${CPPFLAGS_Save} -I/usr/include/irrlicht"
++   CPPFLAGS="${CPPFLAGS_Save} -I/usr/include/irrlicht1.8"
+    AC_CHECK_HEADER(irrlicht.h, irrlicht_found_in_usr=yes, irrlicht_found_in_usr=no)
+    
+    # if it's not found there, try /usr/local instead
+@@ -226,13 +226,13 @@
+        fi
+    fi
+    
+-   CPPFLAGS="${CPPFLAGS_Save} -I ${with_irrlicht}/include/irrlicht"
++   CPPFLAGS="${CPPFLAGS_Save} -I ${with_irrlicht}/include/irrlicht1.8"
+ 
+ fi
+ 
+ case "${host}" in
+ *-*-linux* )
+-  irrlicht_LIBS="-L/$with_irrlicht/lib/Linux -L/$with_irrlicht/lib -lIrrlicht -lX11"
++  irrlicht_LIBS="-L/$with_irrlicht/lib/Linux -L/$with_irrlicht/lib -lIrrlicht1.8 -lX11"
+   ;;
+ *darwin*|*macosx*)
+   irrlicht_LIBS="-L/$with_irrlicht/lib/ -lIrrlicht -framework Cocoa"

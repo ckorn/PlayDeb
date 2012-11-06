@@ -1,0 +1,103 @@
+warsow-data (1.02-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Oct 2012 15:36:04 +0200
+
+warsow-data (1.01-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 10 Oct 2012 21:35:40 +0200
+
+warsow-data (1.0-1~getdeb2) precise; urgency=low
+
+  * Update debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 24 Sep 2012 22:12:55 +0200
+
+warsow-data (1.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 28 Jul 2012 13:59:09 +0200
+
+warsow-data (0.70-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 02 Jun 2012 14:43:13 +0200
+
+warsow-data (0.61-1~getdeb1) maverick; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 19 Mar 2011 20:40:13 +0100
+
+warsow-data (0.60-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #703758)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 17 Jan 2011 21:32:53 +0100
+
+warsow-data (0.50-1~getdeb2) karmic; urgency=low
+
+  * Fixed debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 13:30:20 +0100
+
+warsow-data (0.50-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version.
+
+ -- Christoph Korn <c_korn@gmx.de>  Tue, 01 Sep 2009 19:37:02 +0200
+
+warsow-data (0.42-1) unstable; urgency=low
+
+  [ Andres Mejia ]
+  * New upstream release.
+    Game data is distributable. Closes: #441435
+  * Renamed warsow-data-tarball.sh to warsow-data-get-orig-source.
+    + Modified it to make it more maintainable.
+  * Edited README.Debian.
+  * Bumped Standards-Version to 3.7.3.
+  * Removed Homepage from package description.
+  * Removed XS- prefix from Vcs entries.
+  * Fixed bad Vcs-Svn link.
+  * Rewrote package description.
+  * Changed 'pkg-games team' to 'Debian Games Team'.
+  * Changed who debianized this package, it was the Games team in general.
+  * Fixed up debian/rules.
+    + Including binary-arch target to comply with Debian policy.
+    + Excluding upstream license.txt and gnu.txt from packaging.
+    + Install upstream changelog.txt as as upstream changelog.
+  * Add watchfile.
+  * Updated copyright file with new license for game data.
+
+  [ Gonéri Le Bouder ]
+  * Update the copyright file
+
+ -- Andres Mejia <mcitadel@gmail.com>  Tue, 15 Jan 2008 17:50:03 -0500
+
+warsow-data (0.32-1) unstable; urgency=low
+
+  [ Andres Mejia ]
+  * New upstream release (Closes: 440476)
+  * Adding script to download and create orig tarball.
+  * Added Homepage field in source stanza that will soon be supported.
+  * Added Vcs-{Svn,Browser} fields in control file.
+  * Renaming upstream's changelog.txt file to upstream_changelog.txt.
+  * Removing upstream's license.txt from packaging.
+
+ -- Andres Mejia <mcitadel@gmail.com>  Tue, 04 Sep 2007 15:25:16 -0400
+
+warsow-data (0.31-1) unstable; urgency=low
+
+  [ Gonéri Le Bouder ]
+  * Initial release Closes: #375430
+
+  [ Andres Mejia ]
+  * Fixed copyright file.
+  * Added README.Debian file.
+
+ -- Gonéri Le Bouder <goneri@rulezlan.org>  Sat, 24 Jun 2006 19:15:41 +0200

@@ -1,0 +1,2 @@
+?package(alien-arena):needs="X11" section="Games/Action"\
+  title="alien-arena" command="/usr/games/alien-arena --quiet"

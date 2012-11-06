@@ -1,0 +1,53 @@
+This work was packaged for Debian by:
+
+    Christoph Korn <christoph.korn@getdeb.net> on Sun, 19 Dec 2010 15:03:08 +0100
+
+It was downloaded from:
+
+    http://sourceforge.net/projects/gemrb/files/
+
+Upstream Authors:
+
+    Alyssa Milburn <fuzzie@users.sourceforge.net>
+    Avenger <avenger_teambg@users.sourceforge.net>
+    Balrog994 <Balrog994@yahoo.com>
+    Brian Tanedo <behteh@users.sourceforge.net>
+    Dark-Star <doc_wagon@users.sourceforge.net>
+    Divide <divide@users.sourceforge.net>
+    Edheldil <edheldil@users.sourceforge.net>
+    GuidoJ <guidoj@users.sourceforge.net>
+    Jaka Kranjc <lynxlupodian@users.sourceforge.net>
+    Lotana <lotana@users.sourceforge.net>
+    Marshall Mattingly III <mattinm@users.sourceforge.net>
+    Thuy Nguyen <ndthuy@users.sourceforge.net>
+    Tom Prince <tom.prince@ualberta.net>
+    Willem Jan Palenstijn <wjpalenstijn@users.sourceforge.net>
+    Zefklop <zefklop@users.sourceforge.net>
+
+Copyright:
+
+    Copyright (C) 2010 Alyssa Milburn
+
+License:
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+On Debian systems, the complete text of the GNU General
+Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
+
+The Debian packaging is:
+
+    Copyright (C) 2010 Christoph Korn <christoph.korn@getdeb.net>
+
+and is licensed under the GPL version 3, see above.

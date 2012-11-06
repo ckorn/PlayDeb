@@ -1,0 +1,16 @@
+m_filter:
+	"m_filter" set to "2" now activates mouse extrapolation filter, which calculates a weighted
+         average over the last few mouse deltas to predict the next cursor position. This makes the
+         game appear more responsive to strong mouse movement (e.g. 180° flick rails), especially at
+         low framerates.
+
+m_filterStrength:
+	A new cvar "m_filterStrength" now controls the strength of the inter- and extrapolation
+        filters set by m_filter = "1" or "2" respectively. The default being "1" results in the old
+        smoothing behavior of m_filter = "1". Higher values with m_filter "1" make the mouse "lag
+        behind", much like in first-person role-playing games. If m_filter is set to "2",
+        responsiveness will appear to increase with m_filterStrength, but at some point (anything >
+        "1.0") imo, the screen will appear shaky due to overly optimistic predictions and
+        subsequent corrections. The perfect balance between crispness and shakyness depends on the
+        framerate and mouserate. In general, extrapolation is most useful at low framerates where
+        there's a noticeable delay between mouse movement and screen update otherwise.

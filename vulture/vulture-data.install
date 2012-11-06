@@ -1,0 +1,12 @@
+vulture/gamedata/config/vulture_intro.txt		usr/share/games/vulture/config
+vulture/gamedata/config/vulture_tiles.conf		usr/share/games/vulture/config
+vulture/gamedata/config/vulture_sounds.conf		usr/share/games/vulture/config
+vulture/gamedata/config/vulture.conf			usr/share/games/vulture/config
+
+vulture/gamedata/tiles/*				usr/share/games/vulture/tiles
+vulture/gamedata/graphics/*				usr/share/games/vulture/graphics
+vulture/gamedata/music/*				usr/share/games/vulture/music
+vulture/gamedata/sound/*.ogg				usr/share/games/vulture/sound
+vulture/gamedata/fonts/*				usr/share/games/vulture/fonts
+vulture/gamedata/manual/*.*				usr/share/doc/vulture-data/manual
+vulture/gamedata/manual/img/*				usr/share/doc/vulture-data/manual/img

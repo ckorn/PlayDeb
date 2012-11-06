@@ -1,0 +1,43 @@
+#!/usr/bin/make -f
+
+ifeq ($(DEB_BUILD_ARCH),amd64)
+BREAKPAD := -DBREAKPAD=No
+else
+BREAKPAD := -DBREAKPAD=Yes
+endif
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	mkdir -p bin
+
+	cmake \
+	 -D VERSION=$(shell cat VERSION) $(BREAKPAD) \
+	 -D CMAKE_C_FLAGS="-g" -D CMAKE_CXX_FLAGS="-g" \
+	 -D HAWKNL_BUILTIN=1 \
+	 -D LIBZIP_BUILTIN=1 \
+	 -D DEBUG=0 \
+	 -D SYSTEM_DATA_DIR=/usr/share/games .
+
+override_dh_auto_install:
+	mkdir -p debian/tmp/usr/games debian/tmp/usr/share/games
+	dh_auto_install
+
+	PREFIX=$(CURDIR)/debian/tmp BIN_DIR=usr/games SYSTEM_DATA_DIR=/usr/share/games ./install.sh
+	cp share/OpenLieroX.xpm $(CURDIR)/debian/openlierox/usr/share/pixmaps/OpenLieroX.xpm
+	cp share/OpenLieroX.svg $(CURDIR)/debian/openlierox/usr/share/pixmaps/OpenLieroX.svg
+	cp share/openlierox-openlierox.desktop $(CURDIR)/debian/openlierox/usr/share/applications/
+	gzip -9 -c doc/openlierox.6 > $(CURDIR)/debian/openlierox/usr/share/man/man6/openlierox.6.gz
+
+override_dh_install:
+	find debian/tmp/usr/share/games -type f -exec chmod -x {} \;
+	chmod +x debian/tmp/usr/share/games/OpenLieroX/scripts/presets/*
+	chmod +x debian/tmp/usr/share/games/OpenLieroX/scripts/*
+	chmod -x debian/tmp/usr/share/games/OpenLieroX/scripts/dedicated_control_ranking.py \
+	         debian/tmp/usr/share/games/OpenLieroX/scripts/portalocker.py \
+	         debian/tmp/usr/share/games/OpenLieroX/scripts/simple_ded_control.php
+
+	rm -rf debian/tmp/usr/share/doc/openlierox/original_source_release debian/tmp/usr/share/doc/openlierox/hirudo
+	mv debian/tmp/usr/share/doc/openlierox/ChangeLog.gz debian/tmp/usr/share/doc/openlierox/changelog.gz
+	dh_install

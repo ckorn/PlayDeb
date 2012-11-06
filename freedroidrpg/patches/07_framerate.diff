@@ -1,0 +1,14 @@
+Do not show the framerate.
+Index: freedroidrpg-0.15/src/init.c
+===================================================================
+--- freedroidrpg-0.15.orig/src/init.c	2012-02-26 13:18:21.956078195 +0100
++++ freedroidrpg-0.15/src/init.c	2012-02-26 13:18:39.096077685 +0100
+@@ -1296,7 +1296,7 @@
+ 	GameConfig.Current_Sound_FX_Volume = 0.5;
+ 	GameConfig.current_gamma_correction = 1.00;
+ 	GameConfig.WantedTextVisibleTime = 3;
+-	GameConfig.Draw_Framerate = TRUE;
++	GameConfig.Draw_Framerate = FALSE;
+ 	GameConfig.Draw_Position = TRUE;
+ 	GameConfig.All_Texts_Switch = FALSE;
+ 	GameConfig.enemy_energy_bars_visible = TRUE;

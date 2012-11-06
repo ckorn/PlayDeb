@@ -1,0 +1,14 @@
+Fix syntax error.
+Index: mazenum-0.1/mazenum/game.py
+===================================================================
+--- mazenum-0.1.orig/mazenum/game.py	2012-04-18 19:03:03.714945781 +0200
++++ mazenum-0.1/mazenum/game.py	2012-04-18 19:05:08.026942082 +0200
+@@ -167,7 +167,7 @@
+ 						self.run()
+ 						self.start_button.setCords((screen.get_width()/2) - (self.start_button.rect.width/2), 100)
+ 				if event.type == QUIT or (event.type == KEYDOWN and 
+-						event.key in [K_ESCAPE, pygame.K_b]:
++						event.key in [K_ESCAPE, pygame.K_b]):
+ 					return False							
+ 			screen.blit(self.background, (0, 0))
+ 			screen.blit(self.start_button.image, self.start_button.rect)

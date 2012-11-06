@@ -1,0 +1,27 @@
+Source: brikx
+Section: games
+Priority: optional
+Maintainer: João Pinto <joao.pinto@getdeb.net>
+Uploaders: Marco Rodrigues <gothicx@sapo.pt>
+Build-Depends: cdbs, debhelper (>= 5), libsdl1.2-dev, libsdl-ttf2.0-dev,
+ libsdl-image1.2-dev, libsdl-mixer1.2-dev
+Standards-Version: 3.9.1
+Homepage: http://sourceforge.net/projects/brikx/
+
+Package: brikx
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, brikx-data (= ${source:Version})
+Description: Small puzzle game 
+ Brikx is a small puzzle game in which your goal is to remove all tiles from 
+ the table. You are held up by other tiles, gravity walls, and other things, 
+ and you can even redesign the level while playing. 
+
+Package: brikx-data
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: brikx
+Description: Small puzzle game - Data files
+ Brikx is a small puzzle game in which your goal is to remove all tiles from 
+ the table. 
+ You are held up by other tiles, gravity walls, and other things,  and you can 
+ even redesign the level while playing.

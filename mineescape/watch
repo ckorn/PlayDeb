@@ -1,0 +1,3 @@
+version=3
+http://sites.google.com/site/sipygames/downloads \
+    (?:.*/)?Mine_Escape_v([\d\.]+)-rc\.zip.*

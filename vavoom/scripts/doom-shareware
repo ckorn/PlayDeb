@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+
+if [ ! -f ~/.vavoom/doom-shareware/doom1.wad ]; then
+  set +e
+  /usr/share/autodl/AutoDL.py /usr/share/games/vavoom/doom.autodlrc
+  STATUS=$?
+  set -e
+  # status 2 means download was ok, but the user choice not to start the game
+  if [ "$STATUS" = "0" -o  "$STATUS" = "2" ]; then
+    cd ~/.vavoom/doom-shareware
+    unzip -u doom19s.zip 'DOOMS_19.?'
+    cat DOOMS_19.1 DOOMS_19.2 > doom.zip
+    unzip -u -L doom.zip doom1.wad
+    rm doom19s.zip DOOMS_19.1 DOOMS_19.2 doom.zip
+  fi
+  if [ "$STATUS" != "0" ]; then
+    exit $STATUS
+  fi
+fi
+
+exec /usr/games/vavoom -iwaddir ~/.vavoom/doom-shareware -doom "$@"

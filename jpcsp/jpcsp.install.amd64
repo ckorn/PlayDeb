@@ -1,0 +1,3 @@
+jpcsp-linux-amd64/lib/linux		usr/lib/games/jpcsp/lib
+debian/scripts/jpcsp			usr/games
+debian/jpcsp.desktop			usr/share/applications

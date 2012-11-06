@@ -1,0 +1,21 @@
+Source: ja2
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libsdl1.2-dev
+Standards-Version: 3.9.3
+Homepage: http://tron.homeunix.org/ja2/
+
+Package: ja2
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Jagged Alliance 2 native Linux executable
+ Arulco had been a nice, prospering country until... well,
+ until Deidranna took over.
+ After framing her husband prince Enrico Chivaldori for
+ killing the monarch she ruled the country with an iron fist.
+ Genocide, poverty and ruthless murder is common these days.
+ Enrico Chivaldori gives his last dollars to a shadowy figure
+ to gather a team of mercenaries to free his country.

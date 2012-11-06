@@ -1,0 +1,23 @@
+Source: warsow-data
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Gonéri Le Bouder <goneri@rulezlan.org>, Bruno "Fuddl" Kleinert <fuddl@gmx.de>, Andres Mejia <mcitadel@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: http://www.warsow.net/
+Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/warsow-data
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/warsow-data/?op=log
+
+Package: warsow-data
+Architecture: all
+Recommends: warsow | warsow-server
+Depends: ${misc:Depends}
+Description: Game data for Warsow
+ Warsow is a fast paced first person shooter consisting of cel-shaded
+ cartoon-like graphics with dark, flashy and dirty textures. Warsow is based on
+ the E-novel "Chasseur de bots" ("Bots hunter" in English) by Fabrice Demurger.
+ Warsow's codebase is built upon Qfusion, an advanced modification of the Quake
+ II engine.
+ .
+ This package installs the game data files (textures, maps, sounds, etc.).

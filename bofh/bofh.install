@@ -1,0 +1,3 @@
+bofh			usr/lib/games/bofh
+debian/scripts/bofh	usr/games
+debian/bofh.desktop	usr/share/applications

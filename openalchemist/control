@@ -1,0 +1,29 @@
+Source: openalchemist
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 7), autotools-dev,
+ libclanlib-dev, pkg-config, zip, x11proto-core-dev,
+ mesa-common-dev, libglu1-mesa-dev, libx11-dev
+Standards-Version: 3.8.4
+Homepage: http://www.openalchemist.com
+
+Package: openalchemist
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, openalchemist-data (= ${source:Version})
+Description: OpenAlchemist
+ OpenAlchemist is a new reflexion game which looks like
+ Tetris but where you can take your time. Be a crazy
+ alchemist and try to make new objects from those
+ you get from the sky.
+
+Package: openalchemist-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: OpenAlchemist (data files)
+ OpenAlchemist is a new reflexion game which looks like
+ Tetris but where you can take your time. Be a crazy
+ alchemist and try to make new objects from those
+ you get from the sky.
+ .
+ (This package contains the data files)

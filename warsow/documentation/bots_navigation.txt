@@ -1,0 +1,46 @@
+A quickie, I'll expand later if needed:
+
+- Start : Load your map with devmap. Join and type in the console: "sv 
+makenodes" to create a new file from scratch (will delete the current nav file 
+at saving, if any) or "sv editnodes" to modify the currently loaded nodes.
+
+- Walk around your map dropping nodes: As you walk, the game will be dropping 
+navigation nodes. These nodes are used by the bots to move. Each time a node is 
+dropped the code tries to determine what type of movement is required to move 
+from the previous node to the new one, and it's guess is printed in the chat 
+screen. This only applies to 'normal' movements, other movements like 
+func_plats, teleporters and jumpads aren't guessed, but directly created by the 
+code, so when going through them it will always be print as LINK_INVALID. Also, 
+LINK_JUMP will never be print, they are found before saving by checking all the 
+nodes together.
+
+The only LINK_INVALID you have to worry about is when turning around a corner, 
+if one node doesn't see the other, and there isn't a third node so the bot can 
+use it as union, the bot will probably never choose that path. In this situation 
+you can force a new node to be dropped by typing in the console "sv addnode". 
+The node will be dropped right at your current position.
+
+For midair maps, which doesn't use any item, we need to add goals so the bots 
+find some place to go. We use misc_botroam entities for this purpose. They can 
+also be dropped from the console by typing "sv addbotroam". NOTE: Our botroams 
+don't act the same as Q3 bot roams. Items, even the less interesting one, will 
+always have priority over a bot roam for us, so bot roams will be ignored as 
+long as the bot finds any reachable item to go for.
+
+- Save the nav file: Once you are done walking around and you don't see any more 
+"Dropped node" prints, but only links prints, you can save the navigation file 
+by typing in the console: "sv savenodes". The code will find any possible link 
+between all the nodes, cathegorize it, and save it into a file.
+
+- Review : With the saved navigation file, you can, if you want to review the 
+links, type in the console "showplinks". This will show lines from the closer 
+node to you, to each node linked from it. If you go walking around you will see 
+the possibilities to move from each place. Type "showplinks" again to disable 
+it.
+
+- You can callvote addbots now.
+
+P.S: Don't try to force the bots to follow a path by giving them few options. 
+That was ok with some Q2 bots which used a similar system for dropping the 
+nodes, but their pathing algorithms weren't even similar to Warsow's one. Just 
+make sure all the map has nodes and let the bots do their own decissions.

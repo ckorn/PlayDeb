@@ -1,0 +1,296 @@
+worldofpadman (1.6-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #880387)
+        * ADDED
+
+              o 3D cross hair to QVMs when in STEREO mode
+
+              o 3D stereoscopic options in display menu
+
+              o A delay of 5 sec between dropping the lolly
+
+              o Cgame console now also handles [skipnotify] like the engine
+
+              o Cvar: cg_ambient [0|1] to control playback of ambient sounds
+              (feature request)
+
+              o Cvar: cg_drawLensflare [0|1] -- toggles drawing of cgame lens
+              flares, default 1 (feature request)
+
+              o Cvar: cg_timestamps [0|1|2] -- prefix console lines with time
+              stamp. 1 for game time, 2 for real time, default 0 for none
+
+              o Cvar: g_logDamage [0|1] -- toggle inclusion of damage
+              messages in the log file, default 0
+
+              o Cvar: g_suddenDeath [0|1] -- toggle sudden death in game
+              types that support it, default 1
+
+              o HUD now displays the sender names for recent voice chat
+              messages (feature request)
+
+              o Icons for loading stations and spray portals to help you find
+              them. Icons are visible through walls (feature request)
+
+              o Level designers are able to set values to 'health' and
+              'speed' keys of loading stations
+
+              o Lolly icons added to scoreboard, instead of bot skill
+              icon/handicap (feature request)
+
+              o Nettype info in server browser so players can see whether
+              server is ipv6 or v4 enabled
+
+              o New map oregano4's Airplane
+
+              o New skins BadPaddy and PaddyBee for PaddyBell player model
+
+              o Option in Game Options menu to enable/disable icons of team
+              mates, loading stations, spray portals, LPS arrows and BB boxes
+
+              o Push awards from OpenArena, e.g. when a player knocks another
+              player into the void
+
+              o Quick-infos support added for menu items. A short hint is
+              shown for selected menu items on mouse over.
+
+              o Variants of cross hair i and j, called k and l (feature
+              request)
+
+              o Voice chat icon over player's head and in the HUD to display
+              the sender in game (feature request)
+
+              o WoP program icon that is SVG format to meet free desktop
+              specification standards (feature request)
+
+        * CHANGED
+
+              o Attempt to enforce proper net settings (cvar values) in
+              online game play
+
+              o BamBam health bar appears now in team colours
+
+              o BB boxes are solid objects now, model path is hard code now,
+              there is no need for level designers to set the 'model' key any
+              more (feature request)
+
+              o Cvar: g_modInstagib renamed to g_instaPad
+
+              o Cvar: g_modInstagib_WeaponJump renamed to g_weaponJump
+
+              o Default sound sample rate to 44.100 Hz (was 22.050 Hz)
+
+              o Demo files are shown in alphabetical order and correctly now
+              in menu
+
+              o Do not append a files suffix to a sound file name in
+              target_speaker (e.g. change '.../sound.wav' to '.../sound', so
+              OggVorbis support will work)
+
+              o Edited balloon capture messages in BackyardBB
+
+              o Finalized BamBam spread, removed cvar g_bambamSpread
+
+              o Made Bambams prone to Visionless
+
+              o Major changes to in game server browser layout: limits for
+              ping colours; format changed to 'humans+bots/max'; maps not
+              present locally and full slots are printed red; mods will be
+              printed in cyan; added white space between 'Internet' and
+              master server number; changed cvar default to hide full servers
+              and to show private servers again
+
+              o Merged server info cvars Players_Red, Players_Blue and
+              Players_Active into Players_Team
+
+              o Owned items (Killerducks, BamBams, Boomies) get removed on
+              team change and disconnect
+
+              o Powerups behaviour while being in the spray room
+
+              o Re-enabled Bambam owners, Player also scores when his BamBam
+              frags an opponent
+
+              o Reduced Boaster ammo bottle content to 60 (was 100)
+
+              o Reduced Balloony ammo bottle content to 10 (was 15)
+
+              o Reduced Boaster direct hit damage to 3 (was 5)
+
+              o Reduced PadPower damage multiplier to 2 (was 3)
+
+              o Replaced all old WAV ambient sound files in maps by new high
+              quality OGG sound samples, except of ENTE's PadMaps (check
+              XTRAS/sounds_readme.txt)
+
+              o Replaced default bounce sound at the rubber duck by a nice
+              toy squeeze sound in CybBath (feature request)
+
+              o Revised server config files for all game types
+
+              o Unified BamBam and Boomies placement checks, adjusted
+              distances, added target_push and lolly spawns
+
+              o Windows executables now properly use "%APPDATA%\Padman" as
+              home path. That's the folder for screen shots, demo files etc.
+
+        * FIXED
+
+              o A check for multi-sample GL extension was missing
+
+              o A few issues with LPS sounds and sorting
+
+              o A lot of spelling mistakes
+
+              o Always checks point limit now, regardless of active player
+              number; caused very high BB scores on empty servers
+
+              o Big Balloon capture sounds fixed so they do not play
+              simultaneously
+
+              o Bots should return the flag correctly now instead of standing
+              idle in CTL
+
+              o Bots navigation issues under ramps close to the lolly in
+              CybJourney
+
+              o Broken log file entries, replaced ancient vsprintf calls with
+              more secure Q_vsnprintf
+
+              o Dropped weapons were considered to be a weapon spawn while
+              placing Boomies
+
+              o FridgeWars sparkle shader revised and removed wrong shader
+              keyword which caused error message
+
+              o Friendly fire for team items (BamBams, Boomies)
+
+              o Hopefully Bambams can't be placed into brushwork any more
+
+              o Issues with BB boxes and vertex light
+
+              o Lagometer while demo playback is shown now correctly, taken
+              from wolfcamQL
+
+              o Last char of demo file name in menu got cut off, which caused
+              loading of the demo to fail
+
+              o Memmove for new size_t typedef, thanks to DevHC for reporting
+
+              o Minor texture issues in Hutte, TrashMap, Jail, Anteroom,
+              PadShop, Backyard
+
+              o Moved text drop shadow for a better visibility of text on
+              screen on bright background
+
+              o Movement prediction of frozen players
+
+              o Music play list reading from disk fixed, will now err on
+              overly large files and remain silent on empty play list
+
+              o Music was played for a second while loading a map when the
+              game was unable to load the play list file
+
+              o Padding in status command reply for long ip addresses
+
+              o PaddyBell holds Punchy correct now
+
+              o Players complained handicap would be set in player setup menu
+
+              o Spray room exit portal shader issue in MopAn's Jail
+
+              o Team overlay for spectators
+
+        * REMOVED
+
+              o CVAR_SERVERINFO bit mask from cvars which do not need it
+
+              o Default game type redirect of BB-maps removed. Every map
+              (bsp-file) needs it's own entry in arena file now
+
+              o Menu options for center view, look up, look down, mouse look,
+              free look, joystick, joystick threshold, always run, turn left,
+              turn right, sidestep / turn
+
+              o Outdated and not used menu entry 'sound quality' from sound
+              options
+
+              o Team and bot from status response since Players_ cvars are
+              meant as a replacement
+
+              o UDP/UDP6 net names from in game server browser info
+
+              o Vertex lighting from menu options
+
+        * UPDATED
+
+              o Net protocol version number to 71. This is necessary due to
+              the old clients sending quake3arena heartbeats and the master
+              server not knowing the wop heartbeats.
+
+              o WoP radiant files: CybJourney, PadShop were missing and added
+              Airplane in default_shaderlist.txt; entities.def: added hints
+              for RANDOMSELECT spawnflag, 'marker' to weapon entities,
+              'health' and 'speed' key to loading station entity, corrected
+              description of weapon and ammo 'count' default values, removed
+              'model' key from 'target_balloon' entity (check XTRAS/editing
+              files/WoP radiant files.zip)
+
+              o WoP mapping files: BB sample maps because of changes in
+              'target_balloon' (check XTRAS/editing files/WoP mapping
+              files.zip)
+
+              o Copyright information in copyright_en.txt and
+              copyright_de.txt
+
+              o Code base to ioquake3 revision 2140
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 27 Jan 2012 15:48:49 +0100
+
+worldofpadman (1.5.4~beta-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 27 Jul 2011 11:58:19 +0200
+
+worldofpadman (1.5.3~beta-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 13 Jul 2011 19:40:57 +0200
+
+worldofpadman (1.5.2~beta-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #710066)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 09 Jul 2011 00:43:03 +0200
+
+worldofpadman (1.5-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #695032)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 29 Dec 2010 19:49:58 +0100
+
+worldofpadman (1.1-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Sun, 30 Aug 2009 11:28:10 +0000
+
+worldofpadman (1.1-0~getdeb1) hardy; urgency=low
+
+  * New upstream version
+  Package from: 
+  http://ppa.launchpad.net/jscinoz/ubuntu/pool/main/w/worldofpadman/
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Mon, 11 Aug 2008 18:44:11 +0000
+
+worldofpadman (1.1-0) hardy; urgency=low
+
+  [ Jack Coulter ]
+  * Initial release (Closes: #481286)
+
+  [ Ansgar Burchardt ]
+  * debian/control: Add Homepage field
+
+ -- Jack Coulter <jscinoz@gmail.com>  Thu, 15 May 2008 12:51:11 +1000

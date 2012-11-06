@@ -1,0 +1,17 @@
+Source: autodownloader
+Section: web
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.8.3
+Homepage: http://sourceforge.net/projects/autodownloader
+
+Package: autodownloader
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python-gtk2, python-glade2
+Description: autodownloader
+ autodownloader can prompt a user to download additional
+ components and then do the actual download and install off
+ these components. It is intended for software / content
+ which cannot be included into rpms / debs because of
+ licensing reasons.

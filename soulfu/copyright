@@ -1,0 +1,64 @@
+This package was debianized by Christoph Korn <christoph.korn@getdeb.net> on
+Thu, 21 Jan 2010 21:26:10 +0100.
+
+It was downloaded from http://soulfu.motherhamster.org/
+
+Upstream Author:
+
+    Aaron Bishop
+
+Copyright:
+
+    Copyright (C) 2007 Aaron Bisop
+
+License:
+
+    Disclaimer
+
+    THIS SOFTWARE IS PROVIDED TO YOU "AS IS", AND AARON BISHOP DISCLAIMS
+    ALL WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. BY USING THIS
+    SOFTWARE, YOU AGREE THAT YOU DO SO AT YOUR OWN RISK AND THAT AARON
+    BISHOP WILL NOT BE HELD LIABLE FOR ANY DIRECT, SPECIAL, INCIDENTAL,
+    CONSEQUENTIAL, OR EXEMPLARY DAMAGES. PERIOD.
+
+    Distribution
+
+    THIS SOFTWARE MAY ONLY BE DISTRIBUTED IF NO MONEY IS CHARGED FOR THE
+    SOFTWARE ITSELF, NO MONEY IS CHARGED FOR THE MEDIA UPON WHICH IT IS
+    SUPPLIED, AND NO MONEY IS CHARGED FOR THE SERVICE OF SUPPLYING IT. IT
+    MAY NOT BE SOLD, RENTED, OR OTHERWISE USED TO EARN MONEY, EITHER BY
+    ITSELF OR AS PART OF A COMPILATION OR BUNDLE -- EXCEPT WITH EXPRESS
+    WRITTEN PERMISSION. IF MONEY IS CHANGING HANDS, IT IS A COPYRIGHT
+    VIOLATION! ASK FIRST! I WILL USUALLY GIVE PERMISSION TO MAGAZINES...
+
+    Alterations
+
+    This is the development version of Secret of Ultimate Legendary
+    Fantasy: Unleashed, complete with source code. I hereby grant all
+    users permission to modify this game and to distribute derivative
+    works, provided that the following conditions are met:
+
+    1. The title screen (WSPLASH), main menu (WMAIN), and "Be Nice" window
+       (WMONEY) must remain intact and unchanged.
+
+    2. The disclaimer and distribution text above must be included and
+       abided by.
+
+    3. This manual must be included.
+
+    4. The high standard of quality must be maintained. Official-ish
+       releases should be voted on by members of the Official-ish forum,
+       and the virtue system should be expanded. It must always change
+       for the better.
+
+    5. The NICEWARE system must remain working and enforced - no "work
+       arounds" may be made. In order to access all character classes,
+       the player must type "I SWEAR I DID SOMETHING NICE" one time per
+       session.
+
+The Debian packaging is:
+
+    Copyright (C) 2010 Christoph Korn <christoph.korn@getdeb.net>
+
+and is licensed under the GPL version 3, 
+see `/usr/share/common-licenses/GPL-3'.

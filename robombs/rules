@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+#Add Java classpath
+ #LD_LIBRARY_PATH += /usr/lib/classpath/
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+binary-install/robombs::
+	chmod +x $(CURDIR)/debian/robombs/usr/games/robombs
+	chmod -x $(CURDIR)/debian/robombs/usr/share/games/robombs/Robombs.sh
+	find $(CURDIR)/debian/robombs/ -type f -name "Thumbs.db" -exec rm -f '{}' \; ; done
+	bash $(CURDIR)/debian/scripts/rmarch.sh RDIR=$(CURDIR)

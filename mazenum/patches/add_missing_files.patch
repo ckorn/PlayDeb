@@ -1,0 +1,16 @@
+Add missing files and remove empty directory.
+Index: mazenum-0.1/setup.py
+===================================================================
+--- mazenum-0.1.orig/setup.py	2012-04-18 19:06:50.274939042 +0200
++++ mazenum-0.1/setup.py	2012-04-18 19:12:28.230928987 +0200
+@@ -35,8 +35,8 @@
+ 		data_files = [
+ 			('share/games/mazenum/', ['android-icon.png'] ),
+ 			('share/games/mazenum/fonts', glob('fonts/*')),
+-			('share/games/mazenum/sfx', glob('sfx/*')),		
+-			('share/games/mazenum/gfx', glob('gfx/*.png')),
++			('share/games/mazenum/gfx/buttons', glob('gfx/buttons/*')),
++			('share/games/mazenum/gfx', glob('gfx/*.jpg')),
+ 			('share/applications', ['data/mazenum.desktop']),
+ 			('share/pixmaps', ['data/mazenum-icon.png'])
+ 		],

@@ -1,0 +1,111 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: narcissu2-en
+Source: http://www.neechin.net/narcissu2/140/narcissu-2-download-page
+
+Files: *
+Copyright:  Narcissu is copyright (c) 2005-2007 Stage-Nana.
+            Narcissu 2 is copyright (c) 2007 Stage-Nana.
+License: Upstream License
+ Narcissu is copyright (c) 2005-2007 Stage-Nana.
+ Narcissu 2 is copyright (c) 2007 Stage-Nana.
+ .  
+ Permission has been granted to anyone to redistribute these games
+ by means such as the Internet, provided such distribution is free of
+ charge and the contents of the game data are not modified.
+ .
+ This translation is copyright (c) 2005-2009 Insani/Haeleth/Agilis.
+ .
+ This modified version of the game is distributed with the kind
+ permission of Stage-Nana.
+ .
+ The game data may be redistributed under the same terms as for the
+ original version.  If you distribute a package that includes a copy
+ of the game engine as well (e.g. the Windows or Mac packages), you
+ must additionally meet the requirements of that program's license:
+ .
+ The Ponscripter engine used to play the English version is copyright
+ (c) 2001-2008 Ogapee, (c) 2006-2009 Haeleth, and (c) 2009-2010 UncleMion.
+ .
+ Ponscripter is licensed under the GNU General Public License,
+ version 2 or later.  A copy of this license is included with every
+ copy of Ponscripter, under the name "COPYING" or "COPYING.txt".
+ .
+ Note that the GPL license applies only to the Ponscripter program,
+ which is not actually included in this generic Unix package.  The
+ game script and data files are non-free.
+ .
+ .
+ Legal notices required by third-party components follow.
+ .
+ This game includes fonts derived from the free Charter Type 1 fonts,
+ which bear the following notice:
+ .
+ (c) Copyright 1989-1992, Bitstream Inc., Cambridge, MA.
+ .
+ You are hereby granted permission under all Bitstream propriety
+ rights to use, copy, modify, sublicense, sell, and redistribute the
+ 4 Bitstream Charter (r) Type 1 outline fonts for any purpose and
+ without restriction; provided, that this notice is left intact on
+ all copies of such fonts and that Bitstream's trademark is
+ acknowledged as shown below on all unmodified copies of the 4
+ Charter Type 1 fonts.
+ .
+ BITSTREAM CHARTER is a registered trademark of Bitstream Inc.
+ 
+ Ponscripter includes the libogg and libvorbis libraries, which bear
+ the following notice:
+ .
+ Copyright (c) 2002-2004, Xiph.org Foundation
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ - Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ .
+ - Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+ .
+ - Neither the name of the Xiph.org Foundation nor the names of its
+   contributors may be used to endorse or promote products derived
+   from this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE
+ FOUNDATION OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+ .
+ This softare is based in part on the work of the Independent JPEG
+ Group.
+ .
+ This software is based in part on the work of the FreeType team.
+
+Files: debian/*
+Copyright: 2011 Christoph Korn <christoph.korn@getdeb.net>
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".

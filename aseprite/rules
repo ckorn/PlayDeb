@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --parallel
+
+override_dh_auto_install:
+	dh_auto_install
+	mv debian/aseprite/usr/bin debian/aseprite/usr/games

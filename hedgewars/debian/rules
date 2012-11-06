@@ -1,0 +1,37 @@
+#!/usr/bin/make -f
+
+DEB_CMAKE_INSTALL_PREFIX := /usr/lib/hedgewars
+DEB_CMAKE_EXTRA_FLAGS      := -DWITH_SERVER=1 \
+	-DDATA_INSTALL_DIR=/usr/share/games
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/cmake.mk
+
+
+UPSTREAM_VERSION := $(shell dpkg-parsechangelog \
+	|grep ^Version|awk '{print $$2}'|sed 's/-[[:digit:]]\+$$//' \
+)
+
+clean::
+	rm -fr tmp-icon stamp-icon
+
+pre-build:: stamp-icon
+
+stamp-icon:
+	rm -fr tmp-icon
+	mkdir -p tmp-icon
+	for icon in `find debian/hicolor-icons -type f`; do \
+		dirname=`dirname $$icon`; \
+		dirname=`basename $$dirname`; \
+		basename=`basename $$icon .xpm`; \
+		mkdir -p tmp-icon/$$dirname/apps; \
+		convert $$icon tmp-icon/$$dirname/apps/$$basename.png; \
+	done
+
+tarball:
+	cd .. && \
+	tar --exclude=debian \
+		--exclude=.git \
+		-czf hedgewars_$(UPSTREAM_VERSION).orig.tar.gz \
+		hedgewars-$(UPSTREAM_VERSION)
+

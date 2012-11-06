@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+ 
+override_dh_auto_configure:
+	# Add here commands to compile the package.
+	iconv -f ISO-8859-1 -t UTF-8 README > README.tmp
+	touch -r README README.tmp
+	mv README.tmp README
+	sed -i 's/-lboost_python-st/-lboost_python/g' Makefile.in
+	# we want to use the system version of expat.h
+	rm -f objconv/mesher/expat.h
+
+	./configure -with-data-dir=/usr/share/games/vegastrike --with-boost=system \
+	    --enable-flags="$(CFLAGS) -DBOOST_PYTHON_NO_PY_SIGNATURES" \
+	    --disable-ffmpeg --enable-stencil-buffer --prefix=/usr \
+	    --bindir=/usr/games --datadir=/usr/share/games
+
+override_dh_auto_build:
+	dh_auto_build -- mesher vegaserver vegastrike vssetup
+
+override_dh_strip:
+	dh_strip -p vegastrike --dbg-package=vegastrike-dbg

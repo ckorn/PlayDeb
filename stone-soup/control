@@ -1,0 +1,32 @@
+Source: stone-soup
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 9),
+               libpcre3-dev,
+               libreadline6-dev,
+               zlib1g-dev,
+               libbz2-dev,
+               libsdl1.2-dev,
+               libsdl-image1.2-dev,
+               libfreetype6-dev,
+               libsqlite3-dev,
+               libpng12-dev,
+               liblua5.1-0-dev,
+               bison,
+               flex,
+               ttf-dejavu-core
+Standards-Version: 3.9.3
+Homepage: http://crawl.develz.org/wordpress/
+
+Package: stone-soup
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         ttf-bitstream-vera,
+         ttf-dejavu-core
+Description: Free rogue-like game of exploration and treasure-hunting
+ Dungeon Crawl Stone Soup is a fun, free rogue-like game of
+ exploration and treasure-hunting in dungeons filled with
+ dangerous and unfriendly monsters in a quest for the
+ mystifyingly fabulous Orb of Zot.

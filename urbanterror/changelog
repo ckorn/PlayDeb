@@ -1,0 +1,27 @@
+urbanterror (20100418-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 24 Apr 2010 15:49:22 +0200
+
+urbanterror (20071220-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Mon, 10 Aug 2009 23:22:20 +0000
+
+urbanterror (20071220-0ubuntu3) hardy; urgency=low
+
+  * Added curl dependency, it is needed for automatic map downloading
+
+ -- Jack Coulter <jscinoz@gmail.com>  Sun, 22 Jun 2008 11:26:42 +1100
+
+urbanterror (20071220-0) UNRELEASED; urgency=low
+
+  [ Jack Coulter ]
+  * Initial release (Closes: #468325)
+
+  [ Ansgar Burchardt ]
+  * debian/control: Add Homepage field
+
+ -- Jack Coulter <jscinoz@gmail.com>  Tue, 25 Mar 2008 16:26:42 +1100

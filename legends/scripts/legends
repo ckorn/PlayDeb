@@ -1,0 +1,9 @@
+#!/bin/sh
+cd /usr/lib/games/legends
+
+PADSP=
+if [ -e /usr/bin/padsp ] ; then
+  PADSP=/usr/bin/padsp
+fi
+
+LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$(pwd) ${PADSP} ./LinLegends $@ &

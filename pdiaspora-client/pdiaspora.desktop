@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Project Diaspora
+Exec=/usr/games/pdiaspora
+Icon=pdiaspora
+Terminal=false
+Type=Application
+Categories=Game;

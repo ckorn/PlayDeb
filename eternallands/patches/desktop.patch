@@ -1,0 +1,11 @@
+Encoding is deprecated.
+Index: eternallands-1.9.3/pkgfiles/eternallands.desktop
+===================================================================
+--- eternallands-1.9.3.orig/pkgfiles/eternallands.desktop	2012-02-05 01:56:13.000000000 +0100
++++ eternallands-1.9.3/pkgfiles/eternallands.desktop	2012-02-23 21:29:16.169653144 +0100
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Eternal Lands
+ Comment=Play the massively-multi-player online role-playing game
+ Exec=eternallands

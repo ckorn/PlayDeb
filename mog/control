@@ -1,0 +1,28 @@
+Source: mog
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), quilt,
+ freeglut3-dev, mesa-common-dev, libsdl1.2-dev,
+ libsdl-mixer1.2-dev, libsdl-image1.2-dev,
+ libsdl-ttf2.0-dev, libsdl-sound1.2-dev
+Standards-Version: 3.8.4
+Homepage: http://www.braingames.getput.com/mog/default.asp
+
+Package: mog
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, mog-data (= ${source:Version})
+Description: Massive, free roaming platform game
+ MoG is a very addictive game where you have to kill thousands
+ of enemies, collect items in order to obtain new powers and
+ defeat some really great demons at the end of each level.
+
+Package: mog-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Massive, free roaming platform game (data files)
+ MoG is a very addictive game where you have to kill thousands
+ of enemies, collect items in order to obtain new powers and
+ defeat some really great demons at the end of each level.
+ .
+ (This package contains the data files)

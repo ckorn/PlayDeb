@@ -1,0 +1,3 @@
+version=3
+http://code.google.com/p/jbrickshooter/downloads/list \
+    (?:.*/)?JBrickShooter_v([\d\.]+)\.zip

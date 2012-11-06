@@ -1,0 +1,52 @@
+vegastrike-data (0.5.1~r1-1~getdeb1) precise; urgency=low
+
+  * New upstream version (LP: #1038859)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 20 Aug 2012 17:10:47 +0200
+
+vegastrike-data (0.5.1.r1-1) stable; urgency=low
+
+  * 0.5.1.r1-1 Release
+    * Fixed: MIP loading on rectangular textures
+    * Newer planet textures
+    * Better more compatible shaders for Mesa (Intel DRI mostly)
+    * Issues #3487109, #2531359, #2808586, #2812869, #2879873,
+      #2929602 fixed
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Sun, 01 Apr 2012 12:34:50 -0300
+
+vegastrike-data (0.5.1.beta2-1) stable; urgency=low
+
+  * 0.5.1.beta2-1 Release
+    * navcomputer enhancements
+    * python module cleanups
+    * vdu panel backdrops to improve panel readability
+    * shader fixes, especially for intel gpus
+    * new cargo and weapon images
+    * Patch #3211810, #3217829, #3286893 applied 
+    * Issue #3208662, #3325183, #3395671, #3376610, #3442608, 
+      #3306551, #3429854, #3325182, #3325698, #3199009, #3191110
+      #3471044, #3465565 fixed
+    * Fixed broken normals for several units
+    * Normalmaps for most units
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Mon, 30 Jan 2012 16:53:43 -0300
+
+vegastrike-data (0.5.1.beta1-3) stable; urgency=low
+
+  * Move data files to /usr/share/games
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Fri, 18 Mar 2011 18:28:35 -0300
+
+vegastrike-data (0.5.1.beta1-2) stable; urgency=low
+
+  * 0.5.1.beta1-2 Release
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Tue, 08 Mar 2011 15:49:38 -0300
+
+vegastrike-data (0.5.1.beta1-1) stable; urgency=low
+
+  * 0.5.1.beta1 Release
+  * Removed buitin python modules - use system ones
+
+ -- Claudio Freire <klaussfreire@users.sourceforge.net>  Tue, 01 Mar 2011 20:05:43 -0300

@@ -1,0 +1,34 @@
+Source: jngl
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50~),
+ libboost-dev, libopenal-dev, libogg-dev, libfreetype6-dev, libpng12-dev, libjpeg62-dev,
+ libvorbis-dev, libglu1-mesa-dev, mesa-common-dev, libxxf86vm-dev, x11proto-core-dev,
+ libfontconfig1-dev, pkg-config, scons, libglib2.0-dev, python-dev,
+ libboost-python-dev
+Standards-Version: 3.9.2
+Section: libs
+Homepage: http://jngl.watteimdocht.de
+
+Package: libjngl-dev
+Section: libdevel
+Architecture: any
+Depends: libjngl0.9.5 (= ${binary:Version}), ${misc:Depends}
+Description: Easy to use 2D game library using OpenGL and OpenAL (headers)
+ JNGL aims to be one of the easiest 2D game libraries for
+ C++ and Python. It uses OpenGL for rendering images,
+ can output antialiasied UTF-8 text using FreeType,
+ display BMP, PNG, and JPEG images and play Ogg audio
+ files via OpenAL.
+ (This package contains the development files)
+
+Package: libjngl0.9.5
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}
+Description: Easy to use 2D game library using OpenGL and OpenAL
+ JNGL aims to be one of the easiest 2D game libraries for
+ C++ and Python. It uses OpenGL for rendering images,
+ can output antialiasied UTF-8 text using FreeType,
+ display BMP, PNG, and JPEG images and play Ogg audio
+ files via OpenAL.

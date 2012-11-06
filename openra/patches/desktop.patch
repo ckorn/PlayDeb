@@ -1,0 +1,13 @@
+The executable is in /usr/games.
+Index: openra-20120504/packaging/linux/openra.desktop
+===================================================================
+--- openra-20120504.orig/packaging/linux/openra.desktop	2012-05-01 23:10:53.000000000 +0200
++++ openra-20120504/packaging/linux/openra.desktop	2012-05-06 15:49:04.888271025 +0200
+@@ -4,6 +4,6 @@
+ Name=OpenRA
+ Comment=Reimagining of Red Alert and Command & Conquer
+ Icon=openra
+-Exec=/usr/bin/openra
++Exec=/usr/games/openra
+ Terminal=false
+ Categories=Game;

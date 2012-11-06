@@ -1,0 +1,18 @@
+moonpy (0.8.21-1~getdeb2) lucid; urgency=low
+
+  * Fix debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Jul 2010 21:08:40 +0200
+
+moonpy (0.8.21-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #555292)
+  * Switch to dpkg-source 3.0 (quilt) format
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Sun, 04 Apr 2010 22:36:06 +0100
+
+moonpy (0.8.05-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #535182)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 09 Mar 2010 18:48:27 +0100

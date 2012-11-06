@@ -1,0 +1,359 @@
+desmume (0.9.8-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    General/Core:
+     bug: fix more IPC FIFO errors
+     bug: import more save files correctly
+     bug: don't autopatch already-patched roms
+     bug: fix bugs in piano and guitar grip
+     bug: fix ARM7's VRAMSTAT register
+     bug: fix memory leaks on compact flash emulation
+     bug: fix reading of rom from low header area
+     bug: spu: fix some poppy interpolation audio quality issues
+     bug: improve timing of dma operations by running through normal mem
+     cycle accounting; fixes an annoying number of games and graphical
+     glitches
+     bug: fix opcode MRC and fake bios CRC16
+     enh: jitter some related register and irq events to simulate pipeline
+     effects and stimulate some race conditions to other outcomes
+     enh: fake (deterministic) some tiny jitter from human's hand holding
+     stylus; some games were accidentally depending on this
+     enh: support nocash-stylep rints from arm
+     enh: add lua apis for accessing vram
+     enh: platforms other than windows receive threading optimizations
+     enh: provide diagnostics when system powers off (useful for homebrewers
+     returning from main())
+     enh: clarify handling of different console types within the family
+     (ds,dslite,debug)
+     enh: vfat support for slot-1 devices
+     enh: emulate temperature register
+     enh: add paddle emulation
+
+    Graphics:
+     bug: fix occasional crash from uninitialized blending table
+     bug: fix some 2d alpha blending cases resulting in white screens
+     bug: fix VRAM_I B_OBJ mirroring and fix sprites rendering across the end
+     of vram
+     bug: fix rotoscaled sprites wrapping around screen
+     bug: don't fix rotscaled bitmap sprites with alpha==0
+     bug: opengl: fix degradation of toon rendering during loadstate
+     bug: opengl: alpha blending fixes
+     bug: many refinements to opengl renderer
+     bug: opengl: support rear-plane/ClearImage emulation (fixes many
+     graphics)
+     bug: rasterizer: fix some rare alpha blending cases
+     bug: fix bug in environment mapping introduced after 0.9.6
+     bug: fix totally glitched out 3d graphics with several improvements
+     involving matrix stack
+     bug: fix memory overflows in epx filter
+     bug: prevent backdrop from blending with ???
+     enh: opengl: better depth buffering emulation
+     enh: better support for line segment "polys" by detection and special
+     rendering logic
+     enh: opengl: support quad primitives directly
+     enh: add hq4x filter
+
+    Windows:
+     bug: fix a long-standing loadstate crash
+     bug: fix lag frame accounting
+     bug: fix glitches in cheat entry menu
+     bug: stop compact flash emulation from accidentally scanning c:\
+     sometimes
+     enh: add support for game database for improved save type detection
+     enh: hotkey for limit framerate toggle
+     enh: remove stop and reset toolbar buttons which were accidentally
+     getting used
+     enh: additional complexification to desmume's behaviour run from a
+     console prompt. whether it's better is uncertain.
+     enh: add support for cheats databases
+     enh: improvements to ram search tool
+     enh: preliminary support for varying stylus pressure
+     enh: add [Display] Show Console=1 to ini file
+     enh: more graceful cheat parsing and add some hotkeys
+     enh: add 5x window size
+     enh: add big endian and 20.12 toggle to memview and ramwatch
+     enh: improve FPS throttle feedback and granularity
+     enh: add lua menu API
+     enh: hud font switching
+     enh: add optional file association for .nds to path config dialog
+
+    Cocoa:
+     enh: Big update to cocoa frontend. Pretty much entirely new. (rogerman)
+
+    Linux:
+     bug: gtk: glitches in rom and recent rom loading
+     bug: glade: normalize savestate slot to hotkey mapping
+     enh: support soundtouch for use by metaspu
+     enh: gtk: add SPU mode selection (Tobias Jakobi)
+     enh: cli: better fps limiting (Thomas Jones)
+
+    Wx: 
+      bug: some small fixes here and there (Jan Bücken)
+      enh: lot of code cleanup (Jan Bücken) 
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 01 May 2012 12:17:16 +0200
+
+desmume (0.9.7-2) unstable; urgency=low
+
+  * Add 01_fix_mode_t_on_kfreebsd.patch to fix FTBFS on kfreebsd-*.
+    Closes: #618778
+
+ -- Evgeni Golov <evgeni@debian.org>  Thu, 24 Mar 2011 15:33:12 +0100
+
+desmume (0.9.7-1) unstable; urgency=low
+
+  * New upstream release.
+    Closes: #613365
+  * Update debian/copyright to DEP5.
+  * Standards-Version: 3.9.1.
+  * Add BSD license to debian/copyright.
+
+ -- Evgeni Golov <evgeni@debian.org>  Thu, 17 Mar 2011 23:48:38 +0100
+
+desmume (0.9.6-1-1) unstable; urgency=low
+
+  * New upstream release.
+    + Adding --gbaslot-rom= workaround for embedded file system.
+      LP: #575234
+  * Remove 01_fix_sz_FTBFS_564788.patch, included upstream.
+  * Standards-Version: 3.8.4
+  * Add debian/NEWS about the new config file location.
+  * Add debian/source/format, we're still 1.0.
+
+ -- Evgeni Golov <evgeni@debian.org>  Tue, 25 May 2010 15:55:23 +0200
+
+desmume (0.9.5-2) unstable; urgency=low
+
+  * debian/patches:
+    + Add 01_fix_sz_FTBFS_564788.patch to fix FTBFS.
+      Closes: #564788
+
+ -- Evgeni Golov <evgeni@debian.org>  Tue, 19 Jan 2010 17:20:29 +0100
+
+desmume (0.9.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright:
+    + Update my e-mail address and copyright years.
+  * debian/control:
+    + Add libagg-dev B-D.
+  * debian/patches:
+    + Drop all patches, either applied or superseded by upstream.
+
+ -- Evgeni Golov <evgeni@debian.org>  Sun, 03 Jan 2010 20:30:35 +0100
+
+desmume (0.9.4-2) unstable; urgency=low
+
+  [ Miriam Ruiz ]
+  * Added patch 02_build-with-gcc-4.4.patch. Closes: #539545
+
+  [ Devid Antonio Filoni ]
+  * Add 03_build-on-hurd.patch patch, fix FTBFS on hurd-i386, patch taken from
+    upstream SVN revision 2754.
+
+  [ Evgeni Golov ]
+  * Standards-Version: 3.8.3, no changes needed.
+
+ -- Evgeni Golov <evgeni@debian.org>  Tue, 01 Sep 2009 17:09:34 +0200
+
+desmume (0.9.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright:
+    + Fix typo in Guillaume's mail address.
+  * debian/control:
+    + Standards-Version: 3.8.2
+  * debian/pacthes/02_manpage-fixes.patch:
+    + Drop the patch, was applied upstream.
+
+ -- Evgeni Golov <evgeni@debian.org>  Wed, 15 Jul 2009 00:15:46 +0200
+
+desmume (0.9.2-1-1) unstable; urgency=low
+
+  * New upstream bugfix release.
+  * debian/control:
+    + Remove DM-Upload-Allowed: yes - I'm DD now.
+    + Thus also update my e-mail address.
+    + Add B-D on libosmesa6-dev and drop the one on libgtkglext1-dev,
+      upstream says this is the safer way to go.
+  * debian/patches/01_gfx3d.h_64bit_fix.patch:
+    + Drop the patch, it's included in this release.
+  * debian/patches/01_link-with-GL.patch:
+    + Add patch (ACKed by upstream) to link against libGL, so we don't
+      FTBFS when using --as-needed.
+  * debian/patches/02_manpage-fixes.patch:
+    + Fix hyphens in manpages, thanks lintian.
+  * debian/rules:
+    + Build with --enable-osmesa.
+  * debian/watch:
+    + Update watchfile to match a - in the version string.
+
+ -- Evgeni Golov <evgeni@debian.org>  Sat, 02 May 2009 22:35:04 +0200
+
+desmume (0.9.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/contol:
+    + Bump Standards-Version to 3.8.1.
+    + Wrap Uploaders and Build-Depends.
+    + Remove Reinhard Tartler and Cyril Brulebois from Uploaders on their
+      requests. Thanks for your work!
+    + Set DM-Upload-Allowed: yes.
+  * debian/copyright:
+    + Add my copyright.
+    + Wrap some very long lines.
+  * debian/patches/01_gfx3d.h_64bit_fix.patch:
+    + New patch from upstream SVN, fixes function definitions in gfx3d.h
+      and makes desmume build again on 64bit arches.
+
+ -- Evgeni Golov <sargentd@die-welt.net>  Sat, 18 Apr 2009 10:31:00 +0200
+
+desmume (0.9.1-1) unstable; urgency=low
+
+  * New upstream release.
+    + Doesn't try to setup a 24bit drawing area but reuse the current one.
+      Closes: #455749
+  * debian/rules:
+    + Configure with --enable-gdb-stub. (Closes: #484683)
+    + Don't set CFLAGS, let dpkg handle them.
+    + Make the build-system more cross-build friendly.
+    + Use dh_clean instead of rm -f in the clean target.
+    + Don't install manpages, upstream does that now.
+    + Link with --as-needed to strip direct dependencies.
+  * debian/control:
+    + Add ${misc:Depends} to Depends of desmume.
+    + Bump Standards-Version to 3.8.0.
+  * debian/patches:
+    + Disable 01-dont_crash_on_bad_3d.patch, it was pulled from upstream
+      and is present in the current version.
+  * debian/README.source:
+    + Add information on quilt usage as suggested by policy.
+  * debian/watch:
+    + Update the regex to match only numerical versions (0.9, not 0.9-mac).
+  * debian/copyright:
+    + Update to machine readable format.
+    + Check copyright more carefully.
+
+ -- Evgeni Golov <sargentd@die-welt.net>  Thu, 12 Feb 2009 02:55:17 +0100
+
+desmume (0.8-2) unstable; urgency=low
+
+  [ Ansgar Burchardt ]
+  * debian/control: Remove Homepage semi-field from description
+
+  [ Cyril Brulebois ]
+  * Update config.{guess,sub} before running configure and remove them in
+    the clean target, instead of updating them in the clean target, so as
+    to keep the Debian diff clean, and also prevent an FTBFS with the new
+    “3.0 (quilt)” source package format.
+  * Drop debian/patches/fix-64bit-segfault.diff, since it's already
+    applied upstream, and would cause an FTBFS under the same conditions
+    as above, thanks to Raphaël Hertzog for the notice (Closes: #485033).
+  * Update my mail address.
+
+  [ Evgeni Golov ]
+  * Add debian/patches/01-dont_crash_on_bad_3d.patch, so we don't crash
+    when 3D can't be enabled correctly. (Closes: #509365)
+  * Use $(QUILT_STAMPFN) instead of patch.
+  * Add myself to uploaders.
+  * Update the menu file for section Applications, not Apps.
+
+ -- Evgeni Golov <sargentd@die-welt.net>  Wed, 24 Dec 2008 01:40:40 +0100
+
+desmume (0.8-1) unstable; urgency=low
+
+  [ Eddy Petrișor ]
+  * add missing Vcs-Svn headers
+
+  [ Reinhard Tartler ]
+  * new upstream release.
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sat, 10 May 2008 15:34:39 +0200
+
+desmume (0.7.3-3) unstable; urgency=low
+
+  [ Pascal Giard ]
+  * [debian/control]: Added Build-Dep on quilt.
+  * [debian/rules]: Apply/unapply patches using quilt.
+  * [debian/patches/fix-64bit-segfault.diff]:
+    - Fix possible segfault on 64bit CPUs (closes: #435763).
+
+  [ Jon Dowland ]
+  * add Homepage: control field to source stanza
+
+ -- Jon Dowland <jon@alcopop.org>  Mon, 03 Dec 2007 17:41:37 +0000
+
+desmume (0.7.3-2) unstable; urgency=low
+
+  * [debian/control]:
+   - Added Build-Dep on intltool.
+
+ -- Pascal Giard <pascal@debian.org>  Tue, 04 Sep 2007 18:44:56 -0400
+
+desmume (0.7.3-1) unstable; urgency=low
+
+  * [debian/rules]:
+    - Removed dos2unix/unix2dos calls, no longer needed (closes: #435531).
+    - Specified localedir to workaround intltool Makefile.in.in weird behavior.
+  * [debian/control]: Removed Build-Dep on tofrodos, no longer needed.
+  * [debian/docs]: Added README.TRANSLATION.
+  * [debian/dirs]: Added localization directory.
+
+ -- Pascal Giard <pascal@debian.org>  Mon, 03 Sep 2007 13:35:50 -0400
+
+desmume (0.7.2-3) unstable; urgency=low
+
+  [ Cyril Brulebois ]
+  * [debian/control]:
+   - Added a B-D on tofrodos, which solves the FTBFS due to a missing
+     `unix2dos', thanks Kartik Mistry (Closes: #435217).
+
+  [ Reinhard Tartler ]
+   - Add Cyril to uploaders
+   - M-x whitespace-cleanup debian/rules
+   - don't fail when Makefile fails in clean target. Thanks to lintian for
+    finding this.
+
+ -- Reinhard Tartler <siretart@tauware.de>  Mon, 03 Sep 2007 09:47:25 +0200
+
+desmume (0.7.2-2) unstable; urgency=low
+
+  * [debian/rules]:
+   - Fixed gnome menu entries (upstream tarball encoding problem).
+   - Added debian menu entries.
+  * [debian/menu]:
+   - Added debian menu entries.
+
+ -- Pascal Giard <pascal@debian.org>  Sun, 29 Jul 2007 23:55:59 -0400
+
+desmume (0.7.2-1) unstable; urgency=low
+
+  [ Pascal Giard ]
+  * Upload to unstable (closes: #405616).
+  * [debian/README.Debian]:
+    - Procedure updated reflecting previous changes.
+    - Clarified CVS build instructions.
+  * [debian/rules]:
+    - Removed CFLAGS="-D_REENTRANT" as it was slowing things down considerably.
+    - Install glade interfaces.
+    - Install desktop menu files.
+  * [debian/docs]:
+    - Removed empty files.
+    - Added AUTHORS file.
+  * [debian/dirs]: Added directories for glade interfaces.
+  * [debian/desmume-cli.1, debian/desmume-glade.1]:
+    Added manpages for command-line and glade binairies.
+  * [debian/copyright]:
+    - Added LGPL license note for glade-xml.c and gtk/dev-cpp/* .
+	
+  [ Reinhard Tartler ]
+  * Change maintainer to 'Debian Games Team'
+
+ -- Pascal Giard <pascal@debian.org>  Fri, 27 Jul 2007 16:27:43 -0400
+
+desmume (0.6.0-0ubuntu1) feisty; urgency=low
+
+  * Initial release (Closes: #405616)
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sat, 10 Feb 2007 19:22:16 +0100
+

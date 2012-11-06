@@ -1,0 +1,6 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_configure:
+	LDFLAGS="$(LDFLAGS) -Wl,--as-needed" dh_auto_configure -- --bindir=/usr/games

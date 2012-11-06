@@ -1,0 +1,18 @@
+Index: stransball2-1.5/sources/Makefile
+===================================================================
+--- stransball2-1.5.orig/sources/Makefile	2010-02-09 21:44:33.441470790 +0100
++++ stransball2-1.5/sources/Makefile	2010-02-09 21:44:56.968979475 +0100
+@@ -12,11 +12,11 @@
+ all: stransball2
+ 
+ %.o: %.cpp
+-	c++ -c -g3 -O3 $< -o $@ `sdl-config --cflags` -I/usr/local/include/SDL
++	c++ -c -g3 -O3 $< -o $@ `sdl-config --cflags`
+ 
+ # dynamically linked binary:
+ stransball2: $(OBJS)
+-	c++ $^ -o $@ `sdl-config --libs` -lSDL_image -lSDL_mixer -lSDL_sound -lSDL_sound -lSGE -I/usr/local/include/SDL
++	c++ $^ -o $@ `sdl-config --libs` -lSDL_image -lSDL_mixer -lSGE
+ 	mv ./stransball2 ..
+ 
+ clean:

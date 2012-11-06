@@ -1,0 +1,17 @@
+choria (0.3.2-1~getdeb3) oneiric; urgency=low
+
+  * Update debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 25 Feb 2012 22:30:59 +0100
+
+choria (0.3.2-1~getdeb2~natty) natty; urgency=low
+
+  * Rebuild for natty because of libirrlicht transition.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 21 Apr 2011 22:04:33 +0200
+
+choria (0.3.2-1~getdeb1) lucid; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 12 Dec 2010 12:58:22 +0100

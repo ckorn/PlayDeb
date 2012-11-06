@@ -1,0 +1,17 @@
+Encoding is deprecated.
+Index: mazenum-0.1/data/mazenum.desktop
+===================================================================
+--- mazenum-0.1.orig/data/mazenum.desktop	2012-04-18 18:47:18.318973903 +0200
++++ mazenum-0.1/data/mazenum.desktop	2012-04-18 18:47:45.270973105 +0200
+@@ -1,6 +1,4 @@
+-
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Mazenum
+ Comment=Find the path in the numbers maze
+ Exec=mazenum
+@@ -9,4 +7,3 @@
+ X-MultipleArgs=false
+ Type=Application
+ Categories=Game;ArcadeGame;
+-Name[pt]=mazenum.desktop

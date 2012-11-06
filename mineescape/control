@@ -1,0 +1,20 @@
+Source: mineescape
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), python, python-support
+Standards-Version: 3.8.4
+Homepage: http://sites.google.com/site/sipygames/games-1/mine-escape
+
+Package: mineescape
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}, ttf-dejavu-core,
+ python-pygame
+Description: Minesweeper like game
+ This game is a new way of minesweeping where you need to
+ control a desperated guy - Barney - through an underground
+ minefield.
+ .
+ Similar to a normal minesweeper Barney gets some hints
+ on the fields next to him, and he have some tools to make
+ his life easier: flags, dropweights, digbots.

@@ -1,0 +1,14 @@
+Fix the path to the header.
+Index: goollie-1.1/src/main.cpp
+===================================================================
+--- goollie-1.1.orig/src/main.cpp	2008-12-22 22:15:10.000000000 +0100
++++ goollie-1.1/src/main.cpp	2008-12-22 22:15:24.000000000 +0100
+@@ -22,7 +22,7 @@
+     OTHER DEALINGS IN THE SOFTWARE.
+ */
+ 
+-#include "PycapApp.h"
++#include <tuxcap/PycapApp.h>
+ 
+ using namespace Sexy;
+ 

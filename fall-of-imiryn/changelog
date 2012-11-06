@@ -1,0 +1,11 @@
+fall-of-imiryn (0.0r903-1~getdeb2) karmic; urgency=low
+
+  * Add debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 15:55:54 +0100
+
+fall-of-imiryn (0.0r903-1~getdeb1) jaunty; urgency=low
+
+  * Initial release (LP: #360720)
+
+ -- Christoph Korn <c_korn@gmx.de>  Fri, 23 Oct 2009 14:43:41 +0200

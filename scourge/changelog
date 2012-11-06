@@ -1,0 +1,11 @@
+scourge (0.21.1-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 10 Mar 2010 20:12:10 +0100
+
+scourge (0.21.1-1~getdeb1) jaunty; urgency=low
+
+  * Initial release (LP: #422601)
+
+ -- Christoph Korn <c_korn@gmx.de>  Wed, 02 Sep 2009 22:58:22 +0200

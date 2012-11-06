@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Toy Cars
+Exec=toycars
+Icon=toycars
+Comment=A toy cars racing game
+Terminal=false
+Categories=Application;Game;ActionGame;
+StartupNotify=false

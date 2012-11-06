@@ -1,0 +1,27 @@
+Setting platform to linux.
+Index: bitfighter-0.0.013b/lua/lua-vec/Makefile
+===================================================================
+--- bitfighter-0.0.013b.orig/lua/lua-vec/Makefile	2010-09-12 17:29:04.024425065 +0200
++++ bitfighter-0.0.013b/lua/lua-vec/Makefile	2010-09-12 17:29:13.494056440 +0200
+@@ -5,7 +5,7 @@
+ # == CHANGE THE SETTINGS BELOW TO SUIT YOUR ENVIRONMENT =======================
+ 
+ # Your platform. See PLATS for possible values.
+-PLAT= none
++PLAT=linux
+ 
+ # Where to install. The installation starts in the src and doc directories,
+ # so take care if INSTALL_TOP is not an absolute path.
+Index: bitfighter-0.0.013b/lua/lua-vec/src/Makefile
+===================================================================
+--- bitfighter-0.0.013b.orig/lua/lua-vec/src/Makefile	2010-09-12 17:29:25.973117388 +0200
++++ bitfighter-0.0.013b/lua/lua-vec/src/Makefile	2010-09-12 17:29:32.323118954 +0200
+@@ -5,7 +5,7 @@
+ # == CHANGE THE SETTINGS BELOW TO SUIT YOUR ENVIRONMENT =======================
+ 
+ # Your platform. See PLATS for possible values.
+-PLAT= linux
++PLAT=linux
+ 
+ CC= gcc
+ CFLAGS= -O2 -Wall $(MYCFLAGS)

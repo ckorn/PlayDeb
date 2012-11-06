@@ -1,0 +1,25 @@
+Source: scourge
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 6), autotools-dev,
+ codeblocks-dev, libsdl1.2-dev, zlib1g-dev, wx2.8-headers,
+ libsdl-ttf2.0-dev, libsdl-image1.2-dev, libsdl-net1.2-dev,
+ libsdl-mixer1.2-dev, libpt-1.11.2-dev, libx11-dev,
+ x11proto-core-dev, libglu1-mesa-dev, mesa-common-dev
+Standards-Version: 3.8.4
+Homepage: http://scourgeweb.org/
+
+Package: scourge
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, scourge-data (<= ${source:Version})
+Description: Cross platform, open source rogue-like game
+ S.C.O.U.R.G.E. is a cross platform, open source rogue-like
+ game in the fine tradition of NetHack and Moria It sports
+ a graphical front-end, similar to glHack or the Falcon's
+ eye.The design of the 3D UI is an attempt at the best of
+ both worlds from old to new: It lets you rotate the view,
+ zoom in/out, view special effects, etc with the feeling of
+ the old-school isometric games like Exult or Woodward.
+ .
+  This package contains the binary executables.

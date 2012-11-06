@@ -1,0 +1,29 @@
+Author: Gerfried Fuchs <rhonda@debian.org>	vim:ft=diff:
+Description: Search for wesnothd-BRANCH instead of plain wesnothd
+
+Index: b/src/game_preferences_display.cpp
+===================================================================
+--- a/src/game_preferences_display.cpp
++++ b/src/game_preferences_display.cpp
+@@ -1287,7 +1287,7 @@ std::string show_wesnothd_server_search(
+ #ifndef WESNOTH_PREFIX
+ #define WESNOTH_PREFIX "/usr"
+ #endif
+-	const std::string filename = "wesnothd";
++	const std::string filename = "wesnothd-BRANCH";
+ 	std::string path = WESNOTH_PREFIX + std::string("/bin");
+ 	if (!is_directory(path))
+ 		path = get_cwd();
+Index: b/src/game_controller.cpp
+===================================================================
+--- a/src/game_controller.cpp
++++ b/src/game_controller.cpp
+@@ -909,7 +909,7 @@ void game_controller::start_wesnothd()
+ {
+ 	const std::string wesnothd_program =
+ 		preferences::get_mp_server_program_name().empty() ?
+-		get_program_invocation("wesnothd") : preferences::get_mp_server_program_name();
++		get_program_invocation("wesnothd-BRANCH") : preferences::get_mp_server_program_name();
+ 
+ 	std::string config = get_user_config_dir() + "/lan_server.cfg";
+ 	if (!file_exists(config)) {

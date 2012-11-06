@@ -1,0 +1,15 @@
+Source: stuntrally-tracks
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: http://code.google.com/p/vdrift-ogre
+
+Package: stuntrally-tracks
+Architecture: all
+Depends: ${misc:Depends}
+Description: Rally game with stunt elements (tracks package)
+ Rally game with Stunt elements, based on VDrift and OGRE.
+ .
+ (This package includes tracks for the game)

@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --parallel
+
+override_dh_auto_clean:
+	[ ! -f Makefile ] || $(MAKE) clean
+	find . -type d -name CMakeFiles -execdir rm -rf {} \; || /bin/true
+	find . -name cmake_install.cmake -delete
+	find . -name CTestTestfile.cmake -delete
+	find . -name Makefile -delete
+	-find -name .deps -type d -exec rm -rf {} \;
+
+	dh_clean CMakeCache.txt cmake_uninstall.cmake CPackConfig.cmake \
+	         CPackSourceConfig.cmake install_manifest.txt man/fgfs.1 \
+	         man/fgjs.1 man/fgpanel.1 man/gl-info.1 man/js_demo.1 \
+	         man/terrasync.1 src/Include/config.h src/Include/version.h
+
+override_dh_auto_configure:
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DSIMGEAR_SHARED:BOOL=ON -DENABLE_TESTS:BOOL=OFF \
+	      -DFG_DATA_DIR:STRING="/usr/share/games/flightgear" -DJPEG_FACTORY:BOOL=ON \
+	      -DCMAKE_VERBOSE_MAKEFILE=ON
+
+override_dh_auto_install:
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/flightgear
+	# how can I make cmake to install into /usr/games ?
+	mv debian/flightgear/usr/bin debian/flightgear/usr/games
+
+override_dh_installdocs:
+	dh_installdocs
+	cp docs-mini/* debian/flightgear/usr/share/doc/flightgear || true
+	cp utils/TerraSync/README.txt debian/flightgear/usr/share/doc/flightgear/README.TerraSync
+
+override_dh_installchangelogs:
+	dh_installchangelogs ChangeLog

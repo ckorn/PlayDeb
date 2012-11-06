@@ -1,0 +1,3 @@
+debian/tmp/usr/games
+debian/bubbletrain.xpm usr/share/pixmaps
+debian/bubbletrain.desktop usr/share/applications

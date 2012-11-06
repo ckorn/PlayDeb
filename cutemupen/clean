@@ -1,0 +1,10 @@
+Makefile
+moc_inputdialog.cpp
+moc_mainwindow.cpp
+moc_plugindialog.cpp
+moc_quazipfile.cpp
+qrc_resources.cpp
+ui_inputdialog.h
+ui_mainwindow.h
+ui_plugindialog.h
+cutemupen

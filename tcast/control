@@ -1,0 +1,23 @@
+Source: tcast
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               python | python-all | python-dev | python-all-dev
+Standards-Version: 3.9.3
+Homepage: http://games.renpy.org/game/tcast.shtml
+
+Package: tcast
+Architecture: all
+Depends: ${python:Depends},
+         ${misc:Depends},
+         python-pygame,
+         python-renpy,
+         ttf-dejavu-core
+Description: That Cheap and Sacred Thing
+ Only one person has ever told Autumn Godfrey "I love you."
+ And that person wasn't even human—but Autumn's android playmate
+ and babysitter, Elly. Mysteriously, Autumn hasn't seen Elly since
+ Autumn was seven, but now, with the help of Jude—an android
+ prostitute with attitude—she might just find out what happened
+ all those years ago.

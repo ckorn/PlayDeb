@@ -1,0 +1,38 @@
+This package was debianized by Christoph Korn <c_korn@gmx.de> on
+Sat, 24 Oct 2009 01:43:17 +0200.
+
+It was downloaded from https://code.launchpad.net/intensityengine
+
+Upstream Author:
+
+    Alon Zakai <kripkensteiner@gmail.com>
+
+Copyright:
+
+    Copyright (C) 2008 Alon Zakai ('Kripken')
+
+License:
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+The Debian packaging is copyright 2009, Christoph Korn <c_korn@gmx.de> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
+
+  - ENet (MIT) http://enet.bespin.org/
+  - Simple DirectMedia Layer, or SDL (LGPL) http://www.libsdl.org/
+  - Google V8 (BSD) http://code.google.com/p/v8/
+  - The Python programming language (PSFL) http://python.org/
+  - Boost (Boost Software License) http://www.boost.org/
+  - MochiKit (MIT) http://mochikit.com/
+  - zlib (zlib) http://www.zlib.net/

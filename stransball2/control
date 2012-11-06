@@ -1,0 +1,17 @@
+Source: stransball2
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), libsdl1.2-dev,
+ libsdl-image1.2-dev, libsdl-mixer1.2-dev,
+ libsdl-sge-dev, quilt
+Standards-Version: 3.8.4
+Homepage: http://www.braingames.getput.com
+
+Package: stransball2
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Enhanced version of TRANSBALL 2
+ Super Transball 2 is a Thrust like game.
+ It is inspired in Zara Thrusta for the Amiga 500,
+ is a small (under 1MB), but very adictive game, try it!

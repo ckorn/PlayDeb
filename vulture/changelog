@@ -1,0 +1,19 @@
+vulture (2.3.67-1~getdeb2) natty; urgency=low
+
+  * New upstream version (LP: #584397)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 01 Aug 2011 16:25:50 +0200
+
+vulture (2.2.100-1) unstable; urgency=low
+
+  * trivial adjustments to include support for UnNetHack
+
+ -- Daniel Thaler <daniel@dthaler.de>  Fri, 25 Mar 2011 17:05:00 +0100
+
+vulture (2.1.90-1) unstable; urgency=low
+
+  * Built the initial package for vulture using heavy-handed copying of large parts of the debian/
+    directory in the falconseye package.
+
+ -- Daniel Thaler <daniel@dthaler.de>  Wed, 2 Apr 2008 16:16:16 +0200
+

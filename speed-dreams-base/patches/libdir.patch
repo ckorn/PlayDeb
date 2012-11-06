@@ -1,0 +1,18 @@
+Do not install into lib64 on amd64 arch.
+Index: speed-dreams-base-2.0.0/cmake/macros.cmake
+===================================================================
+--- speed-dreams-base-2.0.0.orig/cmake/macros.cmake	2012-02-26 14:01:00.000000000 +0100
++++ speed-dreams-base-2.0.0/cmake/macros.cmake	2012-05-14 20:24:19.740333027 +0200
+@@ -82,11 +82,7 @@
+ 
+ # Determine the default value of the data, bin and lib (and man) folders.
+ IF(IN_SOURCETREE)
+-  IF(CMAKE_SIZEOF_VOID_P MATCHES 4)
+-    SET(_DEFLIBDIR "lib")
+-  ELSE()
+-    SET(_DEFLIBDIR "lib64")
+-  ENDIF()
++  SET(_DEFLIBDIR "lib")
+   IF(WIN32)
+     SET(SD_BINDIR bin CACHE PATH "Place where the executables should go")
+     SET(SD_DATADIR data CACHE PATH "Place where all the static data files should go")

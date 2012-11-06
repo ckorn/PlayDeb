@@ -1,0 +1,26 @@
+Description: Patch to use fonts provided by external packages not in built copies
+ Refreshed by kgoetz for 2.3.0 because of the comment added after DejaVuSans.
+Author: jordi
+Forwarded: no
+Last-Update: 2011-08-18
+
+--- freeciv-2.3.0/data/themes/gui-sdl/human/theme.themespec	2007-12-28 00:46:03.000000000 +0100
++++ freeciv-2.3.0/data/themes/gui-sdl/human/theme.themespec	2007-12-28 00:49:16.000000000 +0100
+@@ -8,13 +8,13 @@
+ priority = 20
+ 
+ ; The font to be used:
+-font_file         = "themes/gui-sdl/human/DejaVuSans.ttf"
++font_file         = "../../fonts/truetype/ttf-dejavu/DejaVuSans.ttf"
+ ; To use CJK fonts, provide the path to the font below.
+ ; Fonts recommended for Freeciv can be fetched from svn trunk, e.g.:
+ ; http://svn.gna.org/viewcvs/freeciv/trunk/data/themes/gui-sdl/human/
+-font_file_zh_CN   = "themes/gui-sdl/human/fireflysung.ttf"
+-font_file_ja      = "themes/gui-sdl/human/sazanami-gothic.ttf"
+-font_file_ko      = "themes/gui-sdl/human/UnDotum.ttf"
++font_file_zh_CN   = "../../fonts/truetype/arphic/uming.ttf"
++font_file_ja      = "../../fonts/truetype/sazanami/sazanami-gothic.ttf"
++font_file_ko      = "../../fonts/truetype/unfonts/UnDotum.ttf"
+ default_font_size = 18
+ 
+ ; Below, the graphics spec files; must be somewhere (anywhere) in 

@@ -1,0 +1,3 @@
+#!/bin/sh -e
+cd /usr/share/games/intensityengine
+LD_LIBRARY_PATH="./build;./build/" ./build/Intensity_CClient -r $@

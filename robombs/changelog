@@ -1,0 +1,5 @@
+robombs (1.01-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #422599)
+
+ -- Matthias Klumpp <matthias@nlinux.org>  Sun, 04 Oct 2009 19:15:50 +0200

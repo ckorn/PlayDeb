@@ -1,0 +1,33 @@
+Index: deadlycobra-0.7.0/src/Makefile.in
+===================================================================
+--- deadlycobra-0.7.0.orig/src/Makefile.in	2009-11-09 01:50:43.834826587 +0100
++++ deadlycobra-0.7.0/src/Makefile.in	2009-11-09 01:52:45.592324808 +0100
+@@ -90,7 +90,7 @@
+ 	 -g
+ 
+ 
+-LIBS = -L/usr/lib -Wl,-rpath,/usr/lib -lSDL -lSDL_image -lpthread -lSDL_mixer
++LIBS = -L/usr/lib -Wl,--as-needed -lSDL -lSDL_image -lpthread -lSDL_mixer
+ 
+ bin_PROGRAMS = deadlycobra
+ 
+@@ -117,7 +117,9 @@
+ 	obstacles.cc\
+ 	obstacles.h\
+ 	snake.cc\
+-	snake.h
++	snake.h\
++	XDGPath.cc\
++	XDGPath.h
+ 
+ 
+ deadlycobra_LDADD = 
+@@ -130,7 +132,7 @@
+ 
+ am_deadlycobra_OBJECTS = bitmap.$(OBJEXT) enemy.$(OBJEXT) game.$(OBJEXT) \
+ 	main.$(OBJEXT) man.$(OBJEXT) map.$(OBJEXT) obstacles.$(OBJEXT) \
+-	snake.$(OBJEXT)
++	snake.$(OBJEXT) XDGPath.$(OBJEXT)
+ deadlycobra_OBJECTS = $(am_deadlycobra_OBJECTS)
+ deadlycobra_DEPENDENCIES =
+ deadlycobra_LDFLAGS =

@@ -1,0 +1,17 @@
+libbullet (2.80-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 25 Jul 2012 18:03:00 +0200
+
+libbullet (2.77-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 02 Apr 2011 12:06:47 +0200
+
+libbullet (2.75-1~getdeb1) karmic; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 06 Nov 2009 20:36:58 +0100

@@ -1,0 +1,3 @@
+version=3
+opts="dversionmangle=s/0\.0\+//" \
+http://sf.net/caphgame/caph-src-([\d\.]+)\.tar\.bz2

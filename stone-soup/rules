@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --parallel -Dsource
+
+# Build in dh_auto_install target because Makefile
+# decides to rebuild if flags change (DESTDIR)
+override_dh_auto_build:
+
+# Requires X
+override_dh_auto_test:
+
+override_dh_auto_install:
+	dh_auto_install -- TILES=1 prefix=/usr DATADIR=/usr/share/games/stone-soup SAVEDIR='~/.config/stone-soup'
+	# We need the executable in a different directory.
+	mv debian/stone-soup/usr/games/crawl debian/stone-soup/usr/lib/games/stone-soup/crawl
+
+	cd debian/stone-soup && rm usr/share/games/stone-soup/docs/license/libpng-LICENSE.txt \
+	                           usr/share/games/stone-soup/docs/license/lualicense.txt \
+	                           usr/share/games/stone-soup/docs/license/pcre_license.txt
+
+override_dh_installchangelogs:
+	dh_installchangelogs docs/changelog.txt

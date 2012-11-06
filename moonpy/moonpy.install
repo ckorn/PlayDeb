@@ -1,0 +1,3 @@
+client common data server *.py		usr/share/games/moonpy
+debian/scripts/moonpy			usr/games
+debian/moonpy.desktop			usr/share/applications

@@ -1,0 +1,9 @@
+Document: redeclipse-server
+Title: Red Eclipse Server Examples
+Author: Red Eclipse Team
+Abstract: Example scripts for setting up a Red Eclipse server.
+Section: Games/Action
+
+Format: Text
+Files: /usr/share/doc/redeclipse-server/examples/servexec.cfg.gz
+       /usr/share/doc/redeclipse-server/examples/servinit.cfg

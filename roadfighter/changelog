@@ -1,0 +1,11 @@
+roadfighter (1.0.1269-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 10 Mar 2010 12:44:38 +0100
+
+roadfighter (1.0.1269-1~getdeb1) karmic; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 09 Feb 2010 22:49:42 +0100

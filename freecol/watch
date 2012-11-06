@@ -1,0 +1,8 @@
+# Compulsory line, this is a version 3 file
+version=3
+
+# Don't forget to look into debian/copyright first before packaging
+# a new upstream version !!! The watchfile works, but the downloaded
+# archive should not go to debian - you need to repackage it.
+opts=dversionmangle=s/\+dfsg// \
+http://sf.net/freecol/freecol-(?!.*alpha)(.*)-src\.zip debian debian/new-upstream 

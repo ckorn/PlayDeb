@@ -1,0 +1,55 @@
+Source: alien-arena
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Michael Gilbert <mgilbert@debian.org>, Barry deFreese <bddebian@comcast.net>
+Build-Depends: debhelper (>= 9),
+               sharutils,
+               libglu1-mesa-dev | libglu-dev,
+               libgl1-mesa-dev | libgl-dev,
+               libjpeg-dev,
+               libpng-dev,
+               libxxf86vm-dev, libxxf86dga-dev,
+               libxext-dev,
+               libx11-dev,
+               libcurl4-gnutls-dev | libcurl3-gnutls-dev,
+               libopenal-dev,
+               libvorbis-dev,
+               libfreetype6-dev
+Standards-Version: 3.9.3
+DM-Upload-Allowed: yes
+Homepage: http://red.planetarena.org
+Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/alien-arena
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/alien-arena/?op=log
+
+Package: alien-arena
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         libopenal1,
+         alien-arena-data
+Description: Standalone 3D first person online deathmatch shooter
+ ALIEN ARENA is a standalone 3D first person online deathmatch shooter
+ crafted from the original source code of Quake II and Quake III, released
+ by id Software under the GPL license. With features including 32 bit
+ graphics, new particle engine and effects, light blooms, reflective water,
+ hi resolution textures and skins, hi poly models, stain maps, ALIEN ARENA
+ pushes the envelope of graphical beauty rivaling today's top games.
+ .
+ This package installs the SDL client for Alien Arena.
+
+Package: alien-arena-server
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         ruby,
+         alien-arena-data
+Description: Dedicated server for Alien Arena
+ ALIEN ARENA is a standalone 3D first person online deathmatch shooter
+ crafted from the original source code of Quake II and Quake III, released
+ by id Software under the GPL license. With features including 32 bit
+ graphics, new particle engine and effects, light blooms, reflective water,
+ hi resolution textures and skins, hi poly models, stain maps, ALIEN ARENA
+ pushes the envelope of graphical beauty rivaling today's top games.
+ .
+ This package installs the dedicated server for Alien Arena.

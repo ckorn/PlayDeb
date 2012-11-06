@@ -1,0 +1,743 @@
+/****************************
+ *
+ * CHANGELOG
+ *
+ *
+ ****************************/
+
+Quick guide to the changelog:
+
+Add: explanation of an added feature/command to war§ow
+Fix: explanation of a fix added to the war§ow code/gameplay
+Med: Update of (a) certain media file(s)
+Chg: explanation of a change in the gameplay, or a change in behaviour of a command
+
+----------------------------------------------------------------------------------------------------------------
+build v0.1 Revision 2336
+Changes from version 0.071
+
+Fix: Mouse wheel (weapprev and weapnext) should work when in first person chasecam again.
+
+Fix: Rocket splash radius damage bug.
+
+Fix: If you die while having chat bubble on, your body won't have it on for forever 
+
+Fix: Callvoting allow_falldamage
+
+Fix: Make quad effect disappear when you become a spectator.
+
+Fix: Server query empty and full filters.
+
+Fix: WDM1 fixing doors, adding locations and fixing a texture bug.
+
+Fix: CTF scoreboard always shows both teams + updated so it shows caps in stead of scores
+
+Fix: Check for cl_demoavi_scissor being 1, not 2
+
+Fix: Converting/removing illegal chars in a nick. Used for autoaction file-creation.
+
+Fix: Grenades now bounce down slopes.
+
+Fix: "weapnext" and "weapprev" now work correctly (handled client-side so there's no more annoyng no ammo messages,
+     and not going in the wrong direction any more).
+
+Fix: Hud rescaling to 800x600 virtual screen & HUD numbers proportional in virtual screen.
+     And a brand new HUD system, rewritten from scratch : ).
+     Teams score support in hud for team gametypes  (STAT_TEAM_(RED|BLUE|GREEN|YELLOW)_SCORE)
+     SetFont to set any font you want in your HUD.
+     Move the crosshair draw to the HUD scripts.
+
+
+
+Fix: Don't require a restart when resetting a map (gametype change, restart vote, match end and same map to be played again).
+     Don't let warmup timelimit countdown when there is less than one player in non-teambased gametypes. Stop match when no
+     players are left in non-teambased gametype.
+
+Fix: LOD's for armor models
+
+Fix: Allow changing cg_clientHUD without vid_restart.
+
+Fix: Make race-mode work properly.
+
+Fix: Server browser scroll window.
+
+Fix: Allow cancelling writing of chat message by pressing enter when nothing is written (previously it sent an empty message).
+
+Fix: a few issues with healths spawning in midair, and ammo boxes being drop at instagib
+
+Fix: Don't shoot when spawning, mostly notable in instagib
+
+Fix: in_restart on linux
+
+Fix: Don't allow voting same gametype over and over again while in scoreboard
+
+Fix: sound going mad after alt-tab (nip's comment: \o/)
+
+Fix: cg_simpleitems 2 will stop item bobbing again.
+
+Add: new midair map (wmid3, hexagons made by blemish)
+)
+Add: Implement BattlEye anti-cheat system (go to http://www.battleye.com for more information)
+     Serverside: sv_battleye cvar (0 = disabled, 1 = optional, 2 = required)
+     Clientside: cl_battleye cvar (0 = disabled, 1 = enabled), BattlEye.dll (anti-cheat client)
+
+Add: Challenger's queue for all gametypes
+
+Add: Localtime to console.
+
+Add: Stats command (/stats). This will list all of the weapons and your respective accuracies with them.
+		 When speccing it display the stats of the chased player.
+		 
+Add: Support for downloading files (maps) from the server using a web server. 
+     Fail when the asked file does not exist on the web server
+     Support for resuming downloads
+
+Add: Announcer, vsays, and chat tokens (macros) lists in /docs
+
+Add: "demopause" function
+
+Add: Shortcut "flag" to command "drop"
+
+Add: Bots now have better AI and aim. Hf & gl with'm :)
+
+Add: Missing walljump sounds.
+
+Add: vsay and vsay_team commands. Works ET-like. It plays a sound (a voice chat) and shows an icon on player's head. The netcode has been
+     adjusted so that players who aren't in thesame team won't hear nor see the chattokens. vsay headicons to team layouts besides each
+     player name and location, so it's easy to know where the requesting player is.
+     Currently accepted tokens are:
+	needhealth
+	needweapon
+	needarmor
+	affirmative
+	negative
+	yes
+	no
+	ondefense
+	onoffense
+	oops
+	sorry
+	thanks
+	noproblem
+	yeehaa
+	goodgame
+	defend
+	attack
+	needbackup
+
+Add: Flood protection check to vsays, you won't be able to spam YEEHAW anymore : p
+
+Add: Bots use vsay. Pretty much randomly, but it adds nice ambient to the match.
+
+Add: Enable Team Tabs (locations) on CTF too (small team overlay)
+
+Add: Pings are displayed in color now
+     (green is 0<=ping<50, yellow 50<=ping<90, orange 90<=ping<120, red : ping >= 120)
+
+Add: Spawn selection code for CTF (rule is randomly choose a spawn point from all matching your team color)
+
+Add: Tweak bots for better ctf playing.
+
+Add: in_minmsecs cvar. Increasing it, relaxes input update ratio.
+
+Add: cg_enemyModel, cg_enemySkin, cg_teamModel and cg_teamSkin to force a warsow skin to a team.
+
+Add: Self shadow on models.
+
+Add: Captures in jpg when r_screenshotJPG is enabled.
+
+Add: More splash radius to Gunblade.
+
+Add: Generic weapon model for missing weapon models.shader
+
+Add: cg_damage_kick, cg_damage_blend and cg_pickup_flash cvars.
+
+Add: Prestep for all projectiles. Prestep is something to compensate network delay. 
+     When you would fire a rocket in the previous version of war§ow
+     the rocket would be drawn immediatly after you clicked. 
+		 Now it's being spawned and instantly travel some msec ahead using its own speed, 
+		 thus feeling as if that projectile was fired a bit earlier in the past and 
+		 so compensating some lags. This make the game feel more responsive.  
+
+Add: A pair of missing ammo box shaders (riotgun and spawngun ammos)
+
+Add: The outline effect to armors items.
+
+Add: Each time the client returns to the ui from demos, videos, everything is a disconnect.
+
+Add: Shortcut "weapon" to command "drop" will drop current weapon. 
+
+Add: automatic sorting of demos and screenshot in autoaction (autorecord/gametype/foo.bar)
+
+Add: Distance fade effect to player names, with new cvars: 
+	cg_showPlayerNames:         toggles player names
+	cg_showPlayerNames_alpha:   transpacency of names, for 0 to 1, 1 being opaque
+	cg_showPlayerNames_zfar:    distance from where the names are printed or not
+	cg_showPlayerNames_xoffset: 2d horizontal offset of the name from the player
+	cg_showPlayerNames_yoffset: 2d vertical offset of the name from the player
+
+Add: Teleporting effect on both side of the tele.
+
+Add: cvar: cl_compresspackets (default 0, options: 0-1). Allows the client to decide if he wants the client to compress
+     the ucmds he's sending to the server. Ucmd packets are generated very fast, while they are of a very
+     small size. It's not really worth compressing them, but cpus don't really have any problem
+     with doing it. The choice is yours.
+
+Add: (cheat, meaning: use devmap to use it, or cheats enabled, or race) cg_showPlayerTrails (value is time, in ms)
+
+Add: Reward messages for midair
+
+Add: cg_playerTrailsColor cvar to change the color of the player trails (for demos and race mode) 
+     default is: "0.0 1.0 0.0"
+     format is "r g b" with r,g,b [0.0 .. 1.0]
+
+Add: cvar: g_challengers_queue and callvote challengers_gueue.
+     In team gametypes, the half of the players with the lower scores will be put as spectators if we enable the challengers
+     queue (and of course, the players inside the challengers queue will be put inside the teams at the start of the warmup).
+     I don't know if it's desirable to enable it or not, but the code should be already working.
+
+Add: Command line option -hwtimer to use high resolution performance counter if available (win32 only).
+     Enabling this on the command line (shortcut) will result in a better timer system for war§ow. Notes:
+     This won't always work, some computers don't like this and there is no linux support yet, so the linux servers can't enable this.
+     People who do have no trouble with this should enable it, even when playing on linux servers.
+
+Add: mouse wheel support for scrolling in ui (server, demos, binds ...)
+
+Add: cvars: con_fontSystemSmall and con_fontSystemMedium to allow to use user custom fonts.
+
+Add: ctf bonus for extending flag reset countdown. Fix double flags and no-flag captures (hopefully)
+
+Add: 2 new target entities to help mapping for our ctf:
+     "target_reset_flag_countdown" // can't be triggered by flag carriers.
+     "target_freeze_flag_countdown" // can only be triggered by flag carriers.
+
+Add: New fonts system that allows you to create and a use your own fonts for console, ui and scoreboards.
+     Also able to set a different font for each print in the HUD scripts.
+
+Add: Pings in servers browser.
+
+Add: Health/armor bars on teammates.
+
+Add: Simple projected shadows on models. And the most important, a smoother overall feeling.
+
+Del: cvars cg_crosshairX, cg_crosshairY, cg_crosshairSize.
+
+Del: Shockwave and lasergun wrong weapon models.
+
+Chg: Scalable scoreboard.
+
+Chg: In-game menu has been updated.
+
+Chg: cg_grenadeTrail, cg_rocketTrail: Now mean density of the trail in smoke puffs per second.
+     New cvars: cg_grenadeTrailAlpha, cg_rocketTrailAlpha
+
+Chg: Winners stay inside the team at match end.
+
+Chg: make vid_restart restart the sound engine as it also reinit all dlls.
+
+Chg: Fire up BE when getting the BE bit from server.
+
+Chg: Reject clients with BE disabled if we are a BE enabled server
+
+Chg: make midair mod 1v1
+
+Chg: Put back magenta color in ^6, move orange to ^8 and add grey at ^9.
+
+Chg: Midair rules: the knockback was scaled differently + scoresystem is +1 to +5 depending on the distance of the fragged person
+
+Chg: Make say_team prints in yellow tint, cause was quite hard to follow a say_team talk in the console.
+
+Chg: Player hitboxes have thesame height as the model when standing, and are about half that length when ducked.
+
+Chg: Riotgun now has a circular spread, the bullets in the circle are randomized.
+
+Chg: Allow cg_predictLaserBeam values between 0 and 1
+     This var shows the laserbeam as the server sees it. So if you set this to 0, you would have a true-laser for the server.
+     Setting this to one would mean that the laserbeam is drawn as if it were on ping 0.
+
+Chg: Switch LaserGun and ElectroBolt in weapon list
+
+Chg: midair give quad if health >= 200
+
+Chg: allow player to crouch while in air
+
+Chg: Put spawnpoints on floor at load time unless they have the no drop spawnflag.
+
+Chg: Allow server names up to 32 chars for the info msg
+
+Chg: Set thirdperson at updating player POV
+
+Chg: Use "andromeda" skins by Hubikc for silverclaw model. 
+     Delete some never used models. 
+     Update player models animation.cfg to use the rootanim command instead of bonekeys.
+
+Chg: Skeletal pmodels now define their animations using rootanim command in their configs.
+
+Chg: weapondefs to reflect splash damage changes. RL and PG now have same knockback as damage. GL now has
+     same knockback and damage values as RL.
+
+Chg: Splash damage and knockback changes: Calculates the distance of splash damage better. Uses different knockback
+     direction for splash damage when hitting players. Takes mindamage into account when calculating knockback. Removes
+     rocket jump and plasma climb hacks as they are no more needed.
+
+Chg: Lasergun is able to use it's model projection source now.
+
+Chg: Make bots adjust their skill to sv_skilllevel cvar
+
+Chg: Add instant-hit weapons range to weapondefs. Create Lasergun weapondef files.
+
+Chg: Add the outline effect to ammo pack and add the outline effect to the hud armor model.
+
+Chg: Proper player model centering at ui_playerconfig
+
+Chg: When callvoting gametype, don't change map, but go through scoreboards before switching. 
+     Being so instant is confusing, and people likes to know how they were doing before the switch.
+
+Chg: Improve team tabs so it sends smaller updates at a faster update ratio.
+
+Chg: Faster respawning. Cvars g_respawn_delay_min and g_respawn_delay_max control it (in milliseconds).
+
+Chg: Replace Huffman compression by ZLIB for the netcode. 
+
+Chg: Switch BLUE-GREEN teams again, so BLUE is the 2nd team.
+
+Chg: Use Q3A version of LoadTGA, so some textures from custom maps don't crash Warsow. 
+     WARNING: This means LRE-compressed tgas aren't supported anymore.
+
+Chg: Stop sending playerskins as ConfigString, index the player models from the server as any other model. 
+     Same for skin files (added new trap_SkinIndex for them). Skins bug should be gone by now.
+
+Chg: Register sexed sounds in player-model basis (same for weapon models sets).
+
+Chg: New Armor protection rules. Those changes were made in an attemp to stop armor-runs and increase the amount of fights in a 1v1.
+      GA: 25, 75; YA: 50, 100; RA 100, 200 - armor decay (to 150). All protection is 75, no matter the color. All degradation is 0.66.
+
+Chg: More unified knockback for everything (still work to be done in physic_toss and bounce). 
+     Adjust weapondefs; since there is an offset by the radius of the AAbox we are expanding 
+     the radius of the explosion, so, for having the same radius as before, we have to reduce 
+     the splash damages by the radius of AAbox.
+
+Chg: Updated demos player (set read only on config.cfg in place of qfconfig.cfg)
+
+Chg: Make projectiles use corpses solids. Should prevent projectiles stopping player movement and some rocket impact bugs
+
+Chg: When in freefloat in teambased game make red team use teammodels and other teams use enemymodels
+
+Med: New menu.
+
+Med: Several new sfx, adjust volume and frequency.
+
+Med: Added a mapshot for maps that don't have a mapshot included in their pk3 (unknownmap.jpg)
+
+Med: New skin for ammo packs (Lardarse)
+
+Med: Added FLAGS!!!
+
+Med: New gunblade model
+
+Med: New LaserGun model + WIP skin (Primevil)
+
+Med: New fonts
+
+Med: New explosion ring (Primevil)
+
+Med: updated riotgun skin (Primevil)
+
+Med: updated plasmagun skin (Primevil)
+
+Med: new chatbubble (Primevil)
+
+Med: New electrobolt model
+
+Med: updated LG skin (Primevil)
+
+Med: updated RL skin (Primevil)
+
+Med: updated GL skin (Primevil)
+
+Med: Added wdm5 - viciious' home (blx`)
+
+Med: wdm1d (dev version) is now wdm1, we believe this to be a better map, in terms of gameplay
+
+
+----------------------------------------------------------------------------------------------------------------
+build v0.071. Revision 1078
+Changes from version 0.07
+
+fix: allow using ^ key in console and messages
+
+chg: Q2-like 3rd person range by default
+
+fix: match message now disappears when the game starts by warmup timelimit hit
+
+fix: cg_autoaction works again
+
+add: skill levels to servers
+     UI server browser now has skill level filter
+     sv_skilllevel cvar can be used to set server's skill level, values from 0 to 2 mean easy, normal and hard
+
+chg: wider item and player AAboxes
+
+fix: make riotgun bullet impact sounds mono
+
+fix: cut off the extension (had echo) of rocket fire sounds
+
+chg: adjust blaster and rocket launcher sound volumes
+
+chg: adjust the female sounds volumes
+
+add: match end buzzer sound
+
+add: team hit sound (temporary media)
+
+fix: allow dropping current weapon, give 5 weak ammo with the weapon
+     in TDM you can now have atmost two of the same type of weapon in the inventory at once
+
+fix: don't apply picmip to plasma balls
+
+fix: toggling the console on windowed mode in Linux moved the mouse
+
+add: fs_usehomedir cvar for Linux, which toggles whether to use ~/.warsow directory
+
+fix: unparsed %-tokens in say and say_team messages could cause problems
+
+chg: always unlock team when going into warmup
+
+fix: don't get stuck to loading screen when changing map
+
+fix: highlighting of server names with color tokens in UI now works
+
+add: cg_demosfx_rotateX and cg_demosfx_rotateY cvars for thirdperson rotation sfx in demos
+
+add: demos menu
+
+fix: connecting from loopback server to another server will no longer get stuck in loading screen
+
+fix: allow the use cheat cvars when playing demos
+
+add: cg_demo_truePOV cvar, which toggles whether to use watcher's or recorder's hand and fov values
+
+fix: allow switching to 3rd person in demos
+
+fix: demo playing is no-longer choppy with cg_predict 1
+
+fix: enable back the message box when the game closes by fatal error in Windows
+
+fix: going to player config page in UI reseted model and skin back to default
+
+
+----------------------------------------------------------------------------------------------------------------
+build v0.07. Revision xxx
+Changes from version 0.06
+
+add: added wtest4 for tdm/2v2
+
+add: added wtest3 for duels
+
+add: added wmid1 & wmid2 for midair
+
+add: Add point and pickup tokens. Remove sight token. Add short names and colors for items
+     Changed say_team tokens (now: health, armor, weapon, best weapons, location, point, point_location,
+     last pickup, last pickup location, last drop, last drop location)
+         %l=location
+         %a=armor
+         %h=health
+         %b=best weapons
+         %w=current weapon
+         %x=point
+         %y=point location
+         %X=pickup
+         %Y=pickup location
+         %d=drop
+         %D=drop location
+
+add: The new netcode:
+     Using packet fragmentation to remove every SZ_Getspace overflood crashes.
+     Added a sv_pps cvar so server admin has the capability to set up his own server bandwitch use.
+     Everything should work smoothly now. We haven't had a single crash since we released the new netcode ;-)
+     In case you do get a server crash: feel free to contact us.
+
+add: cg_simpleitemsSize cvar so set simple items icons size (default is 12)
+
+add: demoavi <demo name>
+     Will play a demo, and automaticly export the img files into your screenshots/AVI directory in your basewsw folder.
+
+add: cl_demoavi "1|0"
+     When you don't want to have the img files from the beginning of the demo, you can always use this variable,
+     and toggle it whenever you have your right part in the demo.
+
+add: cl_demoavi_fps <value>
+     This variable will set how fast imgs will be written to your hard drive. We recommend keeping this lower than 30,
+     for the sake of not having 700megs-10 minute video files. If you set this to 25, your video file will have 25 fps as well.
+
+add: cl_demoavi_scissor "1|0"
+     Quote from the config guide:
+  
+     "cg_viewSize "40-100"
+     describes how big you want the actual view of the game to be (has nothing to do with fov)
+     if you set this to 40, 40% of your screen will be used to draw the game, the rest will be
+     filled with some background texture (remember the old doom games?) "
+
+     When you set "cl_demoavi_scissor 0" this value will be ignored, and will export an img of the intire screen
+     (when you have set cg_viewsize, it'll also export the borders).
+     when you set "cl_demoavi_scissor 1" the cg_viewsize value will be used, and the exported imgs will be smaller than your screensize.
+     We recommend keeping this to 0 & also having "cg_viewsize 100"
+
+add: demoavi.txt (doc on the demoavi commands)
+
+add: simple icons and shader for backpack
+
+add: display a little box around selected weapon in weaponlist (cg_showWeaponSelect)
+     1 means that it will draw the box around the selected weapon
+     0 means that it won't draw the box around the selected weapon
+
+add: unready command
+
+add: a cvar to filter where obituaries message shall be printed (cg_showObituaries)
+     0 : off
+     1 : console
+     2 : center
+     3 : console and center
+
+add: shaderlist.txt for easier mapping
+
+add: Silverclaw player model
+
+add: Monada player model + moinesse.shader (first compile)
+
+add: cg_ShowPointedPlayer
+     1 means that when your mouse moves over an enemy or teammate it will draw his name on the screen,
+       below your mouse (defaults to this value)
+     0 means it won't
+
+fix: Make delete key work properly in console
+
+fix: the console only displays one texture in the console, not two
+
+fix: /kill command was missing a calls to Killed function
+
+fix: we are now using a q3 like keyboard management (config and bind are done in qwerty,
+     console and message use international keyboard layout). ATM ui is in qwerty
+
+fix: copy paste bug/crash in console
+
+fix: removed ability to vote item respawn time and now using default ones according to gametype
+
+fix: respawn time of MH according to gametype
+
+fix: font size for match messages (was too big for 800*600)
+
+fix: put back health decay when holding MH and having more than 100 health
+
+fix: scoreboard color bug when using a colored name
+
+fix: various fixes for textures on linux machines
+
+fix: lava damage fixed, it was a remnant from the old Q2 code, it was calculated at 10pps, and we're running 25pps (sv_fps 25)
+
+fix: Clock values when timelimit is 0
+
+fix: some botfixes
+
+fix: Linux keyboard repeating is now disabled when in game
+
+fix: Linux now supports mouseaccel & cl_freelook
+
+fix: Linux should now support r_colorbits & r_stencilbits
+
+fix: autoexec.cfg doesn't overwrite commandline parametres anymore and sets latched video cvars work correctly
+
+fix: Linux dedicated server now exits if it can't bind to the network address
+
+fix: Linux dedicated server no longer binds client port
+
+fix: Linux now no longer re-configures network sockets if not necessary
+
+fix: ignore full and ignore empty options in server browser now work
+
+fix: Move running commandline +exec parametres earlier, so that latched cvars can be set correctly in them
+
+fix: Game didn't start when last unready player joined spectator team or disconnected
+
+fix: Play no ammo sound when trying to change to weapon with no ammo
+
+fix: Commandline parametres with spaces in them didn't work correctly
+
+fix: Players command wasn't working properly
+
+fix: Outgoing teleport splash (missing model atm) was drawn on wrong position
+
+fix: Fix chat and team chat ui items, in the customize controls menu
+
+fix: Make the customize controls menu recognise bindings that aren't in same case
+
+fix: Speed and fps meters are now a part of the HUD, and can be moved around
+
+fix: the gunblade consumes ammo proportional to the firing power
+
+chg: the added knockback on the plasmagun should let you climb when you're standing against a wall, but not tweaked yet!
+
+chg: smaller knockback on both riotgun fire modes
+
+chg: minimum strong rocket damage now is 20 in stead of 50
+
+chg: added some knockback and splash to plasma, both fire modes
+
+chg: sv_maxrate & sv_compresspackets has been removed in this release & in the server dedicated_autoexec.cfg
+
+chg: Gunblade blaster sound (& more) from 1oook
+
+chg: increased max name size up to 32 characters
+
+chg: Add dedicated_autoexec.cfg to basewsw so it can be used as template
+
+chg: rename cvars: timelimit, fraglimit and capturelimit -> g_timelimit, g_fraglimit and g_capturelimit
+
+chg: Make moinesse model a little bit bigger
+
+chg: Bots can make use of both models now, and they choose between a group of characters
+
+chg: Dedicated server now uses dedicated.cfg (read and written) and dedicated_autoexec.cfg
+     (only read). Remove dedicated.sh and .bat, since they are no longer needed
+
+chg: qfconfig.cfg renamed to config.cfg
+
+chg: added cvar sv_defaultmap, that will be run at server start if no other commands is given
+
+chg: say_team tokens now use short names for items
+
+chg: (most) HUD items can now be aligned
+
+chg: print connecting client's IP to dedicated server's console
+
+chg: play local noammo sound when trying to change to weapon with no ammo 
+
+----------------------------------------------------------------------------------------------------------------
+build v0.06. Revision 399
+Changes from version 0.05
+
+add: entities.def to docs folder.
+
+add: Riotgun bullect impact sfx.
+
+add: An icon on top of player which is typing in console or chatting or using the menu
+
+add: hud_right.hud and hud_left.hud (thanks to nip)
+
+add: light blooms filter.
+
+add: F3 is bound to join by default and F4 to ready
+
+add: 1 second delay between two consecutive dash
+
+add: extended time in tdm/duel. Callvote extended_time <value>, g_match_extendedtime cvar. 
+
+add: map restart vote (callvote restart)
+
+add: mousewheel scrolling support in console
+
+add: cg_simpleItems cvar to display 2d simple icon (value=1) in place of 3d models
+     for all items (value=0)
+     
+add: cg_autoaction cvar to perform automatic actions. 
+     This cvar is a bitfield.
+     1: means automaticaly record a demos when the match starts.
+     2: means automaticaly take a screenshot when the match ends.
+		 So if you want to record a demos and take a screenshot 
+      set cg_autoaction to 3 (ie 2+1).
+
+add: client now executes basewsw/autoexec.cfg file when starting
+
+add: volumes selections to the ui -> sound options.
+
+add: cg_volume_players and cg_volume_effects cvars. 
+     These allow volume range from 0.0 to 2.0 only.
+
+add: cg_volume_hitsound cvar to control hitsound playback volume.
+     Set it to 0.0 to disable hitsound. 
+     Set it to any positive value to increase volume playback.
+		 
+add: console completion for warsow game commands (callvote, etc)
+
+add: cg_rocketTrail cvar.
+
+chg: decouple Client packets and renderer FPS.
+
+chg: Server sends packets at a 25 packets per second ratio now.
+
+chg: Quad timing is no more computed using server frame numbers
+
+chg: bump protocol version.
+
+chg: hud stats tokens STAT_MATCH_CLOCK to %16 and STAT_WEAK_AMMO to %17.
+
+chg: PS_VIEWHEIGH is sent as a straight byte.
+
+chg: Weapon list netcode.
+
+chg: bot tweaks (item weighting related)
+
+chg: Remove cvars: "cl_masterServer" and "sv_masteraddress". New cvar "masterservers" is used for both client and server. It contains a string with the list of master servers to link and request to. Server addresses must be separated by a space.
+
+fix: outline shaders sorting.
+
+fix: walljump-after-bunny bug
+
+fix: walljump after normal jump+walljump bug
+
+fix: keys configuration menu (added weapons, special etc)
+
+fix: knockback scale of Strong Gunblade shot when quadded
+
+fix: telefrags when taking a teleporter
+
+fix: Movers sounds origin. Create "noise", "noise_start" and "noise_stop" for custom mover sounds from mappers.
+
+----------------------------------------------------------------------------------------------------------------
+build v0.05. Revision 227,
+Changes from version 0.04
+
+add: max chained Wall Jumps limit depending on the gametype. 
+     2 is max in gametype race, 1 is max at every other.
+
+add: absolute max health limit rules (for each gametype).
+
+add: callvote allow_teamdamage and g_teams_teamdamage cvar.
+
+add: options to linux to compile as 64bits (thnx to GladiaC).
+
+add: better error handling when failed to load game/cgame dll/so
+
+add: New quad screen blend sfx.
+
+fix: a crash with the 'give' command caused by trying to give a item 
+     which is disabled by the current gametype.
+
+fix: More scoreboard fixes.
+
+fix: miss initialisation of recursive in Com_Error
+
+fix: A few scores bugfixes.
+
+fix: More sound fixes. Make better use of channels so some sounds aren't cut off.
+
+fix: Precache some media.
+
+fix: Some event optimizations too.
+
+chg: Removed attenuation from 1st person weapon sounds
+
+chg: Change default master server ip.
+
+chg: Reduce the number of gibs.
+
+chg: Tweak blood particle effects for lower bandwitch usage. 
+
+chg: Tweak bot skills a bit (Make bots aim rockets to the feets when it's good to do it). 
+
+chg: Adjust player's AAbox and view height.
+
+chg: projectiles so particle trails are drawn until the impact point. 
+
+----------------------------------------------------------------------------------------------------------------
+

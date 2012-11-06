@@ -1,0 +1,32 @@
+Source: raydium
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), autotools-dev,
+ mesa-common-dev, libglu1-mesa-dev, libx11-dev, x11proto-core-dev,
+ x11proto-xinerama-dev, x11proto-xext-dev, libglew1.5-dev,
+ libopenal-dev, libalut-dev, libvorbis-dev, linux-libc-dev,
+ libjpeg62-dev, libxinerama-dev, bison, flex, libcurl4-gnutls-dev,
+ libxml2-dev, quilt
+Standards-Version: 3.8.3
+Section: libs
+Homepage: http://raydium.org/
+
+Package: libraydium-dev
+Section: libdevel
+Architecture: any
+Depends: libraydium0 (= ${binary:Version}), ${misc:Depends}
+Description: 3D game engine (header files)
+ Raydium is a game engine. It provides a set
+ of functions wich allow quick and flexible
+ games creation.
+ .
+ (This package contains the header files)
+
+Package: libraydium0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: 3D game engine
+ Raydium is a game engine. It provides a set
+ of functions wich allow quick and flexible
+ games creation.

@@ -1,0 +1,57 @@
+This package was debianized by:
+
+    Christoph Korn <c_korn@gmx.de> on Sun, 27 Sep 2009 11:35:08 +0200
+
+It was downloaded from:
+
+    http://www.pcbypaul.com/software/5ball.shtml
+
+Upstream Authors:
+
+    Paul Sherman <psherma1@rochester.rr.com>
+    	- from whence this modified version cometh...
+
+    drF_ckoff <dfo@antex.ru> - current maintainer, all questions/suggestions
+                               should go to him.
+    Eugene Morozov <roshiajin@yahoo.com> - author of 5ball
+
+    Theme authors:
+    Default - Roxana Chernogolova <roxana@ericos.e-burg.ru>
+    klines  - Roman Razilov <Roman.Razilov@gmx.de>
+
+    Translations:
+    Polish - Przemys³aw Su³ek <pbs@linux.net.pl>
+    German - Hermann J. Beckers <beckers@st-oneline.de>
+    French - ObiTuarY <obituary@freshmeat.net>
+
+    Manual page:
+    Christoph Thompson <obituary@freshmeat.net>
+
+Copyright:
+
+    Copyright (C) 2009 Eugene Morozov
+
+License:
+
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this package; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+The Debian packaging is:
+
+    Copyright C) 2009, Christoph Korn <c_korn@gmx.de>
+
+and is licensed under the GPL, see above.

@@ -1,0 +1,71 @@
+Description: Dumb down unneeded wrappers for compatibillity on macs
+Author: Scott Howard <showard@debian.org>
+
+Index: triplea-1.6.1.2/src/games/strategy/common/ui/BasicGameMenuBar.java
+===================================================================
+--- triplea-1.6.1.2.orig/src/games/strategy/common/ui/BasicGameMenuBar.java	2012-07-30 16:33:50.000000000 +0200
++++ triplea-1.6.1.2/src/games/strategy/common/ui/BasicGameMenuBar.java	2012-09-29 21:09:05.724363676 +0200
+@@ -397,7 +397,7 @@
+ 				}
+ 			});
+ 		}
+-		else
++/*		else
+ 		// On Mac OS X, put the About menu where Mac users expect it to be
+ 		{
+ 			Application.getApplication().addApplicationListener(new ApplicationAdapter()
+@@ -410,6 +410,7 @@
+ 				}
+ 			});
+ 		}
++*/
+ 	}
+ 	
+ 	/**
+Index: triplea-1.6.1.2/src/games/strategy/common/ui/MacWrapper.java
+===================================================================
+--- triplea-1.6.1.2.orig/src/games/strategy/common/ui/MacWrapper.java	2011-11-22 22:11:54.000000000 +0100
++++ triplea-1.6.1.2/src/games/strategy/common/ui/MacWrapper.java	2012-09-29 21:09:05.724363676 +0200
+@@ -33,7 +33,7 @@
+ {
+ 	private static MainGameFrame s_shutdownFrame;
+ 	private static Application application = new Application();
+-	static
++/*	static
+ 	{
+ 		application.addApplicationListener(new ApplicationAdapter()
+ 		{
+@@ -47,7 +47,7 @@
+ 			}
+ 		});
+ 	}
+-	
++*/
+ 	// keep this in its own class, otherwise we get a no class def error when
+ 	// we try to load the game and the stubs arent in the classpath
+ 	// i think the java validator triggers this
+Index: triplea-1.6.1.2/src/games/strategy/engine/lobby/client/ui/MacLobbyWrapper.java
+===================================================================
+--- triplea-1.6.1.2.orig/src/games/strategy/engine/lobby/client/ui/MacLobbyWrapper.java	2011-11-22 22:11:42.000000000 +0100
++++ triplea-1.6.1.2/src/games/strategy/engine/lobby/client/ui/MacLobbyWrapper.java	2012-09-29 21:09:05.724363676 +0200
+@@ -26,19 +26,5 @@
+ 	// keep this in its own class, otherwise we get a no class def error when
+ 	// we try to load the game and the stubs arent in the classpath
+ 	// i think the java validator triggers this
+-	public static void registerMacShutdownHandler(final LobbyFrame frame)
+-	{
+-		final Application application = new Application();
+-		application.addApplicationListener(new ApplicationAdapter()
+-		{
+-			@Override
+-			public void handleQuit(final ApplicationEvent event)
+-			{
+-				if (frame != null)
+-					frame.shutdown();
+-				else
+-					System.exit(0);
+-			}
+-		});
+-	}
++	public static void registerMacShutdownHandler(final LobbyFrame frame){}
+ }

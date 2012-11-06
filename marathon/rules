@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	[ ! -d marathon ] || mv marathon 'Marathon (A1)'
+
+override_dh_auto_build:
+	mv 'Marathon (A1)' marathon
+	find marathon -type f -exec chmod -x {} \;
+	find marathon -type d -empty -delete
+
+	# install file cannot handle spaces
+	mv marathon/Plugins/Marathon\ Theme marathon/Plugins/Marathon_Theme
+
+override_dh_link:
+	dh_link
+	mv debian/marathon/usr/share/games/marathon/Plugins/Marathon_Theme debian/marathon/usr/share/games/marathon/Plugins/Marathon\ Theme

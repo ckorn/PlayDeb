@@ -1,0 +1,3 @@
+version=3
+https://launchpad.net/~finteis/+archive/battleship/+sourcepub/2621455/+listing-archive-extra \
+    (?:.*/)?battleship_([\d\.]+)(?:.*)\.tar\.gz

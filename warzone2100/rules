@@ -1,0 +1,42 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+
+%:
+	dh --parallel --with autotools_dev --with autoreconf $@
+
+override_dh_autoreconf:
+	dh_autoreconf ./autogen.sh
+
+override_dh_auto_configure:
+	# Remove GLee embedded code copy so we never use it
+	#rm -f lib/ivis_opengl/GLee.c lib/ivis_opengl/GLee.h
+	# Remove miniupnpc embedded code copy so we never use it
+	#rm -rf lib/netplay/miniupnpc
+	dh_auto_configure -- \
+	    --bindir=\$${prefix}/games \
+	    --datadir=\$${prefix}/share/games \
+	    --with-icondir=\$${prefix}/share/icons/hicolor/128x128/apps \
+	    --with-applicationdir=\$${prefix}/share/applications \
+	    --with-distributor="$(shell dpkg-vendor --query vendor)" \
+	    --disable-debug
+
+override_dh_auto_build:
+	# The HTML to PDF converter needs an X server
+	# The default bit depth is too low for the images in the PDF
+	xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" dh_auto_build
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -f debian/*/usr/share/doc/warzone2100/COPYING*
+	rm -f debian/*/usr/share/doc/warzone2100/ChangeLog*
+	rm -f debian/*/usr/share/doc/warzone2100/Readme*
+
+override_dh_installchangelogs:
+	dh_installchangelogs ChangeLog
+
+override_dh_strip:
+	dh_strip --dbg-package=warzone2100-dbg
+
+override_dh_compress:
+	dh_compress -X.pdf

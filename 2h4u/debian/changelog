@@ -1,0 +1,42 @@
+2h4u (1.3-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Tue, 21 Jul 2009 17:57:39 +0000
+
+2h4u (1.3-2~getdeb1) intrepid; urgency=low
+
+  * Package for Intrepid
+
+ -- Marco Rodrigues <gothicx@sapo.pt>  Mon, 27 Oct 2008 19:48:29 +0000
+
+2h4u (1.3-2~getdeb1) hardy; urgency=low
+
+  * Package for Hardy 
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Wed, 30 Apr 2008 18:53:38 +0100
+
+2h4u (1.3-2~getdeb1) gutsy; urgency=low
+
+  * Packaged by GetDeb.net
+
+ -- Marco Rodrigues <gothicx@sapo.pt>  Mon, 05 Nov 2007 00:01:29 +0000
+
+2h4u (1.3-1~getdeb1) feisty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Sun, 10 Jun 2007 19:48:57 +0000
+
+2h4u (1.2.2-0~getdeb1) dapper; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Sat, 24 Mar 2007 20:55:32 +0000
+
+2h4u (1.2.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- lamego <joao.pinto@getdeb.net>  Sat, 24 Mar 2007 20:55:05 +0000
+

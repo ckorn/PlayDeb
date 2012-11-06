@@ -1,0 +1,188 @@
+freedroidrpg (0.15.1-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 20 Mar 2012 20:06:08 +0100
+
+freedroidrpg (0.15-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #900468)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 26 Feb 2012 13:16:49 +0100
+
+freedroidrpg (0.14.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Bart Martens <bartm@debian.org>  Mon, 27 Dec 2010 15:56:46 +0000
+
+freedroidrpg (0.13-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/freedroidrpg.manpages: Removed.
+  * Removed obsolete patches:
+    + debian/patches/01_array_bounds.diff
+    + debian/patches/04_call_for_contrib.diff
+    + debian/patches/09_druidname.diff
+    + debian/patches/09_druidname.diff.DISABLED
+    + debian/patches/13_resolution.diff.DISABLED
+    + debian/patches/16_cookies.diff.DISABLED
+    + debian/patches/19_chat_text.diff.DISABLED
+    + debian/patches/24_no_editor.diff.DISABLED
+    + debian/patches/25_out_of_map.diff.DISABLED
+  * Updated to fit new upstream release:
+    + debian/patches/07_framerate.diff
+    + debian/patches/17_debianize.diff
+    + debian/patches/20_enter_keys.diff
+  * debian/patches/27_debug.diff: Added.  Reduces output on stdout/stderr.
+
+ -- Bart Martens <bartm@debian.org>  Sat, 27 Feb 2010 17:26:08 +0100
+
+freedroidrpg (0.12.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * To fit new upstream release:
+    + debian/patches/13_resolution.diff: Disabled.
+    + debian/patches/17_debianize.diff: Updated.
+    + debian/patches/26_credits.diff: Removed.
+  * debian/rules: Removed testcoding and simplified.
+  * debian/copyright: Updated.
+
+ -- Bart Martens <bartm@debian.org>  Sat, 25 Apr 2009 16:36:07 +0200
+
+freedroidrpg (0.11.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/patches/11_debug.diff: Removed.
+  * debian/patches/18_droid_drives.diff: Removed.
+  * debian/patches/21_newtown.diff: Removed.
+  * debian/patches/22_end_dialog.diff: Removed.
+  * debian/patches/23_later.diff: Removed.
+  * debian/patches/01_array_bounds.diff: Updated.
+  * debian/patches/04_call_for_contrib.diff: Updated.
+  * debian/patches/07_framerate.diff: Updated.
+  * debian/patches/09_druidname.diff: Partially updated, partially disabled.
+  * debian/patches/13_resolution.diff: Updated.
+  * debian/patches/16_cookies.diff: Disabled.
+  * debian/patches/17_debianize.diff: Updated.
+  * debian/patches/19_chat_text.diff: Disabled.
+  * debian/patches/20_enter_keys.diff: Updated.
+  * debian/patches/24_no_editor.diff: Disabled.  So the level editor is back.
+  * debian/patches/25_out_of_map.diff: Disabled.
+  * debian/patches/26_credits.diff: Added.
+  * debian/control: Standards-Version.
+  * debian/watch: Updated.
+
+ -- Bart Martens <bartm@debian.org>  Sun, 28 Sep 2008 18:43:04 +0200
+
+freedroidrpg (0.10.3-3) unstable; urgency=low
+
+  * debian/patches/24_no_editor.diff: Added, to hide the crashing map editor.
+    Closes: #458178, #444553, #458066.
+  * debian/patches/25_out_of_map.diff: Added, to prevent going out of the map.
+    Closes: #447434.
+
+ -- Bart Martens <bartm@debian.org>  Sat, 29 Dec 2007 12:27:25 +0100
+
+freedroidrpg (0.10.3-2) unstable; urgency=low
+
+  * debian/patches/04_call_for_contrib.diff: Updated.
+  * debian/patches/13_resolution.diff: Added resolutions.
+  * debian/patches/20_enter_keys.diff: Fixes enter key on some keyboards.
+  * debian/patches/21_newtown.diff: Added.  Closes: #447362, #445487.
+  * debian/patches/22_end_dialog.diff: Added.  Fixes endless dialog.
+  * debian/patches/23_later.diff: Added.  Closes: #447355.
+  * debian/rules: Updated, to remove empty directories.
+
+ -- Bart Martens <bartm@debian.org>  Sun, 14 Oct 2007 23:38:09 +0200
+
+freedroidrpg (0.10.3-1) unstable; urgency=low
+
+  * New upstream release.  Closes: #442324.
+  * debian/freedroidrpg-data.install, debian/rules: Install in
+    /usr/share/games.  Closes: #437755.
+  * debian/freedroidrpg.desktop: Updated "Categories".  Closes: #442325.
+  * debian/patches/*: Updated to fit new upstream release.
+  * debian/patches/18_droid_drives.diff: Fixes regression.
+  * debian/patches/19_chat_text.diff: Fixes regression.
+  * debian/rules: Don't install speak.py.
+
+ -- Bart Martens <bartm@knars.be>  Sat, 15 Sep 2007 11:55:58 +0200
+
+freedroidrpg (0.10.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/07_framerate.diff: Updated.
+  * debian/patches/11_debug.diff: Updated.
+  * debian/patches/13_resolution.diff: Updated.
+
+ -- Bart Martens <bartm@knars.be>  Wed, 04 Jul 2007 19:43:32 +0200
+
+freedroidrpg (0.10.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/01_array_bounds.diff: Updated.
+  * debian/patches/02_textures.diff: Removed.
+  * debian/patches/03_male_greeting.diff: Removed.
+  * debian/patches/04_call_for_contrib.diff: Updated.
+  * debian/patches/10_typo.diff: Removed.
+  * debian/patches/11_debug.diff: Updated.
+  * debian/patches/12_play.diff: Removed.
+  * debian/patches/14_audio_rate.diff: Removed.
+  * debian/patches/15_negative_z.diff: Removed.
+  * debian/patches/16_cookies.diff: Added.  Fixes a bug with the trailing
+    colon in cookies confusing the dialogs.
+
+ -- Bart Martens <bartm@knars.be>  Sun, 11 Feb 2007 09:41:07 +0100
+
+freedroidrpg (0.10.0+d070110-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright: Updated.
+  * debian/freedroidrpg.desktop, debian/freedroidrpg.menu: Mouse-over text.
+  * debian/patches/01_no_voice_sample.diff: Removed obsolete patch.
+  * debian/patches/01_array_bounds.diff: Check array bounds.
+  * debian/patches/02_textures.diff: Fix crash "Ran out of...".
+  * debian/patches/03_male_greeting.diff: No male greetings by females.
+  * debian/patches/04_call_for_contrib.diff: Don't call for contributions
+    during the game, but use reasonable general default values.
+  * debian/patches/07_framerate.diff: Don't show framerate by default.
+  * debian/patches/09_druidname.diff: Better druidnames handling.
+  * debian/patches/10_typo.diff: Fixed typo's.
+  * debian/patches/11_debug.diff: Less noise on stderr.
+  * debian/patches/12_play.diff: Replaced "Single Player" by just "Play".
+  * debian/patches/13_resolution.diff: Changes related to screen resolutions.
+  * debian/patches/14_audio_rate.diff: Fixed scratchy sound.  Closes: #406437.
+  * debian/patches/15_negative_z.diff: Patch by upstream developer, Arthur
+    Huillet <arthur.huillet@agoctrl.org>.
+
+ -- Bart Martens <bartm@knars.be>  Mon,  1 Jan 2007 10:52:54 +0100
+
+freedroidrpg (0.9.13-2) unstable; urgency=low
+
+  * debian/control: Removed circular dependency.  Closes: #403262.
+  * debian/control: Added "not the same game as Freedroid".  Closes: #403271.
+  * debian/patches/01_no_voice_sample.diff: Fixes duplicate voice sample.
+
+ -- Bart Martens <bartm@knars.be>  Sat, 16 Dec 2006 10:45:22 +0100
+
+freedroidrpg (0.9.13-1) unstable; urgency=low
+
+  * Initial release in Debian.  Closes: #339896.
+  * New upstream release.
+  * debian/control: Build-Depends on autotools-dev.
+  * debian/copyright: Updated.
+  * debian/freedroidrpg.install: Don't install croppy and pngtoico.
+  * debian/freedroidrpg.manpages: One manpage.
+  * debian/rules: debhelper.mk before autotools.mk.
+  * debian/rules: Don't build the editors to avoid libgtk1.2-dev.
+  * debian/watch: Handle that 0.9.13-rc3 is older than 0.9.13.
+
+ -- Bart Martens <bartm@knars.be>  Sat,  2 Dec 2006 09:41:45 +0100
+
+freedroidrpg (0.9.13rc3-1) unstable; urgency=low
+
+  * Initial release Closes: #339896
+
+ -- Daniel Milstein <djmilstein@gmail.com>  Sat, 19 Nov 2005 15:31:33 +0000
+

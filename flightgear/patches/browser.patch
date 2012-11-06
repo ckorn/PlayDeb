@@ -1,0 +1,14 @@
+Set correct default browser for Ubuntu.
+Index: flightgear-2.8.0/src/Main/options.cxx
+===================================================================
+--- flightgear-2.8.0.orig/src/Main/options.cxx	2012-08-16 16:20:56.000000000 +0200
++++ flightgear-2.8.0/src/Main/options.cxx	2012-08-17 17:26:42.453128497 +0200
+@@ -183,7 +183,7 @@
+     fgSetString("/sim/startup/browser-app", "launchWebJumper");
+ #else
+     const char* browserEnv = ::getenv( "WEBBROWSER" );
+-    if (!browserEnv) browserEnv = "netscape";
++    if (!browserEnv) browserEnv = "sensible-browser";
+     fgSetString("/sim/startup/browser-app", browserEnv);
+ #endif
+     fgSetString("/sim/logging/priority", "alert");

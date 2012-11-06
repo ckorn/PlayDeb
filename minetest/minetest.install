@@ -1,0 +1,5 @@
+usr/bin/minetest		usr/games
+debian/minetest.desktop		usr/share/applications
+minetest.png			usr/share/icons/hicolor/24x24/apps
+minetest.xpm			usr/share/icons/hicolor/24x24/apps
+minetest.svg			usr/share/icons/hicolor/scalable/apps

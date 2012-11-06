@@ -1,0 +1,4 @@
+cube-escape					usr/games
+data/*.png					usr/share/games/cube-escape/data
+debian/cube-escape.desktop			usr/share/applications
+debian/cube-escape.xpm				usr/share/pixmaps

@@ -1,0 +1,26 @@
+From 317e81c74e84012636bd3ed71485fbe950a8a31f Mon Sep 17 00:00:00 2001
+From: Tapio Vierros <tapiovierros@gmail.com>
+Date: Wed, 31 Oct 2012 00:03:00 +0200
+Subject: [PATCH] Material_templates dir was not installed.
+
+Thank you Christian Morales Vega.
+---
+ data/CMakeLists.txt |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/CMakeLists.txt b/data/CMakeLists.txt
+index b15f08c..65715c2 100644
+--- a/data/CMakeLists.txt
++++ b/data/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ cmake_minimum_required(VERSION 2.8)
+ 
+ # Install data files
+-foreach(datadir  cars compositor editor fonts gui hud loading materials objects particles RTShaderLib skies sounds terrain terrain2 trees)
++foreach(datadir  cars compositor editor fonts gui hud loading materials material_templates objects particles RTShaderLib skies sounds terrain terrain2 trees)
+ 	install(DIRECTORY ${datadir} DESTINATION ${SHARE_INSTALL})
+ endforeach()
+ 
+-- 
+1.7.10
+

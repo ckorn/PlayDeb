@@ -1,0 +1,21 @@
+Microsoft files have been deleted.
+Index: mygui-3.2.0/Tools/ImageSetViewer/ImageSetViewer.list
+===================================================================
+--- mygui-3.2.0.orig/Tools/ImageSetViewer/ImageSetViewer.list	2012-02-22 22:28:18.000000000 +0100
++++ mygui-3.2.0/Tools/ImageSetViewer/ImageSetViewer.list	2012-02-26 21:52:54.027159833 +0100
+@@ -7,7 +7,6 @@
+   View.cpp
+   ../../Common/Precompiled.cpp
+   ../../Common/Base/BaseResource.rc
+-  ../../Common/Base/mygui.ico
+ )
+ SOURCE_GROUP("Source Files" FILES
+   Controller.cpp
+@@ -20,7 +19,6 @@
+ SOURCE_GROUP("Resource" FILES
+   ../../Common/Precompiled.cpp
+   ../../Common/Base/BaseResource.rc
+-  ../../Common/Base/mygui.ico
+   CMakeLists.txt
+ )
+ SOURCE_GROUP("" FILES

@@ -1,0 +1,64 @@
+Description: Add printf-format attribute
+ The compiler needs to get more information for function declaration to
+ help to find printf specific format attacks.
+Forwarded: not-needed
+Author: Sven Eckelmann <sven@narfation.org>
+
+---
+diff --git a/src/api/callbacks.h b/src/api/callbacks.h
+index 50b67a661b64642041de6042a87a19894ca2876f..55a84bcb9c61339b2795a0c91add3f04d83c0ab8 100644
+--- a/src/api/callbacks.h
++++ b/src/api/callbacks.h
+@@ -32,7 +32,7 @@
+ /* Functions for use by the Core, to send information back to the front-end app */
+ extern m64p_error SetDebugCallback(ptr_DebugCallback pFunc, void *Context);
+ extern m64p_error SetStateCallback(ptr_StateCallback pFunc, void *Context);
+-extern void       DebugMessage(int level, const char *message, ...);
++extern void       DebugMessage(int level, const char *message, ...) __attribute__ ((format (printf, 2, 3)));
+ extern void       StateChanged(m64p_core_param param_type, int new_value);
+ 
+ #endif /* API_CALLBACKS_H */
+diff --git a/src/debugger/dbg_decoder.c b/src/debugger/dbg_decoder.c
+index 30bef2ab3e341e1705db9da91f0f4272df718591..d5bf75c25061fd34c4d08298e1746c6f05cb8690 100644
+--- a/src/debugger/dbg_decoder.c
++++ b/src/debugger/dbg_decoder.c
+@@ -228,6 +228,11 @@ lookup_rel_lo16 ( struct r4k_dis_t * state,
+ static int
+ db_printf ( struct r4k_dis_t * state,
+             char * fmt, 
++            ...                       ) __attribute__ ((format (printf, 2, 3)));
++
++static int
++db_printf ( struct r4k_dis_t * state,
++            char * fmt, 
+             ...                       )
+ {
+     int l;
+diff --git a/src/main/main.h b/src/main/main.h
+index 3f3a3ea37792204200c0bd2b751b104164813b99..7f475eba4945634cc7e91fdb54b381e254983612 100644
+--- a/src/main/main.h
++++ b/src/main/main.h
+@@ -39,7 +39,7 @@ void new_frame(void);
+ void new_vi(void);
+ 
+ int  main_set_core_defaults(void);
+-void main_message(m64p_msg_level level, unsigned int osd_corner, const char *format, ...);
++void main_message(m64p_msg_level level, unsigned int osd_corner, const char *format, ...) __attribute__ ((format (printf, 3, 4)));
+ 
+ m64p_error main_run(void);
+ void main_stop(void);
+diff --git a/src/osd/osd.h b/src/osd/osd.h
+index 98d564526c3186d4d02751e198e650af6a1d2831..547712ae03a94a127b86ca9ed7447f54707e9b14 100644
+--- a/src/osd/osd.h
++++ b/src/osd/osd.h
+@@ -87,8 +87,8 @@ extern "C" {
+ void osd_init(int width, int height);
+ void osd_exit(void);
+ void osd_render(void);
+-osd_message_t * osd_new_message(enum osd_corner, const char *, ...);
+-void osd_update_message(osd_message_t *, const char *, ...);
++osd_message_t * osd_new_message(enum osd_corner, const char *, ...) __attribute__ ((format (printf, 2, 3)));
++void osd_update_message(osd_message_t *, const char *, ...) __attribute__ ((format (printf, 2, 3)));
+ void osd_delete_message(osd_message_t *);
+ void osd_message_set_corner(osd_message_t *, enum osd_corner);
+ void osd_message_set_static(osd_message_t *);

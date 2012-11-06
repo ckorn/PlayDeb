@@ -1,0 +1,30 @@
+Source: pytraffic
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Homepage: http://alpha.uhasselt.be/Research/Algebra/Members/pytraffic/
+Build-Depends: debhelper (>= 7.0.50~), python, python-dev, libsdl-mixer1.2-dev
+Standards-Version: 3.8.4
+
+Package: pytraffic
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python-gtk2, python-glade2, pytraffic-data (= ${source:Version})
+Description: a Python version of Rush Hour
+ A Python simulation of the board game Rush Hour invented by Nob Yoshigahara and
+ commercialized by Binary Arts Corporation.
+ .
+ The goal is to remove the red car out of the grid through the slot on the
+ right. To do this you have to slide the other cars out of the way.
+
+Package: pytraffic-data
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: pytraffic
+Description: a Python version of Rush Hour
+ A Python simulation of the board game Rush Hour invented by Nob Yoshigahara and
+ commercialized by Binary Arts Corporation.
+ .
+ The goal is to remove the red car out of the grid through the slot on the
+ right. To do this you have to slide the other cars out of the way.
+ .
+ This package contains the data files for PyTraffic.

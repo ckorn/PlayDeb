@@ -1,0 +1,15 @@
+Index: cube-escape-0.8/src/main.h
+===================================================================
+--- cube-escape-0.8.orig/src/main.h	2010-01-19 23:07:15.882495765 +0100
++++ cube-escape-0.8/src/main.h	2010-01-19 23:20:54.810000654 +0100
+@@ -39,8 +39,8 @@
+ #define OPTION_TEXT_DIST_MULT  1.5
+ #define TARGET_FPS  40
+ 
+-#define DATA_DIR  "data/"
+-#define FONT_NAME  DATA_DIR "LiberationMono-Regular.ttf"
++#define DATA_DIR  "/usr/share/games/cube-escape/data/"
++#define FONT_NAME  "/usr/share/fonts/truetype/ttf-liberation/LiberationMono-Regular.ttf"
+ #define ICON_NAME  DATA_DIR "icon.png"
+ 
+ #define SPRITE_SIZE  64

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Vertris
+Comment=A Tetris clone
+Exec=vertris
+Icon=vertris
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Categories=Application;Game;PuzzleGame;

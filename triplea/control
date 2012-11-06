@@ -1,0 +1,32 @@
+Source: triplea
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Scott Howard <showard@debian.org>
+Build-Depends: debhelper (>= 9),
+               default-jdk,
+               javahelper (>= 0.37),
+               ant,
+               libcommons-httpclient-java,
+               libcommons-logging-java,
+               libcommons-codec-java,
+               junit,
+               imagemagick
+Standards-Version: 3.9.3
+Homepage: http://triplea.sourceforge.net
+Vcs-Git: git://anonscm.debian.org/pkg-java/triplea.git
+Vcs-browser: http://anonscm.debian.org/gitweb/?p=pkg-java/triplea.git
+
+Package: triplea
+Architecture: all
+Depends: ${java:Depends},
+         ${misc:Depends}
+Recommends: ${java:Recommends},
+            substance,
+            liblaf-plugin-java,
+            liblaf-widget-java
+Description: Turn based strategy game
+ TripleA is a turn based strategy game. TripleA comes with multiple
+ games and over 100 more games can be downloaded from the user
+ community. Supports single player vs AI, hot-seat, Play by Email,
+ and a hosted online lobby.

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Warsow
+Comment=A fast paced, networked 3D first person shooter
+Comment[de]=Ein netzwerkfähiges, hektisches 3D Ego-Shooter Spiel mit Tron-artiger Grafik
+Comment[ro]=Un joc alert cu împușcături, perspectivă personală și cu grafică similară lui Tron
+Exec=/usr/games/warsow --quiet
+Icon=warsow128x128.png
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame;

@@ -1,0 +1,28 @@
+Source: jag
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libqt4-dev,
+               x11-xserver-utils,
+               libsdl-mixer1.2-dev,
+               libsdl1.2-dev,
+               qt4-dev-tools,
+               libqt4-opengl-dev,
+               libxrandr-dev
+Standards-Version: 3.9.3
+Homepage: http://jag.xlabsoft.com/index.php
+
+Package: jag
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         jag-data (= ${source:Version})
+Description: arcade-puzzle 2D game
+ JAG is an arcade-puzzle 2D game 
+
+Package: jag-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: arcade-puzzle 2D game
+ JAG is an arcade-puzzle 2D game

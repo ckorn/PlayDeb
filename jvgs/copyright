@@ -1,0 +1,34 @@
+This work was packaged for Debian by:
+
+    Joao Pinto <joao.pinto@getdeb.net> on Tue, 04 Jan 2011 17:39:39 +0000
+
+It was downloaded from:
+
+    http://sourceforge.net/projects/jvgs/files/jvgs-0.5/
+
+Upstream Author:
+Copyright:
+
+This game was coded by Jasper Van der Jeugt. All code and data is released under
+the GPL. See http://www.gnu.org/copyleft/gpl.html for details.
+
+The graphics are released under a public domain license. See
+http://creativecommons.org/publicdomain/zero/1.0/ for details.
+
+The soundtrack was made by Nine Inch Nails and released under a Creative Commons
+Attribution Non-Commercial Share Alike license. See
+http://creativecommons.org/licenses/by-nc-sa/3.0/us/ and http://ghosts.nin.com
+for details.
+
+The sound effects were taken from "The Battle for Wesnoth", which is released
+under GPLv2. See http://www.gnu.org/licenses/old-licenses/gpl-2.0.html and
+http://wesnoth.org for details.
+
+On Debian systems, the complete text of the GNU General
+Public License version 3 can be found in `/usr/share/common-licenses/GPL-3'.
+
+The Debian packaging is:
+
+    Copyright (C) 2011 Joao Pinto <joao.pinto@getdeb.net>
+
+and is licensed under the GPL version 3, see above.

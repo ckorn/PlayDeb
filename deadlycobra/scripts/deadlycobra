@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ ! -d $HOME/.config/deadlycobra ] ; then
+	mkdir -p $HOME/.config/deadlycobra/snaps
+	cp /usr/share/games/deadlycobra/data $HOME/.config/deadlycobra/
+	cp /usr/share/games/deadlycobra/data1 $HOME/.config/deadlycobra/
+	cp /usr/share/games/deadlycobra/data2 $HOME/.config/deadlycobra/
+fi
+
+cd /usr/lib/games/deadlycobra
+./deadlycobra

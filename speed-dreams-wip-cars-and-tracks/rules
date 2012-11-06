@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+PACKAGE_NAME=speed-dreams-wip-cars-and-tracks
+
+override_dh_auto_install:
+	# Create directories
+	mkdir -p $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2/cars/
+	mkdir -p $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2/config/raceman/
+	mkdir -p $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2/drivers/
+	mkdir -p $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2/tracks/
+
+	# Install cars
+	cp -r $(CURDIR)/data/cars/models/* $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2/cars/
+
+	# Install tracks
+	cp -r $(CURDIR)/data/tracks/* $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2/tracks/
+
+	# Install drivers
+	cp -r $(CURDIR)/src/drivers/* $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2/drivers/
+
+	# Install raceman config
+	cp -r $(CURDIR)/src/raceman/* $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2/config/raceman/
+
+	find $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2 -type f -execdir chmod -x {} \;
+	find $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2 -type d -empty -delete
+
+	# Delete non-wanted files
+	find $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2/ -name CMakeLists.txt -delete
+	rm $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2/config/raceman/championship.xml
+	rm $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/games/speed-dreams-2/config/raceman/championship-supercars.xml

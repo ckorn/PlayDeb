@@ -1,0 +1,12 @@
+cutemupen (0.1.1-7~getdeb1) precise; urgency=low
+
+  * New upstream version (LP: #996095)
+    - Fixed compatibility with Mupen64Plus 1.99.5+.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 07 May 2012 21:21:30 +0200
+
+cutemupen (0.1.0-1~getdeb1) lucid; urgency=low
+
+  * Initial release (LP: #749555)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 03 Apr 2011 20:51:41 +0200

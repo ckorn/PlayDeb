@@ -1,0 +1,16 @@
+Source: the-powder-toy
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), libsdl1.2debian [i386],
+ ia32-libs [amd64], libasound2 [i386], lib32asound2 [amd64]
+Standards-Version: 3.9.3
+Homepage: http://powdertoy.co.uk
+
+Package: the-powder-toy
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Physics sandbox game
+ The Powder Toy is a desktop version of the classic
+ 'falling sand' physics sandbox game, it simulates
+ air pressure and velocity as well as heat!

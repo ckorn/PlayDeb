@@ -1,0 +1,15 @@
+?package(desmume): \
+        needs="X11" \
+        section="Applications/Emulators" \
+        title="DeSmuME (Gtk)" \
+        icon="/usr/share/pixmaps/DeSmuME.xpm"\
+        command="/usr/games/desmume" \
+        longtitle="DeSmuME Gtk User Interface"
+
+?package(desmume): \
+        needs="X11" \
+        section="Applications/Emulators" \
+        title="DeSmuME (Gtk-Glade)" \
+        icon="/usr/share/pixmaps/DeSmuME.xpm"\
+        command="/usr/games/desmume-glade" \
+        longtitle="DeSmuME Gtk-Glade User Interface"

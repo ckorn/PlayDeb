@@ -1,0 +1,20 @@
+Source: 2h4u
+Section: games
+Priority: optional
+Maintainer: lamego <joao.pinto@getdeb.net>
+Uploaders: Marco Rodrigues <gothicx@sapo.pt>
+Build-Depends: debhelper (>= 5), libsdl1.2-dev, libsdl-image1.2-dev, libsdl-ttf2.0-dev, libsdl-mixer1.2-dev
+Standards-Version: 3.7.2
+Homepage: http://sourceforge.net/projects/toohardforyou
+
+Package: 2h4u
+Architecture: any
+Depends: ${shlibs:Depends}, 2h4u-data (= ${Source-Version})
+Description: Too Hard For You
+ is a mix between a Tetris-like game and a wall breaker. 
+ It requires good reflexes, coordination, and ambidexters should have some advantages.
+
+Package: 2h4u-data
+Architecture: all
+Description: Too Hard For You
+ Data files

@@ -1,0 +1,7 @@
+debian/bsnes.6
+debian/bsnes-bin.6
+debian/bsnes-accuracy.6
+debian/bsnes-compatibility.6
+debian/bsnes-performance.6
+debian/snespurify-gtk.6
+

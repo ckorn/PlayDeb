@@ -1,0 +1,15 @@
+"Fix" ftbfs:
+error: format not a string literal and no format arguments
+Index: fgrun-1.6.2/src/wizard_funcs.cxx
+===================================================================
+--- fgrun-1.6.2.orig/src/wizard_funcs.cxx	2012-07-20 00:38:13.000000000 +0200
++++ fgrun-1.6.2/src/wizard_funcs.cxx	2012-08-19 12:44:21.520469927 +0200
+@@ -772,7 +772,7 @@
+         }
+         catch (const sg_exception& exc )
+         {
+-            fl_alert( exc.getFormattedMessage().c_str() );
++            /*fl_alert( exc.getFormattedMessage().c_str() );*/
+             return;
+         }
+         catch (...)

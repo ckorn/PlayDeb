@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=5Ball - A simple logic game
+Exec=5ball
+Icon=5ball
+Terminal=false
+Categories=Game;BoardGame;

@@ -1,0 +1,22 @@
+This package was debianized by Szymon Weihs <sz.weihs@gmail.com> on
+Mon, 12 Jul 2010 11:22:43 +0200.
+
+It was downloaded from:	http://alleg.sourceforge.net/
+
+Upstream Authors: Shawn Hargreaves <shawn@talula.demon.co.uk> and
+others, see AUTHORS file in the documentation directory.
+
+Copyright (C) 1996-2010 Shawn Hargreaves and the Allegro developers.
+
+License:
+   Allegro is gift-ware. It was created by a number of people working in 
+   cooperation, and is given to you freely as a gift. You may use, modify, 
+   redistribute, and generally hack it about in any way you like, and you do 
+   not have to give us anything in return. However, if you like this product 
+   you are encouraged to thank us by making a return gift to the Allegro 
+   community. This could be by writing an add-on package, providing a useful 
+   bug report, making an improvement to the library, or perhaps just 
+   releasing the sources of your program so that other people can learn from 
+   them. If you redistribute parts of this code or make a game using it, it 
+   would be nice if you mentioned Allegro somewhere in the credits, but you 
+   are not required to do this. We trust you not to abuse our generosity.

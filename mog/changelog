@@ -1,0 +1,18 @@
+mog (0.63.1548-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 10 Mar 2010 15:11:14 +0100
+
+mog (0.63.1548-1~getdeb1) karmic; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 09 Feb 2010 23:20:47 +0100
+
+mog (0.63-1548) stable; urgency=low
+
+  * Bugfix release (applied password patch from Gamut)
+
+ -- Patsie <patsie@no-email>  Fri, 13 Mar 2009 12:45:12 +0100
+

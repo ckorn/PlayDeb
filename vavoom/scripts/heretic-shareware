@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+
+if [ ! -f ~/.vavoom/heretic-shareware/heretic1.wad ]; then
+  set +e
+  /usr/share/autodl/AutoDL.py /usr/share/games/vavoom/heretic.autodlrc
+  STATUS=$?
+  set -e
+  # status 2 means download was ok, but the user choice not to start the game
+  if [ "$STATUS" = "0" -o  "$STATUS" = "2" ]; then
+    cd ~/.vavoom/heretic-shareware
+    unzip -u htic_v12.zip 'HTIC_V12.?'
+    cat HTIC_V12.1 HTIC_V12.2 > heretic.zip
+    unzip -u -L heretic.zip heretic1.wad
+    rm htic_v12.zip HTIC_V12.1 HTIC_V12.2 heretic.zip
+  fi
+  if [ "$STATUS" != "0" ]; then
+    exit $STATUS
+  fi
+fi
+
+exec /usr/games/vavoom -iwaddir ~/.vavoom/heretic-shareware -heretic "$@"

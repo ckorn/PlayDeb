@@ -1,0 +1,24 @@
+Source: 8kingdoms
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 6), autotools-dev, mesa-common-dev,
+ libsdl1.2-dev, freeglut3-dev, libglu1-mesa-dev, libsdl-mixer1.2-dev,
+ libexpat1-dev, tcl8.4-dev, quilt
+Standards-Version: 3.8.0
+Homepage: http://kralovstvi.sourceforge.net/
+
+Package: 8kingdoms
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, 8kingdoms-data (= ${source:Version})
+Description: 3D turn-based fantasy strategic game
+ 8 Kingdoms is a 3D turn-based fantasy strategic game in
+ which players become kings, build their empires and conquer
+ enemy kingdoms.
+
+Package: 8kingdoms-data
+Architecture: all
+Description: 3D turn-based fantasy strategic game
+ 8 Kingdoms is a 3D turn-based fantasy strategic game in
+ which players become kings, build their empires and conquer
+ enemy kingdoms.

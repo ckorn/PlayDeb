@@ -1,0 +1,16 @@
+Index: smokinguns-1.0/stable/code/SDL12/include/SDL_config_minimal.h
+===================================================================
+--- smokinguns-1.0.orig/stable/code/SDL12/include/SDL_config_minimal.h	2009-08-17 22:27:20.757462325 +0200
++++ smokinguns-1.0/stable/code/SDL12/include/SDL_config_minimal.h	2009-08-17 22:28:06.480456635 +0200
+@@ -35,7 +35,10 @@
+ typedef unsigned short uint16_t;
+ typedef signed int int32_t;
+ typedef unsigned int uint32_t;
+-typedef unsigned int size_t;
++#ifndef _THING_
++#define _THING_
++typedef long unsigned int size_t;
++#endif
+ typedef unsigned long uintptr_t;
+ 
+ /* Enable the dummy audio driver (src/audio/dummy/\*.c) */

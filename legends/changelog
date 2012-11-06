@@ -1,0 +1,5 @@
+legends (0.4.1.45-1~getdeb1) lucid; urgency=low
+
+  * Initial release (LP: #421959)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 31 Dec 2010 12:59:04 +0100

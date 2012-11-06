@@ -1,0 +1,16 @@
+Name the libraries properly.
+Index: glc-0.5.7/src/capture.c
+===================================================================
+--- glc-0.5.7.orig/src/capture.c	2009-10-19 23:46:56.173455508 +0200
++++ glc-0.5.7/src/capture.c	2009-10-19 23:47:24.814418939 +0200
+@@ -38,8 +38,8 @@
+ 
+ 	char *program = NULL;
+ 	char **program_args = NULL;
+-	const char *library = "libglc-hook.so";
+-	const char *core_library = "libglc-core.so";
++	const char *library = "libglc-hook.so.0";
++	const char *core_library = "libglc-core.so.0";
+ 	const char *(*glc_version)();
+ 
+ 	struct glc_opt_s options[] = {

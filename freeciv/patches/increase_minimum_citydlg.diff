@@ -1,0 +1,20 @@
+Description: Patch to increase the minimum size of the city dialogue
+box so there is no scroll on the minimap (TODO: test this actually
+works, especially on small screens)
+Author: Karl Goetz <karl@kgoetz.id.au>
+Forwarded: no
+Last-Update: <2010-08-12>
+
+Index: freeciv-2.3.1/client/options.h
+===================================================================
+--- freeciv-2.3.1.orig/client/options.h	2011-11-19 21:22:07.000000000 +0100
++++ freeciv-2.3.1/client/options.h	2011-11-21 21:24:03.976198098 +0100
+@@ -323,7 +323,7 @@
+ #define GUI_GTK2_CITYDLG_MIN_XSIZE      256
+ #define GUI_GTK2_CITYDLG_MAX_XSIZE      4096
+ 
+-#define GUI_GTK2_CITYDLG_DEFAULT_YSIZE  512
++#define GUI_GTK2_CITYDLG_DEFAULT_YSIZE  524
+ #define GUI_GTK2_CITYDLG_MIN_YSIZE      128
+ #define GUI_GTK2_CITYDLG_MAX_YSIZE      4096
+ 

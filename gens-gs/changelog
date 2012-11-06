@@ -1,0 +1,23 @@
+gens-gs (2.16.7-1~getdeb4) precise; urgency=low
+
+  * Update debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 04 Oct 2012 22:27:05 +0200
+
+gens-gs (2.16.7-1~getdeb3) lucid; urgency=low
+
+  * debian/control: Make the package conflict and replace gens.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 07 Mar 2011 19:28:49 +0100
+
+gens-gs (2.16.7-1~getdeb2) lucid; urgency=low
+
+  * Only build the data package for i386.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 01 Nov 2010 17:58:06 +0100
+
+gens-gs (2.16.7-1~getdeb1) lucid; urgency=low
+
+  * Upload to getdeb
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 29 Apr 2010 16:00:12 +0200

@@ -1,0 +1,49 @@
+Source: sm-ssc
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libasound2-dev,
+               libpulse-dev,
+               libmad0-dev,
+               libtheora-dev,
+               libvorbis-dev,
+               libpng-dev,
+               libjpeg-dev,
+               libglu1-mesa-dev,
+               libgl1-mesa-dev,
+               libgtk2.0-dev,
+               libxrandr-dev,
+               ffmpeg,
+               libbz2-dev,
+               libglew1.6-dev
+Standards-Version: 3.9.3
+Homepage: http://code.google.com/p/sm-ssc
+
+Package: sm-ssc
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         sm-ssc-data (= ${source:Version})
+Description: Advanced fork of StepMania
+ An advanced fork of StepMania, focusing on improved speed,
+ usability between game modes and theme and themer-related enhancements.
+ .
+ StepMania SSC (also known as "sm-ssc") is a new version of StepMania,
+ primarily created for themers. It is created with the assumption that
+ most players play at home (either with a keyboard,
+ dance pad/controller/other input device, or even an arcade machine).
+
+Package: sm-ssc-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Advanced fork of StepMania (data package)
+ An advanced fork of StepMania, focusing on improved speed,
+ usability between game modes and theme and themer-related enhancements.
+ .
+ StepMania SSC (also known as "sm-ssc") is a new version of StepMania,
+ primarily created for themers. It is created with the assumption that
+ most players play at home (either with a keyboard,
+ dance pad/controller/other input device, or even an arcade machine).
+ .
+ (This package contains the data files).

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Phun
+Comment=2D physics sandbox
+Exec=phun %f
+Terminal=false
+Type=Application
+Icon=phun
+Categories=Game
+Encoding=UTF-8

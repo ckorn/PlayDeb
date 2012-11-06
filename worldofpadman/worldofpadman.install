@@ -1,0 +1,6 @@
+debian/worldofpadman.desktop	usr/share/applications
+debian/worldofpadman.xpm	usr/share/pixmaps
+debian/worldofpadman32.xpm	usr/share/pixmaps
+debian/scripts/worldofpadman	usr/games
+wop-engine			usr/lib/games/worldofpadman
+*.so				usr/lib/games/worldofpadman

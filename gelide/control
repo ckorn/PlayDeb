@@ -1,0 +1,19 @@
+Source: gelide
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: cdbs, debhelper (>= 7), autotools-dev, libgtkmm-2.4-dev, 
+  libgconfmm-2.6-dev, libxml2-dev, libglademm-2.4-dev, gnome-doc-utils, scrollkeeper
+Standards-Version: 3.9.1
+Homepage: http://gelide.sourceforge.net/index.php?sect=home&lang=en
+
+Package: gelide
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: GUI frontend for emulators
+ Gelide is a configurable user interface which let you manage any kind of
+ emulated system (PC, console, arcade, etc) letting you to catalog and launch
+ any game from any existing emulator under GNU/Linux.  You can configure any
+ emulator with command line parameters support, without the need of remember
+ them every now and then.  Gelide is a free project, licenced under the GNU
+ General Public Licence it is written in C++ using the Gtkmm libraries as base. 

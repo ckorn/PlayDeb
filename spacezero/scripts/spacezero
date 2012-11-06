@@ -1,0 +1,15 @@
+#!/bin/sh
+
+CONFIGDIR=$(HOME)/.config/spacezero/
+RECORDFILE=$(CONFIGDIR)record
+
+if [ ! -d $CONFIGDIR ] ; then
+  mkdir -p $CONFIGDIR ;
+fi
+
+if [ ! -f $RECORDFILE ] ; then
+  touch $RECORDFILE ;
+fi
+
+cd /usr/share/games/spacezero
+./spacezero $@

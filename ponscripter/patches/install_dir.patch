@@ -1,0 +1,18 @@
+We install into the packaging directory not into the system.
+Index: ponscripter-20111009/configure
+===================================================================
+--- ponscripter-20111009.orig/configure	2011-10-10 06:31:51.000000000 +0200
++++ ponscripter-20111009/configure	2011-12-04 12:52:41.590550290 +0100
+@@ -1090,10 +1090,10 @@
+ TARGET ?= ponscr\$(EXESUFFIX)
+ 
+ install-bin: all
+-	util/install-sh -c $STRIPFLAG $SRC/\$(TARGET) \$(PREFIX)/bin/\$(TARGET)
++	util/install-sh -c $STRIPFLAG $SRC/\$(TARGET) debian/ponscripter/\$(PREFIX)/games/\$(TARGET)
+ 
+ install: install-bin
+-	util/install-man install \$(PREFIX) doc/*.[0-9]
++	util/install-man install debian/ponscripter/\$(PREFIX)/share doc/*.[0-9]
+ 
+ uninstall:
+ 	\$(RM) \$(PREFIX)/bin/\$(TARGET)

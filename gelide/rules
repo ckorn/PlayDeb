@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/gnome.mk
+
+DEB_CONFIGURE_EXTRA_FLAGS := --bindir=/usr/games
+
+install/gelide::
+	mkdir -p debian/gelide/usr/share/doc/gelide
+	mv debian/gelide/usr/doc/gelide/* debian/gelide/usr/share/doc/gelide/
+	rm -rf debian/gelide/usr/doc
+
+	rm -f debian/gelide/usr/share/doc/gelide/COPYING debian/gelide/usr/share/doc/gelide/INSTALL

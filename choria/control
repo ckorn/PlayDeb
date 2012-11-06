@@ -1,0 +1,24 @@
+Source: choria
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50~),
+ libenet-dev, libirrlicht-dev, libsqlite3-dev,
+ scons, libglu1-mesa-dev, libxxf86vm-dev,
+ libxext-dev, libx11-dev, libgl1-mesa-swx11-dev
+Standards-Version: 3.9.1
+Homepage: http://code.google.com/p/choria/
+
+Package: choria
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, choria-data (= ${source:Version})
+Description: 2D MMORPG
+ An MMORPG that's all about grinding and doing chores.
+
+Package: choria-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: 2D MMORPG (data package)
+ An MMORPG that's all about grinding and doing chores.
+ .
+ (This package contains the data files)

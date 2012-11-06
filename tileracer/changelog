@@ -1,0 +1,15 @@
+tileracer (0.702-1~getdeb1) jaunty; urgency=low
+
+  * New upstream version
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Thu, 30 Jul 2009 17:36:04 +0000
+
+tileracer (0.702-0~getdeb1) intrepid; urgency=low
+
+  [ Joao Pinto ]
+  * New upstream version
+
+  [ Christoph Korn ]
+  * Building for intrepid.
+
+ -- Christoph Korn <c_korn@gmx.de>  Tue, 30 Dec 2008 21:44:37 +0100

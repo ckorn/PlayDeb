@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=8Kingdoms
+Exec=/usr/games/8kingdoms
+Terminal=false
+Icon=8kingdoms
+Type=Application
+Categories=Game;

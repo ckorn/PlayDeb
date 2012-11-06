@@ -1,0 +1,3 @@
+?package(freedroidrpg):needs="X11" section="Games/Adventure"\
+  longtitle="Isometric role playing game"\
+  title="Freedroid RPG" command="/usr/games/freedroidRPG" icon="/usr/share/pixmaps/freedroidrpg.xpm"

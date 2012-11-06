@@ -1,0 +1,17 @@
+#!/bin/sh
+if [ ! -d $HOME/.config/sm-ssc ] ; then
+	mkdir -p $HOME/.config/sm-ssc
+	cd $HOME/.config/sm-ssc
+	ln -s /usr/lib/games/sm-ssc/stepmania
+	ln -s /usr/lib/games/sm-ssc/GtkModule.so
+	ln -s /usr/share/games/sm-ssc/Characters
+	ln -s /usr/share/games/sm-ssc/Courses
+	cp -a /usr/share/games/sm-ssc/Data .
+	ln -s /usr/share/games/sm-ssc/NoteSkins
+	ln -s /usr/share/games/sm-ssc/Scripts
+	ln -s /usr/share/games/sm-ssc/Songs
+	ln -s /usr/share/games/sm-ssc/Themes
+fi
+
+cd $HOME/.config/sm-ssc
+./stepmania $@

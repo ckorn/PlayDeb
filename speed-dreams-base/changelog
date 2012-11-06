@@ -1,0 +1,67 @@
+speed-dreams-base (2.0.0-1~getdeb2) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 14 May 2012 18:43:04 +0200
+
+speed-dreams-base (2.0.0+r4687-0ubuntu1~precise1) precise; urgency=low
+
+  * Precise build
+
+ -- falkTX <falktx@gmail.com>  Sun, 22 Apr 2012 08:29:40 +0100
+
+speed-dreams-base (2.0.0+r4687-0ubuntu1~oneiric1) oneiric; urgency=low
+
+  * Oneiric build
+
+ -- falkTX <falktx@gmail.com>  Sun, 22 Apr 2012 08:29:14 +0100
+
+speed-dreams-base (2.0.0+r4687-0ubuntu1~natty1) natty; urgency=low
+
+  * Natty build
+
+ -- falkTX <falktx@gmail.com>  Sun, 22 Apr 2012 08:28:48 +0100
+
+speed-dreams-base (2.0.0+r4687-0ubuntu1~maverick1) maverick; urgency=low
+
+  * Maverick build
+
+ -- falkTX <falktx@gmail.com>  Sun, 22 Apr 2012 08:28:22 +0100
+
+speed-dreams-base (2.0.0+r4687-0ubuntu1~lucid1) lucid; urgency=low
+
+  * New upstream release
+
+ -- falkTX <falktx@gmail.com>  Sun, 22 Apr 2012 00:30:53 +0100
+
+speed-dreams-base (2.0.0~rc1-0ubuntu1~precise3) precise; urgency=low
+
+  * Switch to libjpeg62-dev
+
+ -- falkTX <falktx@gmail.com>  Sun, 22 Jan 2012 01:21:16 +0000
+
+speed-dreams-base (2.0.0~rc1-0ubuntu1~lucid2) lucid; urgency=low
+
+  * New RC release, rename package to speed-dreams-base
+
+ -- falkTX <falktx@gmail.com>  Mon, 16 Jan 2012 17:17:28 +0000
+
+speed-dreams (2.0.0~b1-0~lucid2) lucid; urgency=low
+
+  * New beta release
+
+ -- Eckhard M. Jäger <bart@neeneenee.de>  Mon, 26 Sep 2011 11:21:32 +0100
+
+speed-dreams (2.0.0~a3+r3412-0~lucid3) lucid; urgency=low
+
+  * New alpha release
+  * Rename package back to 'speed-dreams'
+   (Users will only get this package when using the PPA)
+
+ -- falktx <falktx@gmail.com>  Mon, 02 May 2011 18:30:30 +0200
+
+speed-dreams-beta (2.0.0~a2+r3111-0~lucid1) lucid; urgency=low
+
+  * Initial release
+
+ -- falkTX <falktx@gmail.com>  Wed, 03 Feb 2010 17:06:47 +0000

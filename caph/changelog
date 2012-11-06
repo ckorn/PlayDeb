@@ -1,0 +1,11 @@
+caph (0.0+091231-1~getdeb2) karmic; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 26 Feb 2010 15:36:47 +0100
+
+caph (0.0+091231-1~getdeb1) karmic; urgency=low
+
+  * Initial release (LP: #506312)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 12 Jan 2010 18:57:40 +0100

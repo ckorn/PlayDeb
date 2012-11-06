@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+
+	cp Capitalism debian/capitalism/usr/games/capitalism
+	cp icons/32x32.png debian/capitalism/usr/share/pixmaps/capitalism.png

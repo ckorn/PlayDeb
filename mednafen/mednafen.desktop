@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Mednafen
+GenericName=Emulator
+Comment=Multi-system video game emulator
+# mednafen doesn't display a file chooser, no point displaying it in
+# the menus
+NoDisplay=true
+Exec=/usr/games/mednafen %f
+MimeType=application/x-gameboy-rom;application/x-gba-rom;application/x-nes-rom

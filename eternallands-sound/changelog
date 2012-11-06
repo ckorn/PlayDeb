@@ -1,0 +1,75 @@
+eternallands-sound (1.9.3-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 23 Feb 2012 21:42:54 +0100
+
+eternallands-sound (1.9.1-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 08 Jan 2011 17:11:46 +0100
+
+eternallands-sound (1.9.0-1~getdeb2) lucid; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 08 Apr 2010 17:19:24 +0200
+
+eternallands-sound (1.9.0-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 08 Apr 2010 17:19:17 +0200
+
+eternallands-sound (1.6.2-1~getdeb1) jaunty; urgency=low
+
+  * Initial release.
+
+ -- Christoph Korn <c_korn@gmx.de>  Thu, 22 Oct 2009 23:33:13 +0200
+
+eternallands-sound (1.6.2-5ubuntu2) karmic; urgency=low
+
+  * Karmic build
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Fri, 02 Oct 2009 23:27:59 +0100
+
+eternallands-sound (1.6.2-5ubuntu1) hardy; urgency=low
+
+  * Ubuntu build
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Fri, 27 Jun 2008 01:34:20 +0100
+
+eternallands-sound (1.6.0-5) unstable; urgency=low
+
+  * Packaging file: Yet more recovery from install/uninstall errors.
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Thu, 26 Jun 2008 23:40:25 +0100
+
+eternallands-sound (1.6.0-4) unstable; urgency=low
+
+  * Packaging file: More recovery from install/uninstall errors.
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Wed, 25 Jun 2008 21:29:57 +0100
+
+eternallands-sound (1.6.0-3) unstable; urgency=low
+
+  * Just packaging updates
+    - delete a bad md5sum download
+    - depend on release or rc packages
+    - change removal code to use a list like the data package
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Tue, 24 Jun 2008 19:53:51 +0100
+
+eternallands-sound (1.6.0-2) unstable; urgency=low
+
+  * Download el_sound_150.zip rather than include in the package
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Sat, 21 Jun 2008 23:52:59 +0100
+
+eternallands-sound (1.6.0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #486428)
+
+ -- Paul Broadhead <pjbroad@twinmoons.clara.co.uk>  Sun, 15 Jun 2008 23:32:09 +0100
+

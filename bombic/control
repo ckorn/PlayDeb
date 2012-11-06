@@ -1,0 +1,26 @@
+Source: bombic
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), autotools-dev,
+ libsdl1.2-dev, libsdl-ttf2.0-dev, libsdl-mixer1.2-dev
+Standards-Version: 3.8.4
+Homepage: http://hippo.nipax.cz/download.en.php
+
+Package: bombic
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, bombic-data (= ${source:Version})
+Description: Bomberman-like game
+ Really nice game. It is like Bomberman. It completly
+ translated to Czech, English and German
+ (including user's manual) Try it :-)
+
+Package: bombic-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Bomberman-like game (data package)
+ Really nice game. It is like Bomberman. It completly
+ translated to Czech, English and German
+ (including user's manual) Try it :-)
+ .
+ (This package contains the data files)

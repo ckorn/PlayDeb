@@ -1,0 +1,13 @@
+Ecnoding is deprecated.
+Index: hedgewars-0.9.18/misc/hedgewars.desktop
+===================================================================
+--- hedgewars-0.9.18.orig/misc/hedgewars.desktop	2012-07-31 21:29:31.000000000 +0200
++++ hedgewars-0.9.18/misc/hedgewars.desktop	2012-11-01 19:50:59.263141572 +0100
+@@ -1,7 +1,6 @@
+ [Desktop Entry]
+ Type=Application
+ Version=1.0
+-Encoding=UTF-8
+ Name=Hedgewars
+ GenericName=Fighting Hedgehogs
+ GenericName[de]=Kämpfende Igel

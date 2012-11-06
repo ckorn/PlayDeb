@@ -1,0 +1,32 @@
+Source: tremfusion
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libncurses5-dev,
+               libsdl1.2-dev,
+               libfreetype6-dev,
+               libnewlib-dev,
+               libspeex-dev,
+               valgrind,
+               libspeexdsp-dev,
+               libogg-dev,
+               libvorbis-dev,
+               libxvidcore-dev,
+               libtheora-dev,
+               libx11-dev,
+               x11proto-core-dev,
+               libglu1-mesa-dev,
+               mesa-common-dev
+Standards-Version: 3.9.3
+Homepage: http://www.tremfusion.net/
+
+Package: tremfusion
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         tremulous-data
+Description: Free software first person shooter
+ TremFusion is a free software first person shooter.
+ It is an outgrowth of Tremulous, which is based on
+ ioquake3 game engine.

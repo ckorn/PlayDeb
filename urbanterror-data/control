@@ -1,0 +1,20 @@
+Source: urbanterror-data
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 5)
+Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/urbanterror-data
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/urbanterror-data/?op=log
+Standards-Version: 3.9.1
+
+Package: urbanterror-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Urban Terror Data
+ Static data files (*.pk3) for urbanterror and urbanterror-server.
+ .
+ Urban Terror could best be described as a Hollywood tactical shooter; it is
+ realism based to a certain extent (environments/weapons/player models), but
+ also goes by the motto "fun over realism" (fast gameplay and lots of action).
+ This combination of reality and action results in a very unique, enjoyable and
+ addictive game.

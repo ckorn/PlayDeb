@@ -1,0 +1,2 @@
+version=3
+http://sf.net/vbam/vbam_([\d\.]+)(?:-[\d]+)?\.tar\.gz

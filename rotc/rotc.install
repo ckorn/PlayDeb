@@ -1,0 +1,4 @@
+lib *.bin			usr/lib/games/rotc
+debian/scripts/rotc		usr/games
+debian/rotc.png			usr/share/pixmaps
+debian/rotc.desktop		usr/share/applications

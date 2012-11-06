@@ -1,0 +1,14 @@
+http://vdrift.net/Forum/viewtopic.php?t=1371
+Index: vdrift-20120722/src/texture.cpp
+===================================================================
+--- vdrift-20120722.orig/src/texture.cpp	2012-07-25 17:54:26.594557282 +0200
++++ vdrift-20120722/src/texture.cpp	2012-07-25 17:54:27.274557258 +0200
+@@ -203,7 +203,7 @@
+ 
+ 		if (GLEW_ARB_framebuffer_object)
+ 		{
+-			glGenerateMipmap(GL_TEXTURE_CUBE_MAP);
++			glGenerateMipmapEXT(GL_TEXTURE_CUBE_MAP);
+ 		}
+ 	}
+ 

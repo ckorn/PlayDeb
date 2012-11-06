@@ -1,0 +1,91 @@
+.TH WORLDOFPADMAN 6 "December 31 , 2007"
+.SH NAME
+worldofpadman \- World of Padman Client
+.SH SYNOPSIS
+.B worldofpadman
+[\-h|\-\-help] [\-q|\-\-quiet] [+set \fIoption\fP \fIvalue\fP]...
+.SH DESCRIPTION
+.PP
+This manual page documents briefly the
+.B worldofpadman
+command.
+.PP
+\fBworldofpadman\fP is the World of Padman client. It is a multiplayer network game.
+.SH OPTIONS
+Options passed to the wrapper script:
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Display a short help summary
+.TP
+\fB\-q\fR, \fB\-\-quiet\fR
+Disable all console output
+.PP
+Options passed to the World of Padman binary by the +set parameter
+.br
+(Note that this is not a full list!)
+.PP
+\fBcg_drawFPS\fR <bool>
+.PP
+\fBcg_drawTeamOverlay\fR <bool>
+.PP
+\fBcg_fov\fR <value>
+.PP
+\fBcg_lagometer\fR <bool>
+.PP
+\fBcg_shadows\fR <bool>
+.PP
+\fBcg_thirdPerson\fR <bool>
+.PP
+\fBcg_thirdPersonAngle\fR <value>
+.PP
+\fBcg_thirdPersonRange\fR <value>
+.PP
+\fBcg_zoomfov\fR <value>
+.PP
+\fBcl_mouseAccel\fR <bool>
+.PP
+\fBcom_blood\fR <bool>
+.PP
+\fBcom_hunkMegs\fR <value>
+.PP
+\fBcom_maxfps\fR <value>
+.PP
+\fBcom_soundMegs\fR <value>
+.PP
+\fBcom_zoneMegs\fR <value>
+.PP
+\fBfs_basepath\fR <string>
+.PP
+\fBfs_game\fR <string>
+.PP
+\fBr_allowExtensions\fR <bool>
+.PP
+\fBr_allowSoftwareGL\fR <bool>
+.TP
+\fBr_customheight\fR <value>
+(Requires +set r_mode \-1)
+.TP
+\fBr_customwidth\fR <value>
+(Requires +set r_mode \-1)
+.PP
+\fBr_dynamiclight\fR <bool>
+.PP
+\fBr_ext_compress_textures\fR <bool>
+.PP
+\fBr_ext_compressed_textures\fR <bool>
+.PP
+\fBr_fullscreen\fR <bool>
+.PP
+\fBr_ignoreGLErrors\fR <bool>
+.PP
+\fBr_mode\fR <value>
+.BR
+.SH SEE ALSO
+.BR worldofpadman-server (6)
+.br
+.SH AUTHOR
+The World of Padman client is based off the GPL ioQuake3 engine; wop-engine, maintained by WoP-Team
+.PP
+This manual page was written by Jack "jscinoz" Coulter <jscinoz@gmail.com> for the Ubuntu project (but may be used by others). It is largely based off the manual page written by Bruno "Fuddl" Kleinert <fuddl@gmx.de> for the Debian project. Permission is granted to copy, distribute and/or modify this document under the terms of the GNU General Public License, Version 2 any later version published by the Free Software Foundation.
+.PP
+On Debian systems, the complete text of the GNU General Public License can be found in /usr/share/common-licenses/GPL-2.

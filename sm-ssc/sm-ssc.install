@@ -1,0 +1,5 @@
+debian/scripts/sm-ssc			usr/games
+debian/sm-ssc.desktop			usr/share/applications
+debian/sm-ssc.xpm			usr/share/pixmaps
+src/stepmania				usr/lib/games/sm-ssc
+src/GtkModule.so			usr/lib/games/sm-ssc

@@ -1,0 +1,4 @@
+version=3
+opts="dversionmangle=s/\+.*//" \
+http://bitbucket.org/wahrhaft/mupen64plus-video-glide64/downloads/ \
+	/wahrhaft/mupen64plus-video-glide64/downloads/mupen64plus-video-glide64-src-(.*).tar.gz

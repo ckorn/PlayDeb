@@ -1,0 +1,3 @@
+uxtank usr/games
+debian/uxtank.desktop usr/share/applications
+debian/uxtank.xpm usr/share/pixmaps

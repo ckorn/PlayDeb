@@ -1,0 +1,11 @@
+alephone (20120514-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 16 May 2012 21:14:20 +0200
+
+alephone (20120128-1~getdeb1) oneiric; urgency=low
+
+  * Initial release (LP: #899693)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 12 Mar 2012 17:07:16 +0100

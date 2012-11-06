@@ -1,0 +1,6 @@
+usr/share/games/vulture/config		usr/lib/games/vulture-nethack/config
+usr/share/games/vulture/tiles		usr/lib/games/vulture-nethack/tiles
+usr/share/games/vulture/graphics	usr/lib/games/vulture-nethack/graphics
+usr/share/games/vulture/music		usr/lib/games/vulture-nethack/music
+usr/share/games/vulture/sound		usr/lib/games/vulture-nethack/sound
+usr/share/games/vulture/fonts		usr/lib/games/vulture-nethack/fonts

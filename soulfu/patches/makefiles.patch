@@ -1,0 +1,23 @@
+Index: soulfu-1.5/Makefile
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ soulfu-1.5/Makefile	2010-01-23 17:42:17.600070657 +0100
+@@ -0,0 +1,18 @@
++CC = gcc
++BIN = soulfu
++INCLUDES = -Isourcecode `sdl-config --cflags` -I/usr/include/GL
++ifeq ($(DEB_BUILD_ARCH),amd64)
++FLAGS = -O0 -g -m32
++LIBS = -L/usr/lib32 -lSDL-1.2 -lSDL_net-1.2 -lGL -ljpeg -lvorbis -lm
++else
++FLAGS = -O0 -g
++LIBS = `sdl-config --libs` -lSDL_net -lGL -ljpeg -lvorbis -lm
++endif
++
++all: $(BIN)
++
++$(BIN):
++	$(CC) $(FLAGS) $(INCLUDES) $(LIBS) sourcecode/soulfu.c -o $@
++
++clean:
++	rm -f $(BIN)

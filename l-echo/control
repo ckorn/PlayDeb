@@ -1,0 +1,15 @@
+Source: l-echo
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 6), mesa-common-dev,
+ libglu1-mesa-dev, freeglut3-dev, libalut-dev, quilt
+Standards-Version: 3.8.3
+Homepage: http://code.google.com/p/l-echo/
+
+Package: l-echo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Open source echochrome clone
+ L-Echo is a free and open source clone of
+ the SCEJ game Echochrome (Mugen Kairou in Japan) (PSP/PS3)

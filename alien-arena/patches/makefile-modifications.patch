@@ -1,0 +1,44 @@
+Description: skip data files since those are in the alien-arena-data package
+Index: alien-arena-7.60/Makefile.in
+===================================================================
+--- alien-arena-7.60.orig/Makefile.in	2012-06-30 05:13:35.000000000 +0200
++++ alien-arena-7.60/Makefile.in	2012-07-28 16:37:15.327383341 +0200
+@@ -182,15 +182,7 @@
+ 	"$(DESTDIR)$(picsdir)" "$(DESTDIR)$(playersdir)" \
+ 	"$(DESTDIR)$(scriptsdir)" "$(DESTDIR)$(sounddir)" \
+ 	"$(DESTDIR)$(texturesdir)" "$(DESTDIR)$(vehiclesdir)"
+-DATA = $(dist_doc_DATA) $(dist_icon_DATA) $(nobase_dist_arena_DATA) \
+-	$(nobase_dist_botinfo_DATA) $(nobase_dist_data1_DATA) \
+-	$(nobase_nodist_env_DATA) $(nobase_nodist_fonts_DATA) \
+-	$(nobase_nodist_gfx_DATA) $(nobase_nodist_levelshots_DATA) \
+-	$(nobase_nodist_maps_DATA) $(nobase_nodist_models_DATA) \
+-	$(nobase_nodist_particles_DATA) $(nobase_nodist_pics_DATA) \
+-	$(nobase_nodist_players_DATA) $(nobase_nodist_scripts_DATA) \
+-	$(nobase_nodist_sound_DATA) $(nobase_nodist_textures_DATA) \
+-	$(nobase_nodist_vehicles_DATA)
++DATA = $(dist_doc_DATA) $(dist_icon_DATA)
+ RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+   distclean-recursive maintainer-clean-recursive
+ AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=) \
+@@ -5085,20 +5077,7 @@
+ info-am:
+ 
+ install-data-am: install-data-local install-dist_docDATA \
+-	install-dist_iconDATA install-nobase_dist_arenaDATA \
+-	install-nobase_dist_botinfoDATA install-nobase_dist_data1DATA \
+-	install-nobase_nodist_envDATA install-nobase_nodist_fontsDATA \
+-	install-nobase_nodist_gfxDATA \
+-	install-nobase_nodist_levelshotsDATA \
+-	install-nobase_nodist_mapsDATA \
+-	install-nobase_nodist_modelsDATA \
+-	install-nobase_nodist_particlesDATA \
+-	install-nobase_nodist_picsDATA \
+-	install-nobase_nodist_playersDATA \
+-	install-nobase_nodist_scriptsDATA \
+-	install-nobase_nodist_soundDATA \
+-	install-nobase_nodist_texturesDATA \
+-	install-nobase_nodist_vehiclesDATA
++	install-dist_iconDATA
+ 
+ install-dvi: install-dvi-recursive
+ 

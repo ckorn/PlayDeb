@@ -1,0 +1,7 @@
+#!/bin/sh -e
+cd /usr/share/games/stone-soup
+mkdir -p $HOME/.config/stone-soup/saves
+mkdir -p $HOME/.config/stone-soup/morgue
+mkdir -p $HOME/.config/stone-soup/settings
+
+./crawl $@

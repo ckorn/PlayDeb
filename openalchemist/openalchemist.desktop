@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=OpenAlchemist
+Exec=/usr/games/openalchemist
+Icon=openalchemist
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=Game;

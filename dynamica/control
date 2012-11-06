@@ -1,0 +1,24 @@
+Source: dynamica
+Section: libs
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50~), cmake,
+ libphysfs-dev, mesa-common-dev, libglu1-mesa-dev, freeglut3-dev,
+ libx11-dev, x11proto-core-dev, libglew1.5-dev, libxml2-dev,
+ zlib1g-dev, libgtk2.0-dev, libcppunit-dev, lesstif2-dev,
+ libgnomevfs2-dev, libgnomeprint2.2-dev, libgnomeprintui2.2-dev,
+ wx2.8-headers, linux-libc-dev, libgstreamer0.10-dev,
+ libsdl1.2-dev, libtiff4-dev, libxt-dev, libxaw7-dev,
+ xviewg-dev
+Standards-Version: 3.9.1
+Homepage: http://code.google.com/p/dynamica/
+
+Package: dynamica-dev
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Maya and 3ds max Plugin for Bullet Rigid Body Dynamics
+ Disney Animation created this Maya plugin and
+ contributed it to the Bullet Physics project 
+ .
+ A 3ds max plugin is added, based on the open source
+ MIT licensed NVidia PhysX plugin (replacing PhysX by Bullet)

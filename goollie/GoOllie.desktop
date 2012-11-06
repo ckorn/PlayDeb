@@ -1,0 +1,7 @@
+[Desktop Entry]
+Categories=Game
+Encoding=UTF-8
+Name=Go Ollie
+Exec=/usr/games/GoOllie
+Icon=goollie
+Type=Application

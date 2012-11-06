@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=djl - Game Manager
+Exec=/usr/games/djl
+Icon=djl
+Terminal=false
+Type=Application
+Categories=Game;

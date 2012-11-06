@@ -1,0 +1,14 @@
+Source: enemy-territory
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 6), libc6, libc6-i386 [amd64],
+ ia32-libs [amd64], libx11-6, libxext6, sharutils
+Standards-Version: 3.9.3
+
+Package: enemy-territory
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, enemy-territory-data (>= 2.60b), libsdl1.2debian
+Description: Free multiplayer FPS
+ Wolfenstein: Enemy Territory is a free multiplayer
+ FPS set during World War II.

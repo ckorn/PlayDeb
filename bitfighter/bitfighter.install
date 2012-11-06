@@ -1,0 +1,4 @@
+exe/bitfighter				usr/lib/games/bitfighter
+debian/scripts/bitfighter		usr/games
+debian/bitfighter.xpm			usr/share/pixmaps
+debian/bitfighter.desktop		usr/share/applications

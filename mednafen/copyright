@@ -1,0 +1,216 @@
+This package was debianized by Ryan Schultz <schultz.ryan@gmail.com> on
+Tue, 22 Nov 2005 22:48:43 -0500.
+
+It was downloaded from http://mednafen.sourceforge.net
+
+It was adopted on Thu, 04 Feb 2010 14:50:12 +0100 by Stephen Kitt
+<steve@sk2.org> on behalf of the Debian games team.
+
+Copyright Holders: 
+  Mednafen Team  <sarencele@hotmail.com>
+  Firebug  High-level mapper information.
+  Andrea Mazzoleni  Scale2x/Scale3x scalers included in Mednafen.
+  Bero  Original FCE source code.
+  Brad Taylor  NES sound information.
+  Charles MacDonald  PC Engine technical information.
+  EFX  Testing.
+  Fredrik Olson  NES four-player adapter information.
+  Gilles Vollant  PKZIP file loading functions.
+  goroh  Various documents.
+  Info-ZIP  ZLIB
+  Jeremy Chadwick  General NES information.
+  kevtris  Low-level NES information and sound information.
+  Ki  Various technical information.
+  Mark Knibbs  Various NES information.
+  Marat Fayzullin  General NES information.
+  Matthew Conte  Sound information.
+  Maxim Stepin  hq2x and hq3x scalers included in Mednafen.
+  Mitsutaka  YM2413 emulator.
+  nori  FDS sound information.
+  Quietust  VRC7 sound translation code by The Quietus
+  rahga  Famicom four-player adapter information.
+  TheRedEye  ROM images, testing.
+  Xodnizel  FCE Ultra.
+  Daniel Stenberg, Bjorn Reese   Trio.
+  Unicode, Inc.  ConvertUTF.
+  Christophe Devine   MD5 Hashing.
+  V810 Emulator   David Tucker
+  Unzipping Code    Gilles Vollant
+  MiniLZO     Markus Franz Xaver Johannes Oberhumer
+  Fuse Z80 emulation code    Philip Kendall, Witold Filipczyk
+  NeoPop Neo Geo Pocket (Color) Code    neopop_uk
+  FPU Emulation    Free Software Foundation, Inc.
+  PC-FX MJPEG Decoding    Thomas G. Lane, Rich Geldreich
+  VRC7 Sound Emulation    Mitsutaka Okazaki
+  NEC V30MZ Emulator	Bryan McPhail
+  Cygne    Dox
+  QuickLZ	Lasse Mikkel Reinhold
+  dvdisaster	Carsten Gnoerlich
+
+  Copyright © 2005 Mednafen Team
+  Copyright © 2003-2005 Shay Green
+  Copyright © 1995-1997, 2000-2004 Ulrich Drepper
+  Copyright © 2002-2003 Xodnizel
+  Copyright © 1996-2005 Markus Franz Xaver Johannes Oberhumer
+  Copyright © 1998 BERO
+  Copyright © 2000, 2001, 2002 Fabrice Bellard
+  Copyright © 1997-1999 H. Dietz
+  Copyright © 2003 CaH4e3
+  Copyright © 2002 Jarek Burczynski
+  Copyright © 2002-2004 Jim Peters
+  Copyright © 1999-2003 Forgotten
+  Copyright © 2004 Forgotten and the VBA development team
+  Copyright © 2003 Tobias Diedrich
+  Copyright © 1998-2005 Gilles Vollant
+  Copyright © 1990-2005 Info-ZIP
+  Copyright © 2004 Ki
+  Copyright © 2001-2004 Andrea Mazzoleni
+  Copyright © 2002 Paul Kuliniewicz
+  Copyright © 2003 MaxSt
+  Copyright © 1996-1997, 2004 K. Wilkins
+  Copyright © 1998-2001 Bjorn Reese and Daniel Stenberg
+  Copyright © 2005 The Musepack Development Team
+  Copyright © 2002 Xiph.org Foundation
+  Copyright © 2001 Tetsuya Isaki
+  Copyright 2001-2004 Unicode, Inc.
+  Copyright © Christophe Devine
+  Copyright © 2006 David Tucker
+  Copyright © 1996-2005 Markus Franz Xaver Johannes Oberhumer
+  Copyright © 1999-2004 Philip Kendall, Witold Filipczyk
+  Copyright © 2001-2002 by neopop_uk
+  Copyright © 1997, 1998, 1999, 2000, 2002, 2003, 2005, 2006, 2007,
+    2008, 2009 Free Software Foundation, Inc.
+  Copyright © 1991-1998, Thomas G. Lane.
+  Copyright © 1994-2000 Rich Geldreich
+  Copyright © 2001 Mitsutaka Okazaki
+  Copyright © 2002 Dox <dox@space.pl>
+  Copyright © 2006-2007 Lasse Mikkel Reinhold
+  Copyright © 2004-2007 Carsten Gnoerlich
+  Copyright © 2006 Phil Karn
+
+License:
+
+   This package is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This package is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this package; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU General
+Public License version 2 can be found in
+`/usr/share/common-licenses/GPL-2'.
+
+Parts of Mednafen are also released under the LGPL:
+
+    This package is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2 of the License, or (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this package; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU Lesser General
+Public License version 2 can be found in
+`/usr/share/common-licenses/LGPL-2'.
+
+The unzipping code is released under the Info-ZIP license:
+
+This software is provided "as is," without warranty of any kind, express
+or implied.  In no event shall Info-ZIP or its contributors be held liable
+for any direct, indirect, incidental, special or consequential damages
+arising out of the use of or inability to use this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+    1. Redistributions of source code must retain the above copyright notice,
+       definition, disclaimer, and this list of conditions.
+
+    2. Redistributions in binary form (compiled executables) must reproduce
+       the above copyright notice, definition, disclaimer, and this list of
+       conditions in documentation and/or other materials provided with the
+       distribution.  The sole exception to this condition is redistribution
+       of a standard UnZipSFX binary (including SFXWiz) as part of a
+       self-extracting archive; that is permitted without inclusion of this
+       license, as long as the normal SFX banner has not been removed from
+       the binary or disabled.
+
+    3. Altered versions--including, but not limited to, ports to new operating
+       systems, existing ports with new graphical interfaces, and dynamic,
+       shared, or static library versions--must be plainly marked as such
+       and must not be misrepresented as being the original source.  Such
+       altered versions also must not be misrepresented as being Info-ZIP
+       releases--including, but not limited to, labeling of the altered
+       versions with the names "Info-ZIP" (or any variation thereof, including,
+       but not limited to, different capitalizations), "Pocket UnZip," "WiZ"
+       or "MacZip" without the explicit permission of Info-ZIP.  Such altered
+       versions are further prohibited from misrepresentative use of the
+       Zip-Bugs or Info-ZIP e-mail addresses or of the Info-ZIP URL(s).
+
+    4. Info-ZIP retains the right to use the names "Info-ZIP," "Zip," "UnZip,"
+       "UnZipSFX," "WiZ," "Pocket UnZip," "Pocket Zip," and "MacZip" for its
+       own source and binary releases.
+
+The definitive text of this license is available at:
+ftp://ftp.info-zip.org/pub/infozip/license.html
+
+The Trio library code integrated with Mednafen is released under the MIT license:
+
+ Permission to use, copy, modify, and distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+
+ THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED
+ WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+ MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE AUTHORS AND
+ CONTRIBUTORS ACCEPT NO RESPONSIBILITY IN ANY CONCEIVABLE MANNER.
+
+ConvertUTF:
+ * Copyright 2001-2004 Unicode, Inc.
+ *
+ * Disclaimer
+ *
+ * This source code is provided as is by Unicode, Inc. No claims are
+ * made as to fitness for any particular purpose. No warranties of any
+ * kind are expressed or implied. The recipient agrees to determine
+ * applicability of information provided. If this file has been
+ * purchased on magnetic or optical media from Unicode, Inc., the
+ * sole remedy for any claim will be exchange of defective media
+ * within 90 days of receipt.
+ *
+ * Limitations on Rights to Redistribute This Code
+ *
+ * Unicode, Inc. hereby grants the right to freely use the information
+ * supplied in this file in the creation of products supporting the
+ * Unicode Standard, and to make copies of this file in any form
+ * for internal or external distribution as long as this notice
+ * remains attached.
+
+This NEC V30MZ emulator may be used for purposes both commercial and noncommercial if you give the author, Bryan McPhail, a small credit somewhere.
+
+QuickLZ can be used for free under the GPL-1 or GPL-2 license (where anything
+released into public must be open source) or under a commercial license if such
+has been acquired (see http://www.quicklz.com/order.html). The commercial
+license does not cover derived or ported versions created by third parties 
+under GPL.
+
+The Debian packaging is
+  Copyright © 2005-2008 Ryan Schultz
+  Copyright © 2010 Stephen Kitt
+and is released under the terms of the GNU GPL v2.

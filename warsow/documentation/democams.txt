@@ -1,0 +1,71 @@
+28 January 2008
+
+Recopilation of commands:
+
+"demoPause" pauses the demo. It's not a democam command, but very useful
+            for editing (on/off accepted since 0.3).
+
+"timescale" scales time up or down. smaller than 1.0 is slow motion, bigger
+            fast motion. It's not a democam command, but very useful for editing.
+
+"demoEditMode" enable/disables editing mode. It accepts "on" and "off" for
+               binding too (bind <key> demoEditMode on).
+
+"demoFreeFly" : in edit mode freefly along the map to position cameras. This command
+                also accepts "on"/"off". If none is added, acts as toggle. When off
+                it's preview mode.
+
+"addcam <type name>" : adds a cam at current position in current time.
+        types:
+        "FirstPerson"
+        "ThirdPerson"
+        "Positional"
+        "Path_linear"
+        "Path_spline"
+        "orbital"
+
+
+"editcam <command>" : edits the current cam
+       editcam  commands:
+       type <type name>
+       track <entity number> ( 0 for no track )
+       fov <value> ( only for not player view cams )
+       timeOffset <milliseconds> ( move camera in time by + or - milliseconds )
+       origin ( changes cam to current origin )
+       angles ( changes cam to current angles )
+       pitch <value> ( assigns pitch angle to current cam )
+       yaw <value> ( assigns yaw angle to current cam )
+       roll <value> ( assigns roll angle to current cam )
+
+"deletecam" : deletes the current cam in playback (current as in the info printed in screen)
+"clearcams" : deletes every cam in memory.
+"saverecam <optional name>" : saves the .cam script file with the changes. If no name
+                              is provided the demo name is used (it must have the demo
+                              name to be played).
+"importcams <filename>" : imports a .cam file. File path is relative to the demos directory.
+                          The cameras imported are merged with the previously existing, if any.
+                          Use at your own risk.
+
+//########### Camera types #######################
+
+"FirstPerson" : While in this camera, the demo will show the player first person view
+"ThirdPerson" : While in this camera, the demo will show the player third person view
+"Positional"  : Static camera which doesn't move. It can be set to track an entity so it's
+                view can auto-aim it. It can make use of custom fov values. Positional cams
+                must also be used to finish path_linear cam trajectories. 
+"Path_linear" : This camera will move from it's position to the next camera position.
+                The next camera can be another path_linear camera or a positional camera.
+                Path linear camera movement involves origin, viewangles and fov. All them
+                will be "moved" to from it, to the next camera ones.
+                Path_linear cameras can also track entities.
+                Remember: A path_linear cam array must be finished in a positional cam.
+"Path_spline" : Works the same as path_linear, but produces smooth curve paths.
+"Orbital"     : A orbital camera will orbit around it's track entity, and will always look
+                to it's track entity. This camera requires having a track entity assigned,
+                and won't work without it.
+                The radius of the rotation will be defined by the distance from the original
+                camera placement to the track entity the first time the camera is activated.
+                The rotation speed will be defined by the pitch, yaw and roll values of the
+                camera. They will be set to 0, 96, 0 (horizontal rotation) at adding the camera
+                and can be modified by editing the camera with editcam.
+

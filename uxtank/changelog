@@ -1,0 +1,12 @@
+uxtank (2.3-1~getdeb2) lucid; urgency=low
+
+  * Added debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 08 Apr 2010 11:39:45 +0200
+
+uxtank (2.3-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (Closes LP: #551139)
+
+ -- Joao Pinto <joao.pinto@getdeb.net>  Sat, 03 Apr 2010 18:01:14 +0000
+

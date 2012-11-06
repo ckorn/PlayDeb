@@ -1,0 +1,6 @@
+resource/editor_plugins			usr/share/games/bitfighter
+resource/*.bmp				usr/share/games/bitfighter
+resource/levels				usr/share/games/bitfighter
+resource/robots				usr/share/games/bitfighter
+resource/scripts			usr/share/games/bitfighter
+resource/sfx				usr/share/games/bitfighter

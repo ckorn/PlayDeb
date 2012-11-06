@@ -1,0 +1,35 @@
+ogre1.8 (1.8.1-1~getdeb2) precise; urgency=low
+
+  * Build with ogre property
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 08 Sep 2012 13:00:40 +0200
+
+ogre1.8 (1.8.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 03 Sep 2012 18:27:31 +0200
+
+ogre1.7 (1.7.4-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 13 Apr 2012 22:47:49 +0200
+
+ogre1.7 (1.7.3-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 09 May 2011 13:55:39 +0200
+
+ogre1.7 (1.7.2-1~getdeb1) lucid; urgency=low
+
+  * Upload to GetDeb
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 07 Apr 2011 19:30:15 +0200
+
+ogre (1.7.2-0~ogredev6) maverick; urgency=low
+
+  * New upstream release 
+
+ -- Andrew Fenn <andrewfenn@gmail.com>  Sat, 08 Jan 2011 20:12:47 +0700

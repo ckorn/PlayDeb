@@ -1,0 +1,20 @@
+Source: naev-data
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <c_korn@gmx.de>
+Build-Depends: debhelper (>= 7.0.50)
+Standards-Version: 3.9.1
+Homepage: http://naev.org/
+
+Package: naev-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: 2D space trading combat game (data package)
+ NAEV is a 2D space trading and combat game, in a similar
+ vein to Escape Velocity. 
+ .
+ NAEV is played from a top-down perspective, featuring fast-paced combat,
+ many ships and outfits, and a large galaxy to explore. The game is highly
+ open-ended, letting players proceed at their own paces.
+ .
+ (This package contains the data files.)

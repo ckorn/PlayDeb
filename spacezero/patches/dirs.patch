@@ -1,0 +1,14 @@
+Define data and savegame directory.
+Index: spacezero-0.83.18/include/general.h
+===================================================================
+--- spacezero-0.83.18.orig/include/general.h	2012-09-26 19:23:39.536180519 +0200
++++ spacezero-0.83.18/include/general.h	2012-09-26 19:23:47.320180289 +0200
+@@ -115,7 +115,7 @@
+ #define MAXASTEROIDDISTANCE2 784000000 /* max distance2 an asteroid can be seen (20 sectors )*/
+ 
+ /* FILES */
+-#define SAVEDIR ".spacezero"
++#define SAVEDIR ".config/spacezero"
+ #define SAVETMPFILE "/tmp/tmpspacezero"
+ #define SAVEFILE0 "save"
+ #define SAVEFILE1 "savecl"

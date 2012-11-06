@@ -1,0 +1,14 @@
+Index: xye-0.12.1/Makefile.in
+===================================================================
+--- xye-0.12.1.orig/Makefile.in	2012-04-02 20:22:03.000000000 +0200
++++ xye-0.12.1/Makefile.in	2012-04-02 20:22:14.179406794 +0200
+@@ -246,8 +246,7 @@
+ res/detailed_L20.png \
+ res/detailed_L30.png \
+ res/detailed_icon.png \
+-res/default_icon.png \
+-res/detailed_COPYING
++res/default_icon.png
+ 
+ EXTRA_DIST1 = autogen.sh \
+              clean.sh \

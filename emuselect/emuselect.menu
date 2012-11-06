@@ -1,0 +1,4 @@
+?package(emuselect):needs="X11" section "Games/Tools"\
+title="Emuselect ROMLauncher"\
+command="/usr/bin/emuselect.gambas"\
+icon="/usr/share/pixmaps/emuselect.png"

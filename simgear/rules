@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --parallel
+
+override_dh_auto_clean:
+	[ ! -f Makefile ] || $(MAKE) clean
+
+	rm -rf CMakeFiles simgear/CMakeFiles
+	rm -f CMakeCache.txt CPackConfig.cmake CPackSourceConfig.cmake \
+	      Makefile cmake_install.cmake cmake_uninstall.cmake \
+	      install_manifest.txt simgear/simgear_config.h simgear/version.h \
+	      simgear/xml/expat_config.h
+
+	find . -type d -name CMakeFiles -execdir rm -rf {} \; || /bin/true
+	find . -name cmake_install.cmake -delete
+	find . -name CTestTestfile.cmake -delete
+	find . -name Makefile -delete
+
+override_dh_auto_configure:
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DSIMGEAR_SHARED:BOOL=ON -DENABLE_TESTS:BOOL=OFF -DJPEG_FACTORY:BOOL=ON \
+	      -DCMAKE_C_FLAGS="-fPIC -pipe" -DCMAKE_CXX_FLAGS="-fPIC -pipe" -DCMAKE_VERBOSE_MAKEFILE=ON -DENABLE_LIBSVN:BOOL=ON
+
+override_dh_install:
+	dh_install --list-missing
+
+override_dh_installchangelogs:
+	dh_installchangelogs ChangeLog
+
+override_dh_suidregister:
+	# You may want to make some executables suid here.
+#	dh_suidregister

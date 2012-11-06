@@ -1,0 +1,63 @@
+Index: soulfu-1.5/sourcecode/soulfu.c
+===================================================================
+--- soulfu-1.5.orig/sourcecode/soulfu.c	2010-01-22 21:36:02.407063431 +0100
++++ soulfu-1.5/sourcecode/soulfu.c	2010-01-22 21:36:02.717066354 +0100
+@@ -18,7 +18,7 @@
+ #include "input.c"
+ #include "tool.c"
+ #include "dcodesrc.c"
+-#include "page.c"
++#include "Page.c"
+ #include "message.c"
+ #include "render.c"
+ #include "volume.c"
+Index: soulfu-1.5/sourcecode/dcodejpg.c
+===================================================================
+--- soulfu-1.5.orig/sourcecode/dcodejpg.c	2010-01-22 21:36:02.427063999 +0100
++++ soulfu-1.5/sourcecode/dcodejpg.c	2010-01-22 21:38:30.624591167 +0100
+@@ -7,7 +7,10 @@
+ #define TEXTURE_ALPHA          1    // Color keyed transparency, Prefix '-'
+ #define TEXTURE_SUPER_ALPHA    2    // Color keyed with edge blur, Prefix '='
+ #define TEXTURE_DONT_LOAD      3    // Not supposed to load this onto card, Prefix '+'
+-#define TEXTURE_ON_CARD        4    // Has been loaded onto the card
++#define TEXTURE_ON_CARD        4    // Has been loaded onto the card
++
++#include <jpeglib.h>
++#include <stdio.h>
+ 
+ unsigned char file_is_a_heightmap;
+ //-----------------------------------------------------------------------------------------------
+@@ -111,7 +114,8 @@
+     unsigned int size;      // Compressed
+     unsigned char* newdata; // Decompressed
+     unsigned int newsize;   // Decompressed
+-    int j;
++    int j;
++    FILE * ftmp = tmpfile();
+ 
+ 
+     // Log what we're doing
+@@ -150,8 +154,11 @@
+ 
+ 
+     // Decompress the data
+-    jpeg_create_decompress(&cinfo);
+-    jpeg_stdio_src(&cinfo, data, size);
++    jpeg_create_decompress(&cinfo);
++    fwrite(data, sizeof(char), size, ftmp);
++    rewind(ftmp);
++    //jpeg_stdio_src(&cinfo, data, size);
++    jpeg_stdio_src(&cinfo, ftmp);
+     jpeg_read_header(&cinfo, TRUE);
+     jpeg_start_decompress(&cinfo);
+ 
+@@ -241,7 +248,8 @@
+         free(data);
+         sdf_can_save = FALSE;
+     #endif
+-
++
++    fclose(ftmp);
+ 
+     return TRUE;
+ }

@@ -1,0 +1,4 @@
+cuby				usr/lib/games/cuby
+debian/scripts/cuby		usr/games
+debian/cuby.xpm			usr/share/pixmaps
+debian/cuby.desktop		usr/share/applications

@@ -1,0 +1,165 @@
+spacezero (0.83.18-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 26 Sep 2012 19:16:56 +0200
+
+spacezero (0.82.02-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    -Fix: bug that create unnecessary trace points.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 12 May 2012 18:46:14 +0200
+
+spacezero (0.82.01-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #924171)
+    version 0.82.01
+    ----------------
+    -Fix: AI bug related to the buy and upgrade of ships.
+
+    version 0.82.00
+    ---------------
+    -Added astronauts. Survival pods.
+    -Window is now resizable.
+    -Start up options menu.
+    -Sound volume control.
+    -Keys defined by user.
+    -Help in game.
+    -Select and send spaceships with a mouse click.
+    -AI:
+       -Added order RETREAT.
+       -Modified order STOP.
+       -EXPLORE reviewed. The ships don't explore out of
+            Universe limits anymore. Explore method depends on ship's level.
+    -Bug fixes:
+       -Asteroids are no more visible everywhere.
+       -Several minor bugfixes.
+    -Minor enhances.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 25 Feb 2012 18:14:13 +0100
+
+spacezero (0.80.08-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    -Fix: Removed RT signals from code,
+     are not used and some architecture failed to build.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 21 Nov 2011 21:57:21 +0100
+
+spacezero (0.80.07-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    -Fix: Makefile
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 05 Oct 2011 20:21:30 +0200
+
+spacezero (0.80.06-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    -Install directory only defined in Makefile.
+    -Refix: initial planet coordinates.
+    -Added: html manual
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 19 Sep 2011 19:53:43 +0200
+
+spacezero (0.80.05-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    -Added: engine flares.
+    -Fix: initial planet coordinates.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 31 Jul 2011 23:21:23 +0200
+
+spacezero (0.80.04-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    -Fix: ships takeoff with very few ammunition.
+    -Fix: incorrect initial number of planets.
+     Incorect initial planet coordinates, planet out of limits.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 29 Jul 2011 12:26:10 +0200
+
+spacezero (0.80.03-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+    -Fix: pause when order write.
+    -Fix: [32-64 bit] Client nickname is truncated to the
+     last part.(!!) ID: 3308044.
+    -Fix: Queen autopilot: still crash the ship while landing
+          - Improve ExecLand() ID: 3305062
+    -Fix: Towers always aim the enemy even if out of range
+          - ID: 3305048
+    - help patch (gionnico)
+    - spacecomm patch (resolve hostnames) (gionnico)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 07 Jun 2011 16:24:54 +0200
+
+spacezero (0.80.02-1~getdeb1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 30 May 2011 21:45:46 +0200
+
+spacezero (0.80.0-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #781921)
+    -Bug fixes.
+      -Bug fixed that make pirates too strong.
+      -Bug fixed in net games between 32 and 64 bits machines
+       that make game crash, hung.
+      -Minor bugfixes.
+    -AI improvements:
+      -AI players follow different strategies.
+      -Attacks to planets improved.
+    -Teams. Mode games added:
+      -Cooperative.
+      -Deathmatch.
+      -Queen mode.
+    -Select ships with mouse.
+    -Game speed improved.
+    -GAME OVER added.
+    -Minor changes:
+      -Ships and asteroids destroyed inside a planet increase the
+       planet resources.
+      -Added the command line option -nopirates
+      -Feed-back in terminal when an order is given.
+      -Home key selects the first ship in outter space.
+      -Sound control from menu.
+      -Indicate player names in the command line, now works.
+      -It is not necessary to install to have sound. Sound works from the
+      install directory.
+    -Documentation updated.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 13 May 2011 14:20:19 +0200
+
+spacezero (0.78.0-1~getdeb1) lucid; urgency=low
+
+  * New upstream version (LP: #696885)
+    version 0.76.02
+    --------------
+    -15Oct10. Minor bug when loading a game. saving actual ship.
+    -25Oct10. Minor bug when selecting a planet.
+    -27Oct10. Error in ControlCenter().
+    -04Nov10. Bug in ControlCenter().
+    -30Nov10. Minor Bug in Updateship() in net game.
+    -14Dic10. Bug in sending new objects.
+
+    version 0.78.00
+    ---------------
+    - Bug fixes.
+    - Added Asteroids.
+    - Ships can be upgraded.
+    - AI improves.
+      - Formation of commands.
+    -New object numeration system (lower numbers).
+    -Frames by second up to 24. Smoother movement and lower net traffic.
+
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 04 Jan 2011 22:01:36 +0100
+
+spacezero (0.76.1-1~getdeb1) lucid; urgency=low
+
+  * Initial release (LP: #676039)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 16 Nov 2010 15:14:40 +0100

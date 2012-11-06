@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ /usr/share/games/lugaru -nt $HOME/.config/lugaru ] ; then
+	rm -rf $HOME/.config/lugaru.bak
+	mv $HOME/.config/lugaru $HOME/.config/lugaru.bak
+fi
+
+if [ ! -d $HOME/.config/lugaru ] ;  then
+	mkdir $HOME/.config/lugaru
+	cp -a /usr/share/games/lugaru/* $HOME/.config/lugaru/
+	ln -s /usr/lib/games/lugaru/lugaru $HOME/.config/lugaru/lugaru
+fi
+
+cd $HOME/.config/lugaru
+./lugaru $@

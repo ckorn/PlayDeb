@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	# Add here commands to clean up after the build process.
+	[ ! -f Makefile ] || $(MAKE) clean
+
+	find . -name '*.a' -delete
+	find . -name '*.o' -delete
+	find . -name 'Makefile' -delete
+
+override_dh_auto_configure:
+	dh_auto_configure -- --with-ndata-path=/usr/share/games/naev/ndata
+
+override_dh_auto_install:

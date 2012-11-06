@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	rm -rf magicassistant
+
+override_dh_auto_build:
+ifeq ($(DEB_BUILD_ARCH),amd64)
+	unzip *.linux.x86_64.zip
+else
+	unzip *.linux.x86.zip
+endif
+
+	mv MagicAssistant magicassistant
+	find magicassistant -type f -exec chmod -x {} \;
+	chmod +x magicassistant/magicassistant
+	find magicassistant -type d -empty -delete

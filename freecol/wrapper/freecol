@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Including wrapper script:
+. /usr/lib/java-wrappers/java-wrappers.sh
+
+# We need openjdk, icedtea  or Sun 6
+find_java_runtime openjdk java6
+
+find_jars miglayout freecol cortado commons-cli
+
+# We test if LC_MESSAGES is different from LC_CTYPE, if that is the case,
+# we pass to freecol the --default-locale argument
+if [ "$LC_CTYPE" != "$LC_MESSAGES" -a "$LC_MESSAGES" ]; then
+    lang_argument="--default-locale=$LC_MESSAGES"
+fi
+
+if [ "$1" = "--enable-ipv6" ]; then
+    shift;
+else
+    echo "Disabling IPV6 network stack to work around bug #560056 on openjdk"
+    echo "If you experience problems with connecting to remote servers, "
+    echo "you can put it back by running Freecol this way:"
+    echo "  freecol --enable-ipv6" "$@"
+    disablenet="-Djava.net.preferIPv4Stack=true"
+fi
+
+run_java $disablenet -Xincgc -Xmx512M net.sf.freecol.FreeCol --freecol-data \
+    /usr/share/games/freecol $lang_argument "$@"

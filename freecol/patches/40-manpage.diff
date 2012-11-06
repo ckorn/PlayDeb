@@ -1,0 +1,37 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 40-manpage.dpatch by  <fourmond@debian.org>
+##
+## DP: Small java-wrappers addition in the manual page
+
+@DPATCH@
+Index: freecol-0.10.5+dfsg/packaging/debian/freecol.6
+===================================================================
+--- freecol-0.10.5+dfsg.orig/packaging/debian/freecol.6	2012-03-05 22:10:30.000000000 +0100
++++ freecol-0.10.5+dfsg/packaging/debian/freecol.6	2012-03-05 23:36:51.633239995 +0100
+@@ -59,8 +59,25 @@
+ Starts a stand-alone server on the specified port.
+ .SH LICENSE
+ FreeCol is available under GPL license terms.
++
++.SH JAVA-WRAPPERS NOTE
++
++This program is a shell script wrapper based on
++.BR java-wrappers (7).
++You therefore benefit from several features; please see the 
++.BR java-wrappers (7)
++manual page.
++
++
+ .SH SEE ALSO
++
+ Homepage: http://freecol.sourceforge.net/
++
++.BR java-wrappers (7)
++
+ .SH AUTHOR
+-This manual page was written by Jean Lepropre <jean_lepropre@users.sourceforge.net>,
++This manual page was written by Jean Lepropre
++<jean_lepropre@users.sourceforge.net>, 
+ for the Debian project (but may be used by others).
++
++It was updated by Vincent Fourmond <fourmond@debian.org>

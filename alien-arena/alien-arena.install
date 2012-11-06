@@ -1,0 +1,4 @@
+source/alienarena		usr/lib/games/alien-arena
+debian/scripts/alien-arena	usr/games
+debian/alien-arena.desktop	usr/share/applications
+debian/alien-arena.xpm		usr/share/pixmaps

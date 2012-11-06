@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+[ -h /usr/share/games/flightgear/Timezone ] && rm -f /usr/share/games/flightgear/Timezone
+
+#DEBHELPER#

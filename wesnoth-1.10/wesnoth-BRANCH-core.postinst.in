@@ -1,0 +1,55 @@
+#!/bin/sh
+# postinst script for wesnoth-BRANCH-core
+# Copyright 2010 by Gerfried Fuchs <rhonda@debian.at>
+# Licensed under WTFPLv2
+
+set -e
+
+divert_oldfiles()
+{
+	# programs
+	for i in wesnoth wesnoth-nolog wesnoth-smallgui wesnoth-editor; do
+		if ! dpkg-divert --list /usr/games/$i | grep -q /usr/games/$i; then
+			dpkg-divert --package wesnoth-BRANCH-core \
+				--divert /usr/games/$i-old \
+				--rename /usr/games/$i
+		fi
+	done
+
+	# manpages
+	for i in ca_ES@valencia cs da de en_GB es et fi fr gl hu it ja \
+		lt nl pl sk sr sr@latin sv tr zh_CN zh_TW; do
+		if ! dpkg-divert --list /usr/share/man/$i/man6/wesnoth.6.gz | grep -q /usr/share/man/$i/man6/wesnoth.6.gz; then
+			dpkg-divert --package wesnoth-BRANCH-core \
+				--divert /usr/share/man/$i/man6/wesnoth-old.6.gz \
+				--rename /usr/share/man/$i/man6/wesnoth.6.gz
+		fi
+	done
+}
+
+setup_alternatives()
+{
+	# man 6 wesnoth
+	slaves=$(for man in /usr/share/man/*/man6/wesnoth-BRANCH.6.gz; do \
+		lang=$(echo $man | sed -e 's#.*/man/##;s#/man6.*##;'); \
+		echo -n " --slave /usr/share/man/$lang/man6/wesnoth.6.gz wesnoth.$lang.6.gz $man"; \
+	done)
+	slaves="$slaves --slave /usr/share/man/man6/wesnoth.6.gz wesnoth.6.gz /usr/share/man/man6/wesnoth-BRANCH.6.gz"
+
+	slaves="$slaves --slave /usr/games/wesnoth-nolog wesnoth-nolog /usr/games/wesnoth-BRANCH-nolog"
+
+	update-alternatives --install /usr/games/wesnoth wesnoth \
+		/usr/games/wesnoth-BRANCH BRANODOT \
+		$slaves
+}
+
+case "$1" in
+	configure|reconfigure)
+		divert_oldfiles
+		setup_alternatives
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0

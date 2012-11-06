@@ -1,0 +1,45 @@
+Source: vbam
+Section: otherosfs
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 7.0.50), cmake, nasm,
+ libsdl1.2-dev, libgtkmm-2.4-dev, libgtkglextmm-x11-1.2-dev,
+ libsfml-dev
+Standards-Version: 3.9.2
+Homepage: http://vba-m.com
+
+Package: vbam
+Architecture: all
+Depends: ${misc:Depends}, vbam-gtk
+Description: Nintendo Game Boy Advance emulator (dummy package)
+ VisualBoyAdvance-M is a Nintendo Game Boy Emulator with high compatibility
+ with commercial games. It emulates the Nintendo Game Boy Advance handheld
+ console, in addition to the original Game Boy handhelds and its Super and
+ Color variants.
+ .
+ (This package is only for transition of vbam to vbam-gtk)
+
+Package: vbam-sdl
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Nintendo Game Boy Advance emulator
+ VisualBoyAdvance-M is a Nintendo Game Boy Emulator with high
+ compatibility with commercial games. It emulates the Nintendo Game
+ Boy Advance handheld console, in addition to the original Game Boy
+ handhelds and its Super and Color variants.
+ .
+ This package does not provide a GUI version of VisualBoyAdvance-M.
+ See the vbam-gtk package for the GTK+ version of this program.
+
+Package: vbam-gtk
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: vbam
+Provides: vbam
+Description: Nintendo Game Boy Advance emulator (GTK+ frontend)
+ VisualBoyAdvance-M is a Nintendo Game Boy Emulator with high
+ compatibility with commercial games. It emulates the Nintendo Game
+ Boy Advance handheld console, in addition to the original Game Boy
+ handhelds and its Super and Color variants.
+ .
+ This package provides the GUI version of VisualBoyAdvance-M.

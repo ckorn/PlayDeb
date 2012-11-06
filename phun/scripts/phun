@@ -1,0 +1,13 @@
+#!/bin/sh
+version=$(LANG=C apt-cache policy phun | grep "Installed" | cut -d":" -f 2 | cut -d"-" -f1 | tr -d " ")
+arch=$(uname -m)
+phun_home="$HOME/.config/phun/${version}_$arch"
+if [ ! -d "$phun_home" ]
+then
+	mkdir -p "$phun_home"
+	cp -a /usr/share/games/Phun/* "$phun_home"
+	zenity --warning --text="Phun was copied to $phun_home  and will be run from there\n\
+If you did an upgrade please check $HOME/.config/phun for previous versions data/scenes"
+fi
+cd "$phun_home"
+./phun

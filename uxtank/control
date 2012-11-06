@@ -1,0 +1,16 @@
+Source: uxtank
+Section: games
+Priority: optional
+Maintainer: Joao Pinto <joao.pinto@getdeb.net>
+Build-Depends: cdbs, debhelper (>= 7),
+	libsdl1.2-dev,
+	libsdl-mixer1.2-dev,
+	libxpm-dev
+Standards-Version: 3.8.4
+Homepage: http://sites.google.com/site/carlosnicolini/Home/opensource/uxtank
+
+Package: uxtank
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Tank Game for Linux 
+ A small tank game for Linux

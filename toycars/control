@@ -1,0 +1,20 @@
+Source: toycars
+Section: games
+Priority: optional
+Maintainer: João Pinto <joao.pinto@getdeb.net>
+Build-Depends: cdbs, cdbs, debhelper (>= 5), autotools-dev,
+ libsdl1.2-dev, libsdl-image1.2-dev, libsdl-mixer1.2-dev, libopenal-dev, libalut-dev,
+ libfltk1.1-dev
+Standards-Version: 3.9.1
+
+Package: toycars
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, toycars-data (= ${source:Version})
+Description:  physics based 2-D racer
+ A physics based 2-D racer
+
+Package: toycars-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: physics based 2-D racer - Data files
+ A physics based 2-D racer

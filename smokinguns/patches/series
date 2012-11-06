@@ -1,0 +1,3 @@
+#chmod.patch
+strcpy_64bit.patch
+sdl.patch

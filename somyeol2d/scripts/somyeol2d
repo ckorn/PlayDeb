@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /usr/share/games/somyeol2d
+python ./main.py $@
