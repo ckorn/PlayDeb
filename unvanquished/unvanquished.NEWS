@@ -1,4 +1,4 @@
-unvanquished (0.4.0-1~~) unstable; urgency=low
+unvanquished (0.4.0-1~debian.sid) unstable; urgency=low
 
   If you're upgrading from 0.3.5 or older or you have Unvanquished
   configuration files in your home directory, you're likely to need at least
