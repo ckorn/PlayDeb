@@ -1,3 +1,9 @@
+unvanquished (0.9.0-1~getdeb2~quantal) quantal; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 06 Nov 2012 20:58:20 +0100
+
 unvanquished (0.8.0-1~getdeb3~quantal) quantal; urgency=low
 
   * Create missing library links (LP: #1072375)
