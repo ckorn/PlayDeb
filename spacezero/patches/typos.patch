@@ -1,8 +1,8 @@
 Just happens :)
-Index: spacezero-0.83.18/src/data.c
+Index: spacezero-0.83.28/src/data.c
 ===================================================================
---- spacezero-0.83.18.orig/src/data.c	2012-09-19 17:57:39.000000000 +0200
-+++ spacezero-0.83.18/src/data.c	2012-09-26 19:23:30.992180771 +0200
+--- spacezero-0.83.28.orig/src/data.c	2012-10-04 16:02:53.000000000 +0200
++++ spacezero-0.83.28/src/data.c	2012-11-08 19:38:13.459997088 +0100
 @@ -429,7 +429,7 @@
    n=strlen(cad);
    if(n>32)n=32; /* max of log messages */
@@ -12,11 +12,11 @@ Index: spacezero-0.83.18/src/data.c
      m=0;
      list=hlist->next;
      while(list!=NULL){
-Index: spacezero-0.83.18/src/spacezero.c
+Index: spacezero-0.83.28/src/spacezero.c
 ===================================================================
---- spacezero-0.83.18.orig/src/spacezero.c	2012-09-25 09:25:44.000000000 +0200
-+++ spacezero-0.83.18/src/spacezero.c	2012-09-26 19:23:30.992180771 +0200
-@@ -1820,7 +1820,7 @@
+--- spacezero-0.83.28.orig/src/spacezero.c	2012-11-06 18:28:04.000000000 +0100
++++ spacezero-0.83.28/src/spacezero.c	2012-11-08 19:38:13.459997088 +0100
+@@ -1823,7 +1823,7 @@
    navcontrol=TRUE;
    if(key->order.state==TRUE)navcontrol=FALSE;
    
