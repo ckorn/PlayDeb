@@ -1,8 +1,22 @@
 #!/usr/bin/make -f
+
+ARCH_FLAG=
+ifeq ($(DEB_BUILD_ARCH),amd64)
+ARCH_FLAG=--64bit
+endif
+
 %:
 	dh $@
 
-override_dh_strip:
+override_dh_auto_clean:
+	rm -rf build .sconf_temp .sconsign.dblite config.log
+
+override_dh_auto_configure:
+	scons --lin --release --sse3 $(ARCH_FLAG)
+
+override_dh_install:
+	[ ! -f build/powder64 ] || mv build/powder64 build/powder
+	dh_install
 
 get-orig-source:
 	uscan --noconf --force-download --rename --repack --download-current-version --destdir=.

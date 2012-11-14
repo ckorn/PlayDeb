@@ -1,3 +1,57 @@
+the-powder-toy (84.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    Version 84.0
+    Fixed Can't undo ambient heat
+    Fixed lag when deleting stamps, and the empty space left behind
+    afterwards
+    Fixed stamp thubnails take too long to load
+    Fixed Can't reload or resave local saves easily
+    Fixed Add a button to bring back missing stamps
+    Fixed Fix being able to set an element's type to an invalid element with
+    the console
+    Changed Change the vote bars back to the old ones
+    Added SIgns can link to forum threads. Use {t:id|sign text}, where id is
+    the thread id
+    Added New Element: DMG, Damage, generates a powerful force of pressure on
+    contact with other elements
+    Added New Element: TSNS, Temperature sensor, creates a spark when a
+    nearby material has a greater temperature
+    Added New Element: VIBR, solid material that stores massive amount of
+    energy before going critical
+
+    Version 83.7
+    Fixed Prevents some freezes when browsing saves with a slow internet
+    connection
+    Changed Much faster gravity simulation
+    Changed Moves to a C++ codebase.
+    Added Ability to ignore update notifications
+    Added Multiple save selection for mass deletion and favouring
+    Added Right click menu for in save browser (Open, View History + more)
+    Added Console remembers previous commands, event after closing
+    Added New menu for decoration tools
+    Added New decoration blending tools
+    Added Video recording (Press R) uses PPM as an output format
+    Added PNG format for screenshots (Press P to capture)
+    Added New middle click tool (defaults to Sample tool)
+    Added New Lua API
+    Added Scollable comments in save preview
+
+    Version 83.0
+    Fixed Fix some elements melting when heat simulation is disabled
+    Fixed PPIP glowing brick works even when "Glow" display mode is disabled.
+    Changed tpt.element (Lua API) can now take an element number and return a
+    name.
+    Changed Corrected proportions of elements during some reactions with SPNG
+    and GEL
+    Added New Element: DTEC, generates a spark when something with it's ctype
+    is nearby
+    Added SPNG and GEL can draw moisture from other water based elements
+    (Saltwater, etc)
+    Added SPNG absorption limit (can be used as a filter for saltwater)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 09 Nov 2012 19:33:18 +0100
+
 the-powder-toy (77.0-1~getdeb1) precise; urgency=low
 
   * New upstream version (LP: #994965)
