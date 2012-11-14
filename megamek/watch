@@ -1,0 +1,2 @@
+version=3
+http://sf.net/megamek/MegaMek-(?:v)?([\d+]\.[\d]*[02468]+\.[\d]+)\.(?:zip|tar\.gz|tar\.bz2|tar\.xz)

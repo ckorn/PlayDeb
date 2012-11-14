@@ -1,3 +1,9 @@
+megamek (0.34.10-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 09 Nov 2012 18:29:13 +0100
+
 megamek (0.34.8-1~getdeb1) jaunty; urgency=low
 
   * Initial release
