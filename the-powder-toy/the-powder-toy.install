@@ -1,3 +1,3 @@
 debian/scripts/the-powder-toy		usr/games
 debian/the-powder-toy.desktop		usr/share/applications
-powder					usr/lib/games/the-powder-toy
+build/powder				usr/lib/games/the-powder-toy
