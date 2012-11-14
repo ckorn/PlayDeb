@@ -2,16 +2,25 @@ Source: legends
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50~), ia32-libs [amd64],
- libc6-i386 [amd64], libogg0 [i386], libopenal1 [i386],
- libsdl1.2debian-all [i386], libvorbis0a [i386]
-Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 9),
+               libogg0 [i386],
+               libopenal1 [i386],
+               libvorbis0a [i386],
+               libx11-6 [i386],
+               libasound2 [i386],
+               libxext6 [i386],
+               libgl1-mesa-glx [i386],
+               libglu1-mesa [i386],
+               libxft2 [i386]
+Standards-Version: 3.9.3
 Homepage: http://legendsthegame.net
 
 Package: legends
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, legends-data (= ${source:Version})
-Description: Fast-paced FPS online multiplayer game
+Architecture: i386
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         legends-data (= ${source:Version})
+Description: Fast-paced FPS online multiplayer game (i386 only)
  Legends is a fast-paced first-person-perspective
  online multiplayer game released as freeware.
  The game is designed to take advantage of the

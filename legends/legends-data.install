@@ -1,8 +1,7 @@
 legends/common				usr/share/games/legends
+legends/Shaders				usr/share/games/legends
 legends/legends				usr/share/games/legends
 legends/show				usr/share/games/legends
 legends/default.keybinds.txt		usr/share/games/legends
-legends/legends.ico			usr/share/games/legends
-legends/legends_icon32.png		usr/share/games/legends
 legends/linux.txt			usr/share/games/legends
 legends/main.cs				usr/share/games/legends

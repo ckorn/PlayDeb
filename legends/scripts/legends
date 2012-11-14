@@ -6,4 +6,4 @@ if [ -e /usr/bin/padsp ] ; then
   PADSP=/usr/bin/padsp
 fi
 
-LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$(pwd) ${PADSP} ./LinLegends $@ &
+LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$(pwd) ${PADSP} ./playlegends $@ &

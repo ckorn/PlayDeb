@@ -1,3 +1,9 @@
+legends (0.4.2.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 05 Nov 2012 21:24:03 +0100
+
 legends (0.4.1.45-1~getdeb1) lucid; urgency=low
 
   * Initial release (LP: #421959)
