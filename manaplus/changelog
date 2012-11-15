@@ -1,3 +1,23 @@
+manaplus (1:1.2.11.11-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: resolution switching under Android with OpenGL.
+    fix: guichan draw lines under ARM.
+    fix: some fixes in jewelry theme.
+    fix: translations under Android.
+    fix: ok dialog size.
+    fix: disable video mode autodetection under Android.
+    fix: chat log if switch game characters.
+    fix: crash with empty relations list.
+    fix: game termination under Android by using "home" key.
+    fix: minimaps loading.
+    add: close button in android version.
+    add: extend theming.
+    add: select maximum resolution under Android.
+    add: highlight window header with "*" if got new chat messages.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 15 Nov 2012 17:29:01 +0100
+
 manaplus (1:1.2.10.28-1~getdeb1) precise; urgency=low
 
   * New upstream version

@@ -17,5 +17,8 @@ override_dh_install:
 	chmod -x debian/manaplus/usr/share/pixmaps/manaplus.png
 	find debian -type d -empty -delete
 
+override_dh_installchangelogs:
+	dh_installchangelogs ChangeLog
+
 override_dh_strip:
 	dh_strip -a --dbg-package=manaplus-dbg
