@@ -1,3 +1,9 @@
+spacezero (0.83.29-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 15 Nov 2012 17:33:15 +0100
+
 spacezero (0.83.28-1~getdeb1) precise; urgency=low
 
   * New upstream version
