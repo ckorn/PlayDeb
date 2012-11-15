@@ -1,3 +1,12 @@
+the-powder-toy (84.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    Fixed: VIBR Fixes
+    Fixed: Spelling errors in game UI
+    Fixed: Make SC_SENSOR available in Lua API
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 15 Nov 2012 20:27:05 +0100
+
 the-powder-toy (84.0-1~getdeb1) precise; urgency=low
 
   * New upstream version
