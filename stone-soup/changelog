@@ -1,3 +1,23 @@
+stone-soup (0.11.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * A number of crash fixes.
+    * Option fixes: spell_slot=, runrest_ignore_monster-=
+    * Xom won't Inner Flame magic-immune monsters. Some were quite
+    inappropriate.
+    * TSO won't get mad at you when a monster uses a staff of death.
+    * Boulder beetles stop rolling upon teleporting.
+    * Zombies get same eligibility for constriction as their base monsters.
+    * Slimify fixes: kraken tentacles (no longer slimeable) and monsters
+    in/over
+      water (will turn into water-capable jellies).
+    * You can't stop some of Xom's spells anymore.
+    * Gaining/losing mutations from Jiyva is less spammy.
+    * Non-good gods can punish their worshippers during penance, like in
+    0.10-.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 16 Nov 2012 22:35:32 +0100
+
 stone-soup (0.11.0-1~getdeb1) precise; urgency=low
 
   * New upstream version
