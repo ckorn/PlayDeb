@@ -1,4 +1,0 @@
-obj-*-*-*/main/game.so				usr/lib/games/unvanquished/main
-debian/scripts/unvanquished-download-paks	usr/games
-obj-*-*-*/download-pk3.sh			usr/lib/games/unvanquished
-main/translation/client/*			usr/lib/games/unvanquished/main/translation/client
