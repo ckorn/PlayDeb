@@ -1,9 +1,0 @@
-#!/bin/sh
-
-set -e
-
-#DEBHELPER#
-
-if [ "$1" = "purge" ] ; then
-    deluser --quiet --system unvanquished-server > /dev/null || true
-fi

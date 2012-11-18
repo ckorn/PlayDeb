@@ -1,2 +1,0 @@
-#! /bin/sh
-exec /usr/lib/games/unvanquished/download-pk3.sh /usr/share/games/unvanquished/main /usr/share/games/unvanquished
