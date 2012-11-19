@@ -4,6 +4,10 @@ if [ ! -d $HOME/.config/sm-ssc ] ; then
 	cd $HOME/.config/sm-ssc
 	ln -s /usr/lib/games/sm-ssc/stepmania
 	ln -s /usr/lib/games/sm-ssc/GtkModule.so
+	ln -s /usr/share/games/sm-ssc/Announcers
+	ln -s /usr/share/games/sm-ssc/BackgroundEffects
+	ln -s /usr/share/games/sm-ssc/BackgroundTransitions
+	ln -s /usr/share/games/sm-ssc/BGAnimations
 	ln -s /usr/share/games/sm-ssc/Characters
 	ln -s /usr/share/games/sm-ssc/Courses
 	cp -a /usr/share/games/sm-ssc/Data .
@@ -11,6 +15,21 @@ if [ ! -d $HOME/.config/sm-ssc ] ; then
 	ln -s /usr/share/games/sm-ssc/Scripts
 	ln -s /usr/share/games/sm-ssc/Songs
 	ln -s /usr/share/games/sm-ssc/Themes
+fi
+
+cd $HOME/.config/sm-ssc
+# Such links did not exist before 5~alpha3-1~getdeb3~quantal
+if [ ! -h $HOME/.config/sm-ssc/Announcers ] ; then
+	ln -s /usr/share/games/sm-ssc/Announcers
+fi
+if [ ! -h $HOME/.config/sm-ssc/BackgroundEffects ] ; then
+	ln -s /usr/share/games/sm-ssc/BackgroundEffects
+fi
+if [ ! -h $HOME/.config/sm-ssc/BackgroundTransitions ] ; then
+	ln -s /usr/share/games/sm-ssc/BackgroundTransitions
+fi
+if [ ! -h $HOME/.config/sm-ssc/BGAnimations ] ; then
+	ln -s /usr/share/games/sm-ssc/BGAnimations
 fi
 
 cd $HOME/.config/sm-ssc

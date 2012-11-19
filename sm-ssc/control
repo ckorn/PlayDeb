@@ -17,7 +17,7 @@ Build-Depends: debhelper (>= 9),
                ffmpeg,
                libbz2-dev,
                libglew-dev
-Standards-Version: 3.9.4
+Standards-Version: 3.9.3
 Homepage: http://code.google.com/p/sm-ssc
 
 Package: sm-ssc

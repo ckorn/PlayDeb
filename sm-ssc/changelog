@@ -1,3 +1,10 @@
+sm-ssc (5~alpha3-1~getdeb3~quantal) quantal; urgency=low
+
+  * Add BackgroundEffects, Announcers, BackgroundTransitions
+    BGAnimations and create symlinks (LP: #1080531)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 19 Nov 2012 18:56:55 +0100
+
 sm-ssc (5~alpha3-1~getdeb2) quantal; urgency=low
 
   * Rebuild for quantal
