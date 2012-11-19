@@ -1,0 +1,4 @@
+wx_launcher_paths.patch
+debianizing_makefiles.patch
+linux_launcher.patch
+librt_linking.patch

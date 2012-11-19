@@ -1,0 +1,3 @@
+?package(sandboxgamemaker):needs="X11" section="Games/Tools"\
+  title="Platinum Arts Sandbox Game Maker" command="sandbox_unix -glauncher"\
+  icon="/usr/share/pixmaps/sandboxgamemaker.xpm"
