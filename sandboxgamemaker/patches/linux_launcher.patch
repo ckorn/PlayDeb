@@ -1,0 +1,97 @@
+Description: Takes new sandbox_unix_usr script from upstream
+Author: Scott Howard <showard314@gmail.com>
+Index: sandboxgamemaker-2.7/sandbox_unix
+===================================================================
+--- sandboxgamemaker-2.7.orig/sandbox_unix	2011-10-09 20:58:35.057195557 +0200
++++ sandboxgamemaker-2.7/sandbox_unix	2011-10-09 21:01:42.027195619 +0200
+@@ -2,7 +2,7 @@
+ # SANDBOX_DIR should refer to the directory in which sandbox is placed, the default should be good enough.
+ #SANDBOX_DIR=~/sandbox
+ #SANDBOX_DIR=/usr/local/sandbox
+-SANDBOX_DIR=$(dirname $(readlink -f $0))
++SANDBOX_DIR=/usr/share/sandboxgamemaker
+ 
+ SANDBOX_OPTIONS=""
+ SANDBOX_MODULE="fps"
+@@ -23,6 +23,7 @@
+ 			echo "  -h|-?|-help|--help	show this help message"
+ 			echo "  -g<string>		set gamemode to <string> (default: fps)"
+ 			echo "				available modes: fps, krs, movie, rpg, ssp"
++			echo "  --launcher		start the graphical launcher GUI"
+ 			echo "  --server		launch dedicated server binary instead"
+ 			echo "  --master		launch a masterserver for server registration"
+ 			echo "				NOTE: compiled masterserver not included"
+@@ -88,6 +89,9 @@
+ 			"master")
+ 				SANDBOX_TYPE="master"
+ 			;;
++			"launcher")
++				SANDBOX_TYPE="launcher"
++			;;
+ 			"debug")
+ 				SANDBOX_PREFIX="debug"
+ 				SANDBOX_EXEC="gdb --args"
+@@ -102,22 +106,13 @@
+ 	shift
+ done
+ 
+-case $(uname -m) in
+-i386|i486|i586|i686)
+-  MACHINE_BIT=32
+-  ;;
+-*)
+-  MACHINE_BIT=64 #assume 64bit otherwise
+-  ;;
+-esac
+-
+ function failed {
+ 	echo ""
+ 	echo "A problem was encountered, please check which of the following it is."
+ 	echo "1) there's no ${SANDBOX_TYPE} for module ${SANDBOX_MODULE}"
+ 	echo "2) There isn't an available executable for your architecture; $(uname -m)"
+ 	echo "3) the executable was moved"
+-	echo "please make sure that ${SANDBOX_DIR}/bin/${SANDBOX_PREFIX}_${SANDBOX_TYPE}_${MACHINE_BIT}_${SANDBOX_MODULE} exists. If it doesn't..."
++	echo "please make sure that /usr/lib/sandboxgamemaker/${SANDBOX_PREFIX}_${SANDBOX_TYPE}_${SANDBOX_MODULE} exists. If it doesn't..."
+ 	echo "install the sdl, sdl-image and sdl-mixer DEVELOPMENT libraries and use \"make -C ${SANDBOX_DIR}/src install\" to compile a binary"
+ 	echo ""
+ 	exit 1
+@@ -127,25 +122,33 @@
+ cd ${SANDBOX_DIR}
+ case ${SANDBOX_TYPE} in
+ 	"client")
+-		if [ -a bin/${SANDBOX_PREFIX}_client_${MACHINE_BIT}_${SANDBOX_MODULE} ]
++		if [ -a /usr/lib/sandboxgamemaker/sandbox_client_${SANDBOX_MODULE} ]
+ 		then
+-			eval ${SANDBOX_EXEC} ./bin/${SANDBOX_PREFIX}_client_${MACHINE_BIT}_${SANDBOX_MODULE} -q${SANDBOX_HOME} -r ${SANDBOX_OPTIONS}
++			eval ${SANDBOX_EXEC} /usr/lib/sandboxgamemaker/${SANDBOX_PREFIX}_client_${SANDBOX_MODULE} -q${SANDBOX_HOME} -r ${SANDBOX_OPTIONS}
+ 		else
+ 			failed
+ 		fi
+ 	;;
+ 	"server")
+-		if [ -a bin/${SANDBOX_PREFIX}_server_${MACHINE_BIT}_${SANDBOX_MODULE} ]
++		if [ -a /usr/lib/sandboxgamemaker/sandbox_server_${SANDBOX_MODULE} ]
+ 		then
+-			eval ${SANDBOX_EXEC} ./bin/${SANDBOX_PREFIX}_server_${MACHINE_BIT}_${SANDBOX_MODULE}  -q${SANDBOX_HOME} ${SANDBOX_OPTIONS}
++			eval ${SANDBOX_EXEC} /usr/lib/sandboxgamemaker/${SANDBOX_PREFIX}_server_${SANDBOX_MODULE}  -q${SANDBOX_HOME} ${SANDBOX_OPTIONS}
+ 		else
+ 			failed
+ 		fi
+ 	;;
+ 	"master")
+-		if [ -a bin/${SANDBOX_PREFIX}_master ]
++		if [ -a /usr/lib/sandboxgamemaker/sandbox_master ]
++		then
++			eval ${SANDBOX_EXEC} /usr/lib/sandboxgamemaker/${SANDBOX_PREFIX}_master
++		else
++			failed
++		fi
++	;;
++	"launcher")
++		if [ -a /usr/lib/sandboxgamemaker/sandboxgamemaker_glauncher ]
+ 		then
+-			eval ${SANDBOX_EXEC} ./bin/${SANDBOX_PREFIX}_master
++			eval ${SANDBOX_EXEC} /usr/lib/sandboxgamemaker/sandboxgamemaker_glauncher
+ 		else
+ 			failed
+ 		fi

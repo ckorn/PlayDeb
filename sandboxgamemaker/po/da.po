@@ -1,0 +1,50 @@
+# danish translation sandboxgamemaker.
+# Copyright (C) 2010 sandboxgamemaker & nedenstående oversættere.
+# This file is distributed under the same license as the sandboxgamemaker package.
+# Joe Hansen <joedalton2@yahoo.dk>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sandboxgamemaker\n"
+"Report-Msgid-Bugs-To: sandboxgamemaker@packages.debian.org\n"
+"POT-Creation-Date: 2010-03-29 18:05+0200\n"
+"PO-Revision-Date: 2010-09-05 23:51+0200\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org> \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Install default content from Platinum Arts?"
+msgstr "Installer standardindhold fra Platinum Arts?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Platinum Arts, LLC, distributes default game content over the Internet."
+msgstr "Platinum Arts, LLC, distribuerer standardspilindhold over internettet."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"This non-free content is a download of over 200 MB, overwriting the game "
+"content already in /usr/share/sandboxgamemaker."
+msgstr ""
+"Dette indhold der ikke er frit fylder mere end 200 MB, og overskriver "
+"spilindholdet der allerede befinder sig i /usr/share/sandboxgamemaker."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If you choose to download and overwrite default game content, this action "
+"will be repeated for any further upgrade of the package, keeping this data "
+"up to date with recently released material."
+msgstr ""
+"Hvis du vælger at hente og overskrive standardspilindhold, vil denne "
+"handling blive gentaget for enhver yderligere opgradering af pakken, hvormed "
+"disse data bliver holdt opdateret med nyt materiale."

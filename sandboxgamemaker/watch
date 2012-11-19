@@ -1,0 +1,3 @@
+version=3
+http://zulu309.server4you.de/redirectors/sandboxgamemaker.html \
+    (?:.*/)?([\d\.]+)

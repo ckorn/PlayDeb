@@ -1,0 +1,13 @@
+This package was downloaded from www.sandboxgamemaker.com.
+
+The get-orig-source target in rules will create the orig.tar.gz of the package source.
+
+Files removed:
+-all precompiled code and the convenience copies of headers and libraries.
+-non-free data folders (see sandboxgamemaker-data)
+
+The remaining files are licensed under the Saurbraten ZLIB license.
+
+The debanizing-makefiles.patch links to shared libenet and installs binaries to the correct locations.
+
+--Scott Howard <showard314@gmail.com>, Jan 20, 2010

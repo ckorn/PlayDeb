@@ -1,0 +1,165 @@
+sandboxgamemaker (2.8.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 18 Nov 2012 14:53:36 +0100
+
+sandboxgamemaker (2.7.1-1~getdeb2) oneiric; urgency=low
+
+  * Update debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 25 Mar 2012 11:38:44 +0200
+
+sandboxgamemaker (2.7.1-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 Nov 2011 15:39:53 +0100
+
+sandboxgamemaker (2.7-1~getdeb1) oneiric; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 09 Oct 2011 21:10:14 +0200
+
+sandboxgamemaker (2.6.1+dfsg-7) unstable; urgency=low
+
+  * S-V 3.9.2 (no changes)
+  * Improved downloader script, thanks to Jasen Betts 
+    (Closes: #627830)
+  * Added parallel build support to debian/rules
+
+ -- Scott Howard <showard@debian.org>  Thu, 26 May 2011 09:14:19 -0400
+
+sandboxgamemaker (2.6.1+dfsg-6) unstable; urgency=low
+
+  * debian/postinst fixed to clean out partially downloaded files in
+    case of an aborted install (LP: #755641)
+  * 0e
+
+ -- Scott Howard <showard@debian.org>  Tue, 17 May 2011 20:40:43 -0400
+
+sandboxgamemaker (2.6.1+dfsg-5) unstable; urgency=low
+
+  * debian/patches/librt_linking.patch
+    - 'shm_open@@GLIBC_2.3' is defined in DSO //lib/librt.so.1 so try adding
+      it to the linker command line. (Closes: #618785)
+ 
+ -- Scott Howard <showard@debian.org>  Sat, 19 Mar 2011 10:45:09 -0400
+
+sandboxgamemaker (2.6.1+dfsg-4) unstable; urgency=low
+
+  * debian/control, debian/compat updated for debhelper version 8
+  * removed debian/patches/libenet_1.3_add.patch, use newly packaged
+    enet 1.3.1 in Debian
+  * use debian/sandboxgamemaker.install instead of src/Makefile's install
+    target
+
+ -- Scott Howard <showard@debian.org>  Sat, 12 Mar 2011 12:16:09 -0500
+
+sandboxgamemaker (2.6.1+dfsg-3) experimental; urgency=low
+
+  * debian/patches/binutils-gold_X11.patch
+    - Fix a FTBFS with binutils-gold not implicitly linking to X11
+      (see LP bug 677934) Thanks to Artur Rona.
+
+ -- Scott Howard <showard314@gmail.com>  Sun, 21 Nov 2010 11:26:10 -0500
+
+sandboxgamemaker (2.6.1+dfsg-2) experimental; urgency=low
+
+  * debian/patches/fix_ftbfs_bigendian.patch
+    - Fixed a FTBFS on big endian machines due to wrong type used in 
+      function call
+
+ -- Scott Howard <showard314@gmail.com>  Wed, 10 Nov 2010 19:33:59 -0500
+
+sandboxgamemaker (2.6.1+dfsg-1) experimental; urgency=low
+
+  * New upstream release.
+  * Refreshed all patches.
+  * Removed spelling_errors.patch and build_fix_bendian.patch (accepted
+    upstream)
+
+ -- Scott Howard <showard314@gmail.com>  Mon, 08 Nov 2010 09:58:16 -0500
+
+sandboxgamemaker (2.6+dfsg-2) experimental; urgency=low
+
+  * debian/patches/build_fix_bendian.patch
+    - Fixed build for big endian architectures (Closes: #599629)
+  * Japanese translation, from Hideki Yamane (Closes: #599887)
+
+ -- Scott Howard <showard314@gmail.com>  Sat, 16 Oct 2010 13:24:37 -0400
+
+sandboxgamemaker (2.6+dfsg-1) experimental; urgency=low
+
+  * New upstream release.
+    - refreshed patches
+  * debian/patches/libenet_1.3_add.patch
+    - includes new upstream libenet and statically links against it
+  * Added wxwidgets launcher
+  * Debian Policy 3.9.1 (no changes)
+  * Fixed some minor spelling errors with spelling_errors.patch
+  * New translations
+    - Danish, by Joe Dalton (Closes: #595586)
+    - Italian, by Vincenzo Campanella (Closes: #576489)
+
+ -- Scott Howard <showard314@gmail.com>  Sat, 09 Oct 2010 13:11:07 -0400
+
+sandboxgamemaker (2.5+dfsg-5) unstable; urgency=low
+
+  [ Christian Perrier ]
+  * Debconf templates and debian/control reviewed by the debian-l10n-
+    english team as part of the Smith review project. Closes: #575689
+  * [Debconf translation updates]
+  * Swedish (Martin Bagge).  Closes: #575874
+  * Russian (Yuri Kozlov).  Closes: #575946
+  * Czech (Michal Simunek).  Closes: #576011
+  * Vietnamese (Clytie Siddall).  Closes: #576017
+  * German (Martin Eberhard Schauer).  Closes: #576289
+  * Portuguese (Pedro Ribeiro).  Closes: #576306
+  * Portuguese (Pedro Ribeiro).  Closes: #577001
+  * French (David Prévot).  Closes: #577030
+  * Spanish (Francisco Javier Cuadrado).  Closes: #577049
+
+  [ Scott Howard ]
+  * Cleaned up wording in .desktop files, added .xpm icon, cleaned up
+    debian menu files. Closes: #575387
+  * postinst script downloads content to /var/cache/sandboxgamemaker
+
+ -- Scott Howard <showard314@gmail.com>  Sat, 17 Apr 2010 16:49:09 -0400
+
+sandboxgamemaker (2.5+dfsg-4) unstable; urgency=low
+
+  * Added debian/po and set up localization for debconf
+  * Merged debian/bin/PAS_downloader into debian/postinst
+
+ -- Scott Howard <showard314@gmail.com>  Tue, 09 Mar 2010 10:46:14 -0500
+
+sandboxgamemaker (2.5+dfsg-3) unstable; urgency=low
+
+  * Switch to dpkg-source 3.0 (quilt) format
+  * Added debian/watch
+  * cleaned up rules to use dh
+  * dropped Build-Depends on quilt and sng
+  * cherry picked upstream launcher sandbox_unix_usr 
+  * added and new man pages
+  * changed .desktop files to use new launcher (Closes: #572097)
+  * debian/control add info about vcs
+  * uses debconf to prompt about installing PA default content
+
+ -- Scott Howard <showard314@gmail.com>  Sun, 07 Mar 2010 14:01:24 -0500
+
+sandboxgamemaker (2.5+dfsg-2) unstable; urgency=low
+
+  * Added debian/bin/PAS_downloader, debian/postrm 
+    to ask user if they want to download and install non-DFSG and large
+    default game data from www.sandboxgamemaker.com
+  * Bump standards to 3.8.4 (no changes)
+
+ -- Scott Howard <showard314@gmail.com>  Fri, 19 Feb 2010 20:54:36 -0500
+
+sandboxgamemaker (2.5+dfsg-1) unstable; urgency=low
+
+  * Initial upload (Closes: #551000).
+
+ -- Scott Howard <showard314@gmail.com>  Wed, 20 Jan 2010 21:45:25 -0500
