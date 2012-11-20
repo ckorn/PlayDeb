@@ -1,3 +1,9 @@
+snowstorm (3.4.4.267139-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 20 Nov 2012 15:02:28 +0100
+
 snowstorm (3.4.3.266591-1~getdeb1) precise; urgency=low
 
   * New upstream version
