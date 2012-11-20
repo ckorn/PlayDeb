@@ -1,0 +1,14 @@
+# Copyright (C) 2009  Miriam Ruiz <little_miry@yahoo.es>
+# Distributed under the same license as the game. See debian/copyright.
+
+--- Performous-0.5.0-Source.orig/data/performous.desktop
++++ Performous-0.5.0-Source/data/performous.desktop
+@@ -10,7 +10,7 @@
+ Comment[ro]=Un joc de tip karaoke
+ Comment[se]=Ett karaoke-spel
+ Exec=performous
+-Icon=performous.xpm
++Icon=performous.png
+ Terminal=false
+ Type=Application
+ Categories=Application;Game;ArcadeGame;

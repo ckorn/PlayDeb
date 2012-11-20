@@ -1,0 +1,2 @@
+# Do not generate diff for changes in config.(sub|guess)
+extend-diff-ignore = "(^|/)config.(sub|guess)$"

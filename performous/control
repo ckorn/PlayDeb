@@ -1,0 +1,87 @@
+Source: performous
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+XSBC-Original-Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders: Miriam Ruiz <little_miry@yahoo.es>
+Build-Depends: debhelper (>= 9),
+               cmake (>= 2.6),
+               pkg-config,
+               help2man,
+               gettext,
+               libgl1-mesa-dev,
+               libsdl1.2-dev,
+               libcairo2-dev,
+               librsvg2-dev,
+               libboost-thread-dev (>= 1.36),
+               libboost-serialization-dev (>= 1.36),
+               libboost-program-options-dev (>= 1.36),
+               libboost-regex-dev (>= 1.36),
+               libboost-filesystem-dev (>= 1.36),
+               libavcodec-dev,
+               libavformat-dev,
+               libswscale-dev,
+               libmagick++-dev,
+               libsamplerate0-dev,
+               libxml++2.6-dev,
+               libasound2-dev,
+               libjack-dev,
+               libpulse-dev,
+               portaudio19-dev,
+               libgstreamer0.10-dev,
+               libglew-dev,
+               libpango1.0-dev
+Standards-Version: 3.9.3
+Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/performous/
+Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-games/packages/trunk/performous/
+Homepage: http://performous.org/
+
+Package: performous
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Pre-Depends: dpkg (>= 1.15.6)
+Recommends: ${alsalibs:Recommends}
+Conflicts: ultrastar-ng (<< 0.3.0)
+Replaces: ultrastar-ng (<< 0.3.0)
+Provides: ultrastar-ng
+Description: karaoke game that allows user supplied songs
+ A karaoke, band and dancing game where one or more players perform a song
+ and the game scores their performances. Supports songs in UltraStar,
+ Frets on Fire and StepMania formats. Microphones and instruments from
+ SingStar, Guitar Hero and Rock Band as well as some dance pads are
+ autodetected.
+
+Package: performous-tools
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Pre-Depends: dpkg (>= 1.15.6)
+Recommends: vorbis-tools
+Suggests: performous
+Description: karaoke game that allows user supplied songs - tools
+ A karaoke, band and dancing game where one or more players perform a song
+ and the game scores their performances. Supports songs in UltraStar,
+ Frets on Fire and StepMania formats. Microphones and instruments from
+ SingStar, Guitar Hero and Rock Band as well as some dance pads are
+ autodetected.
+ .
+ This package includes some tools for converting original Singstar DVDs to
+ the format used by Performous.
+
+Package: performous-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: performous (= ${binary:Version}) | performous-tools (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Pre-Depends: dpkg (>= 1.15.6)
+Description: karaoke game that allows user supplied songs - debug
+ A karaoke, band and dancing game where one or more players perform a song
+ and the game scores their performances. Supports songs in UltraStar,
+ Frets on Fire and StepMania formats. Microphones and instruments from
+ SingStar, Guitar Hero and Rock Band as well as some dance pads are
+ autodetected.
+ .
+ This package includes the debugging symbols.
