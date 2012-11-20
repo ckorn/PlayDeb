@@ -1,0 +1,3 @@
+?package(performous):needs="x11" section="Games/Action" \
+	title="Performous" command="/usr/games/performous" \
+	icon="/usr/share/pixmaps/performous_32x32.xpm"

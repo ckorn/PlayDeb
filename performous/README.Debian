@@ -1,0 +1,38 @@
+performous for Debian
+---------------------
+
+You can find songs online by Google or at your favorite Torrent sites. We
+recommend starting with the ultrastar-songs package that can be download from
+our project website. You need to extract that tarball into ~/.ultrastar/ or to
+one of the other folders that the game searches songs for. Run ultrastar from
+a terminal to see the list of folders.
+
+If your songs are not in UTF-8 (most songs aren't yet), please do:
+        recode CP1252..UTF-8 songs/*/*.txt
+
+You can use iconv instead, if you prefer:
+	iconv --from-code=ISO-8859-1 --to-code=UTF-8 source.txt > dest.txt
+
+For converting a whole directory of songs to UTF-8 with iconv:
+	for i in *; do echo $i; \
+	mv "$i/$i.txt" "$i/$i.ISO-8859-1.txt"; \
+	iconv --from-code=ISO-8859-1 --to-code=UTF-8 "$i/$i.ISO-8859-1.txt" \
+		> "$i/$i.txt"; \
+	done
+
+After that make sure that all the characters display correctly. If they don't,
+you need to guess which charset the original used (instead of CP1252) and retry.
+
+If you want to improve the game, join IRC channel #Performous (Freenode) and
+you'll get SVN write access.
+
+For more (up to date) information, see http://performous.org/
+
+Songs are searched for in the following directories:
+    $HOME/.ultrastar/songs/
+    /usr/local/share/games/ultrastar/songs/
+    /usr/local/share/ultrastar/songs/
+    /usr/share/games/ultrastar/songs/
+    /usr/share/ultrastar/songs/
+
+ -- Miriam Ruiz <little_miry@yahoo.es>  Tue, 11 Nov 2008 21:11:40 +0100
