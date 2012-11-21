@@ -1,3 +1,24 @@
+gemrb (0.7.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+      New features:
+        - configuration changes are now saved to gem-baldur.ini (or
+          equivalent)
+        - GemRB now asks for confirmation when exiting
+        - output can now be shown in the ingame message window (run debug(5))
+        - ToBEx flags for effect damage: bypass mirror image, ignore
+          difficulty
+        - SDL2 software keyboard
+
+      Improved features:
+        - custom dialog.tlk encoding support
+        - fonts, effect icons, initials, chapter text
+        - option windows
+        - actions, triggers, effects, invisibility handling
+        - assorted bugfixes
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Nov 2012 17:39:44 +0100
+
 gemrb (0.7.1-1~getdeb1) precise; urgency=low
 
   * New upstream version
