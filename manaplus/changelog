@@ -1,3 +1,21 @@
+manaplus (1:1.2.11.25-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: some fixes in jewelry theme.
+    fix: disable some popups in Android version.
+    fix: drops window cleaning.
+    fix: missing themes in windows installer.
+    fix: random incorrect beings draw order.
+    add: show/hide on screen keyboard on Android.
+    add: attack human chat command (by Travolta)
+    command: /atkhuman
+    add: extend theming.
+    add: onscreen joystick.
+    add: improve OpenGL draw speed.
+    add: persistend directories under Android.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 24 Nov 2012 23:00:58 +0100
+
 manaplus (1:1.2.11.11-1~getdeb1) precise; urgency=low
 
   * New upstream version
