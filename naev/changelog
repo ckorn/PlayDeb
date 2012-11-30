@@ -1,3 +1,9 @@
+naev (0.5.3-1~getdeb4~quantal) quantal; urgency=low
+
+  * Rebuild for quantal
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 28 Nov 2012 20:36:21 +0100
+
 naev (0.5.3-1~getdeb3~precise) precise; urgency=low
 
   * New upstream version

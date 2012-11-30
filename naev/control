@@ -2,7 +2,7 @@ Source: naev
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <c_korn@gmx.de>
-Build-Depends: debhelper (>= 7.0.50),
+Build-Depends: debhelper (>= 9),
                libpng12-dev,
                libopenal-dev,
                binutils-dev,
@@ -19,7 +19,9 @@ Homepage: http://naev.org
 
 Package: naev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, naev-data (>= 0.5.3)
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         naev-data (>= 0.5.3)
 Description: 2D space trading combat game
  NAEV is a 2D space trading and combat game, in a similar
  vein to Escape Velocity. 
