@@ -254,7 +254,7 @@ EOF
 ed -s debian/copyright-new <<EOF
 /INSERT_DEBIAN_HERE/c
 Files: debian/*
-Copyright: 2011-2012 Martin Erik Werner <martinerikwerner@gmail.com>
+Copyright: 2011-2013 Martin Erik Werner <martinerikwerner@gmail.com>
 License: Zlib
 .
 w
