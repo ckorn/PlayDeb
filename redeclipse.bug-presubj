@@ -6,10 +6,12 @@ clean profile, you can do this temoprarily by opening a terminal and running
 
   redeclipse -h/tmp/recfg
 
-Please also include the init log, you can get the log by opening a terminal and
-running
+Please also include the init log, you can get the init log by opening a
+terminal and running
 
-  redeclipse -h/tmp/recfg -x"quit"
+  redeclipse -h/tmp/recfg -glog_init.txt -x"quit"
+
+The log file will be created as /tmp/recfg/log_init.txt.
 
 
 If Red Eclipse crashes on your system, please include a backtrace with your bug
@@ -20,7 +22,7 @@ report. First install the redeclipse-dbg package and open a terminal and run
 
 Once at the gdb prompt, start Red Eclipse via
 
-  run -h/tmp/recfg -df0
+  run -h/tmp/recfg -df0 -glog_v4.txt -v4
 
 Once Red Eclipse has crashed, type
 
@@ -29,8 +31,5 @@ Once Red Eclipse has crashed, type
 to obtain the backtrace. Please attach the output when you are reporting a bug
 about crashes.
 
-Also, please include the log messages leading up to the crash, you can set
-maximum log verbosity by running
-
-  redeclipse -h/tmp/recfg -v4
-
+Also, please include the log messages leading up to the crash, which was
+created as /tmp/recfg/log_v4.txt.
