@@ -1,3 +1,29 @@
+stendhal (1.05-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    *world*
+    - added Rudolph and a quest for goodies
+    - added reindeer moss as a seasonal goody
+    - Santa is out for Christmas
+
+    *client*
+    - A lot of redrawn images
+    - The game screen can be scaled. The scaling can be turned off in
+    settings to get the old behaviour
+    - Karma bar fits to the width of the left panel
+    - Travel log updates to font preference change immediately
+    - Font size used in the client can be changed
+
+    *fixes*
+    - fixed tic-tac-toe board not being drawn when the top left corner is not
+    on screen
+    - fixed a bug that could cause items being lost in trade
+    - fixed the automatic scrolling of the chat log sometimes turning off by
+    itself
+    - several small fixes to entity views sometimes missing changes
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 08 Feb 2013 22:18:16 +0100
+
 stendhal (1.04-1~getdeb1) precise; urgency=low
 
   * New upstream version
