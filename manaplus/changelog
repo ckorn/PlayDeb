@@ -1,3 +1,91 @@
+manaplus (1:1.3.2.3-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    2013-02-03 New release 1.3.2.3
+    fix: crash on closing before entering into game.
+    fix: sounds in broken quests (evol only)
+    fix: context menu in chat window.
+    fix: erase action for guild members.
+    fix: draw most left tiles in visible map.
+    fix: empty lines support in news.
+    fix: possible crash in skills dialog.
+    fix: first time map loading after registration.
+    fix: minimal windows size for very small resolutions.
+    fix: setup window resize.
+    add: show better ping if response slow.
+    add: show colored party and guild members in online list.
+    add: extend listbox theming.
+    add: increase default soft fps limit for Android to 100.
+    add: texture compression format selection.
+    add: option for autoresize minimaps.
+    add: loading default music files for each maps.
+    add: support for selecting char by click in chars selection dialog.
+    add: new tips.
+    add: sort option to buy dialog from players.
+    add: default avatars support for npcs.
+
+    2013-01-20 New release 1.3.1.20
+    fix: macosx fixes.
+    fix: collision masks.
+    fix: crash on exit on windows.
+    fix: minor changes in black&black theme.
+    fix; servers deletion from servers list.
+    fix: language selection in last ubuntu.
+    fix: environment variables usage.
+    fix: different game sound fixes.
+    fix: shortcuts window resize issue in software draw mode.
+    add: extend theming.
+    add: http registrations in register dialog.
+    add: updated jewelry theme.
+    add: support for outlined texts in some windows and controls.
+    add: show flag icons in language selection list.
+    add: chat command to dump environment variables (/dumpe)
+    add: open broweser in MacOSX.
+    add: popup menu for text fields.
+    add: for sound "strike" alias "miss".
+    add: different sounds from different weapons.
+    add: option to show/hide onscreen keyboard.
+    add: actions for onscreen buttons (touch tab).
+    add: configurable number of onscreen buttons.
+    add: talk to very close npc by only talk key (T).
+    add: better stats line in copy to chat stats.
+    add: context menu for hyper links.
+    add: detect joystick button.
+
+    2012-12-23 New release 1.2.12.23
+    fix: reset in memory password if password was wrong.
+    fix: dont show opengl restart mesasge in settings under Android.
+    fix: image particles alpha property.
+    fix: equipment window selection draw.
+    fix: mouse move events under Android.
+    fix: possible crash in rename nav point dialog.
+    fix: by default disable texture compression.
+    add: settings page for onscreen controls.
+    add; show trading partner nick in trade error messages.
+    add: replace drop down listboxes to popup lists.
+    add: different skills for each skill level.
+    add: description to skills.
+    add: option to disable gamma correction.
+    add: new default wallpaper.
+    add: option for log input events.
+    add: update mplus fonts.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 08 Feb 2013 22:13:53 +0100
+
+manaplus (1:1.2.12.9-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: relative mouse moving for Android.
+    fix: show chat history option.
+    fix: MacOSX compilation.
+    add: email in registration dialog (evol only).
+    add: enable jewelry theme by default for evol branding.
+    add: improve OpenGL draw speed.
+    add: protect chat focus by default.
+    add: basic on screen buttons for Android version.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 10 Dec 2012 19:08:17 +0100
+
 manaplus (1:1.2.11.25-1~getdeb1) precise; urgency=low
 
   * New upstream version
