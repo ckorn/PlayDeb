@@ -7,8 +7,6 @@ Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.3
 DM-Upload-Allowed: yes
 Homepage: http://red.planetarena.org
-Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/alien-arena-data/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/alien-arena-data/?op=log
 
 Package: alien-arena-data
 Architecture: all
