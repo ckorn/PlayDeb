@@ -1,0 +1,202 @@
+sauerbraten (0.0.20130203-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 10 Feb 2013 15:05:14 +0100
+
+sauerbraten (0.0.20100728.dfsg+repack-3) unstable; urgency=low
+
+  * Team upload.
+  * Correct manpage regarding the previous upload: Remove the note that
+    running in fullscreen mode was the default.
+
+ -- Bruno "Fuddl" Kleinert <fuddl@debian.org>  Wed, 29 Jun 2011 17:29:57 +0200
+
+sauerbraten (0.0.20100728.dfsg+repack-2) unstable; urgency=low
+
+  * Team upload.
+  * Start in windowed mode by default. This introduces
+    windowed_by_default.diff.
+
+ -- Bruno "Fuddl" Kleinert <fuddl@debian.org>  Wed, 29 Jun 2011 15:56:14 +0200
+
+sauerbraten (0.0.20100728.dfsg+repack-1) unstable; urgency=low
+
+  * Repack .orig.tar.gz
+    * Drop an unredistributable file (include/wincompat.h). We don't use it
+      anyway
+    * Repack with bzip2 compression
+  * Update debian/copyright:
+    * Update copyright years of sauerbraten and Enet
+    * Liste files in enet/m4/ which are copyright by the FSF and some
+      autotools file in enet/ and the files in include/ (Closes: #618943)
+
+ -- Bruno "Fuddl" Kleinert <fuddl@debian.org>  Tue, 21 Jun 2011 16:59:36 +0200
+
+sauerbraten (0.0.20100728.dfsg-5) unstable; urgency=low
+
+  * Fix wrong variable name in debian/rules. It's not CXXOPTFLAGS but CXXFLAGS
+  * Update to standards version 3.9.2. No changes.
+  * Don't mess with users' PATH environment in sauerbraten.desktop. Instead
+    call /usr/games/sauerbraten directly
+  * Use debhelper 8 to build the package
+    * Build-depend on debhelper (>= 8)
+    * Rewrite debian/rules
+
+ -- Bruno "Fuddl" Kleinert <fuddl@debian.org>  Fri, 03 Jun 2011 19:03:03 +0200
+
+sauerbraten (0.0.20100728.dfsg-4) unstable; urgency=low
+
+  * Team upload.
+  * Link with -lrt on kFreeBSD too.
+    Closes: #621811
+
+ -- Evgeni Golov <evgeni@debian.org>  Thu, 12 May 2011 01:03:35 +0200
+
+sauerbraten (0.0.20100728.dfsg-3) unstable; urgency=low
+
+  * Allow building on PowerPC again (Closes: 549470)
+
+ -- Bruno "Fuddl" Kleinert <fuddl@debian.org>  Tue, 01 Mar 2011 17:38:44 +0100
+
+sauerbraten (0.0.20100728.dfsg-2) unstable; urgency=low
+
+  * Fix typos in package description, manpages and desktop shortcuts
+    (Closes: #573778)
+
+ -- Bruno "Fuddl" Kleinert <fuddl@debian.org>  Mon, 16 Aug 2010 12:12:51 +0200
+
+sauerbraten (0.0.20100728.dfsg-1) unstable; urgency=low
+
+  * New upstream release
+  * Refresh 30-fix-indirect-linking-for-binutils-gold.diff
+  * Refresh 10-fix-clean-target.diff
+  * Fix lintian warning about missing ${misc:Depends} in Depends fields of
+    binary packages
+  * Update to standards version 3.9.1 without changes
+
+ -- Bruno "Fuddl" Kleinert <fuddl@debian.org>  Thu, 29 Jul 2010 21:49:06 -0400
+
+sauerbraten (0.0.20090504.dfsg-2) unstable; urgency=low
+
+  [ Bruno "Fuddl" Kleinert ]
+  * Drop code snippet in debian/rules to make parallel builds possible on SMP
+    machines.
+  * Add 30-fix-indirect-linking-for-binutils-gold.diff. Link directly against
+    X11 so that ld as in binutils-gold is happy. Thanks to Peter Fritzsche for
+    reporting! (Closes: #556757)
+  * Copy over README.source from quilt to document the patch system we are using
+  * Convert to source package format 3.0 quilt
+    * Drop build dependency on quilt
+    * Ship debian/sauerbraten.png instead of the uuencoded sauerbraten.png.uu.
+      We don't need sharutils as build dependency anymore, so drop it.
+  * Update to standards version 3.8.3. No changes required.
+  * Clean up the rules file. Create *.install files instead of calling
+    dh_install repeatedly
+
+ -- Bruno "Fuddl" Kleinert <fuddl@debian.org>  Thu, 19 Nov 2009 13:14:32 +0100
+
+sauerbraten (0.0.20090504.dfsg-1) unstable; urgency=low
+
+  [ Bruno "Fuddl" Kleinert ]
+  * New Upstream Version (Closes: #527032)
+  * Add a script to build pristine tarballs from upstream SVN repository
+  * Update my email address in some files and in the uploaders field
+  * Refresh patch to fix the clean target in the top-level makefile
+  * Add a patch for top-level makefile to build binaries with debug symbols
+  * Updated debian/copyright as we get sources via SVN, now
+  * Bump Debian standards version to 3.8.2
+    + Updated section for sauerbraten-dbg
+    + Use unicode copyright symbol in debian/copyright
+  * Bumped debhelper compatibility level to 7
+  * Versioned binary dependency on sauerbraten-data is now put into a generated
+    substitution variable
+  * Update Vcs-* fields in debian/control to reflect new repository location
+  * Minor changes in README.Debian about download location and from where the
+    sources were obtained.
+
+  [ Evgeni Golov ]
+  * debian/rules:
+    + Don't FTBFS with DEB_BUILD_OPTIONS=noopt.
+      ($(info ...) isn't allowed before the first target)
+    + Neither is $(error ...), so move it into the build target.
+      Closes: #511719
+
+ -- Bruno "Fuddl" Kleinert <fuddl@debian.org>  Fri, 03 Jul 2009 12:13:55 +0200
+
+sauerbraten (0.0.20080620.dfsg-1) unstable; urgency=low
+
+  * New upstream release (Closes: #486802)
+  * Refresh fix-clean-target.diff
+
+ -- Bruno "Fuddl" Kleinert <fuddl@tauware.de>  Wed, 25 Jun 2008 22:51:13 +0200
+
+sauerbraten (0.0.20071227.dfsg-2) unstable; urgency=low
+
+  [ Ansgar Burchardt ]
+  * Remove deprecated Encoding key from .desktop file
+
+  [ Bruno "Fuddl" Kleinert ]
+  * Build-depend on debhelper >= 5.0.51. Found by lintian
+    * We need dh_icon from at least that version
+  * Depend on sauerbraten-data of a newer Debian revision, which fixes #467449
+
+ -- Bruno "Fuddl" Kleinert <fuddl@tauware.de>  Sun, 23 Mar 2008 20:38:20 +0100
+
+sauerbraten (0.0.20071227.dfsg-1) unstable; urgency=low
+
+  [ Bruno "Fuddl" Kleinert ]
+  * New upstream release
+  * Update to Standards version 3.7.3.0. No changes necessary
+  * Build debug package sauerbraten-dbg
+  * Updated README.Debian
+    * Document removal of some precompiled/header files in the engine's
+      sources
+    * Describe in README.Debian how to generate a backtrace if sauerbraten
+      crashes
+  * Fix format of NEWS.Debian. Found by lintian
+  * Use a versioned dependency on sauerbraten-data to avoid incompatible
+    installations of the engine and game-data package (Closes: #440246)
+  * Switch from dpatch to quilt
+  * Install PNG desktop icon in proper location
+  * Update my email address
+  * Patch Makefile to support building binaries with debug symbols
+    (Closes: #443658)
+
+  [ Marco Rodrigues ]
+  * Add Homepage field in the control file.
+
+  [ Reinhard Tartler ]
+  * disable powerpc builds in debian/rules (Closes: #432666)
+
+ -- Bruno "Fuddl" Kleinert <fuddl@tauware.de>  Mon, 29 Jan 2008 18:55:17 +0100
+
+sauerbraten (0.0.20070819.dfsg-1) unstable; urgency=low
+
+  [ Bruno "Fuddl" Kleinert ]
+  * Update the Debian menu file to the latest menu structure
+  * Remove 10_save_and_load_maps_from_home_directory.dpatch (Upstream solved
+    this in this release) (Closes: #426691)
+  * Remove 10_search_home_for_config.dpatch (Upstream solved this in this
+    release)
+  * Add 10_fix_clean_target.dpatch to avoid calling autotools in clean target
+  * Add NEWS.Debian
+
+  [ Cyril Brulebois ]
+  * Added XS-Vcs-Svn and XS-Vcs-Browser fields in the control file.
+
+ -- Bruno "Fuddl" Kleinert <fuddl@gmx.de>  Sun, 26 Aug 2007 17:45:25 +0200
+
+sauerbraten (0.0.20070413.dfsg-1) unstable; urgency=low
+
+  * New upstream release (Closes: #420086)
+  * Replaced german-english mixture 'ego-shooter' by 'first-person shooter'
+  * Added a desktop shortcut icon
+
+ -- Bruno "Fuddl" Kleinert <fuddl@gmx.de>  Sat, 28 Apr 2007 21:57:59 +0200
+
+sauerbraten (0.0.20061204.dfsg-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Bruno "Fuddl" Kleinert <fuddl@gmx.de>  Tue,  9 Jan 2007 18:19:30 +0100

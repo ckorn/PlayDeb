@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CXXFLAGS += -g
+else
+	CXXFLAGS += -g -O2 -fomit-frame-pointer
+endif
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	MAKEFLAGS += -j$(NUMJOBS)
+endif
+
+override_dh_auto_build:
+	convert debian/sauerbraten.png debian/sauerbraten.xpm
+	$(MAKE) CXXFLAGS="$(CXXFLAGS)"
+
+override_dh_auto_clean:
+	$(MAKE) clean
+	rm -f debian/sauerbraten.xpm
+
+override_dh_auto_install:
+	# This override target must not be removed (even if empty!) to stop dh
+	# from trying upstream's broken install target.
+	# Uhm... yes, it's a hack to strip \.dfsg.* from the version string...
+	# Improvements appreciated! It's used by dh_gencontrol
+	echo "sauerbraten-data-ver=`head -n1 debian/changelog | egrep -o '\(.*\)' | sed -e 's/(//' | sed -e 's/-1~getdeb.*//'`" \
+		>> debian/sauerbraten.substvars
+
+override_dh_strip:
+	dh_strip -psauerbraten --dbg-package=sauerbraten-dbg
+	dh_strip
+
+override_dh_installdocs:
+	dh_installdocs --all debian/README.Debian
+	dh_installdocs -psauerbraten debian/NEWS.Debian
