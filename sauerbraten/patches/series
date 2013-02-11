@@ -1,0 +1,4 @@
+10-fix-clean-target.diff
+20-build-with-debug-symbols.diff
+30-fix-indirect-linking-for-binutils-gold.diff
+windowed_by_default.diff

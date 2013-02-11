@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /usr/lib/games/sauerbraten
+exec ./sauer_server "$@"

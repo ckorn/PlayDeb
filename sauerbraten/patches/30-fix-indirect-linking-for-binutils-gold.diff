@@ -1,0 +1,20 @@
+Index: sauerbraten-0.0.20130203/Makefile
+===================================================================
+--- sauerbraten-0.0.20130203.orig/Makefile	2013-02-10 15:10:43.000000000 +0100
++++ sauerbraten-0.0.20130203/Makefile	2013-02-10 15:12:47.960404480 +0100
+@@ -37,11 +37,14 @@
+ CLIENT_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lSDL -lSDL_image -lSDL_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
+ else	
+ CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
+-CLIENT_LIBS= -Lenet/.libs -lenet -L/usr/X11R6/lib -lX11 `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
++CLIENT_LIBS= -Lenet/.libs -lenet -L/usr/X11R6/lib `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
+ endif
+ ifeq ($(PLATFORM),Linux)
+ CLIENT_LIBS+= -lrt
+ endif
++ifeq ($(PLATFORM),GNU/kFreeBSD)
++CLIENT_LIBS+= -lrt
++endif
+ CLIENT_OBJS= \
+ 	shared/crypto.o \
+ 	shared/geom.o \

@@ -1,0 +1,10 @@
+Index: sauerbraten-0.0.20130203/Makefile
+===================================================================
+--- sauerbraten-0.0.20130203.orig/Makefile	2013-02-10 15:10:02.000000000 +0100
++++ sauerbraten-0.0.20130203/Makefile	2013-02-10 15:10:43.400408186 +0100
+@@ -1,4 +1,4 @@
+-CXXFLAGS= -O3 -fomit-frame-pointer
++CXXFLAGS= -O3 -fomit-frame-pointer -g
+ override CXXFLAGS+= -Wall -fsigned-char -fno-exceptions -fno-rtti
+ 
+ PLATFORM= $(shell uname -s)

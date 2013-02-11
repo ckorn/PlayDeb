@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/_//g,dversionmangle=s/0\.0\.//" \
+http://sf.net/sauerbraten/sauerbraten_([\d_]+)_(?:.*)linux\.tar\.(?:bz2|gz|xz)

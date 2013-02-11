@@ -1,0 +1,13 @@
+Index: sauerbraten-0.0.20130203/engine/main.cpp
+===================================================================
+--- sauerbraten-0.0.20130203.orig/engine/main.cpp	2013-02-10 14:59:58.000000000 +0100
++++ sauerbraten-0.0.20130203/engine/main.cpp	2013-02-10 15:12:59.872404126 +0100
+@@ -475,7 +475,7 @@
+ #ifdef _DEBUG
+ VARF(fullscreen, 0, 0, 1, setfullscreen(fullscreen!=0));
+ #else
+-VARF(fullscreen, 0, 1, 1, setfullscreen(fullscreen!=0));
++VARF(fullscreen, 0, 0, 1, setfullscreen(fullscreen!=0));
+ #endif
+ 
+ void screenres(int *w, int *h)
