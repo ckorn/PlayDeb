@@ -1,0 +1,22 @@
+Source: sauerbraten-data
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Bruno "Fuddl" Kleinert <fuddl@debian.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: http://sauerbraten.org/
+
+Package: sauerbraten-data
+Architecture: all
+Recommends: sauerbraten
+Depends: ${misc:Depends}
+Conflicts: sauerbraten (<< ${source:Upstream-Version})
+Description: Game content for the Sauerbraten game
+ Sauerbraten is a networked fast-paced 3D first-person shooter game. It supports
+ rather modern graphic effects and some nice graphic details.
+ .
+ The game client also works as the map editor. It is even possible to create
+ and/or edit a map together with other people over a network connection.
+ .
+ This package installs maps, textures, sounds, etc. of Sauerbraten.

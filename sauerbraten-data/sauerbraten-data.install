@@ -1,0 +1,3 @@
+debian/overrides/sauerbraten-data	usr/share/lintian/overrides
+data					usr/share/games/sauerbraten
+packages				usr/share/games/sauerbraten
