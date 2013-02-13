@@ -1,3 +1,27 @@
+stendhal (1.06-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    *world*
+    - more light in Ados city
+    - some creatures drop blue items now
+    - more creature descriptions added
+    - new sprite shown when blood and corpses setting is turned off
+    - new sound effects for multiple creatures
+    - Leander explains his task better 
+    - new corpses for slimes, ents and stone golems
+    - dwarvish legs now available
+
+    *client*
+
+    *fixes*
+    - Alice Farmer understands players better
+    - Vincento Price can count correctly
+    - Collision touchups around trees on many maps
+    - Elementals in hell can't collide any longer
+    - "Far South" achievement reachable now
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 13 Feb 2013 19:39:04 +0100
+
 stendhal (1.05-1~getdeb1) precise; urgency=low
 
   * New upstream version
