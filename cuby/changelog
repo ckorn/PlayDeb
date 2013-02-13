@@ -1,3 +1,9 @@
+cuby (0.4-1~getdeb4~quantal) quantal; urgency=low
+
+  * Remove debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 12 Feb 2013 18:39:42 +0100
+
 cuby (0.4-1~getdeb3) quantal; urgency=low
 
   * Rebuild for quantal
