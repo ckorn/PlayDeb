@@ -24,7 +24,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          stuntrally-data (= ${source:Version}),
-         stuntrally-tracks (>= 1.8),
+         stuntrally-tracks (>= 1.9),
          libfreeimage3,
          libzzip-0-13,
          libogremain1.8,

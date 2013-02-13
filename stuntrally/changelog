@@ -1,3 +1,9 @@
+stuntrally (1.9-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 12 Feb 2013 17:04:04 +0100
+
 stuntrally (1.8-1~getdeb2) precise; urgency=low
 
   * New upstream version

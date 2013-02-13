@@ -1,32 +1,32 @@
 Also directly enter the paths. Searching them will not work.
-Index: stuntrally-1.7/source/vdrift/pathmanager.cpp
+Index: stuntrally-1.9/source/vdrift/pathmanager.cpp
 ===================================================================
---- stuntrally-1.7.orig/source/vdrift/pathmanager.cpp	2012-09-01 22:12:01.000000000 +0200
-+++ stuntrally-1.7/source/vdrift/pathmanager.cpp	2012-09-02 12:11:48.042774676 +0200
-@@ -157,6 +157,11 @@
- 	CreateDir(GetReplayPath(), error_output);
- 	CreateDir(GetGhostsPath(), error_output);
+--- stuntrally-1.9.orig/source/vdrift/pathmanager.cpp	2013-01-15 09:20:23.000000000 +0100
++++ stuntrally-1.9/source/vdrift/pathmanager.cpp	2013-02-12 17:23:58.878040374 +0100
+@@ -163,6 +163,11 @@
+ 	CreateDir(DataUser(), error_output);  // user data
+ 
  
 +	// Insert the correct directories for the Debian package.
-+	game_data_dir = "/usr/share/games/stuntrally/";
-+	game_config_dir = "/usr/share/games/stuntrally/config/";
++	game_data = "/usr/share/games/stuntrally/";
++	game_config = "/usr/share/games/stuntrally/config/";
 +
 +#if 0
  	// Find game data dir and defaults config dir
  	char *datadir = getenv("STUNTRALLY_DATA_ROOT");
  	if (datadir)
-@@ -197,6 +202,7 @@
- 			if (!game_data_dir.empty() && !game_config_dir.empty()) break;
+@@ -203,6 +208,7 @@
+ 			if (!game_data.empty() && !game_config.empty()) break;
  		}
  	}
 +#endif
  
- 	// Find cache dir
- 	#ifdef _WIN32
-Index: stuntrally-1.7/cmake/FindOGRE.cmake
+ 
+ 	//  Subdirs for each sim_mode
+Index: stuntrally-1.9/cmake/FindOGRE.cmake
 ===================================================================
---- stuntrally-1.7.orig/cmake/FindOGRE.cmake	2012-09-01 22:12:01.000000000 +0200
-+++ stuntrally-1.7/cmake/FindOGRE.cmake	2012-09-06 17:38:26.607493462 +0200
+--- stuntrally-1.9.orig/cmake/FindOGRE.cmake	2013-01-15 09:20:23.000000000 +0100
++++ stuntrally-1.9/cmake/FindOGRE.cmake	2013-02-12 17:04:48.950074580 +0100
 @@ -84,7 +84,7 @@
      /opt/ogre
      /opt/OGRE
