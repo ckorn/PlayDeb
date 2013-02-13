@@ -19,7 +19,6 @@ override_dh_auto_install:
 
 	rm debian/tmp/usr/share/games/stuntrally/fonts/Vera.ttf
 	rm debian/tmp/usr/share/games/stuntrally/fonts/VeraMono.ttf
-	rm debian/tmp/usr/share/games/stuntrally/trees/_model_license.txt
 
 override_dh_install:
 	dh_install --list-missing
