@@ -1,3 +1,29 @@
+the-powder-toy (85.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    Fixed Many, many build and background fixes
+    Fixed Fix save as new name not actually loading the new save
+    Fixed Fix water eq always being on in old saves
+    Fixed Fix '=' resetting air heat, or sometimes breaking GLAS/QRTZ
+    Fixed Fix ctrl+x not deleting signs
+    Fixed Fix replace option with element functions in lua scripts
+    Fixed Fix rare crash when saving
+    Changed Stamps save on a 1 pixel grid
+    Changed TSNS won't detect METL
+    Changed MERC expanding keeps decoration
+    Changed Right click is now 4 again for mouseevent functions, fix
+        tpt.fillrect coordinates from tpt
+    Changed tpt.hud, tpt.set_console, tpt.display_mode work again
+    Changed tpt.selectedl/r/a work again, but return an identifier string
+    Changed Larger brush size max, fix circle brush resizing lag
+    Changed Pressing enter doesn't open a save while you are typing a comment
+    Changed Selecting a stamp moves it to the front of the list
+        (unless holding ctrl)
+    Changed VOID, VACU, BHOL eat LIGH as it moves
+    Added Ability to rename and delete local saves (right click) 
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 13 Feb 2013 19:19:25 +0100
+
 the-powder-toy (84.2-1~getdeb1) precise; urgency=low
 
   * New upstream version
