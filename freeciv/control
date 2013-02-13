@@ -3,11 +3,11 @@ Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Jordi Mallach <jordi@debian.org>, Clint Adams <clint@debian.org>, Karl Goetz <karl@kgoetz.id.au>
-Standards-Version: 3.9.1
+Standards-Version: 3.9.3
 Homepage: http://www.freeciv.org/
 Vcs-Git: git://git.debian.org/git/pkg-games/freeciv.git
 Vcs-Browser: http://git.debian.org/?p=pkg-games/freeciv.git;a=summary
-Build-Depends: debhelper (>= 7.0.50),
+Build-Depends: debhelper (>= 9),
                gettext,
                libx11-dev,
                libxaw7-dev,
