@@ -1,3 +1,15 @@
+galaxy (2.2-1~getdeb2) precise; urgency=low
+
+  * Fix debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 12 Feb 2013 18:42:06 +0100
+
+galaxy (2.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 12 Feb 2013 18:41:14 +0100
+
 galaxy (2.2-1~getdeb1) precise; urgency=low
 
   * New upstream version
