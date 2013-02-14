@@ -48,6 +48,7 @@ get-orig-source:
 	rm -rf $(DIR)/bin/
 	rm -rf $(DIR)/bin64/
 	rm -rf $(DIR)/data/
+	rm -rf $(DIR)/game/
 	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
 	rm -rf $(DIR)
