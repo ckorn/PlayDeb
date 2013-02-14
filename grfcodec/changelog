@@ -1,3 +1,16 @@
+grfcodec (6.0.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    - NFORenum specific changes:
+      - Data file updates
+        - Base costs.
+        - Action5 type 15.
+    - GRFcodec specific changes:
+      - Fix encoding container v1 wrt. maximum size of verbatim data.
+      - Fix container v2 tile decompression.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 14 Feb 2013 18:13:57 +0100
+
 grfcodec (6.0.1-1~getdeb2) precise; urgency=low
 
   * Fix debian/watch file.

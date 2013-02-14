@@ -8,8 +8,6 @@ Build-Depends: debhelper (>= 9),
                libboost-dev,
                libpng12-dev
 Standards-Version: 3.9.3
-Vcs-Browser: http://git.debian.org/?p=collab-maint/grfcodec.git
-Vcs-Git: git://git.debian.org/collab-maint/grfcodec.git
 Homepage: http://dev.openttdcoop.org/projects/grfcodec
 
 Package: grfcodec
