@@ -1,3 +1,31 @@
+pushover (0.0.4-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    - profiles so that more than one player can play the game on the same
+    computer using the same account
+    - 2 solve states. When a level is solved not meeting the time constraint
+    it still gets marked as solved, but with a different marker
+    - Italian translation (we have up to date translations for Czech, German,
+      Spanish and Italian and incomplete translations for French and Russian)
+    - 3 new music pieces (only one theme music and a title music is now
+    missing)
+    - support lua 5.2
+    - fixes to typos
+    - expect for a proper level solution that dominos don't lean against a
+    step this makes level 64 harder, enforced level 64 to play again by
+    removing a useless ladder
+    - pushover can now quit using the window close button on the window
+    header
+    - speed-up the fade-in animation when a level is started
+    - new type of domino: counter blocker, but with no levels using it, yet
+    - improved help window, better suited for translation and improved texts
+    for the dominos
+    - a few new levels in A&V
+    - mission and level names are now translated
+    - fix to the background images of 3 dungeon levels
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 14 Feb 2013 18:35:46 +0100
+
 pushover (0.0.3-1~getdeb1) lucid; urgency=low
 
   * Initial release
