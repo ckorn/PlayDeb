@@ -21,8 +21,6 @@ Build-Depends: debhelper (>= 9),
                libicu-dev
 Standards-Version: 3.9.3
 Homepage: http://c55.me/minetest
-Vcs-Git: git://git.debian.org/git/pkg-games/minetest.git
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-games/minetest.git
 
 Package: minetest
 Architecture: any
