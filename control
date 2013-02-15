@@ -11,7 +11,6 @@ Vcs-Browser: http://git.debian.org/?p=pkg-games/redeclipse-data.git;a=summary
 
 Package: redeclipse-data
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends}
 Enhances: redeclipse-server
 Description: data for the Red Eclipse FPS game
