@@ -3,6 +3,7 @@ redeclipse (1.4~svn) UNRELEASED; urgency=low
   * New upstream release
   * Move server examples to /usr/share/games/doc/redeclipse/
   * Added screenshot URL for Ubuntu
+  * Removed Enet from source package (unused)
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Fri, 15 Feb 2013 00:30:48 +0100
 
