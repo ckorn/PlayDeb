@@ -8,9 +8,6 @@ override_dh_auto_build:
 		cube2font /usr/share/fonts/truetype/play/Play-Bold.ttf \
 			play 4 15 1 1 54 54 512 512 0 0 fonts/
 
-override_dh_install:
-	dh_install --exclude="license.txt"
-
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
 
@@ -25,9 +22,7 @@ get-orig-source:
 	rm -f $(UTAR)
 	mv redeclipse/ $(DIR)
 	rm -rf $(DIR)/bin/
-	rm -rf $(DIR)/bin64/
 	cd $(DIR) && rm -f redeclipse.sh server.sh
-	rm -rf $(DIR)/data/examples/
 	rm -f $(DIR)/data/fonts/play*
 	rm -f $(DIR)/data/fonts/*.ttf
 	rm -rf $(DIR)/src/
