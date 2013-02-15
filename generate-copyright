@@ -31,6 +31,10 @@ mv debian/copyright-temp debian/copyright-new
 awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: data\//' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
+# Remove all records related to game/*
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: game\//' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
 # Remove record for "Akashi-Font" license
 awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: Akashi-Font$/' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
@@ -45,10 +49,6 @@ mv debian/copyright-temp debian/copyright-new
 
 # Remove record for "CC-BY-SA-3.0-AU" license
 awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC-BY-SA-3.0-AU$/' debian/copyright-new > debian/copyright-temp
-mv debian/copyright-temp debian/copyright-new
-
-# Remove record for "CC-BY-3.0-US" license
-awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC-BY-3.0-US$/' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
 # Add marker for inserting Enet chunk
