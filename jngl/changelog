@@ -1,8 +1,14 @@
-jngl (0.9.5-1~getdeb3) quantal; urgency=low
+jngl (1.1.0-1~getdeb1) quantal; urgency=low
 
-  * Rebuild for quantal
+  * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Oct 2012 13:10:03 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 16 Feb 2013 13:07:31 +0100
+
+jngl (1.0.3-1~getdeb12~quantal) quantal; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 23 Oct 2012 19:28:25 +0200
 
 jngl (0.9.5-1~getdeb2) oneiric; urgency=low
 

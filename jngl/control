@@ -12,21 +12,24 @@ Build-Depends: debhelper (>= 9),
                libglu1-mesa-dev,
                mesa-common-dev,
                libxxf86vm-dev,
+               libxext-dev,
                x11proto-core-dev,
                libfontconfig1-dev,
                pkg-config,
                scons,
                libglib2.0-dev,
-               python-dev,
-               libboost-python-dev
-Standards-Version: 3.9.4
+               python3-dev,
+               libboost-python-dev,
+               libglew1.6-dev | libglew-dev,
+               libwebp-dev
+Standards-Version: 3.9.3
 Section: libs
 Homepage: http://jngl.watteimdocht.de
 
 Package: libjngl-dev
 Section: libdevel
 Architecture: any
-Depends: libjngl0.9.5 (= ${binary:Version}),
+Depends: libjngl1.1.0 (= ${binary:Version}),
          ${misc:Depends}
 Description: Easy to use 2D game library using OpenGL and OpenAL (headers)
  JNGL aims to be one of the easiest 2D game libraries for
@@ -36,12 +39,12 @@ Description: Easy to use 2D game library using OpenGL and OpenAL (headers)
  files via OpenAL.
  (This package contains the development files)
 
-Package: libjngl0.9.5
-Section: libs
+Package: libjngl1.1.0
 Architecture: any
 Depends: ${shlibs:Depends},
-         ${misc:Depends},
-         ${python:Depends}
+         ${misc:Depends}
+Conflicts: libjngl0.9.5
+Replaces: libjngl0.9.5
 Description: Easy to use 2D game library using OpenGL and OpenAL
  JNGL aims to be one of the easiest 2D game libraries for
  C++ and Python. It uses OpenGL for rendering images,

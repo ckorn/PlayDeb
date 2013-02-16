@@ -1,3 +1,3 @@
-jngl.hpp		usr/include
+src/jngl.hpp		usr/include
 libjngl.a		usr/lib
 jngl.pc			usr/lib/pkgconfig

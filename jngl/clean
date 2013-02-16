@@ -1,0 +1,6 @@
+.sconsign.dblite
+test
+libjngl.a
+python/main.os
+python/jngl.so
+jngl.pc

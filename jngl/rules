@@ -2,6 +2,10 @@
 %:
 	dh $@
 
+override_dh_clean:
+	dh_clean
+	find . -iname "*.o" -delete
+
 override_dh_auto_configure:
 	scons python=1
 
