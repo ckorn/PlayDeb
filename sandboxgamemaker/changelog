@@ -1,3 +1,45 @@
+sandboxgamemaker (2.8.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    Generic changes
+    * as a fallback, entities without a dedicated QuickEdit GUI will generate
+    one with fallback dummy attributes with a range of -10000 --> 10000
+    (fixed)
+    * embed mapmodel previews into mapmodel quickedit menu"
+
+    SSP Changes
+    * allow pickup_armour types to have arbitrary icons and colours set for
+    them.
+    * basic Goomba level AI
+    * DJUMP armour, simpler version of the FLY armour that allows only one
+    jump in the air.
+    * homing mines and grenade projectile types.
+    * various tweaks,cleanup and optimisation
+    * platforms
+
+    Generic Bugfixes
+    * Allow uitoggle elements to have tooltips like other uibutton derived
+    types
+    * Fix material filter in the edit menu
+    * Possible crash from showenttext 0
+
+    FPS Bugfixes
+    * correct spacetf typo
+    * renamed "banana" entities back to 'base"
+    * fix range for 'playermodel'
+
+    RPG bugfixes
+    * Fix calculation of extra empty inventory, barter and looting buttons.
+    * Fix some potential crashes, such as when r_setref was called outside of
+    a game.
+
+    SSP Bugfixes
+    * enemies are no longer simulated in editmode with the ability to hurt
+    the player.
+    * fly/doublejump armour no longer causes enemies to jetpack upwards
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 16 Feb 2013 00:38:04 +0100
+
 sandboxgamemaker (2.8.1-1~getdeb1) precise; urgency=low
 
   * New upstream version
