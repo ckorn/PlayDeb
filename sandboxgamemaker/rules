@@ -23,6 +23,9 @@ override_dh_auto_clean:
 override_dh_install:
 	dh_install -Xlicense
 
+override_dh_installchangelogs:
+	dh_installchangelogs changelog.txt
+
 ORIG_TARBALL=PlatinumArtsSandbox2.7Multiplatform.zip
 ORIG_DIRECTORY=PlatinumArtsSandbox2.7
 ORIG_DFSG_NAME=sandboxgamemaker-2.7
