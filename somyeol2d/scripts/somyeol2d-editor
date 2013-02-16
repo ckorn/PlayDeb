@@ -1,3 +1,3 @@
 #!/bin/sh
 cd /usr/share/games/somyeol2d
-python ./LevelEditor.py $@
+python3.2 ./LevelEditor.py $@
