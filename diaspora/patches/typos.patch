@@ -1,0 +1,531 @@
+## Description: Just fix some spelling mistaked found by lintian.
+## Origin/Author: Christoph Korn
+## Bug: http://scp.indiegames.us/mantis/view.php?id=2794
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/ai/aiturret.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/ai/aiturret.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/ai/aiturret.cpp	2013-02-15 19:59:26.003320408 +0100
+@@ -1425,7 +1425,7 @@
+ 
+ // NOTE:  Do not change this value unless you understand exactly what it means and what it does.
+ //        It refers to how many (non-destroyed) subsystems (and turrets) will be scanned for possible
+-//        targetting, per turret, per frame.  A higher value will process more systems at once,
++//        targeting, per turret, per frame.  A higher value will process more systems at once,
+ //        but it will be much slower to scan though them.  It is not necessary to scan all
+ //        non-destroyed subsystem each frame for each turret.  Also, "aifft_max_checks" is balanced
+ //        against the original value, be sure to account for this discrepancy with any changes.
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/autopilot/autopilot.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/autopilot/autopilot.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/autopilot/autopilot.cpp	2013-02-15 19:59:26.003320408 +0100
+@@ -225,7 +225,7 @@
+ //        * Control switched from player to AI
+ //        * Time compression to 32x
+ //        * Lock time compression -WMC
+-//        * Tell AI to fly to targetted Nav Point (for all nav-status wings/ships)
++//        * Tell AI to fly to targeted Nav Point (for all nav-status wings/ships)
+ //		  * Sets max waypoint speed to the best-speed of the slowest ship tagged
+ bool StartAutopilot()
+ {
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/autopilot/autopilot.h
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/autopilot/autopilot.h	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/autopilot/autopilot.h	2013-02-15 19:59:26.003320408 +0100
+@@ -83,7 +83,7 @@
+ //        * Checks if Autopilot is allowed.  See CanAutopilot() for conditions.
+ //        * Control switched from player to AI
+ //        * Time compression to 32x
+-//        * Tell AI to fly to targetted Nav Point (for all nav-status wings/ships)
++//        * Tell AI to fly to targeted Nav Point (for all nav-status wings/ships)
+ //        * Sets max waypoint speed to the best-speed of the slowest ship tagged
+ // Returns false if autopilot cannot be started. True otherwise.
+ bool StartAutopilot();
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/cmdline/cmdline.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/cmdline/cmdline.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/cmdline/cmdline.cpp	2013-02-15 19:59:26.007320409 +0100
+@@ -310,7 +310,7 @@
+ 
+ // HUD related
+ cmdline_parm ballistic_gauge("-ballistic_gauge", NULL);	// Cmdline_ballistic_gauge
+-cmdline_parm dualscanlines_arg("-dualscanlines", NULL); // Cmdline_dualscanlines  -- Change to phreaks options including new targetting code
++cmdline_parm dualscanlines_arg("-dualscanlines", NULL); // Cmdline_dualscanlines  -- Change to phreaks options including new targeting code
+ cmdline_parm orb_radar("-orbradar", NULL);			// Cmdline_orb_radar
+ cmdline_parm rearm_timer_arg("-rearm_timer", NULL);	// Cmdline_rearm_timer
+ cmdline_parm targetinfo_arg("-targetinfo", NULL);	// Cmdline_targetinfo  -- Adds ship name/class to right of target box -C
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/freespace2/freespace.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/freespace2/freespace.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/freespace2/freespace.cpp	2013-02-15 19:59:26.007320409 +0100
+@@ -2505,7 +2505,7 @@
+ 		if (g3_in_frame() == 0) {
+ 			// Ensure that the bars are black
+ 			gr_set_color(0,0,0);
+-			gr_set_bitmap(0); // Valathil - Dont ask me why this has to be here but otherwise the black bars dont draw
++			gr_set_bitmap(0); // Valathil - Don't ask me why this has to be here but otherwise the black bars don't draw
+ 			gr_rect(0, 0, gr_screen.max_w, yborder, false);
+ 			gr_rect(0, gr_screen.max_h-yborder, gr_screen.max_w, yborder, false);
+ 		} else {
+@@ -4244,7 +4244,7 @@
+ 		if (g3_in_frame() == 0) {
+ 			//Set rectangles
+ 			gr_set_color(0,0,0);
+-			gr_set_bitmap(0); // Valathil - Dont ask me why this has to be here but otherwise the black bars dont draw
++			gr_set_bitmap(0); // Valathil - Don't ask me why this has to be here but otherwise the black bars don't draw
+ 			gr_rect(0, 0, gr_screen.max_w, yborder, false);
+ 			gr_rect(0, gr_screen.max_h-yborder, gr_screen.max_w, yborder, false);
+ 		} else {
+@@ -4259,7 +4259,7 @@
+ 
+ 		if (g3_in_frame() == 0) {
+ 			gr_set_color(0,0,0);
+-			gr_set_bitmap(0); // Valathil - Dont ask me why this has to be here but otherwise the black bars dont draw
++			gr_set_bitmap(0); // Valathil - Don't ask me why this has to be here but otherwise the black bars don't draw
+ 			gr_rect(0, 0, gr_screen.max_w, yborder, false);
+ 			gr_rect(0, gr_screen.max_h-yborder, gr_screen.max_w, yborder, false);
+ 		} else {
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/fs2netd/fs2netd_client.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/fs2netd/fs2netd_client.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/fs2netd/fs2netd_client.cpp	2013-02-15 19:59:26.007320409 +0100
+@@ -479,7 +479,7 @@
+ 
+ 		default:
+ 			ml_string("FS2NetD ERROR: Unknown return case for GetPlayerData()");
+-			strcpy_s(error_str, "Unkown return case from GetPlayerData(). Contact the FS2NetD Administrator!");
++			strcpy_s(error_str, "Unknown return case from GetPlayerData(). Contact the FS2NetD Administrator!");
+ 			retval = false;
+ 			break;
+ 	}
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/hud/hud.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/hud/hud.cpp	2013-02-15 19:59:08.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/hud/hud.cpp	2013-02-15 19:59:26.011320409 +0100
+@@ -1638,7 +1638,7 @@
+ 	// process asteroid brackets if necessary
+ 	hud_show_asteroid_brackets();
+ 
+-	// process targetting data around the current target
++	// process targeting data around the current target
+ 	hud_show_targeting_gauges(frametime);
+ 
+ 	// process brackets and distance to remote detonate missile
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/hud/hudtarget.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/hud/hudtarget.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/hud/hudtarget.cpp	2013-02-15 19:59:26.011320409 +0100
+@@ -47,7 +47,7 @@
+ #include "network/multiutil.h"
+ #include "model/model.h"
+ 
+-// If any of these bits in the ship->flags are set, ignore this ship when targetting
++// If any of these bits in the ship->flags are set, ignore this ship when targeting
+ int TARGET_SHIP_IGNORE_FLAGS = (SF_EXPLODED|SF_DEPART_WARP|SF_DYING|SF_ARRIVING_STAGE_1|SF_HIDDEN_FROM_SENSORS);
+ 
+ // Global values for the target bracket width and height, used for debugging
+@@ -1283,8 +1283,8 @@
+ ///                                     classes of objects from being targeted.
+ ///                                     Defaults to (SIF_CARGO | SIF_NAVBUOY)
+ ///                                        
+-/// \returns         The next object to target if targetting was successful. 
+-///                  Returns NULL if targetting was unsuccessful.
++/// \returns         The next object to target if targeting was successful. 
++///                  Returns NULL if targeting was unsuccessful.
+ static object* select_next_target_by_distance( const bool targeting_from_closest_to_farthest, const int valid_team_mask, const int attacked_object_number = -1, const int target_filters = (SIF_CARGO | SIF_NAVBUOY)) {
+ 	object *minimum_object_ptr, *maximum_object_ptr, *nearest_object_ptr;
+ 	minimum_object_ptr = maximum_object_ptr = nearest_object_ptr = NULL;
+@@ -1989,7 +1989,7 @@
+ }
+ 
+ 
+-// Given that object 'targeter' is targetting object 'targetee', 
++// Given that object 'targeter' is targeting object 'targetee', 
+ // how far are they?   This uses the point closest to the targeter
+ // object on the targetee's bounding box.  So if targeter is inside
+ // targtee's bounding box, the distance is 0.
+@@ -2140,7 +2140,7 @@
+ 		}
+ 	}
+ 
+-	// If no turret is attacking, check if objp is actually targetting attacked_objnum
++	// If no turret is attacking, check if objp is actually targeting attacked_objnum
+ 	// don't bail if targeting is for player
+ 	if ( !targeting_player && !turret_is_attacking ) {
+ 		ai_info *aip = &Ai_info[esct->shipp->ai_index];
+@@ -3851,7 +3851,7 @@
+ 	// first render the current target the player has selected.
+ 	renderLeadCurrentTarget();
+ 
+-	// if extra targetting info is enabled, render lead indicators for objects in the target display list.
++	// if extra targeting info is enabled, render lead indicators for objects in the target display list.
+ 	for(size_t i = 0; i < target_display_list.size(); i++) {
+ 		if ( (target_display_list[i].flags & TARGET_DISPLAY_LEAD) && target_display_list[i].objp ) {
+ 
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/localization/localize.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/localization/localize.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/localization/localize.cpp	2013-02-15 19:59:26.015320408 +0100
+@@ -1298,7 +1298,7 @@
+ 
+ 	// if we didn't find the language specified, error
+ 	if(found_start <= 0){
+-		error_display(0, "Could not find specified langauge in tstrings.tbl!\n");
++		error_display(0, "Could not find specified language in tstrings.tbl!\n");
+ 		lcl_ext_close();
+ 		return;
+ 	}
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/missionui/missionscreencommon.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/missionui/missionscreencommon.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/missionui/missionscreencommon.cpp	2013-02-15 19:59:26.015320408 +0100
+@@ -1604,7 +1604,7 @@
+ 		}
+ 		g3_done_instance(true);
+ 
+-		gr_zbuffer_set(GR_ZBUFF_NONE); // Turn of Depthbuffer so we dont get gridlines over the ship or a disappearing scanline 
++		gr_zbuffer_set(GR_ZBUFF_NONE); // Turn of Depthbuffer so we don't get gridlines over the ship or a disappearing scanline 
+ 		Glowpoint_use_depth_buffer = false; // Since we don't have one
+ 		if (time >= 0.5f) { // Phase 1 onward draw the grid
+ 			int i;
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/network/psnet2.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/network/psnet2.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/network/psnet2.cpp	2013-02-15 19:59:26.015320408 +0100
+@@ -1999,7 +1999,7 @@
+ 								memcpy(&Reliable_sockets[i].addr,&rcv_addr,sizeof(SOCKADDR));
+ 								Reliable_sockets[i].status = RNF_LIMBO;
+ 								*socket = i;
+-								ml_string("Succesfully connected to server in nw_ConnectToServer().");
++								ml_string("Successfully connected to server in nw_ConnectToServer().");
+ 								//Now send I_AM_HERE packet
+ 								conn_header.type = RNT_I_AM_HERE;
+ 								conn_header.seq = (ushort)(~CONNECTSEQ);
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/object/objectsnd.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/object/objectsnd.cpp	2013-02-15 19:59:08.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/object/objectsnd.cpp	2013-02-15 19:59:26.015320408 +0100
+@@ -32,7 +32,7 @@
+ // --end hack--
+ 
+ 
+-// Persistant sounds for objects (pointer to obj_snd is in object struct)
++// Persistent sounds for objects (pointer to obj_snd is in object struct)
+ typedef struct _obj_snd {
+ 	_obj_snd	*next, *prev;
+ 	int		objnum;			// object index of object that contains this sound
+@@ -47,7 +47,7 @@
+ 	ship_subsys *ss;		//Associated subsystem
+ } obj_snd;
+ 
+-#define VOL_PAN_UPDATE			50						// time in ms to update a persistant sound vol/pan
++#define VOL_PAN_UPDATE			50						// time in ms to update a persistent sound vol/pan
+ #define MIN_PERSISTANT_VOL		0.10f
+ #define MIN_FORWARD_SPEED		5
+ #define SPEED_SOUND				600.0f				// speed of sound in FreeSpace
+@@ -91,10 +91,10 @@
+ // ---------------------------------------------------------------------------------------
+ // dcf_objsnd()
+ //
+-// Debug console function for object linked persistant sounds
++// Debug console function for object linked persistent sounds
+ //
+ //XSTR:OFF
+-DCF(objsnd, "Persistant sound stuff" )
++DCF(objsnd, "Persistent sound stuff" )
+ {
+ 	char		buf1[16], buf2[64];
+ 	obj_snd	*osp;
+@@ -183,7 +183,7 @@
+ // ---------------------------------------------------------------------------------------
+ // obj_snd_init()
+ //
+-// Called once at level start to initialize the persistant object sound system
++// Called once at level start to initialize the persistent object sound system
+ //
+ void obj_snd_level_init()
+ {
+@@ -212,7 +212,7 @@
+ // ---------------------------------------------------------------------------------------
+ // obj_snd_stop()
+ //
+-// Stop a persistant sound from playing.
++// Stop a persistent sound from playing.
+ //
+ // parameters:  objp			=> pointer to object that sound is to be stopped for
+ //
+@@ -285,7 +285,7 @@
+ // ---------------------------------------------------------------------------------------
+ // obj_snd_stop_all()
+ //
+-// Stop all object-linked persistant sounds from playing
++// Stop all object-linked persistent sounds from playing
+ //
+ //
+ void obj_snd_stop_all()
+@@ -446,7 +446,7 @@
+ // ---------------------------------------------------------------------------------------
+ // obj_snd_do_frame()
+ //
+-// Called once per frame to process the persistant sound objects
++// Called once per frame to process the persistent sound objects
+ //
+ void obj_snd_do_frame()
+ {
+@@ -675,13 +675,13 @@
+ // ---------------------------------------------------------------------------------------
+ // obj_snd_assign()
+ //
+-// Assign a persistant sound to an object.
++// Assign a persistent sound to an object.
+ //
+ // parameters:  objnum		=> index of object that sound is being assigned to
+ //              i				=> Index into Snds[] array
+ //					 fname		=> filename of sound to play ( so DS3D can load the sound )
+ //
+-// returns:     -1			=> sound could not be assigned (possible, since only MAX_OBJECT_SOUNDS persistant
++// returns:     -1			=> sound could not be assigned (possible, since only MAX_OBJECT_SOUNDS persistent
+ //										sound can be assigned per object).  
+ //               >= 0			=> sound was successfully assigned
+ //
+@@ -758,7 +758,7 @@
+ // ---------------------------------------------------------------------------------------
+ // obj_snd_delete()
+ //
+-// Remove a persistant sound that has been assigned to an object.
++// Remove a persistent sound that has been assigned to an object.
+ //
+ // parameters:  objnum		=> index of object that sound is being removed from.
+ //				index		=> index of sound in objsnd_num
+@@ -788,7 +788,7 @@
+ // ---------------------------------------------------------------------------------------
+ // obj_snd_delete_type()
+ //
+-// Remove every similar persistant sound that has been assigned to an object.
++// Remove every similar persistent sound that has been assigned to an object.
+ //
+ // parameters:  objnum		=> index of object that sound is being removed from.
+ //				sndnum		=> index of sound that we're trying to completely get rid of
+@@ -830,7 +830,7 @@
+ // ---------------------------------------------------------------------------------------
+ // obj_snd_delete_all()
+ //
+-// Remove all persistant sounds
++// Remove all persistent sounds
+ //
+ void obj_snd_delete_all()
+ {
+@@ -847,7 +847,7 @@
+ // ---------------------------------------------------------------------------------------
+ // obj_snd_close()
+ //
+-// Called once at game close to de-initialize the persistant object sound system
++// Called once at game close to de-initialize the persistent object sound system
+ //
+ void obj_snd_level_close()
+ {
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/parse/lua.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/parse/lua.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/parse/lua.cpp	2013-02-15 19:59:26.019320408 +0100
+@@ -4596,7 +4596,7 @@
+ 	return ade_set_args(L, "o", l_Shields.Set(object_h(objh->objp)));
+ }
+ 
+-ADE_FUNC(getSignature, l_Object, NULL, "Gets the object's unique signature", "number", "Returns the objects unique numeric signature, or -1 if invalid. useful for creating a metadata sytem")
++ADE_FUNC(getSignature, l_Object, NULL, "Gets the object's unique signature", "number", "Returns the objects unique numeric signature, or -1 if invalid. useful for creating a metadata system")
+ {
+ 	object_h *oh;
+ 	if(!ade_get_args(L, "o", l_Object.GetPtr(&oh)))
+@@ -5232,7 +5232,7 @@
+ 		return true;
+ 	}
+ };
+-ade_obj<cockpit_displays_info_h> l_CockpitDisplayInfos("cockpitdisplays", "Array of cockpit display informations");
++ade_obj<cockpit_displays_info_h> l_CockpitDisplayInfos("cockpitdisplays", "Array of cockpit display information");
+ 
+ ADE_FUNC(__len, l_CockpitDisplayInfos, NULL, "Number of cockpit displays for this ship class", "number", "number of cockpit displays or -1 on error")
+ {
+@@ -5636,7 +5636,7 @@
+ 	return ade_set_args(L, "o", l_Model.Set(model_h(sip->cockpit_model_num)));
+ }
+ 
+-ADE_VIRTVAR(CockpitDisplays, l_Shipclass, "cockpitdisplays", "Gets the cockpit display information array of this ship class", "cockpitdisplays", "Array handle containing the informations or invalid handle on error")
++ADE_VIRTVAR(CockpitDisplays, l_Shipclass, "cockpitdisplays", "Gets the cockpit display information array of this ship class", "cockpitdisplays", "Array handle containing the information or invalid handle on error")
+ {
+ 	int ship_info_idx=-1;
+ 	cockpit_displays_info_h *cdih = NULL;
+@@ -6774,7 +6774,7 @@
+ }
+ 
+ 
+-ADE_VIRTVAR(Target, l_Subsystem, "object", "Object targetted by this subsystem. If used to set a new target, AI targeting will be switched off.", "object", "Targeted object, or invalid object handle if subsystem handle is invalid")
++ADE_VIRTVAR(Target, l_Subsystem, "object", "Object targeted by this subsystem. If used to set a new target, AI targeting will be switched off.", "object", "Targeted object, or invalid object handle if subsystem handle is invalid")
+ {
+ 	ship_subsys_h *sso;
+ 	object_h *objh;
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/parse/sexp.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/parse/sexp.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/parse/sexp.cpp	2013-02-15 19:59:26.027320408 +0100
+@@ -12979,7 +12979,7 @@
+ 		Warning(LOCATION, "Invalid turret type '%s'!", turret_type);
+ }
+ 
+-// Goober5000 - sets the "dont collide invisible" flag on a list of ships
++// Goober5000 - sets the "don't collide invisible" flag on a list of ships
+ void sexp_dont_collide_invisible(int n, bool dont_collide)
+ {
+ 	sexp_deal_with_ship_flag(n, true, 0, 0, 0, SF2_DONT_COLLIDE_INVIS, 0, P_SF2_DONT_COLLIDE_INVIS, dont_collide);
+@@ -28739,10 +28739,10 @@
+ 		"Takes 1 argument...\r\n"
+ 		"\t1:\tName of medal to grant to player." },
+ 
+-	{ OP_GOOD_SECONDARY_TIME, "Set prefered secondary weapons\r\n"
+-		"\tThis sexpression is used to inform the AI about prefered secondary weapons to "
++	{ OP_GOOD_SECONDARY_TIME, "Set preferred secondary weapons\r\n"
++		"\tThis sexpression is used to inform the AI about preferred secondary weapons to "
+ 		"fire during combat.  When this expression is evaulated, any AI ships of the given "
+-		"team prefer to fire the given weapon at the given ship. (Prefered over other "
++		"team prefer to fire the given weapon at the given ship. (Preferred over other "
+ 		"secondary weapons)\r\n\r\n"
+ 		"Takes 4 argument...\r\n"
+ 		"\t1:\tTeam name which will prefer firing given weapon\r\n"
+@@ -28940,12 +28940,12 @@
+ 		"\t1+:\tName of ships to make invulnerable to weapons." },
+ 
+ 	{ OP_SHIP_BOMB_TARGETABLE, "ship-targetable-as-bomb\r\n"
+-		"\tCauses the ships listed in this sexpression to be targetable with bomb targetting key.\r\n\r\n"
++		"\tCauses the ships listed in this sexpression to be targetable with bomb targeting key.\r\n\r\n"
+ 		"Takes 1 or more arguments...\r\n"
+ 		"\t1+:\tName of ships to make targetable with bomb targeting key." },
+ 
+ 	{ OP_SHIP_BOMB_UNTARGETABLE, "ship-untargetable-as-bomb\r\n"
+-		"\tCauses the ships listed in this sexpression to not be targetable with bomb targetting key.\r\n\r\n"
++		"\tCauses the ships listed in this sexpression to not be targetable with bomb targeting key.\r\n\r\n"
+ 		"Takes 1 or more arguments...\r\n"
+ 		"\t1+:\tName of ships to make nontargetable with bomb targeting key." },
+ 
+@@ -29216,14 +29216,14 @@
+ 		"\tAll:\tList of ships on which to unset the vaporize flag" },
+ 
+ 	{ OP_DONT_COLLIDE_INVISIBLE, "don't-collide-invisible\r\n"
+-		"\tSets the \"dont collide invisible\" flag on a list of ships.\r\n"
++		"\tSets the \"don't collide invisible\" flag on a list of ships.\r\n"
+ 		"Takes 1 or more arguments...\r\n"
+-		"\tAll:\tList of ships on which to set the \"dont collide invisible\" flag" },
++		"\tAll:\tList of ships on which to set the \"don't collide invisible\" flag" },
+ 
+ 	{ OP_COLLIDE_INVISIBLE, "collide-invisible\r\n"
+-		"\tUnsets the \"dont collide invisible\" flag on a list of ships.\r\n"
++		"\tUnsets the \"don't collide invisible\" flag on a list of ships.\r\n"
+ 		"Takes 1 or more arguments...\r\n"
+-		"\tAll:\tList of ships on which to unset the \"dont collide invisible\" flag" },
++		"\tAll:\tList of ships on which to unset the \"don't collide invisible\" flag" },
+ 
+ 	{ OP_SET_MOBILE, "set-mobile\r\n"
+ 		"\tAllows the specified ship(s) to move.  Opposite of set-immobile.\r\n"
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/ship/ship.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/ship/ship.cpp	2013-02-15 19:59:08.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/ship/ship.cpp	2013-02-15 19:59:26.027320408 +0100
+@@ -16515,7 +16515,7 @@
+ 
+ 	Calculations.clear();
+ 	Arguments.clear();
+-	altArguments.clear();  // Nuke: dont forget to delete it
++	altArguments.clear();  // Nuke: don't forget to delete it
+ }
+ 
+ //************
+@@ -17043,7 +17043,7 @@
+ 			no_content = false;
+ 		}
+ 
+-		// Nuke: dont forget to init things
++		// Nuke: don't forget to init things
+ 		adt.difficulty_scale_type = ADT_DIFF_SCALE_FIRST;
+ 
+ 		if (optional_string("+Difficulty Scale Type:")) {
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/ship/ship.h
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/ship/ship.h	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/ship/ship.h	2013-02-15 19:59:26.031320408 +0100
+@@ -482,7 +482,7 @@
+ #define SF2_SHIP_LOCKED						(1<<24)		// Karajorma - Prevents the player from changing the ship class on loadout screen
+ #define SF2_WEAPONS_LOCKED					(1<<25)		// Karajorma - Prevents the player from changing the weapons on the ship on the loadout screen
+ 
+-// If any of these bits in the ship->flags are set, ignore this ship when targetting
++// If any of these bits in the ship->flags are set, ignore this ship when targeting
+ extern int TARGET_SHIP_IGNORE_FLAGS;
+ 
+ #define MAX_DAMAGE_SLOTS	32
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/ship/shiphit.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/ship/shiphit.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/ship/shiphit.cpp	2013-02-15 19:59:26.031320408 +0100
+@@ -2076,7 +2076,7 @@
+ 				piercing_pct = Armor_types[shipp->shield_armor_type_idx].GetShieldPiercePCT(dmg_type_idx);
+ 			}
+ 			
+-			float pre_shield = damage; // Nuke: dont use the difficulty scaling in here, since its also appled in Armor_type.GetDamage. dont want it to apply twice
++			float pre_shield = damage; // Nuke: don't use the difficulty scaling in here, since its also appled in Armor_type.GetDamage. don't want it to apply twice
+ 			float pre_shield_ss = (subsystem_damage * sub_diff_dmg_scale); // Nuke - same here
+ 
+ 			if (piercing_pct > 0.0f) {
+Index: diaspora-1.0.4/Diaspora/fs2_open/code/weapon/weapons.cpp
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/code/weapon/weapons.cpp	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/code/weapon/weapons.cpp	2013-02-15 19:59:26.031320408 +0100
+@@ -2371,7 +2371,7 @@
+ 					} else {
+ 						wip->particle_spewers[spew_index].particle_spew_type = PSPEW_DEFAULT;
+ 					}
+-				// for compatability with existing tables that dont have a type tag
++				// for compatability with existing tables that don't have a type tag
+ 				} else if (wip->particle_spewers[spew_index].particle_spew_type == PSPEW_NONE) { // make sure the ommission of type wanst to edit an existing entry
+ 					wip->particle_spewers[spew_index].particle_spew_type = PSPEW_DEFAULT;
+ 				}
+@@ -6253,7 +6253,7 @@
+ 				wp->particle_spew_time[psi] = timestamp(wip->particle_spewers[0].particle_spew_time);
+ 
+ 				// turn normals and origins to world space if we need to
+-				if (!vm_vec_same(&wip->particle_spewers[psi].particle_spew_offset, &vmd_zero_vector)) {	// dont xform unused vectors
++				if (!vm_vec_same(&wip->particle_spewers[psi].particle_spew_offset, &vmd_zero_vector)) {	// don't xform unused vectors
+ 					vm_vec_unrotate(&spawn_pos, &wip->particle_spewers[psi].particle_spew_offset, &obj->orient);
+ 				} else {
+ 					spawn_pos = vmd_zero_vector;
+@@ -6368,7 +6368,7 @@
+ 						vm_vec_rand_vec_quick(&input_vel);
+ 						vm_vec_scale(&input_vel, wip->particle_spewers[psi].particle_spew_scale);
+ 						
+-						if (wip->particle_spewers[psi].particle_spew_z_scale != 1.0f) {	// dont do the extra math for spherical effect
++						if (wip->particle_spewers[psi].particle_spew_z_scale != 1.0f) {	// don't do the extra math for spherical effect
+ 							temp_vel = input_vel;
+ 							temp_vel.xyz.z *= wip->particle_spewers[psi].particle_spew_z_scale;	// for an oviod particle effect to better combine with laser effects
+ 							vm_vec_unrotate(&input_vel, &temp_vel, &obj->orient);				// so it has to be rotated
+Index: diaspora-1.0.4/Diaspora/fs2_open/lua/lstate.h
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/lua/lstate.h	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/lua/lstate.h	2013-02-15 19:59:26.031320408 +0100
+@@ -43,7 +43,7 @@
+ 
+ 
+ /*
+-** informations about a call
++** information about a call
+ */
+ typedef struct CallInfo {
+   StkId base;  /* base for this function */
+Index: diaspora-1.0.4/Diaspora/fs2_open/speech/include/sphelper.h
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/fs2_open/speech/include/sphelper.h	2013-02-15 19:46:56.000000000 +0100
++++ diaspora-1.0.4/Diaspora/fs2_open/speech/include/sphelper.h	2013-02-15 20:00:43.399319748 +0100
+@@ -1056,7 +1056,7 @@
+     else if (Osv.dwMajorVersion >= 5.0) 
+     {
+     // Case 2: Running on Windows 2000 or later. Use GetUserDefaultUILanguage to find 
+-    // the user's prefered UI language
++    // the user's preferred UI language
+ 
+ 
+         HMODULE hMKernel32 = ::LoadLibraryW(L"kernel32.dll") ;

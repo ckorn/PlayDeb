@@ -1,0 +1,3 @@
+version=3
+http://www.hard-light.net/forums/index.php?topic=81859.0 \
+    (?:.*/)?Diaspora_(?:.*)_Patch_([\d\.]+)\.tar\.(?:lzma|gz|xz|bz2|zip)
