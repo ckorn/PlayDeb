@@ -1,0 +1,14 @@
+Set the game's data directory.
+Index: diaspora-data-1.0.4/pro00099.template.ini
+===================================================================
+--- diaspora-data-1.0.4.orig/pro00099.template.ini	2012-09-02 02:00:07.000000000 +0200
++++ diaspora-data-1.0.4/pro00099.template.ini	2013-02-15 21:16:50.979280752 +0100
+@@ -21,7 +21,7 @@
+ currentmod=(No mod)
+ currentmodline=
+ flags=-post_process -soft_particles -fxaa -cache_bitmaps -snd_preload -ship_choice_3d -weapon_choice_3d -warp_flash
+-folder=/PATH/TO/YOUR/DIASPORA/FOLDER/HERE
++folder=/usr/share/games/diaspora
+ [video]
+ depth=32
+ height=768

@@ -1,0 +1,6 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_build:
+	cp pro00099.template.ini pro00099.ini && chmod 644 pro00099.ini
