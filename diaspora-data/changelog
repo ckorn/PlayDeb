@@ -1,0 +1,5 @@
+diaspora-data (1.0.4-1~getdeb1) precise; urgency=low
+
+  * Initial release (LP: #1046551)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 12 Sep 2012 18:42:58 +0200

@@ -1,0 +1,17 @@
+Source: diaspora-data
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: http://www.diasporagame.com
+
+Package: diaspora-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Single and multiplayer space fighter combat game (data package)
+ Diaspora is a single and multiplayer space fighter
+ combat game set in the reimagined
+ Battlestar Galactica universe.
+ .
+ (This package contains the data files).

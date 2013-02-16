@@ -1,0 +1,32 @@
+Format: http://dep.debian.net/deps/dep5
+Upstream-Name: diaspora-data
+Source: http://www.hard-light.net/forums/index.php?topic=81859.0
+
+Files: *
+Copyright: Volition, Inc. 1999
+License: CCSA 3.0
+ Diaspora : Shattered Armistice is released under a
+ Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+ This means that you can use anything you want from Diaspora
+ (models, missions, backgrounds) in any way you wish, as long as you
+ don't try to sell it and credit us for our work. 
+
+Files: debian/*
+Copyright: 2012 Christoph Korn <christoph.korn@getdeb.net>
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
