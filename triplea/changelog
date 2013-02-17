@@ -1,3 +1,237 @@
+triplea (1.6.1.4-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * Adding dotted lines to the LOTR Middle Earth map, to show connections
+    over rivers. (veqryn)
+    * Not showing tech in stats panel if game xml does not have any
+    technologies. (veqryn)
+    * Created new stepProperty, "turnSummaryPlayers", which holds a list of
+    players for whom we will include their turn summary information in the
+    forum/email post. (veqryn)
+    * Created new stepProperty, "skipPosting", which when true will skip the
+    forum posting for that EndTurn type step. (veqryn)
+    * Created new xml option type "stepProperty" for a step (gamePlay -
+    sequence), which can hold small options for modifying a delegate step.
+    (veqryn)
+    * Adding some more sounds for ancient/classical era. (veqryn)
+    * Adding some more ww2 sounds and national anthems for main players.
+    (hepster)
+    * Allowing air movement over neutrals and enemy territories so long as
+    movement over neutrals is allowed, and no nonparatrooping units are
+    present. (veqryn)
+    * Creating caching mechanism for sound clips, so that there are never
+    more than 24 sound clips being held in memory. This should prevent errors
+    in MacOS and Linux, which can not handle having large number of sound
+    clips open at same time. This may however result in a delay before
+    hearing clips, and still could result in errors if clips are really long.
+    (veqryn)
+    * Fixed null pointer error for a trigger based game property change of a
+    field that starts out as null. (veqryn)
+    * Fixed bug in strategic bombing that allowed strategic bombing of units
+    that can be damaged, which were also being transported. (veqryn)
+    * Adding scroll bars to notification messages window. (veqryn)
+    * Increasing max memory from 640mb to 768mb, and up to 896mb for online
+    games. (veqryn)
+    * Moved all sounds to a specific "era" folder (ww2, preindustrial,
+    classical, future) and changing how sounds are found again, so that there
+    should no longer be any need for duplicate sound files. Now all sounds
+    should come with TripleA, and you can use the "sounds.properties" file to
+    cherry pick which sounds you want. (veqryn)
+    * Created a "sounds.properties" file which allows you to specify which
+    era of sounds (ww2, preindustrial, classical, future) you are using, and
+    also set up custom sound choices for each sound location path. (veqryn)
+    * Getting TripleA Map Panel to center on the capital of a player,
+    whenever we switch to a new player's phase. (veqryn)
+    * Changing getBoundingRect and createTerritoryImage and getTiles so that
+    any polygons on the right or bottom will be translated to be on the
+    negative left or top, hopefully solving issue where the mini territory
+    image was not being displayed properly for territories on both sides of a
+    map divide. (frigoref) 
+    * Abstracting the Stats panels into AbstractStatPanel so that extending
+    Stats panel (and all of its overhead) is no longer necessary for the
+    EconomyPanel, ObjectivePanel, TerritoryDetailPanel, and other panels.
+    (veqryn)
+    * Changing Tech Stats Panel to use small flag images for column headers
+    instead of the first letter of nation names. (veqryn)
+    * Fixing bugs with placing constructions in sea zones. Now constructions
+    can only be "produced" by the territory they are going into. (veqryn)
+    * Adding a lot more sounds to the engine (zim xero) and some sounds
+    specific to napoleonic empires. (hepster & veqryn)
+    * Added tutorial on how to make a map and/or map skin. (veqryn)
+    * Allowing for Sea Factories, and Air Factories, to produce from owned
+    sea zones. (veqryn)
+    * Added UPnP support to TripleA, so that TripleA will now attempt to
+    Forward Ports for the user.  This means users should no longer have to do
+    port forwarding themselves to be able to host a game online. (veqryn)
+    * Created framework for using UPnP library, and UI component for user.
+    (veqryn)
+    * Added java library for Universal Plug and Play (UPnP) to TripleA.
+    (veqryn)
+    * Created new HotKey, "N", which when pressed during a movement phase,
+    will cycle through all units with available movement left, focusing the
+    map on the unit. (veqryn)
+    * Created new HotKey, "I", which when pressed will create a popup for 5
+    seconds showing all the info about the unit and/or territory your mouse
+    is currently over. (veqryn)
+    * Allowing the map to be scrolled by using the arrow keys and/or WASD.
+    (veqryn)
+    * Added original owner, whenCapturedByGoesTo, captureUnitOnEnteringBy,
+    and changeUnitOwners to the Territory tooltip and territory tab info.
+    (veqryn)
+    * Fixing Move Panel and Place Panel so that Undoing a move or place will
+    not result in scrolling back to the top, and will instead scroll to make
+    sure that the move under the undoed move is still visible. (veqryn)
+    * Allowing all sounds to have a player associated with them.  Just name
+    the sound "<soundName>_<playerName>".  If the player sound does not
+    exist, it will use the default non-player sound. (veqryn)
+    * Added a ton more new sounds to the engine. (veqryn)
+    * Changed Sounds so that instead of specific sound files, the engine will
+    search for specific sound folder. The engine will then randomly select a
+    sound in that folder and play it. This allows for randomized sounds.
+    (veqryn)
+    * Made sure any clicking or dragging gives focus to the main map panel
+    area. Also ensuring that if focus goes to the tabs panel tabs, that the
+    focus goes back to the map. (veqryn)
+    * Created new game option property, "Submarines Defending May Submerge Or
+    Retreat", which will allow defending submarines to submerge or retreat to
+    a friendly neighboring sea zone. (veqryn)
+    * Deleting game option property, "Hari-Kari Units", since it doesn't do
+    anything at this point. (veqryn)
+    * Deleting game option property, "Previous Units Fight", since it doesn't
+    do anything at this point. (veqryn)
+    * Allowing sea units to retreat back if the retreating to territory
+    contains only ignored enemy units. (veqryn) 
+    * Disallowing rockets from firing over impassible territories by default.
+    (veqryn)
+    * Added message on how long a ban lasts for, when a user tries to
+    reconnect to the lobby. (veqryn)
+    * Created ui wrapper for properties, and allowed most to be editable.
+    (veqryn)
+    * Created new map utility, "MapPropertiesMaker", which will make the
+    "map.properties" file. (veqryn)
+    * Added an 'Is Amphibious' check box to the battle calculator, so that
+    units like marines will correctly calculate for an amphibious battle.
+    (veqryn)
+    * Getting Decoration Placer to auto place all images nicely on the map if
+    they match the territory names or if they are not decorations. Also
+    including detailed instructions. (veqryn)
+    * Got the Decoration Placer to work with placing PUs, decorations, name
+    images, capitals, vc's, and all other image types and text files.
+    (veqryn)
+    * Creating new map utility, "Decoration Placer", which allows a map maker
+    to put decorations and other images on a map, recording their points in a
+    text file. (veqryn)
+    * Fixed bug in Triggers that use "chance" and also have more than 1
+    action or event inside them, so that they will no longer test once for
+    each action, and instead only one time total. (veqryn)
+    * Created new tab, "Notes", which will just show the game notes, on the
+    right side of the screen. (veqryn)
+    * Getting the objective panel to not refresh more than every 10 seconds,
+    and adding a "Refresh" button so that it can be manually refreshed.
+    (veqryn)
+    * Getting the objectives on the objective tab to show up in colors (red =
+    true, blue = used up), and show more information: <#of uses
+    left><T=true/F=false><#of objectives filled>. (veqryn)
+    * Including on Objective tab whether condition is currently true or not,
+    and getting it to update with the game. (veqryn)
+    * Creating new text file, "objectives.properties", which will hold all
+    the details about what objectives to show on the objective tab. (veqryn)
+    * Creating new stats panel, "Objective" Tab, which will contain a list of
+    all national objectives and any other conditions the map maker wants.
+    (veqryn)
+    * Created new "map.properties" variables: "map.cursor.hotspot.x", and
+    "map.cursor.hotspot.y". (veqryn)
+    * Allowing TripleA to use custom cursors located at "misc/cursor.gif".
+    (veqryn)
+    * Getting TripleA to use any sounds located in a folder named "sounds" in
+    any map file, thereby allowing custom sounds for every map. (veqryn)
+    * Renaming the "images" folder into "assets", and then moving the
+    "sounds" folder to be inside of the "assets" folder, inside the triplea
+    program directory. (veqryn)
+    * Created new text file, "comments.txt", which will control where things
+    like convoy route names and comments will go. (veqryn)
+    * Deleted "map.properties" variable "map.showConvoyNames" and replaced
+    with "map.showComments". (veqryn)
+    * Created new folder, "territoryNames", which can be filled with .png
+    images of each territory name. These will be displayed at the points in
+    "name_place.txt". (veqryn)
+    * Created new "map.properties" variables: "units.stack.size",
+    "map.showSeaZoneNames", and "map.drawNamesFromTopLeft". (veqryn)
+    * Deleting xml property, "Display Sea Names", and will replace it with a
+    map.properties property "map.showSeaZoneNames", because display options
+    should not be in the xml, only game logic should be. (veqryn)
+    * Deleting xml property, "Display Units as Counters", and will replace it
+    with a map.properties property "units.stack.size", because display
+    options should not be in the xml, only game logic should be. (veqryn)
+    * Created new "map.properties" variable "map.scrollWrapY", and got
+    TripleA to successfully scroll in the Y direction, as well as both X and
+    Y at the same time seamlessly. (veqryn & frigoref)
+    * Created new "map.properties" variables: "map.showResources", and
+    "screenshot.title.enabled". (veqryn)
+    * Creating a ConnectionFinder for the 'map' part of the xml. (edwin van
+    der wal)
+    * Adding Mnemonics to menu options in game. (frigoref)
+    * Improved performance of Polygon Grabber and added a auto-grab to it to
+    will attempt to grab any polygon that does not contain other polygons,
+    based on the centers file. (edwin & veqryn)
+    * Set up UI for map creator, fixed it up to be able to run all utility
+    files, including sending arguments to them. (veqryn)
+    * Creating a new Map Creator / Map Maker that is accessible from the
+    Engine Preferences section of TripleA. (veqryn)
+    * Updating TileImageBreaker and PlacementPicker to include more notes on
+    how to use them, as well as fixing some bugs and allowing arguments and
+    remembering selections. (veqryn)
+    * Updating CenterPicker and PolygonGrabber and AutoPlacementFinder to
+    include more notes on how to use them, as well as allowing arguments and
+    remembering selections. (veqryn)
+    * Fixing Global 1940 to match 2nd Edition version. (veqryn)
+    * Preventing fighters that used up all movement to get to a battle, from
+    getting to retreat. (veqryn)
+    * Allowing PlacementPicker and AutoPlacementFinder to accept two
+    arguments (when run by command line), the width and the height, of the
+    placements. (veqryn)
+    * Fixed issues preventing the smallMap from being updated after switching
+    map skins. Also polishing up support for map skins that are totally
+    different than the original map. (veqryn)
+    * Creating new "map.properties" variables: "units.width", "units.height",
+    "units.counter.offset.width" and "units.counter.offset.height", allowing
+    maps to use non-standard sized unit images. (veqryn)
+    * Fixing a bug in center picker, and fixing a bug where selecting a map
+    skin didn't verify the map before changing the user preferences. (veqryn)
+    * Fixed bug where rockets could attack a factory multiple times. (veqryn)
+    * Deleting the game option "Rocket Attack Per Factory Restricted", and
+    replacing it with its inverse, "Rocket Attacks Per Factory Infinite".
+    (veqryn)
+    * Fixed issue with not being Java 1.5 compatible. (veqryn)
+    * Fixed null pointer error in getSkins method when user has installed
+    triplea to the user folder. (veqryn)
+    * Fixed issue with showing Turn Summary from right clicking on the
+    player's node while in the History mode, which showed the current
+    player's territory summary instead of the selected player. (veqryn)
+    * Fixing movement validation bug that disallowed movement into a sea zone
+    controlled by the enemy with subs, if the sea zone also had an owner,
+    even if subs are being ignored. (veqryn)
+    * Adding new AI, "Moore N Able (2)", with ability to read a script file
+    from map folder. (kmoore)
+    * Fixing Concurrent Modification error with getIsAmphibiousMarine method
+    in battle display. (veqryn)
+    * Fixing comparison method in Easy AI (weak ai) so that adheres to the
+    comparison contract. Also cleaned up a lot of code, fixed a lot of
+    warnings. (veqryn)
+    * Fixing bug history panel bug caused by loading a savegame at the end of
+    the last player's turn, causing a "Can not add event, not in step" error
+    to be thrown. (veqryn)
+    * Adding new menu option "Focus On Own Casualties", which when selected
+    will cause the default casualty selection to focused, allowing the user
+    to hit spacebar to accept it. (hakon)
+    * Changed order of steps so that in games where Submarines may submerge
+    before battle, the attacker is asked first, then the defender is asked.
+    (hakon)
+    * Showed convoy blockade dice rolls in History Panel even if the blockade
+    damage is zero. (veqryn)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 17 Feb 2013 00:33:12 +0100
+
 triplea (1.6.1.2-1~getdeb1) precise; urgency=low
 
   * New upstream version
