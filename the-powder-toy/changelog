@@ -1,3 +1,20 @@
+the-powder-toy (86.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    Version 86.1
+    Fixed Fixed issue with CRAY delete mode
+
+    Version 86.0
+    Fixed Missing Lua API method "removeComponent" added
+    Fixed Fix issue with implicit type conversion with some
+          Lua UI API methods
+    Added New element "CRAY": Creation ray, similar to ARAY but creates
+          particles of ctype
+    Added New element "PSTN": Piston, allows pushing/pulling of particles
+    Added New element "FRME": Allows piston to push multiple elements
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 17 Feb 2013 17:18:46 +0100
+
 the-powder-toy (85.0-1~getdeb1) precise; urgency=low
 
   * New upstream version
