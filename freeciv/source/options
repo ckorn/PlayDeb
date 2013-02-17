@@ -1,3 +1,3 @@
 # see man dpkg-source for details on this file.
 #diff-ignore
-extend-diff-ignore="configure|(Makefile.in|.m4)$"
+extend-diff-ignore="configure|(Makefile.in|.m4)|config.h.in$"
