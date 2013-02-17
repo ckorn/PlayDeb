@@ -9,11 +9,11 @@ Last-Update: <2011-08-07>
  configure.ac |    4 ++--
  2 files changed, 4 insertions(+), 4 deletions(-)
 
-Index: freeciv-2.3.2/configure.ac
+Index: freeciv-2.3.4/configure.ac
 ===================================================================
---- freeciv-2.3.2.orig/configure.ac	2012-03-31 14:35:57.000000000 +0200
-+++ freeciv-2.3.2/configure.ac	2012-04-14 17:52:11.058527289 +0200
-@@ -882,8 +882,8 @@
+--- freeciv-2.3.4.orig/configure.ac	2013-02-16 15:54:38.000000000 +0100
++++ freeciv-2.3.4/configure.ac	2013-02-17 00:03:13.807107008 +0100
+@@ -883,8 +883,8 @@
  dnl In the future we probably get rid of our own lua tree and use
  dnl lua from system.
  dnl LUA_AS_DEPENDENCY should be empty when using lua outside own our tree.
@@ -24,11 +24,11 @@ Index: freeciv-2.3.2/configure.ac
  LUA_AS_DEPENDENCY="$LUA_LIBS"
  AC_SUBST([LUA_CFLAGS])
  AC_SUBST([LUA_LIBS])
-Index: freeciv-2.3.2/configure
+Index: freeciv-2.3.4/configure
 ===================================================================
---- freeciv-2.3.2.orig/configure	2012-03-31 14:37:54.000000000 +0200
-+++ freeciv-2.3.2/configure	2012-04-14 17:52:11.066527289 +0200
-@@ -26194,8 +26194,8 @@
+--- freeciv-2.3.4.orig/configure	2013-02-16 15:55:20.000000000 +0100
++++ freeciv-2.3.4/configure	2013-02-17 00:03:13.811107009 +0100
+@@ -26195,8 +26195,8 @@
  done
  
  
