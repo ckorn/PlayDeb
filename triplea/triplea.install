@@ -1,11 +1,10 @@
+assets			usr/share/triplea
 bin			usr/share/triplea
 data			usr/share/triplea
 dice_servers		usr/share/triplea
 doc			usr/share/doc/triplea
 icons			usr/share/triplea
-images			usr/share/triplea
 maps			usr/share/triplea
-sounds			usr/share/triplea
 readme.html		usr/share/doc/triplea
 triplea			usr/games
 debian/icons/*		usr/share/icons/hicolor
