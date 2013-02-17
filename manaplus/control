@@ -65,7 +65,8 @@ Architecture: all
 Depends: ${misc:Depends},
          ttf-dejavu-core,
          ttf-liberation,
-         ttf-mplus
+         ttf-mplus,
+         ttf-dejavu-extra
 Recommends: manaplus
 Replaces: mana-4144-data
 Description: Extended client for TMW and similar servers (data files)

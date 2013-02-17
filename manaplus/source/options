@@ -1,1 +1,1 @@
-extend-diff-ignore="(^|/).*\.gmo"
+extend-diff-ignore="(^|/).*\.gmo|data/tmw/Makefile|data/tmw/tmw.desktop"

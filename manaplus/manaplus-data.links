@@ -8,3 +8,5 @@ usr/share/fonts/truetype/ttf-liberation/LiberationMono-Bold.ttf		usr/share/games
 usr/share/fonts/truetype/ttf-liberation/LiberationMono-Regular.ttf	usr/share/games/manaplus/data/fonts/liberationsansmono.ttf
 usr/share/fonts/truetype/ttf-mplus/mplus-1p-bold.ttf			usr/share/games/manaplus/data/fonts/mplus-1p-bold.ttf
 usr/share/fonts/truetype/ttf-mplus/mplus-1p-regular.ttf			usr/share/games/manaplus/data/fonts/mplus-1p-regular.ttf
+usr/share/fonts/truetype/ttf-dejavu/DejaVuSerifCondensed-Bold.ttf	usr/share/games/manaplus/data/fonts/dejavuserifcondensed-bold.ttf
+usr/share/fonts/truetype/ttf-dejavu/DejaVuSerifCondensed.ttf		usr/share/games/manaplus/data/fonts/dejavuserifcondensed.ttf

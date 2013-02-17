@@ -16,6 +16,7 @@ override_dh_install:
 	dh_install --list-missing
 	chmod -x debian/manaplus/usr/share/pixmaps/manaplus.png
 	find debian -type d -empty -delete
+	rm -f debian/manaplus-data/usr/share/games/manaplus/data/themes/jewelry/LICENSE.txt
 
 override_dh_installchangelogs:
 	dh_installchangelogs ChangeLog

@@ -1,3 +1,36 @@
+manaplus (1:1.3.2.17-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: inventory sorting
+    fix: initial setup window resize issue.
+    fix: some windows size on small screens.
+    fix: onscreen buttons and positions.
+    fix: resize issue in online list.
+    fix: configuration for onscreen buttons 3 and 4.
+    fix: crash with particle effects.
+    add: browser support on android.
+    add: support for scrolling popup menus.
+    add: allow hide yellow bar and hide it by default.
+    add: unassign default key for "change move type".
+    add: google play url in update message for Android version.
+    add: onscreen buttons default size depend on resolution.
+    add: extend theming.
+    add: adjust on screen buttons positions and padding.
+    add: close buttons to some windows.
+    add: enable job support by default.
+    add: on Android by default hide chat color picker.
+    add: don't hide top right buttons on small screens.
+    add: browser support in android version.
+    add: close buttons to some windows.
+    add: enable job support by default.
+    add: improve font cache cleaning.
+    add: improve network code speed.
+    add: https links support.
+    add: extend theming.
+    add: improve speed.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 17 Feb 2013 00:23:04 +0100
+
 manaplus (1:1.3.2.3-1~getdeb1) precise; urgency=low
 
   * New upstream version
@@ -54,7 +87,7 @@ manaplus (1:1.3.2.3-1~getdeb1) precise; urgency=low
 
     2012-12-23 New release 1.2.12.23
     fix: reset in memory password if password was wrong.
-    fix: dont show opengl restart mesasge in settings under Android.
+    fix: don't show opengl restart mesasge in settings under Android.
     fix: image particles alpha property.
     fix: equipment window selection draw.
     fix: mouse move events under Android.
@@ -502,7 +535,7 @@ manaplus (1:1.2.2.19-1~getdeb1) lucid; urgency=low
     fix: memory leak in evol online list.
     fix: enter some chars in inventory input box.
     fix: some rare used packets.
-    fix: dont load move type from configuration file.
+    fix: don't load move type from configuration file.
     fix: create char dialog size.
     fix: wrong auto adjusting perfomance after sleep mode.
     add: last login time in char selection dialog.
@@ -755,7 +788,7 @@ mana-4144 (1.1.git-1.1.2.6-1lucid) unstable; urgency=low
   * New upstream release.
   * fix: crashes.
   * fix: close npc dialogs in different actions like change character/server or network error.
-  * fix: dont show random navigation point with coord 0,0.
+  * fix: don't show random navigation point with coord 0,0.
   * fix: update item amount in sell dialog.
   * add: japanese fonts mplus 1p regular and mplus 1p bold.
   * add: option to enable/disable players popups.
