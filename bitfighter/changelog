@@ -1,3 +1,9 @@
+bitfighter (0.0.018-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 18 Feb 2013 18:34:23 +0100
+
 bitfighter (0.0.017b-1~getdeb1) precise; urgency=low
 
   * New upstream version

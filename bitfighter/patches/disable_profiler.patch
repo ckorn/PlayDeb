@@ -1,13 +1,32 @@
 Disable the profiler for releases.
-Index: bitfighter-0.0.017b/zap/robot.cpp
+Index: bitfighter-0.0.018/zap/robot.cpp
 ===================================================================
---- bitfighter-0.0.017b.orig/zap/robot.cpp	2012-05-10 07:07:06.000000000 +0200
-+++ bitfighter-0.0.017b/zap/robot.cpp	2012-05-11 18:24:00.734507097 +0200
+--- bitfighter-0.0.018.orig/zap/robot.cpp	2013-02-18 18:33:55.000000000 +0100
++++ bitfighter-0.0.018/zap/robot.cpp	2013-02-18 18:37:54.110674156 +0100
 @@ -38,7 +38,6 @@
  #include "ClientInfo.h"
  #include "ServerGame.h"
  
--#include "../lua/luaprofiler-2.0.2/src/luaprofiler.h"      // For... the profiler!
+-//#include "../lua/luaprofiler-2.0.2/src/luaprofiler.h"      // For... the profiler!
  #include "BotNavMeshZone.h"      // For BotNavMeshZone class definition
- #include "luaUtil.h"
- #include "oglconsole.h"
+ 
+ #ifndef ZAP_DEDICATED
+@@ -1230,12 +1229,12 @@
+   *   @param  itemType - One or more itemTypes specifying what types of objects to find.
+   *   @return resultsTable - Will either be a reference back to the passed \e table, or a new table if one was not provided.
+   *
+-  *   @code items = { }     -- Reusable container for findGlobalItems.  Because it is defined outside
+-  *                         -- any functions, it will have global scope.
+-  *
+-  *         function countObjects(objType, ...)      -- Pass one or more object types
+-  *           table.clear(items)                     -- Remove any items in table from previous use
+-  *           findGlobalItems(items, objType, ...)   -- Put all items of specified type(s) into items table, no bot reference
++  *   @code items = { }     -- Reusable container for findGlobalItems.  Because it is defined outside
++  *                         -- any functions, it will have global scope.
++  *
++  *         function countObjects(objType, ...)      -- Pass one or more object types
++  *           table.clear(items)                     -- Remove any items in table from previous use
++  *           findGlobalItems(items, objType, ...)   -- Put all items of specified type(s) into items table, no bot reference
+   *           print(#items)                          -- Print the number of items found to the console
+   *         end
+   */
