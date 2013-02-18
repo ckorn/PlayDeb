@@ -2,18 +2,28 @@ Source: bitfighter
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50), mesa-common-dev,
- libglu1-mesa-dev, libopenal-dev, libalut-dev,
- libreadline6-dev, libc6-dev-i386 [amd64],
- lib32stdc++6 [amd64], freeglut3-dev,
- liblua5.1-0-dev, libsdl1.2-dev, libspeex-dev,
- libvorbis-dev
+Build-Depends: debhelper (>= 9),
+               mesa-common-dev,
+               libglu1-mesa-dev,
+               libopenal-dev,
+               libalut-dev,
+               libreadline6-dev,
+               libc6-dev-i386 [amd64],
+               lib32stdc++6 [amd64],
+               freeglut3-dev,
+               liblua5.1-0-dev,
+               libsdl1.2-dev,
+               libspeex-dev,
+               libvorbis-dev,
+               libmodplug-dev
 Standards-Version: 3.9.3
 Homepage: http://bitfighter.org
 
 Package: bitfighter
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, bitfighter-data (= ${source:Version})
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         bitfighter-data (= ${source:Version})
 Description: Multiplayer vector graphics space game
  Bitfighter is a free multi-player 2-D space combat
  game with Robotron-like controls. It's a team-based
@@ -30,3 +40,4 @@ Description: Multiplayer vector graphics space game (data files)
  customizable ships. It's fast, fun, and frenetic.
  .
  (This package contains the data files)
+
