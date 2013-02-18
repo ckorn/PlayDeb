@@ -26,4 +26,17 @@ Depends: ${shlibs:Depends},
 Description: Single and multiplayer space fighter combat game
  Diaspora is a single and multiplayer space fighter
  combat game set in the reimagined
- Battlestar Galactica universe. 
+ Battlestar Galactica universe.
+
+Package: diaspora-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: ${misc:Depends},
+         diaspora (= ${binary:Version})
+Description: Single and multiplayer space fighter combat game (debug symbols)
+ Diaspora is a single and multiplayer space fighter
+ combat game set in the reimagined
+ Battlestar Galactica universe.
+ .
+ (This package contains the debug symbols.)
