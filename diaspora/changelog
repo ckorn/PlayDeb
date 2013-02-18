@@ -1,3 +1,11 @@
+diaspora (1.0.4-1~getdeb3) precise; urgency=low
+
+  * debian/rules: Make the wxlauncher with
+    CMAKE_INSTALL_PREFIX to look in the correct directory
+    for the game files.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 18 Feb 2013 18:01:11 +0100
+
 diaspora (1.0.4-1~getdeb2) precise; urgency=low
 
   * Initial release (LP: #1046551)
