@@ -27,10 +27,8 @@ Build-Depends: debhelper (>= 9),
                libapr1-dev
 Standards-Version: 3.9.3
 Homepage: http://www.simgear.org/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-fgfs/simgear/trunk/
-Vcs-Svn: svn://svn.debian.org/pkg-fgfs/simgear/trunk/
 
-Package: simgear2.8.0
+Package: simgear2.10.0
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
