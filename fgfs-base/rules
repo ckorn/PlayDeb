@@ -61,7 +61,8 @@ install:
 	   debian/fgfs-aircraft-base/usr/share/games/flightgear/Aircraft/bo105/COPYING
 	rm debian/fgfs-base/usr/share/games/flightgear/ATC/Chatter/BR/LICENCE.txt \
 	   debian/fgfs-base/usr/share/games/flightgear/Fonts/LiberationFonts/COPYING \
-	   debian/fgfs-base/usr/share/games/flightgear/Fonts/LiberationFonts/License.txt
+	   debian/fgfs-base/usr/share/games/flightgear/Fonts/LiberationFonts/License.txt \
+	   debian/fgfs-base/usr/share/games/flightgear/Aircraft/Generic/Engines/LICENSE
 	rmdir debian/fgfs-base/usr/share/games/flightgear/Aircraft/Instruments-3d/mk-viii/Textures/gpws/xcf/
 
 	# fix some insane permissions
