@@ -1,0 +1,26 @@
+## Description: When developing is active the game looks in the build dir for
+##              the files. Just hardcode the correct directory for the package.
+## Origin/Author: Christoph Korn <christoph.korn@getdeb.net>
+## Bug: this is not an upstream bug
+Index: diaspora-1.0.4/Diaspora/wxlauncher/CMakeLists.txt
+===================================================================
+--- diaspora-1.0.4.orig/Diaspora/wxlauncher/CMakeLists.txt	2013-02-20 19:48:55.000000000 +0100
++++ diaspora-1.0.4/Diaspora/wxlauncher/CMakeLists.txt	2013-02-20 19:50:15.887884465 +0100
+@@ -58,7 +58,7 @@
+ option(DEVELOPMENT_MODE "Doing development (cannot build installer in this mode)" OFF)
+ if(DEVELOPMENT_MODE)
+   set(HELP_HTB_LOCATION ${helphtblocation})
+-  set(RESOURCES_PATH ${PROJECT_SOURCE_DIR}/resources)
++  set(RESOURCES_PATH /usr/share/games/diaspora/resources)
+ else(DEVELOPMENT_MODE)
+   if (NOT DEFINED RESOURCES_PATH)
+     if(IS_WIN32)
+@@ -66,7 +66,7 @@
+     elseif(IS_APPLE)
+       set(RESOURCES_PATH wxlauncher.app/Contents/Resources)
+     else()
+-      set(RESOURCES_PATH /usr/local/share/wxlauncher/)
++      set(RESOURCES_PATH /usr/share/games/diaspora/resources)
+     endif()
+   endif()
+   set(HELP_HTB_LOCATION ${RESOURCES_PATH}/onlinehelp.htb)
