@@ -1,3 +1,9 @@
+fgfs-base (2.10.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 19 Feb 2013 15:43:02 +0100
+
 fgfs-base (2.8.0-1~getdeb1) precise; urgency=low
 
   * New upstream version
