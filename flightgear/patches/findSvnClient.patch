@@ -1,25 +1,13 @@
 Fix broken SVN detection.
-Index: flightgear-2.8.0/CMakeModules/FindSvnClient.cmake
+Index: flightgear-2.10.0/CMakeModules/FindSvnClient.cmake
 ===================================================================
---- flightgear-2.8.0.orig/CMakeModules/FindSvnClient.cmake	2012-08-16 16:20:57.000000000 +0200
-+++ flightgear-2.8.0/CMakeModules/FindSvnClient.cmake	2012-08-17 17:34:02.949115395 +0200
-@@ -16,11 +16,7 @@
-     string(TOUPPER "${comp}" compLibBase)
-     set( compLibName ${compLibBase}_LIBRARY )
- 
--    # NO_DEFAULT_PATH is important on Mac - we need to ensure subversion
--    # libraires in dist/ or Macports are picked over the Apple version 
--    # in /usr, since that's what we will ship.
-     FIND_LIBRARY(${compLibName}
--      NO_DEFAULT_PATH
-       NAMES ${compLib}
-       HINTS $ENV{LIBSVN_DIR} ${CMAKE_INSTALL_PREFIX} 
-       PATH_SUFFIXES lib64 lib libs64 libs libs/Win32 libs/Win64
-@@ -53,7 +49,6 @@
+--- flightgear-2.10.0.orig/CMakeModules/FindSvnClient.cmake	2013-01-28 18:03:22.000000000 +0100
++++ flightgear-2.10.0/CMakeModules/FindSvnClient.cmake	2013-02-19 15:55:11.034052960 +0100
+@@ -55,7 +55,6 @@
  
  if(HAVE_APR_CONFIG OR MSVC)
  	find_path(LIBSVN_INCLUDE_DIR svn_client.h
 -      NO_DEFAULT_PATH
  	  HINTS
- 	  $ENV{LIBSVN_DIR} ${CMAKE_INSTALL_PREFIX}
+ 	  $ENV{LIBSVN_DIR} ${CMAKE_INSTALL_PREFIX} ${MSVC_3RDPARTY_ROOT}/${MSVC_3RDPARTY_DIR}/include
  	  PATH_SUFFIXES include/subversion-1
