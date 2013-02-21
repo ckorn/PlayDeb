@@ -1,0 +1,30 @@
+Description: Fix various issues found in desktop menu entry file
+ - Fix issue found by desktop-file-validate (deprecated Encoding key)
+ - Make translations less specific to localization. See Debian BTS #667640
+ - Original .desktop file in past STK versions on Debian had extra fields in
+   Categories, which ended up showing STK's menu entry in multiple locations;
+   remove these extra fields. See LP: #709987
+Forwarded: http://sourceforge.net/apps/trac/supertuxkart/ticket/632
+           http://sourceforge.net/apps/trac/supertuxkart/ticket/841
+Bug-Debian: http://bugs.debian.org/667640
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/709987
+Last-Update: 2012-12-28
+
+--- a/data/supertuxkart_desktop.template
++++ b/data/supertuxkart_desktop.template
+@@ -1,12 +1,11 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=SuperTuxKart
+ Icon=@PREFIX@/share/pixmaps/supertuxkart_64.xpm
+ GenericName=A kart racing game
+-GenericName[de_DE]=Ein Kart-Rennspiel
+-GenericName[fr_FR]=Un jeu de karting
++GenericName[de]=Ein Kart-Rennspiel
++GenericName[fr]=Un jeu de karting
+ GenericName[gl]=Xogo de carreiras con karts
+-GenericName[ro_RO]=Un joc de curse cu carturi
++GenericName[ro]=Un joc de curse cu carturi
+ Exec=@PREFIX@/games/supertuxkart --log=file
+ Terminal=false
+ StartupNotify=false
