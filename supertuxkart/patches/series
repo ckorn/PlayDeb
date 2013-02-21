@@ -1,2 +1,8 @@
-libirrlicht1.8.patch
-typos.patch
+build_against_system_enet.patch
+link_against_system_libs.patch
+fix_desktop_file.patch
+# Irrlicht patches taken directly from irrlicht source package in Debian
+irrlicht/arch-support.diff
+irrlicht/use-system-libs.diff
+irrlicht/link-against-needed-libs.diff
+irrlicht/fix-hurd-ftbfs.diff

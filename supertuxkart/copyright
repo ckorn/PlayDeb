@@ -5,8 +5,6 @@ Current maintainer is the Debian Games Team
 <pkg-games-devel@lists.alioth.debian.org>
 
 It was downloaded from http://supertuxkart.sourceforge.net/
-Data to replace non-free bits is available at 
-  http://alioth.debian.org/~christoph-guest/stk-0.6.1a-dfsg.tar.bz2
 
 The project leaders are:
 	Joerg Henrichs (hiker)
@@ -52,10 +50,11 @@ For Tuxkart (Supertuxkart is derived from Tuxkart
 
 Debian Packaging (debian/)
 	Copyright © 2006,2007,2008 Gonéri Le Bouder
-	Copyright © 2008 Alexander Schmehl 
+	Copyright © 2008 Alexander Schmehl
 	Copyright © 2007,2008 Sam Hocevar
 	Copyright © 2007,2008 Cyril Brulebois
 	Copyright © 2008,2009 Christoph Egger
+	Copyright © 2012 Vincent Cheng
 
 From Neverball (src/widget_set.cpp and src/widget_set.hpp)
 	Copyright © 2003 Robert Kooima
@@ -97,17 +96,17 @@ License: Bullet
 Bullet Continuous Collision Detection and Physics Library
 
 This software is provided 'as-is', without any express or implied warranty.
-In no event will the authors be held liable for any damages arising from the 
+In no event will the authors be held liable for any damages arising from the
 use of this software.
 Permission is granted to anyone to use this software for any purpose,
 including commercial applications, and to alter it and redistribute it freely,
 subject to the following restrictions:
 
-1.	The origin of this software must not be misrepresented; you must not claim 
-	that you wrote the original software. If you use this software in a 
-	product, an acknowledgment in the product documentation would be 
+1.	The origin of this software must not be misrepresented; you must not claim
+	that you wrote the original software. If you use this software in a
+	product, an acknowledgment in the product documentation would be
 	appreciated but is not required.
-2.	Altered source versions must be plainly marked as such, and must not be 
+2.	Altered source versions must be plainly marked as such, and must not be
 	misrepresented as being the original software.
 3.	This notice may not be removed or altered from any source distribution.
 
@@ -169,7 +168,7 @@ Pidgin & Nolok :
 Wilber and Elephpant :
     Wilber character, Elephpant character and Elephpant kart by Tobias Beyrer
     Released under CC-BY-SA 3.0
-    
+
     Wilber kart by Frederico de Oliveira, released under GPL
 
 Hexley :
@@ -187,7 +186,7 @@ Gooey & Mozilla:
 Tux :
     originally by (??) from original (Super)TuxKart teams
     released under GNU GPL
-    
+
 Animations :
     by Rudy85
 
@@ -314,26 +313,26 @@ data/sfx
 * crash
     obtained from : http://www.freesoundfiles.tintagel.net/Audio/
     (see license text below)
-    
+
 * energy_bar_full
     obtained from : http://www.freesoundfiles.tintagel.net/Audio/
     (see license text below)
-    
+
 * engine_large
     Released under the Free Art License
     by the TORCS project "http://torcs.sourceforge.net/"
-    
+
 * explosion
     Released under the GNU GPL, coming from original (Super)TuxKart
 
 * grab_collectable
     obtained from : http://www.freesoundfiles.tintagel.net/Audio/
     (see license text below)
-    
+
 * horn
     Released under the Creative Commons BY (Attribution) 3.0
     Recorded by Mike Koenig, with modifications by Marianne Gagnon (Auria)
-    
+
 * last lap fanfare
     by Dundersylt
     released under CC-BY-SA 3.0+
@@ -344,8 +343,8 @@ data/sfx
 * pre_start_race
     obtained from : http://www.freesoundfiles.tintagel.net/Audio/
     (see license text below)
-          
-* skid 
+
+* skid
     Released under Creative Commons Attribution - Share Alike License 3.0
     by Atheal Washington and Stephen Dunn (stevo14)
 
@@ -390,7 +389,7 @@ Under Creative Commons Attribution Share-Alike (CC-BY-SA) - http://creativecommo
 
 * palmtree3
     © 2009 Gregory Schick <leadgolem@gmail.com>, Christoph Egger <debian@christoph-egger.org> and Marianne Gagnon (Auria)
-    
+
 * beige_bricks.jpg, bumpy_surface.png, yellow_dirt.png
     by Dakal (http://dakal-fr.deviantart.com/, http://opengameart.org/user/300)
     licensed under the Creative Commons Attribution-Share Alike 3.0 Unported License
@@ -435,7 +434,7 @@ Under Creative Commons Attribution Share-Alike (CC-BY-SA) - http://creativecommo
 * wheel
     created by Andreas Bilng (c) 2008, with Tuxicon by Enrico Billing (c) 2008
     released under Creative Commons Attribution-Share Alike 3.0 Germany [http://creativecommons.org/licenses/by-sa/3.0/de/deed.en]
- 
+
 * icon_frame
     by jmimu
     released under CC-BY-SA 3.0
@@ -543,7 +542,7 @@ farm:
       based on burningwell.org (public domain) images modified by
       Varivar and Marianne Gagnon, released under CC-BY-SA 3.0+
   .
-  leave3.png : by Krzysztof P. Jasiutowicz 
+  leave3.png : by Krzysztof P. Jasiutowicz
   retrieved from http://commons.wikimedia.org/wiki/File:Lisc_lipy.jpg,
       released under CC-BY-SA 3.0
   .
@@ -589,7 +588,7 @@ hacienda:
       based on photograph by Ragesoss
       http://commons.wikimedia.org/wiki/File:Small_twisted_sagebrush.jpg
       Released CC-BY-SA 3
-  .    
+  .
   palmacacia.png
       by Yorik
       from http://yorik.uncreated.net/greenhouse.html
@@ -647,8 +646,8 @@ scottland:
   Released under GNU GPL :
     -bush3.png               based on image from the http://www.titusgames.de GLEST jungle set, modified by Canis Lupus
     -zipper_collect.png      from original STK team
-    .  
-    Character icons in following images by Anthony Carré (yekcim), released under GPL 2; with modifications by Lupus Canis 
+    .
+    Character icons in following images by Anthony Carré (yekcim), released under GPL 2; with modifications by Lupus Canis
     -Puffy_bar.png               from karts/puffy
     -gnu_bar.png                 from karts/gnu
     -Tux_inn.png                 with tinytux
@@ -669,12 +668,12 @@ scottland:
 secretgarden:
   Reused with different colors from supertuxkart/data/textures:
     -water_light2    (water_light is the original)
-    -water_light3    
+    -water_light3
     -bow             (from stk0.5)
     -rock_grey       (rock is the original)
     -rock_lightgrey
     -rock_white
-  .  
+  .
   Selfmade parts and under GPL and CC-BY-SA, by Canis Lupus :
     - flower4
     - invisible
@@ -683,7 +682,7 @@ secretgarden:
     - leave4
     - pot
     - pumkin
-  .  
+  .
   Based on pictures from from burningwell (released under public domain) :
     - flower1
     - Bleech
@@ -708,18 +707,18 @@ secretgarden:
     - leave3 (http://commons.wikimedia.org/wiki/File:Lisc_lipy.jpg,
               CC-BY-SA 3.0, by Krzysztof P. Jasiutowicz)
     - TiZeta_stalkM (http://commons.wikimedia.org/wiki/File:Dwarf_cavendish_leaf.JPG,
-                    CC-BY-SA 3.0, by Ben Clough)              
+                    CC-BY-SA 3.0, by Ben Clough)
     - Greenhouse-Palm-jubaea01
         based on image by Forest & Kim Starr, with modifications by Marianne Gagnon
         Released under CC-BY 3.0
-    - Palm-arecaceae 
+    - Palm-arecaceae
         based on image by José Reynaldo da Fonseca, with modifications by Marianne Gagnon
         Released under CC-BY-SA 3
     from http://yorik.uncreated.net/greenhouse.html
       -Rose                      CC-BY 3.0
-    from http://blender-archi.tuxfamily.org/Textures 
+    from http://blender-archi.tuxfamily.org/Textures
     -Sophora                   GPL
-  from DJHelium:  
+  from DJHelium:
     -secretgarden.ogg
 
 skyline:
@@ -732,30 +731,30 @@ skyline:
 snowmountain:
   Track by Canis Lupus
   Converted by sj04736
-  
+
   Reused with different colors from supertuxkart/data/textures:
-  
+
   -snow2           (snow is the original)
   -roadway2        (roadway is the original)
   -roadwayborder   (roadway is the original)
   -stonesgray      (stones is the original)
-    
+
   Selfmade parts and under GPL and CC-BY-SA)
-  
+
   -rockmountain
   -window2
   -windowshutters
-  
+
   -snowmountain.ac
   -snowmountain.blend
-  
+
   winter sky textures (c) 2010 thomas oppl (toppl@fh-sbg.ac.at)
   licensed under CC BY-SA 3.0
   http://creativecommons.org/licenses/by-sa/3.0/
 
 snowtuxpeak:
   original track released under GNU GPL.
-  
+
   Track converted to Irrlight format by Ivar ten Cate
   cottage_wall1.jpg, cottage_wall2.jpg, cottage_wall3.jpg and wood_planks1.png are modified textures from burningwell.org (public domain)
 
@@ -763,7 +762,7 @@ stadium:
   racetrack (c) 2008 thomas oppl (toppl@fh-sbg.ac.at)
   Arena Mods by Pixel_2ACF3 (Wayne Dennis)
   licensed under CC BY-SA 3.0
-  http://creativecommons.org/licenses/by-sa/3.0/  
+  http://creativecommons.org/licenses/by-sa/3.0/
 
 startrack:
   This track, and the startrack2 / startrack3 textures are released under the GNU GPL version 2 (or later).
@@ -786,10 +785,10 @@ xr591:
     road_dirt_red - with parts by MiniBjorn
     sandred* - based on work by MiniBjorn
     arrws.png - by Marianne Gagnon
-    
+
     arc1.png - based on picture by Mike Switzerland, found on Wikimedia Commons, with modifications by Marianne Gagnon
     arc2.png - based on picture by Axel Rouvin (Attribution license), found on Wikimedia Commons, with modifications by Marianne Gagnon
-      
+
   Reused with different colors from supertuxkart/data/textures (see their individual licenses) :
     -acid_lake.jpg      (lava.jpg is the original)
     -marscity_cyan.jpg  (lava.jpg is the original)
@@ -800,13 +799,13 @@ xr591:
     -mars_lava2.jpg     (lava2 is the original)
     -mars_lava3.jpg     (lava2 is the original)
     -stars.jpg is from startrack
-    
+
   marscity_yellow{,2}.jpg is based on Public Domain Work from burningwell with modifications © 2009 Christoph Egger <debian@christoph-egger.org>
   Released under 3 licenses, at your choice :
    * ZLib License
    * GNU GPL Version 2 or later
    * Creative Commons 3.0 BY
-  
+
   from NASA (public domain) :
       jupiter.jpg, galaxy1.jpg, galaxy2.jpg, saturn.jpg, erde.jpg, mars.jpg, venus.jpg
           http://commons.wikimedia.org/wiki/Jupiter
@@ -815,8 +814,8 @@ xr591:
           http://commons.wikimedia.org/wiki/Image:As08-16-2593.jpg
           http://commons.wikimedia.org/wiki/Image:Mars_Hubble.jpg
           http://commons.wikimedia.org/wiki/Image:Venus_globe.jpg
-  
-  Selfmade parts are dual-licensed under both GPL and CC-BY-SA  
+
+  Selfmade parts are dual-licensed under both GPL and CC-BY-SA
     laser_bridge_green.jpg
     laser_bridge_red.jpg
     marscity_blue*.jpg
@@ -838,7 +837,7 @@ xr591:
     marswindow*.jpg
     marstrack.ac
     marstrack.blend
-      
+
 
 ==========
 

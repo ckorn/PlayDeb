@@ -1,9 +1,11 @@
+config.log
 config.sub
 config.guess
 debian/supertuxkart.6
 Makefile.in
 aclocal.m4
 configure
+data/supertuxkart.desktop
 data/Makefile.in
 data/fonts/Makefile.in
 data/grandprix/Makefile.in
@@ -25,3 +27,4 @@ src/bullet/Makefile.in
 src/bullet/src/Makefile.in
 src/enet/Makefile.in
 src/ide/Makefile.in
+sources.cmake

@@ -1,0 +1,22 @@
+Description: Link against system copies of zlib/libpng/libjpeg/bzip2
+Forwarded: not-yet
+Author: Vincent Cheng <Vincentc1208@gmail.com>
+Last-Update: 2012-12-29
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -196,7 +196,13 @@
+     ${IRRLICHT_LIBRARY}
+     ${IRRLICHT_XF86VM_LIBRARY}
+     ${OPENAL_LIBRARY}
+-    ${OPENGL_LIBRARIES})
++    ${OPENGL_LIBRARIES}
++    X11
++    z
++    png
++    jpeg
++    bz2
++)
+ 
+ if(USE_FRIBIDI)
+     target_link_libraries(supertuxkart ${FRIBIDI_LIBRARIES})

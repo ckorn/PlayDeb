@@ -1,133 +1,110 @@
-supertuxkart (0.7.3-1~getdeb2) lucid; urgency=low
+supertuxkart (0.8-1~getdeb1) precise; urgency=low
 
-  * Rebuild against irrlicht with debug disabled (LP: #976856)
+  * New upstream version (LP: #1089480)
+    * Story mode and new challenge set
+    * Improved AI
+    * Skidding and better collision physics
+    * Reverse mode
+    * New green valley track
+    * New Blackhill Mansion track
+    * Updated XR591 track
+    * Updated Fort Magma track
+    * Updated jungle track
+    * Updated menus
+    * New music
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 09 Apr 2012 20:56:33 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 21 Feb 2013 16:36:27 +0100
 
-supertuxkart (0.7.3-1~getdeb1) lucid; urgency=low
+supertuxkart (0.8-1) experimental; urgency=low
 
-  * New upstream version (LP: #891047)
-    * New Zen Garden, Minigolf and Subsea tracks
-    * New Island battle arena
-    * New Suzanne kart
-    * New graphical effects
-    * New weapons 'Swatter' and 'Rubber Ball'
-    * Added Thunderbird as race referee
-    * 3 Strikes Battles now displays lives as spare tires
-    * Improved bubble gum
-    * See progression during Grand Prix
-    * Improve physics for tall karts (e.g. Adiumy)
-    * Lots of bug fixes
-    * Improved kart control at high speeds
-    * Better placement of rescued karts
-    * Transition track-making to blender 2.5/2.6
+  * New upstream release.
+    - Use embedded/forked copy of irrlicht; refer to debian/README.source for
+      details. Also import patches used in Debian's irrlicht source package.
+    - Remove build-depends on libirrlicht-dev.
+    - Add build-depends on zlib1g-dev, libbz2-dev, libpng-dev, libjpeg-dev,
+      mesa-common-dev.
+    - Remove backport_cmake.patch and build_with_irrlicht_1.8.patch; applied
+      upstream.
+    - Refresh remaining patches.
+  * Bump Standards version to 3.9.4, no changes required.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 16 Dec 2011 19:11:56 +0100
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Fri, 28 Dec 2012 22:45:14 -0800
 
-supertuxkart (0.7.2-1~getdeb1) lucid; urgency=low
+supertuxkart (0.7.3-2+exp1) experimental; urgency=low
 
-  * New upstream version (LP: #811392)
-    * Added in-game addon manager
-    * Fixed major memory leaks
-    * New Snow Peak track by Samuncle
-    * Improved star track UFO by Rudy
-    * New Beastie kart.
-    * Show when you get a highscore
-    * Improve gamepad configuration under Windows
-      (add ability to tell gamepads apart)
-    * Various other tweaks done and glitches fixed
+  * Upload to experimental.
+  * Build with irrlicht 1.8.
+    - This should fix segfaults related to irrlicht 1.7.3 in supertuxkart,
+      commonly triggered through the use of power-ups during races.
+      (Closes: #677609; LP: #1011180, LP: #1048284, LP: #1049398, LP: #1061436,
+      LP: #1064019, LP: #1069871)
+    - This also fixes incorrect rendering of Suzanne's kart. (Closes: #679837)
+    - Update build-depends on libirrlicht-dev (>= 1.8).
+    - Drop patch debian/patches/build_with_irrlicht_1.7.3.patch and add
+      debian/patches/build_with_irrlicht_1.8.patch.
+  * Add new package supertuxkart-dbg containing debugging symbols.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 16 Jul 2011 13:21:51 +0200
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Fri, 16 Nov 2012 08:22:15 -0800
 
-supertuxkart (0.7.1b-1~getdeb1) lucid; urgency=low
+supertuxkart (0.7.3-2) unstable; urgency=low
 
-  * New upstream version (LP: #769623)
-     * Fix circular dependency in challenges
-     * Updated translations
+  * Switch buildsystem to cmake (upstream has deprecated their autotools
+    build system).
+    - Drop build-depends on autotools-dev, automake, dh-autoreconf.
+    - Add build-depends on cmake (>= 2.8.1).
+    - Refresh debian/patches/build_against_system_enet.patch.
+    - Add debian/patches/backport_cmake.patch to backport fixes to STK's
+      CMake build system (and to make it easier to build against system enet).
+  * Install hi-res icon and use it in STK's desktop menu entry. (LP: #937976)
+  * Enable parallel building.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 30 Apr 2011 16:47:44 +0200
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Thu, 31 May 2012 17:23:37 -0700
 
-supertuxkart (0.7.1-1~getdeb1) lucid; urgency=low
+supertuxkart (0.7.3-1) unstable; urgency=low
 
-  * New upstream version
-    * Particle  (smoke, splash, fire) and weather effects
-    * New Fort Magma by Samuncle, new Shiny Suburbs track by Horace
-    * New Beagle kart by wolterh
-    * Added internet news
-    * Support for live language switch
-    * Added optional minimal race UI
-    * Temporary invincibility after being hit
-    * Added support for full-screen anti-aliasing
-    * Clearer multiplayer setup
-    * Renamed many tracks to nicer names
-    * Basic level-of-detail (LOD) support
-    * Debug features for track makers
-    * Update to bullet 2.77
-    * Replace more sounds to be DFSG-compliant
-    * Fixed character names that contain non-ASCII characters
-    * Full RTL (right to left) support
-    * Various other tweaks done and glitches fixed
+  * Team upload.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 15 Apr 2011 19:48:54 +0200
+  [ Alexander Reichle-Schmehl ]
+  * New upstream release (Closes: #634019, LP: #871630)
+  * Fix watchfile to ignore release candidates
+  * Refresh patches/build-against-system-enet.patch
+  * Drop patches/enet1.3.patch (Applied upstream)
 
-supertuxkart (0.7+dfsg1-1~getdeb1) lucid; urgency=low
+  [ Vincent Cheng ]
+  * Add myself to Uploaders.
+  * Add debian/patches/build_with_irrlicht_1.7.3.patch to enable build with
+    latest stable version of irrlicht rather than an unreleased SVN revision.
+  * Bump versioned dependency on libirrlicht-dev to (>= 1.7.3).
+  * Update debian/rules to dh 7 "rules.tiny" style.
+  * Add build-depends on dh-autoreconf and use autoreconf sequence in
+    debian/rules.
+  * Add build-depends on libcurl4-gnutls-dev | libcurl4-dev, libfribidi-dev,
+    libxxf86vm-dev.
+  * Add missing DEP-3 headers to patches.
+  * Source tarball is now DFSG-clean.
+    - Remove unneeded get-orig-source target in debian/rules.
+    - Remove unneeded get-orig-source.sh and README.source.
+  * Remove unneeded *.xpm icons in debian/.
+  * Remove unused lintian-overrides file.
+  * Remove unneeded debian/supertuxkart.desktop menu file (use menu file in
+    data/supertuxkart_desktop.template instead).
+    - Add debian/patches/fix_desktop_file.patch to add Debian/Ubuntu-specific
+      changes to menu file (and forward patch upstream). (Closes: #667640;
+      LP: #709987)
+  * "Modernize" package description, as suggested by an upstream dev.
+    (LP: #774345); remove reference to GotM. (Closes: #531637)
+  * Bump dh compat level from 7 to 9.
+  * Bump standards version from 3.8.3 to 3.9.3 (no changes needed).
 
-  * New upstream version (LP: #726238)
-    SuperTuxKart 0.7 (December 2010)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Too many to list them all. Main points:
-    * Irrlicht:
-      - Ported from plib to irrlicht
-      - Added animations to karts and some tracks
-    * GUI
-      - Completely new designed GUI
-    * Other improvements
-      - Allowed alternative ways/shortcuts in tracks
-      - New item 'switch'
-    * New art:
-      - New tracks farm, hacienda, scotland, secret garden
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Fri, 04 May 2012 18:36:07 -0700
 
-    SuperTuxKart 0.6.2a (October 2009)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    * Bugfix: STK would crash while trying to save the config file
-              on Windows Vista.
+supertuxkart (0.7+dfsg1-2) unstable; urgency=low
 
-    SuperTuxKart 0.6.2 (July 2009)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    * Bugfix: Game could crash in rare circumstances.
-    * Bugfix: Restarting a GP (with the in-race menu ESC) would
-              not subtract already allocated points.
-    * Bugfix: A race could be finished with an invalid shortcut.
-    * Bugfix: Playing a challenge after a splitscreen game would
-              play the challenge in split screen.
-    * Bugfix: Items explode over void.
-    * Bugfix: Grass in castle arena slowed down the kart.
-    * Bugfix: GP result showed kart identifier instead of name.
-    * Improvement: there is now 1 1 sec. wait period for the race
-              result screen, avoiding the problem that someone
-              presses space/enter at the end of a race, immediately
-              quitting the menu before it can be read.
+  * drop 3DGraphics from desktop file (LP: #532065)
+  * Apply patch by Ansgar Burchardt to build against enet 1.3 (Closes:
+    #617783)
 
-    SuperTuxKart 0.6.1a (February 2009)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    * Bugfix: battle mode would not display track groups.
-
-    SuperTuxKart 0.6.1 (February 2009)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    * Added new kart ("Puffy"), new battle map ("Cave"), and new music
-      for Snow Mountain.
-    * Fixed bug in track selection screen that could cause a crash
-      when track groups were used.
-    * Fixed crash in character selection that could happen if an
-      old user config file existed.
-    * Fixed incorrect rescues in Fort Magma.
-    * Improved track selection screen to not display empty track
-      groups.
-    * A plunger in the face is now removed when restarting.
-    * Added slow-down for karts driving backwards.
-    * Somewhat reduced 'shaking' of AI driven karts.
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 01 Mar 2011 18:31:40 +0100
+ -- Christoph Egger <christoph@debian.org>  Thu, 17 Mar 2011 21:08:17 +0100
 
 supertuxkart (0.7+dfsg1-1) unstable; urgency=low
 
