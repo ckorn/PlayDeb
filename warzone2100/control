@@ -1,0 +1,104 @@
+Source: warzone2100
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+XSBC-Original-Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders: Paul Wise <pabs@debian.org>,
+           Christoph Egger <christoph@debian.org>
+Build-Depends: asciidoc,
+               autotools-dev,
+               bison,
+               debhelper (>= 9),
+               dh-autoreconf,
+               docbook-xml,
+               docbook-xsl,
+               dpkg-dev (>= 1.13.19),
+               flex (>= 2.5.33~),
+               flex (>= 2.5.35~) | flex (<< 2.5.34~),
+               libfontconfig-dev,
+               libfreetype6-dev,
+               libfribidi-dev,
+               libglc-dev,
+               libglew-dev,
+               libminiupnpc-dev,
+               libopenal-dev,
+               libphysfs-dev,
+               libpng-dev,
+               libpopt-dev,
+               libqt4-dev,
+               libsdl1.2-dev,
+               libtheora-dev,
+               libvorbis-dev,
+               libxml2-utils,
+               libxrandr-dev,
+               pkg-config,
+               unzip,
+               wkhtmltopdf,
+               xauth,
+               xsltproc,
+               xvfb,
+               zip
+Standards-Version: 3.9.3
+Homepage: http://www.wz2100.net/
+
+Package: warzone2100
+Architecture: any
+Depends: warzone2100-data (<= ${source:Version}),
+         warzone2100-data (>= ${source:Upstream-Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: warzone2100-music (<= ${source:Version}),
+            warzone2100-music (>= ${source:Upstream-Version}),
+            warzone2100-video
+Description: 3D real time strategy game
+ In Warzone 2100 you command the forces of “The Project” in a battle to
+ rebuild the world after mankind has almost been destroyed by nuclear
+ missiles.
+ .
+ The game offers campaign, tutorial, multi-player and single-player skirmish
+ modes.
+ .
+ An extensive tech tree with over 400 different technologies, combined with
+ the unit design system, allows for a wide variety of possible units and
+ tactics.
+ .
+ Warzone 2100 was created by Pumpkin Studios, published by Eidos Interactive
+ and is currently developed by the Warzone 2100 Project.
+ .
+ The campaign video sequences are not yet distributed here, please see the
+ Warzone 2100 website for details on downloading and installing them.
+
+Package: warzone2100-data
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: warzone2100
+Description: data files for warzone2100
+ This package contains data, docs and translations for the warzone2100 game.
+ .
+ It contains the campaign and multiplayer data, several mods (including
+ a more advanced AI, different terrain textures, new maps and scavengers)
+ and documentation for the game.
+
+Package: warzone2100-dbg
+Section: debug
+Architecture: any
+Priority: extra
+Depends: warzone2100 (= ${binary:Version}),
+         ${misc:Depends}
+Description: debug files for warzone2100
+ This package contains debug information for the warzone2100 game.
+ .
+ It can be used to debug warzone2100 using GDB if the game crashes
+ due to programming errors. warzone2100 also generates crash dumps
+ and places them in the /tmp directory.
+
+Package: warzone2100-music
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: warzone2100
+Description: official music for warzone2100
+ This package contains official music for the warzone2100 game.
+ .
+ It contains the background music for the menu and during the game,
+ which varies between abstract, atmospheric and post-apocalyptic beats,
+ a perfect soundscape for a heated battle with the enemy.
