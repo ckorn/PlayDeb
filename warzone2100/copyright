@@ -1,175 +1,362 @@
-This package was debianized by Linas Žvirblis <0x0007@gmail.com> on
-Thu, 10 Aug 2006 00:25:56 +0300.
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Warzone 2100
+Upstream-Contact: http://wz2100.net/contact
+Source: http://wz2100.net/download
 
-The upstream source was downloaded from SVN at:
-
-  https://gna.org/projects/warzone/
-
-The packages are maintained through Subversion on:
-
-  svn://svn.debian.org/svn/pkg-games/packages/trunk/warzone2100/
-
-Upstream Authors:
-
-  Originally developed by Pumpkin Studios, and published by
-  Eidos Interactive in year 1999.
-
-  Warzone 2100 Project:
-
-	Scott Balneaves <sbalneav> : Programming
-	-- <Buginator> : Programming
-	Roman C. <troman> : Programming and Scripting + Scripting-engine rewrite and AI
-	-- <dak180> : MacOSX Packaging
-	Denis Dupeyron <charun> : Programming
-	Bruce V. Edwards <cathuria> : 2D/3D Graphics
-	Don Edwards : 2D Graphics support
-	Mike Gilmore <Chojun> : Programming
-	Elio Gubser <elio, ohyeh> : 2D Graphics
-	-- <Hatsjoe> : 2D Graphics
-	Carl Hee <Watermelon> : Programming + Multiturrets
-	Adam Holland
-	Stefan Huehner <shuehner> : Programming + original 64bit support
-	Ari Johnson <iamtheari> : Programming and MacOSX Packaging + original MacOSX port
-	Steven Koenig <kreuvf> : Documentation, translation
-	Martin Koller <mkoller> : Programming
-	Gerard Krol <gerard_> : Programming
-	Angus Lees <gus> : Debian Packaging
-	Guangcong Luo <Zarel> : Programming, Balancing, and Documentation
-	Dennis Luxen <pret> : Programming
-	Kevin Malec <Kevin`> : Websupport
-	Per I. Mathisen <per> : Programming
-	Dion Mendel <noid> : Programming, original Linux port
-	Kim Metcalfe <lav-coyote25> : Documentation, Maps and Support
-	Christian Ohm <cybersphinx> : Programming
-	Tim P. <kamaze> : Webmaster
-	Phil Procario <GrimMoroe, grimandmandy> : 3D Graphics
-	Marcus Rast <charon> : Programming
-	-- <Pseudonym404> : Programming + original 64bit support
-	Victor Qamly <vqamly> : Programming
-	Ben Russon <grizzly> : Support
-	Hylke van der Schaaf <TheNoid> : Programming
-	Giel van Schijndel <Giel> : Programming and Debian Linux and Windows Packaging
-	Dennis Schridde <devurandom> : Programming and general Linux and Windows Packaging
-	Dmitri Shuralyov <shurcool> : Programming
-	Rodolphe Suescun <rodzilla> : Programming
-	Freddie Witherden <EvilGuru> : Programming and MacOSX Packaging
-	-- <vs2k5> : Programming
+Files: *
+Copyright: 1999-2004, Eidos Interactive
+           2005-2012, Warzone 2100 Project
+License: GPL-2+
 
 Files: debian/*
 Copyright: 2006-2007 Linas Žvirblis <0x0007@gmail.com>
- 2007-2011 Paul Wise <pabs@debian.org>
+ 2007-2012 Paul Wise <pabs@debian.org>
  2009 Christoph Egger <debian@christoph-egger.org>
+License: GPL-2+
 
-Licence: GPL-any
- Debian packaging is also licensed under the GNU General Public License.
+Files: lib/exceptionhandler/dumpinfo.*
+ lib/exceptionhandler/exchndl.h
+ lib/framework/cursors.h
+ lib/framework/opengl.h
+ lib/framework/stdio_ext.h
+ lib/framework/utf.*
+ lib/sdl/cursors_sdl.h
+ lib/sound/openal_error.*
+ src/version.*
+Copyright: 2004-2010, Giel van Schijndel
+  2007-2012, Warzone 2100 Project
+License: GPL-2+
 
- On Debian systems, the complete text of the GNU General Public License
- can be found in `/usr/share/common-licenses/GPL-*'.
+Files: 3rdparty/SDL/mac/include/SDL*.h
+ lib/exceptionhandler/exceptionhandler.*
+ lib/framework/file.h
+ lib/framework/geometry.h
+ lib/framework/i18n.*
+ lib/framework/physfs_ext.h
+ lib/framework/vector.h
+ lib/framework/wzfs.h
+ lib/netplay/nettypes.*
+ lib/sequence/sequence.*
+ lib/sequence/timer.*
+ lib/sound/oggvorbis.*
+ src/qtscript*
+ tests/lint.*
+ tests/modeltest.c
+Copyright: 2005-2012, Warzone 2100 Project
+License: GPL-2+
 
-Files: *
-Copyright: 1999-2004 Eidos Interactive, 2004-2011 Warzone 2100 Project
-License: GPL-2+ | other
-  On Debian systems, the complete text of the GNU General Public License
-  can be found in `/usr/share/common-licenses/GPL-2'.
+Files: 3rdparty/quesoglc/*
+Copyright: 2002-2009, Bertrand Coconnier
+License: LGPL-2.1+
 
-Files: build_tools/autorevision/autorevision.cpp
-Copyright: 2008 Paul Wise
- 2005 Thomas Denk
- 2007-2008 Giel van Schijndel
- 2007-2008 Warzone 2100 Project
+Files: 3rdparty/quesoglc/GL/glc.h
+Copyright: 2002, 2004-2007, Bertrand Coconnier
+           1999-2001, Brian Paul
+License: LGPL-2.1+ and MIT (Brian Paul)
+
+Files: 3rdparty/miniupnpc/*
+Copyright: 2005-2010, Thomas Bernard
+License: BSD-3-clause (miniupnpc)
+
+Files: 3rdparty/miniupnpc/bsdqueue.h
+Copyright: 1991, 1993, the Regents of the University of California
+License: BSD-3-clause
+
+Files: */*_parser.cpp, */*_parser.h
+Copyright: 1984-2006, Free Software Foundation, Inc.
+License: GPL-3+ with bison exception
+
+Files: ylwrap, missing, depcomp, config.sub, config.guess
+Copyright: 1996-2009, Free Software Foundation, Inc.
+License: GPL-2+ with autoconf exception
+
+Files: configure
+Copyright: 1992-2009 Free Software Foundation, Inc.
+License: GAP configure
+
+Files: aclocal.m4
+Copyright: 1996-2009, Free Software Foundation, Inc.
+License: GAP
+
+Files: install-sh
+Copyright: 1994 X Consortium
+License: MIT (X11)
 
 Files: win32/download.pl
 Copyright: 2006 OpenWrt.org
 License: GPL-2
-  On Debian systems, the complete text of the GNU General Public License
-  can be found in `/usr/share/common-licenses/GPL-2'.
-
-Files: src/message_lexer.l*
-Copyright: 1999-2004  Eidos Interactive
- 2008       Giel van Schijndel
- 2005-2011  Warzone 2100 Project
 
 Files: lib/exceptionhandler/include/*
-Copyright: 1990-2002 Free Software Foundation, Inc.
+       lib/framework/gettext.h
+Copyright: 1990-2006 Free Software Foundation, Inc.
 License: GPL-2+
-  On Debian systems, the complete text of the GNU General Public License
-  can be found in `/usr/share/common-licenses/GPL-2'.
 
-Files: lib/framework/SDL_framerate.*
-Copyright: A. Schiffler
-License: LGPL-any
-
-Files: lib/framework/x-motif-messagebox.*
-Copyright: 2010 Giel van Schijndel
- 2010 Warzone 2100 Project
-
-Files: lib/exceptionhandler/exchndl.c
+Files: lib/exceptionhandler/exchndl.cpp
 Copyright:  2008 Giel van Schijndel
- 2008-2011 Warzone 2100 Project
+ 2008-2012 Warzone 2100 Project
  1997  José Fonseca
+License: GPL-2+
 
-Files: lib/framework/cursors.*, src/messagely.h, src/message_parser.y
-Copyright: 2008 Giel van Schijndel
- 2008-2011 Warzone 2100 Project
+Files: lib/framework/stdio_ext.cpp, lib/framework/wzglobal.h
+Copyright: 1992-2007 Trolltech ASA., 2005-2012 Warzone 2100 Project
+License: GPL-2+
 
-Files: lib/iniparser/*
-Copyright: 2000-2007 Nicolas Devillard
+Files: lib/script/chat_lexer.lpp
+       lib/script/chat_parser.ypp
+       lib/script/chat_processing.h
+Copyright: 2006-2008 Roman
+           2006-2011 Warzone 2100 Project
+License: GPL-2+
 
-Files: data/base/images/intfac0.svg
-Copyright: 2008  Elio Gubser
- 2008-2009  Warzone 2100 Project
+Files: lib/sequence/sequence.cpp
+Copyright: 2008-2012 Warzone 2100 Project
+           2002-2007 Xiph.org Foundation
+License: GPL-2+ and BSD-3-clause (Xiph)
 
-Files: lib/framework/gettext.h
-Copyright: 1995-1998, 2000-2002, 2004-2006 Free Software Foundation, Inc.
+Files: lib/ivis_common/jpeg_encoder.*
+Copyright: 2005-2009 Surveyor Corporation
+License: GPL-2+
 
-Files: lib/framework/stdio_ext.c, lib/framework/wzglobal.h
-Copyright: 1992-2007 Trolltech ASA., 2005-2011 Warzone 2100 Project
+Files: m4/*.m4
+Copyright: 1995-2007, Free Software Foundation, Inc.
+License: GAP
 
-Files: lib/framework/stdio_ext.h, src/version.c,
- lib/sound/openal_error.*, lib/framework/utf.*
-Copyright: 2007 Giel van Schijndel, 2007-2011 Warzone 2100 Project
+Files: m4/pkg.m4
+Copyright: 2004 Scott James Remnant <scott@netsplit.com>
+License: GPL-2+
 
-Files: src/version.c
-Copyright: 2004 Giel van Schijndel, 2007-2011 Warzone 2100 Project
+Files: m4/progversion.m4, m4/strlfuncs.m4
+Copyright: 2008-2009, Giel van Schijndel
+           2008-2009, Warzone Resurrection Project
+License: GAP Giel
 
-Files: lib/framework/tagfile.*
-Copyright: None
-Licence: PD
- Written by Per I Mathisen, 2007
- Released into the public domain, no rights reserved.
+Files: m4/ax_with_prog.m4
+Copyright: 2008 Francesco Salvestrini
+           2008 Dustin J. Mitchell
+License: GAP other
 
-Files: lib/netplay/miniupnpc/*
-Copyright: 2005-2009 Thomas Bernard
-License: BSD
- Copyright (c) 2005-2008, Thomas BERNARD 
- All rights reserved.
+Files: m4/ax_prog_perl_version.m4
+Copyright: 2008 Francesco Salvestrini
+License: GAP other
 
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions are met:
+Files: m4/ax_compare_version.m4
+Copyright: 2008 Tim Toolan
+License: GAP other
 
-     * Redistributions of source code must retain the above copyright notice,
-       this list of conditions and the following disclaimer.
-     * Redistributions in binary form must reproduce the above copyright notice,
-       this list of conditions and the following disclaimer in the documentation
-       and/or other materials provided with the distribution.
-     * The name of the author may not be used to endorse or promote products
-           derived from this software without specific prior written permission.
+Files: m4/ax_tls.m4
+Copyright: 2008 Alan Woodland
+           2010 Diego Elio Petteno
+License: GPL-3+ with autoconf-archive exception
 
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- POSSIBILITY OF SUCH DAMAGE.
+Files: m4/ax_c_check_flag.m4
+Copyright: 2008 Francesco Salvestrini
+License: GPL-3+ with autoconf-archive exception
 
-Files: lib/netplay/miniupnpc/bsdqueue.h
-Copyright: 1991, 1993 The Regents of the University of California.
-License: BSD
+Files: pkg/nsis/*.nsi
+Copyright: 2006 Dennis Schridde, 2006-2010 Warzone 2100 Project
+License: GPL-2+
+
+Files: */Makefile.in
+Copyright: 1994-2009 Free Software Foundation Inc.
+License: GAP Makefile.in
+
+Files: po/Makefile.in.in
+Copyright: 1995-1997, 2000-2007 Ulrich Drepper
+License: GAP po/Makefile.in.in
+
+Files: po/*.po
+Copyright: 2007-2008, Warzone 2100 Resurrection Project
+ 2008, Rosetta Contributors and Canonical Ltd
+License: GPL-2+
+
+Files: data/mp/components/prop/prsrwhl1.pie
+       data/mp/components/prop/prslwhl1.pie
+       data/base/components/prop/prmrwhl1.pie
+       data/base/components/prop/prmlwhl1.pie
+       data/base/components/prop/prlrwhl1.pie
+       data/base/components/prop/prllwhl1.pie
+       data/base/components/prop/prhrwhl1.pie
+       data/base/components/prop/prhlwhl1.pie
+       data/base/texpages/page-17-droid-weapons.png
+       data/base/texpages/page-30-features-rockies.png
+Copyright: 2008-2009 Thomas Barlow
+License: CC-BY-SA-3.0
+
+Files: data/base/texpages/bdrops/backdrop*.png
+Copyright: 2007-2008 Bruce V. Edwards
+License: CC-BY-SA-3.0
+
+Files: data/texpages/bdrops/backdrop4.png, data/texpages/bdrops/backdrop6.png
+Copyright: 2010-2011, jorzi
+License: CC0
+
+Files: doc/quickstartguide.*
+Copyright: Ben Latimore, Guangcong Luo
+License: CC0
+
+Files: data/base/texpages/page-25-sky-urban.png
+Copyright: 2009 Christian Ohm
+License: CC0
+
+License: GAP
+ This file is free software; the Free Software Foundation
+ gives unlimited permission to copy and/or distribute it,
+ with or without modifications, as long as this notice is preserved.
+
+License: GAP configure
+ This configure script is free software; the Free Software Foundation
+ gives unlimited permission to copy, distribute and modify it.
+
+License: GAP Giel
+ This file is free software; I, Giel van Schijndel give unlimited
+ permission to copy and/or distribute it, with or without modficiations,
+ as long as this notice is preserved.
+
+License: GAP Makefile.in
+ This Makefile.in is free software; the Free Software Foundation
+ gives unlimited permission to copy and/or distribute it,
+ with or without modifications, as long as this notice is preserved.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+ even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+ PARTICULAR PURPOSE.
+
+License: GAP po/Makefile.in.in
+ This file can be copied and used freely without restrictions.  It can
+ be used in projects which are not available under the GNU General Public
+ License but which still want to provide support for the GNU gettext
+ functionality.
+ Please note that the actual code of GNU gettext is covered by the GNU
+ General Public License and is *not* in the public domain.
+
+License: GAP other
+ Copying and distribution of this file, with or without modification, are
+ permitted in any medium without royalty provided the copyright notice
+ and this notice are preserved.
+
+License: GPL-2
+ This is free software, licensed under the GNU General Public License v2.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-2+
+ Warzone 2100 is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ Warzone 2100 is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with Warzone 2100; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-2+ with autoconf exception
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ As a special exception to the GNU General Public License, if you
+ distribute this file as part of a program that contains a
+ configuration script generated by Autoconf, you may include it under
+ the same distribution terms that you use for the rest of that program.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-3+ with autoconf-archive exception
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the
+ Free Software Foundation, either version 3 of the License, or (at your
+ option) any later version.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+ Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ As a special exception, the respective Autoconf Macro's copyright owner
+ gives unlimited permission to copy, distribute and modify the configure
+ scripts that are the output of Autoconf when processing the Macro. You
+ need not follow the terms of the GNU General Public License when using
+ or distributing such scripts, even though portions of the text of the
+ Macro appear in them. The GNU General Public License (GPL) does govern
+ all other use of the material that constitutes the Autoconf Macro.
+ .
+ This special exception to the GPL applies to versions of the Autoconf
+ Macro released by the Autoconf Archive. When you make and distribute a
+ modified version of the Autoconf Macro, you may extend this special
+ exception to the GPL to apply to your modified version as well.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ can be found in `/usr/share/common-licenses/GPL-3'.
+
+License: GPL-3+ with bison exception
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ As a special exception, you may create a larger work that contains
+ part or all of the Bison parser skeleton and distribute that work
+ under terms of your choice, so long as that work isn't itself a
+ parser generator using the skeleton or a modified version thereof
+ as a parser skeleton.  Alternatively, if you modify or redistribute
+ the parser skeleton itself, you may (at your option) remove this
+ special exception, which will cause the skeleton and the resulting
+ Bison output files to be licensed under the GNU General Public
+ License without this special exception.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ can be found in `/usr/share/common-licenses/GPL-3'.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public License
+ can be found in `/usr/share/common-licenses/LGPL-2.1'.
+
+License: BSD-3-clause
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
@@ -181,7 +368,7 @@ License: BSD
  3. Neither the name of the University nor the names of its contributors
     may be used to endorse or promote products derived from this software
     without specific prior written permission.
- 
+ .
  THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -194,40 +381,46 @@ License: BSD
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
 
-Files: lib/script/chat_lexer.l, lib/script/chat_parser.y,
- lib/script/chat_processing.h
-Copyright: 2006-2008 Roman
- 2006-2011 Warzone 2100 Project
+License: BSD-3-clause (miniupnpc)
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+  * Redistributions of source code must retain the above copyright notice,
+    this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+  * The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
 
-Files: lib/sequence/sequence.c
-Copyright: 2008-2009 Warzone 2100 Project
- 2002-2007 Xiph.org Foundation
-License: GPL-2+ | other
- This file is derived from the SDL player example as found in the OggTheora
- software codec source code. In particular this is examples/player_example.c
- as found in OggTheora 1.0beta3.
- 
- The copyright to this file was originally owned by and licensed as follows.
- Please note, however, that *this* file, i.e. the one you are currently
- reading is not licensed as such anymore.
- 
- Copyright (C) 2002-2007 Xiph.org Foundation
- 
+License: BSD-3-clause (Xiph)
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
- 
+ .
  - Redistributions of source code must retain the above copyright
    notice, this list of conditions and the following disclaimer.
- 
+ .
  - Redistributions in binary form must reproduce the above copyright
    notice, this list of conditions and the following disclaimer in the
    documentation and/or other materials provided with the distribution.
- 
+ .
  - Neither the name of the Xiph.org Foundation nor the names of its
    contributors may be used to endorse or promote products derived from
    this software without specific prior written permission.
- 
+ .
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -240,108 +433,72 @@ License: GPL-2+ | other
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Files: lib/ivis_common/jpeg_encoder.*
-Copyright: 2005-2009 Surveyor Corporation
-License: GPL-2+
-  On Debian systems, the complete text of the GNU General Public License
-  can be found in `/usr/share/common-licenses/GPL-2'.
+License: MIT (Brian Paul)
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the
+ Software is furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+ BRIAN PAUL BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+ AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Files: lib/ivis_opengl/GLee.c
-Copyright: 2009  Ben Woodhouse
-License: BSD
- Copyright (c)2009  Ben Woodhouse  All rights reserved.
+License: MIT (X11)
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to
+ deal in the Software without restriction, including without limitation the
+ rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+ X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+ AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-
+ TION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ .
+ Except as contained in this notice, the name of the X Consortium shall not
+ be used in advertising or otherwise to promote the sale, use or other deal-
+ ings in this Software without prior written authorization from the X Consor-
+ tium.
 
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions are 
- met:
- 1. Redistributions of source code must retain the above copyright
- notice, this list of conditions and the following disclaimer as
- the first lines of this file unmodified.
- 2. Redistributions in binary form must reproduce the above copyright
- notice, this list of conditions and the following disclaimer in the
- documentation and/or other materials provided with the distribution.
-
- THIS SOFTWARE IS PROVIDED BY BEN WOODHOUSE ``AS IS'' AND ANY EXPRESS OR
- IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
- OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
- IN NO EVENT SHALL BEN WOODHOUSE BE LIABLE FOR ANY DIRECT, INDIRECT,
- INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
- NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
- THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-Files: m4/*
-Copyright: 1995-2003 Free Software Foundation, Inc.
-License: GPL-any | other
- This file is free software, distributed under the terms of the GNU
- General Public License.  As a special exception to the GNU General
- Public License, this file may be distributed as part of a program
- that contains a configuration script generated by Autoconf, under
- the same distribution terms as the rest of that program.
-
-Files: m4/pkg.m4
-Copyright: 2004 Scott James Remnant <scott@netsplit.com>
-
-Files: m4/gettext.m4
-Copyright: 1995-2005 Free Software Foundation, Inc.
-Licence: GAP
- This file is free software; the Free Software Foundation
- gives unlimited permission to copy and/or distribute it,
- with or without modifications, as long as this notice is preserved.
-
-Files: m4/progversion.m4, m4/strlfuncs.m4
-Copyright: 2008-2009 Giel van Schijndel
- 2008-2009  Warzone Resurrection Project
-License: GAP
- This file is free software; I, Giel van Schijndel give unlimited
- permission to copy and/or distribute it, with or without modficiations,
- as long as this notice is preserved.
-
-Files: pkg/nsis/*.nsi
-Copyright: 2006 Dennis Schridde, 2006-2010 Warzone 2100 Project
-
-Files: po/Makefile.in.in
-Copyright: 1995-1997, 2000-2006 Ulrich Drepper <drepper@gnu.ai.mit.edu>
-License: other
- This file can be copied and used freely without restrictions.  It can
- be used in projects which are not available under the GNU General Public
- License but which still want to provide support for the GNU gettext
- functionality.
- Please note that the actual code of GNU gettext is covered by the GNU
- General Public License and is *not* in the public domain.
-
-Files: po/*.po 
-Copyright: 2007-2008 Warzone 2100 Resurrection Project
- 2008 Rosetta Contributors and Canonical Ltd 2008
-
-Files: data/texpages/bdrops/backdrop5.png, data/texpages/bdrops/backdrop6.png
-Copyright: 2007-2008 Bruce V. Edwards
 License: CC-BY-SA-3.0
  Creative Commons Attribution-ShareAlike 3.0 License Agreement
- 
+ .
  CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL
  SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN ATTORNEY-CLIENT
  RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS"
  BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION
  PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE.
- 
+ .
  License
- 
+ .
  THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
  COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY
  COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN
  AS AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
- 
+ .
  BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE
  TO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE
  MAY BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS
  CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND
+ .
  CONDITIONS.
- 
+ .
  1. Definitions
- 
+ .
     a. "Adaptation" means a work based upon the Work, or upon the Work
     and other pre-existing works, such as a translation, adaptation,
     derivative work, arrangement of music or other alterations of a
@@ -429,17 +586,17 @@ License: CC-BY-SA-3.0
    fixation and reproducing fixations of the Work, including storage
    of a protected performance or phonogram in digital form or other
    electronic medium.
- 
+ .
  2. Fair Dealing Rights. Nothing in this License is intended to reduce,
  limit, or restrict any uses free from copyright or rights arising from
  limitations or exceptions that are provided for in connection with the
  copyright protection under copyright law or other applicable laws.
- 
+ .
  3. License Grant. Subject to the terms and conditions of this License,
  Licensor hereby grants You a worldwide, royalty-free, non-exclusive,
  perpetual (for the duration of the applicable copyright) license to
  exercise the rights in the Work as stated below:
- 
+ .
     a. to Reproduce the Work, to incorporate the Work into one or
     more Collections, and to Reproduce the Work as incorporated in the
     Collections;
@@ -453,7 +610,7 @@ License: CC-BY-SA-3.0
     incorporated in Collections; and,
     d. to Distribute and Publicly Perform Adaptations.
     e.
- 
+ .
        For the avoidance of doubt:
           i. Non-waivable Compulsory License Schemes. In those
           jurisdictions in which the right to collect royalties through any
@@ -470,16 +627,16 @@ License: CC-BY-SA-3.0
           that the Licensor is a member of a collecting society that
           administers voluntary licensing schemes, via that society, from
           any exercise by You of the rights granted under this License.
- 
+ .
  The above rights may be exercised in all media and formats whether now
  known or hereafter devised. The above rights include the right to make
  such modifications as are technically necessary to exercise the rights
  in other media and formats. Subject to Section 8(f), all rights not
  expressly granted by Licensor are hereby reserved.
- 
+ .
  4. Restrictions. The license granted in Section 3 above is expressly
  made subject to and limited by the following restrictions:
- 
+ .
     a. You may Distribute or Publicly Perform the Work only under the
     terms of this License. You must include a copy of, or the Uniform
     Resource Identifier (URI) for, this License with every copy of the
@@ -575,9 +732,9 @@ License: CC-BY-SA-3.0
     applicable national law, to enable You to reasonably exercise Your
     right under Section 3(b) of this License (right to make Adaptations)
     but not otherwise.
- 
+ .
  5. Representations, Warranties and Disclaimer
- 
+ .
  UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR
  OFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY
  KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE,
@@ -586,15 +743,15 @@ License: CC-BY-SA-3.0
  LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS,
  WHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION
  OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.
- 
+ .
  6. Limitation on Liability. EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE
  LAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR
  ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES
  ARISING OUT OF THIS LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR
  HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
- 
+ .
  7. Termination
- 
+ .
     a. This License and the rights granted hereunder will terminate
     automatically upon any breach by You of the terms of this
     License. Individuals or entities who have received Adaptations or
@@ -611,9 +768,9 @@ License: CC-BY-SA-3.0
     or is required to be, granted under the terms of this License), and
     this License will continue in full force and effect unless terminated
     as stated above.
- 
+ .
  8. Miscellaneous
- 
+ .
     a. Each time You Distribute or Publicly Perform the Work or a
     Collection, the Licensor offers to the recipient a license to the
     Work on the same terms and conditions as the license granted to You
@@ -650,9 +807,9 @@ License: CC-BY-SA-3.0
     rights not granted under this License, such additional rights are
     deemed to be included in the License; this License is not intended
     to restrict the license of any rights under applicable law.
- 
+ .
  Creative Commons Notice
- 
+ .
  Creative Commons is not a party to this License, and makes no warranty
  whatsoever in connection with the Work. Creative Commons will not
  be liable to You or any party on any legal theory for any damages
@@ -661,7 +818,7 @@ License: CC-BY-SA-3.0
  license. Notwithstanding the foregoing two (2) sentences, if Creative
  Commons has expressly identified itself as the Licensor hereunder,
  it shall have all rights and obligations of Licensor.
- 
+ .
  Except for the limited purpose of indicating to the public that the Work
  is licensed under the CCPL, Creative Commons does not authorize the use by
  either party of the trademark "Creative Commons" or any related trademark
@@ -671,23 +828,12 @@ License: CC-BY-SA-3.0
  website or otherwise made available upon request from time to time. For
  the avoidance of doubt, this trademark restriction does not form part
  of the License.
- 
+ .
  Creative Commons may be contacted at http://creativecommons.org/.
 
-Files: data/mods/multiplay/dydo-ai/*
-License: GPL-3
-  On Debian systems, the complete text of the GNU General Public License
-  can be found in `/usr/share/common-licenses/GPL-3'.
-
-Files: doc/quickstartguide.*
-Copyright: Ben Latimore, Guangcong Luo
-License: CC0
-
-Files: data/base/texpages/page-25-sky-urban.png
-Copyright: 2009 Christian Ohm
 License: CC0
  CC0 1.0 Universal
-
+ .
      CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL
      SERVICES. DISTRIBUTION OF THIS DOCUMENT DOES NOT CREATE AN ATTORNEY-CLIENT
      RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS"
@@ -695,14 +841,14 @@ License: CC0
      DOCUMENT OR THE INFORMATION OR WORKS PROVIDED HEREUNDER, AND DISCLAIMS
      LIABILITY FOR DAMAGES RESULTING FROM THE USE OF THIS DOCUMENT OR THE
      INFORMATION OR WORKS PROVIDED HEREUNDER.
-
+ .
  Statement of Purpose
-
+ .
  The laws of most jurisdictions throughout the world automatically confer
  exclusive Copyright and Related Rights (defined below) upon the creator
  and subsequent owner(s) (each and all, an "owner") of an original work of
  authorship and/or a database (each, a "Work").
-
+ .
  Certain owners wish to permanently relinquish those rights to a Work for the
  purpose of contributing to a commons of creative, cultural and scientific
  works ("Commons") that the public can reliably and without fear of later
@@ -713,7 +859,7 @@ License: CC0
  and the further production of creative, cultural and scientific works, or
  to gain reputation or greater distribution for their Work in part through
  the use and efforts of others.
-
+ .
  For these and/or other purposes and motivations, and without any expectation
  of additional consideration or compensation, the person associating CC0
  with a Work (the "Affirmer"), to the extent that he or she is an owner of
@@ -721,12 +867,12 @@ License: CC0
  the Work and publicly distribute the Work under its terms, with knowledge
  of his or her Copyright and Related Rights in the Work and the meaning and
  intended legal effect of CC0 on those rights.
-
+ .
  1. Copyright and Related Rights. A Work made available under CC0 may be
  protected by copyright and related or neighboring rights ("Copyright and
  Related Rights"). Copyright and Related Rights include, but are not limited
  to, the following:
-
+ .
     1. the right to reproduce, adapt, distribute, perform, display,
     communicate, and translate a Work;
     2. moral rights retained by the original author(s) and/or performer(s);
@@ -743,7 +889,7 @@ License: CC0
     7. other similar, equivalent or corresponding rights throughout the
     world based on applicable law or treaty, and any national implementations
     thereof.
-
+ .
  2. Waiver. To the greatest extent permitted by, but not in contravention of,
  applicable law, Affirmer hereby overtly, fully, permanently, irrevocably
  and unconditionally waives, abandons, and surrenders all of Affirmer's
@@ -760,7 +906,7 @@ License: CC0
  termination, or any other legal or equitable action to disrupt the quiet
  enjoyment of the Work by the public as contemplated by Affirmer's express
  Statement of Purpose.
-
+ .
  3. Public License Fallback. Should any part of the Waiver for any reason
  be judged legally invalid or ineffective under applicable law, then the
  Waiver shall be preserved to the maximum extent permitted taking into
@@ -781,9 +927,9 @@ License: CC0
  of his or her remaining Copyright and Related Rights in the Work or (ii)
  assert any associated claims and causes of action with respect to the Work,
  in either case contrary to Affirmer's express Statement of Purpose.
-
+ .
  4. Limitations and Disclaimers.
-
+ .
     1. No trademark or patent rights held by Affirmer are waived, abandoned,
     surrendered, licensed or otherwise affected by this document.
     2. Affirmer offers the Work as-is and makes no representations or
@@ -801,4 +947,3 @@ License: CC0
     4. Affirmer understands and acknowledges that Creative Commons is not
     a party to this document and has no duty or obligation with respect to
     this CC0 or use of the Work.
-

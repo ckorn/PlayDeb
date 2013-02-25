@@ -2,47 +2,54 @@ Source: warzone2100
 Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+XSBC-Original-Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Uploaders: Paul Wise <pabs@debian.org>,
- Bradley Smith <bradsmith@debian.org>,
- Christoph Egger <christoph@debian.org>
-Build-Depends: debhelper (>= 7.0.50~),
- autotools-dev,
- dh-autoreconf,
- bison,
- flex (>= 2.5.35~) | flex (<< 2.5.34~), flex (>= 2.5.33~),
- libopenal-dev,
- libsdl1.2-dev,
- libvorbis-dev,
- libtheora-dev,
- libphysfs-dev,
- libpng12-dev,
- dpkg-dev (>= 1.13.19),
- libglc-dev,
- libpopt-dev,
- glee-dev,
- libminiupnpc-dev,
- pkg-config,
- asciidoc,
- wkhtmltopdf,
- libxml2-utils,
- docbook-xml,
- docbook-xsl,
- xsltproc,
- xauth,
- xvfb,
- zip,
- unzip
+           Christoph Egger <christoph@debian.org>
+Build-Depends: asciidoc,
+               autotools-dev,
+               bison,
+               debhelper (>= 9),
+               dh-autoreconf,
+               docbook-xml,
+               docbook-xsl,
+               dpkg-dev (>= 1.13.19),
+               flex (>= 2.5.33~),
+               flex (>= 2.5.35~) | flex (<< 2.5.34~),
+               libfontconfig-dev,
+               libfreetype6-dev,
+               libfribidi-dev,
+               libglc-dev,
+               libglew-dev,
+               libminiupnpc-dev,
+               libopenal-dev,
+               libphysfs-dev,
+               libpng-dev,
+               libpopt-dev,
+               libqt4-dev,
+               libsdl1.2-dev,
+               libtheora-dev,
+               libvorbis-dev,
+               libxml2-utils,
+               libxrandr-dev,
+               pkg-config,
+               unzip,
+               wkhtmltopdf,
+               xauth,
+               xsltproc,
+               xvfb,
+               zip
 Standards-Version: 3.9.3
 Homepage: http://www.wz2100.net/
-Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/warzone2100/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/warzone2100/?op=log
 
 Package: warzone2100
 Architecture: any
-Depends: ${shlibs:Depends},
- ${misc:Depends},
- warzone2100-data (>= ${source:Upstream-Version}), warzone2100-data (<= ${source:Version})
-Recommends: warzone2100-music (>= ${source:Upstream-Version}), warzone2100-music (<= ${source:Version})
+Depends: warzone2100-data (<= ${source:Version}),
+         warzone2100-data (>= ${source:Upstream-Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: warzone2100-music (<= ${source:Version}),
+            warzone2100-music (>= ${source:Upstream-Version}),
+            warzone2100-video
 Description: 3D real time strategy game
  In Warzone 2100 you command the forces of “The Project” in a battle to
  rebuild the world after mankind has almost been destroyed by nuclear
@@ -67,7 +74,7 @@ Depends: ${misc:Depends}
 Recommends: warzone2100
 Description: data files for warzone2100
  This package contains data, docs and translations for the warzone2100 game.
- . 
+ .
  It contains the campaign and multiplayer data, several mods (including
  a more advanced AI, different terrain textures, new maps and scavengers)
  and documentation for the game.
@@ -76,7 +83,8 @@ Package: warzone2100-dbg
 Section: debug
 Architecture: any
 Priority: extra
-Depends: ${misc:Depends}, warzone2100 (= ${binary:Version})
+Depends: warzone2100 (= ${binary:Version}),
+         ${misc:Depends}
 Description: debug files for warzone2100
  This package contains debug information for the warzone2100 game.
  .
