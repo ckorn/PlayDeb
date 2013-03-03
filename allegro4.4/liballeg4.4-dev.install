@@ -1,0 +1,5 @@
+/usr/include
+/usr/bin
+/usr/lib/pkgconfig
+/usr/lib/liballeg.so
+/usr/lib/*.a

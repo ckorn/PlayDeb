@@ -1,0 +1,83 @@
+Allegro for Debian
+==================
+
+Overview
+~~~~~~~~
+
+- liballegro<version> - Shared library
+- liballegro-dev - Static library, utilities
+- allegro-examples - small demos and example programs
+- allegro-demo - a demo game using the shared library (req. allegro-demo-data)
+- allegro-doc - documentation, example source files
+
+For game developers, I suggest to install data files into
+/usr/share/games/<game-or-package-name>.  If you have an executable file, which
+depends on being executed from the starting directory, you may place this
+binary in the /usr/games/ directory, using a name like "game.real", symlink it
+to the dat directory and create an small wrapper in /usr/games. Or put the
+files in /usr/games, /usr/lib/gamex/*/ and /usr/share/games/*/, corresponding
+to their function and platform dependency. See FHS and allegro-demo for
+example.
+
+Configuration
+~~~~~~~~~~~~~
+
+Allegro should have rational settings by default. To enable DIGMID (software
+midi), please install timidity-patches package. To modify Allegro's behaviour,
+you can take the example config file from /usr/share/doc/liballegro4/examples,
+modify and save as /etc/allegro.cfg or ~/.allegrorc .
+
+Description
+~~~~~~~~~~~
+
+The Allegro library is a comfortable game development kit, used by over
+200 games (in the DOS-version). It is written in C with assembler
+optimisations and can be used in C or C++, but also in other languages
+via extensions.  Allegro has many features, supports several input
+sources and output targets.
+
+Portability:
+- DOS
+- UNIX
+- Win32
+- BeOS
+...without reinventing the wheel.
+
+2D graphics:
+- X window graphics
+- DGA2 (Accelerated modes under XFree86-4.0.x)
+- DGA (Accelerated modes under XFree86-3.3.6)
+- Framebuffer (experimental)
+- SVGALIB (experimental)
+- good driver API, more drivers possible
+- high-level drawing routines, simplifying programming
+
+3D graphics:
+- integrated software 3D routines
+- OpenGL (via extension, in development)
+
+Sound:
+- usuall OSS
+- EsounD
+- misc. playing routines
+- MIDI software synthesizer, similar to Timidity
+- misc. extensions available, MOD, MP3 player
+
+Input:
+- Keyboard, on Console and X11, internationalisation
+- Mouse (native drivers, GPM, X11)
+- Joystick interface
+
+Support functions:
+- image loader (misc. formats, extendable)
+- sound loader (wave, midi, extendable)
+- advanced handling of data files (compression, virtual filesystem, data
+  files embedded into executable)
+- environment detection, configuration storing/loading routines, timers,
+  image manipulation
+
+Got interessted? Install allegro-demo and see Allegro in action.  Wanna
+develop with it? Check documentation and examples in allegro*-dev,
+allegro*-doc and allegro-examples packages.
+
+ Eduard Bloch <blade@debian.org> -- Fri, 18 Jan 2002 14:22:05 +0100
