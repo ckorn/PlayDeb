@@ -3,15 +3,28 @@ Section: games
 Priority: optional
 Maintainer: João Pinto <joao.pinto@getdeb.net>
 Uploaders: Marco Rodrigues <gothicx@sapo.pt>
-Build-Depends: cdbs, debhelper (>= 5), scons, libboost-filesystem-dev, liblua5.1-0-dev, 
- libglu1-mesa-dev, libxxf86vm-dev, libxext-dev, libboost-date-time-dev,
- libirrlicht-dev, libsqlite3-dev
-Standards-Version: 3.9.2
+Build-Depends: cdbs,
+               debhelper (>= 9),
+               cmake,
+               libboost-filesystem-dev,
+               liblua5.1-0-dev, 
+               libglu1-mesa-dev,
+               libxxf86vm-dev,
+               libxext-dev,
+               libboost-date-time-dev,
+               libirrlicht1.8-dev,
+               libsqlite3-dev,
+               libopenal-dev,
+               libxrandr-dev,
+               libbullet-dev
+Standards-Version: 3.9.3
 Homepage: http://code.google.com/p/irrlamb/
 
 Package: irrlamb
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, irrlamb-data (= ${source:Version})
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         irrlamb-data (= ${source:Version})
 Description: 3D Physics Game
  3D game that involves a lot of physics and frustrating gameplay.
 
