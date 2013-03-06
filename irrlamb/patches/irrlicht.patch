@@ -1,0 +1,17 @@
+# Because we do not want to update the irrlicht package
+# in the official repository there is a new package which
+# installs files in its own directory.
+# The patch makes cmake find it.
+Index: irrlamb-0.1.1/FindIrrlicht.cmake
+===================================================================
+--- irrlamb-0.1.1.orig/FindIrrlicht.cmake	2013-03-04 18:47:11.877625000 +0100
++++ irrlamb-0.1.1/FindIrrlicht.cmake	2013-03-05 20:07:19.287155770 +0100
+@@ -24,7 +24,7 @@
+ 		/usr/local
+ 	PATH_SUFFIXES
+ 		include
+-		irrlicht
++		irrlicht1.8
+ )
+ 
+ # find libraries

@@ -1,3 +1,18 @@
+irrlamb (0.1.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version (LP: #1145836)
+    - Added audio (OpenAL)
+    - Added screen fading
+    - Added shader support
+    - Added support for customlevels
+    - Added invert mouse option (or press F2 during play)
+    - Save data now in %APPDATA%/irrlamb for windows
+    - Converted meshes to a binary format for faster loading
+    - Fixed a Lua API bug in Object.GetPosition
+    - Removed scons, added cmake.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 04 Mar 2013 18:22:20 +0100
+
 irrlamb (0.1.0-1~getdeb3) oneiric; urgency=low
 
   * Update debian/watch file
