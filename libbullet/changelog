@@ -1,3 +1,9 @@
+libbullet (2.81-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 07 Mar 2013 19:16:52 +0100
+
 libbullet (2.80-1~getdeb1) precise; urgency=low
 
   * New upstream version

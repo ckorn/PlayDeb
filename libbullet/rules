@@ -1,7 +1,6 @@
 #!/usr/bin/make -f
-
-override_dh_auto_configure:
-	cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_VERBOSE_MAKEFILE=ON -DBUILD_SHARED_LIBS=true -DINSTALL_EXTRA_LIBS=true .
+%:
+	dh $@
 
 override_dh_auto_clean:
 	dh_auto_clean
@@ -12,6 +11,10 @@ override_dh_auto_clean:
 
 	rm -f CMakeCache.txt install_manifest.txt
 
+
+override_dh_auto_configure:
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_VERBOSE_MAKEFILE=ON -DBUILD_SHARED_LIBS=true -DINSTALL_EXTRA_LIBS=true .
+
 override_dh_install:
 	# this is not a link but really a library. Move it manually
 	# to make the *.so and *.so.* macros in the install files work.
@@ -19,5 +22,3 @@ override_dh_install:
 	find debian/tmp -type d -empty -delete
 	dh_install
 
-%:
-	dh $@
