@@ -1,8 +1,16 @@
-freecol (0.10.5-1~getdeb2) precise; urgency=low
+freecol (0.10.7-1~getdeb1) precise; urgency=low
 
-  * Sync with Debian package
+  * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 05 May 2012 12:15:26 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 06 Mar 2013 18:09:27 +0100
+
+freecol (0.10.5+dfsg-1ubuntu1) quantal; urgency=low
+
+  * debian/control:
+    - Use default-jdk and default-jre instead of hard coding openjdk-6.
+      Fixes FTBFS.
+
+ -- Michael Terry <mterry@ubuntu.com>  Tue, 31 Jul 2012 17:06:50 -0400
 
 freecol (0.10.5+dfsg-1) unstable; urgency=low
 

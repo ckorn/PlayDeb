@@ -6,11 +6,11 @@
 ## DP: packages 
 
 @DPATCH@
-Index: freecol-0.10.0+dfsg/build.xml
+Index: freecol-0.10.7/build.xml
 ===================================================================
---- freecol-0.10.0+dfsg.orig/build.xml	2011-06-25 17:12:29.000000000 +0200
-+++ freecol-0.10.0+dfsg/build.xml	2011-06-25 17:17:57.346240904 +0200
-@@ -105,9 +105,10 @@
+--- freecol-0.10.7.orig/build.xml	2013-03-06 18:07:46.000000000 +0100
++++ freecol-0.10.7/build.xml	2013-03-06 18:40:37.334141544 +0100
+@@ -101,9 +101,10 @@
      <!-- Compiles the java source files. -->
      <target name="compile" depends="init">
          <mkdir dir="${freecol.build.dir}"/>
@@ -22,7 +22,7 @@ Index: freecol-0.10.0+dfsg/build.xml
              debug="on"
              optimize="on"
              deprecation="off"
-@@ -158,7 +159,7 @@
+@@ -173,7 +174,7 @@
  
      <!-- Compiles the source files and creates a JAR-file. -->
      <target name="package" depends="init,build,manifest" description="Compiles the source files and creates a JAR-file.">

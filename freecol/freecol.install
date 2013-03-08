@@ -1,6 +1,6 @@
-data/*			usr/share/games/freecol
-debian/wrapper/freecol	usr/games
-debian/freecol.desktop	usr/share/applications
-freecol.xpm		usr/share/pixmaps
+data/* usr/share/games/freecol
+debian/wrapper/freecol usr/games
+debian/freecol.desktop usr/share/applications
+freecol.xpm usr/share/pixmaps
 
 

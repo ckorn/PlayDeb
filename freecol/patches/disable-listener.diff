@@ -1,0 +1,43 @@
+Index: freecol-0.9.2+dfsg/src/net/sf/freecol/client/gui/video/VideoComponent.java
+===================================================================
+--- freecol-0.9.2+dfsg.orig/src/net/sf/freecol/client/gui/video/VideoComponent.java	2010-03-07 17:50:13.011526706 +0100
++++ freecol-0.9.2+dfsg/src/net/sf/freecol/client/gui/video/VideoComponent.java	2010-03-07 17:50:54.619521752 +0100
+@@ -34,7 +34,8 @@
+ import net.sf.freecol.common.resources.ResourceManager;
+ 
+ import com.fluendo.player.Cortado;
+-import com.fluendo.player.StopListener;
++// Disable the feature that seems to be missing from the stock Cortado
++// import com.fluendo.player.StopListener;
+ 
+ /**
+  * A component for playing video.
+@@ -74,17 +75,17 @@
+         applet.setParam ("showStatus", "hide");
+         applet.init();
+ 
+-        applet.setStopListener(new StopListener() {
+-            public void stopped() {
+-                SwingUtilities.invokeLater(new Runnable() {
+-                    public void run() {
+-                        for (VideoListener sl : videoListeners) {
+-                            sl.stopped();
+-                        }
+-                    }
+-                });
+-            }
+-        });
++        // applet.setStopListener(new StopListener() {
++        //     public void stopped() {
++        //         SwingUtilities.invokeLater(new Runnable() {
++        //             public void run() {
++        //                 for (VideoListener sl : videoListeners) {
++        //                     sl.stopped();
++        //                 }
++        //             }
++        //         });
++        //     }
++        // });
+         
+         setLayout(null);
+         add(applet);

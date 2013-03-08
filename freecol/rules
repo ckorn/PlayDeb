@@ -36,9 +36,3 @@ LIBERATION_FONTS     := LiberationSerif-Bold.ttf LiberationSerif-BoldItalic.ttf 
 DEB_DH_INSTALL_ARGS  = $(patsubst %,-X%, $(LIBERATION_FONTS)) 
 
 DEB_DH_LINK_freecol  = $(foreach file, $(LIBERATION_FONTS), usr/share/fonts/truetype/liberation/$(file) usr/share/games/freecol/base/resources/fonts/$(file))
-
-binary-post-install/ttf-freecol::
-	mkdir -p debian/ttf-freecol/usr/share/fonts/truetype/ttf-freecol/
-	# Create own ttf package. Move files into ttf package
-	mv data/base/resources/fonts/Imperator.ttf debian/ttf-freecol/usr/share/fonts/truetype/ttf-freecol/
-	mv data/base/resources/fonts/ShadowedBlack.ttf debian/ttf-freecol/usr/share/fonts/truetype/ttf-freecol/
