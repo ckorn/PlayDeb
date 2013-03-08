@@ -1,3 +1,9 @@
+irrlamb (0.1.1-1~getdeb2) precise; urgency=low
+
+  * Rebuild for bullet 2.81
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 08 Mar 2013 21:11:54 +0100
+
 irrlamb (0.1.1-1~getdeb1) precise; urgency=low
 
   * New upstream version (LP: #1145836)
