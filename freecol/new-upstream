@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+# new-upstream: copyright 2007 by Vincent Fourmond.
+# See debian/copyright file for details.
+#
+# Called by uscan; from uscan(1):
+#
+# Finally,  if a third parameter (an action) is given in the watchfile
+# line, this is taken as the name of a command, and the command
+#  command --upstream-version version filename
+# 
+# is executed, using either the original file or the symlink name.
+#
+# Thanks to Sam Morris <sam@robots.org.uk> for giving me the idea
+#
+
+# If called manually, this file must be called from within the freecol/
+# directory.
+
+version=$2
+filename=`readlink -f $3`
+
+dir=`mktemp -d`
+
+curdir=`pwd`
+
+origname=freecol_$version"+dfsg".orig.tar.bz2
+
+echo "Repackaging freecol version $version from $filename"
+echo $filename
+echo $version
+
+# Abort on errors:
+set -e
+
+# We repackage the upstream source file, according to the method
+# written in debian/copyrigh
+cd $dir
+# tar xvzf $filename
+# Now using unzip:
+unzip $filename
+cd $dir/freecol*
+patch --no-backup-if-mismatch -p0 < $curdir/debian/freecol-dist-targz.diff
+echo $version | ant tarDistBundle
+# Do not remove the original file !!!
+# rm $curdir/$filename
+echo "Moving back dist/freecol-$version-dist-src.tar.bz2 to $curdir/../$origname"
+mv dist/freecol-$version-dist-src.tar.bz2 $curdir/../$origname
+cd -
+rm -rf $dir

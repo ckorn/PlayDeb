@@ -1,0 +1,11 @@
+freecol for Debian
+------------------
+
+This package has been repackaged from source, as upstream tarballs include
+binary-only libraries. This will hopefully change in next releases.
+
+Additionally, the directory for saves has been moved to ~/.freecol, as
+it doesn't clutter home directories this way and seems to be the
+current (unspoken, at least) policy for games.
+
+ -- Vincent Fourmond <fourmond@debian.org>  Mon, 01 Oct 2007 23:58:51 +0200

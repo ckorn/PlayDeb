@@ -1,0 +1,73 @@
+Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=437
+Upstream-Source: http://www.freecol.org
+Upstream-Name: freecol
+Upstream-Maintainer: The FreeCol Team <freecol-developers@lists.sourceforge.net>
+
+ This package was debianized by Vincent Fourmond <fourmond@debian.org> on
+ Mon, 01 Oct 2007 23:58:51 +0200.
+
+ The original tarball was made downloading the freecol-*-src.tar.gz
+ tarball on http://www.freecol.org/download.html, applying the patch
+ debian/freecol-dist-targz.diff and then using the ant target
+ tarDistBundle.
+
+ For more details, see the debian/new-upstream script that does precisely
+ this.
+
+Files: *
+Copyright: Copyright (C) 2003-2009 The FreeCol Team
+License: GPL-2+
+  This package is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This package is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with this package; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+  On Debian systems, the complete text of the GNU General Public
+  License version 2 can be found in  `/usr/share/common-licenses/GPL-2'.
+
+
+Files: debian/*
+Copyright: Copyright (C) 2007-2009 Vincent Fourmond <fourmond@debian.org>
+License: GPL-2+
+  (see above)
+
+Files: data/fonts/ShadowedBlack.ttf is 
+Copyright: Copyright Paul Lloyd <Paul.Lloyd@uwa.edu.au>
+License: GPL-2+
+  (see above)
+
+Files: packaging/gentoo/freecol-0.3.0.ebuild is 
+Copyright: Copyright 1999-2004 Gentoo Foundation	
+License: GPL-2+
+  (see above)
+
+Files: data/images/ui/bg_map1.jpg
+Files: data/images/ui/military.png
+Files: data/images/ui/political.png
+Files: data/images/ui/religious.png
+Files: data/images/ui/trade.png
+Files: data/images/ui/exploration.png
+Files: data/images/ui/landing.png
+Copyright: not copyrightable
+License: PD
+  The aforementioned images are fidel copies of objects in the public
+  domain and are thus not copyrightable (see for instance
+  http://en.wikipedia.org/wiki/Bridgeman_Art_Library_v._Corel_Corp for
+  more information).
+
+Files: data/images/monarch/*
+Files: data/images/ui/bg_europe.jpg
+Files: data/images/ui/doi.png
+Copyright: no copyright
+License: PD
+  The aforementioned files were downloaded from Wikimedia and are in
+  the public domain.

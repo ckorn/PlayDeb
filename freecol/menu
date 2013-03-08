@@ -1,0 +1,3 @@
+?package(freecol):needs="X11" section="Games/Strategy"\
+  title="FreeCol" command="/usr/games/freecol" \
+  icon="/usr/share/pixmaps/freecol.xpm"

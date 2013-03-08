@@ -1,0 +1,24 @@
+freecol (0.8.4+dfsg-1) unstable; urgency=low
+
+  To work around bug #560056 on openjdk, IPV6 network stack is now
+  disabled by default. If you experience problems connecting to remote
+  servers, you can try enabling it back by passing --enable-ipv6 as 
+  first argument to freecol.
+
+ -- Vincent Fourmond <fourmond@debian.org>  Thu, 07 Jan 2010 22:44:32 +0100
+
+freecol (0.8.1.dfsg-1) unstable; urgency=low
+
+  Saved games from version before 0.8 WILL NOT WORK with this version. 
+  Finish your games before upgrading !
+
+ -- Vincent Fourmond <fourmond@debian.org>  Tue, 24 Feb 2009 18:54:23 +0100
+
+freecol (0.7.3-1) unstable; urgency=low
+
+  Apparently, saves for earlier versions of freecol might not be valid 
+  with this version; please exercise caution, as this problem will 
+  probably never get fixed.
+  
+
+ -- Vincent Fourmond <fourmond@debian.org>  Fri, 29 Feb 2008 22:53:29 +0100
