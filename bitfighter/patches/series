@@ -1,2 +1,3 @@
-lua_plat.patch
-disable_profiler.patch
+cmake_fix1.patch
+cmake_fix2.patch
+datadir.patch
