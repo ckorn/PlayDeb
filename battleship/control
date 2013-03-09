@@ -7,7 +7,8 @@ Build-Depends: debhelper (>= 9),
                intltool (>= 0.35.0),
                pkg-config,
                libgtk2.0-dev (>= 2.8),
-               libcanberra-gtk-dev
+               libcanberra-gtk-dev,
+               libgupnp-1.0-dev
 Standards-Version: 3.9.3
 Homepage: https://launchpad.net/battleship
 
