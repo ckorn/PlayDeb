@@ -1,3 +1,9 @@
+intensityengine (1.1.6-1~getdeb7~quantal) quantal; urgency=low
+
+  * Remove debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 09 Mar 2013 22:41:13 +0100
+
 intensityengine (1.1.6-1~getdeb6~quantal) quantal; urgency=low
 
   * Rebuild for quantal
