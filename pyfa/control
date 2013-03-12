@@ -11,8 +11,11 @@ Package: pyfa
 Architecture: all
 Depends: ${python:Depends},
          ${misc:Depends},
-         python-gtk2,
-         python-glade2
+         python-wxgtk2.8,
+         python-wxglade,
+         python-sqlalchemy
+Recommends: python-matplotlib,
+            python-numpy
 Description: Python Fitting Assistant for the EVE-Online SciFi MMORPG
  pyfa is the Python Fitting Assistant,
  a standalone application to create fittings
