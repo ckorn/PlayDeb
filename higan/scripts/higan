@@ -1,0 +1,56 @@
+#!/bin/bash
+
+if test ! -d $HOME/.config/higan
+  then
+    mkdir -p $HOME/.config/higan
+fi
+
+if test ! -d $HOME/.config/ananke
+  then
+    mkdir -p $HOME/.config/ananke
+fi
+
+if test ! -d $HOME/.config/higan/"Video Shaders"
+  then
+    mkdir -p $HOME/.config/higan/"Video Shaders"
+fi
+
+if test ! -e $HOME/.config/higan/cheats.bml
+  then
+    ln -s /usr/share/games/higan/cheats.bml $HOME/.config/higan/cheats.bml
+fi
+
+if test ! -e $HOME/.config/higan/Famicom.sys
+  then
+    ln -s /usr/share/games/higan/profile/Famicom.sys $HOME/.config/higan/Famicom.sys
+fi
+
+if test ! -e $HOME/.config/higan/"Game Boy.sys"
+  then
+    ln -s /usr/share/games/higan/profile/"Game Boy.sys" $HOME/.config/higan/"Game Boy.sys"
+fi
+
+if test ! -e $HOME/.config/higan/"Game Boy Advance.sys"
+  then
+    ln -s /usr/share/games/higan/profile/"Game Boy Advance.sys" $HOME/.config/higan/"Game Boy Advance.sys"
+fi
+
+if test ! -e $HOME/.config/higan/"Game Boy Color.sys"
+  then
+    ln -s /usr/share/games/higan/profile/"Game Boy Color.sys" $HOME/.config/higan/"Game Boy Color.sys"
+fi
+
+if test ! -e $HOME/.config/higan/"Super Famicom.sys"
+  then
+    ln -s /usr/share/games/higan/profile/"Super Famicom.sys" $HOME/.config/higan/"Super Famicom.sys"
+fi
+
+for shader in $(ls /usr/share/games/higan/shaders/*.OpenGL.shader)
+  do
+    if test ! -f $HOME/.config/higan/"Video Shaders"/${shader##*/}
+      then
+        ln -s $shader $HOME/.config/higan/"Video Shaders"/${shader##*/}
+    fi
+done
+
+higan-bin $@

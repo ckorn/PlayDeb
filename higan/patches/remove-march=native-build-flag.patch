@@ -1,0 +1,20 @@
+Description: Remove -march=native build flag.
+ * This will cause gcc to use all instruction subsets
+   available on the build machine, meaning that the program
+   will not work on computers where they are not available.
+ * Also the flag is not supported on many architectures
+   (armhf, s390, s390x, powerpc, ia64, ...).
+Author: Tobias Hansen <tobias.han@gmx.de>
+
+Index: higan-092/higan/Makefile
+===================================================================
+--- higan-092.orig/higan/Makefile	2013-03-09 13:43:21.669529729 +0100
++++ higan-092/higan/Makefile	2013-03-09 13:56:31.949506221 +0100
+@@ -33,7 +33,6 @@
+ 
+ # platform
+ ifeq ($(platform),x)
+-  flags += -march=native
+   link += -Wl,-export-dynamic -ldl -lX11 -lXext
+ else ifeq ($(platform),win)
+   ifeq ($(arch),win32)

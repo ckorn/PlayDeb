@@ -1,0 +1,38 @@
+Source: higan
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Tobias Hansen <tobias.han@gmx.de>
+Build-Depends: debhelper (>= 9),
+               libgtk2.0-dev,
+               libsdl1.2-dev,
+               libpulse-dev,
+               libopenal-dev,
+               libao-dev,
+               libxv-dev,
+               gcc (>= 4.6)
+Standards-Version: 3.9.3
+Homepage: http://byuu.org/higan/
+DM-Upload-Allowed: yes
+
+Package: higan
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Conflicts: bsnes
+Replaces: bsnes
+Description: Accurate SNES/SuperFamicom emulator
+ higan is an emulator that focuses on accuracy, debugging functionality, and
+ clean code. higan does not include speed and game-specific hacks for
+ compatibility, and as a result the minimum system requirements are very high.
+ .
+ There are three profiles that differ in the amount of accuracy and required
+ system resources. Which profile to use can be set with:
+ .
+ # update-alternatives --config higan-bin
+ .
+ Although not as polished as the SNES emulation (yet), there is also support
+ for NES, Gameboy and Gameboy Color games.
+ .
+ higan was formerly known as bsnes. The project was renamed after becoming
+ a multi-system emulator.

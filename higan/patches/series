@@ -1,0 +1,3 @@
+misc-makefile-changes.patch
+remove-march=native-build-flag.patch
+detect-endianness.patch
