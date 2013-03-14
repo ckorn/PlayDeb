@@ -1,0 +1,3 @@
+debian/higan.xpm		usr/share/pixmaps
+debian/scripts/higan		usr/games
+higan/out/*			usr/games
