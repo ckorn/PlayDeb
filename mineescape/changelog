@@ -1,3 +1,9 @@
+mineescape (1.0-1~getdeb2) precise; urgency=low
+
+  * Update debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 17 Mar 2013 14:03:27 +0100
+
 mineescape (1.0-1~getdeb1) lucid; urgency=low
 
   * Initial release (LP: #612218)
