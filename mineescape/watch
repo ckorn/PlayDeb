@@ -1,3 +1,3 @@
 version=3
-http://sites.google.com/site/sipygames/downloads \
+http://www.pygame.org/project-Mine+Escape-1319-.html \
     (?:.*/)?Mine_Escape_v([\d\.]+)-rc\.zip.*
