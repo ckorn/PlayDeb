@@ -20,6 +20,7 @@ override_dh_strip:
 override_dh_auto_install:
 	dh_auto_install -- \
 		CXXFLAGS="$(CXXFLAGS)" \
+		icons="" \
 		prefix=/usr games=/games gamesbin=/games \
 		system-install-client system-install-server \
 		system-install-docs system-install-menus
@@ -46,8 +47,9 @@ get-orig-source:
 	rm -rf $(DIR)/src/lib/
 	rm -rf $(DIR)/src/install/win/
 	rm -rf $(DIR)/bin/
-	rm -rf $(DIR)/data/
-	rm -rf $(DIR)/game/
+	rm -rf $(DIR)/data
+	find $(DIR)/game/ -not -type d -not -iname 'version.cfg' -delete
+	find $(DIR)/game/ -empty -delete
 	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
 	rm -rf $(DIR)

@@ -5,6 +5,7 @@ redeclipse (1.4-1~svn) UNRELEASED; urgency=low
   * Added screenshot URL for Ubuntu
   * Removed Enet from source package (unused)
   * Drop dpkg Pre-Depends (upredes from old Ubuntu versions not relevant)
+  * Include version.cfg in tarball, required for server
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Fri, 15 Feb 2013 00:30:48 +0100
 
