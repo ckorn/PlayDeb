@@ -44,10 +44,8 @@ get-orig-source:
 	rm -rf $(DIR)/src/enet/
 	rm -rf $(DIR)/src/xcode/
 	rm -rf $(DIR)/src/lib/
-	rm -rf $(DIR)/src/lib64/
 	rm -rf $(DIR)/src/install/win/
 	rm -rf $(DIR)/bin/
-	rm -rf $(DIR)/bin64/
 	rm -rf $(DIR)/data/
 	rm -rf $(DIR)/game/
 	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
