@@ -20,7 +20,7 @@ override_dh_strip:
 override_dh_auto_install:
 	dh_auto_install -- \
 		CXXFLAGS="$(CXXFLAGS)" \
-		icons="" \
+		ICON="" \
 		prefix=/usr games=/games gamesbin=/games \
 		system-install-client system-install-server \
 		system-install-docs system-install-menus
