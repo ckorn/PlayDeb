@@ -22,7 +22,7 @@ get-orig-source:
 	rm -f $(UTAR)
 	mv redeclipse/ $(DIR)
 	rm -rf $(DIR)/bin/
-	cd $(DIR) && rm -f redeclipse.sh server.sh
+	cd $(DIR) && rm -f redeclipse.sh redeclipse_server.sh
 	rm -f $(DIR)/data/fonts/play*
 	rm -f $(DIR)/data/fonts/*.ttf
 	rm -rf $(DIR)/src/
