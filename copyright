@@ -11,8 +11,8 @@ License: Red-Eclipse
  Red Eclipse is based on Cube Engine 2, both of which are covered under the ZLIB
  license, you may use the source code so long as you obey this license.
  .
-     Red Eclipse, Copyright (C) 2009-2012 Quinton Reeves, Lee Salzman
-     Cube Engine 2, Copyright (C) 2001-2012 Wouter van Oortmerssen, Lee Salzman,
+     Red Eclipse, Copyright (C) 2009-2013 Quinton Reeves, Lee Salzman
+     Cube Engine 2, Copyright (C) 2001-2013 Wouter van Oortmerssen, Lee Salzman,
          Mike Dysart, Robert Pointon, and Quinton Reeves
      http://www.opensource.org/licenses/zlib-license.php
  .
@@ -40,11 +40,12 @@ License: Red-Eclipse
  is intended to be "open source" friendly.
  .
  In the absence of an explicit license, content is considered to be covered by
- the CC-BY-SA license, you may use the content in Red Eclipse so long as you
- obey individual licensing criteria.
+ the CC-BY-SA license, either version 3.0 or (at your option) any later version,
+ you may use the content in Red Eclipse so long as you obey individual
+ licensing criteria.
  .
-     Red Eclipse, Copyright (C) 2009-2012 Red Eclipse Team
-     Creative Commons Attribution ShareAlike 3.0 License (CC-BY-SA)
+     Red Eclipse, Copyright (C) 2009-2013 Red Eclipse Team
+     Creative Commons Attribution ShareAlike 3.0+ License (CC-BY-SA)
      See cc-by-sa.txt or http://creativecommons.org/licenses/by-sa/3.0/
  .
  For a license breakdown of all content in Red Eclipse, see all-licenses.txt.
@@ -54,10 +55,23 @@ License: Red-Eclipse
 Disclaimer:
  This package is not part of Debian due to missing "sources" for artwork, audio,
  models, etc.
+ .
+ If you read the DFSG to also require "source" for all media content (and most
+ people in Debian do), it implies that for example images created via GIMP
+ would need to have the original xcf-files available, models created in
+ Blender would need to have the original blend-files, music created by
+ combining samples in audacity would need to have the original samples
+ available, and the corresponding audacity project file, etc.
+ .
+ Much of the data for redeclipse does fail this requirement. I've guesstimated
+ that for Red Eclipse, it might be possible to get the "source" for maybe 30%
+ of the media content, with considerable effort and time spent. I felt that it
+ would not be a particularly useful exercise, and decided not to do so, at
+ least for the time being.
 
 Files: *
-Copyright: 2009-2012, Red Eclipse Team
-License: CC-BY-SA-3.0
+Copyright: 2009-2013, Red Eclipse Team
+License: CC-BY-SA-3.0+
 
 Files: doc/trademark.txt
 Copyright: 2011, The Document Foundation
@@ -66,35 +80,84 @@ Copyright: 2011, The Document Foundation
 License: CC-BY-SA-3.0
 
 Files: doc/examples/*
-Copyright: 2011-2012, Red Eclipse Team
+Copyright: 2011-2013, Red Eclipse Team
 License: Zlib
 
 Files: doc/man/cube2font.1 doc/man/redeclipse.6.am
-       doc/man/redeclipse-server.6.am
+       doc/man/redeclipse-server.6.am src/scripts/*
 Copyright: 2011-2012, Martin Erik "arand" Werner <martinerikwerner@gmail.com>
 License: ZLib
 
-Files: data/maps/biolytic* data/maps/darkness* data/maps/mist* data/maps/nova*
-       data/maps/panic* data/maps/oneiroi* data/maps/processing*
-       data/maps/tranquility*
-Copyright: 2009-2012, Derek "favorito" Ponicki <favorito.redeclipse@gmail.com>
+Files: game/fps/maps/biolytic* game/fps/maps/darkness* game/fps/maps/mist*
+       game/fps/maps/nova* game/fps/maps/panic* game/fps/maps/oneiroi*
+       game/fps/maps/processing* game/fps/maps/tranquility*
+       game/fps/maps/vault*
+Copyright: 2009-2013, Derek "favorito" Ponicki <favorito.redeclipse@gmail.com>
 License: Zlib
 
-Files: data/maps/ares* data/maps/canals* data/maps/conflict*
-Copyright: 2011-2012, Ulukai <jonathan.denil@gmail.com>
+Files: game/fps/maps/deadsimple*
+Copyright: Jonathan 'Wicked' Roels
+           2013 Ulukai <jonathan.denil@gmail.com>
 License: CC-BY-SA-3.0
 
-Files: data/maps/fourplex* data/maps/pumpstation* data/maps/starlibido*
-Copyright: 2012 D.a.M.i.E.n. <daymeenn@gmail.com>,
+Files: game/fps/maps/ares* game/fps/maps/canals* game/fps/maps/conflict*
+Copyright: 2011-2013, Ulukai <jonathan.denil@gmail.com>
 License: CC-BY-SA-3.0
 
-Files: data/maps/neodrive* data/maps/hawk*
-Copyright: 2012, Kirill "TristamK" Kolesnikov <tristamk@bk.ru>
+Files: game/fps/maps/keystone2k* game/fps/maps/livefire*
+Copyright: 2012-2013, John_III <snaginneb@yahoo.com>
 License: CC-BY-SA-3.0
 
-Files: data/maps/industrial* data/maps/isolation* data/maps/keystone2k*
-Copyright: 2012, John_III <snaginneb@yahoo.com>
+Files: game/fps/maps/fourplex* game/fps/maps/pumpstation*
+       game/fps/maps/starlibido*
+Copyright: 2012-2013 D.a.M.i.E.n. <daymeenn@gmail.com>
 License: CC-BY-SA-3.0
+
+Files: game/fps/maps/neodrive* game/fps/maps/hawk*
+Copyright: 2012-2013, Kirill "TristamK" Kolesnikov <tristamk@bk.ru>
+License: CC-BY-SA-3.0
+
+Files: game/fps/maps/cutec*
+Copyright: 2012-2013, Raiden
+License: CC-BY-SA-3.0
+
+Files: game/fps/maps/erosion* game/fps/maps/suspended*
+Copyright: 2012-2013 Matt "greasepirate" Kalt
+License: CC-BY-3.0
+
+Files: game/fps/maps/battlefield*
+Copyright: 2012-2013, Quinton Reeves, Ulukai <jonathan.denil@gmail.com>
+License: CC-BY-SA-3.0+
+
+Files: game/fps/maps/cyanide*
+Copyright: 2013 Ricky Thomson "unixfreak" <punkalert@gmail.com>
+License: CC-BY-SA-3.0
+
+Files: game/fps/maps/steelrat*
+Copyright: 2012 Kirill "TristamK" Kolesnikov <tristamk@bk.ru>
+           2012-2013 D.a.M.i.E.n. <daymeenn@gmail.com>
+License: CC-BY-SA-3.0
+
+Files: game/fps/maps/venus*
+Copyright: 2011-2013, Red Eclipse Team
+           2013, Ulukai <jonathan.denil@gmail.com>
+License: CC-BY-SA-3.0
+
+Files: game/fps/maps/bloodlust*
+Copyright: 2013 Joseph "ballist1c" Calabria
+           2013 Matt "greaserpirate" Kalt
+License: CC-BY-SA-3.0
+
+Files: data/misc/light2*
+Copyright: 2009 Georges "TRaK" Grondin <drognin@gmail.com>
+           2013 D.a.M.i.E.n. <daymeenn@gmail.com>
+License: Expat
+
+Files: data/misc/starllogo*
+Copyright: 2009 Georges "TRaK" Grondin <drognin@gmail.com>
+           2012 Julia Petretta <julia.petretta@googlemail.com>
+           2013 D.a.M.i.E.n. <daymeenn@gmail.com>
+License: Expat
 
 Files: data/jwin/*
 Copyright: JWindecker <jacobwindecker@hotmail.com>
@@ -108,22 +171,26 @@ Files: data/penguins/*
 Copyright: 2009, 2012, skiingpenguins <roy153roy153@yahoo.com>
 License: CC-BY-SA-3.0
 
+Files: data/ulukai/*
+Copyright: 2013 Ulukai <jonathan.denil@gmail.com>
+License: CC-BY-SA-3.0
+
+Files: data/ulukai/redeclipse*
+Copyright: 1999 Luc Viatour
+           2013 Dratz-C
+           2013 Ulukai <jonathan.denil@gmail.com>
+License: CC-BY-SA-3.0
+Comment:
+ sources: https://commons.wikimedia.org/wiki/File:Solar_eclips_1999_4.jpg
+          http://www.lucnix.be/v/Astronomy/Solar+eclipse+1999+Luc+Viatour.jpg.html
+
 Files: data/crosshairs/*
 Copyright: 2011, fluxord <fluxord> at <yahoo.com>
 License: CC-BY-SA-3.0
 
 Files: data/skyboxes/gradient* data/skyboxes/stars*
 Copyright: Quinton Reeves <qreeves@gmail.com>
-License: public-domain
- "gradient" by Quinton Reeves
-     This set is in the public domain, it was created using the gradient fill
-     tool in GIMP.
- .
- "stars" by Quinton Reeves
-     This set is in the public domain, it was created with Starbox 1.9 by Alex
-     Grigny de Castro from the included xgStars.txt.
-     Generation parameters were set to 0'N / 0'E (Sidereal: 18.299266, or 00:00
-     July 26th, 2008) which is Red Eclipse's birthday.
+License: CC-BY-SA-3.0+
 
 Files: data/skyboxes/sunsetflat*
 Copyright: 2009, LedIris
@@ -133,22 +200,27 @@ Files: data/skyboxes/skyhigh*
 Copyright: Pieter Verhoeven
 License: CC-BY-SA-3.0
 
-Files: data/particles/bullet.png data/particles/energy.png
-       data/particles/blob.png data/particles/scorch.png
-       data/particles/entity.png data/particles/lightning.png
+Files: data/particles/entity.png data/particles/lightning.png
        data/particles/hint.png data/particles/mflare.png
        data/particles/sflare.png data/particles/spark.png
 Copyright: Quinton Reeves <qreeves@gmail.com>
-License: public-domain
- bullet.png, energy.png, scorch.png, blob.png
-     Public domain sources
- .
- entity.png, lightning.png, hint.png, mflare.png, sflare.png, spark.png
-     Created by Quinton Reeves, released into the public domain
+License: CC-BY-SA-3.0+
 
 Files: data/skyboxes/interstellar* data/skyboxes/miramar*
        data/skyboxes/stormydays*
 Copyright: Jockum "hipshot" Skoglund <hipshot@zfight.com>
+License: CC-BY-3.0
+
+Files: data/elyvisions/*
+Copyright: 2012 3delyvisions
+License: CC-BY-3.0
+
+Files: data/mayhem/*
+Copyright: Mayhem
+License: CC-BY-SA (version unclear, probably not 3.0)
+
+Files: data/philipk/
+Copyright: Philip Klevestav <philipk@philipk.net>
 License: CC-BY-3.0
 
 Files: data/particles/smoke.png data/particles/explosion.png
@@ -179,9 +251,19 @@ Files: data/models/weapons/plasma/* data/models/weapons/flamer/*
 Copyright: Mike Ledger ( mikeplus[i] )
 License: CC-BY-SA-3.0-AU
 
+Files: data/models/john/*
+Copyright: John_III
+License: CC-BY-SA-3.0
+
 Files: data/mayhem/*
 Copyright: Mayhem
 License: CC-BY-SA-3.0
+
+Files: data/fonts/Play*.ttf
+Copyright: 2011, Jonas Hecksher, Playtypes, e-types AS (e-types.com)
+License: OFL-1.1
+Comment:
+ Reserved Font Names "Play", "Playtype", "Playtype Sans".
 
 Files: data/fonts/*.png
 Copyright: 2011, Jonas Hecksher, Playtypes, e-types AS (e-types.com)
@@ -190,7 +272,7 @@ License: OFL-1.1
 Comment:
  Reserved Font Names "Play", "Playtype", "Playtype Sans".
  .
- These are regenerated from the fonts-play package at build time
+ These font image grids are generated from the "Play" font via cube2font.
 
 Files: data/textures/lava.jpg
 Copyright: RaZgRiZ
@@ -199,40 +281,28 @@ License:
  Licensed publicly for everyone to use, modify and distribute as long as the
  author is credited for the original work.
 
-Files: data/textures/bloodbath.png data/textures/carnage.png
-       data/textures/critical.png data/textures/dominate.png
-       data/textures/firstblood.png data/textures/headshot.png
-       data/textures/massacre.png data/textures/multi.png
-       data/textures/revenge.png data/textures/slaughter.png
-       data/textures/triple.png
+Files: data/textures/rewards/*
 Copyright: Ed Merrit, Ten by Twenty, <http://www.tenbytwenty.com/>
            2011, Red Eclipse Team
-License: Akashi-Font and CC-BY-SA-3.0
+License: Akashi-Font and CC-BY-SA-3.0+
 Comment:
  The Akashi font is used as a basis for the word art in these images.
 
 Files: data/textures/logo.png data/luckystrike/pub2* data/luckystrike/pub1*
 Copyright: Ed Merrit, Ten by Twenty, <http://www.tenbytwenty.com/>
            2011, Red Eclipse Team
-License: Akashi-Font and CC-BY-SA-3.0 and Mark-Policy
+License: Akashi-Font and CC-BY-SA-3.0+ and Mark-Policy
 Comment:
  The Akashi font is used as a basis for the word art in this image.
 
 Files: data/textures/emblem.png
 Copyright: 2011, Red Eclipse Team
-License: CC-BY-SA-3.0 and Mark-Policy
+License: CC-BY-SA-3.0+ and Mark-Policy
 
 Files: data/torley/*
 Copyright: 2007-2008, Torley Linden
            2010, Red Eclipse Team
-License: custom and CC-BY-3.0-US
- All Torley Textures are 512x512 in (lossless) PNG format and seamlessly tiling.
- Use 'em almost however you want — just don't resell as-is — and let me know if
- you make somethin' kewl with 'em. You can also get them in Second Life @
- http://torley.com/here
- .
- This work is licensed under a Creative Commons Attribution 3.0 United States
- License: http://creativecommons.org/licenses/by/3.0/us/
+License: CC-BY-SA-3.0
 
 Files: data/sounds/ambience/*
 Copyright: Quinton "quin" Reeves, Alex "blackshoe" Anguix
@@ -349,8 +419,12 @@ Comment:
  http://www.freesound.org/samplesViewSingle.php?id=34580
  http://www.freesound.org/samplesViewSingle.php?id=7292
 
+Files: data/sounds/ambience/vapour.ogg
+Copyright: 2013 D.a.M.i.E.n. <daymeenn@gmail.com>
+License: CC-BY-SA-3.0
+
 Files: debian/*
-Copyright: 2011-2012 Martin Erik Werner <martinerikwerner@gmail.com>
+Copyright: 2011-2013 Martin Erik Werner <martinerikwerner@gmail.com>
 License: Zlib
 
 License: Zlib
@@ -393,37 +467,82 @@ License: Expat
  DEALINGS IN THE SOFTWARE.
 
 License: Akashi-Font
- http://www.tenbytwenty.com/
+ Basically, you can use the fonts for whatever you like, the only
+ restriction being that:
+ If the font is a "paid" one, rather than a free one, you should not make
+ the .ttf file available to the public.
  .
- License Agreement
+ Other than that I'm happy for you use the font however you like.
  .
- By downloading any product from Ten by Twenty, you agree to the following:
- .
-     * All products remain property of Ten by Twenty.
-     * Products may be used by the licensee in any personal or commercial
-       projects (royalty-free).
-     * Products may not be resold or redistributed.
-     * Wordpress themes may be edited and developed for individual use, but
-       credit links must remain in place and adapted themes may not be
-       reditributed.
- .
- Clarification:
- .
- I ("Arand") contacted Ed Merrit (of Ten by Twenty) via email, requesting a
- clarification for the font license and received this response:
- .
- > Hi Arand,
- >
- > Basically, you can use the fonts for whatever you like, the only restriction
-   being that:
- > If the font is a "paid" one, rather than a free one, you should not make the
-   .ttf file available to the public.
- > Other than that I'm happy for you use the font however you like.
- >
- > Ed
- .
+ Note:
  The "akashi" typeface (available from http://www.tenbytwenty.com/akashi.php) is
  made available for free by the author.
+ .
+ Background:
+ I ("Arand") contacted Ed Merrit (of Ten by Twenty) via email, requesting a
+ clarification for the font license, here is a copy of the response:
+ .
+ Date: Sat, 05 Nov 2011 14:53:39 +0000
+ From: Ed Merritt <ed@edmerritt.com>
+ To: Arand Nash <ienorand@gmail.com>
+ Subject: Re: Fwd: akashi license
+ .
+ Hi Arand,
+ .
+ Basically, you can use the fonts for whatever you like, the only
+ restriction being that:
+ If the font is a "paid" one, rather than a free one, you should not make
+ the .ttf file available to the public.
+ .
+ Other than that I'm happy for you use the font however you like.
+ .
+ Ed
+ .
+ .
+ .
+ .
+ On 05/11/2011 14:50, Arand Nash wrote:
+ > Hello, sorry, but would you have time to have a look at these questions?
+ >
+ > I noticed that you've released the typeface "Jura" under a SIL license,
+ > would it be at all feasible, to use the Akashi font under a similar license?
+ > I completely understand if this is not possible.
+ >
+ > I'm still looking for an answer regarding the current license, though:
+ >
+ > -------- Original Message --------
+ > Subject: akashi license
+ > Date: Fri, 14 Oct 2011 01:59:44 +0200
+ > From: Arand Nash<ienorand@gmail.com>
+ > To: ed@edmerritt.com
+ >
+ > Hello Ed Merrit,
+ >
+ > I've got a few questions about the license, set for the Ten by twenty
+ > products, in particular for the akashi.ttf font:
+ > ###
+ > By downloading any product from Ten by Twenty, you agree to the following:
+ >
+ > -All products remain property of Ten by Twenty.
+ > -Products may be used by the licensee in any personal or commercial
+ > projects (royalty-free).
+ > -Products may not be resold or redistributed.
+ > ###
+ > It is somewhat unclear in what way it may, and may not be used.
+ >
+ > What is meant by the "used by licensee" wording in this context?
+ > Does it mean strictly personal, "off-line" use only?
+ > Or displaying (publicly) of the font only (with no access by viewer to
+ > .ttf file, somehow)?
+ >
+ > The "may not be (...) redistributed" seems to imply that one may only
+ > receive the .ttf file from your site and that any other propagation of
+ > the font must be in some hardcoded-into-image format?
+ >
+ > Is my interpretation of the main intent of your license correct?
+ >
+ > --
+ > Martin Werner ("arand")
 
 License: OFL-1.1
  -----------------------------------------------------------
@@ -1387,214 +1506,6 @@ License: CC-BY-SA-3.0-AU
  .
  The construction, validity and performance of this Licence shall be governed by
  the laws in force in the Australian Capital Territory, Australia.
-
-License: CC-BY-3.0-US
- THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
- COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY
- COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS
- AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
- .
- BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE TO BE
- BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY BE
- CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS CONTAINED HERE
- IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND CONDITIONS.
- .
- 1. Definitions
- .
-  a. "Collective Work" means a work, such as a periodical issue, anthology or
-     encyclopedia, in which the Work in its entirety in unmodified form, along
-     with one or more other contributions, constituting separate and independent
-     works in themselves, are assembled into a collective whole. A work that
-     constitutes a Collective Work will not be considered a Derivative Work (as
-     defined below) for the purposes of this License.
-  b. "Derivative Work" means a work based upon the Work or upon the Work and
-     other pre-existing works, such as a translation, musical arrangement,
-     dramatization, fictionalization, motion picture version, sound recording,
-     art reproduction, abridgment, condensation, or any other form in which the
-     Work may be recast, transformed, or adapted, except that a work that
-     constitutes a Collective Work will not be considered a Derivative Work for
-     the purpose of this License. For the avoidance of doubt, where the Work is
-     a musical composition or sound recording, the synchronization of the Work
-     in timed-relation with a moving image ("synching") will be considered a
-     Derivative Work for the purpose of this License.
-  c. "Licensor" means the individual, individuals, entity or entities that
-     offers the Work under the terms of this License.
-  d. "Original Author" means the individual, individuals, entity or entities who
-     created the Work.
-  e. "Work" means the copyrightable work of authorship offered under the terms
-     of this License.
-  f. "You" means an individual or entity exercising rights under this License
-     who has not previously violated the terms of this License with respect to
-     the Work, or who has received express permission from the Licensor to
-     exercise rights under this License despite a previous violation.
- .
- 2. Fair Use Rights. Nothing in this license is intended to reduce, limit, or
- restrict any rights arising from fair use, first sale or other limitations on
- the exclusive rights of the copyright owner under copyright law or other
- applicable laws.
- .
- 3. License Grant. Subject to the terms and conditions of this License, Licensor
- hereby grants You a worldwide, royalty-free, non-exclusive, perpetual (for the
- duration of the applicable copyright) license to exercise the rights in the
- Work as stated below:
- .
-  a. to reproduce the Work, to incorporate the Work into one or more Collective
-     Works, and to reproduce the Work as incorporated in the Collective Works;
-  b. to create and reproduce Derivative Works provided that any such Derivative
-     Work, including any translation in any medium, takes reasonable steps to
-     clearly label, demarcate or otherwise identify that changes were made to
-     the original Work. For example, a translation could be marked "The original
-     work was translated from English to Spanish," or a modification could
-     indicate "The original work has been modified.";;
-  c. to distribute copies or phonorecords of, display publicly, perform
-     publicly, and perform publicly by means of a digital audio transmission the
-     Work including as incorporated in Collective Works;
-  d. to distribute copies or phonorecords of, display publicly, perform
-     publicly, and perform publicly by means of a digital audio transmission
-     Derivative Works.
-  e. For the avoidance of doubt, where the Work is a musical composition:
- .
-      i. Performance Royalties Under Blanket Licenses. Licensor waives the
-         exclusive right to collect, whether individually or, in the event that
-         Licensor is a member of a performance rights society (e.g. ASCAP, BMI,
-         SESAC), via that society, royalties for the public performance or
-         public digital performance (e.g. webcast) of the Work.
-     ii. Mechanical Rights and Statutory Royalties. Licensor waives the
-         exclusive right to collect, whether individually or via a music rights
-         agency or designated agent (e.g. Harry Fox Agency), royalties for any
-         phonorecord You create from the Work ("cover version") and distribute,
-         subject to the compulsory license created by 17 USC Section 115 of the
-         US Copyright Act (or the equivalent in other jurisdictions).
-  f. Webcasting Rights and Statutory Royalties. For the avoidance of doubt,
-     where the Work is a sound recording, Licensor waives the exclusive right to
-     collect, whether individually or via a performance-rights society (e.g.
-     SoundExchange), royalties for the public digital performance (e.g. webcast)
-     of the Work, subject to the compulsory license created by 17 USC Section
-     114 of the US Copyright Act (or the equivalent in other jurisdictions).
- .
- The above rights may be exercised in all media and formats whether now known or
- hereafter devised. The above rights include the right to make such
- modifications as are technically necessary to exercise the rights in other
- media and formats. All rights not expressly granted by Licensor are hereby
- reserved.
- .
- 4. Restrictions. The license granted in Section 3 above is expressly made
- subject to and limited by the following restrictions:
- .
-  a. You may distribute, publicly display, publicly perform, or publicly
-     digitally perform the Work only under the terms of this License, and You
-     must include a copy of, or the Uniform Resource Identifier for, this
-     License with every copy or phonorecord of the Work You distribute, publicly
-     display, publicly perform, or publicly digitally perform. You may not offer
-     or impose any terms on the Work that restrict the terms of this License or
-     the ability of a recipient of the Work to exercise the rights granted to
-     that recipient under the terms of the License. You may not sublicense the
-     Work. You must keep intact all notices that refer to this License and to
-     the disclaimer of warranties. When You distribute, publicly display,
-     publicly perform, or publicly digitally perform the Work, You may not
-     impose any technological measures on the Work that restrict the ability of
-     a recipient of the Work from You to exercise the rights granted to that
-     recipient under the terms of the License. This Section 4(a) applies to the
-     Work as incorporated in a Collective Work, but this does not require the
-     Collective Work apart from the Work itself to be made subject to the terms
-     of this License. If You create a Collective Work, upon notice from any
-     Licensor You must, to the extent practicable, remove from the Collective
-     Work any credit as required by Section 4(b), as requested. If You create a
-     Derivative Work, upon notice from any Licensor You must, to the extent
-     practicable, remove from the Derivative Work any credit as required by
-     Section 4(b), as requested.
-  b. If You distribute, publicly display, publicly perform, or publicly
-     digitally perform the Work (as defined in Section 1 above) or any
-     Derivative Works (as defined in Section 1 above) or Collective Works (as
-     defined in Section 1 above), You must, unless a request has been made
-     pursuant to Section 4(a), keep intact all copyright notices for the Work
-     and provide, reasonable to the medium or means You are utilizing: (i) the
-     name of the Original Author (or pseudonym, if applicable) if supplied, and/
-     or (ii) if the Original Author and/or Licensor designate another party or
-     parties (e.g. a sponsor institute, publishing entity, journal) for
-     attribution ("Attribution Parties") in Licensor's copyright notice, terms
-     of service or by other reasonable means, the name of such party or parties;
-     the title of the Work if supplied; to the extent reasonably practicable,
-     the Uniform Resource Identifier, if any, that Licensor specifies to be
-     associated with the Work, unless such URI does not refer to the copyright
-     notice or licensing information for the Work; and, consistent with Section
-     3(b) in the case of a Derivative Work, a credit identifying the use of the
-     Work in the Derivative Work (e.g., "French translation of the Work by
-     Original Author," or "Screenplay based on original Work by Original
-     Author"). The credit required by this Section 4(b) may be implemented in
-     any reasonable manner; provided, however, that in the case of a Derivative
-     Work or Collective Work, at a minimum such credit will appear, if a credit
-     for all contributing authors of the Derivative Work or Collective Work
-     appears, then as part of these credits and in a manner at least as
-     prominent as the credits for the other contributing authors. For the
-     avoidance of doubt, You may only use the credit required by this Section
-     for the purpose of attribution in the manner set out above and, by
-     exercising Your rights under this License, You may not implicitly or
-     explicitly assert or imply any connection with, sponsorship or endorsement
-     by the Original Author, Licensor and/or Attribution Parties, as
-     appropriate, of You or Your use of the Work, without the separate, express
-     prior written permission of the Original Author, Licensor and/or
-     Attribution Parties.
- .
- 5. Representations, Warranties and Disclaimer
- .
- UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS
- THE WORK AS-IS AND ONLY TO THE EXTENT OF ANY RIGHTS HELD IN THE LICENSED WORK
- BY THE LICENSOR. THE LICENSOR MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY
- KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING,
- WITHOUT LIMITATION, WARRANTIES OF TITLE, MARKETABILITY, MERCHANTIBILITY,
- FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR
- OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT
- DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED
- WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.
- .
- 6. Limitation on Liability. EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW, IN
- NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY SPECIAL,
- INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF THIS
- LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF THE
- POSSIBILITY OF SUCH DAMAGES.
- .
- 7. Termination
- .
-  a. This License and the rights granted hereunder will terminate automatically
-     upon any breach by You of the terms of this License. Individuals or
-     entities who have received Derivative Works (as defined in Section 1 above)
-     or Collective Works (as defined in Section 1 above) from You under this
-     License, however, will not have their licenses terminated provided such
-     individuals or entities remain in full compliance with those licenses.
-     Sections 1, 2, 5, 6, 7, and 8 will survive any termination of this License.
-  b. Subject to the above terms and conditions, the license granted here is
-     perpetual (for the duration of the applicable copyright in the Work).
-     Notwithstanding the above, Licensor reserves the right to release the Work
-     under different license terms or to stop distributing the Work at any time;
-     provided, however that any such election will not serve to withdraw this
-     License (or any other license that has been, or is required to be, granted
-     under the terms of this License), and this License will continue in full
-     force and effect unless terminated as stated above.
- .
- 8. Miscellaneous
- .
-  a. Each time You distribute or publicly digitally perform the Work (as defined
-     in Section 1 above) or a Collective Work (as defined in Section 1 above),
-     the Licensor offers to the recipient a license to the Work on the same
-     terms and conditions as the license granted to You under this License.
-  b. Each time You distribute or publicly digitally perform a Derivative Work,
-     Licensor offers to the recipient a license to the original Work on the same
-     terms and conditions as the license granted to You under this License.
-  c. If any provision of this License is invalid or unenforceable under
-     applicable law, it shall not affect the validity or enforceability of the
-     remainder of the terms of this License, and without further action by the
-     parties to this agreement, such provision shall be reformed to the minimum
-     extent necessary to make such provision valid and enforceable.
-  d. No term or provision of this License shall be deemed waived and no breach
-     consented to unless such waiver or consent shall be in writing and signed
-     by the party to be charged with such waiver or consent.
-  e. This License constitutes the entire agreement between the parties with
-     respect to the Work licensed here. There are no understandings, agreements
-     or representations with respect to the Work not specified here. Licensor
-     shall not be bound by any additional provisions that may appear in any
-     communication from You. This License may not be modified without the mutual
-     written agreement of the Licensor and You.
 
 License: Mark-Policy
  THE RED ECLIPSE MARK POLICY
