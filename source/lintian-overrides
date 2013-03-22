@@ -1,0 +1,6 @@
+# The license is CC-BY-SA-3.0+, meaning "or later", albeit valid, this is not a
+# recognised license shortname.
+# The stand-alone license paragraph has the standard CC-BY-SA-3.0 version.
+missing-license-paragraph-in-dep5-copyright cc-by-sa-3.0+ (paragraph at line 298)
+# All CC-BY-SA versions should be fine for non-free
+missing-license-paragraph-in-dep5-copyright cc-by-sa version unclear, probably not 3.0) (paragraph at line 218)
