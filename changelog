@@ -1,6 +1,8 @@
-redeclipse-data (1.4-1~svn) UNRELEASED; urgency=low
+redeclipse-data (1.4-1) experimental; urgency=low
 
   * New upstream release
+  * Drop dpkg Pre-Depends (upgrades from old Ubuntu versions not relevant)
+  * Added more verbose notice why package is in non-free
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Fri, 15 Feb 2013 02:03:20 +0100
 
