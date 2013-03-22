@@ -1,10 +1,10 @@
-redeclipse (1.4-1~svn) UNRELEASED; urgency=low
+redeclipse (1.4-1) experimental; urgency=low
 
   * New upstream release
   * Move server examples to /usr/share/games/doc/redeclipse/
   * Added screenshot URL for Ubuntu
   * Removed Enet from source package (unused)
-  * Drop dpkg Pre-Depends (upredes from old Ubuntu versions not relevant)
+  * Drop dpkg Pre-Depends (upgrades from old Ubuntu versions not relevant)
   * Include version.cfg in tarball, required for server
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Fri, 15 Feb 2013 00:30:48 +0100
