@@ -40,7 +40,7 @@ get-orig-source:
 	rm -rf $(DIR)
 	tar -xf $(UTAR)
 	rm -f $(UTAR)
-	mv redeclipse/ $(DIR)
+	mv redeclipse-$(VER)/ $(DIR)
 	rm -rf $(DIR)/src/include/
 	rm -rf $(DIR)/src/enet/
 	rm -rf $(DIR)/src/xcode/
