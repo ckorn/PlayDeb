@@ -6,7 +6,7 @@ Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
 
 --- a/src/core.mk
 +++ b/src/core.mk
-@@ -21,7 +21,7 @@
+@@ -28,7 +28,7 @@
  CXX_TEMP:=$(CXX)
  override CXX=$(TOOLSET_PREFIX)$(CXX_TEMP)
  
@@ -15,7 +15,7 @@ Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
  
  
  STRIP=
-@@ -59,7 +59,7 @@
+@@ -66,7 +66,7 @@
  CLIENT_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lSDL -lSDL_image -lSDL_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
  else
  CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
@@ -24,7 +24,7 @@ Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
  endif
  ifeq ($(PLATFORM),Linux)
  CLIENT_LIBS+= -lrt
-@@ -130,7 +130,7 @@
+@@ -137,7 +137,7 @@
  SERVER_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lzlib1 -lenet -lws2_32 -lwinmm
  else
  SERVER_INCLUDES= -DSTANDALONE $(INCLUDES)
@@ -33,7 +33,7 @@ Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
  endif
  SERVER_OBJS= \
  	shared/crypto-standalone.o \
-@@ -195,13 +195,13 @@
+@@ -202,13 +202,13 @@
  	$(STRIP) $(WINBIN)/$(APPSERVER).exe
  endif
  else
