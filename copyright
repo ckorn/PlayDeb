@@ -217,7 +217,30 @@ License: CC-BY-3.0
 
 Files: data/mayhem/*
 Copyright: Mayhem
-License: CC-BY-SA (version unclear, probably not 3.0)
+License: CC-BY-SA-3.0
+Comment:
+ Discussion from content page at http://www.quadropolis.us/node/2696
+ .
+ Just a quick question, is the license for these CC-BY-SA version 3.0? (And if
+ not, can they be used also under this new version?).
+ .
+ 2.0 and 2.5 is a bit iffy on some points, so hence why I'm asking, we're
+ likely including them in the next Red Eclipse release and I'm going around
+ being paternicky about licenses ;)
+ .
+ .
+ Yes, I'm pretty sure these are CC-BY-SA version 3.0 and if not, they are now!
+ :)
+ .
+ I would be honored to have them in the RE release.
+ .
+ Edit: It would seem mediafire didn't keep that file hosted and I can't find it
+ on my systems either. I will try to find my source files and re-post it when I
+ can.
+ .
+ Edit2: Done. I upgraded the licenses and used the higher quality PNG format
+ which unfortunately brings the zip file over 40 Mb. I've also included the
+ much smaller JPG files on this node.
 
 Files: data/philipk/
 Copyright: Philip Klevestav <philipk@philipk.net>
