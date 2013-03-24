@@ -1,0 +1,133 @@
+Source: gigi-freeorion
+Section: libs
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: cmake (>= 2.6),
+               debhelper (>= 9),
+               libboost-all-dev (>= 1.47),
+               libdevil-dev,
+               libfreetype6-dev,
+               libglu1-mesa-dev,
+               libltdl-dev,
+               libogre-dev,
+               libois-dev,
+               libsdl1.2-dev,
+               pkg-config,
+Standards-Version: 3.9.3
+Homepage: https://www.freeorion.org/
+
+Package: libgigi0d
+Section: libs
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: OpenGL Graphical User Interface Library
+ GiGi (aka GG) is a GUI library for OpenGL.
+ It is platform-independent (it runs at least on Linux
+ and Windows, and probably more), compiler-independent
+ (it compiles under at GCC 3.4 or higher and
+ MSVC++ 8.0 SP1 or higher, and probably more),
+ and driver-independent.
+ Reference drivers for SDL and Ogre are provided.
+ .
+ This is the modified version from FreeOrion.
+
+Package: libgigi-dev
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends},
+         libgigi0d (= ${binary:Version}),
+         libboost-all-dev,
+         libdevil-dev,
+         libfreetype6-dev,
+         libglu1-mesa-dev,
+         libltdl-dev,
+         libois-dev
+Description: OpenGL Graphical User Interface Library (header files)
+ GiGi (aka GG) is a GUI library for OpenGL.
+ It is platform-independent (it runs at least on Linux
+ and Windows, and probably more), compiler-independent
+ (it compiles under at GCC 3.4 or higher and
+ MSVC++ 8.0 SP1 or higher, and probably more),
+ and driver-independent.
+ Reference drivers for SDL and Ogre are provided.
+ .
+ This is the modified version from FreeOrion.
+ .
+ (This package contains the header files).
+
+Package: libgigisdl0d
+Section: libs
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: OpenGL Graphical User Interface Library (SDL driver)
+ GiGi (aka GG) is a GUI library for OpenGL.
+ It is platform-independent (it runs at least on Linux
+ and Windows, and probably more), compiler-independent
+ (it compiles under at GCC 3.4 or higher and
+ MSVC++ 8.0 SP1 or higher, and probably more),
+ and driver-independent.
+ Reference drivers for SDL and Ogre are provided.
+ .
+ This is the modified version from FreeOrion.
+ .
+ (This package contains the SDL driver).
+
+Package: libgigisdl-dev
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends},
+         libgigisdl0d (= ${binary:Version}),
+         libgigi-dev (= ${binary:Version}),
+         libsdl1.2-dev,
+Description: OpenGL Graphical User Interface Library (SDL headers)
+ GiGi (aka GG) is a GUI library for OpenGL.
+ It is platform-independent (it runs at least on Linux
+ and Windows, and probably more), compiler-independent
+ (it compiles under at GCC 3.4 or higher and
+ MSVC++ 8.0 SP1 or higher, and probably more),
+ and driver-independent.
+ Reference drivers for SDL and Ogre are provided.
+ .
+  This is the modified version from FreeOrion.
+ .
+ (This package contains the headers for the SDL driver).
+
+Package: libgigiogre0d
+Section: libs
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: OpenGL Graphical User Interface Library (Ogre driver)
+ GiGi (aka GG) is a GUI library for OpenGL.
+ It is platform-independent (it runs at least on Linux
+ and Windows, and probably more), compiler-independent
+ (it compiles under at GCC 3.4 or higher and
+ MSVC++ 8.0 SP1 or higher, and probably more),
+ and driver-independent.
+ Reference drivers for SDL and Ogre are provided.
+ .
+ This is the modified version from FreeOrion.
+ .
+ (This package contains the Ogre driver).
+
+Package: libgigiogre-dev
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends},
+         libgigiogre0d (= ${binary:Version}),
+         libgigi-dev (= ${binary:Version}),
+         libogre-dev,
+Description: OpenGL Graphical User Interface Library (Ogre headers)
+ GiGi (aka GG) is a GUI library for OpenGL.
+ It is platform-independent (it runs at least on Linux
+ and Windows, and probably more), compiler-independent
+ (it compiles under at GCC 3.4 or higher and
+ MSVC++ 8.0 SP1 or higher, and probably more),
+ and driver-independent.
+ Reference drivers for SDL and Ogre are provided.
+ .
+ This is the modified version from FreeOrion.
+ .
+ (This package contains the headers for the Ogre driver).

@@ -1,0 +1,30 @@
+gigi-freeorion (1:0.4.2~svn5890-1~getdeb1) quantal; urgency=low
+
+  * This is the modified version of GIGI which is
+    distributed with the freeorion source.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 23 Mar 2013 00:15:13 +0100
+
+gigi (0.7.0+svn1074-1~getdeb1) quantal; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 21 Mar 2013 20:30:23 +0100
+
+gigi (0.7.0+svn1074-0ubuntu3) quantal; urgency=low
+
+  * Just disable tests for now
+
+ -- Michael Terry <mterry@ubuntu.com>  Thu, 19 Jul 2012 16:13:54 -0400
+
+gigi (0.7.0+svn1074-0ubuntu2) quantal; urgency=low
+
+  * Fix test run
+
+ -- Michael Terry <mterry@ubuntu.com>  Thu, 19 Jul 2012 14:16:20 -0400
+
+gigi (0.7.0+svn1074-0ubuntu1) quantal; urgency=low
+
+  * Initial release
+
+ -- Michael Terry <mterry@ubuntu.com>  Thu, 19 Jul 2012 10:43:46 -0400
