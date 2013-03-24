@@ -1,0 +1,13 @@
+Index: freeorion-0.4.2~svn5890/CMakeLists.txt
+===================================================================
+--- freeorion-0.4.2~svn5890.orig/CMakeLists.txt	2013-03-03 13:15:36.000000000 +0100
++++ freeorion-0.4.2~svn5890/CMakeLists.txt	2013-03-21 20:12:10.403971720 +0100
+@@ -11,7 +11,7 @@
+ set(FREEORION_VERSION 0.4.2)
+ set(FREEORION_RELEASE false)
+ 
+-list(APPEND CMAKE_MODULE_PATH ${CMAKE_HOME_DIRECTORY}/cmake ${CMAKE_HOME_DIRECTORY}/GG/cmake)
++list(APPEND CMAKE_MODULE_PATH ${CMAKE_HOME_DIRECTORY}/cmake /usr/share/gigi/cmake /usr/share/OGRE/cmake/modules)
+ include(Config)
+ include(Util)
+ 

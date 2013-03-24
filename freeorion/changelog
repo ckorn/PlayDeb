@@ -1,0 +1,35 @@
+freeorion (0.4.2~svn5890-1~getdeb1) quantal; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 21 Mar 2013 20:12:04 +0100
+
+freeorion (0.4-0ubuntu5) quantal; urgency=low
+
+  * Fix Ogre path adjusting
+
+ -- Michael Terry <mterry@ubuntu.com>  Fri, 20 Jul 2012 17:40:55 -0400
+
+freeorion (0.4-0ubuntu4) quantal; urgency=low
+
+  * Fix version better
+
+ -- Michael Terry <mterry@ubuntu.com>  Fri, 20 Jul 2012 13:21:01 -0400
+
+freeorion (0.4-0ubuntu3) quantal; urgency=low
+
+  * Ship server and adjust the version to be user-friendly
+
+ -- Michael Terry <mterry@ubuntu.com>  Fri, 20 Jul 2012 12:47:59 -0400
+
+freeorion (0.4-0ubuntu2) quantal; urgency=low
+
+  * Adjust locations, add desktop file
+
+ -- Michael Terry <mterry@ubuntu.com>  Thu, 19 Jul 2012 23:12:29 -0400
+
+freeorion (0.4-0ubuntu1) quantal; urgency=low
+
+  * Initial release
+
+ -- Michael Terry <mterry@ubuntu.com>  Thu, 19 Jul 2012 17:00:43 -0400

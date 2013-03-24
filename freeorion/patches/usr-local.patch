@@ -1,0 +1,22 @@
+Index: freeorion-0.4.2~svn5890/util/Directories.cpp
+===================================================================
+--- freeorion-0.4.2~svn5890.orig/util/Directories.cpp	2012-08-17 02:13:44.000000000 +0200
++++ freeorion-0.4.2~svn5890/util/Directories.cpp	2013-03-21 20:12:15.315971573 +0100
+@@ -164,7 +164,7 @@
+ 
+ const fs::path GetRootDataDir() {
+     if (!g_initialized) InitDirs("");
+-    char* dir_name = br_find_data_dir("/usr/local/share");
++    char* dir_name = br_find_data_dir("/usr/share/games");
+     fs::path p(dir_name);
+     std::free(dir_name);
+     p /= "freeorion";
+@@ -228,7 +228,7 @@
+ 
+     if (problem) {
+         // failed trying to parse the call path, so try hard-coded standard location...
+-        char* dir_name = br_find_bin_dir("/usr/local/bin");
++        char* dir_name = br_find_bin_dir("/usr/games");
+         fs::path p(dir_name);
+         std::free(dir_name);
+ 

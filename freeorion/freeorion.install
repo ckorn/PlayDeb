@@ -1,0 +1,10 @@
+debian/tmp/usr/freeorion		usr/lib/games/freeorion
+debian/tmp/usr/freeorionca		usr/lib/games/freeorion
+debian/tmp/usr/freeoriond		usr/lib/games/freeorion
+debian/scripts/freeorion		usr/games
+debian/scripts/freeorionca		usr/games
+debian/scripts/freeoriond		usr/games
+ogre_plugins.cfg			usr/share/games/freeorion
+OISInput.cfg				usr/share/games/freeorion
+debian/freeorion.desktop		usr/share/applications
+debian/freeorion.png			usr/share/pixmaps

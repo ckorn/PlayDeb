@@ -1,0 +1,12 @@
+Index: freeorion-0.4.2~svn5890/cmake/Version.cpp.in
+===================================================================
+--- freeorion-0.4.2~svn5890.orig/cmake/Version.cpp.in	2009-06-04 20:36:08.000000000 +0200
++++ freeorion-0.4.2~svn5890/cmake/Version.cpp.in	2013-03-21 20:13:00.571970226 +0100
+@@ -2,6 +2,6 @@
+ 
+ const std::string& FreeOrionVersionString()
+ {
+-    static const std::string retval = "v@FREEORION_VERSION@ [Rev @svn_revision_number@]";
++    static const std::string retval = "v@FREEORION_VERSION@";
+     return retval;
+ }

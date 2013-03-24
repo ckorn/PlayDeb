@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+TAR_VER = $(shell dpkg-parsechangelog | sed -ne 's/^Version: \(.*\)-.*/\1/p')
+SVN_REV = 5890
+
+OGRE_PLUGINDIR = $(shell pkg-config --variable=plugindir OGRE)
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/tmp
+
+override_dh_install:
+	dh_install --list-missing
+	# this cannot be patched because the directory is architecture specific (e.g. /usr/lib/x86_64-linux-gnu/OGRE-1.7.4)
+	sed -i "s|PluginFolder=.*|PluginFolder=${OGRE_PLUGINDIR}|" debian/freeorion/usr/share/games/freeorion/ogre_plugins.cfg
+
+get-orig-source:
+	wget "http://freeorion.svn.sourceforge.net/viewvc/freeorion/trunk/FreeOrion/?view=tar&pathrev=${SVN_REV}" -O "freeorion_${TAR_VER}.orig.tar.gz"
