@@ -1,3 +1,10 @@
+redeclipse (1.4-2) experimental; urgency=low
+
+  * Add upstream server install patch
+    - This fixes broken server-only installs
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 25 Mar 2013 21:18:33 +0100
+
 redeclipse (1.4-1) experimental; urgency=low
 
   * New upstream release
