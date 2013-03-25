@@ -3,7 +3,7 @@
 	dh $@
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DWITH_FREETYPE2:string="ON"
+	dh_auto_configure -- -DWITH_FREETYPE2:string="ON" -DWITH_MOVIES:string="OFF"
 
 override_dh_auto_install:
 	dh_auto_install
