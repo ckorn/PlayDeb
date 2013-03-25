@@ -2,3 +2,4 @@ windowed-by-default.patch
 build-with-system-enet.patch
 desktop-file-don-t-quote-icon-app-name.patch
 system-install-symlink-to-version.cfg-in-server-inst.patch
+don-t-check-for-keymap-when-using-standalone.patch

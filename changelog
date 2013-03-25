@@ -1,7 +1,8 @@
 redeclipse (1.4-2) experimental; urgency=low
 
-  * Add upstream server install patch
-    - This fixes broken server-only installs
+  * Fix broken server-only installs
+    - Add upstream server install patch
+    - Add upstream patch enabling the server to start without data
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 25 Mar 2013 21:18:33 +0100
 
