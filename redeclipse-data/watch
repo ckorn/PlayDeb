@@ -1,0 +1,2 @@
+version=3
+http://sf.net/redeclipse/redeclipse_([0-9\.]+)_(?:nix|linux)(?:_bsd)\.tar\.bz2

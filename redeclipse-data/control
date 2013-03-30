@@ -1,0 +1,18 @@
+Source: redeclipse-data
+Section: games
+Priority: optional
+Uploaders: Martin Erik Werner <martinerikwerner@gmail.com>
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               cube2font,               
+               fonts-play
+Standards-Version: 3.9.3
+Homepage: http://www.redeclipse.net
+
+Package: redeclipse-data
+Architecture: all
+Depends: ${misc:Depends}
+Enhances: redeclipse-server
+Description: data for the Red Eclipse FPS game
+ This package contains the data content, e.g. maps, models, textures, sounds,
+ etc. for the Red Eclipse FPS game.
