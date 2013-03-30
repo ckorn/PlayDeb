@@ -3,17 +3,14 @@ Section: games
 Priority: optional
 Uploaders: Martin Erik Werner <martinerikwerner@gmail.com>
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
-Build-Depends: cube2font,
-               debhelper (>= 9),
+Build-Depends: debhelper (>= 9),
+               cube2font,               
                fonts-play
 Standards-Version: 3.9.3
 Homepage: http://www.redeclipse.net
-Vcs-Git: git://git.debian.org/pkg-games/redeclipse-data.git
-Vcs-Browser: http://git.debian.org/?p=pkg-games/redeclipse-data.git;a=summary
 
 Package: redeclipse-data
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends}
 Enhances: redeclipse-server
 Description: data for the Red Eclipse FPS game

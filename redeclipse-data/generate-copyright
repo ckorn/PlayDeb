@@ -1,0 +1,63 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"/..
+
+# Header
+cat <<EOF > debian/copyright-new
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Red Eclipse
+Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
+                  Lee "Eihrul" Salzman <lsalzman@gmail.com>
+Source: https://redeclipse.svn.sourceforge.net
+ All sourcecode-related items have been removed from the source package, they
+ are shipped in the redeclipse source package instead.
+License: Red-Eclipse
+EOF
+
+# "Red-Eclipse" summary license, indented
+sed -e 's/^/\ /' -e 's/^\ $/\ \./' doc/license.txt >> debian/copyright-new
+
+# Reason for being "non-free"
+cat <<EOF >> debian/copyright-new
+Disclaimer:
+ This package is not part of Debian due to missing "sources" for artwork, audio,
+ models, etc.
+ .
+ If you read the DFSG to also require "source" for all media content (and most
+ people in Debian do), it implies that for example images created via GIMP
+ would need to have the original xcf-files available, models created in
+ Blender would need to have the original blend-files, music created by
+ combining samples in audacity would need to have the original samples
+ available, and the corresponding audacity project file, etc.
+ .
+ Much of the data for redeclipse does fail this requirement. I've guesstimated
+ that for Red Eclipse, it might be possible to get the "source" for maybe 30%
+ of the media content, with considerable effort and time spent. I felt that it
+ would not be a particularly useful exercise, and decided not to do so, at
+ least for the time being.
+EOF
+
+# Remove duplicated Format: line and insert upstream license dep5 file
+sed '/Format:.*/d' doc/all-licenses.txt >> debian/copyright-new
+
+# Remove record stating some dirs are omitted (the dirs are removed in Debian)
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: bin\//' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove all records related to src/*
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: src\//' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Add marker for inserting Debian chunk
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 ~ /^License: Zlib$/ { print "INSERT_DEBIAN_HERE" } { print }' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Debian chunk
+ed -s debian/copyright-new <<EOF
+/INSERT_DEBIAN_HERE/c
+Files: debian/*
+Copyright: 2011-2013 Martin Erik Werner <martinerikwerner@gmail.com>
+License: Zlib
+.
+w
+EOF
