@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /usr/share/games/paintown/
+/usr/lib/games/paintown/paintown -d $(pwd) $@

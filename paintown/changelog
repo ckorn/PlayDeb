@@ -1,0 +1,83 @@
+paintown (3.6.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version (LP: #1162000)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 29 Mar 2013 20:38:33 +0100
+
+paintown (3.6.0.11~precise) precise; urgency=low
+
+  * Latest packaging
+
+ -- Jon Rafkind <jon@rafkind.com>  Mon, 20 Aug 2012 14:36:45 -0600
+
+paintown (3.6.0.1) natty; urgency=low
+
+  * Latest packaging
+
+ -- Jon Rafkind <jon@rafkind.com>  Fri, 16 Dec 2011 15:29:30 -0700
+
+paintown (3.5.0-0ubuntu1~ppao1) oneiric; urgency=low
+
+  * Build for 11.10
+
+ -- Savvas Radevic <vicedar@gmail.com>  Sun, 20 Nov 2011 10:12:17 +0100
+
+paintown (3.5.0) karmic; urgency=low
+
+  * New version
+ 
+ -- Jon Rafkind <jon@rafkind.com>  Mon, 17 Jan 2011 18:05:11 -0700
+
+paintown (3.4.0.8) karmic; urgency=low
+
+  * Use DESTDIR in install.sh
+ 
+ -- Jon Rafkind <jon@rafkind.com>  Sun, 03 Oct 2010 19:04:08 -0600
+
+paintown (3.4.0.7) karmic; urgency=low
+
+  * Install to DESTDIR
+
+ -- Jon Rafkind <jon@rafkind.com>  Sun, 03 Oct 2010 15:59:47 -0600
+
+paintown (3.4.0.6) karmic; urgency=low
+
+  * Ignore configure step
+
+ -- Jon Rafkind <jon@rafkind.com>  Sun, 03 Oct 2010 11:31:31 -0600
+
+paintown (3.4.0.5) karmic; urgency=low
+
+  * Use 9.10 to get a newer dh
+
+ -- Jon Rafkind <jon@rafkind.com>  Sun, 03 Oct 2010 11:16:24 -0600
+
+paintown (3.4.0.4) jaunty; urgency=low
+
+  * Trivial fixes
+
+ -- Jon Rafkind <jon@rafkind.com>  Sun, 03 Oct 2010 10:40:44 -0600
+
+paintown (3.4.0.3) jaunty; urgency=low
+
+  * Fixes to dh build
+
+ -- Jon Rafkind <jon@rafkind.com>  Sat, 02 Oct 2010 23:42:37 -0600
+
+paintown (3.4.0.2) jaunty; urgency=low
+
+  * Add more dependancies
+ 
+ -- Jon Rafkind <jon@rafkind.com>  Sat, 02 Oct 2010 19:27:35 -0600
+
+paintown (3.4.0.1) jaunty; urgency=low
+
+  * Trivial fixes to make launchpad happy
+
+ -- Jon Rafkind <jon@rafkind.com>  Sat, 02 Oct 2010 18:56:15 -0600
+
+paintown (3.4.0) jaunty; urgency=low
+
+  * First PPA release
+
+ -- Jon Rafkind <jon@rafkind.com>  Fri, 01 Oct 2010 23:36:06 -0600
