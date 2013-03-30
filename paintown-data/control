@@ -1,0 +1,19 @@
+Source: paintown-data
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               unzip
+Homepage: http://paintown.sf.net
+Standards-Version: 3.9.3
+
+Package: paintown-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: 2-d fighting game similar to Streets of Rage (data package)
+ Paintown is a 2-d fighting game similar to Streets of Rage
+ and Teenage Mutant Ninja Turtles. Paintown comes with level and animation 
+ editors to help with the creation of new content. Paintown also implements the
+ MUGEN engine.
+ .
+ This package contains the data files.

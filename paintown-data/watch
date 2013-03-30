@@ -1,0 +1,2 @@
+version=3
+http://sf.net/paintown/data-([\d\.]+)\.(?:gz|xz|bz2|zip)

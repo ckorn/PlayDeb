@@ -1,0 +1,6 @@
+paintown-data (3.6.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version (LP: #1162000)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 29 Mar 2013 20:38:33 +0100
+
