@@ -5,5 +5,4 @@ Abstract: Example scripts for setting up a Red Eclipse server.
 Section: Games/Action
 
 Format: Text
-Files: /usr/share/doc/redeclipse-server/examples/servexec.cfg.gz
-       /usr/share/doc/redeclipse-server/examples/servinit.cfg
+Files: /usr/share/doc/redeclipse/examples/servinit.cfg

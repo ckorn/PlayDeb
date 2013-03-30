@@ -15,7 +15,7 @@ If the Red Eclipse server crashes on your system, please include a backtrace wit
 
 Once at the gdb prompt, start the Red Eclipse server via
 
-  run -h/tmp/recfg
+  run -h/tmp/recfg -glog_v4.txt -v4
 
 Once the Red Eclipse server has crashed, type
 
@@ -24,8 +24,5 @@ Once the Red Eclipse server has crashed, type
 to obtain the backtrace. Please attach the output when you are reporting a bug
 about crashes.
 
-Also, please include the log messages leading up to the crash, you can set
-maximum log verbosity by running
-
-  redeclipse-server -h/tmp/recfg -v4
-
+Also, please include the log messages leading up to the crash, which was
+created as /tmp/recfg/log_v4.txt.

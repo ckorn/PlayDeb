@@ -4,42 +4,47 @@ Priority: optional
 Uploaders: Martin Erik Werner <martinerikwerner@gmail.com>
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: debhelper (>= 9),
-               imagemagick,
                libenet-dev,
-               libgl1-mesa-dev,
+               libgl1-mesa-dev | libgl-dev,
                libsdl-image1.2-dev,
                libsdl-mixer1.2-dev,
-               libsdl1.2-dev,
+               libsdl1.2-dev | libsdl-dev,
                libx11-dev,
-               zlib1g-dev
+               zlib1g-dev | libz-dev
 Standards-Version: 3.9.3
 Homepage: http://www.redeclipse.net
-Vcs-Git: git://git.debian.org/pkg-games/redeclipse.git
-Vcs-Browser: http://git.debian.org/?p=pkg-games/redeclipse.git;a=summary
 
 Package: redeclipse
+XB-Thumbnail-Url: http://redeclipse.net/bits/thumbs/02.jpg
+XB-Screenshot-Url: http://redeclipse.net/bits/images/02.jpg
 Architecture: any
-Pre-Depends: dpkg (>= 1.15.6~)
 Depends: redeclipse-data (>= ${source:Upstream-Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Description: single-player and multi-player first-person ego-shooter
- A single-player and multi-player first-person ego-shooter, built as a
- total conversion of Cube Engine 2, which lends itself toward a balanced
- gameplay, with a general theme of agility in a variety of environments.
+Description: multiplayer FPS game based on Cube2
+ A single-player and multi-player first-person ego-shooter, built on Cube
+ Engine 2, which lends itself toward a balanced gameplay, completely at the
+ control of map makers, while maintaining a general theme of agility in a
+ variety of environments.
+ .
+ Features:
+  * Balanced gameplay, with a general theme of agility in a variety of
+    environments
+  * Parkour, impulse boosts, dashing, sliding, and other tricks
+  * Favourite gamemodes with tons of mutators and variables
+  * Available for Windows, Linux/BSD and Mac OSX
+  * Builtin editor lets you create your own maps cooperatively online
 
 Package: redeclipse-dbg
-Section: contrib/debug
+Section: debug
 Priority: extra
 Architecture: any
-Pre-Depends: dpkg (>= 1.15.6~)
 Depends: redeclipse (= ${binary:Version}), ${misc:Depends}
 Description: debug symbols for the Red Eclipse FPS game
  This package contains the debugging symbols for the Red Eclipse FPS game.
 
 Package: redeclipse-server
 Architecture: any
-Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: server for the Red Eclipse FPS game
  This package contains the dedicated server for the Red Eclipse FPS game, it
@@ -47,10 +52,9 @@ Description: server for the Red Eclipse FPS game
  init integration.
 
 Package: redeclipse-server-dbg
-Section: contrib/debug
+Section: debug
 Priority: extra
 Architecture: any
-Pre-Depends: dpkg (>= 1.15.6~)
 Depends: redeclipse-server (= ${binary:Version}), ${misc:Depends}
 Description: debug symbols for the Red Eclipse dedicated server
  This package contains the debugging symbols for the dedicated server of the

@@ -1,165 +1,47 @@
-redeclipse (1.3.1-1~getdeb1) precise; urgency=low
+redeclipse (1.4-1~getdeb1) precise; urgency=low
 
-  * New upstream version
-    = Red Eclipse 1.3 =
-    Gameplay:
-     * New "impulse vaulting" movement (press Q next to an obstacle to use it
-     to propel yourself upward)
-     * Points no longer given for consecutively dropping and picking up
-     affinities (flags/ball)
-     * AI now uses "random walk" when no waypoints are present
-     * Players in time trial are now non-solid by default (/{sv_}trialstyle)
+  * New upstream version (LP: #1161997)
 
-    Weapons:
-     * Rocket launcher now spawns in instagib
-     * Melee no longer requires an impulse action before (back to 1.1
-     behaviour)
-     * Flamer primary and secondary range and size reduced, secondary fire
-     lifetime of particles increased
-     * Pistol recoil slightly increased, secondary now fires twice as many
-     particles with more spread, but with less damage and longer intervals
-     * SMG secondary now fires balls which after a short distance explodes
-     into a large amount of radial flak
-     * Shotgun recoil increased
-     * Plasma primary damage and radius reduced, primary and secondary recoil
-     increased
-     * Rifle recoil increased
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 29 Mar 2013 21:23:04 +0100
 
-    Maps:
-     * Institute, new map
-     * Biolytic, new map
-     * Ares, updated to version 1.9
-     * Conflict, new map
-     * Fourplex, new map
-     * Starlibido, new map
-     * Industrial, new map
-     * Oneiroi, new map
-     * Pumpstation, new map
-     * Dawn, removed from rotations
-     * Neodrive, new time-trial map
-     * Hawk, new time-trial map
-     * Ubik, clip/water/door fixes
-     * Alphacampaign, removed
-     * Canals, new map
-     * Wet, tweaked obstacles
-     * Keystone, revamped as "Keystone2k"
-     * Isolation, added bomber-ball waypoints
+redeclipse (1.4-2) experimental; urgency=low
 
-    Interface & Menus:
-     * Brush selection now mapped to K+wheel (unbound in 1.2, J+wheel in 1.1)
-     * Added ability to save and automatically use arena loadouts
-     * Show player count on server browser
-     * Show unresponsive servers (bottom of server list)
-     * Several new international keycodes are now bind-able as WORLD_{0..95}
-     * Added ability to mark map favourites (pinned to top of map list)
-     * Now possible to skip dead players while spectating (on by default in
-     duel & survivor; /followdead, /spectvdead)
-     * Added on-screen help for commands/vars/etc. (work in progress)
-     * Blank names are no longer possible
-     * Added Texture preview on hover in browser
-     * Bot info hidden on scoreboard per default
-     * Joins/leaves no longer shown when connecting/disconnecting
-     * Added player model preview in profile selection
-     * /kidmode (reduced blood & gore) is now persistent
+  * Fix broken server-only installs
+    - Add upstream server install patch
+    - Add upstream patch enabling the server to start without data
 
-    Modes & Mutators:
-     * Hover mutator removed
-     * Added "gamespeedlock" to independently allow servers to unlock
-     "gamespeed" (still checks varslock though)
-     * Added {mode,muts}idxname variables for mode and mutator values
-     * Added server variable "<weap>reloads" now defines the number of times
-     a weapon can reload (-1 = infinite, 0 = never, 1+ = count)
-     * Bomber-ball basket (possible to score by throwing ball into goal) set
-     as the default, moved from mutator to server-side variable
-     (bomberbasket)
-     * Removed campaign and teambalance 3,
-     * Added new mutator "coop" (humans vs bots)
-     * Added new mutator "king of the hill" for defend the flag
-     * Multi and team mutators are now mutually exclusive
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 25 Mar 2013 21:18:33 +0100
 
-    Modding & Data Assets:
-     * Removed kitchen and kitchen1 textures from trak4 (unused)
-     * track_11, track_12, new music
-     * Skyboxes: arid2, interstellar, miramar, stormydays - added; dusk -
-     removed
-     * Now possible to link playerstart/affinity/checkpoint to
-     mapsound/particles/lightfx
-     * Added texture based slippery physics (textcoastscale and vcoastscale,
-     sets as a scale of floorcoast/slidecoast, only works on top facing
-     textures)
-     * Added sigma/kappa concrete textures and mapmodels
-     * Added style parameter for /editmat
-     (empty/non-empty/entirely-solid/non-entirely-solid)
+redeclipse (1.4-1) experimental; urgency=low
 
-    Multiplayer & Servers:
-     * Added server hosting and player guidelines for the master server
-     * mapname.wpt and mapname.txt is now included when sending a map
-     * Allow players to cast votes for ones made by an admin which conflict
-     with a lock control
-     * Added ability to lock demos/spec/kick/ban to specific access levels
-     (master/auth/admin), likewise for {mode,maps,vars,vote}lock
-     * Expanded admin control (can now add allows, mute, and limit team
-     changing)
-     * Renamed privileges: master->helper, auth->moderator
-     * Added ability to specify a ban/kick/etc. reason
-     * Added ability to get client hostname (/echo (gethostname <cn>) or
-     /showhostname to show on scoreboard)
-     * Intermission now waits full time before proceeding to the next map
-     * Added auto-mute on chat spam (warns on 3 lines per 10 seconds, mutes
-     after 3 warns)
-     * Voting mid-game now requires unanimous vote
-     * Added selectable voting styles (/voteinterm, /votestyle)
-     * Client-based servers no longer put into private mode
+  * New upstream release
+  * Move server examples to /usr/share/games/doc/redeclipse/
+  * Added screenshot URL for Ubuntu
+  * Removed Enet from source package (unused)
+  * Drop dpkg Pre-Depends (upgrades from old Ubuntu versions not relevant)
+  * Include version.cfg in tarball, required for server
 
-    Core & Install:
-     * Corrected icon size for x32 and x48 versions
-     * SDL 1.2.15
-     * Remove "-r" command-line option
-     * Enet 1.3.5
-     * 64bit builds for Windows
-     * Use APP/app* variables for name abstraction (simplifies
-     forking/install renaming)
-     * *nix icons stored as PNG/XPM, no ImageMagick needed in system-install
-     process
-     * all-licenses.txt added, exhaustive copyright/license breakdown
-     * Basic math commands in CubeScript now accepts multiple arguments
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Fri, 15 Feb 2013 00:30:48 +0100
 
-    Additional Fixed Bugs:
-     * #103 - [minor] Revenge-seeking remains after team-change
-     * #112 - Fix server browser sorting full servers to the bottom
-     * #115 - When joining mid-match, bomber-ball affinities aren't enabled
-     * #128 - Buff state not properly synchronised
-     * #129 - Spawn rotation problems
-     * #136 - Arena-expert and submodes are bugged (rocket & grenade select
-     issues)
-     * #132 - venus geom errors
-     * #135 - ghost geom errors
-     * #117 - Team-duel problems (force cycle team member after 3 wins)
-     * #113 - Botbalance issues (breaks if teambalance = 2 or team imbalance
-     is > 1)
-     * #154 - Fix darkness omega bb-goal to be at same position as alpha
-     * #158 - Possibility to miss first checkpoint on testchamber
-     * #164 - synchronise death count in resume/frag messages
-     * #165 - ghost clipping (disable odd sniper spot)
-     * #148 - replaced tabs on texture gui with scrolling pages
-     * #141 - can select a team while in spectator to join the game on a
-     specific team
-     * #126 - Looping focus-oriented sounds persist after target change (new
-     camerapos code takes care of attenuation already)
-     * #130 - Auth Identification Announcements (printed such that it is
-     visible to the authing user)
-     * #120 - -g option does not work with absolute paths
-     * #177 - (roughly) predict time remaining in server list
-     * #102 - Some flat geometry walls acts as crouch-entrance
-     * #189 - overcome MAXSTRLEN limitation in N_COMMAND/N_EDITVAR by
-     dynamically allocating and transmitting arguments
-     * #197 - synchronise sticky grenade offset position across the network
-     * #207 - corrected bug with projectile "in wall" checks
-     * #209 - ghost texture tweaks
-     * #211 - Going in water doesn't reset the "able to double jump" state
-     * #210 - Map Bath has some texture errors
+redeclipse (1.3.1-1) experimental; urgency=low
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 02 Sep 2012 12:29:23 +0200
+  * New upstream release
+  * XZ compression for orig tarball
+  * No more icon conversion in build
+    - Drop ImageMagick build-dependency
+  * Dropped debian/patches/build-with-ldflags.patch, upstreamed
+  * Add unversioned lib dependency alternatives
+    - libgl1-mesa-dev | libgl-dev
+    - libsdl1.2-dev | libsdl-dev
+    - lib1g-dev | libz-dev
+  * Enable hardening build flags
+    - dh compat level 9
+    - Removed build-with-debug-symbols.patch:
+      Now handled in d/rules instead
+  * Enable paralell build
+  * debian/copyright now generated from upstream equivalent
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 01 Sep 2012 21:11:34 +0200
 
 redeclipse (1.2-3) unstable; urgency=high
 

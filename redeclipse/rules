@@ -1,45 +1,52 @@
 #!/usr/bin/make -f
 
-%:
-	dh $@ --sourcedirectory=src
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
-override_dh_auto_clean:
-	dh_auto_clean
+%:
+	dh $@ --sourcedirectory=src --parallel
 
 override_dh_auto_build:
-	dh_auto_build -- client server icons
+	dh_auto_build -- \
+		CPPFLAGS="$(CPPFLAGS)" \
+		CFLAGS="$(CFLAGS) $(CPPFLAGS)" \
+		CXXFLAGS="$(CXXFLAGS) $(CPPFLAGS)" \
+		LDFLAGS="$(LDFLAGS)" \
+		client server
 
 override_dh_strip:
 	dh_strip -predeclipse --dbg-package=redeclipse-dbg
 	dh_strip -predeclipse-server --dbg-package=redeclipse-server-dbg
-	dh_strip
 
 override_dh_auto_install:
-	dh_auto_install -- prefix=/usr games=/games gamesbin=/games \
+	dh_auto_install -- \
+		CXXFLAGS="$(CXXFLAGS)" \
+		ICON="" \
+		prefix=/usr games=/games gamesbin=/games \
 		system-install-client system-install-server \
 		system-install-docs system-install-menus
-	install -d debian/tmp/usr/share/pixmaps
-	convert 'src/redeclipse.ico[1]' \
-		debian/tmp/usr/share/pixmaps/redeclipse.xpm
 
-override_dh_builddeb:
-	dh_builddeb -- -Zxz
+override_dh_compress:
+	dh_compress --exclude=.cfg
 
 VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
 DIR=redeclipse-$(VER).orig
-TAR=redeclipse_$(VER).orig.tar.bz2
+UTAR=redeclipse_$(VER).orig.tar.bz2
+TAR=redeclipse_$(VER).orig.tar.xz
 get-orig-source:
 	uscan --noconf --force-download --download-current-version --destdir=.
 	rm -rf $(DIR)
-	tar -xf $(TAR)
-	rm -f $(TAR)
-	mv redeclipse/ $(DIR)
+	tar -xf $(UTAR)
+	rm -f $(UTAR)
+	mv redeclipse-$(VER)/ $(DIR)
 	rm -rf $(DIR)/src/include/
+	rm -rf $(DIR)/src/enet/
 	rm -rf $(DIR)/src/xcode/
 	rm -rf $(DIR)/src/lib/
 	rm -rf $(DIR)/src/install/win/
 	rm -rf $(DIR)/bin/
-	find $(DIR)/data/ -mindepth 1 -not -wholename "*examples*" -delete
-	BZIP2="-9" tar -cj --owner root --group root --mode a+rX \
+	rm -rf $(DIR)/data
+	find $(DIR)/game/ -not -type d -not -iname 'version.cfg' -delete
+	find $(DIR)/game/ -empty -delete
+	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
 		-f $(TAR) $(DIR)
 	rm -rf $(DIR)

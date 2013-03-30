@@ -4,20 +4,18 @@ Description: Use system Enet instead of bundled version
 Origin: http://gitorious.org/chakra-packages/games/commit/1aae10c597cf09a281d47570e43c8892531cd9bf
 Author: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
 
-Index: redeclipse-1.3.1/src/Makefile
-===================================================================
---- redeclipse-1.3.1.orig/src/Makefile	2012-09-02 12:31:30.000000000 +0200
-+++ redeclipse-1.3.1/src/Makefile	2012-09-02 12:34:48.862733601 +0200
-@@ -9,7 +9,7 @@
- PLATFORM= $(shell uname -s)
- PLATFORM_SUFFIX=_native
+--- a/src/core.mk
++++ b/src/core.mk
+@@ -28,7 +28,7 @@
+ CXX_TEMP:=$(CXX)
+ override CXX=$(TOOLSET_PREFIX)$(CXX_TEMP)
  
--INCLUDES= -Ishared -Iengine -Igame -Ienet/include
-+INCLUDES= -Ishared -Iengine -Igame -I/usr/share/enet/include
+-INCLUDES= -Ishared -Iengine -Igame -Ienet/include $(APPFLAGS)
++INCLUDES= -Ishared -Iengine -Igame $(APPFLAGS)
+ 
  
  STRIP=
- ifeq (,$(findstring -g,$(CXXFLAGS)))
-@@ -42,7 +42,7 @@
+@@ -66,7 +66,7 @@
  CLIENT_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lSDL -lSDL_image -lSDL_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
  else
  CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
@@ -26,7 +24,7 @@ Index: redeclipse-1.3.1/src/Makefile
  endif
  ifeq ($(PLATFORM),Linux)
  CLIENT_LIBS+= -lrt
-@@ -113,7 +113,7 @@
+@@ -137,7 +137,7 @@
  SERVER_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lzlib1 -lenet -lws2_32 -lwinmm
  else
  SERVER_INCLUDES= -DSTANDALONE $(INCLUDES)
@@ -35,7 +33,7 @@ Index: redeclipse-1.3.1/src/Makefile
  endif
  SERVER_OBJS= \
  	shared/crypto-standalone.o \
-@@ -178,13 +178,13 @@
+@@ -202,13 +202,13 @@
  	$(STRIP) $(WINBIN)/$(APPSERVER).exe
  endif
  else

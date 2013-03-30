@@ -1,8 +1,9 @@
 Document: redeclipse
-Title: Red Eclipse Readme
+Title: Red Eclipse Information
 Author: Red Eclipse Team
-Abstract: General readme for Red Eclipse
+Abstract: General information for Red Eclipse
 Section: Games/Action
 
 Format: Text
 Files: /usr/share/doc/redeclipse/readme.txt.gz
+       /usr/share/doc/redeclipse/guidelines.txt.gz
