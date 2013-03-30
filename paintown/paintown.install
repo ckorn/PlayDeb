@@ -1,0 +1,4 @@
+paintown		usr/lib/games/paintown
+debian/scripts/paintown	usr/games
+debian/paintown.desktop	usr/share/applications
+debian/paintown.png	usr/share/pixmaps
