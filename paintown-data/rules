@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf data-3.6.0
+
+override_dh_auto_install:
+	unzip *.zip
+	find data-3.6.0 -type f -execdir chmod -x {} \;
