@@ -1,0 +1,4 @@
+debian/scripts/pokemon-online		usr/games
+bin/Pokemon-Online			usr/lib/games/pokemon-online
+debian/pokemon-online-client.desktop	usr/share/applications
+debian/pokemon-online.xpm		usr/share/pixmaps
