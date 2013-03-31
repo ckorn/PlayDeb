@@ -1,3 +1,18 @@
+manaplus (1:1.3.3.31-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: talking text position.
+    fix: mumble configure parameter.
+    fix: per server settings update.
+    fix: custom repeat interval.
+    add: improve map loading speed.
+    add: language chat tab (evol only).
+    add: improve speed.
+    add: restore auction bot support.
+    add: disable more particles if particle egine disabled.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 31 Mar 2013 12:44:41 +0200
+
 manaplus (1:1.3.3.17-1~getdeb1) precise; urgency=low
 
   * New upstream version
