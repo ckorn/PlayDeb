@@ -1,0 +1,168 @@
+Source: pokemon-online
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: dpkg-dev (>= 1.16.1),
+               debhelper (>= 9),
+               qt4-qmake,
+               libqt4-dev (>= 4.8),
+               libzip-dev,
+               libphonon-dev,
+               libqt4-opengl-dev
+Standards-Version: 3.9.3
+Homepage: http://pokemon-online.eu
+
+Package: pokemon-online-client
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         libqt4-declarative-shaders,
+         libqt4-declarative-particles,
+         pokemon-online-data (= ${source:Version})
+Suggests: pokemon-online-client-plugins
+Provides: pokemon-online
+Description: Pokemon battle simulator
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ This is the Pokemon Online client.
+
+Package: pokemon-online-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Pokemon battle simulator (game data)
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ These are the common data files for Pokemon Online.
+
+Package: pokemon-online-client-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: pokemon-online-client (= ${binary:Version}),
+         ${misc:Depends}
+Description: Pokemon battle simulator (client debug)
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ This package contains the debugging symbols for the client.
+
+Package: pokemon-online-client-plugins
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         pokemon-online-client (= ${source:Version})
+Description: Pokemon battle simulator (client plugins)
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ These are the Pokemon Online client plugins.
+
+Package: pokemon-online-client-plugins-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: pokemon-online-client-plugins (= ${binary:Version}), 
+         ${misc:Depends}
+Description: Pokemon battle simulator (client plugins debug)
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ This package contains the debugging symbols for the client plugins.
+
+Package: libpo-pokemoninfo1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: libpo-pokemoninfo (runtime)
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ This package contains the runtime library. 
+
+Package: libpo-pokemoninfo-dev
+Section: libdevel
+Architecture: any
+Depends: libpo-pokemoninfo1 (= ${binary:Version}),
+         ${misc:Depends}
+Description: libpo-pokemoninfo (development)
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ This package contains the development header files.
+
+Package: libpo-utilities1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: libpo-utilities (runtime)
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ This package contains the runtime library. 
+
+Package: libpo-utilities-dev
+Section: libdevel
+Architecture: any
+Depends: libpo-utilities1 (= ${binary:Version}),
+         ${misc:Depends}
+Description: libpo-utilities (development)
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ This package contains the development header files.
+
+Package: libpo-battlemanager1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: libpo-battlemanager (runtime)
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ This package contains the runtime library. 
+
+Package: libpo-battlemanager-dev
+Section: libdevel
+Architecture: any
+Depends: libpo-battlemanager1 (= ${binary:Version}),
+         ${misc:Depends}
+Description: libpo-battlemanager (development)
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ This package contains the development header files.

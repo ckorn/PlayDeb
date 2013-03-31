@@ -1,0 +1,48 @@
+Description: Fix data path for deb package build
+Author: Fabio Fantoni <fabio.fantoni@tiscali.it>
+Index: pokemon-online-2.0.1/src/Teambuilder/pluginmanager.cpp
+===================================================================
+--- pokemon-online-2.0.1.orig/src/Teambuilder/pluginmanager.cpp	2013-03-30 16:27:20.738276987 +0100
++++ pokemon-online-2.0.1/src/Teambuilder/pluginmanager.cpp	2013-03-30 17:25:44.714172753 +0100
+@@ -257,7 +257,11 @@
+     QFileDialog *fd = new QFileDialog(this);
+     fd->setAttribute(Qt::WA_DeleteOnClose, true);
+     fd->setFileMode(QFileDialog::ExistingFile);
++#if defined(DEB_PKG)
++    fd->setDirectory("/usr/lib/games/pokemon-online/clientplugins");
++#else
+     fd->setDirectory("myplugins");
++#endif
+     fd->show();
+ 
+     connect(fd, SIGNAL(fileSelected(QString)), this, SLOT(addPlugin(QString)));
+Index: pokemon-online-2.0.1/src/Server/Server.pro
+===================================================================
+--- pokemon-online-2.0.1.orig/src/Server/Server.pro	2013-03-30 17:19:51.022183275 +0100
++++ pokemon-online-2.0.1/src/Server/Server.pro	2013-03-30 17:24:42.382174609 +0100
+@@ -5,7 +5,8 @@
+     script \
+     xml \
+     sql
+-TARGET = Server
++CONFIG(debian_package): TARGET = Pokemon-Online-Server
++!CONFIG(debian_package): TARGET = Server
+ DESTDIR = ../../bin
+ TEMPLATE = app
+ SOURCES += main.cpp \
+Index: pokemon-online-2.0.1/src/Server/pluginmanager.cpp
+===================================================================
+--- pokemon-online-2.0.1.orig/src/Server/pluginmanager.cpp	2013-03-30 16:27:20.726276989 +0100
++++ pokemon-online-2.0.1/src/Server/pluginmanager.cpp	2013-03-30 17:26:18.254171755 +0100
+@@ -204,7 +204,11 @@
+     QFileDialog *fd = new QFileDialog(this);
+     fd->setAttribute(Qt::WA_DeleteOnClose, true);
+     fd->setFileMode(QFileDialog::ExistingFile);
++#if defined(DEB_PKG)
++    fd->setDirectory("/usr/lib/games/pokemon-online/serverplugins");
++#else
+     fd->setDirectory("serverplugins");
++#endif
+     fd->show();
+ 
+     connect(fd, SIGNAL(fileSelected(QString)), this, SLOT(addPlugin(QString)));

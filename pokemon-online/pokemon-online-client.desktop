@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Pokémon Online client
+Comment=Pokémon battle simulator (client)
+Exec=pokemon-online
+Icon=pokemon-online
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GTK;Game;StrategyGame;
