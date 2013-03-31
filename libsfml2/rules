@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+version=2
+major=1
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+	find $(CURDIR)/debian/tmp -name Win32 -o -name OSX -print | xargs /bin/rm -rf
+
+override_dh_install:
+	dh_install --list-missing
+
+override_dh_strip:
+	dh_strip --dbg-package=libsfml$(version)-dbg
+
