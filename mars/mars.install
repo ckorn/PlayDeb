@@ -1,0 +1,3 @@
+usr/games
+debian/mars.desktop		usr/share/applications
+debian/mars.png			usr/share/pixmaps

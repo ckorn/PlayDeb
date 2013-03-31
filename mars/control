@@ -1,0 +1,73 @@
+Source: mars
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               cmake,
+               libsfml2-dev,
+               libtag1-dev,
+               libfribidi-dev,
+               mesa-common-dev,
+               libgl1-mesa-dev,
+               libglu1-mesa-dev
+Standards-Version: 3.9.3
+Homepage: http://mars-game.sourceforge.net/
+
+Package: mars
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         mars-data (= ${source:Version})
+Description: Ridiculous shooter
+ In year 3547, civilizations all over the galaxy have
+ settled their own planets, living in peace and harmony
+ with its environment. But outside the contemplative
+ habitats, the GREAT WAR is raging.
+ As a famous fighter on your way to never ending honor
+ and prosperity, you have to protect your planet from
+ the oncoming doom of your jealous neighbours!
+ Fight the battle, a true hero as you are was born for:
+ SPACEBALL.
+ Protect your planet from the sphere of death and defeat
+ your enemies by letting it crush into their ridiculous
+ globe.
+
+Package: mars-data
+Architecture: all
+Depends: ${misc:Depends},
+         fonts-deva-extra,
+         ttf-mars (= ${source:Version})
+Description: Ridiculous shooter (data package)
+ In year 3547, civilizations all over the galaxy have
+ settled their own planets, living in peace and harmony
+ with its environment. But outside the contemplative
+ habitats, the GREAT WAR is raging.
+ As a famous fighter on your way to never ending honor
+ and prosperity, you have to protect your planet from
+ the oncoming doom of your jealous neighbours!
+ Fight the battle, a true hero as you are was born for:
+ SPACEBALL.
+ Protect your planet from the sphere of death and defeat
+ your enemies by letting it crush into their ridiculous
+ globe.
+ .
+ (This package contains the data files).
+
+Package: ttf-mars
+Architecture: all
+Depends: ${misc:Depends}
+Description: Ridiculous shooter (font package)
+ In year 3547, civilizations all over the galaxy have
+ settled their own planets, living in peace and harmony
+ with its environment. But outside the contemplative
+ habitats, the GREAT WAR is raging.
+ As a famous fighter on your way to never ending honor
+ and prosperity, you have to protect your planet from
+ the oncoming doom of your jealous neighbours!
+ Fight the battle, a true hero as you are was born for:
+ SPACEBALL.
+ Protect your planet from the sphere of death and defeat
+ your enemies by letting it crush into their ridiculous
+ globe.
+ .
+ (This package contains the font files).
