@@ -1,0 +1,15 @@
+To not conflict with the existing libirrlicht-dev (1.7) package
+the headers are placed in a different directory.
+Index: choria-0.4.0/FindIrrlicht.cmake
+===================================================================
+--- choria-0.4.0.orig/FindIrrlicht.cmake	2013-03-31 21:28:31.000000000 +0200
++++ choria-0.4.0/FindIrrlicht.cmake	2013-03-31 23:09:44.801849852 +0200
+@@ -24,7 +24,7 @@
+ 		/usr/local
+ 	PATH_SUFFIXES
+ 		include
+-		irrlicht
++		irrlicht1.8
+ )
+ 
+ # find libraries

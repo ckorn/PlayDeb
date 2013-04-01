@@ -1,9 +1,8 @@
 #!/usr/bin/make -f
 %:
-	dh $@
+	dh $@ --parallel
 
-override_dh_auto_configure:
-	scons
-
-override_dh_auto_clean:
-	scons -c
+override_dh_install:
+	mkdir -p debian/tmp/usr/lib/games/choria
+	mv debian/tmp/usr/share/games/choria/choria debian/tmp/usr/lib/games/choria/
+	dh_install --list-missing
