@@ -1,4 +1,4 @@
+usr/share/applications
+usr/share/pixmaps
+usr/lib/games/choria
 debian/scripts/choria			usr/games
-debian/choria.png			usr/share/pixmaps
-debian/choria.desktop			usr/share/applications
-choria					usr/lib/games/choria

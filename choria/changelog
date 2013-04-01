@@ -1,3 +1,20 @@
+choria (0.4.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version (LP: #1162565)
+    - Added invisibility potion
+    - Added mouse moving
+    - Can now stop the server manually
+    - Made player names visible in multiplayer
+    - Updated to irrlicht 1.8
+    - Save data now in %APPDATA%/choria for windows
+    - Fixed skill bug
+    - Fixed health/mana regen bug
+    - Updated keybindings
+    - Updated web design tool
+    - Some rebalancing
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 31 Mar 2013 22:55:59 +0200
+
 choria (0.3.2-1~getdeb3) oneiric; urgency=low
 
   * Update debian/watch file
