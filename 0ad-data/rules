@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ 
+
+override_dh_install:
+	dh_install --exclude=LICENSE
+
+override_dh_link:
+	# Remove embedded fonts and use system copies instead
+	rm -f $(CURDIR)/debian/0ad-data-common/usr/share/games/0ad/tools/fontbuilder/fonts/*.{ttf,otf}
+	dh_link
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
