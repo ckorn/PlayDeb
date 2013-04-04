@@ -1,102 +1,77 @@
-0ad (0.0.0+r11863~alpha-1~getdeb1) precise; urgency=low
+0ad (0.0.13-1~getdeb1) precise; urgency=low
 
   * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 15 May 2012 19:31:50 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 03 Apr 2013 17:40:22 +0200
 
-0ad (0.0.0+r11339~alpha-1~getdeb1) oneiric; urgency=low
+0ad (0.0.12-1) unstable; urgency=low
 
-  * New upstream version
+  [ Vincent Cheng ]
+  * New upstream release.
+    - Remove debian/patches/fix-kfreebsd-ftbfs.patch; applied upstream.
+    - Refresh remaining patches.
+  * Add depends on 0ad-data-common.
+  * Add lintian overrides for:
+    - outdated-autotools-helper-file (caused by config.{guess,sub} in a
+      convenience copy of libenet, which we don't use).
+    - version-substvar-for-external-package (not a problem since 0ad and
+      0ad-data uploaded at same time, and no other mechanism provided by
+      dpkg-gencontrol for packages that want to depend on versioned packages
+      built from a separate source package).
+  * Update Standards version to 3.9.4, no changes required.
+  * Enable verbose build.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 14 Mar 2012 17:48:57 +0100
+  [ Ansgar Burchardt ]
+  * debian/control: Remove DM-Upload-Allowed.
 
-0ad (0.0.0+r10803~alpha-1~getdeb1) oneiric; urgency=low
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Tue, 12 Feb 2013 19:24:59 -0800
 
-  * New upstream version
+0ad (0.0.11-1) unstable; urgency=low
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 26 Jan 2012 19:21:34 +0100
+  * New upstream release. (Alpha 11 Kronos)
+    - Upstream disabled FAM support as of svn r12550, so remove build-depends
+      on libgamin-dev, and remove depends on gamin | fam. (Closes: #679087)
+    - Refresh existing patches.
+  * Add fallback to launcher script when /usr/games is not in $PATH.
+    (Closes: #679033)
+  * Restrict list of architectures to i386, amd64, and kfreebsd-{i386,amd64}.
+    (Closes: #683282)
+  * Update debian/watch file.
+  * Add DMUA field in debian/control with agreement of sponsor.
 
-0ad (0.0.0+r10288~alpha-1~getdeb1) natty; urgency=low
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Sat, 08 Sep 2012 02:43:25 -0700
 
-  * New upstream version
+0ad (0~r11863-2) unstable; urgency=low
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 17 Sep 2011 15:22:06 +0200
+  * Add stricter dependency on 0ad-data. (Closes: #673526)
 
-0ad (0.0.0+r09786~alpha-1~getdeb1) natty; urgency=low
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Sun, 20 May 2012 01:48:59 -0700
 
-  * New upstream version
+0ad (0~r11863-1) unstable; urgency=low
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 08 Jul 2011 20:23:07 +0200
+  * New upstream release.
+    - Refresh patches.
+  * Add debian/patches/enable-hardening-relro.patch to build using the
+    "read-only relocation" link flag, as suggested by lintian.
+  * Add build-depends on libxcursor-dev.
 
-0ad (0.0.0+r09530~alpha-1~getdeb1) natty; urgency=low
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Wed, 16 May 2012 23:50:12 -0700
 
-  * New upstream version
+0ad (0~r11339-2) unstable; urgency=low
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 17 May 2011 17:30:12 +0200
+  * Add debian/patches/fix-kfreebsd-ftbfs.patch to fix FTBFS on kfreebsd.
+  * Update debian/0ad.6.
+  * Add build-depends on dpkg-dev (>= 1.15.5) for xz compression support.
+  * Change build-depends on libjpeg8-dev to libjpeg-dev.
+  * Change build-depends on libpng12-dev to libpng-dev. (Closes: #668453)
+  * Add alternate build-depends on libcurl4-dev.
+  * Add alternate dependency on fam. (Closes: #668353)
+  * Override dh_auto_clean to clean source properly. (Closes: #668686)
 
-0ad (0.0.0+r09049~alpha-1~getdeb1) natty; urgency=low
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Thu, 26 Apr 2012 19:12:26 -0700
 
-  * New upstream version
+0ad (0~r11339-1) unstable; urgency=low
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 22 Apr 2011 17:48:00 +0200
+  * Initial release (Closes: #594800)
 
-0ad (0.0.0+r08832~alpha-1~getdeb1) maverick; urgency=low
-
-  * New upstream version
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 12 Dec 2010 15:39:37 +0100
-
-0ad (0.0.0+r07732~pre-alpha-1~getdeb2) maverick; urgency=low
-
-  * Rebuild for maverick
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 24 Oct 2010 12:53:15 +0200
-
-0ad (0.0.0+r07732~pre-alpha-1~getdeb1) lucid; urgency=low
-
-  * New upstream version (LP: #604236)
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 23 Jul 2010 20:08:13 +0200
-
-0ad (0.0.0+r07539~pre-alpha-1~getdeb1) lucid; urgency=low
-
-  * New upstream version (LP: #556356)
-    Added new unit movement system, for precise pathfinding and obstacle
-    avoidance.
-    Added training queues in buildings.
-    Added units to the minimap.
-    Added initial audio integration with gameplay code.
-    Gameplay fixes in projectile models and population bonuses.
-    Graphics fixes in unit outline shapes and animation synchronisation.
-    For modders and developers: Added automatic RNG validation of entity
-    template XML files; Added documentation of entity template XML file
-    format.
-    Fixed compatibility bugs with Windows x64 and with OS X.
-    Various other changes and bug fixes and optimisations - see the SVN log.
-       http://trac.wildfiregames.com/log?rev=7539&stop_rev=7420
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 12 May 2010 18:54:51 +0200
-
-0ad (0.0.0+r07419~pre-alpha-1~getdeb1) karmic; urgency=low
-
-  * New upstream version (LP: #543277)
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 01 Apr 2010 12:58:44 +0200
-
-0ad (0.0.0+r07413~pre-alpha-1~getdeb2) lucid; urgency=low
-
-  * Added debian/watch file
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 01 Apr 2010 12:42:48 +0200
-
-0ad (0.0.0+r07413~pre-alpha-1~getdeb1) lucid; urgency=low
-
-  * New upstream version (LP: #543277)
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 29 Mar 2010 23:33:09 +0200
-
-0ad (0svn7029-1~getdeb1) jaunty; urgency=low
-
-  * Initial release
-
- -- Christoph Korn <c_korn@gmx.de>  Wed, 22 Jul 2009 01:15:05 +0200
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Thu, 29 Mar 2012 16:13:33 -0700

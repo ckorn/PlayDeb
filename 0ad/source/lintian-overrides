@@ -1,0 +1,9 @@
+# These warnings are triggered by config.{guess,sub} in the convenience copy
+# of libenet provided in the source package; we can ignore this because we
+# build against the system's enet packages. 0ad doesn't even use autotools
+# (premake is used instead), so just add a blanket override.
+0ad source: outdated-autotools-helper-file
+# Not a problem since 0ad and 0ad-data are uploaded at the same time, and
+# dpkg-gencontrol doesn't provide any other substitution variables for packages
+# to depend on versioned packages built from a separate source package
+0ad source: version-substvar-for-external-package

@@ -1,0 +1,7 @@
+binaries/system/libAtlasUI.so                   usr/lib/games/0ad/
+binaries/system/libCollada.so                   usr/lib/games/0ad/
+binaries/system/ActorEditor                     usr/lib/games/0ad/
+binaries/system/pyrogenesis                     usr/games/
+build/resources/0ad.desktop                     usr/share/applications/
+build/resources/0ad.png                         usr/share/pixmaps/
+usr/games/0ad

@@ -1,0 +1,20 @@
+Description: Build with the "read-only relocation" hardening linker flag
+ Pass "-Wl,-z,relro" to the linker. This fixes lintian warning 
+ "hardening-no-relro".
+Forwarded: http://trac.wildfiregames.com/ticket/1416
+Author: Vincent Cheng <Vincentc1208@gmail.com>
+Last-Update: 2012-09-08
+
+Index: 0ad-0.0.13/build/premake/premake4.lua
+===================================================================
+--- 0ad-0.0.13.orig/build/premake/premake4.lua	2013-03-07 14:49:49.000000000 +0100
++++ 0ad-0.0.13/build/premake/premake4.lua	2013-04-03 17:40:29.389592455 +0200
+@@ -245,7 +245,7 @@
+ 				end
+ 
+ 				if os.is("linux") or os.is("bsd") then
+-					linkoptions { "-Wl,--no-undefined", "-Wl,--as-needed" }
++					linkoptions { "-Wl,--no-undefined", "-Wl,--as-needed", "-Wl,-z,relro" }
+ 				end
+ 
+ 				if arch == "x86" then

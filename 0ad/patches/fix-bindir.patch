@@ -1,0 +1,35 @@
+Description: Fix path to 0 A.D. binaries
+ Modify launcher script to look for pyrogenesis binary in PATH instead of
+ hardcoding the path, and modify the .desktop file to use a relative Exec=
+ value.
+Forwarded: http://trac.wildfiregames.com/ticket/492#comment:16
+Author: Vincent Cheng <Vincentc1208@gmail.com>
+Last-Update: 2012-09-08
+
+--- a/build/resources/0ad.sh
++++ b/build/resources/0ad.sh
+@@ -1,3 +1,12 @@
+ #!/bin/sh
+ 
+-/usr/bin/pyrogenesis "$@"
++path_to_pyrogenesis=$(which pyrogenesis)
++if [ -x "$path_to_pyrogenesis" ] ; then
++	"$path_to_pyrogenesis" "$@"
++elif [ -x /usr/games/pyrogenesis ] ; then
++	# Fallback in case /usr/games is not in $PATH; see #679033
++	/usr/games/pyrogenesis "$@"
++else
++	echo "Error: pyrogenesis cannot be found in $PATH"
++	exit 1
++fi
+--- a/build/resources/0ad.desktop
++++ b/build/resources/0ad.desktop
+@@ -3,7 +3,7 @@
+ Name=0 A.D.
+ Comment=A real-time strategy game of ancient warfare
+ Comment[it]=Videogioco strategico in tempo reale di guerre antiche
+-Exec=/usr/bin/0ad
++Exec=0ad
+ Icon=0ad
+ Terminal=false
+ Type=Application
