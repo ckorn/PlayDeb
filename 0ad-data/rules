@@ -1,16 +1,15 @@
 #!/usr/bin/make -f
+
 %:
-	dh $@
+	dh $@ 
 
 override_dh_install:
-	dh_install
+	dh_install --exclude=LICENSE
 
-	find debian/0ad-data/usr/share/games/0ad -type f -name LICENSE.txt -delete
-	find debian/0ad-data/usr/share/games/0ad -type f -name DejaVu-LICENSE.txt -delete
-	find debian/0ad-data/usr/share/games/0ad -type f -name GUST-FONT-LICENSE.txt -delete
-	find debian/0ad-data/usr/share/games/0ad -type d -empty -delete
+override_dh_link:
+	# Remove embedded fonts and use system copies instead
+	rm -f $(CURDIR)/debian/0ad-data-common/usr/share/games/0ad/tools/fontbuilder/fonts/*.{ttf,otf}
+	dh_link
 
-	rm debian/0ad-data/usr/share/games/0ad/data/tools/fontbuilder/fonts/DejaVuSans.ttf
-	rm debian/0ad-data/usr/share/games/0ad/data/tools/fontbuilder/fonts/DejaVuSansMono.ttf
-	rm debian/0ad-data/usr/share/games/0ad/data/tools/fontbuilder/fonts/texgyrepagella-bold.otf
-	rm debian/0ad-data/usr/share/games/0ad/data/tools/fontbuilder/fonts/texgyrepagella-regular.otf
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

@@ -1,83 +1,45 @@
-0ad-data (0.0.0+r11863~alpha-1~getdeb1) oneiric; urgency=low
+0ad-data (0.0.13-1~getdeb1) precise; urgency=low
 
   * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 15 May 2012 19:35:02 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 03 Apr 2013 19:52:38 +0200
 
-0ad-data (0.0.0+r11339~alpha-1~getdeb1) oneiric; urgency=low
+0ad-data (0.0.12-1) unstable; urgency=low
 
-  * New upstream version
+  [ Vincent Cheng ]
+  * New upstream release.
+  * Split single binary package in two (0ad-data{,-common}). (Closes: #696030)
+    - This makes it easier to provide incremental updates (via upstream's PPA)
+      by separating components that are changed more frequently.
+  * Add Breaks+Replaces relationship on 0ad-data to avoid problems when
+    upgrading from packages distributed by upstream's PPA. (LP: #1063499)
+  * Update Standards version to 3.9.4, no changes required.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 14 Mar 2012 18:24:36 +0100
+  [ Ansgar Burchardt ]
+  * debian/control: Remove DM-Upload-Allowed.
 
-0ad-data (0.0.0+r10803~alpha-1~getdeb1) oneiric; urgency=low
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Tue, 18 Dec 2012 00:22:00 -0800
 
-  * New upstream version
+0ad-data (0.0.11-1) unstable; urgency=low
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 26 Jan 2012 19:34:41 +0100
+  [ Vincent Cheng ]
+  * New upstream release. (Alpha 11 Kronos)
+  * Update debian/watch file.
 
-0ad-data (0.0.0+r10288~alpha-1~getdeb1) natty; urgency=low
+  [ Joachim Breitner ]
+  * Added DMAU field
 
-  * New upstream version
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Sat, 08 Sep 2012 03:20:19 -0700
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 17 Sep 2011 15:32:31 +0200
+0ad-data (0~r11863-1) unstable; urgency=low
 
-0ad-data (0.0.0+r09786~alpha-1~getdeb1) natty; urgency=low
+  * New upstream release.
+  * Add build-depends on dpkg-dev (>= 1.15.5) for xz compression support.
 
-  * New upstream version
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Thu, 17 May 2012 00:13:38 -0700
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 08 Jul 2011 20:58:23 +0200
+0ad-data (0~r11339-1) unstable; urgency=low
 
-0ad-data (0.0.0+r09530~alpha-1~getdeb1) natty; urgency=low
+  * Initial release (Closes: #594802)
 
-  * New upstream version
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 17 May 2011 17:37:29 +0200
-
-0ad-data (0.0.0+r09049~alpha-1~getdeb1) natty; urgency=low
-
-  * New upstream version
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 22 Apr 2011 17:58:35 +0200
-
-0ad-data (0.0.0+r08832~alpha-1~getdeb1) maverick; urgency=low
-
-  * New upstream version
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 12 Dec 2010 15:46:38 +0100
-
-0ad-data (0.0.0+r07732~pre-alpha-1~getdeb1) lucid; urgency=low
-
-  * New upstream version
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 23 Jul 2010 20:13:01 +0200
-
-0ad-data (0.0.0+r07539~pre-alpha-1~getdeb1) lucid; urgency=low
-
-  * New upstream version
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 12 May 2010 19:15:10 +0200
-
-0ad-data (0.0.0+r07419~pre-alpha-1~getdeb1) karmic; urgency=low
-
-  * New upstream version (LP: #543277)
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 01 Apr 2010 13:05:51 +0200
-
-0ad-data (0.0.0+r07413~pre-alpha-1~getdeb2) lucid; urgency=low
-
-  * Added debian/watch file
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 01 Apr 2010 12:48:12 +0200
-
-0ad-data (0.0.0+r07413~pre-alpha-1~getdeb1) lucid; urgency=low
-
-  * New upstream version (LP: #543277)
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 29 Mar 2010 23:33:09 +0200
-
-0ad-data (0svn7029-1~getdeb1) jaunty; urgency=low
-
-  * Initial release
-
- -- Christoph Korn <c_korn@gmx.de>  Wed, 22 Jul 2009 01:15:05 +0200
+ -- Vincent Cheng <Vincentc1208@gmail.com>  Thu, 29 Mar 2012 16:23:58 -0700
