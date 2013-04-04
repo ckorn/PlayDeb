@@ -1,0 +1,45 @@
+#!/usr/bin/make -f
+
+ifeq ($(findstring parallel=,$(DEB_BUILD_OPTIONS)),)
+	export DEB_BUILD_OPTIONS+=parallel=$(shell getconf _NPROCESSORS_ONLN)
+endif
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_clean:
+	build/workspaces/clean-workspaces.sh
+	
+	# Clean up some extra cruft not picked up by clean-workspaces.sh
+	find binaries/system/ -type f ! -name readme.txt -delete
+	rm -f libraries/fcollada/lib/*.a
+	rm -f build/premake/.*.tmp
+	
+	dh_auto_clean
+
+override_dh_auto_build:
+	build/workspaces/update-workspaces.sh \
+		--bindir=/usr/games \
+		--libdir=/usr/lib/games/0ad \
+		--datadir=/usr/share/games/0ad \
+		--with-system-enet \
+		--with-system-nvtt \
+		--with-system-mozjs185
+	
+	$(MAKE) config=release verbose=1 -C build/workspaces/gcc
+
+override_dh_auto_test:
+	# Note: Avoid running tests from root dir of build, otherwise certain
+	# tests (i.e. in testsuite MeshManager) may not work as intended and
+	# create spurious directories above root dir (../data/mods).
+	cd binaries/system/ && LD_LIBRARY_PATH=. ./test -libdir .
+
+override_dh_auto_install:
+	install -Dm 0755 build/resources/0ad.sh $(CURDIR)/debian/tmp/usr/games/0ad
+	dh_auto_install
+
+override_dh_strip:
+	dh_strip -p 0ad --dbg-package=0ad-dbg
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

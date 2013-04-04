@@ -1,0 +1,2 @@
+fix-bindir.patch
+enable-hardening-relro.patch
