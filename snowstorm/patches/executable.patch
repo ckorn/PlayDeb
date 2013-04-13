@@ -1,9 +1,9 @@
 Do not run tasks handled by the package.
-Index: snowstorm-3.4.2.265141/secondlife
+Index: snowstorm-3.5.2.273873/secondlife
 ===================================================================
---- snowstorm-3.4.2.265141.orig/secondlife	2012-09-25 20:31:21.000000000 +0200
-+++ snowstorm-3.4.2.265141/secondlife	2012-09-25 22:22:11.482771381 +0200
-@@ -83,10 +83,10 @@
+--- snowstorm-3.5.2.273873.orig/secondlife	2013-04-12 18:52:30.000000000 +0200
++++ snowstorm-3.5.2.273873/secondlife	2013-04-13 13:05:07.675677219 +0200
+@@ -92,10 +92,10 @@
  cd "${RUN_PATH}"
  
  # Re-register the secondlife:// protocol handler every launch, for now.
