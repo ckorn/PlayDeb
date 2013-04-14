@@ -1,3 +1,21 @@
+manaplus (1:1.3.4.14-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: login dialog size with some localizations.
+    fix: big http links in chat.
+    fix: unstackable items sell.
+    fix: random rare crashes in closing windows.
+    add: option for mode players names in map.
+    add: sound effects in notifications.
+    add: animated emotes.
+    add: animated effects for effects.xml.
+    add: turkish language and translation.
+    add: improve perfomance.
+    add: improve latency in linux versions.
+    add: option to left all per map sprites in memory.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 14 Apr 2013 14:40:17 +0200
+
 manaplus (1:1.3.3.31-1~getdeb1) precise; urgency=low
 
   * New upstream version
