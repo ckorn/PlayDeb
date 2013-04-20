@@ -1,3 +1,40 @@
+stendhal (1.07-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    *world*
+     - New quest from Julius: Emotion Crystals
+     - New items required by Mayor Chalmers and Hazel
+     - New food requirements for Katinka's animals
+     - Snake pit beneath Ados caves
+     - New dropped items: elvish hat
+     - New quest items: stone legs
+     - More lights on Ados market, around Athor island and more light effects
+     - New look for mountain orc
+     - Dwarves rebuilt rails in Semos Mine
+     - New creatures: Mimics, cobra, king cobra, and lamia
+     - More sounds and descriptions for creatures
+     - Creatures added to the mountains
+     - Pdiddi warns first customers about the risk of his pills
+     - Pianos and clocks have sound effects
+     - Toilets and sinks have running water sound effects
+     - Athor's ferry has "creaking" sound effects
+     - Jef feels better but still wants to hear from his mom
+     - Pushable stone blocks
+     - Background music in hell
+     - Growing cherry trees on Orril Mountain
+
+    *client*
+     - A lot of redrawn tilesets
+     - style changeable from settings menu
+
+    *fixes*
+     - Special character in offline messages (postman messages) work now
+     - Fixed imperial defender sprite
+     - Map fixes (e.g. collision errors and layers)
+     - Slightly increasing drop rates for blue items
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 19 Apr 2013 23:55:56 +0200
+
 stendhal (1.06-1~getdeb1) precise; urgency=low
 
   * New upstream version
