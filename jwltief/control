@@ -2,16 +2,18 @@ Source: jwltief
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50~),
- ia32-libs [amd64], libsdl1.2debian-all [i386],
+Build-Depends: debhelper (>= 9),
+ ia32-libs [amd64], libsdl1.2debian [i386],
  libsdl-image1.2 [i386], libsdl-mixer1.2 [i386],
  libsdl-ttf2.0-0 [i386]
-Standards-Version: 3.9.1
+Standards-Version: 3.9.3
 Homepage: http://games.aleva.com.br/jwltief
 
 Package: jwltief
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, jwltief-data (= ${source:Version})
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         jwltief-data (= ${source:Version})
 Description: Play a thief and collect jewels
  Jwltef is a game where you control a
  thief with the mouse and aim to collect
@@ -20,7 +22,8 @@ Description: Play a thief and collect jewels
 
 Package: jwltief-data
 Architecture: all
-Depends: ${misc:Depends}, ttf-jwltief (= ${source:Version})
+Depends: ${misc:Depends},
+         ttf-jwltief (= ${source:Version})
 Description: Play a thief and collect jewels (data package)
  Jwltef is a game where you control a
  thief with the mouse and aim to collect
