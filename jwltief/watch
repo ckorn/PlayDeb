@@ -1,4 +1,4 @@
 version=3
-opts="dversionmangle=s/.*/19/" \
+opts="dversionmangle=s/.*/81/" \
 http://games.aleva.com.br/jwltief/ \
     (?:.*/)download\.php\?a=([\d]+)

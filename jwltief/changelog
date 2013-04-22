@@ -1,3 +1,9 @@
+jwltief (1.5.1-1~getdeb2) precise; urgency=low
+
+  * Fix debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 22 Apr 2013 16:57:54 +0200
+
 jwltief (1.5.1-1~getdeb1) lucid; urgency=low
 
   * New upstream version (LP: #905777)
