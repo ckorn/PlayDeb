@@ -7,4 +7,3 @@ bin/trans			usr/share/games/pokemon-online
 bin/usage_stats			usr/share/games/pokemon-online
 bin/languages.txt		usr/share/games/pokemon-online
 bin/version.ini			usr/share/games/pokemon-online
-debian/pokemon-online.xpm	usr/share/pixmaps
