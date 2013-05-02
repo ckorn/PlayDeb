@@ -16,7 +16,8 @@ override_dh_auto_install:
 
 	cd debian/stone-soup && rm usr/share/games/stone-soup/docs/license/libpng-LICENSE.txt \
 	                           usr/share/games/stone-soup/docs/license/lualicense.txt \
-	                           usr/share/games/stone-soup/docs/license/pcre_license.txt
+	                           usr/share/games/stone-soup/docs/license/pcre_license.txt && \
+	                        chmod -x usr/share/games/stone-soup/dat/tiles/title_psiweapon_kiku.png
 
 override_dh_installchangelogs:
 	dh_installchangelogs docs/changelog.txt

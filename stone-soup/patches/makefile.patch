@@ -1,13 +1,13 @@
 contrib directory does not exist.
-Index: stone-soup-0.11.0/source/Makefile
+Index: stone-soup-0.12.0/source/Makefile
 ===================================================================
---- stone-soup-0.11.0.orig/source/Makefile	2012-09-30 23:25:31.000000000 +0200
-+++ stone-soup-0.11.0/source/Makefile	2012-10-01 19:34:24.349699445 +0200
-@@ -1313,7 +1313,6 @@
+--- stone-soup-0.12.0.orig/source/Makefile	2013-04-29 22:00:49.000000000 +0200
++++ stone-soup-0.12.0/source/Makefile	2013-05-02 22:32:24.243904302 +0200
+@@ -1351,7 +1351,6 @@
  	$(RM) -r build
  
  clean-contrib:
 -	+$(MAKE) -C contrib clean
  
- distclean: clean clean-contrib clean-rltiles
- 	$(RM) -r morgue saves
+ clean-android:
+ 	$(RM) ../icon.png ../libapplication.so
