@@ -1,3 +1,12 @@
+stone-soup (0.12.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * Fix a Dazzling Spray + Battlesphere crash on Windows.
+    * Add a missing cloak of the Thief ability tile.
+    * Add a mention of cursed blunt butchery in 0.12 to this changelog.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 05 May 2013 18:45:24 +0200
+
 stone-soup (0.12.0-1~getdeb1) precise; urgency=low
 
   * New upstream version
