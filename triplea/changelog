@@ -1,3 +1,295 @@
+triplea (1.7.0.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * New attachment properties for Triggers, Politics, and User Actions:
+    "chanceIncrementOnFailure" and "chanceDecrementOnSuccess" which will
+    modify the "chance" value. (veqryn)
+    * Fixing fuelCost to not be charged for units in transports. (veqryn)
+    * Major changes to both the map and the placements and the rules for
+    "Great War" world war one game. (veqryn)
+    * Implemented all sounds through
+    IDelegateBridge.getSoundChannelBroadcaster().playSoundForAll() or through
+    DefaultSoundChannel.playSoundOnLocalMachine() for a few local sounds like
+    slapping in chat. (veqryn)
+    * Created new channel broadcaster for use with playing sounds on both
+    server machine and client machines. (veqryn)
+    * Created user interface element for RandomStartDelegate, so that players
+    can pick which territory they want and what units they want in it.
+    (veqryn)
+    * Gave all AIs methods to pick territories, and they will attempt to
+    focus on a single area of the board. (veqryn)
+    * Created new game option property, "Territories Are Assigned Randomly",
+    which determines if territories are randomly assigned or picked by
+    players during RandomStartDelegate. (veqryn)
+    * Created new delegate, "RandomStartDelegate", which will allow for
+    randomly assigned territories or territories chosen in turn order.
+    (veqryn)
+    * Fixed problem where territory names that were parseable integers could
+    not allow any territory based conditions. I still recommend territories
+    have a non integer character in them though. (veqryn) 
+    * Fixed null pointer error in signalGameOver when called by a trigger for
+    a game that has never reached the end round step. (veqryn)
+    * Minor adjustment to retain capital produce number methods to allow a
+    value of zero. (flaaargle)
+    * Created user interface element for the User Action Delegate, based on
+    the existing politics interface. (veqryn)
+    * Created new delegate, "UserActionDelegate", which will allow nations to
+    take any kind of condition/trigger based action. (veqryn)
+    * Created new text file, "actionstext.properties", which contains action
+    text for the user interface for taking user actions, similar to
+    politicstext.properties. (veqryn)
+    * Added new property, "activateTrigger", to UserActionAttachment, which
+    will fire a trigger when the nation takes this action. (veqryn)
+    * Added properties for conditions, conditionType, invert, chance, costPU,
+    text, actionAccept, and attemptsPerTurn to the User Action Attachment.
+    (veqryn)
+    * Created new attachment, "UserActionAttachment", which holds actions
+    that can be taken by a player, based on an abstraction of the political
+    action attachment. (veqryn)
+    * New Condition Attachment property option, "gameProperty", which can be
+    set equal to the exact string of any boolean game property option,
+    including custom made up ones. (veqryn)
+    * Created new AI specially for multiplayer free-for-all games, "Does
+    Nothing AI", which will buy units the first round then destroy all money
+    all subsequent rounds, along with doing nothing else. (veqryn)
+    * Abstracted methods to find the power and rolls of units into a single
+    method. (veqryn)
+    * Fixed issue with Marine amphibious attackers showing a bonus on the
+    battle screen even when attacking via land. (veqryn)
+    * Fixed null pointer error in Strong AI (Moore AI). (veqryn)
+    * Getting the UnitSupportAttachment faction option to handle both allied
+    and enemy, thereby allowing giving positive or negative support to enemy
+    units. (veqryn)
+    * Getting the UnitSupportAttachment dice option to handle both strength
+    and roll, thereby allowing giving extra rolls to units. (veqryn)
+    * Changing defending submarines to fire after all attacking units under
+    classic rules, where property Defending Subs Sneak Attack is false.
+    (veqryn) 
+    * Created new button, "Order of Losses", in the battle calculator, which
+    will all you to put in a text script of which casualties to select in
+    what order. (veqryn)
+    * Added option to retreat in battle calculator when we are losing, which
+    is approximated by seeing if our 'meta-power' is lower than the
+    opponent's. (veqryn)
+    * Created new image utility, TileImageReconstructor, which will recreate
+    an image based on base tiles or relief tiles and/or draw a polygons file
+    onto an image. (veqryn)
+    * Adding a visual log to AutoPlacementFinder and TileImageBreaker, and
+    getting the AutoPlacementFinder to cut out at a max of about 50
+    placements per territory. (veqryn)
+    * Changed unit attachment "isMarine" to allow for integers instead of
+    boolean. (veqryn)
+    * Updated default casualty selection to take territory effects into
+    consideration. (veqryn)
+    * Updating web poster to keep track of many entered websites, and save
+    them all to the local cache but not to the savegame. (veqryn)
+    * Created new unit attachment property, "canAirBattle", which determines
+    if a unit participates in a normal battle's air battle. (veqryn)
+    * Allowing defense to ground their planes before an air battle (preceding
+    a normal battle) if withdrawing is turned on, however if the territory is
+    lost they die. (veqryn)
+    * Fixed battle screen null pointer errors caused by maps with artillery
+    units but no supportable units. Also fixed bug where maps without notes
+    could not be closed. (veqryn)
+    * Allowed AA Gun type units to fire back in same round if killed by other
+    AA Gun type units. (veqryn)
+    * Added new steps to must fight battle so that offensive aa guns will
+    work correctly. (veqryn)
+    * Created new unit attachment properties, "offensiveAttackAA" and
+    "offensiveAttackAAmaxDieSides", which will be used by offensive aa guns.
+    (veqryn)
+    * Created new unit attachment property, "maxRoundsAA", which sets the
+    number of rounds an AA gun may fire in, with 1 being default. Only normal
+    battles are affected, while flyover and strategic bombing are not
+    affected. (veqryn)
+    * Created new game option property, "Battle Rounds", which sets the
+    maximum number of rounds of combat for normal battles, with -1 being
+    infinite which is default. (veqryn)
+    * Created new game option property, "Can Scramble Into Air Battles",
+    which will allow a player to scramble air to neighboring territories in
+    order to defend against air raids and air battles. (veqryn)
+    * Set up battle delegate and tracker to allow air battles to be created
+    for normal battles. (veqryn)
+    * Created new game option property, "Battles May Be Preceeded By Air
+    Battles", which will allow normal battles to have air battles first.
+    (veqryn)
+    * Created new game option properties, "Air Battle Attackers Can Retreat"
+    and "Air Battle Defenders Can Retreat", which allow retreating from air
+    battles. (veqryn)
+    * Created new game option property, "Air Battle Rounds", which will allow
+    setting the number of rounds of combat for air battles. (veqryn)
+    * Abstracted StrategicBombingRaidPreBattle to become AirBattle, no longer
+    extending StrategicBombingRaid. (veqryn)
+    * Fixed bug that caused a rare skipping of a battle involving transports
+    and air vs undefended transports. (veqryn)
+    * Adding new PBEM feature, the ability to post to a custom triplea
+    website. (weigo)
+    * Adding scroll bar to chat panel for online game waiting host room
+    before game launched. (veqryn)
+    * Expanded Unit tool tips to include unit support attachments, and also
+    to detail more info for other abilities. (veqryn)
+    * Increasing maximum memory to 1gb (1024mb), up from 768mb. (veqryn)
+    * Creating a new monthly check to see if all maps are up to date, and if
+    not then asking the user to update their maps. (veqryn)
+    * Allowed "men" in International Draughts to capture backwards, which
+    appears as a game option in Checkers. (veqryn)
+    * Created caching mechanism for the game notes, so that it is only in
+    memory when the notes tab is open and otherwise can be cleared from
+    memory if needed. (veqryn)
+    * Created a new Unit Attachment option, "damageableAA", which allows this
+    AA gun type unit to cause damage to a two hitpoint unit instead of
+    outright killing it. (veqryn)
+    * Fixed bug where AA shots on 2 hitpoint units with Choose AA Casualties
+    on was resulting in no damage or killed unit. Also changed battle display
+    to show "typeAA" for each AA Fire phase, instead of a generic identifier.
+    (veqryn)
+    * Allowing custom AA hit and miss sounds for irregular AA types, with the
+    folder being located at "battle_<typeaa>_hit" and "battle_<typeaa>_miss"
+    (folder must be lowercase though), where <typeaa> is the unit attachment
+    "typeAA" of that unit. (veqryn)
+    * Adding text labels to the Battle Calculator for the number of hitpoints
+    and the total attack or defense power of each side. (veqryn) 
+    * Adding a new Hot Key "F" for 'Find Units', which will highlight all
+    units you own that have movement left, but only during a movement phase.
+    (frigoref)
+    * Allowed Edit Mode to add land units to a sea zone if there are either
+    transports already there or transports also being added at the same time.
+    (veqryn)
+    * Allowed Edit Mode to remove units owned by different players. (veqryn)
+    * Changed territory attachment "victoryCity" to allow integers instead of
+    boolean, thereby allowing victory cities with greater value, and also
+    added a tooltip to tech purchase phase to show what techs are in each
+    category. (eurofabio)
+    * Allowed Edit Add Units to check if artwork exists for units not in a
+    production frontier, and if so allow them to be created. (veqryn) 
+    * Added more info to Battle Calc including total TUV swing, and allowing
+    retreat after losing all air units or having only x units left. (veqryn)
+    * Fixed bug where having sea units begin the turn on top of an enemy sub,
+    and then not moving them but also not attacking, caused them to lose
+    their movement anyway. (veqryn)
+    * Fixed bug where you could move a destroyer after it had killed a sub,
+    during noncombat move. (veqryn)
+    * Updating text xml's and adding TWW xml for new tests. (veqryn)
+    * Fixing bug in air movement validation for complex movement cases.
+    (veqryn)
+    * Fixing several memory leaks related to game notes staying in memory
+    multiple times. (veqryn)
+    * Creating Edit Mode for Grid Based games like chess, checkers, and go.
+    (veqryn)
+    * Added feature to automatically parse HTML text in game notes and in
+    notifications, and replace all image links with links to the map folder's
+    "doc/images/" directory, thereby allowing local image files to be used.
+    (veqryn)
+    * Adding ability to specify when the attacker should retreat after how
+    many rounds, to the battle calculator. (veqryn)
+    * Added fields for average number of rounds, average attacking units left
+    when attacker won, and average defending units left when defender won, to
+    the battle calculator. (veqryn)
+    * Added new Edit option to change political relationships between
+    players. (veqryn)
+    * Created option in game 'View' menu to change the font size and font
+    colors of things like territory names, pu's, unit count, and factory
+    damage count. (veqryn)
+    * Fixed serious bug with process runner util that prevented a new
+    classpath from being used, most notably preventing the 'old jars' from
+    getting run. (veqryn)
+    * Creating a method in IDisplay to send messages to all player's
+    computers, but only once per computer. Also includes ability to send to
+    certain players only. (veqryn)
+    * Forced all non-returning void dialogs to run in a separate process as
+    to not block the game from moving forward. 
+    * Forced all UI interactions to either go through a single thread, or
+    wait for thread to finish, so as not to have multiple popups at same
+    time. (veqryn)
+    * Creating simple message dialog report for end of turn collection of PUs
+    and national objectives and any blockade action. (veqryn)
+    * Creating a mouse shadow image to go with the route image, showing how
+    much movement you have left for any selected units, in blue font.
+    (veqryn)
+    * Possibly fixing bug where the game host process does not end, even
+    though all windows close. (veqryn)
+    * Allowing all Grid Games to use the play by email and forum posters.
+    (veqryn)
+    * Abstracted the Forum Poster to its own component and static methods.
+    Added new checkboxes for including savegame and for reposting the turn if
+    it failed the first time. (veqryn)
+    * Creating victory conditions for Go, and creating a UI for players to
+    negotiate which groups of stones are alive or dead. (veqryn)
+    * Creating all game logic for Go. (veqryn)
+    * Creating UI for Go. (veqryn)
+    * Allowing Grid Games to change their width and height mid-game, like
+    through game options. (veqryn)
+    * Creating initial framework and loader for Go. (veqryn)
+    * Creating simple AI for Checkers, and adding rules to enforce the
+    forcing of jump capture moves when available. (veqryn)
+    * Creating UI for Checkers. (veqryn)
+    * Adding all game logic for Checkers. (veqryn)
+    * Adding sound for joining a game chat room. (cpp-ose & jeparedes)
+    * Creating framework and loader for Checkers. (veqryn)
+    * Adding Chess to available games that come with TripleA, and cleaning up
+    source and UI, and fixing various bugs in the grid games framework.
+    (veqryn)
+    * Getting Grid Games to use the History Panel, and adding the history
+    panel and other options to their menu bar. (veqryn)
+    * Getting GridMapPanel to scroll by having it extend
+    ImageScrollerLargeView, and fixing up all grid based games to use this.
+    (veqryn)
+    * Getting Grid Games to allow having a chat panel in multiplayer and
+    networked games. (veqryn) 
+    * Abstracting both Sliding Tiles (N-Puzzle) game and Tic Tac Toe game
+    into Grid Game. (veqryn)
+    * Created a min-max/alpha-beta type of AI, which takes a long time to
+    think but actually makes OK moves. (veqryn)
+    * Created a very very simple AI for Chess, based on random moves plus
+    capturing pieces when available. (veqryn)
+    * Finished checking for Check and Check Mate in Chess. (veqryn)
+    * Finishing movement validation for Chess. (veqryn)
+    * Adding a visual cue for which moves are legal for Chess and other Grid
+    games. (veqryn)
+    * Added movement validation logic for Chess. (veqryn)
+    * Upgrading the graphics for Grid Games, and including a mouse shadow of
+    selected units, and a highlight of which units on map are currently
+    selected. (veqryn)
+    * Major abstraction of both King's Table and Chess into a single
+    framework for Grid based games. (veqryn)
+    * Completing most of UI aspect of Chess game. (veqryn)
+    * Creating framework for a Chess game. (veqryn)
+    * Created a notification to the user when they start a version of TripleA
+    for the first time, showing the new features of this version. (veqryn)
+    * Created a notification to the user when they start TripleA that checks
+    if their TripleA is the latest version, and if not asks them to update
+    it. (veqryn)
+    * Created a notification to the user when they click "list games" that
+    will alert them to which maps they already have which may be out of date
+    and need updating. (veqryn)
+    * Added the default map downloader xml web link to the download maps
+    feature, if the user does not already have any. (veqryn)
+    * Fixed movement validation bug that prevent loading of land units onto a
+    transport during noncombat if the transport was in an enemy 'owned' sea
+    zone. (veqryn)
+    * Fixed bug where units being transported or otherwise dependent were
+    being counted towards unit presence and unit exclusion objectives.
+    (veqryn)
+    * Changing territory attachment "occupiedTerrOf" into "originalOwner".
+    (veqryn)
+    * Deleting game option property "Occupied Territories" since it does not
+    do anything anymore. (veqryn)
+    * Created new territory effect attachment option, "unitsNotAllowed",
+    which is a list of units that will be prevented from moving into any
+    territories with this effect. (crystalct) 
+    * Adding ability to specify which round the game starts on, through a
+    round offset in gameplay section of xml. (veqryn)
+    * Added ability to Right Click on any node in the History panel, and save
+    a game at that point in history [could still be buggy, do not use for
+    tournament games]. (veqryn)
+    * Abstracted delegates so that the server can now determine if it needs
+    to wait on the user for input for a delegate or not. (veqryn)
+    * Fixed bug where having a tech token but not having enough money to buy
+    a new one, would cause you to skip rolling for the existing token.
+    (veqryn)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 05 May 2013 19:00:50 +0200
+
 triplea (1.6.1.4-1~getdeb1) precise; urgency=low
 
   * New upstream version
