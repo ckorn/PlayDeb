@@ -1,3 +1,10 @@
+redeclipse (1.4-3) unstable; urgency=low
+
+  * Upload to unstable
+  * Remove unused screenshot entries for Ubuntu
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 05 May 2013 22:04:18 +0200
+
 redeclipse (1.4-2) experimental; urgency=low
 
   * Fix broken server-only installs
