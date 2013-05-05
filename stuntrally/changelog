@@ -1,3 +1,9 @@
+stuntrally (2.0-1~getdeb2~quantal) quantal; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 05 May 2013 00:10:44 +0200
+
 stuntrally (1.9-1~getdeb2~quantal) quantal; urgency=low
 
   * New upstream version
