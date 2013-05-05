@@ -17,8 +17,6 @@ Vcs-Git: git://git.debian.org/pkg-games/redeclipse.git
 Vcs-Browser: http://git.debian.org/?p=pkg-games/redeclipse.git;a=summary
 
 Package: redeclipse
-XB-Thumbnail-Url: http://redeclipse.net/bits/thumbs/02.jpg
-XB-Screenshot-Url: http://redeclipse.net/bits/images/02.jpg
 Architecture: any
 Depends: redeclipse-data (>= ${source:Upstream-Version}),
          ${misc:Depends},
