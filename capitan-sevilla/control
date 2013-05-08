@@ -2,14 +2,19 @@ Source: capitan-sevilla
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50), libvorbis-dev,
- liballegro4.2-dev, libfreetype6-dev, quilt, libpng12-dev
-Standards-Version: 3.8.3
+Build-Depends: debhelper (>= 9),
+               libvorbis-dev,
+               liballegro4.2-dev,
+               libfreetype6-dev,
+               libpng12-dev
+Standards-Version: 3.9.4
 Homepage: http://computeremuzone.com/ficha.php?id=754&l=en
 
 Package: capitan-sevilla
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, capitan-sevilla-data (= ${source:Version})
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         capitan-sevilla-data (= ${source:Version})
 Description: Save Seville from the evil Dr. Torrebruno
  A calm day begins in Seville. Mariano López goes to his job
  as sausage delivery man. Meanwhile, at Santiponce's

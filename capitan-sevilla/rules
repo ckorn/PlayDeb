@@ -1,4 +1,6 @@
 #!/usr/bin/make -f
+%:
+	dh $@
 
 override_dh_auto_build:
 	$(MAKE) -C dependencies/alfont
@@ -18,5 +20,3 @@ override_dh_install:
 	cp extra/capitan.desktop debian/capitan-sevilla/usr/share/applications/capitan-sevilla.desktop
 	cp extra/capitan.png debian/capitan-sevilla/usr/share/pixmaps/capitan-sevilla.png
 
-%:
-	dh --with quilt $@
