@@ -1,0 +1,174 @@
+### Add missing header for "mkdir".
+Index: racer-1.1.64/src/STDH.cpp
+===================================================================
+--- racer-1.1.64.orig/src/STDH.cpp	2009-12-22 10:24:03.000000000 +0100
++++ racer-1.1.64/src/STDH.cpp	2013-05-08 21:43:41.444339369 +0200
+@@ -1,4 +1,5 @@
+-
++#include <sys/stat.h>
++#include <sys/types.h>
+ #include "stdh.h"
+ #include "cars.h"
+ #include "objects.h"
+@@ -118,83 +119,83 @@
+ 	return (rect->left < point.x && rect->right > point.x &&
+ 	        rect->top  < point.y && rect->bottom > point.y);
+ }
+-
+-////////////////////////////////////////////////////////////////////////////////////////////
+-
++
++////////////////////////////////////////////////////////////////////////////////////////////
++
+ 
+ //LINUX
+-
+-#include <fstream>
+-#include <iostream>
+-
+-inline bool exist(const char* file)
+-{
+-	std::ifstream ifs(file);
+-	if (!ifs) return false;
+-	return true;
+-}
+-
+-char working_dir[PATH_MAX] = ".";
+-
+-/**
+- * \brief Change the working directory to ~/.racer
+- */
+-void goHomeRacer()
+-{
+-	getcwd(working_dir, PATH_MAX-1);
+-
+-	string racerhome;
+-	if (getenv("HOME")) racerhome = getenv("HOME");
+-	else racerhome = ".";
+-	racerhome.append("/.racer");
+-
+-	int rv = mkdir(racerhome.c_str(), 0777);	
+-	if ( !(rv == 0 || rv == EEXIST) )			
+-		cerr << "Problem with path " << racerhome << endl;
+-		
+-	chdir(racerhome.c_str());
+-}
+-
+-
+-
+-/**
+- * \brief Paths with 
+- */
+-const char* PATHS_UNIX[] = 
+-{
+-	".", "/usr/share/racer",  "/usr/local/share/racer", "/usr/share/games/racer", 
+-        "/usr/local/share/games/racer", /* INSTALL_DIR, */  0,
+-};
+-
+-const char* SUBDIRS[] =  // not used at the moment
+-{
+-	".", "maps",  "gfx", "data", 0,
+-};
+-
+-
+-string locateFile(const string& file)
+-{
+-	if (file == "") return file;
+-	
+-	string f;		
+-	for (int i = 0; PATHS_UNIX[i] != 0; ++i) 
+-	{
+-		f.clear();
+-		f.append( PATHS_UNIX[i]).append("/").append(file);
+-					
+-		if ( exist(f.c_str()) ) return f;
+-	}
+-
+-	f.clear();
+-	f.append(working_dir).append("/").append(file);
+-	if ( exist(f.c_str()) ) return f;
+-
+-//	cerr << "Locating " << file << "failed" << endl;
+-
+-	return file;
+-}
+-
+-
+-
+-
+-
++
++#include <fstream>
++#include <iostream>
++
++inline bool exist(const char* file)
++{
++	std::ifstream ifs(file);
++	if (!ifs) return false;
++	return true;
++}
++
++char working_dir[PATH_MAX] = ".";
++
++/**
++ * \brief Change the working directory to ~/.racer
++ */
++void goHomeRacer()
++{
++	getcwd(working_dir, PATH_MAX-1);
++
++	string racerhome;
++	if (getenv("HOME")) racerhome = getenv("HOME");
++	else racerhome = ".";
++	racerhome.append("/.racer");
++
++	int rv = mkdir(racerhome.c_str(), 0777);	
++	if ( !(rv == 0 || rv == EEXIST) )			
++		cerr << "Problem with path " << racerhome << endl;
++		
++	chdir(racerhome.c_str());
++}
++
++
++
++/**
++ * \brief Paths with 
++ */
++const char* PATHS_UNIX[] = 
++{
++	".", "/usr/share/racer",  "/usr/local/share/racer", "/usr/share/games/racer", 
++        "/usr/local/share/games/racer", /* INSTALL_DIR, */  0,
++};
++
++const char* SUBDIRS[] =  // not used at the moment
++{
++	".", "maps",  "gfx", "data", 0,
++};
++
++
++string locateFile(const string& file)
++{
++	if (file == "") return file;
++	
++	string f;		
++	for (int i = 0; PATHS_UNIX[i] != 0; ++i) 
++	{
++		f.clear();
++		f.append( PATHS_UNIX[i]).append("/").append(file);
++					
++		if ( exist(f.c_str()) ) return f;
++	}
++
++	f.clear();
++	f.append(working_dir).append("/").append(file);
++	if ( exist(f.c_str()) ) return f;
++
++//	cerr << "Locating " << file << "failed" << endl;
++
++	return file;
++}
++
++
++
++
++
