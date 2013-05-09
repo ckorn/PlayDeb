@@ -1,3 +1,9 @@
+somyeol2d (110606-1~getdeb4) raring; urgency=low
+
+  * Fix python executable name.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 09 May 2013 13:06:25 +0200
+
 somyeol2d (110606-1~getdeb3) quantal; urgency=low
 
   * Rebuild for quantal
