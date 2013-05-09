@@ -1,8 +1,8 @@
-http://vdrift.net/Forum/viewtopic.php?p=14102#14102
+### http://vdrift.net/Forum/printthread.php?tid=1705
 Index: vdrift-20120722/data/skins/simple/menus/AssignControl
 ===================================================================
---- vdrift-20120722.orig/data/skins/simple/menus/AssignControl	2012-07-21 17:17:19.000000000 +0200
-+++ vdrift-20120722/data/skins/simple/menus/AssignControl	2012-07-25 17:53:14.954559411 +0200
+--- vdrift-20120722.orig/data/skins/simple/menus/AssignControl	2013-05-08 23:52:39.184109190 +0200
++++ vdrift-20120722/data/skins/simple/menus/AssignControl	2013-05-08 23:54:06.052106604 +0200
 @@ -46,7 +46,7 @@
  image = white.png
  color = 0.172, 0.161, 0.169
@@ -15,8 +15,8 @@ Index: vdrift-20120722/data/skins/simple/menus/AssignControl
  height = 0.04
 Index: vdrift-20120722/data/skins/simple/menus/GuiControls
 ===================================================================
---- vdrift-20120722.orig/data/skins/simple/menus/GuiControls	2012-07-21 17:17:19.000000000 +0200
-+++ vdrift-20120722/data/skins/simple/menus/GuiControls	2012-07-25 17:53:14.954559411 +0200
+--- vdrift-20120722.orig/data/skins/simple/menus/GuiControls	2013-05-08 23:52:39.184109190 +0200
++++ vdrift-20120722/data/skins/simple/menus/GuiControls	2013-05-08 23:54:06.052106604 +0200
 @@ -82,7 +82,7 @@
  onselect = controledit.string:gui_select:0
  onmoveleft = widget-01d
@@ -46,8 +46,8 @@ Index: vdrift-20120722/data/skins/simple/menus/GuiControls
  onblur = widget-01d.sat:0.0
 Index: vdrift-20120722/data/skins/simple/menus/InGameMain
 ===================================================================
---- vdrift-20120722.orig/data/skins/simple/menus/InGameMain	2012-07-21 17:17:19.000000000 +0200
-+++ vdrift-20120722/data/skins/simple/menus/InGameMain	2012-07-25 17:53:14.954559411 +0200
+--- vdrift-20120722.orig/data/skins/simple/menus/InGameMain	2013-05-08 23:52:39.184109190 +0200
++++ vdrift-20120722/data/skins/simple/menus/InGameMain	2013-05-08 23:54:06.052106604 +0200
 @@ -44,10 +44,10 @@
  
  
@@ -81,8 +81,8 @@ Index: vdrift-20120722/data/skins/simple/menus/InGameMain
  tip = Leave game and return to the Main menu.
 Index: vdrift-20120722/data/skins/simple/menus/InputDevice
 ===================================================================
---- vdrift-20120722.orig/data/skins/simple/menus/InputDevice	2012-07-21 17:17:19.000000000 +0200
-+++ vdrift-20120722/data/skins/simple/menus/InputDevice	2012-07-25 17:53:14.954559411 +0200
+--- vdrift-20120722.orig/data/skins/simple/menus/InputDevice	2013-05-08 23:52:39.184109190 +0200
++++ vdrift-20120722/data/skins/simple/menus/InputDevice	2013-05-08 23:54:06.052106604 +0200
 @@ -82,7 +82,7 @@
  onselect = joystick.type.prev
  onmoveleft = joystick.type.prev
@@ -103,8 +103,8 @@ Index: vdrift-20120722/data/skins/simple/menus/InputDevice
  onblur = widget-01b.alpha:0 widget-01c.alpha:0 widget-01d.sat:0.0
 Index: vdrift-20120722/data/skins/simple/menus/SingleRace
 ===================================================================
---- vdrift-20120722.orig/data/skins/simple/menus/SingleRace	2012-07-21 17:17:19.000000000 +0200
-+++ vdrift-20120722/data/skins/simple/menus/SingleRace	2012-07-25 17:53:14.954559411 +0200
+--- vdrift-20120722.orig/data/skins/simple/menus/SingleRace	2013-05-08 23:52:39.184109190 +0200
++++ vdrift-20120722/data/skins/simple/menus/SingleRace	2013-05-08 23:54:06.052106604 +0200
 @@ -860,7 +860,7 @@
  onmoveleft = game.vehicle_damage.prev
  onmoveright = game.vehicle_damage.next
@@ -116,8 +116,8 @@ Index: vdrift-20120722/data/skins/simple/menus/SingleRace
  focus = false
 Index: vdrift-20120722/src/camera.h
 ===================================================================
---- vdrift-20120722.orig/src/camera.h	2012-07-21 17:03:21.000000000 +0200
-+++ vdrift-20120722/src/camera.h	2012-07-25 17:53:14.954559411 +0200
+--- vdrift-20120722.orig/src/camera.h	2013-05-08 23:52:39.184109190 +0200
++++ vdrift-20120722/src/camera.h	2013-05-08 23:54:06.052106604 +0200
 @@ -16,7 +16,7 @@
  
  	const std::string & GetName() const { return name; }
@@ -129,8 +129,8 @@ Index: vdrift-20120722/src/camera.h
  
 Index: vdrift-20120722/src/carcontrolmap_local.cpp
 ===================================================================
---- vdrift-20120722.orig/src/carcontrolmap_local.cpp	2012-07-25 17:51:18.850562864 +0200
-+++ vdrift-20120722/src/carcontrolmap_local.cpp	2012-07-25 17:53:14.954559411 +0200
+--- vdrift-20120722.orig/src/carcontrolmap_local.cpp	2013-05-08 23:52:39.184109190 +0200
++++ vdrift-20120722/src/carcontrolmap_local.cpp	2013-05-08 23:54:06.056106605 +0200
 @@ -830,16 +830,6 @@
  	keycodes["y"] = SDLK_y;
  	keycodes["z"] = SDLK_z;
@@ -202,10 +202,116 @@ Index: vdrift-20120722/src/carcontrolmap_local.cpp
  	return keycodes;
  }
  
+Index: vdrift-20120722/src/cardynamics.cpp
+===================================================================
+--- vdrift-20120722.orig/src/cardynamics.cpp	2012-07-21 17:03:21.000000000 +0200
++++ vdrift-20120722/src/cardynamics.cpp	2013-05-08 23:54:06.060106608 +0200
+@@ -1791,23 +1791,29 @@
+ 
+ bool CARDYNAMICS::WheelContactCallback(
+ 	btManifoldPoint& cp,
+-	const btCollisionObject* colObj0,
+-	int partId0,
++	const btCollisionObjectWrapper* col0,
++	int part0,
+ 	int index0,
+-	const btCollisionObject* colObj1,
+-	int partId1,
++	const btCollisionObjectWrapper* col1,
++	int part1,
+ 	int index1)
+ {
+-	// cars are fracture bodies, wheel is a cylinder shape
+-	const btCollisionShape* shape = colObj0->getCollisionShape();
+-	if ((colObj0->getInternalType() & CO_FRACTURE_TYPE) &&
++#if (BT_BULLET_VERSION < 281)
++	const btCollisionObject* obj = col0;
++	const btCollisionShape* shape = obj->getCollisionShape();
++	const btCollisionShape* rootshape = obj->getRootCollisionShape();
++#else
++	const btCollisionObject* obj = col0->getCollisionObject();
++	const btCollisionShape* shape = col0->getCollisionShape();
++	const btCollisionShape* rootshape = obj->getCollisionShape();
++#endif
++	if ((obj->getInternalType() & CO_FRACTURE_TYPE) &&
+ 		(shape->getShapeType() == CYLINDER_SHAPE_PROXYTYPE))
+ 	{
+-		// is contact within contact patch?
+-		const btCompoundShape* car = static_cast<const btCompoundShape*>(colObj0->getRootCollisionShape());
+-		const btCylinderShapeX* wheel = static_cast<const btCylinderShapeX*>(shape);
+-		btVector3 contactPoint = cp.m_localPointA - car->getChildTransform(cp.m_index0).getOrigin();
+-		if (-direction::up.dot(contactPoint) > 0.5 * wheel->getRadius())
++		const btCompoundShape* carshape = static_cast<const btCompoundShape*>(rootshape);
++		const btCylinderShapeX* wheelshape = static_cast<const btCylinderShapeX*>(shape);
++		btVector3 contactPoint = cp.m_localPointA - carshape->getChildTransform(cp.m_index0).getOrigin();
++		if (-direction::up.dot(contactPoint) > 0.5 * wheelshape->getRadius())
+ 		{
+ 			// break contact (hack)
+ 			cp.m_normalWorldOnB = btVector3(0, 0, 0);
+Index: vdrift-20120722/src/cardynamics.h
+===================================================================
+--- vdrift-20120722.orig/src/cardynamics.h	2012-07-21 17:03:21.000000000 +0200
++++ vdrift-20120722/src/cardynamics.h	2013-05-08 23:54:06.060106608 +0200
+@@ -25,6 +25,12 @@
+ class FractureBody;
+ class PTree;
+ 
++#if (BT_BULLET_VERSION < 281)
++#define btCollisionObjectWrapper btCollisionObject
++#else
++struct btCollisionObjectWrapper;
++#endif
++
+ class CARDYNAMICS : public btActionInterface
+ {
+ friend class PERFORMANCE_TESTING;
+@@ -151,11 +157,11 @@
+ 
+ 	static bool WheelContactCallback(
+ 		btManifoldPoint& cp,
+-		const btCollisionObject* colObj0,
+-		int partId0,
++		const btCollisionObjectWrapper* col0,
++		int part0,
+ 		int index0,
+-		const btCollisionObject* colObj1,
+-		int partId1,
++		const btCollisionObjectWrapper* col1,
++		int part1,
+ 		int index1);
+ 
+ protected:
+Index: vdrift-20120722/src/dynamicsworld.cpp
+===================================================================
+--- vdrift-20120722.orig/src/dynamicsworld.cpp	2012-07-21 17:03:21.000000000 +0200
++++ vdrift-20120722/src/dynamicsworld.cpp	2013-05-08 23:54:06.060106608 +0200
+@@ -105,7 +105,7 @@
+ 	int patch_id = -1;
+ 	const BEZIER * b = 0;
+ 	const TRACKSURFACE * s = TRACKSURFACE::None();
+-	btCollisionObject * c = 0;
++	const btCollisionObject * c = 0;
+ 
+ 	MyRayResultCallback ray(origin, p, caster);
+ 	rayTest(origin, p, ray);
+@@ -221,6 +221,7 @@
+ 
+ void DynamicsWorld::fractureCallback()
+ {
++#if (BT_BULLET_VERSION < 281)
+ 	m_activeConnections.resize(0);
+ 
+ 	int numManifolds = getDispatcher()->getNumManifolds();
+@@ -268,4 +269,5 @@
+ 		btRigidBody* child = body->updateConnection(con_id);
+ 		if (child) addRigidBody(child);
+ 	}
++#endif
+ }
 Index: vdrift-20120722/src/game.cpp
 ===================================================================
---- vdrift-20120722.orig/src/game.cpp	2012-07-21 17:03:21.000000000 +0200
-+++ vdrift-20120722/src/game.cpp	2012-07-25 17:53:14.954559411 +0200
+--- vdrift-20120722.orig/src/game.cpp	2013-05-08 23:52:39.184109190 +0200
++++ vdrift-20120722/src/game.cpp	2013-05-08 23:54:06.056106605 +0200
 @@ -324,10 +324,6 @@
  
  	info_output << "Shutting down..." << std::endl;
@@ -366,8 +472,8 @@ Index: vdrift-20120722/src/game.cpp
  {
 Index: vdrift-20120722/src/game.h
 ===================================================================
---- vdrift-20120722.orig/src/game.h	2012-07-21 17:03:21.000000000 +0200
-+++ vdrift-20120722/src/game.h	2012-07-25 17:53:14.954559411 +0200
+--- vdrift-20120722.orig/src/game.h	2013-05-08 23:52:39.184109190 +0200
++++ vdrift-20120722/src/game.h	2013-05-08 23:54:06.056106605 +0200
 @@ -201,6 +201,7 @@
  	void SetTrackImage(const std::string & value);
  	void SetControl(const std::string & value);
@@ -378,8 +484,8 @@ Index: vdrift-20120722/src/game.h
  
 Index: vdrift-20120722/src/sound.cpp
 ===================================================================
---- vdrift-20120722.orig/src/sound.cpp	2012-07-21 17:03:21.000000000 +0200
-+++ vdrift-20120722/src/sound.cpp	2012-07-25 17:53:14.954559411 +0200
+--- vdrift-20120722.orig/src/sound.cpp	2013-05-08 23:52:39.184109190 +0200
++++ vdrift-20120722/src/sound.cpp	2013-05-08 23:54:06.056106605 +0200
 @@ -30,17 +30,20 @@
  }
  
@@ -724,8 +830,8 @@ Index: vdrift-20120722/src/sound.cpp
  		{
 Index: vdrift-20120722/src/sound.h
 ===================================================================
---- vdrift-20120722.orig/src/sound.h	2012-07-21 17:03:21.000000000 +0200
-+++ vdrift-20120722/src/sound.h	2012-07-25 17:53:14.954559411 +0200
+--- vdrift-20120722.orig/src/sound.h	2013-05-08 23:52:39.184109190 +0200
++++ vdrift-20120722/src/sound.h	2013-05-08 23:54:06.056106605 +0200
 @@ -33,11 +33,8 @@
  	// disable sound
  	void Disable();
@@ -795,8 +901,8 @@ Index: vdrift-20120722/src/sound.h
  	void GetSourceChanges();
 Index: vdrift-20120722/src/texture.cpp
 ===================================================================
---- vdrift-20120722.orig/src/texture.cpp	2012-07-25 17:51:19.562562838 +0200
-+++ vdrift-20120722/src/texture.cpp	2012-07-25 17:53:14.954559411 +0200
+--- vdrift-20120722.orig/src/texture.cpp	2013-05-08 23:52:39.184109190 +0200
++++ vdrift-20120722/src/texture.cpp	2013-05-08 23:54:06.056106605 +0200
 @@ -179,6 +179,7 @@
  	else
  	{

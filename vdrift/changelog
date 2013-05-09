@@ -1,3 +1,15 @@
+vdrift (20120722-1~getdeb5~raring) raring; urgency=low
+
+  * Rebuild for raring.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 08 May 2013 22:26:40 +0200
+
+vdrift (20120722-1~getdeb4~quantal) quantal; urgency=low
+
+  * Rebuild against new bullet version.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 22 Mar 2013 20:08:59 +0100
+
 vdrift (20120722-1~getdeb2) quantal; urgency=low
 
   * Rebuild for quantal
