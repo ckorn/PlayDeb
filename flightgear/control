@@ -30,7 +30,7 @@ Build-Depends: debhelper (>= 9),
                libsvn-dev,
                libapr1-dev,
                libudev-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://www.flightgear.org/
 
 Package: flightgear
