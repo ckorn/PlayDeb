@@ -74,7 +74,7 @@ Last-Update: <YYYY-MM-DD>
  if (UNIX)
  	add_executable (vertris board.c hiscores.c main.c output.c vertro.c state.c allegro_icon.c)
 -	target_link_libraries (vertris `allegro-config --libs`)
-+	target_link_libraries (vertris -L/usr/lib -Wl,-Bsymbolic-functions -lalleg-4.2.2)
++	target_link_libraries (vertris -L/usr/lib -Wl,-Bsymbolic-functions -lalleg)
  endif (UNIX)
  
  if (WIN32)

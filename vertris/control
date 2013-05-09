@@ -2,11 +2,14 @@ Source: vertris
 Section: games
 Priority: optional
 Maintainer: João Pinto <joao.pinto@getdeb.net>
-Build-Depends: cdbs, debhelper (>= 5), liballegro4.2-dev, cmake
-Standards-Version: 3.8.4
+Build-Depends: debhelper (>= 9),
+               liballegro4.2-dev,
+               cmake
+Standards-Version: 3.9.4
 Homepage: http://vertris.googlepages.com/
 
 Package: vertris
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: A simple cross-platform Tetris clone
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Simple cross-platform Tetris clone
