@@ -2,15 +2,17 @@ Source: kulic
 Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50),
- autotools-dev, liballegro4.2-dev, libjpeg62-dev,
- quilt
-Standards-Version: 3.8.3
+Build-Depends: debhelper (>= 9),
+               autotools-dev,
+               liballegro4.2-dev,
+               libjpeg62-dev
+Standards-Version: 3.9.4
 Homepage: http://hippo.nipax.cz
 
 Package: kulic
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
 Description: Brutal shooting game
  A computer game where the main goal is to kill
  a lot of enemies. The average living time of

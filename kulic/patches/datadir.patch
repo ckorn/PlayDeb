@@ -1,3 +1,4 @@
+### Point to the datadir inside /usr/share/games
 Index: kulic-1.1/src/GMAP.cpp
 ===================================================================
 --- kulic-1.1.orig/src/GMAP.cpp	2009-12-26 21:08:16.964473894 +0100

@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 %:
-	dh --with quilt $@
+	dh $@
 
 override_dh_auto_configure:
 	dh_auto_configure -- --bindir=/usr/games --datarootdir=/usr/share/games
