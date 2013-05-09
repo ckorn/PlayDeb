@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 %:
-	_ALLEGRO_LIBS=`allegro-config --libs` _ALLEGRO_VERSION=`allegro-config --version` dh --buildsystem=cmake $@
+	_ALLEGRO_LIBS=`allegro-config --libs` _ALLEGRO_VERSION=`allegro-config --version` dh $@ --buildsystem=cmake
 
 override_dh_strip:
 	dh_strip --dbg-package=opensonic-dbg
