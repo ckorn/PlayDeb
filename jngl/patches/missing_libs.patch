@@ -1,0 +1,14 @@
+### Add missing libs to compile the test program.
+Index: jngl-1.1.0/SConstruct
+===================================================================
+--- jngl-1.1.0.orig/SConstruct	2013-05-08 21:06:32.840405664 +0200
++++ jngl-1.1.0/SConstruct	2013-05-08 21:15:42.008389328 +0200
+@@ -99,7 +99,7 @@
+ 	env.Append(LIBPATH='.', CPPPATH='src')
+ 	testEnv = env.Clone()
+ 	testEnv.ParseConfig("pkg-config --cflags --libs jngl.pc")
+-	testEnv.Program('test', testSrc, CPPFLAGS="-std=c++0x")
++	testEnv.Program('test', testSrc, CPPFLAGS="-std=c++0x", LIBS=Split("jngl GL GLU jpeg openal webp png12 glib-2.0 Xxf86vm freetype fontconfig vorbisfile GLEW vorbis m ogg X11"))
+ 	if env['python']:
+ 		env = env.Clone()
+ 		env.ParseConfig("pkg-config --cflags --libs jngl.pc")
