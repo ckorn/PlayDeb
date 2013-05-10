@@ -1,3 +1,63 @@
+the-powder-toy (87.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+        Version 87.2
+            Fixed Fix lua graphics function crash on error
+            Fixed Fix Being able to !set type none to something in the
+            console
+            Changed Changed the menusection of some elements
+            Changed Implicit return in lua console, multiline code input
+            Changed tpt.log does tostring on all arguments
+            Changed Redo lua event registration, no more limit of 6
+            Changed Window position saved on close
+            Changed Improved readability of tooltips
+            Changed Improved descriptions for many elements
+            Added New Element: GOLD, Corrosion resistant metal,
+            superconductor
+            Added New Element: TUGN (Tungsten), brittle metal with a very
+            high melting point
+            Added New Element: PSNS, pressure sensor
+            Added Socket library for Lua API builtin
+            Added Added ctrl+r shortcut to reload save
+            Added TPT "blue screen" on crashes
+        Version 87.0
+            Fixed Fix a SWCH conduction bug
+            Fixed Fix setting negative numbers in the old console
+            Fixed Fix crash when trying to viewing corrupted stamps
+            Changed Split login button; can both logout, and edit profiles
+            Added Add a button to go upload avatars
+            Added You can click on a user's avatar to view their profile
+        Version 86.2
+            Fixed Fix save browser sort buttons sometimes not working
+            Fixed Fix a ton of memory leaks
+            Fixed Fix crash when rapidly opening and closing save previews
+            Fixed Fix PSTN glitches when extending and retracting with FRME
+            Fixed Fix CRAY bug where length check may be ignored in some
+            cases
+            Fixed Fix stamp thumbnails not showing until you move the mouse
+            Changed Local save searches are case insensitive
+            Changed CFLM can defuse VIBR
+            Changed NEUT can go through ICE and SNOW, and changes OIL to GAS
+            Changed ACEL and DCEL strength can be modified with life
+            Changed PSTN arms get the deco color of the PSTN pushing them
+            Changed FRME with a tmp of 1 will not be sticky
+            Changed PSTN's ctype can be set to control which element it stops
+            on
+            Changed CRAY spawns elements at it's own temp
+            Changed A small speed improvement on almost every element
+            Added New lua api methods: sim.partProperty, sim.partPosition,
+            sim.partID
+            Added Ability to read hexadecimal constants in old console
+            commands
+            Added A link to the rules is now in the save upload preview
+            Added Ability to edit your profile from the game (unfinished /
+            glitchy)
+            Added Avatars on comments and the save preview
+            Added Added Identifier constants based on display name to the lua
+            api
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 06 May 2013 14:57:53 +0200
+
 the-powder-toy (86.1-1~getdeb1) precise; urgency=low
 
   * New upstream version
