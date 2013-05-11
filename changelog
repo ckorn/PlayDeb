@@ -1,5 +1,6 @@
 redeclipse (1.4-5) UNRELEASED; urgency=low
 
+  * Standards-Version 3.9.5 (no changes)
   * Fix FTBFS on hurd-i386: missing link to rt (Closes: #712894)
     - Add debian/patches/gnu-link-rt.patch
 
