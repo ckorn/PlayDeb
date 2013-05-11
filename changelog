@@ -1,6 +1,7 @@
 redeclipse (1.4-4) unstable; urgency=low
 
   * Fix FTBFS due to d/control typo lib{lg->gl}1-mesa-dev (Closes: #707028)
+  * Standards-Version 3.9.4 (no changes)
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 11 May 2013 11:53:10 +0200
 
