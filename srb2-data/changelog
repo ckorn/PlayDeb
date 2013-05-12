@@ -1,0 +1,17 @@
+srb2-data (2.0.6-1~getdeb1) precise; urgency=low
+
+  * Upload to PlayDeb.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 12 May 2013 01:47:26 +0200
+
+srb2-data (2.0.6-3) lenny; urgency=low
+
+  * Took over ownership of srb2-data package
+
+ -- Alam Ed Arias <alam@srb2.org>  Thu, 01 Sep 2011 12:59:43 +0500
+
+srb2-data (2.0.6-2) maverick; urgency=high
+
+  * Initial proper release..
+
+ -- Callum Dickinson <gcfreak_ag20@hotmail.com>  Sat, 29 Jan 2011 01:18:42 +1300

@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+%:
+	dh $@ 
+
+override_dh_install:
+	chmod -x SRB2/*
+	dh_install
