@@ -1,0 +1,31 @@
+srb2 (2.0.6-1~getdeb1) precise; urgency=low
+
+  * Upload to PlayDeb (LP: #1162001)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 11 May 2013 22:47:23 +0200
+
+srb2 (2.0.6-6+svn7211) lenny; urgency=low
+
+  * Updated source code to trunk r7211
+    the real reason to test builds make by my workstation, RigginStereo
+
+ -- Alam Ed Arias <alam@srb2.org>  Sat, 29 Jan 2011 03:04:13 +0500
+ 
+srb2 (2.0.6-6+svn7210) lenny; urgency=low
+
+  * Updated source code to trunk r7210
+
+ -- Alam Ed Arias <alam@srb2.org>  Sat, 29 Jan 2011 03:04:13 +0500
+
+srb2 (2.0.6-6) lenny; urgency=low
+
+  * Took over ownership of srb2 package
+  * fix up depends on srb2-data to be corrrect
+
+ -- Alam Ed Arias <alam@srb2.org>  Sat, 29 Jan 2011 03:04:13 +0500
+
+srb2 (2.0.6-5) maverick; urgency=high
+
+  * Initial proper release..
+
+ -- Callum Dickinson <gcfreak_ag20@hotmail.com>  Sat, 29 Jan 2011 01:18:42 +1300

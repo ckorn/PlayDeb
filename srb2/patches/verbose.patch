@@ -1,0 +1,30 @@
+### Make the Makefile more verbode because it fails to build on the build server
+### objcopy:../bin/Linux/Release/debug/srb2: No such file or directory
+Index: srb2-2.0.6/src/Makefile
+===================================================================
+--- srb2-2.0.6.orig/src/Makefile	2011-09-01 20:19:31.000000000 +0200
++++ srb2-2.0.6/src/Makefile	2013-05-12 14:43:00.429166998 +0200
+@@ -562,8 +562,10 @@
+ # NOTE: DJGPP's objcopy do not have --add-gnu-debuglink
+ 
+ $(BIN)/$(EXENAME): $(POS) $(OBJS)
++	@echo "$(MKDIR) $(BIN)"
+ 	-$(MKDIR) $(BIN)
+ 	@echo Linking $(EXENAME)...
++	@echo "$(LD) $(LDFLAGS) $(OBJS) -o $(BIN)/$(EXENAME) $(LIBS)"
+ 	$(LD) $(LDFLAGS) $(OBJS) -o $(BIN)/$(EXENAME) $(LIBS)
+ ifndef VALGRIND
+ ifndef NOOBJDUMP
+@@ -575,9 +577,12 @@
+ endif
+ endif
+ ifndef PSP
++	@echo "$(OBJCOPY) $(BIN)/$(EXENAME) $(BIN)/$(DBGNAME)"
+ 	$(OBJCOPY) $(BIN)/$(EXENAME) $(BIN)/$(DBGNAME)
++	@echo "$(OBJCOPY) --strip-debug $(BIN)/$(EXENAME)"
+ 	$(OBJCOPY) --strip-debug $(BIN)/$(EXENAME)
+ ifndef DJGPPDOS
++	@echo "$(OBJCOPY) --add-gnu-debuglink=$(BIN)/$(DBGNAME) $(BIN)/$(EXENAME)"
+ 	$(OBJCOPY) --add-gnu-debuglink=$(BIN)/$(DBGNAME) $(BIN)/$(EXENAME)
+ endif
+ endif
