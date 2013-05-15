@@ -1,3 +1,233 @@
+openra (20130514-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    All mods:
+    Destroyed bridges can now be repaired with an engineer.
+    Significantly improved AI.
+    Added (beta) support for left-click mouse orders via the settings menu.
+    Added "move viewport to group" hotkey (home key or double tap group
+    number).
+    Exposed several new and/or hidden preferences in the settings menu.
+    Games can now be paused with a hotkey (F9 by default) or by opening the
+    menu in a single player game.
+    New/improved UI for spectators and defeated players.
+    Improved server list and lobby UI.
+    Fixed units attacking enemy units hidden by fog/shroud.
+    Fixed several other visibility-related bugs.
+    Improved range circle contrast against terrain.
+    Fixed UI notification sound issues.
+    Added "Reset Exploration" developer option (same effect as the hide-map
+    crate).
+    Fixed the visibility of peripheral effects for spectators/replays (ranks,
+    production bars, etc).
+    Improved aircraft contrail rendering.
+    Fixed issue with harvesters not undocking when a refinery is destroyed.
+    Fixed civilian building rendering.
+    Added in-game player statistics for spectators (RA and D2K only).
+    Added "Fragile Alliances" option, allowing alliances to be changed during
+    free-for-all games (RA and D2K only).
+    Added a tooltip that shows provided and drained power (RA and D2K - C&C
+    already had this)
+    Improved ingame chat dialog (RA and D2K only).
+    Red Alert:
+    Added Mobile Gap Generator.
+    Added Mobile Radar Jammer (jams radar and deflects enemy missiles).
+    Added desert theater (ported from C&C plus additional custom tiles by
+    Harrison).
+    Removed Volkov.
+    Added announcer voice upon game start.
+    Civilians now panic when attacked.
+    Added a new desert-themed shellmap inspired by C&C Generals.
+    Added ice floe actors for use on snow maps.
+    Several improvements to the original shellmap.
+    New missions: Allies03, Allies04, Soviet01Classic, MonsterTankMadness,
+    Survival01.
+    New maps: Room Convergence, Ghost Town, Bad Neighbors.
+    Improved maps: Chaos Canyon, Bomber John, Bombardment Islands.
+    Fixed Mechanic repair cursor.
+    Fixed graphics for craters for snow maps.
+    Re-enabled "Mud" music track.
+    Fixed supply track shadow.
+    Added unit production hotkeys.
+    Fixed Airfield tooltip.
+    Changed minimap color of gems to blue.
+    Gap Generator shroud now disappears on low-power/death.
+    Added support for Nyerguds music upgrade pack.
+    Fixed target line/flash for Demo Truck targets.
+    Added building death frames for Construction Yard, Power Plants and Ore
+    Refinery.
+    Improved Ore Silo artwork (more fill states).
+    Improved Weapon Factory door animation and prevented the door closing
+    before units exited.
+    Changed building placement color to black on snow maps for increased
+    contrast.
+    Fixed Attack Dog sound.
+    Added duration indicators for units under Chronosphere and Iron Curtain
+    effects.
+    Fixed Tanya shooting buildings and using C4 on barrels.
+    Fixed Chrono Tank being unable to crush infantry/sandbags or trigger
+    mines.
+    Balance changes:
+    Base defense damage reduced against structures.
+    Pillbox armor increased from wood to heavy.
+    Construction Yard armor reduced/health increased.
+    Construction Yard is now unsellable to prevent Mobile Construction
+    Vehicle crate exploit.
+    Superweapon health increased.
+    Chrono Tank damage increased/health increased/Chrono-shift range limit
+    added/Chronosphere prerequisite added.
+    Demo Truck cost increased/health reduced/speed reduced.
+    Disguised Spies are now hidden from enemy GPS.
+    Added build limit to Missile Silo and Tanya.
+    Oil derricks are now repairable by engineers.
+    Minelayers can now detect mines, allowing other units to target and
+    destroy them.
+    Nukes can destroy ore wells and trees.
+    Tesla Tank health increased.
+    Medium Tank damage increased.
+    Mammoth Tank turret rotation speed increased/damage increased.
+    Badger bomber health increased.
+    Cruiser speed increased.
+    Missile Sub accuracy increased.
+    C&C:
+    Building range and a short construction delay added to Construction Yards
+    to prevent base walking.
+    Mobile SAM launcher given to Nod as dedicated mobile AA.
+    Improved explosions.
+    Corrected music.yaml track titles.
+    Tweaked building construction animation speed.
+    Improved cloak and building destruction sounds.
+    Added blue tiberium trees.
+    Fixed blue tiberium not poisoning infantry.
+    Increased crate lifetime and removed level-up crate effect.
+    Fixed infantry running animations.
+    Fixed Viceroid unit decorations (veterancy/group number).
+    Fixed tooltip flickering when moving the mouse.
+    Fixed mouse-interaction bugs in the production palette.
+    Improved tooltip names.
+    Added maps: The Sentinel, Bialystok, No Escapism, Rock Canyon, Slippery
+    Slopes, Skull Valley, Dead in Motion Redux, East vs West redux, Drop
+    Zone, The Hourglass.
+    Added EVA notification for nuclear missile launches.
+    Husk lifetime reduced to 10 seconds.
+    Obelisk is now automatically targeted by units.
+    Balance:
+    Harvester capacity increased.
+    Advanced Comm-Center and Temple of Nod act as a substitute prerequisite
+    of the Comm-Center.
+    Reduced MCV crate probability to 80% to solve Construction Yard sell
+    exploit.
+    MCV can be constructed without a service depot.
+    Construction Yard health reduced.
+    Infantry detect nearby cloaked units.
+    Infantry and vehicle speed on clear terrain increased.
+    Airstrike regen reduced to three minutes.
+    Comm-Center health reduced.
+    Airfield health reduced.
+    Helipad price reduced.
+    Advanced Guard Tower range increased/health reduced/power consumption
+    increased.
+    Advanced Guard Tower missiles improved vs aircraft and vehicles/reduced
+    vs infantry
+    Obelisk range increased.
+    Tank firing rate increased/damage vs light armor increased.
+    Light Tank speed increased/turn rate increased/ROF increased/damage
+    reduced.
+    Turn speeds increased for most units.
+    Recon Bike damage reduced/sight increased/speed increased on clear,
+    reduced on road.
+    Buggy health reduced/sight increased.
+    Flamethrower range reduced/damage increased vs wood.
+    Flame Tank significantly buffed.
+    Chinook price reduced.
+    Helicopter prerequisites changed to Comm-Center/Advanced Tech building.
+    Apache sight increased.
+    Orca ROF reduced/ammo increased/damage reduced/sight increased.
+    Stealth Tank initial stance changed to "hold-fire."
+    Increased sight range for Light Tank and APC.
+    A10 sight range increased.
+    Mammoth Tank speed increased/health increased/turret rotation
+    increased/missile spread increased.
+    Stealth Tank range reduced/cloak delay increased/damage vs heavy armor
+    reduced.
+    Turret and Guard Tower range increased.
+    APC damage increased/speed reduced.
+    Artillery range reduced/damage vs wood reduced.
+    Rocket Infantry damage increased vs armor.
+    Increased nuke and Ion Cannon damage vs heavy armor.
+    Grenadier's grenade speed increased.
+    SAM site pop-up speed increased.
+    Humvee / Buggy damage increased.
+    MLRS range reduced/ROF reduced/damage reduced.
+    Recon Bike damage increased vs heavy armor/burst delay added/range
+    reduced.
+    Dune 2000:
+    Removed shroud (uses fog-of-war instead). Buildings are hidden under the
+    fog until they are first seen.
+    Added Medic.
+    Added Stealth Raider.
+    Removed Deviator.
+    Aircraft are now unbuildable.
+    Fixed building positioning and selection boxes.
+    Added husks for units and turrets.
+    Added trails to shells and missiles.
+    Fixed animations for Windtrap, Repair Pad, IX Research.
+    Reduced "silos needed" warnings.
+    Husk lifetime reduced to 20 seconds.
+    Added large building radius to construction yard.
+    Improved explosions.
+    Crate probabilities adjusted.
+    New UI button artwork.
+    Added maps: Black Mesa, Black Mesa (large), Dune Boogie, Dune Boogie
+    (large), Brimstone, Death Depths - Modded, Tuck's Sietch.
+    Complete rebalancing from the ground up.
+    Engine:
+    Fixed several desync crashes.
+    Fixed a crash involving keyboard shortcuts and dead units.
+    Fixed a crash involving replays and multiple game sessions on a single
+    machine.
+    Fixed a rare loadscreen crash.
+    Improved logging on game desync.
+    Improved UPnP support via Mono.Nat.
+    Improved freetype support via SharpFont (replaces custom patched
+    Tao.Freetype).
+    Improved dedicated server support.
+    Improved mix file decryption (fixes a crash when playing the "Mud" audio
+    track).
+    Introduced a new coordinate model to simplify eventual TS/RA2 support.
+    Initial work to port existing code to new coordinates model.
+    Added a muzzle positioning debug visualization.
+    Added a pathfinder debug visualization.
+    Removed player-configurable range behind the scenes of the color picker.
+    Fixes "radioactive" color exploit.
+    Show an improved error message when connecting to a server with
+    incompatible mods.
+    Added automatic map downloads from content.open-ra.org when joining a
+    server with an unknown map.
+    Added support for randomized weapon reports.
+    Improved loading times by removing unnecessary map indexing.
+    Scripted maps can now require human players in specified slots.
+    Allow mods to independently enable/disable shroud and fog of war.
+    Minor pathfinding improvements.
+    Other misc refactoring and code cleanup.
+    Build system and packages:
+    Added a `version` rule to the makefile for setting mod version strings on
+    local development builds.
+    Added a `docs` rule for generating trait documentation.
+    Fixed permission errors in the .deb package.
+    Support `--instdir` options for parallel installation of .deb packages.
+    Added Desura compatibility for Linux.
+    Map Editor and Tools:
+    Added a toolstrip with new and improved tools.
+    Added support for terrain categories.
+    Fixed wrong palette remapping for neutral buildings.
+    Maps are now saved/loaded from the custom maps directory.
+    Fixed legacy map importer.
+    Added a --docs flag for OpenRA.Utility for generating trait
+    documentation.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 14 May 2013 21:03:12 +0200
+
 openra (20121019-1~getdeb2) precise; urgency=low
 
   * Fix debian/watch file

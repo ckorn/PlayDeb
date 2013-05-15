@@ -2,10 +2,10 @@ dh_clideps does not understand the "dllentry" syntax.
 Take the config files from the Ubuntu package which uses the "target" syntax.
 
 Map libGL.so to libGLU.so.1
-Index: openra-20120504/thirdparty/Tao/Tao.Cg.dll.config
+Index: openra-20130514/thirdparty/Tao/Tao.Cg.dll.config
 ===================================================================
---- openra-20120504.orig/thirdparty/Tao/Tao.Cg.dll.config	2012-05-01 23:10:53.000000000 +0200
-+++ openra-20120504/thirdparty/Tao/Tao.Cg.dll.config	2012-05-06 15:35:12.952295771 +0200
+--- openra-20130514.orig/thirdparty/Tao/Tao.Cg.dll.config	2013-05-14 21:04:27.324872224 +0200
++++ openra-20130514/thirdparty/Tao/Tao.Cg.dll.config	2013-05-14 21:04:27.320872224 +0200
 @@ -1,12 +1,9 @@
  <configuration>
 -    <dllmap dll="cg.dll">
@@ -26,25 +26,10 @@ Index: openra-20120504/thirdparty/Tao/Tao.Cg.dll.config
 +    <dllmap dll="cgGL.dll" os="osx" target="/Library/Frameworks/Cg.framework/Cg" />
 +    <dllmap dll="cgGL.dll" os="!windows,osx" target="libCgGL.so" />
  </configuration>
-Index: openra-20120504/thirdparty/Tao/Tao.FreeType.dll.config
+Index: openra-20130514/thirdparty/Tao/Tao.OpenAl.dll.config
 ===================================================================
---- openra-20120504.orig/thirdparty/Tao/Tao.FreeType.dll.config	2012-05-01 23:10:53.000000000 +0200
-+++ openra-20120504/thirdparty/Tao/Tao.FreeType.dll.config	2012-05-06 15:35:40.584294951 +0200
-@@ -1,7 +1,5 @@
- <configuration>
--	<dllmap dll="freetype6.dll">
--    	<dllentry os="linux" dll="libfreetype.so.6" />
--    	<dllentry os="windows" dll="freetype6.dll" />
--    	<dllentry os="osx" dll="/usr/X11/lib/libfreetype.6.dylib" />
--    </dllmap>
-+    <dllmap dll="freetype6.dll" os="windows" target="freetype6.dll" />
-+    <dllmap dll="freetype6.dll" os="osx" target="/Library/Frameworks/Mono.framework/Libraries/libfreetype.6.dylib" />
-+    <dllmap dll="freetype6.dll" os="!windows,osx" target="libfreetype.so.6" />
- </configuration>
-Index: openra-20120504/thirdparty/Tao/Tao.OpenAl.dll.config
-===================================================================
---- openra-20120504.orig/thirdparty/Tao/Tao.OpenAl.dll.config	2012-05-01 23:10:53.000000000 +0200
-+++ openra-20120504/thirdparty/Tao/Tao.OpenAl.dll.config	2012-05-06 15:36:09.220294099 +0200
+--- openra-20130514.orig/thirdparty/Tao/Tao.OpenAl.dll.config	2013-05-14 21:04:27.324872224 +0200
++++ openra-20130514/thirdparty/Tao/Tao.OpenAl.dll.config	2013-05-14 21:04:27.320872224 +0200
 @@ -1,12 +1,9 @@
  <configuration>
 -    <dllmap dll="OpenAL32.dll">
@@ -65,10 +50,10 @@ Index: openra-20120504/thirdparty/Tao/Tao.OpenAl.dll.config
 +    <dllmap dll="alut.dll" os="osx" target="libalut.so.0" />
 +    <dllmap dll="alut.dll" os="!windows,osx" target="libalut.so.0" />
  </configuration>
-Index: openra-20120504/thirdparty/Tao/Tao.OpenGl.dll.config
+Index: openra-20130514/thirdparty/Tao/Tao.OpenGl.dll.config
 ===================================================================
---- openra-20120504.orig/thirdparty/Tao/Tao.OpenGl.dll.config	2012-05-01 23:10:53.000000000 +0200
-+++ openra-20120504/thirdparty/Tao/Tao.OpenGl.dll.config	2012-05-06 15:36:36.444293287 +0200
+--- openra-20130514.orig/thirdparty/Tao/Tao.OpenGl.dll.config	2013-05-14 21:04:27.324872224 +0200
++++ openra-20130514/thirdparty/Tao/Tao.OpenGl.dll.config	2013-05-14 21:04:27.320872224 +0200
 @@ -1,12 +1,11 @@
  <configuration>
 -    <dllmap dll="opengl32.dll">
@@ -91,10 +76,10 @@ Index: openra-20120504/thirdparty/Tao/Tao.OpenGl.dll.config
 +
 +    <dllmap dll="libGL.so" os="!windows,osx" target="libGLU.so.1" />
  </configuration>
-Index: openra-20120504/thirdparty/Tao/Tao.Sdl.dll.config
+Index: openra-20130514/thirdparty/Tao/Tao.Sdl.dll.config
 ===================================================================
---- openra-20120504.orig/thirdparty/Tao/Tao.Sdl.dll.config	2012-05-01 23:10:53.000000000 +0200
-+++ openra-20120504/thirdparty/Tao/Tao.Sdl.dll.config	2012-05-06 15:36:58.684292623 +0200
+--- openra-20130514.orig/thirdparty/Tao/Tao.Sdl.dll.config	2013-05-14 21:04:27.324872224 +0200
++++ openra-20130514/thirdparty/Tao/Tao.Sdl.dll.config	2013-05-14 21:04:27.320872224 +0200
 @@ -1,37 +1,29 @@
  <configuration>
 -	<dllmap dll="SDL.dll">
@@ -160,3 +145,19 @@ Index: openra-20120504/thirdparty/Tao/Tao.Sdl.dll.config
 +    <dllmap dll="SDL_gfx.dll" os="osx" target="/Library/Frameworks/SDL_gfx.framework/SDL_gfx" />
 +    <dllmap dll="SDL_gfx.dll" os="!windows,osx" target="libSDL_gfx.so.13" />
  </configuration>
+Index: openra-20130514/thirdparty/SharpFont.dll.config
+===================================================================
+--- openra-20130514.orig/thirdparty/SharpFont.dll.config	2013-05-13 13:20:02.000000000 +0200
++++ openra-20130514/thirdparty/SharpFont.dll.config	2013-05-14 21:07:01.388867641 +0200
+@@ -1,7 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8" ?>
+ <configuration>
+-	<dllmap dll="freetype6.dll">
+-		<dllentry os="linux" dll="libfreetype.so.6" />
+-		<dllentry os="osx" dll="/usr/X11/lib/libfreetype.6.dylib" />
+-	</dllmap>
+-</configuration>
+\ No newline at end of file
++    <dllmap dll="freetype6.dll" os="osx" target="/usr/X11/lib/libfreetype.6.dylib" />
++    <dllmap dll="freetype6.dll" os="!windows,osx" target="libfreetype.so.6" />
++</configuration>

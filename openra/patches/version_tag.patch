@@ -1,27 +1,40 @@
 Set the correct version.
-Index: openra-20121019/mods/cnc/mod.yaml
+Index: openra-20130514/mods/cnc/mod.yaml
 ===================================================================
---- openra-20121019.orig/mods/cnc/mod.yaml	2012-10-19 00:56:39.000000000 +0200
-+++ openra-20121019/mods/cnc/mod.yaml	2012-10-21 16:22:10.990368784 +0200
+--- openra-20130514.orig/mods/cnc/mod.yaml	2013-05-14 21:32:40.956821843 +0200
++++ openra-20130514/mods/cnc/mod.yaml	2013-05-14 21:32:40.952821843 +0200
 @@ -1,7 +1,7 @@
  Metadata:
  	Title: C&C
  	Description: OpenRA Reimagining of the classic game
 -	Version: {DEV_VERSION}
-+	Version: release-20121019
++	Version: release-20130514
  	Author: The OpenRA Developers
  
  Folders:
-Index: openra-20121019/mods/ra/mod.yaml
+Index: openra-20130514/mods/ra/mod.yaml
 ===================================================================
---- openra-20121019.orig/mods/ra/mod.yaml	2012-10-19 00:56:39.000000000 +0200
-+++ openra-20121019/mods/ra/mod.yaml	2012-10-21 16:22:25.058368367 +0200
+--- openra-20130514.orig/mods/ra/mod.yaml	2013-05-14 21:32:40.956821843 +0200
++++ openra-20130514/mods/ra/mod.yaml	2013-05-14 21:32:40.952821843 +0200
 @@ -1,7 +1,7 @@
  Metadata:
  	Title: Red Alert
  	Description: OpenRA Reimagining of the classic game
 -	Version: {DEV_VERSION}
-+	Version: release-20121019
++	Version: release-20130514
+ 	Author: The OpenRA Developers
+ 
+ Folders:
+Index: openra-20130514/mods/d2k/mod.yaml
+===================================================================
+--- openra-20130514.orig/mods/d2k/mod.yaml	2013-05-13 13:20:02.000000000 +0200
++++ openra-20130514/mods/d2k/mod.yaml	2013-05-14 21:33:22.180820616 +0200
+@@ -1,7 +1,7 @@
+ Metadata:
+ 	Title: Dune 2000 (beta)
+ 	Description: early version of the Dune 2000 mod
+-	Version: {DEV_VERSION}
++	Version: release-20130514
  	Author: The OpenRA Developers
  
  Folders:
