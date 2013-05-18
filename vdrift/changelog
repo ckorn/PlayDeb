@@ -1,3 +1,9 @@
+vdrift (20120722-1~getdeb2~precise) precise; urgency=low
+
+  * Rebuild against new bullet (LP: #1180898)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 17 May 2013 22:47:47 +0200
+
 vdrift (20120722-1~getdeb1) precise; urgency=low
 
   * New upstream version
