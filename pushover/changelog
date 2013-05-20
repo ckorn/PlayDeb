@@ -1,3 +1,14 @@
+pushover (0.0.5-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    - new Swedish and Esperanto translation and updated French translation
+      many thanks to the translators
+    - AROS support inside the code
+    - minor usability improvements in the menu sytem
+    - slightly lower requirements on libpng and lua versions
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 20 May 2013 16:43:10 +0200
+
 pushover (0.0.4-1~getdeb1) precise; urgency=low
 
   * New upstream version
