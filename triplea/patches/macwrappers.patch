@@ -1,11 +1,11 @@
 Description: Dumb down unneeded wrappers for compatibillity on macs
 Author: Scott Howard <showard@debian.org>
 
-Index: triplea-1.7.0.1/src/games/strategy/common/ui/BasicGameMenuBar.java
+Index: triplea-1.7.0.3/src/games/strategy/common/ui/BasicGameMenuBar.java
 ===================================================================
---- triplea-1.7.0.1.orig/src/games/strategy/common/ui/BasicGameMenuBar.java	2013-05-05 19:03:08.061588697 +0200
-+++ triplea-1.7.0.1/src/games/strategy/common/ui/BasicGameMenuBar.java	2013-05-05 19:03:16.393588626 +0200
-@@ -543,7 +543,7 @@
+--- triplea-1.7.0.3.orig/src/games/strategy/common/ui/BasicGameMenuBar.java	2013-05-21 23:08:16.318111135 +0200
++++ triplea-1.7.0.3/src/games/strategy/common/ui/BasicGameMenuBar.java	2013-05-21 23:08:16.314111135 +0200
+@@ -558,7 +558,7 @@
  				}
  			}).setMnemonic(KeyEvent.VK_A);
  		}
@@ -14,7 +14,7 @@ Index: triplea-1.7.0.1/src/games/strategy/common/ui/BasicGameMenuBar.java
  		// On Mac OS X, put the About menu where Mac users expect it to be
  		{
  			Application.getApplication().addApplicationListener(new ApplicationAdapter()
-@@ -556,6 +556,7 @@
+@@ -571,6 +571,7 @@
  				}
  			});
  		}
@@ -22,10 +22,10 @@ Index: triplea-1.7.0.1/src/games/strategy/common/ui/BasicGameMenuBar.java
  	}
  	
  	/**
-Index: triplea-1.7.0.1/src/games/strategy/common/ui/MacWrapper.java
+Index: triplea-1.7.0.3/src/games/strategy/common/ui/MacWrapper.java
 ===================================================================
---- triplea-1.7.0.1.orig/src/games/strategy/common/ui/MacWrapper.java	2013-05-05 19:03:08.061588697 +0200
-+++ triplea-1.7.0.1/src/games/strategy/common/ui/MacWrapper.java	2013-05-05 19:03:16.393588626 +0200
+--- triplea-1.7.0.3.orig/src/games/strategy/common/ui/MacWrapper.java	2013-05-21 23:08:16.318111135 +0200
++++ triplea-1.7.0.3/src/games/strategy/common/ui/MacWrapper.java	2013-05-21 23:08:16.314111135 +0200
 @@ -33,7 +33,7 @@
  {
  	private static MainGameFrame s_shutdownFrame;
@@ -44,10 +44,10 @@ Index: triplea-1.7.0.1/src/games/strategy/common/ui/MacWrapper.java
  	// keep this in its own class, otherwise we get a no class def error when
  	// we try to load the game and the stubs arent in the classpath
  	// i think the java validator triggers this
-Index: triplea-1.7.0.1/src/games/strategy/engine/lobby/client/ui/MacLobbyWrapper.java
+Index: triplea-1.7.0.3/src/games/strategy/engine/lobby/client/ui/MacLobbyWrapper.java
 ===================================================================
---- triplea-1.7.0.1.orig/src/games/strategy/engine/lobby/client/ui/MacLobbyWrapper.java	2013-05-05 19:03:08.061588697 +0200
-+++ triplea-1.7.0.1/src/games/strategy/engine/lobby/client/ui/MacLobbyWrapper.java	2013-05-05 19:03:16.393588626 +0200
+--- triplea-1.7.0.3.orig/src/games/strategy/engine/lobby/client/ui/MacLobbyWrapper.java	2013-05-21 23:08:16.318111135 +0200
++++ triplea-1.7.0.3/src/games/strategy/engine/lobby/client/ui/MacLobbyWrapper.java	2013-05-21 23:08:16.314111135 +0200
 @@ -26,19 +26,5 @@
  	// keep this in its own class, otherwise we get a no class def error when
  	// we try to load the game and the stubs arent in the classpath
