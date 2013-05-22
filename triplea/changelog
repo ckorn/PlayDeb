@@ -1,3 +1,62 @@
+triplea (1.7.0.3-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * Got headless game to show options to client's, for changing the game,
+    changing to an autosave, sending a save to the server, and getting the
+    savegame from the host. (veqryn)
+    * Got headless game to restart its lobby connection once per 8 hours.
+    (veqryn)
+    * Got headless game server to be able to connect to lobby, and host games
+    repeatedly without requiring any UI or swing event thread. Also got to
+    immediately reload autosave when a player quits. (veqryn)
+    * Got headless game server to be able to pick games, and have a mini-ui
+    for hosting and for during the game. (veqryn)
+    * Got headless game server to be able to host minimap, with the game
+    screen headless. (veqryn)
+    * First pass at setting up framework for a headless game server. (veqryn)
+    * Preventing AA units with maxRoundsAA from getting removed early from
+    battle. (veqryn)
+    * Fixed bug causing Random Territory Start delegate to fail in online
+    games due to requesting dice too quickly. (veqryn)
+    * Updating Great War ww1 map and xml, to improve options and balance.
+    (veqryn)
+    * Updating packaged JRE to Java 7 update 21 for x86. (veqryn)
+    * Made fuelCost no longer charge for allied air dependants, paratroopers,
+    and owned air on owned fighters not making an attack. (veqryn)
+    * Created new game option property, "Use Fuel Cost", which will control
+    if we charge for fuel in our movement. (veqryn)
+    * Added an option to turn off the end of turn report, into the game menu
+    bar. (veqryn)
+    * Changed engine preference for max memory into a "system.ini" file, that
+    way a user can delete or reinstall TripleA if they screw up. (veqryn)
+    * Created new engine preference option to set the maximum memory used for
+    triplea, for joining, hosting, and also an option to have triplea always
+    restart with higher memory maximum. (veqryn)
+    * Created new option in engine preferences to show engine log console,
+    and also had the console show current memory usage. (veqryn)
+    * Reducing maximum memory to 896mb, down from 1024mb, in order to stop
+    these errors from happening, and not allowing engine to add 20% to this
+    when joining online games or hosting. (veqryn)
+    * Figuring out some user's Java jvm's and/or the JRE included with
+    triplea, only allow up to xmx 1024mb of memory maximum, and that the
+    program completely fails when going over this limit, often causing the
+    user to be unable to join or host games online. (veqryn & diaz)
+    * Fixing some lock not held errors. (veqryn)
+    * Fixed bug causing triggered notifications to not use local images when
+    shown on a client computer. (veqryn)
+    * Not allowing scrambling question when only and SBR raid is in a
+    territory and scramble to SBR is turned off. (veqryn)
+    * Fixed bug causing Territory Effects to not be applied at all, ever.
+    Also fixed possible issue with 'choose best roll' in low luck. (veqryn)
+    * Fixed bug causing national objectives which rewarded players on a
+    per-territory basis using the "each" modifier to not work. (veqryn)
+    * Fixed bug causing paratrooping land units who's air transports were hit
+    by AA fire to not be removed from the battle. (veqryn)
+    * Fixed possible null pointer in color chooser for color property, which
+    occurred when chosing the color for map text. (veqryn)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 21 May 2013 23:06:56 +0200
+
 triplea (1.7.0.1-1~getdeb1) precise; urgency=low
 
   * New upstream version
