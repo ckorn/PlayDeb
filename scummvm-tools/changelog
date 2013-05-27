@@ -1,3 +1,34 @@
+scummvm-tools (1.6.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+     - Fix crash when compiling with wxWidgets 2.9.
+     - Add two tools to extract and repackage the Soltys game data.
+     - Fix bug #3093138: "compress_tucker with ScummVM CLI Tools not
+     working".
+     - Fix bug #3280674: "ScummTools do not compress monster.sou of german
+     fdd-version"
+     - Fix various issues on case sensitive systems when looking for input
+     files
+       (e.g. in compress_tucker or compress_sword1 the sub-directories and
+       input
+       files needed to be all uppercase).
+     - Improve tool detection and inputs handling for tools that require
+     multiple
+       input files or an input directory (in both the GUI and command line).
+     - Add signature to compressed Tinsel .smp to match the one at the start
+     of
+       the .idx file. This ensures that no sound starts at offset 0, since
+       that is
+       interpreted as the sound missing. This fixes the first line of speech
+       when
+       Rincewind wakes up at the beginning of Discworld 1.
+     - Fix too long help string for compression tools in the extra input file
+       selection which made the file selection impossible because the widgets
+       were outside the window.
+     - Respect given output directory in compress_tinsel.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 27 May 2013 19:54:12 +0200
+
 scummvm-tools (1.4.0-1~getdeb1) lucid; urgency=low
 
   * New upstream version
