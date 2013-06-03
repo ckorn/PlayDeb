@@ -1,9 +1,9 @@
 Always include curses.h. Else functions are not found.
-Index: stone-soup-0.10.2/source/libunix.cc
+Index: stone-soup-0.12.2/source/libunix.cc
 ===================================================================
---- stone-soup-0.10.2.orig/source/libunix.cc	2012-04-14 23:36:19.777913044 +0200
-+++ stone-soup-0.10.2/source/libunix.cc	2012-04-14 23:36:30.161912734 +0200
-@@ -50,16 +50,7 @@
+--- stone-soup-0.12.2.orig/source/libunix.cc	2013-06-02 13:58:19.229942228 +0200
++++ stone-soup-0.12.2/source/libunix.cc	2013-06-02 13:58:19.225942228 +0200
+@@ -51,16 +51,7 @@
  #endif
  
  #include <time.h>
