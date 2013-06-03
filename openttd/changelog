@@ -1,3 +1,79 @@
+openttd (1.3.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    1.3.1 (2013-06-01)
+    ------------------------------------------------------------------------
+    - Fix: When overbuilding a reserved track with a non-track station tile,
+    that tile would remain reserved and eventually trigger a crash upon
+    removal [FS#5540] (r25251)
+
+
+    1.3.1-RC1 (2013-05-17)
+    ------------------------------------------------------------------------
+    - Feature: Translations of baseset descriptions via language files
+    (r25209, r25205)
+    - Feature: Faroese and Scottish Gaelic translations (r25198, r25176)
+    - Feature: Plural form to be used by Scottish Gaelic (1,11; 2,12; 3..10,
+    13..19; other) (r25078)
+    - Change: [strgen] Allow any number of colour codes in translations
+    (r25193, r25192, r25191)
+    - Change: [Win32] MSVC 2010 comes with stdint.h (r25128)
+    - Change: Be slightly more lenient with trying to detect a subversion
+    repository in case someone has a sparse tags checkout. In that case the
+    .svn folder misses from the $ROOT_DIR because it is in the $ROOT_DIR/..
+    (i.e. tags) folder (r25107)
+    - Fix: 'No station' error was given, even when there was a station that
+    way occupied or not yours [FS#5546] (r25243)
+    - Fix: Crash when AI is executing a command as it is bankrupted (removed
+    from the game) [FS#5547] (r25236)
+    - Fix: Give bridges owned by noone (from bankrupt companies) to the first
+    company which replaces the bridge. Everyone could have removed/rebuild
+    the bridge anyway [FS#5541] (r25231, r25227)
+    - Fix: [NewGRF] Revise when vehicle running sound effects 04, 07 and 08
+    are played; in depot or tunnel, or when crashed or stopped: No sound.
+    Braking: Effect 08 instead of 07 [FS#5538] (r25226)
+    - Fix: [NewGRF] Play vehicle sound effect also for planes (r25225)
+    - Fix: [NewGRF] cur_speed is only valid for the front engine, so make
+    other engines in the consist use the speed of the front [FS#5534]
+    (r25224)
+    - Fix: [NewGRF] Make tick_counters work the same for vehicles (r25223,
+    r25222)
+    - Fix: [NewGRF] IsCompatibleTrainStationTile() is not a symmetric
+    function. Clarify the parameters and fix the cases were they were swapped
+    (r25221)
+    - Fix: Consider map border as water with repsect to river/canal
+    continuation (r25220)
+    - Fix: [Script] Clarify on which tiles IsDesertTile and IsSnowTile work,
+    i.e. the ones without infrastructure or buildings, and introduce
+    GetTerrainType for the cases where IsDesertTile/IsSnowTile do not work
+    [FS#5537] (r25213)
+    - Fix: The level crossing sound is an ambient sound and not a new year
+    sound (r25200)
+    - Fix: Original train and road vehicle acceleration did no longer respect
+    bridge speed limits [FS#5523] (r25167)
+    - Fix: [Win32] Do not statically link to SHGetFolderPath as it may not
+    exist, and improve its emulation [FS#5522] (r25155, r25153)
+    - Fix: [Win32] Do not store invalid paths in the search path list
+    (r25154)
+    - Fix: Remove stray reservation from savegames affected by FS#5510 et al.
+    upon loading [FS#5520] (r25152)
+    - Fix: [Script] XXBase::Chance function did not work for large values
+    (>65535) [FS#5517] (r25148)
+    - Fix: Several typos/inconsistencies in English strings [FS#5496]
+    (r25144, r25143)
+    - Fix: When extra dynamite was disabled, towns would be allowed to clear
+    bridges with trams (r25141)
+    - Fix: Towns are build as OWNER_TOWN, so they also need to be removed as
+    OWNER_TOWN otherwise parts might remain [FS#5519] (r25140)
+    - Fix: Editboxes could become too small when resizing windows (r25121)
+    - Fix: Game script language files did not work, when inside a tar
+    [FS#5509] (r25117, r25114)
+    - Fix: [NewGRF] Acceleration of NewGRF aircraft was too fast, while
+    acceleration of default aircraft was way too slow (r25115)
+    - Fix: Pass $LDFLAGS_BUILD to all endian_check compilations (r25108)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 02 Jun 2013 13:35:19 +0200
+
 openttd (1.3.0-1~getdeb1) precise; urgency=low
 
   * New upstream version

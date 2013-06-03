@@ -3,7 +3,6 @@ Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Jordi Mallach <jordi@debian.org>
-DM-Upload-Allowed: yes
 Build-Depends: debhelper (>= 9),
                libsdl-dev,
                zlib1g-dev,
@@ -15,8 +14,6 @@ Build-Depends: debhelper (>= 9),
                liblzma-dev,
                grfcodec (>= 5.1.2)
 Standards-Version: 3.9.3
-Vcs-Browser: http://git.debian.org/?p=collab-maint/openttd.git
-Vcs-Git: git://git.debian.org/collab-maint/openttd.git
 Homepage: http://www.openttd.org/
 
 Package: openttd
