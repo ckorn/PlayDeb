@@ -1,50 +1,74 @@
-hedgewars (0.9.18-1~getdeb2) precise; urgency=low
+hedgewars (0.9.19.1-1~getdeb1) precise; urgency=low
 
-  * Fix broken upstream files.
+  * New upstream version (LP: #1186716)
+     + New Freezer weapon - freezes terrain, water, hedgehogs, mines, cases,
+     explosives
+     + Saucer can aim weapons and fire underwater
+     + Main graphical user interface overhaul
+     + Splashscreen on Windows *_*
+     + Up and down keys navigate in chat history
+     + Several commands from chat available
+     + Support hwplay:// scheme syntax
+     + Supply full revision and hash information in version tag
+     + Better set of options for driving engine
+     + Downloadable content can now be stored in packages for easy uninstall
+     + Lua scripts can load a sidecar overlay package of game resources
+     + Math improvements for better performance/reliability
+     + Smarter AI - now uses drill rocket accurately and is aware of barrels
+     and dud mines.  More aggressive in infinite attack, lua can tell to
+     target specific hogs, such as in Mutant
+     + New fort, Steel Tower
+     + New theme, Fruit
+     + New hats - some national ones, Portal, harlequin, more animals...
+     + New maps based on StarBound. SB_Bones, SB_Crystal, SB_Grassy,
+     SB_Grove, SB_Haunty, SB_Oaks, SB_Shrooms, SB_Tentacles
+     + Translation updates - Turkish, French, German, Japanese, Portuguese,
+     Italian, Russian - Campaign french should work correctly now
+     + Theme object masks
+     + Easier weapon selection in shoppa. F1 will select from F5 if there are
+     no weps in F1-F4
+     + Cleaver radius shrunk to improve usability on horizontal throws
+     + Map hog limit is now just a suggestion, not enforced
+     + Static map theme is now just the default, can be changed
+     + Themeable static maps (provide a mask.png without a map.png)
+     + Split seed with '|' to keep the land shape but change the hog
+     placement
+     * You can now move out of the way when throwing a sticky mine or cleaver
+     straight up
+     * Rope sliding should behave more like pre-0.9.18 again
+     * Forbid kicking on 1v1 matches
+     * Desync fixes
+     * Fixed fort mode
+     * Making very large maps now works properly with targeted weapons
+     * ParseCommand should be safe to use in Lua now, at any time
+     * Fixes to many weapons. Mudball, blowtorch, explosives, cluster bomb
+     spread, portal.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 02 Nov 2012 20:59:29 +0100
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 03 Jun 2013 21:19:17 +0200
 
-hedgewars (0.9.18-1~getdeb1) precise; urgency=low
+hedgewars (0.9.18-0.2ubuntu1) raring; urgency=low
 
-  * New upstream version
+  * Build-depend on ghc and libghc-* rather than the transitional ghc6 and
+    libghc6-*.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 02 Nov 2012 20:51:23 +0100
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 10 Apr 2013 12:43:22 +0100
 
-hedgewars (0.9.18-1~getdeb1) precise; urgency=low
+hedgewars (0.9.18-0.2) experimental; urgency=low
 
-  * New upstream version
-     + 'A Classic Fairytale' Campaign
-     + Video recorder (requires ffmpeg)
-     + Cleaver weapon
-     + AI is now aware of drowning and fall damage
-     + AI learned how to use Sniper Rifle and Cake
-     + Variable pen width and eraser for drawn maps
-     + Several trainings and missions
-     + Allow setting custom local palette of teams colors
-     + Hide eliminated teams from teams healths widget
-     + Server doesn't delete room till last player quits it
-     + PNG screenshots
-     + Show bot level on CPU flag
-     + Objects now have density value assigned which impacts their behavior
-     on explosions, throwing from rope and drowning
-     + Improve AI skills at Desert Eagel, Whip, Firepunch, Baseball Bat,
-     Hammer, Cluster Bomb, Watermelon and walking
-     + Individual hedgehogs healths in team health bar
-     + Drill rocket wouldn't explode in your face if you stand close to wall
-     + Ability to rope into a portal, allow RC plane to go through portals
-     + Many small frontend improvements: get rid of "save" buttons,
-     descriptions, allow to use network proxy, etc
-     + Reduce amount of memory needed for engine to store land data
-     + Countless other small fixes and improvements
-     + Detect desyncs early
-     * Fix cake getting stuck in barrels, crates and hedgehogs
-     * Fix all knowns bugs which caused network game hang when players close
-     engine or quit
-     * Fix drill strike bug when drill's timer gets ridiculously high value
-     instead of explosion
-     * Fix some crashes, freezes and memory leaks in frontend and engine
+  * Non-maintainer upload
+  * Added patch from upstream to fix a FTBFS with haskell 7.6
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 01 Nov 2012 18:54:28 +0100
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Thu, 21 Feb 2013 17:26:19 +0100
+
+hedgewars (0.9.18-0.1) experimental; urgency=low
+
+  * Non-maintainer upload
+  * New upstream version (Closes: #691986 LP: #1073730)
+    + Built using the -3 upstream tarball hedgewars-src-0.9.18-3.tar.bz2
+  * Bumped standards version to 3.9.4
+  * Added some external build-dependencies
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Mon, 28 Jan 2013 15:45:14 +0100
 
 hedgewars (0.9.17-1) unstable; urgency=low
 
