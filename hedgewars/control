@@ -2,6 +2,7 @@ Source: hedgewars
 Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+XSBC-Original-Maintainer: Dmitry E. Oboukhov <unera@debian.org>
 Uploaders: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Build-Depends: debhelper (>= 9),
                cmake,
@@ -15,25 +16,30 @@ Build-Depends: debhelper (>= 9),
                libsdl-net1.2-dev,
                bzip2,
                fp-units-gfx,
-               fp-units-misc,
-               ghc6,
-               libghc6-stm-dev,
-               libghc6-network-dev,
-               libghc6-dataenc-dev,
-               libghc6-hslogger-dev,
+               ghc,
+               libghc-stm-dev,
+               libghc-network-dev,
+               libghc-dataenc-dev,
+               libghc-hslogger-dev,
                libghc-utf8-string-dev,
-               libghc-vector-dev,
+               libghc-random-dev,
                liblua5.1-dev,
                imagemagick,
                libghc-bytestring-show-dev,
                libghc-deepseq-dev,
+               fpc,
+               libpng12-dev,
                libavcodec-dev,
                libavformat-dev,
-               libavutil-dev
+               freeglut3-dev,
+               libghc-binary-dev,
+               libghc-mtl-dev,
+               libghc-parsec3-dev,
+               libghc-vector-dev,
+               qt4-qmake,
+               fp-units-misc
 Standards-Version: 3.9.3
 Homepage: http://hedgewars.org
-VCS-Browser: http://git.debian.org/?p=collab-maint/hedgewars.git;a=summary
-VCS-Git: git://git.debian.org/collab-maint/hedgewars.git
 
 Package: hedgewars
 Architecture: any
@@ -41,8 +47,6 @@ Depends: ${shlibs:Depends},
          ${misc:Depends},
          ttf-dejavu-core,
          ttf-wqy-zenhei,
-         ffmpeg,
-         freeglut3,
          hedgewars-data (>= ${source:Upstream-Version})
 Description: Worms style game
  Each player controls a team of several hedgehogs. During the
@@ -69,6 +73,41 @@ Description: Worms style game
  contact with explosions, to zero (the damage dealt to the
  attacked hedgehog or hedgehogs after a player's or CPU turn is
  shown only when all movement on the battlefield has ceased).
+
+Package: hedgewars-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         hedgewars (= ${binary:Version})
+Description: Worms style game (debug package)
+ Each player controls a team of several hedgehogs. During the
+ course of the game, players take turns with one of their
+ hedgehogs. They then use whatever tools and weapons are
+ available to attack and kill the opponents' hedgehogs, thereby
+ winning the game. Hedgehogs may move around the terrain in a
+ variety of ways, normally by walking and jumping but also by
+ using particular tools such as the "Rope" or "Parachute", to
+ move to otherwise inaccessible areas. Each turn is time-limited
+ to ensure that players do not hold up the game with excessive
+ thinking or moving.
+ .
+ A large variety of tools and weapons are available for players
+ during the game: Grenade, Cluster Bomb, Bazooka, UFO, Homing Bee,
+ Shotgun, Desert Eagle, Fire Punch, Baseball Bat, Dynamite, Mine,
+ Rope, Pneumatic pick, Parachute. Most weapons, when used, cause
+ explosions that deform the terrain, removing circular chunks.
+ The landscape is an island floating on a body of water, or a
+ restricted cave with water at the bottom. A hedgehog dies when
+ it enters the water (either by falling off the island, or
+ through a hole in the bottom of it), it is thrown off either
+ side of the arena or when its health is reduced, typically from
+ contact with explosions, to zero (the damage dealt to the
+ attacked hedgehog or hedgehogs after a player's or CPU turn is
+ shown only when all movement on the battlefield has ceased).
+ .
+ This package contains the debug symbols.
 
 Package: hedgewars-data
 Breaks: hedgewars (<= 0.8.1-10)

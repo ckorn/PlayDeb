@@ -1,0 +1,13 @@
+# I: hedgewars: desktop-entry-contains-encoding-key usr/share/applications/hedgewars.desktop:4 Encoding
+Index: hedgewars-0.9.19.1/share/hedgewars/Data/misc/hedgewars.desktop
+===================================================================
+--- hedgewars-0.9.19.1.orig/share/hedgewars/Data/misc/hedgewars.desktop	2013-05-30 22:07:42.000000000 +0200
++++ hedgewars-0.9.19.1/share/hedgewars/Data/misc/hedgewars.desktop	2013-06-03 22:55:30.427973914 +0200
+@@ -1,7 +1,6 @@
+ [Desktop Entry]
+ Type=Application
+ Version=1.0
+-Encoding=UTF-8
+ Name=Hedgewars
+ GenericName=Fighting Hedgehogs
+ GenericName[de]=Kämpfende Igel

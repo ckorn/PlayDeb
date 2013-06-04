@@ -1,0 +1,19 @@
+# Taken from:
+# https://build.opensuse.org/package/view_file?expand=1&file=hedgewars-fix-physfs-linking.patch&package=hedgewars&project=games
+Index: hedgewars-0.9.19.1/misc/libphysfs/CMakeLists.txt
+===================================================================
+--- hedgewars-0.9.19.1.orig/misc/libphysfs/CMakeLists.txt	2013-05-30 22:07:37.000000000 +0200
++++ hedgewars-0.9.19.1/misc/libphysfs/CMakeLists.txt	2013-06-03 23:00:31.623964954 +0200
+@@ -11,6 +11,12 @@
+ # Increment this if/when we break backwards compatibility.
+ set(PHYSFS_SOVERSION 1)
+ 
++# 32bit platforms won't link unless this is set
++if(CMAKE_SIZEOF_VOID_P LESS 8)
++    set(PHYSFS_NO_64BIT_SUPPORT TRUE)
++    add_definitions(-DPHYSFS_NO_64BIT_SUPPORT=1)
++endif(CMAKE_SIZEOF_VOID_P LESS 8)
++
+ # I hate that they define "WIN32" ... we're about to move to Win64...I hope!
+ if(WIN32 AND NOT WINDOWS)
+     set(WINDOWS TRUE)

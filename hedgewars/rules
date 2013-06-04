@@ -1,9 +1,10 @@
 #!/usr/bin/make -f
 
 DEB_CMAKE_INSTALL_PREFIX := /usr/lib/hedgewars
-DEB_CMAKE_EXTRA_FLAGS      := -DWITH_SERVER=1 \
-	-DDATA_INSTALL_DIR=/usr/share/games
-
+DEB_CMAKE_EXTRA_FLAGS      := -DNOVIDEOREC=1 -DDATA_INSTALL_DIR=/usr/share/games/hedgewars
+DEB_BUILD_PARALLEL := 1
+# Leftover file in upstream tarball
+DEB_CLEAN_EXCLUDE := QTfrontend/main.cpp.orig
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/cmake.mk
 
