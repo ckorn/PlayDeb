@@ -1,3 +1,9 @@
+pyfa (1.1.14-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 06 Jun 2013 18:24:16 +0200
+
 pyfa (1.1.13-1~getdeb1) precise; urgency=low
 
   * New upstream version
