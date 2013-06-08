@@ -1,3 +1,52 @@
+stendhal (1.08-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    *world*
+    - New NPC and quest in Nalwor Flower Shop: Restock Flower Shop
+    - New achievements: Nalwor's Bane and Feeling Blue
+    - New puppy NPC in Semos City
+    - Rodent trap added to Daily Item Quest
+    - Some new creature sound effects
+    - Some new creature corpses
+    - New NPC type: PassiveNPC
+    - Warning messages for dangerous areas now show up in client display
+    - Sound plays when player/creature blocks an attack
+    - Item names have a new highlighting mode
+    - Twin swords have a bit of DEF again
+    - Teddies can be hugged
+    - Food and drinks have "Eat" and "Drink" menu items, instead of "Use"
+    - House keys are no longer dropped on death
+    - Bufferflies added to Semos Plains North
+    - Rabbits added to Fado City
+    - Fish added to fountain in Ados City
+    - 3 kitten added to Felina's house
+
+
+    *client*
+    - Option to turn off creature speech bubbles
+    - Fixed accidental looting on drag by deactivating ctrl-click as looting
+    command
+    - Immediate response when starting to move with arrow keys
+    - Attack sprites are scaled according to attacker size
+    - Player now faces attack target if not doing so on each turn
+
+
+    *fixes*
+    - quest log of EmotionCrystals fixed
+    - Removed background noise from many sound effects
+    - Pressing an arrow key always tries to move one tile
+    - Producers don't ask to come back in the past under certain conditions
+    anymore
+    - Hayunn won't give more than one task at a time
+    - Stone style for client fixed
+
+    *code*
+    - @Override added where applicable
+    - Reduced visibility of several classes, methods and fields
+    - Unused old code removed
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 08 Jun 2013 17:54:10 +0200
+
 stendhal (1.07-1~getdeb1) precise; urgency=low
 
   * New upstream version
