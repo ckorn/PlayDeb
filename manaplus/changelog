@@ -1,3 +1,22 @@
+manaplus (1:1.3.6.9-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: colors in jewelry theme.
+    fix: player sprite in disguise mode.
+    fix: spell attack key.
+    fix: some inventory crashes.
+    fix: space button in edit server dialog.
+    fix: wrong animation time with goto and label.
+    add: money popup in inventory.
+    add: include tags in most configs.
+    add: drag and drop between inventory and other windows.
+    add: chat command for testing particle effects: /testparticle
+    add: alternate server name in servers list.
+    add: improve windows version speed.
+    add: remove "server:" from chat notifications.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 08 Jun 2013 22:18:03 +0200
+
 manaplus (1:1.3.5.26-1~getdeb1) precise; urgency=low
 
   * New upstream version
