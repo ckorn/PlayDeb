@@ -26,11 +26,15 @@ libd0_blind_id.so.0 libd0-blind-id0 #MINVER#
  d0_blind_id_read_public_id@Base 0.5.0
  d0_blind_id_read_public_key@Base 0.5.0
  d0_blind_id_sessionkey_public_id@Base 0.5.0
+ d0_blind_id_setmallocfuncs@Base 0.5.0
+ d0_blind_id_setmutexfuncs@Base 0.5.0
  d0_blind_id_sign_with_private_id_sign@Base 0.5.0
  d0_blind_id_sign_with_private_id_sign_detached@Base 0.5.0
  d0_blind_id_sign_with_private_id_verify@Base 0.5.0
  d0_blind_id_sign_with_private_id_verify_detached@Base 0.5.0
  d0_blind_id_util_sha256@Base 0.5.0
+ d0_blind_id_verify_private_id@Base 0.5.0
+ d0_blind_id_verify_public_id@Base 0.5.0
  d0_blind_id_write_private_id@Base 0.5.0
  d0_blind_id_write_private_id_modulus@Base 0.5.0
  d0_blind_id_write_private_id_request_camouflage@Base 0.5.0

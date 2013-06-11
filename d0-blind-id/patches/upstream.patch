@@ -1,0 +1,1985 @@
+# apply all upstream changes which are not in the latest tag.
+Index: d0-blind-id-0.5.0/COPYING
+===================================================================
+--- d0-blind-id-0.5.0.orig/COPYING	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/COPYING	2013-06-09 15:12:27.547364000 +0200
+@@ -27,6 +27,6 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * commit 933873052795f6abc14deead27f0f652a7e401e1
++ * $Format:commit %H$
+  * $Id: 5a9d7fb3fb92d06c546cf7ce1aa448446d878906 $
+  */
+Index: d0-blind-id-0.5.0/Makefile.am
+===================================================================
+--- d0-blind-id-0.5.0.orig/Makefile.am	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/Makefile.am	2013-06-09 15:12:27.547364000 +0200
+@@ -23,7 +23,7 @@
+ libd0_blind_id_la_SOURCES += d0_bignum-gmp.c
+ endif
+ endif
+-libd0_blind_id_la_LDFLAGS = -versioninfo 5:0:5
++libd0_blind_id_la_LDFLAGS = -versioninfo 7:0:7
+ libd0_blind_id_la_CFLAGS = -fvisibility=hidden -Wold-style-definition -Wstrict-prototypes -Wsign-compare -Wdeclaration-after-statement
+ library_includedir = $(includedir)/d0_blind_id
+ library_include_HEADERS = d0_blind_id.h d0.h
+Index: d0-blind-id-0.5.0/configure.ac
+===================================================================
+--- d0-blind-id-0.5.0.orig/configure.ac	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/configure.ac	2013-06-09 15:12:27.547364000 +0200
+@@ -1,8 +1,8 @@
+-AC_INIT([d0_blind_id], [0.3], [divVerent@xonotic.org])
++AC_INIT([d0_blind_id],[0.5],[divVerent@xonotic.org])
+ AC_CONFIG_MACRO_DIR([m4])
+ AM_INIT_AUTOMAKE([-Wall foreign])
+ AC_PROG_CC
+-AC_PROG_LIBTOOL
++LT_INIT
+ 
+ AC_ARG_WITH(openssl, AS_HELP_STRING([--with-openssl], [Use OpenSSL instead of GMP (beware of the OpenSSL license)]), [with_openssl=$withval], [with_openssl=no])
+ AC_ARG_WITH(tommath, AS_HELP_STRING([--with-tommath], [Use libtommath instead of GMP (slow, but WTFPL)]), [with_tommath=$withval], [with_tommath=no])
+@@ -20,7 +20,7 @@
+ 
+ AC_ARG_ENABLE(rijndael, AS_HELP_STRING([--disable-rijndael], [Disable build of the d0_rijndael library]), [enable_aes=$enableval], [enable_aes=yes])
+ 
+-AS_IF([test -f d0_rijndael.c], [], [AS_IF([test x"$enable_aes" != x"no"], [AC_MSG_ERROR([d0_rijndael.c is missing, try --disable-rijndael or download the full version of this library, but beware of crypto import laws then])])])
++AS_IF([test -f d0_rijndael.c], [], [AS_IF([test x"$enable_aes" != xno], [AC_MSG_ERROR([d0_rijndael.c is missing, try --disable-rijndael or download the full version of this library, but beware of crypto import laws then])])])
+ AM_CONDITIONAL(ENABLE_RIJNDAEL, [test x$enable_aes = xyes])
+ 
+ AC_CONFIG_FILES([Makefile d0_blind_id.pc d0_rijndael.pc])
+Index: d0-blind-id-0.5.0/d0.c
+===================================================================
+--- d0-blind-id-0.5.0.orig/d0.c	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/d0.c	2013-06-09 15:12:27.547364000 +0200
+@@ -1,9 +1,11 @@
++#include "d0.h"
++
+ /*
+  * include the license notice into the dynamic library to "reproduce the
+  * copyright notice" automatically, so the application developer does not have
+  * to care about this term
+  */
+-const char *d0_bsd_license_notice = "\n"
++const char *d0_bsd_license_notice D0_USED = "\n"
+ "/*\n"
+ " * FILE:	d0.c\n"
+ " * AUTHOR:	Rudolf Polzer - divVerent@xonotic.org\n"
+@@ -35,13 +37,89 @@
+ " * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n"
+ " * SUCH DAMAGE.\n"
+ " *\n"
+-" * commit 933873052795f6abc14deead27f0f652a7e401e1\n"
+-" * $Id: 29b0aed1e76de5458941551d3400ee25fc3f7af8 $\n"
++" * $Format:commit %H$\n"
++" * $Id: c8920b4ef5a120ad66f94b9d3355f152239063f1 $\n"
+ " */\n";
+ 
+-#include "d0.h"
+-
+ #include <stdlib.h>
+ 
+-void *(*d0_malloc)(size_t len) = malloc;
+-void (*d0_free)(void *p) = free;
++//#define MUTEX_DEBUG
++
++#ifdef MUTEX_DEBUG
++#define NUM_MUTEXES 1024
++#include <stdio.h>
++static mutexarray[NUM_MUTEXES];
++static int mutexpos = 0;
++static void *dummy_createmutex(void)
++{
++	if(mutexpos >= NUM_MUTEXES)
++	{
++		printf("We don't support creating so many mutexes here\n");
++		return NULL;
++	}
++	return &mutexarray[mutexpos++];
++}
++static void dummy_destroymutex(void *m)
++{
++	if(*(int *)m != 0)
++		printf("Destroying in-use mutex\n");
++	*(int *)m = -1;
++}
++static int dummy_lockmutex(void *m)
++{
++	if(*(int *)m != 0)
++		printf("Locking in-use mutex\n");
++	*(int *)m += 1;
++	return 0;
++}
++static int dummy_unlockmutex(void *m)
++{
++	if(*(int *)m != 1)
++		printf("Unlocking not-in-use mutex\n");
++	*(int *)m -= 1;
++	return 0;
++}
++#else
++static void *dummy_createmutex(void)
++{
++	return (void *) 1; // some dummy non-NULL pointer
++}
++static void dummy_destroymutex(void *m)
++{
++}
++static int dummy_lockmutex(void *m)
++{
++	return 0;
++}
++static int dummy_unlockmutex(void *m)
++{
++	return 0;
++}
++#endif
++
++d0_malloc_t *d0_malloc = NULL;
++d0_free_t *d0_free = NULL;
++d0_createmutex_t *d0_createmutex = NULL;
++d0_destroymutex_t *d0_destroymutex = NULL;
++d0_lockmutex_t *d0_lockmutex = NULL;
++d0_unlockmutex_t *d0_unlockmutex = NULL;
++
++void d0_setmallocfuncs(d0_malloc_t *m, d0_free_t *f)
++{
++	d0_malloc = (m ? m : malloc);
++	d0_free = (f ? f : free);
++}
++
++void d0_setmutexfuncs(d0_createmutex_t *c, d0_destroymutex_t *d, d0_lockmutex_t *l, d0_unlockmutex_t *u)
++{
++	d0_createmutex = (c ? c : dummy_createmutex);
++	d0_destroymutex = (d ? d : dummy_destroymutex);
++	d0_lockmutex = (l ? l : dummy_lockmutex);
++	d0_unlockmutex = (u ? u : dummy_unlockmutex);
++}
++
++void d0_initfuncs(void)
++{
++	d0_setmallocfuncs(d0_malloc, d0_free);
++	d0_setmutexfuncs(d0_createmutex, d0_destroymutex, d0_lockmutex, d0_unlockmutex);
++}
+Index: d0-blind-id-0.5.0/d0.h
+===================================================================
+--- d0-blind-id-0.5.0.orig/d0.h	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/d0.h	2013-06-09 15:12:27.547364000 +0200
+@@ -29,8 +29,8 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * commit 933873052795f6abc14deead27f0f652a7e401e1
+- * $Id: 9a7b912057b836675f4e24f08514cad53fa46d2a $
++ * $Format:commit %H$
++ * $Id: 6c55afeb50f24bd316079ae46582e65f8020b19b $
+  */
+ 
+ #ifndef __D0_H__
+@@ -39,11 +39,28 @@
+ #include <unistd.h> // size_t
+ 
+ #define D0_EXPORT __attribute__((__visibility__("default")))
++#define D0_USED __attribute__((used))
+ #define D0_WARN_UNUSED_RESULT __attribute__((warn_unused_result))
+ #define D0_BOOL int
+ 
+-extern void *(*d0_malloc)(size_t len);
+-extern void (*d0_free)(void *p);
++typedef void *(d0_malloc_t)(size_t len);
++typedef void (d0_free_t)(void *p);
++typedef void *(d0_createmutex_t)(void);
++typedef void (d0_destroymutex_t)(void *);
++typedef int (d0_lockmutex_t)(void *); // zero on success
++typedef int (d0_unlockmutex_t)(void *); // zero on success
++
++extern d0_malloc_t *d0_malloc;
++extern d0_free_t *d0_free;
++extern d0_createmutex_t *d0_createmutex;
++extern d0_destroymutex_t *d0_destroymutex;
++extern d0_lockmutex_t *d0_lockmutex;
++extern d0_unlockmutex_t *d0_unlockmutex;
++
++void d0_setmallocfuncs(d0_malloc_t *m, d0_free_t *f);
++void d0_setmutexfuncs(d0_createmutex_t *c, d0_destroymutex_t *d, d0_lockmutex_t *l, d0_unlockmutex_t *u);
++void d0_initfuncs(void); // initializes them, this needs to be only called internally once
++
+ extern const char *d0_bsd_license_notice;
+ 
+ #endif
+Index: d0-blind-id-0.5.0/d0_bignum-gmp.c
+===================================================================
+--- d0-blind-id-0.5.0.orig/d0_bignum-gmp.c	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/d0_bignum-gmp.c	2013-06-09 15:12:27.551364000 +0200
+@@ -29,8 +29,8 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * commit 933873052795f6abc14deead27f0f652a7e401e1
+- * $Id: c26e9fc7e13656f1d0b1dabf4050083dc53711a4 $
++ * $Format:commit %H$
++ * $Id: d5da8b5889d64ee68e36febcc368d99487221952 $
+  */
+ 
+ /* NOTE: this file links against libgmp (http://gmplib.org), which is under the
+@@ -58,15 +58,43 @@
+ 
+ static gmp_randstate_t RANDSTATE;
+ static d0_bignum_t temp;
++static unsigned char numbuf[65536];
++static void *tempmutex = NULL; // hold this mutex when using RANDSTATE or temp or numbuf
+ 
+ #include <time.h>
+ #include <stdio.h>
+ 
++static void *allocate_function (size_t alloc_size)
++{
++	return d0_malloc(alloc_size);
++}
++static void *reallocate_function (void *ptr, size_t old_size, size_t new_size)
++{
++	void *data;
++	if(old_size == new_size)
++		return ptr;
++	data = d0_malloc(new_size);
++	if(ptr && data)
++		memcpy(data, ptr, (old_size < new_size) ? old_size : new_size);
++	d0_free(ptr);
++	return data;
++}
++void deallocate_function (void *ptr, size_t size)
++{
++	d0_free(ptr);
++}
++
+ D0_WARN_UNUSED_RESULT D0_BOOL d0_bignum_INITIALIZE(void)
+ {
+ 	FILE *f;
+ 	D0_BOOL ret = 1;
+ 	unsigned char buf[256];
++
++	tempmutex = d0_createmutex();
++	d0_lockmutex(tempmutex);
++
++	mp_set_memory_functions(allocate_function, reallocate_function, deallocate_function);
++
+ 	d0_bignum_init(&temp);
+ 	gmp_randinit_mt(RANDSTATE);
+ 	gmp_randseed_ui(RANDSTATE, time(NULL));
+@@ -122,39 +150,67 @@
+ 	mpz_import(temp.z, sizeof(buf), 1, 1, 0, 0, buf);
+ 	gmp_randseed(RANDSTATE, temp.z);
+ 
++	d0_unlockmutex(tempmutex);
++
+ 	return ret;
+ }
+ 
+ void d0_bignum_SHUTDOWN(void)
+ {
++	d0_lockmutex(tempmutex);
++
+ 	d0_bignum_clear(&temp);
+ 	gmp_randclear(RANDSTATE);
++
++	d0_unlockmutex(tempmutex);
++	d0_destroymutex(tempmutex);
++	tempmutex = NULL;
+ }
+ 
+ D0_BOOL d0_iobuf_write_bignum(d0_iobuf_t *buf, const d0_bignum_t *bignum)
+ {
+-	static unsigned char numbuf[65536];
++	D0_BOOL ret;
+ 	size_t count = 0;
++
++	d0_lockmutex(tempmutex);
+ 	numbuf[0] = mpz_sgn(bignum->z) & 3;
+ 	if((numbuf[0] & 3) != 0) // nonzero
+ 	{
+ 		count = (mpz_sizeinbase(bignum->z, 2) + 7) / 8;
+ 		if(count > sizeof(numbuf) - 1)
++		{
++			d0_unlockmutex(tempmutex);
+ 			return 0;
++		}
+ 		mpz_export(numbuf+1, &count, 1, 1, 0, 0, bignum->z);
+ 	}
+-	return d0_iobuf_write_packet(buf, numbuf, count + 1);
++	ret = d0_iobuf_write_packet(buf, numbuf, count + 1);
++	d0_unlockmutex(tempmutex);
++	return ret;
+ }
+ 
+ d0_bignum_t *d0_iobuf_read_bignum(d0_iobuf_t *buf, d0_bignum_t *bignum)
+ {
+-	static unsigned char numbuf[65536];
+ 	size_t count = sizeof(numbuf);
++
++	d0_lockmutex(tempmutex);
+ 	if(!d0_iobuf_read_packet(buf, numbuf, &count))
++	{
++		d0_unlockmutex(tempmutex);
+ 		return NULL;
++	}
+ 	if(count < 1)
++	{
++		d0_unlockmutex(tempmutex);
+ 		return NULL;
+-	if(!bignum) bignum = d0_bignum_new(); if(!bignum) return NULL;
++	}
++	if(!bignum)
++		bignum = d0_bignum_new();
++	if(!bignum)
++	{
++		d0_unlockmutex(tempmutex);
++		return NULL;
++	}
+ 	if(numbuf[0] & 3) // nonzero
+ 	{
+ 		mpz_import(bignum->z, count-1, 1, 1, 0, 0, numbuf+1);
+@@ -165,6 +221,7 @@
+ 	{
+ 		mpz_set_ui(bignum->z, 0);
+ 	}
++	d0_unlockmutex(tempmutex);
+ 	return bignum;
+ }
+ 
+@@ -252,8 +309,10 @@
+ d0_bignum_t *d0_bignum_rand_range(d0_bignum_t *r, const d0_bignum_t *min, const d0_bignum_t *max)
+ {
+ 	if(!r) r = d0_bignum_new(); if(!r) return NULL;
++	d0_lockmutex(tempmutex);
+ 	mpz_sub(temp.z, max->z, min->z);
+ 	mpz_urandomm(r->z, RANDSTATE, temp.z);
++	d0_unlockmutex(tempmutex);
+ 	mpz_add(r->z, r->z, min->z);
+ 	return r;
+ }
+@@ -261,14 +320,18 @@
+ d0_bignum_t *d0_bignum_rand_bit_atmost(d0_bignum_t *r, size_t n)
+ {
+ 	if(!r) r = d0_bignum_new(); if(!r) return NULL;
++	d0_lockmutex(tempmutex);
+ 	mpz_urandomb(r->z, RANDSTATE, n);
++	d0_unlockmutex(tempmutex);
+ 	return r;
+ }
+ 
+ d0_bignum_t *d0_bignum_rand_bit_exact(d0_bignum_t *r, size_t n)
+ {
+ 	if(!r) r = d0_bignum_new(); if(!r) return NULL;
++	d0_lockmutex(tempmutex);
+ 	mpz_urandomb(r->z, RANDSTATE, n-1);
++	d0_unlockmutex(tempmutex);
+ 	mpz_setbit(r->z, n-1);
+ 	return r;
+ }
+@@ -409,5 +472,5 @@
+ 
+ char *d0_bignum_tostring(const d0_bignum_t *x, unsigned int base)
+ {
+-	return mpz_get_str(NULL, base, x->z);
++	return mpz_get_str(NULL, base, x->z); // this allocates!
+ }
+Index: d0-blind-id-0.5.0/d0_bignum-openssl.c
+===================================================================
+--- d0-blind-id-0.5.0.orig/d0_bignum-openssl.c	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/d0_bignum-openssl.c	2013-06-09 15:12:27.551364000 +0200
+@@ -29,8 +29,8 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * commit 933873052795f6abc14deead27f0f652a7e401e1
+- * $Id: 1e103a4c725c8ca75dcf67e052544cdfdb153dd4 $
++ * $Format:commit %H$
++ * $Id: 8b52eb28ae3db54492ae5df2001658696b30c5b2 $
+  */
+ 
+ /* NOTE: this file links against openssl (http://www.openssl.org), which is
+@@ -45,6 +45,7 @@
+ #include <assert.h>
+ #include <string.h>
+ #include <openssl/bn.h>
++#include <openssl/crypto.h>
+ 
+ // for stupid OpenSSL versions in Mac OS X
+ #ifndef BN_is_negative
+@@ -59,48 +60,190 @@
+ 
+ static d0_bignum_t temp;
+ static BN_CTX *ctx;
++static unsigned char numbuf[65536];
++static void *tempmutex = NULL; // hold this mutex when using ctx or temp or numbuf
+ 
+ #include <time.h>
+ #include <stdio.h>
+ 
++static void **locks;
++
++void locking_function(int mode, int l, const char *file, int line)
++{
++	void *m = locks[l];
++	if(mode & CRYPTO_LOCK)
++		d0_lockmutex(m);
++	else
++		d0_unlockmutex(m);
++}
++
++typedef struct CRYPTO_dynlock_value
++{
++	void *m;
++};
++
++struct CRYPTO_dynlock_value *dyn_create_function(const char *file, int line)
++{
++	return (struct CRYPTO_dynlock_value *) d0_createmutex();
++}
++
++void dyn_lock_function(int mode, struct CRYPTO_dynlock_value *l, const char *file, int line)
++{
++	void *m = (void *) l;
++	if(mode & CRYPTO_LOCK)
++		d0_lockmutex(m);
++	else
++		d0_unlockmutex(m);
++}
++
++void dyn_destroy_function(struct CRYPTO_dynlock_value *l, const char *file, int line)
++{
++	void *m = (void *) l;
++	d0_destroymutex(l);
++}
++
+ D0_WARN_UNUSED_RESULT D0_BOOL d0_bignum_INITIALIZE(void)
+ {
++	FILE *f;
++	D0_BOOL ret = 1;
++	unsigned char buf[256];
++	int i, n;
++
++	tempmutex = d0_createmutex();
++	d0_lockmutex(tempmutex);
++
++	n = CRYPTO_num_locks();
++	locks = d0_malloc(n * sizeof(*locks));
++	for(i = 0; i < n; ++i)
++		locks[i] = d0_createmutex();
++
++	CRYPTO_set_locking_callback(locking_function);
++	CRYPTO_set_dynlock_create_callback(dyn_create_function);
++	CRYPTO_set_dynlock_lock_callback(dyn_lock_function);
++	CRYPTO_set_dynlock_destroy_callback(dyn_destroy_function);
++
+ 	ctx = BN_CTX_new();
+ 	d0_bignum_init(&temp);
++
++#ifdef WIN32
++	{
++		HCRYPTPROV hCryptProv;
++		if(CryptAcquireContext(&hCryptProv, NULL, NULL, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT))
++		{
++			if(!CryptGenRandom(hCryptProv, sizeof(buf), (PBYTE) &buf[0]))
++			{
++				fprintf(stderr, "WARNING: could not initialize random number generator (CryptGenRandom failed)\n");
++				ret = 0;
++			}
++			CryptReleaseContext(hCryptProv, 0);
++		}
++		else if(CryptAcquireContext(&hCryptProv, NULL, NULL, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT | CRYPT_NEWKEYSET))
++		{
++			if(!CryptGenRandom(hCryptProv, sizeof(buf), (PBYTE) &buf[0]))
++			{
++				fprintf(stderr, "WARNING: could not initialize random number generator (CryptGenRandom failed)\n");
++				ret = 0;
++			}
++			CryptReleaseContext(hCryptProv, 0);
++		}
++		else
++		{
++			fprintf(stderr, "WARNING: could not initialize random number generator (CryptAcquireContext failed)\n");
++			ret = 0;
++		}
++	}
++#else
++	f = fopen("/dev/urandom", "rb");
++	if(!f)
++		f = fopen("/dev/random", "rb");
++	if(f)
++	{
++		setbuf(f, NULL);
++		if(fread(buf, sizeof(buf), 1, f) != 1)
++		{
++			fprintf(stderr, "WARNING: could not initialize random number generator (read from random device failed)\n");
++			ret = 0;
++		}
++		fclose(f);
++	}
++	else
++	{
++		fprintf(stderr, "WARNING: could not initialize random number generator (no random device found)\n");
++		ret = 0;
++	}
++#endif
++	RAND_add(buf, sizeof(buf), sizeof(buf));
++
++	d0_unlockmutex(tempmutex);
++
+ 	return 1;
++	// FIXME initialize the RNG on Windows on UNIX it is done right already
+ }
+ 
+ void d0_bignum_SHUTDOWN(void)
+ {
++	int i, n;
++
++	d0_lockmutex(tempmutex);
++
+ 	d0_bignum_clear(&temp);
+ 	BN_CTX_free(ctx);
+ 	ctx = NULL;
++
++	n = CRYPTO_num_locks();
++	for(i = 0; i < n; ++i)
++		d0_destroymutex(locks[i]);
++	d0_free(locks);
++
++	d0_unlockmutex(tempmutex);
++	d0_destroymutex(tempmutex);
++	tempmutex = NULL;
+ }
+ 
+ D0_BOOL d0_iobuf_write_bignum(d0_iobuf_t *buf, const d0_bignum_t *bignum)
+ {
+-	static unsigned char numbuf[65536];
++	D0_BOOL ret;
+ 	size_t count = 0;
++
++	d0_lockmutex(tempmutex);
+ 	numbuf[0] = BN_is_zero(&bignum->z) ? 0 : BN_is_negative(&bignum->z) ? 3 : 1;
+ 	if((numbuf[0] & 3) != 0) // nonzero
+ 	{
+ 		count = BN_num_bytes(&bignum->z);
+ 		if(count > sizeof(numbuf) - 1)
++		{
++			d0_unlockmutex(tempmutex);
+ 			return 0;
++		}
+ 		BN_bn2bin(&bignum->z, numbuf+1);
+ 	}
+-	return d0_iobuf_write_packet(buf, numbuf, count + 1);
++	ret = d0_iobuf_write_packet(buf, numbuf, count + 1);
++	d0_unlockmutex(tempmutex);
++	return ret;
+ }
+ 
+ d0_bignum_t *d0_iobuf_read_bignum(d0_iobuf_t *buf, d0_bignum_t *bignum)
+ {
+-	static unsigned char numbuf[65536];
+ 	size_t count = sizeof(numbuf);
++
++	d0_lockmutex(tempmutex);
+ 	if(!d0_iobuf_read_packet(buf, numbuf, &count))
++	{
++		d0_unlockmutex(tempmutex);
+ 		return NULL;
++	}
+ 	if(count < 1)
++	{
++		d0_unlockmutex(tempmutex);
+ 		return NULL;
+-	if(!bignum) bignum = d0_bignum_new(); if(!bignum) return NULL;
++	}
++	if(!bignum)
++		bignum = d0_bignum_new();
++	if(!bignum)
++	{
++		d0_unlockmutex(tempmutex);
++		return NULL;
++	}
+ 	if(numbuf[0] & 3) // nonzero
+ 	{
+ 		BN_bin2bn(numbuf+1, count-1, &bignum->z);
+@@ -111,6 +254,7 @@
+ 	{
+ 		BN_zero(&bignum->z);
+ 	}
++	d0_unlockmutex(tempmutex);
+ 	return bignum;
+ }
+ 
+@@ -174,8 +318,10 @@
+ d0_bignum_t *d0_bignum_rand_range(d0_bignum_t *r, const d0_bignum_t *min, const d0_bignum_t *max)
+ {
+ 	if(!r) r = d0_bignum_new(); if(!r) return NULL;
++	d0_lockmutex(tempmutex);
+ 	BN_sub(&temp.z, &max->z, &min->z);
+ 	BN_rand_range(&r->z, &temp.z);
++	d0_unlockmutex(tempmutex);
+ 	BN_add(&r->z, &r->z, &min->z);
+ 	return r;
+ }
+@@ -262,7 +408,9 @@
+ d0_bignum_t *d0_bignum_mul(d0_bignum_t *r, const d0_bignum_t *a, const d0_bignum_t *b)
+ {
+ 	if(!r) r = d0_bignum_new(); if(!r) return NULL;
++	d0_lockmutex(tempmutex);
+ 	BN_mul(&r->z, &a->z, &b->z, ctx);
++	d0_unlockmutex(tempmutex);
+ 	return r;
+ }
+ 
+@@ -270,6 +418,7 @@
+ {
+ 	if(!q && !m)
+ 		m = d0_bignum_new();
++	d0_lockmutex(tempmutex);
+ 	if(q)
+ 	{
+ 		if(m)
+@@ -280,6 +429,7 @@
+ 	}
+ 	else
+ 		BN_nnmod(&m->z, &a->z, &b->z, ctx);
++	d0_unlockmutex(tempmutex);
+ 	if(m)
+ 		return m;
+ 	else
+@@ -289,43 +439,59 @@
+ d0_bignum_t *d0_bignum_mod_add(d0_bignum_t *r, const d0_bignum_t *a, const d0_bignum_t *b, const d0_bignum_t *m)
+ {
+ 	if(!r) r = d0_bignum_new(); if(!r) return NULL;
++	d0_lockmutex(tempmutex);
+ 	BN_mod_add(&r->z, &a->z, &b->z, &m->z, ctx);
++	d0_unlockmutex(tempmutex);
+ 	return r;
+ }
+ 
+ d0_bignum_t *d0_bignum_mod_sub(d0_bignum_t *r, const d0_bignum_t *a, const d0_bignum_t *b, const d0_bignum_t *m)
+ {
+ 	if(!r) r = d0_bignum_new(); if(!r) return NULL;
++	d0_lockmutex(tempmutex);
+ 	BN_mod_sub(&r->z, &a->z, &b->z, &m->z, ctx);
++	d0_unlockmutex(tempmutex);
+ 	return r;
+ }
+ 
+ d0_bignum_t *d0_bignum_mod_mul(d0_bignum_t *r, const d0_bignum_t *a, const d0_bignum_t *b, const d0_bignum_t *m)
+ {
+ 	if(!r) r = d0_bignum_new(); if(!r) return NULL;
++	d0_lockmutex(tempmutex);
+ 	BN_mod_mul(&r->z, &a->z, &b->z, &m->z, ctx);
++	d0_unlockmutex(tempmutex);
+ 	return r;
+ }
+ 
+ d0_bignum_t *d0_bignum_mod_pow(d0_bignum_t *r, const d0_bignum_t *a, const d0_bignum_t *b, const d0_bignum_t *m)
+ {
+ 	if(!r) r = d0_bignum_new(); if(!r) return NULL;
++	d0_lockmutex(tempmutex);
+ 	BN_mod_exp(&r->z, &a->z, &b->z, &m->z, ctx);
++	d0_unlockmutex(tempmutex);
+ 	return r;
+ }
+ 
+ D0_BOOL d0_bignum_mod_inv(d0_bignum_t *r, const d0_bignum_t *a, const d0_bignum_t *m)
+ {
+ 	// here, r MUST be set, as otherwise we cannot return error state!
+-	return !!BN_mod_inverse(&r->z, &a->z, &m->z, ctx);
++	int ret;
++	d0_lockmutex(tempmutex);
++	ret = !!BN_mod_inverse(&r->z, &a->z, &m->z, ctx);
++	d0_unlockmutex(tempmutex);
++	return ret;
+ }
+ 
+ int d0_bignum_isprime(const d0_bignum_t *r, int param)
+ {
++	int ret;
++	d0_lockmutex(tempmutex);
+ 	if(param <= 0)
+-		return BN_is_prime_fasttest(&r->z, 1, NULL, ctx, NULL, 1);
++		ret = BN_is_prime_fasttest(&r->z, 1, NULL, ctx, NULL, 1);
+ 	else
+-		return BN_is_prime(&r->z, param, NULL, ctx, NULL);
++		ret = BN_is_prime(&r->z, param, NULL, ctx, NULL);
++	d0_unlockmutex(tempmutex);
++	return ret;
+ }
+ 
+ d0_bignum_t *d0_bignum_gcd(d0_bignum_t *r, d0_bignum_t *s, d0_bignum_t *t, const d0_bignum_t *a, const d0_bignum_t *b)
+@@ -336,16 +502,28 @@
+ 	else if(t)
+ 		assert(!"Extended gcd not implemented");
+ 	else
++	{
++		d0_lockmutex(tempmutex);
+ 		BN_gcd(&r->z, &a->z, &b->z, ctx);
++		d0_unlockmutex(tempmutex);
++	}
+ 	return r;
+ }
+ 
+ char *d0_bignum_tostring(const d0_bignum_t *x, unsigned int base)
+ {
++	char *s = NULL;
++	char *s2;
++	size_t n;
+ 	if(base == 10)
+-		return BN_bn2dec(&x->z);
++		s = BN_bn2dec(&x->z);
+ 	else if(base == 16)
+-		return BN_bn2hex(&x->z);
++		s = BN_bn2hex(&x->z);
+ 	else
+ 		assert(!"Other bases not implemented");
++	n = strlen(s) + 1;
++	s2 = d0_malloc(n);
++	memcpy(s2, s, n);
++	OPENSSL_free(s);
++	return s2;
+ }
+Index: d0-blind-id-0.5.0/d0_bignum-tommath.c
+===================================================================
+--- d0-blind-id-0.5.0.orig/d0_bignum-tommath.c	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/d0_bignum-tommath.c	2013-06-09 15:12:27.551364000 +0200
+@@ -29,8 +29,8 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * commit 933873052795f6abc14deead27f0f652a7e401e1
+- * $Id: d28a56fc0cb31765b08678de60755cb869828645 $
++ * $Format:commit %H$
++ * $Id: 75392a48ec7529f0d671d0863b6dbb74fa2c1119 $
+  */
+ 
+ #ifdef WIN32
+@@ -51,6 +51,8 @@
+ };
+ 
+ static d0_bignum_t temp;
++static unsigned char numbuf[65536];
++static void *tempmutex = NULL; // hold this mutex when using temp or numbuf
+ 
+ #include <stdio.h>
+ 
+@@ -75,6 +77,10 @@
+ {
+ 	D0_BOOL ret = 1;
+ 	unsigned char buf[256];
++
++	tempmutex = d0_createmutex();
++	d0_lockmutex(tempmutex);
++
+ 	d0_bignum_init(&temp);
+ #ifdef WIN32
+ 	{
+@@ -106,11 +112,15 @@
+ 	}
+ #endif
+ 
++	d0_unlockmutex(tempmutex);
++
+ 	return ret;
+ }
+ 
+ void d0_bignum_SHUTDOWN(void)
+ {
++	d0_lockmutex(tempmutex);
++
+ 	d0_bignum_clear(&temp);
+ #ifdef WIN32
+ 	if(hCryptProv)
+@@ -119,32 +129,55 @@
+ 		hCryptProv = NULL;
+ 	}
+ #endif
++
++	d0_unlockmutex(tempmutex);
++	d0_destroymutex(tempmutex);
++	tempmutex = NULL;
+ }
+ 
+ D0_BOOL d0_iobuf_write_bignum(d0_iobuf_t *buf, const d0_bignum_t *bignum)
+ {
+-	static unsigned char numbuf[65536];
++	D0_BOOL ret;
+ 	size_t count = 0;
++
++	d0_lockmutex(tempmutex);
+ 	numbuf[0] = (mp_iszero(&bignum->z) ? 0 : (bignum->z.sign == MP_ZPOS) ? 1 : 3);
+ 	if((numbuf[0] & 3) != 0) // nonzero
+ 	{
+ 		count = mp_unsigned_bin_size((mp_int *) &bignum->z);
+ 		if(count > sizeof(numbuf) - 1)
++		{
++			d0_unlockmutex(tempmutex);
+ 			return 0;
++		}
+ 		mp_to_unsigned_bin((mp_int *) &bignum->z, numbuf+1);
+ 	}
+-	return d0_iobuf_write_packet(buf, numbuf, count + 1);
++	ret = d0_iobuf_write_packet(buf, numbuf, count + 1);
++	d0_unlockmutex(tempmutex);
++	return ret;
+ }
+ 
+ d0_bignum_t *d0_iobuf_read_bignum(d0_iobuf_t *buf, d0_bignum_t *bignum)
+ {
+-	static unsigned char numbuf[65536];
+ 	size_t count = sizeof(numbuf);
++	d0_lockmutex(tempmutex);
+ 	if(!d0_iobuf_read_packet(buf, numbuf, &count))
++	{
++		d0_unlockmutex(tempmutex);
+ 		return NULL;
++	}
+ 	if(count < 1)
++	{
++		d0_unlockmutex(tempmutex);
+ 		return NULL;
+-	if(!bignum) bignum = d0_bignum_new(); if(!bignum) return NULL;
++	}
++	if(!bignum)
++		bignum = d0_bignum_new();
++	if(!bignum)
++	{
++		d0_unlockmutex(tempmutex);
++		return NULL;
++	}
+ 	if(numbuf[0] & 3) // nonzero
+ 	{
+ 		mp_read_unsigned_bin(&bignum->z, numbuf+1, count-1);
+@@ -155,6 +188,7 @@
+ 	{
+ 		mp_zero(&bignum->z);
+ 	}
++	d0_unlockmutex(tempmutex);
+ 	return bignum;
+ }
+ 
+@@ -246,45 +280,69 @@
+ 	size_t n = d0_bignum_size(limit);
+ 	size_t b = (n + 7) / 8;
+ 	unsigned char mask = "\xFF\x7F\x3F\x1F\x0F\x07\x03\x01"[8*b - n];
+-	unsigned char numbuf[65536];
+ 	assert(b <= sizeof(numbuf));
++	d0_lockmutex(tempmutex);
+ 	for(;;)
+ 	{
+ 		rand_bytes(numbuf, b);
+ 		numbuf[0] &= mask;
+ 		r = d0_bignum_import_unsigned(r, numbuf, b);
+ 		if(d0_bignum_cmp(r, limit) < 0)
++		{
++			d0_unlockmutex(tempmutex);
+ 			return r;
++		}
+ 	}
+ }
+ 
+ d0_bignum_t *d0_bignum_rand_range(d0_bignum_t *r, const d0_bignum_t *min, const d0_bignum_t *max)
+ {
++	d0_lockmutex(tempmutex);
+ 	mp_sub((mp_int *) &max->z, (mp_int *) &min->z, &temp.z);
+ 	r = d0_bignum_rand_0_to_limit(r, &temp);
++	d0_unlockmutex(tempmutex);
+ 	mp_add((mp_int *) &r->z, (mp_int *) &min->z, &r->z);
+ 	return r;
+ }
+ 
+ d0_bignum_t *d0_bignum_rand_bit_atmost(d0_bignum_t *r, size_t n)
+ {
++	d0_lockmutex(tempmutex);
+ 	if(!d0_bignum_one(&temp))
++	{
++		d0_unlockmutex(tempmutex);
+ 		return NULL;
++	}
+ 	if(!d0_bignum_shl(&temp, &temp, n))
++	{
++		d0_unlockmutex(tempmutex);
+ 		return NULL;
++	}
+ 	r = d0_bignum_rand_0_to_limit(r, &temp);
++	d0_unlockmutex(tempmutex);
+ 	return r;
+ }
+ 
+ d0_bignum_t *d0_bignum_rand_bit_exact(d0_bignum_t *r, size_t n)
+ {
++	d0_lockmutex(tempmutex);
+ 	if(!d0_bignum_one(&temp))
++	{
++		d0_unlockmutex(tempmutex);
+ 		return NULL;
++	}
+ 	if(!d0_bignum_shl(&temp, &temp, n-1))
++	{
++		d0_unlockmutex(tempmutex);
+ 		return NULL;
++	}
+ 	r = d0_bignum_rand_0_to_limit(r, &temp);
+ 	if(!d0_bignum_add(r, r, &temp))
++	{
++		d0_unlockmutex(tempmutex);
+ 		return NULL;
++	}
++	d0_unlockmutex(tempmutex);
+ 	return r;
+ }
+ 
+@@ -425,7 +483,10 @@
+ 
+ char *d0_bignum_tostring(const d0_bignum_t *x, unsigned int base)
+ {
+-	static char str[65536];
+-	mp_toradix_n((mp_int *) &x->z, str, base, sizeof(str));
++	char *str;
++	int sz = 0;
++	mp_radix_size((mp_int *) &x->z, base, &sz);
++	str = d0_malloc(sz + 1);
++	mp_toradix_n((mp_int *) &x->z, str, base, sz + 1);
+ 	return str;
+ }
+Index: d0-blind-id-0.5.0/d0_bignum.h
+===================================================================
+--- d0-blind-id-0.5.0.orig/d0_bignum.h	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/d0_bignum.h	2013-06-09 15:12:27.551364000 +0200
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * commit 933873052795f6abc14deead27f0f652a7e401e1
++ * $Format:commit %H$
+  * $Id: ef53ffb924a3de36bb2b6c7e021dc0666a26cb6f $
+  */
+ 
+Index: d0-blind-id-0.5.0/d0_blind_id.c
+===================================================================
+--- d0-blind-id-0.5.0.orig/d0_blind_id.c	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/d0_blind_id.c	2013-06-09 15:12:27.559364000 +0200
+@@ -29,8 +29,8 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * commit 933873052795f6abc14deead27f0f652a7e401e1
+- * $Id: 8852402cfe544e317bdd4c429b0ee3c192f4d8cc $
++ * $Format:commit %H$
++ * $Id: f1cd22e4e14172707b6c6e07826d1d4a9b2ec581 $
+  */
+ 
+ #include "d0_blind_id.h"
+@@ -45,10 +45,9 @@
+ 
+ // our SHA is SHA-256
+ #define SHA_DIGESTSIZE 32
+-const char *sha(const unsigned char *in, size_t len)
++const unsigned char *sha(unsigned char *h, const unsigned char *in, size_t len)
+ {
+-	static char h[32];
+-	d0_blind_id_util_sha256(h, (const char *) in, len);
++	d0_blind_id_util_sha256((char *) h, (const char *) in, len);
+ 	return h;
+ }
+ 
+@@ -109,10 +108,21 @@
+ #define USING(x) if(!(ctx->x)) return 0
+ #define REPLACING(x)
+ 
+-static d0_bignum_t *zero, *one, *four, *temp0, *temp1, *temp2, *temp3, *temp4;
++// safe to use
++static d0_bignum_t *zero, *one, *four;
++
++static d0_bignum_t *temp0, *temp1, *temp2, *temp3, *temp4;
++static void *tempmutex = NULL; // hold this mutex when using temp0 to temp4
++#define USINGTEMPS() int locked = 0
++#define LOCKTEMPS() do { if(!locked) d0_lockmutex(tempmutex); locked = 1; } while(0)
++#define UNLOCKTEMPS() do { if(locked) d0_unlockmutex(tempmutex); locked = 0; } while(0);
+ 
+ D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_INITIALIZE(void)
+ {
++	USINGTEMPS();
++	d0_initfuncs();
++	tempmutex = d0_createmutex();
++	LOCKTEMPS();
+ 	CHECK(d0_bignum_INITIALIZE());
+ 	CHECK_ASSIGN(zero, d0_bignum_int(zero, 0));
+ 	CHECK_ASSIGN(one, d0_bignum_int(one, 1));
+@@ -122,13 +132,17 @@
+ 	CHECK_ASSIGN(temp2, d0_bignum_int(temp2, 0));
+ 	CHECK_ASSIGN(temp3, d0_bignum_int(temp3, 0));
+ 	CHECK_ASSIGN(temp4, d0_bignum_int(temp4, 0));
++	UNLOCKTEMPS();
+ 	return 1;
+ fail:
++	UNLOCKTEMPS();
+ 	return 0;
+ }
+ 
+ void d0_blind_id_SHUTDOWN(void)
+ {
++	USINGTEMPS();
++	LOCKTEMPS();
+ 	d0_bignum_free(zero);
+ 	d0_bignum_free(one);
+ 	d0_bignum_free(four);
+@@ -138,10 +152,13 @@
+ 	d0_bignum_free(temp3);
+ 	d0_bignum_free(temp4);
+ 	d0_bignum_SHUTDOWN();
++	UNLOCKTEMPS();
++	d0_destroymutex(tempmutex);
++	tempmutex = NULL;
+ }
+ 
+ // (G-1)/2
+-d0_bignum_t *d0_dl_get_order(d0_bignum_t *o, const d0_bignum_t *G)
++static d0_bignum_t *d0_dl_get_order(d0_bignum_t *o, const d0_bignum_t *G)
+ {
+ 	CHECK_ASSIGN(o, d0_bignum_sub(o, G, one));
+ 	CHECK(d0_bignum_shl(o, o, -1)); // order o = (G-1)/2
+@@ -159,13 +176,15 @@
+ 	return NULL;
+ }
+ 
+-D0_BOOL d0_dl_generate_key(size_t size, d0_bignum_t *G)
++// temps must NOT be locked when calling this
++static D0_BOOL d0_dl_generate_key(size_t size, d0_bignum_t *G)
+ {
+-	// using: temp0
++	USINGTEMPS(); // using: temp0
+ 	if(size < 16)
+ 		size = 16;
+ 	for(;;)
+ 	{
++		LOCKTEMPS();
+ 		CHECK(d0_bignum_rand_bit_exact(temp0, size-1));
+ 		if(d0_bignum_isprime(temp0, 0) == 0)
+ 			continue;
+@@ -174,16 +193,19 @@
+ 			continue;
+ 		if(d0_bignum_isprime(temp0, 10) == 0) // finish the previous test
+ 			continue;
++		UNLOCKTEMPS();
+ 		break;
+ 	}
+ 	return 1;
+ fail:
++	UNLOCKTEMPS();
+ 	return 0;
+ }
+ 
+-D0_BOOL d0_rsa_generate_key(size_t size, const d0_bignum_t *challenge, d0_bignum_t *d, d0_bignum_t *n)
++// temps must NOT be locked when calling this
++static D0_BOOL d0_rsa_generate_key(size_t size, d0_blind_id_t *ctx)
+ {
+-	// uses temp0 to temp4
++	USINGTEMPS(); // uses temp1 to temp4
+ 	int fail = 0;
+ 	int gcdfail = 0;
+ 	int pb = (size + 1)/2;
+@@ -192,54 +214,76 @@
+ 		pb = 8;
+ 	if(qb < 8)
+ 		qb = 8;
++
++	// we use ctx->rsa_d for the first result so that we can unlock temps later
+         for (;;)
+ 	{
+-		CHECK(d0_bignum_rand_bit_exact(temp0, pb));
+-		if(d0_bignum_isprime(temp0, 10) == 0)
++		LOCKTEMPS();
++		CHECK(d0_bignum_rand_bit_exact(ctx->rsa_d, pb));
++		if(d0_bignum_isprime(ctx->rsa_d, 10) == 0)
++		{
++			UNLOCKTEMPS();
+ 			continue;
+-		CHECK(d0_bignum_sub(temp2, temp0, one));
+-		CHECK(d0_bignum_gcd(temp4, NULL, NULL, temp2, challenge));
++		}
++		CHECK(d0_bignum_sub(temp2, ctx->rsa_d, one));
++		CHECK(d0_bignum_gcd(temp4, NULL, NULL, temp2, ctx->rsa_e));
+ 		if(!d0_bignum_cmp(temp4, one))
+ 			break;
+ 		if(++gcdfail == 3)
+-			return 0;
++			goto fail;
+ 		++gcdfail;
+ 	}
++	UNLOCKTEMPS();
++
+ 	gcdfail = 0;
+         for (;;)
+ 	{
++		LOCKTEMPS();
+ 		CHECK(d0_bignum_rand_bit_exact(temp1, qb));
+-		if(!d0_bignum_cmp(temp1, temp0))
++		if(!d0_bignum_cmp(temp1, ctx->rsa_d))
+ 		{
++			UNLOCKTEMPS();
+ 			if(++fail == 3)
+-				return 0;
++				goto fail;
++			continue;
+ 		}
+ 		fail = 0;
+ 		if(d0_bignum_isprime(temp1, 10) == 0)
++		{
++			UNLOCKTEMPS();
+ 			continue;
++		}
+ 		CHECK(d0_bignum_sub(temp3, temp1, one));
+-		CHECK(d0_bignum_gcd(temp4, NULL, NULL, temp3, challenge));
++		CHECK(d0_bignum_gcd(temp4, NULL, NULL, temp3, ctx->rsa_e));
+ 		if(!d0_bignum_cmp(temp4, one))
++		{
++			// we do NOT unlock, as we still need temp1 and temp3
+ 			break;
++		}
++		UNLOCKTEMPS();
+ 		if(++gcdfail == 3)
+-			return 0;
++			goto fail;
+ 		++gcdfail;
+ 	}
+ 
+-	// n = temp0*temp1
+-	CHECK(d0_bignum_mul(n, temp0, temp1));
++	// ctx->rsa_n = ctx->rsa_d*temp1
++	CHECK(d0_bignum_mul(ctx->rsa_n, ctx->rsa_d, temp1));
+ 
+-	// d = challenge^-1 mod (temp0-1)(temp1-1)
++	// ctx->rsa_d = ctx->rsa_e^-1 mod (ctx->rsa_d-1)(temp1-1)
++	CHECK(d0_bignum_sub(temp2, ctx->rsa_d, one)); // we can't reuse the value from above because temps were unlocked
+ 	CHECK(d0_bignum_mul(temp0, temp2, temp3));
+-	CHECK(d0_bignum_mod_inv(d, challenge, temp0));
++	CHECK(d0_bignum_mod_inv(ctx->rsa_d, ctx->rsa_e, temp0));
++	UNLOCKTEMPS();
+ 	return 1;
+ fail:
++	UNLOCKTEMPS();
+ 	return 0;
+ }
+ 
+-D0_BOOL d0_rsa_generate_key_fastreject(size_t size, d0_fastreject_function reject, d0_blind_id_t *ctx, void *pass)
++// temps must NOT be locked when calling this
++static D0_BOOL d0_rsa_generate_key_fastreject(size_t size, d0_fastreject_function reject, d0_blind_id_t *ctx, void *pass)
+ {
+-	// uses temp0 to temp4
++	USINGTEMPS(); // uses temp1 to temp4
+ 	int fail = 0;
+ 	int gcdfail = 0;
+ 	int pb = (size + 1)/2;
+@@ -248,12 +292,18 @@
+ 		pb = 8;
+ 	if(qb < 8)
+ 		qb = 8;
++
++	// we use ctx->rsa_d for the first result so that we can unlock temps later
+         for (;;)
+ 	{
+-		CHECK(d0_bignum_rand_bit_exact(temp0, pb));
+-		if(d0_bignum_isprime(temp0, 10) == 0)
++		LOCKTEMPS();
++		CHECK(d0_bignum_rand_bit_exact(ctx->rsa_d, pb));
++		if(d0_bignum_isprime(ctx->rsa_d, 10) == 0)
++		{
++			UNLOCKTEMPS();
+ 			continue;
+-		CHECK(d0_bignum_sub(temp2, temp0, one));
++		}
++		CHECK(d0_bignum_sub(temp2, ctx->rsa_d, one));
+ 		CHECK(d0_bignum_gcd(temp4, NULL, NULL, temp2, ctx->rsa_e));
+ 		if(!d0_bignum_cmp(temp4, one))
+ 			break;
+@@ -261,62 +311,81 @@
+ 			return 0;
+ 		++gcdfail;
+ 	}
++	UNLOCKTEMPS();
++
+ 	gcdfail = 0;
+         for (;;)
+ 	{
++		LOCKTEMPS();
+ 		CHECK(d0_bignum_rand_bit_exact(temp1, qb));
+-		if(!d0_bignum_cmp(temp1, temp0))
++		if(!d0_bignum_cmp(temp1, ctx->rsa_d))
+ 		{
++			UNLOCKTEMPS();
+ 			if(++fail == 3)
+ 				return 0;
++			continue;
+ 		}
+ 		fail = 0;
+ 
+-		// n = temp0*temp1
+-		CHECK(d0_bignum_mul(ctx->rsa_n, temp0, temp1));
++		// n = ctx->rsa_d*temp1
++		CHECK(d0_bignum_mul(ctx->rsa_n, ctx->rsa_d, temp1));
+ 		if(reject(ctx, pass))
++		{
++			UNLOCKTEMPS();
+ 			continue;
++		}
+ 
+ 		if(d0_bignum_isprime(temp1, 10) == 0)
++		{
++			UNLOCKTEMPS();
+ 			continue;
++		}
+ 		CHECK(d0_bignum_sub(temp3, temp1, one));
+ 		CHECK(d0_bignum_gcd(temp4, NULL, NULL, temp3, ctx->rsa_e));
+ 		if(!d0_bignum_cmp(temp4, one))
++		{
++			// we do NOT unlock, as we still need temp3
+ 			break;
++		}
++		UNLOCKTEMPS();
+ 		if(++gcdfail == 3)
+ 			return 0;
+ 		++gcdfail;
+ 	}
+ 
+-	// ctx->rsa_d = ctx->rsa_e^-1 mod (temp0-1)(temp1-1)
+-	CHECK(d0_bignum_mul(temp0, temp2, temp3));
++	// ctx->rsa_d = ctx->rsa_e^-1 mod (ctx->rsa_d-1)(temp1-1)
++	CHECK(d0_bignum_sub(temp2, ctx->rsa_d, one)); // we can't reuse the value from above because temps were unlocked
++	CHECK(d0_bignum_mul(ctx->rsa_d, temp2, temp3));
+ 	CHECK(d0_bignum_mod_inv(ctx->rsa_d, ctx->rsa_e, temp0));
++	UNLOCKTEMPS();
+ 	return 1;
+ fail:
++	UNLOCKTEMPS();
+ 	return 0;
+ }
+ 
+ D0_WARN_UNUSED_RESULT D0_BOOL d0_longhash_destructive(unsigned char *convbuf, size_t sz, unsigned char *outbuf, size_t outbuflen)
+ {
+ 	size_t n, i;
++	char shabuf[32];
+ 
+ 	n = outbuflen;
+ 	while(n > SHA_DIGESTSIZE)
+ 	{
+-		memcpy(outbuf, sha(convbuf, sz), SHA_DIGESTSIZE);
++		memcpy(outbuf, sha(shabuf, convbuf, sz), SHA_DIGESTSIZE);
+ 		outbuf += SHA_DIGESTSIZE;
+ 		n -= SHA_DIGESTSIZE;
+ 		for(i = 0; i < sz; ++i)
+ 			if(++convbuf[i])
+ 				break; // stop until no carry
+ 	}
+-	memcpy(outbuf, sha(convbuf, sz), n);
++	memcpy(outbuf, sha(shabuf, convbuf, sz), n);
+ 	return 1;
+ }
+ 
+ D0_WARN_UNUSED_RESULT D0_BOOL d0_longhash_bignum(const d0_bignum_t *in, unsigned char *outbuf, size_t outbuflen)
+ {
+-	static unsigned char convbuf[1024];
++	unsigned char convbuf[1024];
+ 	size_t sz;
+ 
+ 	CHECK(d0_bignum_export_unsigned(in, convbuf, sizeof(convbuf)) >= 0);
+@@ -381,7 +450,7 @@
+ 	if(reject)
+ 		CHECK(d0_rsa_generate_key_fastreject(k+1, reject, ctx, pass)); // must fit G for sure
+ 	else
+-		CHECK(d0_rsa_generate_key(k+1, ctx->rsa_e, ctx->rsa_d, ctx->rsa_n)); // must fit G for sure
++		CHECK(d0_rsa_generate_key(k+1, ctx)); // must fit G for sure
+ 	return 1;
+ fail:
+ 	return 0;
+@@ -463,9 +532,10 @@
+ D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_fingerprint64_public_key(const d0_blind_id_t *ctx, char *outbuf, size_t *outbuflen)
+ {
+ 	d0_iobuf_t *out = NULL;
+-	static unsigned char convbuf[2048];
++	unsigned char convbuf[2048];
+ 	d0_iobuf_t *conv = NULL;
+ 	size_t sz, n;
++	char shabuf[32];
+ 
+ 	USING(rsa_n); USING(rsa_e);
+ 
+@@ -480,7 +550,7 @@
+ 	n = (*outbuflen / 4) * 3;
+ 	if(n > SHA_DIGESTSIZE)
+ 		n = SHA_DIGESTSIZE;
+-	CHECK(d0_iobuf_write_raw(out, sha(convbuf, sz), n) == n);
++	CHECK(d0_iobuf_write_raw(out, sha(shabuf, convbuf, sz), n) == n);
+ 	CHECK(d0_iobuf_conv_base64_out(out));
+ 
+ 	return d0_iobuf_close(out, outbuflen);
+@@ -536,27 +606,30 @@
+ 
+ D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_generate_private_id_start(d0_blind_id_t *ctx)
+ {
+-	// temps: temp0 = order
++	USINGTEMPS(); // temps: temp0 = order
+ 	USING(schnorr_G);
+ 	REPLACING(schnorr_s); REPLACING(schnorr_g_to_s);
+ 
++	LOCKTEMPS();
+ 	CHECK(d0_dl_get_order(temp0, ctx->schnorr_G));
+ 	CHECK_ASSIGN(ctx->schnorr_s, d0_bignum_rand_range(ctx->schnorr_s, zero, temp0));
+ 	CHECK_ASSIGN(ctx->schnorr_g_to_s, d0_bignum_mod_pow(ctx->schnorr_g_to_s, four, ctx->schnorr_s, ctx->schnorr_G));
+ 	CHECK_ASSIGN(ctx->schnorr_H_g_to_s_signature, d0_bignum_zero(ctx->schnorr_H_g_to_s_signature));
++	UNLOCKTEMPS();
+ 	return 1;
+ 
+ fail:
++	UNLOCKTEMPS();
+ 	return 0;
+ }
+ 
+ D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_generate_private_id_request(d0_blind_id_t *ctx, char *outbuf, size_t *outbuflen)
+ {
+ 	d0_iobuf_t *out = NULL;
+-	static unsigned char shabuf[2048];
++	unsigned char hashbuf[2048];
+ 	size_t sz;
+ 
+-	// temps: temp0 rsa_blind_signature_camouflage^challenge, temp1 (4^s)*rsa_blind_signature_camouflage^challenge
++	USINGTEMPS(); // temps: temp0 rsa_blind_signature_camouflage^challenge, temp1 (4^s)*rsa_blind_signature_camouflage^challenge
+ 	USING(rsa_n); USING(rsa_e); USING(schnorr_g_to_s);
+ 	REPLACING(rsa_blind_signature_camouflage);
+ 
+@@ -566,19 +639,21 @@
+ 	CHECK(d0_bignum_mod_pow(temp0, ctx->rsa_blind_signature_camouflage, ctx->rsa_e, ctx->rsa_n));
+ 
+ 	// we will actually sign HA(4^s) to prevent a malleability attack!
+-	CHECK(d0_bignum_mov(temp2, ctx->schnorr_g_to_s));
++	LOCKTEMPS();
+ 	sz = (d0_bignum_size(ctx->rsa_n) + 7) / 8; // this is too long, so we have to take the value % rsa_n when "decrypting"
+-	if(sz > sizeof(shabuf))
+-		sz = sizeof(shabuf);
+-	CHECK(d0_longhash_bignum(temp2, shabuf, sz));
+-	CHECK(d0_bignum_import_unsigned(temp2, shabuf, sz));
++	if(sz > sizeof(hashbuf))
++		sz = sizeof(hashbuf);
++	CHECK(d0_longhash_bignum(ctx->schnorr_g_to_s, hashbuf, sz));
++	CHECK(d0_bignum_import_unsigned(temp2, hashbuf, sz));
+ 
+ 	// hash complete
+ 	CHECK(d0_bignum_mod_mul(temp1, temp2, temp0, ctx->rsa_n));
+ 	CHECK(d0_iobuf_write_bignum(out, temp1));
++	UNLOCKTEMPS();
+ 	return d0_iobuf_close(out, outbuflen);
+ 
+ fail:
++	UNLOCKTEMPS();
+ 	d0_iobuf_close(out, outbuflen);
+ 	return 0;
+ }
+@@ -588,20 +663,23 @@
+ 	d0_iobuf_t *in = NULL;
+ 	d0_iobuf_t *out = NULL;
+ 
+-	// temps: temp0 input, temp1 temp0^d
++	USINGTEMPS(); // temps: temp0 input, temp1 temp0^d
+ 	USING(rsa_d); USING(rsa_n);
+ 
+ 	in = d0_iobuf_open_read(inbuf, inbuflen);
+ 	out = d0_iobuf_open_write(outbuf, *outbuflen);
+ 
++	LOCKTEMPS();
+ 	CHECK(d0_iobuf_read_bignum(in, temp0));
+ 	CHECK(d0_bignum_mod_pow(temp1, temp0, ctx->rsa_d, ctx->rsa_n));
+ 	CHECK(d0_iobuf_write_bignum(out, temp1));
+ 
++	UNLOCKTEMPS();
+ 	d0_iobuf_close(in, NULL);
+ 	return d0_iobuf_close(out, outbuflen);
+ 
+ fail:
++	UNLOCKTEMPS();
+ 	d0_iobuf_close(in, NULL);
+ 	d0_iobuf_close(out, outbuflen);
+ 	return 0;
+@@ -611,19 +689,23 @@
+ {
+ 	d0_iobuf_t *in = NULL;
+ 
+-	// temps: temp0 input, temp1 rsa_blind_signature_camouflage^-1
++	USINGTEMPS(); // temps: temp0 input, temp1 rsa_blind_signature_camouflage^-1
+ 	USING(rsa_blind_signature_camouflage); USING(rsa_n);
+ 	REPLACING(schnorr_H_g_to_s_signature);
+ 
+ 	in = d0_iobuf_open_read(inbuf, inbuflen);
+ 
++	LOCKTEMPS();
++
+ 	CHECK(d0_iobuf_read_bignum(in, temp0));
+ 	CHECK(d0_bignum_mod_inv(temp1, ctx->rsa_blind_signature_camouflage, ctx->rsa_n));
+ 	CHECK_ASSIGN(ctx->schnorr_H_g_to_s_signature, d0_bignum_mod_mul(ctx->schnorr_H_g_to_s_signature, temp0, temp1, ctx->rsa_n));
+ 
++	UNLOCKTEMPS();
+ 	return d0_iobuf_close(in, NULL);
+ 
+ fail:
++	UNLOCKTEMPS();
+ 	d0_iobuf_close(in, NULL);
+ 	return 0;
+ }
+@@ -742,12 +824,13 @@
+ //   1. get random r, send HASH(4^r)
+ {
+ 	d0_iobuf_t *out = NULL;
+-	static unsigned char convbuf[1024];
++	unsigned char convbuf[1024];
+ 	d0_iobuf_t *conv = NULL;
+ 	size_t sz = 0;
+ 	D0_BOOL failed = 0;
++	char shabuf[32];
+ 
+-	// temps: temp0 order, temp0 4^r
++	USINGTEMPS(); // temps: temp0 order, temp0 4^r
+ 	if(is_first)
+ 	{
+ 		USING(schnorr_g_to_s); USING(schnorr_H_g_to_s_signature);
+@@ -768,6 +851,7 @@
+ 
+ 	// start schnorr ID scheme
+ 	// generate random number r; x = g^r; send hash of x, remember r, forget x
++	LOCKTEMPS();
+ 	CHECK(d0_dl_get_order(temp0, ctx->schnorr_G));
+ #ifdef RNG_XKCD
+ 	CHECK_ASSIGN(ctx->r, d0_bignum_int(ctx->r, 4)); // decided by fair dice roll
+@@ -794,15 +878,17 @@
+ 	CHECK(d0_iobuf_write_bignum(conv, ctx->g_to_t));
+ 	CHECK(d0_iobuf_write_packet(conv, msg, msglen));
+ 	CHECK(d0_iobuf_write_bignum(conv, temp0));
++	UNLOCKTEMPS();
+ 	CHECK(d0_iobuf_write_bignum(conv, ctx->g_to_t));
+ 	d0_iobuf_close(conv, &sz);
+ 	conv = NULL;
+-	CHECK(d0_iobuf_write_raw(out, sha(convbuf, sz), SCHNORR_HASHSIZE) == SCHNORR_HASHSIZE);
++	CHECK(d0_iobuf_write_raw(out, sha(shabuf, convbuf, sz), SCHNORR_HASHSIZE) == SCHNORR_HASHSIZE);
+ 	CHECK(d0_iobuf_write_packet(out, msg, msglen));
+ 
+ 	return d0_iobuf_close(out, outbuflen);
+ 
+ fail:
++	UNLOCKTEMPS();
+ 	d0_iobuf_close(out, outbuflen);
+ 	return 0;
+ }
+@@ -815,10 +901,10 @@
+ {
+ 	d0_iobuf_t *in = NULL;
+ 	d0_iobuf_t *out = NULL;
+-	static unsigned char shabuf[2048];
++	unsigned char hashbuf[2048];
+ 	size_t sz;
+ 
+-	// temps: temp0 order, temp0 signature check
++	USINGTEMPS(); // temps: temp0 order, temp0 signature check
+ 	if(is_first)
+ 	{
+ 		REPLACING(schnorr_g_to_s); REPLACING(schnorr_H_g_to_s_signature);
+@@ -853,25 +939,24 @@
+ 		CHECK(d0_bignum_cmp(ctx->schnorr_H_g_to_s_signature, zero) >= 0);
+ 		CHECK(d0_bignum_cmp(ctx->schnorr_H_g_to_s_signature, ctx->rsa_n) < 0);
+ 
+-		// check signature of key (t = k^d, so, t^challenge = k)
+-		CHECK(d0_bignum_mod_pow(temp0, ctx->schnorr_H_g_to_s_signature, ctx->rsa_e, ctx->rsa_n));
+-
+-		// we will actually sign SHA(4^s) to prevent a malleability attack!
+-		CHECK(d0_bignum_mov(temp2, ctx->schnorr_g_to_s));
+-		sz = (d0_bignum_size(ctx->rsa_n) + 7) / 8; // this is too long, so we have to take the value % rsa_n when "decrypting"
+-		if(sz > sizeof(shabuf))
+-			sz = sizeof(shabuf);
+-		CHECK(d0_longhash_bignum(temp2, shabuf, sz));
+-		CHECK(d0_bignum_import_unsigned(temp2, shabuf, sz));
++		if(d0_bignum_cmp(ctx->schnorr_H_g_to_s_signature, zero))
++		{
++			// check signature of key (t = k^d, so, t^challenge = k)
++			LOCKTEMPS();
++			CHECK(d0_bignum_mod_pow(temp0, ctx->schnorr_H_g_to_s_signature, ctx->rsa_e, ctx->rsa_n));
++
++			// we will actually sign SHA(4^s) to prevent a malleability attack!
++			sz = (d0_bignum_size(ctx->rsa_n) + 7) / 8; // this is too long, so we have to take the value % rsa_n when "decrypting"
++			if(sz > sizeof(hashbuf))
++				sz = sizeof(hashbuf);
++			CHECK(d0_longhash_bignum(ctx->schnorr_g_to_s, hashbuf, sz));
++			CHECK(d0_bignum_import_unsigned(temp2, hashbuf, sz));
+ 
+-		// + 7 / 8 is too large, so let's mod it
+-		CHECK(d0_bignum_divmod(NULL, temp1, temp2, ctx->rsa_n));
++			// + 7 / 8 is too large, so let's mod it
++			CHECK(d0_bignum_divmod(NULL, temp1, temp2, ctx->rsa_n));
+ 
+-		// hash complete
+-		if(d0_bignum_cmp(temp0, temp1))
+-		{
+-			// accept the key anyway, but mark as failed signature! will later return 0 in status
+-			CHECK(d0_bignum_zero(ctx->schnorr_H_g_to_s_signature));
++			// hash complete
++			CHECK(d0_bignum_cmp(temp0, temp1) == 0);
+ 		}
+ 	}
+ 
+@@ -888,6 +973,7 @@
+ 	CHECK(d0_iobuf_write_bignum(out, ctx->challenge));
+ 
+ 	// Diffie Hellmann send
++	LOCKTEMPS();
+ 	CHECK(d0_dl_get_order(temp0, ctx->schnorr_G));
+ #ifdef RNG_XKCD
+ 	CHECK_ASSIGN(ctx->t, d0_bignum_int(ctx->t, 4)); // decided by fair dice roll
+@@ -896,6 +982,7 @@
+ #endif
+ 	CHECK(d0_bignum_mod_pow(temp0, four, ctx->t, ctx->schnorr_G));
+ 	CHECK(d0_iobuf_write_bignum(out, temp0));
++	UNLOCKTEMPS();
+ 
+ 	if(status)
+ 		*status = !!d0_bignum_cmp(ctx->schnorr_H_g_to_s_signature, zero);
+@@ -904,6 +991,7 @@
+ 	return d0_iobuf_close(out, outbuflen);
+ 
+ fail:
++	UNLOCKTEMPS();
+ 	d0_iobuf_close(in, NULL);
+ 	d0_iobuf_close(out, outbuflen);
+ 	return 0;
+@@ -916,13 +1004,14 @@
+ 	d0_iobuf_t *in = NULL;
+ 	d0_iobuf_t *out = NULL;
+ 
+-	// temps: 0 order, 1 prod, 2 y, 3 challenge
++	USINGTEMPS(); // temps: 0 order, 1 prod, 2 y, 3 challenge
+ 	REPLACING(other_g_to_t); REPLACING(t);
+ 	USING(schnorr_G); USING(schnorr_s); USING(r); USING(g_to_t);
+ 
+ 	in = d0_iobuf_open_read(inbuf, inbuflen);
+ 	out = d0_iobuf_open_write(outbuf, *outbuflen);
+ 
++	LOCKTEMPS();
+ 	CHECK(d0_iobuf_read_bignum(in, temp3));
+ 	CHECK(d0_bignum_cmp(temp3, zero) >= 0);
+ 	CHECK(d0_bignum_size(temp3) <= SCHNORR_BITS);
+@@ -937,6 +1026,7 @@
+ 	CHECK(d0_bignum_mod_sub(temp2, ctx->r, temp1, temp0));
+ #endif
+ 	CHECK(d0_iobuf_write_bignum(out, temp2));
++	UNLOCKTEMPS();
+ 
+ 	// Diffie Hellmann recv
+ 	CHECK_ASSIGN(ctx->other_g_to_t, d0_iobuf_read_bignum(in, ctx->other_g_to_t));
+@@ -949,6 +1039,7 @@
+ 	return d0_iobuf_close(out, outbuflen);
+ 
+ fail:
++	UNLOCKTEMPS();
+ 	d0_iobuf_close(in, NULL);
+ 	d0_iobuf_close(out, outbuflen);
+ 	return 0;
+@@ -960,16 +1051,19 @@
+ //      (check using H(g^r) which we know)
+ {
+ 	d0_iobuf_t *in = NULL;
+-	static unsigned char convbuf[1024];
++	unsigned char convbuf[1024];
+ 	d0_iobuf_t *conv = NULL;
+ 	size_t sz;
++	char shabuf[32];
+ 
+-	// temps: 0 y 1 order
++	USINGTEMPS(); // temps: 0 y 1 order
+ 	USING(challenge); USING(schnorr_G);
+ 	REPLACING(other_g_to_t);
+ 
+ 	in = d0_iobuf_open_read(inbuf, inbuflen);
+ 
++	LOCKTEMPS();
++
+ 	CHECK(d0_dl_get_order(temp1, ctx->schnorr_G));
+ 	CHECK(d0_iobuf_read_bignum(in, temp0));
+ 	CHECK(d0_bignum_cmp(temp0, zero) >= 0);
+@@ -998,10 +1092,11 @@
+ 	CHECK(d0_iobuf_write_bignum(conv, ctx->other_g_to_t));
+ 	CHECK(d0_iobuf_write_packet(conv, ctx->msg, ctx->msglen));
+ 	CHECK(d0_iobuf_write_bignum(conv, temp3));
++	UNLOCKTEMPS();
+ 	CHECK(d0_iobuf_write_bignum(conv, ctx->other_g_to_t));
+ 	d0_iobuf_close(conv, &sz);
+ 	conv = NULL;
+-	if(memcmp(sha(convbuf, sz), ctx->msghash, SCHNORR_HASHSIZE))
++	if(memcmp(sha(shabuf, convbuf, sz), ctx->msghash, SCHNORR_HASHSIZE))
+ 	{
+ 		// FAIL (not owned by player)
+ 		goto fail;
+@@ -1020,6 +1115,7 @@
+ 	return 1;
+ 
+ fail:
++	UNLOCKTEMPS();
+ 	d0_iobuf_close(in, NULL);
+ 	return 0;
+ }
+@@ -1027,25 +1123,31 @@
+ D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_authenticate_with_private_id_generate_missing_signature(d0_blind_id_t *ctx)
+ {
+ 	size_t sz;
+-	static unsigned char shabuf[2048];
++	unsigned char hashbuf[2048];
+ 
++	USINGTEMPS(); // temps: 2 hash
+ 	REPLACING(schnorr_H_g_to_s_signature);
+ 	USING(schnorr_g_to_s); USING(rsa_d); USING(rsa_n);
+ 
++	LOCKTEMPS();
++
+ 	// we will actually sign SHA(4^s) to prevent a malleability attack!
+-	CHECK(d0_bignum_mov(temp2, ctx->schnorr_g_to_s));
+ 	sz = (d0_bignum_size(ctx->rsa_n) + 7) / 8; // this is too long, so we have to take the value % rsa_n when "decrypting"
+-	if(sz > sizeof(shabuf))
+-		sz = sizeof(shabuf);
+-	CHECK(d0_longhash_bignum(temp2, shabuf, sz));
+-	CHECK(d0_bignum_import_unsigned(temp2, shabuf, sz));
++	if(sz > sizeof(hashbuf))
++		sz = sizeof(hashbuf);
++	CHECK(d0_longhash_bignum(ctx->schnorr_g_to_s, hashbuf, sz));
++	LOCKTEMPS();
++	CHECK(d0_bignum_import_unsigned(temp2, hashbuf, sz));
+ 
+ 	// + 7 / 8 is too large, so let's mod it
+ 	CHECK(d0_bignum_divmod(NULL, temp1, temp2, ctx->rsa_n));
+ 	CHECK(d0_bignum_mod_pow(ctx->schnorr_H_g_to_s_signature, temp1, ctx->rsa_d, ctx->rsa_n));
++
++	UNLOCKTEMPS();
+ 	return 1;
+ 
+ fail:
++	UNLOCKTEMPS();
+ 	return 0;
+ }
+ 
+@@ -1053,10 +1155,11 @@
+ {
+ 	d0_iobuf_t *out = NULL;
+ 	unsigned char *convbuf = NULL;
+-	static unsigned char shabuf[2048];
++	unsigned char hashbuf[2048];
+ 	d0_iobuf_t *conv = NULL;
+ 	size_t sz = 0;
+ 
++	USINGTEMPS(); // temps: 0 order 1 4^r 2 hash
+ 	if(is_first)
+ 	{
+ 		USING(schnorr_g_to_s); USING(schnorr_H_g_to_s_signature);
+@@ -1078,6 +1181,7 @@
+ 
+ 	// start schnorr SIGNATURE scheme
+ 	// generate random number r; x = g^r; send hash of H(m||r), remember r, forget x
++	LOCKTEMPS();
+ 	CHECK(d0_dl_get_order(temp0, ctx->schnorr_G));
+ 	CHECK_ASSIGN(ctx->r, d0_bignum_rand_range(ctx->r, zero, temp0));
+ 	CHECK(d0_bignum_mod_pow(temp1, four, ctx->r, ctx->schnorr_G));
+@@ -1088,10 +1192,10 @@
+ 	CHECK(d0_iobuf_write_bignum(conv, temp1));
+ 	d0_iobuf_close(conv, &sz);
+ 	conv = NULL;
+-	CHECK(d0_longhash_destructive(convbuf, sz, shabuf, (d0_bignum_size(temp0) + 7) / 8));
++	CHECK(d0_longhash_destructive(convbuf, sz, hashbuf, (d0_bignum_size(temp0) + 7) / 8));
+ 	d0_free(convbuf);
+ 	convbuf = NULL;
+-	CHECK(d0_bignum_import_unsigned(temp2, shabuf, (d0_bignum_size(temp0) + 7) / 8));
++	CHECK(d0_bignum_import_unsigned(temp2, hashbuf, (d0_bignum_size(temp0) + 7) / 8));
+ 	CHECK(d0_iobuf_write_bignum(out, temp2));
+ 
+ 	// multiply with secret, sub k, modulo order
+@@ -1102,6 +1206,7 @@
+ 	CHECK(d0_bignum_mod_sub(temp2, ctx->r, temp1, temp0));
+ #endif
+ 	CHECK(d0_iobuf_write_bignum(out, temp2));
++	UNLOCKTEMPS();
+ 
+ 	// write the message itself
+ 	if(with_msg)
+@@ -1110,6 +1215,7 @@
+ 	return d0_iobuf_close(out, outbuflen);
+ 
+ fail:
++	UNLOCKTEMPS();
+ 	d0_iobuf_close(out, outbuflen);
+ 	return 0;
+ }
+@@ -1127,9 +1233,10 @@
+ 	d0_iobuf_t *in = NULL;
+ 	d0_iobuf_t *conv = NULL;
+ 	unsigned char *convbuf = NULL;
+-	static unsigned char shabuf[2048];
++	unsigned char hashbuf[2048];
+ 	size_t sz;
+ 
++	USINGTEMPS(); // temps: 0 sig^e 2 g^s 3 g^-s 4 order
+ 	if(is_first)
+ 	{
+ 		REPLACING(schnorr_g_to_s); REPLACING(schnorr_H_g_to_s_signature);
+@@ -1163,15 +1270,15 @@
+ 		CHECK(d0_bignum_cmp(ctx->schnorr_H_g_to_s_signature, ctx->rsa_n) < 0);
+ 
+ 		// check signature of key (t = k^d, so, t^challenge = k)
++		LOCKTEMPS();
+ 		CHECK(d0_bignum_mod_pow(temp0, ctx->schnorr_H_g_to_s_signature, ctx->rsa_e, ctx->rsa_n));
+ 
+ 		// we will actually sign SHA(4^s) to prevent a malleability attack!
+-		CHECK(d0_bignum_mov(temp2, ctx->schnorr_g_to_s));
+ 		sz = (d0_bignum_size(ctx->rsa_n) + 7) / 8; // this is too long, so we have to take the value % rsa_n when "decrypting"
+-		if(sz > sizeof(shabuf))
+-			sz = sizeof(shabuf);
+-		CHECK(d0_longhash_bignum(temp2, shabuf, sz));
+-		CHECK(d0_bignum_import_unsigned(temp2, shabuf, sz));
++		if(sz > sizeof(hashbuf))
++			sz = sizeof(hashbuf);
++		CHECK(d0_longhash_bignum(ctx->schnorr_g_to_s, hashbuf, sz));
++		CHECK(d0_bignum_import_unsigned(temp2, hashbuf, sz));
+ 
+ 		// + 7 / 8 is too large, so let's mod it
+ 		CHECK(d0_bignum_divmod(NULL, temp1, temp2, ctx->rsa_n));
+@@ -1209,13 +1316,14 @@
+ 	CHECK(d0_iobuf_write_bignum(conv, temp3));
+ 	d0_iobuf_close(conv, &sz);
+ 	conv = NULL;
+-	CHECK(d0_longhash_destructive(convbuf, sz, shabuf, (d0_bignum_size(temp4) + 7) / 8));
++	CHECK(d0_longhash_destructive(convbuf, sz, hashbuf, (d0_bignum_size(temp4) + 7) / 8));
+ 	d0_free(convbuf);
+ 	convbuf = NULL;
+-	CHECK(d0_bignum_import_unsigned(temp1, shabuf, (d0_bignum_size(temp4) + 7) / 8));
++	CHECK(d0_bignum_import_unsigned(temp1, hashbuf, (d0_bignum_size(temp4) + 7) / 8));
+ 
+ 	// verify signature
+ 	CHECK(!d0_bignum_cmp(temp0, temp1));
++	UNLOCKTEMPS();
+ 
+ 	if(status)
+ 		*status = !!d0_bignum_cmp(ctx->schnorr_H_g_to_s_signature, zero);
+@@ -1224,6 +1332,7 @@
+ 	return 1;
+ 
+ fail:
++	UNLOCKTEMPS();
+ 	d0_iobuf_close(in, NULL);
+ 	return 0;
+ }
+@@ -1239,9 +1348,10 @@
+ D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_fingerprint64_public_id(const d0_blind_id_t *ctx, char *outbuf, size_t *outbuflen)
+ {
+ 	d0_iobuf_t *out = NULL;
+-	static unsigned char convbuf[1024];
++	unsigned char convbuf[1024];
+ 	d0_iobuf_t *conv = NULL;
+ 	size_t sz, n;
++	char shabuf[32];
+ 
+ 	USING(rsa_n);
+ 	USING(rsa_e);
+@@ -1259,7 +1369,7 @@
+ 	n = (*outbuflen / 4) * 3;
+ 	if(n > SHA_DIGESTSIZE)
+ 		n = SHA_DIGESTSIZE;
+-	CHECK(d0_iobuf_write_raw(out, sha(convbuf, sz), n) == n);
++	CHECK(d0_iobuf_write_raw(out, sha(shabuf, convbuf, sz), n) == n);
+ 	CHECK(d0_iobuf_conv_base64_out(out));
+ 
+ 	return d0_iobuf_close(out, outbuflen);
+@@ -1273,13 +1383,76 @@
+ 
+ D0_BOOL d0_blind_id_sessionkey_public_id(const d0_blind_id_t *ctx, char *outbuf, size_t *outbuflen)
+ {
++	D0_BOOL ret;
++
++	USINGTEMPS(); // temps: temp0 result
+ 	USING(t); USING(other_g_to_t); USING(schnorr_G);
+ 
+-	// temps: temp0 result
++	LOCKTEMPS();
+ 	CHECK(d0_bignum_mod_pow(temp0, ctx->other_g_to_t, ctx->t, ctx->schnorr_G));
+-	return d0_longhash_bignum(temp0, (unsigned char *) outbuf, *outbuflen);
++	ret = d0_longhash_bignum(temp0, (unsigned char *) outbuf, *outbuflen);
++	UNLOCKTEMPS();
++	return ret;
++
++fail:
++	UNLOCKTEMPS();
++	return 0;
++}
++
++D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_verify_public_id(const d0_blind_id_t *ctx, D0_BOOL *status)
++{
++	unsigned char hashbuf[2048];
++	size_t sz;
++
++	USINGTEMPS(); // temps: temp0 temp1 temp2
++	USING(schnorr_H_g_to_s_signature); USING(rsa_e); USING(rsa_n); USING(schnorr_g_to_s);
++
++	if(d0_bignum_cmp(ctx->schnorr_H_g_to_s_signature, zero))
++	{
++		// check signature of key (t = k^d, so, t^challenge = k)
++		LOCKTEMPS();
++
++		CHECK(d0_bignum_mod_pow(temp0, ctx->schnorr_H_g_to_s_signature, ctx->rsa_e, ctx->rsa_n));
++
++		// we will actually sign SHA(4^s) to prevent a malleability attack!
++		sz = (d0_bignum_size(ctx->rsa_n) + 7) / 8; // this is too long, so we have to take the value % rsa_n when "decrypting"
++		if(sz > sizeof(hashbuf))
++			sz = sizeof(hashbuf);
++		CHECK(d0_longhash_bignum(ctx->schnorr_g_to_s, hashbuf, sz));
++		CHECK(d0_bignum_import_unsigned(temp2, hashbuf, sz));
++
++		// + 7 / 8 is too large, so let's mod it
++		CHECK(d0_bignum_divmod(NULL, temp1, temp2, ctx->rsa_n));
++
++		// hash complete
++		CHECK(d0_bignum_cmp(temp0, temp1) == 0);
++
++		*status = 1;
++	}
++	else
++		*status = 0;
++
++	UNLOCKTEMPS();
++	return 1;
+ 
+ fail:
++	UNLOCKTEMPS();
++	return 0;
++}
++
++D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_verify_private_id(const d0_blind_id_t *ctx)
++{
++	USINGTEMPS(); // temps: temp0 = g^s
++	USING(schnorr_G); USING(schnorr_s); USING(schnorr_g_to_s);
++
++	LOCKTEMPS();
++	CHECK(d0_bignum_mod_pow(temp0, four, ctx->schnorr_s, ctx->schnorr_G));
++	CHECK(!d0_bignum_cmp(temp0, ctx->schnorr_g_to_s));
++	UNLOCKTEMPS();
++	return 1;
++
++fail:
++	UNLOCKTEMPS();
+ 	return 0;
+ }
+ 
+@@ -1303,3 +1476,12 @@
+ 	SHA256_Update(&context, (const unsigned char *) in, n);
+ 	return SHA256_Final((unsigned char *) out, &context);
+ }
++
++void d0_blind_id_setmallocfuncs(d0_malloc_t *m, d0_free_t *f)
++{
++	d0_setmallocfuncs(m, f);
++}
++void d0_blind_id_setmutexfuncs(d0_createmutex_t *c, d0_destroymutex_t *d, d0_lockmutex_t *l, d0_unlockmutex_t *u)
++{
++	d0_setmutexfuncs(c, d, l, u);
++}
+Index: d0-blind-id-0.5.0/d0_blind_id.h
+===================================================================
+--- d0-blind-id-0.5.0.orig/d0_blind_id.h	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/d0_blind_id.h	2013-06-09 15:12:27.559364000 +0200
+@@ -29,8 +29,8 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * commit 933873052795f6abc14deead27f0f652a7e401e1
+- * $Id: bea924581e2a7daf61a2fe20ab360ed1f05f5aaa $
++ * $Format:commit %H$
++ * $Id: bf838f43093aceadcd2d20071684f1e7148a4332 $
+  */
+ 
+ #ifndef __D0_BLIND_ID_H__
+@@ -75,6 +75,8 @@
+ D0_EXPORT D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_sign_with_private_id_verify(d0_blind_id_t *ctx, D0_BOOL is_first, D0_BOOL recv_modulus, const char *inbuf, size_t inbuflen, char *msg, size_t *msglen, D0_BOOL *status);
+ D0_EXPORT D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_sign_with_private_id_verify_detached(d0_blind_id_t *ctx, D0_BOOL is_first, D0_BOOL recv_modulus, const char *inbuf, size_t inbuflen, const char *msg, size_t msglen, D0_BOOL *status);
+ D0_EXPORT D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_fingerprint64_public_id(const d0_blind_id_t *ctx, char *outbuf, size_t *outbuflen);
++D0_EXPORT D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_verify_public_id(const d0_blind_id_t *ctx, D0_BOOL *status);
++D0_EXPORT D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_verify_private_id(const d0_blind_id_t *ctx);
+ D0_EXPORT D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_sessionkey_public_id(const d0_blind_id_t *ctx, char *outbuf, size_t *outbuflen); // can only be done after successful key exchange, this performs a modpow; key length is limited by SHA_DIGESTSIZE for now; also ONLY valid after successful d0_blind_id_authenticate_with_private_id_verify/d0_blind_id_fingerprint64_public_id
+ 
+ D0_EXPORT D0_WARN_UNUSED_RESULT D0_BOOL d0_blind_id_INITIALIZE(void);
+@@ -82,4 +84,8 @@
+ 
+ D0_EXPORT void d0_blind_id_util_sha256(char *out, const char *in, size_t n);
+ 
++// for exporting
++D0_EXPORT void d0_blind_id_setmallocfuncs(d0_malloc_t *m, d0_free_t *f);
++D0_EXPORT void d0_blind_id_setmutexfuncs(d0_createmutex_t *c, d0_destroymutex_t *d, d0_lockmutex_t *l, d0_unlockmutex_t *u);
++
+ #endif
+Index: d0-blind-id-0.5.0/d0_iobuf.c
+===================================================================
+--- d0-blind-id-0.5.0.orig/d0_iobuf.c	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/d0_iobuf.c	2013-06-09 15:12:27.559364000 +0200
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * commit 933873052795f6abc14deead27f0f652a7e401e1
++ * $Format:commit %H$
+  * $Id: 4fa37e2e1455de52a892fc8acbee4e228a010e44 $
+  */
+ 
+Index: d0-blind-id-0.5.0/d0_iobuf.h
+===================================================================
+--- d0-blind-id-0.5.0.orig/d0_iobuf.h	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/d0_iobuf.h	2013-06-09 15:12:27.559364000 +0200
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * commit 933873052795f6abc14deead27f0f652a7e401e1
++ * $Format:commit %H$
+  * $Id: 9705e2c9ae812b7e2560ec0d2b60c7223a2a44b4 $
+  */
+ 
+Index: d0-blind-id-0.5.0/main.c
+===================================================================
+--- d0-blind-id-0.5.0.orig/main.c	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/main.c	2013-06-09 15:12:27.563364000 +0200
+@@ -29,8 +29,8 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * commit 933873052795f6abc14deead27f0f652a7e401e1
+- * $Id: bc39797db4b1b58face52be4a098119836279cc4 $
++ * $Format:commit %H$
++ * $Id: 1fa088f5824f6850ad5236c071586cda799121ba $
+  */
+ 
+ #include "d0_blind_id.h"
+@@ -119,9 +119,9 @@
+ 		buf2size = sizeof(buf2) - 1; if(!d0_blind_id_fingerprint64_public_id(ctx_other, buf2, &buf2size))
+ 			errx(4, "fp64 fail");
+ 		bench(&bench_stop);
++		++n;
+ 		if(n % 1024 == 0)
+ 			printf("gen=%f fp=%f\n", n/bench_gen, n/bench_fp);
+-		++n;
+ 	}
+ 	while(!(quit || argc != 2 || (buf2size > strlen(argv[1]) && !memcmp(buf2, argv[1], strlen(argv[1])))));
+ 
+Index: d0-blind-id-0.5.0/sha2.c
+===================================================================
+--- d0-blind-id-0.5.0.orig/sha2.c	2011-08-18 11:57:29.000000000 +0200
++++ d0-blind-id-0.5.0/sha2.c	2013-06-09 15:12:27.563364000 +0200
+@@ -1,9 +1,11 @@
++#include "d0.h"
++
+ /*
+  * include the license notice into the dynamic library to "reproduce the
+  * copyright notice" automatically, so the application developer does not have
+  * to care about this term
+  */
+-const char *d0_sha2_c_bsd_license_notice = "\n"
++const char *d0_sha2_c_bsd_license_notice D0_USED = "\n"
+ "/*\n"
+ " * FILE:	sha2.c\n"
+ " * AUTHOR:	Aaron D. Gifford - http://www.aarongifford.com/\n"
