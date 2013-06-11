@@ -1,3 +1,9 @@
+xonotic (0.7.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 09 Jun 2013 18:51:23 +0200
+
 xonotic (0.6.0-1~getdeb2) precise; urgency=low
 
   * Rebuild against d0-blind-id (LP: #992131)
