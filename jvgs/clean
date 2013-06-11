@@ -1,0 +1,4 @@
+src/jvgs
+src/font/libfont.a
+src/core/libcore.a
+src/video/libvideo.a

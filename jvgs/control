@@ -3,7 +3,7 @@ Section: games
 Priority: optional
 Maintainer: Joao Pinto <joao.pinto@getdeb.net>
 Build-Depends: cdbs, debhelper (>= 7), cmake, swig,
- libsdl1.2-dev, libsdl-mixer1.2-dev, liblua5.1-0-dev
+ libsdl1.2-dev, libsdl-mixer1.2-dev, liblua5.1-0-dev, libfreetype6-dev
 Standards-Version: 3.9.1
 Homepage: http://jvgs.sourceforge.net/
 

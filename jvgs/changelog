@@ -1,3 +1,9 @@
+jvgs (0.5.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Jhonny OLiveira <jhonny.oliveira@gmail.com>  Sat, 08 Jun 2013 22:37:53 +0100
+
 jvgs (0.5-1~getdeb2) lucid; urgency=low
 
   * Added debian/watch file
