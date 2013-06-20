@@ -1,4 +1,4 @@
-debian/tmp/usr/lib/*					usr/lib
-obj-*/share/hedgewars/Data/misc/hwengine.desktop	usr/share/games/hedgewars/Data/misc
-usr/share/games/hedgewars/Data/misc/hedgewars.desktop	usr/share/applications
-tmp-icon/*						usr/share/icons/hicolor
+debian/tmp/usr/lib/* /usr/lib/
+obj-*/share/hedgewars/Data/misc/hwengine.desktop /usr/share/games/hedgewars/Data/misc
+debian/tmp/usr/share/games/hedgewars/Data/misc/hedgewars.desktop /usr/share/applications/
+tmp-icon/* /usr/share/icons/hicolor/

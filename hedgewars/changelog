@@ -1,57 +1,109 @@
-hedgewars (0.9.19.1-1~getdeb1) precise; urgency=low
+hedgewars (0.9.19.3-1~getdeb1) precise; urgency=low
 
-  * New upstream version (LP: #1186716)
-     + New Freezer weapon - freezes terrain, water, hedgehogs, mines, cases,
-     explosives
-     + Saucer can aim weapons and fire underwater
-     + Main graphical user interface overhaul
-     + Splashscreen on Windows *_*
-     + Up and down keys navigate in chat history
-     + Several commands from chat available
-     + Support hwplay:// scheme syntax
-     + Supply full revision and hash information in version tag
-     + Better set of options for driving engine
-     + Downloadable content can now be stored in packages for easy uninstall
-     + Lua scripts can load a sidecar overlay package of game resources
-     + Math improvements for better performance/reliability
-     + Smarter AI - now uses drill rocket accurately and is aware of barrels
-     and dud mines.  More aggressive in infinite attack, lua can tell to
-     target specific hogs, such as in Mutant
-     + New fort, Steel Tower
-     + New theme, Fruit
-     + New hats - some national ones, Portal, harlequin, more animals...
-     + New maps based on StarBound. SB_Bones, SB_Crystal, SB_Grassy,
-     SB_Grove, SB_Haunty, SB_Oaks, SB_Shrooms, SB_Tentacles
-     + Translation updates - Turkish, French, German, Japanese, Portuguese,
-     Italian, Russian - Campaign french should work correctly now
-     + Theme object masks
-     + Easier weapon selection in shoppa. F1 will select from F5 if there are
-     no weps in F1-F4
-     + Cleaver radius shrunk to improve usability on horizontal throws
-     + Map hog limit is now just a suggestion, not enforced
-     + Static map theme is now just the default, can be changed
-     + Themeable static maps (provide a mask.png without a map.png)
-     + Split seed with '|' to keep the land shape but change the hog
-     placement
-     * You can now move out of the way when throwing a sticky mine or cleaver
-     straight up
-     * Rope sliding should behave more like pre-0.9.18 again
-     * Forbid kicking on 1v1 matches
-     * Desync fixes
-     * Fixed fort mode
-     * Making very large maps now works properly with targeted weapons
-     * ParseCommand should be safe to use in Lua now, at any time
-     * Fixes to many weapons. Mudball, blowtorch, explosives, cluster bomb
-     spread, portal.
+  * Upload to PlayDeb. Synced with debian package.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 03 Jun 2013 21:19:17 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 19 Jun 2013 18:12:06 +0200
 
-hedgewars (0.9.18-0.2ubuntu1) raring; urgency=low
+hedgewars (0.9.19.3-1) unstable; urgency=low
 
+  * New upstream tarball.
+    - Addressed some more bugs and linking failures.
+    - Dropped fix-physfs.patch accepted upstream.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Tue, 11 Jun 2013 10:53:33 +0200
+
+hedgewars (0.9.19.2-2) unstable; urgency=low
+
+  * debian/control
+    - Changed package description
+    - added fix-physfs.patch
+      this basically reverts the problem with i386 machines
+      see upstream issue 665.
+      Revert upstream commit 3883b5dc600c
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Mon, 10 Jun 2013 18:21:36 +0200
+
+hedgewars (0.9.19.2-1) unstable; urgency=low
+
+  * New upstream tarball.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Tue, 04 Jun 2013 17:53:08 +0200
+
+hedgewars (0.9.19-1) unstable; urgency=low
+
+  * New upstream version.
+    + New theme: Fruit
+    + Cool New Weapons: Freezer
+    + We've improved your existing arsenal, too! The 'size' of cleaver has been
+      reduced, so now it's more likely to cut into hogs instead of imbedding
+      itself infuriatingly into the ground. The Flying Saucer has also seen some
+      interesting changes...
+    + Death comes from below!
+      It's time to take your amphibious assault to the next level.
+      While using the Flying Saucer, it's now possible to launch projectiles
+      from underwater!
+      Also, instead of just dropping bombs on your enemies you can aim
+      them, too! Wow!
+    + Improved AI
+      The newly improved AI can use drill-rockets!
+    + New Gameplay Challenges
+      A frenetic, awesome new gameplay mode: Frenzy! In this mode each turn
+      lasts only one second.
+    + An extra mission: Nobody Laugh.
+    + More Achievements: 'Prestigious Pilot' and 'Naughty Ninja' have been added
+      to the old missions. Have fun trying to unlock them.
+    + A new weaponset, One of Everything.
+    + New Maps
+      Fight on a variety of new battlegrounds!
+      New entries include Bones, Crystal, Grassy, Haunty, Oaks,
+      Shrooms and Tentacles!
+    + More customization!
+      Over 30 new hats!
+      New SteelTower fort!
+    + Ropers Rejoice
+      Now you can play on an 'infinite' number of procedurally generated maps,
+      thanks to the new Shoppa Map script.
+    + Much improvements in the behavior of rope in 0.9.18.
+  * Dropped patch for ghc 7.6 build failure.
+  * Added libghc-random-dev as build-dep.
+  * Tweaking install files, some file location has changed.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Tue, 28 May 2013 12:21:49 +0200
+
+hedgewars (0.9.18-1) unstable; urgency=low
+
+  [ Gianfranco Costamagna ]
+  * Added myself and unera to uploaders, with unera's permission.
+  * Added Debian Games Team to Maintainer and removed from uploaders.
+  * Bumped compat version to 9.
+  * Added some deps and build-deps on control file.
+  * Removed some check in control file (higher versions
+    already in oldstable)
+  * Enabled hardening flags.
+  * Fixed armhf and powerpc build failure with libc 2.17
+    with Felix Geyer's help. (LP: #1179850)
+
+  [ Felix Geyer ]
+  * Drop build-dependency on libghc-binary-dev and libghc-deepseq-dev as
+    they are just virtual packages provided by ghc.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Fri, 03 May 2013 10:31:44 +0200
+
+hedgewars (0.9.18-0.3) experimental; urgency=low
+
+  * Non-maintainer upload.
+
+  [ Felix Geyer ]
+  * Add missing dependency on freeglut3. (LP: #1171825)
+
+  [ Colin Watson ]
   * Build-depend on ghc and libghc-* rather than the transitional ghc6 and
-    libghc6-*.
+    libghc6-*. (Closes: #705125)
 
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 10 Apr 2013 12:43:22 +0100
+  [ Gianfranco Costamagna ]
+  * Updated debian/rules file, the SERVER disable string has changed.
+
+ -- Felix Geyer <fgeyer@debian.org>  Thu, 02 May 2013 17:55:31 +0200
 
 hedgewars (0.9.18-0.2) experimental; urgency=low
 
@@ -65,6 +117,32 @@ hedgewars (0.9.18-0.1) experimental; urgency=low
   * Non-maintainer upload
   * New upstream version (Closes: #691986 LP: #1073730)
     + Built using the -3 upstream tarball hedgewars-src-0.9.18-3.tar.bz2
+    + Hedgewars now has a campaign! This was a GSoC project.
+    + Another GSoC project, video recording! Use the 'r' key to start/stop
+      recording video. Video management is on the frontpage.
+    + PNG screenshots, to make sharing screenshots more convenient.
+    + New weapons! The meat cleaver is the latest addition.
+      Cleavers work well for climbing or blocking entrances.
+    + The AI is now a lot more evil. Set it to maximum level to get the full
+      effect. It knows how to use cake, sniper rifle and kamikaze, as well
+      as aiming shots to drown hedgehogs or do fall damage. It has also gotten
+      more effective at a number of existing weapons, and can move around the
+      map more intelligently.
+    + Drawn maps now have variable pen width, and an eraser tool.
+      Note that the eraser does increase the size of the drawn map network
+      traffic, so don't use it as a substitute for undo.
+    + Static maps no longer have size limits. Please use this sanely, since not
+      everyone has a machine with 16 gigs of memory like you do.
+    + New missions such as portal and rope training.
+    + Customised team colours! Check the advanced tab in team config.
+    + Individual hog health now shows up in the team health bar.
+    + Some weapon tweaks, such as throwing things from rope varying based on
+      density (similar to More Wind) mode, drill rocket no longer exploding
+      in your face if fired from against a wall, you are now able to rope through
+      a portal or fly an RC plane through one, and multiple portal pairs can be
+      setup in a turn by a team if you switch hogs.
+    + Bugfixes Bugfixes Bugfixes (okandprobablyaddedmorebugstoo) and performance
+      enhancements like reduced memory usage.
   * Bumped standards version to 3.9.4
   * Added some external build-dependencies
 

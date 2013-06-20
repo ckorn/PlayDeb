@@ -52,12 +52,12 @@ On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL-2'.
 
 Data/Fonts/DroidSansFallback.ttf:
-	Google Droid are Copyright The Android Open Source Project under the
+	Google Droid are (c) The Android Open Source Project under the
 	terms of the Apache license (2.0). Google Droid changes are in
 	public domain.
 On Debian systems, the complete text of the Apache License version 2.0
 can be found in `/usr/share/common-licenses/Apache-2.0'.
 
-The Debian packaging is Copyright 2006, Dmitry E. Oboukhov <dimka@avanto.org> and
+The Debian packaging is (C) 2006, Dmitry E. Oboukhov <dimka@avanto.org> and
 is licensed under the GPL, see `/usr/share/common-licenses/GPL-2'.
 
