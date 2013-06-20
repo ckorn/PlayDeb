@@ -1,13 +1,19 @@
 #!/usr/bin/make -f
-
-DEB_CMAKE_INSTALL_PREFIX := /usr/lib/hedgewars
-DEB_CMAKE_EXTRA_FLAGS      := -DNOVIDEOREC=1 -DDATA_INSTALL_DIR=/usr/share/games/hedgewars
-DEB_BUILD_PARALLEL := 1
-# Leftover file in upstream tarball
-DEB_CLEAN_EXCLUDE := QTfrontend/main.cpp.orig
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/cmake.mk
 
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+CFLAGS+=$(CPPFLAGS)
+CXXFLAGS+=$(CPPFLAGS)
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+#Helping libc >= 2.17, see launchpad bug #1179850
+TYPE_FLAGS = -DFPFLAGS="-k/lib/$(DEB_HOST_MULTIARCH)/libgcc_s.so.1"
+
+DEB_CMAKE_INSTALL_PREFIX := /usr/lib/hedgewars
+DEB_CMAKE_EXTRA_FLAGS      := -DNOSERVER=0 \
+	-DDATA_INSTALL_DIR=/usr/share/games/hedgewars $(TYPE_FLAGS)
 
 UPSTREAM_VERSION := $(shell dpkg-parsechangelog \
 	|grep ^Version|awk '{print $$2}'|sed 's/-[[:digit:]]\+$$//' \
