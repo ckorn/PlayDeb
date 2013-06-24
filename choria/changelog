@@ -1,3 +1,10 @@
+choria (0.4.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    - Fixed save/load path for mapeditor
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 21 Jun 2013 20:47:52 +0200
+
 choria (0.4.0-1~getdeb1) precise; urgency=low
 
   * New upstream version (LP: #1162565)
