@@ -1,3 +1,9 @@
+aseprite (0.9.5-1~getdeb2) precise; urgency=low
+
+  * Make default window size bigger (LP: #1193694)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 24 Jun 2013 21:36:22 +0200
+
 aseprite (0.9.5-1~getdeb1) precise; urgency=low
 
   * New upstream version
