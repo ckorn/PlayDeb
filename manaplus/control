@@ -1,7 +1,6 @@
 Source: manaplus
 Section: games
 Priority: optional
-Homepage: http://manaplus.evolonline.org/
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: debhelper (>= 9),
                libcurl4-gnutls-dev,
@@ -17,6 +16,7 @@ Build-Depends: debhelper (>= 9),
                zlib1g-dev,
                libsdl-ttf2.0-dev,
                libsdl-gfx1.2-dev
+Homepage: http://manaplus.evolonline.org/
 Standards-Version: 3.9.3
 
 Package: manaplus
