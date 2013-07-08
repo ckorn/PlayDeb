@@ -20,7 +20,11 @@ Build-Depends: debhelper (>= 9), autotools-dev,
                libgnustep-gui-dev,
                libglew1.6-dev,
                libreadline6-dev,
-               libexpat1-dev
+               libexpat1-dev,
+               libavcodec-dev,
+               libavformat-dev,
+               libavutil-dev,
+               libswscale-dev
 Standards-Version: 3.9.3
 Homepage: http://marathon.sourceforge.net/
 
