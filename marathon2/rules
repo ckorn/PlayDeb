@@ -17,3 +17,4 @@ override_dh_link:
 	dh_link '/usr/share/fonts/truetype/ttf-marathon2/Squarish Sans CT Regular.ttf' '/usr/share/games/marathon2/Plugins/XBLA_HUD/squarishsans/Squarish Sans CT Regular.ttf'
 	dh_link '/usr/share/fonts/truetype/ttf-marathon2/Squarish Sans CT Regular SC.ttf' '/usr/share/games/marathon2/Plugins/XBLA_HUD/squarishsans/Squarish Sans CT Regular SC.ttf'
 	mv debian/marathon2/usr/share/games/marathon2/Plugins/Marathon_2_Theme debian/marathon2/usr/share/games/marathon2/Plugins/Marathon\ 2\ Theme
+	rm debian/marathon2/usr/share/games/marathon2/COPYING.txt
