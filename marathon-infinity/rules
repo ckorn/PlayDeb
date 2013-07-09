@@ -15,3 +15,4 @@ override_dh_link:
 	dh_link
 	dh_link '/usr/share/fonts/truetype/ttf-marathon2/Squarish Sans CT Regular.ttf' '/usr/share/games/marathon-infinity/Plugins/XBLA_HUD/squarishsans/Squarish Sans CT Regular.ttf'
 	dh_link '/usr/share/fonts/truetype/ttf-marathon2/Squarish Sans CT Regular SC.ttf' '/usr/share/games/marathon-infinity/Plugins/XBLA_HUD/squarishsans/Squarish Sans CT Regular SC.ttf'
+	rm debian/marathon-infinity/usr/share/games/marathon-infinity/COPYING.txt
