@@ -1,3 +1,9 @@
+marathon2 (20130714-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 15 Jul 2013 22:31:14 +0200
+
 marathon2 (20130707-1~getdeb1) precise; urgency=low
 
   * New upstream version
