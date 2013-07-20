@@ -3,7 +3,6 @@ Section: devel
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Jordi Mallach <jordi@debian.org>
-DM-Upload-Allowed: yes
 Build-Depends: debhelper (>= 9),
                libboost-dev,
                libpng12-dev
