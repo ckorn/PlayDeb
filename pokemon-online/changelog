@@ -1,3 +1,9 @@
+pokemon-online (2.1.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Jul 2013 15:05:21 +0200
+
 pokemon-online (2.0.22-1~getdeb1) precise; urgency=low
 
   * New upstream version
