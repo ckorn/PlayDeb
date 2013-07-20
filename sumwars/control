@@ -11,11 +11,12 @@ Build-Depends: debhelper (>= 9),
                libopenal-dev,
                libvorbis-dev,
                libenet-dev,
-               libogre-dev (>= 1.7.0),
+               libogre-dev (>= 1.7.0), 
                libois-dev,
                libcegui-mk2-dev (>= 0.7.0),
                liblua5.1-0-dev,
-               libxrandr-dev
+               libxrandr-dev,
+               libboost-all-dev
 Standards-Version: 3.9.4
 Homepage: http://www.sumwars.org/
 Vcs-Svn: http://sumwars.svn.sourceforge.net/svnroot/sumwars/trunk

@@ -1,3 +1,23 @@
+sumwars (0.5.7-1~getdeb5~raring) raring; urgency=low
+
+  * New upstream version - Not Yet Released
+    - 0000002: [Graphics] After minimizing and restoring game in fullscreen
+    mode map is broken (fusion44) - resolved.
+    - 0000058: [User Interface] Scrolling in Quests zooms screen (fusion44) -
+    resolved.
+    - 0000063: [Unknown] The AUTHORS file should have utf-8 encoding
+    (fusion44) - resolved.
+    - 0000075: [Programming] Hero picture in inventory is with the arms
+    spread open (dezGusty) - resolved.
+    - 0000067: [Programming] On deleting savegame, wrong savegame files
+    deleted (dezGusty) - resolved.
+    - 0000066: [Build System] Translations installed into wrong directory -
+    resolved.
+    - 0000051: [Translation] Add missing translation strings, fix existing
+    translations (Kulik) - resolved.
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 14 Jul 2013 22:55:25 +0200
+
 sumwars (0.5.6-1~getdeb2) quantal; urgency=low
 
   * Rebuild for quantal

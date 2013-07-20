@@ -1,8 +1,14 @@
 #!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+myString:=$(shell dpkg --get-selections | grep libogre-1 | awk -F"-|\t|:" '{print $$2}' )
+
 ifeq ($(DEB_BUILD_ARCH),amd64)
-	OGRE_DIR:=-DOGRE_PLUGIN_DIR:STRING=/usr/lib/x86_64-linux-gnu/OGRE-1.7.4
+        OGRE_DIR:=-DSUMWARS_OGRE_PLUGIN_DIR:STRING=/usr/lib/x86_64-linux-gnu/OGRE-$(myString)
 else
-	OGRE_DIR:=-DOGRE_PLUGIN_DIR:STRING=/usr/lib/i386-linux-gnu/OGRE-1.7.4
+        OGRE_DIR:=-DSUMWARS_OGRE_PLUGIN_DIR:STRING=/usr/lib/i386-linux-gnu/OGRE-$(myString)
 endif
 
 %:
