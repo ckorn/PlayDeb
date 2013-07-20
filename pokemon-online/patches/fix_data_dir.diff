@@ -1,9 +1,9 @@
 Description: Fix data path for deb package build
 Author: Fabio Fantoni <fabio.fantoni@tiscali.it>
-Index: pokemon-online-2.0.21/src/Teambuilder/pluginmanager.cpp
+Index: pokemon-online-2.1.2/src/Teambuilder/pluginmanager.cpp
 ===================================================================
---- pokemon-online-2.0.21.orig/src/Teambuilder/pluginmanager.cpp	2013-04-27 15:39:28.000000000 +0200
-+++ pokemon-online-2.0.21/src/Teambuilder/pluginmanager.cpp	2013-04-27 19:23:24.006518758 +0200
+--- pokemon-online-2.1.2.orig/src/Teambuilder/pluginmanager.cpp	2013-07-20 15:06:08.714607176 +0200
++++ pokemon-online-2.1.2/src/Teambuilder/pluginmanager.cpp	2013-07-20 15:06:08.714607176 +0200
 @@ -265,7 +265,11 @@
      QFileDialog *fd = new QFileDialog(this);
      fd->setAttribute(Qt::WA_DeleteOnClose, true);
@@ -16,10 +16,10 @@ Index: pokemon-online-2.0.21/src/Teambuilder/pluginmanager.cpp
      fd->show();
  
      connect(fd, SIGNAL(fileSelected(QString)), this, SLOT(addPlugin(QString)));
-Index: pokemon-online-2.0.21/src/Server/Server.pro
+Index: pokemon-online-2.1.2/src/Server/Server.pro
 ===================================================================
---- pokemon-online-2.0.21.orig/src/Server/Server.pro	2013-04-27 15:39:28.000000000 +0200
-+++ pokemon-online-2.0.21/src/Server/Server.pro	2013-04-27 19:23:24.006518758 +0200
+--- pokemon-online-2.1.2.orig/src/Server/Server.pro	2013-07-20 15:06:08.714607176 +0200
++++ pokemon-online-2.1.2/src/Server/Server.pro	2013-07-20 15:07:29.506606486 +0200
 @@ -5,7 +5,8 @@
      script \
      xml \
@@ -27,13 +27,13 @@ Index: pokemon-online-2.0.21/src/Server/Server.pro
 -TARGET = Server
 +CONFIG(debian_package): TARGET = Pokemon-Online-Server
 +!CONFIG(debian_package): TARGET = Server
- DESTDIR = ../../bin
+ DESTDIR = $$PWD/../../bin
  TEMPLATE = app
  SOURCES += main.cpp \
-Index: pokemon-online-2.0.21/src/Server/pluginmanager.cpp
+Index: pokemon-online-2.1.2/src/Server/pluginmanager.cpp
 ===================================================================
---- pokemon-online-2.0.21.orig/src/Server/pluginmanager.cpp	2013-04-27 15:39:28.000000000 +0200
-+++ pokemon-online-2.0.21/src/Server/pluginmanager.cpp	2013-04-27 19:23:24.006518758 +0200
+--- pokemon-online-2.1.2.orig/src/Server/pluginmanager.cpp	2013-07-20 15:06:08.714607176 +0200
++++ pokemon-online-2.1.2/src/Server/pluginmanager.cpp	2013-07-20 15:06:08.714607176 +0200
 @@ -209,7 +209,11 @@
      QFileDialog *fd = new QFileDialog(this);
      fd->setAttribute(Qt::WA_DeleteOnClose, true);
