@@ -1,3 +1,19 @@
+grfcodec (6.0.3-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    - NFORenum specific changes:
+      - Data file updates
+        - Action 4 language ID 0x13 (Scottish Gaelic).
+        - Action D patch variables 15 and 16.
+        - Action 5, type 15 (OpenTTD GUI): Now 174 sprites are allowed
+    - GRFcodec specific changes:
+      - Fix container v2 include sprite decoding.
+      - Fix encoding from interlaced png images.
+    - GRFID specific changes:
+      - Fix number of crashes caused by corrupted NewGRFs
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 17 Jul 2013 18:38:47 +0200
+
 grfcodec (6.0.2-1~getdeb1) precise; urgency=low
 
   * New upstream version
