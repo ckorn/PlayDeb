@@ -1,0 +1,166 @@
+'\" t
+.\"     Title: SPACEZERO
+.\"    Author: Romanella Di Ferdinando <romanelladf@gmail.com>
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 07/21/2013
+.\"    Manual: SpaceZero User Manual
+.\"    Source: spacezero
+.\"  Language: English
+.\"
+.TH "SPACEZERO" "6" "07/21/2013" "spacezero" "SpaceZero User Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+spacezero \- Explore and conquer all space
+.SH "SYNOPSIS"
+.HP \w'\fBspacezero\fR\ 'u
+\fBspacezero\fR [\fIGENERAL_OPTIONS\fR] [\fB\-c\fR | \fB\-s\fR] [\fIGAME_OPTIONS\fR]
+.HP \w'\fBspacezero\fR\ 'u
+\fBspacezero\fR \fB\-h\fR
+.SH "DESCRIPTION"
+.PP
+This manual page documents briefly the
+\fBspacezero\fR
+command\&.
+.PP
+\fBspacezero\fR
+is a Real Time Strategy 2D space combat, multiplayer (two players by now) net game\&.
+.PP
+The objective is to conquer the space, defeating all enemies\&.
+.PP
+At starting point you have only one ship and one planet, but you have gold to buy more ships to conquer more planets\&.
+.PP
+All the ships can be controlled by the computer (automatic mode) or by the player (manual mode)\&. You can easily change among your ships controlling all of them independly\&.
+.SH "GENERAL OPTIONS"
+.PP
+\fB\-nosound\fR
+.RS 4
+Sound disabled\&.
+.RE
+.PP
+\fB\-nomusic\fR
+.RS 4
+Music disabled\&.
+.RE
+.PP
+\fB\-name \fR\fB\fIplayer_name\fR\fR
+.RS 4
+Where player_name is the name of the player\&.
+.RE
+.PP
+\fB\-f \fR\fB\fIfont\fR\fR
+.RS 4
+Change the default font by font\&.
+.RE
+.PP
+\fB\-s\fR
+.RS 4
+Server mode (multiplayer)\&.
+.RE
+.PP
+\fB\-c\fR
+.RS 4
+Client mode (multiplayer)\&.
+.RE
+.PP
+\fB\-h\fR
+.RS 4
+Show summary of options and keyboard controls\&.
+.RE
+.SH "GAME OPTIONS"
+.PP
+\fB\-n \fR\fB\fIN\fR\fR
+.RS 4
+Play with N number of planets (default 30)\&.
+.RE
+.PP
+\fB\-p \fR\fB\fIN\fR\fR
+.RS 4
+Play with N number of players (default 2)\&.
+.RE
+.PP
+\fB\-g \fR\fB\fIN\fR\fR
+.RS 4
+Play with N number of galaxies (default 1)\&.
+.RE
+.PP
+\fB\-l \fR\fB\fIN\fR\fR
+.RS 4
+Play with N as the size of the Universe\&.
+.RE
+.PP
+\fB\-k\fR
+.RS 4
+planets are known by all the players\&.
+.RE
+.PP
+\fB\-cooperative\fR
+.RS 4
+cooperative mode (all humans allied)\&.
+.RE
+.PP
+\fB\-compcooperative\fR
+.RS 4
+computer cooperative mode (all computers allied)\&.
+.RE
+.PP
+\fB\-queen\fR
+.RS 4
+Queen mode\&.
+.RE
+.PP
+\fB\-nopirates\fR
+.RS 4
+Dont add a team of pirates\&.
+.RE
+.SH "MULTIPLAYER OPTIONS"
+.PP
+\fB\-ip \fR\fB\fIIP\fR\fR
+.RS 4
+where IP is the ip of the server\&.(default 127\&.0\&.0\&.1)
+.RE
+.PP
+\fB\-port \fR\fB\fIn\fR\fR
+.RS 4
+where n and n+1 are the tcp ports used\&.(default 8000)
+.RE
+.SH "BUGS"
+.PP
+Not tested in net between 32 and 64 machines\&. Maybe doesn\*(Aqt work properly
+.PP
+Not so tested in an internet connection\&. Maybe doesn\*(Aqt work properly\&.
+.SH "AUTHOR"
+.PP
+\fBRomanella Di Ferdinando\fR <\&romanelladf@gmail\&.com\&>
+.RS 4
+Wrote this manpage for the Debian system\&.
+.RE
+.SH "COPYRIGHT"
+.br
+Copyright \(co 2011 Julia Palandri, Lucia Prado, Romanella Di Ferdinando
+.br
+.PP
+This manual page was written for the Debian system (and may be used by others)\&.
+.PP
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU General Public License, Version 3 or (at your option) any later version published by the Free Software Foundation\&.
+.PP
+On Debian systems, the complete text of the GNU General Public License can be found in
+/usr/share/common\-licenses/GPL\&.
+.sp

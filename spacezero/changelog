@@ -1,3 +1,38 @@
+spacezero (0.84.01-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    -Fix: Pursuing target, waste of fuel.
+    -Fix: no ammunition, don't return home.
+    -Fix: graphics in statistics.
+    -Added: air resistance.
+    -Added: game statistics.
+    -Added: random planet names.
+    -New explosions.
+    -Added: new ship models for pirates.
+    -GUI:
+    -Now you can select ships in space.
+    -Number of galaxies added to options window.
+    -Added: -enemyknown as game option.
+    -Added: -pirates as game option.
+    -Ctrl-w to write messages instead of O-w.
+    -AI:
+    -AI improved.
+    -AI of missiles reviewed.
+    -Attacks improved.
+    -Added: retreat n(ear).
+    -Sound:
+    -New background music theme: M31 (thanks to Yubatake)
+    -game sound and music controls.
+    -Minor enhances.
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sat, 20 Jul 2013 20:58:50 +0200
+
+spacezero (0.83.41-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 03 May 2013 22:46:30 +0200
+
 spacezero (0.83.39-1~getdeb1) precise; urgency=low
 
   * New upstream version
