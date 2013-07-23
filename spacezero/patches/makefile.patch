@@ -1,41 +1,49 @@
 Define installation directory.
-Index: spacezero-0.83.39/Makefile
-===================================================================
---- spacezero-0.83.39.orig/Makefile	2012-12-17 14:35:19.000000000 +0100
-+++ spacezero-0.83.39/Makefile	2013-03-12 19:38:00.855621450 +0100
+--- a/Makefile
++++ b/Makefile
 @@ -1,20 +1,20 @@
- CC = gcc 
- #CC= i586-mingw32msvc-cc
+ CC = gcc
  BINDIR= ./bin
 -DATADIR= ./dat
 -SOUNDDIR= $(DATADIR)/sounds
 +DATADIR= /usr/share/games/spacezero/
 +SOUNDDIR= ./dat/sounds
  SRCPATH= ./src/
- 
 -CONFIGDIR=$(HOME)/.spacezero
 +CONFIGDIR=$(HOME)/.config/spacezero
  RECORDFILE=$(CONFIGDIR)/record
  
- 
+ #
  # The binary executable will be copied in the next directory.
--INSTALL_DIR=/usr/local/bin
+ #
+-INSTALL_DIR=/usr/local/games
 +INSTALL_DIR=`pwd`/debian/spacezero/usr/lib/games/spacezero/
  
+ #
  # All data files will be copied in the next directory.
  # tar.gz 
 -INSTALL_DATA_DIR=/usr/local/share/spacezero
 +INSTALL_DATA_DIR=`pwd`/debian/spacezero-data/usr/share/games/spacezero/
- # DEB pkg 
- #INSTALL_DATA_DIR=/usr/share/spacezero
  
-@@ -62,7 +62,8 @@
+ # DEB pkg 
+ #INSTALL_DIR=/usr/games
+@@ -31,7 +31,7 @@
+ 
+ LDFLAGS=  -lm -lpthread $(SOUNDFLAGS) $(GTKLIBS)
+ LDFLAGS12=  -lm -lpthread $(SOUNDFLAGS) $(GTKLIBS12)
+-CFLAGS=  -Wall -O3 -I./include -DDATADIR=\"$(DATADIR)\" -DINSTALL_DATA_DIR=\"$(INSTALL_DATA_DIR)\"
++CFLAGS=  -Wall -O3 -I./include -DDATADIR=\"$(DATADIR)\" -DINSTALL_DATA_DIR=\"$(INSTALL_DATA_DIR)\" -lX11
+ CFLAGS12=  -Wall -O3 -I./include -DGTK12 -DDATADIR=\"$(DATADIR)\" -DINSTALL_DATA_DIR=\"$(INSTALL_DATA_DIR)\" 
+ 
+ PROGRAM=$(BINDIR)/spacezero
+@@ -56,7 +56,9 @@
  	-if [ ! -d $(INSTALL_DATA_DIR) ] ; then mkdir -p $(INSTALL_DATA_DIR); fi
  	-if [ ! -d $(INSTALL_DATA_DIR)/sounds/ ] ; then mkdir -p $(INSTALL_DATA_DIR)/sounds/; fi
  	cp $(SOUNDDIR)/* $(INSTALL_DATA_DIR)/sounds/
 -	cp $(DATADIR)/letterfrequencytable $(INSTALL_DATA_DIR)
++	cp dat/letterfrequencytable $(INSTALL_DATA_DIR)
 +	chmod -x $(INSTALL_DATA_DIR)/sounds/*
-+	cp ./dat/letterfrequencytable $(INSTALL_DATA_DIR)
++	chmod -x $(INSTALL_DATA_DIR)/letterfrequencytable
  	cp $(PROGRAM) $(INSTALL_DIR)
- 
- uninstall:
+ 	@echo executable files copied to: $(INSTALL_DIR)
+ 	@echo data files copied to: $(INSTALL_DATA_DIR)
