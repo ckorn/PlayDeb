@@ -1,3 +1,26 @@
+the-powder-toy (88.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    Fix issues with decoration presets
+    Fix crash with PSTN
+    Fix some STKM bugs
+    Fix crash when rapidly opening save previews
+    Fix all flood fill issues
+    HUD displays LIFE particle names correctly
+    Unhide FOG and RIME
+    Walls can be flood fill deleted without the wall delete tool selected
+    Author names appear yellow on your own comments, red on save owner
+    comments
+    Save more simulation options in powder.pref
+    Stamps and local saves rendered without fire again
+    Allow right modifier keys to work
+    'n' toggles Newtonian Gravity
+    Added images to the local / server save uploads
+    Black decoration preset, color on the deco editor tool buttons
+    Replace mode and specific delete, activated by insert and delete keys
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 28 Jul 2013 18:34:55 +0200
+
 the-powder-toy (87.2-1~getdeb1) precise; urgency=low
 
   * New upstream version
