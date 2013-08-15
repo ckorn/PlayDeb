@@ -1,3 +1,15 @@
+manaplus (1:1.3.8.4-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: allow buy protected items.
+    add: option for hp bar offset.
+    add: sprite actions depen on tile type (evol only).
+    add: chat emotes.
+    for open use f1 inside chat.
+    add: improve a bit memory usage.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 10 Aug 2013 18:57:45 +0200
+
 manaplus (1:1.3.7.21-1~getdeb1) precise; urgency=low
 
   * New upstream version
