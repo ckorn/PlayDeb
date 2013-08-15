@@ -1,4 +1,5 @@
 dist/*			usr/share/games/vertris
+obj-*/dist/*		usr/lib/games/vertris
 dist/vertris.xpm	usr/share/pixmaps
 debian/vertris.desktop	usr/share/applications
 debian/scripts/vertris	usr/games

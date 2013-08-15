@@ -1,3 +1,9 @@
+vertris (0.3.2-1~getdeb5~raring) raring; urgency=low
+
+  * Include executable.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 10 Aug 2013 19:26:49 +0200
+
 vertris (0.3.2-1~getdeb4~raring) raring; urgency=low
 
   * Rebuild for raring.
