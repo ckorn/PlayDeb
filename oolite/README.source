@@ -1,0 +1,32 @@
+This package uses the default "3.0 (quilt)" source format. Read the
+rest of this file only if you need the latest debian packaging from the
+version control system.
+
+The Debian packaging is maintained in a git repository.
+
+The "upstream" branch contains the files distributed by upstream tarballs.
+The "dfsg_clean" branch removes binaries and Mac/Windows specific stuff.
+The debian orig.tar.gz archive will have the same content.
+The "master" branch adds the Debian packaging.
+
+You will need the "git-buildpackage" debian package. Its usage is described
+in http://wiki.debian.org/PackagingWithGit, with a link to the full manual.
+Pristine-tar and patch-queue are not used.
+
+In brief:
+
+# Clone the whole repository.
+gbp-clone --all git://git.debian.org/pkg-games/oolite.git
+
+# Enter the directory containing the local copy.
+cd oolite
+
+# Build the package.
+git buildpackage
+
+# Clean the tree.
+debuild clean
+
+Launching "gitk --all &" may help a lot.
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>, Mon,  6 Feb 2012 18:54:04 +0100

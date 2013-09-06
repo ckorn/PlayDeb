@@ -1,0 +1,350 @@
+oolite (1.77-1~getdeb1) raring; urgency=low
+
+  * New upstream version (LP: #1221450)
+    * Enabled reverse-stepping through list of beacons shown by the Advanced
+      Space Compass.  The default key is '|' (Shift-'\').
+    * Energy bomb made strict mode only.
+    * Ships with a bounty will often avoid the main station
+    * A certain classified device is now possible to repair and has had
+      minor changes to its behaviour.
+    * Improvements to sound effect handling for scoop and laser
+    * Several efficiency improvements for smoother gameplay
+    * New combat behaviour and AI, including:
+        More consistent missile explosion behaviour
+        Smarter Thargoids
+        Smarter use of turret weapons
+        Better reactions against cloaked opponents
+        Better reaction to deployment of Q-mines
+        NPCs can now use side weapons
+        NPC lasers now equivalent to player lasers in terms of rate of fire
+        and overheating.
+
+    * Gamma control for SDL builds
+    * System populator cleaner, and hermits now semi-persistent
+    * Longer visibility distance
+    * Criminal behaviour sanctions now equivalent for player and NPCs
+    * Witchspace exit speed now depends on the lead ship, and player
+      following NPC through a wormhole now behaves better.
+    * Keyboard precision mode
+    * Stations can now have multiple docks
+    * Docking Clearance Protocol now a Game Option
+    * Interfaces screen on docked F4 for accessing arbitrary station or
+      ship systems. Passenger and cargo contracts moved to this screen;
+      parcel contracts added.
+    * Can switch to custom views while paused
+    * Improved rendering of planetary atmosphere and sun
+    * New 'b' key for activation of secondary function of primable
+      equipment (e.g. a mode switch)
+    * New starfield textures
+    * New laser textures
+    * New exhaust textures
+    * Mac specific: ctrl-cmd-f is the new toggle key for full screen display
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 06 Sep 2013 20:08:47 +0200
+
+oolite (1.76.1-2ubuntu2) raring; urgency=low
+
+  * Rebuild for gnustep-base 1.24 transition.
+
+ -- Benjamin Drung <bdrung@ubuntu.com>  Wed, 21 Nov 2012 15:22:53 +0100
+
+oolite (1.76.1-2ubuntu1) quantal; urgency=low
+
+  * Merge from debian, no remaining changes.
+  * debian/patches/pkg-config.patch:
+    - Use "pkg-config --libs mozjs185" instead of "js-config --libs" since
+      js-config gives bogus values that cause FTBFS.
+
+ -- Michael Terry <mterry@ubuntu.com>  Sun, 15 Jul 2012 11:31:21 -0400
+
+oolite (1.76.1-2) unstable; urgency=low
+
+  * control (Build-Depend), rules, patches/debian_version_of_libmozjs.diff:
+    use quite stable libmozjs185-dev instead of libmozjs-dev, that tracks
+    firefox's latest API.
+  * rules: clarified which settings may be modified in a Debian build.
+    CPPFLAGS, CFLAGS, noopt, nostrip -> GNUSTEP.
+    parallel=n -> Make.
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Mon, 25 Jun 2012 19:55:39 +0200
+
+oolite (1.76.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Tue, 29 May 2012 21:16:33 +0200
+
+oolite (1.76dfsg-1) unstable; urgency=low
+
+  * Fake upstream release to correct 1.76.orig.tgz content. It did contain
+    the full upstream branch instead of the dfsg_clean branch.
+    Adapted watch file with dversionmangle.
+  * patches/debian_version_of_libmozjs: refreshed.
+  * patches/timer_allocation_bug: backported from upstream VCS, should
+    close #665839.
+  * Debhelper 9, Standards-Version 3.9.3 (no changes).
+  * rules: use all available processors if DEB_BUILD_OPTIONS does not
+    specify parallel=n.
+  * README.Debian: remove obsolete part.
+  * README.source: updated, dpkg-source removes patches automatically.
+  * copyright: stand-alone detailed paragraph, updated copyrights.
+  * rules: updated copyrights
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Sat, 12 May 2012 21:52:34 +0200
+
+oolite (1.76-1) unstable; urgency=low
+
+  * New upstream.
+  * watch: scan upstream stable releases instead of dev snapshots.
+  * control: use default gobjc instead of explicit 4.6.
+  * rules: use dpkg-dev build flags.
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Thu, 22 Dec 2011 00:22:39 +0100
+
+oolite (1.75.3-4) unstable; urgency=low
+
+  * control (Build-Depends): not g++ (was needed for libmozjs)
+    dpkg (>= 1.16.1) to set build flags
+    gobjc-4.6 to get an explicit FTBFS on next gnustep-dev upgrade
+  * copyright: (cosmetic) versioned DEP-3 format.
+  * patches/debian_version_of_libmozjs.path: work-around two backward
+    incompatibilities introduced by libmozjs-dev (Closes: #643972)
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Thu, 06 Oct 2011 13:31:41 +0200
+
+oolite (1.75.3-3) unstable; urgency=low
+
+  * rules: compiles with gobjc-4.6, as current gnustep runtime.
+  * patches: respect DEP-3
+  * copyright: respects DEP-5
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Mon, 19 Sep 2011 18:42:30 +0200
+
+oolite (1.75.3-2) unstable; urgency=low
+
+  * patches: use debian mozjs v6 (Closes: #639075).
+  * gbp.conf: handle new git-buildpackage option for dfsg tarballs.
+  * rules: --as-needed linker option to remove dpkg-shlibdeps warning.
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Thu, 25 Aug 2011 20:39:06 +0200
+
+oolite (1.75.3-1ubuntu1) oneiric; urgency=low
+
+  * Allow building with libmozjs185-dev.
+  * Switch back to gobjc-4.6, which is compatible with the current GNUstep
+    runtime in Ubuntu.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 24 Aug 2011 21:26:39 +0100
+
+oolite (1.75.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * gbp.conf, source/local-options: clarified git-buildpackage configuration.
+  * compat, control: switched to debhelper 8.
+  * patches/libmojs5_not_4.diff: upstream uses mozjs v4, debian v5.
+  * control: made dh targets more generic.
+  * Upload to unstable with libmozjs>=4 (Closes: #614277).
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Sat, 16 Jul 2011 14:57:16 +0200
+
+oolite (1.75.2-2) experimental; urgency=low
+
+  * Recompiled with gobjc-4.5, compatible with the current gnustep runtime,
+    allthough gobjc-4.6 is now the default compiler in unstable.
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Sun, 15 May 2011 23:17:45 +0200
+
+oolite (1.75.2-1) experimental; urgency=low
+
+  * New upstream beta release.
+  * control: Standards-Version 3.9.2 (no changes)
+  * patches: src/Core/OOCPUInfo.h to consult sys/param.h instead of an
+    explicit list of architectures to configure endianness. Should help #614277.
+  * Updated manpage from upstream debian/ subdir.
+  * Removed libespeak support because of #591717.
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Tue, 10 May 2011 01:04:17 +0200
+
+oolite (1.75.1-20110315-1) experimental; urgency=low
+
+  * New upstream release. Huge diff because of CRLF elimination.
+  * Use system libmozjs-dev instead of embedded one which caused some FTBS.
+    (control:Build-Depends, copyright, mozjs.LICENSE, mozjs.LEGAL, rules)
+  * Break circular dependency between binary packages (Closes: #616001)
+    (control:Depends, rules).
+  * Now builds with gcc-4.5 (Closes: #565101).
+  * Allowed date component in upstream version number (watch).
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Fri, 25 Mar 2011 21:59:04 +0100
+
+oolite (1.75-1) unstable; urgency=low
+
+  * New upstream release.
+  * DFSG compliant tarball and twice smaller. It embeds the source of
+    mozilla javascript library (aka spidermonkey). Oolite needs the version
+    shipped with iceweasel 4.0, not yet in libmozjs-dev debian package.
+    Upstream downloads it at compile-time, wich is worst.
+  * Renamed README->README.Debian so that it is embedded.
+  * README.source documenting use of git-buildpackage for debian packaging.
+  * control: four binary packages: oolite, -doc, -data and -data-sounds.
+    (Uploaders, Maintainers) Removed Eddy and Debian Games Team.
+    (Breaks, Replaces) to handle the split of -data (Closes: #614185).
+    (Vcs-*) point to alioth git repository instead of old svn.
+    (Build-Depends) libnspr4-dev, zip, python for embedded mozjs.
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Sat, 26 Feb 2011 01:18:27 +0100
+
+oolite (1.74.2-1) unstable; urgency=low
+
+  * New upstream release (closes: #506809).
+  * Merged oolite and oolite-data old packaging to share same source.
+  * control(Build-Depends): oolite needs its own version of libmozjs.
+  * copyright: upstream is now released under the GPL.
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Thu, 05 Aug 2010 00:49:00 +0200
+
+oolite (1.65-7) unstable; urgency=low
+
+  [ Eddy Petrișor ]
+  * properly install the lintian override
+  * override the emty-dir lintian warning since we actually need and
+    empty dir
+
+  [ Nicolas Boulenguez ]
+  * Switch to dpkg-source 3.0 (quilt) format
+  * rules: used debhelper overrides
+  * moved non patch files from debian/patches to debian
+  * renamed debhelper files (foo->oolite.foo) to comply to recent
+    guidelines and prepare sharing source with oolite-data
+  * removed dirs debhelper files, no more needed
+  * control: added Homepage, Standards-Version 3.9.0, added myself to uploaders
+  * copyright: added explicit copyright dates, broken very long lines.
+  * doc-base: registered reference sheet
+  * Closes: 578310 by recompilating with current headers
+
+ -- Nicolas Boulenguez <nicolas.boulenguez@free.fr>  Thu, 08 Jul 2010 16:16:52 +0200
+
+oolite (1.65-6) unstable; urgency=low
+
+  [ Cyril Brulebois ]
+  * Added Vcs-Svn and Vcs-Browser fields in the control file.
+
+  [ Eddy Petrișor ]
+  * changes (closes: #449101, #447465) according to
+    http://lists.alioth.debian.org/pipermail/pkg-games-devel/2007-July/004000.html
+    - use gs_make instead of sourcing
+      /usr/lib/GNUstep/System/Makefiles/GNUstep.sh and running $(MAKE)
+    - bumped versioned build depends on libgnustep-base-dev to (>= 1.14.0)
+    - added a Build-Depends on quilt since we needed a patch to obtain this
+  * install the .desktop file; patch thanks to Mario Bonino from Ubuntu
+
+  [ Gerfried Fuchs ]
+  * Removed leading The from the synopsis.
+
+  [ Eddy Petrișor ]
+  * bump debhelper compatibiliy to 5; updated builddep on debhelper
+    accordingly
+  * removed no longer needed XS-Autobuild
+
+  [ Jon Dowland ]
+  * add Homepage: control field to source stanza
+
+ -- Jon Dowland <jon@alcopop.org>  Mon, 03 Dec 2007 17:46:28 +0000
+
+oolite (1.65-5) unstable; urgency=low
+
+  * remove debian/svn-deblayout from the source since it holds 0 value for the
+    actual source package
+  * the game was relicensed by upstream with the dual license model (GNU GPL
+    and CC-NC-SA) - this was acknowledged to be done also retroactively for
+    the current stable release of the game. Here is a quote from upstream's
+    announce on its forum:
+    The current official release, 1.65, may be considered to be dual-licensed;
+    that is, it may be distributed under its current license (the Creative
+    Commons Attribution-NonCommercial-ShareAlike 2.0 license, herafter known
+    as CC-by-nc-sa-2) or the GPL.
+  * change section from non-free/games to games as a consequence of the former
+  * remove the justification from copyright for autobuilding this package since
+    will be autobuild in main from now on
+  * update TODO to remember to update the copyright info when the new release
+    will be done
+
+ -- Eddy Petrișor <eddy.petrisor@gmail.com>  Wed,  7 Mar 2007 01:06:03 +0200
+
+oolite (1.65-4) unstable; urgency=low
+
+  * changed XS-X-VCS-SVN into XS-VCS-SVN after the discussion on debian devel
+  * also ship the TXT.rtf file which is actually a replacement for PLAYING.txt
+  * added two more files with pointers to online documentation about the game:
+    advanced_instructions.readme and first_flight.readme
+  * remove "Application" from the categories list in the desktop file since is
+    not a valid category
+  * added the "XS-Autobuild: yes" line in the control file and added reasons
+    in the copyright file (after Andi white-listed the package)
+    Done as requested in:
+    http://lists.debian.org/debian-devel-announce/2006/11/msg00012.html
+  * install the Oolite reference sheet which was hidden in
+    installers/win32/OoliteRS.pdf
+  * fix the mail format in README.Debian
+  * no longer install README_LINUX.TXT since is useless to Debian users
+  * added a PLAYING.TXT with pointers about the contents of the installed
+    documentation
+
+ -- Eddy Petrișor <eddy.petrisor@gmail.com>  Fri, 22 Dec 2006 17:26:39 +0200
+
+oolite (1.65-3) unstable; urgency=low
+
+  * build depend on non-versioned libgnustep-base-dev instead of the
+    versioned variant because of the GNUstep transition (Closes: #389855)
+  * added the xs-x-vcs-svn header to the control file
+  * changed the locale language code for Romanian in the desktop file from ro
+    to ro_RO since the short form is the last to be tested (marginal speed
+    optimisation)
+  * updated package TODO file (nothing to do :-)
+
+ -- Eddy Petrișor <eddy.petrisor@gmail.com>  Wed, 27 Sep 2006 21:11:23 +0300
+
+oolite (1.65-2) unstable; urgency=low
+
+  * added versioned dependency on oolite-data, since it crashes with older
+    data sets
+
+ -- Eddy Petrișor <eddy.petrisor@gmail.com>  Wed, 26 Jul 2006 11:50:59 +0300
+
+oolite (1.65-1) unstable; urgency=low
+
+  * new upstream release (closes: #378875)
+  * changed the watch file as upstream has changed the naming convention
+  * removed dependency on sdl-gfx and gnustep-gui since upstream managed to
+    remove them.
+  * it is no longer needed to have Info-Oolite.plist in the debian part of the
+    package, it is now in the source tarball
+  * go all the way using debhelper and install the lintian override using it
+  * some files changed their location in the upstream source, synced the package
+
+ -- Eddy Petrișor <eddy.petrisor@gmail.com>  Wed, 26 Jul 2006 10:47:52 +0300
+
+oolite (1.62-5-3) unstable; urgency=low
+
+  * Make the Homepage: "field" match the regexp from Debian Develper's
+    Reference, best packaging practices, chapter "6.2.4 Upstream home page"
+
+ -- Eddy Petrişor <eddy.petrisor@gmail.com>  Mon, 29 May 2006 02:07:10 +0300
+
+oolite (1.62-5-2) unstable; urgency=low
+
+  * Added a .desktop file
+  * "The fix was already there" fix: typo in debian/control is now visible;
+    wrong build was uploaded
+  * removed commented call to dh_makeshlibs in debian/rules
+  * bump standards version (nothing to do) - 3.7.2
+  * fix watch file
+
+ -- Eddy Petrișor <eddy.petrisor@gmail.com>  Sun, 16 Apr 2006 19:41:25 +0300
+
+oolite (1.62-5-1) unstable; urgency=low
+
+  * Initial release Closes: #361704
+
+ -- Eddy Petrișor <eddy.petrisor@gmail.com>  Sun,  9 Apr 2006 21:56:57 +0300
+

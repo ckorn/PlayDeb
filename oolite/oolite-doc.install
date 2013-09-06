@@ -1,0 +1,12 @@
+# Avoid using dh_installdocs because we want the user to find all
+# documentation in one place, but without oolite-doc depending on
+# oolite, see policy 12.3.
+
+Doc/AdviceForNewCommanders.pdf             usr/share/doc/oolite
+Doc/contributors.txt                       usr/share/doc/oolite
+Doc/ExternalLibrariesSourceCodeChanges.txt usr/share/doc/oolite
+Doc/FAQ.TXT                                usr/share/doc/oolite
+Doc/OoliteReadMe.pdf                       usr/share/doc/oolite
+Doc/OoliteRS.pdf                           usr/share/doc/oolite
+
+deps/Linux-deps/README.TXT                 usr/share/doc/oolite

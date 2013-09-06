@@ -1,0 +1,114 @@
+Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=174
+Upstream-Name: oolite
+Upstream-Contact: http://www.oolite.org
+Source: http://www.oolite.org.
+ The upstream archive contains all dependencies needed to build the
+ game and create extensions on every supported architecture. This
+ results in a huge amount of precompiled binaries, free libraries
+ source adapted to some specific OS, tools needed only when creating
+ extensions. I removed from the source tarball all stuff not directly
+ related with oolite compilation on Debian.
+ .
+ Removed:
+ .
+ Makefile, debian, tests: only used for upstream tests
+ .
+ Oolite.xcodeproj: concerns a Macintosh IDE.
+ .
+ deps: removed all but linux uncompiled dependencies.
+ .
+ installers/autopackage: another way of distributing on linux.
+ .
+ installers/win32: distribution on windows.
+ .
+ tools: used only by developpers.
+
+Files: *
+Copyright: 2004-2007 Giles C Williams and contributors
+           2007-2011 the Oolite project
+License: GPL-2+
+
+Files: Resources/* Schemata/* installers/*
+Copyright: 2004-2007 Giles C Williams and contributors
+           2007-2011 the Oolite project
+License: GPL-2+ or CC-BY-NC-SA-3.0
+
+Files: debian/*
+Copyright: 2006-2009 Eddy Petrişor <eddy.petrisor@gmail.com>
+           2009      Darren Salt <linux@youmustbejoking.demon.co.uk>
+           2009      Michael Werle <micha@michaelwerle.com>
+           2010-2011 Nicolas Boulenguez <nicolas.boulenguez@free.fr>
+License: GPL-3+
+
+License: GPL-2+
+ This program is free software; you can redistribute it
+ and/or modify it under the terms of the GNU General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later
+ version.
+ .
+ This program is distributed in the hope that it will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied
+ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ PURPOSE.  See the GNU General Public License for more
+ details.
+ .
+ You should have received a copy of the GNU General Public
+ License along with this package; if not, write to the Free
+ Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ Boston, MA  02110-1301 USA
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-3+
+ This program is free software; you can redistribute it
+ and/or modify it under the terms of the GNU General Public
+ License as published by the Free Software Foundation; either
+ version 3 of the License, or (at your option) any later
+ version.
+ .
+ This program is distributed in the hope that it will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied
+ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ PURPOSE.  See the GNU General Public License for more
+ details.
+ .
+ You should have received a copy of the GNU General Public
+ License along with this package; if not, write to the Free
+ Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ Boston, MA  02110-1301 USA
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 3 can be found in the file
+ `/usr/share/common-licenses/GPL-3'.
+
+License: CC-BY-NC-SA-3.0
+ To view a copy of Attribution-NonCommercial-ShareAlike license, visit
+ http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to
+ Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305,
+ USA.
+ .
+ You are free:
+ • to Share — to copy, distribute and transmit the work
+ • to Remix — to adapt the work
+ .
+ Under the following conditions:
+ • Attribution. You must attribute the work in the manner
+ specified by the author or licensor (but not in any way that
+ suggests that they endorse you or your use of the work).
+ • Noncommercial. You may not use this work for commercial purposes.
+ • Share Alike. If you alter, transform, or build upon this work,
+ you may distribute the resulting work only under the same or
+ similar license to this one.
+ .
+ For any reuse or distribution, you must make clear to others the
+ license terms of this work. Any of the above conditions can be waived
+ if you get permission from the copyright holder. Apart from the remix
+ rights granted under this license, nothing in this license impairs or
+ restricts the author’s moral rights.
+ .
+ Your fair dealing and other rights are in no way affected by the
+ above. This is a human-readable summary of the Legal Code (the full
+ license).

@@ -1,0 +1,180 @@
+Description: use Debian/unstable version of libmozjs
+ Upstream downloads libmozjs v4 from a private URL at build time.
+ .
+ We adapt the source to use 1.8.5 packaged in Debian.
+ This part of the work has been forwarded upstream
+ but changes have been necessary since.
+ .
+ JSOPTION_ANONFUNFIX has been removed in mozjs, see
+ https://bugzilla.mozilla.org/show_bug.cgi?id=665835
+ .
+ The main API difference is that older JSScript memory allocation
+ is hidden inside the associated JSObject.
+
+Author: Nicolas Boulenguez <nicolas.boulenguez@free.fr>
+Forwarded: Michael Werle <micha@michaelwerle.com>
+
+Index: oolite-1.77/src/Core/Scripting/OOJSScript.m
+===================================================================
+--- oolite-1.77.orig/src/Core/Scripting/OOJSScript.m	2013-09-06 20:11:57.419058769 +0200
++++ oolite-1.77/src/Core/Scripting/OOJSScript.m	2013-09-06 20:14:28.019054289 +0200
+@@ -58,11 +58,11 @@
+ 
+ static void AddStackToArrayReversed(NSMutableArray *array, RunningStack *stack);
+ 
+-static JSScript *LoadScriptWithName(JSContext *context, NSString *path, JSObject *object, JSObject **outScriptObject, NSString **outErrorMessage);
++static JSObject *LoadScriptWithName(JSContext *context, NSString *path, JSObject *object, NSString **outErrorMessage);
+ 
+ #if OO_CACHE_JS_SCRIPTS
+-static NSData *CompiledScriptData(JSContext *context, JSScript *script);
+-static JSScript *ScriptWithCompiledData(JSContext *context, NSData *data);
++static NSData *CompiledScriptData(JSContext *context, JSObject *script);
++static JSObject *ScriptWithCompiledData(JSContext *context, NSData *data);
+ #endif
+ 
+ static NSString *StrippedName(NSString *string);
+@@ -114,8 +114,7 @@
+ {
+ 	JSContext				*context = NULL;
+ 	NSString				*problem = nil;		// Acts as error flag.
+-	JSScript				*script = NULL;
+-	JSObject				*scriptObject = NULL;
++	JSObject				*script = NULL;
+ 	jsval					returnValue = JSVAL_VOID;
+ 	NSEnumerator			*keyEnum = nil;
+ 	NSString				*key = nil;
+@@ -145,7 +144,7 @@
+ 			problem = @"could not add JavaScript root object";
+ 		}
+ 		
+-		if (!problem && !OOJSAddGCObjectRoot(context, &scriptObject, "Script GC holder"))
++		if (!problem && !OOJSAddGCObjectRoot(context, &script, "Script GC holder"))
+ 		{
+ 			problem = @"could not add JavaScript root object";
+ 		}
+@@ -171,7 +170,7 @@
+ 		if (!problem)
+ 		{
+ 			OOLog(@"script.javaScript.willLoad", @"About to load JavaScript %@", path);
+-			script = LoadScriptWithName(context, path, _jsSelf, &scriptObject, &problem);
++			script = LoadScriptWithName(context, path, _jsSelf, &problem);
+ 		}
+ 		OOLogIndentIf(@"script.javaScript.willLoad");
+ 		
+@@ -208,10 +207,9 @@
+ 			OOJSStopTimeLimiter();
+ 			
+ 			// We don't need the script any more - the event handlers hang around as long as the JS object exists.
+-			JS_DestroyScript(context, script);
+ 		}
+ 		
+-		JS_RemoveObjectRoot(context, &scriptObject);
++		JS_RemoveObjectRoot(context, &script);
+ 		
+ 		sRunningStack = stackElement.back;
+ 		
+@@ -638,16 +636,16 @@
+ }
+ 
+ 
+-static JSScript *LoadScriptWithName(JSContext *context, NSString *path, JSObject *object, JSObject **outScriptObject, NSString **outErrorMessage)
++static JSObject *LoadScriptWithName(JSContext *context, NSString *path, JSObject *object, NSString **outErrorMessage)
+ {
+ #if OO_CACHE_JS_SCRIPTS
+ 	OOCacheManager				*cache = nil;
+ #endif
+ 	NSString					*fileContents = nil;
+ 	NSData						*data = nil;
+-	JSScript					*script = NULL;
++	JSObject					*script = NULL;
+ 	
+-	NSCParameterAssert(outScriptObject != NULL && outErrorMessage != NULL);
++	NSCParameterAssert(outErrorMessage != NULL);
+ 	*outErrorMessage = nil;
+ 	
+ #if OO_CACHE_JS_SCRIPTS
+@@ -668,8 +666,7 @@
+ 		else
+ 		{
+ 			script = JS_CompileUCScript(context, object, [data bytes], [data length] / sizeof(unichar), [path UTF8String], 1);
+-			if (script != NULL)  *outScriptObject = JS_NewScriptObject(context, script);
+-			else  *outErrorMessage = @"compilation failed";
++			if (script == NULL) *outErrorMessage = @"compilation failed";
+ 		}
+ 		
+ #if OO_CACHE_JS_SCRIPTS
+@@ -687,7 +684,7 @@
+ 
+ 
+ #if OO_CACHE_JS_SCRIPTS
+-static NSData *CompiledScriptData(JSContext *context, JSScript *script)
++static NSData *CompiledScriptData(JSContext *context, JSObject *script)
+ {
+ 	JSXDRState					*xdr = NULL;
+ 	NSData						*result = nil;
+@@ -697,7 +694,7 @@
+ 	xdr = JS_XDRNewMem(context, JSXDR_ENCODE);
+ 	if (xdr != NULL)
+ 	{
+-		if (JS_XDRScript(xdr, &script))
++		if (JS_XDRScriptObject(xdr, &script))
+ 		{
+ 			bytes = JS_XDRMemGetData(xdr, &length);
+ 			if (bytes != NULL)
+@@ -712,10 +709,10 @@
+ }
+ 
+ 
+-static JSScript *ScriptWithCompiledData(JSContext *context, NSData *data)
++static JSObject *ScriptWithCompiledData(JSContext *context, NSData *data)
+ {
+ 	JSXDRState					*xdr = NULL;
+-	JSScript					*result = NULL;
++	JSObject					*result = NULL;
+ 	
+ 	if (data == nil)  return NULL;
+ 	
+@@ -726,7 +723,7 @@
+ 		if (EXPECT_NOT(length > UINT32_MAX))  return NULL;
+ 		
+ 		JS_XDRMemSetData(xdr, (void *)[data bytes], (uint32_t)length);
+-		if (!JS_XDRScript(xdr, &result))  result = NULL;
++		if (!JS_XDRScriptObject(xdr, &result))  result = NULL;
+ 		
+ 		JS_XDRMemSetData(xdr, NULL, 0);	// Don't let it be freed by XDRDestroy
+ 		JS_XDRDestroy(xdr);
+Index: oolite-1.77/src/Core/Scripting/OOJavaScriptEngine.m
+===================================================================
+--- oolite-1.77.orig/src/Core/Scripting/OOJavaScriptEngine.m	2013-09-06 20:11:57.419058769 +0200
++++ oolite-1.77/src/Core/Scripting/OOJavaScriptEngine.m	2013-09-06 20:11:57.415058769 +0200
+@@ -79,7 +79,7 @@
+ #else
+ #define JIT_OPTIONS					JSOPTION_JIT | JSOPTION_METHODJIT | JSOPTION_PROFILING
+ #endif
+-#define OOJSENGINE_CONTEXT_OPTIONS	JSOPTION_VAROBJFIX | JSOPTION_RELIMIT | JSOPTION_ANONFUNFIX | JIT_OPTIONS
++#define OOJSENGINE_CONTEXT_OPTIONS	JSOPTION_VAROBJFIX | JSOPTION_RELIMIT | JIT_OPTIONS
+ 
+ 
+ #define OOJS_STACK_SIZE				8192
+Index: oolite-1.77/GNUmakefile
+===================================================================
+--- oolite-1.77.orig/GNUmakefile	2013-09-06 20:11:57.419058769 +0200
++++ oolite-1.77/GNUmakefile	2013-09-06 20:11:57.419058769 +0200
+@@ -40,12 +40,11 @@
+     LIBJS_LIB_DIR                = $(LIBJS_ROOT)/dist/lib
+     LIBJS = js_static
+ 
+-    ADDITIONAL_INCLUDE_DIRS      = -I$(LIBJS_INC_DIR) -Isrc/SDL -Isrc/Core -Isrc/BSDCompat -Isrc/Core/Scripting -Isrc/Core/Materials -Isrc/Core/Entities -Isrc/Core/OXPVerifier -Isrc/Core/Debug -Isrc/Core/Tables
+-    ADDITIONAL_OBJC_LIBS         = -lGLU -lGL -lX11 -lSDL -lSDL_mixer -lgnustep-base -l$(LIBJS) `nspr-config --libs` -lstdc++
+-    ADDITIONAL_CFLAGS            = -Wall -DLINUX -DNEED_STRLCPY `sdl-config --cflags` `nspr-config --cflags`
+-    ADDITIONAL_OBJCFLAGS         = -Wall -std=c99 -DLOADSAVEGUI -DLINUX -DXP_UNIX -Wno-import `sdl-config --cflags` `nspr-config --cflags`
+-    oolite_LIB_DIRS              += -L/usr/X11R6/lib/ -L$(LIBJS_LIB_DIR)
+-
++    ADDITIONAL_INCLUDE_DIRS      = -Isrc/SDL -Isrc/Core -Isrc/BSDCompat -Isrc/Core/Scripting -Isrc/Core/Materials -Isrc/Core/Entities -Isrc/Core/OXPVerifier -Isrc/Core/Debug -Isrc/Core/Tables
++    ADDITIONAL_OBJC_LIBS         = -lGLU -lGL -lX11 -lSDL -lSDL_mixer `js-config --libs` -lgnustep-base `nspr-config --libs` -lstdc++
++    ADDITIONAL_CFLAGS            = -Wall -DLINUX -DNEED_STRLCPY `sdl-config --cflags` `nspr-config --cflags` `js-config --cflags`
++    ADDITIONAL_OBJCFLAGS         = -Wall -std=c99 -DLOADSAVEGUI -DLINUX -DXP_UNIX -Wno-import `sdl-config --cflags` `nspr-config --cflags` `js-config --cflags`
++    oolite_LIB_DIRS              += -L/usr/X11R6/lib/
+     ifeq ($(use_deps),yes)
+         oolite_LIB_DIRS          += -Ldeps/Linux-deps/$(HOST_ARCH)/lib_linker
+         ADDITIONAL_OBJC_LIBS     += -lpng14

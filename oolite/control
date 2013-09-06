@@ -1,0 +1,87 @@
+Source: oolite
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+XSBC-Original-Maintainer: Nicolas Boulenguez <nicolas.boulenguez@free.fr>
+Standards-Version: 3.9.3
+Build-Depends: dpkg-dev (>= 1.16.1),
+               debhelper (>= 9),
+               libsdl1.2-dev,
+               libsdl-mixer1.2-dev,
+               libgnustep-base-dev,
+               gnustep-core-devel,
+               libnspr4-dev,
+               libmozjs185-dev,
+               libpng-dev,
+               mesa-common-dev,
+               gobjc,
+               libffi-dev
+# Work-around: Oolite does not Build-Depend on libffi-dev, but
+# libmozjs185-dev does (reported as #).
+Homepage: http://www.oolite.org
+
+Package: oolite
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, oolite-data (= ${source:Version})
+Replaces: oolite-data (<< 1.74.2-2)
+Breaks: oolite-data (<< 1.74.2-2)
+Recommends: oolite-doc (= ${source:Version}),
+            oolite-data-sounds (= ${source:Version})
+Description: space sim game, inspired by Elite
+ Oolite is a space sim game, inspired by Elite, powered by Objective-C
+ and OpenGL, and designed as a small game that is easy for users to pick
+ up, modify and expand upon. Almost every aspect of the game can be changed
+ by using simple, free graphics packages and text-editors.
+ .
+ The purpose of the game is to fly from planet to planet, buying and
+ selling goods, shooting pirates or committing acts of piracy.
+
+Package: oolite-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Replaces: oolite (<<1.74.2-2), oolite-data (<< 1.74.2-2)
+Breaks: oolite (<<1.74.2-2), oolite-data (<< 1.74.2-2)
+Suggests: oolite
+Description: space sim game, inspired by Elite (documentation)
+ Oolite is a space sim game, inspired by Elite, powered by Objective-C
+ and OpenGL, and designed as a small game that is easy for users to pick
+ up, modify and expand upon. Almost every aspect of the game can be changed
+ by using simple, free graphics packages and text-editors.
+ .
+ The purpose of the game is to fly from planet to planet, buying and
+ selling goods, shooting pirates or committing acts of piracy.
+ .
+ This package contains the documentation.
+
+Package: oolite-data
+Architecture: all
+Depends: ${misc:Depends}
+Replaces: oolite (<<1.74.2-2)
+Breaks: oolite (<<1.74.2-2)
+Description: space sim game, inspired by Elite (data files)
+ Oolite is a space sim game, inspired by Elite, powered by Objective-C
+ and OpenGL, and designed as a small game that is easy for users to pick
+ up, modify and expand upon. Almost every aspect of the game can be changed
+ by using simple, free graphics packages and text-editors.
+ .
+ The purpose of the game is to fly from planet to planet, buying and
+ selling goods, shooting pirates or committing acts of piracy.
+ .
+ This package contains the data files for the game.
+
+Package: oolite-data-sounds
+Architecture: all
+Depends: ${misc:Depends}
+Replaces: oolite-data (<< 1.74.2-2)
+Breaks: oolite-data (<< 1.74.2-2)
+Description: space sim game, inspired by Elite (sounds)
+ Oolite is a space sim game, inspired by Elite, powered by Objective-C
+ and OpenGL, and designed as a small game that is easy for users to pick
+ up, modify and expand upon. Almost every aspect of the game can be changed
+ by using simple, free graphics packages and text-editors.
+ .
+ The purpose of the game is to fly from planet to planet, buying and
+ selling goods, shooting pirates or committing acts of piracy.
+ .
+ This package contains the sounds.
