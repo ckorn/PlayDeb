@@ -1,0 +1,39 @@
+Source: mazeofgalious
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libsdl1.2-dev,
+               libsdl-mixer1.2-dev,
+               libsdl-image1.2-dev,
+               libsdl-sound1.2-dev
+Standards-Version: 3.9.3
+Homepage: http://www.braingames.getput.com/mog/
+
+Package: mazeofgalious
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         mazeofgalious-data (>= ${source:Version})
+Description: Maze of Galious
+ This is a very addictive game where you have to kill thousands of enemies,
+ collect items in order to obtain new powers, and defeat some really great
+ guys at the end of each level. You are free to go everywhere you want from
+ the beginning of the game. You have to choose very carefully the order in
+ which you visit all the rooms in the huge map if you want to keep your
+ character alive. The map is structured in a main map (called the castle),
+ and 10 submaps (called the worlds). Initially you are in the castle,
+ and you have to find the keys that open the doors that go to each of the
+ worlds. To complete the game, you have to defeat the boss at the end of
+ each one of the 10 worlds. You are free to revisit each world as often as
+ you want, in order to see if you have missed something. To defeat all 10
+ beasts, you control two characters: Popolon and Aphrodite, and each one
+ has special abilities, i.e. Popolon has a greater ability to jump and
+ Aphrodite is able to dive.
+	      
+Package: mazeofgalious-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Maze of Galious (data package)
+ This package contains graphics, leveldata, sounds, and music needed
+ for the game.
