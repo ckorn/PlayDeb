@@ -1,0 +1,370 @@
+Index: mazeofgalious-0.63.1548/build/linux/Makefile
+===================================================================
+--- mazeofgalious-0.63.1548.orig/build/linux/Makefile	2013-09-07 22:19:25.737667397 +0200
++++ mazeofgalious-0.63.1548/build/linux/Makefile	2013-09-07 23:38:07.637627084 +0200
+@@ -52,19 +52,18 @@
+ 
+ install: all
+ 	@$(ECHO) " o Creating install directory $(BINDIR)"
+-	@$(MD) "$(BINDIR)"
++	@$(MD) "$(DESTDIR)/$(BINDIR)"
+ 	@$(ECHO) " o Installing game and data to $(BINDIR)"
+-	@$(CP) "$(EXE)" $(DATA) "$(BINDIR)"
++	@$(CP) $(DATA) "$(DESTDIR)/$(BINDIR)"
+ 	@$(ECHO) " o Creating startup script $(STARTUP)"
+-	@$(MD) "$(GAMEDIR)"
+-	@$(ECHO) "#!/bin/sh" >"$(STARTUP)"
+-	@$(ECHO) "cd \"$(BINDIR)\" && ./$(EXE); cd -" >>"$(STARTUP)"
+-	@$(CHMOD) 755 "$(STARTUP)"
++	@$(MD) "$(DESTDIR)/$(GAMEDIR)"
++	@$(CP) "$(EXE)" "$(DESTDIR)/$(STARTUP)"
++	@$(CHMOD) 755 "$(DESTDIR)/$(STARTUP)"
+ 	@$(ECHO) " o Creating application menu entry"
+-	@$(MD) "$(ICNDIR)"
+-	@$(CP) "$(EXTRADIR)/$(ICON)" "$(ICNDIR)"
+-	@$(MD) "$(APPDIR)"
+-	@$(CP) "$(EXTRADIR)/$(DESKTOP)" "$(APPDIR)"
++	@$(MD) "$(DESTDIR)/$(ICNDIR)"
++	@$(CP) "$(EXTRADIR)/$(ICON)" "$(DESTDIR)/$(ICNDIR)"
++	@$(MD) "$(DESTDIR)/$(APPDIR)"
++	@$(CP) "$(EXTRADIR)/$(DESKTOP)" "$(DESTDIR)/$(APPDIR)"
+ 	@$(ECHO) ""
+ 
+ uninstall:
+Index: mazeofgalious-0.63.1548/sources/gameaux.cpp
+===================================================================
+--- mazeofgalious-0.63.1548.orig/sources/gameaux.cpp	2008-09-13 21:31:49.000000000 +0200
++++ mazeofgalious-0.63.1548/sources/gameaux.cpp	2013-09-07 23:23:47.385634429 +0200
+@@ -1,6 +1,7 @@
+ #include "math.h"
+ #include "stdio.h"
+ #include "stdlib.h" 
++#include "unistd.h" 
+ #include "string.h"
+ #include "SDL.h"
+ #include "SDL_image.h"
+@@ -27,6 +28,8 @@
+ extern int n_s_paths,act_s_path;
+ extern char *s_path;
+ 
++extern char *datadir;
++
+ /* GrÂ·ficos: */ 
+ extern Bitmap *konami_bmp,*menu_bmp,*tiles_bmp,*tiles2_bmp,*enemy_bmp,*enemy2_bmp,*final_bmp;
+ extern int n_tiles;
+@@ -1710,7 +1713,9 @@
+ 
+ 	sprintf(filename,"rooms/%s%.2i%.2i.txt",prefixes[map],map_x,map_y);
+ 
+-	fp=f1open(filename,"r",GAMEDATA);
++    chdir(datadir);
++	/*fp=f1open(filename,"r",GAMEDATA);*/
++	fp=fopen(filename,"r");
+ 	if (fp==NULL) return false;
+ 
+ 	/* Leer fondo: */ 
+Index: mazeofgalious-0.63.1548/sources/gamecycle.cpp
+===================================================================
+--- mazeofgalious-0.63.1548.orig/sources/gamecycle.cpp	2008-09-13 21:31:49.000000000 +0200
++++ mazeofgalious-0.63.1548/sources/gamecycle.cpp	2013-09-07 23:29:18.725631600 +0200
+@@ -1,6 +1,7 @@
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ #include <string.h>
+ #include <ctype.h>
+ #include "SDL.h"
+@@ -47,6 +48,8 @@
+ extern char **s_paths;
+ extern int n_s_paths,act_s_path;
+ extern char *s_path;
++extern char *datadir;
++extern char *confdir;
+ 
+ /* Gráficos: */ 
+ Bitmap *konami_bmp=0,*menu_bmp=0,*tiles_bmp=0,*tiles2_bmp=0,*enemy_bmp=0,*enemy2_bmp=0,*final_bmp=0;
+@@ -65,7 +68,7 @@
+ /* Juego: */ 
+ int inter_screen=0;
+ int frame_counter=0;
+-bool pause=false;
++bool pause2=false;
+ 
+ int pause_state=0;
+ int map=0;			/* En que mundo está el personaje			*/ 
+@@ -338,10 +341,12 @@
+ 
+ 				if (SUBSTATE==0) {
+ 					init_paths();
++					chdir(confdir);
+ 					if (!cargar_configuracion("MoG.cfg")) {
+ 						configuracion_por_defecto();
+ 						guardar_configuracion("MoG.cfg");
+ 					} /* if */ 
++					chdir(datadir);
+ 					GameEnd();
+ 					GameInit(dx,dy);
+ 					HP_objs_reset();
+@@ -349,7 +354,7 @@
+ 					SetSFXVolume(sfx_volume);
+ 					/* Borrar la pantalla: */ 
+ 					memset(screen,konami_bmp->get_image()[0],dx*dy);
+-//					set_palete((BYTE *)konami_bmp->get_palete());
++//					set_palete((BYTE *)thegnu_bmp->get_palete());
+ 
+ 					for(;SUBSTATE<25;SUBSTATE++) {
+ 						konami_bmp->draw_sprite(0,SUBSTATE,konami_bmp->get_ancho(),1,0,SUBSTATE*(dy/200),dx,1,screen,dx,dy,dx);
+@@ -475,7 +480,7 @@
+ 				in_ladder=-1;
+ 				previous_x_collision=false;
+ 				previous_y_collision=false;
+-				pause=false;
++				pause2=false;
+ 			} /* if */ 
+ 
+ 			if (next_world>=10 && world10_door_x==-1) {
+@@ -492,7 +497,7 @@
+ 
+ 			check_typed_word();
+ 
+-			if (!pause) {
++			if (!pause2) {
+ 				if (room_demonroom) {
+ 					if ((next_world<=1 && fighting_demon==0 && map==1 && typed_word_p("yomar")) ||
+ 						(next_world<=2 && fighting_demon==0 && map==2 && typed_word_p("elohim")) ||
+@@ -695,7 +700,7 @@
+ 				GameRoomEvents();
+ 				RoomChange();
+ 			} else {
+-				if (typed_word_p("zeus") && map==0 && map_x==5 && map_y==12 && pause) {
++				if (typed_word_p("zeus") && map==0 && map_x==5 && map_y==12 && pause2) {
+ 					ZEUS_password=true;
+ 				} /* if */ 
+ 				if (pause_state<0) {
+@@ -725,7 +730,7 @@
+ 				STATE=19;
+ 			} /* if */ 
+ 
+-			if (keyboard[ITEM_KEY] && !old_keyboard[ITEM_KEY] && player_energy[character]>0 && !pause && to_enter_cut==0) {
++			if (keyboard[ITEM_KEY] && !old_keyboard[ITEM_KEY] && player_energy[character]>0 && !pause2 && to_enter_cut==0) {
+ 				Sound_play(S_F1);
+ 				currently_selecting=0;
+ 				STATE=5;
+@@ -733,8 +738,8 @@
+ 			} /* if */ 
+ 
+ 			if (keyboard[PAUSE_KEY] && !old_keyboard[PAUSE_KEY]) {
+-				pause=(pause ? false:true);
+-				if (pause) {
++				pause2=(pause2 ? false:true);
++				if (pause2) {
+ 					pause_state=-256;
+ 					Sound_pause_music();
+ 					Sound_play(S_pause);
+@@ -1378,7 +1383,9 @@
+ 					 (keyboard[SDLK_k] && !old_keyboard[SDLK_k]))) {
+ 					STATE=2;
+ 					SUBSTATE=0;
++					chdir(confdir);
+ 					guardar_configuracion("MoG.cfg");
++					chdir(datadir);
+ 				} /* if */ 
+ 			}
+ 			break;
+@@ -1706,7 +1713,9 @@
+ 						FILE *fp;
+ 
+ 						sprintf(tmp,"sgame%.2i.txt",slot);
++						chdir(confdir);
+ 						fp=f1open(tmp,"r",USERDATA);
++						chdir(datadir);
+ 						if (fp!=0) {
+ 							int i;
+ 							for(i=0;i<48;i++) {
+@@ -1954,6 +1963,7 @@
+ 				sprintf(filename,"rooms/%s%.2i%.2i.txt",prefixes[developer_start_map],
+ 														developer_start_x,
+ 														developer_start_y);
++			    chdir(datadir);
+ 				fp=f1open(filename,"r",GAMEDATA);
+ 				if (fp!=0) {
+ 					tile_print("PRESS SPACE TO START",TILE_SIZE_X*9,TILE_SIZE_Y*8,screen,dx,dy);
+@@ -2278,7 +2288,9 @@
+ 
+ 				if (keyboard[SDLK_ESCAPE] && !old_keyboard[SDLK_ESCAPE]) {
+ 					STATE=OLDSTATE;
++					chdir(confdir);
+ 					guardar_configuracion("MoG.cfg");
++					chdir(datadir);
+ 				} /* if */ 
+ 				if (keyboard[DOWN_KEY] && !old_keyboard[DOWN_KEY] && MENUOPTION<2) MENUOPTION++;
+ 				if (keyboard[UP_KEY] && !old_keyboard[UP_KEY] && MENUOPTION>0) MENUOPTION--;
+@@ -2287,7 +2299,9 @@
+ 					Sound_release_music();
+ 					STATE=0;
+ 					SUBSTATE=0;
++					chdir(confdir);
+ 					guardar_configuracion("MoG.cfg");
++					chdir(datadir);
+ 				} /* if */ 
+ 
+ 				if (keyboard[RIGHT_KEY] && MENUOPTION==1 && music_volume<127) {
+Index: mazeofgalious-0.63.1548/sources/main.cpp
+===================================================================
+--- mazeofgalious-0.63.1548.orig/sources/main.cpp	2008-09-13 21:31:49.000000000 +0200
++++ mazeofgalious-0.63.1548/sources/main.cpp	2013-09-07 23:18:12.737637286 +0200
+@@ -8,6 +8,10 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
++#include <sys/stat.h>
++#include <sys/types.h>
+ #include "SDL.h"
+ #include "SDL_mixer.h"
+ #include "sound.h"
+@@ -48,6 +52,9 @@
+ int n_s_paths = 0, act_s_path = 0;
+ char *s_path = 0;
+ 
++char *confdir;
++char *datadir="/usr/share/games/mazeofgalious/";
++
+ extern int music_volume, sfx_volume;
+ extern int fighting_demon;
+ 
+@@ -75,6 +82,18 @@
+ #else
+ int main(int argc, char** argv)
+ {
++	mode_t mode;
++
++	confdir=(char*)malloc(strlen(getenv("HOME"))+50);
++	strcpy(confdir,getenv("HOME"));
++	strcat(confdir,"/.mog");
++	chdir(confdir);
++	mode=S_IRUSR | S_IWUSR | S_IXUSR | S_IRGRP | S_IXGRP;
++	mkdir(confdir,mode);
++
++	printf("Configuration: %s\n",confdir);
++	printf("Data: %s\n",datadir);
++	chdir(datadir);
+ #endif
+ 
+ 	int time, act_time;
+@@ -213,7 +232,9 @@
+ 						g_path = g_paths[act_g_path];
+ 						ReleaseGraphics();
+ 						ReloadGraphics(SCREEN_X, SCREEN_Y);
++						chdir(confdir);
+ 						guardar_configuracion("MoG.cfg");
++						chdir(datadir);
+ 						
+ 						if (fighting_demon != 0) {
+ 							redo_demonintro(fighting_demon, 0, SCREEN_X, SCREEN_Y);
+@@ -232,13 +253,17 @@
+ 						ReleaseSound(false);
+ 						ReloadSound();
+ 						music_recovery();
++						chdir(confdir);
+ 						guardar_configuracion("MoG.cfg");
++						chdir(datadir);
+ 						Mix_VolumeMusic(music_volume);
+ 						SetSFXVolume(sfx_volume);
+ 					}
+ 
+ 					if (event.key.keysym.sym == SDLK_d) {
++						chdir(confdir);
+ 						write_debug_report("debug-report.txt");
++						chdir(datadir);
+ 					} 
+                     break;
+ 
+Index: mazeofgalious-0.63.1548/sources/shrines.cpp
+===================================================================
+--- mazeofgalious-0.63.1548.orig/sources/shrines.cpp	2008-09-13 21:31:49.000000000 +0200
++++ mazeofgalious-0.63.1548/sources/shrines.cpp	2013-09-07 23:08:37.389642198 +0200
+@@ -1,6 +1,7 @@
+ #include "math.h"
+ #include "stdio.h"
+ #include "stdlib.h"
++#include "unistd.h"
+ #include "SDL.h"
+ #include "SDL_mixer.h"
+ #include "sound.h"
+@@ -15,6 +16,8 @@
+ 
+ const int MAX_FIRED_ARROWS[2]={2,3};
+ 
++extern char *datadir;
++extern char *confdir;
+ 
+ /* Gráficos: */ 
+ extern Bitmap *konami_bmp,*menu_bmp,*tiles_bmp,*enemy_bmp;
+@@ -265,7 +268,9 @@
+ 			generatepassword(passwd);
+ 
+ 			sprintf(tmp,"sgame%.2i.txt",slot);
++			chdir(confdir);
+ 			fp=f1open(tmp,"w",USERDATA);
++			chdir(datadir);
+ 			if (fp!=0) {
+ 				int i;
+ 				for(i=0;i<48;i++) {
+Index: mazeofgalious-0.63.1548/sources/sound.cpp
+===================================================================
+--- mazeofgalious-0.63.1548.orig/sources/sound.cpp	2008-09-13 21:31:49.000000000 +0200
++++ mazeofgalious-0.63.1548/sources/sound.cpp	2013-09-07 23:06:30.505643281 +0200
+@@ -3,6 +3,7 @@
+ #include "SDL_sound.h"
+ #include "sound.h"
+ #include "stdio.h"
++#include "unistd.h"
+ #include "string.h"
+ #include "stdlib.h"
+ #include "MOGtypes.h"
+@@ -21,6 +22,8 @@
+ extern char *s_path;
+ extern int music_volume;
+ 
++extern char *datadir;
++
+ bool sound_enabled=false;
+ 
+ 
+@@ -86,6 +89,8 @@
+ {
+ 	FILE *fp;
+ 
++	/* printf("%s\n",fname); */
++	chdir(datadir);
+ 	if ((fp=fopen(fname,"r"))!=NULL) {
+ 		if (fseek(fp,0L, SEEK_END)==0 && ftell(fp)>0) {
+   			fclose(fp);
+@@ -104,7 +109,7 @@
+ SOUNDT Sound_create_sound(char *file,int flags)
+ {
+ 	int n_ext=6;
+-	char *ext[6]={".WAV",".OGG",".MP3",".wav",".ogg",".mp3"};
++	char *ext[6]={".wav",".ogg",".mp3",".WAV",".OGG",".MP3"};
+ 	char name[256],name2[256];
+ 	int i;
+ 
+@@ -115,12 +120,12 @@
+ 			sprintf(name2,"%s%s",s_path,name);
+ 			if (file_check(name2)) return Mix_LoadWAV(name2);
+ 		} /* for */ 
+-		for(i=0;i<n_ext;i++) {
++/*		for(i=0;i<n_ext;i++) {
+ 			strcpy(name,file);
+ 			strcat(name,ext[i]);
+-			sprintf(name2,"%s%s",default_s_path,name);
++			sprintf(name2,"%s%s%s",datadir,"/sound/original/",name);
+ 			if (file_check(name2)) return Mix_LoadWAV(name2);
+-		} /* for */ 
++		} */ /* for */ 
+ 
+ 		fprintf(stderr,"ERROR in Sound_create_sound(): Could not load sound file: %s%s.(wav|ogg|mp3)\n",s_path, file);
+ 		exit(1);

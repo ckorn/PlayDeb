@@ -1,0 +1,14 @@
+# LDFLAGS have to be at the end
+Index: mazeofgalious-0.63.1548/build/linux/Makefile
+===================================================================
+--- mazeofgalious-0.63.1548.orig/build/linux/Makefile	2013-09-07 22:19:25.733667397 +0200
++++ mazeofgalious-0.63.1548/build/linux/Makefile	2013-09-07 22:41:46.361655952 +0200
+@@ -42,7 +42,7 @@
+ 	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ $(EXE): $(OBJS)
+-	$(CC) $(LDFLAGS) $^ -o $@
++	$(CC) $^ -o $@ $(LDFLAGS)
+ 	@$(STRIP) $@
+ 	@$(ECHO) " o If there are no errors, the game compiled succesfully"
+ 

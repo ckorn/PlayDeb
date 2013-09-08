@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_install:
+	chmod -x debian/tmp/usr/share/games/mog/sound/jorito/demon-vfast.ogg
+	rm -f debian/tmp/usr/share/games/mog/LICENSE
+	dh_install --list-missing

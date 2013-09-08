@@ -1,0 +1,57 @@
+mazeofgalious (0.63.1548-1~getdeb1) precise; urgency=low
+
+  * Rebase on package from universe (LP: #1222236)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 07 Sep 2013 22:19:29 +0200
+
+mazeofgalious (0.62.dfsg2-3) unstable; urgency=low
+
+  * QA upload.
+  * Maintainer field set to QA group. (Closes: #675217) 
+  * Provide build-arch and build-indep targets in debian/rules.
+  * Do not ignore errors on make clean.
+  * Standards-Version bumped to 3.9.3.
+  * Set debhelper compatibility level to 9.
+  * Use dh_prep instead of deprecated dh_clean -k.
+  * Add Homepage field.
+
+ -- Emanuele Rocca <ema@debian.org>  Fri, 15 Jun 2012 11:05:26 +0000
+
+mazeofgalious (0.62.dfsg2-2.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Make package binNMU safe (Closes: #502505)
+
+ -- Bernd Zeimetz <bzed@debian.org>  Sun, 24 Jan 2010 13:47:48 +0100
+
+mazeofgalious (0.62.dfsg2-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Remove #define of abs(), which crashes with the stdlib headers; fixes
+    FTBFS. (Closes: #377955)
+
+ -- Steinar H. Gunderson <sesse@debian.org>  Wed, 19 Jul 2006 14:40:59 +0200
+
+mazeofgalious (0.62.dfsg2-2) unstable; urgency=low
+
+  * Applied patch from upstream. (closes: #343500)
+  * Fixed another typo in description.
+
+ -- Gürkan Sengün <gurkan@linuks.mine.nu>  Thu,  5 Jan 2006 14:45:20 +0100
+
+mazeofgalious (0.62.dfsg2-1) unstable; urgency=low
+
+  * Updated start.pcx and created a thegnu.pcx. (closes: #341501)
+  * Added symlinks for sound and graphics. (closes: #341497)
+  * Fixed typos in description. (closes: #341494)
+  * Updated manual page.
+
+ -- Gürkan Sengün <gurkan@linuks.mine.nu>  Thu,  1 Dec 2005 13:04:23 +0100
+
+mazeofgalious (0.62-1) unstable; urgency=low
+
+  * Initial Release. (closes: #301527)
+  * Removed non-free original graphics.
+
+ -- Gürkan Sengün <gurkan@linuks.mine.nu>  Sat, 26 Mar 2005 14:14:11 +0100
+

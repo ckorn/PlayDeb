@@ -1,0 +1,2 @@
+?package(mazeofgalious):needs="X11" section="Games/Adventure"\
+  title="Maze of Galious" command="/usr/games/mog"
