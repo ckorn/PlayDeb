@@ -1,3 +1,36 @@
+stendhal (1.10-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    *world*
+    - More creature descriptions
+    - Added 3rd frame to cyclops and cave troll for smoother walking effect
+    - Animated sprite for diamond
+    - Touched up sprites for some creatures
+    - NPC Seremela has a new sprite
+    - Touched up elf ears for some NPCs
+    - Added reversible path on collision to Eheneumniranin
+    - Added achievement "A Bit Xenophobic"
+    - Reworked area around ghost in Ados city_n
+
+    *client*
+    - Now handles images for multiple status effect icons/animations
+    - On multi-screen systems updater windows open on the screen with the
+    mouse pointer
+    - Shop signs can have animated item images
+    - Game opens in the initial window
+
+    *fixes*
+    - Fixing table entities in Kalavan houses
+    - Exchanging white round tables in fado city
+    - Clicking the menu button when the menu is open, closes it
+
+    *code*
+    - NPC sound effects are handled by server
+    - Sheep sounds are generated server side
+    - Domestic animals and NPCs use the same idea handling code in the client
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 10 Sep 2013 18:38:21 +0200
+
 stendhal (1.09-1~getdeb1) precise; urgency=low
 
   * New upstream version
