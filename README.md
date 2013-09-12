@@ -1,0 +1,1 @@
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Okumura&url=https://github.com/ckorn/PlayDeb&title=PlayDeb&language=&tags=github&category=software)
