@@ -1,0 +1,14 @@
+# fix compilation errors
+Index: alien-arena-7.66/source/game/p_client.c
+===================================================================
+--- alien-arena-7.66.orig/source/game/p_client.c	2013-06-22 22:07:36.000000000 +0200
++++ alien-arena-7.66/source/game/p_client.c	2013-09-12 22:24:33.756959985 +0200
+@@ -2123,7 +2123,7 @@
+ #else
+ 	ent->ctype = 0; //alien is default
+ 	sprintf(modelpath, "players/%s/human", playermodel);
+-	sprintf(ent->charModel, playermodel);
++	sprintf(ent->charModel, "%s", playermodel);
+ 	Q2_FindFile (modelpath, &file);
+ 	if(file) 
+ 	{ 

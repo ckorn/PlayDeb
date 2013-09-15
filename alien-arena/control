@@ -17,7 +17,6 @@ Build-Depends: debhelper (>= 9),
                libvorbis-dev,
                libfreetype6-dev
 Standards-Version: 3.9.3
-DM-Upload-Allowed: yes
 Homepage: http://red.planetarena.org
 
 Package: alien-arena

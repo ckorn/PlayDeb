@@ -1,3 +1,9 @@
+alien-arena (7.66-1~getdeb2) precise; urgency=low
+
+  * New upstream version (LP: #1223570)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 12 Sep 2013 21:47:12 +0200
+
 alien-arena (7.65-1~getdeb1) precise; urgency=low
 
   * New upstream version

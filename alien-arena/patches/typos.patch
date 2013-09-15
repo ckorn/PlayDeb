@@ -1,0 +1,72 @@
+# just typos
+Index: alien-arena-7.66/source/qcommon/files.c
+===================================================================
+--- alien-arena-7.66.orig/source/qcommon/files.c	2013-06-22 22:07:36.000000000 +0200
++++ alien-arena-7.66/source/qcommon/files.c	2013-09-12 22:39:36.836933121 +0200
+@@ -292,18 +292,18 @@
+ 		 * use the ".codered" or $COR_GAME directory,
+ 		 *  even if this is a Traditional install.
+ 		 */
+-		// set "data1" path for user writeable data
++		// set "data1" path for user writable data
+ 		// Alien Arena maybe never uses this
+ 		memset( user_base_gamedata, 0, sizeof(user_base_gamedata) );
+ 		Com_sprintf( user_base_gamedata, sizeof(user_base_gamedata),
+ 			"%s/%s", fs_homedir, BASE_GAMEDATA );
+ 
+-		// set "arena" path for user writeable data
++		// set "arena" path for user writable data
+ 		memset( user_game_gamedata, 0, sizeof(user_game_gamedata) );
+ 		Com_sprintf( user_game_gamedata, sizeof(user_game_gamedata),
+ 			"%s/%s", fs_homedir, GAME_GAMEDATA );
+ 
+-		// set "botinfo" path for user writeable data
++		// set "botinfo" path for user writable data
+ 		memset( user_bot_gamedata, 0, sizeof(user_bot_gamedata) );
+ 		Com_sprintf( user_bot_gamedata, sizeof(user_bot_gamedata),
+ 				"%s", fs_homedir );
+@@ -311,7 +311,7 @@
+ 	else
+ 	{
+ 		// unexpected missing $HOME directory
+-		Sys_Error("set environment variable HOME (or COR_GAME) to a writeable directory.");
++		Sys_Error("set environment variable HOME (or COR_GAME) to a writable directory.");
+ 	}
+ #endif
+ 
+@@ -478,7 +478,7 @@
+   otherwise return false, with full_path set to zero-length string
+ 
+ Corrected 2012-11, was:
+-  otherwise, return false, with a constructed writeable full path
++  otherwise, return false, with a constructed writable full path
+   (which clearly it might not, and could not do).
+ ===
+  */
+@@ -543,7 +543,7 @@
+  FS_FullWritePath()
+ 
+   Given a relative path for a file to be written
+-    Using the game writeable directory
++    Using the game writable directory
+     Create any sub-directories required
+     Return the generated full path for file
+ 
+@@ -563,7 +563,7 @@
+ 		Com_sprintf( full_path, pathsize, "%s/%s", fs_botsearch[0], relative_path);
+ 	}
+ 	else
+-	{ // writeable path for game data, same as fs_gamesearch[0]
++	{ // writable path for game data, same as fs_gamesearch[0]
+ 		Com_sprintf( full_path, pathsize, "%s/%s", fs_gamedir, relative_path);
+ 	}
+ 
+@@ -1231,7 +1231,7 @@
+ #if defined UNIX_VARIANT
+ 	Com_Printf("using %s for writing\n", fs_gamedir );
+ 	/*
+-	 * Create the writeable directory if it does not exist.
++	 * Create the writable directory if it does not exist.
+ 	 * Otherwise, a dedicated server may fail to create a logfile.
+ 	 * "dummy" is there just so FS_CreatePath works, no file is created.
+ 	 */
