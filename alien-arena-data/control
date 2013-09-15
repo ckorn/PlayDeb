@@ -5,12 +5,12 @@ Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Michael Gilbert <michael.s.gilbert@gmail.com>, Barry deFreese <bddebian@comcast.net>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.3
-DM-Upload-Allowed: yes
 Homepage: http://red.planetarena.org
 
 Package: alien-arena-data
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends},
+         ttf-aenigma
 Recommends: ttf-freefont
 Enhances: alien-arena (>= ${source:Upstream-Version}),
           alien-arena-server (>= ${source:Upstream-Version})

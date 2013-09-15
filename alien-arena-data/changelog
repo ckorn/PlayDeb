@@ -1,3 +1,9 @@
+alien-arena-data (7.66-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 12 Sep 2013 21:58:59 +0200
+
 alien-arena-data (7.65-1~getdeb1) precise; urgency=low
 
   * New upstream version
