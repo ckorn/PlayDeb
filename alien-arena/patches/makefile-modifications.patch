@@ -1,12 +1,12 @@
 Description: skip data files since those are in the alien-arena-data package
-Index: alien-arena-7.65/Makefile.in
+Index: alien-arena-7.66/Makefile.in
 ===================================================================
---- alien-arena-7.65.orig/Makefile.in	2013-02-07 21:34:40.000000000 +0100
-+++ alien-arena-7.65/Makefile.in	2013-02-09 16:02:42.132153063 +0100
-@@ -155,16 +155,7 @@
- 	"$(DESTDIR)$(picsdir)" "$(DESTDIR)$(playersdir)" \
+--- alien-arena-7.66.orig/Makefile.in	2013-09-12 21:52:14.953017659 +0200
++++ alien-arena-7.66/Makefile.in	2013-09-12 21:53:10.165016017 +0200
+@@ -221,17 +221,7 @@
  	"$(DESTDIR)$(scriptsdir)" "$(DESTDIR)$(sounddir)" \
- 	"$(DESTDIR)$(texturesdir)" "$(DESTDIR)$(vehiclesdir)"
+ 	"$(DESTDIR)$(tacticaldir)" "$(DESTDIR)$(texturesdir)" \
+ 	"$(DESTDIR)$(vehiclesdir)"
 -DATA = $(dist_doc_DATA) $(dist_icon_DATA) $(nobase_dist_arena_DATA) \
 -	$(nobase_dist_botinfo_DATA) $(nobase_dist_data1_DATA) \
 -	$(nobase_nodist_env_DATA) $(nobase_nodist_fonts_DATA) \
@@ -16,12 +16,13 @@ Index: alien-arena-7.65/Makefile.in
 -	$(nobase_nodist_models_DATA) $(nobase_nodist_particles_DATA) \
 -	$(nobase_nodist_pics_DATA) $(nobase_nodist_players_DATA) \
 -	$(nobase_nodist_scripts_DATA) $(nobase_nodist_sound_DATA) \
--	$(nobase_nodist_textures_DATA) $(nobase_nodist_vehicles_DATA)
+-	$(nobase_nodist_tactical_DATA) $(nobase_nodist_textures_DATA) \
+-	$(nobase_nodist_vehicles_DATA)
 +DATA = $(dist_doc_DATA) $(dist_icon_DATA)
  RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
    distclean-recursive maintainer-clean-recursive
- AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=) \
-@@ -5102,21 +5093,7 @@
+ am__recursive_targets = \
+@@ -5354,22 +5344,7 @@
  info-am:
  
  install-data-am: install-data-local install-dist_docDATA \
@@ -38,6 +39,7 @@ Index: alien-arena-7.65/Makefile.in
 -	install-nobase_nodist_playersDATA \
 -	install-nobase_nodist_scriptsDATA \
 -	install-nobase_nodist_soundDATA \
+-	install-nobase_nodist_tacticalDATA \
 -	install-nobase_nodist_texturesDATA \
 -	install-nobase_nodist_vehiclesDATA
 +	install-dist_iconDATA
