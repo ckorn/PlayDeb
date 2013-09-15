@@ -6,3 +6,4 @@ override_dh_auto_install:
 	dh_auto_install
 	rm -f debian/alien-arena-data/data1/fonts/freemono.ttf
 	rm -f debian/alien-arena-data/data1/fonts/freesans.ttf
+	rm -f debian/alien-arena-data/data1/fonts/bendable.ttf
