@@ -6,15 +6,16 @@ tmpdir:=$(shell mktemp -d)
 wrkdir:=$(shell pwd)
 
 # parallel building
-parallel=$(shell echo $$DEB_BUILD_OPTIONS | grep parallel > /dev/null && echo -j$$(test -f /proc/cpuinfo && cat /proc/cpuinfo | grep ^processor | wc -l || echo 1))
+parallel=$(shell echo $$DEB_BUILD_OPTIONS | grep parallel > /dev/null && echo -j$$(test -f /proc/cpuinfo && cat /proc/cpuinfo | (grep ^processor || echo 1) | wc -l))
 
 # build-hardening flags
-export DEB_BUILD_MAINT_OPTIONS="hardening=+all"
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
 # file names
 sources=$(shell find . -name *.cpp)
 headers=$(shell find . -name *.h)
-dfsgremovals=.gitignore \
+dfsgremovals=Makefile.bak \
+	     .gitignore \
 	     .gitattributes \
 	     .hg_archival \
 	     .hg_archival.txt \
@@ -22,7 +23,9 @@ dfsgremovals=.gitignore \
 	     .hgtags \
 	     fontlucida.png \
 	     jthread \
-	     sqlite
+	     sqlite \
+	     json \
+	     lua
 cleanremovals= bin \
 	       CMakeFiles \
 	       src/CMakeFiles \
@@ -31,7 +34,7 @@ cleanremovals= bin \
 	       CPackSourceConfig.cmake \
 	       Makefile \
 	       cmake_install.cmake \
-	       old/Makefile.bak \
+               old/Makefile.bak \
 	       src/Makefile \
 	       src/cmake_config.h \
 	       src/cmake_install.cmake \
@@ -41,10 +44,32 @@ cleanremovals= bin \
 	       minetest.svg \
 	       minetest.png \
                src/lua/build/CMakeFiles \
-               src/lua/build/liblua.a
+               src/lua/build/liblua.a \
+	       src/cguittfont/CMakeFiles \
+	       src/cguittfont/Makefile \
+	       src/cguittfont/cmake_install.cmake \
+	       src/cguittfont/libcguittfont.a \
+               src/script/CMakeFiles \
+               src/script/Makefile \
+               src/script/cmake_install.cmake \
+               src/script/common/CMakeFiles \
+               src/script/common/Makefile \
+               src/script/common/cmake_install.cmake \
+               src/script/cpp_api/CMakeFiles \
+               src/script/cpp_api/Makefile \
+               src/script/cpp_api/cmake_install.cmake \
+               src/script/lua_api/CMakeFiles \
+               src/script/lua_api/Makefile \
+               src/script/lua_api/cmake_install.cmake \
+               src/util/CMakeFiles \
+               src/util/Makefile \
+               src/util/cmake_install.cmake
+
+override_dh_clean:
+	dh_clean --exclude old/Makefile.old
 
 override_dh_auto_clean:
-	dh_clean
+	dh_clean --exclude old/Makefile.old
 	sed -e s/jthread\:\:JMutex/JMutex/g -e s/jthread\:\:JThread/JThread/g \
 	    -i ${sources} ${headers}
 	rm -rf ${cleanremovals}
@@ -53,33 +78,69 @@ override_dh_auto_configure:
 	CFLAGS="${CFLAGS}" \
 	    LDFLAGS="${LDFLAGS}" \
 	    CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" \
-	    cmake -DCMAKE_INCLUDE_PATH=/usr/include/jthread -DCMAKE_INSTALL_PREFIX=/usr .
+	    cmake -DRUN_IN_PLACE=0 \
+	          -DENABLE_GETTEXT=1 \
+		  -DENABLE_FREETYPE=1 \
+		  -DCMAKE_INCLUDE_PATH=/usr/include/jthread \
+		  -DCUSTOM_LOCALEDIR=/usr/share/locale \
+		  -DCUSTOM_SHAREDIR=/usr/share/games/minetest \
+		  -DCMAKE_INSTALL_PREFIX=/usr .
 
 override_dh_auto_build:
 	sed -e s/JMutex/jthread\:\:JMutex/g -e s/JThread/jthread\:\:JThread/g \
 	    -i ${sources} ${headers}
 	make VERBOSE=1 ${parallel}
-	cp misc/minetest-icon-24x24.png minetest.png
-	cp misc/minetest-icon.svg minetest.svg
-	convert minetest.png minetest.xpm
+
+override_dh_install:
+	# remove stuff we dont need
+	rm -rf debian/tmp/usr/share/games/minetest/fonts
+	rm -rf debian/tmp/usr/share/man
+	rm -rf debian/tmp/usr/share/icons/hicolor/scalable/apps/minetest-icon.svg
+	# 
+	dh_install --list-missing -X.gitignore
+	# get changelog in place
+	for bpkg in minetest minetest-data minetest-dbg minetest-server ; do \
+	  mkdir -p debian/$${bpkg}/usr/share/doc/$${bpkg} ; \
+	  echo "Check http://dev.minetest.net/Changelog" > debian/$${bpkg}/usr/share/doc/$${bpkg}/changelog ; \
+	done
+	# copy the logo
+	mkdir -p debian/minetest/usr/share/icons/hicolor/24x24/apps/
+	cp misc/minetest-icon-24x24.png debian/minetest/usr/share/icons/hicolor/24x24/apps/minetest.png
+	convert debian/minetest/usr/share/icons/hicolor/24x24/apps/minetest.png \
+	        debian/minetest/usr/share/icons/hicolor/24x24/apps/minetest.xpm
+	mkdir -p debian/minetest/usr/share/icons/hicolor/scalable/apps/
+	cp misc/minetest-icon.svg       debian/minetest/usr/share/icons/hicolor/scalable/apps/minetest.svg
+	# take care of the fonts we need
+	mkdir -p debian/minetest-data/usr/share/games/minetest/fonts/
+	ln -s /usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf \
+	      debian/minetest-data/usr/share/games/minetest/fonts/liberationmono.ttf
+	ln -s /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf \
+	      debian/minetest-data/usr/share/games/minetest/fonts/liberationsans.ttf
+	# Install the mapper script
+	mkdir -p debian/minetest-data/usr/games
+	cp util/minetestmapper.py debian/minetest-data/usr/games/minetest-mapper
+	cp util/colors.txt        debian/minetest-data/usr/share/games/minetest/minetestmapper-colors.txt
 
 override_dh_strip:
 	dh_strip --dbg-package=minetest-dbg
 
-override_dh_install:
-	dh_install
-	rm -rf debian/minetest-common/usr/share/applications
-
 get-orig-source:
-	uscan --force-download && mv ../${version} ${tmpdir} || true
-	cd ${tmpdir} && \
-	    tar xf ${version} && rm -f ${version} && \
+	rm -f ${wrkdir}/../minetest_${version}+dfsg.orig.tar.gz
+	uscan --verbose --force-download && mv ../${version}.tar.gz ${tmpdir} || true
+	set +ex; cd ${tmpdir} && \
+	    tar xf ${version}.tar.gz && rm -f ${version}.tar.gz && \
+	    cd minetest-${version}/games && \
+	    for game in minetest_game ; do \
+	       wget --no-verbose https://github.com/minetest/$${game}/archive/${version}.tar.gz -O - | tar xfz - ; \
+	       mv $${game}-${version} $${game} ; \
+	       done && \
+	    cd .. ; \
 	    for file in ${dfsgremovals}; do \
 	        find . -name $$file -execdir rm -rf {} \; 2>/dev/null || true; \
 		done && \
-	    tar czf ${wrkdir}/../minetest_${version}+dfsg.orig.tar.gz *
+	    tar cf ${wrkdir}/../minetest_${version}+dfsg.orig.tar * ; \
+	    gzip --best ${wrkdir}/../minetest_${version}+dfsg.orig.tar
 	rm -rf ${tmpdir}
-	@echo "successfully created new tarball: ../minetest_${version}+dfsg.orig.tar.gz"
-
+	@echo "successfully created new tarball: ${wrkdir}/../minetest_${version}+dfsg.orig.tar.gz"
 %:
 	dh ${@} 

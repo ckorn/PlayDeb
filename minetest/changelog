@@ -1,3 +1,15 @@
+minetest (0.4.7-1~getdeb2) precise; urgency=low
+
+  * Fix font issue in debian package
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Tue, 10 Sep 2013 21:35:45 +0200
+
+minetest (0.4.7-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 28 Jul 2013 14:35:45 +0200
+
 minetest (0.4.4-1~getdeb1) precise; urgency=low
 
   * New upstream version

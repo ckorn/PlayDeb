@@ -1,22 +1,7 @@
 Description: install binaries to /usr/games and don't install changelog twice
 Author: Michael Gilbert <michael.s.gilbert@gmail.com>
-Index: minetest-0.4.4/src/CMakeLists.txt
-===================================================================
---- minetest-0.4.4.orig/src/CMakeLists.txt	2012-12-06 20:21:10.000000000 +0100
-+++ minetest-0.4.4/src/CMakeLists.txt	2012-12-10 19:10:50.388267998 +0100
-@@ -373,7 +373,7 @@
- 		set(ARCH i386)
- 	endif()
- 
--	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -O3 -ffast-math -Wall -fomit-frame-pointer -pipe -funroll-loops")
-+	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -ffast-math -Wall -fomit-frame-pointer -pipe -funroll-loops")
- 	set(CMAKE_CXX_FLAGS_DEBUG "-g -O1 -Wall ${WARNING_FLAGS} ${OTHER_FLAGS}")
- 
- 	if(USE_GPROF)
-Index: minetest-0.4.4/cmake/Modules/FindIrrlicht.cmake
-===================================================================
---- minetest-0.4.4.orig/cmake/Modules/FindIrrlicht.cmake	2012-12-06 20:21:10.000000000 +0100
-+++ minetest-0.4.4/cmake/Modules/FindIrrlicht.cmake	2012-12-10 19:10:50.388267998 +0100
+--- a/cmake/Modules/FindIrrlicht.cmake
++++ b/cmake/Modules/FindIrrlicht.cmake
 @@ -50,7 +50,7 @@
  		/usr/include/irrlicht
  	)

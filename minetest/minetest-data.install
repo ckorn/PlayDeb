@@ -1,0 +1,7 @@
+usr/share/doc/minetest/*	usr/share/doc/minetest-data
+
+usr/share/games/minetest/builtin/*   usr/share/games/minetest/builtin
+usr/share/games/minetest/textures/*  usr/share/games/minetest/textures 
+usr/share/games/minetest/games/*     usr/share/games/minetest/games
+usr/share/games/minetest/client/*    usr/share/games/minetest/client
+usr/share/locale/*                   usr/share/locale

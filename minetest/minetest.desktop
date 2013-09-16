@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Minetest
-GenericName=Minetest
-Comment=InfiniMiner/Minecraft-inspired open game world
-Exec=minetest
-Icon=minetest
-Terminal=false
-Type=Application
-Categories=Game;
