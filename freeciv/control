@@ -5,8 +5,6 @@ Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Jordi Mallach <jordi@debian.org>, Clint Adams <clint@debian.org>, Karl Goetz <karl@kgoetz.id.au>
 Standards-Version: 3.9.3
 Homepage: http://www.freeciv.org/
-Vcs-Git: git://git.debian.org/git/pkg-games/freeciv.git
-Vcs-Browser: http://git.debian.org/?p=pkg-games/freeciv.git;a=summary
 Build-Depends: debhelper (>= 9),
                gettext,
                libx11-dev,
@@ -27,7 +25,8 @@ Build-Depends: debhelper (>= 9),
                liblua5.1-0-dev,
                libbz2-dev,
                gnulib,
-               python-minimal
+               python-minimal,
+               libcurl4-openssl-dev
 
 # Remaining build-deps required to remove the tolua dependency. These
 # Can't be added until upstream stop using a mangled copy of their own.

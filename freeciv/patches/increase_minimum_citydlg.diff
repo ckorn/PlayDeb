@@ -5,11 +5,11 @@ Author: Karl Goetz <karl@kgoetz.id.au>
 Forwarded: no
 Last-Update: <2010-08-12>
 
-Index: freeciv-2.3.1/client/options.h
+Index: freeciv-2.4.0/client/options.h
 ===================================================================
---- freeciv-2.3.1.orig/client/options.h	2011-11-19 21:22:07.000000000 +0100
-+++ freeciv-2.3.1/client/options.h	2011-11-21 21:24:03.976198098 +0100
-@@ -323,7 +323,7 @@
+--- freeciv-2.4.0.orig/client/options.h	2013-09-14 23:00:08.645475499 +0200
++++ freeciv-2.4.0/client/options.h	2013-09-14 23:00:08.637475499 +0200
+@@ -367,7 +367,7 @@
  #define GUI_GTK2_CITYDLG_MIN_XSIZE      256
  #define GUI_GTK2_CITYDLG_MAX_XSIZE      4096
  

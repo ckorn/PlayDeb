@@ -9,33 +9,33 @@ Last-Update: <2011-08-07>
  configure.ac |    4 ++--
  2 files changed, 4 insertions(+), 4 deletions(-)
 
-Index: freeciv-2.3.4/configure.ac
+Index: freeciv-2.4.0/configure.ac
 ===================================================================
---- freeciv-2.3.4.orig/configure.ac	2013-02-16 15:54:38.000000000 +0100
-+++ freeciv-2.3.4/configure.ac	2013-02-17 00:03:13.807107008 +0100
-@@ -883,8 +883,8 @@
- dnl In the future we probably get rid of our own lua tree and use
- dnl lua from system.
- dnl LUA_AS_DEPENDENCY should be empty when using lua outside own our tree.
--LUA_CFLAGS="-I\$(top_srcdir)/dependencies/lua-5.1/src"
--LUA_LIBS="\$(top_builddir)/dependencies/lua-5.1/src/liblua.a"
-+LUA_CFLAGS=$(pkg-config lua5.1 --cflags)
-+LUA_LIBS="$(pkg-config lua5.1 --libs --static)"
- LUA_AS_DEPENDENCY="$LUA_LIBS"
+--- freeciv-2.4.0.orig/configure.ac	2013-09-14 23:00:25.101475009 +0200
++++ freeciv-2.4.0/configure.ac	2013-09-14 23:01:51.273472446 +0200
+@@ -1126,8 +1126,8 @@
+ fi
+ 
+ if test "x$sys_lua" = "xfalse" ; then
+-  LUA_CFLAGS="-I\$(top_srcdir)/dependencies/lua-5.1/src"
+-  LUA_LIBS="\$(top_builddir)/dependencies/lua-5.1/src/liblua.la"
++  LUA_CFLAGS=$(pkg-config lua5.1 --cflags)
++  LUA_LIBS="$(pkg-config lua5.1 --libs --static)"
+ fi
+ 
  AC_SUBST([LUA_CFLAGS])
- AC_SUBST([LUA_LIBS])
-Index: freeciv-2.3.4/configure
+Index: freeciv-2.4.0/configure
 ===================================================================
---- freeciv-2.3.4.orig/configure	2013-02-16 15:55:20.000000000 +0100
-+++ freeciv-2.3.4/configure	2013-02-17 00:03:13.811107009 +0100
-@@ -26195,8 +26195,8 @@
- done
+--- freeciv-2.4.0.orig/configure	2013-09-14 23:00:25.101475009 +0200
++++ freeciv-2.4.0/configure	2013-09-14 23:02:14.113471766 +0200
+@@ -32623,8 +32623,8 @@
+ fi
  
- 
--LUA_CFLAGS="-I\$(top_srcdir)/dependencies/lua-5.1/src"
--LUA_LIBS="\$(top_builddir)/dependencies/lua-5.1/src/liblua.a"
-+LUA_CFLAGS="$(pkg-config lua5.1 --cflags)"
-+LUA_LIBS="$(pkg-config lua5.1 --libs --static)"
- LUA_AS_DEPENDENCY="$LUA_LIBS"
+ if test "x$sys_lua" = "xfalse" ; then
+-  LUA_CFLAGS="-I\$(top_srcdir)/dependencies/lua-5.1/src"
+-  LUA_LIBS="\$(top_builddir)/dependencies/lua-5.1/src/liblua.la"
++  LUA_CFLAGS="$(pkg-config lua5.1 --cflags)"
++  LUA_LIBS="$(pkg-config lua5.1 --libs --static)"
+ fi
  
  

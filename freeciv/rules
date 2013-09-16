@@ -59,6 +59,8 @@ build-xaw3d:
 	ln -sf /usr/share/misc/config.guess bootstrap/config.guess
 
 	mkdir build-xaw3d
+	rm -f config.cache
+	autoreconf
 	(cd build-xaw3d && 	\
 	 ../configure $(COMMON_CONFIG) --disable-server --enable-client=xaw \
 	 	--with-xaw3d --without-ggz-client --without-ggz-server && \
