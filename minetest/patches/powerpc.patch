@@ -1,0 +1,157 @@
+Description: Fix the build on powerpc
+Author: Matthew Bekkema <mat8913ftw@gmail.com>
+
+--- a/src/cguittfont/irrUString.h
++++ b/src/cguittfont/irrUString.h
+@@ -41,6 +41,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
++#include <endian.h>
+ 
+ #ifdef USTRING_CPP0X
+ #	include <utility>
+@@ -802,7 +803,7 @@
+ 	ustring16()
+ 	: array(0), allocated(1), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -816,7 +817,7 @@
+ 	ustring16(const ustring16<TAlloc>& other)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -830,7 +831,7 @@
+ 	ustring16(const string<B, A>& other)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -845,7 +846,7 @@
+ 	ustring16(const std::basic_string<B, A, Alloc>& other)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -859,7 +860,7 @@
+ 	ustring16(Itr first, Itr last)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -878,7 +879,7 @@
+ 	ustring16(const char* const c)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -893,7 +894,7 @@
+ 	ustring16(const char* const c, u32 length)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -908,7 +909,7 @@
+ 	ustring16(const uchar8_t* const c)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -922,7 +923,7 @@
+ 	ustring16(const char c)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -936,7 +937,7 @@
+ 	ustring16(const uchar8_t* const c, u32 length)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -950,7 +951,7 @@
+ 	ustring16(const uchar16_t* const c)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -964,7 +965,7 @@
+ 	ustring16(const uchar16_t* const c, u32 length)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -978,7 +979,7 @@
+ 	ustring16(const uchar32_t* const c)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -992,7 +993,7 @@
+ 	ustring16(const uchar32_t* const c, u32 length)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -1006,7 +1007,7 @@
+ 	ustring16(const wchar_t* const c)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
+@@ -1025,7 +1026,7 @@
+ 	ustring16(const wchar_t* const c, u32 length)
+ 	: array(0), allocated(0), used(0)
+ 	{
+-#if __BIG_ENDIAN__
++#if __BYTE_ORDER == __BIG_ENDIAN
+ 		encoding = unicode::EUTFE_UTF16_BE;
+ #else
+ 		encoding = unicode::EUTFE_UTF16_LE;
