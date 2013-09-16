@@ -17,7 +17,6 @@ Build-Depends: debhelper (>= 9),
 Build-Conflicts: autoconf2.13
 Standards-Version: 3.9.3
 Homepage: http://mednafen.sourceforge.net
-DM-Upload-Allowed: yes
 
 Package: mednafen
 Architecture: any
