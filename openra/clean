@@ -1,2 +1,7 @@
 openra
 openra-editor
+SharpFont.dll.config
+Tao.Cg.dll.config
+Tao.OpenAl.dll.config
+Tao.OpenGl.dll.config
+Tao.Sdl.dll.config
