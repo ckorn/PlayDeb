@@ -1,9 +1,9 @@
 === modified file 'client/gui-gtk-2.0/gui_main.c'
-Index: freeciv-2.3.2/client/gui-gtk-2.0/gui_main.c
+Index: freeciv-2.4.0/client/gui-gtk-2.0/gui_main.c
 ===================================================================
---- freeciv-2.3.2.orig/client/gui-gtk-2.0/gui_main.c	2012-03-31 14:35:49.000000000 +0200
-+++ freeciv-2.3.2/client/gui-gtk-2.0/gui_main.c	2012-04-14 17:51:53.370527814 +0200
-@@ -1520,6 +1520,10 @@
+--- freeciv-2.4.0.orig/client/gui-gtk-2.0/gui_main.c	2013-09-14 22:59:58.425475803 +0200
++++ freeciv-2.4.0/client/gui-gtk-2.0/gui_main.c	2013-09-14 22:59:58.421475803 +0200
+@@ -1522,6 +1522,10 @@
     * locale logic in gtk_init() causes problems with zh_CN (see PR#39475) */
    gtk_disable_setlocale();
  

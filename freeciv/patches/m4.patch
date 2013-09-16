@@ -1,9 +1,9 @@
 Create some m4 files.
-Index: freeciv-2.3.1/aclocal.m4
+Index: freeciv-2.4.0/aclocal.m4
 ===================================================================
---- freeciv-2.3.1.orig/aclocal.m4	2011-11-21 21:27:03.000000000 +0100
-+++ freeciv-2.3.1/aclocal.m4	2011-11-21 21:28:02.008191017 +0100
-@@ -8960,7 +8960,12 @@
+--- freeciv-2.4.0.orig/aclocal.m4	2013-09-14 23:07:01.841463207 +0200
++++ freeciv-2.4.0/aclocal.m4	2013-09-14 23:09:14.073459274 +0200
+@@ -9654,7 +9654,12 @@
  m4_include([m4/lib-ld.m4])
  m4_include([m4/lib-link.m4])
  m4_include([m4/lib-prefix.m4])
@@ -13,13 +13,13 @@ Index: freeciv-2.3.1/aclocal.m4
 +m4_include([m4/ltsugar.m4])
 +m4_include([m4/ltversion.m4])
 +m4_include([m4/lt~obsolete.m4])
- m4_include([m4/ngettext.m4])
- m4_include([m4/no-client.m4])
- m4_include([m4/pkg.m4])
-Index: freeciv-2.3.1/m4/libtool.m4
+ m4_include([m4/magickwand.m4])
+ m4_include([m4/mapimg-magickwand.m4])
+ m4_include([m4/mysql.m4])
+Index: freeciv-2.4.0/m4/libtool.m4
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ freeciv-2.3.1/m4/libtool.m4	2011-11-21 21:28:02.020191016 +0100
++++ freeciv-2.4.0/m4/libtool.m4	2013-09-14 23:07:01.841463207 +0200
 @@ -0,0 +1,7377 @@
 +# libtool.m4 - Configure libtool for the host system. -*-Autoconf-*-
 +#
@@ -7398,10 +7398,10 @@ Index: freeciv-2.3.1/m4/libtool.m4
 +    ;;
 +  esac
 +])
-Index: freeciv-2.3.1/m4/lt~obsolete.m4
+Index: freeciv-2.4.0/m4/lt~obsolete.m4
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ freeciv-2.3.1/m4/lt~obsolete.m4	2011-11-21 21:28:02.024191015 +0100
++++ freeciv-2.4.0/m4/lt~obsolete.m4	2013-09-14 23:07:01.841463207 +0200
 @@ -0,0 +1,92 @@
 +# lt~obsolete.m4 -- aclocal satisfying obsolete definitions.    -*-Autoconf-*-
 +#
@@ -7495,10 +7495,10 @@ Index: freeciv-2.3.1/m4/lt~obsolete.m4
 +m4_ifndef([_LT_AC_LANG_RC_CONFIG],	[AC_DEFUN([_LT_AC_LANG_RC_CONFIG])])
 +m4_ifndef([AC_LIBTOOL_CONFIG],		[AC_DEFUN([AC_LIBTOOL_CONFIG])])
 +m4_ifndef([_LT_AC_FILE_LTDLL_C],	[AC_DEFUN([_LT_AC_FILE_LTDLL_C])])
-Index: freeciv-2.3.1/m4/ltoptions.m4
+Index: freeciv-2.4.0/m4/ltoptions.m4
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ freeciv-2.3.1/m4/ltoptions.m4	2011-11-21 21:28:02.024191015 +0100
++++ freeciv-2.4.0/m4/ltoptions.m4	2013-09-14 23:07:01.841463207 +0200
 @@ -0,0 +1,368 @@
 +# Helper functions for option handling.                    -*- Autoconf -*-
 +#
@@ -7868,10 +7868,10 @@ Index: freeciv-2.3.1/m4/ltoptions.m4
 +		 [m4_define([_LTDL_TYPE], [installable])])
 +LT_OPTION_DEFINE([LTDL_INIT], [convenience],
 +		 [m4_define([_LTDL_TYPE], [convenience])])
-Index: freeciv-2.3.1/m4/ltsugar.m4
+Index: freeciv-2.4.0/m4/ltsugar.m4
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ freeciv-2.3.1/m4/ltsugar.m4	2011-11-21 21:28:02.024191015 +0100
++++ freeciv-2.4.0/m4/ltsugar.m4	2013-09-14 23:07:01.841463207 +0200
 @@ -0,0 +1,123 @@
 +# ltsugar.m4 -- libtool m4 base layer.                         -*-Autoconf-*-
 +#
@@ -7996,10 +7996,10 @@ Index: freeciv-2.3.1/m4/ltsugar.m4
 +           lt_unquote(m4_split(m4_normalize(m4_foreach(_Lt_key, lt_car([m4_shiftn(4, $@)]),
 +		      [lt_if_dict_fetch([$1], _Lt_key, [$2], [$3], [_Lt_key ])])))))])[]dnl
 +])
-Index: freeciv-2.3.1/m4/ltversion.m4
+Index: freeciv-2.4.0/m4/ltversion.m4
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ freeciv-2.3.1/m4/ltversion.m4	2011-11-21 21:28:02.024191015 +0100
++++ freeciv-2.4.0/m4/ltversion.m4	2013-09-14 23:07:01.841463207 +0200
 @@ -0,0 +1,23 @@
 +# ltversion.m4 -- version numbers			-*- Autoconf -*-
 +#
