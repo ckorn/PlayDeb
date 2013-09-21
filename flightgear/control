@@ -23,8 +23,8 @@ Build-Depends: debhelper (>= 9),
                libopenal-dev,
                libalut-dev,
                autotools-dev,
-               simgear-dev (>= 2.10.0),
-               simgear2.10.0 (>= 2.10.0),
+               simgear-dev (>= 2.12.0),
+               simgear2.12.0 (>= 2.12.0),
                libpng12-dev,
                cmake,
                libsvn-dev,
@@ -36,10 +36,10 @@ Homepage: http://www.flightgear.org/
 Package: flightgear
 Architecture: any
 Depends: ${shlibs:Depends},
-         fgfs-base (>= 2.10.0),
+         fgfs-base (>= 2.12.0),
          ${misc:Depends}
-Recommends: fgfs-aircraft-base (>= 2.10.0),
-            fgfs-models-base (>= 2.10.0)
+Recommends: fgfs-aircraft-base (>= 2.12.0),
+            fgfs-models-base (>= 2.12.0)
 Description: Flight Gear Flight Simulator
  Flight Gear is a free and highly sophisticated flight simulator.
  .

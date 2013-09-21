@@ -1,3 +1,9 @@
+flightgear (2.12.0-1~getdeb2~raring) raring; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 20 Sep 2013 17:53:02 +0200
+
 flightgear (2.10.0-1~getdeb2~raring) raring; urgency=low
 
   * Rebuild for raring.
