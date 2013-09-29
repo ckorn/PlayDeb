@@ -1,3 +1,11 @@
+spacezero (0.84.02-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    -Bugfix: In save games
+    -Bugfix: Collision between ships and pilots.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 29 Sep 2013 01:14:43 +0200
+
 spacezero (0.84.01-1~getdeb1) precise; urgency=low
 
   * New upstream version
