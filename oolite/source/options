@@ -1,3 +1,0 @@
-# Bzip2 compression for debian.tar
-compression = "bzip2"
-compression-level = 7

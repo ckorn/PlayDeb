@@ -1,3 +1,54 @@
+oolite (1.77.1-1~getdeb1) raring; urgency=low
+
+  * New upstream version
+    * Bug with planetary cloud display fixed
+    * Cargo/Passenger contracts correctly report premium/advance again
+    * Fix to escort scan class initialisation
+    * Fix for mission screen not allowing exit when HUD off
+    * Fix quaternion constructor to produce identity quaternion as
+      documented when called as new Quaternion().
+    * guiScreenChanged now fires on transition when launching
+    * Yaw and velocity are now also zeroed when launching from a station
+    * Autopilot status reset on death
+    * Regression: HUD n_bars now works again
+    * Bug with NPCs continuing to lock on dead ships fixed
+    * Laser shot positioning fixed
+    * Bug with manifest checks in guiScreenChanged when launching fixed
+    * Reasonably skilled pilots will now remember to look where they're
+      going when fleeing
+    * Shields now also protect subentities
+    * Edge-case for damage to main station fixed
+    * Frustum culling over-enthusiasm fixed
+    * Some 'ghost' ship bugs fixed
+    * Fix mission screen crash with numeric choice keys
+    * Fix bug with cancelling galactic jump by script
+    * Fix bug in validation for station interface creation
+    * Use correct types in JS Station.market object
+    * Fix bug with docking with stations where dock is very slightly off-axis
+    * Fix contract reputation calculations so that negative rep works
+    properly
+    * Fix inconsistencies with cloaking device behaviour
+    * Fix calculation of heat damage to subentities
+    * Fix updates of energy, laser temp, alert condition related to autopilot
+    * Fix for crash when pressing up on long manifest screen
+    * Fix conflict between "pilot" and "unpiloted" shipdata keys
+    * Fix equipment condition check in player.replaceShip()
+    * Fix flasher scaling in visual effects
+    * Add fuel scoop icon to small HUD
+    * Lighten mouse cursor cross color
+    * Sort save-game list alphabetically
+    * Slightly lengthen deadlines on parcel contracts to avoid impossible
+    ones
+    * Prevent docking with dead stations
+    * Fix memory leaks.
+    * Remove "performBroadside" AI command
+    * Fix scanner display bug
+    * Display correct key in 'pause' message
+    * Fix rotational_velocity for subentities
+    * Fix shipEnergyBecameFull event to fire as documented
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 01 Oct 2013 20:06:52 +0200
+
 oolite (1.77-1~getdeb1) raring; urgency=low
 
   * New upstream version (LP: #1221450)
