@@ -2,23 +2,34 @@ Source: glc
 Section: video
 Priority: optional
 Maintainer: Christoph Korn <c_korn@gmx.de>
-Build-Depends: debhelper (>= 6), cmake, libasound2-dev,
- x11proto-core-dev, libx11-dev, x11proto-xf86vidmode-dev,
- mesa-common-dev, libpng12-dev, gcc-multilib [amd64],
- libelfhacks-dev, libpacketstream-dev,
- libgl1-mesa-swx11-dev, libxxf86vm-dev
-Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 9),
+               cmake,
+               libasound2-dev,
+               x11proto-core-dev,
+               libx11-dev,
+               x11proto-xf86vidmode-dev,
+               mesa-common-dev,
+               libpng12-dev,
+               gcc-multilib [amd64],
+               libelfhacks-dev,
+               libpacketstream-dev,
+               libxxf86vm-dev,
+               libgl1-mesa-dev
+Standards-Version: 3.9.3
 Homepage: http://nullkey.ath.cx/projects/glc
 
 Package: glc
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
 Description: ALSA & OpenGL video capture tool
  This is an ALSA and OpenGL video capture tool.
 
 Package: glc-dev
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, glc (>= ${binary:Version})
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         glc (>= ${binary:Version})
 Description: ALSA & OpenGL video capture tool (header files)
  This is an ALSA and OpenGL video capture tool.
  .

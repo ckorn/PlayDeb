@@ -1,6 +1,7 @@
 libglc-capture.so.0 glc #MINVER#
  alsa_capture_destroy@Base 0.5.7
  alsa_capture_init@Base 0.5.7
+ alsa_capture_set_buffer@Base 0.5.8
  alsa_capture_set_channels@Base 0.5.7
  alsa_capture_set_device@Base 0.5.7
  alsa_capture_set_rate@Base 0.5.7
