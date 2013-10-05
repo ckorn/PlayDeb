@@ -1,3 +1,9 @@
+glc (0.5.8-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 03 Oct 2013 21:50:57 +0200
+
 glc (0.5.7-1~getdeb3~oneiric) oneiric; urgency=low
 
   * Remove debian/watch file
