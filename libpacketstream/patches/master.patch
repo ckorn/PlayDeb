@@ -1,0 +1,248 @@
+# applying all patches from master (0092012)
+diff -Nur libpacketstream-0.1.4/CMakeLists.txt packetstream/CMakeLists.txt
+--- libpacketstream-0.1.4/CMakeLists.txt	2009-10-19 22:31:05.000000000 +0200
++++ packetstream/CMakeLists.txt	2013-10-03 22:13:15.095900271 +0200
+@@ -1,3 +1,6 @@
++
++CMAKE_MINIMUM_REQUIRED(VERSION 2.4)
++
+ PROJECT(packetstream)
+ 
+ SET(PACKETSTREAM_SOVER 0)
+diff -Nur libpacketstream-0.1.4/Doxyfile packetstream/Doxyfile
+--- libpacketstream-0.1.4/Doxyfile	2009-10-19 22:31:05.000000000 +0200
++++ packetstream/Doxyfile	2013-10-03 22:13:15.095900271 +0200
+@@ -5,7 +5,7 @@
+ #---------------------------------------------------------------------------
+ DOXYFILE_ENCODING      = UTF-8
+ PROJECT_NAME           = packetstream
+-PROJECT_NUMBER         = 0.1.3
++PROJECT_NUMBER         = 0.1.4
+ OUTPUT_DIRECTORY       = doc/
+ CREATE_SUBDIRS         = NO
+ OUTPUT_LANGUAGE        = English
+@@ -193,12 +193,12 @@
+ # Configuration options related to the preprocessor   
+ #---------------------------------------------------------------------------
+ ENABLE_PREPROCESSING   = YES
+-MACRO_EXPANSION        = NO
+-EXPAND_ONLY_PREDEF     = NO
++MACRO_EXPANSION        = YES
++EXPAND_ONLY_PREDEF     = YES
+ SEARCH_INCLUDES        = YES
+ INCLUDE_PATH           = 
+ INCLUDE_FILE_PATTERNS  = 
+-PREDEFINED             = 
++PREDEFINED             = __PS_PUBLIC
+ EXPAND_AS_DEFINED      = 
+ SKIP_FUNCTION_MACROS   = YES
+ #---------------------------------------------------------------------------
+diff -Nur libpacketstream-0.1.4/src/packetstream.c packetstream/src/packetstream.c
+--- libpacketstream-0.1.4/src/packetstream.c	2009-10-19 22:31:05.000000000 +0200
++++ packetstream/src/packetstream.c	2013-10-03 22:13:15.099900271 +0200
+@@ -172,13 +172,13 @@
+ 	int shared = 0;
+ 	ps_flags_t flags = attr->flags;
+ 	int shmid = attr->shmid;
++	pthread_mutexattr_t mutexattr;
+ 
+ 	if (buffer == NULL)
+ 		return EINVAL;
+ 
+ 	memset(buffer, 0, sizeof(ps_buffer_t));
+ 
+-	pthread_mutexattr_t mutexattr;
+ 	pthread_mutexattr_init(&mutexattr);
+ 
+ #ifdef __PS_SHM
+@@ -337,12 +337,17 @@
+ 		return ps_packet_openwrite(packet, flags);
+ }
+ 
++#define MAX_SEM_WAIT_TRIES 6
++
+ int ps_packet_openread(ps_packet_t *packet, ps_flags_t flags)
+ {
+ 	__PS_BUFFER_VARS(packet->buffer)
+ 	ps_buffer_t *buffer = packet->buffer;
+ 	struct ps_packet_header_s *header;
++	unsigned int tries = 0;
+ 
++retry:
++	tries++;
+ 	if (flags & PS_PACKET_TRY) {
+ 		if (pthread_mutex_trylock(&state->read_mutex))
+ 			return EBUSY;
+@@ -360,7 +365,10 @@
+ 		}
+ 	} else if (sem_wait(&state->written_packets)) {
+ 		pthread_mutex_unlock(&state->read_mutex);
+-		return EINVAL;
++		if (tries < MAX_SEM_WAIT_TRIES)
++			goto retry;
++		else
++			return EINVAL;
+ 	}
+ 	__PS_CHECK_CANCEL_READ(state)
+ 
+@@ -489,6 +497,7 @@
+ /* NOTE len is absolute packet size, not added to current reserved */
+ int ps_packet_reserve(ps_packet_t *packet, size_t len)
+ {
++	unsigned int tries = 0;
+ 	__PS_PACKET_VARS(packet)
+ 
+ 	if (len <= packet->reserved)
+@@ -496,6 +505,8 @@
+ 
+ 	state->free_bytes -= len - packet->reserved;
+ 	while (state->free_bytes < 0) {
++retry:
++		tries++;
+ 		/* "consume" next free (=read) packet */
+ 		if (state->flags & PS_BUFFER_STATS)
+ 			buffer->write_wait_start = ps_buffer_utime(buffer);
+@@ -505,8 +516,12 @@
+ 				state->free_bytes += len - packet->reserved;
+ 				return EBUSY;
+ 			}
+-		} else if (sem_wait(&state->read_packets))
+-			return EINVAL;
++		} else if (sem_wait(&state->read_packets)) {
++			if (tries < MAX_SEM_WAIT_TRIES)
++				goto retry;
++			else
++				return EINVAL;
++		}
+ 		__PS_CHECK_CANCEL_WRITE(state)
+ 
+ 		if (state->flags & PS_BUFFER_STATS)
+@@ -630,8 +645,8 @@
+ 
+ int ps_packet_read(ps_packet_t *packet, void *dest, size_t size)
+ {
+-	__PS_PACKET(packet)
+ 	size_t offs, rlen = size;
++	__PS_PACKET(packet)
+ 
+ 	if (packet->pos + size > header->size)
+ 		return EINVAL;
+@@ -1040,44 +1055,45 @@
+ }
+ 
+ 
+-int ps_stats_text(ps_stats_t *stats, FILE *stream)
++void ps_stats_text_hbytes(size_t bytes, FILE *stream)
+ {
+-	void hbytes(size_t bytes, FILE *stream)
+-	{
+-		if (bytes >= 1024 * 1024 * 1024)
+-			fprintf(stream, "%.2f GiB\n", (float) bytes / (float) (1024 * 1024 * 1024));
+-		else if (bytes >= 1024 * 1024)
+-			fprintf(stream, "%.2f MiB\n", (float) bytes / (float) (1024 * 1024));
+-		else if (bytes >= 1024)
+-			fprintf(stream, "%.2f KiB\n", (float) bytes / 1024.0f);
+-		else
+-			fprintf(stream, "%d B\n", (int) bytes);
+-	}
++	if (bytes >= 1024 * 1024 * 1024)
++		fprintf(stream, "%.2f GiB\n", (float) bytes / (float) (1024 * 1024 * 1024));
++	else if (bytes >= 1024 * 1024)
++		fprintf(stream, "%.2f MiB\n", (float) bytes / (float) (1024 * 1024));
++	else if (bytes >= 1024)
++		fprintf(stream, "%.2f KiB\n", (float) bytes / 1024.0f);
++	else
++		fprintf(stream, "%d B\n", (int) bytes);
++}
+ 
+-	void hfloat(float val, FILE *stream)
+-	{
+-		if (val >= 1000000000.0f)
+-			fprintf(stream, "%.2f G\n", val / 1000000000.0f);
+-		else if (val >= 1000000.0f)
+-			fprintf(stream, "%.2f M\n", val / 1000000.0f);
+-		else if (val >= 1000.0f)
+-			fprintf(stream, "%.2f K\n", val / 1000.0f);
+-		else
+-			fprintf(stream, "%.2f\n", val);
+-	}
++void ps_stats_text_hfloat(float val, FILE *stream)
++{
++	if (val >= 1000000000.0f)
++		fprintf(stream, "%.2f G\n", val / 1000000000.0f);
++	else if (val >= 1000000.0f)
++		fprintf(stream, "%.2f M\n", val / 1000000.0f);
++	else if (val >= 1000.0f)
++		fprintf(stream, "%.2f K\n", val / 1000.0f);
++	else
++		fprintf(stream, "%.2f\n", val);
++}
+ 
+-	void hnum(size_t num, FILE *stream)
+-	{
+-		if (num >= 1000000000)
+-			fprintf(stream, "%.2f G\n", (float) num / 1000000000.0f);
+-		else if (num >= 1000000)
+-			fprintf(stream, "%.2f M\n", (float) num / 1000000.0f);
+-		else if (num >= 1000)
+-			fprintf(stream, "%.2f K\n", (float) num / 1000.0f);
+-		else
+-			fprintf(stream, "%d\n", (int) num);
+-	}
++void ps_stats_text_hnum(size_t num, FILE *stream)
++{
++	if (num >= 1000000000)
++		fprintf(stream, "%.2f G\n", (float) num / 1000000000.0f);
++	else if (num >= 1000000)
++		fprintf(stream, "%.2f M\n", (float) num / 1000000.0f);
++	else if (num >= 1000)
++		fprintf(stream, "%.2f K\n", (float) num / 1000.0f);
++	else
++		fprintf(stream, "%d\n", (int) num);
++}
+ 
++
++int ps_stats_text(ps_stats_t *stats, FILE *stream)
++{
+ 	float secs = ((float) stats->utime) / 1000000.0f;
+ 
+ 	/* fprintf(stream, "ps_stats_text()\n"); */
+@@ -1086,22 +1102,30 @@
+ 	if ((stats->utime > 0) && (secs >= 0.5f)) {
+ 		fprintf(stream, " averages\n");
+ 		fprintf(stream, "  written\n");
+-		fprintf(stream, "   packets   : "); hfloat((float) stats->written_packets / secs, stream);
+-		fprintf(stream, "   bytes     : "); hbytes(stats->written_bytes / (size_t) (secs + 0.5f), stream);
++		fprintf(stream, "   packets   : ");
++		ps_stats_text_hfloat((float) stats->written_packets / secs, stream);
++		fprintf(stream, "   bytes     : ");
++		ps_stats_text_hbytes(stats->written_bytes / (size_t) (secs + 0.5f), stream);
+ 		fprintf(stream, "   %% waited  : %.2f %%\n", 100.0f * ((float) stats->write_wait_usec / (float) stats->utime));
+ 		fprintf(stream, "  read\n");
+-		fprintf(stream, "   packets   : "); hfloat((float) stats->read_packets / secs, stream);
+-		fprintf(stream, "   bytes     : "); hbytes(stats->read_bytes / (size_t) (secs + 0.5f), stream);
++		fprintf(stream, "   packets   : "); 
++		ps_stats_text_hfloat((float) stats->read_packets / secs, stream);
++		fprintf(stream, "   bytes     : "); 
++		ps_stats_text_hbytes(stats->read_bytes / (size_t) (secs + 0.5f), stream);
+ 		fprintf(stream, "   %% waited  : %.2f %%\n", 100.0f * ((float) stats->read_wait_usec / (float) stats->utime));
+ 	}
+ 
+ 	fprintf(stream, " totals\n");
+ 	fprintf(stream, "  written\n");
+-	fprintf(stream, "   packets   : "); hnum(stats->written_packets, stream);
+-	fprintf(stream, "   bytes     : "); hbytes(stats->written_bytes, stream);
++	fprintf(stream, "   packets   : ");
++	ps_stats_text_hnum(stats->written_packets, stream);
++	fprintf(stream, "   bytes     : ");
++	ps_stats_text_hbytes(stats->written_bytes, stream);
+ 	fprintf(stream, "  read\n");
+-	fprintf(stream, "   packets   : "); hnum(stats->read_packets, stream);
+-	fprintf(stream, "   bytes     : "); hbytes(stats->read_bytes, stream);
++	fprintf(stream, "   packets   : ");
++	ps_stats_text_hnum(stats->read_packets, stream);
++	fprintf(stream, "   bytes     : ");
++	ps_stats_text_hbytes(stats->read_bytes, stream);
+ 
+ 	return 0;
+ }

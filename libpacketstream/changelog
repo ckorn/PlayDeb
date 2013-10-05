@@ -1,3 +1,9 @@
+libpacketstream (0.1.4-1~getdeb2) precise; urgency=low
+
+  * Apply patches from master.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 03 Oct 2013 22:15:37 +0200
+
 libpacketstream (0.1.4-1~getdeb1) jaunty; urgency=low
 
   * Initial release.
