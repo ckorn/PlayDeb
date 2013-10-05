@@ -1,15 +1,17 @@
 Source: libpacketstream
 Priority: optional
 Maintainer: Christoph Korn <c_korn@gmx.de>
-Build-Depends: debhelper (>= 6), cmake
-Standards-Version: 3.8.3
+Build-Depends: debhelper (>= 9),
+               cmake
+Standards-Version: 3.9.3
 Section: libs
 Homepage: http://nullkey.ath.cx/git/packetstream/
 
 Package: libpacketstream-dev
 Section: libdevel
 Architecture: any
-Depends: libpacketstream0 (= ${binary:Version})
+Depends: libpacketstream0 (= ${binary:Version}),
+         ${misc:Depends}
 Description: Library implementation of a thread-safe ring buffer (header files)
  Thread-safe ring buffer.
  .
@@ -20,7 +22,8 @@ Description: Library implementation of a thread-safe ring buffer (header files)
 Package: libpacketstream0
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
 Description: Library implementation of a thread-safe ring buffer
  Thread-safe ring buffer.
  .
