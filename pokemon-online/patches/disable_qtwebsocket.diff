@@ -1,11 +1,11 @@
 Description: Disabled RelayStation and WebServerPlugin for now.
 Them require QtWebsocket beta not packaged and modified locally.
 Author: Fabio Fantoni <fabio.fantoni@tiscali.it>
-Index: pokemon-online-2.0.1/PokemonOnline.pro
+Index: pokemon-online-2.2.0/PokemonOnline.pro
 ===================================================================
---- pokemon-online-2.0.1.orig/PokemonOnline.pro	2013-03-30 16:27:20.000000000 +0100
-+++ pokemon-online-2.0.1/PokemonOnline.pro	2013-03-30 17:29:44.730165614 +0100
-@@ -55,16 +55,16 @@
+--- pokemon-online-2.2.0.orig/PokemonOnline.pro	2013-10-06 19:34:49.085611191 +0200
++++ pokemon-online-2.2.0/PokemonOnline.pro	2013-10-06 19:34:49.077611191 +0200
+@@ -54,16 +54,16 @@
  
  CONFIG(po_server) {
      SUBDIRS += src/Server \
