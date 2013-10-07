@@ -1,3 +1,4 @@
+# just fix some typos
 --- gens-gs-2.16.7.orig/src/gens/util/file/config_file.cpp
 +++ gens-gs-2.16.7/src/gens/util/file/config_file.cpp
 @@ -292,9 +292,9 @@ int Config::save(const string& filename)

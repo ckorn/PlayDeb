@@ -1,4 +1,4 @@
 version=3
 opts="uversionmangle=s/([\d]+)/2\.16\.$1/" \
-http://zulu309.server4you.de/redirectors/gens-gs.html \
-    (?:.*/)?Gens-gs-r([\d]+)\.tar\.gz
+http://www.dusers.drexel.edu/gitweb/gitweb.cgi?p=~korth/gens.git;a=summary \
+    (?:.*/)?gens.git/log/refs/tags/release-([\d]+)
