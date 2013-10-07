@@ -1,3 +1,5 @@
+# Encoding is depcrecated
+# fix icon path
 Index: gens-gs-2.16.7/xdg/gens.desktop
 ===================================================================
 --- gens-gs-2.16.7.orig/xdg/gens.desktop	2010-04-29 16:40:52.016395142 +0200

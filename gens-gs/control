@@ -21,7 +21,9 @@ Package: gens-gs
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         gens-gs-data (= ${source:Version})
+         gens-gs-data (= ${source:Version}),
+         gtk2-engines-murrine,
+         gtk2-engines-pixbuf
 Conflicts: gens
 Replaces: gens
 Description: Sega Genesis, Sega CD, and Sega 32X emulator
