@@ -16,7 +16,8 @@ Package: zero-ballistics
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         zero-ballistics-data (= ${source:Version})
+         zero-ballistics-data (= ${source:Version}),
+         ia32-libs-multiarch
 Description: First person shooter tank combat
  Zero Ballistics is a unique blend of first
  person shooter and tank combat, focusing

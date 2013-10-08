@@ -1,3 +1,9 @@
+zero-ballistics (2.0-1~getdeb5) precise; urgency=low
+
+  * Add dependency on ia32-libs-multiarch
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 08 Oct 2013 19:41:37 +0200
+
 zero-ballistics (2.0-1~getdeb4) precise; urgency=low
 
   * Add missing libjpeg.so.62
