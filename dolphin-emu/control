@@ -29,8 +29,8 @@ Build-Depends: debhelper (>= 9),
                portaudio19-dev,
                wx2.8-headers,
                zlib1g-dev
-Standards-Version: 3.9.3
-Homepage: http://www.dolphin-emu.com
+Standards-Version: 3.9.4
+Homepage: http://dolphin-emu.org/
 
 Package: dolphin-emu
 Architecture: any

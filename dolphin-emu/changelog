@@ -1,3 +1,9 @@
+dolphin-emu (4.0-1~getdeb2~raring) raring; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 09 Oct 2013 23:03:53 +0200
+
 dolphin-emu (3.0-1~getdeb3) quantal; urgency=low
 
   * Rebuild for quantal

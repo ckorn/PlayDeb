@@ -1,16 +1,16 @@
 Description: Patch the cmake build system to install the application icon
 Author: Glenn Rice <glennricster@gmail.com>
 
-Index: dolphin-emu-3.0/CMakeLists.txt
+Index: dolphin-emu-4.0/CMakeLists.txt
 ===================================================================
---- dolphin-emu-3.0.orig/CMakeLists.txt	2011-06-24 01:11:12.000000000 +0200
-+++ dolphin-emu-3.0/CMakeLists.txt	2011-10-25 20:38:48.865096282 +0200
-@@ -425,6 +425,8 @@
- if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux")
- 	install(FILES Data/license.txt DESTINATION ${datadir})
+--- dolphin-emu-4.0.orig/CMakeLists.txt	2013-10-09 23:06:14.786083677 +0200
++++ dolphin-emu-4.0/CMakeLists.txt	2013-10-09 23:06:14.778083677 +0200
+@@ -482,6 +482,8 @@
+ 		endif()
+ 	endif()
  endif()
 +install(FILES Source/Core/DolphinWX/resources/Dolphin.xpm DESTINATION
 +	${CMAKE_INSTALL_PREFIX}/share/pixmaps RENAME dolphin-emu.xpm)
  
- # packaging information
- set(CPACK_PACKAGE_NAME "dolphin-emu")
+ ########################################
+ # Setup include directories (and make sure they are preferred over the Externals)

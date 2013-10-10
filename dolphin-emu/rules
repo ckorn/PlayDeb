@@ -8,8 +8,8 @@
 
 CMAKE_OPTIONS =						\
 	-DDOLPHIN_WC_REVISION=35d1599724a4c41d0c93e4cbf05ba109feaa969c			\
-	-DDOLPHIN_WC_DESCRIBE=3.0-0			\
-	-DDOLPHIN_WC_BRANCH=3.0				\
+	-DDOLPHIN_WC_DESCRIBE=4.0-0			\
+	-DDOLPHIN_WC_BRANCH=4.0				\
 	-Dbindir=/usr/games				\
 	-Ddatadir=/usr/share/games/dolphin-emu		\
 	-DCMAKE_INSTALL_PREFIX=/usr			\
@@ -21,6 +21,7 @@ override_dh_auto_configure:
 override_dh_auto_install:
 	dh_auto_install
 	find $(CURDIR)/debian/tmp -type d -empty -delete
+	rm debian/tmp/usr/lib/libpolarssl.a
 
 override_dh_install:
 	dh_install --fail-missing
