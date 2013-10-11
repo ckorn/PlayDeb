@@ -18,7 +18,7 @@ Package: magicassistant
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         openjdk-6-jre | java2-common | java-common
+         openjdk-7-jre | openjdk-6-jre | java2-common | java-common
 Description: Helper for "Magic: the Gathering" (MTG) players
  Magic Assistant is an application that helps
  "Magic: the Gathering" (MTG) players in different
