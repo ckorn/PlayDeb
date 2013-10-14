@@ -6,5 +6,3 @@ override_dh_install:
 	dh_install
 	[ ! -d debian/rotc-data/usr/share/games/rotc ] || find debian/rotc-data/usr/share/games/rotc -type f -exec chmod -x {} \;
 
-override_dh_makeshlibs:
-	dh_makeshlibs -Xusr/lib/games/rotc

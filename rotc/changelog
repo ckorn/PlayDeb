@@ -1,3 +1,9 @@
+rotc (5.3-1~getdeb2~saucy) saucy; urgency=low
+
+  * Rebuild for saucy
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 13 Oct 2013 17:04:10 +0200
+
 rotc (5.3-1~getdeb1) oneiric; urgency=low
 
   * New upstream version

@@ -2,15 +2,19 @@ Source: rotc
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50~), libogg0,
- ia32-libs [amd64], libtheora0, libsdl1.2debian-all,
- libxft2
-Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 9),
+               libogg0,
+               libtheora0,
+               libsdl1.2debian,
+               libxft2,
+               libc6
+Standards-Version: 3.9.4
 Homepage: http://ethernet.wasted.ch
 
 Package: rotc
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, rotc-data (= ${source:Version})
+Depends: ${misc:Depends},
+         rotc-bin (= ${source:Version})
 Description: Fast-paced, team multiplayer FPS
  Revenge Of The Cats: Ethernet wants to be a fast-paced,
  teamwork-oriented, non-stop-action multiplayer PC FPS game that
@@ -19,8 +23,25 @@ Description: Fast-paced, team multiplayer FPS
  Its main influences are Subspace/Continuum,
  Starsiege: Tribes and Tron.
 
+Package: rotc-bin
+Architecture: i386
+Multi-Arch: foreign
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         rotc-data (= ${source:Version})
+Description: Fast-paced, team multiplayer FPS (binary files).
+ Revenge Of The Cats: Ethernet wants to be a fast-paced,
+ teamwork-oriented, non-stop-action multiplayer PC FPS game that
+ allows players to achieve a high degree of mastery.
+ .
+ Its main influences are Subspace/Continuum,
+ Starsiege: Tribes and Tron.
+ .
+ (This package contains binary files).
+
 Package: rotc-data
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends}
 Description: Fast-paced, team multiplayer FPS (data package)
  Revenge Of The Cats: Ethernet wants to be a fast-paced,
