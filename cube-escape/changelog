@@ -1,3 +1,9 @@
+cube-escape (0.8-1~getdeb4~saucy) saucy; urgency=low
+
+  * Rebuild for saucy.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 13 Oct 2013 15:29:52 +0200
+
 cube-escape (0.8-1~getdeb3) lucid; urgency=low
 
   * Fix debian/watch file
