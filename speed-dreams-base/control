@@ -21,7 +21,7 @@ Build-Depends: debhelper (>= 9),
                libsdl1.2-dev,
                libjpeg62-dev | libjpeg8-dev,
                chrpath
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://speed-dreams.sourceforge.net/
 
 Package: speed-dreams-base
