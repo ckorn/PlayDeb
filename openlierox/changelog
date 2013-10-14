@@ -1,3 +1,9 @@
+openlierox (0.58~rc3-1~getdeb2~saucy) saucy; urgency=low
+
+  * Rebuild for saucy.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 13 Oct 2013 16:17:00 +0200
+
 openlierox (0.58~rc3-1~getdeb1) karmic; urgency=low
 
   * New upstream version
