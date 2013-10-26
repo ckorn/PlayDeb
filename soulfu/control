@@ -2,24 +2,43 @@ Source: soulfu
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50), pkg-config,
- libsdl-net1.2-dev, libsdl1.2-dev, mesa-common-dev,
- libvorbis-dev, libjpeg62-dev, quilt, libc6-dev-i386 [amd64],
- ia32-libs [amd64], gcc-4.4-multilib [amd64]
-Standards-Version: 3.8.3
+Build-Depends: debhelper (>= 9),
+               pkg-config,
+               libsdl-net1.2-dev,
+               libsdl1.2-dev,
+               mesa-common-dev,
+               libvorbis-dev,
+               libjpeg62-dev
+Standards-Version: 3.9.4
 Homepage: http://aaronbishopgames.com/
 
 Package: soulfu
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, soulfu-data (= ${source:Version})
+Depends: ${misc:Depends},
+         soulfu-bin (= ${source:Version})
 Description: Graphical Rogue-like role-playing game
  SoulFu is Aaron Bishop's latest 3D Graphical Rogue-like role-playing
  game. A sequel to the wildly popular open source game Egoboo. It
  features rich gameplay, cell-shaded graphics, and random generation.
  The game is very fun and has cute little graphics.
 
+Package: soulfu-bin
+Architecture: i386
+Multi-Arch: foreign
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         soulfu-data (= ${source:Version})
+Description: Graphical Rogue-like role-playing game (binary files)
+ SoulFu is Aaron Bishop's latest 3D Graphical Rogue-like role-playing
+ game. A sequel to the wildly popular open source game Egoboo. It
+ features rich gameplay, cell-shaded graphics, and random generation.
+ The game is very fun and has cute little graphics.
+ .
+ (This package contains the binary files).
+
 Package: soulfu-data
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends}
 Description: Graphical Rogue-like role-playing game (data files)
  SoulFu is Aaron Bishop's latest 3D Graphical Rogue-like role-playing

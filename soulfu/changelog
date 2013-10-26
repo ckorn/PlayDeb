@@ -1,3 +1,9 @@
+soulfu (1.5-1~getdeb2~saucy) saucy; urgency=low
+
+  * Rebuild for saucy.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 14 Oct 2013 21:54:50 +0200
+
 soulfu (1.5-1~getdeb1) karmic; urgency=low
 
   * Initial release (LP: #510639)
