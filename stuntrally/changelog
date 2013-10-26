@@ -1,3 +1,9 @@
+stuntrally (2.0-1~getdeb3~saucy) saucy; urgency=low
+
+  * Rebuild for saucy
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 14 Oct 2013 22:02:32 +0200
+
 stuntrally (2.0-1~getdeb2~quantal) quantal; urgency=low
 
   * New upstream version

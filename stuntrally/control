@@ -16,7 +16,7 @@ Build-Depends: debhelper (>= 9),
                libenet-dev,
                libxcursor-dev
 Build-Conflicts: libogre-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://code.google.com/p/vdrift-ogre
 
 Package: stuntrally
@@ -24,7 +24,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          stuntrally-data (= ${source:Version}),
-         stuntrally-tracks (>= 1.9),
+         stuntrally-tracks (>= 2.0),
          libfreeimage3,
          libzzip-0-13,
          libogremain1.8,
