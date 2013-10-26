@@ -1,3 +1,9 @@
+sandboxgamemaker (2.8.2-1~getdeb2~saucy) saucy; urgency=low
+
+  * Rebuild for saucy
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 15 Oct 2013 19:52:27 +0200
+
 sandboxgamemaker (2.8.2-1~getdeb1) precise; urgency=low
 
   * New upstream version
