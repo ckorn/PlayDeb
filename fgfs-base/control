@@ -4,14 +4,14 @@ Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Ove Kaaven <ovek@arcticnet.no>
 Build-Depends: debhelper (>= 9)
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://www.flightgear.org/
 
 Package: fgfs-base
 Architecture: all
 Depends: ${misc:Depends},
          tzdata,
-         ttf-liberation
+         fonts-liberation
 Breaks: flightgear (<< 2.12.0)
 Description: Flight Gear Flight Simulator -- base files
  Flight Gear is a free and highly sophisticated flight simulator.
