@@ -2,25 +2,39 @@ Source: tileracer
 Section: games
 Priority: optional
 Maintainer: Joao Pinto <joao.pinto@getdeb.net>
-Build-Depends: cdbs, debhelper (>= 5)
-Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 9),
+               libx11-6,
+               libxt6,
+               libxext6,
+               libxmu6,
+               libglu1-mesa,
+               libxrandr2
+Standards-Version: 3.9.4
 
 Package: tileracer
 Architecture: any
-Depends: tileracer-data (= ${Source-Version}),
-  ia32-libs [amd64],
-  libx11-6 [i386],
-  libxt6 [i386],
-  libxext6 [i386],
-  libxmu6 [i386],
-  libglu1-mesa [i386],
-  libxrandr2 [i386]
-Description: 3D stunt racing game - Data files
+Depends: ${misc:Depends},
+         tileracer-bin (= ${source:Version})
+Description: 3D stunt racing game
  freeware 3D stunt racing game which features realistic car physics and an 
  in game track editor to create new maps to race on.
 
+Package: tileracer-bin
+Architecture: i386
+Multi-Arch: foreign
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         tileracer-data (= ${source:Version})
+Description: 3D stunt racing game - binary files
+ freeware 3D stunt racing game which features realistic car physics and an 
+ in game track editor to create new maps to race on.
+ .
+ (This package contains the binary files).
+
 Package: tileracer-data
 Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
 Description: 3D stunt racing game - Data files
  freeware 3D stunt racing game which features realistic car physics and an 
  in game track editor to create new maps to race on.

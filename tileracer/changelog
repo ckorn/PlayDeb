@@ -1,3 +1,9 @@
+tileracer (0.702-1~getdeb2~saucy) saucy; urgency=low
+
+  * Rebuild for saucy
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 14 Oct 2013 22:11:32 +0200
+
 tileracer (0.702-1~getdeb1) jaunty; urgency=low
 
   * New upstream version

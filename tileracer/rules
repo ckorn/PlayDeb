@@ -1,7 +1,11 @@
 #!/usr/bin/make -f
+%:
+	dh $@ 
 
-ARCH=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
-  
-include /usr/share/cdbs/1/rules/debhelper.mk
+override_dh_shlibdeps:
+	dh_shlibdeps -l$(CURDIR)/debian/tileracer-bin/usr/share/games/tileracer/lib_linux:/usr/lib32/mesa/
 
-DEB_DH_SHLIBDEPS_ARGS_ALL = -Xtileracer
+override_dh_install:
+	dh_install
+	# plugin depends on old ogre version
+	rm -f debian/tileracer-bin/usr/share/games/tileracer/lib_linux/Plugin_EXRCodec.so
