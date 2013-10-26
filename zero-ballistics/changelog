@@ -1,3 +1,9 @@
+zero-ballistics (2.0-1~getdeb7~saucy) saucy; urgency=low
+
+  * Rebuild for saucy.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 14 Oct 2013 22:17:36 +0200
+
 zero-ballistics (2.0-1~getdeb5) precise; urgency=low
 
   * Add dependency on ia32-libs-multiarch
