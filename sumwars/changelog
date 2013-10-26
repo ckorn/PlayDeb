@@ -1,3 +1,9 @@
+sumwars (0.5.7-1~getdeb6~saucy) saucy; urgency=low
+
+  * Rebuild for saucy.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 14 Oct 2013 22:07:45 +0200
+
 sumwars (0.5.7-1~getdeb5~raring) raring; urgency=low
 
   * New upstream version - Not Yet Released

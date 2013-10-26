@@ -3,7 +3,7 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-myString:=$(shell dpkg --get-selections | grep libogre-1 | awk -F"-|\t|:" '{print $$2}' )
+myString:=$(shell dpkg --get-selections | grep libogre-1 | awk -F"-|\t|:" '{print $$2}' | head -n1 )
 
 ifeq ($(DEB_BUILD_ARCH),amd64)
         OGRE_DIR:=-DSUMWARS_OGRE_PLUGIN_DIR:STRING=/usr/lib/x86_64-linux-gnu/OGRE-$(myString)
