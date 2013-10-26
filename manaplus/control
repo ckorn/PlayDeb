@@ -17,7 +17,7 @@ Build-Depends: debhelper (>= 9),
                libsdl-ttf2.0-dev,
                libsdl-gfx1.2-dev
 Homepage: http://manaplus.evolonline.org/
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 
 Package: manaplus
 Architecture: any
@@ -63,10 +63,10 @@ Description: Extended client for TMW and similar servers (debugging symbols)
 Package: manaplus-data
 Architecture: all
 Depends: ${misc:Depends},
-         ttf-dejavu-core,
-         ttf-liberation,
-         ttf-mplus,
-         ttf-dejavu-extra
+         fonts-dejavu-core,
+         fonts-liberation,
+         fonts-mplus,
+         fonts-dejavu-extra
 Recommends: manaplus
 Replaces: mana-4144-data
 Description: Extended client for TMW and similar servers (data files)
