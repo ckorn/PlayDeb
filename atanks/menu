@@ -1,3 +1,0 @@
-?package(atanks):needs="x11" section="Games/Action" \
-	title="Atomic Tanks" command="/usr/games/atanks" \
-	icon="/usr/share/pixmaps/atanks-icon.xpm"

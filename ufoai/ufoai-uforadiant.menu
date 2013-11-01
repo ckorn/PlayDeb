@@ -1,3 +1,0 @@
-?package(ufoai-radiant):needs="X11" section="Games/Strategy" \
-	title="UFORadiant" command="/usr/games/uforadiant" \
-	icon="/usr/share/pixmaps/uforadiant.xpm"

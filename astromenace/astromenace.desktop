@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/usr/games/astromenace --mode=14
-Icon=astromenace
-Terminal=false
-Name=Astromenace
-Comment=Hardcore 3D space shooter with spaceship upgrade possibilities
-Categories=Game;ActionGame;

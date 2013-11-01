@@ -1,4 +1,0 @@
-AstroMenace					usr/lib/games/astromenace
-debian/scripts/astromenace			usr/games
-debian/astromenace.desktop			usr/share/applications
-debian/astromenace.xpm				usr/share/pixmaps

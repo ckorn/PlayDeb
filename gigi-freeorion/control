@@ -42,7 +42,6 @@ Depends: ${misc:Depends},
          libfreetype6-dev,
          libglu1-mesa-dev,
          libltdl-dev,
-         libois-dev
 Description: OpenGL Graphical User Interface Library (header files)
  GiGi (aka GG) is a GUI library for OpenGL.
  It is platform-independent (it runs at least on Linux

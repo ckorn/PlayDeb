@@ -1,3 +1,0 @@
-?package(hedgewars):needs="x11" section="Games/Action"\
-  title="Hedgewars" \
-  command="/usr/games/hedgewars" 

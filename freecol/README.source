@@ -1,9 +1,0 @@
-Note about the source package of freecol.
-
-This package uses dpatch to manage all modifications to the upstream
-source. See /usr/share/doc/dpatch/README.source.gz to get more information
-on how to use it.
-
- -- Vincent Fourmond <fourmond@debian.org>, Tue, 24 Feb 2009 00:50:16 +0100
-
-

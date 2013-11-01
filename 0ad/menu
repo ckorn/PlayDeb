@@ -1,2 +1,0 @@
-?package(0ad):needs="X11" section="Games/Strategy"\
-  title="0 A.D." command="/usr/games/0ad"

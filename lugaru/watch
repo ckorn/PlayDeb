@@ -1,6 +1,0 @@
-version=3
-opts=\
-downloadurlmangle=s|.*[?]name=(.*?)&.*|http://lugaru.googlecode.com/files/$1|,\
-filenamemangle=s|[^/]+[?]name=(.*?)&.*|$1|,\
-dversionmangle=s|.*[+]rev(\d+)|$1| \
-http://code.google.com/p/lugaru/downloads/detail[?]name=lugaru-rev(\d+)-src.tar.bz2&.*

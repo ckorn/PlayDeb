@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Allegro Sprite Editor
-Exec=/usr/games/aseprite
-Icon=aseprite
-Terminal=false
-Type=Application
-Categories=Application;Graphics;
