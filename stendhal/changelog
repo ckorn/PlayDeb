@@ -1,3 +1,34 @@
+stendhal (1.11-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    *world*
+    - Mine Town Weeks are celebrated
+      - New Paper chase quest
+      - New Sokoban game
+      - all the games from last years festival are back
+    - Margaret accepts coupons
+    - New look for Semos plains
+    - More creature descriptions
+    - Added fairy cakes to daily item quest
+    - Icons to indicate healer and merchant NPCs
+    - Pebbles sprite replaced by rocks in some collision areas on maps
+    - New achievement: Fisherman
+
+    *client*
+    - Notifies player of last login attempt
+    - Subwindows on the right side panel can be arranged by the user
+
+    *fixes*
+    - Screen flashing during zone colouring change has been fixed
+    - Resizing karma bar no longer causes it to flash
+    - Font setting changes opening travel log window has been fixed
+
+    *code*
+    - Status icon positions are automatically arranged
+    - Poisoning and new status effects handled with new system
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 02 Nov 2013 14:41:22 +0100
+
 stendhal (1.10-1~getdeb1) precise; urgency=low
 
   * New upstream version
