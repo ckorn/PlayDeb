@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 %:
-	dh $@ -B$(CURDIR)/build-tree --parallel
+	dh $@ -B$(CURDIR)/build-tree # --parallel
 
 override_dh_auto_configure:
 	mkdir -p $(CURDIR)/build-tree

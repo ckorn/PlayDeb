@@ -1,3 +1,9 @@
+stuntrally (2.1-1~getdeb1) saucy; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 02 Nov 2013 16:19:12 +0100
+
 stuntrally (2.0-1~getdeb3~saucy) saucy; urgency=low
 
   * Rebuild for saucy
