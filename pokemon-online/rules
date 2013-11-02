@@ -2,6 +2,16 @@
 %:
 	dh $@ --parallel
 
+override_dh_auto_clean:
+	dh_auto_clean
+	find . -name "*.o" -delete
+	rm -f bin/Pokemon-Online
+	find bin -name "*.so.*" -delete
+	find bin -name "*.so" -delete
+	find src -name "moc_*" -delete
+	find src -name "ui_*" -delete
+	find . -name "Makefile" -delete
+
 override_dh_auto_configure:
 	dh_auto_configure -- CONFIG+=po_client CONFIG+=debian_package CONFIG+=po_clientplugins
 
