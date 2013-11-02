@@ -1,3 +1,29 @@
+the-powder-toy (89.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+        Fixed Fix SOAP crashes with SING
+        Fixed Fix sparking QRTZ stopping it from growing
+        Fixed Fix another PSTN extension glitch
+        Fixed Fixed crash when flood fill deleting
+        Fixed Fix !load -1 crash and !bubble crash
+        Fixed Fix stamp browser thumbnails being too large
+        Fixed Fix PROP not setting properties of particle #0
+        Fixed Fixed red / yellow nick colors mixing up
+        Changed Removed regex dependency
+        Changed SOAP bubbles freeze at -25
+        Added New Element: PROT. Transfers heat to materials and removes
+        sparks
+        Added New Element VIRS. Turns everything it touches into VIRS
+        Added 6 new FILT .tmp modes, set using PROP
+        Added Semicolon shortcut key for replace mode, ctrl+; for specific
+        delete
+        Added Ability to use Celcius or Farenheit in the console
+        Added X11 Clipboard pull on linux
+        Added Spark signs, with the "{b|Click here}" creates a button that
+        can be used to activate electronics underneath.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 02 Nov 2013 15:22:10 +0100
+
 the-powder-toy (88.1-1~getdeb1) precise; urgency=low
 
   * New upstream version
