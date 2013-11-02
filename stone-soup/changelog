@@ -1,3 +1,367 @@
+stone-soup (0.13.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * A new race: Gargoyles.
+    * A reimagined Skald background.
+    * A thorough rework of the monster set in Crypt.
+    * Improvements to many evokable items.
+    * A new item: sack of spiders.
+    * Massively overhauled layout generators.
+    * Summoning school: per-spell limits and no stair following or pulling.
+    * New Sprint map: linesprint.
+
+    Branches, environment
+    ---------------------
+    * A new Sprint map: "|||||||||||||||||||||||||||||" by st (otherwise
+    known as
+      linesprint).
+    * Branches now have exactly one exit stair (except the Dungeon, which
+    can,
+      but is not guaranteed, to have more).
+    * Many new layouts have been added to most branches, including unique
+    layouts
+      for branches that didn't have them; and numerous tweaks and
+      improvements
+      to existing layouts.
+    * Vaults can now be placed at the centre of some layouts prepared to
+    accept
+      them there.
+    * All portal vaults entrances that time out are now announced.
+    * Temple overflow altars can now contain multiple altars.
+    * New shop type: gadget shops, which sell evokable items.
+    * Mechanical traps do not spawn outside of vaults.
+    * Zot trap effects are now only a subset of the full set of miscasts, and
+      have some new unique effects - draining of wand charges and Word of
+      Recall
+      (as per ironbrand convokers).
+
+    Character
+    ---------
+    * A new race: Gargoyles, with low natural HP but an impressive host of
+      resistances and the ability to fly at XL14.
+    * Sludge elves are no more.
+    * The Skald background gets a reworked spellbook with four new spells:
+        - Infusion grants additional melee damage costing MP with each
+        strike;
+        - Song of Slaying grants an incremental slaying bonus with every
+        monster
+          killed (of sufficient threat level);
+        - Spectral Weapon creates an allied spectral clone of your weapon
+          which strikes enemies in melee when you do.
+        - Song of Shielding has a similar effect to Spirit Shield, trading HP
+          loss for MP loss.
+    * Priests are no more.
+    * The nausea status from eating contaminated chunks has been removed;
+      contaminated chunks now give less nutrition for characters that can't
+      handle them.
+    * Stabbing skill is no more; stabs now depend upon the average of the
+      character's stealth and weapon skill.
+    * The Traps skill is no more; all characters detect traps as though they
+      had (XL/3) Traps skill.
+    * Chaos knights start with a +0 chaos weapon instead of a +2 normal
+    weapon.
+    * New tier 2 demonspawn mutation - "magic shield", giving spirit shield
+      at level one, improved magic regeneration at level two, and
+      regenerating
+      mana in place of health as a function of current magic level at level
+      three.
+    * Deaths to acid, self-targetting, and sticky flame now credit
+      the appropriate monster/spell.
+    * Draining a stat to zero can no longer directly kill the player;
+    instead,
+      further stat drain damages the player. The effects of a stat being at
+      zero
+      (fainting, slow actions, etc.) persist.
+    * Ogre hunters and artificers now start with a club instead of a short
+    sword.
+
+    Monsters
+    --------
+    * New/reworked Crypt monsters:
+        - Wraiths, shadow wraiths, and eidolons drain speed instead of XP.
+        - Eidolons deal more melee damage and can cast bolt of draining.
+        - Phantasmal warriors can temporarily reduce their target's magic
+          resistance and can blink closer to their foes.
+        - Flayed ghosts gain a smite-targetted flaying attack, dealing
+          temporary damage that scales with XP and goes away when the flayed
+          ghost is killed and/or enough time passes.
+        - Ancient champions, formerly a vault-specific monster, are now
+          full randomly-generated monsters, coming with a band of skeletal
+          warriors 50% of the time.
+        - Vampire mages cast vampiric draining more often, and have slightly
+          higher HD and HP; they also come with a band of vampires.
+        - Rotting hulks are now plague shamblers, capable of inflicting a
+          "retching" status effect that prevents food consumption; they
+          generate a cloud of miasma on death.
+        - Spectral things move at their full base monster speed.
+        - Deep dwarf death knights gain slightly better attack power and
+          starting equipment, and now come with a band of undead.
+        - Flying skulls get a slight HP boost and a larger attack power
+        boost.
+        - Ghouls inflict rot half as often.
+        - Curse skulls are capable of out-of-LOS movement, similar to
+        wandering
+          mushrooms, but preferring to place themselves where a player needs
+          to
+          move the most to actually reach them.
+        - New monster: revenants, possessing a ghostly fireball attack and
+          capable of creating clouds of ghostly flame, which do not harm
+          undead and occasionally summon spectral things.
+        - New monster: lost souls, who sacrifice themselves to heal nearby
+          undead creatures or assume the shape of a nearby killed living
+          creature; they can be summoned by deep elf death mages.
+        - Necromancers don't come with necrophages, but do some with
+        simulacra.
+        - Unborn deep dwarves are now just unborn.
+        - New monster: jiangshi, who move in short bursts (like sixfirhies)
+        and
+          possess a vampiric melee attack.
+    * New forest-themed monsters:
+        - Spriggan assassins and enchanters, who attempt to disable the
+        player
+          with blowguns and hexes respectively before moving in for the kill.
+        - Wind drakes, who can breathe powerful blasts of wind and airstrike
+        the
+          player.
+    * Other new monsters:
+        - Tengu reavers, skilled with both steel and spells; appearing in the
+          late dungeon and in Vaults.
+        - Deathcaps, summonable by curse toes - tougher wandering mushrooms
+          with Drain Life.
+    * New unique: Sojobo, king of the tengu.
+    * Jory now spawns normally in the late dungeon, instead of being limited
+    to
+      vaults.
+    * Adjustments to some tier 4 demons:
+        - Orange demons' sting has a 50% chance of inflicting a Weakness
+        status,
+          which reduces the player's attack damage.
+        - Blue devils have a swooping attack, where they can immediately move
+          adjacent to the player and attack from up to four tiles away.
+        - Red devils can now hop backwards from adjacent foes to make use of
+        their
+          now-guaranteed polearms' reaching attacks.
+    * Adjustments to the elementals:
+        - Water elementals have an asphyxiation attack which lasts as long as
+          their target is next to them, and have slightly increased AC and
+          HP.
+        - Fire elementals (and fire vortices) deal pure fire damage.
+    * Updated spell set for several monsters:
+        - Draconian shifters:
+            - Banishment is dropped.
+            - A new monster spell: Dimension Anchor, which temporarily
+            prevents
+              teleportation, blinking, and Phase Shift.
+            - A new monster spell: Blink Allies Encircling, which blinks
+            nearby
+              allies around the target.
+            - Controlled Blink is replaced with Blink Away as an emergency
+            spell.
+        - Spriggan air mages:
+            - Drop Swiftness.
+            - New spell: Control Winds, which manipulates clouds (including
+              putting out fores fires immediately), and improves allied
+              ranged weapon accuracy.
+        - Spriggan druids:
+            - Drop Summon Caniforms.
+            - New spells: Haste Plants, which hastes nearby plant-like
+            enemies,
+              and Druid's Call, which calls wildlife from elsewhere on the
+              level
+              to aid the druid.
+        - The Enchantress:
+            - Banishment is banished.
+            - Gains Dimension Anchor (see draconian shifter entry above),
+            Strip
+              Resistance (lowers the magic resistance of the target), and
+              Mass
+              Confusion.
+        - Curse toes:
+            - No more Summon Undead.
+        - Deep elf summoners:
+            - Summon Demon replaced with Summon Vermin, which summons orange
+              rats, spiders, and some other things.
+        - Deep elf priests/high priests:
+            - A new spell "Malign Offering", which steals HP from the target
+              to give to their allies.
+        - Deep elf mages:
+            - Entirely new spellsets:
+                - Freeze, Throw Icicle, Summon Ice Beast;
+                - Bolt of Magma, Stone Arrow, Petrify;
+                - Iskenderun's Mystic Blast, Slow, Venom Bolt, Blink;
+                - Flame Tongue, Throw Flame, Sticky Flame, Fireball;
+                - Magic Dart, Force Lance, Iskenderun's Mystic Blast,
+                  Iskenderun's Battlesphere.
+        - Deep elf conjurers:
+            - Only one spellset (bolt of fire, bolt of cold, lightning bolt,
+              bolt of draining); the spell set with sticky flame has been
+              removed.
+        - Gloorx Vloq:
+            - No longer has Invisibility as an emergency spell.
+    * Speed adjustments to several monsters:
+        - Speed 8: spiny worms, snapping turtles, guardian mummies (all
+        previously
+          speed 9).
+        - Speed 10: jellies (previously 9).
+    * Shadows can now turn invisible, allowing them to move faster and
+      land a guaranteed stab attack on enemies.
+    * The retribution effect for killing an apis now inflicts Weakness on
+      the player, instead of healing nearby hostiles.
+    * Giant fireflies can now signal nearby awake monsters in a manner
+    similar to
+      shouting.
+    * Vault wardens can seal stairways in addition to doors.
+    * Zombies no longer appear excessively out of depth in the early dungeon.
+    * Orb run monster spawns no longer include weak monsters, and now include
+      Orb Guardians.
+    * Monster actions are now taken in order of speed, rather than any given
+      monster taking all of its actions at once.
+    * Removed monsters:
+        - Laboratory rats.
+        - War dogs (replaced by wolves with essentially matching stats).
+        - Deep dwarf scions, necromancers, and artificers.
+        - Deep elf soldiers.
+        - A large number of vault-specific monsters.
+    * Imps and other weak monsters no longer appear in Pan.
+    * Nergalle appears earlier in the dungeon.
+    * Lamia no longer comes with a band of minions.
+    * Creatures other than natural creatures can now be frenzied; this causes
+      them to attack anything in sight. The berserking effect of frenzy
+      (might
+      and haste effects) is limited to natural creatures.
+
+    Spells
+    ------
+    * New spells:
+      - Searing Ray, a level 2 conjuration replacing Force Lance in the
+        Book of Conjurations that deals damage over several consecutive
+        turns.
+      - Discord, a level 8 hex that attempts to frenzy all monsters in sight.
+    * Summon Small Mammals now only ever summons one mammal, and is renamed
+    to
+      Summon Small Mammal as a consequence.
+    * 100% of teleports on the orb run are delays (up from 50%).
+    * Haunt adjustments:
+        - Summons now fixate on their target.
+        - Flayed ghosts are no longer summoned.
+        - Friendlies are no longer targettable.
+    * Olgreb's Toxic Radiance now poisons continuously over several turns
+    (and
+      deals impact damage); it also ignores the caster's poison resistance
+      (if
+      any).
+    * Dragon Form is pure Transmutations (was Tmut/Fire for all but
+    Draconians).
+    * Force Lance is now level 5 (was level 2), with boosted range and damage
+      to match.
+    * Fulminant Prism now caps at 200 spellpower.
+    * Swiftness can be cast in water; it doesn't operate in water, but it
+      grants the status (which operates as expected when out of the water).
+    * Summons caps are introduced. This acts on a per-spell basis, each spell
+      has a fixed numerical limit for the number of summons active at any
+      time.
+      Going over this limit means your oldest summons will expire in a very
+      short number of turns. Applies only to non-necromantic non-permanent
+      summons.
+    * Temporary summons will no longer follow the player down stairs.
+    * Temporary summons expire when the player moves to a different level.
+
+    Items
+    -----
+    * The elemental evocation items have been reworked:
+        - All no longer depend on elemental magic skill or nearby terrain,
+        can
+          summon multiple elementals, and have an XP-based recharge timer.
+        - The lamp of fire fires up to three trails of flame in a given
+        direction.
+        - The fan of air elementals is now the fan of gales, and blows back
+          nearby enemies.
+        - The stone of earth elementals is now the stone of tremors; it
+        causes
+          rubble to fall from nearby rock, stone, or permarock walls to
+          damage
+          creatures adjacent to them, and has a chance to shaft creatures;
+        - A new elemental evoker item - the phial of floods; it generates a
+        wave
+          of water which temporarily leaves a pool of water behind, and
+          summons
+          water elementals.
+    * The dependence of armour penalties on strength has been adjusted; there
+      are no longer magic strength numbers for lowest possible penalties.
+    * Potions of gain <ability> have been replaced by potions of beneficial
+      mutation, which grant the player a single beneficial mutation.
+    * Scrolls of vorpalise weapons are now scrolls of brand weapon, and can
+      rebrand weapons that already have a permanent brand affixed.
+    * Scrolls of immolation have been reworked to inner flame everything in
+      LOS.
+    * Lear's chain mail is now Lear's hauberk - a +27 chain mail that covers
+      all armour slots other than shields and cloaks.
+    * The staves of energy eliminates 100% of spell hunger again, and
+    includes
+      the now-gone staff of channeling as well.
+    * The staff of power scales with your maximum magic power.
+    * Box of beasts has been reworked:
+        - Has a fixed, random number of charges between 5 and 15 inclusive.
+        - 1/3 chance to fail on usage with no bad effects.
+        - When successful, generates a chimera; a new monster with three
+        heads.
+          Each head can be a different beast, picked from a list which
+          provides
+          better/stronger beasts at higher Evocations skill. The heads
+          determine
+          the attacks and abilities available to the monster.
+    * New "sack of spiders" item:
+        - Fixed charges between 5 and 15 inclusive.
+        - On evoking, creates webs around you and releases spiders.
+        - Number of webs and type/number of spiders scales with evocations.
+    * Splint mail has been removed; chain mail is now 8 AC to compensate.
+    * Needles of sickness have been removed.
+    * Manuals do not need to be read to be activated; they're always on while
+    in
+      inventory.
+    * The rod of striking now functions as a melee weapon - it expends
+    charges
+      to deal additional damage in melee.
+    * Boots of running have a -1 movement delay (was -2).
+    * The lantern of shadows' rate of shadow spawning scales with evocations,
+      and the resulting shadows now wander instead of following the player.
+    * New unrand: the +4 moon troll leather armour {Spirit MP+5 Regen}.
+    * Adjustments to unrands:
+       - Arga is now a broad axe.
+       - The shield of the gong no longer has guardian spirit; it is
+       otherwise
+         unchanged.
+       - The knife of accuracy and boots of the Assassin are no more.
+       - The lightning scales are now +6 (was +3).
+    * Hammers do not generate outside of vaults.
+
+    Gods
+    ----
+    * Yredelemnul no longer gifts rotting hulks / plague shamblers.
+    * Orcs encountering an orc priest for the first time are offered the
+    chance
+      to convert to Beogh on the spot.
+    * Recite no longer paralyses the player; the player can take any action
+      that doesn't involve the mouth while reciting.
+
+    Interface
+    ---------
+    * For online play, explore_delay and travel_delay are instananeous by
+    default.
+    * Dungeon features with variable-colour tiles now display those colours
+    in
+      tiles (e.g. walls in the Abyss, the Elven Halls, and the Pan disco
+      hall).
+    * Examining a monster will display the spells monsters of its type are
+      capable of using.
+
+    Technical
+    ---------
+    * A port to OpenSolaris (Dyson/Illumos).
+    * MSVC compilation once again possible (Visual Studio [Express] 2012)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 02 Nov 2013 15:00:15 +0100
+
 stone-soup (0.12.3-1~getdeb1) precise; urgency=low
 
   * New upstream version
