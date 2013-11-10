@@ -2,47 +2,20 @@ Description: Detect endianness using endian.h
  Upstream bsnes knows the endianess only for a few architectures and otherwise FTBFS.
 Origin: http://anonscm.debian.org/gitweb/?p=pkg-games/bsnes.git;a=tree;f=debian/patches
 
-Index: higan-092/ananke/nall/intrinsics.hpp
+Index: higan-093/nall/intrinsics.hpp
 ===================================================================
---- higan-092.orig/ananke/nall/intrinsics.hpp	2013-01-11 19:26:29.000000000 +0100
-+++ higan-092/ananke/nall/intrinsics.hpp	2013-03-09 14:07:38.961486379 +0100
+--- higan-093.orig/nall/intrinsics.hpp	2013-08-17 01:37:28.000000000 +0200
++++ higan-093/nall/intrinsics.hpp	2013-11-03 13:20:32.896274211 +0100
 @@ -1,6 +1,8 @@
  #ifndef NALL_INTRINSICS_HPP
  #define NALL_INTRINSICS_HPP
  
 +#include <endian.h>
 +
+ namespace nall {
+ 
  struct Intrinsics {
-   enum class Compiler : unsigned { GCC, VisualC, Unknown };
-   enum class Platform : unsigned { X, OSX, Windows, Unknown };
-@@ -45,11 +47,11 @@
- 
- /* Endian detection */
- 
--#if defined(__i386__) || defined(__amd64__) || defined(_M_IX86) || defined(_M_AMD64)
-+#if __BYTE_ORDER == __LITTLE_ENDIAN
-   #define ENDIAN_LSB
-   #define ARCH_LSB
-   Intrinsics::Endian Intrinsics::endian() { return Intrinsics::Endian::LSB; }
--#elif defined(__powerpc__) || defined(_M_PPC) || defined(__BIG_ENDIAN__)
-+#elif __BYTE_ORDER == __BIG_ENDIAN
-   #define ENDIAN_MSB
-   #define ARCH_MSB
-   Intrinsics::Endian Intrinsics::endian() { return Intrinsics::Endian::MSB; }
-Index: higan-092/higan/nall/intrinsics.hpp
-===================================================================
---- higan-092.orig/higan/nall/intrinsics.hpp	2013-01-14 19:27:28.000000000 +0100
-+++ higan-092/higan/nall/intrinsics.hpp	2013-03-09 14:06:30.969488401 +0100
-@@ -1,6 +1,8 @@
- #ifndef NALL_INTRINSICS_HPP
- #define NALL_INTRINSICS_HPP
- 
-+#include <endian.h>
-+
- struct Intrinsics {
-   enum class Compiler : unsigned { GCC, VisualC, Unknown };
-   enum class Platform : unsigned { X, OSX, Windows, Unknown };
-@@ -45,11 +47,11 @@
+@@ -50,11 +52,11 @@
  
  /* Endian detection */
  

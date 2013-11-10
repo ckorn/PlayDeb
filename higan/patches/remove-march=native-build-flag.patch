@@ -6,15 +6,107 @@ Description: Remove -march=native build flag.
    (armhf, s390, s390x, powerpc, ia64, ...).
 Author: Tobias Hansen <tobias.han@gmx.de>
 
-Index: higan-092/higan/Makefile
+Index: higan-093/Makefile
 ===================================================================
---- higan-092.orig/higan/Makefile	2013-03-09 13:43:21.669529729 +0100
-+++ higan-092/higan/Makefile	2013-03-09 13:56:31.949506221 +0100
-@@ -33,7 +33,6 @@
+--- higan-093.orig/Makefile	2013-11-03 13:13:36.776277764 +0100
++++ higan-093/Makefile	2013-11-06 19:29:49.909268413 +0100
+@@ -13,7 +13,7 @@
+ # console := true
+ 
+ # compiler
+-flags   := -I. $(CFLAGS) $(CPPFLAGS)
++flags   := -I. -Dplatform=x -DPLATFORM_X=1
+ link    := $(LDFLAGS)
+ objects := libco
+ 
+@@ -30,7 +30,6 @@
  
  # platform
  ifeq ($(platform),x)
--  flags += -march=native
+-  #flags += -march=native
    link += -Wl,-export-dynamic -ldl -lX11 -lXext
+ else ifeq ($(platform),osx)
+   flags += -march=native
+@@ -58,7 +57,7 @@
+     $(if $(filter %.c,$<), \
+       $(compiler) $(cflags) $(flags) $1 -c $< -o $@, \
+       $(if $(filter %.cpp,$<), \
+-        $(compiler) $(cppflags) $(flags) $1 -c $< -o $@ \
++        $(compiler) $(cppflags) $(flags) -std=c++0x -Dplatform=x -DPLATFORM_X=1 $1 -c $< -o $@ \
+       ) \
+     ) \
+   )
+Index: higan-093/phoenix/Makefile
+===================================================================
+--- higan-093.orig/phoenix/Makefile	2013-08-17 01:37:31.000000000 +0200
++++ higan-093/phoenix/Makefile	2013-11-06 19:33:25.721261994 +0100
+@@ -4,12 +4,12 @@
+   endif
+ 
+   ifeq ($(phoenix),gtk)
+-    phoenixflags = $(cppflags) $(flags) -DPHOENIX_GTK `pkg-config --cflags gtk+-2.0`
++    phoenixflags = $(cppflags) $(flags) -std=c++0x -Dplatform=x -DPLATFORM_X=1 -DPHOENIX_GTK `pkg-config --cflags gtk+-2.0`
+     phoenixlink = `pkg-config --libs gtk+-2.0`
+   endif
+ 
+   ifeq ($(phoenix),qt)
+-    phoenixflags = $(cppflags) $(flags) -DPHOENIX_QT `pkg-config --cflags QtCore QtGui`
++    phoenixflags = $(cppflags) $(flags) -std=c++0x -Dplatform=x -DPLATFORM_X=1 -DPHOENIX_QT `pkg-config --cflags QtCore QtGui`
+     phoenixlink = `pkg-config --libs QtCore QtGui`
+   endif
+ else ifeq ($(platform),osx)
+Index: higan-093/ruby/Makefile
+===================================================================
+--- higan-093.orig/ruby/Makefile	2013-08-17 01:37:29.000000000 +0200
++++ higan-093/ruby/Makefile	2013-11-06 19:45:03.673241231 +0100
+@@ -1,7 +1,7 @@
+ ifeq ($(platform),osx)
+   rubyflags = $(objcppflags) $(flags)
+ else
+-  rubyflags = $(cppflags) $(flags)
++  rubyflags = $(cppflags) $(flags) -std=c++0x -Dplatform=x -DPLATFORM_X=1
+ endif
+ 
+ rubyflags += $(foreach c,$(subst .,_,$(call strupper,$(ruby))),-D$c)
+@@ -30,6 +30,7 @@
+ 
+ ifeq ($(platform),x)
+   rubylink += $(if $(findstring audio.openal,$(ruby)),-lopenal)
++  rubylink += -lm
+ else ifeq ($(platform),osx)
+   rubylink += $(if $(findstring audio.openal,$(ruby)),-framework OpenAL)
  else ifeq ($(platform),win)
-   ifeq ($(arch),win32)
+Index: higan-093/nall/Makefile
+===================================================================
+--- higan-093.orig/nall/Makefile	2013-08-17 01:37:28.000000000 +0200
++++ higan-093/nall/Makefile	2013-11-09 21:51:23.961173043 +0100
+@@ -45,8 +45,8 @@
+     link := -lc++ -lobjc
+   else
+     compiler := g++-4.7
+-    flags :=
+-    link :=
++    flags := -std=c++0x
++    link := -lstdc++
+   endif
+ 
+   cflags := -x c -std=gnu99
+Index: higan-093/ananke/Makefile
+===================================================================
+--- higan-093.orig/ananke/Makefile	2013-11-03 13:10:20.124279443 +0100
++++ higan-093/ananke/Makefile	2013-11-09 21:57:06.721162847 +0100
+@@ -2,12 +2,12 @@
+ include ../phoenix/Makefile
+ 
+ path := /usr/local/lib
+-flags := $(flags) $(CFLAGS) $(CPPFLAGS) -I..
++flags := $(flags) $(CFLAGS) $(CPPFLAGS) -I.. -std=c++0x -Dplatform=x -DPLATFORM_X=1
+ 
+ all:
+ 	$(compiler) $(cppflags) $(flags) -fPIC -o obj/ananke.o -c ananke.cpp
+ ifeq ($(platform),x)
+-	$(compiler) $(link) -shared -Wl,-soname,libananke.so.1 -o libananke.so obj/ananke.o
++	$(compiler) $(link) -shared -Wl,-soname,libananke.so.1 -o libananke.so obj/ananke.o -lstdc++
+ else ifeq ($(platform),osx)
+ 	$(compiler) $(link) -shared -dynamiclib -undefined suppress -flat_namespace -o libananke.dylib obj/ananke.o
+ else ifeq ($(platform),win)

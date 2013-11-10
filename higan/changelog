@@ -1,3 +1,9 @@
+higan (093-1~getdeb1) saucy; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 03 Nov 2013 13:09:07 +0100
+
 higan (092-1~getdeb2) precise; urgency=low
 
   * Fix "Import games"

@@ -44,13 +44,16 @@ if test ! -e $HOME/.config/higan/"Super Famicom.sys"
   then
     ln -s /usr/share/games/higan/profile/"Super Famicom.sys" $HOME/.config/higan/"Super Famicom.sys"
 fi
-
-for shader in $(ls /usr/share/games/higan/shaders/*.OpenGL.shader)
+TMPDIR=$(pwd)
+cd /usr/share/games/higan/shaders/
+for shader in *.shader
   do
-    if test ! -f $HOME/.config/higan/"Video Shaders"/${shader##*/}
+    echo "$shader"
+    if test ! -f $HOME/.config/higan/"Video Shaders"/"$shader"
       then
-        ln -s $shader $HOME/.config/higan/"Video Shaders"/${shader##*/}
+        ln -s /usr/share/games/higan/shaders/"$shader" $HOME/.config/higan/"Video Shaders"/"$shader"
     fi
 done
+cd $TMPDIR
 
 LD_LIBRARY_PATH=/usr/lib/games higan-bin $@

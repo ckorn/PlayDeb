@@ -1,3 +1,2 @@
 version=3
-http://code.google.com/p/higan/downloads/list \
-    (?:.*/)?higan_v([\d]+)(?:-source)?\.tar\.(?:bz2|gz|xz)
+http://byuu.org/higan/release/higan_v([\d]+)(?:-source)?\.tar\.(?:bz2|gz|xz)

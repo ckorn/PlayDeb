@@ -8,26 +8,50 @@ Description: Various changes to the upstream makefiles
 
 Origin: http://anonscm.debian.org/gitweb/?p=pkg-games/bsnes.git;a=tree;f=debian/patches
 
-Index: higan-092/higan/Makefile
+Index: higan-093/ananke/Makefile
 ===================================================================
---- higan-092.orig/higan/Makefile	2013-03-09 13:42:41.505530924 +0100
-+++ higan-092/higan/Makefile	2013-03-09 14:01:04.781498105 +0100
-@@ -16,8 +16,8 @@
+--- higan-093.orig/ananke/Makefile	2013-11-03 13:09:36.656279814 +0100
++++ higan-093/ananke/Makefile	2013-11-03 13:10:20.124279443 +0100
+@@ -2,7 +2,7 @@
+ include ../phoenix/Makefile
+ 
+ path := /usr/local/lib
+-flags := $(flags) -O3 -fomit-frame-pointer -I..
++flags := $(flags) $(CFLAGS) $(CPPFLAGS) -I..
+ 
+ all:
+ 	$(compiler) $(cppflags) $(flags) -fPIC -o obj/ananke.o -c ananke.cpp
+Index: higan-093/Makefile
+===================================================================
+--- higan-093.orig/Makefile	2013-08-17 01:38:46.000000000 +0200
++++ higan-093/Makefile	2013-11-03 13:13:36.776277764 +0100
+@@ -13,8 +13,8 @@
+ # console := true
+ 
  # compiler
- c       := $(compiler) -std=gnu99
- cpp     := $(subst cc,++,$(compiler)) -std=gnu++0x
--flags   := -I. -O3 -fomit-frame-pointer
--link    := -s
+-flags   += -I. -O3 -fomit-frame-pointer
+-link    +=
 +flags   := -I. $(CFLAGS) $(CPPFLAGS)
 +link    := $(LDFLAGS)
  objects := libco
  
  # profile-guided optimization mode
-Index: higan-092/higan/target-ethos/Makefile
+@@ -30,8 +30,8 @@
+ 
+ # platform
+ ifeq ($(platform),x)
+-  flags += -march=native
+-  link += -s -Wl,-export-dynamic -ldl -lX11 -lXext
++  #flags += -march=native
++  link += -Wl,-export-dynamic -ldl -lX11 -lXext
+ else ifeq ($(platform),osx)
+   flags += -march=native
+ else ifeq ($(platform),win)
+Index: higan-093/target-ethos/Makefile
 ===================================================================
---- higan-092.orig/higan/target-ethos/Makefile	2013-01-12 22:59:47.000000000 +0100
-+++ higan-092/higan/target-ethos/Makefile	2013-03-09 13:46:30.093524124 +0100
-@@ -17,8 +17,11 @@
+--- higan-093.orig/target-ethos/Makefile	2013-08-17 01:39:20.000000000 +0200
++++ higan-093/target-ethos/Makefile	2013-11-03 13:16:50.548276110 +0100
+@@ -16,8 +16,11 @@
  # platform
  ifeq ($(platform),x)
    ruby := video.glx video.xv video.sdl
@@ -38,38 +62,25 @@ Index: higan-092/higan/target-ethos/Makefile
 +    ruby += audio.alsa
 +  endif
  else ifeq ($(platform),osx)
-   ruby :=
+   ruby := video.cgl
    ruby += audio.openal
-@@ -84,14 +87,11 @@
- 	@echo Please do not run make install as root.
- 	@echo The installer needs to know your home directory to install important files.
- else ifeq ($(platform),x)
+@@ -86,14 +89,11 @@
+ 
+ install:
+ ifeq ($(platform),x)
 -	sudo install -D -m 755 out/$(name) $(DESTDIR)$(prefix)/bin/$(name)
 -	sudo install -D -m 644 data/$(name).png $(DESTDIR)$(prefix)/share/pixmaps/$(name).png
 -	sudo install -D -m 644 data/$(name).desktop $(DESTDIR)$(prefix)/share/applications/$(name).desktop
 -
--	mkdir -p ~/.config/$(name)
--	cp -R profile/* ~/.config/$(name)
--	cp data/cheats.bml ~/.config/$(name)/cheats.bml
--	chmod -R 777 ~/.config/$(name)
+-	sudo mkdir -p /usr/share/$(name)
+-	sudo cp -R profile/* /usr/share/$(name)
+-	sudo cp data/cheats.bml /usr/share/$(name)/cheats.bml
+-	sudo chmod -R 777 /usr/share/$(name)
 +	install -D -m 755 out/$(name) $(DESTDIR)$(prefix)/games/$(name)
 +	install -D -m 644 data/higan.png $(DESTDIR)$(prefix)/share/pixmaps/higan.png
 +	install -D -m 644 data/higan.desktop $(DESTDIR)$(prefix)/share/applications/higan.desktop
 +	install -D -m 644 data/cheats.xml $(DESTDIR)$(prefix)/share/games/higan/cheats.xml
 +	cp -R profile/* $(DESTDIR)$(prefix)/share/games/higan/profile/
- endif
- 
- uninstall:
-Index: higan-092/ananke/Makefile
-===================================================================
---- higan-092.orig/ananke/Makefile	2013-01-13 00:18:14.000000000 +0100
-+++ higan-092/ananke/Makefile	2013-03-09 14:03:14.661494241 +0100
-@@ -2,7 +2,7 @@
- include phoenix/Makefile
- 
- path := /usr/local/lib
--flags := -I. -O3 -fomit-frame-pointer
-+flags := -I. $(CFLAGS) $(CPPFLAGS)
- ifeq ($(arch),win32)
-   flags := -m32 $(flags)
- endif
+ else ifeq ($(platform),osx)
+ 	sudo mkdir -p /Library/Application\ Support/$(name)
+ 	sudo cp -R profile/* /Library/Application\ Support/$(name)

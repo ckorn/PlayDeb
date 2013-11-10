@@ -10,10 +10,10 @@ Build-Depends: debhelper (>= 9),
                libopenal-dev,
                libao-dev,
                libxv-dev,
-               gcc (>= 4.6)
-Standards-Version: 3.9.3
+               gcc (>= 4.6),
+               clang
+Standards-Version: 3.9.4
 Homepage: http://byuu.org/higan/
-DM-Upload-Allowed: yes
 
 Package: higan
 Architecture: any
