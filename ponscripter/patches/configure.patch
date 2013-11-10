@@ -1,0 +1,74 @@
+# libs come after the source
+Index: ponscripter-20111009/configure
+===================================================================
+--- ponscripter-20111009.orig/configure	2013-11-10 16:42:43.000000000 +0100
++++ ponscripter-20111009/configure	2013-11-10 17:17:49.027779806 +0100
+@@ -515,12 +515,12 @@
+ 	int main(int argc, char**argv){bool j=IMG_Load_RW(SDL_RWFromConstMem(jpeg,309),1),p=IMG_Load_RW(SDL_RWFromConstMem(png,69),1);return j&&p?0:(j?1:(p?2:3));}
+ 	_EOF
+     INTERNAL_SDL_IMAGE=true
+-    $CXX `$SDL_CONFIG --cflags` `$SDL_CONFIG --libs` -lSDL_image test.cc -o itest >/dev/null 2>&1
++    $CXX test.cc -o itest `$SDL_CONFIG --cflags` `$SDL_CONFIG --libs` -lSDL_image >/dev/null 2>&1
+     ./itest 2>/dev/null
+     case $? in
+     0) echo "yes"; INTERNAL_SDL_IMAGE=false ;;
+     1) echo "no PNG" ;; 2) echo "no JPEG" ;; 3) echo "no PNG or JPEG" ;;
+-    *) echo "no" ;;
++    *) echo "no $?" ;;
+     esac
+ fi
+ 
+@@ -532,7 +532,7 @@
+ 	unsigned char png[]={137,80,78,71,13,10,26,10};int main(int argc, char**argv){return png_sig_cmp(png,0,8);}
+ 	_EOF
+     INTERNAL_LIBPNG=true
+-    $CXX -lpng -lz test.cc -o ptest >/dev/null 2>&1
++    $CXX test.cc -o ptest -lpng -lz >/dev/null 2>&1
+     ./ptest 2>/dev/null
+     case $? in
+     0) echo "yes"; INTERNAL_LIBPNG=false ;;
+@@ -550,7 +550,7 @@
+ 	int main(int argc, char**argv){struct jpeg_decompress_struct cinfo;struct jpeg_error_mgr jerr;cinfo.err=jpeg_std_error(&jerr);jpeg_create_decompress(&cinfo);return 0;}
+ 	_EOF
+     INTERNAL_LIBJPEG=true
+-    $CXX -ljpeg test.cc -o jtest >/dev/null 2>&1
++    $CXX test.cc -o jtest -ljpeg >/dev/null 2>&1
+     ./jtest 2>/dev/null
+     case $? in
+     0) echo "yes"; INTERNAL_LIBJPEG=false ;;
+@@ -605,7 +605,7 @@
+ 	Mix_Music*m;bool ogg=m=Mix_LoadMUS("o.ogg");if(m)Mix_FreeMusic(m);bool mp3=m=Mix_LoadMUS("o.mp3");if(m)Mix_FreeMusic(m);return ogg&&mp3?0:(ogg?1:(mp3?2:3));}
+ 	_EOF
+     INTERNAL_SDL_MIXER=true
+-    $CXX `$SDL_CONFIG --cflags` `$SDL_CONFIG --libs` -lSDL_mixer test.cc -o mtest >/dev/null 2>&1
++    $CXX test.cc -o mtest `$SDL_CONFIG --cflags` `$SDL_CONFIG --libs` -lSDL_mixer >/dev/null 2>&1
+     ./mtest 2>/dev/null
+     case $? in
+     0) echo "yes"; INTERNAL_SDL_MIXER=false ;;
+@@ -627,7 +627,7 @@
+ 	OggVorbis_File vf;f=fopen("o.ogg","rb");int n=ov_open(f,&vf,0,0)<0;fclose(f);return n;}
+ 	_EOF
+     INTERNAL_OGGLIBS=true
+-    $CXX -logg -lvorbis -lvorbisfile test.cc -o otest >/dev/null 2>&1
++    $CXX test.cc -o otest -logg -lvorbis -lvorbisfile >/dev/null 2>&1
+     ./otest 2>/dev/null
+     case $? in
+     0) echo "yes"; INTERNAL_OGGLIBS=false ;;
+@@ -649,7 +649,7 @@
+ 	OggVorbis_File vf;f=fopen("o.ogg","rb");int n=ov_open(f,&vf,0,0)<0;fclose(f);return n;}
+ 	_EOF
+     EXPLICIT_OGGLIBS=true
+-    $CXX `$SDL_CONFIG --cflags` `$SDL_CONFIG --libs` -lSDL_mixer test.cc -o mtest >/dev/null 2>&1
++    $CXX test.cc -o mtest `$SDL_CONFIG --cflags` `$SDL_CONFIG --libs` -lSDL_mixer >/dev/null 2>&1
+     case $? in
+     0) echo "no"; EXPLICIT_OGGLIBS=false ;;
+     *) echo "yes" ;;
+@@ -664,7 +664,7 @@
+ 	unsigned char bz[]={66,90,104,57,49,65,89,38,83,89,41,212,246,171,0,0,0,16,0,64,0,32,0,33,24,70,130,238,72,167,10,18,5,58,158,213,96};
+ 	int main(int argc, char**argv){char out[2];unsigned int olen=2;out[0]='.';return(BZ2_bzBuffToBuffDecompress(out,&olen,(char*)bz,37,0,0)==BZ_OK&&olen==1&&out[0]==' ')?0:1;}
+ 	_EOF
+-    $CXX -lbz2 test.cc -o btest >/dev/null 2>&1
++    $CXX test.cc -o btest -lbz2 >/dev/null 2>&1
+     if ./btest 2>/dev/null
+     then echo "yes"
+     else echo "no"

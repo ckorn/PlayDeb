@@ -1,0 +1,48 @@
+# fix compiler errors about unused variables.
+Index: ponscripter-20111009/src/ScriptHandler.cpp
+===================================================================
+--- ponscripter-20111009.orig/src/ScriptHandler.cpp	2011-10-10 06:31:51.000000000 +0200
++++ ponscripter-20111009/src/ScriptHandler.cpp	2013-11-10 17:20:10.739775590 +0100
+@@ -733,7 +733,6 @@
+ {
+     unsigned char magic[5] = { 0x79, 0x57, 0x0d, 0x80, 0x04 };
+     int  magic_counter = 0;
+-    bool newline_flag  = true;
+     bool cr_flag = false;
+     int bom_check = 0;
+ 
+@@ -765,7 +764,6 @@
+ 
+         if (cr_flag && ch != 0x0a) {
+             *(*buf)++    = 0x0a;
+-            newline_flag = true;
+             cr_flag = false;
+         }
+ 
+@@ -776,13 +774,12 @@
+ 
+         if (ch == 0x0a) {
+             *(*buf)++    = 0x0a;
+-            newline_flag = true;
+             cr_flag = false;
+         }
+         else {
+             *(*buf)++ = ch;
+             if (!isawspace(ch))
+-                newline_flag = false;
++                { }
+         }
+ 
+         if (is_utf) {
+Index: ponscripter-20111009/src/PonscripterLabel_image.cpp
+===================================================================
+--- ponscripter-20111009.orig/src/PonscripterLabel_image.cpp	2011-10-10 06:31:51.000000000 +0200
++++ ponscripter-20111009/src/PonscripterLabel_image.cpp	2013-11-10 17:23:25.043769810 +0100
+@@ -140,7 +140,6 @@
+     while (filename[c] == ' ' || filename[c] == '\t') c++;
+     int n=0, c2 = c;
+     while(filename[c] == '#'){
+-        rgb_t col = readColour((const char *)filename + c);
+         n++;
+         c += 7;
+         while (filename[c] == ' ' || filename[c] == '\t') c++;
