@@ -1,3 +1,9 @@
+ponscripter (20111009-1~getdeb2) precise; urgency=low
+
+  * Fix debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 10 Nov 2013 16:44:50 +0100
+
 ponscripter (20111009-1~getdeb1) lucid; urgency=low
 
   * Initial release

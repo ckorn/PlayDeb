@@ -1,2 +1,4 @@
 install_dir.patch
 typos.patch
+configure.patch
+ftbfs.patch

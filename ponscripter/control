@@ -2,17 +2,25 @@ Source: ponscripter
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50~), autotools-dev,
- libsdl1.2-dev, libpng12-dev, libjpeg62-dev,
- libsdl-image1.2-dev, libogg-dev, libvorbis-dev,
- libsdl-mixer1.2-dev, libbz2-dev, libsmpeg-dev,
- libfreetype6-dev, xmlto
-Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 9),
+               autotools-dev,
+               libsdl1.2-dev,
+               libpng12-dev,
+               libsdl-image1.2-dev,
+               libogg-dev,
+               libvorbis-dev,
+               libsdl-mixer1.2-dev,
+               libbz2-dev,
+               libsmpeg-dev,
+               libfreetype6-dev,
+               xmlto
+Standards-Version: 3.9.3
 Homepage: http://unclemion.com/onscripter/releases/
 
 Package: ponscripter
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
 Description: NScripter-style novel-game interpreter
  Ponscripter is an NScripter-style novel-game interpreter with an
  emphasis on supporting games in Western languages.  The goal is to
