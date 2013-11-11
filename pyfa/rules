@@ -1,3 +1,7 @@
 #!/usr/bin/make -f
 %:
 	dh $@ --with python2
+
+override_dh_install:
+	dh_install
+	find debian/pyfa/usr/share/games/pyfa -type f -exec chmod -x {} \;
