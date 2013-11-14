@@ -1,3 +1,9 @@
+sm-ssc (5.0~beta1a-1~getdeb1) saucy; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 14 Nov 2013 18:43:16 +0100
+
 sm-ssc (5~alpha3-1~getdeb3~quantal) quantal; urgency=low
 
   * Add BackgroundEffects, Announcers, BackgroundTransitions

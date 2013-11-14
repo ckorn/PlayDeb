@@ -17,7 +17,7 @@ Build-Depends: debhelper (>= 9),
                ffmpeg,
                libbz2-dev,
                libglew-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://code.google.com/p/sm-ssc
 
 Package: sm-ssc
@@ -26,7 +26,7 @@ Depends: ${shlibs:Depends},
          ${misc:Depends},
          sm-ssc-data (= ${source:Version})
 Description: Advanced fork of StepMania
- An advanced fork of StepMania, focusing on improved speed,
+ Advanced fork of StepMania, focusing on improved speed,
  usability between game modes and theme and themer-related enhancements.
  .
  StepMania SSC (also known as "sm-ssc") is a new version of StepMania,
@@ -38,7 +38,7 @@ Package: sm-ssc-data
 Architecture: all
 Depends: ${misc:Depends}
 Description: Advanced fork of StepMania (data package)
- An advanced fork of StepMania, focusing on improved speed,
+ Advanced fork of StepMania, focusing on improved speed,
  usability between game modes and theme and themer-related enhancements.
  .
  StepMania SSC (also known as "sm-ssc") is a new version of StepMania,
