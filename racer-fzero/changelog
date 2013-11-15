@@ -1,0 +1,5 @@
+racer-fzero (0.0.320-1~getdeb1) saucy; urgency=low
+
+  * Initial release (LP: #1251468)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 15 Nov 2013 19:02:24 +0100

@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --parallel
+
+override_dh_auto_configure:
+	dh_auto_configure -- --bindir=/usr/lib/games/racer-fzero --datadir=/usr/share/games
+
+override_dh_install:
+	dh_install --list-missing
+	# there is already a racer package
+	[ ! -d debian/racer-fzero-data/usr/share/games/racer ] || mv debian/racer-fzero-data/usr/share/games/racer debian/racer-fzero-data/usr/share/games/racer-fzero
+	[ ! -d debian/racer-fzero/usr/share/games/applications ] || mv debian/racer-fzero/usr/share/games/applications debian/racer-fzero/usr/share/applications
+	[ ! -f debian/racer-fzero/usr/share/applications/racer.desktop ] || mv debian/racer-fzero/usr/share/applications/racer.desktop debian/racer-fzero/usr/share/applications/racer-fzero.desktop
+	[ ! -f debian/racer-fzero/usr/share/applications/racer_editor.desktop ] || mv debian/racer-fzero/usr/share/applications/racer_editor.desktop debian/racer-fzero/usr/share/applications/racer-fzero-editor.desktop

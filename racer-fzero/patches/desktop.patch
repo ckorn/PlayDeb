@@ -1,0 +1,33 @@
+# fix path in desktop file and executable names
+Index: racer-fzero-0.0.320/racer/data/racer.desktop
+===================================================================
+--- racer-fzero-0.0.320.orig/racer/data/racer.desktop	2010-01-30 00:42:07.000000000 +0100
++++ racer-fzero-0.0.320/racer/data/racer.desktop	2013-11-15 20:34:22.025588841 +0100
+@@ -4,8 +4,8 @@
+ Name=Racer
+ GenericName=Racing Game
+ Comment=Sci-fi racing
+-Icon=/usr/local/share/racer/data/icons/r64.png
+-Exec=racer
+-Path=/usr/local/share/racer
++Icon=/usr/share/games/racer-fzero/data/icons/r64.png
++Exec=racer-fzero
++Path=/usr/share/games/racer-fzero
+ Categories=Game;ActionGame;
+ StartupNotify=false
+Index: racer-fzero-0.0.320/racer/data/racer_editor.desktop
+===================================================================
+--- racer-fzero-0.0.320.orig/racer/data/racer_editor.desktop	2010-01-30 00:42:07.000000000 +0100
++++ racer-fzero-0.0.320/racer/data/racer_editor.desktop	2013-11-15 20:35:01.505587666 +0100
+@@ -4,8 +4,8 @@
+ Name=Racer Editor
+ GenericName=Track Editor
+ Comment=Edit tracks for the Sci-fi racing game Racer.
+-Icon=/usr/local/share/racer/data/icons/r64.png
+-Exec=racer_editor
+-Path=/usr/local/share/racer
++Icon=/usr/share/games/racer-fzero/data/icons/r64.png
++Exec=racer-fzero-editor
++Path=/usr/share/games/racer-fzero
+ Categories=Development;3DGraphics;GTK;
+ StartupNotify=false

@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /usr/share/games/racer-fzero
+./racer_editor "$@"
