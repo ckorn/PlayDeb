@@ -1,0 +1,131 @@
+<!doctype refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN" [
+
+<!-- Process this file with docbook-to-man to generate an nroff manual
+     page: `docbook-to-man manpage.sgml > manpage.1'.  You may view
+     the manual page with: `docbook-to-man manpage.sgml | nroff -man |
+     less'.  A typical entry in a Makefile or Makefile.am is:
+
+manpage.1: manpage.sgml
+	docbook-to-man $< > $@
+
+    
+	The docbook-to-man binary is found in the docbook-to-man package.
+	Please remember that if you create the nroff version in one of the
+	debian/rules file targets (such as build), you will need to include
+	docbook-to-man in your Build-Depends control field.
+
+  -->
+
+  <!-- Fill in your name for FIRSTNAME and SURNAME. -->
+  <!ENTITY dhfirstname "<firstname>ALEXANDER</firstname>">
+  <!ENTITY dhsurname   "<surname>SCHMEHL</surname>">
+  <!-- Please adjust the date whenever revising the manpage. -->
+  <!ENTITY dhdate      "<date>Februar  6, 2005</date>">
+  <!-- SECTION should be 1-8, maybe w/ subsection other parameters are
+       allowed: see man(7), man(1). -->
+  <!ENTITY dhsection   "<manvolnum>6</manvolnum>">
+  <!ENTITY dhemail     "<email>tolimar@debian.org</email>">
+  <!ENTITY dhusername  "Alexander Schmehl">
+  <!ENTITY dhucpackage "<refentrytitle>ETRACER</refentrytitle>">
+  <!ENTITY dhpackage   "etracer">
+
+  <!ENTITY debian      "<productname>Debian</productname>">
+  <!ENTITY gnu         "<acronym>GNU</acronym>">
+  <!ENTITY gpl         "&gnu; <acronym>GPL</acronym>">
+
+  <!ENTITY url         "http://www.extremetuxracer.com/">
+]>
+
+<refentry>
+  <refentryinfo>
+    <address>
+      &dhemail;
+    </address>
+    <author>
+      &dhfirstname;
+      &dhsurname;
+    </author>
+    <copyright>
+      <year>2005-2008</year>
+      <holder>&dhusername;</holder>
+    </copyright>
+    &dhdate;
+  </refentryinfo>
+  <refmeta>
+    &dhucpackage;
+
+    &dhsection;
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+
+    <refpurpose>3D Rennspiel mit Tux, dem Linux Pinguin</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>BESCHREIBUNG</title>
+
+    <para>Diese manpage dokumentiert kurz das <command>&dhpackage;</command>.</para>
+
+    <para>Diese manpage wurde für die &debian;-Distribution geschrieben, weil
+    das orginal Programm keine manpage hatte.</para>
+
+    <para><command>&dhpackage;</command>
+    Extreme Tux Racer ist ein einfaches OpenGL Rennspiel mit Tux, dem Linux
+    Maskottchen.  Ziel ist es einen schnee- und eisbedeckten Berg so schnell
+    wie möglich hinunterzu rutschen und dabei möglichst viele Fische
+    auszusammeln.  Vermeiden sie Bäume und felsigen Untergrund, der sie
+    abbremsen wird.</para>
+
+  </refsect1>
+  <refsect1>
+    <title>OPTIONEN</title>
+
+    <para>Für dieses Kommando existieren keine Kommdozeilen-Parameter.
+    </para>
+  </refsect1>
+  <!--refsect1>
+    <title>SEE ALSO</title>
+
+    <para>The programs are documented fully by <citetitle>README</citetitle> available via the
+      <file>/usr/share/doc/extremetuxracer/README</para>
+  </refsect1-->
+  <refsect1>
+    <title>AUTHOR</title>
+
+    <para>Diese manpage wurde von &dhusername; &dhemail; für das &debian;
+    System geschrieben (und darf von anderen benutzt werden).  Es ist ihnen
+    erlaubt, sie zu kopieren, weiterzugeben und/oder Modifikationen dieses
+    Dokumentes unter den Bedingungen der &gnu; General Public License, Version
+    2 oder jede spätere, veröffentlich durch die Free Software Foundation, vorzunehmen.
+    </para>
+	<para>
+	  Auf Debian-Systemen finden sie den kompletten text der &gnu; General Public License unter /usr/share/common-licenses/GPL-2
+	</para>
+
+  </refsect1>
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-default-dtd-file:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
+
+

@@ -1,0 +1,69 @@
+This package was debianized by Alexander Schmehl <alexander@schmehl.info> on
+Thu, 14 Feb 2008 14:51:59 +0100.
+
+It was downloaded from http://www.extremetuxracer.com/?download
+
+
+Upstream Authors:
+
+    The Extreme Tux Racer Team:
+
+    Andreas Tarandi <torandi@gmail.com>
+    Steven Bell  <botsnlinux@gmail.com>
+    Hamish Morrison <hamishm@blueyonder.co.uk>
+
+
+    The PlanetPenguin Racer Team:
+
+    Volker Ströbel <volker@planetpenguin.de>
+
+
+    The TuxRacer Team:
+
+    Patrick Gilhuly <pogilhul@sunspirestudios.com>
+    Eric Hall <ehall@sunspirestudios.com>
+    Rick Knowles <rdknowle@sunspirestudios.com>
+    Vincent Ma <vma@sunspirestudios.com>
+    Jasmin Patry <jfpatry@sunspirestudios.com>
+    Mark Riddell <mrriddel@sunspirestudios.com>
+
+Copyright:
+    Copyright (C) 2007-2008 The Extreme Tux Racer Team
+    Copyright (C) 2004-2005 The PlanetPenguin Racer Team
+    Copyright (C) 1999-2002 The TuxRacer Team
+
+    src/quadtree.cpp:
+    Copyright (C) 1999-2000 Thatcher Ulrich <tu@tulrich.com>
+
+All other files are Copyright by their specific owners (see AUTHORS or the
+specific file) and published under the Terms of the GNU General Public Licence,
+Version 2 or (at your option) any later version.
+
+License: 
+
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this package; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in '/usr/share/common-licenses/GPL-2'.
+
+src/quadtree.cpp license, by Thatcher Ulrich:
+
+    This code may be freely modified and redistributed.  I make no
+    warrantees about it; use at your own risk.  If you do incorporate
+    this code into a project, I'd appreciate a mention in the credits.
+
+The Debian packaging is Copyright 2005-2008 by Alexander Schmehl
+<tolimar@debian.org> and published under the Terms of the GNU General
+Public Licence Version 2 or (at your option) any later version, see above.

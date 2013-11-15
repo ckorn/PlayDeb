@@ -1,0 +1,134 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+# This has to be exported to make some magic below work.
+export DH_OPTIONS
+
+# These are used for cross-compiling and for saving the configure script
+# from having to guess our platform (since we know it already)
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+DEB_HOST_MULTIARCH  ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+
+CFLAGS = -Wall -g
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+
+config.status: configure
+	dh_testdir
+ifneq "$(wildcard /usr/share/misc/config.sub)" ""
+	cp -f /usr/share/misc/config.sub config.sub
+endif
+ifneq "$(wildcard /usr/share/misc/config.guess)" ""
+	cp -f /usr/share/misc/config.guess config.guess
+endif
+	CFLAGS="$(CFLAGS)" ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) \
+	--prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info \
+	--datadir=\$${prefix}/share/games/extremetuxracer --with-tcl=/usr/lib/$(DEB_HOST_MULTIARCH)/tcl8.5 \
+	--with-tcl-inc=/usr/include/tcl8.5
+
+build: build-arch build-indep
+
+build-arch: build-arch-stamp
+build-arch-stamp:  config.status
+	# compile the binary
+	$(MAKE)
+	# create the manpages
+	/usr/bin/docbook-to-man debian/extremetuxracer.6.sgml > etr.6
+	/usr/bin/docbook-to-man debian/extremetuxracer.6.de.sgml > etr.de.6
+	touch build-arch-stamp
+
+build-indep: build-indep-stamp
+build-indep-stamp:  config.status
+	touch build-indep-stamp
+
+
+clean:
+	dh_testdir
+	dh_testroot
+	[ ! -f Makefile ] || $(MAKE) distclean
+	# remove temporary directory used for the additional documentation in the -data package
+	rm -rf debian/docs-data/
+	# Remove files from previous builds.
+	rm -rf .pc
+	dh_clean etr.6 etr.de.6 config.sub config.guess \
+	  config.status build-arch-stamp build-indep-stamp #CONFIGURE-STAMP#
+
+
+
+install: install-indep install-arch
+install-indep:
+	dh_testdir
+	dh_testroot
+	dh_prep -i
+	dh_installdirs -i
+	##
+	## extremetuxracer-gimp-dev
+	##
+	# the scripts and paletes for the gimp-dev package
+	#dh_install -pextremetuxracer-gimp-dev contrib/palettes/* /usr/share/gimp/2.0/palettes/
+	#dh_install -pextremetuxracer-gimp-dev contrib/script-fu/* /usr/share/gimp/2.0/scripts/
+	##
+	## extremetuxracer-data
+	##
+	# install the game data
+	dh_install -pextremetuxracer-data --exclude=Makefile --exclude=README --exclude=readme data/* /usr/share/games/extremetuxracer/
+	find debian/extremetuxracer-data/usr -type f -exec chmod 644 {} \;
+	# the herring run event contains some addiontal documentation, let's install them, too
+	# first in a temporary directory...
+	mkdir -p debian/docs-data
+	#mkdir -p debian/docs-data/b-herring_run
+	#for HAS_DOC in $(shell find data/courses/events/b-herring_run/ -iname readme | cut --delimiter=/ --fields=5) ; do \
+	#	cp -af data/courses/events/b-herring_run/$$HAS_DOC/[rR][eE][aA][dD][mM][eE] debian/docs-data/b-herring_run/README.$$HAS_DOC ; \
+	#done
+	# and a bit documentation about the ingame music. Put that in the temporary doc-dir, too
+	cp -af data/music/readme debian/docs-data/README.music
+	# and now install it to the -data package
+	dh_installdocs -pextremetuxracer-data debian/docs-data/*
+
+
+install-arch:
+	dh_testdir
+	dh_testroot
+	dh_prep -s
+	dh_installdirs -s
+	## extremetuxracer
+	dh_install -s etr /usr/games/
+	dh_install -s debian/extremetuxracer.desktop /usr/share/applications/
+	dh_install -s debian/etr.xpm /usr/share/pixmaps/
+	dh_install -s resources/etracericon.svg /usr/share/pixmaps/
+	dh_installman -s etr.6 etr.de.6
+	dh_installdocs -s AUTHORS
+
+binary-common:
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs ChangeLog
+	dh_installdocs
+	dh_installmenu
+	dh_icons
+	dh_strip --dbg-package=extremetuxracer-dbg
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary-indep: build-indep install-indep
+	$(MAKE) -f debian/rules DH_OPTIONS=-i binary-common
+
+binary-arch: build-arch install-arch
+	$(MAKE) -f debian/rules DH_OPTIONS=-a binary-common
+
+binary: binary-arch binary-indep
+.PHONY: build clean binary-indep binary-arch binary install install-indep install-arch
