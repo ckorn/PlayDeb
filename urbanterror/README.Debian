@@ -1,7 +1,0 @@
-Note that an embedded copy of libjpeg is used when building UrbanTerror.
-This is due to upstream shipping with this embedded and outdated version,
-and the difficulties encountered when trying to patch to use the system 
-libjpeg (Graphical corruption, and extremely low framerates).
-
-Source package tremulous has this same issue, it could probably be resolved
-with sufficient time, but it is not currently a priority.

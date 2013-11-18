@@ -1,9 +1,10 @@
 [Desktop Entry]
-Version=1.0
 Name=UrbanTerror
+Comment=Play UrbanTerror; a realism based, yet fun first person shooter.
+Encoding=UTF-8
 Exec=urbanterror
 Icon=urbanterror
-Comment=Play UrbanTerror; a realism based, yet fun first person shooter.
 Terminal=false
 Type=Application
-Categories=Application;Game;ArcadeGame;
+StartupNotify=false
+Categories=Application;Game;

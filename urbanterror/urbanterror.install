@@ -1,0 +1,3 @@
+debian/urbanterror.desktop usr/share/applications/
+debian/urbanterror.xpm usr/share/pixmaps/
+debian/scripts/urbanterror usr/games/
