@@ -1,3 +1,9 @@
+magicassistant (1.2.10.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 20 Nov 2013 18:43:39 +0100
+
 magicassistant (1.2.8.35-1~getdeb1) precise; urgency=low
 
   * New upstream version (LP: #1238034)
