@@ -1,3 +1,46 @@
+libsfml2 (2.1-1~getdeb7) saucy; urgency=low
+
+  * no comment
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Wed, 20 Nov 2013 21:43:01 +0200
+
+libsfml2 (2.1-1~getdeb6) precise; urgency=low
+
+  * Mars seems to work with this package on precise, rebuilding for precise
+    again.
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Wed, 20 Nov 2013 21:43:01 +0200
+
+libsfml2 (2.1-1~getdeb5) saucy; urgency=low
+
+  * Rebuild only for saucy
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 17 Nov 2013 21:43:01 +0200
+
+libsfml2 (2.1-1~getdeb4) precise; urgency=low
+
+  * Repackage to fix precise build
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 17 Nov 2013 13:43:01 +0200
+
+libsfml2 (2.1-1~getdeb3) raring; urgency=low
+
+  * Fix libsfml-dev conflict - GetDeb bug #1235652
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 27 Oct 2013 14:43:01 +0200
+
+libsfml2 (2.1-1~getdeb2) raring; urgency=low
+
+  * To correct Ubuntu version
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 08 Sep 2013 20:43:01 +0200
+
+libsfml2 (2.1-1~getdeb1) raring; urgency=low
+
+  * New upstream version
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 08 Sep 2013 20:43:01 +0200
+
 libsfml2 (2.0~rc+git20130323-1~getdeb1) quantal; urgency=low
 
   * New upstream version

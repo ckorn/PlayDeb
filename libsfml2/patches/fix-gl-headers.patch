@@ -1,0 +1,27 @@
+Description: Use glext.h and glxext.f from libgl1-mesa-dev
+Author: James Cowgill <james410@cowgill.org.uk>
+Last-Update: 2013-08-26
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/src/SFML/Window/GlContext.cpp
++++ b/src/SFML/Window/GlContext.cpp
+@@ -30,7 +30,7 @@
+ #include <SFML/System/Mutex.hpp>
+ #include <SFML/System/Lock.hpp>
+ #include <SFML/OpenGL.hpp>
+-#include <SFML/Window/glext/glext.h>
++#include <GL/glext.h>
+ #include <set>
+ #include <cstdlib>
+ #include <cassert>
+--- a/src/SFML/Window/Linux/GlxContext.cpp
++++ b/src/SFML/Window/Linux/GlxContext.cpp
+@@ -30,7 +30,7 @@
+ #include <SFML/Window/Linux/WindowImplX11.hpp>
+ #include <SFML/Window/Linux/Display.hpp>
+ #include <SFML/OpenGL.hpp>
+-#include <SFML/Window/glext/glxext.h>
++#include <GL/glxext.h>
+ #include <SFML/System/Err.hpp>
+ 
+ 

@@ -1,0 +1,18 @@
+From: Christoph Egger <Christoph.Egger@gmx.de>
+Subject: [PATCH] debian/kfreebsd
+
+This patch gets GNU/kFreeBSD handled as FreeBSD and therefor enables
+building on Debian GNU/kFreeBSD. The same should work on GNU/Hurd so try that.
+
+Signed-off-by: Christoph Egger <Christoph.Egger@gmx.de>
+--- a/include/SFML/Config.hpp
++++ b/include/SFML/Config.hpp
+@@ -54,7 +54,7 @@
+     // MacOS
+     #define SFML_SYSTEM_MACOS
+ 
+-#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)  || defined(__gnu_hurd__)
+ 
+     // FreeBSD
+     #define SFML_SYSTEM_FREEBSD

@@ -16,7 +16,7 @@ Build-Depends: debhelper (>= 9),
                libpng-dev,
                libglew-dev,
                libsoil-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://www.sfml-dev.org/
 
 Package: libsfml2-dev
@@ -28,8 +28,8 @@ Depends: ${misc:Depends},
          libsfml-network2 (= ${binary:Version}),
          libsfml-system2 (= ${binary:Version}),
          libsfml-window2 (= ${binary:Version})
-Conflicts: libsfml1.deb3-dev
-Replaces: libsfml1.deb3-dev
+Conflicts: libsfml1.deb3-dev, libsfml-dev
+Replaces: libsfml1.deb3-dev, libsfml-dev
 Suggests: libsfml2-dbg
 Description: Simple and fast cross-platform multimedia library - Development Files
  SFML is an modern multimedia library offering a wide range of subsystems
@@ -110,7 +110,7 @@ Package: libsfml2-dbg
 Section: debug
 Architecture: any
 Priority: extra
-Depends: ${shlibs:Depends}, ${misc:Depends},
+Depends: ${misc:Depends},
          libsfml-audio2 (= ${binary:Version}) |
          libsfml-graphics2 (= ${binary:Version}) |
          libsfml-network2 (= ${binary:Version}) |
