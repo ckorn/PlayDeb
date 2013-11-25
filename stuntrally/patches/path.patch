@@ -1,8 +1,8 @@
 Also directly enter the paths. Searching them will not work.
-Index: stuntrally-1.9/source/vdrift/pathmanager.cpp
+Index: stuntrally-2.2/source/vdrift/pathmanager.cpp
 ===================================================================
---- stuntrally-1.9.orig/source/vdrift/pathmanager.cpp	2013-01-15 09:20:23.000000000 +0100
-+++ stuntrally-1.9/source/vdrift/pathmanager.cpp	2013-02-12 17:15:42.838055130 +0100
+--- stuntrally-2.2.orig/source/vdrift/pathmanager.cpp	2013-11-24 21:39:47.855080091 +0100
++++ stuntrally-2.2/source/vdrift/pathmanager.cpp	2013-11-24 21:39:47.843080092 +0100
 @@ -163,6 +163,11 @@
  	CreateDir(DataUser(), error_output);  // user data
  
@@ -15,24 +15,24 @@ Index: stuntrally-1.9/source/vdrift/pathmanager.cpp
  	// Find game data dir and defaults config dir
  	char *datadir = getenv("STUNTRALLY_DATA_ROOT");
  	if (datadir)
-@@ -203,6 +208,7 @@
- 			if (!game_data.empty() && !game_config.empty()) break;
+@@ -204,6 +209,7 @@
+ 			if (!game_data.empty() && !game_config.empty())  break;
  		}
  	}
 +#endif
  
  
  	//  Subdirs for each sim_mode
-Index: stuntrally-1.9/cmake/FindOGRE.cmake
+Index: stuntrally-2.2/cmake/FindOGRE.cmake
 ===================================================================
---- stuntrally-1.9.orig/cmake/FindOGRE.cmake	2013-01-15 09:20:23.000000000 +0100
-+++ stuntrally-1.9/cmake/FindOGRE.cmake	2013-02-12 17:15:42.838055130 +0100
-@@ -84,7 +84,7 @@
+--- stuntrally-2.2.orig/cmake/FindOGRE.cmake	2013-11-24 21:39:47.855080091 +0100
++++ stuntrally-2.2/cmake/FindOGRE.cmake	2013-11-24 21:40:37.083078627 +0100
+@@ -89,7 +89,7 @@
      /opt/ogre
      /opt/OGRE
-     /usr/lib/ogre
--    /usr/lib/OGRE
-+    /usr/lib/OGRE1.8
-     /usr/local/lib/ogre
-     /usr/local/lib/OGRE
+     /usr/lib${LIB_SUFFIX}/ogre
+-    /usr/lib${LIB_SUFFIX}/OGRE
++    /usr/lib${LIB_SUFFIX}/OGRE1.8
+     /usr/local/lib${LIB_SUFFIX}/ogre
+     /usr/local/lib${LIB_SUFFIX}/OGRE
      $ENV{HOME}/ogre

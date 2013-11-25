@@ -24,7 +24,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          stuntrally-data (= ${source:Version}),
-         stuntrally-tracks (>= 2.0),
+         stuntrally-tracks (>= 2.1),
          libfreeimage3,
          libzzip-0-13,
          libogremain1.8,
@@ -37,7 +37,9 @@ Description: Rally game with stunt elements
 
 Package: stuntrally-data
 Architecture: all
-Depends: ${misc:Depends}, ttf-bitstream-vera
+Depends: ${misc:Depends},
+         ttf-bitstream-vera,
+         ttf-liberation
 Description: Rally game with stunt elements (data package)
  Rally game with Stunt elements, based on VDrift and OGRE.
  .
