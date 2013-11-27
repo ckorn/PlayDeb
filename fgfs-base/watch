@@ -1,3 +1,2 @@
 version=3
-# upstream named one tarball bz instead of bz2. This is why the 2 is optional.
-ftp://ftp.de.flightgear.org/pub/fgfs/Shared/FlightGear-data-([\d\.]+)\.tar\.bz(?:2)?
+ftp://ftp.de.flightgear.org/pub/fgfs/Shared/FlightGear-([\d\.]+)-data\.tar\.bz2
