@@ -1,3 +1,23 @@
+stone-soup (0.13.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * Several crash fixes.
+    * Several message improvements.
+    * Spectral weapon and battlespheres behave better with stairs.
+    * Wind blasts can no longer push monsters through walls.
+    * Shadow creatures band members don't count towards the summon cap.
+    * Awakened trees and flaying ghosts respect sanctuary.
+    * Unfinished monsters shouldn't spawn anymore, and are identified if they
+      do.
+    * You can check \ when reading scrolls of identify.
+    * clua/gearset works again.
+    * Vampires can't use lich form anymore.
+    * A tome of destruction evoke-fest exploit is no more.
+    * Monsters can't swap weapons while berserk.
+    * Fixed several bugs related to removed or disabled species/backgrounds.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 29 Nov 2013 18:58:45 +0100
+
 stone-soup (0.13.0-1~getdeb1) precise; urgency=low
 
   * New upstream version
