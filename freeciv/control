@@ -35,7 +35,9 @@ Build-Depends: debhelper (>= 9),
 
 Package: freeciv-server
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, freeciv-data (>= 2.2.0)
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         freeciv-data (>= 2.2.0)
 Suggests: freeciv-client
 Replaces: freeciv-data (<< 2.1.0)
 Description: Civilization turn based strategy game (server files)
@@ -47,7 +49,9 @@ Description: Civilization turn based strategy game (server files)
 
 Package: freeciv-client-xaw3d
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, freeciv-data (>= 2.2.0)
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         freeciv-data (>= 2.2.0)
 Recommends: freeciv-server (>= 2.2.0)
 Suggests: freeciv-sound
 Provides: freeciv-client
@@ -60,10 +64,14 @@ Description: Civilization turn based strategy game (Xaw3D client)
 
 Package: freeciv-client-gtk
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, freeciv-data (>= 2.2.0), ggzcore-bin
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         freeciv-data (>= 2.2.0),
+         ggzcore-bin
 Recommends: freeciv-server (>= 2.2.0)
 Suggests: freeciv-sound
-Provides: freeciv-client, freeciv
+Provides: freeciv-client,
+          freeciv
 Description: Civilization turn based strategy game (GTK+ client)
  Freeciv is a free clone of the turn based strategy game Civilization.
  In this game, each player becomes leader of a civilisation, fighting to
@@ -73,10 +81,17 @@ Description: Civilization turn based strategy game (GTK+ client)
 
 Package: freeciv-client-sdl
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, freeciv-data (>= 2.2.0), ttf-dejavu-core, ttf-sazanami-gothic, ttf-unfonts-core, ttf-arphic-uming
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         freeciv-data (>= 2.2.0),
+         ttf-dejavu-core,
+         ttf-sazanami-gothic,
+         ttf-unfonts-core,
+         ttf-arphic-uming
 Recommends: freeciv-server (>= 2.2.0)
 Suggests: freeciv-sound
-Provides: freeciv-client, freeciv
+Provides: freeciv-client,
+          freeciv
 Description: Civilization turn based strategy game (SDL client)
  Freeciv is a free clone of the turn based strategy game Civilization.
  In this game, each player becomes leader of a civilisation, fighting to
@@ -87,7 +102,8 @@ Description: Civilization turn based strategy game (SDL client)
 Package: freeciv-data
 Architecture: all
 Depends: ${misc:Depends}
-Replaces: freeciv-client-gtk (<< 2.1.0), freeciv-server (<< 2.1.0)
+Replaces: freeciv-client-gtk (<< 2.1.0),
+          freeciv-server (<< 2.1.0)
 Description: Civilization turn based strategy game (game data)
  Freeciv is a free clone of the turn based strategy game Civilization.
  In this game, each player becomes leader of a civilisation, fighting to

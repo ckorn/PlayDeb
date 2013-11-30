@@ -3,10 +3,10 @@ Author: Karl Goetz <karl@kgoetz.id.au>
 Forwarded: no
 Last-Update: <2010-06-27>
 
-Index: freeciv-2.4.0/Makefile.am
+Index: freeciv-2.4.1/Makefile.am
 ===================================================================
---- freeciv-2.4.0.orig/Makefile.am	2013-09-14 23:03:30.881469483 +0200
-+++ freeciv-2.4.0/Makefile.am	2013-09-14 23:03:30.869469483 +0200
+--- freeciv-2.4.1.orig/Makefile.am	2013-11-30 19:19:47.022425820 +0100
++++ freeciv-2.4.1/Makefile.am	2013-11-30 19:19:47.010425820 +0100
 @@ -1,6 +1,6 @@
  ## Process this file with automake to produce Makefile.in
  
@@ -15,11 +15,11 @@ Index: freeciv-2.4.0/Makefile.am
  
  if CLIENT
  CSUBDIRS = client
-Index: freeciv-2.4.0/Makefile.in
+Index: freeciv-2.4.1/Makefile.in
 ===================================================================
---- freeciv-2.4.0.orig/Makefile.in	2013-09-14 23:03:30.881469483 +0200
-+++ freeciv-2.4.0/Makefile.in	2013-09-14 23:05:17.713466305 +0200
-@@ -45,8 +45,8 @@
+--- freeciv-2.4.1.orig/Makefile.in	2013-11-30 19:19:47.022425820 +0100
++++ freeciv-2.4.1/Makefile.in	2013-11-30 19:19:47.010425820 +0100
+@@ -46,8 +46,8 @@
  	bootstrap/config.sub bootstrap/depcomp bootstrap/install-sh \
  	bootstrap/ltmain.sh bootstrap/missing bootstrap/mkinstalldirs
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -30,7 +30,7 @@ Index: freeciv-2.4.0/Makefile.in
  	$(top_srcdir)/m4/c99.m4 $(top_srcdir)/m4/codeset.m4 \
  	$(top_srcdir)/m4/compiler.m4 $(top_srcdir)/m4/debug.m4 \
  	$(top_srcdir)/m4/fcdb-mysql.m4 \
-@@ -432,7 +432,7 @@
+@@ -462,7 +462,7 @@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -39,10 +39,10 @@ Index: freeciv-2.4.0/Makefile.in
  @CLIENT_FALSE@CSUBDIRS = 
  @CLIENT_TRUE@CSUBDIRS = client
  @SERVER_FALSE@SSUBDIRS = 
-Index: freeciv-2.4.0/aclocal.m4
+Index: freeciv-2.4.1/aclocal.m4
 ===================================================================
---- freeciv-2.4.0.orig/aclocal.m4	2013-09-14 23:03:30.881469483 +0200
-+++ freeciv-2.4.0/aclocal.m4	2013-09-14 23:06:17.681464521 +0200
+--- freeciv-2.4.1.orig/aclocal.m4	2013-11-30 19:19:47.022425820 +0100
++++ freeciv-2.4.1/aclocal.m4	2013-11-30 19:19:47.014425820 +0100
 @@ -9632,8 +9632,8 @@
  AC_SUBST([am__untar])
  ]) # _AM_PROG_TAR
@@ -54,11 +54,11 @@ Index: freeciv-2.4.0/aclocal.m4
  m4_include([m4/c99.m4])
  m4_include([m4/codeset.m4])
  m4_include([m4/compiler.m4])
-Index: freeciv-2.4.0/autogen.sh
+Index: freeciv-2.4.1/autogen.sh
 ===================================================================
---- freeciv-2.4.0.orig/autogen.sh	2013-09-14 23:03:30.881469483 +0200
-+++ freeciv-2.4.0/autogen.sh	2013-09-14 23:03:30.877469483 +0200
-@@ -262,7 +262,7 @@
+--- freeciv-2.4.1.orig/autogen.sh	2013-11-30 19:19:47.022425820 +0100
++++ freeciv-2.4.1/autogen.sh	2013-11-30 19:19:47.014425820 +0100
+@@ -257,7 +257,7 @@
  fi
  
  echo "+ running $ACLOCAL ..."
