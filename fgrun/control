@@ -5,14 +5,20 @@ Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Christopher Baines <cbaines8@gmail.com>
 Build-Depends: debhelper (>= 9),
                autotools-dev,
-               libfltk1.1-dev,
+               libfltk1.3-dev,
                libplib-dev (>= 1.1.4),
-               simgear-dev (>= 2.8.0),
+               simgear-dev (>= 2.12.0),
                libboost-dev,
                zlib1g-dev (>= 1:1.1.4),
                cmake,
-               simgear2.8.0
-Standards-Version: 3.9.3
+               simgear2.12.0,
+               libpng12-dev,
+               libjpeg62-dev,
+               libxft-dev,
+               libfontconfig1-dev,
+               libxinerama-dev,
+               fluid
+Standards-Version: 3.9.4
 Homepage: http://fgrun.sourceforge.net
 
 Package: fgrun
