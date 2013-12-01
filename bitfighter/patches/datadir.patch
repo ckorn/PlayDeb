@@ -1,10 +1,14 @@
 # the data dir is /usr/share/games/bitfighter
-Index: bitfighter-0.0.018a/config.h
+Index: bitfighter-0.0.019/zap/CMakeLists.txt
 ===================================================================
---- bitfighter-0.0.018a.orig/config.h	2013-03-09 14:58:17.737395983 +0100
-+++ bitfighter-0.0.018a/config.h	2013-03-09 15:16:44.757363052 +0100
-@@ -1,3 +1,3 @@
- /* Define to enable proper resource detection on Linux */
--#define LINUX_DATA_DIR "/usr/share"
-+#define LINUX_DATA_DIR "/usr/share/games"
+--- bitfighter-0.0.019.orig/zap/CMakeLists.txt	2013-12-01 04:09:16.000000000 +0100
++++ bitfighter-0.0.019/zap/CMakeLists.txt	2013-12-01 13:23:52.739798478 +0100
+@@ -6,7 +6,7 @@
+ # Define the Linux data dir if not defined in a packaging build script already
+ if("${CMAKE_SYSTEM}" MATCHES "Linux")
+ 	if(NOT LINUX_DATA_DIR)
+-		set(LINUX_DATA_DIR "/usr/share")
++		set(LINUX_DATA_DIR "/usr/share/games")
+ 	endif()
  
+ 	message(STATUS "LINUX_DATA_DIR: ${LINUX_DATA_DIR}.  Change this by invoking cmake with -DLINUX_DATA_DIR=<SOME_DIRECTORY>")
