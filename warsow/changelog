@@ -1,3 +1,44 @@
+warsow (1.03-1~getdeb2) precise; urgency=low
+
+  * Re-make debian package
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 24 Nov 2013 15:46:04 +0200
+
+warsow (1.03-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * New stuff:
+    - Higher-poly health models.
+    - Regeneration powerup. Mappers can add this in radiant by adding
+    'item_regen' item.
+    - New map: wda5.
+    - More detailed wdm5.
+    - Server browser has sorting now. However, this needs a manual UI .pk3
+    update, download it
+    http://update.warsow.net/autoupdate/1.03/basewsw/ui_porkui_003.pk3
+    (place to basewsw).
+    - Meat gibs removed, cg_gibs values bigger than 1 now increase amount of
+    pixel gibs.
+
+    * Fixed stuff:
+    - /whois -1 crashes the server.
+    - Users can workaround the banlist by supplying two ip addresses in the
+    userinfo.
+    - Memory leak in linear allocator.
+    - Negative values of Demojump break POV change.
+    - Mitigated problems with serverbrowser performance.
+
+    * Gameplay balancing to clean up some rushy problems, most of which
+    originated from weak ammo removal:
+    - RL: -100ups +50ms reload.
+    - RG: +5dmg per blast.
+    - GL: -20 splash +50ms reload.
+    - PG: -1dmg per cell and -200ups.
+    - MG: +10dps.
+    - Bomb has 5 less nades, from 15 to 10.
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 17 Nov 2013 15:36:04 +0200
+
 warsow (1.02-1~getdeb1) precise; urgency=low
 
   * New upstream version

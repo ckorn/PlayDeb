@@ -2,4 +2,4 @@
   section="Games/Action" \
   title="Warsow" command="/usr/games/warsow --quiet" \
   longtitle="A fast paced, networked 3D first person shooter" \
-  icon="warsow.xpm"
+  icon="/usr/share/pixmaps/warsow.xpm"

@@ -1,8 +1,8 @@
 Just happens :)
-Index: warsow-1.02/warsow-1.02-src/source/client/cl_serverlist.c
+Index: source/client/cl_serverlist.c
 ===================================================================
---- warsow-1.02.orig/warsow-1.02-src/source/client/cl_serverlist.c	2012-09-17 15:38:49.000000000 +0200
-+++ warsow-1.02/warsow-1.02-src/source/client/cl_serverlist.c	2012-10-10 21:21:52.741498106 +0200
+--- a/source/client/cl_serverlist.c	2012-09-17 15:38:49.000000000 +0200
++++ b/source/client/cl_serverlist.c	2012-10-10 21:21:52.741498106 +0200
 @@ -298,7 +298,7 @@
  	requeststring = va( cmdname );
  
@@ -21,10 +21,10 @@ Index: warsow-1.02/warsow-1.02-src/source/client/cl_serverlist.c
  	}
  	else
  	{
-Index: warsow-1.02/warsow-1.02-src/source/client/cl_sound.c
+Index: source/client/cl_sound.c
 ===================================================================
---- warsow-1.02.orig/warsow-1.02-src/source/client/cl_sound.c	2012-04-30 10:18:54.000000000 +0200
-+++ warsow-1.02/warsow-1.02-src/source/client/cl_sound.c	2012-10-10 21:21:52.741498106 +0200
+--- a/source/client/cl_sound.c	2012-04-30 10:18:54.000000000 +0200
++++ b/source/client/cl_sound.c	2012-10-10 21:21:52.741498106 +0200
 @@ -169,7 +169,7 @@
  	}
  

@@ -1,10 +1,10 @@
 Some makefile modifications, making it more useful in building
 Debian packages.
 ===================================================================
-Index: warsow-1.02/warsow-1.02-src/source/Makefile
+Index: source/Makefile
 ===================================================================
---- warsow-1.02.orig/warsow-1.02-src/source/Makefile	2012-08-07 16:29:18.000000000 +0200
-+++ warsow-1.02/warsow-1.02-src/source/Makefile	2012-10-10 21:16:42.017507350 +0200
+--- a/source/Makefile	2012-08-07 16:29:18.000000000 +0200
++++ b/source/Makefile	2012-10-10 21:16:42.017507350 +0200
 @@ -50,7 +50,7 @@
  else
  CC?=gcc
@@ -65,7 +65,7 @@ Index: warsow-1.02/warsow-1.02-src/source/Makefile
 +LDFLAGS_COMMON+= -L/usr/lib -lm -pthread
  else
 -LDFLAGS_COMMON+= -L/usr/local/lib -ldl -lm -O1 -Wl,--as-needed
-+LDFLAGS_COMMON+= -L/usr/lib -ldl -lm -Wl -O1
++LDFLAGS_COMMON+= -L/usr/lib -ldl -lm -Wl,-O1
  endif
  
  ifneq ($(DEBUG_BUILD),YES)
