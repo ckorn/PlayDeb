@@ -15,8 +15,6 @@ else
    DEBUG = YES
 endif
 
-VERSION := 1.02
-
 # Needed for deleting directory created when running rules clean twice on
 # x86_64 and other architectures.
 UNAME_ARCH=$(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
@@ -24,7 +22,7 @@ UNAME_ARCH=$(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64
 # This is used convert files to be patched from dos to unix EOL convention.
 from-dos:
 	dh_testdir
-	fromdos -e warsow-$(VERSION)-src/source/gameshared/q_shared.h
+	fromdos -e source/gameshared/q_shared.h
 	#fromdos -e warsow_0.50_src/source/client/cl_main.c
 	touch fromdos-stamp
 
@@ -33,7 +31,7 @@ patch: from-dos
 build: patch build-stamp
 build-stamp:
 	dh_testdir
-	cd warsow-$(VERSION)-src/source && $(MAKE) CFLAGS="-O0" LOCALBASE=/usr DEBUG_BUILD=$(DEBUG) \
+	cd source && $(MAKE) CFLAGS="-O0" LOCALBASE=/usr DEBUG_BUILD=$(DEBUG) \
 		CC=$(DEB_HOST_GNU_TYPE)-gcc LD=$(DEB_HOST_GNU_TYPE)-gcc
 	touch build-stamp
 
@@ -41,13 +39,13 @@ clean: clean-patched to-dos
 clean-patched:
 	dh_testdir
 	dh_testroot
-	cd warsow-$(VERSION)-src/source && $(MAKE) clean
-	cd warsow-$(VERSION)-src/libsrcs/angelscript/angelSVN/sdk/angelscript/projects/gnuc && \
+	cd source && $(MAKE) clean
+	cd libsrcs/angelscript/angelSVN/sdk/angelscript/projects/gnuc && \
 	  $(MAKE) clean
-	rm -rf warsow-$(VERSION)-src/source/build warsow-0.6-src/source/release \
-		warsow-$(VERSION)-src/source/build$(UNAME_ARCH) \
-		warsow-$(VERSION)-src/source/build$(DPKG_ARCH) \
-		warsow-$(VERSION)-src/source/release/
+	rm -rf source/build warsow-0.6-src/source/release \
+		source/build$(UNAME_ARCH) \
+		source/build$(DPKG_ARCH) \
+		source/release/
 	[ ! -f warsow128x128.png ] || rm warsow128x128.png
 	[ ! -f 0.4_renderer_changes.png ] || rm 0.4_renderer_changes.png
 	dh_clean
@@ -56,7 +54,7 @@ clean-patched:
 # Reverses from-dos target
 to-dos:
 	dh_testdir
-	todos -e warsow-$(VERSION)-src/source/gameshared/q_shared.h
+	todos -e source/gameshared/q_shared.h
 	#todos -e warsow_0.50_src/source/client/cl_main.c
 	[ ! -f fromdos-stamp ] || rm fromdos-stamp
 
