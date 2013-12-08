@@ -1,2 +1,3 @@
 version=3
-http://sf.net/fgrun/fgrun-([\d\.]+)\.tar\.(?:gz|bz2)
+https://gitorious.org/fg/fgrun/activities \
+    (?:.*/)?release/([\d\.]+)
