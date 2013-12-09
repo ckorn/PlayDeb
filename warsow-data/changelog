@@ -1,3 +1,15 @@
+warsow-data (1.02-1~getdeb3) precise; urgency=low
+
+  * Include ui_porkui_003.pk3 in the proper way. Required by warsow-1.03
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 08 Dec 2013 20:26:04 +0200
+
+warsow-data (1.02-1~getdeb2) precise; urgency=low
+
+  * Incorporate ui_porkui_003.pk3 into original data, required by warsow-1.03 
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Mon, 02 Dec 2013 21:36:04 +0200
+
 warsow-data (1.02-1~getdeb1) precise; urgency=low
 
   * New upstream version
