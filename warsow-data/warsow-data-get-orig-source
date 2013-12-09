@@ -3,8 +3,8 @@
 # This script will download the upstream tarball that contains the content of
 # the warsow-data package and create an orig tarball of it.
 
-WARSOW_DATA_TARBALL="warsow_0.42_unified.zip"
-WARSOW_DATA_VERSION="0.42"
+WARSOW_DATA_TARBALL="warsow_1.02_unified.zip"
+WARSOW_DATA_VERSION="1.02"
 CORRECT_CHECKSUM="cba5fe9b8af01b378e685959098fa84f"
 
 USAGE="\
@@ -65,17 +65,17 @@ if [ ! -d warsow_0.42_unified ]; then
 	echo "Extracting $WARSOW_DATA_TARBALL."
 	unzip -qq $WARSOW_DATA_TARBALL
 else
-	echo "Already found extracted warsow_0.42_unified directory. Please remove
-or move warsow_0.42_unified and warsow-data-$WARSOW_DATA_VERSION directories and
+	echo "Already found extracted warsow_1.02_unified directory. Please remove
+or move warsow_1.02_unified and warsow-data-$WARSOW_DATA_VERSION directories and
 also warsow-data_$WARSOW_DATA_VERSION.orig.tar.gz."
 	exit 1
 fi
 if [ ! -d warsow-data-$WARSOW_DATA_VERSION ]; then
 	echo "Renaming extracted directory to warsow-data-$WARSOW_DATA_VERSION."
-	mv warsow_0.42_unified warsow-data-$WARSOW_DATA_VERSION
+	mv warsow_1.02_unified warsow-data-$WARSOW_DATA_VERSION
 else
 	echo "Already found extracted warsow-data-$WARSOW_DATA_VERSION directory. Please remove
-or move warsow_0.42_unified and warsow-data-$WARSOW_DATA_VERSION directories and
+or move warsow_1.02_unified and warsow-data-$WARSOW_DATA_VERSION directories and
 also warsow-data_$WARSOW_DATA_VERSION.orig.tar.gz."
 	exit 1
 fi
