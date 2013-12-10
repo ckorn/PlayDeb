@@ -5,11 +5,13 @@ Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: debhelper (>= 9),
                libsdl1.2debian
 Homepage: http://www.urbanterror.info
-Standards-Version: 3.9.4
+Standards-Version: 3.9.3
 
 Package: urbanterror
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, urbanterror-data (>= ${source:Version}),
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         urbanterror-data (>= ${source:Version}),
          curl
 Suggests: urbanterror-server
 Description: Urban Terror client binary
@@ -35,7 +37,8 @@ Description: Urban Terror maps
 
 Package: urbanterror-server
 Architecture: any
-Depends: ${shlibs:Depends}, urbanterror-data (>= ${source:Version})
+Depends: ${shlibs:Depends},
+         urbanterror-data (>= ${source:Version})
 Description: Urban Terror dedicated server binary
  This package contains the dedicated server for UrbanTerror.
  .
