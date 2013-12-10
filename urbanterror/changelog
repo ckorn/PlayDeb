@@ -1,3 +1,61 @@
+urbanterror (1:4.2.016-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    - Fixed the bug in the Auth System that appeared since 4.2.015 where
+    sometimes lag in authentication could lead to use the account name of the
+    previous player on the same slot
+    - Fixed the "badinfo" issue (many thanks to Jacepriester)
+    - Animation config updates
+    - New Dr. Pink and Dr. Blue player skins
+    - Correctly disable inactivity timer when g_inactivity is set to 0
+    - Ability to set skins per team using cg_skinfixed0|1
+    - Increased minimum value of com_hunkmegs and made the error message
+    Hunk_Alloc failed on... more understandable
+    - Updated Mac11 sounds
+    - Fix for specularity on SR8 (very noticeable on bolt cap)
+    - Fixed lagometer position on CTF when using Wave Respawns
+    - Enhanced cg_speedo CVAR: will display client speed using (1) UPS: Quake
+    units per second, (2) KPH: Kilometers per hour, (3) MPH: Miles per hour
+    - Fixed killsound not being played upon HE Grenade kill and bleed out
+    - New sniper crosshair: cross-dot (cg_scopeSR8|cg_scopePSG|cg_scopeG36 4)
+    - Fixed skeetshoot map reloaders: fix target_give not resetting state
+    after execution
+    - New crosshair: cg_drawCrosshair 14 (simple cross Quake 3 style).
+    Available in UI menu
+    - Fixed respawn timer being shown after map restart
+    - Added 0 padding in asset download time left and server list refresh
+    time
+    - Added sound on weapon mode change
+    - Added accelerometer configurable with cg_accelero 0|1|2 and UI menu
+    - Added cg_accelSize CVAR to tune dedicated accelerometer size
+    - Fixed bots being kicked from the server for teamkilling
+    - Added TeamBalancer. Can be controller with g_autobalance CVAR (0 =
+    disabled, 1 = balance every minute, 2 = every 2 minutes, etc)
+    - Added g_noVest CVAR for Jump Mode: is set to 1 removes the Vest from
+    all the players
+    - Added client respawn event to game log: ClientSpawn: <slot>
+    - Fixed impossibility to kick zombie clients off the server
+    - Fixed connection to full server resulting in Server is for low pings
+    only
+    - dmaHD engine forced to 44Khz 16-bit stereo output
+    - Increased command buffer from 64KiB to 128KiB for players with large
+    config files
+    - Added separate Windows executable for non-SSE2 processors
+    - Fixed substitute flag being resetted upon map change
+    - Correctly update client team overlay when /forcesub command is executed
+    - Added menu items in sound menu for configuring dmaHD
+    - Added more in-built r_mode graphics modes for wide screen monitors
+    - Added new wide resolutions in graphics menu
+    - Increased chat area width and message area width
+    - Hide timelimit from HUD if there are no valuable info to be displayed
+    - Fixed inactivity timer kicking local client thus causing all the
+    players to be disconnected
+    - Added flag capture time. New log string: "FlagCaptureTime: <player id>:
+    <time in milliseconds>"
+    - Major overhaul of dmaHD sound system 
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 10 Dec 2013 18:51:35 +0100
+
 urbanterror (1:4.2.015-1~getdeb1) precise; urgency=low
 
   * New upstream version

@@ -4,29 +4,12 @@
 
 # This has to be exported to make some magic below work.
 export DH_OPTIONS
-DEBIAN_DIR:=$(shell echo ${MAKEFILE_LIST} | awk '{print $$1}' | xargs dirname)
-DEB_SOURCE_PACKAGE:=$(shell dpkg-parsechangelog | grep Source |cut -f2 -d" ")
-VERSION:=$(shell dpkg-parsechangelog | grep Version | cut -d" " -f2 | cut -d"-" -f1 | sed -r 's/1\://')
-UVERSION:=$(shell echo $(VERSION) | sed -r 's/\.//')
-LVERSION:=$(shell echo $(UVERSION) | cut -d"." -f1 )
-RVERSION:=$(shell echo $(UVERSION) | cut -d"." -f2 )
-TMPDIR:=$(shell mktemp -dp./)
-
-
-get-orig-source:
-	cd ${DEBIAN_DIR}/..
-	uscan --force-download --no-symlink
-	unzip ../UrbanTerror$(LVERSION)_full$(RVERSION).zip -d $(TMPDIR)
-	cd $(TMPDIR)/UrbanTerror$(LVERSION); \
-	tar czvf ../../../${DEB_SOURCE_PACKAGE}_$(VERSION).orig.tar.gz *
-	rm ../UrbanTerror$(LVERSION)_full$(RVERSION).zip
-	rm -rf ${TMPDIR}
 
 %:
 	dh $@
 
-#override_dh_shlibdeps:
-#	dh_shlibdeps -l$(CURDIR)/debian/urbanterror/usr/lib/games/urbanterror:$(CURDIR)/debian/urbanterror-server/usr/lib/games/urbanterror
+override_dh_shlibdeps:
+	dh_shlibdeps -l$(CURDIR)/debian/urbanterror/usr/lib/games/urbanterror:$(CURDIR)/debian/urbanterror-server/usr/lib/games/urbanterror
 
 override_dh_install:
 	dh_install
