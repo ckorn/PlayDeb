@@ -1,3 +1,25 @@
+stendhal (1.12-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    *world*
+    - New achievement "Dragon Slayer". Loot all dragon cloaks (inactive).
+    - New Christmas maps for bank, townhall, storage (Eonnas house, all
+    Semos)
+    - Reworked normal storage interior
+    - more creature descriptions
+    - new stocking items, deleting coal
+
+    *client*
+    - New sounds and images
+
+    *fixes*
+    - Fixing tiles on several maps
+
+    *website*
+    - Display name of ip-address on login history
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 13 Dec 2013 19:02:26 +0100
+
 stendhal (1.11-1~getdeb1) precise; urgency=low
 
   * New upstream version
