@@ -1,3 +1,9 @@
+mednafen (0.9.32.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 15 Dec 2013 20:06:28 +0100
+
 mednafen (0.9.32-1~getdeb1) precise; urgency=low
 
   * New upstream version
