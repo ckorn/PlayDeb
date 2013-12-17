@@ -1,0 +1,29 @@
+Description:
+ (paraphrased from http://bugs.debian.org/712894#5)
+ .
+ Redeclipse fails to compile on GNU/Hurd.
+ .
+ The problem is that, when libc provides the _POSIX_SHARED_MEMORY_OBJECTS
+ define, shm_* is used, which is implemented in librt (currently linked
+ only on Linux).
+ .
+ Easy fix, is to link to rt when the platform string contains "GNU" (i.e.
+ on GNU-based OSes, which are using GNU libc).
+Author: Pino Toscano <pino@debian.org>
+Applied-Upstream: http://redeclipse.net/svn/5621
+Debian-Bug: http://bugs.debian.org/712894
+Last-Update: 2013-12-17
+
+--- a/src/core.mk
++++ b/src/core.mk
+@@ -70,6 +70,10 @@
+ endif
+ ifeq ($(PLATFORM),Linux)
+ CLIENT_LIBS+= -lrt
++else
++ifneq (,$(findstring GNU,$(PLATFORM)))
++CLIENT_LIBS+= -lrt        
++endif         
+ endif
+ CLIENT_OBJS= \
+ 	shared/crypto.o \

@@ -1,3 +1,10 @@
+redeclipse (1.4-5) UNRELEASED; urgency=low
+
+  * Fix FTBFS on hurd-i386: missing link to rt (Closes: #712894)
+    - Add debian/patches/gnu-link-rt.patch
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 17 Dec 2013 18:26:55 +0100
+
 redeclipse (1.4-4) unstable; urgency=low
 
   * Fix FTBFS due to d/control typo lib{lg->gl}1-mesa-dev (Closes: #707028)
