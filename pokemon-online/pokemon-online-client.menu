@@ -1,1 +1,1 @@
-?package(pokemon-online-client):needs="x11" section="Games/Strategy" title="Pokémon Online client" command="/usr/games/Pokemon-Online"
+?package(pokemon-online-client):needs="x11" section="Games/Strategy" title="Pokémon Online client" command="/usr/games/pokemon-online"
