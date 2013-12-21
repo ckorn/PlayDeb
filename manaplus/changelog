@@ -1,3 +1,22 @@
+manaplus (1:1.3.12.22-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: bot checker window in some themes.
+    fix: tabbed area resizing.
+    fix: chat window resizing with enabled color picker.
+    fix: multi line motd messages in "new" tmw server.
+    add: allow replace body/race sprite by equipped item.
+    add: extend theming.
+    add: allow set small size for shortcuts windows.
+    add: golden-delicious theme by t3st3r.
+    add: in updater window cut long news.
+    add: show emotes in over head text.
+    add: npc window title change from server script.
+    add: ability to give more than one item to npc (evol only).
+    add: addition attributes for abient layer.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 21 Dec 2013 21:36:41 +0100
+
 manaplus (1:1.3.11.24-1~getdeb1) precise; urgency=low
 
   * New upstream version
