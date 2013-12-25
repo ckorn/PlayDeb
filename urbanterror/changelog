@@ -1,3 +1,21 @@
+urbanterror (1:4.2.017-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    - Fixed teambalancer-skin bug.
+    - Fixed chat overflow bug (was overflowing on the team overlay)
+    - Fixed the flag capture time.
+    - New cvar: cg_drawFlagCaptureTime (0: no time shown, 1: time in seconds,
+    2: time in seconds and milliseconds)
+    - All UrT executables are now compatible with older CPUs (no-SSE build no
+    longer needed)
+    - Fixed mousewheel scrolling of console when raw-mouse was used.
+    - dmaHD: Sound system is on by default on the UrT executables.
+    - dmaHD: Fixed annoying clicks/echoes with some weapon sounds.
+    - dmaHD: Re-introduced all the old mixers (CVAR: dmaHD_mixer)
+    - Autobalance turned off by default.
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Wed, 25 Dec 2013 20:35:45 +0200
+
 urbanterror (1:4.2.016-1~getdeb1) precise; urgency=low
 
   * New upstream version
