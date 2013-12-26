@@ -1,3 +1,18 @@
+spacezero (0.86.00-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    -Added: Spanish translation.
+    -Added: new objects: satellites.
+    -Added: New objects: Freighter.
+    -Added: Cargo. Ships can carry objects.
+    -Added: Trading.
+    -Minor enhances.
+    -Bugfixes.
+    -AI:
+       -Added: ORBIT order.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 22 Dec 2013 21:39:06 +0100
+
 spacezero (0.84.02-1~getdeb1) precise; urgency=low
 
   * New upstream version

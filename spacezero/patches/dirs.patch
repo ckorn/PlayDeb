@@ -1,7 +1,9 @@
 Define data and savegame directory.
---- a/include/general.h
-+++ b/include/general.h
-@@ -110,7 +110,7 @@
+Index: spacezero-0.86.00/include/general.h
+===================================================================
+--- spacezero-0.86.00.orig/include/general.h	2013-12-22 21:46:56.453389163 +0100
++++ spacezero-0.86.00/include/general.h	2013-12-22 21:46:56.449389164 +0100
+@@ -111,7 +111,7 @@
  #define MAXASTEROIDDISTANCE2 784000000 /* max distance2 an asteroid can be seen (20 sectors )*/
  
  /* FILES */
