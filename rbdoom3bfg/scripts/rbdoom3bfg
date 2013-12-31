@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ ! -f $HOME/.config/rbdoom3bfg/base/default.cfg ] ; then
+	zenity --error --title="No data directory" \
+	       --text="Put the base/ directory into the\n$HOME/.config/rbdoom3bfg\ndirectory." \
+	       --window-icon=/usr/share/pixmaps/rbdoom3bfg.png
+	exit 1
+fi
+
+mkdir -p $HOME/.config/rbdoom3bfg
+cd $HOME/.config/rbdoom3bfg
+
+if [ ! -h $HOME/.config/rbdoom3bfg/RBDoom3BFG ] ; then
+	ln -s /usr/lib/games/rbdoom3bfg/RBDoom3BFG
+fi
+
+./RBDoom3BFG "$@"

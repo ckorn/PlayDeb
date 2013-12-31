@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Doom 3 BFG Edition
+Exec=/usr/games/rbdoom3bfg
+Icon=rbdoom3bfg
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=doom;doom3;bfg;

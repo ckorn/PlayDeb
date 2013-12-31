@@ -1,0 +1,11 @@
+# use SDL2
+Index: rbdoom3bfg-0.0.0+git20131116/neo/cmake-eclipse-linux-profile.sh
+===================================================================
+--- rbdoom3bfg-0.0.0+git20131116.orig/neo/cmake-eclipse-linux-profile.sh	2013-12-31 00:48:50.969901490 +0100
++++ rbdoom3bfg-0.0.0+git20131116/neo/cmake-eclipse-linux-profile.sh	2013-12-31 01:06:19.205870308 +0100
+@@ -2,4 +2,4 @@
+ rm -rf build
+ mkdir build
+ cd build
+-cmake -G "Eclipse CDT4 - Unix Makefiles" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DSDL2=OFF ../neo
++cmake -G "Eclipse CDT4 - Unix Makefiles" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DSDL2=ON ../neo
