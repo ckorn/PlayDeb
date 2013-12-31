@@ -1,3 +1,13 @@
+stendhal (1.12.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    *fixes*
+    - disabled reference to an empty item file which broke the website
+    - fixed a karma exploit on accepting accpeted quests
+    - fixed PVP defense against weaker players 
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 31 Dec 2013 15:49:04 +0100
+
 stendhal (1.12-1~getdeb1) precise; urgency=low
 
   * New upstream version
