@@ -1,0 +1,24 @@
+Description: Link against system copies of zlib/libpng/libjpeg/bzip2
+Forwarded: not-yet
+Author: Vincent Cheng <Vincentc1208@gmail.com>
+Last-Update: 2012-12-29
+
+Index: supertuxkart-0.8.1/CMakeLists.txt
+===================================================================
+--- supertuxkart-0.8.1.orig/CMakeLists.txt	2014-01-02 20:20:28.023616214 +0100
++++ supertuxkart-0.8.1/CMakeLists.txt	2014-01-02 20:20:28.019616214 +0100
+@@ -230,7 +230,13 @@
+     ${OGGVORBIS_LIBRARIES}
+     ${IRRLICHT_XF86VM_LIBRARY}
+     ${OPENAL_LIBRARY}
+-    ${OPENGL_LIBRARIES})
++    ${OPENGL_LIBRARIES}
++    X11
++    z
++    png
++    jpeg
++    bz2
++)
+ 
+ if(APPLE)
+     # In theory it would be cleaner to let CMake detect the right dependencies. In practice, this means that if a OSX user has
