@@ -1,0 +1,15 @@
+ufo                  /usr/lib/games/ufoai/
+debian/ufo           /usr/games/
+debian/ufoai.xpm     /usr/share/pixmaps
+debian/ufoai.desktop /usr/share/applications
+debian/ufoai-safe.desktop /usr/share/applications
+ufoded                /usr/lib/games/ufoai/
+debian/ufoded         /usr/games/
+debian/ufoded.xpm     /usr/share/pixmaps/
+debian/ufoded.desktop /usr/share/applications
+base/game.so          /usr/lib/games/ufoai/base
+# don't add 0media.pk3, the fonts are added via symlinks
+base/i18n/* /usr/share/games/ufoai/base/i18n
+ufo2map /usr/games/
+ufomodel /usr/games/
+src/tools/blender/md2tag_export.py /usr/share/blender/scripts/blender/

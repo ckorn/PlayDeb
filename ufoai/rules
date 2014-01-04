@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --parallel
+
+CONFIGUREFLAGS += --datadir=/usr/share/games \
+	--libdir=/usr/lib/games/ufoai/base \
+	--prefix=/usr \
+	--enable-uforadiant \
+	--disable-testall
+
+override_dh_auto_clean:
+	dh_auto_clean
+	#find base/maps -name '*.bsp' | xargs --no-run-if-empty rm
+	-rm -f config.h config.log
+	-rm -rf base/i18n
+
+override_dh_auto_configure:
+	./configure $(CONFIGUREFLAGS)
+
+
+override_dh_auto_build:
+	mkdir -p base/models base/maps
+	dh_auto_build
+	dh_auto_build -- installer-pre
+	dh_auto_build -- manual
+
+override_dh_auto_test:
+
+override_dh_auto_install:

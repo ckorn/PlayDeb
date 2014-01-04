@@ -1,0 +1,32 @@
+# fix some typos
+Index: ufoai-2.4/src/tools/radiant/radiant/eventmanager/MouseEvents.cpp
+===================================================================
+--- ufoai-2.4.orig/src/tools/radiant/radiant/eventmanager/MouseEvents.cpp	2012-04-22 23:01:29.000000000 +0200
++++ ufoai-2.4/src/tools/radiant/radiant/eventmanager/MouseEvents.cpp	2014-01-03 23:37:06.064868106 +0100
+@@ -98,7 +98,7 @@
+ 				} else if (eventName == "DisableFreeLookMode") {
+ 					_cameraConditions[ui::camDisableFreeLookMode] = getCondition(eventList[i]);
+ 				} else {
+-					globalOutputStream() << "MouseEventManager: Warning: Ignoring unkown event name: " << eventName
++					globalOutputStream() << "MouseEventManager: Warning: Ignoring unknown event name: " << eventName
+ 							<< "\n";
+ 				}
+ 			}
+@@ -149,7 +149,7 @@
+ 				} else if (eventName == "JumpToObject") {
+ 					_observerConditions[ui::obsJumpToObject] = getCondition(eventList[i]);
+ 				} else {
+-					globalOutputStream() << "MouseEventManager: Warning: Ignoring unkown event name: " << eventName
++					globalOutputStream() << "MouseEventManager: Warning: Ignoring unknown event name: " << eventName
+ 							<< "\n";
+ 				}
+ 			}
+@@ -192,7 +192,7 @@
+ 				} else if (eventName == "NewBrushDrag") {
+ 					_xyConditions[ui::xyNewBrushDrag] = getCondition(eventList[i]);
+ 				} else {
+-					globalOutputStream() << "MouseEventManager: Warning: Ignoring unkown event name: " << eventName
++					globalOutputStream() << "MouseEventManager: Warning: Ignoring unknown event name: " << eventName
+ 							<< "\n";
+ 				}
+ 			}
