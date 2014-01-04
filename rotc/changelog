@@ -1,3 +1,9 @@
+rotc (5.4-1~getdeb1) saucy; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 04 Jan 2014 19:51:38 +0100
+
 rotc (5.3-1~getdeb3~saucy) saucy; urgency=low
 
   * Fix debian/watch file
