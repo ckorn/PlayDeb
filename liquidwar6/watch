@@ -1,3 +1,3 @@
 version=3
 opts="dversionmangle=s/~//" \
-http://download.savannah.gnu.org/releases/liquidwar6/(\d.+)/liquidwar6-(\d.+)\.tar\.gz
+http://ftp.gnu.org/gnu/liquidwar6/liquidwar6-(\d.+)\.tar\.gz
