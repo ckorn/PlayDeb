@@ -18,4 +18,4 @@ override_dh_auto_install:
 	mv debian/tmp/usr/share/games/pixmaps debian/tmp/usr/share/pixmaps
 
 override_dh_install:
-	dh_install --sourcedir=debian/tmp
+	dh_install --list-missing
