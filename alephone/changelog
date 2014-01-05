@@ -1,3 +1,9 @@
+alephone (20140104-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 05 Jan 2014 13:33:12 +0100
+
 alephone (20130813-1~getdeb1) precise; urgency=low
 
   * New upstream version
