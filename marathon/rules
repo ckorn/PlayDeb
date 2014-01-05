@@ -16,6 +16,4 @@ override_dh_auto_build:
 override_dh_link:
 	dh_link
 	mv debian/marathon/usr/share/games/marathon/Plugins/Marathon_Theme debian/marathon/usr/share/games/marathon/Plugins/Marathon\ Theme
-	rm debian/marathon/usr/share/games/marathon/COPYING.txt
-	rm debian/marathon/usr/share/games/marathon/svn-commit.tmp
 	mv marathon/Plugins/Marathon_Theme marathon/Plugins/Marathon\ Theme

@@ -1,2 +1,3 @@
 version=3
-http://sf.net/marathon/AlephOne-([\d]+)\.tar\.bz2
+http://build.getdeb.net/redirectors/marathon.html \
+    (?:.*/)?Marathon-([\d]+)-Data\.zip
