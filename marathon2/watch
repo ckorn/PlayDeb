@@ -1,3 +1,3 @@
 version=3
 http://build.getdeb.net/redirectors/marathon.html \
-    http://lhowon.org/Marathon2-([\d]+)-Data\.zip
+    (?:.*/)?Marathon2-([\d]+)-Data\.zip
