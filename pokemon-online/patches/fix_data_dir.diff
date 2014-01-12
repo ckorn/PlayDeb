@@ -1,49 +1,49 @@
 Description: Fix data path for deb package build
 Author: Fabio Fantoni <fabio.fantoni@tiscali.it>
-Index: pokemon-online-2.4.0/src/Teambuilder/pluginmanager.cpp
+Index: pokemon-online-2.4.1/src/Teambuilder/pluginmanager.cpp
 ===================================================================
---- pokemon-online-2.4.0.orig/src/Teambuilder/pluginmanager.cpp	2013-12-17 18:13:49.057418125 +0100
-+++ pokemon-online-2.4.0/src/Teambuilder/pluginmanager.cpp	2013-12-17 18:13:49.053418125 +0100
-@@ -265,7 +265,11 @@
-     QFileDialog *fd = new QFileDialog(this);
-     fd->setAttribute(Qt::WA_DeleteOnClose, true);
-     fd->setFileMode(QFileDialog::ExistingFile);
-+#if defined(DEB_PKG)
-+    fd->setDirectory("/usr/lib/games/pokemon-online/clientplugins");
-+#else
-     fd->setDirectory("myplugins");
-+#endif
-     fd->show();
+--- pokemon-online-2.4.1.orig/src/Teambuilder/pluginmanager.cpp	2014-01-12 16:32:09.832376658 +0100
++++ pokemon-online-2.4.1/src/Teambuilder/pluginmanager.cpp	2014-01-12 16:46:51.056350444 +0100
+@@ -133,5 +133,5 @@
  
-     connect(fd, SIGNAL(fileSelected(QString)), this, SLOT(addPlugin(QString)));
-Index: pokemon-online-2.4.0/src/Server/Server.pro
+ QString ClientPluginManager::directory() const
+ {
+-    return "clientplugins/";
++    return "/usr/lib/games/pokemon-online/clientplugins/";
+ }
+Index: pokemon-online-2.4.1/src/Server/Server.pro
 ===================================================================
---- pokemon-online-2.4.0.orig/src/Server/Server.pro	2013-12-17 18:13:49.057418125 +0100
-+++ pokemon-online-2.4.0/src/Server/Server.pro	2013-12-17 18:15:57.317414309 +0100
-@@ -4,7 +4,8 @@
- QT += network \
-     script \
-     xml
+--- pokemon-online-2.4.1.orig/src/Server/Server.pro	2014-01-12 16:32:09.832376658 +0100
++++ pokemon-online-2.4.1/src/Server/Server.pro	2014-01-12 16:33:41.152373942 +0100
+@@ -6,7 +6,8 @@
+     xml \
+     sql
+ 
 -TARGET = Server
 +CONFIG(debian_package): TARGET = Pokemon-Online-Server
 +!CONFIG(debian_package): TARGET = Server
- DESTDIR = $$PWD/../../bin
  TEMPLATE = app
  SOURCES += main.cpp \
-Index: pokemon-online-2.4.0/src/Utilities/pluginmanagerwidget.cpp
+     consolereader.cpp \
+Index: pokemon-online-2.4.1/src/BattleServer/pluginmanager.cpp
 ===================================================================
---- pokemon-online-2.4.0.orig/src/Utilities/pluginmanagerwidget.cpp	2013-12-17 16:52:25.000000000 +0100
-+++ pokemon-online-2.4.0/src/Utilities/pluginmanagerwidget.cpp	2013-12-17 18:19:10.481408563 +0100
-@@ -37,7 +37,11 @@
-     QFileDialog *fd = new QFileDialog(this);
-     fd->setAttribute(Qt::WA_DeleteOnClose, true);
-     fd->setFileMode(QFileDialog::ExistingFile);
--    fd->setDirectory("serverplugins");
-+#if defined(DEB_PKG)
-+    fd->setDirectory("/usr/lib/games/pokemon-online/serverplugins");
-+#else
-+     fd->setDirectory("serverplugins");
-+#endif
-     fd->show();
+--- pokemon-online-2.4.1.orig/src/BattleServer/pluginmanager.cpp	2014-01-11 18:42:37.000000000 +0100
++++ pokemon-online-2.4.1/src/BattleServer/pluginmanager.cpp	2014-01-12 16:49:20.376346002 +0100
+@@ -46,5 +46,5 @@
  
-     connect(fd, SIGNAL(fileSelected(QString)), this, SLOT(addPlugin(QString)));
+ QString BattleServerPluginManager::directory() const
+ {
+-    return "battleserverplugins/";
++    return "/usr/lib/games/pokemon-online/battleserverplugins/";
+ }
+Index: pokemon-online-2.4.1/src/Server/pluginmanager.cpp
+===================================================================
+--- pokemon-online-2.4.1.orig/src/Server/pluginmanager.cpp	2014-01-11 18:42:37.000000000 +0100
++++ pokemon-online-2.4.1/src/Server/pluginmanager.cpp	2014-01-12 16:49:23.784345901 +0100
+@@ -20,5 +20,5 @@
+ 
+ QString ServerPluginManager::directory() const
+ {
+-    return "serverplugins/";
++    return "/usr/lib/games/pokemon-online/serverplugins/";
+ }
