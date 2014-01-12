@@ -167,3 +167,30 @@ Description: libpo-battlemanager (development)
  in real time with trainers from around the world!
  .
  This package contains the development header files.
+
+Package: libpo-teambuilder1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: libpo-teambuilder (runtime)
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ This package contains the runtime library. 
+
+Package: libpo-teambuilder-dev
+Section: libdevel
+Architecture: any
+Depends: libpo-teambuilder1 (= ${binary:Version}),
+         ${misc:Depends}
+Description: libpo-teambuilder (development)
+ Pokemon Online is the most popular, accurate, and complete Pokemon battle
+ simulator out there. Available in 11 languages with over 100 themes, it
+ hosts more than a million battles per month. Experience competitive battles
+ across five generations (RBY/Stadium, GSC, RSE, DPPt/HGSS, and Black/White 2)
+ in real time with trainers from around the world!
+ .
+ This package contains the development header files.

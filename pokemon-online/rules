@@ -20,7 +20,8 @@ override_dh_strip:
 	dh_strip -p libpo-pokemoninfo1 --dbg-package=pokemon-online-client-dbg
 	dh_strip -p libpo-utilities1 --dbg-package=pokemon-online-client-dbg
 	dh_strip -p libpo-battlemanager1 --dbg-package=pokemon-online-client-dbg
+	dh_strip -p libpo-teambuilder1 --dbg-package=pokemon-online-client-dbg
 	dh_strip -p pokemon-online-client-plugins --dbg-package=pokemon-online-client-plugins-dbg
 
 override_dh_shlibdeps:
-	dh_shlibdeps -l$(CURDIR)/debian/libpo-pokemoninfo1/usr/lib/games/pokemon-online:$(CURDIR)/debian/libpo-utilities1/usr/lib/games/pokemon-online:$(CURDIR)/debian/libpo-battlemanager1/usr/lib/games/pokemon-online
+	dh_shlibdeps -l$(CURDIR)/debian/libpo-teambuilder1/usr/lib/games/pokemon-online:$(CURDIR)/debian/libpo-pokemoninfo1/usr/lib/games/pokemon-online:$(CURDIR)/debian/libpo-utilities1/usr/lib/games/pokemon-online:$(CURDIR)/debian/libpo-battlemanager1/usr/lib/games/pokemon-online

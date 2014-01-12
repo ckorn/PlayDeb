@@ -1,42 +1,58 @@
 Description: Disabled RelayStation and WebServerPlugin for now.
 Them require QtWebsocket beta not packaged and modified locally.
 Author: Fabio Fantoni <fabio.fantoni@tiscali.it>
-Index: pokemon-online-2.4.0/PokemonOnline.pro
+Index: pokemon-online-2.4.1/PokemonOnline.pro
 ===================================================================
---- pokemon-online-2.4.0.orig/PokemonOnline.pro	2013-12-17 18:20:02.545407015 +0100
-+++ pokemon-online-2.4.0/PokemonOnline.pro	2013-12-17 18:21:42.701404035 +0100
-@@ -38,9 +38,9 @@
-     SUBDIRS += src/BattleManager
- }
- 
--CONFIG(po_relaystation) | CONFIG(po_serverplugins) {
--    SUBDIRS += src/QtWebsocket #git://gitorious.org/qtwebsocket/qtwebsocket.git
--}
-+#CONFIG(po_relaystation) | CONFIG(po_serverplugins) {
-+#    SUBDIRS += src/QtWebsocket #git://gitorious.org/qtwebsocket/qtwebsocket.git
-+#}
- 
- CONFIG(po_client) {
-     SUBDIRS += src/Teambuilder
-@@ -60,16 +60,16 @@
+--- pokemon-online-2.4.1.orig/PokemonOnline.pro	2014-01-12 16:50:01.036344793 +0100
++++ pokemon-online-2.4.1/PokemonOnline.pro	2014-01-12 16:54:01.584337637 +0100
+@@ -41,9 +41,9 @@
          src/BattleServer
  }
  
 -CONFIG(po_relaystation) {
--    SUBDIRS += src/QJson \
--               src/RelayStation
+-    SUBDIRS += src/RelayStation
 -}
 +#CONFIG(po_relaystation) {
-+#    SUBDIRS += src/QJson \
-+#               src/RelayStation
++#    SUBDIRS += src/RelayStation
 +#}
  
  CONFIG(po_serverplugins) {
-     SUBDIRS += src/UsageStatistics \
-                src/StatsExtracter \
-                src/BattleLogs \
--               src/WebServerPlugin
-+#               src/WebServerPlugin
+     SUBDIRS += src/server-plugins
+Index: pokemon-online-2.4.1/src/libraries/libraries.pro
+===================================================================
+--- pokemon-online-2.4.1.orig/src/libraries/libraries.pro	2014-01-11 18:42:37.000000000 +0100
++++ pokemon-online-2.4.1/src/libraries/libraries.pro	2014-01-12 16:52:27.468340437 +0100
+@@ -21,17 +21,17 @@
+     SUBDIRS += BattleManager
  }
  
+-CONFIG(po_relaystation) | CONFIG(po_serverplugins) {
+-    SUBDIRS += QtWebsocket #git://gitorious.org/qtwebsocket/qtwebsocket.git
+-}
++#CONFIG(po_relaystation) | CONFIG(po_serverplugins) {
++#    SUBDIRS += QtWebsocket #git://gitorious.org/qtwebsocket/qtwebsocket.git
++#}
+ 
+ CONFIG(po_client) {
+     SUBDIRS += TeambuilderLibrary
+ }
+ 
+-CONFIG(po_relaystation) {
+-    SUBDIRS += QJson
+-}
++#CONFIG(po_relaystation) {
++#    SUBDIRS += QJson
++#}
+ 
  CONFIG(po_registry) {
+     CONFIG(webconf) {
+Index: pokemon-online-2.4.1/src/server-plugins/server-plugins.pro
+===================================================================
+--- pokemon-online-2.4.1.orig/src/server-plugins/server-plugins.pro	2014-01-11 18:42:37.000000000 +0100
++++ pokemon-online-2.4.1/src/server-plugins/server-plugins.pro	2014-01-12 16:55:28.912335039 +0100
+@@ -2,5 +2,4 @@
+ 
+ SUBDIRS += BattleLogs \
+            UsageStatistics \
+-           WebServerPlugin \
+            ../StatsExtracter
