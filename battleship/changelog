@@ -1,3 +1,9 @@
+battleship (0.51-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 13 Jan 2014 18:20:42 +0100
+
 battleship (0.50-1~getdeb1) precise; urgency=low
 
   * New upstream version
