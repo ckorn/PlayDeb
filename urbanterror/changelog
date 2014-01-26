@@ -1,3 +1,18 @@
+urbanterror (1:4.2.018-1~getdeb1) precise; urgency=low
+  * New upstream version
+    New g_gear restriction code. It now uses weapon/item letters so you can
+    disable whatever weapon or item you want.
+    Changed the medic badges back to the caduceus.
+    Solved FPS drops introduced in 016/017 client.
+    Fixed the issues with auth_owners.
+    Fixed the "auth string output overrun" issue.
+    Solved 'callvote map' problem where results can be unpredictable.
+    Fixed client number in callvote server log entry.
+    Fixed callvote kick bug.
+    More checks for pure servers.
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 26 Jan 2014 13:35:45 +0200
+
 urbanterror (1:4.2.017-1~getdeb1) precise; urgency=low
 
   * New upstream version
