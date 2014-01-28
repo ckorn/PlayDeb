@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=TONG
+Exec=/usr/games/tong
+Icon=tong
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=tetris;pong;

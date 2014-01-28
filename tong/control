@@ -1,0 +1,36 @@
+Source: tong
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libsdl1.2-dev,
+               libsdl-image1.2-dev,
+               libsdl-mixer1.2-dev
+Standards-Version: 3.9.3
+Homepage: http://www.nongnu.org/tong/
+
+Package: tong
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         tong-data (= ${source:Version})
+Description: Tetris and Pong mix
+ Tetris and Pong are classics, addictive and unshakable
+ from their places in gaming history.
+ TONG is the result of mixing the two, capitalizing on
+ the essential qualities of each classic and adding new
+ twists of its own to make an explosive chemical
+ reaction out of it all.
+
+Package: tong-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Tetris and Pong mix (data package)
+ Tetris and Pong are classics, addictive and unshakable
+ from their places in gaming history.
+ TONG is the result of mixing the two, capitalizing on
+ the essential qualities of each classic and adding new
+ twists of its own to make an explosive chemical
+ reaction out of it all.
+ .
+ (This package contains the data files).

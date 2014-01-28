@@ -1,0 +1,14 @@
+# the libraries have to be after the executable and all objects
+Index: tong-1.2/Makefile
+===================================================================
+--- tong-1.2.orig/Makefile	2012-10-25 21:56:40.000000000 +0200
++++ tong-1.2/Makefile	2014-01-28 19:33:42.646728788 +0100
+@@ -29,7 +29,7 @@
+ 
+ # builds all, builds the target
+ all:	$(OBJS)
+-	$(CC) $(SDL_LDFLAGS) $(MIXER_FLAGS) $(IMG_FLAGS) $(OBJS) -o $(TARGET)
++	$(CC) $(OBJS) -o $(TARGET) $(SDL_LDFLAGS) $(MIXER_FLAGS) $(IMG_FLAGS)
+ %.o: %.cpp
+ 	$(CC) $(SDL_CFLAGS) -c -o $@ $<
+ tong.o: $(SDL_SOURCES)

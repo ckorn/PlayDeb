@@ -1,0 +1,14 @@
+# place the config file inside $HOME/.config
+Index: tong-1.2/option.h
+===================================================================
+--- tong-1.2.orig/option.h	2012-10-25 21:56:40.000000000 +0200
++++ tong-1.2/option.h	2014-01-28 19:35:05.806726315 +0100
+@@ -38,7 +38,7 @@
+ #ifdef WIN32
+ #define CONFIG_FILENAME "config.txt"
+ #else
+-#define CONFIG_FILENAME ".tong-config"
++#define CONFIG_FILENAME ".config/tong/config"
+ #endif
+ #define MUSIC_PATH "media/music"
+ 
