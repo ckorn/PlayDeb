@@ -1,0 +1,5 @@
+tong (1.2-1~getdeb1) precise; urgency=low
+
+  * Initial release (LP: #1273237)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 28 Jan 2014 19:26:09 +0100

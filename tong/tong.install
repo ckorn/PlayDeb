@@ -1,0 +1,4 @@
+tong				usr/lib/games/tong
+debian/scripts/tong		usr/games
+debian/tong.png			usr/share/pixmaps
+debian/tong.desktop		usr/share/applications
