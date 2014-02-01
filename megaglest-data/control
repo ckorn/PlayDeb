@@ -1,0 +1,24 @@
+Source: megaglest-data
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Giuseppe Borzi <gborzi@ieee.org>,
+ Siegfried-Angel Gevatter Pujals <rainct@ubuntu.com>,
+ Mark Vejvoda <mark_vejvoda@hotmail.com>
+Build-Depends: cmake,
+               debhelper (>= 9),
+               rdfind,
+               symlinks
+Standards-Version: 3.9.4
+Homepage: http://megaglest.org/
+
+Package: megaglest-data
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}
+Architecture: all
+Recommends: megaglest
+Description: data files for MegaGlest
+ This package contains the data, docs and translations for MegaGlest.
+ .
+ It contains many factions, models, textures, maps, tilesets, scenarios,
+ tutorials and language files.
