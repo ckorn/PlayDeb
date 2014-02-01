@@ -1,0 +1,66 @@
+Source: megaglest
+Section: games
+Priority: extra
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Giuseppe Borzi <gborzi@ieee.org>,
+ Siegfried-Angel Gevatter Pujals <rainct@ubuntu.com>,
+ Mark Vejvoda <mark_vejvoda@hotmail.com>
+Build-Depends: cmake,
+               debhelper (>= 9),
+               help2man,
+               libcurl4-gnutls-dev | libcurl4-nss-dev,
+               libfontconfig1-dev,
+               libftgl-dev,
+               libglew-dev,
+               libircclient-dev,
+               libjpeg-dev,
+               liblua5.1-0-dev,
+               libminiupnpc-dev,
+               libogg-dev,
+               libopenal-dev,
+               libpng12-dev,
+               libsdl1.2-dev,
+               libvlc-dev,
+               libvorbis-dev,
+               libwxgtk2.8-dev,
+               libxerces-c-dev,
+               libxml2-dev,
+               libz-dev,
+               xauth,
+               xvfb
+Standards-Version: 3.9.4
+Homepage: http://megaglest.org/
+
+Package: megaglest
+Architecture: any-amd64 any-i386 alpha arm armel armhf ia64 mipsel sh4
+Depends: famfamfam-flag-png,
+         fonts-liberation,
+         fonts-uralic,
+         megaglest-data (<= ${source:Version}),
+         megaglest-data (>= ${source:Upstream-Version}),
+         p7zip-full,
+         ttf-dejavu-core,
+         ttf-wqy-zenhei,
+         vlc,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: 3D multi-player real time strategy game
+ MegaGlest is a free 3D real-time customizable strategy game
+ which takes place in a context which could be compared to that of the
+ pre-renaissance Europe, with the licence that magic forces exist in the
+ environment and can be controlled.
+ .
+ The current version is fully playable and supports both single player
+ games against CPU controlled players and multiplayer matches over the
+ Internet or a LAN.
+
+Package: megaglest-dbg
+Section: debug
+Architecture: any-amd64 any-i386 alpha arm armel armhf ia64 mipsel sh4
+Depends: megaglest (= ${binary:Version}),
+         ${misc:Depends}
+Description: debug files for MegaGlest
+ This package contains debug information for the MegaGlest game.
+ .
+ It can be used to debug MegaGlest using GDB if the game crashes
+ due to programming errors.

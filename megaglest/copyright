@@ -1,0 +1,209 @@
+Almost-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: MegaGlest
+Upstream-Contact: Mark Vejvoda <mark_vejvoda@hotmail.com>
+Source: http://sourceforge.net/projects/megaglest/files/
+Comment:
+ This package was debianized by Giuseppe Borzi <gborzi@ieee.org>
+ and Mark Vejvoda <mark_vejvoda@hotmail.com>
+ on Wed, 25 May 2011 Wed, 25 May 2011 23:31:21 -0700.
+ .
+ It was downloaded from http://sourceforge.net/projects/megaglest
+ .
+ Embedded libs:
+ .
+    freetype-gl:
+    Nicolas P. Rougier
+    Stefan Gustavson (stefan.gustavson@gmail.com)
+ .
+    streflop:
+    Makoto Matsumoto and Takuji Nishimura / Mutsuo Saito
+    Sun Microsystems
+    Free Software Foundation, Inc
+    Stephen L. Moshier <moshier@na-net.ornl.gov>
+    Tobi Vollebregt
+ .
+ MojoSetup Installer:
+ .
+    Julian Seward <jseward@bzip.org>
+    Mark Adler
+    Jean-loup Gailly
+    Dag-Erling Coïdan Smørgrav
+    Massachusetts Institute of Technology
+    Lua.org, PUC-Rio
+ .
+ Scripts:
+ .
+    nixCraft (nixcraft.com)
+    Vincent Gadoury
+    Jonathan Merritt
+    Andreas Becker (seltsamuel@yahoo.de)
+ .
+ Original Glest:
+ .
+    Copyright (C) 2001-2008 Martiño Figueroa
+     - Everything except the files inside the directories listed below,
+       which belong to Matthias Braun.
+ .
+    Copyright (C) 2005 Matthias Braun <matze@braunis.de>
+     - source/shared_lib/*/platform/posix/
+     - source/shared_lib/*/platform/sdl/
+     - source/shared_lib/*/sound/openal/
+ .
+ License:
+ .
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+ .
+ On Debian systems, the complete text of the GNU General Public
+ License can be found in /usr/share/common-licenses/GPL-3.
+
+Files: *
+Copyright: 2008-2011 Titus Tscharntke (info@titusgames.de)
+           2008-2011 Mark Vejvoda (www.soft-haus.com - mark_vejvoda@hotmail.com)
+           2001-2008 Martiño Figueroa <contact@glest.org>
+           2005      Matthias Braun <matze@braunis.de>
+           2008      Frank Tetzel --> Map Editor Icon
+           2010      Andreas Martin (andreas.martin@linuxmail.org) --> feathery FTP server
+           2008      Bryan L Blackburn --> Mac OSX legacy fonts
+           2005      Roland BROCHAR --> string utilities
+           2006-2008 Alexander Chemeris --> data types for win32
+           2006      Nemanja Trifunovic --> utf8 code
+License: GPL-2+
+
+Files: source/shared_lib/sources/feathery_ftp/* source/shared_lib/include/feathery_ftp/*
+Copyright: Copyright 2005-2010 Andreas Martin (andreas.martin@linuxmail.org)
+License: GPL-3+
+
+Files: *.sh
+Copyright: Copyright 2008-2011 Mark Vejvoda (www.soft-haus.com - mark_vejvoda@hotmail.com)
+License: GPL-3+
+
+Files: source/shared_lib/sources/platform/win32/glob.cpp source/shared_lib/include/platform/win32/glob.h
+Copyright: Copyright 2002-2010 Matthew Wilson and Synesis Software
+License: BSD-2-clause
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * - Redistributions of source code must retain the above copyright notice, this
+ *   list of conditions and the following disclaimer.
+ * - Redistributions in binary form must reproduce the above copyright notice,
+ *   this list of conditions and the following disclaimer in the documentation
+ *   and/or other materials provided with the distribution.
+ * - Neither the names of Matthew Wilson and Synesis Software nor the names of
+ *   any contributors may be used to endorse or promote products derived from
+ *   this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+
+Files: source/shared_lib/sources/graphics/freetype-gl/* source/shared_lib/include/graphics/freetype-gl/*
+Copyright: Copyright 2011 Nicolas P. Rougier
+License: BSD-2-clause
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ *  1. Redistributions of source code must retain the above copyright notice,
+ *     this list of conditions and the following disclaimer.
+ *
+ *  2. Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in the
+ *     documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY NICOLAS P. ROUGIER ''AS IS'' AND ANY EXPRESS OR
+ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ * EVENT SHALL NICOLAS P. ROUGIER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * The views and conclusions contained in the software and documentation are
+ * those of the authors and should not be interpreted as representing official
+ * policies, either expressed or implied, of Nicolas P. Rougier.
+
+Files: source/shared_lib/include/util/utf8/*
+Copyright: 2006 Nemanja Trifunovic
+License: BSL-1.0
+ Permission is hereby granted, free of charge, to any person or organization
+ obtaining a copy of the software and accompanying documentation covered by
+ this license (the "Software") to use, reproduce, display, distribute,
+ execute, and transmit the Software, and to prepare derivative works of the
+ Software, and to permit third-parties to whom the Software is furnished to
+ do so, all subject to the following:
+ .
+ The copyright notices in the Software and this entire statement, including
+ the above license grant, this restriction and the following disclaimer,
+ must be included in all copies of the Software, in whole or in part, and
+ all derivative works of the Software, unless such copies or derivative
+ works are solely in the form of machine-executable object code generated by
+ a source language processor.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+ SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+ FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.
+
+Files: source/shared_lib/sources/streflop/libm/flt-32/s_llroundf.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/s_lrintf.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/s_roundf.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/s_lroundf.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/e_gammaf_r.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/s_fpclassifyf.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/s_llrintf.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/s_sincosf.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/s_signbitf.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/s_truncf.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/e_asinf.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/s_remquof.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/s_cbrtf.cpp
+       source/shared_lib/sources/streflop/libm/flt-32/e_exp2f.cpp
+Copyright: Copyright 1997-2002 Free Software Foundation, Inc
+License: LGPL-2+
+
+
+Files: source/shared_lib/sources/streflop/Random.cpp
+Copyright: Copyright 1997-2002 Makoto Matsumoto and Takuji Nishimura / OWNER OR / 2005, Mutsuo Saito
+License: BSD-2-clause
+   Redistribution and use in source and binary forms, with or without
+   modification, are permitted provided that the following conditions
+   are met:
+ .
+     1. Redistributions of source code must retain the above copyright
+        notice, this list of conditions and the following disclaimer.
+ .
+     2. Redistributions in binary form must reproduce the above copyright
+        notice, this list of conditions and the following disclaimer in the
+        documentation and/or other materials provided with the distribution.
+ .
+     3. The names of its contributors may not be used to endorse or promote
+        products derived from this software without specific prior written
+        permission.
+ .
+   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+   "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+   LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+   A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+   EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+   PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+   LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
