@@ -7,9 +7,9 @@
 #DOLPHIN_WC_BRANCH=git rev-parse --abbrev-ref HEAD
 
 CMAKE_OPTIONS =						\
-	-DDOLPHIN_WC_REVISION=35d1599724a4c41d0c93e4cbf05ba109feaa969c			\
-	-DDOLPHIN_WC_DESCRIBE=4.0-0			\
-	-DDOLPHIN_WC_BRANCH=4.0				\
+	-DDOLPHIN_WC_REVISION=2879cbd2b5648bf896ed521628284bd4d96c3d4f			\
+	-DDOLPHIN_WC_DESCRIBE=4.0.2-0			\
+	-DDOLPHIN_WC_BRANCH=4.0.2			\
 	-Dbindir=/usr/games				\
 	-Ddatadir=/usr/share/games/dolphin-emu		\
 	-DCMAKE_INSTALL_PREFIX=/usr			\

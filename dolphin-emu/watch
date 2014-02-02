@@ -1,3 +1,3 @@
 version=3
-http://code.google.com/p/dolphin-emu/downloads/list \
-    (?:.*/)?dolphin-([\d\.]+)-src\.zip
+https://github.com/dolphin-emu/dolphin/releases \
+    (?:.*/)?archive/([\d\.]+)\.tar\.gz

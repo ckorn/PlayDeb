@@ -1,3 +1,9 @@
+dolphin-emu (4.0.2-1~getdeb1) saucy; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 02 Feb 2014 15:58:51 +0100
+
 dolphin-emu (4.0-1~getdeb2~raring) raring; urgency=low
 
   * New upstream version
