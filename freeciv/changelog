@@ -1,3 +1,9 @@
+freeciv (2.4.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 09 Feb 2014 17:53:29 +0100
+
 freeciv (2.4.1-1~getdeb1) precise; urgency=low
 
   * New upstream version
