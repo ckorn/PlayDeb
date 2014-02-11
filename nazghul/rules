@@ -3,8 +3,13 @@
 	dh $@
 
 override_dh_auto_configure:
+	./autogen.sh
 	dh_auto_configure -- --bindir=/usr/games --datadir=/usr/share/games
 
 override_dh_auto_install:
 	dh_auto_install
 	mv debian/tmp/usr/games/haxima.sh debian/tmp/usr/games/haxima
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf missing Makefile.in aclocal.m4 config.guess config.h.in config.sub configure depcomp install-sh m4/Makefile.in src/Makefile.in worlds/Makefile.in worlds/haxima-1.002/Makefile.in worlds/haxima-1.002/music/Makefile.in

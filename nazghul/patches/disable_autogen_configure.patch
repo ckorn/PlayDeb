@@ -1,0 +1,10 @@
+--- a/autogen.sh
++++ b/autogen.sh
+@@ -6,6 +6,7 @@
+ 
+ PKG_NAME="nazghul"
+ DIE=0
++NOCONFIGURE=true
+ 
+ (test -f $srcdir/configure.ac \
+ ## put other tests here

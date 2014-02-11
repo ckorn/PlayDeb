@@ -1,0 +1,2 @@
+version=3
+http://sf.net/nazghul/nazghul-([\d\.]+)\.tar\.(?:gz|bz2)
