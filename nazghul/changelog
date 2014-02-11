@@ -1,3 +1,13 @@
+nazghul (0.7.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    - GIT version (git clone git://git.code.sf.net/p/nazghul/git nazghul-git)
+      as of 2014/02/09 - YYYY-MM-DD
+    - Fixed c++ compile warnings (g++ (GCC) 4.4.4 20100630 (Red Hat 4.4.4-10))
+    - Fixed missing libpng DLL in win32 release
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Thu, 06 Feb 2014 21:03:21 +0100
+
 nazghul (0.7.0-1~getdeb1) karmic; urgency=low
 
   * Initial release (LP: #497974)
