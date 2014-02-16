@@ -1,8 +1,6 @@
 Don't put the version in the tarball name.
-Index: stendhal-1.08/build.xml
-===================================================================
---- stendhal-1.08.orig/build.xml	2013-06-08 17:55:31.587000786 +0200
-+++ stendhal-1.08/build.xml	2013-06-08 17:55:31.583000786 +0200
+--- a/build.xml
++++ b/build.xml
 @@ -28,16 +28,16 @@
  
  	<property name="build_client" value="${buildroot}/build_client"/>
@@ -28,7 +26,7 @@ Index: stendhal-1.08/build.xml
  	
  	<property name="config_dir" value="data/conf"/>
  
-@@ -602,7 +602,7 @@
+@@ -605,7 +605,7 @@
  		<copy todir="${buildroot}/stendhal-server-${version}" file="README.txt"/>
  		<mkdir dir="${buildroot}/stendhal-server-${version}/log" />
  		<touch file="${buildroot}/stendhal-server-${version}/log/empty" />
@@ -37,16 +35,16 @@ Index: stendhal-1.08/build.xml
  			<zipfileset dir="${buildroot}/stendhal-server-${version}" excludes="${server_jarname}"/>
  			<zipfileset dir="${buildroot}/stendhal-server-${version}" includes="${server_jarname}" filemode="755"/>
  		</zip>
-@@ -635,7 +635,7 @@
- 		<touch file="${buildroot}/stendhal-${version}/log/stendhal.txt" />
+@@ -639,7 +639,7 @@
  		<copy todir="${buildroot}/stendhal-${version}" file="README.txt"/>
  		<copy todir="${buildroot}/stendhal-${version}" file=".hotspotrc"/>
+ 		<copy todir="${buildroot}/stendhal-${version}" file="icon.ico"/>
 -		<zip destfile="${buildroot}/stendhal-${version}.zip">
 +		<zip destfile="${buildroot}/stendhal.zip">
  			<zipfileset dir="${buildroot}/stendhal-${version}" excludes="stendhal-starter.jar"/>
  			<zipfileset dir="${buildroot}/stendhal-${version}" includes="stendhal-starter.jar" filemode="755"/>
  		</zip>
-@@ -658,7 +658,7 @@
+@@ -662,7 +662,7 @@
  		</copy>
  		<copy todir="${buildroot}/stendhal-${version}" file="README.txt"/>
  		<copy todir="${buildroot}/stendhal-${version}" file=".hotspotrc"/>
@@ -55,7 +53,7 @@ Index: stendhal-1.08/build.xml
  			<zipfileset dir="${buildroot}/stendhal-${version}" excludes="${client_starter_jarname}"/>
  			<zipfileset dir="${buildroot}/stendhal-${version}" includes="${client_starter_jarname}" filemode="755"/>
  		</zip>
-@@ -717,7 +717,7 @@
+@@ -721,7 +721,7 @@
  		</copy>
  
  		<tar destfile="${buildroot}/stendhal-${version}-src.tar.gz" compression="gzip" longfile="gnu">
