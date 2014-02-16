@@ -1,3 +1,28 @@
+stendhal (1.13-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    *World*
+    - Nice zone names
+    - Dragon slayer achievement
+    - Xeno helmet added to NPC purchasing shops
+    - Improvements to maps, most notable a makeover in hell
+    - Rats are so hungry that they are not scared by weak people anymore
+    *Fixes*
+    - Fixed webstart on Oracle Java (for Windows users)
+    - Postman messages are now filtered by the ignore list
+    - Fixed item description for canned tuna (item name underlining)
+    - Fixed a karma exploit on accepting accpeted quests (1.12.1)
+    - Fixed PVP defense against weaker players (1.12.1)
+    *Website*
+    - Removed myopenid as it is going to be discontinued
+    *Developers*
+    - If you developed a game based on stendhal and use the automatic
+      updater, you will need to edit game.properties and add
+      UPDATE_SIGNER_KEY. The required value will printed in the webstart
+      console.
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 16 Feb 2014 15:38:47 +0100
+
 stendhal (1.12.1-1~getdeb1) precise; urgency=low
 
   * New upstream version

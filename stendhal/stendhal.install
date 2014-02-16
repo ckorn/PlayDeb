@@ -1,8 +1,10 @@
 build/lib/stendhal-starter.jar		usr/share/games/stendhal
+#build/lib/stendhal-server-1.13.jar		usr/share/games/stendhal
 build/lib/stendhal.jar			usr/share/games/stendhal/lib
 build/lib/stendhal-maps.jar		usr/share/games/stendhal/lib
 build/lib/stendhal-data.jar		usr/share/games/stendhal/lib
-build/lib/stendhal-sound-data.jar	usr/share/games/stendhal/lib
+build/lib/stendhal-sound-data.jar		usr/share/games/stendhal/lib
+build/lib/stendhal-music-data.jar		usr/share/games/stendhal/lib
 build/lib/stendhal-xmlconf.jar		usr/share/games/stendhal/lib
 libs/log4j.jar				usr/share/games/stendhal/lib
 libs/marauroa.jar			usr/share/games/stendhal/lib
