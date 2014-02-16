@@ -1,42 +1,36 @@
 Source: hedgewars
 Section: games
-Priority: extra
+Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Dmitry E. Oboukhov <unera@debian.org>,
  Gianfranco Costamagna <costamagnagianfranco@yahoo.it>
 Build-Depends: debhelper (>= 9),
-               cmake,
-               cdbs,
                dpkg-dev (>= 1.16.1~),
-               libqt4-dev (>= 4.2),
-               fp-compiler,
+               cmake,
+               qt4-qmake,
+               libqt4-dev,
                libsdl1.2-dev,
-               libsdl-ttf2.0-dev,
+               libsdl-net1.2-dev,
                libsdl-mixer1.2-dev,
                libsdl-image1.2-dev,
-               libsdl-net1.2-dev,
-               bzip2,
-               fp-units-gfx,
-               ghc,
-               libghc-stm-dev,
-               libghc-network-dev,
-               libghc-dataenc-dev,
-               libghc-hslogger-dev,
-               libghc-utf8-string-dev,
+               libsdl-ttf2.0-dev,
                liblua5.1-dev,
-               imagemagick,
-               libghc-bytestring-show-dev,
                fpc,
                libpng12-dev,
                libavcodec-dev,
                libavformat-dev,
                freeglut3-dev,
+               ghc,
+               libghc-bytestring-show-dev,
+               libghc-dataenc-dev,
+               libghc-hslogger-dev,
                libghc-mtl-dev,
+               libghc-network-dev,
                libghc-parsec3-dev,
+               libghc-utf8-string-dev,
                libghc-vector-dev,
-               qt4-qmake,
-               fp-units-misc,
-               libghc-random-dev
+               libghc-random-dev,
+               imagemagick
 Standards-Version: 3.9.3
 Homepage: http://hedgewars.org
 
@@ -75,11 +69,10 @@ Description: Funny turn-based artillery game, featuring fighting Hedgehogs!
  shown only when all movement on the battlefield has ceased).
 
 Package: hedgewars-data
-Conflicts: hedgewars (<= 0.8.1-10)
-Replaces: hedgewars (<= 0.8.1-10)
 Architecture: all
 Depends: ${misc:Depends}
 Recommends: hedgewars
 Description: Data files for hedgewars
- This package contains data files (images, sounds, levels data) 
- for the hedgewars package.
+ This package contains data files for the hedgewars package.
+ Examples of files are: maps, scripts, themes, images, sounds,
+ level data and other miscellaneous files needed by hedgewars.

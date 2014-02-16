@@ -1,32 +1,9 @@
 #!/usr/bin/make -f
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/cmake.mk
 
-DPKG_EXPORT_BUILDFLAGS = 1
-include /usr/share/dpkg/buildflags.mk
-CFLAGS+=$(CPPFLAGS)
-CXXFLAGS+=$(CPPFLAGS)
+%:
+	dh $@
 
-DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
-#Helping libc >= 2.17, see launchpad bug #1179850
-TYPE_FLAGS = -DFPFLAGS="-k/lib/$(DEB_HOST_MULTIARCH)/libgcc_s.so.1"
-
-DEB_CMAKE_INSTALL_PREFIX := /usr/lib/hedgewars
-DEB_CMAKE_EXTRA_FLAGS      := -DNOSERVER=0 \
-	-DDATA_INSTALL_DIR=/usr/share/games/hedgewars $(TYPE_FLAGS)
-
-UPSTREAM_VERSION := $(shell dpkg-parsechangelog \
-	|grep ^Version|awk '{print $$2}'|sed 's/-[[:digit:]]\+$$//' \
-)
-
-clean::
-	rm -fr tmp-icon stamp-icon
-
-pre-build:: stamp-icon
-
-stamp-icon:
-	rm -fr tmp-icon
-	mkdir -p tmp-icon
+override_dh_auto_configure:
 	for icon in `find debian/hicolor-icons -type f`; do \
 		dirname=`dirname $$icon`; \
 		dirname=`basename $$dirname`; \
@@ -34,11 +11,10 @@ stamp-icon:
 		mkdir -p tmp-icon/$$dirname/apps; \
 		convert $$icon tmp-icon/$$dirname/apps/$$basename.png; \
 	done
+	dh_auto_configure -- 	-DCMAKE_INSTALL_PREFIX=/usr/lib/hedgewars \
+				-DDATA_INSTALL_DIR=/usr/share/games/hedgewars \
+				-DCMAKE_BUILD_TYPE=RELEASE
 
-tarball:
-	cd .. && \
-	tar --exclude=debian \
-		--exclude=.git \
-		-czf hedgewars_$(UPSTREAM_VERSION).orig.tar.gz \
-		hedgewars-$(UPSTREAM_VERSION)
-
+override_dh_clean:
+	rm -rf tmp-icon
+	dh_clean
