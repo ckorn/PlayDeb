@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	for icon in `find debian/hicolor-icons -type f`; do \
+		dirname=`dirname $$icon`; \
+		dirname=`basename $$dirname`; \
+		basename=`basename $$icon .xpm`; \
+		mkdir -p tmp-icon/$$dirname/apps; \
+		convert $$icon tmp-icon/$$dirname/apps/$$basename.png; \
+	done
+	dh_auto_configure -- 	-DCMAKE_INSTALL_PREFIX=/usr/lib/hedgewars \
+				-DDATA_INSTALL_DIR=/usr/share/games/hedgewars \
+				-DCMAKE_BUILD_TYPE=RELEASE
+
+override_dh_clean:
+	rm -rf tmp-icon
+	dh_clean
