@@ -2,10 +2,10 @@ dh_clideps does not understand the "dllentry" syntax.
 Take the config files from the Ubuntu package which uses the "target" syntax.
 
 Map libGL.so to libGLU.so.1
-Index: openra-20130514/thirdparty/Tao/Tao.Cg.dll.config
+Index: openra-20131223/thirdparty/Tao/Tao.Cg.dll.config
 ===================================================================
---- openra-20130514.orig/thirdparty/Tao/Tao.Cg.dll.config	2013-05-14 21:04:27.324872224 +0200
-+++ openra-20130514/thirdparty/Tao/Tao.Cg.dll.config	2013-05-14 21:04:27.320872224 +0200
+--- openra-20131223.orig/thirdparty/Tao/Tao.Cg.dll.config	2013-12-25 21:58:02.930633038 +0100
++++ openra-20131223/thirdparty/Tao/Tao.Cg.dll.config	2013-12-25 21:58:02.898633038 +0100
 @@ -1,12 +1,9 @@
  <configuration>
 -    <dllmap dll="cg.dll">
@@ -26,10 +26,10 @@ Index: openra-20130514/thirdparty/Tao/Tao.Cg.dll.config
 +    <dllmap dll="cgGL.dll" os="osx" target="/Library/Frameworks/Cg.framework/Cg" />
 +    <dllmap dll="cgGL.dll" os="!windows,osx" target="libCgGL.so" />
  </configuration>
-Index: openra-20130514/thirdparty/Tao/Tao.OpenAl.dll.config
+Index: openra-20131223/thirdparty/Tao/Tao.OpenAl.dll.config
 ===================================================================
---- openra-20130514.orig/thirdparty/Tao/Tao.OpenAl.dll.config	2013-05-14 21:04:27.324872224 +0200
-+++ openra-20130514/thirdparty/Tao/Tao.OpenAl.dll.config	2013-05-14 21:04:27.320872224 +0200
+--- openra-20131223.orig/thirdparty/Tao/Tao.OpenAl.dll.config	2013-12-25 21:58:02.930633038 +0100
++++ openra-20131223/thirdparty/Tao/Tao.OpenAl.dll.config	2013-12-25 21:58:02.926633038 +0100
 @@ -1,12 +1,9 @@
  <configuration>
 -    <dllmap dll="OpenAL32.dll">
@@ -50,10 +50,10 @@ Index: openra-20130514/thirdparty/Tao/Tao.OpenAl.dll.config
 +    <dllmap dll="alut.dll" os="osx" target="libalut.so.0" />
 +    <dllmap dll="alut.dll" os="!windows,osx" target="libalut.so.0" />
  </configuration>
-Index: openra-20130514/thirdparty/Tao/Tao.OpenGl.dll.config
+Index: openra-20131223/thirdparty/Tao/Tao.OpenGl.dll.config
 ===================================================================
---- openra-20130514.orig/thirdparty/Tao/Tao.OpenGl.dll.config	2013-05-14 21:04:27.324872224 +0200
-+++ openra-20130514/thirdparty/Tao/Tao.OpenGl.dll.config	2013-05-14 21:04:27.320872224 +0200
+--- openra-20131223.orig/thirdparty/Tao/Tao.OpenGl.dll.config	2013-12-25 21:58:02.930633038 +0100
++++ openra-20131223/thirdparty/Tao/Tao.OpenGl.dll.config	2013-12-25 21:58:02.926633038 +0100
 @@ -1,12 +1,11 @@
  <configuration>
 -    <dllmap dll="opengl32.dll">
@@ -76,10 +76,10 @@ Index: openra-20130514/thirdparty/Tao/Tao.OpenGl.dll.config
 +
 +    <dllmap dll="libGL.so" os="!windows,osx" target="libGLU.so.1" />
  </configuration>
-Index: openra-20130514/thirdparty/Tao/Tao.Sdl.dll.config
+Index: openra-20131223/thirdparty/Tao/Tao.Sdl.dll.config
 ===================================================================
---- openra-20130514.orig/thirdparty/Tao/Tao.Sdl.dll.config	2013-05-14 21:04:27.324872224 +0200
-+++ openra-20130514/thirdparty/Tao/Tao.Sdl.dll.config	2013-05-14 21:04:27.320872224 +0200
+--- openra-20131223.orig/thirdparty/Tao/Tao.Sdl.dll.config	2013-12-25 21:58:02.930633038 +0100
++++ openra-20131223/thirdparty/Tao/Tao.Sdl.dll.config	2013-12-25 21:58:02.926633038 +0100
 @@ -1,37 +1,29 @@
  <configuration>
 -	<dllmap dll="SDL.dll">
@@ -145,10 +145,10 @@ Index: openra-20130514/thirdparty/Tao/Tao.Sdl.dll.config
 +    <dllmap dll="SDL_gfx.dll" os="osx" target="/Library/Frameworks/SDL_gfx.framework/SDL_gfx" />
 +    <dllmap dll="SDL_gfx.dll" os="!windows,osx" target="libSDL_gfx.so.13" />
  </configuration>
-Index: openra-20130514/thirdparty/SharpFont.dll.config
+Index: openra-20131223/thirdparty/SharpFont.dll.config
 ===================================================================
---- openra-20130514.orig/thirdparty/SharpFont.dll.config	2013-05-13 13:20:02.000000000 +0200
-+++ openra-20130514/thirdparty/SharpFont.dll.config	2013-05-14 21:07:01.388867641 +0200
+--- openra-20131223.orig/thirdparty/SharpFont.dll.config	2013-12-25 21:58:02.930633038 +0100
++++ openra-20131223/thirdparty/SharpFont.dll.config	2013-12-25 21:58:02.926633038 +0100
 @@ -1,7 +1,5 @@
  ﻿<?xml version="1.0" encoding="utf-8" ?>
  <configuration>
@@ -161,3 +161,34 @@ Index: openra-20130514/thirdparty/SharpFont.dll.config
 +    <dllmap dll="freetype6.dll" os="osx" target="/usr/X11/lib/libfreetype.6.dylib" />
 +    <dllmap dll="freetype6.dll" os="!windows,osx" target="libfreetype.so.6" />
 +</configuration>
+Index: openra-20131223/thirdparty/SDL2#.dll.config
+===================================================================
+--- openra-20131223.orig/thirdparty/SDL2#.dll.config	2013-12-22 22:31:49.000000000 +0100
++++ openra-20131223/thirdparty/SDL2#.dll.config	2013-12-25 22:31:41.794615802 +0100
+@@ -2,21 +2,21 @@
+ <configuration>
+ 	<dllmap dll="SDL2.dll" os="windows" target="SDL2.dll"/>
+ 	<dllmap dll="SDL2.dll" os="osx" target="/Library/Frameworks/SDL2.framework/SDL2"/>
+-	<dllmap dll="SDL2.dll" os="linux" target="libSDL2-2.0.so.0"/>
++	<dllmap dll="SDL2.dll" os="!windows,osx" target="libSDL2-2.0.so.0"/>
+ 
+ 	<dllmap dll="SDL2_image.dll" os="windows" target="SDL2_image.dll"/>
+ 	<dllmap dll="SDL2_image.dll" os="osx" target="libSDL2_image-2.0.0.dylib"/>
+-	<dllmap dll="SDL2_image.dll" os="linux" target="libSDL2_image-2.0.so.0"/>
++	<dllmap dll="SDL2_image.dll" os="!windows,osx" target="libSDL2_image-2.0.so.0"/>
+ 
+ 	<dllmap dll="SDL2_mixer.dll" os="windows" target="SDL2_mixer.dll"/>
+ 	<dllmap dll="SDL2_mixer.dll" os="osx" target="libSDL2_mixer-2.0.0.dylib"/>
+-	<dllmap dll="SDL2_mixer.dll" os="linux" target="libSDL2_mixer-2.0.so.0"/>
++	<dllmap dll="SDL2_mixer.dll" os="!windows,osx" target="libSDL2_mixer-2.0.so.0"/>
+ 
+ 	<dllmap dll="SDL2_ttf.dll" os="windows" target="SDL2_ttf.dll"/>
+ 	<dllmap dll="SDL2_ttf.dll" os="osx" target="libSDL2_ttf-2.0.0.dylib"/>
+-	<dllmap dll="SDL2_ttf.dll" os="linux" target="libSDL2_ttf-2.0.so.0"/>
++	<dllmap dll="SDL2_ttf.dll" os="!windows,osx" target="libSDL2_ttf-2.0.so.0"/>
+ 
+ 	<dllmap dll="openal32.dll" os="windows" target="openal32.dll"/>
+ 	<dllmap dll="openal32.dll" os="osx" target="libopenal.1.dylib"/>
+-	<dllmap dll="openal32.dll" os="linux" target="libopenal.so.1"/>
++	<dllmap dll="openal32.dll" os="!windows,osx" target="libopenal.so.1"/>
+ </configuration>

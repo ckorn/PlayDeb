@@ -5,3 +5,5 @@ Tao.Cg.dll.config
 Tao.OpenAl.dll.config
 Tao.OpenGl.dll.config
 Tao.Sdl.dll.config
+SDL2#.dll
+SDL2#.dll.config
