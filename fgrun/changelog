@@ -1,3 +1,9 @@
+fgrun (3.0.0-1~getdeb1) saucy; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 19 Feb 2014 18:50:19 +0100
+
 fgrun (2.12-1~getdeb2) saucy; urgency=low
 
   * Fix debian/watch file.
