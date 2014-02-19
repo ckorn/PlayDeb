@@ -65,6 +65,7 @@ install:
 	   debian/fgfs-base/usr/share/games/flightgear/Aircraft/Generic/Engines/LICENSE
 	rmdir debian/fgfs-base/usr/share/games/flightgear/Aircraft/Instruments-3d/mk-viii/Textures/gpws/xcf/
 	rm debian/fgfs-base/usr/share/games/flightgear/AI/Aircraft/A330-MRTT/COPYING
+	rm debian/fgfs-base/usr/share/games/flightgear/Aircraft/Generic/Human/COPYING
 
 	# fix some insane permissions
 	find debian/fgfs-base/usr/share/games/flightgear -type f -exec chmod 644 {} \;
