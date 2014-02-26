@@ -8,10 +8,10 @@ Description: Various changes to the upstream makefiles
 
 Origin: http://anonscm.debian.org/gitweb/?p=pkg-games/bsnes.git;a=tree;f=debian/patches
 
-Index: higan-093/ananke/Makefile
+Index: higan-094/ananke/Makefile
 ===================================================================
---- higan-093.orig/ananke/Makefile	2013-11-03 13:09:36.656279814 +0100
-+++ higan-093/ananke/Makefile	2013-11-03 13:10:20.124279443 +0100
+--- higan-094.orig/ananke/Makefile	2014-02-26 18:52:41.446232525 +0100
++++ higan-094/ananke/Makefile	2014-02-26 18:52:41.438232525 +0100
 @@ -2,7 +2,7 @@
  include ../phoenix/Makefile
  
@@ -21,10 +21,10 @@ Index: higan-093/ananke/Makefile
  
  all:
  	$(compiler) $(cppflags) $(flags) -fPIC -o obj/ananke.o -c ananke.cpp
-Index: higan-093/Makefile
+Index: higan-094/Makefile
 ===================================================================
---- higan-093.orig/Makefile	2013-08-17 01:38:46.000000000 +0200
-+++ higan-093/Makefile	2013-11-03 13:13:36.776277764 +0100
+--- higan-094.orig/Makefile	2014-02-26 18:52:41.446232525 +0100
++++ higan-094/Makefile	2014-02-26 18:56:17.062230685 +0100
 @@ -13,8 +13,8 @@
  # console := true
  
@@ -36,38 +36,38 @@ Index: higan-093/Makefile
  objects := libco
  
  # profile-guided optimization mode
-@@ -30,8 +30,8 @@
- 
- # platform
- ifeq ($(platform),x)
--  flags += -march=native
--  link += -s -Wl,-export-dynamic -ldl -lX11 -lXext
-+  #flags += -march=native
-+  link += -Wl,-export-dynamic -ldl -lX11 -lXext
- else ifeq ($(platform),osx)
+@@ -44,8 +44,8 @@
+ else ifeq ($(platform),macosx)
    flags += -march=native
- else ifeq ($(platform),win)
-Index: higan-093/target-ethos/Makefile
+ else ifeq ($(platform),linux)
+-  flags += -march=native
+-  link += -s -Wl,-export-dynamic -lX11 -lXext -ldl
++  #flags += -march=native
++  link += -Wl,-export-dynamic -lX11 -lXext -ldl
+ else ifeq ($(platform),bsd)
+   flags += -march=native
+   link += -s -Wl,-export-dynamic -lX11 -lXext
+Index: higan-094/target-ethos/Makefile
 ===================================================================
---- higan-093.orig/target-ethos/Makefile	2013-08-17 01:39:20.000000000 +0200
-+++ higan-093/target-ethos/Makefile	2013-11-03 13:16:50.548276110 +0100
-@@ -16,8 +16,11 @@
- # platform
- ifeq ($(platform),x)
-   ruby := video.glx video.xv video.sdl
+--- higan-094.orig/target-ethos/Makefile	2014-02-26 18:52:41.446232525 +0100
++++ higan-094/target-ethos/Makefile	2014-02-26 18:55:07.098231282 +0100
+@@ -24,8 +24,11 @@
+   ruby += input.carbon
+ else ifeq ($(platform),linux)
+   ruby := video.glx video.xv video.xshm video.sdl
 -  ruby += audio.alsa audio.openal audio.oss audio.pulseaudio audio.pulseaudiosimple audio.ao
 +  ruby += audio.openal audio.oss audio.pulseaudio audio.pulseaudiosimple audio.ao
-   ruby += input.sdl input.x
+   ruby += input.udev input.sdl input.x
 +  ifneq ($(findstring Linux,$(uname)),)
 +    ruby += audio.alsa
 +  endif
- else ifeq ($(platform),osx)
-   ruby := video.cgl
-   ruby += audio.openal
-@@ -86,14 +89,11 @@
- 
- install:
- ifeq ($(platform),x)
+ else ifeq ($(platform),bsd)
+   ruby := video.glx
+   ruby += audio.openal audio.oss
+@@ -96,14 +99,11 @@
+ 	sudo cp data/cheats.bml /Library/Application\ Support/$(name)/cheats.bml
+ 	sudo chmod -R 777 /Library/Application\ Support/$(name)
+ else
 -	sudo install -D -m 755 out/$(name) $(DESTDIR)$(prefix)/bin/$(name)
 -	sudo install -D -m 644 data/$(name).png $(DESTDIR)$(prefix)/share/pixmaps/$(name).png
 -	sudo install -D -m 644 data/$(name).desktop $(DESTDIR)$(prefix)/share/applications/$(name).desktop
@@ -81,6 +81,6 @@ Index: higan-093/target-ethos/Makefile
 +	install -D -m 644 data/higan.desktop $(DESTDIR)$(prefix)/share/applications/higan.desktop
 +	install -D -m 644 data/cheats.xml $(DESTDIR)$(prefix)/share/games/higan/cheats.xml
 +	cp -R profile/* $(DESTDIR)$(prefix)/share/games/higan/profile/
- else ifeq ($(platform),osx)
- 	sudo mkdir -p /Library/Application\ Support/$(name)
- 	sudo cp -R profile/* /Library/Application\ Support/$(name)
+ endif
+ 
+ uninstall:

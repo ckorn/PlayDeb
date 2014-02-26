@@ -1,2 +1,3 @@
 version=3
-http://byuu.org/higan/release/higan_v([\d]+)(?:-source)?\.tar\.(?:bz2|gz|xz)
+http://build.getdeb.net/redirectors/higan.html \
+    (?:.*/)?higan_v([\d]+)(?:-source)?\.tar\.(?:bz2|gz|xz)

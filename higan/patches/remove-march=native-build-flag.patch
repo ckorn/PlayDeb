@@ -6,10 +6,10 @@ Description: Remove -march=native build flag.
    (armhf, s390, s390x, powerpc, ia64, ...).
 Author: Tobias Hansen <tobias.han@gmx.de>
 
-Index: higan-093/Makefile
+Index: higan-094/Makefile
 ===================================================================
---- higan-093.orig/Makefile	2013-11-03 13:13:36.776277764 +0100
-+++ higan-093/Makefile	2013-11-06 19:29:49.909268413 +0100
+--- higan-094.orig/Makefile	2014-02-26 18:56:51.790230388 +0100
++++ higan-094/Makefile	2014-02-26 18:58:19.342229641 +0100
 @@ -13,7 +13,7 @@
  # console := true
  
@@ -19,15 +19,15 @@ Index: higan-093/Makefile
  link    := $(LDFLAGS)
  objects := libco
  
-@@ -30,7 +30,6 @@
- 
- # platform
- ifeq ($(platform),x)
--  #flags += -march=native
-   link += -Wl,-export-dynamic -ldl -lX11 -lXext
- else ifeq ($(platform),osx)
+@@ -44,7 +44,6 @@
+ else ifeq ($(platform),macosx)
    flags += -march=native
-@@ -58,7 +57,7 @@
+ else ifeq ($(platform),linux)
+-  #flags += -march=native
+   link += -Wl,-export-dynamic -lX11 -lXext -ldl
+ else ifeq ($(platform),bsd)
+   flags += -march=native
+@@ -61,7 +60,7 @@
      $(if $(filter %.c,$<), \
        $(compiler) $(cflags) $(flags) $1 -c $< -o $@, \
        $(if $(filter %.cpp,$<), \
@@ -36,11 +36,11 @@ Index: higan-093/Makefile
        ) \
      ) \
    )
-Index: higan-093/phoenix/Makefile
+Index: higan-094/phoenix/Makefile
 ===================================================================
---- higan-093.orig/phoenix/Makefile	2013-08-17 01:37:31.000000000 +0200
-+++ higan-093/phoenix/Makefile	2013-11-06 19:33:25.721261994 +0100
-@@ -4,12 +4,12 @@
+--- higan-094.orig/phoenix/Makefile	2014-02-26 18:56:51.790230388 +0100
++++ higan-094/phoenix/Makefile	2014-02-26 18:56:51.786230388 +0100
+@@ -13,12 +13,12 @@
    endif
  
    ifeq ($(phoenix),gtk)
@@ -54,13 +54,13 @@ Index: higan-093/phoenix/Makefile
 +    phoenixflags = $(cppflags) $(flags) -std=c++0x -Dplatform=x -DPLATFORM_X=1 -DPHOENIX_QT `pkg-config --cflags QtCore QtGui`
      phoenixlink = `pkg-config --libs QtCore QtGui`
    endif
- else ifeq ($(platform),osx)
-Index: higan-093/ruby/Makefile
+ endif
+Index: higan-094/ruby/Makefile
 ===================================================================
---- higan-093.orig/ruby/Makefile	2013-08-17 01:37:29.000000000 +0200
-+++ higan-093/ruby/Makefile	2013-11-06 19:45:03.673241231 +0100
+--- higan-094.orig/ruby/Makefile	2014-02-26 18:56:51.790230388 +0100
++++ higan-094/ruby/Makefile	2014-02-26 19:01:09.666228186 +0100
 @@ -1,7 +1,7 @@
- ifeq ($(platform),osx)
+ ifeq ($(platform),macosx)
    rubyflags = $(objcppflags) $(flags)
  else
 -  rubyflags = $(cppflags) $(flags)
@@ -68,34 +68,32 @@ Index: higan-093/ruby/Makefile
  endif
  
  rubyflags += $(foreach c,$(subst .,_,$(call strupper,$(ruby))),-D$c)
-@@ -30,6 +30,7 @@
- 
- ifeq ($(platform),x)
+@@ -34,4 +34,5 @@
+   rubylink += $(if $(findstring audio.openal,$(ruby)),-framework OpenAL)
+ else
    rubylink += $(if $(findstring audio.openal,$(ruby)),-lopenal)
 +  rubylink += -lm
- else ifeq ($(platform),osx)
-   rubylink += $(if $(findstring audio.openal,$(ruby)),-framework OpenAL)
- else ifeq ($(platform),win)
-Index: higan-093/nall/Makefile
+ endif
+Index: higan-094/nall/Makefile
 ===================================================================
---- higan-093.orig/nall/Makefile	2013-08-17 01:37:28.000000000 +0200
-+++ higan-093/nall/Makefile	2013-11-09 21:51:23.961173043 +0100
-@@ -45,8 +45,8 @@
-     link := -lc++ -lobjc
+--- higan-094.orig/nall/Makefile	2014-02-26 18:56:51.790230388 +0100
++++ higan-094/nall/Makefile	2014-02-26 19:02:00.366227754 +0100
+@@ -49,8 +49,8 @@
+     flags := -w -I/usr/local/include
    else
-     compiler := g++-4.7
+     compiler := g++
 -    flags :=
 -    link :=
 +    flags := -std=c++0x
 +    link := -lstdc++
    endif
  
-   cflags := -x c -std=gnu99
-Index: higan-093/ananke/Makefile
+   cflags := -x c -std=c99
+Index: higan-094/ananke/Makefile
 ===================================================================
---- higan-093.orig/ananke/Makefile	2013-11-03 13:10:20.124279443 +0100
-+++ higan-093/ananke/Makefile	2013-11-09 21:57:06.721162847 +0100
-@@ -2,12 +2,12 @@
+--- higan-094.orig/ananke/Makefile	2014-02-26 18:56:51.790230388 +0100
++++ higan-094/ananke/Makefile	2014-02-26 19:02:58.202227260 +0100
+@@ -2,7 +2,7 @@
  include ../phoenix/Makefile
  
  path := /usr/local/lib
@@ -104,9 +102,12 @@ Index: higan-093/ananke/Makefile
  
  all:
  	$(compiler) $(cppflags) $(flags) -fPIC -o obj/ananke.o -c ananke.cpp
- ifeq ($(platform),x)
+@@ -13,7 +13,7 @@
+ else ifeq ($(platform),macosx)
+ 	$(compiler) $(link) -shared -dynamiclib -undefined suppress -flat_namespace -o libananke.dylib obj/ananke.o
+ else
 -	$(compiler) $(link) -shared -Wl,-soname,libananke.so.1 -o libananke.so obj/ananke.o
 +	$(compiler) $(link) -shared -Wl,-soname,libananke.so.1 -o libananke.so obj/ananke.o -lstdc++
- else ifeq ($(platform),osx)
- 	$(compiler) $(link) -shared -dynamiclib -undefined suppress -flat_namespace -o libananke.dylib obj/ananke.o
- else ifeq ($(platform),win)
+ endif
+ 
+ resource: force
