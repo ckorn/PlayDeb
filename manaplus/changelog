@@ -1,3 +1,15 @@
+manaplus (1:1.4.3.1-1~getdeb2~saucy) saucy; urgency=low
+
+  * New upstream version
+    fix: crazy moves.
+    add: missing help translations.
+    add: allow load branding info from portable.xml.
+    add: dehardcode weapons id for auto switching weapons.
+    add: remove all depericated manaserv code.
+    add: remove support for external guichan.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 01 Mar 2014 18:30:35 +0100
+
 manaplus (1:1.4.2.15-1~getdeb2~saucy) saucy; urgency=low
 
   * New upstream version
