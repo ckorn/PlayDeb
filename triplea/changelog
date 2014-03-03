@@ -1,3 +1,254 @@
+triplea (1.8.0.1-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * Adding new sci-fi sound for "future" era. (pulicat, cernel, veqryn)
+    * Allowing "NONE" as a valid option value in sounds.properties file.
+    (veqryn)
+    * Fixed null pointer exception in Moore AI for water based factories.
+    (veqryn)
+    * Fixed bid delegate so that it will still run even if the player has no
+    resources other than the bid amount. (veqryn)
+    * Fixed possible null pointer exception in Triggered Victory which is
+    triggered from outside of the end round delegate. (veqryn)
+    * Making TransportTracker a static implementation to clean up the engine
+    a little bit. (veqryn)
+    * Fixing various bugs in Global 1940, ww2v3, v4, v5, and v6. (veqryn)
+    * Created new Player Rule Attachment, "immuneToBlockade", which will
+    prevent blockade production loss for that player. (veqryn)
+    * Allowed 1940's paratroopers tech (ariborne combat) to move to / attack
+    territories that have been blitz or already conquered this turn. (veqryn)
+    * Allowed 1940's paratroopers tech (airborne combat) to move from allied
+    bases, and to allow travel over water. (veqryn)
+    * Created new step properties for special move delegates, "airborneMove",
+    which controls if it is an Airborne Combat move phase. (veqyrn)
+    * Adding some more pre-industrial sounds. (pulicat)
+    * Allowed muting of custom aa gun sounds and custom notification,
+    victory, and defeat sounds. (veqryn)
+    * Created resource image factory for making images and icons of
+    resources. (veqryn)
+    * Fixed user interface to allow purchasing resources. (veqryn)
+    * Fixing engine to allow purchase rules for purchasing resources.
+    (veqryn)
+    * Fixed memory leak in repair rules for repairing factories. (veqryn)
+    * Creating a menu option in the "File" menu called "Post PBEM/PBF
+    Gamesave...", which will for pbem games post/email the savegame to the
+    forum, without having to wait for the end turn phase. (veqryn)
+    * Changing trigger "notification" to use "players". (veqryn)
+    * Changing unit attachment property, "repairsUnits", to allow multiple
+    and to have repair values associated with each unit, thereby allowing
+    units to be repaired by X amount each turn. (veqryn)
+    * Created new unitPlacement attribute, "unitDamage", which will let a
+    unit start with bombing factory damage. (veqryn)
+    * Created new unitPlacement attribute, "hitsTaken", which will let a unit
+    start damaged. (veqryn)
+    * Deleting game option property, "SBR Affects Unit Production", and
+    simplifying the engine to only use direct unit damage. (veqryn)
+    * Getting units with different bombing unit damage to not stack. (veqryn)
+    * Allowing selection of casualties for multiple hit units to allow damage
+    points past one. (veqryn)
+    * Getting "hitPoints" to work in the graphical user interface. (veqryn)
+    * Getting "hitPoints" to work on the back end inside the engine. (veqryn)
+    * Created new unit attachment property, "hitPoints", which sets the
+    number of hitpoints a unit has, and also deleted property "isTwoHit".
+    (veqryn)
+    * Allowing sounds to be played by trigger, by putting "_sounds" after a
+    duplicate of the Notification message key, with the value equal to
+    "notification_" or "victory_" or "defeat_" + the sound key found in the
+    sounds.properties file. (veqryn)
+    * Added logfile "dump" command for host bots, that will from the command
+    line print out all status, connection, memory, and thread information to
+    the log. (veqryn)
+    * Created ability for lobby admins to mute and/or boot players in a host
+    bot, remotely. (veqryn)
+    * Created ability for lobby admins to see the player connections in any
+    host game. (veqryn)
+    * Created ability for lobby admins to see chatlog of a host bot remotely.
+    (veqryn)
+    * Adding a new autosave, 'autosave2', which will take turns being saved
+    to with 'autosave'. (veqyrn)
+    * Changing movement validation to disallow moving from a contested battle
+    territory into an enemy territory. (veqryn)
+    * Fixed bug with a territory owned by one player but having enemy units
+    in it, if the owned reconquers the territory it is no longer marked as
+    newly-conquered. (veqryn)
+    * Fixed bug preventing sounds inside a zipped map from playing if the
+    zipped map file path had any spaces or special characters in it. (veqryn)
+    * Fixed bug preventing phase sounds from playing more than once in a
+    non-pbem game. (veqryn)
+    * Creating an option to select local players and AI's for PBEM games.
+    AI's will not post/email the turn summary and savegame at the ends of
+    their turns however. (veqryn)
+    * Fixing bug with host bots where disabling players, quitting, then
+    reloading and disabling even more players, resulted in game crash.
+    (veqryn)
+    * Disallowing previously disabled players from being re-enabled after a
+    game has started. (veqryn)
+    * Fixed bug with moderator lobby unbanning utility. (veqryn)
+    * Created ability for lobby admins to ban players inside a host bot,
+    remotely. (veqryn)
+    * Created ability for lobby admins to stop game on a host bot remotely.
+    (veqryn)
+    * Created ability for lobby admins to shut down a host bot remotely.
+    (veqryn)
+    * Created new option for host bots, "triplea.lobby.game.supportPassword",
+    which when set will allow remote actions on the host bot from the lobby
+    admins. (veqryn)
+    * Created new option for host bots, "triplea.lobby.game.reconnection",
+    which will set the time between lobby reconnection refreshes, with the
+    minimum and default being 6 hours. (veqryn)
+    * Created new game option property, "Disabled Players Assets Deleted",
+    which will delete all units and resources from a disabled unused player
+    during game startup. (veqryn)
+    * Allowing clients to disable and enable players for host bots, but not
+    normal hosts. (veqryn)
+    * Forcing random start to not allow disabled players to select
+    territories, and also letting savegames keep disabled state, and disabled
+    players switched to an AI. (veqryn)
+    * Creating new playerlist option for players, "canBeDisabled", which if
+    set to true will force the game to delete all delegates for that player,
+    thereby allowing more customized multiplayer games. (veqryn)
+    * Forcing hosts and hosting bots to always use Secure Random source when
+    playing online, even when the host is not playing. (veqryn)
+    * Updating TripleA to require at least Java 6 or greater. (veqryn)
+    * Updating included jar libraries to latest versions. (veqryn)
+    * Updating embedded JRE to Java 7 update 51 for x86. (veqryn)
+    * Updated Substance UI to version 7.2.1, and included approximately 14
+    new Look and Feel skins. (veqryn)
+    * Created a menu option called "User Notifications..." which lets you
+    turn off notifications you would receive from End Turn Reports, Triggered
+    Notifications, Chance rolls that are successful or failed. (veqryn)
+    * Fixing Comment Log so that it updates in real time. (veqryn)
+    * Changed automated hosting bots so that they show up as having 1 less
+    player (ie: the bot itself doesn't count), which means zero players if
+    noone else has joined. (veqryn)
+    * Changed unit resource creation so that positive resources will be
+    created before negative resources. (veqryn)
+    * Fixing bug in destroyedTUV condition for allRounds that prevented it
+    from working at all. (veqryn)
+    * Added an updated engine jar for 1.7.0.5 so that the new engine can play
+    old 1.7.0.x savegames. (veqryn)
+    * Changed game setup screen so that the buttons for "Choose Game", "Load
+    Saved Game", and "Game Options", will no longer be greyed out for Clients
+    who have connected to an automated hosting bot. Those buttons will
+    perform the same as if the client used the "Network" menu instead.
+    (veqryn)
+    * Adding a menu option to change an automated hosting bot's game options,
+    and creating backend to process this request. (veqryn)
+    * Forcing automated hosting bots have have a "support email address", so
+    that when a bot has hung or stopped responding, a moderator in the lobby
+    can email the bot's owner to notify them of the situation. (veqryn)
+    * Forcing automated hosting bots to have no password, to start with the
+    string "Bot", and have "automated_host" somewhere in comments. (veqryn)
+    * Adding a column to the lobby called "B" for "Bots", which will show
+    which hosts are automated hosting bots. They will also show up as
+    italics. (veqryn)
+    * Fixed order of firing in ww2v3 and Global 1940, so that defending subs
+    that are not sneak attacking will fire after all attackers have fired.
+    (veqryn)
+    * Fixing a bug where attacking with a carrier loaded with allied
+    fighters, then retreating, would prevent those fighters from being able
+    to participate in battles for the rest of the game. (veqryn)
+    * Allowed TripleA clip player to access sound files within a zipped map.
+    (veqryn)
+    * Fixed bug that allowed fighters to be moved greater than their allowed
+    movement if paired with a carrier. (veqryn)
+    * Adding scroll bars to placement window. (veqryn)
+    * Fixed another bug in getMaxUnitsToBePlaced, it will no longer stop the
+    game if it frees up enough capacity to place but not equal to theoretical
+    maximum. (veqryn)
+    * Fixed bug where a strategic bombing unit receiving negative support
+    and/or negative terrain modifier would be unable to bomb is its attack
+    power decreased to zero. (veqryn)
+    * Created new step properties for move delegates, "combinedTurns", which
+    changes some validation for intermeshed player phases, such as allowing
+    air to live if the ally could place a carrier under them. (veqyrn)
+    * Created new step properties for purchase and place delegates, "bid",
+    which controls if it is a bid phase. (veqyrn)
+    * Created new step properties for move and end turn delegates,
+    "repairUnits", which controls when units get repaired. (veqyrn)
+    * Created new step properties for move and place delegates,
+    "removeAirThatCanNotLand", which controls when air that can not land gets
+    killed. (veqryn)
+    * Created new step properties for move delegates, "resetUnitState", which
+    controls when units get their movement and other stats reset. (veqryn)
+    * Created new step properties for move delegates, "giveBonusMovement",
+    which controls when bonus movement is given. (veqryn)
+    * Created new step properties for move delegates, "fireRockets", which
+    controls when rockets fire. (veqryn)
+    * Created new step properties for move delegates, "combatMove" and
+    "nonCombatMove", which control movement validation. (veqryn)
+    * Prevented AA type units from firing on both start and end of movement,
+    when option "Force AA Attacks For Last Step Of Fly Over" is turned on.
+    (frogg)
+    * Created new game property option "Abandoned Territories May Be Taken
+    Over Immediately", which allows an abandoned territory to be taken over
+    on the turn it was abandoned, rather than waiting for it to be attacked.
+    (veqryn)
+    * Created new game property option "Sea Battles May Be Ignored", which
+    allows attackers to not create a battle in a contested sea zone. (frogg)
+    * Created new game property option "Contested Territories Produce No
+    Income", which will stop all production in territories that contain enemy
+    units. (frogg)
+    * Created new game property option "Retreating Units Remain In Place",
+    which will allow retreats to only the same territory as the battle.
+    (frogg & veqryn)
+    * Allowed AxisAndAllies.org forum poster to maintain "notify me"
+    settings. (Bruce Nielsen)
+    * Changed trigger property "when" so that it can be set multiple times,
+    allowing a trigger to fire multiple times per round. (frogg)
+    * Changed game property option "Battle Rounds" to "Land Battle Rounds".
+    (veqryn)
+    * Added game property option "Sea Battle Rounds". (frogg)
+    * Possible fix for host game hang, when host is launching and another
+    player leaves or joins at start of launch. (veqryn)
+    * Possible fix for game hang / game freeze during hosting, client start
+    step should now wait for delegate bridge to finish updating. (veqryn)
+    * Possible workaround for game hang / game freeze during hosting, if
+    error occurs game should now drop back to waiting screen instead of just
+    hanging or ghosting. (veqryn)
+    * Adding much more logging to HeadlessServerGame in order to try to find
+    cause of the CastClassExceptions in TripleAPlayer.start() and
+    NullPointer/IllegalArgumentExceptions in RemoteName. (veqryn)
+    * Fixed null pointer error in battle calculator when spamming the cancel
+    button. (veqryn)
+    * Rebalancing Great War world war 1 game. (veqryn)
+    * Fixed bug where chanceIncrementOnFailure and chanceDecrementOnSuccess
+    were not allowing any number of zero or less for chance. (veqryn)
+    * Fixed error where games with a round offset where doubling what round
+    the game started on each time it was saved via the history panel.
+    (veqryn)
+    * Creating a headless chat service, so that server can be created in a
+    headless environment and still chat. (veqryn)
+    * Fixed bug causing fatal errors in client-server games when client owned
+    very last step/delegate of game (only applied to some grid based games).
+    (veqryn)
+    * Adding a log file for the headless server located at
+    /log/headless-game-server-<servername>-log<#>.txt, to keep track of
+    events. (veqryn)
+    * Adding many more additional commands to headless game server console,
+    including show connections, ban player, save game, and stop game.
+    (veqryn)
+    * Stopped headless game server from being able to load any savegame for a
+    map to which it does not have the required map files for. (veqryn)
+    * Possible fix another possible hang/freeze point causing a Could Not
+    Block Delegate Execution error. (veqryn)
+    * Fixed headless game server's connect to lobby so that resetting the
+    connection does not erase info about the game. (veqryn)
+    * Possible fixes two possible hang/freeze points in Server Game, one
+    caused by a bogus ClassCastException in ClientGame, the other by a bogus
+    NullPointerError/IllegalArgumentError in RemoteName from
+    PlayerDelegateBridge. (veqryn)
+    * Making sure sound system never loads sound clips for headless game
+    server. (veqryn)
+    * Added a console to automated headless game server host, which allows
+    commands such as 'help', 'status', 'memory', 'threads', and 'quit'.
+    (veqryn)
+    * Created a headless UIContext for use with headless game server, so that
+    it may run on a linux platform that has no configured graphics
+    environment. (veqryn)
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Mon, 03 Mar 2014 21:35:25 +0100
+
 triplea (1.7.0.3-1~getdeb1) precise; urgency=low
 
   * New upstream version

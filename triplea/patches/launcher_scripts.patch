@@ -1,19 +1,15 @@
 Description: Points to Debian installed location, and calls #!/bin/sh
 Author: Scott Howard <showard@debian.org>
 
-Index: triplea-1.5.2.1/run-server.sh
-===================================================================
---- triplea-1.5.2.1.orig/run-server.sh	2011-06-19 04:14:04.000000000 +0200
-+++ triplea-1.5.2.1/run-server.sh	2012-04-14 20:26:41.902251506 +0200
+--- a/run-server.sh
++++ b/run-server.sh
 @@ -1,2 +1,3 @@
 -cd $(dirname $0)
 +#!/bin/sh
 +cd /usr/share/triplea
- java -server  -Xmx192m -classpath bin/triplea.jar:lib/derby_10_1_2.jar -Dtriplea.lobby.port=3303 -Dtriplea.lobby.console=true  games.strategy.engine.lobby.server.LobbyServer 
-Index: triplea-1.5.2.1/triplea_unix.sh
-===================================================================
---- triplea-1.5.2.1.orig/triplea_unix.sh	2011-09-17 01:31:32.000000000 +0200
-+++ triplea-1.5.2.1/triplea_unix.sh	2012-04-14 20:28:37.398248070 +0200
+ java -server  -Xmx192m -classpath bin/triplea.jar:lib/derby-10.10.1.1.jar -Dtriplea.lobby.port=3303 -Dtriplea.lobby.console=true  games.strategy.engine.lobby.server.LobbyServer 
+--- a/triplea_unix.sh
++++ b/triplea_unix.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
