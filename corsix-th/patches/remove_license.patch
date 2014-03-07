@@ -1,0 +1,14 @@
+# remove license
+# it does not even exist in this directory
+# ftbfs
+Index: corsix-th-0.30/CorsixTH/CMakeLists.txt
+===================================================================
+--- corsix-th-0.30.orig/CorsixTH/CMakeLists.txt	2013-12-01 17:49:04.000000000 +0100
++++ corsix-th-0.30/CorsixTH/CMakeLists.txt	2014-03-07 22:02:05.319080557 +0100
+@@ -228,5 +228,5 @@
+   install(DIRECTORY Bitmap DESTINATION CorsixTH
+         FILES_MATCHING REGEX ".*\\.(tab|pal|dat|png)$"
+         PATTERN "*.svn" EXCLUDE)
+-  install(FILES CorsixTH.lua LICENSE.txt CorsixTH.ico DESTINATION CorsixTH )
++  install(FILES CorsixTH.lua CorsixTH.ico DESTINATION CorsixTH )
+ ENDIF()
