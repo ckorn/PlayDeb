@@ -1,3 +1,9 @@
+popzi (0.1-1~getdeb2) precise; urgency=low
+
+  * Remove debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 17 Mar 2014 22:10:39 +0100
+
 popzi (0.1-1~getdeb1) lucid; urgency=low
 
   * Upload to GetDeb (LP: #951606O)

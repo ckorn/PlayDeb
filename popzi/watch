@@ -1,3 +1,0 @@
-version=3
-http://www.osgameseed.org/games/popzi \
-    (?:.*)?popzi-([\d\.]+)\.tar\.gz(?:.*)
