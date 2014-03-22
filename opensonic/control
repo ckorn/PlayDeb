@@ -2,14 +2,18 @@ Source: opensonic
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50), cmake,
- liballeg4.4-dev, libvorbis-dev, pkg-config
-Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 9),
+               cmake,
+               liballeg4.4-dev,
+               libvorbis-dev,
+               pkg-config
+Standards-Version: 3.9.3
 Homepage: http://opensnc.sourceforge.net
 
 Package: opensonic
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
 Description: Open-source game based on the "Sonic the Hedgehog" universe
  Open Sonic is a free open-source game based on the
  "Sonic the Hedgehog" universe. It introduces a different
@@ -24,7 +28,8 @@ Package: opensonic-dbg
 Section: debug
 Priority: extra
 Architecture: any
-Depends: opensonic (= ${binary:Version}), ${misc:Depends}
+Depends: opensonic (= ${binary:Version}),
+         ${misc:Depends}
 Description: Open-source game based on the "Sonic the Hedgehog" universe (debugging symbols)
  Open Sonic is a free open-source game based on the
  "Sonic the Hedgehog" universe. It introduces a different
