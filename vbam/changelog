@@ -1,3 +1,9 @@
+vbam (1.8.0.1229-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 25 Mar 2014 22:46:04 +0100
+
 vbam (1.8.0.1001-1~getdeb3) oneiric; urgency=low
 
   * Fix debian/watch file

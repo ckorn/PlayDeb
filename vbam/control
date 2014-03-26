@@ -2,15 +2,29 @@ Source: vbam
 Section: otherosfs
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50), cmake, nasm,
- libsdl1.2-dev, libgtkmm-2.4-dev, libgtkglextmm-x11-1.2-dev,
- libsfml-dev
-Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 9),
+               cmake,
+               nasm,
+               libsdl1.2-dev,
+               libgtkmm-2.4-dev,
+               libgtkglextmm-x11-1.2-dev,
+               libsfml-dev,
+               libavcodec-dev,
+               libavformat-dev,
+               libswscale-dev,
+               libavutil-dev,
+               wx-common,
+               libcairo2-dev,
+               liblircclient-dev,
+               libopenal-dev,
+               libwxgtk2.8-dev
+Standards-Version: 3.9.3
 Homepage: http://vba-m.com
 
 Package: vbam
 Architecture: all
-Depends: ${misc:Depends}, vbam-gtk
+Depends: ${misc:Depends},
+         vbam-gtk
 Description: Nintendo Game Boy Advance emulator (dummy package)
  VisualBoyAdvance-M is a Nintendo Game Boy Emulator with high compatibility
  with commercial games. It emulates the Nintendo Game Boy Advance handheld
@@ -21,7 +35,8 @@ Description: Nintendo Game Boy Advance emulator (dummy package)
 
 Package: vbam-sdl
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
 Description: Nintendo Game Boy Advance emulator
  VisualBoyAdvance-M is a Nintendo Game Boy Emulator with high
  compatibility with commercial games. It emulates the Nintendo Game
@@ -33,7 +48,8 @@ Description: Nintendo Game Boy Advance emulator
 
 Package: vbam-gtk
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
 Replaces: vbam
 Provides: vbam
 Description: Nintendo Game Boy Advance emulator (GTK+ frontend)

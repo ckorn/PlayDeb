@@ -1,2 +1,3 @@
 version=3
-http://sf.net/vbam/vbam_([\d\.]+)(?:-[\d]+)?\.tar\.gz
+opts="dversionmangle=s/.*\.(\d+)$/$1/g" \
+    http://sf.net/vbam/VisualBoyAdvanceM([\d]+)\.7z
