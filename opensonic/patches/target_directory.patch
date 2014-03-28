@@ -1,3 +1,4 @@
+# install files in /usr/share/games and /usr/lib/games
 Index: opensonic-0.1.4/CMakeLists.txt
 ===================================================================
 --- opensonic-0.1.4.orig/CMakeLists.txt	2011-04-27 22:05:51.301485000 +0200

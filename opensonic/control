@@ -4,10 +4,14 @@ Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
                cmake,
-               liballeg4.4-dev,
+               liballegro4-dev,
                libvorbis-dev,
-               pkg-config
-Standards-Version: 3.9.3
+               pkg-config,
+               libloadpng4-dev,
+               libpng12-dev,
+               libjpgalleg4-dev,
+               liblogg4-dev
+Standards-Version: 3.9.4
 Homepage: http://opensnc.sourceforge.net
 
 Package: opensonic

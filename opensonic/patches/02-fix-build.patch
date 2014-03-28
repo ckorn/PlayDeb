@@ -1,3 +1,4 @@
+# add alleg to link list
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -249,8 +249,7 @@

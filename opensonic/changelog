@@ -1,3 +1,9 @@
+opensonic (0.1.4-1~getdeb4~saucy) saucy; urgency=low
+
+  * Rebuild for saucy (LP: #1299084)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 28 Mar 2014 21:57:25 +0100
+
 opensonic (0.1.4-1~getdeb3~raring) raring; urgency=low
 
   * Rebuild for raring.
