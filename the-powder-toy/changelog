@@ -1,3 +1,49 @@
+the-powder-toy (89.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    Ctype is displayed as a number for elements which use it as a wavelength
+    "no effect" tmp mode (tmp=6) works on CRAY
+    Add vertical flip when pasting stamps (ctrl+shift+r)
+    Tooltips on open/save simulation buttons change when ctrl is held
+    Fix crash when pasting from empty clipboard
+    Fix numpad behavior
+    Fix sim.deleteStamp and sim.loadStamp
+    Fix error logging in lua key events
+    Fix sim.neighbors and sim.partNeighbors not working correctly in most
+    cases
+    Fix crash in sim.partKill, and bug sim.partID design
+    Add sim.reloadSave() and tpt.selectedreplace
+    elem.property and elem.element can read "Identifier" property
+    Everything else in the previous two betas
+    Better PROP tool, draws like any other tool and remembers last setting.
+    The property selection window comes up as soon as you click it now.
+    Fix crash when flood deleting VIRS
+    Fix PHOT+HYGN reaction not taking place under some circumstances
+    Reverted WIFI to previous delay amount
+    Prevent black FILT
+    Fix possible crash when modifying LIFE with the console
+    Fix state transitions in id:1419883
+    Insulators block ambient heat
+    Improve "pretty powders", so that the deco doesn't interfere with state
+    changes
+    Fix Gravity wall areas not recalculating when deleting them
+    Fix occasional missing pixels on the top / bottom of circle brush
+    Fix holes in wall line drawing
+    Signs can be moved onto the zoom window
+    Fix crash when viewing corrupt saves
+    Element search promotes exact matches first
+    Fix comment box resizing bugs
+    Pressing tab switches between textboxes in the deco editor
+    Fix key repeat on Linux
+    Fix lua crashes in the graphics and interface apis
+    Bluescreen on lua panics instead of crashing
+    Fixes to tpt.el.color and tpt.el.name
+    Add tpt.screenshot support for PPM and BMP
+    Add lua functions to get / set clipboard text; Add sim.deleteStamp
+    function
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 30 Mar 2014 21:52:25 +0200
+
 the-powder-toy (89.0-1~getdeb1) precise; urgency=low
 
   * New upstream version
