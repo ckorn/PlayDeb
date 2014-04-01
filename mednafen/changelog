@@ -1,3 +1,22 @@
+mednafen (0.9.33.2-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    -PSX: Fixed a small MDEC emulation bug; fixes the hang during startup in
+    "SimCity 2000".
+    -The order of evaluation of the frame advance and run normal command
+    keys/hotkeys is now based on whether or not we're currently in frame
+    advance mode, to allow for the derivation of a single-press pause/unpause
+    key(effected by the user mapping both functions to a single key).
+    -Renamed the log2 LUT array in the mpcdec code to avoid shadowing the
+    math library function log2().
+    -NES: Fixed the problem of the VS Unisystem DIP switch position
+    display(accessed via the "F6" key) being invisible.
+    -PCE: Fixed broken MCGenjin support.
+    -CDPLAY: Tweaked visualization code to reduce memory and CPU usage.
+    -Lynx: Minor code cleanups.
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Mon, 31 Mar 2014 22:23:35 +0200
+
 mednafen (0.9.33.1-1~getdeb1) precise; urgency=low
 
   * New upstream version
