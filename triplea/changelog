@@ -1,3 +1,64 @@
+triplea (1.8.0.3-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * Created new step property option, "repairPlayers", which will allow a
+    player to repair the units owned by a different player. (veqryn)
+    * Fixed issue where your move phase was skipped if the only unit you
+    owned was a land unit in a transport. (veqryn)
+    * Allowing land units to receive repairing and bonus movement from
+    neighboring sea zone sea units. (veqryn)
+    * Units on transports no longer are able to repair other units, allow
+    scrambling, or give movement to other units. (veqryn)
+    * Fixed issue where a unit that dies from rockets, still participates in
+    subsequent strategic bombing battle. (veqryn)
+    * Fixed issue with allied land units in friendly transports and allied
+    air on friendly carriers losing their movement when their
+    transport/carrier moved. (veqryn)
+    * Fixing issue with allied land units starting game loaded on friendly
+    transports, could not offload until at least one non-combat phase had
+    passed. (veqryn)
+    * Deleted global game option property, "Allied Air Dependents", and
+    replaced with its inverse, "Allied Air Independent". (veqryn)
+    * Added menu option under 'Export" menu, called "Export Unit Charts",
+    which will create an html document showing all units in the game and
+    their properties and cost. (veqryn)
+    * Created an new menu option under the 'Help' menu called "Unit Help",
+    which will display a table of all units, by player, including all unit
+    properties. (veqryn)
+    * Fixed bug in relationship attachment property change by trigger.
+    (veqryn)
+    * Deleting phase step property option, "resetUnitState", and replacing
+    with "resetUnitStateAtEnd" and "resetUnitStateAtStart". (frogg)
+    * Making createsUnitsList ability choose a random territory when
+    producing to a neighboring territory. (veqryn)
+    * Fixing bugs in AI's where factories were on water zones that had no
+    territory attachment. (veqryn)
+    * Fixed bug where a stalemate battle with carriers that can be damaged
+    and when damaged don't let planes land, were not letting defending planes
+    move to land. (veqryn)
+    * Deleting game option property "Unescorted Transport Dies", as it no
+    longer does anything. (veqryn)
+    * Cleanup of HeadlessGameServer classes. (veqryn)
+    * Fixed bugs in Placement, which were allowing infinite placement of sea
+    units which were constructions. (veqryn)
+    * Some updates for 'Great War' world war 1 map, and Pact of Steel 2.
+    (veqryn)
+    * Possible fix for "Could not stop delegate execution" bug. (veqryn)
+    * Fixed possible bug where a corrupted game save had the initialization
+    delegate get called more than once. (veqryn)
+    * Adding a new AI called "Hard AI". Also renamed AI's: EZ Fodder -> Easy
+    AI, Moore N Able -> Medium AI, Dynamix -> Land Only AI. (redrum)
+    * Fix for infinite crash-reload loop on loading a corrupt autosave on a
+    host bot. (veqryn)
+    * Fixed issue with Victory trigger not being able to use html properly.
+    (veqryn)
+    * Fixed illegal state exception error in landing paratroopers during a
+    battle. (veqryn)
+    * Possibly final fix for a game hang / frozen bot on game launch.
+    (veqryn)
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Mon, 31 Mar 2014 21:50:15 +0200
+
 triplea (1.8.0.1-1~getdeb1) precise; urgency=low
 
   * New upstream version
