@@ -1,3 +1,19 @@
+manaplus (1:1.4.3.29-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    fix: memory leak on window resize.
+    fix: crash with map layer patches.
+    add: improve performance.
+    add: chat command for send message to gms.
+    Command: /gm message
+    add: context menu in windows.
+    add: in social window highlight poisoned hp bad with other color.
+    add: option to hide support link on errors.
+    add: option to show server side player position.
+    add: swap X and left Ctrl keys.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 08 Apr 2014 19:30:28 +0200
+
 manaplus (1:1.4.3.15-1~getdeb1) precise; urgency=low
 
   * New upstream version
