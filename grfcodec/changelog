@@ -1,3 +1,19 @@
+grfcodec (6.0.4-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    - NFORenum specific changes:
+      - Data file updates
+        - Action 0, feature 0xF, property 0x18 (Object amount on map)
+        - Action 2 train and road vehicle variable 4D
+        - Action 2 object variable 60
+        - Action 5, type 0x15 (OpenTTD GUI): Now 175 sprites are allowed
+      - Support string codes 9A 16 to 9A 1D
+      - Allow higher IDs for vehicles when GRF version >= 8
+      - Fix some checks for sprite numbers >= 65536
+    - Remove grfdiff and grfmerge due to being unmaintained
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 07 Apr 2014 20:44:38 +0200
+
 grfcodec (6.0.3-1~getdeb1) precise; urgency=low
 
   * New upstream version
