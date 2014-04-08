@@ -1,3 +1,9 @@
+tong (1.3-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 08 Apr 2014 19:44:43 +0200
+
 tong (1.2-1~getdeb1) precise; urgency=low
 
   * Initial release (LP: #1273237)
