@@ -1,3 +1,14 @@
+stone-soup (0.14.0-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+    * The lower half of D is now a new branch, the Depths.
+    * Two new species: Formicids and Vine Stalkers.
+    * A new deity: Dithmenos the Shadowed.
+    * Greatly revised monster sets in the Lair branches.
+    * Greatly revised summoning spell sets.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 10 Apr 2014 19:58:28 +0200
+
 stone-soup (0.13.2-1~getdeb1) precise; urgency=low
 
   * New upstream version
