@@ -1,9 +1,9 @@
 Do not try to build anything in the debian directory.
-Index: liquidwar6-0.2.3551/configure
+Index: liquidwar6-0.4.3681/configure
 ===================================================================
---- liquidwar6-0.2.3551.orig/configure	2014-01-05 16:35:40.228309521 +0100
-+++ liquidwar6-0.2.3551/configure	2014-01-05 16:36:54.856307301 +0100
-@@ -18077,7 +18077,7 @@
+--- liquidwar6-0.4.3681.orig/configure	2014-04-12 01:00:58.543047471 +0200
++++ liquidwar6-0.4.3681/configure	2014-04-12 01:00:58.539047471 +0200
+@@ -18078,7 +18078,7 @@
  
  
  
@@ -12,7 +12,7 @@ Index: liquidwar6-0.2.3551/configure
  
  
  cat >confcache <<\_ACEOF
-@@ -19334,9 +19334,6 @@
+@@ -19335,9 +19335,6 @@
      "map/playfield/Makefile") CONFIG_FILES="$CONFIG_FILES map/playfield/Makefile" ;;
      "map/strange-new-world/Makefile") CONFIG_FILES="$CONFIG_FILES map/strange-new-world/Makefile" ;;
      "map/subflower/Makefile") CONFIG_FILES="$CONFIG_FILES map/subflower/Makefile" ;;
@@ -22,10 +22,10 @@ Index: liquidwar6-0.2.3551/configure
      "pkg/Makefile") CONFIG_FILES="$CONFIG_FILES pkg/Makefile" ;;
      "pkg/liquidwar6.spec") CONFIG_FILES="$CONFIG_FILES pkg/liquidwar6.spec" ;;
      "pkg/liquidwar6.nsi") CONFIG_FILES="$CONFIG_FILES pkg/liquidwar6.nsi" ;;
-Index: liquidwar6-0.2.3551/Makefile.in
+Index: liquidwar6-0.4.3681/Makefile.in
 ===================================================================
---- liquidwar6-0.2.3551.orig/Makefile.in	2014-01-05 16:35:40.228309521 +0100
-+++ liquidwar6-0.2.3551/Makefile.in	2014-01-05 16:35:40.224309521 +0100
+--- liquidwar6-0.4.3681.orig/Makefile.in	2014-04-12 01:00:58.543047471 +0200
++++ liquidwar6-0.4.3681/Makefile.in	2014-04-12 01:00:58.539047471 +0200
 @@ -449,7 +449,7 @@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@

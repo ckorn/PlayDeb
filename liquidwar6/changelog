@@ -1,3 +1,9 @@
+liquidwar6 (0.4.3681-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 12 Apr 2014 01:00:47 +0200
+
 liquidwar6 (0.2.3551-1~getdeb1) precise; urgency=low
 
   * New upstream version
