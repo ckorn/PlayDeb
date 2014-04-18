@@ -12,12 +12,12 @@ Build-Depends: cdbs,
                libxxf86vm-dev,
                libxext-dev,
                libboost-date-time-dev,
-               libirrlicht1.8-dev,
+               libirrlicht-dev,
                libsqlite3-dev,
                libopenal-dev,
                libxrandr-dev,
                libbullet-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://code.google.com/p/irrlamb/
 
 Package: irrlamb

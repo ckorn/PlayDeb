@@ -1,3 +1,9 @@
+irrlamb (0.1.1-1~getdeb3~trusty) trusty; urgency=low
+
+  * Rebuild for trusty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Apr 2014 00:54:58 +0200
+
 irrlamb (0.1.1-1~getdeb2) precise; urgency=low
 
   * Rebuild for bullet 2.81
