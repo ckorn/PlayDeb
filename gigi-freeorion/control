@@ -9,11 +9,11 @@ Build-Depends: cmake (>= 2.6),
                libfreetype6-dev,
                libglu1-mesa-dev,
                libltdl-dev,
-               libogre-dev,
+               libogre-1.9-dev,
                libois-dev,
                libsdl1.2-dev,
                pkg-config,
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: https://www.freeorion.org/
 
 Package: libgigi0d
@@ -117,7 +117,7 @@ Architecture: any
 Depends: ${misc:Depends},
          libgigiogre0d (= ${binary:Version}),
          libgigi-dev (= ${binary:Version}),
-         libogre-dev,
+         libogre-1.9-dev
 Description: OpenGL Graphical User Interface Library (Ogre headers)
  GiGi (aka GG) is a GUI library for OpenGL.
  It is platform-independent (it runs at least on Linux

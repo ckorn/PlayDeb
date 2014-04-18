@@ -1,3 +1,9 @@
+gigi-freeorion (1:0.4.2~svn5890-1~getdeb2) trusty; urgency=low
+
+  * Rebuild for trusty.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Apr 2014 00:20:28 +0200
+
 gigi-freeorion (1:0.4.2~svn5890-1~getdeb1) quantal; urgency=low
 
   * This is the modified version of GIGI which is
