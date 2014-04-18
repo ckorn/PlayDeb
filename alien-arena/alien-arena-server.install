@@ -1,6 +1,0 @@
-source/alienarena-ded			usr/lib/games/alien-arena
-Tools/LinuxScripts/launch-server	usr/lib/games/alien-arena
-Tools/LinuxScripts/kill-runaway-crx-ded	usr/lib/games/alien-arena
-Tools/LinuxScripts/rcon			usr/lib/games/alien-arena
-Tools/LinuxScripts/svstat		usr/lib/games/alien-arena
-debian/scripts/alien-arena-server	usr/games

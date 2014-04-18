@@ -1,7 +1,0 @@
-#!/bin/sh
-
-set -e
-
-update-alternatives --remove freeciv /usr/games/freeciv-sdl
-
-#DEBHELPER#

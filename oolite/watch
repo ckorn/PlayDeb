@@ -1,4 +1,0 @@
-version=3
-opts=downloadurlmangle=s/prdownload/download/,dversionmangle=s/dfsg// \
-  http://developer.berlios.de/project/showfiles.php?group_id=3577 \
-  http://prdownload.berlios.de/oolite-linux/oolite-source-([\d\.-]*).tar.bz2

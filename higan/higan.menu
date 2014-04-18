@@ -1,5 +1,0 @@
-?package(higan): needs="X11" \
-                 section="Games/Tools" \
-                 title="higan" \
-                 command="/usr/games/higan" \
-                 icon="/usr/share/pixmaps/higan.xpm"

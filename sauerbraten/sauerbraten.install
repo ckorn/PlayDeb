@@ -1,5 +1,0 @@
-sauer_client			usr/lib/games/sauerbraten
-debian/sauerbraten.desktop	usr/share/applications
-debian/scripts/sauerbraten	usr/games
-debian/sauerbraten.png		usr/share/icons/hicolor/32x32/apps
-debian/sauerbraten.xpm		usr/share/pixmaps

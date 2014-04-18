@@ -1,5 +1,0 @@
-usr/include/*
-usr/lib/lib*.so
-usr/lib/pkgconfig
-usr/share/SFML/cmake/Modules/FindSFML.cmake
-usr/share/SFML/readme.txt

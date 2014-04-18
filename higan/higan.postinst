@@ -1,8 +1,0 @@
-#!/bin/sh
-
-set -e
-update-alternatives --install /usr/games/higan-bin higan-bin /usr/games/higan-accuracy 10
-update-alternatives --install /usr/games/higan-bin higan-bin /usr/games/higan-balanced 30
-update-alternatives --install /usr/games/higan-bin higan-bin /usr/games/higan-performance 20
-
-#DEBHELPER#

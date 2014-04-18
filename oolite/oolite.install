@@ -1,7 +1,0 @@
-oolite.app/oolite usr/lib/GNUstep/Applications/oolite.app
-
-installers/FreeDesktop/oolite.desktop  usr/share/applications
-installers/FreeDesktop/oolite-icon.png usr/share/icons
-
-debian/launcher/oolite usr/games
-debian/oolite-logo1.xpm usr/share/pixmaps

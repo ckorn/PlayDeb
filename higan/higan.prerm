@@ -1,9 +1,0 @@
-#!/bin/sh
-
-set -e
-
-if [ "$1" != "upgrade" ]; then
-    update-alternatives --remove-all higan-bin
-fi
-
-#DEBHELPER#

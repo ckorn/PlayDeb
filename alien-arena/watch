@@ -1,3 +1,0 @@
-version=3
-opts="uversionmangle=s/_/./g;s/\-.*$//g,dversionmangle=s/\+dfsg$//g" \
-http://red.planetarena.org/files/alienarena-([\d\.]+)\-(?:.*)\.tar\.gz

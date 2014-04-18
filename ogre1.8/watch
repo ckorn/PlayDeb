@@ -1,3 +1,0 @@
-version=3
-opts="uversionmangle=s/-/\./g" \
-http://sf.net/ogre/ogre_src_v([\d-]+)\.tar\.bz2

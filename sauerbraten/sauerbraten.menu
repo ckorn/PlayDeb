@@ -1,6 +1,0 @@
-?package(sauerbraten):needs="X11" \
-  section="Games/Action" \
-  icon="/usr/share/pixmaps/sauerbraten.xpm" \
-  title="Sauerbraten" \
-  longtitle="A networked 3D first-person shooter game" \
-  command="/usr/games/sauerbraten"

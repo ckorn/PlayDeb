@@ -1,4 +1,0 @@
-#!/bin/sh
-
-cd /usr/lib/games/sauerbraten
-exec ./sauer_client -q"$HOME/.sauerbraten" -r "$@"

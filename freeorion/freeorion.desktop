@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=FreeOrion
-Comment=Conquer the galaxy
-Icon=freeorion
-Exec=/usr/games/freeorion
-Type=Application
-Categories=Game;StrategyGame;
