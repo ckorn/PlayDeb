@@ -3,6 +3,7 @@ Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
+               dh-autoreconf,
                libasound2-dev,
                libpulse-dev,
                libmad0-dev,
@@ -14,10 +15,9 @@ Build-Depends: debhelper (>= 9),
                libgl1-mesa-dev,
                libgtk2.0-dev,
                libxrandr-dev,
-               ffmpeg,
                libbz2-dev,
                libglew-dev
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Homepage: http://code.google.com/p/sm-ssc
 
 Package: sm-ssc

@@ -1,4 +1,4 @@
 version=3
-opts="dversionmangle=s/([\d\.]+)~(.+)([\d]+.*)/$1-$2-$3/" \
-http://code.google.com/p/sm-ssc/downloads/list \
-    (?:.*/)?StepMania-v(.*)-src\.tar\.(?:bz2|xz|gz)
+opts="dversionmangle=s/(\d)(?:\.\d)~(.+)([\d]+.*)/$1-$2$3/" \
+https://github.com/stepmania/stepmania/releases \
+    (?:.*/)?archive/SM(.*)\.tar\.gz

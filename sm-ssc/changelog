@@ -1,3 +1,15 @@
+sm-ssc (5.0~beta3-1~getdeb1) trusty; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Apr 2014 02:05:26 +0200
+
+sm-ssc (5.0~beta1a-1~getdeb2~trusty) trusty; urgency=low
+
+  * Rebuild for trusty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Apr 2014 01:44:07 +0200
+
 sm-ssc (5.0~beta1a-1~getdeb1) saucy; urgency=low
 
   * New upstream version
