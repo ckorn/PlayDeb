@@ -1,0 +1,214 @@
+# apply boost fixes
+Index: violetland-0.4.3/src/game/Highscores.h
+===================================================================
+--- violetland-0.4.3.orig/src/game/Highscores.h	2011-06-05 12:35:08.000000000 +0200
++++ violetland-0.4.3/src/game/Highscores.h	2014-04-06 22:19:57.949404474 +0200
+@@ -3,6 +3,13 @@
+ 
+ #include <set>
+ 
++// as of boost 1.50 there is no version 2, and compiles will fail 
++#include <boost/version.hpp> 
++#if BOOST_VERSION > 104900 
++#define BOOST_FILESYSTEM_VERSION 3 
++#else 
++#define BOOST_FILESYSTEM_VERSION 2 
++#endif
+ #include <boost/filesystem.hpp>
+ #include <boost/filesystem/fstream.hpp>
+ 
+Index: violetland-0.4.3/src/game/WeaponManager.h
+===================================================================
+--- violetland-0.4.3.orig/src/game/WeaponManager.h	2011-06-11 18:11:55.000000000 +0200
++++ violetland-0.4.3/src/game/WeaponManager.h	2014-04-06 22:20:04.505404418 +0200
+@@ -1,6 +1,13 @@
+ #ifndef WEAPONMANAGER_H_
+ #define WEAPONMANAGER_H_
+ 
++// as of boost 1.50 there is no version 2, and compiles will fail 
++#include <boost/version.hpp> 
++#if BOOST_VERSION > 104900 
++#define BOOST_FILESYSTEM_VERSION 3 
++#else 
++#define BOOST_FILESYSTEM_VERSION 2 
++#endif
+ #include <boost/filesystem/fstream.hpp>
+ 
+ #include "../system/sound/SoundManager.h"
+Index: violetland-0.4.3/src/game/lifeforms/MonsterFactory.h
+===================================================================
+--- violetland-0.4.3.orig/src/game/lifeforms/MonsterFactory.h	2011-04-12 21:51:04.000000000 +0200
++++ violetland-0.4.3/src/game/lifeforms/MonsterFactory.h	2014-04-06 22:20:14.289404334 +0200
+@@ -3,6 +3,13 @@
+ 
+ #include <sstream>
+ 
++// as of boost 1.50 there is no version 2, and compiles will fail 
++#include <boost/version.hpp> 
++#if BOOST_VERSION > 104900 
++#define BOOST_FILESYSTEM_VERSION 3 
++#else 
++#define BOOST_FILESYSTEM_VERSION 2 
++#endif
+ #include <boost/filesystem/fstream.hpp>
+ 
+ #include "../../system/sound/SoundManager.h"
+Index: violetland-0.4.3/src/program.cpp
+===================================================================
+--- violetland-0.4.3.orig/src/program.cpp	2011-06-16 19:43:52.000000000 +0200
++++ violetland-0.4.3/src/program.cpp	2014-04-06 22:20:24.929404243 +0200
+@@ -29,6 +29,13 @@
+ #include "SDL_ttf.h"
+ 
+ // Boost
++// as of boost 1.50 there is no version 2, and compiles will fail 
++#include <boost/version.hpp> 
++#if BOOST_VERSION > 104900 
++#define BOOST_FILESYSTEM_VERSION 3 
++#else 
++#define BOOST_FILESYSTEM_VERSION 2 
++#endif
+ #include <boost/filesystem.hpp>
+ #include <boost/format.hpp>
+ 
+Index: violetland-0.4.3/src/system/ConfigFile.h
+===================================================================
+--- violetland-0.4.3.orig/src/system/ConfigFile.h	2011-05-03 22:00:31.000000000 +0200
++++ violetland-0.4.3/src/system/ConfigFile.h	2014-04-06 22:20:49.621404033 +0200
+@@ -5,6 +5,13 @@
+ #include <iostream>
+ #include <sstream>
+ 
++// as of boost 1.50 there is no version 2, and compiles will fail 
++#include <boost/version.hpp> 
++#if BOOST_VERSION > 104900 
++#define BOOST_FILESYSTEM_VERSION 3 
++#else 
++#define BOOST_FILESYSTEM_VERSION 2 
++#endif
+ #include <boost/filesystem.hpp>
+ #include <boost/filesystem/fstream.hpp>
+ 
+Index: violetland-0.4.3/src/system/Configuration.h
+===================================================================
+--- violetland-0.4.3.orig/src/system/Configuration.h	2011-04-12 21:51:23.000000000 +0200
++++ violetland-0.4.3/src/system/Configuration.h	2014-04-06 22:20:35.729404151 +0200
+@@ -1,6 +1,13 @@
+ #ifndef CONFIGURATION_H_
+ #define CONFIGURATION_H_
+ 
++// as of boost 1.50 there is no version 2, and compiles will fail 
++#include <boost/version.hpp> 
++#if BOOST_VERSION > 104900 
++#define BOOST_FILESYSTEM_VERSION 3 
++#else 
++#define BOOST_FILESYSTEM_VERSION 2 
++#endif
+ #include <boost/filesystem/fstream.hpp>
+ 
+ #include "utility/FileUtility.h"
+Index: violetland-0.4.3/src/system/graphic/text/TextManager.h
+===================================================================
+--- violetland-0.4.3.orig/src/system/graphic/text/TextManager.h	2011-05-03 22:01:11.000000000 +0200
++++ violetland-0.4.3/src/system/graphic/text/TextManager.h	2014-04-06 22:20:30.529404196 +0200
+@@ -1,6 +1,13 @@
+ #ifndef TEXTMANAGER_H_
+ #define TEXTMANAGER_H_
+ 
++// as of boost 1.50 there is no version 2, and compiles will fail 
++#include <boost/version.hpp> 
++#if BOOST_VERSION > 104900 
++#define BOOST_FILESYSTEM_VERSION 3 
++#else 
++#define BOOST_FILESYSTEM_VERSION 2 
++#endif
+ #include <boost/filesystem.hpp>
+ 
+ #include "TextObject.h"
+Index: violetland-0.4.3/src/system/sound/SoundManager.h
+===================================================================
+--- violetland-0.4.3.orig/src/system/sound/SoundManager.h	2011-05-03 22:00:50.000000000 +0200
++++ violetland-0.4.3/src/system/sound/SoundManager.h	2014-04-06 22:20:54.109403994 +0200
+@@ -1,6 +1,13 @@
+ #ifndef SOUNDMANAGER_H_
+ #define SOUNDMANAGER_H_
+ 
++// as of boost 1.50 there is no version 2, and compiles will fail 
++#include <boost/version.hpp> 
++#if BOOST_VERSION > 104900 
++#define BOOST_FILESYSTEM_VERSION 3 
++#else 
++#define BOOST_FILESYSTEM_VERSION 2 
++#endif
+ #include <boost/filesystem.hpp>
+ 
+ #include "Sound.h"
+Index: violetland-0.4.3/src/system/utility/FileUtility.h
+===================================================================
+--- violetland-0.4.3.orig/src/system/utility/FileUtility.h	2011-05-28 20:09:19.000000000 +0200
++++ violetland-0.4.3/src/system/utility/FileUtility.h	2014-04-06 22:20:41.165404105 +0200
+@@ -6,6 +6,13 @@
+ #include <cstdlib>
+ #include <string>
+ 
++// as of boost 1.50 there is no version 2, and compiles will fail 
++#include <boost/version.hpp> 
++#if BOOST_VERSION > 104900 
++#define BOOST_FILESYSTEM_VERSION 3 
++#else 
++#define BOOST_FILESYSTEM_VERSION 2 
++#endif
+ #include <boost/filesystem.hpp>
+ 
+ 
+Index: violetland-0.4.3/src/system/utility/ImageUtility.h
+===================================================================
+--- violetland-0.4.3.orig/src/system/utility/ImageUtility.h	2011-05-03 22:00:33.000000000 +0200
++++ violetland-0.4.3/src/system/utility/ImageUtility.h	2014-04-06 22:20:45.497404068 +0200
+@@ -2,6 +2,13 @@
+ #define IMAGEUTILITY_H_
+ 
+ #include <iostream>
++// as of boost 1.50 there is no version 2, and compiles will fail 
++#include <boost/version.hpp> 
++#if BOOST_VERSION > 104900 
++#define BOOST_FILESYSTEM_VERSION 3 
++#else 
++#define BOOST_FILESYSTEM_VERSION 2 
++#endif
+ #include <boost/filesystem.hpp>
+ #include "SDL_ttf.h"
+ #include "SDL_image.h"
+Index: violetland-0.4.3/src/system/utility/FileUtility.cpp
+===================================================================
+--- violetland-0.4.3.orig/src/system/utility/FileUtility.cpp	2011-05-12 19:46:19.000000000 +0200
++++ violetland-0.4.3/src/system/utility/FileUtility.cpp	2014-04-06 22:26:40.325401038 +0200
+@@ -20,7 +20,7 @@
+ 
+ 	while (dir_it != boost::filesystem::directory_iterator()) {
+ 		if (boost::filesystem::is_regular_file(*dir_it))
+-			files.push_back(dir_it->filename());
++			files.push_back(dir_it->path().filename().string());
+ 		++dir_it;
+ 	}
+ 	return files;
+@@ -32,8 +32,8 @@
+ 
+ 	while (dir_it != boost::filesystem::directory_iterator()) {
+ 		if (boost::filesystem::is_directory(*dir_it))
+-			if (dir_it->path().filename()[0] != '.')
+-				subDirs.push_back(dir_it->path().filename());
++			if (dir_it->path().filename().string()[0] != '.')
++				subDirs.push_back(dir_it->path().filename().string());
+ 		++dir_it;
+ 	}
+ 	return subDirs;
+@@ -45,7 +45,7 @@
+ 
+ 	while (dir_it != boost::filesystem::directory_iterator()) {
+ 		if (boost::filesystem::is_directory(*dir_it))
+-			if (dir_it->path().filename()[0] != '.')
++			if (dir_it->path().filename().string()[0] != '.')
+ 				++count;
+ 		++dir_it;
+ 	}
