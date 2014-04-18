@@ -5,7 +5,7 @@ Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: debhelper (>= 9),
                cmake (>= 2.6),
                pkg-config,
-               libogre1.8-dev (>= 1.8.1),
+               libogre-1.8-dev,
                libmygui-dev (>= 3.2.0),
                libois-dev,
                libsdl2-dev,
@@ -14,9 +14,10 @@ Build-Depends: debhelper (>= 9),
                libfreeimage-dev,
                libbullet-dev,
                libenet-dev,
-               libxcursor-dev
-Build-Conflicts: libogre-dev
-Standards-Version: 3.9.4
+               libxcursor-dev,
+               libboost-dev,
+               libboost-wave-dev
+Standards-Version: 3.9.5
 Homepage: http://code.google.com/p/vdrift-ogre
 
 Package: stuntrally
@@ -26,12 +27,7 @@ Depends: ${shlibs:Depends},
          stuntrally-data (= ${source:Version}),
          stuntrally-tracks (>= 2.2.1),
          libfreeimage3,
-         libzzip-0-13,
-         libogremain1.8,
-         libogrepaging1.8,
-         libogreproperty1.8,
-         libogrertshadersystem1.8,
-         libogreterrain1.8
+         libzzip-0-13
 Description: Rally game with stunt elements
  Rally game with Stunt elements, based on VDrift and OGRE.
 

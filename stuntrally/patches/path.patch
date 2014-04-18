@@ -1,8 +1,8 @@
 Also directly enter the paths. Searching them will not work.
-Index: stuntrally-2.2/source/vdrift/pathmanager.cpp
+Index: stuntrally-2.2.1/source/vdrift/pathmanager.cpp
 ===================================================================
---- stuntrally-2.2.orig/source/vdrift/pathmanager.cpp	2013-11-24 21:39:47.855080091 +0100
-+++ stuntrally-2.2/source/vdrift/pathmanager.cpp	2013-11-24 21:39:47.843080092 +0100
+--- stuntrally-2.2.1.orig/source/vdrift/pathmanager.cpp	2014-04-06 16:55:56.945570451 +0200
++++ stuntrally-2.2.1/source/vdrift/pathmanager.cpp	2014-04-06 16:55:56.941570451 +0200
 @@ -163,6 +163,11 @@
  	CreateDir(DataUser(), error_output);  // user data
  
@@ -23,16 +23,3 @@ Index: stuntrally-2.2/source/vdrift/pathmanager.cpp
  
  
  	//  Subdirs for each sim_mode
-Index: stuntrally-2.2/cmake/FindOGRE.cmake
-===================================================================
---- stuntrally-2.2.orig/cmake/FindOGRE.cmake	2013-11-24 21:39:47.855080091 +0100
-+++ stuntrally-2.2/cmake/FindOGRE.cmake	2013-11-24 21:40:37.083078627 +0100
-@@ -89,7 +89,7 @@
-     /opt/ogre
-     /opt/OGRE
-     /usr/lib${LIB_SUFFIX}/ogre
--    /usr/lib${LIB_SUFFIX}/OGRE
-+    /usr/lib${LIB_SUFFIX}/OGRE1.8
-     /usr/local/lib${LIB_SUFFIX}/ogre
-     /usr/local/lib${LIB_SUFFIX}/OGRE
-     $ENV{HOME}/ogre
