@@ -1,0 +1,71 @@
+Index: raydium-0.0svn20100207/raydium/php/ext/dom/documenttype.c
+===================================================================
+--- raydium-0.0svn20100207.orig/raydium/php/ext/dom/documenttype.c	2008-12-31 12:17:37.000000000 +0100
++++ raydium-0.0svn20100207/raydium/php/ext/dom/documenttype.c	2014-04-06 18:22:05.241526327 +0200
+@@ -213,14 +213,19 @@
+ 
+ 	if (dtdptr->doc != NULL && ((intsubset = dtdptr->doc->intSubset) != NULL)) {
+ 		buff = xmlAllocOutputBuffer(NULL);
+-		if (buff != NULL) {
+-			xmlNodeDumpOutput (buff, NULL, (xmlNodePtr) intsubset, 0, 0, NULL);
+-			xmlOutputBufferFlush(buff);
+-			strintsubset = xmlStrndup(buff->buffer->content, buff->buffer->use);
+-			(void)xmlOutputBufferClose(buff);
+-			ZVAL_STRING(*retval, (char *) strintsubset, 1);
+-			return SUCCESS;
+-		}
++                if (buff != NULL) {
++                        xmlNodeDumpOutput (buff, NULL, (xmlNodePtr) intsubset, 0, 0, NULL);
++                        xmlOutputBufferFlush(buff);
++
++#ifdef LIBXML2_NEW_BUFFER
++                       ZVAL_STRINGL(*retval, xmlOutputBufferGetContent(buff),
++                                    xmlOutputBufferGetSize(buff), 1);
++#else
++                        ZVAL_STRINGL(*retval, buff->buffer->content, buff->buffer->use, 1);
++#endif
++                        (void)xmlOutputBufferClose(buff);
++                        return SUCCESS;
++                }
+ 	}
+ 
+ 	ZVAL_EMPTY_STRING(*retval);
+Index: raydium-0.0svn20100207/raydium/php/ext/dom/node.c
+===================================================================
+--- raydium-0.0svn20100207.orig/raydium/php/ext/dom/node.c	2009-03-13 14:41:42.000000000 +0100
++++ raydium-0.0svn20100207/raydium/php/ext/dom/node.c	2014-04-06 18:13:38.885530650 +0200
+@@ -1950,9 +1950,17 @@
+         RETVAL_FALSE;
+     } else {
+ 		if (mode == 0) {
++#ifdef LIBXML2_NEW_BUFFER
++            ret = xmlOutputBufferGetSize(buf);
++#else
+ 			ret = buf->buffer->use;
++#endif
+ 			if (ret > 0) {
++#ifdef LIBXML2_NEW_BUFFER
++                RETVAL_STRINGL((char *) xmlOutputBufferGetContent(buf), ret, 1);
++#else
+ 				RETVAL_STRINGL((char *) buf->buffer->content, ret, 1);
++#endif
+ 			} else {
+ 				RETVAL_EMPTY_STRING();
+ 			}
+Index: raydium-0.0svn20100207/raydium/php/ext/simplexml/simplexml.c
+===================================================================
+--- raydium-0.0svn20100207.orig/raydium/php/ext/simplexml/simplexml.c	2008-12-31 12:17:43.000000000 +0100
++++ raydium-0.0svn20100207/raydium/php/ext/simplexml/simplexml.c	2014-04-06 18:26:41.469523968 +0200
+@@ -1340,7 +1340,12 @@
+ 
+ 			xmlNodeDumpOutput(outbuf, (xmlDocPtr) sxe->document->ptr, node, 0, 0, ((xmlDocPtr) sxe->document->ptr)->encoding);
+ 			xmlOutputBufferFlush(outbuf);
++#ifdef LIBXML2_NEW_BUFFER
++                       RETVAL_STRINGL((char)xmlOutputBufferGetContent(outbuf),
++                                      xmlOutputBufferGetSize(outbuf), 1);
++#else
+ 			RETVAL_STRINGL((char *)outbuf->buffer->content, outbuf->buffer->use, 1);
++#endif
+ 			xmlOutputBufferClose(outbuf);
+ 		}
+ 	} else {

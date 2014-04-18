@@ -1,9 +1,17 @@
 Remove invalid tests.
 Index: raydium-0.0svn20100207/configure
 ===================================================================
---- raydium-0.0svn20100207.orig/configure	2010-02-07 20:36:18.966855688 +0100
-+++ raydium-0.0svn20100207/configure	2010-02-07 21:21:15.976883961 +0100
-@@ -374,48 +374,6 @@
+--- raydium-0.0svn20100207.orig/configure	2014-04-06 19:17:54.093497736 +0200
++++ raydium-0.0svn20100207/configure	2014-04-06 19:30:56.557491056 +0200
+@@ -222,6 +222,7 @@
+     echo "   Renaming $php to raydium/php/ ..."
+     mv "$php" "raydium/php"
+     exit_if_error "$?" "Is this script up to date ?"
++    patch -p1 < debian/patches/ftbfs.patch
+ 
+ # check for 64bits
+ 	
+@@ -374,48 +375,6 @@
  test_build "Xinerama" "$file" "-L/usr/X11R6/lib/ -lXinerama"
  exit_if_error "$?" "You must install libxinerama-devel package"
  
@@ -52,7 +60,7 @@ Index: raydium-0.0svn20100207/configure
  # GLEW ("The OpenGL Extension Wrangler Library")
  # Using previous "file" (GL/GLU test)
  test_build "GLEW" "$file" "-DUSE_GLEW -L/usr/X11R6/lib/ -lGL -lGLU -lGLEW"
-@@ -432,53 +390,6 @@
+@@ -432,53 +391,6 @@
  # Check PHP installation
  php_install
  
