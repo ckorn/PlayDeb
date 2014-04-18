@@ -1,3 +1,9 @@
+snowstorm (3.5.2.273873-1~getdeb2~trusty) trusty; urgency=low
+
+  * Rebuild for trusty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Apr 2014 16:49:12 +0200
+
 snowstorm (3.5.2.273873-1~getdeb1) precise; urgency=low
 
   * New upstream version

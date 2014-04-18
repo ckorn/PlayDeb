@@ -17,11 +17,20 @@ Build-Depends: debhelper (>= 9),
                libsm6,
                libice6,
                chrpath
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://wiki.secondlife.com/wiki/Project_Snowstorm
 
 Package: snowstorm
+Architecture: any
+Depends: ${misc:Depends},
+         snowstorm-bin (= ${source:Version})
+Description: New viewer for Second Life
+ Snowstorm is the name of a new viewer
+ (in development) for Second Life.
+
+Package: snowstorm-bin
 Architecture: i386
+Multi-Arch: foreign
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          snowstorm-data (= ${source:Version})
@@ -33,6 +42,7 @@ Description: New viewer for Second Life (i386 only)
 
 Package: snowstorm-data
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends},
          ttf-dejavu-core,
          ttf-dejavu-extra

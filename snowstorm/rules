@@ -5,15 +5,15 @@
 override_dh_install:
 	chmod -x app_settings/settings.xml character/invisible_head.tga app_settings/logcontrol.xml
 	dh_install
-	chrpath -d debian/snowstorm/usr/share/games/snowstorm/bin/SLVoice
-	chrpath -d debian/snowstorm/usr/share/games/snowstorm/lib/libSDL-1.2.so.0.11.3
-	chrpath -d debian/snowstorm/usr/share/games/snowstorm/lib/libaprutil-1.so.0.4.1
-	chrpath -d debian/snowstorm/usr/share/games/snowstorm/lib/libdirectfb-1.4.so.5.0.4
-	chrpath -d debian/snowstorm/usr/share/games/snowstorm/lib/libfusion-1.4.so.5.0.4
-	chrpath -d debian/snowstorm/usr/share/games/snowstorm/lib/libvivoxplatform.so
-	chrpath -d debian/snowstorm/usr/share/games/snowstorm/lib/libvivoxsdk.so
+	[ ! -d debian/snowstorm-bin ] || chrpath -d debian/snowstorm-bin/usr/share/games/snowstorm/bin/SLVoice
+	[ ! -d debian/snowstorm-bin ] || chrpath -d debian/snowstorm-bin/usr/share/games/snowstorm/lib/libSDL-1.2.so.0.11.3
+	[ ! -d debian/snowstorm-bin ] || chrpath -d debian/snowstorm-bin/usr/share/games/snowstorm/lib/libaprutil-1.so.0.4.1
+	[ ! -d debian/snowstorm-bin ] || chrpath -d debian/snowstorm-bin/usr/share/games/snowstorm/lib/libdirectfb-1.4.so.5.0.4
+	[ ! -d debian/snowstorm-bin ] || chrpath -d debian/snowstorm-bin/usr/share/games/snowstorm/lib/libfusion-1.4.so.5.0.4
+	[ ! -d debian/snowstorm-bin ] || chrpath -d debian/snowstorm-bin/usr/share/games/snowstorm/lib/libvivoxplatform.so
+	[ ! -d debian/snowstorm-bin ] || chrpath -d debian/snowstorm-bin/usr/share/games/snowstorm/lib/libvivoxsdk.so
 
 	rm -f debian/snowstorm-data/usr/share/games/snowstorm/fonts/DejaVu-license.txt
 
 override_dh_shlibdeps:
-	dh_shlibdeps -l$(CURDIR)/debian/snowstorm/usr/share/games/snowstorm/lib
+	dh_shlibdeps -l$(CURDIR)/debian/snowstorm-bin/usr/share/games/snowstorm/lib
