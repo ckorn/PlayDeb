@@ -1,8 +1,8 @@
 # fix path in desktop file and executable names
 Index: racer-fzero-0.0.320/racer/data/racer.desktop
 ===================================================================
---- racer-fzero-0.0.320.orig/racer/data/racer.desktop	2010-01-30 00:42:07.000000000 +0100
-+++ racer-fzero-0.0.320/racer/data/racer.desktop	2013-11-15 20:34:22.025588841 +0100
+--- racer-fzero-0.0.320.orig/racer/data/racer.desktop	2014-04-06 17:48:46.773543388 +0200
++++ racer-fzero-0.0.320/racer/data/racer.desktop	2014-04-06 17:48:46.765543388 +0200
 @@ -4,8 +4,8 @@
  Name=Racer
  GenericName=Racing Game
@@ -17,8 +17,8 @@ Index: racer-fzero-0.0.320/racer/data/racer.desktop
  StartupNotify=false
 Index: racer-fzero-0.0.320/racer/data/racer_editor.desktop
 ===================================================================
---- racer-fzero-0.0.320.orig/racer/data/racer_editor.desktop	2010-01-30 00:42:07.000000000 +0100
-+++ racer-fzero-0.0.320/racer/data/racer_editor.desktop	2013-11-15 20:35:01.505587666 +0100
+--- racer-fzero-0.0.320.orig/racer/data/racer_editor.desktop	2014-04-06 17:48:46.773543388 +0200
++++ racer-fzero-0.0.320/racer/data/racer_editor.desktop	2014-04-06 17:48:46.769543388 +0200
 @@ -4,8 +4,8 @@
  Name=Racer Editor
  GenericName=Track Editor

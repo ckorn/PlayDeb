@@ -1,3 +1,9 @@
+racer-fzero (0.0.320-1~getdeb2~trusty) trusty; urgency=low
+
+  * Rebuild for trusty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Apr 2014 16:34:02 +0200
+
 racer-fzero (0.0.320-1~getdeb1) saucy; urgency=low
 
   * Initial release (LP: #1251468)
