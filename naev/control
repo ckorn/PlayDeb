@@ -6,6 +6,7 @@ Build-Depends: debhelper (>= 9),
                libpng12-dev,
                libopenal-dev,
                binutils-dev,
+               libiberty-dev,
                libreadline-gplv2-dev,
                wget,
                libvorbis-dev (>= 1.2.3),
@@ -14,7 +15,7 @@ Build-Depends: debhelper (>= 9),
                libsdl-mixer1.2-dev,
                libsdl-image1.2-dev,
                libfreetype6-dev
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Homepage: http://naev.org
 
 Package: naev
