@@ -1,3 +1,9 @@
+openttd (1.4.0-1~getdeb3~trusty) trusty; urgency=low
+
+  * Rebuild for trusty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 12 Apr 2014 23:23:48 +0200
+
 openttd (1.4.0-1~getdeb2) precise; urgency=low
 
   * New upstream version
