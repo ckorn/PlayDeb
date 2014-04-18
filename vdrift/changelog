@@ -1,3 +1,9 @@
+vdrift (20120722-1~getdeb6~trusty) trusty; urgency=low
+
+  * Rebuild for trusty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Apr 2014 20:40:05 +0200
+
 vdrift (20120722-1~getdeb5~raring) raring; urgency=low
 
   * Rebuild for raring.
