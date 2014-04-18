@@ -28,7 +28,7 @@ Build-Depends: cmake,
                libz-dev,
                xauth,
                xvfb
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Homepage: http://megaglest.org/
 
 Package: megaglest
@@ -40,7 +40,7 @@ Depends: famfamfam-flag-png,
          megaglest-data (>= ${source:Upstream-Version}),
          p7zip-full,
          ttf-dejavu-core,
-         ttf-wqy-zenhei,
+         fonts-wqy-zenhei,
          vlc,
          ${misc:Depends},
          ${shlibs:Depends}

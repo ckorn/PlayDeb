@@ -1,3 +1,9 @@
+megaglest (3.9.1-1~getdeb2~trusty) trusty; urgency=low
+
+  * Rebuild for trusty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Apr 2014 22:31:32 +0200
+
 megaglest (3.9.1-1~getdeb1) saucy; urgency=low
 
   * New upstream version (LP: #1274532)
