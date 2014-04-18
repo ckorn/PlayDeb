@@ -1,3 +1,4 @@
 scons.patch
 python3.3.patch
 missing_libs.patch
+headers.patch

@@ -1,3 +1,9 @@
+jngl (1.1.0-1~getdeb2~trusty) trusty; urgency=low
+
+  * Rebuild for trusty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Apr 2014 01:16:57 +0200
+
 jngl (1.1.0-1~getdeb2~raring) raring; urgency=low
 
   * Rebuild for raring.

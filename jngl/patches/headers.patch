@@ -1,0 +1,19 @@
+Index: jngl-1.1.0/src/freetype.hpp
+===================================================================
+--- jngl-1.1.0.orig/src/freetype.hpp	2013-02-16 13:03:27.000000000 +0100
++++ jngl-1.1.0/src/freetype.hpp	2014-04-06 01:20:27.882565465 +0200
+@@ -9,10 +9,10 @@
+ #include "texture.hpp"
+ 
+ #include <ft2build.h>
+-#include <freetype/freetype.h>
+-#include <freetype/ftglyph.h>
+-#include <freetype/ftoutln.h>
+-#include <freetype/fttrigon.h>
++#include <freetype2/freetype.h>
++#include <freetype2/ftglyph.h>
++#include <freetype2/ftoutln.h>
++#include <freetype2/fttrigon.h>
+ 
+ #include <vector>
+ #include <string>

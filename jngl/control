@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 9),
                libogg-dev,
                libfreetype6-dev,
                libpng12-dev,
-               libjpeg62-dev,
+               libjpeg-dev,
                libvorbis-dev,
                libglu1-mesa-dev,
                mesa-common-dev,
@@ -20,9 +20,9 @@ Build-Depends: debhelper (>= 9),
                libglib2.0-dev,
                python3-dev,
                libboost-python-dev,
-               libglew1.6-dev | libglew-dev,
+               libglew-dev,
                libwebp-dev
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Section: libs
 Homepage: http://jngl.watteimdocht.de
 
