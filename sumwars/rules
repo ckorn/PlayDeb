@@ -3,14 +3,6 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-myString:=$(shell dpkg --get-selections | grep libogre-1 | awk -F"-|\t|:" '{print $$2}' | head -n1 )
-
-ifeq ($(DEB_BUILD_ARCH),amd64)
-        OGRE_DIR:=-DSUMWARS_OGRE_PLUGIN_DIR:STRING=/usr/lib/x86_64-linux-gnu/OGRE-$(myString)
-else
-        OGRE_DIR:=-DSUMWARS_OGRE_PLUGIN_DIR:STRING=/usr/lib/i386-linux-gnu/OGRE-$(myString)
-endif
-
 %:
 	dh $@ --buildsystem=cmake --parallel
 
@@ -21,8 +13,7 @@ override_dh_auto_configure:
 		-DSUMWARS_NO_ENET:BOOL=ON \
 		-DSUMWARS_BUILD_TOOLS:BOOL=OFF \
 		-DSUMWARS_EXECUTABLE_DIR:STRING="games" \
-		-DSUMWARS_SHARE_DIR:STRING="share/games/sumwars" \
-		$(OGRE_DIR)
+		-DSUMWARS_SHARE_DIR:STRING="share/games/sumwars"
 
 override_dh_auto_install:
 	dh_auto_install
