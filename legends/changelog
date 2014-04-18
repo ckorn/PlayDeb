@@ -1,3 +1,9 @@
+legends (0.4.2.0-1~getdeb3~trusty) trusty; urgency=low
+
+  * Rebuild for trusty.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Apr 2014 01:48:54 +0200
+
 legends (0.4.2.0-1~getdeb1) precise; urgency=low
 
   * New upstream version

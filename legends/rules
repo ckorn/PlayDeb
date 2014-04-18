@@ -9,4 +9,4 @@ override_dh_auto_build:
 	[ -d legends ] || ( tar xJf *.tar.xz )
 
 override_dh_shlibdeps:
-	dh_shlibdeps -l$(CURDIR)/debian/legends/usr/lib/games/legends
+	dh_shlibdeps -l$(CURDIR)/debian/legends-bin/usr/lib/games/legends
