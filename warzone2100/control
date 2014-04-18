@@ -38,7 +38,7 @@ Build-Depends: asciidoc,
                xsltproc,
                xvfb,
                zip
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Homepage: http://www.wz2100.net/
 
 Package: warzone2100
