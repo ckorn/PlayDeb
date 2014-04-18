@@ -1,3 +1,9 @@
+dolphin-emu (4.0.2-1~getdeb2~trusty) trusty; urgency=low
+
+  * Rebuild for trusty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 05 Apr 2014 23:42:55 +0200
+
 dolphin-emu (4.0.2-1~getdeb1) saucy; urgency=low
 
   * New upstream version
