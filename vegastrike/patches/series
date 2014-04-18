@@ -1,2 +1,4 @@
 headers.patch
 svn13364.patch
+python.patch
+ftbfs.patch

@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 %:
-	dh $@
+	dh $@ --with autoreconf
  
 override_dh_auto_configure:
 	# Add here commands to compile the package.

@@ -3,6 +3,7 @@ Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: debhelper (>= 9),
+               dh-autoreconf,
                libdmx-dev,
                libfontenc-dev,
                libfs-dev,
@@ -61,7 +62,7 @@ Build-Depends: debhelper (>= 9),
                xserver-xorg-dev,
                xtrans-dev,
                x11-common,
-               libjpeg62-dev,
+               libjpeg-dev,
                libpng12-dev,
                libglu-dev,
                freeglut3-dev,
@@ -76,7 +77,7 @@ Build-Depends: debhelper (>= 9),
                libavformat-dev,
                libopenal-dev
 Homepage: http://vegastrike.sourceforge.net/
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 
 Package: vegastrike
 Architecture: any
