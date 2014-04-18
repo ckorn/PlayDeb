@@ -17,7 +17,7 @@ Build-Depends: debhelper (>= 9),
                libsdl-ttf2.0-dev,
                libsdl-gfx1.2-dev
 Homepage: http://manaplus.evolonline.org/
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 
 Package: manaplus
 Architecture: any
@@ -25,8 +25,6 @@ Depends: ${shlibs:Depends},
          ${misc:Depends},
          manaplus-data (= ${source:Version}),
          xsel
-Recommends: manaplus-music,
-            manaplus-themes
 Suggests: mumble
 Replaces: mana-4144
 Description: Extended client for The Mana World and similar servers

@@ -1,3 +1,15 @@
+manaplus (1:1.4.4.12-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: possible crash.
+    fix: selection in dropdowns.
+    fix: redraw graphics on game window resize.
+    add: improve online list update speed.
+    add: slider step in char creation dialog.
+    add: improved gui draw speed.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 18 Apr 2014 16:39:44 +0200
+
 manaplus (1:1.4.3.29-1~getdeb2~saucy) saucy; urgency=low
 
   * New upstream version
