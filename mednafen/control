@@ -15,7 +15,7 @@ Build-Depends: debhelper (>= 9),
                libasound2-dev [linux-any],
                libjack-dev
 Build-Conflicts: autoconf2.13
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://mednafen.sourceforge.net
 
 Package: mednafen
