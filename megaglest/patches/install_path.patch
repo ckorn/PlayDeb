@@ -1,0 +1,19 @@
+# pass the custom install directory to the compiler
+# fix escaping
+Index: megaglest-3.9.1/CMakeLists.txt
+===================================================================
+--- megaglest-3.9.1.orig/CMakeLists.txt	2014-01-19 02:59:14.000000000 +0100
++++ megaglest-3.9.1/CMakeLists.txt	2014-04-22 22:26:51.355543978 +0200
+@@ -256,10 +256,11 @@
+                         IF(APPLE)
+ 			        SET(CUSTOM_DATA_INSTALL_PATH "'\\\\'${CMAKE_INSTALL_PREFIX}/${MEGAGLEST_DATA_INSTALL_PATH}\\\\''" CACHE STRING "The FULL installation path for data files (this is build automatically by combining CMAKE_INSTALL_PREFIX and MEGAGLEST_DATA_INSTALL_PATH)")
+                         ELSE()
+-                                SET(CUSTOM_DATA_INSTALL_PATH "'\\\"${CMAKE_INSTALL_PREFIX}/${MEGAGLEST_DATA_INSTALL_PATH}\\\"'" CACHE STRING "The FULL installation path for data files (this is build automatically by combining CMAKE_INSTALL_PREFIX and MEGAGLEST_DATA_INSTALL_PATH)")
++                                SET(CUSTOM_DATA_INSTALL_PATH "\"${CMAKE_INSTALL_PREFIX}/${MEGAGLEST_DATA_INSTALL_PATH}\"" CACHE STRING "The FULL installation path for data files (this is build automatically by combining CMAKE_INSTALL_PREFIX and MEGAGLEST_DATA_INSTALL_PATH)")
+                         ENDIF()
+ 		ENDIF()
+ 		SET(CUSTOM_DATA_INSTALL_PATH_VALUE "-DCUSTOM_DATA_INSTALL_PATH=${CUSTOM_DATA_INSTALL_PATH}")
++		ADD_DEFINITIONS("-DCUSTOM_DATA_INSTALL_PATH=${CUSTOM_DATA_INSTALL_PATH}")
+ 
+                 SET(PKG_DATADIR ${CUSTOM_DATA_INSTALL_PATH_VALUE})
+                 SET(PKG_BINDIR ${MEGAGLEST_BIN_INSTALL_PATH})
