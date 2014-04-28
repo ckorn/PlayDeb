@@ -1,3 +1,13 @@
+manaplus (1:1.4.4.26-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: crash with dragging empty spell.
+    fix: crash if open storage and start trade.
+    fix: links drawing over player head.
+    fix: downlod music option with incomplete configuration.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 26 Apr 2014 18:52:51 +0200
+
 manaplus (1:1.4.4.12-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
