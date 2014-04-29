@@ -16,7 +16,7 @@ Build-Depends: debhelper (>= 9),
                bison,
                flex,
                ttf-dejavu-core
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://crawl.develz.org/wordpress/
 
 Package: stone-soup

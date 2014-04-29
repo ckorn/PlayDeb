@@ -1,3 +1,18 @@
+stone-soup (0.14.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    * Several crash fixes.
+    * Fire dragons correctly grant bonus Dithmenos piety.
+    * Ranged attacks from invisibile monsters correctly turn off autopickup.
+    * Good gods punish the player properly for negative energy clouds.
+    * Natasha no longer revives after being pacified, and does not get a new
+      item when reviving.
+    * When playing a race with permanent flight ability, it is now possible
+    to remove an item granting flight over dangerous terrain.
+    * Wanderers do not occasionally get more MP than other backgrounds.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 29 Apr 2014 18:25:53 +0200
+
 stone-soup (0.14.0-1~getdeb1) precise; urgency=low
 
   * New upstream version
