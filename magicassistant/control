@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 9),
                libxrender1,
                openjdk-6-jre,
                openjdk-6-jdk
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://sourceforge.net/apps/mediawiki/mtgbrowser/index.php?title=Main_Page
 
 Package: magicassistant
