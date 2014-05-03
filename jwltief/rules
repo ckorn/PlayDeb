@@ -5,7 +5,7 @@
 override_dh_install:
 	dh_install
 	# Fix permissions
-	chmod -x debian/jwltief/usr/share/pixmaps/jwltief.png
+	[ ! -f debian/jwltief-bin/usr/share/pixmaps/jwltief.png ] || chmod -x debian/jwltief-bin/usr/share/pixmaps/jwltief.png
 	[ ! -f debian/jwltief-data/usr/share/games/jwltief/launch.sh ] || chmod -x debian/jwltief-data/usr/share/games/jwltief/launch.sh
 	[ ! -f debian/jwltief-data/usr/share/games/jwltief/content/misc/aleva.png ] || chmod -x debian/jwltief-data/usr/share/games/jwltief/content/misc/aleva.png
 	# Font files are in a seperate package
@@ -13,4 +13,4 @@ override_dh_install:
 	rm -f debian/jwltief-data/usr/share/games/jwltief/content/font/default.ttf
 
 override_dh_shlibdeps:
-	dh_shlibdeps -l$(CURDIR)/debian/jwltief/usr/lib/games/jwltief
+	dh_shlibdeps -l$(CURDIR)/debian/jwltief-bin/usr/lib/games/jwltief

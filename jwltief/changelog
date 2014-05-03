@@ -1,3 +1,9 @@
+jwltief (1.5.1-1~getdeb5~trusty) trusty; urgency=medium
+
+  * Remove debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 03 May 2014 21:49:03 +0200
+
 jwltief (1.5.1-1~getdeb3) precise; urgency=low
 
   * Fix debian/watch file.
