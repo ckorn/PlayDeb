@@ -1,3 +1,9 @@
+djl (1.2.20-1~getdeb3~trusty) trusty; urgency=medium
+
+  * Remove debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 03 May 2014 21:38:00 +0200
+
 djl (1.2.20-1~getdeb2) karmic; urgency=low
 
   * Added debian/watch file

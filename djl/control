@@ -2,15 +2,16 @@ Source: djl
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50), python-support,
- python-all-dev, quilt
-Standards-Version: 3.8.4
+Build-Depends: debhelper (>= 9),
+               python-all-dev
+Standards-Version: 3.9.5
 Homepage: http://en.djl-linux.org/
 
 Package: djl
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends},
- python-qt4
+Depends: ${misc:Depends},
+         ${python:Depends},
+         python-qt4
 Description: Game Manager
  Djl is an open-source (GPL licensed) game manager
  written in Python 2.5 for the GNU/Linux Operating

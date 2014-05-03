@@ -1,3 +1,8 @@
 #!/usr/bin/make -f
 %:
-	dh --with python-support,quilt $@
+	dh $@ --with python2
+
+override_dh_install:
+	dh_install
+	find debian/djl/usr/share/games/djl -type f -execdir chmod -x {} \;
+	rm debian/djl/usr/share/games/djl/libs/SOAPpy/LICENSE
