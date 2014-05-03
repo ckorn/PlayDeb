@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
                libsdl1.2-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://tron.homeunix.org/ja2/
 
 Package: ja2
