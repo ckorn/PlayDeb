@@ -1,16 +1,16 @@
 #!/usr/bin/make -f
 %:
-	dh $@
+	dh $@ --parallel
 
 override_dh_auto_configure:
 	dh_auto_configure -- -DLIB_DIR=/usr/lib/games/gemrb -DBIN_DIR=/usr/games \
-	-DDATA_DIR=/usr/share/games/gemrb -DSVG_DIR=/usr/share/pixmaps
+	-DDATA_DIR=/usr/share/games/gemrb -DPLUGIN_DIR=/usr/lib/games/gemrb/plugins -DSVG_DIR=/usr/share/pixmaps
 
 override_dh_installchangelogs:
 	dh_installchangelogs NEWS
 
 override_dh_install:
-	dh_install
+	dh_install --fail-missing
 	rm debian/gemrb/usr/share/doc/gemrb/INSTALL
 	rm debian/gemrb/usr/share/doc/gemrb/COPYING*
 	rm -f debian/gemrb/usr/share/doc/gemrb/NEWS*

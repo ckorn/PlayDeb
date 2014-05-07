@@ -4,15 +4,16 @@ Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
                cmake,
-               libsdl1.2-dev,
                libpng12-dev,
                zlib1g-dev,
                libsdl-mixer1.2-dev,
                libvorbis-dev,
                python-dev,
                libopenal-dev,
-               libgstreamer0.10-dev
-Standards-Version: 3.9.3
+               libgstreamer0.10-dev,
+               libsdl1.2-dev,
+               libfreetype6-dev
+Standards-Version: 3.9.5
 Homepage: http://gemrb.sourceforge.net
 
 Package: gemrb
