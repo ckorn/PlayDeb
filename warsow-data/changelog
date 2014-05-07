@@ -1,3 +1,9 @@
+warsow-data (1.5-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 07 May 2014 21:27:27 +0200
+
 warsow-data (1.02-1~getdeb3) precise; urgency=low
 
   * Include ui_porkui_003.pk3 in the proper way. Required by warsow-1.03

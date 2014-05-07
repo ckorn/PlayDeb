@@ -18,7 +18,6 @@ install: build
 	dh_testroot
 	dh_prep
 	dh_install basewsw usr/share/games/warsow
-	dh_install debian/ui_porkui_003.pk3 usr/share/games/warsow/basewsw
 	find debian/warsow-data/usr/share/games/warsow -name .svn -type d -exec rm -rf {} \; || /bin/true
 
 binary-arch:
