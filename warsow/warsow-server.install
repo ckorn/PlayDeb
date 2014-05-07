@@ -1,4 +1,4 @@
-source/release/wsw_server_bin		usr/lib/games/warsow
-source/release/wswtv_server_bin		usr/lib/games/warsow
-debian/scripts/warsow-server		usr/games
-debian/scripts/warsowtv-server		usr/games
+source/source/release/wsw_server_bin		usr/lib/games/warsow
+source/source/release/wswtv_server_bin		usr/lib/games/warsow
+debian/scripts/warsow-server			usr/games
+debian/scripts/warsowtv-server			usr/games

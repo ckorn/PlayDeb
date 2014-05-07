@@ -22,7 +22,7 @@ UNAME_ARCH=$(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64
 # This is used convert files to be patched from dos to unix EOL convention.
 from-dos:
 	dh_testdir
-	fromdos -e source/gameshared/q_shared.h
+	#fromdos -e source/source/gameshared/q_shared.h
 	#fromdos -e warsow_0.50_src/source/client/cl_main.c
 	touch fromdos-stamp
 
@@ -31,7 +31,7 @@ patch: from-dos
 build: patch build-stamp
 build-stamp:
 	dh_testdir
-	cd source && $(MAKE) CFLAGS="-O0" LOCALBASE=/usr DEBUG_BUILD=$(DEBUG) \
+	cd source/source/ && $(MAKE) CFLAGS="-O0" LOCALBASE=/usr DEBUG_BUILD=$(DEBUG) \
 		CC=$(DEB_HOST_GNU_TYPE)-gcc LD=$(DEB_HOST_GNU_TYPE)-gcc
 	touch build-stamp
 
@@ -39,13 +39,13 @@ clean: clean-patched to-dos
 clean-patched:
 	dh_testdir
 	dh_testroot
-	cd source && $(MAKE) clean
-	cd libsrcs/angelscript/angelSVN/sdk/angelscript/projects/gnuc && \
+	cd source/source && $(MAKE) clean
+	cd source/libsrcs/angelscript/sdk/angelscript/projects/gnuc && \
 	  $(MAKE) clean
-	rm -rf source/build warsow-0.6-src/source/release \
-		source/build$(UNAME_ARCH) \
-		source/build$(DPKG_ARCH) \
-		source/release/
+	rm -rf source/source/build warsow-0.6-src/source/release \
+		source/source/build$(UNAME_ARCH) \
+		source/source/build$(DPKG_ARCH) \
+		source/source/release/
 	[ ! -f warsow128x128.png ] || rm warsow128x128.png
 	[ ! -f 0.4_renderer_changes.png ] || rm 0.4_renderer_changes.png
 	dh_clean
@@ -54,7 +54,7 @@ clean-patched:
 # Reverses from-dos target
 to-dos:
 	dh_testdir
-	todos -e source/gameshared/q_shared.h
+	#todos -e source/source/gameshared/q_shared.h
 	#todos -e warsow_0.50_src/source/client/cl_main.c
 	[ ! -f fromdos-stamp ] || rm fromdos-stamp
 
@@ -83,7 +83,7 @@ binary-arch: build install
 	dh_installman -pwarsow-server debian/warsow-server.6 \
 		debian/warsowtv-server.6
 #ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
-	dh_strip
+	dh_strip --dbg-package=warsow-dbg
 #endif
 	dh_compress
 	dh_fixperms

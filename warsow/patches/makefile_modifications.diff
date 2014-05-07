@@ -1,20 +1,20 @@
 Some makefile modifications, making it more useful in building
 Debian packages.
 ===================================================================
-Index: source/Makefile
+Index: warsow-1.5/source/source/Makefile
 ===================================================================
---- a/source/Makefile	2012-08-07 16:29:18.000000000 +0200
-+++ b/source/Makefile	2012-10-10 21:16:42.017507350 +0200
-@@ -50,7 +50,7 @@
+--- warsow-1.5.orig/source/source/Makefile	2014-05-07 20:46:33.312297454 +0200
++++ warsow-1.5/source/source/Makefile	2014-05-07 20:57:54.148291642 +0200
+@@ -54,7 +54,7 @@
  else
  CC?=gcc
  CXX?=g++
 -LD=gcc
 +LD?=gcc
- LXX?=g++
+ LXX=g++
  AR=ar
  RANLIB=ranlib
-@@ -68,7 +68,7 @@
+@@ -79,7 +79,7 @@
  SHARED_LIBRARY_EXTENSION=so
  endif
  
@@ -23,16 +23,16 @@ Index: source/Makefile
  
  ifeq ($(DEBUG_BUILD), YES)
  BINDIR=debug
-@@ -133,7 +133,7 @@
- ifeq ($(USE_MINGW),YES)
- CFLAGS_COMMON=-D_M_IX86 $(CFLAGS) -MD -I. -Iwin32/include -I../libsrcs/zlib -I../libsrcs/libcurl/include -D__WIN32 -D__USE_LARGEFILE -D__USE_LARGEFILE64 -mwindows -Wall -Wno-unknown-pragmas -Wno-unused-function
+@@ -152,7 +152,7 @@
+ 
+ CFLAGS_COMMON=-D_M_IX86 $(CFLAGS) -MD -I. -Iwin32/include -I../libsrcs/zlib -I../libsrcs/libcurl/include -D__WIN32 -D__USE_LARGEFILE -D__USE_LARGEFILE64 -mwindows -Wall -Wno-unknown-pragmas -Wno-unused-function -Winvalid-pch
  CFLAGS_RELEASE=-O2 -fno-strict-aliasing -ffast-math -funroll-loops -DNDEBUG
 -CFLAGS_DEBUG=-O0 -ggdb -D_DEBUG
 +CFLAGS_DEBUG=-O0 -g -D_DEBUG
  ifeq ($(DEBUG_BUILD),YES)
  CFLAGS_COMMON+=$(CFLAGS_DEBUG)
  else
-@@ -190,14 +190,14 @@
+@@ -227,13 +227,13 @@
  CLIENT_EXE=warsow_$(ARCH).exe
  SERVER_EXE=wsw_server_$(ARCH).exe
  TV_SERVER_EXE=wswtv_server_$(ARCH).exe
@@ -40,16 +40,15 @@ Index: source/Makefile
 +else # when USE_MINGW=NO
  ####################### NORMAL *NIX? ######################
  LOCALBASE?=/usr/local
- X11BASE?=/usr/X11R6
  
- CFLAGS_COMMON=$(CFLAGS) -pipe -I. -I$(LOCALBASE)/include -I$(X11BASE)/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -Wall -Wno-unused-function -fvisibility=hidden
+ CFLAGS_COMMON=$(CFLAGS) -pipe -I. -I$(LOCALBASE)/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -Wall -Wno-unused-function -fvisibility=hidden -Winvalid-pch
  CFLAGS_RELEASE=-O2 -fno-strict-aliasing -ffast-math -funroll-loops -DNDEBUG -msse2
 -CFLAGS_DEBUG=-O0 -ggdb -D_DEBUG
 +CFLAGS_DEBUG=-O0 -D_DEBUG
  ifeq ($(DEBUG_BUILD),YES)
  CFLAGS_COMMON+=$(CFLAGS_DEBUG)
  else
-@@ -206,16 +206,16 @@
+@@ -242,16 +242,16 @@
  
  CFLAGS_CLIENT=$(shell curl-config --cflags)
  CFLAGS_DED=-DDEDICATED_ONLY -DC_ONLY $(shell curl-config --cflags)
@@ -61,15 +60,15 @@ Index: source/Makefile
  LXXFLAGS_COMMON=$(LDFLAGS) -lstdc++ -lsupc++
  
  ifeq ($(OS),FreeBSD)
--LDFLAGS_COMMON+= -L/usr/local/lib -lm -pthread
+-LDFLAGS_COMMON+= -L$(LOCALBASE)/lib -lm
 +LDFLAGS_COMMON+= -L/usr/lib -lm -pthread
  else
--LDFLAGS_COMMON+= -L/usr/local/lib -ldl -lm -O1 -Wl,--as-needed
+-LDFLAGS_COMMON+= -L$(LOCALBASE)/lib -lm -ldl -O1 -Wl,--as-needed
 +LDFLAGS_COMMON+= -L/usr/lib -ldl -lm -Wl,-O1
  endif
  
  ifneq ($(DEBUG_BUILD),YES)
-@@ -223,11 +223,7 @@
+@@ -259,11 +259,7 @@
  LXXFLAGS_COMMON+= -s
  endif
  
@@ -79,9 +78,9 @@ Index: source/Makefile
  LIB=lib
 -endif
  
- LDFLAGS_CLIENT=-ljpeg -lpng -lz -L$(X11BASE)/$(LIB) -lX11 -lXext -lXxf86dga -lXxf86vm -lXinerama -lXrandr -lrt $(shell curl-config --libs)
- LDFLAGS_DED=-lz $(shell curl-config --libs)
-@@ -258,9 +254,9 @@
+ LDFLAGS_CLIENT=-lz -lpthread -lX11 -lXext -lXi -lXrandr -lrt $(shell curl-config --libs)
+ LDFLAGS_DED=-lz -lpthread $(shell curl-config --libs)
+@@ -312,9 +308,9 @@
  LDFLAGS_IRC=
  LDFLAGS_ANGELWRAP=$(ANGELSCRIPT_LIB) -lpthread
  
@@ -94,7 +93,7 @@ Index: source/Makefile
  endif # USE_MINGW
  
  ####################### MAC support ######################
-@@ -271,7 +267,7 @@
+@@ -325,7 +321,7 @@
  LOCALBASE?=/usr
  CFLAGS_COMMON=-arch ppc -arch i386 -I. -I$(LOCALBASE)/include -Wall -isysroot /Developer/SDKs/MacOSX10.4u.sdk -mmacosx-version-min=10.4
  CFLAGS_RELEASE=-O2 -fno-strict-aliasing -ffast-math -funroll-loops -DNDEBUG -fvisibility=hidden
@@ -103,7 +102,7 @@ Index: source/Makefile
  ifeq ($(DEBUG_BUILD),YES)
  CFLAGS_COMMON+=$(CFLAGS_DEBUG)
  else
-@@ -298,21 +294,18 @@
+@@ -358,21 +354,18 @@
  ######################################################################################################
  # Helper functions
  ######################################################################################################
@@ -135,7 +134,7 @@ Index: source/Makefile
  
  ######################################################################################################
  # Files
-@@ -697,12 +690,13 @@
+@@ -856,12 +849,13 @@
  
  ######################################################################################################
  # Linking Rules
@@ -150,7 +149,7 @@ Index: source/Makefile
  	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_DED)
  
  #########
-@@ -710,11 +704,11 @@
+@@ -869,11 +863,11 @@
  #########
  ifeq ($(OS),Darwin)
  $(BINDIR)/$(CLIENT_EXE): $(OBJS_CLIENT)
@@ -164,7 +163,7 @@ Index: source/Makefile
  	$(LD) -o $@ $(OBJS_CLIENT) $(LDFLAGS_COMMON) $(LDFLAGS_CLIENT)
  endif
  
-@@ -722,48 +716,48 @@
+@@ -881,60 +875,60 @@
  # OPENAL
  #########
  $(BINDIR)/libs/snd_openal_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_OPENAL)
@@ -186,14 +185,14 @@ Index: source/Makefile
  $(BINDIR)/basewsw/cgame_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_CGAME)
 -	@echo "  > Linking $@" && \
 +	@echo "$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE)" && \
- 	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE)
+ 	$(LXX) -o $@ $^ $(LXXFLAGS_COMMON) $(LDFLAGS_MODULE)
  
  $(BINDIR)/basewsw/game_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_GAME)
 -	@echo "  > Linking $@" && \
 +	@echo "$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE)" && \
- 	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE)
+ 	$(LXX) -o $@ $^ $(LXXFLAGS_COMMON) $(LDFLAGS_MODULE)
  
- $(BINDIR)/basewsw/ui_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_UI_ROCKET)
+ $(BINDIR)/basewsw/ui_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_UI_ROCKET) $(LIBROCKET_LIB)
 -	@echo "  > Linking $@" && \
 +	@echo "$(LXX) -o $@ $^ $(LXXFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_ROCKET)" && \
  	$(LXX) -o $@ $^ $(LXXFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_ROCKET)
@@ -208,9 +207,24 @@ Index: source/Makefile
 +	@echo "$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_CIN)" && \
  	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_CIN)
  
- $(BINDIR)/libs/angelwrap_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_ANGELWRAP)
+ $(BINDIR)/libs/ftlib_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_FTLIB)
 -	@echo "  > Linking $@" && \
-+	@echo "$(LXX) -o $@ $^ $(LXXFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_ANGELWRAP)" && \
++	@echo "$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_FTLIB)" && \
+ 	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_FTLIB)
+ 
+ $(BINDIR)/libs/steamlib_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_STEAMLIB)
+-	@echo "  > Linking $@" && \
++	@echo "$(LD) -o $@ $^ $(LXXFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_STEAMLIB)" && \
+ 	$(LXX) -o $@ $^ $(LXXFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_STEAMLIB)
+ 
+ $(BINDIR)/libs/ref_gl_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_REF_GL)
+-	@echo "  > Linking $@" && \
++	@echo "$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_REF_GL)" && \
+ 	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_REF_GL)
+ 
+ $(BINDIR)/libs/angelwrap_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_ANGELWRAP) $(ANGELSCRIPT_LIB)
+-	@echo "  > Linking $@" && \
++	@echo "$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_REF_GL)" && \
  	$(LXX) -o $@ $^ $(LXXFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_ANGELWRAP)
  
  ########

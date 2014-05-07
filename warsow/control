@@ -17,17 +17,16 @@ Build-Depends: debhelper (>= 9),
                libxinerama-dev,
                libcurl4-gnutls-dev | libcurl3-gnutls-dev,
                libfreetype6-dev,
-               libtheora-dev
-Standards-Version: 3.9.3
+               libtheora-dev,
+               libxi-dev
+Standards-Version: 3.9.5
 Homepage: http://www.warsow.net/
-Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/warsow
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/warsow/?op=log
 
 Package: warsow
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-         warsow-data (>= 1.02)
+         warsow-data (>= 1.5)
 Description: fast paced 3D first person shooter
  Warsow is a fast paced first person shooter consisting of cel-shaded
  cartoon-like graphics with dark, flashy and dirty textures. Warsow is based on
@@ -56,7 +55,7 @@ Package: warsow-server
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-         warsow-data (>= 1.02)
+         warsow-data (>= 1.5)
 Description: Server and TV server for the Warsow 3D first person shooter
  Warsow is a fast paced first person shooter consisting of cel-shaded
  cartoon-like graphics with dark, flashy and dirty textures. Warsow is based on

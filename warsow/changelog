@@ -1,3 +1,9 @@
+warsow (1.5-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version (LP: #1316809)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 07 May 2014 20:42:21 +0200
+
 warsow (1.03-1~getdeb2) precise; urgency=low
 
   * Re-make debian package

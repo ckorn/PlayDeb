@@ -1,4 +1,4 @@
 version=3
 opts="dversionmangle=s/\.//" \
 http://www.warsow.net/download \
-    (?:.*/)?download\?dl=sdk([\d]+)
+    (?:.*/)?download\?dl=warsow([\d]+)sdk
