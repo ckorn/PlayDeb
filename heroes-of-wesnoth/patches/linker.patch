@@ -1,0 +1,14 @@
+# libs have to be after the objects
+Index: heroes-of-wesnoth-0.1.2/Makefile
+===================================================================
+--- heroes-of-wesnoth-0.1.2.orig/Makefile	2014-05-07 23:35:42.928210802 +0200
++++ heroes-of-wesnoth-0.1.2/Makefile	2014-05-07 23:53:43.224201579 +0200
+@@ -104,7 +104,7 @@
+ 
+ # Build dependencies
+ $(EXE) : $(OBJECTS)
+-	$(CC) -g -Wall $(SDL_LIBS) -o heroes $(OBJECTS)
++	$(CC) -g -Wall $(OBJECTS) $(SDL_LIBS) -o heroes
+ 
+ battle.o : battle.cpp $(BATTLE) \
+            $(CELL) \

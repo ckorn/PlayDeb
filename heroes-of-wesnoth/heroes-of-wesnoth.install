@@ -1,0 +1,8 @@
+heroes					usr/lib/games/heroes-of-wesnoth
+debian/scripts/heroes-of-wesnoth	usr/games
+debian/heroes-of-wesnoth.png		usr/share/pixmaps
+debian/heroes-of-wesnoth.desktop	usr/share/pixmaps
+config					usr/share/games/heroes-of-wesnoth
+font					usr/share/games/heroes-of-wesnoth
+img					usr/share/games/heroes-of-wesnoth
+maps					usr/share/games/heroes-of-wesnoth

@@ -1,0 +1,4 @@
+version=3 
+opts=filenamemangle=s/\S*download=//g \
+http://qa.debian.org/cgi-bin/fakeupstream.cgi?upstream=gitorious/heroes-of-wesnoth/mainline \
+    (?:.*)download=mainline-v([\d\.]+)\.tar\.gz

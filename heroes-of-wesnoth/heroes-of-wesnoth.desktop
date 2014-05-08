@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Heroes of Wesnoth
+Exec=heroes-of-wesnoth
+Icon=heroes-of-wesnoth
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=hero;wesnoth;

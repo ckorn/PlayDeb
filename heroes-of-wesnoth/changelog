@@ -1,0 +1,5 @@
+heroes-of-wesnoth (0.1.2-1~getdeb1) trusty; urgency=low
+
+  * Initial release (LP: #1307143)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 07 May 2014 23:37:25 +0200
