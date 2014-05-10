@@ -1,3 +1,15 @@
+manaplus (1:1.4.5.10-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: time events before connecting to game.
+    fix: compilation for Android with SDL2.
+    add: <animation> tag in maps.
+    add: update project file for code blocks.
+    add: option same ip, for individual servers.
+    add: mirrors support for downloads.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 10 May 2014 19:04:48 +0200
+
 manaplus (1:1.4.4.26-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
