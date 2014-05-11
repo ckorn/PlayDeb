@@ -5,10 +5,11 @@ Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: debhelper (>= 9),
                cmake (>= 2.6),
                pkg-config,
-               libogre-1.8-dev,
+               libogre-1.9-dev,
                libmygui-dev (>= 3.2.0),
                libois-dev,
                libsdl2-dev,
+               libmirclient-dev,
                libogg-dev,
                libvorbis-dev,
                libfreeimage-dev,
@@ -25,7 +26,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          stuntrally-data (= ${source:Version}),
-         stuntrally-tracks (>= 2.2.1),
+         stuntrally-tracks (>= 2.3),
          libfreeimage3,
          libzzip-0-13
 Description: Rally game with stunt elements

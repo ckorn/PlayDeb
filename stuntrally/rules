@@ -1,11 +1,11 @@
 #!/usr/bin/make -f
 %:
-	dh $@ -B$(CURDIR)/build-tree # --parallel
+	dh $@ -B$(CURDIR)/build-tree --parallel
 
 override_dh_auto_configure:
 	mkdir -p $(CURDIR)/build-tree
 	cd $(CURDIR)/build-tree; \
-	 PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/lib/OGRE1.8/pkgconfig/ cmake .. \
+	 cmake .. \
 	 -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
 	 -DCMAKE_INSTALL_PREFIX:STRING="/usr" \
 	 -DCMAKE_C_FLAGS:STRING="$(CFLAGS)" \
@@ -27,4 +27,4 @@ override_dh_strip:
 	dh_strip --dbg-package=stuntrally-dbg
 
 override_dh_shlibdeps:
-	dh_shlibdeps -l/usr/lib/OGRE1.8/OGRE:/usr/lib/OGRE1.8 --dpkg-shlibdeps-params=--ignore-missing-info
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info

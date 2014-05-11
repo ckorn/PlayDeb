@@ -1,3 +1,3 @@
 #!/bin/sh
 cd /usr/share/games/stuntrally
-OGRE_PLUGIN_DIR=/usr/lib/OGRE1.8/OGRE LD_LIBRARY_PATH=/usr/lib/OGRE1.8:/usr/lib/OGRE1.8/OGRE ./sr-editor $@
+./sr-editor "$@"

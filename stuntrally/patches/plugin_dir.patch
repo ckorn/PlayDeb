@@ -1,0 +1,39 @@
+# The definition for DOGRE_PLUGIN_DIR_REL and DOGRE_PLUGIN_DIR_DBG was added before actually filling those variables which resulted in an empty definition.
+# https://github.com/stuntrally/stuntrally/pull/7
+Index: stuntrally-2.3/source/vdrift/pathmanager.cpp
+===================================================================
+--- stuntrally-2.3.orig/source/vdrift/pathmanager.cpp	2014-05-11 18:18:38.477949719 +0200
++++ stuntrally-2.3/source/vdrift/pathmanager.cpp	2014-05-11 18:18:38.473949719 +0200
+@@ -20,6 +20,9 @@
+ #define SHARED_DATA_DIR "data"
+ #endif
+ 
++#ifndef OGRE_PLUGIN_DIR_REL
++#error OGRE_PLUGIN_DIR_REL not defined !
++#endif
+ 
+ // TODO: Create a PORTABLE_INSTALL flag that allows disabling the usage of system dirs
+ 
+Index: stuntrally-2.3/CMakeLists.txt
+===================================================================
+--- stuntrally-2.3.orig/CMakeLists.txt	2014-05-11 18:18:34.000000000 +0200
++++ stuntrally-2.3/CMakeLists.txt	2014-05-11 18:19:19.041948512 +0200
+@@ -61,9 +61,6 @@
+ #      but that would break other build systems for good.
+ add_definitions(-DSHARED_DATA_DIR="${SHARE_INSTALL}")
+ 
+-add_definitions(-DOGRE_PLUGIN_DIR_REL="${OGRE_PLUGIN_DIR_REL}")
+-add_definitions(-DOGRE_PLUGIN_DIR_DBG="${OGRE_PLUGIN_DIR_DBG}")
+-
+ if (DEFINED CMAKE_BUILD_TYPE)
+ 	if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+ 		add_definitions(-D_DEBUG="")
+@@ -98,6 +95,8 @@
+         if (OGRE_VERSION_MAJOR GREATER 1 OR OGRE_VERSION_MINOR GREATER 8)
+             list(APPEND LIBS ${OGRE_Overlay_LIBRARIES})
+         endif()
++        add_definitions(-DOGRE_PLUGIN_DIR_REL="${OGRE_PLUGIN_DIR_REL}")
++        add_definitions(-DOGRE_PLUGIN_DIR_DBG="${OGRE_PLUGIN_DIR_DBG}")
+ 
+ 	#find_package(Bullet REQUIRED QUIET)
+ 	#include_directories(${BULLET_INCLUDE_DIRS})
