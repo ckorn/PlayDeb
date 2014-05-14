@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/_//g" \
+    http://download.tuxfamily.org/tesseract/tesseract_([\d_]+)_(?:.*_)linux\.tar\.xz

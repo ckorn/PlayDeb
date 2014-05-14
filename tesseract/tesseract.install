@@ -1,0 +1,3 @@
+debian/scripts/tesseract	usr/games
+debian/tesseract.png		usr/share/pixmaps
+debian/tesseract.desktop	usr/share/applications

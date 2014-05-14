@@ -1,0 +1,7 @@
+#!/bin/sh
+TESS_DATA=/usr/share/games/tesseract
+TESS_SERV_BIN=/usr/lib/games/tesseract/tesseract_server
+TESS_SERV_OPTIONS="-q${HOME}/.config/tesseract"
+
+cd ${TESS_DATA}
+exec ${TESS_SERV_BIN} ${TESS_SERV_OPTIONS} "$@"

@@ -1,0 +1,51 @@
+Source: tesseract
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libenet-dev,
+               libx11-dev,
+               x11proto-core-dev,
+               libgles1-mesa-dev,
+               mesa-common-dev,
+               libogg-dev,
+               libsdl2-dev,
+               libsdl2-mixer-dev,
+               libsdl2-image-dev,
+               libmirclient-dev,
+               zlib1g-dev,
+               libfreetype6-dev
+Standards-Version: 3.9.5
+Homepage: http://tesseract.gg/
+
+Package: tesseract
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         tesseract-data (= ${source:Version})
+Description: First-person shooter game
+ Tesseract is a first-person shooter game focused on
+ instagib deathmatch and capture-the-flag gameplay
+ as well as cooperative in-game map editing.
+
+Package: tesseract-server
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         tesseract-data (= ${source:Version})
+Description: First-person shooter game (server package)
+ Tesseract is a first-person shooter game focused on
+ instagib deathmatch and capture-the-flag gameplay
+ as well as cooperative in-game map editing.
+ .
+ (This package contains the server executable).
+
+Package: tesseract-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: First-person shooter game (data package)
+ Tesseract is a first-person shooter game focused on
+ instagib deathmatch and capture-the-flag gameplay
+ as well as cooperative in-game map editing.
+ .
+ (This package contains the data files).

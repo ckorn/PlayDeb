@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Tesseract
+Exec=/usr/games/tesseract
+Icon=tesseract
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=fps;

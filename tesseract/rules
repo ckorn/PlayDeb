@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --sourcedirectory=src
+
+override_dh_install:
+	dh_install
+	cp bin_unix/native_client debian/tesseract/usr/lib/games/tesseract/tesseract_client
+	cp bin_unix/native_server debian/tesseract-server/usr/lib/games/tesseract/tesseract_server
