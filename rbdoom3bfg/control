@@ -5,8 +5,12 @@ Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
                cmake,
                libsdl2-dev,
-               libopenal-dev
-Standards-Version: 3.9.4
+               libopenal-dev,
+               libavcodec-dev,
+               libavformat-dev,
+               libavutil-dev,
+               libswscale-dev
+Standards-Version: 3.9.5
 Homepage: https://github.com/RobertBeckebans/RBDOOM-3-BFG
 
 Package: rbdoom3bfg

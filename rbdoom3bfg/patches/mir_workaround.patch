@@ -1,0 +1,15 @@
+# SDL2 does not tell where the mir headers are located:
+# https://bugs.launchpad.net/ubuntu/+source/libsdl2/+bug/1306629
+Index: rbdoom3bfg-1.0.2/neo/CMakeLists.txt
+===================================================================
+--- rbdoom3bfg-1.0.2.orig/neo/CMakeLists.txt	2014-05-18 15:17:15.000000000 +0200
++++ rbdoom3bfg-1.0.2/neo/CMakeLists.txt	2014-05-18 17:07:06.844685840 +0200
+@@ -1332,7 +1332,7 @@
+ 
+ 		if(SDL2)
+ 			find_package(SDL2 REQUIRED)
+-			include_directories(${SDL2_INCLUDE_DIR})
++			include_directories(${SDL2_INCLUDE_DIR} /usr/include/mirclient /usr/include/mircommon)
+ 			set(SDLx_LIBRARY ${SDL2_LIBRARY})
+ 		else()
+ 			find_package(SDL REQUIRED)

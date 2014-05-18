@@ -1,3 +1,2 @@
 sdl2.patch
-ftbfs.patch
-typos.patch
+mir_workaround.patch
