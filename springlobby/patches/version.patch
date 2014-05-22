@@ -1,8 +1,8 @@
 # get the version from env var. not from git.
-Index: springlobby-0.189/tools/regen_config_header.sh
+Index: springlobby-0.193/tools/regen_config_header.sh
 ===================================================================
---- springlobby-0.189.orig/tools/regen_config_header.sh	2014-04-15 21:07:01.000000000 +0200
-+++ springlobby-0.189/tools/regen_config_header.sh	2014-04-21 22:18:03.296935161 +0200
+--- springlobby-0.193.orig/tools/regen_config_header.sh	2014-05-13 10:56:28.000000000 +0200
++++ springlobby-0.193/tools/regen_config_header.sh	2014-05-22 19:10:52.000000000 +0200
 @@ -14,11 +14,7 @@
  
  REV_TEMPLATE="@SPRINGLOBBY_REV@"
