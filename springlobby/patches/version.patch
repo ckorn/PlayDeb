@@ -1,11 +1,11 @@
 # get the version from env var. not from git.
-Index: springlobby-0.193/tools/regen_config_header.sh
+Index: springlobby-0.194/tools/regen_config_header.sh
 ===================================================================
---- springlobby-0.193.orig/tools/regen_config_header.sh	2014-05-13 10:56:28.000000000 +0200
-+++ springlobby-0.193/tools/regen_config_header.sh	2014-05-22 19:10:52.000000000 +0200
-@@ -14,11 +14,7 @@
- 
- REV_TEMPLATE="@SPRINGLOBBY_REV@"
+--- springlobby-0.194.orig/tools/regen_config_header.sh	2014-05-23 03:45:33.340002194 +0200
++++ springlobby-0.194/tools/regen_config_header.sh	2014-05-23 03:45:33.336002194 +0200
+@@ -11,11 +11,7 @@
+ SOURCE="${1}"
+ OUTPUT="${2}"
  
 -REV="$(git describe --tags)" 2>/dev/null
 -
@@ -15,4 +15,4 @@ Index: springlobby-0.193/tools/regen_config_header.sh
 +REV="${SPRINGLOBBY_REV}"
  
  OLDREV=""
- if [ -s ${VERSIONFILE} ] && [ -s ${TARGET_HEADER} ]; then
+ if [ -s ${SOURCE}/VERSION ] && [ -s ${SOURCE}/springlobby_config.h ]; then
