@@ -1,3 +1,14 @@
+manaplus (1:1.4.5.24-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: memory leak.
+    add: mirrors support for generic manaplus downloads.
+    add: imrove beings creation/deletion speed.
+    add: open updater window while connected to server.
+    add: improved a bit code style.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 24 May 2014 20:15:09 +0200
+
 manaplus (1:1.4.5.10-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
