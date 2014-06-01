@@ -1,0 +1,5 @@
+tales-of-majeyal (1.1.5-1~getdeb1) trusty; urgency=low
+
+  * Initial release (LP: #1325323)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 01 Jun 2014 17:59:11 +0200

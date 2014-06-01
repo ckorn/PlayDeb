@@ -1,0 +1,4 @@
+t-engine				usr/lib/games/tales-of-majeyal
+debian/scripts/tales-of-majeyal		usr/games
+debian/tales-of-majeyal.png		usr/share/pixmaps
+debian/tales-of-majeyal.desktop		usr/share/applications

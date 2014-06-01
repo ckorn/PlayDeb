@@ -1,0 +1,53 @@
+Source: tales-of-majeyal
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libreadline6-dev,
+               libglew-dev,
+               zlib1g-dev,
+               libx11-dev,
+               x11proto-core-dev,
+               mesa-common-dev,
+               libglu1-mesa-dev,
+               libvorbis-dev,
+               libsdl2-dev,
+               libopenal-dev,
+               valgrind,
+               linux-libc-dev,
+               libsdl2-ttf-dev,
+               libsdl2-image-dev,
+               libpng12-dev,
+               libexpat1-dev,
+               lua5.1,
+               premake4
+Standards-Version: 3.9.5
+Homepage: http://te4.org/
+
+Package: tales-of-majeyal
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         tales-of-majeyal-data (= ${source:Version})
+Description: Free, open source roguelike RPG
+ Tales of Maj'Eyal (ToME) is a free, open source roguelike
+ RPG, featuring tactical turn-based combat and advanced
+ character building.  Play as one of many unique races and
+ classes in the lore-filled world of Eyal, exploring random
+ dungeons, facing challenging battles, and developing
+ characters with your own tailored mix of abilities and
+ powers.
+
+Package: tales-of-majeyal-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Free, open source roguelike RPG (data package)
+ Tales of Maj'Eyal (ToME) is a free, open source roguelike
+ RPG, featuring tactical turn-based combat and advanced
+ character building.  Play as one of many unique races and
+ classes in the lore-filled world of Eyal, exploring random
+ dungeons, facing challenging battles, and developing
+ characters with your own tailored mix of abilities and
+ powers.
+ .
+ (This package contains data files).

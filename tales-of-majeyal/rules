@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	[ ! -f Makefile ] || make clean
+	premake4 clean
+
+override_dh_auto_build:
+	premake4 gmake
+	make config=release

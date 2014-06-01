@@ -1,0 +1,3 @@
+version=3
+http://te4.org/download \
+    (?:.*/)?t-engine4-src-([\d\.]+)\.tar\.bz2
