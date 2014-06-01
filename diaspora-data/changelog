@@ -1,3 +1,9 @@
+diaspora-data (1.0.4-1~getdeb2) trusty; urgency=medium
+
+  * Remove default config (LP: #1325277)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 01 Jun 2014 17:10:38 +0200
+
 diaspora-data (1.0.4-1~getdeb1) precise; urgency=low
 
   * Initial release (LP: #1046551)
