@@ -6,14 +6,15 @@ Build-Depends: debhelper (>= 9),
                openjdk-7-jdk | openjdk-6-jdk | sun-java6-jdk,
                ant,
                ant-optional
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://stendhal.game-host.org/
 
 Package: stendhal
 Architecture: all
 Depends: ${misc:Depends},
-         openjdk-7-jre | openjdk-6-jre | sun-java6-jre,
-         fontconfig
+         openjdk-7-jre | sun-java6-jre,
+         fontconfig,
+         jarwrapper
 Description: Multiplayer online adventures game
  Stendhal is a fully fledged multiplayer online
  adventures game (MMORPG) developed using the Arianne

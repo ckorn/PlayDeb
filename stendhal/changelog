@@ -1,3 +1,33 @@
+stendhal (1.14-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    *world*
+    - new park in Fado city, south of church
+    - Easter map for Fado city
+
+    *website*
+    - unified search: creatures, items, quests, achievements, players, world
+    guide, player's guide
+    - integration of wiki pages
+    - detail pages for quests, regions and dungeons
+    - links from NPC, items and creatures to related quests
+    - new, cleaner layout with drop down menus
+    - breadcrumbs for easier navigation
+    - gallery for screenshots
+    - website now works on small devices
+
+
+    *fixes*
+    - length of text messages limited and line breaks fixed on Java 7/8
+    - wedding ring supports double click
+    - message on shocked
+    - code cleanup and documentation improvements
+    - excessly high atk and def level are capped for fighters with little
+    experience 
+      (average players should not notice much of a difference)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 05 Jun 2014 19:05:28 +0200
+
 stendhal (1.13-1~getdeb1) precise; urgency=low
 
   * New upstream version
