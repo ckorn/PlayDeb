@@ -1,3 +1,9 @@
+warsow-data (1.51-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 08 Jun 2014 19:58:10 +0200
+
 warsow-data (1.5-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
