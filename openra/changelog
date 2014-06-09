@@ -1,3 +1,172 @@
+openra (20140608-1~getdeb1) trusty; urgency=low
+
+  * New upstream version
+    Fixed unloading passengers moving unnecessarily far from their transport.
+    Fixed the unload cursor sometimes being displayed for transports even when they were unable to unload.
+    Fixed units staying selected and contributing to control groups when becoming cloaked or hidden in fog.
+    Fixed the game sometimes crashing when deploying and activating the guard cursor at the same time.
+    Fixed unit build time calculation (accounts for the current power state, not the power state when it was queued).
+    Fixed a crash when connecting to a server with an unavailable map.
+    Fixed walls not updating when neighboring sections were sold or destroyed.
+    Fixed a bug where a player could queue production of multiple build-limited units. [#5188]
+    Fixed a number of bugs related to the tech tree. [#5233]
+    Fixed a crash when dead units are unloaded from a transport. [#5324]
+    Fixed a crash when aircraft are ordered to a different airfield / helipad. [#5390]
+    Fixed a crash when starting to repair a building at the same time that it dies. [#5523]
+    Fixed a glitch that prevented units on bridges from being targetable. [#5381]
+    Fixed units retaliating against the support-power structures after being damaged by a support power. [#5329]
+    Fixed Nuclear missile travel time to be independent of map size.
+    Fixed units being unable to guard planes or helicopters.
+    Fixed own/allied units blocking production exits.
+    Fixed performance issues with units pathing to naval transports.
+    Fixed unit moving to transports that have moved.
+    Fixed an exploit where you could add control groups on enemy units.
+    Added placeable beacons that highlight an area to allies and spectators (Hotkey: `F9`). [#4682, #4930, #5093]
+    Added automatic beacons to support powers. [#4815, #4920, #4930, #4959]
+    Added radar notifications for units or buildings under attack, and for beacon events.
+    Added AttackMove and Guard abilities to Aircraft and Helicopters.
+    Added cheat button to grow map resources.
+    Adjusted default pause hotkey from `F9` (now used for beacons) to `F8`.
+    Adjusted husks to be damageable (use force-fire to destroy them), and appear darkened (burnt) to distinguish them.
+    Adjusted Support powers to reveal their target area (only) when they strike.
+    Adjusted helicopters to automatically take off and move to their rallypoint after being repaired or rearmed. [#5250]
+    Fixed chat synchronization in replays.
+    Fixed unclickable area on the right edge of the production palette.
+    Fixed single resources being invisible and unharvestable. [#5571]
+    Added the Abort Mission Confirmation dialog to avoid miss-clicks. [#5180]
+    Added `Ctrl+T` shortcut for selection of all units matching the types of the currently selected ones across the screen and map.
+    Added a hotkey toggle for pixel doubling (default `.`) [#5142]
+    Added an error dialog if the server connection is lost.
+    Added a combined shroud view of every player to the replay viewer and spectator mode.
+    Added playback speed controls to replays.
+    Added a new cursor type for attacking targets that are out of range.
+    Added a warning dialog when force starting a match.
+    Added support for console commands. Type `/help` in the chat list to see a list. [#5253]
+    Improved the observer/replay view selector with teams, factions, player colors, and hotkeys.
+    Improved chat scrolling behavior. [#5191]
+    Adjusted the READY overlay to blink when a building is ready to place. [#5178]
+    Adjusted unit order lines to display when a unit is selected.
+    Removed health bars and selection boxes from walls.
+    The UI logic has been unified between TD and RA/D2K, allowing all mods to provide the same options.
+    Fixed an issue where names would reset in the lobby. [#5115]
+    Fixed a bug where a bot could be automatically added to maps that don't support them. [#5143]
+    Added a new mod selection window, which now appears on the first game start.
+    Added a Singleplayer menu that provides direct access to the missions and skirmishes vs bots.
+    Added an Extras menu for miscellaneous extras to reduce clutter from the primary menu.
+    Added a community news panel. [#5279]
+    Added a preference for the (mousewheel / trackpad) scroll-panel scroll speed. [#5297]
+    Added filters and file management to the replay browser. [#5215]
+    Added animations to the color-picker preview image.
+    Added a check for unsupported maps to the lobby. [#5353]
+    Added the ability for admins to disable spectators from joining a multiplayer game.
+    Added support for custom map previews in the lobby.  Map authors can include a map.png inside their oramap package.
+    Improved support for installing custom maps via the lobby.
+    Improved spawn point selection in the lobby. [#5192]
+    Improved chat scrolling behavior. [#5307]
+    Improved the MP server browser to fetch unknown map details from the OpenRA content site.
+    Improved the asset browser file list to sort names in alphabetical order.
+    Moved the MP create game and direct connect buttons to the server browser window.
+    Fixed the repair indicator positioning. [#5512]
+    Added the Atreides grenadier from the 1.06 patch.
+    Added randomized tiles for Sand and Rock terrain.
+    Added shroud by default (can be disabled via the lobby settings).
+    Added shrapnel when buildings are destroyed.
+    Added active animations for all structures. [#5119, #5124, #5134, #5138, #5373, #5376, #5393]
+    Added the BLOXXMAS terrain tiles from the 1.06 patch.
+    Added concrete plates and building weathering.
+    Adjusted Saboteur to allow demolition of vehicles, but not walls.
+    Adjusted Engineers to allow capturing of unit husks (which are repaired to 25% health).
+    Improved turret rendering to integrate visually with walls.
+    Removed the build radius restrictions.
+    Corrected Fremen's tooltip [#5488]
+    Fixed Chronoshift to properly kill infantry cargo (fixed unbuildable tanya glitch).
+    Fixed transparency glitches in the sniper icon.
+    Fixed Spies having an enemy team-color health bar when disguised as a friendly unit.
+    Fixed an issue where husks were hidden under the refinery bib. [#5306]
+    Fixed ore mine artwork in the interior tileset. [#5316]
+    Fixed spies not being removed from the minimap after they infiltrate a structure.
+    Fixed Gem Mines having an incorrect land footprint.
+    Fixed Gap generators spinning when disabled or low-power. [#5138]
+    Fixed Shock Trooper tooltip having the incorrect unit name. [#5020]
+    Fixed chronoshifted units not returning if the origin cell was blocked.
+    Added player colors to Engineers.
+    Added more player color to the bottom edge of SAM sites. [#4909]
+    Added dirt patches ("mini-bibs") under bib-less buildings.
+    Added door open/closing animations to the naval transport.
+    Added splash effect when aircraft crash into water. [#5346]
+    Added additional terrain-specific artwork for the Allied Barracks and the Missile Silo.
+    Added Phase Transport, an Allied high-tech infantry transport which can cloak. [#4855]
+    Added cloak detection to Attack Dogs, Snipers, Mobile Radar Jammers, Camo Pillboxes, Phase Transports, Radar Domes, and Spy Planes. [#4855]
+    Added Hijacker, a Soviet infantry unit with a vehicle hijacking ability.
+    Added maps: Blitzkrieg, Burlesca, Seaside 2, Singles and Synergy; balanced Doubles and Man to Man. [#5420]
+    Added new mission: Intervention. [#5483]
+    Adjusted Tanya to allow demolition of bridges and vehicles, but not walls.
+    Adjusted Mechanics to allow capturing of unit husks (which are repaired to 25% health).
+    Adjusted Allied and Soviet factions to both build general-purpose mines, instead of AT and AP mines respectively. [#4827]
+    Adjusted balancing of Mobile Flak (renamed from Flak truck), Mobile Radar Jammer, Mammoth Tank, Chrono Tank, AA Gun, SAM Site. [#4407, #4766, #4810, #4855, #4960, #5020, #5070, #5086, #5219]
+    Adjusted AI names "Easy AI" to "Rush AI", "Hard AI" to "Turtle AI", and "Island Map AI" to "Naval AI". [#4613]
+    Improved chinook rotor animation. [#4805]
+    Improved explosions for several vehicles. [#5091]
+    Improved infantry death sounds. [#5236, #5242]
+    Improved the corners of the dialog borders.
+    Improved attack-move mouse cursor.
+    Improved Chrono tank ordering: tanks can be teleported in groups by holding SHIFT or ALT while issuing a move order.
+    Removed maps: Battle Lake, Crossing the River, Doughnut Hole, Ice Woods, Island Hoppers (KOTH), Mad Scramble, Nishnekolymsk, Strip Mine, Free Coasts.
+    Removed redundant AI types: "Test AI", "High-Tech AI", "Long-Range AI", "Tank AI". [#4613]
+    Removed the hardcoded missions. These will be later reimplemented using lua.
+    Replaced the previous shellmaps with a new lua-scripted version.
+    Fixed various glitches in the tilesets with passable cliffs and rocks. [#5289]
+    Fixed helicopter reload behavior. [#5345]
+    Fixed MCV not crushing infantry. [#5212]
+    Fixed Chinook being unable to land on Tiberium, and improved rotor animation. [#4805]
+    Fixed dinosaurs not being able to collect crates.
+    Fixed Obelisk of Light charge animation and sound effects. [#4699, #4803]
+    Fixed the cursors used for sabotaging and capturing buildings/units (they were swapped).
+    Fixed tech structures counting towards victory/loss. [#5146]
+    Fixed Comm. Center and Advanced Comm. Center radar dishes spinning during low power. [#5138]
+    Improved infantry death sounds. [#5236, #5242]
+    Improved tree footprints to allow unit movement through forests.
+    Improved or replaced several mouse cursors.
+    Adjusted Commando to allow demolition of bridges, but not walls.
+    Adjusted Commando to no longer shoot (ineffectively) at vehicles or buildings. [#5063]
+    Adjusted balance of most other units and structures to reduce the effectiveness of static defences, and more clearly define unit roles. [#4526, #4724, #5132, #5186, #5194, #5212, #5246, #5254, #5286, #5413]
+    Adjusted Engineers to allow capturing of unit husks (which are repaired to 25% health).
+    Renamed "Easy AI" to "Cabal", "Normal AI" to "Watson", and "Hard AI" to "HAL 9001". [#4613]
+    Added dirt patches ("mini-bibs") under bib-less buildings.
+    Added new maps: Letters from Lexington, Pirates and Empires, White Acres, Year 501, Pressure, Profit Over People [#5275, #5407]
+    Added new missions: Nod01, Nod03a, Nod03b, GDI01, GDI02, GDI03, GDI04a GDI04b, GDI04c[#4397, #4402, #4408, #4428, #4386, #4399, #4499, #4899, #5462]
+    Fixed the long first-startup delay on OSX. [#5244]
+    Added a [new lua interface](https://github.com/OpenRA/OpenRA/wiki/New-Lua-Interface) for scripted maps.  The previous interface is now deprecated. [#5190]
+    Added, changed, or removed a number of traits (see the [full traits list](https://github.com/OpenRA/OpenRA/wiki/Traits) for the full list).
+    Added custom palette overrides to many traits. [#5125, #5137, #5185, #5217, #5218, #5238, #5329, #5392]
+    Added an IEffectiveOwner interface for traits/logic that temporarily alter an actor's apparent owner.
+    Added a command-line parameter `Launch.Replay=$FILEPATH` to launch the game directly into a replay.
+    Added support for tech levels as included in the original games. [#5280]
+    Added support for rectangular cells with forced perspective by specifying a custom TileSize in mod.yaml
+    Added initial support for the tmp(TS) tile format.
+    Added load-time performance measurements to perf.log. [#5184]
+    Changed platform integration to use SDL 2 everywhere (previously only supported under OSX), and remove SDL 1.2 / Cg. [#5226]
+    Changed the underlying project layout, merging OpenRA.FileFormats.dll into OpenRA.Game.exe and reorganizing namespaces.
+    Changed many traits properties to use world coordinates. OpenRA.Utility includes a command for automating the unit conversions (see [upgrading mods to a new release](https://github.com/OpenRA/OpenRA/wiki/Upgrading-mods-to-a-new-release)).
+    Improved caching of mod and map rules for significantly reduced load times. [#5234]
+    Improved the internal map management and preview generation code.
+    Changed OpenGL and OpenAL bindings from Tao to SDL-CS. [#5248]
+    Changed the server Message of the day to share a default motd.txt gets that is created in the user directory.
+    Fixed aircraft not replying with a voice when ordered to stop. [#5453]
+    Fixed the editor flood fill tool on similar grass/snow/desert tiles.
+    Fixed broken random tiles in Red Alert's snow tileset [#5447]
+    Fixed a river template in Red Alert not expanding to 3x3 [#5447]
+    Added support for file globs to `OpenRA.Utility --shp` under windows. [#5266]
+    Added an `--upgrade-mod` feature to upgrade the yaml of mods to the latest specifications (see [upgrading mods to a new release](https://github.com/OpenRA/OpenRA/wiki/Upgrading-mods-to-a-new-release)).
+    Moved legacy INI/MPR map import to OpenRA.Utility
+    Fixed broken FreeType 2 dependency for Fedora RPM.
+    Added HTML documentation to the Windows installer.
+    Added a counterpart to the Makefile for Windows users.  Run make.cmd to see options for compiling the source code.
+    Changed `make clean` to remove intermediate files created by MonoDevelop. [#5089, #5128]
+    Removed portable install option from Windows installer as the game left without write access breaks content download and error log generation.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 9 Jun 2014 11:33:53 +0100
+
 openra (20131223-1~getdeb1) precise; urgency=low
 
   * New upstream version (LP: #1277862)
