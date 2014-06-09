@@ -26,7 +26,7 @@ Package: warsow
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-         warsow-data (>= 1.5)
+         warsow-data (>= 1.51)
 Description: fast paced 3D first person shooter
  Warsow is a fast paced first person shooter consisting of cel-shaded
  cartoon-like graphics with dark, flashy and dirty textures. Warsow is based on
@@ -55,7 +55,7 @@ Package: warsow-server
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-         warsow-data (>= 1.5)
+         warsow-data (>= 1.51)
 Description: Server and TV server for the Warsow 3D first person shooter
  Warsow is a fast paced first person shooter consisting of cel-shaded
  cartoon-like graphics with dark, flashy and dirty textures. Warsow is based on
