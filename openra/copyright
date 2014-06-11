@@ -3,17 +3,11 @@ Upstream-Name: openra
 Source: https://github.com/OpenRA/OpenRA/tags
 
 Files: *
-Copyright: 2012 Alli Witheford (alzeih)
-           2012 Caleb Anderson (RobotCaleb)
-           2012 Chris Forbes (chrisf)
-           2012 Curtis Shmyr (hamb)
-           2012 Daniel Hernandez (Mancano)
-           2012 Matthew Bowra-Dean (beedee)
-           2012 Mike Bundy (kehaar)
+Copyright: 2007-2014 The OpenRA developers (see AUTHORS)
 License: GPL-3.0+
 
 Files: debian/*
-Copyright: 2012 Christoph Korn <christoph.korn@getdeb.net>
+Copyright: 2014 Christoph Korn <christoph.korn@getdeb.net>
 License: GPL-3.0+
 
 License: GPL-3.0+
