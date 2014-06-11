@@ -1,0 +1,14 @@
+# install game files into /usr/share/games/openra
+Index: openra-20140608/Makefile
+===================================================================
+--- openra-20140608.orig/Makefile	2014-06-08 10:38:12.000000000 +0200
++++ openra-20140608/Makefile	2014-06-10 22:12:38.920672128 +0200
+@@ -49,7 +49,7 @@
+ datadir ?= $(datarootdir)
+ bindir ?= $(prefix)/bin
+ libdir ?= $(prefix)/lib
+-gameinstalldir ?= $(libdir)/openra
++gameinstalldir ?= $(datadir)/openra
+ 
+ BIN_INSTALL_DIR = $(DESTDIR)$(bindir)
+ DATA_INSTALL_DIR = $(DESTDIR)$(gameinstalldir)

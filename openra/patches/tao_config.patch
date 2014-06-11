@@ -1,0 +1,84 @@
+dh_clideps does not understand the "dllentry" syntax.
+Take the config files from the Ubuntu package which uses the "target" syntax.
+
+Map libGL.so to libGLU.so.1
+Index: openra-20140608/thirdparty/SharpFont.dll.config
+===================================================================
+--- openra-20140608.orig/thirdparty/SharpFont.dll.config	2014-06-10 22:51:54.268602062 +0200
++++ openra-20140608/thirdparty/SharpFont.dll.config	2014-06-10 22:51:54.264602062 +0200
+@@ -1,7 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8" ?>
+ <configuration>
+-	<dllmap dll="freetype6.dll">
+-		<dllentry os="linux" dll="libfreetype.so.6" />
+-		<dllentry os="osx" dll="/Library/Frameworks/Mono.framework/Libraries/libfreetype.6.dylib" />
+-	</dllmap>
+-</configuration>
+\ No newline at end of file
++    <dllmap dll="freetype6.dll" os="osx" target="/Library/Frameworks/Mono.framework/Libraries/libfreetype.6.dylib" />
++    <dllmap dll="freetype6.dll" os="!windows,osx" target="libfreetype.so.6" />
++</configuration>
+Index: openra-20140608/thirdparty/SDL2-CS.dll.config
+===================================================================
+--- openra-20140608.orig/thirdparty/SDL2-CS.dll.config	2014-06-10 22:51:54.268602062 +0200
++++ openra-20140608/thirdparty/SDL2-CS.dll.config	2014-06-10 23:10:48.848568311 +0200
+@@ -2,17 +2,20 @@
+ <configuration>
+   <dllmap os="osx" dll="SDL2.dll" target="libSDL2.dylib"/>
+   <dllmap os="linux" dll="SDL2.dll" target="libSDL2-2.0.so.0" />
++  <dllmap os="linux" dll="SDL2_image.dll" target="libSDL2_image-2.0.so.0" />
++  <dllmap os="linux" dll="SDL2_mixer.dll" target="libSDL2_mixer-2.0.so.0" />
++  <dllmap os="linux" dll="SDL2_ttf.dll" target="libSDL2_ttf-2.0.so.0" />
++  <dllmap os="linux" dll="libGLES.dll" target="libGLESv1_CM.so.1" />
++  <dllmap os="linux" dll="libGLESv2.dll" target="libGLESv2.so.2" />
+ 
+   <dllmap dll="soft_oal.dll" os="osx" target="/System/Library/Frameworks/OpenAL.framework/OpenAL"/>
+   <dllmap dll="soft_oal.dll" os="linux" target="libopenal.so.1"/>
+ 
+-  <dllmap dll="opengl32.dll">
+-    <dllentry os="linux" dll="libGL.so.1" />
+-    <dllentry os="osx" dll="/System/Library/Frameworks/OpenGL.framework/OpenGL" />
+-  </dllmap>
++  <dllmap dll="opengl32.dll" os="osx" target="/System/Library/Frameworks/OpenGL.framework/OpenGL" />
++  <dllmap dll="opengl32.dll" os="!windows,osx" target="libGL.so.1" />
+ 
+-  <dllmap dll="glu32.dll">
+-    <dllentry os="linux" dll="libGLU.so.1" />
+-    <dllentry os="osx" dll="/System/Library/Frameworks/OpenGL.framework/Libraries/libGLU.dylib" />
+-  </dllmap>
++  <dllmap dll="glu32.dll" os="osx" target="/System/Library/Frameworks/OpenGL.framework/Libraries/libGLU.dylib" />
++  <dllmap dll="glu32.dll" os="!windows,osx" target="libGLU.so.1" />
++
++  <dllmap dll="libGL.so" os="!windows,osx" target="libGLU.so.1" />
+ </configuration>
+Index: openra-20140608/thirdparty/linux/SDL2-CS.dll.config
+===================================================================
+--- openra-20140608.orig/thirdparty/linux/SDL2-CS.dll.config	2014-06-10 22:51:54.268602062 +0200
++++ openra-20140608/thirdparty/linux/SDL2-CS.dll.config	2014-06-10 23:10:55.128568125 +0200
+@@ -1,15 +1,18 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <configuration>
+-  <dllmap os="linux" dll="SDL2.dll" cpu="x86" target="libSDL232.2.0.2.so" />
+-  <dllmap os="linux" dll="SDL2.dll" cpu="x86-64" target="libSDL264.2.0.2.so" />
++  <dllmap os="linux" dll="SDL2.dll" cpu="x86" target="libSDL2-2.0.so.0" />
++  <dllmap os="linux" dll="SDL2.dll" cpu="x86-64" target="libSDL2-2.0.so.0" />
++  <dllmap os="linux" dll="SDL2_image.dll" target="libSDL2_image-2.0.so.0" />
++  <dllmap os="linux" dll="SDL2_mixer.dll" target="libSDL2_mixer-2.0.so.0" />
++  <dllmap os="linux" dll="SDL2_ttf.dll" target="libSDL2_ttf-2.0.so.0" />
++  <dllmap os="linux" dll="libGLES.dll" target="libGLESv1_CM.so.1" />
++  <dllmap os="linux" dll="libGLESv2.dll" target="libGLESv2.so.2" />
+ 
+   <dllmap dll="soft_oal.dll" os="linux" target="libopenal.so.1"/>
+ 
+-  <dllmap dll="opengl32.dll">
+-    <dllentry os="linux" dll="libGL.so.1" />
+-  </dllmap>
++  <dllmap dll="opengl32.dll" os="!windows,osx" target="libGL.so.1" />
+ 
+-  <dllmap dll="glu32.dll">
+-    <dllentry os="linux" dll="libGLU.so.1" />
+-  </dllmap>
++  <dllmap dll="glu32.dll" os="!windows,osx" target="libGLU.so.1" />
++
++  <dllmap dll="libGL.so" os="!windows,osx" target="libGLU.so.1" />
+ </configuration>

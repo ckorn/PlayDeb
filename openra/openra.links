@@ -1,4 +1,4 @@
-usr/share/fonts/truetype/freefont/FreeSans.ttf		usr/lib/openra/FreeSans.ttf
-usr/share/fonts/truetype/freefont/FreeSansBold.ttf	usr/lib/openra/FreeSansBold.ttf
-usr/share/fonts/truetype/openra/Dune2k.ttf		usr/lib/openra/mods/d2k/Dune2k.ttf
-usr/share/fonts/truetype/openra/ZoodRangmah.ttf		usr/lib/openra/mods/ra/ZoodRangmah.ttf
+usr/share/fonts/truetype/freefont/FreeSans.ttf		usr/share/games/openra/FreeSans.ttf
+usr/share/fonts/truetype/freefont/FreeSansBold.ttf	usr/share/games/openra/FreeSansBold.ttf
+usr/share/fonts/truetype/openra/Dune2k.ttf		usr/share/games/openra/mods/d2k/Dune2k.ttf
+usr/share/fonts/truetype/openra/ZoodRangmah.ttf		usr/share/games/openra/mods/ra/ZoodRangmah.ttf

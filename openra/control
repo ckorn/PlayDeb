@@ -4,22 +4,26 @@ Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
                mono-gmcs,
-               cli-common-dev,
-               libgl1-mesa-glx,
-               libfreetype6,
-               liblua5.1-0
-Standards-Version: 3.9.3
+               cli-common-dev (>= 0.5.7),
+               libgl1-mesa-dev,
+               libsdl2-dev,
+               libsdl2-image-dev,
+               libsdl2-mixer-dev,
+               libsdl2-ttf-dev,
+               libgles2-mesa-dev,
+               libgles1-mesa-dev,
+               libsmpeg-dev,
+               libopenal-dev,
+               libalut-dev,
+               liblua5.1-0-dev
+Standards-Version: 3.9.5
 Homepage: http://openra.net/
 
 Package: openra
 Architecture: all
 Depends: ${misc:Depends},
          ${cli:Depends},
-         libasound2,
-         libopenal1,
-         libsdl2-2.0-0,
-         xdg-utils,
-         zenity,
+         libcg,
          ttf-freefont,
          ttf-openra (= ${source:Version})
 Description: Open-source implementation of the Red Alert engine
