@@ -1,3 +1,44 @@
+tales-of-majeyal (1.2.2-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    - Reduced Death Dance bleed damage
+    - Fixed the donator achievements when playing higher difficulty mode
+    - Reduced Displacement Shield mana cost
+    - Fixed a bug that made mouse hard to move when targeting under the game
+    log in some circumstances
+    - Added an icon to webviews to copy the current URL to clipboard
+    - Mummy wrappings are considered light armour now
+    - Fixed Cuirass of the Dark Lord
+    - Fixed Rak'Shor Cultist, again
+    - Fixed Wintertide storm effect
+    - Moving an item out of the transmogrification chest correctly checks
+    encumberance
+    - Click on your own character to pass a turn correctly reload ammo too
+    - Crystal walls in the crystaline old forest are diggable
+    - Fixed crystaline forest "eating" vault walls in the old forest
+    - Fixed Shattering Charge range limit
+    - Fixed Buckler Mastery
+    - Ring of the War Master now also improved 2h assault talents
+    - Fixed the bug that turned the level into half-ascii mode after coming
+    out of the Eidolon/Fearscape/Dreamscape after a save&reload
+    - Fixed Alchemist Golem gaining too much talents in the Infinite Dungeon
+    - Renamed Lightbringer's Rod to Wand to keep naming consistent
+    - Improved reshaped weapons/armours display
+    - Rare items/randarts with negative life will not always spawn with the
+    max value
+    - Nerfed Mucus damage a little
+    - Uncapped Recovery and altered scaling
+    - Fixed Infinite Dungeon having most creatures poison immune
+    - Fixed corrupting the heart of the sandworm queen on the altar on the
+    same turn as being fearscaped
+    - Gaining a high difficulty achievement also grants lower achievements
+    - Fixed devour life damage type
+    - Fixed crash after saving that happened to some people
+    - Fix Bash and Smash
+    - Fixed Fearless Cleave
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Thu, 12 Jun 2014 20:08:42 +0200
+
 tales-of-majeyal (1.2.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
