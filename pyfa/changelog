@@ -1,3 +1,14 @@
+pyfa (1.2.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    - Features:
+     - Open Character Editor from Character Selector
+    - Fixes:
+     - Frequent crashes with automatic HTML export enabled (#122)
+     - Required skills bug (#118)
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Thu, 12 Jun 2014 21:21:37 +0200
+
 pyfa (1.2.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
