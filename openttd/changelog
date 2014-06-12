@@ -1,3 +1,55 @@
+openttd (1.4.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    - Fix: First send packages about new company, then clients joining it to
+    admin port [FS#6025] (r26616)
+    - Fix: Save/load issues on big endian machines (r26593, r26590, r26589)
+    - Fix: Consider multiheaded trains in station refits [FS#5995] (r26586)
+    - Fix: Game script could be changed in game by double clicking [FS#5974]
+    (r26583)
+    - Fix: Transfer stations also should have a cargo rating [FS#5989]
+    (r26581, r26580)
+    - Fix: [Network] AIs would not reset certain network state information
+    upon creation of their company [FS#6003] (r26578, r26576)
+    - Fix: [Network] Client of non-dedicated server was not correctly put
+    into the first company for all state variables [FS#6001] (r26577)
+    - Change: Remove demand calculation based on tiles (r26484)
+    - Change: Use pkg-config for libpng as well (r26435, r26433, r26432)
+    - Change: Use better distance metric for link graph [FS#5941] (r26411)
+    - Fix: [Windows] Crash when the operating system performs the "paint"
+    callback during window creation [FS#5994] (r26539, r26538)
+    - Fix: OpenBSD compilation [FS#5992] (r26523)
+    - Fix: prevent from ever reading huge (or negative) amounts of data in
+    strgen (r26521)
+    - Fix: Severity rating of dedicated server messages during world
+    generation (r26518)
+    - Fix: Buffer overruns in handling of symbolic links inside tars (r26514)
+    - Fix: Incorrect usage of strecpy (r26505, r26485)
+    - Fix: Reading console input on dedicated server relied on unspecified
+    behaviour (r26496)
+    - Fix: Allow single-vehicle consists to station-refit in a meaningful way
+    (r26483)
+    - Fix: Prevent comparing to NULL when strndup could not allocate memory
+    (r26476)
+    - Fix: Potentially undefined shifts in NewGRF code (r26475)
+    - Fix: Make sure there is no uninitialised sprite data (r26473)
+    - Fix: Draw text shadow for ellipses (r26467)
+    - Fix: Add special handling for PALETTE_CRASH to work for non-8bpp-mapped
+    sprites (r26463)
+    - Fix: Avoid division by 0 when scaling flow values [FS#5970] (r26448)
+    - Fix: Draw links to match _settings_game.vehicle.road_side [FS#5961]
+    (r26445)
+    - Fix: Load button for heightmap list was missing [FS#5953] (r26428)
+    - Fix: Do not crash when supplying an invalid filename without extension
+    to cmd parameter -q (r26423)
+    - Fix: Some road constructions used the rail sound effect [FS#5946]
+    (r26422)
+    - Fix: Goal GUI failed to shade [FS#5948] (r26420)
+    - Fix: Shares button state was not appropriately updated when switching
+    setting or company [FS#5947] (r26416)
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Wed, 11 Jun 2014 21:05:12 +0200
+
 openttd (1.4.0-1~getdeb3~trusty) trusty; urgency=low
 
   * Rebuild for trusty
