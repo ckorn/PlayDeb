@@ -1,3 +1,9 @@
+zero-ballistics (2.0-1~getdeb8~trusty) trusty; urgency=medium
+
+  * Change start script to copy new files.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 19 Jun 2014 17:32:01 +0200
+
 zero-ballistics (2.0-1~getdeb7~saucy) saucy; urgency=low
 
   * Rebuild for saucy.

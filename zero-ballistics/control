@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 9),
                libglu1-mesa,
                libgl1-mesa-glx,
                libjpeg62
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Homepage: http://www.zeroballistics.com
 
 Package: zero-ballistics

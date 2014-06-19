@@ -8,12 +8,26 @@ fi
 
 if [ ! -d $HOME/.config/zero-ballistics ] ; then
 	mkdir -p $HOME/.config/zero-ballistics
-	cp -a /usr/share/games/zero-ballistics/* $HOME/.config/zero-ballistics/
-	cp -a /usr/lib/games/zero-ballistics/shared_libs $HOME/.config/zero-ballistics/
-	cp -a /usr/lib/games/zero-ballistics/tank.x86 $HOME/.config/zero-ballistics/
 fi
 
 cd $HOME/.config/zero-ballistics
+
+[ ! -f ./tank.x86 ] || rm ./tank.x86
+[ ! -d ./shared_libs ] || rm -r ./shared_libs
+
+[ -h ./tank.x86 ] || ln -s /usr/lib/games/zero-ballistics/tank.x86
+[ -h ./shared_libs ] || ln -s /usr/lib/games/zero-ballistics/shared_libs
+
+[ ! -h ./data ] || rm ./data
+[ -d ./data ] || cp -a /usr/share/games/zero-ballistics/data .
+[ ! ./data/exclude_server.txt -nt /usr/share/games/zero-ballistics/data/exclude_server.txt ] || rm -r ./data
+[ -d ./data ] || cp -a /usr/share/games/zero-ballistics/data .
+
+for f in config_client.xml config_common.xml config_server.xml ranking.pub ; do
+	[ ! -h ./$f ] || rm ./$f
+	[ -f ./$f ] || cp /usr/share/games/zero-ballistics/$f .
+	[ ! ./$f -nt /usr/share/games/zero-ballistics/$f ] || cp /usr/share/games/zero-ballistics/$f .
+done
 
 #if [ -e /usr/lib32/mesa/ ] ; then
 #	LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/lib32/mesa/
