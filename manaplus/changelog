@@ -1,3 +1,16 @@
+manaplus (1:1.4.6.21-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: chat window input field size if smiles button disabled.
+    fix: make file for tmw branding.
+    fix: some spelling errors.
+    add: fallback OpenGL renderer if OpenGL version too small.
+    add: modern OpenGL renderer.
+    add: improve speed in normalopengl renderer.
+    add: shell script into tmw/evol branding.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 21 Jun 2014 18:26:50 +0200
+
 manaplus (1:1.4.6.7-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
