@@ -1,0 +1,4 @@
+# not using those files anyway, so it's not problem
+dhewm3 source: source-is-missing neo/sys/linux/setup/image-base/setup.data/bin/Linux/x86/setup
+dhewm3 source: source-is-missing neo/sys/linux/setup/image-base/setup.data/bin/Linux/x86/glibc-2.1/setup.gtk
+dhewm3 source: source-is-missing neo/sys/linux/setup/image-base/setup.data/bin/Linux/x86/glibc-2.1/xsu

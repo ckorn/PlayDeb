@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=dhewm3
+GenericName=Doom 3 Engine
+Exec=dhewm3
+Type=Application
+Categories=Game;
+StartupNotify=true
+Icon=dhewm3

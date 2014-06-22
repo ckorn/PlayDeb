@@ -1,0 +1,136 @@
+.TH DHEWM3 6 "JUNE 2014"
+.SH NAME
+dhewm3 \- Doom 3 engine
+.SH SYNOPSIS
+.TP
+Client:
+.B dhewm3 \fR[options]
+.br
+.B dhewm3-sdl2 \fR[options]
+.PP
+.TP
+Dedicated server:
+.br
+.B dhewm3ded \fR[options]
+.br
+.B dhewm3ded-sdl2 \fR[options]
+
+.SH DESCRIPTION
+\fBdhewm3-sdl2\fR and \fBdhewm3ded-sdl2\fR are compiled with SDL2 support.
+
+.SS "Which game data files are required?"
+.TP
+Data files for the original Doom 3, including the MD5 hash:
+.nf
+\f[C]
+MD5 (base/pak000.pk4) = 71b8d37b2444d3d86a36fd61783844fe
+MD5 (base/pak001.pk4) = 4bc4f3ba04ec2b4f4837be40e840a3c1
+MD5 (base/pak002.pk4) = fa84069e9642ad9aa4b49624150cc345
+MD5 (base/pak003.pk4) = f22d8464997924e4913e467e7d62d5fe
+MD5 (base/pak004.pk4) = 38561a3c73f93f2e6fd31abf1d4e9102
+MD5 (base/pak005.pk4) = 2afd4ece27d36393b7538d55a345b90d
+MD5 (base/pak006.pk4) = a6e7003fa9dcc75073dc02b56399b370
+MD5 (base/pak007.pk4) = 6319f086f930ec1618ab09b4c20c268c
+MD5 (base/pak008.pk4) = 28750b7841de9453eb335bad6841a2a5
+\f[]
+.fi
+.TP
+And if you own the expansion pack Resurrection of Evil:
+.nf
+\f[C]
+MD5 (d3xp/pak000.pk4) = a883fef0fd10aadeb73d34c462ff865d
+MD5 (d3xp/pak001.pk4) = 06fc9be965e345587064056bf22236d2
+\f[]
+.fi
+.PP
+Note that you have to patch your game to version v1.3.1 to obtain all files.
+
+.SS "Where do I need to put the game data files?"
+Each mod keeps its data files in its own sub directory relative to the
+so called \fBBASEPATH\fR.
+For the original game the sub directory is named \fBbase\fR and the
+expansion is named \fBd3xp\fR.
+.TP
+dhewm3 tries to find the \fBBASEDIR\fR in the following order:
+1. The data directory which was configured at compile time:
+.I /usr/share/games/dhewm3
+.br
+2. The default Doom 3 installation directory
+.I /usr/share/games/doom3
+(if you have installed the game from CD)
+.PP
+Data files can also be placed in the savegame folder (see below).
+These will always take precedence over the paths listed above on all platforms.
+
+.SS "Where do I find the config files and savegames?"
+Config files can be found in \fI$HOME/.config/dhewm3\fR,
+savegames are stored in \fI$HOME/.local/share/dhewm3\fR.
+
+.SS "The console key does not open the console. How to fix?"
+This is a side effect of the move to SDL.
+Start the game once with the command line parameter:
+.B +set in_kbd german
+
+Current supported layouts are:
+.B english french german italian spanish turkish
+
+If your layout is not supported, file a bug. You need to mention the symbol codes
+of the console key for your keyboard layout. These can be taken from this codepage:
+.I http://en.wikipedia.org/wiki/ISO/IEC_8859-1#Codepage_layout
+.PP
+We need the codes (the bold ones) for the symbol you get when pressing that key,
+once without and once with shift.
+
+.SS "How do I enable the OpenAL EFX sound effects?"
+Just enable `EAX 4.0 HD` in the system options.
+
+.SH "DEDICATED SERVER OPTIONS"
+.SS "Commonly used commands:"
+.nf
+\f[C]
+spawnServer      - start the server.
+disconnect       - shut down the server.
+listCmds         - list all console commands.
+listCVars        - list all console variables.
+kick             - kick a client by number.
+gameKick         - kick a client by name.
+serverNextMap    - immediately load next map.
+serverMapRestart - restart the current map.
+serverForceReady - force all players to ready status.
+\f[]
+.fi
+.SS "Commonly used variables:"
+.nf
+\f[C]
+si_name          - server name (change requires a restart to see)
+si_gametype      - type of game.
+si_fragLimit     - max kills to win (or lives in Last Man Standing).
+si_timeLimit     - maximum time a game will last.
+si_warmup        - do pre-game warmup.
+si_pure          - pure server.
+g_mapCycle       - name of .scriptcfg file for cycling maps.
+                   See mapcycle.scriptcfg for an example of a mapcyle script.
+\f[]
+.fi
+
+.SH UPDATES
+.TP
+You can find updates on the following websites:
+.I ftp://ftp.idsoftware.com/idstuff/doom3/linux/
+.br
+.I ftp://ftp.fu-berlin.de/pc/games/idgames/idstuff/doom3/linux
+.br
+.I http://zerowing.idsoftware.com:6969/
+.br
+.I http://www.liflg.org/?catid=6&gameid=48
+.PP
+To extract the PAK files, make the .run file executable (\fBchmod a+x doom3*.run\fR)
+and then run:
+.br
+.B ./doom3*.run --noexec --target NewDirectory\fR
+.PP
+The PAK files will be extracted to NewDirectory/base.
+Copy them to the other PAK files as descriped in the section above.
+
+.SH "SEE ALSO"
+.I https://github.com/dhewm/dhewm3
