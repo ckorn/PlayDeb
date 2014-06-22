@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ ! -f $HOME/.config/dhewm3/base/default.cfg ] ; then
+	zenity --error --title="No data directory" \
+	       --text="Put the base/ directory into the\n$HOME/.config/dhewm3\ndirectory." \
+	       --window-icon=/usr/share/pixmaps/dhewm3.png
+	exit 1
+fi
+
+mkdir -p $HOME/.config/dhewm3
+cd $HOME/.config/dhewm3
+
+/usr/lib/games/dhewm3/dhewm3 "$@"

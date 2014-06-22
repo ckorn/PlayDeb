@@ -1,2 +1,3 @@
 ID_ENFORCE_KEY.patch
 LINUX_DEFAULT_PATH.patch
+sdl2.patch

@@ -1,4 +1,6 @@
-dhewm3             usr/games
-dhewm3-sdl2        usr/games
-debian/*.desktop   usr/share/applications
-debian/*.png       usr/share/pixmaps
+debian/scripts/dhewm3		usr/games
+debian/scripts/dhewm3-sdl2	usr/games
+dhewm3				usr/lib/games/dhewm3
+dhewm3-sdl2			usr/lib/games/dhewm3
+debian/*.desktop		usr/share/applications
+debian/*.png			usr/share/pixmaps
