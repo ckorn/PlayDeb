@@ -1,0 +1,4 @@
+dhewm3             usr/games
+dhewm3-sdl2        usr/games
+debian/*.desktop   usr/share/applications
+debian/*.png       usr/share/pixmaps

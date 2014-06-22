@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+CONFS = -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_DATAROOTDIR=share/games -DBASE=ON -DDEDICATED=ON
+
+%:
+	dh ${@} --parallel
+
+override_dh_auto_clean:
+	dh_clean dhewm3-sdl2 dhewm3ded-sdl2 \
+		CMakeCache.txt cmake_install.cmake Makefile
+	rm -rf CMakeFiles idlib
+
+override_dh_auto_build:
+	cp debian/dhewm3.6 dhewm3-dedicated.6
+	echo '*.so  usr/lib/$(DEB_HOST_MULTIARCH)/dhewm3' > debian/libdhewm3-0.install
+	cmake $(CONFS) -DSDL2=ON neo
+	$(MAKE)
+	mv dhewm3 dhewm3-sdl2
+	mv dhewm3ded dhewm3ded-sdl2
+	$(MAKE) clean
+	cmake $(CONFS) -DSDL2=OFF neo
+	$(MAKE)
+
+override_dh_auto_install:
+	# will be handled by dh_install
+
+override_dh_installdocs:
+	dh_installdocs --link-doc=libdhewm3-0
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz -z9
