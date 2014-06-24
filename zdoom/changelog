@@ -1,0 +1,11 @@
+zdoom (1.8.5+git20140624-1~trusty) trusty; urgency=low
+
+  * Git snapshot
+
+ -- Marshall Banana <djcj@gmx.de>  Tue, 24 Jun 2014 13:17:43 +0200
+
+zdoom (1.8.5) trusty; urgency=low
+
+  * Initial release
+
+ -- Marshall Banana <djcj@gmx.de>  Sun, 22 Jun 2014 16:25:11 +0200
