@@ -1,0 +1,5 @@
+To create a source package, install YHtWtG in Steam:
+http://store.steampowered.com/app/286100/
+
+Then open a console and run:
+tar cvf - "$HOME/.steam/steam/SteamApps/common/You Have to Win the Game" | xz > thegame_1.01.0499.orig.tar.xz
