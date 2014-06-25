@@ -1,0 +1,4 @@
+version=3
+opts="dversionmangle=s/(.*)\+.*/$1/" \
+https://github.com/freedoom/freedoom/releases \
+    (?:.*/)?archive/v([\d\.]+)\.tar\.gz

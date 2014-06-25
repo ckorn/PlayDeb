@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+
+# upstream makefile invokes 'deutex' which lives in
+# /usr/games
+PATH := /usr/games:$(PATH)
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_build:
+	$(MAKE) wads/freedm.wad
+	$(MAKE) wads/freedoom1.wad
+	$(MAKE) wads/freedoom2.wad
+	
+	# icon stuff
+	convert sprites/cposa2a8.gif freedoom1.xpm
+	sed -i 's/cyan/None/' freedoom1.xpm
+	convert sprites/heada1.gif freedoom2.xpm
+	sed -i 's/cyan/None/' freedoom2.xpm
+	convert sprites/sht2a0.gif freedm.xpm
+	sed -i 's/cyan/None/' freedm.xpm
+
+override_dh_clean:
+	dh_clean freedm.xpm freedoom1.xpm freedoom2.xpm
+
+override_dh_installdocs:
+	dh_installdocs -A CREDITS README.adoc
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz -z9
