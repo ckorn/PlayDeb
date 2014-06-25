@@ -1,0 +1,9 @@
+debian/distfiles/thegame            usr/lib/thegame
+TheGame_NFML                        usr/lib/thegame
+*.so                                usr/lib/thegame
+Engine.npk                          usr/share/games/thegame
+VolverHeavy.npk                     usr/share/games/thegame
+Volver.npk                          usr/share/games/thegame
+VolverVersion.npk                   usr/share/games/thegame
+debian/distfiles/*.desktop          usr/share/applications
+debian/distfiles/icons/hicolor      usr/share/icons
