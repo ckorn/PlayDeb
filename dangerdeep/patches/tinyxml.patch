@@ -1,0 +1,38 @@
+# dynamic link tinyxml
+Index: dangerdeep-0.3.9+git140522/src/xml.cpp
+===================================================================
+--- dangerdeep-0.3.9+git140522.orig/src/xml.cpp	2014-06-29 21:06:28.000000000 +0200
++++ dangerdeep-0.3.9+git140522/src/xml.cpp	2014-06-29 21:14:34.276659299 +0200
+@@ -21,7 +21,7 @@
+ // subsim (C)+(W) Thorsten Jordan. SEE LICENSE
+ 
+ #include "xml.h"
+-#include "tinyxml/tinyxml.h"
++#include <tinyxml.h>
+ #include <stdio.h>
+ 
+ #ifdef WIN32
+Index: dangerdeep-0.3.9+git140522/src/SConscript
+===================================================================
+--- dangerdeep-0.3.9+git140522.orig/src/SConscript	2014-06-29 21:06:28.000000000 +0200
++++ dangerdeep-0.3.9+git140522/src/SConscript	2014-06-29 21:16:44.184655434 +0200
+@@ -95,11 +95,6 @@
+ 	vertexbufferobject.cpp
+ 	xml.cpp""")
+ 
+-tinyxmlsources = Split("""
+-	tinyxml/tinyxml.cpp
+-	tinyxml/tinyxmlerror.cpp
+-	tinyxml/tinyxmlparser.cpp""")
+-
+ oglextsources = Split("""
+ 	oglext/OglExt.cpp
+ 	oglext/RenderingContext.cpp""")
+@@ -129,7 +124,6 @@
+ 
+ binary = env.Program(target = 'dangerdeep', source = dftdsources + filehelper_obj + widget_obj + frustum_obj + datadirsobj + globaldataobj + osspecificsrc_obj + threads_obj, LIBS = alllibs)
+ env.StaticLibrary(target = 'oglext', source = oglextsources)
+-env.StaticLibrary(target = 'tinyxml', source = tinyxmlsources)
+ 
+ env.Default(binary)
+ 

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Danger from the Deep
+Exec=/usr/games/dangerdeep
+Icon=dangerdeep
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=danger;deep;

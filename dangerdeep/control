@@ -1,0 +1,66 @@
+Source: dangerdeep
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               pkg-config,
+               scons,
+               libglu1-mesa-dev,
+               libsdl1.2-dev,
+               libsdl-image1.2-dev,
+               libfftw3-dev,
+               libsdl-mixer1.2-dev,
+               libsdl-net1.2-dev,
+               libavformat-dev,
+               libbz2-dev,
+               libx11-dev,
+               mesa-common-dev,
+               libfreetype6-dev,
+               libtinyxml-dev
+Standards-Version: 3.9.5
+Homepage: http://dangerdeep.sourceforge.net/
+
+Package: dangerdeep
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         dangerdeep-data (= ${source:Version})
+Description: World War II German submarine simulator
+ Danger from the Deep (known as dangerdeep or DftD) is a
+ free (as in free speech), Open Source World War II German
+ submarine simulator. The program and source code is
+ available under the GPL license and most of the
+ artwork/data is released under a
+ Creative Commons license
+ (Attribution/NonCommercial/Non-Derivative works).
+
+Package: dangerdeep-dbg
+Architecture: any
+Depends: ${misc:Depends},
+         dangerdeep (= ${source:Version})
+Section: debug
+Priority: extra
+Description: World War II German submarine simulator (debug package)
+ Danger from the Deep (known as dangerdeep or DftD) is a
+ free (as in free speech), Open Source World War II German
+ submarine simulator. The program and source code is
+ available under the GPL license and most of the
+ artwork/data is released under a
+ Creative Commons license
+ (Attribution/NonCommercial/Non-Derivative works).
+ .
+ (This package contains the debugging symbols).
+
+Package: dangerdeep-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: World War II German submarine simulator (data package)
+ Danger from the Deep (known as dangerdeep or DftD) is a
+ free (as in free speech), Open Source World War II German
+ submarine simulator. The program and source code is
+ available under the GPL license and most of the
+ artwork/data is released under a
+ Creative Commons license
+ (Attribution/NonCommercial/Non-Derivative works).
+ .
+ (This package contains the data files).

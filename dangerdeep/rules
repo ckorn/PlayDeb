@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	scons -c
+
+override_dh_auto_install:
+	scons conf=0 tests=0 datadir="/usr/share/games/dangerdeep" installbindir=$(CURDIR)/debian/dangerdeep/usr/games install
+	chmod -x data/textures/marker.png
+
+override_dh_strip:
+	dh_strip --dbg-package=dangerdeep-dbg
