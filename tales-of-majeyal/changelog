@@ -1,3 +1,81 @@
+tales-of-majeyal (1.2.3-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    Release highlights:
+
+    Important bugfixes
+    Better balancing of Mindslayers
+
+    Expanded changelist:﻿
+
+    Vitality triggers correctly from Berserker Rage
+    Charged Strike on a frozen target vaporizes the ice into a flash of
+    vapour that knocks back foes
+    Charged Strike on a pinned target will charge up Charge Shield
+    Thermal Strike on a pinned target will summon a encasing wall of ice
+    Shocked effect now also reduces pin resistance, mostly to the benefit of
+    mindslayers
+    Dogroth Caldera fumes go inactive after the boss deth, even on the first
+    level
+    Temporal Rift shield is no longer metallic
+    The Eidolon can now teleport players someplace else on the level when
+    coming from the Infinite Dungeon
+    Projectile evasion buffs do not stack, only the highest is used
+    Fixed Tirakai's Maul
+    Molten Skin boosts both Sun and Sunlight trees
+    Uniques count as bosses in the charsheet counter instead of rares
+    Skeleton and Ghoul racial stat increases are always integers now
+    Fixed Bloody Butcher to correcty add physical power and to work with Deep
+    Wound effect
+    Fixed stoneskin-like shader auras to be symetrical again
+    Fixed Bombardment not using the correct shot power
+    Fixed Hurricane Short on right click too
+    Improved Total Thuggery AI hints
+    Fixed Swift Shot and Feed to work on right click
+    Improved Feed particle effect
+    Ethereal Embrace tooltip correctly states that it improves damage shields
+    Everpyre Blade is not considered metallic anymore
+    Husks now get a self destruct button just like golems
+    Fixed Path of the Sun interraction with Fearless Cleave
+    Fixed the "anti inferior to 1.2.0" message when loading savefiles to only
+    trigger for the ToME module
+    Fixed Sentry and High capacity ammo egos to not make non-integer ammo
+    number
+    Fixed partial ASCII-ification when reloading on a worldmap ambush
+    Fixed Chant of Fortress tooltip
+    Numerous improvements & balancing to Mindslayers
+    Adventurer class now has low mana regen
+    Fix daikara's pyroclast gfx effect
+    Fixed Cursed Sentry speed display
+    Nerfed Vitality regen and added a cooldown
+    Fixed Reknor lore accountancy
+    Static Map generator can load maps from addon's data folder
+    Respec'ing the last talent points can only happen in town (this will only
+    affect new characters)
+    Fixed Unseen Force
+    Fixed Uttercold piercing
+    Fixed Suncloak display
+    Fixed Frenzy from the Murderblade to not kill you through heorism
+    Fixed Combination Kick removing too many sustains
+    Fixed Rotting Titan
+    Undead characters should not get antimagic items from the merchant
+    artifact
+    Fixed volumetric aura shader for OSX
+    Fixed bone shield shader for OSX
+    Animus Purge can not be used on creatures with special death scripts
+    Fixed Unstoppable
+    Fixed Limmir disappearing when leaving the level
+    Path of the Sun also makes the actor avoid traps
+    Bump Arcane Combat chance when using shields to 75%
+    Bump Arcane Destruction chance when using shields to 75%
+    Reduced magewarrior staves power a little
+    Acid Wave and Biting Gale runes correctly check their corresponding
+    immunities
+    Added Shasshhiy'Kaish tile to the custom birth tiles option
+    Fixed trollmire loot tier
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 05 Jul 2014 02:33:15 +0200
+
 tales-of-majeyal (1.2.2-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
