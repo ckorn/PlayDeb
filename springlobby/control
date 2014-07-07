@@ -25,7 +25,7 @@ Homepage: http://springlobby.info
 
 Package: springlobby
 Provides: spring-lobby
-Architecture: i386 amd64
+Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          spring (>= 0.81.2.1+dfsg1-5)
@@ -36,7 +36,7 @@ Description: single/multiplayer lobby for the Spring RTS engine
 
 Package: springlobby-dbg
 Section: debug
-Architecture: i386 amd64
+Architecture: any
 Priority: extra
 Depends: ${misc:Depends},
          springlobby (= ${binary:Version})
