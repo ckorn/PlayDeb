@@ -2,14 +2,17 @@ Source: moonpy
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50), python-support
-Standards-Version: 3.8.4
+Build-Depends: debhelper (>= 9),
+               python-all-dev
+Standards-Version: 3.9.5
 Homepage: http://code.google.com/p/tether/
 
 Package: moonpy
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends},
- python-pygame
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         ${python:Depends},
+         python-pygame
 Description: Open source remake of Moonbase Commander
  MoonPy is an open-source remake of the classic strategy
  game Moonbase Commander. A multiplayer turn-based game.

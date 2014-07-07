@@ -1,3 +1,9 @@
+moonpy (0.8.21-1~getdeb3) trusty; urgency=medium
+
+  * Remove debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 07 Jul 2014 03:55:53 +0200
+
 moonpy (0.8.21-1~getdeb2) lucid; urgency=low
 
   * Fix debian/watch file
