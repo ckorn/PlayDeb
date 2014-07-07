@@ -1,4 +1,3 @@
 version=3
-opts="dversionmangle=s/\.//" \
 http://zulu309.server4you.de/redirectors/warsow.html \
     (?:.*/)?warsow_([\d\.]+)_unified(?:_unified)\.tar\.(?:gz|xz|bz2)
