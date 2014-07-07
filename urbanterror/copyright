@@ -4,44 +4,43 @@ Source: http://www.urbanterror.info
 
 Files: *
 Copyright: 2013 Frozen Sand/0870760 B.C. Ltd 2000-2012 
-
 License:
-    Frozen Sand grants you a personal, non-exclusive, non-transferable limited
-    license to use Urban Terror Accounts and Frozen Sand services distributed by
-    Frozen Sand. You may not sub-license, or charge others to use or access
-    Frozen Sand services without first obtaining written permission from
-    Frozen Sand.
-
-    You may not sell, assign, grant a security interest in or otherwise transfer
-    any right of the Frozen Sand services or incorporate it (or any portion of
-    it) into another product. You may not copy the Software or its services.
-    You may not translate reverse-engineer or reverse-compile or decompile,
-    disassemble, make derivative works from, or otherwise attempt to discover
-    any source code in the Software. You may not modify the Software or use it
-    in any way not expressly authorized by these Terms of Service. You may not
-    obtain the communications protocol for accessing the Urban Terror Accounts
-    service or any other Frozen Sand services. Finally, you may not authorize
-    or assist any third party to do any of the things described in this
-    paragraph. 
-
-  Further details can be found here:
-    http://www.urbanterror.info/support/36-terms-of-service/#1.14
+ Frozen Sand grants you a personal, non-exclusive, non-transferable limited
+ license to use Urban Terror Accounts and Frozen Sand services distributed by
+ Frozen Sand. You may not sub-license, or charge others to use or access
+ Frozen Sand services without first obtaining written permission from
+ Frozen Sand.
+ .
+ You may not sell, assign, grant a security interest in or otherwise transfer
+ any right of the Frozen Sand services or incorporate it (or any portion of
+ it) into another product. You may not copy the Software or its services.
+ You may not translate reverse-engineer or reverse-compile or decompile,
+ disassemble, make derivative works from, or otherwise attempt to discover
+ any source code in the Software. You may not modify the Software or use it
+ in any way not expressly authorized by these Terms of Service. You may not
+ obtain the communications protocol for accessing the Urban Terror Accounts
+ service or any other Frozen Sand services. Finally, you may not authorize
+ or assist any third party to do any of the things described in this
+ paragraph. 
+ .
+ Further details can be found here:
+ http://www.urbanterror.info/support/36-terms-of-service/#1.14
 
 Files: debian/*
 Copyright: 2013 Jhonny Oliveira <jhonny.oliveira@gmail.com>
 License:
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License version 2 as published by
-    the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
-
-    On Debian GNU/Linux systems, the complete text of the GNU General
-    Public License can be found in the /usr/share/common-licenses/GPL-2 file.
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 2 as published by
+ the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+ .
+ On Debian GNU/Linux systems, the complete text of the GNU General
+ Public License can be found in the /usr/share/common-licenses/GPL-2 file.

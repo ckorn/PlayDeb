@@ -1,4 +1,11 @@
+urbanterror (1:4.2.018-1~getdeb2) trusty; urgency=medium
+
+  * Fix debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 07 Jul 2014 03:52:42 +0200
+
 urbanterror (1:4.2.018-1~getdeb1) precise; urgency=low
+
   * New upstream version
     New g_gear restriction code. It now uses weapon/item letters so you can
     disable whatever weapon or item you want.

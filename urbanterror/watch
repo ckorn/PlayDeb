@@ -1,4 +1,4 @@
 version=3
 opts="dversionmangle=s/\.//" \
-http://www.urbanterror.info/downloads/ \
+http://files.cucurb.net/UrbanTerror/ \
     (?:.*/)?UrbanTerror([\d]+)_full([\d]+)\.zip
