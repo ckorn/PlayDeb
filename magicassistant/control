@@ -9,8 +9,8 @@ Build-Depends: debhelper (>= 9),
                libx11-6,
                libxext6,
                libxrender1,
-               openjdk-6-jre,
-               openjdk-6-jdk
+               openjdk-7-jre,
+               openjdk-7-jdk
 Standards-Version: 3.9.5
 Homepage: http://sourceforge.net/apps/mediawiki/mtgbrowser/index.php?title=Main_Page
 
