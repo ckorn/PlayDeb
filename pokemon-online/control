@@ -10,7 +10,7 @@ Build-Depends: dpkg-dev (>= 1.16.1),
                libphonon-dev,
                libqt4-opengl-dev,
                libqrencode-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://pokemon-online.eu
 
 Package: pokemon-online-client

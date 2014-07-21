@@ -1,11 +1,11 @@
 Description: Disabled RelayStation and WebServerPlugin for now.
 Them require QtWebsocket beta not packaged and modified locally.
 Author: Fabio Fantoni <fabio.fantoni@tiscali.it>
-Index: pokemon-online-2.4.1/PokemonOnline.pro
+Index: pokemon-online-2.4.2/PokemonOnline.pro
 ===================================================================
---- pokemon-online-2.4.1.orig/PokemonOnline.pro	2014-01-12 16:50:01.036344793 +0100
-+++ pokemon-online-2.4.1/PokemonOnline.pro	2014-01-12 16:54:01.584337637 +0100
-@@ -41,9 +41,9 @@
+--- pokemon-online-2.4.2.orig/PokemonOnline.pro	2014-07-21 23:19:39.333667951 +0200
++++ pokemon-online-2.4.2/PokemonOnline.pro	2014-07-21 23:19:39.329667951 +0200
+@@ -45,9 +45,9 @@
          src/BattleServer
  }
  
@@ -18,11 +18,11 @@ Index: pokemon-online-2.4.1/PokemonOnline.pro
  
  CONFIG(po_serverplugins) {
      SUBDIRS += src/server-plugins
-Index: pokemon-online-2.4.1/src/libraries/libraries.pro
+Index: pokemon-online-2.4.2/src/libraries/libraries.pro
 ===================================================================
---- pokemon-online-2.4.1.orig/src/libraries/libraries.pro	2014-01-11 18:42:37.000000000 +0100
-+++ pokemon-online-2.4.1/src/libraries/libraries.pro	2014-01-12 16:52:27.468340437 +0100
-@@ -21,17 +21,17 @@
+--- pokemon-online-2.4.2.orig/src/libraries/libraries.pro	2014-07-21 23:19:39.333667951 +0200
++++ pokemon-online-2.4.2/src/libraries/libraries.pro	2014-07-21 23:19:39.329667951 +0200
+@@ -15,17 +15,17 @@
      SUBDIRS += BattleManager
  }
  
@@ -46,10 +46,10 @@ Index: pokemon-online-2.4.1/src/libraries/libraries.pro
  
  CONFIG(po_registry) {
      CONFIG(webconf) {
-Index: pokemon-online-2.4.1/src/server-plugins/server-plugins.pro
+Index: pokemon-online-2.4.2/src/server-plugins/server-plugins.pro
 ===================================================================
---- pokemon-online-2.4.1.orig/src/server-plugins/server-plugins.pro	2014-01-11 18:42:37.000000000 +0100
-+++ pokemon-online-2.4.1/src/server-plugins/server-plugins.pro	2014-01-12 16:55:28.912335039 +0100
+--- pokemon-online-2.4.2.orig/src/server-plugins/server-plugins.pro	2014-07-21 23:19:39.333667951 +0200
++++ pokemon-online-2.4.2/src/server-plugins/server-plugins.pro	2014-07-21 23:19:39.329667951 +0200
 @@ -2,5 +2,4 @@
  
  SUBDIRS += BattleLogs \
