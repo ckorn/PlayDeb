@@ -1,3 +1,131 @@
+openra (20140722-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    General Improvements (all mods):
+
+    - Fixed a crash caused by missiles leaving the map boundaries. [#5687]
+    - Fixed a crash when salvaging husks or capturing buildings that have
+    just been destroyed. [#5801]
+    - Fixed a rare crash when connecting to a server with a custom map.
+    [#5890]
+    - Fixed a regression where lobby tooltips were not shown. [#5680]
+    - Fixed C4 cursor showing for walls under fog. [#5579]
+    - Fixed attack cursors showing for buildings hidden under shroud. [#5989]
+    - Fixed resources (tiberium, ore) growing beneath building bibs. [#5807]
+    - Fixed mission description scroll bar being out-of-bounds. [#5667]
+    - Fixed the replay filter dropdown height. [#5646]
+    - Fixed repair wrench overlay not pausing when the repair pauses. [#5539]
+    - Fixed target line color for RallyPoint which is an AttackMove. [#5470]
+    - Fixed cloaked actors under fog showing a tooltip to the enemy. [#5627]
+    - Fixed in-game news not updating in all mods. [#5860]
+    - Fixed news parsing crashing the game. [#5860]
+    - Added tech levels (configurable in the lobby options). [#5833, #5898,
+    #5901]
+    - Added a setting to lock the mouse cursor inside the game window.
+    [#5590, #5597]
+    - Added filter as you type for file names in the asset browser. [#5813]
+    - Added repair bonus for multiple players. [#5768]
+    - Added a developer hotkey for reloading the UI artwork. [#5550]
+    - Added an /all commandline cheat to enable every single developer cheat
+    at once. [#5631]
+    - Added a dialog asking for a restart when setting changes require it.
+    [#5600]
+    - Improved harvesters to leak resources onto the ground when they are
+    destroyed. [#5305]
+    - Improved scroll-panel scrolling. [#5628]
+    - Improved commandline cheats to be always available in skirmishes and
+    missions. [#5631]
+
+    Red Alert:
+
+    - Fixed capturing enemy buildings not unlocking new build options.
+    [#5759]
+    - Fixed pillboxes not ejecting their garrisoned infantry when sold.
+    [#5696]
+    - Fixed paratroopers that land on water or cliffs not dying. [#5695]
+    - Fixed a glitch where damaged walls could become invisible. [#5835]
+    - Fixed the sonar pulse ability (unlocked by infiltrating a submarine pen
+    with a spy). [#5698]
+    - Fixed inconsistently colored aircraft production tabs. [#5926]
+    - Fixed gem mine palette on desert maps. [#5987]
+    - Fixed aircraft flying outside the map becoming unselectable. [#5967]
+    - Added back the Fort Lonestar minigame that was removed in the last
+    release. [#5469]
+    - Added rally points to airfields to take off and unblock after plane
+    construction. [#5470]
+    - Added SHIFT + unit hotkey to queue 5 units. [#5763]
+    - Added a faster chinook helicopter landing speed and removed the forced
+    turn. [#5834]
+    - Added support for downloading the game music files. [#5304]
+    - Added beacon posters for the spy plane, paratroopers, and parabombs.
+    [#5854]
+    - Added explosion radius to large oil derricks. [#5930]
+    - Removed the flare from paratroopers and parabombs. [#5854]
+    - Removed the ability for Snipers to garrison churches. [#5742]
+    - Improved minelayers now also support the original right-click order to
+    lay a single mine. [#5697]
+    - Improved the build palette icon ordering [#5944]
+
+    Tiberian Dawn:
+
+    - Fixed a crash if a production structure was destroyed while
+    mousing-over the production palette. [#5798]
+    - Fixed capturing enemy buildings not unlocking new build options.
+    [#5759]
+    - Fixed visual offsets for the Blossom Tree. [#5792]
+    - Fixed a glitch where damaged walls could become invisible. [#5835]
+    - Added support for downloading the game music files. [#5304]
+    - Added a community-contributed jungle tileset. [#5330]
+    - Improved the blue tiberium artwork. [#5808]
+    - Improved the chinook landing behaviour. [#5834]
+
+    Dune 2000:
+
+    - Fixed the incorrect prone-firing animation for the Sardaukar unit.
+    [#5818]
+    - Fixed the concrete placement indicator for cells containing units.
+    [#5911]
+    - Added starting unit options. [#5732, #5733]
+    - Added SHIFT + unit hotkey to queue 5 units. [#5763]
+    - Added a veterancy levelup rank crate. [#5779]
+    - Added a new map Mount Idaho [#5805]
+    - Changed ramps to be infantry only like in the original. [#5932]
+    - Improved the shellmap. [#5804]
+
+    Engine:
+
+    - Fixed a crash when loading game assets. [#5509]
+    - Fixed a crash when parsing certain OpenGL version strings. [#5596]
+    - Fixed replay corruption when the game closes unexpectedly. [#5735]
+    - Added a new option ReadyTextStyle (Solid, AlternatingColor or Blinking)
+    to BuildPalette. [#5517]
+    - Added support for weapon warheads that spawn resources on the ground.
+    [#5305]
+    - Added support for weapon warheads to define custom prone-damage
+    modifiers. [#5824]
+    - Added a timeout to automatically clean up UPnP forwarded ports. [#5649]
+    - Added a shadow setting to missile projectiles. [#5828]
+    - Improved map chooser preview generation speed. [#5503, #5505]
+    - Improved performance and memory usage. [#5401, #5405, #5406, #5463,
+    #5484, #5567, #5541, #5504, #5540, #5601, #5602, #5616, #5635, #5679,
+    #5712, #5751]
+    - Improved strictness of resource cleanup. [#5410]
+    - Removed the SpyPlanePower trait (spy planes can be implemented using
+    AirstrikePower). [#5854]
+
+    Map Editor and OpenRA.Utility:
+
+    - Added a utility command for extracting translatable UI strings. [#5152]
+    - Improved output compression of the png -> shp converter. [#5781]
+
+    Build system and packages:
+
+    - Fixed a crash when using the Visual Studio debugger. [#5731]
+    - Added additional lint passes to check for common map errors. [#5706,
+    #5769, #5794]
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 22 Jul 2014 20:20:13 +0200
+
 openra (20140608-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
