@@ -1,3 +1,9 @@
+speed-dreams-hq-cars-and-tracks (2.1.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 24 Jul 2014 20:13:07 +0200
+
 speed-dreams-hq-cars-and-tracks (2.0.0-1~getdeb1) precise; urgency=low
 
   * New upstream version
