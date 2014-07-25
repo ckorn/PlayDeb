@@ -3,7 +3,7 @@
 	dh $@
 
 override_dh_auto_clean:
-	dh_auto_clean
+	-dh_auto_clean
 	rm -f config.log config.h config.mk
 
 override_dh_auto_configure:

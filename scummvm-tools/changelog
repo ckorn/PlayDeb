@@ -1,3 +1,22 @@
+scummvm-tools (1.7.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+     - Add support for CGE 2 (Sfinx) in extract_cge and pack_cge tools.
+     - Add option to run some of the tools in the GUI  on all the files with
+     the same
+       extension (e.g. run compress_scumm_san on all *.san files).
+     - Improve support for sub-directory structure in Broken Sword 1 (e.g.
+     when the
+       files are in the Clusters, Music and Speech sub-directories).
+     - Fix issue with output file name in compress_sword2 tool when
+     specifying an
+       output directory (the output file name was empty with only an
+       extension).
+     - Fix issue when trying to use compress_scumm_san more than once in the
+     GUI tool.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 24 Jul 2014 21:14:06 +0200
+
 scummvm-tools (1.6.0-1~getdeb1) precise; urgency=low
 
   * New upstream version

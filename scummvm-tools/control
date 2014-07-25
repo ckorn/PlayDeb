@@ -13,7 +13,7 @@ Build-Depends: debhelper (>= 9),
                libwxbase2.8-dev,
                libmad0-dev,
                libwxgtk2.8-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://www.scummvm.org
 
 Package: scummvm-tools
