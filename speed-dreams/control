@@ -3,7 +3,7 @@ Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9)
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://speed-dreams.sourceforge.net/
 
 Package: speed-dreams
