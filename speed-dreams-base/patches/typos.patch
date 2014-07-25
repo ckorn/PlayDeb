@@ -1,21 +1,30 @@
-Just typos.
-Index: speed-dreams-base-2.0.0/src/drivers/human/human.cpp
+# just some typos
+Index: speed-dreams-base-2.1.0/src/libs/robottools/rthumandriver.cpp
 ===================================================================
---- speed-dreams-base-2.0.0.orig/src/drivers/human/human.cpp	2012-02-22 09:48:32.000000000 +0100
-+++ speed-dreams-base-2.0.0/src/drivers/human/human.cpp	2012-05-14 19:17:29.736452315 +0200
-@@ -1723,7 +1723,7 @@
-   }
+--- speed-dreams-base-2.1.0.orig/src/libs/robottools/rthumandriver.cpp	2014-06-18 16:20:38.000000000 +0200
++++ speed-dreams-base-2.1.0/src/libs/robottools/rthumandriver.cpp	2014-07-24 20:00:02.836013277 +0200
+@@ -1975,7 +1975,7 @@
+             PRM_FUEL, NULL, 0.0f);
  
-   GfLogInfo("Human #%d : Starting race session with %.1f l of fuel (%s)\n",
--			idx, fuel_requested, initial_fuel ? "as explicitely stated" : "computed");
-+			idx, fuel_requested, initial_fuel ? "as explicitly stated" : "computed");
+     if (initial_fuel) {
+-        // If starting fuel is set up explicitely,
++        // If starting fuel is set up explicitly,
+         // no use computing anything...
+         fuel_requested = initial_fuel;
+     } else {
+@@ -1997,7 +1997,7 @@
+     }
  
-   GfParmSetNum(*carParmHandle, SECT_CAR, PRM_FUEL, NULL, fuel_requested);
+     GfLogInfo("Human #%d : Starting race session with %.1f l of fuel (%s)\n",
+-            idx, fuel_requested, initial_fuel ? "as explicitely stated" : "computed");
++            idx, fuel_requested, initial_fuel ? "as explicitly stated" : "computed");
+ 
+     GfParmSetNum(*carParmHandle, SECT_CAR, PRM_FUEL, NULL, fuel_requested);
  }  // SetFuelAtRaceStart
-Index: speed-dreams-base-2.0.0/src/libs/tgfclient/guifont.cpp
+Index: speed-dreams-base-2.1.0/src/libs/tgfclient/guifont.cpp
 ===================================================================
---- speed-dreams-base-2.0.0.orig/src/libs/tgfclient/guifont.cpp	2011-11-27 14:57:13.000000000 +0100
-+++ speed-dreams-base-2.0.0/src/libs/tgfclient/guifont.cpp	2012-05-14 19:21:17.860445529 +0200
+--- speed-dreams-base-2.1.0.orig/src/libs/tgfclient/guifont.cpp	2014-07-24 19:39:18.344023902 +0200
++++ speed-dreams-base-2.1.0/src/libs/tgfclient/guifont.cpp	2014-07-24 20:00:59.268012796 +0200
 @@ -144,7 +144,7 @@
  	//fread(font, sizeof(GLFONT), 1, Input);
  	readSize = fread(font, 24, 1, Input); // for IA64...
@@ -43,96 +52,109 @@ Index: speed-dreams-base-2.0.0/src/libs/tgfclient/guifont.cpp
  
  	fclose(Input);
  
-Index: speed-dreams-base-2.0.0/src/modules/networking/client.cpp
+Index: speed-dreams-base-2.1.0/src/libs/tgfclient/tgfclient.h
 ===================================================================
---- speed-dreams-base-2.0.0.orig/src/modules/networking/client.cpp	2011-09-18 23:38:04.000000000 +0200
-+++ speed-dreams-base-2.0.0/src/modules/networking/client.cpp	2012-05-14 19:19:48.184448195 +0200
-@@ -360,7 +360,7 @@
+--- speed-dreams-base-2.1.0.orig/src/libs/tgfclient/tgfclient.h	2014-06-18 16:20:37.000000000 +0200
++++ speed-dreams-base-2.1.0/src/libs/tgfclient/tgfclient.h	2014-07-24 20:00:07.088013241 +0200
+@@ -259,7 +259,7 @@
+ typedef void (*tfuiCheckboxCallback)(tCheckBoxInfo *);
+ 
+ 
+-/* Event loop callback functions (should be called explicitely if the corresponding
++/* Event loop callback functions (should be called explicitly if the corresponding
+    event loop callback is overriden after a call to GfuiActivateScreen */
+ TGFCLIENT_API void GfuiDisplay(void);
+ TGFCLIENT_API void GfuiDisplayNothing(void);
+Index: speed-dreams-base-2.1.0/src/modules/networking/client.cpp
+===================================================================
+--- speed-dreams-base-2.1.0.orig/src/modules/networking/client.cpp	2014-07-24 19:39:18.344023902 +0200
++++ speed-dreams-base-2.1.0/src/modules/networking/client.cpp	2014-07-24 19:58:45.476013938 +0200
+@@ -417,7 +417,7 @@
  
  void NetClient::ReadStartTimePacket(ENetPacket *pPacket)
  {
--	GfLogTrace("Recieved the start race Packet\n");
-+	GfLogTrace("Received the start race Packet\n");
- 	unsigned char *pData = &pPacket->data[1];
- 	memcpy(&m_racestarttime,pData,sizeof(m_racestarttime));
- 	//double time = GfTimeClock();
-@@ -515,7 +515,7 @@
+-    GfLogTrace("Recieved the start race Packet\n");
++    GfLogTrace("Received the start race Packet\n");
+     //double time = GfTimeClock();
+ 
+     PackedBuffer msg(pPacket->data, pPacket->dataLength);
+@@ -583,7 +583,7 @@
  
  void NetClient::ReadPrepareToRacePacket(ENetPacket *pPacket)
  {
--	GfLogTrace("Recieved the start race Packet\n");
-+	GfLogTrace("Received the start race Packet\n");
+-    GfLogTrace("Recieved the start race Packet\n");
++    GfLogTrace("Received the start race Packet\n");
  
- 	//unsigned char packetId = pPacket->data[0];
- 	
-@@ -610,7 +610,7 @@
- 	UnlockNetworkData();
- 	SetRaceInfoChanged(true);
+     //unsigned char packetId = pPacket->data[0];
  
--	GfLogTrace("Recieved All Driver Ready Packet\n");
-+	GfLogTrace("Received All Driver Ready Packet\n");
+@@ -691,7 +691,7 @@
+         GfLogFatal("ReadAllDriverReadyPacket: packed buffer error\n");
+     }
+ 
+-    GfLogTrace("Recieved All Driver Ready Packet\n");
++    GfLogTrace("Received All Driver Ready Packet\n");
  }
  
  void NetClient::ReadFinishTimePacket(ENetPacket *pPacket)
-@@ -620,7 +620,7 @@
- 	NetMutexData *pNData = LockNetworkData();
- 	memcpy(&pNData->m_finishTime,pData,sizeof(pNData->m_finishTime));
- 	UnlockNetworkData();
--	GfOut("Recieved finish time packet\n");
-+	GfOut("Received finish time packet\n");
+@@ -713,7 +713,7 @@
+         GfLogFatal("ReadFinishTimePacket: packed buffer error\n");
+     }
+ 
+-    GfOut("Recieved finish time packet\n");
++    GfOut("Received finish time packet\n");
  }
  
  void NetClient::ReadTimePacket(ENetPacket *pPacket)
-Index: speed-dreams-base-2.0.0/src/modules/networking/network.cpp
+Index: speed-dreams-base-2.1.0/src/modules/networking/network.cpp
 ===================================================================
---- speed-dreams-base-2.0.0.orig/src/modules/networking/network.cpp	2011-09-18 23:38:04.000000000 +0200
-+++ speed-dreams-base-2.0.0/src/modules/networking/network.cpp	2012-05-14 19:20:03.588447737 +0200
-@@ -683,7 +683,7 @@
- 				{
- 					GfLogTrace("Rejected car status from startRank %i\n",status.startRank);
- 				}
--				GfLogTrace("Recieved car status from startRank %i\n",status.startRank);
-+				GfLogTrace("Received car status from startRank %i\n",status.startRank);
- 			}
- 		}
- 
-Index: speed-dreams-base-2.0.0/src/tools/accc/ac3dgroup.cpp
+--- speed-dreams-base-2.1.0.orig/src/modules/networking/network.cpp	2014-07-24 19:39:18.344023902 +0200
++++ speed-dreams-base-2.1.0/src/modules/networking/network.cpp	2014-07-24 19:58:40.328013982 +0200
+@@ -707,7 +707,7 @@
+                     {
+                         GfLogTrace("Rejected car status from startRank %i\n",status.startRank);
+                     }
+-                    GfLogTrace("Recieved car status from startRank %i\n",status.startRank);
++                    GfLogTrace("Received car status from startRank %i\n",status.startRank);
+                     break;
+                 }
+             }
+Index: speed-dreams-base-2.1.0/src/tools/accc/ac3dgroup.cpp
 ===================================================================
---- speed-dreams-base-2.0.0.orig/src/tools/accc/ac3dgroup.cpp	2011-05-28 17:17:26.000000000 +0200
-+++ speed-dreams-base-2.0.0/src/tools/accc/ac3dgroup.cpp	2012-05-14 19:15:53.464455179 +0200
-@@ -553,7 +553,7 @@
- 	  fprintf(ofile,"OBJECT group\n");
- 	  fprintf(ofile,"name \"___%s_gl3\"\n",array_groups[i].tkmn->name);
- 	  fprintf(ofile,"kids %d\n",array_groups[i].numkids3);
--	  printf("writting group: ___%s_gl3\n",array_groups[i].tkmn->name);
-+	  printf("writing group: ___%s_gl3\n",array_groups[i].tkmn->name);
- 	  tmpob=array_groups[i].kids3;
- 	  while (tmpob!=NULL)
- 	    {
-@@ -569,7 +569,7 @@
- 	  fprintf(ofile,"OBJECT group\n");
- 	  fprintf(ofile,"name \"%%___%s_gl2\"\n",array_groups[i].tkmn->name);
- 	  fprintf(ofile,"kids %d\n",array_groups[i].numkids2);
--	  printf("writting group: ___%s_gl2\n",array_groups[i].tkmn->name);
-+	  printf("writing group: ___%s_gl2\n",array_groups[i].tkmn->name);
- 	  tmpob=array_groups[i].kids2;
- 	  while (tmpob!=NULL)
- 	    {
-@@ -583,7 +583,7 @@
- 	  fprintf(ofile,"OBJECT group\n");
- 	  fprintf(ofile,"name \"___%s_gl1\"\n",array_groups[i].tkmn->name);
- 	  fprintf(ofile,"kids %d\n",array_groups[i].numkids1);
--	  printf("writting group: ___%s_gl1\n",array_groups[i].tkmn->name);
-+	  printf("writing group: ___%s_gl1\n",array_groups[i].tkmn->name);
- 	  tmpob=array_groups[i].kids1;
- 	  while (tmpob!=NULL)
- 	    {
-@@ -597,7 +597,7 @@
-       fprintf(ofile,"OBJECT group\n");
-       fprintf(ofile,"name \"___%s_gl0\"\n",array_groups[i].tkmn->name);
-       fprintf(ofile,"kids %d\n",array_groups[i].numkids0+1);
--      printf("writting group: ___%s_gl0\n",array_groups[i].tkmn->name);
-+      printf("writing group: ___%s_gl0\n",array_groups[i].tkmn->name);
-       tmpob=array_groups[i].kids0;
-       while (tmpob!=NULL)
- 	{
+--- speed-dreams-base-2.1.0.orig/src/tools/accc/ac3dgroup.cpp	2014-07-24 19:39:18.344023902 +0200
++++ speed-dreams-base-2.1.0/src/tools/accc/ac3dgroup.cpp	2014-07-24 19:57:55.080014368 +0200
+@@ -439,7 +439,7 @@
+             fprintf(ofile, "OBJECT group\n");
+             fprintf(ofile, "name \"___%s_gl3\"\n", array_groups[i].tkmn->name);
+             fprintf(ofile, "kids %d\n", array_groups[i].numkids3);
+-            printf("writting group: ___%s_gl3\n", array_groups[i].tkmn->name);
++            printf("writing group: ___%s_gl3\n", array_groups[i].tkmn->name);
+             tmpob = array_groups[i].kids3;
+             while (tmpob != NULL)
+             {
+@@ -456,7 +456,7 @@
+             fprintf(ofile, "name \"%%___%s_gl2\"\n",
+                     array_groups[i].tkmn->name);
+             fprintf(ofile, "kids %d\n", array_groups[i].numkids2);
+-            printf("writting group: ___%s_gl2\n", array_groups[i].tkmn->name);
++            printf("writing group: ___%s_gl2\n", array_groups[i].tkmn->name);
+             tmpob = array_groups[i].kids2;
+             while (tmpob != NULL)
+             {
+@@ -470,7 +470,7 @@
+             fprintf(ofile, "OBJECT group\n");
+             fprintf(ofile, "name \"___%s_gl1\"\n", array_groups[i].tkmn->name);
+             fprintf(ofile, "kids %d\n", array_groups[i].numkids1);
+-            printf("writting group: ___%s_gl1\n", array_groups[i].tkmn->name);
++            printf("writing group: ___%s_gl1\n", array_groups[i].tkmn->name);
+             tmpob = array_groups[i].kids1;
+             while (tmpob != NULL)
+             {
+@@ -484,7 +484,7 @@
+         fprintf(ofile, "OBJECT group\n");
+         fprintf(ofile, "name \"___%s_gl0\"\n", array_groups[i].tkmn->name);
+         fprintf(ofile, "kids %d\n", array_groups[i].numkids0 + 1);
+-        printf("writting group: ___%s_gl0\n", array_groups[i].tkmn->name);
++        printf("writing group: ___%s_gl0\n", array_groups[i].tkmn->name);
+         tmpob = array_groups[i].kids0;
+         while (tmpob != NULL)
+         {

@@ -19,28 +19,18 @@ override_dh_install:
 	[ ! -d debian/speed-dreams-base/usr/lib32 ] || mv debian/speed-dreams-base/usr/lib32 debian/speed-dreams-base/usr/lib
 	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/simplix_sc/simplix_sc.so
 	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/usr_sc/usr_sc.so
-
-	#chrpath -d debian/speed-dreams-base/usr/games/sd2-accc
-	#chrpath -d debian/speed-dreams-base/usr/games/sd2-menuview
-	#chrpath -d debian/speed-dreams-base/usr/games/sd2-nfs2ac
-	#chrpath -d debian/speed-dreams-base/usr/games/sd2-nfsperf
-	#chrpath -d debian/speed-dreams-base/usr/games/sd2-trackgen
-	#chrpath -d debian/speed-dreams-base/usr/games/speed-dreams-2
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/human/human.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/kilo2008/kilo2008.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/simplix/simplix.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/usr/usr.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/lib/liblearning.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/lib/libnetworking.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/lib/libraceengine.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/lib/librobottools.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/lib/libtgf.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/lib/libtgfclient.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/lib/libtgfdata.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/lib/libtxml.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/modules/graphic/ssggraph.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/modules/simu/simuv2.1.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/modules/telemetry/telemetry.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/modules/track/track.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/modules/userinterface/legacymenu.so
-	#chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/modules/userinterface/textonly.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/simplix_36GP/simplix_36GP.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/simplix_lp1/simplix_lp1.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/simplix_ls1/simplix_ls1.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/simplix_ls2/simplix_ls2.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/simplix_mp5/simplix_mp5.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/simplix_mpa1/simplix_mpa1.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/simplix_ref/simplix_ref.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/simplix_trb1/simplix_trb1.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/usr_36GP/usr_36GP.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/usr_lp1/usr_lp1.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/usr_ls1/usr_ls1.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/usr_ls2/usr_ls2.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/usr_mpa1/usr_mpa1.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/usr_rs/usr_rs.so
+	chrpath -d debian/speed-dreams-base/usr/lib/games/speed-dreams-2/drivers/usr_trb1/usr_trb1.so

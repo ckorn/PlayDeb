@@ -1,9 +1,9 @@
 Do not install into lib64 on amd64 arch.
-Index: speed-dreams-base-2.0.0/cmake/macros.cmake
+Index: speed-dreams-base-2.1.0/cmake/macros.cmake
 ===================================================================
---- speed-dreams-base-2.0.0.orig/cmake/macros.cmake	2012-02-26 14:01:00.000000000 +0100
-+++ speed-dreams-base-2.0.0/cmake/macros.cmake	2012-05-14 20:24:19.740333027 +0200
-@@ -82,11 +82,7 @@
+--- speed-dreams-base-2.1.0.orig/cmake/macros.cmake	2014-07-24 19:40:14.468023423 +0200
++++ speed-dreams-base-2.1.0/cmake/macros.cmake	2014-07-24 19:40:14.460023423 +0200
+@@ -81,11 +81,7 @@
  
  # Determine the default value of the data, bin and lib (and man) folders.
  IF(IN_SOURCETREE)

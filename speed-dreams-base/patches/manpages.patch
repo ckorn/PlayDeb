@@ -1,8 +1,8 @@
 Hyphon used as minus.
-Index: speed-dreams-base-2.0.0/doc/man/sd2-accc.6
+Index: speed-dreams-base-2.1.0/doc/man/sd2-accc.6
 ===================================================================
---- speed-dreams-base-2.0.0.orig/doc/man/sd2-accc.6	2012-02-26 11:58:48.000000000 +0100
-+++ speed-dreams-base-2.0.0/doc/man/sd2-accc.6	2012-05-14 19:09:22.632466804 +0200
+--- speed-dreams-base-2.1.0.orig/doc/man/sd2-accc.6	2014-07-24 19:37:46.272024688 +0200
++++ speed-dreams-base-2.1.0/doc/man/sd2-accc.6	2014-07-24 19:37:46.268024688 +0200
 @@ -3,7 +3,7 @@
  .LP
  sd2-accc \- Speed Dreams 2 multi-layer generator for tracks
@@ -12,19 +12,10 @@ Index: speed-dreams-base-2.0.0/doc/man/sd2-accc.6
  .SH DESCRIPTION
  sd2-accc is intended to add multi-texturing to the track models
  built in the native Ac3d file format.
-@@ -39,7 +39,7 @@
- ac3d to ac3d with triangles no split and extended ac3d file output (normals normals)
- .TP
- .B +shad
--ac3d to ac3d with triangles, create a new ac3d file used for track shading\n   vertical mapping of a single texture
-+ac3d to ac3d with triangles, create a new ac3d file used for track shading vertical mapping of a single texture
- .TP
- .B -order order-string
- only used with \fB+es\fP , \fB+s\fP and \fB+et\fP \fIorderstring\fP is the order of the objects during the save for example: \fIHB;OB;OBM\fP is the names of the objet separate by a semicolon for imported NFS cars the object name \fIHB\fP must be used instead of: \fIHB\fP
-Index: speed-dreams-base-2.0.0/doc/man/sd2-menuview.6
+Index: speed-dreams-base-2.1.0/doc/man/sd2-menuview.6
 ===================================================================
---- speed-dreams-base-2.0.0.orig/doc/man/sd2-menuview.6	2012-02-26 12:24:00.000000000 +0100
-+++ speed-dreams-base-2.0.0/doc/man/sd2-menuview.6	2012-05-14 19:11:07.012463699 +0200
+--- speed-dreams-base-2.1.0.orig/doc/man/sd2-menuview.6	2014-07-24 19:37:46.272024688 +0200
++++ speed-dreams-base-2.1.0/doc/man/sd2-menuview.6	2014-07-24 19:37:46.268024688 +0200
 @@ -2,11 +2,11 @@
  .SH NAME
  sd2-menuview \- Menu viewer for Speed Dreams 2
@@ -42,10 +33,10 @@ Index: speed-dreams-base-2.0.0/doc/man/sd2-menuview.6
                menu-file
  
  .SH DESCRIPTION
-Index: speed-dreams-base-2.0.0/doc/man/sd2-nfsperf.6
+Index: speed-dreams-base-2.1.0/doc/man/sd2-nfsperf.6
 ===================================================================
---- speed-dreams-base-2.0.0.orig/doc/man/sd2-nfsperf.6	2012-02-26 12:28:21.000000000 +0100
-+++ speed-dreams-base-2.0.0/doc/man/sd2-nfsperf.6	2012-05-14 19:11:45.040462569 +0200
+--- speed-dreams-base-2.1.0.orig/doc/man/sd2-nfsperf.6	2014-07-24 19:37:46.272024688 +0200
++++ speed-dreams-base-2.1.0/doc/man/sd2-nfsperf.6	2014-07-24 19:37:46.268024688 +0200
 @@ -4,7 +4,7 @@
  sd2-nfsperf \- Car Specifications Converter from 'Need for Speed' to Speed Dreams 2
  .SH SYNOPSIS
@@ -55,10 +46,10 @@ Index: speed-dreams-base-2.0.0/doc/man/sd2-nfsperf.6
  .SH DESCRIPTION
  This manual describes the Car Specifications Converter application that is shipped with Speed Dreams 2.
  .SH OPTIONS
-Index: speed-dreams-base-2.0.0/doc/man/sd2-trackgen.6
+Index: speed-dreams-base-2.1.0/doc/man/sd2-trackgen.6
 ===================================================================
---- speed-dreams-base-2.0.0.orig/doc/man/sd2-trackgen.6	2012-02-26 11:59:34.000000000 +0100
-+++ speed-dreams-base-2.0.0/doc/man/sd2-trackgen.6	2012-05-14 19:12:23.912461411 +0200
+--- speed-dreams-base-2.1.0.orig/doc/man/sd2-trackgen.6	2014-07-24 19:37:46.272024688 +0200
++++ speed-dreams-base-2.1.0/doc/man/sd2-trackgen.6	2014-07-24 19:37:46.268024688 +0200
 @@ -4,7 +4,7 @@
  sd2-trackgen \- Speed Dreams 2 terrain generator for tracks
  .SH SYNOPSIS
@@ -68,10 +59,10 @@ Index: speed-dreams-base-2.0.0/doc/man/sd2-trackgen.6
  .SH DESCRIPTION
  .TP
  This manual describes the track terrain generator that is shipped with Speed Dreams 2.
-Index: speed-dreams-base-2.0.0/doc/man/speed-dreams-2.6
+Index: speed-dreams-base-2.1.0/doc/man/speed-dreams-2.6
 ===================================================================
---- speed-dreams-base-2.0.0.orig/doc/man/speed-dreams-2.6	2012-02-26 12:26:45.000000000 +0100
-+++ speed-dreams-base-2.0.0/doc/man/speed-dreams-2.6	2012-05-14 19:13:46.592458952 +0200
+--- speed-dreams-base-2.1.0.orig/doc/man/speed-dreams-2.6	2014-07-24 19:37:46.272024688 +0200
++++ speed-dreams-base-2.1.0/doc/man/speed-dreams-2.6	2014-07-24 19:37:46.268024688 +0200
 @@ -2,12 +2,12 @@
  .SH NAME
  speed-dreams-2 \- High-quality 3D racing cars simulator game based on Open GL

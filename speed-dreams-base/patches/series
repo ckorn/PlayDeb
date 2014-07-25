@@ -1,4 +1,3 @@
-base-only.patch
 manpages.patch
-typos.patch
 libdir.patch
+typos.patch

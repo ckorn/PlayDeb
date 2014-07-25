@@ -9,7 +9,10 @@ Build-Depends: debhelper (>= 9),
                freeglut3-dev,
                libplib-dev,
                libopenal-dev,
+               libogg-dev,
                libalut-dev,
+               libvorbis-dev,
+               libexpat1-dev,
                libxi-dev,
                libxmu-dev,
                libxxf86vm-dev,
@@ -21,7 +24,7 @@ Build-Depends: debhelper (>= 9),
                libsdl1.2-dev,
                libjpeg62-dev | libjpeg8-dev,
                chrpath
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Homepage: http://speed-dreams.sourceforge.net/
 
 Package: speed-dreams-base

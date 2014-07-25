@@ -1,3 +1,9 @@
+speed-dreams-base (2.1.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 22 Jul 2014 20:55:29 +0200
+
 speed-dreams-base (2.0.0-1~getdeb3~saucy) saucy; urgency=low
 
   * Rebuild for saucy.
