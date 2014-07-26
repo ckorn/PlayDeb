@@ -1,0 +1,7 @@
+# uscan(1) configuration file.
+# Use `debian/rules get-orig-source` to generate DFSG-repackaged orig.tar.
+
+version=3
+
+opts="dversionmangle=s/\+dfsg//" \
+http://sf.net/scummvm/scummvm-([0-9.]+)\.tar\.(?:xz|bz2|gz)

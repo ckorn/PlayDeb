@@ -1,0 +1,16 @@
+DFSG concerns
+-------------
+
+Upstream source contains:
+
+ *  bundled cxxtest (also provided by package "cxxtest") 3.10.1 (2004) in
+
+        test/cxxtest
+
+ * bundled freefonts (also provided by package "fonts-freefont-ttf") in
+
+        gui/themes/scummmodern/*.ttf
+        gui/themes/fonts/*.ttf
+
+
+However neither of them installed in process of building debian packages.
