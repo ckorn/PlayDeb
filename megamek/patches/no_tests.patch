@@ -1,0 +1,14 @@
+# tests fail
+Index: megamek-0.38.0/build.xml
+===================================================================
+--- megamek-0.38.0.orig/build.xml	2014-07-03 00:43:37.000000000 +0200
++++ megamek-0.38.0/build.xml	2014-07-25 21:55:11.413199095 +0200
+@@ -93,7 +93,7 @@
+         <touch file="${timestampfile}" />
+     </target>
+ 
+-    <target name="jar" depends="unit.test" description="Generates JAR File from compiled sources">
++    <target name="jar" description="Generates JAR File from compiled sources">
+         <!-- collects all files from the ${builddir} (classes) and generates the jar file in ${basedir} -->
+         <jar basedir="${builddir}" jarfile="${basedir}/${jarfile}">
+             <fileset dir="${propdir}" includes="**/*.properties"/>

@@ -1,0 +1,14 @@
+# error: unmappable character for encoding ASCII
+Index: megamek-0.38.0/build.xml
+===================================================================
+--- megamek-0.38.0.orig/build.xml	2014-07-25 21:55:11.413199095 +0200
++++ megamek-0.38.0/build.xml	2014-07-26 16:07:05.760764392 +0200
+@@ -74,7 +74,7 @@
+ 
+     <target name="compile" depends="init" description="Compile java sources into class files">
+         <!-- compile -->
+-        <javac debug="true" debuglevel="lines,source" target="1.7" source="1.7" destdir="${builddir}" srcdir="${srcdir}" memoryInitialSize="512m" memoryMaximumSize="512m" fork="true">
++        <javac encoding="utf-8" debug="true" debuglevel="lines,source" target="1.7" source="1.7" destdir="${builddir}" srcdir="${srcdir}" memoryInitialSize="512m" memoryMaximumSize="512m" fork="true">
+             <classpath>
+                 <pathelement location="${basedir}" />
+                 <fileset dir="${libdir}" includes="*.jar" />

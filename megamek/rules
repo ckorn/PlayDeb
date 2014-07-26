@@ -55,6 +55,7 @@ binary-indep: install
 	dh_installexamples
 	dh_install
 	chmod +x debian/megamek/usr/share/games/megamek/docs/stats.pl
+	find debian/megamek/usr -type d -empty -delete
 #	dh_installmenu
 #	dh_installdebconf
 #	dh_installlogrotate

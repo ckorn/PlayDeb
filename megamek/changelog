@@ -1,3 +1,36 @@
+megamek (0.38.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    + Data: Unit and Image Fixes
+    + Data: Broken Cadaver image link
+    + Bug [#4156]: Searchlights not properly added if searchlight quirk is
+    added in lobby
+    + Bug: MegaMekGUI was looking for readme's in the wrong location (they're
+    in docs now)
+    + Bug: startup.sh not properly handling documentation: it would symlink
+    the data directory and copy over the readme's.  The readme's moved to the
+    docs dir, but this behavior would break all of the other docs.  I added
+    code to symlink the docs directory in the same fashion as the data dir.
+    + Data: New Images and Unit Fixes.
+    + Bug [#4163]: Typo in C3 Network choices
+    + Bug [#4162]: MULParser incorrectly handles ammo with NA slots
+    + Bug [#4166]: Exception in CustomMechDialog when Modifying Gun
+    Emplacements
+    + Patch [patches:#456]: Fixes for Princess Immediate Withdrawal/Autoflee
+    + Data: New Images.
+    + Data: Revised RATs  RATs now have a date/Date range at the start of the
+    folder to keep them in a chronological order.  Also New RATS for the FR
+    2765 series.
+    + Data:Fixes to previous commit.
+    + Made instructions for saving custom Princess configs under new names
+    explicit in the Princess help file.
+    + Data: New Images and a couple of date fixes.
+    + Bug: Physical weapon "aimed shot" dialog not always disposing properly.
+    + Data: New Images and a couple of date fixes.
+    + Data: New Images and Unit Fixes.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 25 Jul 2014 21:44:20 +0200
+
 megamek (0.34.10-1~getdeb1) precise; urgency=low
 
   * New upstream version
