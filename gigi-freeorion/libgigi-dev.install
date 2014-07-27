@@ -1,8 +1,8 @@
 usr/include/GG/*.h
+usr/include/GG/*.py
 usr/include/GG/adobe/
 usr/include/GG/dialogs/
 usr/include/GG/utf8/
-usr/lib/libGiGi.so
 usr/lib/pkgconfig/GiGi.pc
 cmake/Config.cmake		usr/share/gigi/cmake
 cmake/Util.cmake		usr/share/gigi/cmake

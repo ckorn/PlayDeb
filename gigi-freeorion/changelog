@@ -1,3 +1,9 @@
+gigi-freeorion (1:0.4.3~svn7300-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 Jul 2014 01:14:44 +0200
+
 gigi-freeorion (1:0.4.2~svn5890-1~getdeb2) trusty; urgency=low
 
   * Rebuild for trusty.

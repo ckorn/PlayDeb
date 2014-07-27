@@ -1,8 +1,8 @@
-Index: gigi-freeorion-0.4.2~svn5890/test/CMakeLists.txt
+Index: gigi-freeorion-0.4.3~svn7300/test/CMakeLists.txt
 ===================================================================
---- gigi-freeorion-0.4.2~svn5890.orig/test/CMakeLists.txt	2012-08-17 02:13:44.000000000 +0200
-+++ gigi-freeorion-0.4.2~svn5890/test/CMakeLists.txt	2013-03-23 00:24:59.284485950 +0100
-@@ -45,7 +45,6 @@
+--- gigi-freeorion-0.4.3~svn7300.orig/test/CMakeLists.txt	2014-07-27 01:26:28.991765974 +0200
++++ gigi-freeorion-0.4.3~svn7300/test/CMakeLists.txt	2014-07-27 01:26:28.987765974 +0200
+@@ -46,7 +46,6 @@
  make_test_exec(AdamWriter)
  make_test_exec(EveParser)
  make_test_exec(EveWriter)
@@ -10,7 +10,7 @@ Index: gigi-freeorion-0.4.2~svn5890/test/CMakeLists.txt
  
  add_test_and_data_files(StrongIntegralTypedef)
  add_test_and_data_files(StrongSizeTypedef)
-@@ -75,12 +74,3 @@
+@@ -76,12 +75,3 @@
  foreach (test_file ${eve_test_files})
      add_test_and_data_files(EveWriter ${test_file})
  endforeach ()

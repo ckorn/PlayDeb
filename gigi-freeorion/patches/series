@@ -1,3 +1,2 @@
 system-libltdl.patch
 disable-some-tests.patch
-soname.patch
