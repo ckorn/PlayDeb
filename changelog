@@ -1,3 +1,10 @@
+redeclipse (1.4-6) unstable; urgency=medium
+
+  * Team upload.
+  * Move Red Eclipse to the main archive since it fully complies with the DFSG.
+
+ -- Markus Koschany <apo@gambaru.de>  Sun, 27 Jul 2014 11:15:54 +0200
+
 redeclipse (1.4-5) unstable; urgency=low
 
   * Standards-Version 3.9.5 (no changes)

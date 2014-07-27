@@ -1,5 +1,5 @@
 Source: redeclipse
-Section: contrib/games
+Section: games
 Priority: optional
 Uploaders: Martin Erik Werner <martinerikwerner@gmail.com>
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
@@ -36,7 +36,7 @@ Description: multiplayer FPS game based on Cube2
   * Builtin editor lets you create your own maps cooperatively online
 
 Package: redeclipse-dbg
-Section: contrib/debug
+Section: debug
 Priority: extra
 Architecture: any
 Depends: redeclipse (= ${binary:Version}), ${misc:Depends}
@@ -52,7 +52,7 @@ Description: server for the Red Eclipse FPS game
  init integration.
 
 Package: redeclipse-server-dbg
-Section: contrib/debug
+Section: debug
 Priority: extra
 Architecture: any
 Depends: redeclipse-server (= ${binary:Version}), ${misc:Depends}
