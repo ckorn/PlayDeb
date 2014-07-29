@@ -1,0 +1,11 @@
+ufoai-maps (2.5-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 Jul 2014 22:53:49 +0200
+
+ufoai-maps (2.5-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Markus Koschany <apo@gambaru.de>  Mon, 30 Jun 2014 22:09:54 +0200

@@ -1,0 +1,98 @@
+From: Markus Koschany <apo@gambaru.de>
+Date: Fri, 1 Nov 2013 18:29:56 +0100
+Subject: Makefile
+
+---
+ Makefile      | 40 ++++++++++++++++++++--------------------
+ build/maps.mk |  4 ++--
+ 2 files changed, 22 insertions(+), 22 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 0a97f26..a761752 100644
+--- a/Makefile
++++ b/Makefile
+@@ -54,10 +54,10 @@ all: $(TARGETS)
+ endif
+ endif
+ 
+-include build/flags.mk
+-include build/platforms/$(TARGET_OS).mk
+-include build/modes/$(MODE).mk
+-include build/default.mk
++#include build/flags.mk
++#include build/platforms/$(TARGET_OS).mk
++#include build/modes/$(MODE).mk
++#include build/default.mk
+ 
+ CXXFLAGS := $(CFLAGS) $(CXXFLAGS)
+ 
+@@ -73,20 +73,20 @@ include build/modules/$(1).mk
+ endef
+ $(foreach TARGET,$(TARGETS_TMP),$(eval $(call INCLUDE_RULE,$(TARGET))))
+ 
+-.PHONY: clean
+-clean: $(addprefix clean-,$(TARGETS)) clean-docs
+-	$(Q)rm -rf $(BUILDDIR)
++#.PHONY: clean
++#clean: $(addprefix clean-,$(TARGETS)) clean-docs
++#	$(Q)rm -rf $(BUILDDIR)
+ 
+-.PHONY: distclean
+-distclean: clean
+-	$(Q)rm -f $(TARGET_OS)-config.h Makefile.local
+-	$(Q)rm -rf $(BUILDDIR)
++#.PHONY: distclean
++#distclean: clean
++#	$(Q)rm -f $(TARGET_OS)-config.h Makefile.local
++#	$(Q)rm -rf $(BUILDDIR)
+ 
+-.PHONY: install
+-install: install-pre $(addprefix install-,$(TARGETS))
++#.PHONY: install
++#install: install-pre $(addprefix install-,$(TARGETS))
+ 
+-.PHONY: strip
+-strip: $(addprefix strip-,$(TARGETS))
++#.PHONY: strip
++#strip: $(addprefix strip-,$(TARGETS))
+ 
+ $(TARGET_OS)-config.h: configure
+ 	@echo "restarting configure for $(TARGET_OS)"
+@@ -170,12 +170,12 @@ $(foreach PROJECT,$(PROJECTS),$(eval $(call INCLUDE_PROJECT_RULE,$(PROJECT))))
+ run-configure:
+ 	$(Q)$(CONFIGURE_PREFIX) ./configure $(CONFIGURE_OPTIONS)
+ 
+-include build/data.mk
+-include build/install.mk
+-include build/lang.mk
++#include build/data.mk
++#include build/install.mk
++#include build/lang.mk
+ include build/maps.mk
+-include build/models.mk
+-include build/various.mk
++#include build/models.mk
++#include build/various.mk
+ 
+ ifeq ($(TARGET_OS),android)
+ .PHONY: clean-android
+diff --git a/build/maps.mk b/build/maps.mk
+index 2f11cfe..75b6d13 100644
+--- a/build/maps.mk
++++ b/build/maps.mk
+@@ -1,5 +1,5 @@
+ MAPSDIR           ?= base/maps
+-UFO2MAP            = ./ufo2map$(EXE_EXT)
++UFO2MAP            = /usr/bin/ufo2map
+ MAPSRCS           := $(shell find $(MAPSDIR) -name '*.map' \! -name 'tutorial*' \! -name '*autosave*' \! -name 'test*' | xargs du | sort -bnr | sed -e 's/^[0-9]*//' | tr -d "\t")
+ BSPS              := $(MAPSRCS:.map=.bsp)
+ NICE              ?= 19
+@@ -20,7 +20,7 @@ ifeq ($(PYTHONBIN),)
+         PYTHONBIN         := python
+ endif
+ 
+-maps: ufo2map $(BSPS)
++maps: $(BSPS)
+ 
+ maps-fast:
+ 	$(MAKE) maps UFO2MAPFLAGS="$(FAST_UFO2MAPFLAGS)"
