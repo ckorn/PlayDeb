@@ -1,0 +1,57 @@
+#!/bin/sh
+
+set -e
+
+# ufoai or ufoai-server
+UFOSELF=ufoai
+# "server" or "client"
+UFOROLE=client
+# ufo or ufoded
+UFOBINARY=ufo
+# /usr/lib/ufoai or /usr/lib/ufoai-server
+FS_BASEPATH=/usr/lib/ufoai
+# additional cvar parameters, do not upload crashdump log automatically
+PARAM="+set uploadcrashdump 0"
+
+cd $FS_BASEPATH
+
+ENGINE="${FS_BASEPATH}/${UFOBINARY}"
+
+DEBUGGER="$UFO_DEBUGGER"
+
+QUIET=0
+
+EXCUSE="\
+UFO Alien Invasion ${UFOROLE} wrapper for Debian\n\
+\n\
+Usage: ${UFOSELF} [OPTION]...\n\
+\n\
+ -h, --help\t\tDisplay this help\n\
+ -q, --quiet\t\tDisable console output\n\
+  +<internal command>\tPass commands to the engine\n"
+
+while [ "$1" != "" ]; do
+  case "$1" in
+    -h|--help)
+      echo ${EXCUSE}
+      exit 0
+      ;;
+    -q|--quiet)
+      QUIET=1
+      ;;
+    *)
+      break
+      ;;
+  esac
+  shift
+done
+
+if test "z$QUIET" = z1; then
+  exec >/dev/null 2>&1;
+fi
+
+if test -n "$UFO_BACKTRACE"; then
+  exec gdb -return-child-result -batch -ex run -ex 'thread apply all bt full' -ex kill -ex quit --args ${ENGINE} "$@"
+else
+  exec ${DEBUGGER} ${ENGINE} ${PARAM} "$@"
+fi

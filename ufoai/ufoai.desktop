@@ -1,12 +1,11 @@
 [Desktop Entry]
 Version=1.0
 Name=UFO: Alien Invasion
-GenericName=UFO: Alien Invasion
 Comment=Turn-based tactical combat against hostile alien forces
-Comment[de_DE]=Rundenbasiertes Taktikspiel
-Exec=/usr/games/ufo
-Icon=ufoai.xpm
+Comment[de]=Rundenbasierendes Taktikspiel gegen feindliche außerirdische Streitkräfte
+Exec=ufoai
+Icon=ufoai
 Terminal=false
 Type=Application
-Categories=Application;Game;StrategyGame;
-StartupNotify=true
+Categories=Game;StrategyGame;
+Keywords=combat;tactic;turn-based;real-time;aliens;action;strategy;fiction;

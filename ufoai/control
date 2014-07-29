@@ -2,82 +2,178 @@ Source: ufoai
 Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Markus Koschany <apo@gambaru.de>
 Build-Depends: debhelper (>= 9),
-               libpng-dev,
-               libjpeg8-dev,
-               libgl1-mesa-dev,
-               libsdl-dev,
-               libsdl-ttf2.0-dev,
-               libsdl-mixer1.2-dev,
-               libcurl3-openssl-dev | libcurl4-openssl-dev | libcurl4-gnutls-dev,
-               zip,
-               libgtk2.0-dev (>=2.4.0),
-               libxml2-dev,
-               libgtkglext1-dev,
-               libtheora-dev | libxvidcore4-dev,
-               libglib2.0-dev,
-               zlib1g-dev,
+               dpkg-dev (>= 1.17.1~),
                gettext,
-               libmxml-dev,
-               pkg-config,
-               libopenal-dev,
+               libcunit1-dev,
+               libcurl4-gnutls-dev | libcurl4-openssl-dev | libcurl-dev,
+               libglib2.0-dev,
+               libgtk2.0-dev,
+               libgtkglext1-dev,
                libgtksourceview2.0-dev,
-               python2.7 | python2.6,
-               binutils-dev,
-               libx11-xcb-dev,
+               libjpeg8-dev,
+               libmxml-dev,
+               libogg-dev,
+               libopenal-dev,
+               libpng-dev,
+               libsdl2-mixer-dev,
+               libsdl2-ttf-dev,
+               libsdl2-dev,
+               libtheora-dev,
+               libvorbis-dev,
+               libxml2-dev,
+               libxvidcore-dev,
+               pkg-config,
                texlive-latex-base,
+               texlive-latex-extra,
                texlive-latex-recommended,
-               texlive-latex-extra
-Build-Conflicts: nvidia-glx,
-                 nvidia-current
-Standards-Version: 3.9.4
-Homepage: http://ufoai.sf.net
+               zip,
+               zlib1g-dev
+Standards-Version: 3.9.5
+Homepage: http://ufoai.org
 
 Package: ufoai
 Architecture: any
-Depends: ${shlibs:Depends},
-         ttf-freefont,
-         ttf-dejavu,
-         fonts-thai-tlwg,
-         ttf-wqy-zenhei,
-         ttf-unfonts-core,
-         ttf-unfonts-extra,
-         fonts-umeplus,
-         ufoai-data (>= 2.4),
-         ${misc:Depends}
-Suggests: blender,
+Depends: fonts-dejavu,
+         ufoai-common (>= ${source:Version}),
+         ufoai-data,
+         ufoai-maps,
+         ufoai-misc (>= ${source:Version}),
+         ufoai-sound,
+         ufoai-textures,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: ufoai-music
+Suggests: ufoai-server,
           ufoai-uforadiant
-Conflicts: ufoai-server
-Recommends: ufoai-music (>= 2.4)
-Description: UFO: Alien Invasion - build your team and stop the aliens
- "UFO: Alien Invasion" is a game inspired by the XCOM "UFO" series.
+Description: UFO: Alien Invasion -- build your team and stop the aliens
+ UFO: Alien Invasion is a squad-based tactical strategy game in the tradition
+ of the old X-COM PC games. It combines military realism with hard
+ science-fiction and the weirdness of an alien invasion. The carefully
+ constructed turn-based system gives you pin-point control of your squad while
+ maintaining a sense of pace and danger.
  .
- As manager of an international military force dedicated to stop the
- Alien Invasion, you prepare your soldiers and attack the aliens on
- various sites on the Earth.
+ UFO:AI has two main modes of play: Geoscape mode and Tactical mode.
  .
- A multiplayer mode is also available.
+ In Geoscape mode you manage the activities and finances of PHALANX, a secret
+ organisation charged with defending Earth from a brutal alien enemy. You
+ control bases, installations, aircraft and squads of armed-response troops.
+ You will research new technologies and use their results in battle against the
+ aliens. You can build, buy and produce anything you like, as long as your
+ technology level and your budget will allow it. Easy-to-use time buttons make
+ it possible to control the passage of time.
+ .
+ In Tactical mode the game is about taking command of your team in various
+ missions to combat the aliens wherever they might appear. Tactical mode uses a
+ turn-based system, where your team and the aliens take turns to make moves.
+ You can order your troops around, fire their weapons, throw grenades and use
+ other equipment. All actions require Time Units to perform. Once a soldier is
+ out of Time Units, he or she can't do anything more until the next turn. Your
+ mission objectives will vary for each mission and there are many to perform as
+ the aliens' terrifying plot unfolds. You'll have to watch your back, be quick
+ on your feet and take the fight to them.
+ .
+ If you don't, humanity is doomed.
+
+Package: ufoai-misc
+Architecture: all
+Depends: ${misc:Depends}
+Description: UFO: Alien Invasion -- miscellaneous files and documentation
+ It is the year 2084. You control a secret organisation charged with defending
+ Earth from a brutal alien enemy. Build up your bases, prepare your team, and
+ dive head-first into the fast and flowing turn-based combat.
+ .
+ This package contains architecture-independent data for the game UFO: Alien
+ Invasion like language files and documentation.
+
+Package: ufoai-common
+Architecture: all
+Depends: ${misc:Depends}
+Description: UFO: Alien Invasion -- scripts and configuration files
+ It is the year 2084. You control a secret organisation charged with defending
+ Earth from a brutal alien enemy. Build up your bases, prepare your team, and
+ dive head-first into the fast and flowing turn-based combat.
+ .
+ This package contains scripts and configuration files for UFO: Alien Invasion
+ which are useful for client and server.
 
 Package: ufoai-server
 Architecture: any
-Conflicts: ufoai
-Depends: ${shlibs:Depends},
-         ufoai-server-data (>= 2.4),
-         ${misc:Depends}
-Description: UFO: Alien Invasion - standalone game server
- "UFO: Alien Invasion" is a game inspired by the XCOM "UFO" series.
+Depends: adduser,
+         ufoai-common (>= ${source:Version}),
+         ufoai-maps,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Suggests: ufoai
+Description: UFO: Alien Invasion -- dedicated server
+ It is the year 2084. You control a secret organisation charged with defending
+ Earth from a brutal alien enemy. Build up your bases, prepare your team, and
+ dive head-first into the fast and flowing turn-based combat.
  .
- This package includes the standalone game server.
- It is only needed if you want to setup a permanent game server.
+ This package contains the dedicated game server for UFO: Alien Invasion. It is
+ only needed if you want to setup a permanent game server.
 
 Package: ufoai-uforadiant
+Section: graphics
 Architecture: any
-Conflicts: ufoai-radiant,
-           ufoai-tools
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
-Description: UFO: Alien Invasion - map-building tool
- "UFO: Alien Invasion" is a game inspired by the XCOM "UFO" series.
+Depends: ufoai-common (>= ${source:Version}),
+         ufoai-uforadiant-data (>= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Suggests: blender,
+          ufoai,
+          ufoai-tools
+Description: UFO: Alien Invasion -- map-building tool
+ It is the year 2084. You control a secret organisation charged with defending
+ Earth from a brutal alien enemy. Build up your bases, prepare your team, and
+ dive head-first into the fast and flowing turn-based combat.
  .
- This package includes the map-building tool UFORadiant. It's based on
- GTKRadiant 1.5.
+ This package contains the map-building tool UFORadiant for UFO: Alien
+ Invasion.
+
+Package: ufoai-uforadiant-data
+Section: graphics
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: ufoai,
+          ufoai-uforadiant
+Description: UFO: Alien Invasion -- map-building tool data files
+ It is the year 2084. You control a secret organisation charged with defending
+ Earth from a brutal alien enemy. Build up your bases, prepare your team, and
+ dive head-first into the fast and flowing turn-based combat.
+ .
+ This package contains architecture-independent data files for the map-building
+ tool UFORadiant.
+
+Package: ufoai-tools
+Section: graphics
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Suggests: bash-completion,
+          ufoai,
+          ufoai-uforadiant
+Description: UFO: Alien Invasion -- developer tools
+ It is the year 2084. You control a secret organisation charged with defending
+ Earth from a brutal alien enemy. Build up your bases, prepare your team, and
+ dive head-first into the fast and flowing turn-based combat.
+ .
+ This package contains developer tools for UFO: Alien Invasion.
+ .
+  * ufo2map
+  * ufomodel
+  * ufoslicer
+
+Package: ufoai-dbg
+Priority: extra
+Section: debug
+Architecture: any
+Depends: ufoai (= ${binary:Version}) | ufoai-tools (= ${binary:Version}) | ufoai-uforadiant (= ${binary:Version}) | ufoai-server (= ${binary:Version}),
+         ${misc:Depends}
+Description: UFO: Alien Invasion -- debugging symbols
+ It is the year 2084. You control a secret organisation charged with defending
+ Earth from a brutal alien enemy. Build up your bases, prepare your team, and
+ dive head-first into the fast and flowing turn-based combat.
+ .
+ This package contains detached debugging symbols for ufoai.

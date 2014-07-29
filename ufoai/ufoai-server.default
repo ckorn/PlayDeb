@@ -1,0 +1,9 @@
+# Defaults for UFO:AI init script
+# sourced by /etc/init.d/ufoai-server
+# installed at /etc/default/ufoai-server by the maintainer scripts
+
+# You can add additional options that are passed to the daemon.
+#
+# debian_server.cfg is a symlink to /etc/ufoai-server/server.cfg, so you
+# can use that file for system-wide configuration.
+DAEMON_OPTS="+exec debian_server.cfg"

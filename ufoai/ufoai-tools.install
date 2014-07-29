@@ -1,0 +1,5 @@
+contrib/scripts/bashcompletion/ufo2map      etc/bash_completion.d/ufo2map
+contrib/scripts/bashcompletion/ufomodel     etc/bash_completion.d/ufomodel
+ufo2map                                     usr/bin
+ufomodel                                    usr/bin
+ufoslicer                                   usr/bin

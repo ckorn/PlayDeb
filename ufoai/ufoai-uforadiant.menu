@@ -1,3 +1,6 @@
-?package(ufoai-uforadiant):needs="X11" section="Games/Strategy" \
-	title="UFORadiant" command="/usr/games/uforadiant" \
-	icon="/usr/share/pixmaps/uforadiant.xpm"
+?package(ufoai-uforadiant):needs="X11"\
+ section="Applications/Graphics" \
+ title="UFORadiant" \
+ longtitle="UFORadiant - map editor for UFO:AI" \
+ command="/usr/bin/uforadiant" \
+ icon="/usr/share/pixmaps/uforadiant.xpm"

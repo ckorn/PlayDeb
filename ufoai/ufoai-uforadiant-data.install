@@ -1,0 +1,2 @@
+debian/icons/uforadiant.xpm         usr/share/pixmaps
+radiant/*                           usr/share/uforadiant

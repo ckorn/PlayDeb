@@ -1,0 +1,57 @@
+UFO:AI dedicated server for Debian
+=====================================
+
+Running the server via the init script
+--------------------------------------
+
+The ufoai-server init script runs a dedicated server as the user
+"Debian-ufoai". This is a simple setup suitable for running one server
+on a machine; by default it will run a deathmatch server.
+
+The Debian-ufoai user's home directory is /var/games/ufoai-server,
+so you can find UFO:AI files in the /var/games/ufoai-server/.ufoai
+directory.
+
+By default, the init script will use
+/usr/lib/ufoai-server/base/debian_server.cfg, which is a symlink to
+/etc/ufoai-server/server.cfg. You can edit this file, or put an alternative
+configuration in /var/games/ufoai-server/.ufoai/$VERSION/base and change
+/etc/default/ufoai-server to exec that.
+
+Disabling the init script
+-------------------------
+
+To disable the init script, use the facilities provided by your init system.
+For instance, under sysvinit, use
+
+    update-rc.d ufoai-server disable
+
+or under systemd, use
+
+    ln -s /dev/null /etc/systemd/system/ufoai-server.service
+
+Running the server with cron and screen
+---------------------------------------
+
+One alternative way to run the server is to run it in a screen(1) session
+from a cron @reboot action. This can be used to run multiple instances
+of the server; you'll need to set a different net_port on each server after
+the first, and it's safest to give each server a unique fs_homepath so they
+don't overwrite each other's configuration files.
+
+To do this, you could put something like this in the Debian-openarena user's
+crontab (don't break the long lines!):
+
+    @reboot screen -d -m -S ffa /usr/games/ufoai-server +set fs_homepath /var/games/ufoai-server/ffa +exec ffa.cfg
+    @reboot screen -d -m -S ctf /usr/games/ufoai-server +set fs_homepath /var/games/ufoai-server/ctf +set net_port 54321 +exec ctf.cfg
+
+or in /etc/crontab or a file in /etc/cron.d:
+
+    @reboot Debian-ufoai screen -d -m -S ffa /usr/games/ufoai-server +set fs_homepath /var/games/ufoai-server/ffa +exec ffa.cfg
+    @reboot Debian-ufoai screen -d -m -S ctf /usr/games/ufoai-server +set fs_homepath /var/games/ufoai-server/ctf +set net_port 54321 +exec ctf.cfg
+
+If you do that, you can access the servers' consoles by attaching a screen
+session to them:
+
+    sudo -u Debian-ufoai screen -r ffa
+    sudo -u Debian-ufoai screen -r ctf
