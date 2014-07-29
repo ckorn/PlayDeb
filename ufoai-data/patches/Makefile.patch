@@ -1,0 +1,100 @@
+From: Markus Koschany <apo@gambaru.de>
+Date: Sun, 25 Aug 2013 21:08:45 +0200
+Subject: Makefile
+
+---
+ Makefile        | 40 ++++++++++++++++++++--------------------
+ build/models.mk |  4 ++--
+ 2 files changed, 22 insertions(+), 22 deletions(-)
+
+Index: ufoai-data-2.5/Makefile
+===================================================================
+--- ufoai-data-2.5.orig/Makefile	2014-07-27 22:00:31.561063655 +0200
++++ ufoai-data-2.5/Makefile	2014-07-27 22:00:31.557063656 +0200
+@@ -60,10 +60,10 @@
+ endif
+ endif
+ 
+-include build/flags.mk
+-include build/platforms/$(TARGET_OS).mk
+-include build/modes/$(MODE).mk
+-include build/default.mk
++#include build/flags.mk
++#include build/platforms/$(TARGET_OS).mk
++#include build/modes/$(MODE).mk
++#include build/default.mk
+ 
+ CXXFLAGS := $(CFLAGS) $(CXXFLAGS)
+ 
+@@ -79,20 +79,20 @@
+ endef
+ $(foreach TARGET,$(TARGETS_TMP),$(eval $(call INCLUDE_RULE,$(TARGET))))
+ 
+-.PHONY: clean
+-clean: $(addprefix clean-,$(TARGETS)) clean-docs
+-	$(Q)rm -rf $(BUILDDIR)
+-
+-.PHONY: distclean
+-distclean: clean
+-	$(Q)rm -f $(TARGET_OS)-config.h Makefile.local
+-	$(Q)rm -rf $(BUILDDIR)
++#.PHONY: clean
++#clean: $(addprefix clean-,$(TARGETS)) clean-docs
++#	$(Q)rm -rf $(BUILDDIR)
++
++#.PHONY: distclean
++#distclean: clean
++#	$(Q)rm -f $(TARGET_OS)-config.h Makefile.local
++#	$(Q)rm -rf $(BUILDDIR)
+ 
+-.PHONY: install
+-install: install-pre $(addprefix install-,$(TARGETS))
++#.PHONY: install
++#install: install-pre $(addprefix install-,$(TARGETS))
+ 
+-.PHONY: strip
+-strip: $(addprefix strip-,$(TARGETS))
++#.PHONY: strip
++#strip: $(addprefix strip-,$(TARGETS))
+ 
+ $(TARGET_OS)-config.h: configure
+ 	@echo "restarting configure for $(TARGET_OS)"
+@@ -176,12 +176,12 @@
+ run-configure:
+ 	$(Q)$(CONFIGURE_PREFIX) ./configure $(CONFIGURE_OPTIONS)
+ 
+-include build/data.mk
+-include build/install.mk
+-include build/lang.mk
+-include build/maps.mk
++#include build/data.mk
++#include build/install.mk
++#include build/lang.mk
++#include build/maps.mk
+ include build/models.mk
+-include build/various.mk
++#include build/various.mk
+ 
+ ifeq ($(TARGET_OS),android)
+ .PHONY: clean-android
+Index: ufoai-data-2.5/build/models.mk
+===================================================================
+--- ufoai-data-2.5.orig/build/models.mk	2014-07-27 22:00:31.561063655 +0200
++++ ufoai-data-2.5/build/models.mk	2014-07-27 22:00:31.557063656 +0200
+@@ -1,6 +1,6 @@
+ MODELDIR ?= base/models
+ 
+-UFOMODEL = ./$(ufomodel_FILE)
++UFOMODEL = /usr/bin/ufomodel
+ UFOMODEL_PARAMS = -mdx -overwrite -v
+ 
+ MODELS_MD2 := $(shell find $(MODELDIR) -name "*.md2")
+@@ -28,7 +28,7 @@
+ #MDXS     := $(MDXS_MD2) $(MDXS_MD3) $(MDXS_OBJ) $(MDXS_DPM)
+ MDXS     := $(MDXS_MD2) $(MDXS_MD3) $(MDXS_DPM)
+ 
+-models: ufomodel $(MDXS)
++models: $(MDXS)
+ 
+ $(MDXS_MD2): %.mdx: %.md2
+ $(MDXS_MD3): %.mdx: %.md3

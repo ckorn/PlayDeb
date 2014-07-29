@@ -1,5 +1,11 @@
-ufoai-data (2.4-1~getdeb1) oneiric; urgency=low
+ufoai-data (2.5-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 24 Apr 2012 18:55:17 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 Jul 2014 21:59:01 +0200
+
+ufoai-data (2.5-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Markus Koschany <apo@gambaru.de>  Mon, 30 Jun 2014 18:00:12 +0200

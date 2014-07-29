@@ -2,41 +2,24 @@ Source: ufoai-data
 Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50~)
-Standards-Version: 3.9.1
-Homepage: http://ufoai.sf.net
-Vcs-Svn: https://ufoai.svn.sourceforge.net/svnroot/ufoai/ufoai/branches/ufoai_2.3
-
-Package: ufoai-server-data
-Section: games
-Priority: optional
-Architecture: all
-Depends: ${misc:Depends}
-Recommends: ufoai-server
-Description: Server data for UFO: Alien Invasion
- "UFO: Alien Invasion" is a game inspired by the XCOM "UFO" series.
- .
- This package contains parts of the UFO:AI game data (maps, scripts
- and config files) which are needed for running game servers.
+Uploaders: Markus Koschany <apo@gambaru.de>
+Build-Depends: debhelper (>= 9)
+Build-Depends-Indep: ufoai-tools (>= 2.5),
+                     zip
+Standards-Version: 3.9.5
+Homepage: http://ufoai.org
 
 Package: ufoai-data
-Section: games
-Priority: optional
 Architecture: all
-Depends: ufoai-server-data (= ${source:Version}), ${misc:Depends}
-Recommends: ufoai
-Description: Data for UFO: Alien Invasion
- "UFO: Alien Invasion" is a game inspired by the XCOM "UFO" series.
- .
- This package contains rest of the non-optional game data for UFO:AI:
- models, units, sound effects, etc.
-
-Package: ufoai-music
-Section: games
-Priority: optional
 Depends: ${misc:Depends}
-Architecture: all
-Suggests: ufoai
-Description: Music for UFO: Alien Invasion
- This package contains the music for UFO:AI.  It is recommended to
- fully experience the game, but not required.
+Suggests: ufoai,
+          ufoai-uforadiant
+Description: UFO: Alien Invasion (data package)
+ UFO: Alien Invasion is a squad-based tactical strategy game in the tradition
+ of the old X-COM PC games. It combines military realism with hard
+ science-fiction and the weirdness of an alien invasion. The carefully
+ constructed turn-based system gives you pin-point control of your squad while
+ maintaining a sense of pace and danger.
+ .
+ This package contains hundreds of models, images and shader files for the game
+ UFO: Alien Invasion.
