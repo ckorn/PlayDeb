@@ -1,0 +1,33 @@
+Source: ufoai-music
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Markus Koschany <apo@gambaru.de>
+Build-Depends: debhelper (>= 9)
+Build-Depends-Indep: zip
+Standards-Version: 3.9.5
+Homepage: http://ufoai.org
+
+Package: ufoai-music
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: ufoai,
+          ufoai-server
+Description: UFO: Alien Invasion -- music files
+ It is the year 2084. You control a secret organisation charged with defending
+ Earth from a brutal alien enemy. Build up your bases, prepare your team, and
+ dive head-first into the fast and flowing turn-based combat.
+ .
+ This package contains music files for the game UFO: Alien Invasion.
+
+Package: ufoai-sound
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: ufoai,
+          ufoai-server
+Description: UFO: Alien Invasion -- sound files
+ It is the year 2084. You control a secret organisation charged with defending
+ Earth from a brutal alien enemy. Build up your bases, prepare your team, and
+ dive head-first into the fast and flowing turn-based combat.
+ .
+ This package contains sound files for the game UFO: Alien Invasion.
