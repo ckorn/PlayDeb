@@ -1,0 +1,4 @@
+?package(flare):needs="X11" \
+        section="Games/Adventure" \
+        title="flare" \
+        command="/usr/games/flare"

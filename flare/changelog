@@ -1,0 +1,120 @@
+flare (0.19-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version (LP: #1351831)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 03 Aug 2014 14:19:22 +0200
+
+flare (0.18-1) unstable; urgency=low
+
+  [ Jan-Hendrik Peters ]
+  * New upstream version 0.18
+
+  [ Manuel A. Fernandez Montecelo ]
+  * Bump Policy Standards-Version to 3.9.4 (no changes needed)
+  * Change maintaner address
+  * Remove obsolete "DM-Upload-Allowed: yes"
+
+ -- Manuel A. Fernandez Montecelo <mafm@debian.org>  Wed, 08 May 2013 21:53:39 +0100
+
+flare (0.17.1-1~exp1) experimental; urgency=low
+
+  [ Jan-Hendrik Peters ]
+  * New upstream version
+
+  [ Manuel A. Fernandez Montecelo ]
+  * Bump Policy Standards-Version to 3.9.3 (no changes needed)
+  * debhelper compatibility level set to 9 (brings fortified builds and other
+    goodies), dependencies change accordingly
+  * Depending on fonts (liberation and unifont) rather than installing the
+    embedded ones
+  * Review of debian/copyright for the new version, documenting licenses of
+    included fonts, updating URLs, copyright file format
+  * Updated watch file
+
+ -- Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>  Fri, 28 Dec 2012 00:44:42 +0000
+
+flare (0.15.1-1) unstable; urgency=low
+
+  [ Jan-Hendrik Peters <hennr@hennr.name> ]
+  * New upstream release (Closes: #646455)
+    - Imported Upstream version 0.15.1 [76cb190]
+  * Added new build dependency: libsdl-ttf2.0-dev
+
+  [ Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com> ]
+  * Remove stuff in debian/ now present upstream:
+    - flare.desktop (now in distribution/flare.desktop.in)
+    - flare-icon.png (installed by CMake from art_src/logo/flare_logo.svg), and
+      debian/source/include-binaries (created because of this icon)
+  * debian/rules:
+    - No need for "override_dh_fixperms" with this upstream
+    - Now it doesn't contain the master CMakeLists.txt on build, so no need for
+      overrides to "dh_auto_configure", "dh_auto_build" or "dh_auto_clean"
+      (already commented out); nor "--builddirectory=build" to the base "dh"
+      template.
+    - "override_dh_install" to include --fail-missing (to avoid not installing
+      new files by mistake, in this package with the data changing so often)
+  * debian/copyright: minor updates, e.g. changes to dir names and clarifying
+    that files are under GPLv3/CC-BY-SAv3 or later (not just 3.0)
+  * Update package descriptions (text taken from upstream's README)
+
+ -- Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>  Mon, 26 Dec 2011 22:12:48 +0000
+
+flare (0.14.1-5) unstable; urgency=low
+
+  [ Jan-Hendrik Peters <hennr@hennr.name> ]
+  * Correcting path to icon in the menu file
+
+ -- Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>  Tue, 15 Nov 2011 22:12:48 +0000
+
+flare (0.14.1-4) unstable; urgency=low
+
+  * Installing .desktop file in the proper directory, otherwise it doesn't work
+  * Quell lintian warnings:
+    - latest-debian-changelog-entry-without-new-date: fix date of entry for
+      version 0.14.1-3, it was set to one hour too early and didn't notice any
+      lintian warning before uploading
+    - duplicate-short-description: Improving description of packages flare and
+      flare-data
+
+ -- Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>  Mon, 14 Nov 2011 19:48:16 +0000
+
+flare (0.14.1-3) unstable; urgency=low
+
+  * Disabling the override of dh_fixperms at the moment, it doesn't
+    seem to work on buildd machines.  Better a lintian warning that
+    not being able to build in all architectures...
+
+ -- Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>  Sat, 22 Oct 2011 15:26:07 +0100
+
+flare (0.14.1-2) unstable; urgency=low
+
+  * Simplifying debian/rules by using specific flags controlling the
+    directories to use for building.
+  * Fixing in debian/rules the way to remove executable permissions to
+    a PNG file, so it doesn't break on buildd machines (it was working
+    fine in pbuilder, though).
+  * Disabled the automatic re-generation of the single man page, the
+    man page is already provided in its proper form and can be
+    regenerated from time to time -- no need for the added complexity
+    of overriding dh_installman in debian/rules.  As a consequence,
+    remove the xsltproc and docbook-* build-deps (XML is not being
+    used for anything else).
+
+ -- Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>  Sat, 22 Oct 2011 14:26:09 +0100
+
+flare (0.14.1-1) unstable; urgency=low
+
+  [ Jan-Hendrik Peters <hennr@hennr.name> ]
+  * Initial release (Closes: #622288)
+  * Added CC-BY-SA text to debian/copyright
+  * This is my first Debian package :)
+
+  [ Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com> ]
+  * Recompressed the original tarball as .xz, goes down from ~120MB to
+    ~78MB of space
+  * Created a separate package for data
+  * Minor modifications to the rules file to improve some commands
+    (e.g. the way to clean/remove files)
+  * Added .desktop file
+
+ -- Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>  Tue, 18 Oct 2011 18:49:56 +0200

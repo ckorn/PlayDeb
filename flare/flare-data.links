@@ -1,0 +1,9 @@
+usr/share/games/flare/default/mods					usr/share/games/flare/mods
+usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf		usr/share/games/flare/fonts/LiberationSans-Regular.ttf
+usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf		usr/share/games/flare/fonts/LiberationSans-Bold.ttf
+usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf		usr/share/games/flare/fonts/LiberationSans-Italic.ttf
+usr/share/fonts/truetype/unifont/unifont.ttf				usr/share/games/flare/default/mods/fantasycore/fonts/unifont-6.3.ttf
+usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf		usr/share/games/flare/default/mods/fantasycore/fonts/LiberationSans-Bold.ttf
+usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf		usr/share/games/flare/default/mods/fantasycore/fonts/LiberationSans-Regular.ttf
+usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf		usr/share/games/flare/default/mods/fantasycore/fonts/LiberationSans-Italic.ttf
+usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf		usr/share/games/flare/default/mods/default/fonts/LiberationSans-Regular.ttf
