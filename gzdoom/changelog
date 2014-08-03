@@ -1,3 +1,9 @@
+gzdoom (1.8.6-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 02 Aug 2014 23:48:26 +0200
+
 gzdoom (1.8.5+git140624-1~getdeb1) trusty; urgency=medium
 
   * Upload to PlayDeb

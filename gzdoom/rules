@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-fmodrevision = 37
+fmodrevision = 40
 
 ifeq ($(DEB_HOST_ARCH), amd64)
 LIB64 = 64
