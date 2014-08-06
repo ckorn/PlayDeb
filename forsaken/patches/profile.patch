@@ -1,0 +1,14 @@
+# disable profile
+Index: forsaken-1.18+git20140805/Makefile
+===================================================================
+--- forsaken-1.18+git20140805.orig/Makefile	2014-08-05 21:51:16.767489847 +0200
++++ forsaken-1.18+git20140805/Makefile	2014-08-05 22:36:56.815466454 +0200
+@@ -19,7 +19,7 @@
+ DEBUG=1
+ 
+ # might as well leave gprof support on by default as well
+-PROFILE=1
++PROFILE=0
+ 
+ # use this if you want to build everything statically
+ STATIC=0

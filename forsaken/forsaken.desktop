@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Forsaken
+Exec=/usr/games/forsaken
+Icon=forsaken
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=projectx

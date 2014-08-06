@@ -1,0 +1,4 @@
+projectx		usr/lib/games/forsaken
+debian/scripts/forsaken	usr/games
+debian/forsaken.desktop	usr/share/applications
+debian/forsaken.png	usr/share/pixmaps

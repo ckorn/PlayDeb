@@ -1,0 +1,10 @@
+data/bgobjects		usr/share/games/forsaken/data
+data/levels		usr/share/games/forsaken/data
+data/models		usr/share/games/forsaken/data
+data/offsets		usr/share/games/forsaken/data
+data/sound		usr/share/games/forsaken/data
+data/textures		usr/share/games/forsaken/data
+data/txt		usr/share/games/forsaken/data
+debian/configs		usr/share/games/forsaken
+debian/pilots		usr/share/games/forsaken
+scripts			usr/share/games/forsaken

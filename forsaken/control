@@ -1,0 +1,34 @@
+Source: forsaken
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               liblua5.1-0-dev,
+               libminiupnpc-dev,
+               libsdl1.2-dev,
+               libopenal-dev,
+               libpng12-dev,
+               lua-socket-dev,
+               libenet-dev
+Standards-Version: 3.9.5
+Homepage: http://fly.thruhere.net/
+
+Package: forsaken
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         forsaken-data (= ${source:Version})
+Description: Single/multiplayer 6DoF first person shooter
+ Is a single/multiplayer 6DoF first person shooter.
+ The game play is generally fast, fun, and arcade like.
+ This lends it self to high paced competitive gameplay.
+
+Package: forsaken-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Single/multiplayer 6DoF first person shooter (data package)
+ Is a single/multiplayer 6DoF first person shooter.
+ The game play is generally fast, fun, and arcade like.
+ This lends it self to high paced competitive gameplay.
+ .
+ (This package contains the data files).
