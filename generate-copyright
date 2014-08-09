@@ -17,26 +17,6 @@ EOF
 # "Red-Eclipse" summary license, indented
 sed -e 's/^/\ /' -e 's/^\ $/\ \./' doc/license.txt >> debian/copyright-new
 
-# Reason for being "non-free"
-cat <<EOF >> debian/copyright-new
-Disclaimer:
- This package is not part of Debian due to missing "sources" for artwork, audio,
- models, etc.
- .
- If you read the DFSG to also require "source" for all media content (and most
- people in Debian do), it implies that for example images created via GIMP
- would need to have the original xcf-files available, models created in
- Blender would need to have the original blend-files, music created by
- combining samples in audacity would need to have the original samples
- available, and the corresponding audacity project file, etc.
- .
- Much of the data for redeclipse does fail this requirement. I've guesstimated
- that for Red Eclipse, it might be possible to get the "source" for maybe 30%
- of the media content, with considerable effort and time spent. I felt that it
- would not be a particularly useful exercise, and decided not to do so, at
- least for the time being.
-EOF
-
 # Remove duplicated Format: line and insert upstream license dep5 file
 sed '/Format:.*/d' doc/all-licenses.txt >> debian/copyright-new
 
