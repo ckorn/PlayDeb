@@ -1,9 +1,9 @@
 Also directly enter the paths. Searching them will not work.
-Index: stuntrally-2.2.1/source/vdrift/pathmanager.cpp
+Index: stuntrally-2.4/source/vdrift/pathmanager.cpp
 ===================================================================
---- stuntrally-2.2.1.orig/source/vdrift/pathmanager.cpp	2014-04-06 16:55:56.945570451 +0200
-+++ stuntrally-2.2.1/source/vdrift/pathmanager.cpp	2014-04-06 16:55:56.941570451 +0200
-@@ -163,6 +163,11 @@
+--- stuntrally-2.4.orig/source/vdrift/pathmanager.cpp	2014-08-08 23:40:01.013247378 +0200
++++ stuntrally-2.4/source/vdrift/pathmanager.cpp	2014-08-08 23:40:01.009247378 +0200
+@@ -136,6 +136,11 @@
  	CreateDir(DataUser(), error_output);  // user data
  
  
@@ -15,7 +15,7 @@ Index: stuntrally-2.2.1/source/vdrift/pathmanager.cpp
  	// Find game data dir and defaults config dir
  	char *datadir = getenv("STUNTRALLY_DATA_ROOT");
  	if (datadir)
-@@ -204,6 +209,7 @@
+@@ -177,6 +182,7 @@
  			if (!game_data.empty() && !game_config.empty())  break;
  		}
  	}
