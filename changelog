@@ -1,12 +1,12 @@
 redeclipse-data (1.4-3) unstable; urgency=medium
 
-  * Team upload.
+  [ Markus Koschany ]
   * Update copyright file. Add missing public-domain licenses.
     Remove obsolete font license.
   * Move redeclipse-data to the main archive because it fully complies with the
     DFSG. (Closes: #740565)
 
- -- Markus Koschany <apo@gambaru.de>  Sun, 27 Jul 2014 13:27:05 +0200
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 09 Aug 2014 18:32:07 +0200
 
 redeclipse-data (1.4-2) unstable; urgency=low
 
