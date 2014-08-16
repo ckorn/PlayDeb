@@ -1,3 +1,12 @@
+manaplus (1:1.4.8.16-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: floor item position if tile height is not zero.
+    fix: allow context menu in outfits window in all places.
+    add: upload log button in settings.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 16 Aug 2014 19:49:49 +0200
+
 manaplus (1:1.4.8.2-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
