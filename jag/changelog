@@ -1,3 +1,9 @@
+jag (0.3.2-1~getdeb2) trusty; urgency=medium
+
+  * Remove debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 16 Aug 2014 00:23:57 +0200
+
 jag (0.3.2-1~getdeb1) precise; urgency=low
 
   * New upstream version

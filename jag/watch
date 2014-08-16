@@ -1,3 +1,0 @@
-version=3
-http://zulu309.server4you.de/redirectors/jag.html \
-    (?:.*/)?jag-([\d\.]+)-src\.(?:zip|xz|gz|bz2)

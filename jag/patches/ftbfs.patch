@@ -1,0 +1,14 @@
+# add X11 lib to linker flag
+Index: jag-0.3.2/Game.pro
+===================================================================
+--- jag-0.3.2.orig/Game.pro	2014-08-16 00:23:53.000000000 +0200
++++ jag-0.3.2/Game.pro	2014-08-16 00:41:12.180675857 +0200
+@@ -10,7 +10,7 @@
+     datas.path = /usr/share/games/jag
+     datas.files = data
+     INSTALLS += datas
+-    LIBS += -lXrandr
++    LIBS += -lXrandr -lX11
+ }
+ win32: {
+     TARGET = ../bin/jag

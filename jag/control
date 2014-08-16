@@ -10,7 +10,7 @@ Build-Depends: debhelper (>= 9),
                qt4-dev-tools,
                libqt4-opengl-dev,
                libxrandr-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://jag.xlabsoft.com/index.php
 
 Package: jag
