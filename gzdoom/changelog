@@ -1,3 +1,9 @@
+gzdoom (2.0.02-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 19 Aug 2014 19:54:11 +0200
+
 gzdoom (1.8.6-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
