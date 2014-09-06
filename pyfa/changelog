@@ -1,3 +1,37 @@
+pyfa (1.4.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    -Database:
+    --Updated to Hyperion 1.0
+    -New:
+    --"Last Updated" added to HTML export
+    --Ctrl/Cmd+F toggles search box and sets focus, enabling search for
+    modules / fits without mouse intervention
+    --"Hide/Show Empty Groups" extended to Category view; icon less opaque if
+    filtering is disabled
+    --Deployables added to market, allowing users to add them to a fits
+    cargohold
+    --Prices included in Drone and Cargo bays
+    --Jam Chance added to Sensor Strength tooltip if ECM is projected
+    --Ability to turn off network calls in preferences.
+    --Add "Open in Ship Browser" to fitting context menu
+    -Fixed:
+    --Info mindlink / sensor integrity fixes (#144)
+    --[Inno Setup] Fixed crash when using Windows Installer with pyfa already
+    running (#120)
+    --Various layout fixes when running under Linux
+    --Proxy support has been added / fixed for all network calls
+    --Attribute modifiers not showing in edge cases (#154)
+    --Case where attributes were loaded for incorrect item (#139)
+    --Capital shield rigs affect capital shield boosters (#151)
+    --Some ships which originally were vanity variations (but no longer are)
+    were added to Limited Issue Group (#136)
+    -Technical:
+    --New Network service has been written to consolidate all HTTP requests
+    into one place (#135)
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 31 Aug 2014 14:07:54 +0200
+
 pyfa (1.3.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
