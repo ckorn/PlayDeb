@@ -1,3 +1,279 @@
+megamek (0.39.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    v0.39.1 (2014-08-26 14:56 UTC)
+    + Patch [#458]: Highlighting FOV options
+    + Patch [#462]: Forcing redirected system.out and sys.err to respect
+    flush
+    + Data: New Images and some date fixes
+    + Added entity attribute neverDeployed to the MUL files
+    + Bug [#4189] Princess throws NPE (in exp branch)
+    + Feature [#1269]: Allow changing button order for phase displays
+    + Feature: Added an FPS counter that is toggleable via advanced options
+    + Data: Unit Fixes and New Images.
+    + Data: New Images.
+    + Data: Starting to change Source Names to match TRO for easier
+    reference.
+    + Bug [#4193]: Princess NPE: Exception in thread "Packet Pump"
+    java.lang.NullPointerException
+    + Feature: Added the font_color attribute to the UI_Element tag in skin
+    specs
+    + Feature: Plain skin; now if an icon for a border or button fails to
+    load, the element falls back to the paintComponent method of its parent,
+    which enables a plain skin to be specified by leaving out all icons.
+    + Feature: Added ability to select a skin specification file in the
+    client settings dialog. Note: this only takes effect before a game is 
+    started
+    + Feature: SkinSpecification/MegamekBorder now supports a no border mode
+    + Feature: SkinSpec/MegamekButton now supports scaled background images
+    in addition to tiled ones
+    + Bug [#4190]: Nova/Watchdog CEWS projects a 6 hex ECM field instead of 3
+    + Data: New Images,Unit Fixes, and RAT fixes
+    + Bug [#4199]: Movement impossible due to infinite recursion/stack
+    overflow
+    + Better error handling for skin selection: in the client dialog it will
+    check to see if the skin file failed to load and if so notify the user
+    and reinit the old skin. Error logging for failed parsing is also better. 
+    Finally, if a SkinSpecification is requested when no SkinSpec is
+    initialized, a default value is returned that will effectively force a
+    "plain" skin.
+    + Refactored BoardView1 to move it to its own package and refactored a
+    lot of inner classes to their own classes/files.
+    + Rewrote BoardView1.drawMinefields(): now instead of iterating through
+    all visible coords, it iterates through all mined coords and checks to see
+    if they are visible.
+    + Adjusted default values for ADVANCED_KEY_REPEAT_DELAY and
+    ADVANCED_KEY_REPEAT_RATE
+    + Bug [#4196]: Princess Fires on Crew Killed Vehicles
+    + Bug [#4203]: Poor indication when aeros are low or out of fuel
+    + Bug [#4201]: Initiative Issues with mek/vee lance and inf/proto move
+    multi options
+    + Data: New Images
+    + Data: Part 2 of Source Name change to match TRO for easier reference.
+    + Bug: Flare rounds missing from Mutators.
+    + Feature: Added flare sprites, to indicate the locations of flares
+    + Patch [#460]: Merged changes from experimental: New shortest path
+    finders + Longest path finder + fixed bug with jump movement envelope.
+    + Bug [#4204]: Game.addEntity allows adding of duplicate Entity IDs
+    + Feature: Added maximal movement modifiers envelope.
+    + Bug: movement envelope and movement modifiers sprites not scaling when
+    changing zoom levels
+    + Data: New Images and some equipment date/name fixes.
+    + Fix: Faster path finding for aeros on ground.(Longest path still takes
+    >20sec)
+    + Data: New Images
+    + Feature: Smarter path finding for Princess
+    + Data: New Images
+    + Bug: Princess violates stacking restrictions
+    + Bug: Windows does not allow double quotes in filenames, so fluff images
+    for any unit that has a model using them will not work. Fixed by stripping
+    the double quotes from the models of such units, allowing the filenames to
+    be exact without them. Example:
+    Unit: Grasshopper GHR-7K "Gravedigger"
+    Fluff Filename: Grasshopper GHR-7K Gravedigger.gif
+    + Data: New Images and some unit fixes. Includes additional wreck images.
+    + Data: New Images and fix for bug [#4209]
+    + Bug: Added a new game event: GameVictoryEvent, which has a corresonding
+    GameListener.gameVictory method. This event is called when the
+    PHASE_VICTORY is ending, but before Game.reset is called. This fixes a
+    bug with MekHQ (and likely MekWars as well)
+    + Bug: NPE in princess precognition when after a mechwarrior is picked by
+    a mech
+    + Data: New Images
+    + PlayerSettingsDialog now displays the name of the player being
+    configured
+    + Server sends a chat to all players when a player changes their
+    player-wide initiative bonus
+    + PlayerSettingsDialog can now be accessed mid-game so that players can
+    adjust their settings, like player-wide initiative bonus. This is to help
+    support conditional initiative bonuses, like in Total Chaos
+    + Feature [#1264]: Display proper probabilities with Natural Aptitude:
+    Gunnery
+    + Feature [#1270]: RFE: Please add simple Pilot data to MechDialog
+    + Bug [#4207]: Aero fighters lose ability to take off once landed
+    + Feature [#1198]: View last round's report option (View -> Round Report
+    now displays previous rounds as well as the current round)
+    + Feature [#1199]: Make addbot default to princess bot
+    + Feature [#1271]: Unofficial Heavy Wood PSR should not apply to
+    Inf/BA/Protos
+    + Feature [#1197]: Random Army Dialog remembers settings (except selected
+    RAT)
+    + Feature [#1197]: Random Army Dialog remembers selected RAT
+    + Data: New Images - So ends DBs NBP Project Pt#1
+    + Bug: Ortho graphic icons (bridges) drawn too low when on negative
+    elevation
+    + Bug: Princess.die could throw an NPE
+    + Bug: CustomMechDialog getNextEntity(boolean) returning entities for
+    other players
+    From a discussion with Arlith, we decided that perhaps this was intended
+    if no blind drop options are on. However, we also decided to limit it to the
+    units owned by the player of the currently displayed units so that you will
+    only cycle through the entities of one player at a time
+    + Bug: BattleMaster BLR-1G and "chassis" not working quite right due to
+    misnamed files
+    + Bug: NPE in MtfFile.java when the file that is being parsed is empty
+    + Feature [#1158]: Map Editor: Re-size maps
+    + Refactored Compute.get*ECMFieldSize() methods to be cleaner and a bit
+    more efficient
+    + Updated Game to cache which Coords have Entitys in them, and what those
+    Entitys are. Now Game.getEntities(Coords) uses the cache to return much
+    quicker. This is important for games with a large number of Entitys, as
+    Game.getEntities(Coords) can be called frequently (like when computing
+    LoS)
+    + Bug: View -> Round Report was displaying the phase report for the
+    current round instead of the round report
+    + Bug [#4215]: Long delays between turns for large battles with
+    double-blind/sensors
+    + Bug [#4213]: Deployment Not Following Initiative Options
+    + Feature [#1147]: Simultaneous Deployment Option
+    See the simultaneous_move_deploy.txt in the docs folder
+    + Feature [#1192]: Simultaneous movement
+    See the simultaneous_move_deploy.txt in the docs folder
+    + Bug [#4194]: Hang in Firing Phase When Using Battle Armor with
+    Non-Standard AP
+    Weapon (v39.0)
+    + Bug: RandomSkillDialog hides player selection combo box with long
+    player names
+    + Bug: Mek/Vee lance rules not working in deployment phase
+    + Bug: NPE in RandomArmyDialog if no RAT is selected
+    + Data: New Images and RATs for Steiner 2765 (Start of DBNDPII)
+    + Bug [#4217] Vedette (Standard) appears in Xotl tables as Vedette (AC2)
+    + Bug [#4218]: J. Edgar displaying wrong in Unit List
+    + Bug: Simultaneous Deployment not working because of missing code in
+    Client.java
+    + Bug [#4219]: Issues with stacking violations and MovePaths (Temporary
+    Hack Fix)
+    + Bug [#4220]: Client issues with Load and LocalLoad Commands
+    + Bug: SocketException: Broken Pipe when disconnecting from server
+    + Bug [#4224]: Client still thinks an Entity is in the dest hex during
+    movement phase
+    + Feature: Natural Aptitude Piloting
+    + Feature [#1237]: Save/Load game settings in Megamek
+    + Added consideration for Natural Aptitude Piloting & Gunnery to Princess
+    (I think I got it all)
+    + Data: New Images, Osteon Fix, Wreck Set Fix and RAT fixes
+    + Added consideration for Natural Aptitude Piloting & Gunnery to TestBot
+    + Bug: Simultaneous Movement/Deployment unit selected resetting when
+    other player deploys
+    + Bug: Simultaneous Deployment stacking violations from units moving when
+    another hex is clicked
+    + Refactored MechDisplay to UnitDisplay to better reflect that we have
+    more unit types
+    + Bug: Fixing missing l10n entry: InfantryMapSet.ArmorXXXXXXXXXXXX (the
+    entry being looked for was wrong)
+    + Bug [#4194]: BA APmounts specified in MULs could cause a crash
+    + Bug [#4226]: Long delays between phases for large battles with
+    double-blind/sensors
+    + Bug: NPE when selecting C3 choices for masters in unit customization
+    dialog
+    + Bug: Loading a MUL file with specified C3 networks caused doubling or
+    slave Entities, and C3 networks were not connected
+    + Bug: Compute.inVisualRange wasn't considering SO Advanced AA fire
+    + Bug [#4228]: VTOLs Invalid Targets for ASF on Map
+    + Bug: updated ECM drawing code to not draw EC(C)M fields for transported
+    units (according to current errata)
+    + Bug [#4227]: VTOL Turrets do not show in MM Unit Display
+    + Feature [#1279]: Introduction of custom quirks file
+    + Data: New Images
+    + Added the following new quirks: Battle Fists, Overhead Arms, Compact
+    Mech, Low-Mounted Arms, Oversized and Static Ammo Feed. None of these are
+    coded yet, they are purely display values only. Also updated the 
+    cannonUnitQuirks.xml file to include these new quirks
+    + Feature Request [features:#1265] Princess Bot and magma
+    + Added code to make Princess fire hole-punchers before crit-seekers
+    + Added new unofficial option to ignore TW pg. 109 rules requiring
+    primary targets being in front arc
+    + Bug: ArrayIndexOutOfBoundsException in Princess's
+    PathRanker.validatePaths()
+    if the list of paths to validate is empty to begin with
+    + Refactored Entity.getDamageLevel() and associated methods to allow for
+    a boolean flag checkCrew so that crew life checking can be ignored
+    + Bug [#4233]: IllegalStateException From LongestPathFinder.
+    + Bug: Fixed a few things with VGL submunitions, allow them to be
+    selectable, however VGLs are still non-functional
+    + Bug: Smoke does not dissapate unless TO starting fires is on
+    + Feature: Updated UI to handle weapons that have automatic targets (like
+    vehicular grenade launchers)
+    + Feature: Vehicular grenade launchers now report as auto-hits
+    + Bug: Fixed stack overflow with UI automatic target code
+    + Added support for a new Smoke type: Chaff, to be used for VGL chaff
+    grenades
+    + Refactored code relating to SmokeCloud, including replacing magic
+    numbers with static final values in SmokeCloud
+    + Bug: Princess FireControl was using the smoke level directly to compute
+    to-hit penalties, since smoke level doesn't directly correspond to
+    light/heavy, this wasn't quite accurate. Fixed the code and expanded the
+    firecontrol unit tests to incorporate tests for other smoke levels
+    + Bug: data/images/hexs/trasparent/lismoke.png should be lismokes.gif
+    + Updated hex tilesets to include a chaff icon, just used light smoke
+    icon as a placeholder
+    + Bug: Communications equipment always generating ECCM, regardless of
+    mode
+    + More support for Chaff: chaff now considered as ECM that effects all
+    players
+    + Server now updates client's list of smoke clouds: added a new packet
+    type, this is required because chaff type SmokeClouds generate ECM, which
+    the client needs to know about
+    + ECMInfo now supports having a null owner, which indicates that it
+    should always be considered as coming from an enemy
+    + Feature [#1281]: Implement vehicular grenade launcher ammo
+    functionality
+    + Updated VGL Ammo names, default ammo name has Fragmentation in it
+    + Changed UnitDisplay so that the ammo dropdown displays the name of the
+    ammo for one-shot weapons, the combo box remains disabled
+    + Bug: Missing break statements in Mech.decodeCritical, causing VGLs to
+    write out incorrectly
+    + Bug: BLKMechFile VGL parsing out of sync with Mtf.parseCrits
+    + Updated Mounted.getDesc() to add in the facing for VGLs
+    + Updated BLKFile.loadEquipment to handle parsing facing for VGLs, also
+    updated various overrides for other applicable units
+    + Bug [#4235]: ECM Effects being summed instead of maxed across multiple
+    hexes
+    + Bug [#4235]: ECM Range using < instead of <=
+    + Bug [#4230]: ECM strength and ECCM strength now tracked separately in
+    ECMInfo
+    + Bug: ECCM no longer effects Stealth armor, per errata
+    + Bug [#4229] ECCM covering the source of an ECM field should negate the
+    ECM field
+    + Data: New Images/Unit Fixes few new Camos.
+    v0.39.0 (2014-07-02 21:14 UTC)
+    + Night-time modifiers now effected by hexes being illuminated by a
+    searchlight
+    + Bug: Team initiative not properly calculated when negative values are
+    present (such as for team constant init bonus, or player init bonus, etc)
+    + Bug [#4161]: Run MP allowed after moving backwards and failing a fall
+    PSR
+    + Bug [#4144]: 'Mechs landing in rubble without PSR
+    + Bug [#4164]: EntityLilstFile prints N/A ammo slots for tanks
+    + Bug [#4165]: Issue with reinforcing after done has been selected
+    + Bug [#4158]: Issues launching docked Dropships from Warships
+    + Bug [#4154]: WarShip docking bug (minor)
+    + Bug [#4146]: Aeros can no longer select munition types for LB-X
+    (errata)
+    + TestAero will now mark Aeros with special munitions are illega
+    (errata), except for cluster munitions on LB-X's (can only use cluster), and
+    artemis capable munitions for Artemis-linked launchers. NARC, MMLs and ATMs
+    are exempt
+    + Bug [#4148]: bug in dfa hitting water
+    + Bug [#4168]: Careful movement penalties should not apply to jump/VTOL
+    MP
+    + Bug [#4171]: Erroneous "C3 Network Too Big" message with 12 'Mechs
+    networked
+    + Bug [#4172]: Incorrect punch to-hit modifier for 'Mechs built without
+    hands and lower arms
+    + Bug [#4173]: Incorrect attacker falling damage from successful DFA
+    + Bug [#4174]: Cannot hit the legs of a 'Mech that is standing in depth 1
+    water when the attacker is underwater
+    + Bug [#4184]: Move multi options don't keep lances of the same unit type
+    + Bug [#4184]: Various "move multi" options do not work together
+    + Bug [#4175] Mek/Vee Lance movement incompatible with Infantry Move even
+    + Bug: Inf and Protos move multi option could cause extra turns to be
+    added
+    + Bug [#4178]: Must click in the wrong place to use the Unit Overview on
+    maps that are thinner than the MegaMek window
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 31 Aug 2014 17:38:56 +0200
+
 megamek (0.38.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
