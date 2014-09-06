@@ -1,3 +1,17 @@
+manaplus (1:1.4.8.30-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: evol desktop file translations.
+    add: OpenGL 4.5 features detection.
+    add: OpenGL texture compression bptc.
+    add: dyecmd to windows version.
+    add: missing values into outfits, chat, minimap context menu.
+    add: chat command /nextTab and /prevTab.
+    add: many different chat commands what mapped to existing actions.
+    add: allow load itemcolors.xml in legacy servers.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 30 Aug 2014 20:11:14 +0200
+
 manaplus (1:1.4.8.16-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
