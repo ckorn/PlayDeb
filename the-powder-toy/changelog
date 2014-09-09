@@ -1,3 +1,40 @@
+the-powder-toy (90.2-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    Version 90.2
+
+     Fixed Fix tags button being too long
+     Fixed Fix DRAY's tmp mode
+     Changed Make tpt.selectedl/r/a and tpt.brushx/y writable, add
+     tpt.brushID
+     Changed Command key can be used instead of control key on OS X
+
+    Version 90.0
+
+     Fixed Fix freeze when selecting PROP tool from element search
+     Fixed Fix liquids not stabilizing in radial gravity
+     Fixed Fix possible crashes with SOAP, FIGH, and TNT
+     Changed Less overpowered QRTZ in bunkers
+     Changed Make the upvote button bigger
+     Changed Add velocity cap to prevent NaN pressure
+     Changed PROT now goes through portals
+     Changed Disable deco on PHOT
+     Changed Changes to FILT / PHOT
+     Changed Output console messages to stdout.txt on windows
+     Added Experimental 64bit Linux version
+     Added Improvements to SPRK graphics, allow toggling of SPRK glow in
+     render options
+     Added Add "Open data folder" button in settings window
+     Added New element: GRVT. Energy particle which Newtonian Gravity
+     Added Lua code highlighting in the console
+     Added New wall: airblock wall
+     Added New element: DRAY. Ray type element which replicates particles in
+     front of it
+     Added Fix for crashes on older versions of OS X, move save data into
+     Application Support
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 06 Sep 2014 23:50:26 +0200
+
 the-powder-toy (89.2-1~getdeb1) precise; urgency=low
 
   * New upstream version
