@@ -3,7 +3,8 @@ Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: debhelper (>= 9),
-               libsdl1.2debian
+               libsdl1.2debian,
+               libxxf86vm1
 Homepage: http://www.urbanterror.info
 Standards-Version: 3.9.5
 

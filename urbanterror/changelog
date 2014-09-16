@@ -1,3 +1,9 @@
+urbanterror (1:4.2.019-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 15 Sep 2014 19:13:45 +0200
+
 urbanterror (1:4.2.018-1~getdeb2) trusty; urgency=medium
 
   * Fix debian/watch file.

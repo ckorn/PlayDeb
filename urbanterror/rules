@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+PKD   = $(abspath $(dir $(MAKEFILE_LIST)))
+PKG   = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SSource)
+VER  ?= $(shell dpkg-parsechangelog -l$(PKD)/changelog -SVersion | cut -d- -f1 | cut -d: -f2)
 
 # This has to be exported to make some magic below work.
 export DH_OPTIONS
@@ -25,3 +26,28 @@ else
 #	 cp UrTUpdater.x86_64 debian/urbanterror/usr/lib/games/UrTUpdater
 	 cp Quake3-UrT-Ded.x86_64 debian/urbanterror-server/usr/lib/games/urbanterror/Quake3-UrT-Ded
 endif
+
+## http://wiki.debian.org/onlyjob/get-orig-source
+.PHONY: get-orig-source
+get-orig-source: $(PKG)_$(VER).orig.tar.xz $(info I: $(PKG)_$(VER))
+	@
+
+$(PKG)_$(VER)$(DTYPE).orig.tar.xz:
+	@echo "# Downloading..."
+	uscan --noconf --verbose --rename --destdir=$(CURDIR) --check-dirname-level=0 --force-download --download-version $(VER) $(PKD)
+	$(if $(wildcard $(PKG)-$(VER)),$(error $(PKG)-$(VER) exist, aborting..))
+	@echo "# Extracting..."
+	unzip *.zip \
+	&& mv UrbanTerror42 $(PKG)-$(VER) \
+	|| $(RM) -r $(PKG)-$(VER)
+	@echo "# Cleaning-up..."
+	cd $(PKG)-$(VER) \
+	&& find . -depth -type f -iname '*.dll' -exec $(RM) {} \; -printf 'removed %p\n' \
+	&& find . -depth -type f -iname '*.exe' -exec $(RM) {} \; -printf 'removed %p\n' \
+	&& find . -depth -type f -iname '*.reg' -exec $(RM) {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -iname 'Quake3-UrT.app' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -iname 'UrTUpdater.app' -exec $(RM) -r {} \; -printf 'removed %p\n'
+	@echo "# Packing..."
+	find -L "$(PKG)-$(VER)" -xdev -type f -print | sort \
+	| XZ_OPT="-6v" tar -caf "$(PKG)_$(VER)$(DTYPE).orig.tar.xz" -T- --owner=root --group=root --mode=a+rX \
+	&& $(RM) -r "$(PKG)-$(VER)"
