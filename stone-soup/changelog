@@ -1,3 +1,17 @@
+stone-soup (0.15.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    * Assorted crash fixes.
+    * Monsters don't benefit from player throwing skill.
+    * Monsters no longer flee at random on re-entering a level after a short
+    time.
+    * Several messages correctly no longer appear for out-of-sight monster
+      actions.
+    * Dithmenos' stealth bonus works properly again.
+    * Several spell icons that missed the initial 0.15 release.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 16 Sep 2014 21:47:24 +0200
+
 stone-soup (0.15.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
