@@ -4,15 +4,14 @@ Priority: optional
 Maintainer: Christoph Korn <c_korn@gmx.de>
 Build-Depends: debhelper (>= 9),
                scons,
-               libsdl-gfx1.2-dev,
-               libsdl-image1.2-dev,
-               libsdl-net1.2-dev,
+               libsdl2-dev,
+               libsdl2-image-dev,
                libvorbis-dev,
-               libglew-dev,
-               libasio-dev,
-               libboost-regex-dev,
+#               libglew-dev,
+#               libasio-dev,
+#               libboost-regex-dev,
                libbullet-dev,
-               libarchive-dev,
+#               libarchive-dev,
                libcurl4-gnutls-dev
 Standards-Version: 3.9.5
 Homepage: http://vdrift.net/

@@ -1,3 +1,21 @@
+vdrift (20140922-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Thu, 25 Sep 2014 21:46:11 +0200
+
+vdrift (20140811-1~getdeb2) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Wed, 17 Sep 2014 21:32:46 +0200
+
+vdrift (20140811-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Jhonny Oliveira <jhonny.oliveira@gmail.com>  Sun, 31 Aug 2014 21:32:46 +0200
+
 vdrift (20120722-1~getdeb6~trusty) trusty; urgency=low
 
   * Rebuild for trusty

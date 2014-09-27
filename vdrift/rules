@@ -6,6 +6,7 @@ override_dh_auto_clean:
 	find . -iname "*.o" -type f -delete
 	rm -f .sconsign.dblite build/vdrift
 	rm -rf .sconf_temp
+	rm -rf data/locale/*/LC_MESSAGES/vdrift.mo
 
 override_dh_auto_configure:
 
