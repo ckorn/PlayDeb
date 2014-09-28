@@ -1,3 +1,23 @@
+manaplus (1:1.4.9.27-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: chat creation on hercules.
+    fix: away mode if was disconnect from server.
+    add: support hecules packet version 201500.
+    add: option for compile with/without tmwa/evol support.
+    add: different hercules packets.
+    add: ignore list for logging packets.
+    add: formatting in debug packets log.
+    add: names for sent packets in debug log.
+    add: skills cooldown.
+    add: theme colors for disabled text.
+    add: basic support for chat objects.
+    add: mercenary, pets, homunculus basic support (hercules).
+    add: actions for targeting mercenaries, pets, homunculuses.
+    add: error text for skills.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 27 Sep 2014 21:03:04 +0200
+
 manaplus (1:1.4.9.14-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
