@@ -1,0 +1,11 @@
+diff -Nurpd a/source/src/Makefile b/source/src/Makefile
+--- a/source/src/Makefile	2013-11-10 00:12:11.000000000 +0100
++++ b/source/src/Makefile	2014-03-24 23:34:38.834829472 +0100
+@@ -1,5 +1,5 @@
+-CXXFLAGS= -O3 -fomit-frame-pointer
+-CXX=clang++	# Use clang++, as g++ optimizations cause crashes...
++CXXFLAGS= -O3 -g
++CXX=g++	# Use clang++, as g++ optimizations cause crashes...
+ override CXXFLAGS+= -Wall -fsigned-char
+ 
+ PLATFORM= $(shell uname -s)

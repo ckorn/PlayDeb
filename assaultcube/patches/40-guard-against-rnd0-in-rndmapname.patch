@@ -1,0 +1,40 @@
+From 7482f259cf0cdf64bf173f2c83d4d14b108fa066 Mon Sep 17 00:00:00 2001
+From: Pascal de Bruijn <pmjdebruijn@pcode.nl>
+Date: Thu, 27 Mar 2014 18:20:21 +0100
+Subject: [PATCH] main: guard against rnd(0) in rndmapname
+
+starting ac_client from the wrong working directory, where
+packages/maps/official/*.cgz globs to an empty list, we
+trigger a SIGFPE because of rnd(0):
+
+Program received signal SIGFPE, Arithmetic exception.
+0x000000000044d37d in rndmapname () at main.cpp:897
+897	        char *map = newstring(maps[rnd(maps.length())]);
+---
+ source/src/main.cpp | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/source/src/main.cpp b/source/src/main.cpp
+index 1f48696..448b6c3 100644
+--- a/source/src/main.cpp
++++ b/source/src/main.cpp
+@@ -895,9 +895,13 @@ const char *rndmapname()
+ {
+     vector<char *> maps;
+     listfiles("packages/maps/official", "cgz", maps);
+-    char *map = newstring(maps[rnd(maps.length())]);
+-    maps.deletearrays();
+-    return map;
++    if (maps.length() > 0)
++    {
++        char *map = newstring(maps[rnd(maps.length())]);
++        maps.deletearrays();
++        return map;
++    }
++    else return "";
+ }
+ 
+ extern void connectserv(char *, int *, char *);
+-- 
+1.9.1
+
