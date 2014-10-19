@@ -20,9 +20,6 @@ override_dh_auto_build:
 	convert sprites/sht2a0.gif freedm.xpm
 	sed -i 's/cyan/None/' freedm.xpm
 
-override_dh_clean:
-	dh_clean freedm.xpm freedoom1.xpm freedoom2.xpm
-
 override_dh_installdocs:
 	dh_installdocs -A CREDITS README.adoc
 

@@ -9,10 +9,9 @@ Build-Depends: debhelper (>= 9),
                deutex,
                gsfonts,
                imagemagick,
-               python (>= 2.4)
+               python (>= 2.4),
+               asciidoc
 Standards-Version: 3.9.5
-Vcs-Git: https://github.com/freedoom/freedoom.git
-Vcs-Browser: https://github.com/freedoom/freedoom
 Homepage: http://freedoom.github.io/
 
 Package: freedm
@@ -48,7 +47,7 @@ Description: free game files for the 3D game DOOM
  modifications ("mods") that have been released by the continually-active
  community since 1993.
  .
- Freedoom aims to create “IWAD” files for the engine, each of these
+ Freedoom aims to create "IWAD" files for the engine, each of these
  is an independent sub-project representing different aims towards game
  design and compatibility with Doom mods:
  .

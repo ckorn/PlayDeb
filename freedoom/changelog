@@ -1,3 +1,9 @@
+freedoom (0.9-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 14 Oct 2014 15:06:01 +0200
+
 freedoom (0.8+git140623-1~getdeb1) trusty; urgency=medium
 
   * Upload to PlayDeb.
