@@ -1,3 +1,9 @@
+tales-of-majeyal (1.2.4-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 18 Oct 2014 19:39:45 +0200
+
 tales-of-majeyal (1.2.3-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
