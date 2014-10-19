@@ -1,1 +1,2 @@
 enable-hardening-relro.patch
+fakeroot.patch

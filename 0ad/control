@@ -33,10 +33,10 @@ Homepage: http://play0ad.com/
 Package: 0ad
 Architecture: amd64 armel armhf i386 kfreebsd-amd64 kfreebsd-i386
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: 0ad-data (>= 0.0.16),
-         0ad-data (<< 0.0.17),
-         0ad-data-common (>= 0.0.16),
-         0ad-data-common (<< 0.0.17),
+Depends: 0ad-data (>= 0.0.17),
+         0ad-data (<< 0.0.18),
+         0ad-data-common (>= 0.0.17),
+         0ad-data-common (<< 0.0.18),
          ${misc:Depends},
          ${shlibs:Depends}
 Description: Real-time strategy game of ancient warfare
