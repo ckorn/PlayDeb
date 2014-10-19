@@ -1,0 +1,20 @@
+# just fakeroot
+Index: 0ad-0.0.17/build/workspaces/update-workspaces.sh
+===================================================================
+--- 0ad-0.0.17.orig/build/workspaces/update-workspaces.sh	2014-09-25 03:54:58.000000000 +0200
++++ 0ad-0.0.17/build/workspaces/update-workspaces.sh	2014-10-18 21:00:33.533930555 +0200
+@@ -1,9 +1,10 @@
+ #!/bin/sh
+ 
+-if [ "$(id -u)" = "0" ]; then
+-   echo "Running as root will mess up file permissions. Aborting ..." 1>&2
+-   exit 1
+-fi
++# it is just fakeroot
++#if [ "$(id -u)" = "0" ]; then
++#   echo "Running as root will mess up file permissions. Aborting ..." 1>&2
++#   exit 1
++#fi
+ 
+ die()
+ {
