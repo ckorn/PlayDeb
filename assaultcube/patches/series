@@ -1,0 +1,4 @@
+20-fix-clean-target.patch
+30-build-with-g++.patch
+40-guard-against-rnd0-in-rndmapname.patch
+50-add-anisotropic-filtering.patch

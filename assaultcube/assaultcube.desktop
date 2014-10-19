@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=AssaultCube
+Comment=Realistic first-person-shooter
+Icon=assaultcube
+TryExec=assaultcube
+Exec=assaultcube
+Categories=Game;ActionGame;

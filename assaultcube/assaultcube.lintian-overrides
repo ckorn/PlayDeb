@@ -1,0 +1,4 @@
+# The content of the manpages are CC-BY-NC-SA, and hence provided by
+# assaultcube-data instead, which is non-free.
+assaultcube: binary-without-manpage usr/games/assaultcube
+assaultcube: binary-without-manpage usr/games/assaultcube-server

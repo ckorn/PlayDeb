@@ -1,0 +1,23 @@
+Description: Clean Enet in AC clean target
+ On Debian we recompile the Enet submodule as well, hence we need to clean it
+ properly.
+ .
+ This may also be useful when recompiling oneself.
+Author: Martin Erik Werner <martinerikwerner@gmail.com>
+Forwarded: https://sourceforge.net/tracker/?func=detail&aid=3430222&group_id=123597&atid=697091
+Last-Update: 2011-10-28
+
+--- a/source/src/Makefile
++++ b/source/src/Makefile
+@@ -128,9 +128,9 @@
+ 	-$(MAKE) -C ../enet all
+ 
+ clean-enet: ../enet/Makefile
+-	$(MAKE) -C ../enet/ clean
++	$(MAKE) -C ../enet/ distclean
+ 
+-clean:
++clean:	clean-enet
+ 	-$(RM) $(CLIENT_PCH) $(CLIENT_OBJS) $(SERVER_OBJS) $(MASTER_OBJS) ac_client ac_server ac_master
+ #	-$(MAKE) -C ../enet/ clean
+ 

@@ -1,0 +1,8 @@
+source/src/ac_client /usr/lib/games/assaultcube
+source/src/ac_server /usr/lib/games/assaultcube
+debian/scripts/assaultcube /usr/games
+debian/scripts/assaultcube-server /usr/games
+debian/assaultcube.png /usr/share/pixmaps
+debian/assaultcube.desktop /usr/share/applications 
+config /usr/lib/games/assaultcube
+packages /usr/lib/games/assaultcube
