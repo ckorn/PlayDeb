@@ -2,14 +2,21 @@ Source: pdiaspora-client
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50), libsdl1.2-dev, libsdl-image1.2-dev,
- libsdl-ttf2.0-dev, libsdl-gfx1.2-dev, libgloox-dev, libcurl4-gnutls-dev
-Standards-Version: 3.8.4
+Build-Depends: debhelper (>= 9),
+               libsdl1.2-dev,
+               libsdl-image1.2-dev,
+               libsdl-ttf2.0-dev,
+               libsdl-gfx1.2-dev,
+               libgloox-dev,
+               libcurl4-gnutls-dev
+Standards-Version: 3.9.5
 Homepage: http://www.nighsoft.com
 
 Package: pdiaspora-client
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, pdiaspora-client-data (= ${source:Version})
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         pdiaspora-client-data (= ${source:Version})
 Description: 2D Space Trading MMORPG
  Project Diaspora is a 2D Space Trading MMORPG for Windows
  and Linux. Project Diaspora is a High quality,
