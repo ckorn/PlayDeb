@@ -1,3 +1,9 @@
+vdrift (20140926-1~getdeb2~utopic) utopic; urgency=medium
+
+  * Rebuild for utopic
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 28 Oct 2014 20:41:00 +0100
+
 vdrift (20140926-1~getdeb1) trusty; urgency=medium
 
   * New upstream version

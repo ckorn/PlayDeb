@@ -7,11 +7,7 @@ Build-Depends: debhelper (>= 9),
                libsdl2-dev,
                libsdl2-image-dev,
                libvorbis-dev,
-#               libglew-dev,
-#               libasio-dev,
-#               libboost-regex-dev,
                libbullet-dev,
-#               libarchive-dev,
                libcurl4-gnutls-dev
 Standards-Version: 3.9.5
 Homepage: http://vdrift.net/
