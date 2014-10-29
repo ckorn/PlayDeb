@@ -1,3 +1,9 @@
+irrlamb (0.1.1-1~getdeb4~utopic) utopic; urgency=medium
+
+  * Rebuild for utopic
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 28 Oct 2014 20:06:15 +0100
+
 irrlamb (0.1.1-1~getdeb3~trusty) trusty; urgency=low
 
   * Rebuild for trusty
