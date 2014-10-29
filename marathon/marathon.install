@@ -1,4 +1,0 @@
-debian/scripts/marathon		usr/games
-debian/marathon.desktop		usr/share/applications
-debian/marathon.png		usr/share/pixmaps
-marathon			usr/share/games

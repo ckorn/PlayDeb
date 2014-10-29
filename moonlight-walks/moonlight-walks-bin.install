@@ -1,8 +1,0 @@
-common				usr/share/games/moonlight-walks
-doc				usr/share/games/moonlight-walks
-game				usr/share/games/moonlight-walks
-renpy				usr/share/games/moonlight-walks
-moonlight.py			usr/share/games/moonlight-walks
-debian/scripts/moonlight-walks	usr/games
-debian/moonlight-walks.png	usr/share/pixmaps
-debian/moonlight-walks.desktop	usr/share/applications

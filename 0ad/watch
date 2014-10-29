@@ -1,3 +1,0 @@
-version=3
-opts=dversionmangle=s/\+(debian|dfsg|ds|deb)(\.\d+)?$// \
-http://releases.wildfiregames.com/0ad-([\d\.]+)-.*-unix-build\.tar\.xz

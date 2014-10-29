@@ -1,3 +1,0 @@
-version=3
-http://build.getdeb.net/redirectors/marathon.html \
-    (?:.*/)?MarathonInfinity-([\d]+)-Data\.zip

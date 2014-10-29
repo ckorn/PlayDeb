@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Marathon
-Exec=/usr/games/marathon
-Icon=/usr/share/pixmaps/marathon.png
-Terminal=false
-Type=Application
-Categories=Game;
