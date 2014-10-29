@@ -1,3 +1,9 @@
+heroes-of-wesnoth (0.1.2-1~getdeb2~utopic) utopic; urgency=medium
+
+  * Rebuild for utopic
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 28 Oct 2014 20:04:08 +0100
+
 heroes-of-wesnoth (0.1.2-1~getdeb1) trusty; urgency=low
 
   * Initial release (LP: #1307143)
