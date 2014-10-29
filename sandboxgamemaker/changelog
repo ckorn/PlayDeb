@@ -1,3 +1,9 @@
+sandboxgamemaker (2.8.2-1~getdeb3~utopic) utopic; urgency=medium
+
+  * Rebuild for utopic
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 28 Oct 2014 20:48:42 +0100
+
 sandboxgamemaker (2.8.2-1~getdeb2~saucy) saucy; urgency=low
 
   * Rebuild for saucy
