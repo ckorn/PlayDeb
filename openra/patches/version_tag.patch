@@ -1,72 +1,72 @@
 Set the correct version.
-Index: openra-20140722/mods/cnc/mod.yaml
+Index: openra-20141029/mods/cnc/mod.yaml
 ===================================================================
---- openra-20140722.orig/mods/cnc/mod.yaml	2014-07-22 20:26:37.623635500 +0200
-+++ openra-20140722/mods/cnc/mod.yaml	2014-07-22 20:27:49.987633348 +0200
+--- openra-20141029.orig/mods/cnc/mod.yaml
++++ openra-20141029/mods/cnc/mod.yaml
 @@ -1,7 +1,7 @@
  Metadata:
  	Title: Tiberian Dawn
  	Description: Join the Global Defense Initiative or the Brotherhood of Nod in our\nrecreation of the classic game that started it all.\n\nTiberian Dawn modernizes the original Command & Conquer gameplay\nby introducing features from later games, including per-factory\nproduction queues, unit veterancy, and capturable tech structures.
 -	Version: {DEV_VERSION}
-+	Version: release-20140722
++	Version: release-20141029
  	Author: the OpenRA Developers
  
  Folders:
-Index: openra-20140722/mods/ra/mod.yaml
+Index: openra-20141029/mods/ra/mod.yaml
 ===================================================================
---- openra-20140722.orig/mods/ra/mod.yaml	2014-07-22 20:26:37.623635500 +0200
-+++ openra-20140722/mods/ra/mod.yaml	2014-07-22 20:28:14.811632609 +0200
+--- openra-20141029.orig/mods/ra/mod.yaml
++++ openra-20141029/mods/ra/mod.yaml
 @@ -1,7 +1,7 @@
  Metadata:
  	Title: Red Alert
  	Description: In a world where Hitler was assassinated and the Third Reich never\nexisted, the Soviet Union seeks power over all of Europe.  Allied\nagainst this Evil Empire, the free world faces a Cold War turned hot.\n\nRed Alert fuses the quick and fun gameplay of the original\nC&C: Red Alert, with balance improvements and new gameplay\nfeatures inspired by modern RTS games.
 -	Version: {DEV_VERSION}
-+	Version: release-20140722
++	Version: release-20141029
  	Author: the OpenRA Developers
  
  Folders:
-Index: openra-20140722/mods/d2k/mod.yaml
+Index: openra-20141029/mods/d2k/mod.yaml
 ===================================================================
---- openra-20140722.orig/mods/d2k/mod.yaml	2014-07-22 20:26:37.623635500 +0200
-+++ openra-20140722/mods/d2k/mod.yaml	2014-07-22 20:28:07.535632826 +0200
+--- openra-20141029.orig/mods/d2k/mod.yaml
++++ openra-20141029/mods/d2k/mod.yaml
 @@ -1,7 +1,7 @@
  Metadata:
  	Title: Dune 2000
  	Description: Three great houses fight for the precious spice, melange.\nHe who controls the spice controls the universe!\n\nOur work in progress Dune 2000 recreation brings modern\ngameplay improvements into the Dune universe.\n\nFuture versions of OpenRA will incorporate more of the missing\nunique features from this classic game.
 -	Version: {DEV_VERSION}
-+	Version: release-20140722
++	Version: release-20141029
  	Author: the OpenRA Developers
  
  Folders:
-Index: openra-20140722/mods/ts/mod.yaml
+Index: openra-20141029/mods/ts/mod.yaml
 ===================================================================
---- openra-20140722.orig/mods/ts/mod.yaml	2014-07-22 20:26:37.623635500 +0200
-+++ openra-20140722/mods/ts/mod.yaml	2014-07-22 20:28:20.427632442 +0200
+--- openra-20141029.orig/mods/ts/mod.yaml
++++ openra-20141029/mods/ts/mod.yaml
 @@ -1,7 +1,7 @@
  Metadata:
  	Title: Tiberian Sun
  	Description: Developer stub, not yet ready for release!
 -	Version: {DEV_VERSION}
-+	Version: release-20140722
++	Version: release-20141029
  	Author: the OpenRA Developers
  
  Folders:
-Index: openra-20140722/mods/modchooser/mod.yaml
+Index: openra-20141029/mods/modchooser/mod.yaml
 ===================================================================
---- openra-20140722.orig/mods/modchooser/mod.yaml	2014-07-22 20:26:37.623635500 +0200
-+++ openra-20140722/mods/modchooser/mod.yaml	2014-07-22 20:28:51.591631515 +0200
+--- openra-20141029.orig/mods/modchooser/mod.yaml
++++ openra-20141029/mods/modchooser/mod.yaml
 @@ -1,6 +1,6 @@
  Metadata:
  	Title: Mod Chooser
 -	Version: {DEV_VERSION}
-+	Version: release-20140722
++	Version: release-20141029
  	Author: The OpenRA Developers
  
  Folders:
-@@ -49,4 +49,4 @@
- 		Font:FreeSansBold.ttf
- 		Size:10
+@@ -51,4 +51,4 @@ Fonts:
  
--LobbyDefaults:
+ LobbyDefaults:
+ 
+-SpriteFormats: ShpTD
 \ No newline at end of file
-+LobbyDefaults:
++SpriteFormats: ShpTD
