@@ -1,3 +1,9 @@
+openra (20141029-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 30 Oct 2014 21:16:38 +0100
+
 openra (20140722-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
