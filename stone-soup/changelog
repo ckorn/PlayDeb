@@ -1,3 +1,37 @@
+stone-soup (0.15.2-1~getdeb2) trusty; urgency=medium
+
+  * New upstream version
+    * Assorted crash fixes, bug fixes, and display cleanups.
+    * Always weight formicid weapon acquirement towards two-handed weapons.
+    * Allow in-game updates to the mon_glyph option to change the glyph.
+    * Allow the option syntax of mon_glyph = <mon1>:<mon2> in order to set
+    the color/glyph of one monster using the base values of another monster.
+    * In tiles, the tile_player_tile option allows you to specify an
+    arbitrary monster tile to display for your character. The options
+    tile_weapon_offsets and tile_shield_offsets can be used to adjust
+    the player weapon and shield location when using these custom tiles.
+    * For use with tile_player_tile: the old orb guardian tile, a new monster
+    vampire tile, and weapon/shield offsets for various monster tiles.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 30 Oct 2014 21:39:15 +0100
+
+stone-soup (0.15.2-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    * Assorted crash fixes, bug fixes, and display cleanups.
+    * Always weight formicid weapon acquirement towards two-handed weapons.
+    * Allow in-game updates to the mon_glyph option to change the glyph.
+    * Allow the option syntax of mon_glyph = <mon1>:<mon2> in order to set
+    the color/glyph of one monster using the base values of another monster.
+    * In tiles, the tile_player_tile option allows you to specify an
+    arbitrary monster tile to display for your character. The options
+    tile_weapon_offsets and tile_shield_offsets can be used to adjust
+    the player weapon and shield location when using these custom tiles.
+    * For use with tile_player_tile: the old orb guardian tile, a new monster
+    vampire tile, and weapon/shield offsets for various monster tiles.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 21 Oct 2014 20:39:06 +0200
+
 stone-soup (0.15.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
