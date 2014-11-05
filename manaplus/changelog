@@ -1,3 +1,17 @@
+manaplus (1:1.4.10.25-1~getdeb2~utopic) utopic; urgency=medium
+
+  * New upstream version
+    add: extent chat tabs theming.
+    add: channels support (hercules).
+    add: whisper and channel commands to autocomplete.
+    add: different packets support (hercules).
+    add: bank window (hercules).
+    add: pickup item statuses (hercules).
+    add: multiline popup.
+    add: missing slots to equipment window.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 30 Oct 2014 21:02:15 +0100
+
 manaplus (1:1.4.10.11-1~getdeb2~utopic) utopic; urgency=medium
 
   * Rebuild for utopic
