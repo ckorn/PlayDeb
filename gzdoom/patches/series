@@ -1,0 +1,2 @@
+link-liboutput_sdl-against-SDL.patch
+link-liboutput_sdl.so-against-SDL.patch
