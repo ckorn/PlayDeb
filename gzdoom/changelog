@@ -1,3 +1,10 @@
+gzdoom (2.0.03-1~getdeb2) trusty; urgency=medium
+
+  * Apply patch for link against libsdl.
+  * Also apply fmod fixes.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 14 Nov 2014 21:27:39 +0100
+
 gzdoom (2.0.03-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
