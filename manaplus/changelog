@@ -1,3 +1,15 @@
+manaplus (1:1.4.11.8-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: dont show overhead text for chat channels messages.
+    add: invole chat commmands from skills.
+    add: update hercules version support to 20141022.
+    add: skill attribute to show skill always.
+    add: read first time chat commands from configuration file.
+    add: server type Evol2.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 10 Nov 2014 19:19:42 +0100
+
 manaplus (1:1.4.10.25-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
