@@ -12,6 +12,11 @@ rm -f $changelog
 dirname=fmodapi${version}linux
 fname=${dirname}.tar.gz
 
+if [ $1 = "getrevision" ] ; then
+    echo $pointversion | cut -d. -f3
+    exit 0
+fi
+
 # download fmod ex
 if [ ! -f $fname ] ; then
     wget "http://www.fmod.org/download/fmodex/api/Linux/$fname"
