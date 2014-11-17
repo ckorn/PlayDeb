@@ -1,3 +1,9 @@
+stuntrally (2.5-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 16 Nov 2014 20:57:59 +0100
+
 stuntrally (2.4-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
