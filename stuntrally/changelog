@@ -1,3 +1,9 @@
+stuntrally (2.5-1~getdeb2~utopic) utopic; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 16 Nov 2014 20:57:23 +0100
+
 stuntrally (2.4-1~getdeb2) utopic; urgency=medium
 
   * Rebuild for utopic
