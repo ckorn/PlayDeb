@@ -37,7 +37,7 @@ $(PKG)_$(VER)$(DTYPE).orig.tar.xz:
 	uscan --noconf --verbose --rename --destdir=$(CURDIR) --check-dirname-level=0 --force-download --download-version $(VER) $(PKD)
 	$(if $(wildcard $(PKG)-$(VER)),$(error $(PKG)-$(VER) exist, aborting..))
 	@echo "# Extracting..."
-	unzip *.zip \
+	tar xzf $(PKG)_$(VER)$(DTYPE).orig.tar.gz \
 	&& mv UrbanTerror42 $(PKG)-$(VER) \
 	|| $(RM) -r $(PKG)-$(VER)
 	@echo "# Cleaning-up..."
