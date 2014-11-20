@@ -1,3 +1,9 @@
+vdrift (20141020-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 19 Nov 2014 20:24:48 +0100
+
 vdrift (20140926-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
