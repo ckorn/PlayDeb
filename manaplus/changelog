@@ -1,3 +1,13 @@
+manaplus (1:1.4.11.22-1~getdeb2~utopic) utopic; urgency=medium
+
+  * New upstream version
+    fix: variant attribute in sprites xml with includes.
+    add: extend hercules and evol2 support.
+    add: update manaplus.cbp.
+    add: command option --server-type for set server type.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 22 Nov 2014 17:09:23 +0100
+
 manaplus (1:1.4.11.8-1~getdeb2~utopic) utopic; urgency=medium
 
   * New upstream version
