@@ -1,0 +1,13 @@
+# Defaults for wesnoth-1.12-server initscript
+# sourced by /etc/init.d/wesnoth-1.12-server
+# installed at /etc/default/wesnoth-1.12-server
+
+#
+# This is a POSIX shell fragment
+#
+
+# Additional options that are passed to the Daemon.
+# You will have to create the config file if you want to change the
+# default options that the server runs with.
+# See wesnothd-1.12(6) for the syntax of the configuration file.
+#DAEMON_OPTS="-c /etc/wesnothd-1.12.cfg"

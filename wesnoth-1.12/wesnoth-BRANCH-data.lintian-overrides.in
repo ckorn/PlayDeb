@@ -1,0 +1,7 @@
+# Wesnoth refuses to run if license file cannot be found; see #697933
+wesnoth-BRANCH-data: extra-license-file usr/share/games/wesnoth/BRANCH/data/COPYING.txt
+# Manually create symlinks because dh_link has problems with forming relative
+# links; see #461392
+wesnoth-BRANCH-data: symlink-should-be-relative usr/share/games/wesnoth/BRANCH/fonts/DejaVuSans.ttf /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+wesnoth-BRANCH-data: symlink-should-be-relative usr/share/games/wesnoth/BRANCH/fonts/DroidSansFallbackFull.ttf /usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf
+wesnoth-BRANCH-data: symlink-should-be-relative usr/share/games/wesnoth/BRANCH/fonts/DroidSansJapanese.ttf /usr/share/fonts/truetype/droid/DroidSansJapanese.ttf

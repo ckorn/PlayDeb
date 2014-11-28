@@ -1,0 +1,490 @@
+Source: wesnoth-1.12
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libsdl-image1.2-dev,
+               libfreetype6-dev,
+               libsdl-mixer1.2-dev,
+               libsdl-net1.2-dev,
+               libfribidi-dev,
+               libsdl1.2-dev,
+               libsdl-ttf2.0-dev (>= 2.0.8),
+               python-support,
+               libdbus-1-dev,
+               libboost-iostreams-dev,
+               libboost-test-dev,
+               libboost-regex-dev,
+               libboost-serialization-dev,
+               libboost-system-dev,
+               libboost-thread-dev,
+               libboost-program-options-dev,
+               libboost-locale-dev,
+               libboost-filesystem-dev,
+               libpango1.0-dev,
+               cmake (>= 2.6)
+Standards-Version: 3.9.5
+Uploaders: Gerfried Fuchs <rhonda@debian.org>,
+  Vincent Cheng <Vincentc1208@gmail.com>
+Homepage: http://wesnoth.org/
+
+Package: wesnoth-1.12-data
+Architecture: all
+Depends: ${misc:Depends},
+         fonts-dejavu-core
+Recommends: fonts-droid
+Suggests: wesnoth-1.12-music
+Description: data files for Wesnoth (branch 1.12)
+ This package contains the sound files and graphics for Wesnoth. It is required
+ for being able to play wesnoth or create maps with the editor.
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-core
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         wesnoth-1.12-data (= ${source:Version})
+Suggests: wesnoth
+Description: fantasy turn-based strategy game (branch 1.12)
+ This package contains the main program for wesnoth. It can be used to play
+ multiplayer games.  If you want to play campaigns you will have to install
+ them individually, but if you prefer to have all the official campaigns
+ installed please be advised to install the wesnoth-1.12 package which depends
+ on all of them.
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-core
+Architecture: all
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${binary:Version}),
+         wesnoth-1.12-data (= ${source:Version})
+Suggests: wesnoth
+Description: fantasy turn-based strategy game (metapackage)
+ This metapackage pulls in the core wesnoth package which allows you to play
+ using the latest stable version.
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-dbg
+Section: debug
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (= ${binary:Version}),
+         wesnoth-1.12-data (= ${source:Version})
+Description: fantasy turn-based strategy game (debugging symbols for branch 1.12)
+ This package contains the debugging symbols for the wesnoth binaries.
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12
+Architecture: all
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${binary:Version}),
+         wesnoth-1.12-core (<< ${binary:Version}.~),
+         wesnoth-1.12-data (= ${source:Version}),
+         wesnoth-1.12-httt (= ${source:Version}),
+         wesnoth-1.12-tsg (= ${source:Version}),
+         wesnoth-1.12-trow (= ${source:Version}),
+         wesnoth-1.12-ttb (= ${source:Version}),
+         wesnoth-1.12-ei (= ${source:Version}),
+         wesnoth-1.12-utbs (= ${source:Version}),
+         wesnoth-1.12-did (= ${source:Version}),
+         wesnoth-1.12-nr (= ${source:Version}),
+         wesnoth-1.12-sof (= ${source:Version}),
+         wesnoth-1.12-sotbe (= ${source:Version}),
+         wesnoth-1.12-l (= ${source:Version}),
+         wesnoth-1.12-aoi (= ${source:Version}),
+         wesnoth-1.12-thot (= ${source:Version}),
+         wesnoth-1.12-low (= ${source:Version}),
+         wesnoth-1.12-dm (= ${source:Version}),
+         wesnoth-1.12-dw (= ${source:Version})
+Recommends: wesnoth-1.12-music (= ${source:Version})
+Description: fantasy turn-based strategy game - complete suite (branch 1.12)
+ This package depends on the complete set of packages built from the wesnoth
+ source package but the server (which can be found in the
+ wesnoth-1.12-server package), most helpful if you always
+ want to have all the official campaigns installed.  If you only want to play
+ over the network with other players or want to play only a few campaigns you
+ just need to install the wesnoth-1.12-core package and
+ the wanted campaign packages.
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth
+Architecture: all
+Depends: ${misc:Depends},
+         wesnoth-1.12 (>= ${binary:Version}),
+         wesnoth-1.12-data (= ${source:Version})
+Description: fantasy turn-based strategy game - complete suite (metapackage)
+ This metapackage pulls in the complete set of the latest stable version, most
+ helpful if you always want to have all the official campaigns installed. If
+ you only want to play over the network with other players or want to play only
+ a few campaigns you just need to install the wesnoth-core package and the
+ wanted campaign packages.
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-music
+Architecture: all
+Depends: ${misc:Depends}
+Description: music files for Wesnoth (branch 1.12)
+ This package contains the music files for Wesnoth. It is not required but
+ gives nice background music and encouraged.
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-music
+Architecture: all
+Depends: ${misc:Depends},
+         wesnoth-1.12-music (= ${source:Version}),
+         wesnoth-1.12-data (= ${source:Version})
+Description: music files for Wesnoth (metapackage)
+ This metapackage pulls in the music package for use with the latest stable
+ version of wesnoth.
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-server
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         lsb-base
+Description: multiplayer network server for Wesnoth (branch 1.12)
+ This package contains the multiplayer network server for Wesnoth.  You need it
+ if you want to host multiplayer games on your computer and don't want to use
+ the official servers.
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-tools
+Architecture: all
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         ${python:Depends},
+         wesnoth-1.12-data (= ${source:Version})
+Enhances: wesnoth-1.12-core
+Description: tools for campaign developers for Wesnoth (branch 1.12)
+ This package contains various tools for Wesnoth that are especially useful for
+ campaign developers, including but not limited to scripts supporting the
+ generation and checking of WML (Wesnoth Markup Language).  You can find them
+ in the directory /usr/share/games/wesnoth/1.12/data/tools
+ after installation of the package.
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-httt
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "Heir to the Throne" official campaign for Wesnoth (branch 1.12)
+ This package contains the "Heir to the Throne" campaign for Wesnoth:
+ "Fight to regain the throne of Wesnoth, of which you are the legitimate
+ heir."
+ (Novice level, 23 scenarios.)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-tsg
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "The South Guard" official campaign for Wesnoth (branch 1.12)
+ This package contains the "The South Guard" campaign for Wesnoth:
+ "A young Knight, Deoran, is dispatched to take command of the South Guard...
+ Note: This campaign is designed as an introduction to Wesnoth. The 'Civilian'
+ difficulty level is aimed at first-time players."
+ (Novice level, 9 scenarios.)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-trow
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "The Rise of Wesnoth" official campaign for Wesnoth (branch 1.12)
+ This package contains the "The Rise of Wesnoth" campaign for Wesnoth:
+ "Lead Prince Haldric through the destruction of the Green Isle and across the
+ Ocean to establish the very kingdom of Wesnoth itself. The confrontation with
+ Lich-Lord Jevyan awaits..."
+ (Intermediate level, 24 scenarios.)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-ttb
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "A Tale of Two Brothers" official campaign for Wesnoth (branch 1.12)
+ This package contains the "A Tale of Two Brothers" campaign for Wesnoth:
+ "An evil mage is threatening the small village of Maghre and its inhabitants.
+ The village’s mage sends to his warrior brother for help, but not all goes as
+ planned. Can you help?"
+ (Novice level, 4 scenarios.)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-ei
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "The Eastern Invasion" official campaign for Wesnoth (branch 1.12)
+ This package contains the "The Eastern Invasion" campaign for Wesnoth:
+ "There are rumors of undead attacks on the eastern border of Wesnoth. You, an
+ officer in the Royal Army, have been sent to the eastern front to protect the
+ villagers and find out what is happening."
+ (Intermediate level, 16 scenarios.)"
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-utbs
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "Under the Burning Suns" official campaign for Wesnoth (branch 1.12)
+ This package contains the "Under the Burning Suns" campaign for Wesnoth:
+ "In the distant future a small band of elves struggles to survive amidst the
+ ruins of fallen empires. Lead your people out of the desert on an epic journey
+ to find a new home."
+ (Expert level, 10 scenarios.)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-did
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "Descent Into Darkness" official campaign for Wesnoth (branch 1.12)
+ This package contains the "Descent Into Darkness" campaign for Wesnoth:
+ "Learn the dark arts of necromancy in order to save your people from an orcish
+ incursion."
+ (Intermediate level, 12 scenarios.)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-nr
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "Northern Rebirth" official campaign for Wesnoth (branch 1.12)
+ This package contains the "Northern Rebirth" campaign for Wesnoth:
+ "For the people of Dwarven Doors the choice was stark: either drudge as
+ downtrodden slaves for the orcs until the end of their brief and miserable
+ lives, or risk all for freedom and rise up against their cruel overlords.
+ Little did they suspect that their struggle would be the hinge of great events
+ that might restore the Northlands to the glory they had once known."
+ (Expert level, 13 scenarios.)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-sof
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "The Sceptre of Fire" official campaign for Wesnoth (branch 1.12)
+ This package contains the "The Sceptre of Fire" campaign for Wesnoth:
+  "The land of Wesnoth's banner bold
+  Comes not from its own land;
+  It comes from Dwarfdom, grim and old
+  Made by a runesmith's hand.
+  So now I tell from whence it came -
+  The Fire-sceptre great -
+  And of the makers of the same,
+  Their tale I now relate..."
+ (Expert level, 9 scenarios.)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-sotbe
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "Son of the Black-Eye" official campaign for Wesnoth (branch 1.12)
+ This package contains the "Son of the Black-Eye" campaign for Wesnoth:
+ "Your father Karun Black-Eye was the greatest orcish leader that ever lived.
+ Now, as his son, it's up to you to thwart the selfish designs of the humans
+ who have broken the old agreements with the orcs and are bent upon taking your
+ lands. Unite the warring orcish tribes, bring together the Orcish Council and
+ call up the Great Horde to send the human-worms and their wose-born allies to
+ the land of the dead!"
+ (Expert level, 18 scenarios.)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-l
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "Liberty" official campaign for Wesnoth (branch 1.12)
+ This package contains the "Liberty" campaign for Wesnoth:
+ "As the shadow of civil war lengthens across Wesnoth, a band of hardy
+ marchlanders revolts against the tyranny of Queen Asheviere. To win their way
+ to freedom, they must defeat not just the trained blades of Wesnothian troops
+ but darker foes including orcs and undead."
+ (Intermediate level, 8 scenarios)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-aoi
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "An Orcish Incursion" official campaign for Wesnoth (branch 1.12)
+ This package contains the "An Orcish Incursion" campaign for Wesnoth:
+ "Defend the forests of the elves against the first orcs to reach the Great
+ Continent, learning valuable tactics as you do so."
+ (Novice level, 7 scenarios.)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-thot
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "The Hammer of Thursagan" official campaign for Wesnoth (branch 1.12)
+ This package contains the "The Hammer of Thursagan" campaign for Wesnoth:
+ "In the first years of the Northern Alliance, an expedition from Knalga seeks
+ out their kin at Kal Kartha and to learn the fate of the legendary Hammer of
+ Thursagan. The perils of their journey through the wild Northern Lands, though
+ great, pale beside the evil they will face at its end."
+ (Intermediate level, 11 scenarios.)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-low
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "Legend of Wesmere" official campaign for Wesnoth (branch 1.12)
+ This package contains the "Legend of Wesmere" campaign for Wesnoth:
+ "The tale of Kalenz, the High Lord who rallied his people after the second
+ orcish invasion of the Great Continent and became the most renowned hero in
+ the recorded history of the Elves."
+ (Intermediate level, 18 scenarios.)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-dm
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "Delfador's Memoirs" official campaign for Wesnoth (branch 1.12)
+ This package contains the "Delfador's Memoirs" campaign for Wesnoth:
+ "Wesnoth seems to be slipping inexorably into chaos, as marauding orcs pour
+ south across the Great River, and mysterious and deadly creatures roam the
+ night. Who is the shadowy Iliah-Malal? Can you defeat him before he destroys
+ all life in Wesnoth?"
+ (Intermediate level, 19 scenarios)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
+
+Package: wesnoth-1.12-dw
+Depends: ${misc:Depends},
+         wesnoth-1.12-core (>= ${wesnoth:Min-Version}),
+         wesnoth-1.12-core (<< ${wesnoth:Max-Version})
+Architecture: all
+Description: "Dead Water" official campaign for Wesnoth (branch 1.12)
+ This package contains the "Dead Water" campaign for Wesnoth:
+ "You are Kai Krellis, son and heir of the last merman king but only a child. A
+ necromancer is turning your subjects into undead slaves! Lead your people on a
+ mission to convince a powerful mer-sorceress to help you repel the invasion.
+ The oceans near the Northern Lands are perilous, so you will need cunning and
+ bravery to survive. But first you need to gain the respect of your troops!"
+ (Intermediate level, 10 scenarios)
+ .
+ Battle for control of villages, using variety of units which have advantages
+ and disadvantages in different types of terrains and against different types
+ of attacks.  Units gain experience and advance levels, and are carried over
+ from one scenario to the next in a campaign.
