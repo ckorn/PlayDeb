@@ -1,0 +1,65 @@
+wesnoth-1.8 (1:1.8.3-4) unstable; urgency=low
+
+    This version now finally brings the unversioned wesnoth and wesnoth-core
+    packages to ease upgrades. With the wesnoth package installed one will
+    be upgraded to the next stable branch of wesnoth when that gets released.
+    You can keep the wesnoth-1.8 package around at that time to continue
+    playing your old started campaigns.
+
+    Same with the wesnoth-core package. This will always keeps you up to date
+    with the core binaries and allows you to hand-select the campaigns you
+    want to play or can be used for multiplayer games without further
+    disturbance.
+
+    Please note that the old binaries get renamed for the benefit of setting
+    up an alternative system, so the old wesnoth version (if you still have it
+    installed) is called "wesnoth-old".
+
+ -- Gerfried Fuchs <rhonda@debian.at>  Wed, 18 Aug 2010 22:31:11 +0200
+
+wesnoth (1:1.6-1) unstable; urgency=low
+
+    Please be aware what a new stable upstream release of wesnoth means for
+    your save games: You won't be able to continue playing from them. The
+    reasons for those are several, not limited to these two bigger points:
+    - Most of all, balancing changes: Units might have different
+      characteristics and thus fights would end differently, or your units
+      could move to places they have never seen before (and weren't meant to).
+    - Most obvious, changes in the campaigns themself. A unit you kept from a
+      former scenario might not be in the campaign anymore, or a whole
+      scenario might have been added or removed somewhere in between. Map
+      changes also affect multiplayer games.
+
+    Again: You won't be able to continue playing your old save games from
+    older stable releases (e.g. 1.4.x). Further updates to 1.6.x will though
+    be compatible with this version.
+
+ -- Gerfried Fuchs <rhonda@debian.at>  Wed, 18 Mar 2009 17:27:36 +0100
+
+wesnoth (1:1.5.5-1) experimental; urgency=low
+
+    The meaning of the wesnoth package has changed: It is now the old
+    wesnoth-all package that pulls in all the campaigns. If you don't want
+    that and didn't use wesnoth-all before please switch to using the
+    wesnoth-core package. The switch was done to reduce the confusion of users
+    who wonder about where the campaigns are.
+
+ -- Gerfried Fuchs <rhonda@debian.at>  Mon, 06 Oct 2008 00:17:43 +0200
+
+wesnoth (1:1.4-1) unstable; urgency=low
+
+    Please be aware what a new stable upstream release of wesnoth means for
+    your save games: You won't be able to continue playing from them. The
+    reasons for those are several, not limited to these two bigger points:
+    - Most of all, balancing changes: Units might have different
+      characteristics and thus fights would end differently.
+    - Most obvious, changes in the campaigns themself. A unit you kept from a
+      former scenario might not be in the campaign anymore, or a whole
+      scenario might have been added or removed somewhere in between. Map
+      changes also affect multiplayer games.
+
+    Again: You won't be able to continue from your old save games with a new
+    stable upstream release like it happened with this update from the former
+    stable release 1.2 to this new one 1.4.
+
+ -- Gerfried Fuchs <rhonda@debian.at>  Wed, 02 Apr 2008 16:14:20 +0200

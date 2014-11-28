@@ -1,0 +1,22 @@
+#!/bin/sh
+# prerm script for wesnoth-1.12-core
+# Copyright 2010 by Gerfried Fuchs <rhonda@debian.at>
+# Licensed under WTFPLv2
+
+set -e
+
+setup_alternatives()
+{
+	update-alternatives --remove wesnoth /usr/games/wesnoth-1.12
+}
+
+
+case "$1" in
+	remove)
+		setup_alternatives
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0

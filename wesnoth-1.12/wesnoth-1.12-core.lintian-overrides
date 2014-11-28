@@ -1,0 +1,4 @@
+wesnoth-1.12-core: manpage-locale-dir-country-specific usr/share/man/en_GB/man6/wesnoth-1.12-nolog.6.gz
+wesnoth-1.12-core: manpage-locale-dir-country-specific usr/share/man/en_GB/man6/wesnoth-1.12-smallgui.6.gz
+wesnoth-1.12-core: manpage-locale-dir-country-specific usr/share/man/en_GB/man6/wesnoth-1.12.6.gz
+wesnoth-1.12-core: manpage-locale-dir-country-specific usr/share/man/en_GB/man6/wesnoth-1.12_editor.6.gz

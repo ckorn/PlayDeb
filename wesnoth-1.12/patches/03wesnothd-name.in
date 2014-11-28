@@ -1,0 +1,29 @@
+Author: Gerfried Fuchs <rhonda@debian.org>	vim:ft=diff:
+Description: Search for wesnothd-1.12 instead of plain wesnothd
+
+Index: wesnoth-1.12-1.12.0/src/game_preferences_display.cpp
+===================================================================
+--- wesnoth-1.12-1.12.0.orig/src/game_preferences_display.cpp
++++ wesnoth-1.12-1.12.0/src/game_preferences_display.cpp
+@@ -1489,7 +1489,7 @@ std::string show_wesnothd_server_search(
+ #ifndef WESNOTH_PREFIX
+ #define WESNOTH_PREFIX "/usr"
+ #endif
+-	const std::string filename = "wesnothd";
++	const std::string filename = "wesnothd-BRANCH";
+ 	std::string path = WESNOTH_PREFIX + std::string("/bin");
+ 	if (!filesystem::is_directory(path))
+ 		path = filesystem::get_cwd();
+Index: wesnoth-1.12-1.12.0/src/game_controller.cpp
+===================================================================
+--- wesnoth-1.12-1.12.0.orig/src/game_controller.cpp
++++ wesnoth-1.12-1.12.0/src/game_controller.cpp
+@@ -759,7 +759,7 @@ void game_controller::start_wesnothd()
+ {
+ 	const std::string wesnothd_program =
+ 		preferences::get_mp_server_program_name().empty() ?
+-		filesystem::get_program_invocation("wesnothd") : preferences::get_mp_server_program_name();
++		filesystem::get_program_invocation("wesnothd-BRANCH") : preferences::get_mp_server_program_name();
+ 
+ 	std::string config = filesystem::get_user_config_dir() + "/lan_server.cfg";
+ 	if (!filesystem::file_exists(config)) {

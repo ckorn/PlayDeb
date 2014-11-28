@@ -1,0 +1,21 @@
+#!/bin/sh
+# Copyright (C) 2009-2012 Gerfried Fuchs <rhonda@debian.org>
+# Licenced under WTFPLv2
+
+# Description: rebuild files from .in files
+#              This script will (re)generate the branched files from the
+#              corresponding .in files.
+#              To be called as "sh debian/branchcheck"
+
+set -e
+
+BRANCH=$(dpkg-parsechangelog | grep "^Version:" | cut -d" " -f2 | cut -d. -f1,2 | cut -d: -f2 | cut -d- -f1 | sed -e 's/[a-z].*//')
+BRANODOT=$(echo $BRANCH | tr -d .)
+
+for i in debian/*.in debian/patches/*.in; do
+	new=$(basename $i .in | sed -e s/BRANCH/$BRANCH/)
+	dir=$(dirname $i)
+	cp $i $dir/$new
+	sed -i -e "s/BRANCH/$BRANCH/g"   $dir/$new
+	sed -i -e "s/BRANODOT/$BRANODOT/g" $dir/$new
+done

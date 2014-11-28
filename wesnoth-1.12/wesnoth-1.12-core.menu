@@ -1,0 +1,14 @@
+?package(wesnoth-1.12-core): \
+ needs="X11" \
+ section="Games/Strategy" \
+ title="Battle for Wesnoth (1.12)" \
+ longtitle="Battle for Wesnoth (1.12) is a fantasy turn-based strategy game" \
+ command="/usr/games/wesnoth-1.12-nolog" \
+ icon="/usr/share/pixmaps/wesnoth-1.12-icon.xpm"
+?package(wesnoth-1.12-core): \
+ needs="X11" \
+ section="Games/Tools" \
+ title="Battle for Wesnoth Editor (1.12)" \
+ longtitle="Map editor for Battle for Wesnoth (1.12), a fantasy turn-based strategy game" \
+ command="/usr/games/wesnoth-1.12-nolog -e" \
+ icon="/usr/share/pixmaps/wesnoth-1.12_editor-icon.xpm"
