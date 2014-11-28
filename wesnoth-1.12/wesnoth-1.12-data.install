@@ -1,0 +1,33 @@
+icons/wesnoth-icon.png /usr/share/icons/hicolor/64x64/apps
+icons/wesnoth_editor-icon.png /usr/share/icons/hicolor/64x64/apps
+debian/tmp/usr/share/games/wesnoth/1.12/data/*.cfg
+debian/tmp/usr/share/games/wesnoth/1.12/data/COPYING.txt
+debian/tmp/usr/share/games/wesnoth/1.12/data/ai
+debian/tmp/usr/share/games/wesnoth/1.12/data/campaigns/tutorial
+debian/tmp/usr/share/games/wesnoth/1.12/data/core/*.cfg
+debian/tmp/usr/share/games/wesnoth/1.12/data/core/README
+debian/tmp/usr/share/games/wesnoth/1.12/data/core/editor
+debian/tmp/usr/share/games/wesnoth/1.12/data/core/encyclopedia
+debian/tmp/usr/share/games/wesnoth/1.12/data/core/images
+debian/tmp/usr/share/games/wesnoth/1.12/data/core/macros
+debian/tmp/usr/share/games/wesnoth/1.12/data/core/sounds
+debian/tmp/usr/share/games/wesnoth/1.12/data/core/terrain-graphics
+debian/tmp/usr/share/games/wesnoth/1.12/data/core/units
+debian/tmp/usr/share/games/wesnoth/1.12/data/gui
+debian/tmp/usr/share/games/wesnoth/1.12/data/hardwired
+debian/tmp/usr/share/games/wesnoth/1.12/data/languages
+debian/tmp/usr/share/games/wesnoth/1.12/data/lua
+debian/tmp/usr/share/games/wesnoth/1.12/data/multiplayer
+debian/tmp/usr/share/games/wesnoth/1.12/data/test
+debian/tmp/usr/share/games/wesnoth/1.12/data/themes
+debian/tmp/usr/share/games/wesnoth/1.12/fonts/Andagii.ttf
+debian/tmp/usr/share/games/wesnoth/1.12/images
+debian/tmp/usr/share/games/wesnoth/1.12/sounds
+debian/tmp/usr/share/games/wesnoth/1.12/locale/*/LC_MESSAGES/wesnoth-editor.mo
+debian/tmp/usr/share/games/wesnoth/1.12/locale/*/LC_MESSAGES/wesnoth-help.mo
+debian/tmp/usr/share/games/wesnoth/1.12/locale/*/LC_MESSAGES/wesnoth-lib.mo
+debian/tmp/usr/share/games/wesnoth/1.12/locale/*/LC_MESSAGES/wesnoth-multiplayer.mo
+debian/tmp/usr/share/games/wesnoth/1.12/locale/*/LC_MESSAGES/wesnoth-tutorial.mo
+debian/tmp/usr/share/games/wesnoth/1.12/locale/*/LC_MESSAGES/wesnoth-units.mo
+debian/tmp/usr/share/games/wesnoth/1.12/locale/*/LC_MESSAGES/wesnoth.mo
+debian/tmp/usr/share/games/wesnoth/1.12/locale/*/LC_MESSAGES/wesnoth-anl.mo

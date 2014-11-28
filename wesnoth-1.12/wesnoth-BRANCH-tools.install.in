@@ -1,0 +1,15 @@
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/addon_manager/
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/extractbindings
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/helpheader.html
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/helptrailer.html
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/hexometer/
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/README
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/unit_tree/
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/wesnoth/
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/wesnoth_addon_manager
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/wmlflip
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/wmlindent
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/wmllint
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/wmlscope
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/wmlvalidator
+debian/tmp/usr/share/games/wesnoth/BRANCH/data/tools/wmlxgettext

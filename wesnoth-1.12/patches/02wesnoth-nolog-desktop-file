@@ -1,0 +1,27 @@
+Author: Gerfried Fuchs <rhonda@debian.at>	vim:ft=diff:
+Description: call wesnoth-nolog from desktop file, too
+
+--- a/icons/wesnoth.desktop
++++ b/icons/wesnoth.desktop
+@@ -69,7 +69,7 @@
+ Comment[sr@latin]=Fantazijska strateška igra na poteze
+ Comment[tr]=Fantastik, sırayla oynanan bir strateji oyunu
+ Comment[vi]=Một trò chơi chiến lược dựa trên lượt đi theo phong cách thần thoại
+-Icon=wesnoth-icon
+-Exec=wesnoth
++Icon=wesnoth-1.12-icon
++Exec=wesnoth-1.12-nolog
+ Categories=Game;StrategyGame;
+ 
+--- a/icons/wesnoth_editor.desktop
++++ b/icons/wesnoth_editor.desktop
+@@ -48,7 +48,7 @@
+ Comment[sr@latin]=Uređivač za mape namenjene Boju za Vesnot
+ Comment[tr]=Wesnoth savaşı haritaları için harita düzenleyici
+ Comment[vi]=Một chương trình chỉnh sửa bản đồ cho Trận chiến vì Wesnoth
+-Icon=wesnoth_editor-icon
+-Exec=wesnoth -e
++Icon=wesnoth-1.12_editor-icon
++Exec=wesnoth-1.12-nolog -e
+ Categories=Game;StrategyGame;
+ 
