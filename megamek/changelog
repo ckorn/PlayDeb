@@ -1,3 +1,9 @@
+megamek (0.39.3-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 06 Dec 2014 15:45:02 +0100
+
 megamek (0.39.2-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
