@@ -1,3 +1,20 @@
+manaplus (1:1.4.12.6-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: block target+attack action in player dead.
+    add: additional slots support (hercules).
+    add: option to disable logging in game.
+    add: being particle effects (hercules).
+    add: map mask support (hercules).
+    add: npc genders (hercules).
+    add: full moving mob path (hercules).
+    add: map music packet (hercules).
+    add: npc change title (hercules).
+    add: action to switch pvev/next inventory tab.
+    add: impliment correct join/part channels (hercules).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 06 Dec 2014 19:54:50 +0100
+
 manaplus (1:1.4.11.22-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
