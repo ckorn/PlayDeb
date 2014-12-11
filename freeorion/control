@@ -1,0 +1,62 @@
+Source: freeorion
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Markus Koschany <apo@gambaru.de>
+Build-Depends: cmake,
+               debhelper (>= 9),
+               dpkg-dev (>= 1.17),
+               libalut-dev,
+               libboost-all-dev,
+               libbullet-dev,
+               libfreetype6-dev,
+               libgl1-mesa-dev,
+               libglu1-mesa-dev,
+               libjpeg-dev,
+               libltdl-dev,
+               libogg-dev,
+               libogre-1.9-dev,
+               libois-dev,
+               libopenal-dev,
+               libpng-dev,
+               libtiff-dev,
+               libvorbis-dev,
+               pkg-config,
+               python
+Build-Depends-Indep: imagemagick
+Standards-Version: 3.9.5
+Homepage: http://www.freeorion.org
+
+Package: freeorion
+Architecture: any
+Depends: freeorion-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: turn-based space empire and galactic conquest game
+ FreeOrion is a turn-based space empire and galactic conquest (4X) game being
+ designed and built by the FreeOrion project. FreeOrion is inspired by the
+ tradition of the Master of Orion games, but is not a clone or remake of that
+ series or any other game.
+ .
+ The game is about the construction of a living, breathing universe in a grand
+ campaign model. You can develop your own galactic empire and explore new star
+ systems with your fleets as one of several unique human or alien species.
+ Colonization of new worlds, researching new technology, managing your
+ resources and defending your planets against the AI or other human players on
+ a galactic scale are your main objectives.
+
+Package: freeorion-data
+Architecture: all
+Depends: fonts-dejavu,
+         ${misc:Depends},
+         ${python:Depends}
+Suggests: freeorion
+Description: turn-based space empire and galactic conquest game -- data
+ FreeOrion is a turn-based space empire and galactic conquest (4X) game being
+ designed and built by the FreeOrion project.
+ .
+ This package provides architecture-independent data files for FreeOrion,
+ hundreds of unique designs for in-game icons, ships and planets, many
+ different sounds and an immersive music score.
+ .
+ Also included are in-game descriptions, translations and game scripts.
