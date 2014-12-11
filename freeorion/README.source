@@ -1,0 +1,22 @@
+FreeOrion for Debian
+====================
+
+Please use debian/rules get-orig-source to retrieve the original sources.
+
+Bundled GG (libgigi) library:
+ At the moment GG is not feasible to maintain separately:
+  * It is used exclusively by freeorion.
+  * FreeOrion maintains a fork of GG in FreeOrion's source tree.
+  * FreeOrion's GG fork is better maintained and needs less patches.
+    * For example the original libgigi library doesn't build with gcc-4.7
+      (requires gcc-4.6) while from FreeOrion's source tree
+      it builds fine with gcc-4.7 and doesn't need the "vector.patch".
+  * GG is not a proper library (more like a plugin) and therefore
+    not suitable for packaging as a standalone libgigi(-dev) package.
+
+log4cpp:
+
+This is a modified version of log4cpp. It is better maintained than Debian's
+package and uses some modifications which are not upstreamable and cannot be
+incorporated in Debian's package. It is therefore more reasonable to use
+FreeOrion's log4cpp version.
