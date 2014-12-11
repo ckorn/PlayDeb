@@ -1,0 +1,219 @@
+freeorion (0.4.4-1~getdeb2~utopic) utopic; urgency=medium
+
+  * Upload to PlayDeb
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 10 Dec 2014 18:25:21 +0100
+
+freeorion (0.4.4-2) unstable; urgency=medium
+
+  * Switch build-dependency from libjpeg8-dev to libjpeg-dev due to the
+    libjpeg-turbo transition.
+    Thanks to Ondřej Surý for the report and patch. (Closes: #763471)
+  * Update debian/watch. Detect RC and normal releases.
+  * Declare compliance with Debian Policy 3.9.6.
+
+ -- Markus Koschany <apo@gambaru.de>  Tue, 30 Sep 2014 20:43:21 +0200
+
+freeorion (0.4.4-1) unstable; urgency=medium
+
+  * New upstream release 0.4.4 r7640.
+  * Remove mips and mipsel from Architecture field.
+    Although FreeOrion should be able to compile on mips and mipsel, it
+    regularly FTBFS due to the lack of virtual memory on the buildd. Requests
+    for help remained unanswered on debian-mips. As long as the situation does
+    not change these architectures won't be supported anymore.
+  * debian/rules: Delete DEB_HOST_MULTIARCH and DEB_HOST_GNU_TYPE variable.
+  * Update FreeOrion man page for version 0.4.4.
+
+ -- Markus Koschany <apo@gambaru.de>  Thu, 04 Sep 2014 19:47:41 +0200
+
+freeorion (0.4.4~svn7616-1) unstable; urgency=medium
+
+  * New upstream release candidate 0.4.4 RC3 r7616.
+  * Update version string when creating the original source tarball and drop
+    version-string.patch.
+  * debian/rules: Use Tabs consistently.
+  * Drop ConditionParser2.patch. Merged with release-0.4.4 branch.
+
+ -- Markus Koschany <apo@gambaru.de>  Mon, 25 Aug 2014 15:51:58 +0200
+
+freeorion (0.4.4~svn7504-1) unstable; urgency=medium
+
+  * New upstream release candidate 0.4.4 RC2.
+  * Update version-string.patch and REV variable in debian/rules to 7504.
+  * Add ConditionParser2.patch cherry-picked from upstream trunk r7533:
+    - Break enqueued condition parser into 4 sub-parsers to hopefully help
+      compile by reducing memory usage on mips and mipsel.
+
+ -- Markus Koschany <apo@gambaru.de>  Thu, 21 Aug 2014 12:43:54 +0200
+
+freeorion (0.4.4~svn7431-1) unstable; urgency=medium
+
+  * Upload to unstable.
+  * New upstream release candidate 0.4.4 RC1.
+  * debian/control: Remove spurious virtual b-d on libsdl-dev.
+  * Update get-orig-source target for 0.4.4 RC1.
+  * Update version string patch to version 7431.
+
+ -- Markus Koschany <apo@gambaru.de>  Mon, 11 Aug 2014 21:59:17 +0200
+
+freeorion (0.4.3+svn7394-1) experimental; urgency=medium
+
+  * New upstream snapshot.
+  * freeorion-data.links: Adjust the path to DejaVu fonts and point to the new
+    fonts-dejavu package.
+  * Update get-orig-source target.
+    - Do not remove FindBullet.cmake anymore since it has been removed upstream.
+  * Build with MinSizeRel and max-parallel=1 on armel, armhf, mips and mipsel
+    again. Readd WEAK_HOSTS and -DCMAKE_BUILD_TYPE options. Apparently Debian's
+    buildd are currently not able to cope with FreeOrion's default compiler
+    options on a regular basis.
+  * Update version string patch to version 7394.
+  * Add Forwarded header to GG-verbose-makefile.patch.
+
+ -- Markus Koschany <apo@gambaru.de>  Wed, 06 Aug 2014 22:31:55 +0200
+
+freeorion (0.4.3+svn7114-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * FreeOrion depends on Ogre 1.9 now. (Closes: #732721)
+  * Fix dpkg-shlibdeps warning.
+     - Update the LD_LIBRARY_PATH variable again.
+  * Remove WEAK_HOSTS conditionals.
+     - Build with default values on all arches again since FreeOrion is now
+       able to build on armel, armhf and mips. If this proves not to be
+       successful, compiling with MinSizeRel is still an alternative.
+  * Install ogre_plugins.cfg with arch-dependent package.
+     - ogre_plugins.cfg must be installed with the arch-dependent package
+       otherwise the game won't start for all architectures except the one
+       that built the -data package.
+  * Use dh_install --fail-missing to detect uninstalled files.
+
+ -- Markus Koschany <apo@gambaru.de>  Sun, 11 May 2014 19:27:11 +0200
+
+freeorion (0.4.3+svn7114-1) experimental; urgency=medium
+
+  [ Dmitry Smirnov ]
+  * Removed myself from Uploaders.
+
+  [ Markus Koschany ]
+  * New upstream snapshot.
+  * Remove powerpc64, sparc64, sh4, x32, powerpcspe, arm64 and hppa from
+    WEAK_HOSTS.
+    - These hosts should be able to compile freeorion with RelWithDebInfo.
+  * Update get-orig-source target for r7114.
+  * Drop the following patches. They were merged upstream.
+    - omit-ADOBE_NO_DOCUMENTATION-check.patch
+    - omit-endianness-and-size-checks.patch
+  * Update freeorion.install for new release.
+  * Update freeorion-data.install for new release.
+  * Remove subversion from Build-Depends to reduce the probability of build
+    failures.
+  * Use icons provided by upstream:
+    - Do not convert FreeOrion.ico anymore.
+    - Convert only the 32x32 icon to the xpm format due to compatibility reasons
+      with older window managers.
+  * wrap-and-sort -sa.
+  * Switch to Ogre 1.9.
+  * debian/rules:
+    - Update LD_LIBRARY_PATH for new release.
+    - Set CMAKE_VERBOSE_MAKEFILE=ON.
+    - Use -S option of dpkg-parsechangelog. Build-Depend on dpkg-dev (>= 1.17).
+  * Update freeorion wrapper script.
+    - Adjust the path to OISInput.cfg.
+    - Create ~/.freeorion on first start.
+  * Update version-string.patch.
+  * Add GG-verbose-makefile.patch again and increase verbosity when building GG.
+  * Update freeorion.6 man page for new release.
+  * Add Forwarded header to remaining patches.
+  * Update copyright years.
+
+ -- Markus Koschany <apo@gambaru.de>  Wed, 07 May 2014 23:16:16 +0200
+
+freeorion (0.4.3-3) unstable; urgency=medium
+
+  * debian/rules:
+    - Remove s390 from WEAK hosts. It is obsolete.
+    - Change optimization for WEAK hosts to MinSizeRel.
+      This change tries to achieve that the build stops failing on arches such
+      as armel, armhf, mips and mipsel by using less optimization. (-Os)
+  * Update Standards-Version to 3.9.5, no changes.
+  * Add OISInput-config.patch and copy OISInput.cfg from
+    /usr/share/games/freeorion to $HOME/.freeorion. Provide an easy way to
+    modify OISInput.cfg for normal users and allow them to adjust the settings
+    for mouse and keyboard behaviour. (Closes: #719496)
+  * Use a stricter dependency for the data package.
+    - Apparently it makes no difference if a >= <= relation or just =
+      is used for the data package.
+  * Update copyright years.
+  * Remove source/options. xz compression is the default now.
+
+ -- Markus Koschany <apo@gambaru.de>  Wed, 26 Mar 2014 07:41:32 +0100
+
+freeorion (0.4.3-2) unstable; urgency=low
+
+  * [9d92bb3] Build icons in dh_auto_build-indep target.
+  * [6fc6bec] Use conditional for MAX parallel jobs.
+    - Define WEAK_HOSTS in debian/rules and build only with one process on
+      weaker architectures. Use max-parallel=4 on all other architectures. This
+      prevents that buildd run out of virtual memory.
+  * [0d1ab80] Add omit-ADOBE_NO_DOCUMENTATION-check.patch
+    - Fix FTBFS on mips, mipsel, armel, armhf, s390, powerpc and sparc.
+  * debian/control:
+    - [a7c115f] Move imagemagick to Build-Depends-Indep.
+    - [82948af] Depend only on libboost-all-dev again.
+      Boost1.54 is now finally the default version.
+
+ -- Markus Koschany <apo@gambaru.de>  Thu, 26 Sep 2013 13:59:25 +0200
+
+freeorion (0.4.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Upload to unstable.
+  * [0bb9ae2] debian/copyright: comment about artistic content.
+    Enhance the comment about artistic or creative content and add a missing
+    paragraph from the COPYING file in FreeOrion/default.
+  * [81ba198] Clarify copyright of log4cpp. It is GPL-2.
+  * [e44fbe2] debian/control: Drop build-dep libdevil-dev. Not needed.
+  * debian/control: Build-depend on libboost1.53-all-dev or libboost-all-dev to
+    avoid a FTBFS because of conflicting boost versions.
+  * debian/patches:
+     - [b86e971] Drop desktop-file.patch. Merged upstream.
+     - Rename and refresh display-correct-FreeOrion-version.patch to
+       version-string.patch.
+     - [1887fd9] Drop GG_verbose_build.patch. Merged upstream.
+     - [fcfab2a] Drop spelling.patch. Merged upstream.
+     - [b6e6140] Drop GG_unbundle_libltdl.patch.
+       The upstream build system can detect system libltdl libraries
+       automatically now.
+     - [8893994] Drop build-with-libboost1.49.patch.
+     - [2772512] Add omit-endianness-and-size-checks.patch. Try to avoid build
+       failures on big-endian systems.
+  * [b494fd6] debian/rules: Do not override the plugin path for
+    ogre_plugins.cfg. The upstream build system detects and inserts the right
+    path at build time automatically.
+  * [aafccb3] debian/rules: Simplify clean rules and move them to clean file.
+  * [eb34bbd] Update dh_auto_configure. It is no longer necessary to build GiGi
+    separately.
+  * [d78e04e] Install ogre_plugins.cfg to RootDataDir.
+    Install ogre_plugins.cfg to /usr/share/games/freeorion instead of
+    /usr/lib/freeorion hence we can drop the path_to_cfg.patch and reduce
+    Debian specific modifications.
+  * [e306777] debian/rules: Update LD_LIBRARY_PATH.
+    Extend LD_LIBRARY_PATH so that dpkg-shlibdeps is able to find the new shared
+    libraries, freeorionparse and freeorioncommon.
+  * [700b3f9] Update get-orig-source target and fix sourceforge URL.
+  * [4e53b36] Install OISInput.cfg in architecture independent package to
+    RootDataDir. OISInput.cfg is not intended to be modified. Placing it in
+    /usr/share/games/freeorion is appropriate.
+  * [a3e8e58] debian/rules: Remove override for dh_builddeb. xz is the default
+    compressor now.
+  * [21d8c41] Update debian/watch.
+
+ -- Markus Koschany <apo@gambaru.de>  Sat, 10 Aug 2013 12:54:12 +0200
+
+freeorion (0.4.2+svn5771-1) experimental; urgency=low
+
+  * Initial release by Dmitry Smirnov and Markus Koschany.(Closes: #593339)
+
+ -- Markus Koschany <apo@gambaru.de>  Thu, 06 Jun 2013 20:39:43 +0200

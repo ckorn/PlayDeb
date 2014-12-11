@@ -1,0 +1,25 @@
+From: Markus Koschany <apo@gambaru.de>
+Date: Wed, 7 May 2014 20:25:20 +0200
+Subject: GG verbose makefile
+
+Forwarded: http://www.freeorion.org/forum/viewtopic.php?f=24&t=8855
+---
+ FreeOrion/GG/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/FreeOrion/GG/CMakeLists.txt b/FreeOrion/GG/CMakeLists.txt
+index 69387d6..4acdfd6 100644
+--- a/FreeOrion/GG/CMakeLists.txt
++++ b/FreeOrion/GG/CMakeLists.txt
+@@ -6,7 +6,7 @@ include(CMakeDependentOption)
+ 
+ project(GiGi)
+ 
+-set(CMAKE_VERBOSE_MAKEFILE false)
++set(CMAKE_VERBOSE_MAKEFILE true)
+ 
+ ########################################
+ # Configuration                        #
+-- 
+2.0.0.rc0
+
