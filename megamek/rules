@@ -1,83 +1,14 @@
 #!/usr/bin/make -f
-# -*- makefile -*-
-# Sample debian/rules that uses debhelper.
-# This file was originally written by Joey Hess and Craig Small.
-# As a special exception, when this file is copied by dh-make into a
-# dh-make output file, you may use that output file without restriction.
-# This special exception was added by Craig Small in version 0.37 of dh-make.
+%:
+	dh $@
 
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
-
-
-configure: configure-stamp
-configure-stamp:
-	dh_testdir
-	# Add here commands to configure the package.
-
-	touch configure-stamp
-
-
-build: build-stamp
-
-build-stamp: configure-stamp  
-	dh_testdir
-
-	# Add here commands to compile the package.
-	ant
-	#docbook-to-man debian/megamek.sgml > megamek.1
-
-	touch $@
-
-clean:
-	dh_testdir
-	dh_testroot
-	rm -f build-stamp configure-stamp
-
-	# Add here commands to clean up after the build process.
+override_dh_clean:
 	ant clean
 
-	dh_clean 
+override_dh_auto_build:
+	ant
 
-install: build
-	dh_testdir
-	dh_testroot
-	dh_installdirs
-
-	# Add here commands to install the package into debian/megamek.
-
-# Build architecture-independent files here.
-binary-indep: install
-	dh_testdir
-	dh_testroot
-	dh_installchangelogs 
-	dh_installdocs
-	dh_installexamples
+override_dh_install:
 	dh_install
 	chmod +x debian/megamek/usr/share/games/megamek/docs/stats.pl
 	find debian/megamek/usr -type d -empty -delete
-#	dh_installmenu
-#	dh_installdebconf
-#	dh_installlogrotate
-#	dh_installemacsen
-#	dh_installpam
-#	dh_installmime
-#	dh_python
-#	dh_installinit
-#	dh_installcron
-#	dh_installinfo
-	dh_installman
-	dh_link
-	dh_strip
-	dh_compress
-	dh_fixperms
-#	dh_perl
-#	dh_makeshlibs
-	dh_installdeb
-	dh_shlibdeps
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-binary: binary-indep
-.PHONY: build clean binary-indep binary install configure
