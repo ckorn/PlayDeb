@@ -1,3 +1,37 @@
+megamek (0.39.4-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    + added Transporter.resetTransporter function for MHQ purposes
+    + Bug [#4355]: ASFs are unable to strafe hexes with friendly ASFs
+    + Bots will now issue /allowTeamChange in response to /joinTeam requests
+    + Updated Server messages for /allowTeamChange to make it clear who voted
+    + Bug: Extreme range rule check box was disabled in game options dialog
+    + Bug [#4361]: Out of control ASFs do not have access to the ASF movement
+    option
+    + Bug: Unexpected connection closing can cause client to enter an
+    infinite loop
+    + Bug: Added showScrollBar to SkinSpec specifications, added
+    plainSkinScrollBars
+    + Added Entity.clearBombs() for MekHQ
+    + MHQ helper functions for resetting weapon jams
+    + Data: New Unit images and couple of unit fixes.
+    + Bug [#4373] Aero Squadron with RocketBomb MUL fails to load
+    + Bug [#4358]: ASFs can combine strafing with the aimed shot popup to aim
+    + Bug [#4377]: New replacePlayer menu option was replacing all bot
+    players rather than just the selected players.
+        Also changed the "show config" and "list commands" chat commands so
+        that Princess will respond to these commands
+        from enemies.
+    + Bug: Fixed potential NPE in MovementDisplay.currentMove
+    + Bug: Deploy phase Remove Unit dialog used wrong l10n entries
+    + Data: New Unit Images
+    + Feature: Changed the client/server mismatch check to use a checksum of
+    the MegaMek.jar file instead of timestamp
+    + Bug: Checksum NumberFormat error
+    + Added logging for the new checksum system
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 15 Dec 2014 19:08:02 +0100
+
 megamek (0.39.3-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
