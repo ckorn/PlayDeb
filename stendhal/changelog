@@ -1,3 +1,9 @@
+stendhal (1.16-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 15 Dec 2014 23:22:55 +0100
+
 stendhal (1.15.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
