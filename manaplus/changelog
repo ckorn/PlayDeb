@@ -1,3 +1,18 @@
+manaplus (1:1.4.12.20-1~getdeb2~utopic) utopic; urgency=medium
+
+  * New upstream version
+    fix: inventory related packets (hercules).
+    fix: background paralax.
+    add: command /me in pet talk.
+    add: npc whispers (hercules).
+    add: keyboard navigation in popup menus.
+    add: many chat commands.
+    add: own context menus for each npc.
+    add: autohatch it present only one egg in inventory (hercules).
+    add: support url variable in help/npc/update windows.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 20 Dec 2014 17:40:02 +0100
+
 manaplus (1:1.4.12.6-1~getdeb2~utopic) utopic; urgency=medium
 
   * New upstream version
