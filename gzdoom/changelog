@@ -1,3 +1,9 @@
+gzdoom (2.0.04-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Dec 2014 16:22:46 +0100
+
 gzdoom (2.0.03-1~getdeb2) trusty; urgency=medium
 
   * Apply patch for link against libsdl.
