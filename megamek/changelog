@@ -1,3 +1,67 @@
+megamek (0.39.5-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    + Bug: GameVictoryEvent was not adding "Out of Game" entities to the
+    entityIds hashtable
+        This was causing bugs in MekHQ, such as not registering kills
+        properly
+    + Bug: ComputeECM.computeAllEntitiesECMInfo could NPE in some
+    circumstances
+    + Bug [#4384]: BA can move over max MP if move is past starting position
+    + Bug [#4383]: NPE at end of firing phase (GetClosestFlightPath)
+    + Bug [#4374] Infantry units may dig in even if they are already dug in
+    + Feature [#1345]: Dug in indicator for infantry units
+    + Bug [#4379]: java.io.FileNotFoundException when any player joins
+    + Bug [#4368]: Infantry Field guns were using wrong firing arc
+    + Changed when facing widge is drawn for infantry: previously it was
+    drawn when they were dug in (since digging in used to require a facing),
+    now it's drawn when infantry have field guns
+    + Bug [#4142]: Alternate "Better" MASC should mention, or not effect,
+    superchargers
+    + Bug [#3655]: Hardened armor and vehicle damage threshold rule
+    + Bug [#4370]: Spheroid dropships have incorrect atmospheric modifiers
+    + Bug [#4313]: Bot auto-disconnects when all units are destroyed
+    + Bug [#4386]: PSD files included with binary releases
+    + Bug [#4330]: Potential problem with the vehicle threshold rule
+    + Feature [feature-requests:#1340]: Please make inferno bombs work with
+    the vehicle damage threshold rule
+    + Data [#388] & [#389]: New Maps!
+    + Data: Added a new quicksand image under the singlehex folder
+        This is not implemented in tilesets because I'm not sure what the
+        setting should be for it
+        Right now the classic tileset has a weird note about quicksand, but
+        the images are all commented
+    + Bug: Aero validation failed for Aero's with bombs loaded as
+    reinforcements from MUL because bombs were counted for weight
+    + Bug [#4362]: ASFs at velocity 1 are unable to eject because "this unit
+    has not used all of its velocity"
+    + Bug [#4359]: Units forced to move into basement, even if not collapsed
+    + Bug [#4357]: TestMech now ensures Omni 'mechs don't have hand/lower arm
+        actuators with arm mounted PPCs/Gauss/Autocannons
+    + Bug [#2843]: bot does not use bridges (fixed for Princess only).
+    + Bug [#4364]: Cluster hit weapons may cause multiple critical hits per
+    weapon on a to hit roll of 12
+    + Bug [#3235]: Bot hates air-dropped units
+    + Cached ECM Info computation for Princess, should speed-up
+    deployment/movement
+    + Bug [#3378]: Bots Don't Use Plasma
+    + Bug [#4351]: Alpha strike with ASFs conflicts with bombs
+    + Data: New Unit Images.
+    + Bug [MML#150]: Fixed alot of equipment in MiscType wrongly showing for
+    Aeros
+    + Bug [#4349]: Unable to manually land WIGEs (MM simply will not allow
+    it)
+    + Bug: Industrial armor doesn't parse correctly, due to a space in the
+    type name
+    + Bug [#4336]: Unofficial rule : Grounded dropships fire weapons
+    individually allows dropships to disregard max heat
+    + Bug [#4381]: Various Game.checkPositionCacheConsistency() Errors
+    + Bug [#4391]: Immobilized Hovers Not Sinking
+    + Bug [#4396]: VTOLs shouldn't get building floor select dialog when
+    deploying
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 25 Dec 2014 20:52:54 +0100
+
 megamek (0.39.4-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
