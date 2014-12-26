@@ -6,11 +6,11 @@ Author: Matthew Bekkema <mat8913ftw@gmail.com>
  src/CMakeLists.txt           |    4 ----
  2 files changed, 11 insertions(+), 17 deletions(-)
 
-Index: freeminer-0.4.10.4/src/CMakeLists.txt
+Index: freeminer-0.4.11.5/src/CMakeLists.txt
 ===================================================================
---- freeminer-0.4.10.4.orig/src/CMakeLists.txt
-+++ freeminer-0.4.10.4/src/CMakeLists.txt
-@@ -369,7 +369,6 @@ if(NOT USE_LUAJIT)
+--- freeminer-0.4.11.5.orig/src/CMakeLists.txt	2014-12-25 21:10:07.547709414 +0100
++++ freeminer-0.4.11.5/src/CMakeLists.txt	2014-12-25 21:10:07.547709414 +0100
+@@ -459,7 +459,6 @@
  	message (STATUS "LuaJIT not found, using bundled Lua.")
  	set(LUA_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/lua/src")
  	set(LUA_LIBRARY "lua")
@@ -18,15 +18,15 @@ Index: freeminer-0.4.10.4/src/CMakeLists.txt
  endif(NOT USE_LUAJIT)
  
  mark_as_advanced(LUA_LIBRARY)
-@@ -958,7 +957,6 @@ endif(USE_GETTEXT)
+@@ -957,7 +956,6 @@
  
  if (SQLITE3_FOUND)
  else (SQLITE3_FOUND)
 -	add_subdirectory(sqlite)
  endif (SQLITE3_FOUND)
  
- if (BUILD_CLIENT AND USE_FREETYPE)
-@@ -967,7 +965,6 @@ endif (BUILD_CLIENT AND USE_FREETYPE)
+ if (BUILD_CLIENT)
+@@ -966,7 +964,6 @@
  
  if (JSON_FOUND)
  else (JSON_FOUND)
@@ -34,10 +34,10 @@ Index: freeminer-0.4.10.4/src/CMakeLists.txt
  endif (JSON_FOUND)
  
  configure_file(
-Index: freeminer-0.4.10.4/cmake/Modules/FindJson.cmake
+Index: freeminer-0.4.11.5/cmake/Modules/FindJson.cmake
 ===================================================================
---- freeminer-0.4.10.4.orig/cmake/Modules/FindJson.cmake
-+++ freeminer-0.4.10.4/cmake/Modules/FindJson.cmake
+--- freeminer-0.4.11.5.orig/cmake/Modules/FindJson.cmake	2014-12-25 21:10:07.547709414 +0100
++++ freeminer-0.4.11.5/cmake/Modules/FindJson.cmake	2014-12-25 21:10:07.547709414 +0100
 @@ -1,18 +1,16 @@
  # Look for json, use our own if not found
  
