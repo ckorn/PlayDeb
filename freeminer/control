@@ -17,7 +17,10 @@ Build-Depends: debhelper (>= 9),
                libogg-dev,
                libvorbis-dev,
                libopenal-dev,
-               libjsoncpp-dev
+               libjsoncpp-dev,
+               libmsgpack-dev,
+               libenet-dev,
+               libx11-dev
 Standards-Version: 3.9.5
 Homepage: http://freeminer.org/
 
