@@ -1,3 +1,35 @@
+megamek (0.40.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    + Bug [#4372]: Inferno Bomb/IV fires do not last the proper duration
+    + Bug: NPE in Precognition.getECMInfo when using /replacePlayer
+    + Bug: Crossbow Prime isn't showing image
+    + Bug: Some weapon data and use fixes
+    + Data: New Unit images
+    + Bug: Vehicular Stealth was trying to allocate 2 items that each take 2
+    slots, instead of 2*1
+    + TestAero now ensures that Aeros have valid heatsink types
+    + Refactored l10n folder name to i18n, which is the proper term for the
+    usage we're doing
+    + Data: FR 2765 Warships/XTR Prim IV Units/New Images
+    + Data: RS: Vehicle Annex - please note units from these RS supersede the
+        Industrial mechs in other books and are to be considered the most
+        current versions. Any previous versions have been marked unofficial
+        and moved into the unofficial folder
+    + Bug: build.xml not up to date with l10n -> i18n change
+    + Fixed some issues with the space in the name of Industrial armor
+    + Bug [#4399]: Translation Properties file in UTF-8 read wrong
+        Also, replaced unreadable Russian character code with the actual word
+        in the .properties files
+    + Bug [#4398]: APMs cannot be selected in UnitDisplay Weapons tab
+    + Changes for MegaMekLab Bug 139
+    + Changes for MegaMekLab Bug 95
+    + Refactor some class names to change 'Mech' to 'Unit' since they apply
+    to all units9
+    + Changes for MegaMekLab Bug 70
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 02 Jan 2015 21:26:43 +0100
+
 megamek (0.39.5-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
