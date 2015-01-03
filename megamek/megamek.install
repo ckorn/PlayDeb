@@ -5,5 +5,5 @@ MegaMek.jar					usr/share/games/megamek
 lib						usr/share/games/megamek
 data						usr/share/games/megamek
 docs						usr/share/games/megamek
-l10n						usr/share/games/megamek
+i18n						usr/share/games/megamek
 mmconf						usr/share/games/megamek

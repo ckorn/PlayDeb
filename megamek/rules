@@ -3,6 +3,7 @@
 	dh $@
 
 override_dh_clean:
+	dh_clean
 	ant clean
 
 override_dh_auto_build:
