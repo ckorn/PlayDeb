@@ -1,9 +1,9 @@
 # do not create Cache dir in current dir
-Index: gemrb-0.8.1/gemrb/core/Interface.cpp
+Index: gemrb-0.8.2/gemrb/core/Interface.cpp
 ===================================================================
---- gemrb-0.8.1.orig/gemrb/core/Interface.cpp	2014-05-05 21:14:04.701397222 +0200
-+++ gemrb-0.8.1/gemrb/core/Interface.cpp	2014-05-05 21:26:15.693375477 +0200
-@@ -1557,7 +1557,7 @@
+--- gemrb-0.8.2.orig/gemrb/core/Interface.cpp	2015-01-02 22:47:49.019731621 +0100
++++ gemrb-0.8.2/gemrb/core/Interface.cpp	2015-01-02 22:47:49.019731621 +0100
+@@ -1556,7 +1556,7 @@
  	CONFIG_PATH("GemRBPath", GemRBPath,
  				CopyGemDataPath(GemRBPath, _MAX_PATH));
  
