@@ -48,7 +48,8 @@ Depends: warzone2100-data (<= ${source:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Recommends: warzone2100-music (<= ${source:Version}),
-            warzone2100-music (>= ${source:Upstream-Version})
+            warzone2100-music (>= ${source:Upstream-Version}),
+            warzone2100-video
 Description: 3D real time strategy game
  In Warzone 2100 you command the forces of “The Project” in a battle to
  rebuild the world after mankind has almost been destroyed by nuclear
