@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=C-Dogs SDL
+GenericName=Action/Arcade Game
+Version=1.0
+Type=Application
+Categories=Game;ActionGame;
+Comment=Classic overhead run-and-gun game
+TryExec=cdogs-sdl
+Exec=cdogs-sdl
+Terminal=false
+Icon=cdogs-sdl

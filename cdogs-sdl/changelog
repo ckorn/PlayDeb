@@ -1,0 +1,5 @@
+cdogs-sdl (0.5.7-1~getdeb1) trusty; urgency=low
+
+  * Initial release (LP: #1406880)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 03 Jan 2015 01:09:37 +0100
