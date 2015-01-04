@@ -1,0 +1,37 @@
+Source: cdogs-sdl
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               cmake,
+               libsdl1.2-dev,
+               libsdl-image1.2-dev,
+               libjsoncpp-dev,
+               libreadline6-dev,
+               libphysfs-dev,
+               libsdl-mixer1.2-dev,
+               libenet-dev
+Standards-Version: 3.9.5
+Homepage: http://cxong.github.io/cdogs-sdl/
+
+Package: cdogs-sdl
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         cdogs-sdl-data (= ${source:Version})
+Description: Open source, classic overhead run-and-gun game
+ C-Dogs SDL is a classic overhead run-and-gun game,
+ supporting up to 4 players in co-op and deathmatch modes.
+ Customize your player, choose from up to 11 weapons, and
+ try the dozens of user-created campaigns. Have fun!
+
+Package: cdogs-sdl-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Open source, classic overhead run-and-gun game (data package)
+ C-Dogs SDL is a classic overhead run-and-gun game,
+ supporting up to 4 players in co-op and deathmatch modes.
+ Customize your player, choose from up to 11 weapons, and
+ try the dozens of user-created campaigns. Have fun!
+ .
+ (This package contains the data files).
