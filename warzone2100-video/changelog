@@ -1,3 +1,9 @@
+warzone2100-video (3.1.0-1~getdeb2) trusty; urgency=medium
+
+  * Remove debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 04 Jan 2015 02:20:55 +0100
+
 warzone2100-video (3.1.0-1~getdeb1) precise; urgency=low
 
   * New upstream version
