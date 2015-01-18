@@ -1,4 +1,8 @@
 #!/usr/bin/make -f
+PKD   = $(abspath $(dir $(MAKEFILE_LIST)))
+PKG   = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SSource)
+VER  = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SVersion | cut -d- -f1)
+
 %:
 	dh $@
 
@@ -10,3 +14,30 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 
+## http://wiki.debian.org/onlyjob/get-orig-source
+.PHONY: get-orig-source
+get-orig-source: $(PKG)_$(VER).orig.tar.xz $(info I: $(PKG)_$(VER))
+	@
+
+$(PKG)_$(VER).orig.tar.xz:
+	@echo "# Downloading..."
+	uscan --noconf --verbose --rename --destdir=$(CURDIR) --check-dirname-level=0 --force-download --download-version $(VER) $(PKD)
+	$(if $(wildcard $(PKG)-$(VER)),$(error $(PKG)-$(VER) exist, aborting..))
+	@echo "# Extracting..."
+	mkdir $(PKG)-$(VER) \
+	&& tar -xf $(PKG)_$(VER).orig.tar.* --directory $(PKG)-$(VER) --strip-components 1 \
+	|| $(RM) -r $(PKG)-$(VER)
+	@echo "# Cleaning-up..."
+	cd $(PKG)-$(VER) \
+	&& find . -depth -type d -name 'bin32' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'bin64' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'Xonotic.app' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& $(RM) -v \
+	    *.exe \
+	    xonotic-linux32* \
+	    xonotic-linux64* \
+	    xonotic-osx-dedicated
+	@echo "# Packing..."
+	find -L "$(PKG)-$(VER)" -xdev -type f -print | sort \
+	| XZ_OPT="-6v" tar -caf "$(PKG)_$(VER)$(DTYPE).orig.tar.xz" -T- --owner=root --group=root --mode=a+rX \
+	&& $(RM) -r "$(PKG)-$(VER)"
