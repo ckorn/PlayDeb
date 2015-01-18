@@ -22,7 +22,7 @@ Build-Depends: debhelper (>= 9),
               libglu1-mesa-dev,
               libxxf86dga-dev,
               libd0-blind-id0-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://www.xonotic.org/
 
 Package: xonotic

@@ -1,3 +1,9 @@
+xonotic (0.8.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 17 Jan 2015 17:13:23 +0100
+
 xonotic (0.7.0-1~getdeb1) precise; urgency=low
 
   * New upstream version
