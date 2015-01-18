@@ -1,0 +1,1039 @@
+hedgewars (0.9.21.1-1~getdeb2~utopic) utopic; urgency=medium
+
+  * New upstream version
+     + New type of randomly generated maps: Perlin Maps.
+     + Old Random generated maps are more diverse now.
+     + Slider for adjusting land generation detail.
+     + Highlander gamemode can now be used with custom weapon schemes
+     (1-8=How probable to get this weapon. 9=All hogs get it)
+     + New gameplay mode "Construction Mode"
+     + New gameplay mode "TechRacer"
+     + New game play mode "DiagonalMaze" (generates a simple diagonal maze)
+     + Add 7 target practice missions, now with simple scoring
+     + Update RC Plane Challenge: Stats screen reworked and shows now several
+     facts, simple ranking system based on used planes, some taunts in the
+     game
+     + New training/multiplayer mission: "Climb Home"
+     + Game scheme screen has a "Script parameter" field now. This allows
+       one to make more customizable scripts/modes.
+     + Network game rejoining. Note: Your team(s) will vanish after 3 turns.
+     + Visual and gameplay changes to "sea" - world edge, visual change to
+     wrap world edge to allow seeing through the wrap, visual change to
+     bounce worldedge 
+     + The map of the Basketball Mission can be selected for regular games
+     again ("BasketballField")
+     + New engine command: /togglechat will disable/enable chat display (does
+     not affect chat history display)
+     + Change to Racer: first weapon/utility available will be automatically
+     selected on start
+     + Added some visual feedback to failed girder placement.
+     + Various performance tweaks, especially for very large maps.
+     + Allow switching through hogs in reverse order with PRECISE+HOGSWITCH
+     (left shift + tab, by default)
+     + Added support for custom Sudden Death music to theme.cfg (e.g.
+     sd-music=hell.ogg ).
+     + New Hats: policegirl, fr_tomato, cratehider
+     * Fixed drill rockets sometimes exploding on impact.
+     * Fixed trainings broken due to indestructable targets/crates.
+     * Fixes and tweaks for low qualily rendering.
+     * Sinegun won't shoot through -solid- land anymore
+     * Many bug fixes and tweaks.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 18 Jan 2015 18:52:57 +0100
+
+hedgewars (0.9.21.1-4) unstable; urgency=medium
+
+  * Fix some copyright issues.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Wed, 07 Jan 2015 17:29:07 +0100
+
+hedgewars (0.9.21.1-3) unstable; urgency=medium
+
+  * Upload to unstable, with no patches at all.
+    - the clang build failure seems probably clang-related (cfr: #754417).
+      leaving the arch enabled until some clang folk fixes this.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Wed, 07 Jan 2015 11:02:36 +0100
+
+hedgewars (0.9.21.1-2) experimental; urgency=medium
+
+  * Try to not use fstack-protector when BUILD_ENGINE_C, clang is
+    failing to build on arch != arm64.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Wed, 07 Jan 2015 06:55:03 +0100
+
+hedgewars (0.9.21.1-1) unstable; urgency=medium
+
+  * New upstream bugfix release.
+    - Drop every debian patch, all merged upstream.
+  [ Reiner Herrmann ]
+  * Make hedgewars create reproducible builds, by removing timestamp
+    on build-time created png icons. (Closes: #774633)
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Mon, 05 Jan 2015 16:57:51 +0100
+
+hedgewars (0.9.21-3) unstable; urgency=medium
+
+  * Fix bad ghc find module cmake script.
+  * Fix arm* build failures.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Mon, 29 Dec 2014 09:58:48 +0100
+
+hedgewars (0.9.21-2) experimental; urgency=medium
+
+  * Enable experimental BUILD_ENGINE_C.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Sun, 28 Dec 2014 21:49:51 +0100
+
+hedgewars (0.9.21-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #760776).
+    + New type of randomly generated maps: Perlin Maps.
+    + Old Random generated maps are more diverse now.
+    + Slider for adjusting land generation detail.
+    + Highlander gamemode can now be used with custom weapon schemes
+      (1-8=How probable to get this weapon. 9=All hogs get it)
+    + New gameplay mode "Construction Mode"
+    + New gameplay mode "TechRacer"
+    + New game play mode "DiagonalMaze" (generates a simple diagonal maze)
+    + Add 7 target practice missions, now with simple scoring
+    + Update RC Plane Challenge: Stats screen reworked and shows now several
+      facts, simple ranking system based on used planes, some taunts in
+      the game
+    + New training/multiplayer mission: "Climb Home"
+    + Game scheme screen has a "Script parameter" field now. This allows one
+      to make more customizable scripts/modes.
+    + Network game rejoining. Note: Your team(s) will vanish after 3 turns.
+    + Visual and gameplay changes to "sea" - world edge, visual change to wrap
+      world edge to allow seeing through the wrap, visual change to bounce
+      worldedge
+    + The map of the Basketball Mission can be selected for regular games
+      again ("BasketballField")
+    + New engine command: /togglechat will disable/enable chat display (does
+      not affect chat history display)
+    + Change to Racer: first weapon/utility available will be automatically
+      selected on start
+    + Added some visual feedback to failed girder placement.
+    + Various performance tweaks, especially for very large maps.
+    + Allow switching through hogs in reverse order with
+      PRECISE+HOGSWITCH (left shift + tab, by default)
+    + Added support for custom Sudden Death music to theme.cfg
+      (e.g. sd-music=hell.ogg ).
+    + New Hats: policegirl, fr_tomato, cratehider
+    * Fixed drill rockets sometimes exploding on impact.
+    * Fixed trainings broken due to indestructable targets/crates.
+    * Fixes and tweaks for low qualily rendering.
+    * Sinegun won't shoot through -solid- land anymore
+    * Many bug fixes and tweaks.
+    Frontend / Netgame:
+    + High resolution previews!
+    + Preview for dynamic maps generated by game style scripts
+      (e.g. "ShoppaMap))!
+    + Moved room status filter to top left of rooms list.
+    Lua API:
+    + New library: Params, makes parsing of script parameters easier
+    + New library: TargetPractice, used to generate target practice missions
+      (the newly added missions use it)
+    + More helpful syntax error messages.
+    + New hooks:
+      onParameters(paramString) -- called when script parameters are
+      configured. the parameter contains the parameter(s) as text string
+      onPreviewInit() -- called during map preview initialization
+      onGearWaterSkip(gearUid) -- called when a gear skims the water without
+      drowning (when hitting it with high speed at low angle). By checking
+      gearUid you can figure out which gear that was.
+    + New functions:
+      DismissTeam(teamname) -- removes a team from the game (note: if you used
+      loc() on teamnames, don't forget to the translated teamname here too)
+      GetGameFlag(gameflag) -- returns true/false
+      PlaceSprite(x, y, sprite, frameIdx [, landFlag, ... ]) -- sprite
+      refers to an id from the TSprite list
+      SetWaterLine(waterline) -- moves water level to the specified
+      y. the current value is in read-only global waterline
+      SetNextWeapon() -- make current hedgehog switch to next weapon.
+      e.g. use in trainings to preselect weapon
+      SetWeapon(ammoType) -- decide which weapon the current hedgehog should
+      equip
+    + Map Drawing:
+      -- to be used in onGameInit() -- first set MapGen to mgDrawn and then use
+      the commands below
+      AddPoint(x, y [, width [, erase] ]) -- takes x,y location, a width (means
+      start of a new line) and erase (if line should erase, not draw)
+      FlushPoints() -- makes sure that all the points/lines specified using the
+      command above are actually applied to the map
+    + New global enumerations:
+      Mapgens: mgRandom, mgMaze, mgPerlin, mgDrawn
+      TSprite values
+      LandFlags: lfIndestructible, lfIce, lfBouncy
+    + Changed functions:
+      HogSay(gearUid, text, manner [, vgState]) -- now also allows you to make
+      NON-Hedgehog gears speak, e.g. barrels... wait what?!
+    + Changed hooks:
+      onHogAttack() can now be hooked with new parameter:
+      onHogAttack(ammoType) - to conveniently find out which ammo/weapon
+      is being used
+    * Fixes:
+      gfResetHealth is now a available like the other GameFlags
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Fri, 26 Dec 2014 11:33:43 +0100
+
+hedgewars (0.9.20.5+git20141210-2) experimental; urgency=medium
+
+  * Add disable-fstack-protector.patch
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Wed, 10 Dec 2014 17:33:06 +0100
+
+hedgewars (0.9.20.5+git20141210-1) experimental; urgency=medium
+
+  * New upstream release snapshot.
+  * Update copyright lua entry.
+  * Drop all debian patches, merged upstream.
+  * Use C engine where fpc is not available.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Wed, 10 Dec 2014 13:00:24 +0100
+
+hedgewars (0.9.20.5-12) unstable; urgency=medium
+
+  * Fix experimental lintian warnings (copyright)
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Fri, 17 Oct 2014 18:00:32 +0200
+
+hedgewars (0.9.20.5-11) unstable; urgency=medium
+
+  * Bump std-version to 3.9.6, no changes required.
+  * Fix some copyright entries (s/BSD/BSD-3-clause).
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Tue, 30 Sep 2014 14:48:03 +0200
+
+hedgewars (0.9.20.5-10) unstable; urgency=medium
+
+  * Fix build failure with recent CMake. (Closes: #763233)
+    patch: 774cfec959227a52b9a54afa8b069277c2f7e656.patch
+  * Update copyright file.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Sun, 28 Sep 2014 20:55:55 +0200
+
+hedgewars (0.9.20.5-9) unstable; urgency=medium
+
+  * Upload to unstable.
+
+  [ Felix Geyer ]
+  * Backport upstream commit b2d1b0d292c7 to fix
+    cmake 3.0 build (Closes: #758449)
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Wed, 03 Sep 2014 09:21:38 +0200
+
+hedgewars (0.9.20.5-8) experimental; urgency=medium
+
+  * Try again to enable parallel builds.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Tue, 05 Aug 2014 13:25:25 +0200
+
+hedgewars (0.9.20.5-7) unstable; urgency=medium
+
+  * Restoring png files for hicolor icons.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Mon, 14 Jul 2014 11:08:28 +0200
+
+hedgewars (0.9.20.5-6) unstable; urgency=low
+
+  * Release to unstable.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Mon, 16 Jun 2014 10:51:04 +0200
+
+hedgewars (0.9.20.5-5) experimental; urgency=low
+
+  * debian/patches/0001-Fixed-desktop-file-By-adding-an-xpm-icon.patch
+    Added an hedgewars.xpm file (Closes: #726443)
+  * Installing icons as xpm instead of png.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Fri, 07 Feb 2014 11:57:27 +0100
+
+hedgewars (0.9.20.5-4) experimental; urgency=low
+
+  * debian/rules
+    - added NOVERSIONINFOUPDATE, avoiding to change
+      share/version_info.txt
+    - Added a script for checking the ttf-fonts version, in order
+      to find the original file, not the symlink (needed for
+      backports to systems with ttf-dejavu-core << 2.33+svn2514-2~ 
+      the first version with the font location changed
+      and symlink created)
+  * debian/control
+    - Switched back to ttf-dejavu-core since it is easier to backport,
+      fonts-dejavu-core is only available in testing
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Mon, 20 Jan 2014 14:35:59 +0100
+
+hedgewars (0.9.20.5-3) experimental; urgency=low
+
+  * Using the system libphysfs library
+  * debian/control:
+    - added libphysfs-dev as build-dep
+    - depend on fonts-dejavu-core instead of ttf-dejavu-core
+      since it is smaller
+  * Adding font paths to debian/rules, dropping
+    hedgewars-data.links
+  * Now debian/copyright is in a Machine-Readable form
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Mon, 20 Jan 2014 14:04:38 +0100
+
+hedgewars (0.9.20.5-2) unstable; urgency=medium
+
+  * Fixed many copyright issues
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Sun, 12 Jan 2014 15:35:36 +0100
+
+hedgewars (0.9.20.5-1) unstable; urgency=low
+
+  * New upstream tarball, upload to unstable
+  * Simplified debian/rules, by removing override_dh_install
+  * debian/control, reorganized and dropped some useless build-deps
+    taken from upstream wiki build page
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Sat, 04 Jan 2014 17:53:27 +0100
+
+hedgewars (0.9.20.3-2) experimental; urgency=low
+
+  * Removed fPIC support on fpc, fixing build failures
+    in arm* and sparc platforms
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Fri, 03 Jan 2014 01:32:36 +0100
+
+hedgewars (0.9.20.3-1) unstable; urgency=low
+
+  * New upstream minor release, suitable for unstable
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Thu, 02 Jan 2014 12:37:23 +0100
+
+hedgewars (0.9.20-2) experimental; urgency=low
+
+  * Building without parallel support
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Sun, 29 Dec 2013 14:02:19 +0100
+
+hedgewars (0.9.20-1) experimental; urgency=low
+
+  * New upstream release (lp: #1264606)
+    - new Mission Campaign: A Space Adventure!
+      (thanks to Master_ex for working on it!)
+    - Shapes on drawn maps
+    - New rubber utility
+    - A polished Graphical user interface
+    - AFK mode. (Press p when not your turn online
+      to trigger autoskip of your turn.)
+    - Visual enhancements for whip and crosshair
+    - New hats
+    - New voice pack (Russian)
+    - Map edges can wrap or bounce.
+    - Password protected rooms
+    - Translation updates
+    - Many, many, many bugfixes.
+    - And much more (see ChangeLog.txt)
+  * Switch to debhelper
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Sat, 28 Dec 2013 09:10:41 +0100
+
+hedgewars (0.9.19.3-2) experimental; urgency=low
+
+  * Upload to experimental
+  * debian/rules
+    - no linking of libgcc_s.so.1 is needed anymore
+    - simplified some target
+  * debian/control
+    - Bumped standard version to 3.9.5, no changes required.
+    - moved libpng12-dev to libpng-dev.
+    - VCS-Git and VCS-Browser are now in a canonical form
+    - extended hedgewars-data description
+  * debian/copyright
+    - fixed copyright symbol usage
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Thu, 27 Jun 2013 15:59:59 +0200
+
+hedgewars (0.9.19.3-1) unstable; urgency=low
+
+  * New upstream tarball.
+    - Addressed some more bugs and linking failures.
+    - Dropped fix-physfs.patch accepted upstream.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Tue, 11 Jun 2013 10:53:33 +0200
+
+hedgewars (0.9.19.2-2) unstable; urgency=low
+
+  * debian/control
+    - Changed package description
+    - added fix-physfs.patch
+      this basically reverts the problem with i386 machines
+      see upstream issue 665.
+      Revert upstream commit 3883b5dc600c
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Mon, 10 Jun 2013 18:21:36 +0200
+
+hedgewars (0.9.19.2-1) unstable; urgency=low
+
+  * New upstream tarball.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Tue, 04 Jun 2013 17:53:08 +0200
+
+hedgewars (0.9.19-1) unstable; urgency=low
+
+  * New upstream version.
+    + New theme: Fruit
+    + Cool New Weapons: Freezer
+    + We've improved your existing arsenal, too! The 'size' of cleaver has been
+      reduced, so now it's more likely to cut into hogs instead of imbedding
+      itself infuriatingly into the ground. The Flying Saucer has also seen some
+      interesting changes...
+    + Death comes from below!
+      It's time to take your amphibious assault to the next level.
+      While using the Flying Saucer, it's now possible to launch projectiles
+      from underwater!
+      Also, instead of just dropping bombs on your enemies you can aim
+      them, too! Wow!
+    + Improved AI
+      The newly improved AI can use drill-rockets!
+    + New Gameplay Challenges
+      A frenetic, awesome new gameplay mode: Frenzy! In this mode each turn
+      lasts only one second.
+    + An extra mission: Nobody Laugh.
+    + More Achievements: 'Prestigious Pilot' and 'Naughty Ninja' have been added
+      to the old missions. Have fun trying to unlock them.
+    + A new weaponset, One of Everything.
+    + New Maps
+      Fight on a variety of new battlegrounds!
+      New entries include Bones, Crystal, Grassy, Haunty, Oaks,
+      Shrooms and Tentacles!
+    + More customization!
+      Over 30 new hats!
+      New SteelTower fort!
+    + Ropers Rejoice
+      Now you can play on an 'infinite' number of procedurally generated maps,
+      thanks to the new Shoppa Map script.
+    + Much improvements in the behavior of rope in 0.9.18.
+  * Dropped patch for ghc 7.6 build failure.
+  * Added libghc-random-dev as build-dep.
+  * Tweaking install files, some file location has changed.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Tue, 28 May 2013 12:21:49 +0200
+
+hedgewars (0.9.18-1) unstable; urgency=low
+
+  [ Gianfranco Costamagna ]
+  * Added myself and unera to uploaders, with unera's permission.
+  * Added Debian Games Team to Maintainer and removed from uploaders.
+  * Bumped compat version to 9.
+  * Added some deps and build-deps on control file.
+  * Removed some check in control file (higher versions
+    already in oldstable)
+  * Enabled hardening flags.
+  * Fixed armhf and powerpc build failure with libc 2.17
+    with Felix Geyer's help. (LP: #1179850)
+
+  [ Felix Geyer ]
+  * Drop build-dependency on libghc-binary-dev and libghc-deepseq-dev as
+    they are just virtual packages provided by ghc.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Fri, 03 May 2013 10:31:44 +0200
+
+hedgewars (0.9.18-0.3) experimental; urgency=low
+
+  * Non-maintainer upload.
+
+  [ Felix Geyer ]
+  * Add missing dependency on freeglut3. (LP: #1171825)
+
+  [ Colin Watson ]
+  * Build-depend on ghc and libghc-* rather than the transitional ghc6 and
+    libghc6-*. (Closes: #705125)
+
+  [ Gianfranco Costamagna ]
+  * Updated debian/rules file, the SERVER disable string has changed.
+
+ -- Felix Geyer <fgeyer@debian.org>  Thu, 02 May 2013 17:55:31 +0200
+
+hedgewars (0.9.18-0.2) experimental; urgency=low
+
+  * Non-maintainer upload
+  * Added patch from upstream to fix a FTBFS with haskell 7.6
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Thu, 21 Feb 2013 17:26:19 +0100
+
+hedgewars (0.9.18-0.1) experimental; urgency=low
+
+  * Non-maintainer upload
+  * New upstream version (Closes: #691986 LP: #1073730)
+    + Built using the -3 upstream tarball hedgewars-src-0.9.18-3.tar.bz2
+    + Hedgewars now has a campaign! This was a GSoC project.
+    + Another GSoC project, video recording! Use the 'r' key to start/stop
+      recording video. Video management is on the frontpage.
+    + PNG screenshots, to make sharing screenshots more convenient.
+    + New weapons! The meat cleaver is the latest addition.
+      Cleavers work well for climbing or blocking entrances.
+    + The AI is now a lot more evil. Set it to maximum level to get the full
+      effect. It knows how to use cake, sniper rifle and kamikaze, as well
+      as aiming shots to drown hedgehogs or do fall damage. It has also gotten
+      more effective at a number of existing weapons, and can move around the
+      map more intelligently.
+    + Drawn maps now have variable pen width, and an eraser tool.
+      Note that the eraser does increase the size of the drawn map network
+      traffic, so don't use it as a substitute for undo.
+    + Static maps no longer have size limits. Please use this sanely, since not
+      everyone has a machine with 16 gigs of memory like you do.
+    + New missions such as portal and rope training.
+    + Customised team colours! Check the advanced tab in team config.
+    + Individual hog health now shows up in the team health bar.
+    + Some weapon tweaks, such as throwing things from rope varying based on
+      density (similar to More Wind) mode, drill rocket no longer exploding
+      in your face if fired from against a wall, you are now able to rope through
+      a portal or fly an RC plane through one, and multiple portal pairs can be
+      setup in a turn by a team if you switch hogs.
+    + Bugfixes Bugfixes Bugfixes (okandprobablyaddedmorebugstoo) and performance
+      enhancements like reduced memory usage.
+  * Bumped standards version to 3.9.4
+  * Added some external build-dependencies
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Mon, 28 Jan 2013 15:45:14 +0100
+
+hedgewars (0.9.17-1) unstable; urgency=low
+
+  * [Paul Wise]
+   * Mention the homing bee in the package description (Closes: #577092)
+   * Also install the hwengine desktop file (LP: #811770)
+   * Depend on ttf-dejavu-core since it is smaller
+   * Depend on ttf-wqy-zenhei instead of embedding a copy of it
+  * [Dmitry E. Oboukhov]
+   * New upstream version.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Sun, 20 Nov 2011 18:31:17 +0400
+
+hedgewars (0.9.16-1) unstable; urgency=low
+
+  * New upstream version.
+   + Downloadable content! Simply click to install any content.
+     New voices, hats, maps, themes, translations, music, scripts...
+     Hedgewars is now more customisable than ever before! As time goes
+     by we will be soliciting community content to feature on this page,
+     so remember to check it from time to time. If you decide you want
+     to go back to standard Hedgewars, just remove the Data directory
+     from your Hedgewars config directory.
+   + 3-D rendering! Diorama-like rendering of the game in a variety
+     of 3D modes. Let us know which ones work best for you, we didn't
+     really have the equipment to test them all.
+   + Resizable game window.
+   + New utilities! The Time Box will remove one of your hedgehogs
+     from the game for a while, protecting from attack until it returns,
+     somewhere else on the map. Land spray will allow you to build bridges,
+     seal up holes, or just make life unpleasant for your enemies.
+   + New single player: Bamboo Thicket, That Sinking Feeling, Newton and
+     the Tree and multi-player: The Specialists, Space Invaders,
+     Racer - scripts! And a ton more script hooks for scripters
+   + New twists on old weapons. Drill strike, seduction and fire have
+     been adjusted. Defective mines have been added, rope can attach to
+     hogs/crates/barrels again, grenades now have variable bounce (use
+     precise key + 1-5). Portal gun is now more usable in flight and
+     all game actions are a lot faster.
+   + New theme - Golf, dozens of new community hats and a new
+     localised Default voice, Ukranian.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Fri, 23 Sep 2011 10:16:55 +0400
+
+hedgewars (0.9.15-4) unstable; urgency=low
+
+  * Exclude buggy icnsutils from B-D.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Thu, 07 Jul 2011 17:23:34 +0400
+
+hedgewars (0.9.15-3) unstable; urgency=low
+
+  * Fixed hicolor icons path. 
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Wed, 06 Jul 2011 11:25:45 +0400
+
+hedgewars (0.9.15-2) unstable; urgency=low
+
+  * Fixed depends (FTBFS, closes: #629778), closed fake bug (closes: #631152).
+  * Bump Standards-Version to 3.9.2.
+  * Install hicolor icons, closes: #621792,
+    thanks to Kees Cook <kees@debian.org>.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Tue, 05 Jul 2011 17:35:56 +0400
+
+hedgewars (0.9.15-1) unstable; urgency=low
+
+  * New upstream version.
+   + Ability to create, save and load hand drawn maps
+   + New maps: Capture the Flag (Blizzard) Map
+   + New themes: Christmas
+   + Snowflakes on Christmas/Snow themes accumulates on the ground
+   + New game modifiers: No wind, More wind
+   + New missions: Dangerous ducklings, Diver, Spooky tree, Teamwork
+   + New weapons: Mudball, Drill strike
+   + Many more Lua hooks
+   + Readytimer
+   + Ability to edit seed
+   + Ability to select gameplay scripts
+   + New gameplay scripts: Capture the Flag, No jumping, Random weapon
+   + New Lua unified translation framework
+   + Code refactoring
+   + Max teams upped to 8
+   + Cosmetic enhancements to Napalm strike
+   + Selecting a game scheme selects the corresponding weapon set
+   + Dust when drills dig
+   + New hats: beaver, porkey, sheep
+   + Add density property to Gears
+   + Reworked management of schemes and weapon sets
+   + Will ask before deleting teams, schemes and weapon sets
+   + Explosions detach rope from land
+   + Allow hog speech when not your turn
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Tue, 28 Dec 2010 23:29:54 +0300
+
+hedgewars (0.9.14.1-1) unstable; urgency=low
+
+  * New upstream version.
+   + New audio tracks
+   + New forts: EvilChicken, Tank
+   + New game modes: AI Survival Mode, Per Hedgehog Ammo,
+     Reset Health, Reset Weapons, Unlimited Attacks
+   + New grave: ring
+   + Over 30 new hats
+   + New themes: Art, Brick, Jungle, Stage
+   + New maps: ShoppaKing, Sticks, TrophyRace (Mission)
+   + New utilities: Portal Gun, Resurrector
+   + New weapons: Flamethrower, Hammer, Old Limburger,
+     Piano Strike, Sticky Mines
+   + Weapons' projectiles will how be launched from their
+     barrels instead of the hog's center
+   + Flying Saucers may be used for moving below the water surface
+   + New default game schemes: Clean Slate, Fort Mode, Timeless,
+     Thinking with Portals, King Mode
+   + New default weapon set: Clean Slate, Thinking with Portals
+   + Bomb clusters/Melon parts inherit some of the original bomb's speed
+   + Extended game statistics
+   + Improved health bar updating
+   + Hogs that blow themselves up will use triggers in they team color
+   + Settings allow better control over the level of details/effects
+   + Improved Lua support
+   + On empty ammo switch to no weapon rather than the first available
+     one (to avoid shooting by accident)
+   + Display of hints in the frontend
+   + Some improvements of existing Themes of Maps
+   + Land destruction effects added
+   + Improved fire effects
+   + Improved Melon explosion effects
+   + Online game lobby now features game filters
+   + Other Frontend enhancements
+   + Additional sounds
+   + Show special game rules in Esc screen
+   + Updated translation
+   + Speed optimizations
+   + Hedgewars will now use a sub directory of "My Documents"
+     like other games instead of "%userprofile%/.hedgewars" under Windows
+   + Added support for graphics cards/drivers that have a 512x512
+     pixel textures limit
+   + Team colors are more distinguishable from each other now
+   * Fixed bug that allowed charging a weapon while on rope,
+     leading to frozen timer
+   * Various bug fixes
+  * Switched to 3.0 source format.
+  * Switched to cdbs build system.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Sun, 14 Nov 2010 22:45:48 +0300
+
+hedgewars (0.9.13-1) unstable; urgency=low
+
+  * New upstream version, closes: #576370
+    * many bug fixes
+    * speed optimisations
+    * many new hats, hats visible while using rope and blowtorch
+    * Exploding barrels
+    * AI uses new weapons, aware of fire, can fight in artillery mode
+    * New options in ammo editing - crate probability, delays
+    * option of semi-opaque hog name tags to avoid fail when
+      land is hidden by name
+    * new British voicepack
+    * notification sound when people join your room
+    * translation updates
+    * contextual help when using weapons menu
+    * 3d effect for waves
+    * fade effect when starting/stopping game
+    * new game modes - place hedgehog, king mode, randomise starts,
+      allies share ammo, disable girders
+    * shift + direction to turn without moving
+    * view ammo menu when not your turn
+    * new font for CJK text and better CJK detection
+    * dud mines
+    * hat reservation for donators (hats should be released to public
+      in 6 months or so)
+    * team flags
+    * visual effects: dust on fall impact, smoke, shotgun shells,
+      blink team name on start of turn, hogs pulling weapons out,
+      falling flakes kicked by explosion and more
+    * hogs react to throwing grenades / dynamite and when near them
+    * graphic of crate contents when picking up weapon/utility
+    * walk sound for hedgehogs
+    * UFO changed to homing bee
+    * splashes/droplets when things fall in the water
+    * 45 degree bounce when throwing grenades
+    * new bounce sounds
+    * information on game rules when starting game
+    * knockball map (scripted map)
+    * Birdy weapon and poisoning effect
+    * maze generator for new random maps
+    * new crazy map template
+    * new Olympics, Desert themes, visual updates to many other themes
+    * Background texture for land for a 3d effect on explosions
+    * frontend able to delete teams
+    * ignore/friends lists in frontend
+    * alt weapon preview on rope, parachute
+    * updated options in frontend: independent toggles for
+      frontend/game sound/music, select locale
+    * More
+    * lua scripting
+      Lua scripting allows the easy creation of missions and special maps.
+      Examples of this can be seen in the Knockball and Basketball maps,
+      that are now scripted
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Mon, 05 Apr 2010 10:39:04 +0400
+
+hedgewars (0.9.12-2) unstable; urgency=low
+
+  * fixes 'FTBFS: Error: Illegal parameter: -Nu', closes: #573694,
+    thanks for Lucas Nussbaum <lucas@lucas-nussbaum.net>.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Mon, 15 Mar 2010 11:03:16 +0300
+
+hedgewars (0.9.12-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Sun, 18 Oct 2009 22:39:07 +0400
+
+hedgewars (0.9.11-5) unstable; urgency=low
+
+  * Icon for .desktop file has been installed, too, closes: #540235,
+    thanks for Andrew SB <a.starr.b@gmail.com>.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Thu, 06 Aug 2009 22:38:40 +0400
+
+hedgewars (0.9.11-4) unstable; urgency=low
+
+  * Fixed FTBFS: added absent build-depends.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Wed, 05 Aug 2009 12:02:26 +0400
+
+hedgewars (0.9.11-3) unstable; urgency=low
+
+  * Turned on network/server features (server was patched for buildling by
+    new haskell-compiler).
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Wed, 05 Aug 2009 10:44:23 +0400
+
+hedgewars (0.9.11-2) unstable; urgency=low
+
+  * Added Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+    to uploaders list.
+  * debian/copyright has been updated (added section about fonts).
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Tue, 07 Jul 2009 15:38:33 +0400
+
+hedgewars (0.9.11-1) unstable; urgency=low
+
+  * New upstream version, closes: #526975, #532851.
+  * Now upstream contains .desktop entry, closes: #512842.
+  * Debian hasn't haskell libraries it need, so we temporary turned off
+    the network features.
+  * Fixed all the warnings of dpkg-shlibdeps.
+  * Standards-Version bumped to 3.8.2.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Tue, 07 Jul 2009 12:52:36 +0400
+
+hedgewars (0.9.9-2) unstable; urgency=low
+
+  * Added VCS-* records to debian/control.
+  * GIT-repo has been created in git.debian.org.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Sun, 01 Feb 2009 23:25:04 +0300
+
+hedgewars (0.9.9-1) unstable; urgency=low
+
+  * New upstream (and bugfix) release, closes: #511558
+    * Voicepacks, customize your teams voice!
+    * Nice new visual statistics page after the match
+    * Precise aiming, hold shift to aim more accurately
+    * Improved lobby chat
+    * Remote Control Plane weapon
+    * A couple of additions to customization content, 
+      (i.e. grave / fort / hat content)
+    * Additional sound effects
+    * Various tweaks and bug fixes
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Tue, 20 Jan 2009 20:19:13 +0300
+
+hedgewars (0.9.8-1) unstable; urgency=low
+
+  * New upstream release, upstream changes:
+   * Massive number of network play bugfixes
+   * Now spectating works for those who joined after game start
+   * New Drill rocket weapon
+   * New Napalm strike weapon
+   * New Super awesome super weapon
+   * Land can now be set to be indestructable
+   * Six brand new maps using new themes
+   * Lots of new forts
+   * Hellish hand grenade reworked
+   * Brand new server lobby
+   * Lobby chat
+   * Spread of Melon Bomb fragments improved
+   * Blowtorch bug fixes and improvements
+   * Fixed a crash bug that occured when the engine had no room to
+     place all Hedgehogs
+   * More delay after jump, less delay after small fall for hedgehog
+   * Limit max chat message length to 300 characters
+   * Ammo menu no longer closes when user clicks on not yet available weapon
+   * Ammo scheme bug fixes
+   * Fire effect improved
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Fri, 09 Jan 2009 22:40:13 +0300
+
+hedgewars (0.9.7-3) unstable; urgency=low
+
+  * Recompiled with enable server options.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Tue, 04 Nov 2008 21:31:43 +0300
+
+hedgewars (0.9.7-2) unstable; urgency=low
+
+  * DejaVuSans-Bold.ttf has been replaced by symlink.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Tue, 04 Nov 2008 21:31:40 +0300
+
+hedgewars (0.9.7-1) unstable; urgency=low
+
+  * New upstream release, upstream changes:
+    * A completely redesigned, redrawn frontend, built to be both
+      prettier and easier to use.
+    * Completely reworked netplay, supports players joining and
+      leaving games in progress
+    * Admin controls for network play
+    * A new, official central dedicated server, allowing mutiple
+      "rooms" per server, a multiplayer lobby for matchmaking
+    * The ability to customize your team in exciting new ways,
+      including the ability to customize the visual look of your
+      hedgehogs
+    * New maps, themes, and graphics, a huge addition to content
+    * New weapons, gameplay mechanics and game options. New super
+      weapons that you will find only in crates
+    * New working flames that damage hedgehogs and corrode the
+      terrain
+    * New sounds, music and media
+    * Atmostrophic's chat border 
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Mon, 03 Nov 2008 13:18:28 +0300
+
+hedgewars (0.9.6-1) unstable; urgency=low
+
+  * New upstream release, closes: #492953.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Wed, 30 Jul 2008 11:03:46 +0400
+
+hedgewars (0.9.5-2) unstable; urgency=low
+
+  * Fix typo in german translation, 
+    thanks for Michael Vogt, closes: #492859.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Tue, 29 Jul 2008 17:04:59 +0400
+
+hedgewars (0.9.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Thu, 10 Jul 2008 21:18:26 +0400
+
+hedgewars (0.9.4-2) unstable; urgency=low
+
+  * Switching between fullscreen and window mode has been restored,
+    closes: #489011.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Fri, 04 Jul 2008 22:40:37 +0400
+
+hedgewars (0.9.4-1) unstable; urgency=low
+
+  * New upstream release, closes: #483813.
+  * Standards-Version bumped to 3.8.0.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Thu, 19 Jun 2008 16:10:12 +0400
+
+hedgewars (0.9.3-3~bpo40+1) etch-backports; urgency=low
+
+  * Rebuilt for etch.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Wed, 11 Jun 2008 18:01:53 +0400
+
+hedgewars (0.9.3-3) unstable; urgency=low
+
+  * My email address has been changed.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Fri, 30 May 2008 08:00:33 +0400
+
+hedgewars (0.9.3-2) unstable; urgency=low
+
+  * Fix depends on hedgewars-data (0.9.3).
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Sun, 18 May 2008 19:49:13 +0400
+
+hedgewars (0.9.3-1) unstable; urgency=low
+
+  * New upstream release, closes: #476190 (To easy win).
+  * Removed unnecessary build-depends.
+  * Added fp-units-gfx to build-depends.
+  * Upload sponsored by Al Nikolov <clown@debian.org>.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Tue, 29 Apr 2008 16:26:09 +0400
+
+hedgewars (0.9.2-2) unstable; urgency=low
+
+  * Fix FTBFS make configure-stamp (added libxrandr-dev, libfontconfig1-dev,
+    libxi-dev, libsm-dev, libice-dev to build-depends), closes: #477012.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Sun, 20 Apr 2008 20:01:42 +0400
+
+hedgewars (0.9.2-1) unstable; urgency=low
+
+  * New upstream version (closes: #420431, #420418).
+  * Standards-Version bumped to 3.7.3.
+  * Move menu item to Games/Action (closes lintian warning).
+  * Added debian/watch file.
+  * Updated packaging, now using tar-in-tar approach.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Tue, 22 Jan 2008 17:34:31 +0300
+
+hedgewars (0.9.0-7) unstable; urgency=low
+
+  * Apply patch for gcc4.3, thanks Martin Michlmayr <tbm@cyrius.com>
+    (closes: #421216).
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Fri, 27 Apr 2007 22:50:36 +0400
+
+hedgewars (0.9.0-6) unstable; urgency=low
+
+  * Disable debug mode (closes: #415606).
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Fri, 16 Mar 2007 19:13:05 +0300
+
+hedgewars (0.9.0-5) unstable; urgency=low
+
+  * Apply new_team_warnings_cmake.patch (closes: #415004):
+     - new team in multiplayer and net game fix - new team is now 
+        correctly added to widgets;
+     - Fix most of the warnings in hwengine;
+     - Use right way of finding and using Qt4 in CMake.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Thu, 15 Mar 2007 15:18:19 +0300
+
+hedgewars (0.9.0-4) unstable; urgency=low
+
+  * Add dpatch mechanizm.
+  * Apply 'http://hedgewars.org/download/new_team_readme_angle.patch'
+    pacth.
+  * Remove one 'make install' from debian/rules.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Sun, 25 Feb 2007 19:54:29 +0300
+
+hedgewars (0.9.0-3) unstable; urgency=low
+
+  * Add "Recommends" record into debian/control (for hedgewars-data package).
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Sat, 24 Feb 2007 23:31:56 +0300
+
+hedgewars (0.9.0-2) unstable; urgency=low
+
+  * Fix 'Messes with the mouse in other desktops' bug (closes: #405875).
+  * Record about tools/runhelper.dpr is removed from debian/copyright.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Sat, 24 Feb 2007 12:55:19 +0300
+
+hedgewars (0.9.0-1) UNRELEASE; urgency=low
+
+  * New upstream version.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Sat, 24 Feb 2007 12:21:08 +0300
+
+hedgewars (0.8.2+trunk20070223) UNRELEASE; urgency=low
+
+  * Trunk version.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Fri, 23 Feb 2007 16:18:53 +0300
+
+hedgewars (0.8.1-11) unstable; urgency=low
+
+  * Split into two packages: hedgewars and hedgewars-data (closes: #406129).
+  * Remove build-depend libsdl-net1.2 (>= 1.2.5-4).
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Wed, 21 Feb 2007 23:09:19 +0300
+
+hedgewars (0.8.1-10) unstable; urgency=low
+
+  * Set build depends for libsdl-net1.2 to >= 1.2.5-4, 
+    http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=217221.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Mon, 19 Feb 2007 22:17:46 +0300
+
+hedgewars (0.8.1-9) unstable; urgency=low
+
+  * Fixed debian/copyright (added copyright from tools/runhelper.dpr file).
+  * Removed file 'Fonts_LICENSE.txt' from orig.tar.gz (font was removed in
+    revision 0.8.1-5).
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Thu, 28 Dec 2006 18:03:25 +0300
+
+hedgewars (0.8.1-8) unstable; urgency=low
+
+  * Removed lintian and linda overrides.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Sun, 17 Dec 2006 20:52:10 +0300
+
+hedgewars (0.8.1-7) unstable; urgency=low
+
+  * Add 'debian/README.Debian-sources' file (diff -ur hedgewars-0.8.1.orig
+    hedgewars-0.8.1).
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Sun, 17 Dec 2006 12:07:59 +0300
+
+hedgewars (0.8.1-6) unstable; urgency=low
+
+  * For upload (Closes: #401790).
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Wed,  6 Dec 2006 01:14:08 +0300
+
+hedgewars (0.8.1-5) unstable; urgency=low
+
+  * Remove DejaVuSans.ttf from orig.tar.gz.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Mon,  4 Dec 2006 00:10:10 +0300
+
+hedgewars (0.8.1-4) unstable; urgency=low
+
+  * Move exec-files into /usr/games.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Sun,  3 Dec 2006 21:25:32 +0300
+
+hedgewars (0.8.1-3) unstable; urgency=low
+
+  * Fix (or overrides) all linda/lintianwarnings.
+  * Add depends: 'ttf-dejavu'.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Sun,  3 Dec 2006 16:41:32 +0300
+
+hedgewars (0.8.1-2) unstable; urgency=low
+
+  * Add menu item.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Tue, 28 Nov 2006 20:57:06 +0300
+
+hedgewars (0.8.1-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Dmitry E. Oboukhov <dimka@avanto.org>  Mon, 27 Nov 2006 13:58:41 +0300
+

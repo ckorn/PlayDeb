@@ -1,0 +1,40 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --parallel
+
+DEJAVU_DIRECTORY := $(shell dirname `readlink -f /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans-Bold.ttf`)
+
+ifeq ($(shell dpkg-query --status fpc |grep -o Package), Package)
+ BUILD_ENGINE_C := NO
+else
+ BUILD_ENGINE_C := YES
+endif
+
+HEDGEWARS_OPTIONS= \
+ -DCMAKE_INSTALL_PREFIX=/usr/lib/hedgewars \
+ -DDATA_INSTALL_DIR=/usr/share/games/hedgewars \
+ -DCMAKE_BUILD_TYPE=RELEASE -DPHYSFS_SYSTEM=ON \
+ -DFONTS_DIRS='/usr/share/fonts/truetype/wqy;$(DEJAVU_DIRECTORY)' \
+ -DNOVERSIONINFOUPDATE=1 \
+ -DBUILD_ENGINE_C=$(BUILD_ENGINE_C)
+
+override_dh_clean:
+	rm -rf tmp-icon
+	dh_clean
+
+override_dh_install:
+	mv debian/tmp/usr/lib/hedgewars/share/pixmaps/ debian/tmp/usr/share/
+	rm -Rf debian/tmp/usr/lib/hedgewars/share/
+	dh_install
+
+override_dh_auto_configure:
+	for icon in `find debian/hicolor-icons -type f`; do \
+		dirname=`dirname $$icon`; \
+		dirname=`dirname $$dirname`; \
+		dirname=`basename $$dirname`; \
+		basename=`basename $$icon .xpm`; \
+		mkdir -p tmp-icon/$$dirname/apps; \
+		convert $$icon +set date:create +set date:modify -define png:exclude-chunk=time tmp-icon/$$dirname/apps/$$basename.png; \
+	done
+	dh_auto_configure -- $(HEDGEWARS_OPTIONS)
