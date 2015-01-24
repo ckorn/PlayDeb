@@ -1,3 +1,9 @@
+freeminer (0.4.11.5-1~getdeb2~utopic) utopic; urgency=medium
+
+  * Rebuild for utopic
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Jan 2015 19:53:49 +0100
+
 freeminer (0.4.11.5-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
