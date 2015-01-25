@@ -3,10 +3,6 @@
 %:
 	dh $@ --parallel
 
-override_dh_auto_clean:
-	dh_auto_clean
-	rm -rf mk/linux
-
 override_dh_auto_configure:
 	dh_auto_configure -- -DMEGAGLEST_DATA_INSTALL_PATH=share/games/megaglest/
 
