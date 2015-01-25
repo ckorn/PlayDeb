@@ -1,3 +1,9 @@
+pokemon-online (2.5.2-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 25 Jan 2015 01:03:39 +0100
+
 pokemon-online (2.5.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
