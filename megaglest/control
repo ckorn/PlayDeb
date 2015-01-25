@@ -33,6 +33,7 @@ Homepage: http://megaglest.org/
 
 Package: megaglest
 Architecture: any-amd64 any-i386 alpha arm armel armhf ia64 mipsel sh4
+Replaces: megaglest-data (<< 3.10.0)
 Depends: famfamfam-flag-png,
          fonts-liberation,
          fonts-uralic,
