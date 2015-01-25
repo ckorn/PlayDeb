@@ -1,5 +1,3 @@
 version=3
 # The built data is here:
-https://github.com/MegaGlest/megaglest-data/releases/latest (?:.*/)?megaglest-data-([\d\.]+)\.tar\.xz
-# The data source code is here:
-https://github.com/MegaGlest/megaglest-data-source/releases/latest (?:.*/)?megaglest-data-source-([\d\.]+)\.tar\.xz
+https://github.com/MegaGlest/megaglest-data/releases/latest (?:.*/)?megaglest-data-([\d\.]+)\.tar\.(?:xz|gz|bz2)
