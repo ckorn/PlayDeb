@@ -1,3 +1,88 @@
+wesnoth-1.12 (1:1.12.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+     * AI:
+       * Big Animals Micro AI: bug fix for units not attacking when
+       [avoid_unit] is not set
+       * Lurkers MAI: bug fix for attack error when lurker runs into ambush
+       * Lurkers MAI: bug fix for attempting to attack petrified units
+       * Stationed Guardian Micro AI: bug fix for unreachable stations
+     * Campaigns:
+       * Heir to the Throne:
+         * Tweaked and expanded music playlists for all scenarios.
+         * Hide unit variations that should not be listed in the help
+         browser.
+       * Liberty:
+         * Fixed possibility of no viable routes around guards in 'Hide and
+         Seek'.
+       * Son of the Black Eye:
+         * S6 Black Flag: reduce randomness of unit types unloading from
+         galleons
+       * The Rise of Wesnoth:
+         * Hide unit variations that should not be listed in the help
+         browser.
+       * Under the Burning Suns:
+         * Hide unit variations that should not be listed in the help
+         browser.
+     * Editor:
+       * Fixed falcon race missing an icon due to having incorrectly-named
+       image files.
+       * Fixed editor startup slowness. <http://r.wesnoth.org/t41421>
+     * Help browser:
+       * Unit types that do not include any visible (hide_help=no) variations
+       no longer generate topic sections.
+     * Language and i18n:
+       * Updated translations: French, Portuguese, Russian, Scottish Gaelic,
+       Slovak, Spanish
+       * Fixed cmake pot-update target on Debian and other systems that do
+       not use bash as the default /bin/sh.
+     * Multiplayer:
+       * Fixed the Set Password option during game creation not having an
+       effect due to a misplaced WML attribute in the client's command for
+       the server (bug #23015).
+       * Workaround for modifications failing to work with MP campaigns
+         (bug #22334).
+       * Fixed Observer crashed on joining non-first scenario of a campaign
+         (bug #23036).
+       * Fixed AI-controlled sides being transferred to human players on MP
+       game reloading (bug #22968).
+       * Fixed missing scenario title in lobby for reloaded MP campaigns.
+     * Units:
+       * Assigned capitalized translatable names to Walking Corpse and
+       Soulless variations (bug #22902).
+       * Hid alternate Great Wolf variation from help as it is identical to
+       the default variation stats-wise.
+     * User interface:
+       * Added a Classic theme which restores the 1.10 game UI.
+     * WML engine:
+       * Fixed nested macros emitting incorrect bindings to the default
+       'wesnoth'
+         textdomain at the end of a substitution instead of the parent
+         textdomain,
+         thus breaking localization of subsequent strings (bug #22962).
+       * Fixed special _initial.cfg and _final.cfg file inclusion order not
+       being honored by Windows builds using Boost.filesystem (bug #22967).
+       * Fixed dot-files being considered when {including} directories in
+       WML, on builds using the new filesystem code (regression introduced in
+         1.11.19).
+       * Preprocessor #warning messages now conform better to the new WML
+         parser/preprocessor diagnostics format introduced in version
+         1.11.10.
+     * Miscellaneous and bug fixes:
+       * Fixed non-ASCII characters in the player's profile path preventing
+       Wesnoth to launch on Windows (bug #22983).
+       * Fixed wesnoth failing to start on some systems using non-UTF-8
+       locales. <http://r.wesnoth.org/t41268>
+       * Fixed hotkeys for displaying tips on the titlescreen crashing the
+       game (bug #18926).
+       * Disallowed toggling Delayed Shroud Updates when not the player's
+       turn as it causes OOS.
+       * Fixed problems building wesnothd using cmake if not building the
+       game
+       * Added several new options to GUI.pyw
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 25 Jan 2015 00:26:58 +0100
+
 wesnoth-1.12 (1:1.12-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
