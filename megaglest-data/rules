@@ -5,7 +5,6 @@
 override_dh_auto_install:
 	dh_auto_install --destdir=debian/megaglest-data
 	rm debian/megaglest-data/usr/share/megaglest/docs/README.data-license.txt
-	echo "CountryTexturePath=/usr/share/flags/countries/16x11/" >> debian/megaglest-data/usr/share/megaglest/glest.ini
 	find debian/megaglest-data/usr -type d -empty -delete
 	mkdir debian/megaglest-data/usr/share/games
 	mv debian/megaglest-data/usr/share/megaglest debian/megaglest-data/usr/share/games

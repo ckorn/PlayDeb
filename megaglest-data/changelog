@@ -1,3 +1,9 @@
+megaglest-data (3.11.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 24 Jan 2015 22:23:46 +0100
+
 megaglest-data (3.9.1-1~getdeb1) saucy; urgency=low
 
   * New upstream version
