@@ -1,0 +1,78 @@
+netmaumau (0.11-1~getdeb1) trusty; urgency=medium
+
+  * Upload to PlayDeb (LP: #1413948)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 25 Jan 2015 15:00:53 +0100
+
+netmaumau (0.11~utopic) utopic; urgency=medium
+
+  * improved AI opponent
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sat, 24 Jan 2015 05:19:42 +0100
+
+netmaumau (0.10) UNRELEASED; urgency=low
+
+  * installing links to ai_imgN.png for customizing AI images
+  * added whitespace substitution for xinetd
+
+ -- Heiko Schäfer <heiko@rangun.de>  Thu, 15 Jan 2015 08:12:34 +0100
+
+netmaumau (0.9) UNRELEASED; urgency=low
+
+  * added sqlite database for collecting scores and other stats
+  * added possibility to run via (x)inetd
+
+ -- Heiko Schäfer <heiko@rangun.de>  Fri, 09 Jan 2015 06:13:50 +0100
+
+netmaumau (0.8) UNRELEASED; urgency=low
+
+  * implemented take card count on play card request
+  * implemented https://github.com/velnias75/NetMauMau/issues/14
+
+ -- Heiko Schäfer <heiko@rangun.de>  Thu, 01 Jan 2015 16:06:55 +0100
+
+netmaumau (0.7) UNRELEASED; urgency=low
+
+  * implemented ace rounds
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sun, 21 Dec 2014 17:55:59 +0100
+
+netmaumau (0.6) UNRELEASED; urgency=low
+
+  * check if the player image is really a PNG image
+  * improved test tools (for developing)
+  * added dependency to libgsl0-dev
+
+ -- Heiko Schäfer <heiko@rangun.de>  Thu, 18 Dec 2014 10:00:23 +0100
+
+netmaumau (0.5) UNRELEASED; urgency=low
+
+  * Fixed out of memory handling at picture upload
+  * Fixed https://github.com/velnias75/NetMauMau-Qt-Client/issues/3
+  * Fixed https://github.com/velnias75/NetMauMau/issues/7
+
+ -- Heiko Schäfer <heiko@rangun.de>  Wed, 10 Dec 2014 15:37:45 +0100
+
+netmaumau (0.4) UNRELEASED; urgency=low
+
+  * If a player has lost due a played out Jack, the points are doubled
+  * If a player has lost and a 7 is the open card, the player takes the 
+    cards and they get added to the points
+  * Fixed https://github.com/velnias75/NetMauMau/issues/2
+  * Fixed https://github.com/velnias75/NetMauMau/issues/3
+  * Player pictures can get transferred via server to clients
+
+ -- Heiko Schäfer <heiko@rangun.de>  Thu, 04 Dec 2014 06:08:36 +0100
+
+netmaumau (0.3) UNRELEASED; urgency=low
+
+  * On Win32 systems every log message gets flushed afterwards
+  * Support for up to 4 AI players
+
+ -- Heiko Schäfer <heiko@rangun.de>  Wed, 26 Nov 2014 12:28:36 +0100
+
+netmaumau (0.2) UNRELEASED; urgency=low
+
+  * Initial release
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sat, 01 Nov 2014 17:38:01 +0100
