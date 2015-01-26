@@ -1,0 +1,4278 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ nmm-qt-client (0.11-6~precise) precise; urgency=medium
+ .
+   * player images can now be dropped on the main window
+   * all Qt supported image formats are accepted
+   * improved server dialog
+   * card tooltips can get disabled
+Author: Heiko Schäfer <heiko@rangun.de>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- nmm-qt-client-0.11.orig/nmm_qt_client_de_DE.ts
++++ nmm-qt-client-0.11/nmm_qt_client_de_DE.ts
+@@ -3,6 +3,47 @@
+ <TS version="2.0" language="de_DE">
+ <defaultcodec>UTF-8</defaultcodec>
+ <context>
++    <name>AddServerDialog</name>
++    <message>
++        <location filename="addserverdialog.ui" line="14"/>
++        <source>Add server</source>
++        <translation>Server hinzufügen</translation>
++    </message>
++</context>
++<context>
++    <name>AddServerWidget</name>
++    <message>
++        <location filename="addserverwidget.ui" line="20"/>
++        <source>Add server</source>
++        <translation>Füge Server hinzu</translation>
++    </message>
++    <message>
++        <location filename="addserverwidget.ui" line="26"/>
++        <source>&amp;Server:</source>
++        <translation>&amp;Server:</translation>
++    </message>
++    <message>
++        <location filename="addserverwidget.ui" line="39"/>
++        <source>The server you want to add</source>
++        <translation>Der Server den Du hinzufügen möchtest</translation>
++    </message>
++    <message>
++        <location filename="addserverwidget.ui" line="51"/>
++        <source>The port to connect to</source>
++        <translation>Der Port zu dem verbunden werden soll</translation>
++    </message>
++    <message>
++        <location filename="addserverwidget.ui" line="80"/>
++        <source>Add server to list</source>
++        <translation>Füge Server zur Liste hinzu</translation>
++    </message>
++    <message>
++        <location filename="addserverwidget.ui" line="97"/>
++        <source>&amp;Port:</source>
++        <translation>&amp;Port:</translation>
++    </message>
++</context>
++<context>
+     <name>CardWidget</name>
+     <message>
+         <location filename="cardwidget.cpp" line="120"/>
+@@ -25,37 +66,37 @@
+         <translation>Pik</translation>
+     </message>
+     <message>
+-        <location filename="cardwidget.cpp" line="156"/>
++        <location filename="cardwidget.cpp" line="165"/>
+         <source>Illegal card</source>
+         <translation>Ungültige Karte</translation>
+     </message>
+     <message>
+-        <location filename="cardwidget.cpp" line="138"/>
++        <location filename="cardwidget.cpp" line="143"/>
+         <source>Jack</source>
+         <translation>Bube</translation>
+     </message>
+     <message>
+-        <location filename="cardwidget.cpp" line="139"/>
++        <location filename="cardwidget.cpp" line="145"/>
+         <source>Queen</source>
+         <translation>Dame</translation>
+     </message>
+     <message>
+-        <location filename="cardwidget.cpp" line="140"/>
++        <location filename="cardwidget.cpp" line="147"/>
+         <source>King</source>
+         <translation>König</translation>
+     </message>
+     <message>
+-        <location filename="cardwidget.cpp" line="141"/>
++        <location filename="cardwidget.cpp" line="149"/>
+         <source>Ace</source>
+         <translation>Ass</translation>
+     </message>
+     <message>
+-        <location filename="cardwidget.cpp" line="145"/>
++        <location filename="cardwidget.cpp" line="154"/>
+         <source>%1 of %2</source>
+         <translation>%2 %1</translation>
+     </message>
+     <message numerus="yes">
+-        <location filename="cardwidget.cpp" line="148"/>
++        <location filename="cardwidget.cpp" line="157"/>
+         <source>%n point(s)</source>
+         <oldsource>%n points(s)</oldsource>
+         <translation>
+@@ -117,15 +158,20 @@ Der Server erwartet mindestens Version %
+ <context>
+     <name>DeleteServersDialog</name>
+     <message>
+-        <location filename="deleteserversdialog.ui" line="6"/>
++        <location filename="deleteserversdialog.ui" line="14"/>
+         <source>Delete servers</source>
+         <translation>Server löschen</translation>
+     </message>
+     <message>
+-        <location filename="deleteserversdialog.ui" line="17"/>
++        <location filename="deleteserversdialog.ui" line="25"/>
+         <source>Select servers to delete:</source>
+         <translation>Server zum Löschen auswählen:</translation>
+     </message>
++    <message>
++        <location filename="deleteserversdialog.ui" line="32"/>
++        <source>Select the servers you want to delete</source>
++        <translation>Die Server die Du entfernen möchtest</translation>
++    </message>
+ </context>
+ <context>
+     <name>JackChooseDialog</name>
+@@ -145,22 +191,22 @@ Der Server erwartet mindestens Version %
+         <translation></translation>
+     </message>
+     <message>
+-        <location filename="jackchoosedialog.cpp" line="44"/>
++        <location filename="jackchoosedialog.cpp" line="45"/>
+         <source>Hearts</source>
+         <translation>Herz</translation>
+     </message>
+     <message>
+-        <location filename="jackchoosedialog.cpp" line="45"/>
++        <location filename="jackchoosedialog.cpp" line="47"/>
+         <source>Diamonds</source>
+         <translation>Karo</translation>
+     </message>
+     <message>
+-        <location filename="jackchoosedialog.cpp" line="46"/>
++        <location filename="jackchoosedialog.cpp" line="49"/>
+         <source>Clubs</source>
+         <translation>Kreuz</translation>
+     </message>
+     <message>
+-        <location filename="jackchoosedialog.cpp" line="47"/>
++        <location filename="jackchoosedialog.cpp" line="51"/>
+         <source>Spades</source>
+         <translation>Pik</translation>
+     </message>
+@@ -289,17 +335,22 @@ Schließe den Klienten deshalb nicht, de
+         <translation>&amp;Beim Start:</translation>
+     </message>
+     <message>
+-        <location filename="launchserverdialog.ui" line="308"/>
++        <location filename="launchserverdialog.ui" line="283"/>
++        <source>The local server will get started automatically</source>
++        <translation>Der lokale Server wird automatisch gestartet</translation>
++    </message>
++    <message>
++        <location filename="launchserverdialog.ui" line="311"/>
+         <source>&amp;Cancel</source>
+         <translation>&amp;Abbruch</translation>
+     </message>
+     <message>
+-        <location filename="launchserverdialog.ui" line="315"/>
++        <location filename="launchserverdialog.ui" line="318"/>
+         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tries to launch the server.&lt;/p&gt;&lt;p&gt;The server will be available at &lt;tt&gt;localhost&lt;/tt&gt; and the given port.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Versucht den Server zu starten.&lt;/p&gt;&lt;p&gt;Der Server wird unter &lt;tt&gt;localhost&lt;/tt&gt; und dem angegeben Port verfügbar sein.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+     </message>
+     <message>
+-        <location filename="launchserverdialog.ui" line="318"/>
++        <location filename="launchserverdialog.ui" line="321"/>
+         <source>&amp;Launch</source>
+         <translation>&amp;Starten</translation>
+     </message>
+@@ -344,301 +395,293 @@ Schließe den Klienten deshalb nicht, de
+ <context>
+     <name>MainWindow</name>
+     <message>
+-        <location filename="mainwindow.ui" line="15"/>
++        <location filename="mainwindow.ui" line="18"/>
+         <source>NetMauMau Client</source>
+         <translation>NetMauMau Klient</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="53"/>
+-        <location filename="mainwindow.cpp" line="1229"/>
++        <location filename="mainwindow.ui" line="56"/>
++        <location filename="mainwindow.cpp" line="1289"/>
+         <source>Players</source>
+         <translation>Spieler</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="130"/>
++        <location filename="mainwindow.ui" line="133"/>
+         <source>&amp;File</source>
+         <translation>&amp;Datei</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="142"/>
++        <location filename="mainwindow.ui" line="145"/>
+         <source>&amp;Help</source>
+         <translation>&amp;Hilfe</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="151"/>
++        <location filename="mainwindow.ui" line="154"/>
+         <source>&amp;View</source>
+         <translation>&amp;Ansicht</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="165"/>
++        <location filename="mainwindow.ui" line="170"/>
+         <source>Toolbar</source>
+         <translation>Werkzeugleiste</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="199"/>
++        <location filename="mainwindow.ui" line="204"/>
+         <source>Talon</source>
+         <translation>Stapel</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="214"/>
+-        <location filename="mainwindow.cpp" line="156"/>
++        <location filename="mainwindow.ui" line="219"/>
++        <location filename="mainwindow.cpp" line="165"/>
+         <source>Turn</source>
+         <translation>Runde</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="238"/>
++        <location filename="mainwindow.ui" line="243"/>
+         <source>Open card</source>
+         <translation>Aufg. Karte</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="379"/>
++        <location filename="mainwindow.ui" line="384"/>
+         <source>Shuffling</source>
+         <translation>Am mischen</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="402"/>
++        <location filename="mainwindow.ui" line="407"/>
+         <source>Jack</source>
+         <translation>Farbe</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="446"/>
+-        <location filename="mainwindow.cpp" line="1382"/>
++        <location filename="mainwindow.ui" line="454"/>
++        <location filename="mainwindow.cpp" line="1452"/>
+         <source>Local player</source>
+         <translation>Lokaler Spieler</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="482"/>
+-        <location filename="mainwindow.ui" line="488"/>
++        <location filename="mainwindow.ui" line="490"/>
++        <location filename="mainwindow.ui" line="496"/>
+         <source>My cards</source>
+         <translation>Meine Karten</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="539"/>
++        <location filename="mainwindow.ui" line="547"/>
+         <source>No s&amp;ort</source>
+         <translation>Keine &amp;Sortierung</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="555"/>
++        <location filename="mainwindow.ui" line="563"/>
+         <source>S&amp;uit/Rank</source>
+         <translation>&amp;Farbe/Wert</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="574"/>
++        <location filename="mainwindow.ui" line="582"/>
+         <source>&amp;Rank/Suit</source>
+         <translation>&amp;Wert/Farbe</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="590"/>
++        <location filename="mainwindow.ui" line="598"/>
+         <source>Disable cards which aren&apos;t possible to play</source>
+         <translation>Graue Karten aus, die nicht spielbar sind</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="593"/>
++        <location filename="mainwindow.ui" line="601"/>
+         <source>F&amp;ilter</source>
+         <translation>&amp;Filtere aus</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="622"/>
++        <location filename="mainwindow.ui" line="630"/>
+         <source>Take cards first and choose</source>
+         <translation>Ziehe zuerst eine Karte und lege dann</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="625"/>
++        <location filename="mainwindow.ui" line="633"/>
+         <source>&amp;Take</source>
+         <oldsource>Take</oldsource>
+         <translation>&amp;Ziehe</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="638"/>
++        <location filename="mainwindow.ui" line="646"/>
+         <source>Suspend your turn and take one card</source>
+         <translation>Setze diese Runde aus und ziehe eine Karte</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="641"/>
++        <location filename="mainwindow.ui" line="649"/>
+         <source>&amp;Suspend</source>
+         <translation>A&amp;ussetzen</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="662"/>
++        <location filename="mainwindow.ui" line="670"/>
+         <source>&amp;Servers...</source>
+         <translation>&amp;Server...</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="665"/>
++        <location filename="mainwindow.ui" line="673"/>
+         <source>Show available servers</source>
+         <translation>Zeige verfügbare Server</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="678"/>
++        <location filename="mainwindow.ui" line="686"/>
+         <source>E&amp;xit</source>
+         <translation>B&amp;eenden</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="689"/>
++        <location filename="mainwindow.ui" line="697"/>
+         <source>About &amp;Qt</source>
+         <translation>Über &amp;Qt</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="692"/>
++        <location filename="mainwindow.ui" line="700"/>
+         <source>Show the Qt library&apos;s About box</source>
+         <translation>Zeige den Über-Dialog von Qt</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="702"/>
++        <location filename="mainwindow.ui" line="710"/>
+         <source>&amp;About %1</source>
+         <translation>Ü&amp;ber %1</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="715"/>
++        <location filename="mainwindow.ui" line="723"/>
+         <source>Re&amp;connect</source>
+         <translation>&amp;Wiederverbinden</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="718"/>
++        <location filename="mainwindow.ui" line="726"/>
+         <source>Reconnect to last server</source>
+         <translation>Verbinde zum zuletzt genutzen Server</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="729"/>
++        <location filename="mainwindow.ui" line="737"/>
+         <source>Connection &amp;log</source>
+         <oldsource>Connection &amp;log...</oldsource>
+         <translation>&amp;Verbindungslog</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="740"/>
++        <location filename="mainwindow.ui" line="748"/>
+         <source>&amp;Launch local server...</source>
+         <translation>&amp;Lokalen Server starten...</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="743"/>
++        <location filename="mainwindow.ui" line="751"/>
+         <source>Launch a local server</source>
+         <translation>Lokalen Server starten</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="757"/>
++        <location filename="mainwindow.ui" line="765"/>
+         <source>&amp;NetMauMau server output</source>
+         <oldsource>&amp;NetMauMau server output...</oldsource>
+         <translation>&amp;NetMauMau Serverausgabe</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="776"/>
++        <location filename="mainwindow.ui" line="784"/>
+         <source>&amp;Disconnect</source>
+         <translation>&amp;Trennen</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="779"/>
++        <location filename="mainwindow.ui" line="787"/>
+         <source>Disconnect from server</source>
+         <translation>Vom Server trennen</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="787"/>
++        <location filename="mainwindow.ui" line="795"/>
+         <source>License</source>
+         <translation>Lizenz</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.ui" line="792"/>
++        <location filename="mainwindow.ui" line="800"/>
+         <source>Hall of Fame</source>
+         <oldsource>Hall of Fame...</oldsource>
+         <translation>Ruhmeshalle</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="154"/>
++        <location filename="mainwindow.ui" line="811"/>
++        <source>Show card tooltips</source>
++        <translation>Zeige Kartenkurzinfos</translation>
++    </message>
++    <message>
++        <location filename="mainwindow.cpp" line="163"/>
+         <source>Name</source>
+         <translation>Name</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="155"/>
++        <location filename="mainwindow.cpp" line="164"/>
+         <source>Cards</source>
+         <translation>Karten</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="157"/>
++        <location filename="mainwindow.cpp" line="166"/>
+         <source>Message</source>
+         <translation>Nachricht</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="338"/>
+-        <source>Receiving player image for &quot;%1&quot;…</source>
+-        <oldsource>Receiving player image for &quot;%1&quot;u2026</oldsource>
++        <location filename="mainwindow.cpp" line="359"/>
++        <source>Receiving player image for &quot;%1&quot;...</source>
++        <oldsource>Receiving player image for &quot;%1&quot;…</oldsource>
+         <translation>Empfange Bild für Spieler &quot;%1&quot;…</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="489"/>
++        <location filename="mainwindow.cpp" line="531"/>
+         <source>%1 on %2</source>
+         <oldsource> on </oldsource>
+         <translation>%1 auf %2</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="504"/>
++        <location filename="mainwindow.cpp" line="546"/>
+         <source>Couldn&apos;t get scores from server</source>
+         <translation>Konnte die Punktzahlen nicht vom Server beziehen</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="506"/>
++        <location filename="mainwindow.cpp" line="548"/>
+         <source>Couldn&apos;t get player list from server</source>
+         <translation>Konnte die Spielerliste nicht vom Server beziehen</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="508"/>
++        <location filename="mainwindow.cpp" line="550"/>
+         <source>While connecting to &lt;b&gt;%1&lt;/b&gt;: &lt;i&gt;%2&lt;/i&gt;</source>
+         <translation>Beim Verbindungsaufbau zu &lt;b&gt;%1&lt;/b&gt;: &lt;i&gt;%2&lt;/i&gt;</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="573"/>
++        <location filename="mainwindow.cpp" line="615"/>
+         <source>Server Error</source>
+         <translation>Serverfehler</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="675"/>
++        <location filename="mainwindow.cpp" line="717"/>
+         <source>Card rejected</source>
+         <translation>Karte zurückgewiesen</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="675"/>
++        <location filename="mainwindow.cpp" line="717"/>
+         <source>You cannot play card %1!</source>
+         <translation>Du kannst die Karte %1 nicht legen!</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="686"/>
++        <location filename="mainwindow.cpp" line="728"/>
+         <source>suspended the turn</source>
+         <translation>hat die Runde ausgesetzt</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="714"/>
+-        <location filename="mainwindow.cpp" line="766"/>
++        <location filename="mainwindow.cpp" line="758"/>
++        <location filename="mainwindow.cpp" line="822"/>
+         <source>Sorry</source>
+         <translation>Entschuldigung</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="715"/>
+-        <source>You have lost!
+-Your points: %1
+-
+-Playing time: %2</source>
+-        <translation>Du hast verloren!
+-Deine Punkte: %1
+-
+-Spieldauer: %2</translation>
+-    </message>
+-    <message>
+-        <location filename="mainwindow.cpp" line="751"/>
+-        <source>You have won!
+-Playing time: %1</source>
+-        <translation>Du hast gewonnen!
+-Spieldauer: %1</translation>
++        <location filename="mainwindow.cpp" line="762"/>
++        <source>Your deduction of points: %1</source>
++        <translation>Dein Punktabzug: %1</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="901"/>
++        <location filename="mainwindow.cpp" line="961"/>
+         <source>Continue current %1?</source>
+         <translation>%1 weiterführen?</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="902"/>
++        <location filename="mainwindow.cpp" line="962"/>
+         <source>Start %1?</source>
+         <translation>Eine %1 beginnen?</translation>
+     </message>
+     <message numerus="yes">
+-        <location filename="mainwindow.cpp" line="993"/>
++        <location filename="mainwindow.cpp" line="1053"/>
+         <source>You can play another &lt;i&gt;Seven&lt;/i&gt; or take %n card(s)</source>
+         <translation>
+             <numerusform>Du kannst eine andere &lt;i&gt;Sieben&lt;/i&gt; legen oder %n Karte ziehen</numerusform>
+@@ -646,7 +689,7 @@ Spieldauer: %1</translation>
+         </translation>
+     </message>
+     <message numerus="yes">
+-        <location filename="mainwindow.cpp" line="996"/>
++        <location filename="mainwindow.cpp" line="1056"/>
+         <source>You have no &lt;i&gt;Seven&lt;/i&gt; to play over. You must take %n card(s)</source>
+         <translation>
+             <numerusform>Du hast keine &lt;i&gt;Sieben&lt;/i&gt; zu legen. Du musst %n Karte ziehen</numerusform>
+@@ -654,42 +697,47 @@ Spieldauer: %1</translation>
+         </translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1058"/>
++        <location filename="mainwindow.cpp" line="1118"/>
+         <source>Shortcut</source>
+         <translation>Schnellwahl</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1147"/>
++        <location filename="mainwindow.cpp" line="1207"/>
+         <source>Current score: %1</source>
+         <translation>Gegenwärtige Punktzahl: %1</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1290"/>
++        <location filename="mainwindow.cpp" line="1354"/>
+         <source>starts a %1</source>
+         <translation>beginnt eine %1</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1301"/>
++        <location filename="mainwindow.cpp" line="1365"/>
+         <source>%1 of %2</source>
+         <translation>%1 von %2</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1315"/>
++        <location filename="mainwindow.cpp" line="1379"/>
+         <source>ends a %1</source>
+         <translation>beendet die %1</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1415"/>
++        <location filename="mainwindow.cpp" line="1485"/>
+         <source>Version %1 is available!</source>
+         <translation>Version %1 ist verfügbar!</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="729"/>
++        <location filename="mainwindow.cpp" line="1514"/>
++        <source>%1 set as player image</source>
++        <translation>%1 als Spielerbild gesetzt</translation>
++    </message>
++    <message>
++        <location filename="mainwindow.cpp" line="777"/>
+         <source>%1 lost!</source>
+         <translation>%1 hat verloren!</translation>
+     </message>
+     <message numerus="yes">
+-        <location filename="mainwindow.cpp" line="703"/>
++        <location filename="mainwindow.cpp" line="745"/>
+         <source>&lt;span style=&quot;color:blue;&quot;&gt;lost&lt;/span&gt; in turn %1 with %n point(s) at hand</source>
+         <translation>
+             <numerusform>&lt;span style=&quot;color:blue;&quot;&gt;verliert&lt;/span&gt; in Runde %1 mit %n Punkt auf der Hand</numerusform>
+@@ -697,34 +745,60 @@ Spieldauer: %1</translation>
+         </translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="719"/>
+-        <location filename="mainwindow.cpp" line="754"/>
++        <location filename="mainwindow.cpp" line="759"/>
++        <source>You have lost!
++%1
++
++Playing time: %2</source>
++        <translation>Du hast verloren!
++%1
++
++Spieldauer: %2</translation>
++    </message>
++    <message>
++        <location filename="mainwindow.cpp" line="761"/>
++        <location filename="mainwindow.cpp" line="801"/>
++        <source>Your score: %1</source>
++        <translation>Deine Punktzahl: %1</translation>
++    </message>
++    <message>
++        <location filename="mainwindow.cpp" line="767"/>
++        <location filename="mainwindow.cpp" line="810"/>
+         <source>Try &amp;again</source>
+         <oldsource>Try again</oldsource>
+         <translation>Nochmals &amp;versuchen</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="740"/>
++        <location filename="mainwindow.cpp" line="788"/>
+         <source>&lt;span style=&quot;color:blue;&quot;&gt;wins&lt;/span&gt; in turn %1</source>
+         <translation>&lt;span style=&quot;color:blue;&quot;&gt;gewinnt&lt;/span&gt; in Runde %1</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="742"/>
++        <location filename="mainwindow.cpp" line="790"/>
+         <source>%1 wins!</source>
+         <translation>%1 hat gewonnen!</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="750"/>
++        <location filename="mainwindow.cpp" line="806"/>
+         <source>Congratulations</source>
+         <translation>Gratulation</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="769"/>
++        <location filename="mainwindow.cpp" line="807"/>
++        <source>You have won!
++%1
++Playing time: %2</source>
++        <translation>Du hast gewonnen!
++%1
++Spieldauer: %2</translation>
++    </message>
++    <message>
++        <location filename="mainwindow.cpp" line="825"/>
+         <source>&lt;font color=&quot;blue&quot;&gt;%1&lt;/font&gt; has won!</source>
+         <translation>&lt;font color=&quot;blue&quot;&gt;%1&lt;/font&gt; hat gewonnen!</translation>
+     </message>
+     <message numerus="yes">
+-        <location filename="mainwindow.cpp" line="781"/>
++        <location filename="mainwindow.cpp" line="837"/>
+         <source>picks up %n card(s)</source>
+         <oldsource>picked up %n card(s)</oldsource>
+         <translation>
+@@ -733,12 +807,12 @@ Spieldauer: %1</translation>
+         </translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="784"/>
++        <location filename="mainwindow.cpp" line="840"/>
+         <source>You %1</source>
+         <translation>Du %1</translation>
+     </message>
+     <message numerus="yes">
+-        <location filename="mainwindow.cpp" line="784"/>
++        <location filename="mainwindow.cpp" line="840"/>
+         <source>picked up %n card(s)</source>
+         <oldsource>picks up %n card(s)</oldsource>
+         <comment>playerPick</comment>
+@@ -748,58 +822,58 @@ Spieldauer: %1</translation>
+         </translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="792"/>
++        <location filename="mainwindow.cpp" line="848"/>
+         <source>plays %1</source>
+         <translation>legt %1</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="823"/>
++        <location filename="mainwindow.cpp" line="883"/>
+         <source>Player &lt;span style=&quot;color:blue;&quot;&gt;%1&lt;/span&gt; joined the game</source>
+         <translation>Spieler &lt;span style=&quot;color:blue;&quot;&gt;%1&lt;/span&gt; ist dem Spiel beigetreten</translation>
+     </message>
+     <message numerus="yes">
+-        <location filename="mainwindow.cpp" line="834"/>
+-        <source>Waiting for %n more player(s)…</source>
+-        <oldsource>Waiting for %n more player(s)u2026</oldsource>
++        <location filename="mainwindow.cpp" line="894"/>
++        <source>Waiting for %n more player(s)...</source>
++        <oldsource>Waiting for %n more player(s)…</oldsource>
+         <translation>
+             <numerusform>Warte auf %n weiteren Spieler…</numerusform>
+             <numerusform>Warte auf %n weitere Spieler…</numerusform>
+         </translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="861"/>
+-        <source>Play your card…</source>
+-        <oldsource>Play your cardu2026</oldsource>
++        <location filename="mainwindow.cpp" line="921"/>
++        <source>Play your card...</source>
++        <oldsource>Play your card…</oldsource>
+         <translation>Lege Deine Karte…</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1262"/>
++        <location filename="mainwindow.cpp" line="1324"/>
+         <source>Queen round</source>
+         <translation>Damenrunde</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1262"/>
++        <location filename="mainwindow.cpp" line="1324"/>
+         <source>queen round</source>
+         <translation>Damenrunde</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1263"/>
++        <location filename="mainwindow.cpp" line="1326"/>
+         <source>King round</source>
+         <translation>Königsrunde</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1263"/>
++        <location filename="mainwindow.cpp" line="1326"/>
+         <source>king round</source>
+         <translation>Königsrunde</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1264"/>
++        <location filename="mainwindow.cpp" line="1328"/>
+         <source>Ace round</source>
+         <translation>Assrunde</translation>
+     </message>
+     <message numerus="yes">
+-        <location filename="mainwindow.cpp" line="1100"/>
+-        <location filename="mainwindow.cpp" line="1104"/>
++        <location filename="mainwindow.cpp" line="1160"/>
++        <location filename="mainwindow.cpp" line="1164"/>
+         <source>%n card(s)</source>
+         <translation>
+             <numerusform>%n Karte</numerusform>
+@@ -807,17 +881,17 @@ Spieldauer: %1</translation>
+         </translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1264"/>
++        <location filename="mainwindow.cpp" line="1328"/>
+         <source>ace round</source>
+         <translation>Assrunde</translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="1270"/>
++        <location filename="mainwindow.cpp" line="1334"/>
+         <source>Reconnect to </source>
+         <translation>Verbinde wieder zu </translation>
+     </message>
+     <message>
+-        <location filename="mainwindow.cpp" line="73"/>
++        <location filename="mainwindow.cpp" line="74"/>
+         <source>Client library version</source>
+         <translation>Version der Klientenbibliothek</translation>
+     </message>
+@@ -841,14 +915,14 @@ Spieldauer: %1</translation>
+     <name>PlayerImageProgressDialog</name>
+     <message>
+         <location filename="playerimageprogressdialog.cpp" line="28"/>
+-        <source>Receiving player image…</source>
+-        <oldsource>Receiving player imageu2026</oldsource>
++        <source>Receiving player image...</source>
++        <oldsource>Receiving player image…</oldsource>
+         <translation>Empfange Spielerbild…</translation>
+     </message>
+     <message>
+         <location filename="playerimageprogressdialog.cpp" line="42"/>
+-        <source>Receiving player image for &quot;%1&quot;…</source>
+-        <oldsource>Receiving player image for &quot;%1&quot;u2026</oldsource>
++        <source>Receiving player image for &quot;%1&quot;...</source>
++        <oldsource>Receiving player image for &quot;%1&quot;…</oldsource>
+         <translation>Empfange Bild für Spieler &quot;%1&quot;…</translation>
+     </message>
+ </context>
+@@ -890,7 +964,7 @@ Spieldauer: %1</translation>
+         <translation>Punktzahl</translation>
+     </message>
+     <message>
+-        <location filename="scoresdialog.cpp" line="148"/>
++        <location filename="scoresdialog.cpp" line="156"/>
+         <source>This server provides no scores</source>
+         <translation>Dieser Server liefert keine Punktzahlen</translation>
+     </message>
+@@ -904,142 +978,163 @@ Spieldauer: %1</translation>
+     </message>
+     <message>
+         <location filename="serverdialog.ui" line="43"/>
++        <location filename="serverdialog.ui" line="52"/>
+         <source>Available servers</source>
+         <translation>Verfügbare Server</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.ui" line="110"/>
++        <location filename="serverdialog.ui" line="116"/>
+         <source>Refresh server list</source>
+         <translation>Aktualisiere Serverliste</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.ui" line="137"/>
++        <location filename="serverdialog.ui" line="143"/>
+         <source>Remove server from list</source>
+         <translation>Entferne Server von Liste</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.ui" line="174"/>
++        <location filename="serverdialog.ui" line="180"/>
+         <source>Delete servers</source>
+         <translation>Lösche Server</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.ui" line="212"/>
++        <location filename="serverdialog.ui" line="218"/>
+         <source>Player</source>
+         <translation>Spieler</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.ui" line="218"/>
++        <location filename="serverdialog.ui" line="224"/>
+         <source>&amp;Name:</source>
+         <translation>&amp;Name:</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.ui" line="241"/>
+-        <source>Player i&amp;mage:</source>
+-        <translation>Spieler&amp;bild:</translation>
++        <location filename="serverdialog.ui" line="240"/>
++        <source>Your player name</source>
++        <translation>Dein Spielername</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.ui" line="310"/>
+-        <source>Add server</source>
+-        <translation>Füge Server hinzu</translation>
++        <location filename="serverdialog.ui" line="250"/>
++        <source>Player i&amp;mage:</source>
++        <translation>Spieler&amp;bild:</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.ui" line="316"/>
+-        <source>&amp;Server:</source>
+-        <translation>&amp;Server:</translation>
++        <location filename="serverdialog.ui" line="262"/>
++        <source>Your player image</source>
++        <translation>Dein Spielerbild</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.ui" line="380"/>
+-        <source>&amp;Port:</source>
+-        <translation>&amp;Port:</translation>
++        <location filename="serverdialog.ui" line="281"/>
++        <source>Choose your player image file</source>
++        <translation>Wähle die Datei für Dein Spielerbild</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.ui" line="363"/>
+-        <source>Add server to list</source>
+-        <translation>Füge Server zur Liste hinzu</translation>
++        <location filename="serverdialog.ui" line="303"/>
++        <source>Revert your player image to the default image</source>
++        <translation>Setze Dein Spielerbild auf das Standardspielerbild zurück</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.ui" line="410"/>
++        <location filename="serverdialog.ui" line="346"/>
+         <source>&amp;Cancel</source>
+         <translation>&amp;Abbruch</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.ui" line="420"/>
++        <location filename="serverdialog.ui" line="356"/>
+         <source>C&amp;onnect</source>
+         <translation>&amp;Verbinde</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.cpp" line="34"/>
++        <location filename="serverdialog.ui" line="373"/>
++        <source>Add server...</source>
++        <oldsource>Add server…</oldsource>
++        <translation>Füge Server hinzu…</translation>
++    </message>
++    <message>
++        <location filename="serverdialog.ui" line="376"/>
++        <source>Add server</source>
++        <translation>Füge Server hinzu</translation>
++    </message>
++    <message>
++        <location filename="serverdialog.ui" line="386"/>
++        <source>Delete server...</source>
++        <translation>Server löschen…</translation>
++    </message>
++    <message>
++        <location filename="serverdialog.cpp" line="643"/>
++        <source>Delete server</source>
++        <translation>Server löschen</translation>
++    </message>
++    <message>
++        <location filename="serverdialog.cpp" line="37"/>
+         <source>n/a</source>
+         <translation>n.V.</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.cpp" line="59"/>
++        <location filename="serverdialog.cpp" line="75"/>
+         <source>Server</source>
+         <translation>Server</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.cpp" line="59"/>
++        <location filename="serverdialog.cpp" line="75"/>
+         <source>AI</source>
+         <translation>KI</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.cpp" line="59"/>
++        <location filename="serverdialog.cpp" line="75"/>
+         <source>Players</source>
+         <translation>Spieler</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.cpp" line="59"/>
++        <location filename="serverdialog.cpp" line="75"/>
+         <source>Version</source>
+         <translation>Version</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.cpp" line="222"/>
++        <location filename="serverdialog.cpp" line="242"/>
+         <source>Choose a player image</source>
+         <translation>Wähle ein Spielerbild</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.cpp" line="224"/>
+-        <source>PNG-Images (*.png)</source>
+-        <translation>PNG-Bilder (*.png)</translation>
++        <location filename="serverdialog.cpp" line="243"/>
++        <source>Images (%1)</source>
++        <translation>Bilder (%1)</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.cpp" line="258"/>
+-        <location filename="serverdialog.cpp" line="289"/>
++        <location filename="serverdialog.cpp" line="496"/>
++        <source>The chosen image won&apos;t be accepted by the server.
++It is either too large or of an unsupported image format.</source>
++        <translation>Das ausgewählte Bild wird vom Server nicht akzeptiert werden.
++Es ist entweder zu groß oder in keinem unterstützten Bildformat.</translation>
++    </message>
++    <message>
++        <location filename="serverdialog.cpp" line="644"/>
++        <source>&lt;html&gt;&lt;body&gt;Really delete server
++&lt;b&gt;%1&lt;/b&gt;?&lt;/body&gt;&lt;/html&gt;</source>
++        <translation>&lt;html&gt;&lt;body&gt;Server &lt;b&gt;%1&lt;/b&gt; wirklich löschen?&lt;/body&gt;&lt;/html&gt;</translation>
++    </message>
++    <message>
++        <location filename="serverdialog.cpp" line="282"/>
++        <location filename="serverdialog.cpp" line="299"/>
+         <source>Connect</source>
+         <translation>Verbinde</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.cpp" line="258"/>
++        <location filename="serverdialog.cpp" line="282"/>
+         <source>%1 is already in use!</source>
+         <translation>%1 wird bereits verwendet!</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.cpp" line="289"/>
++        <location filename="serverdialog.cpp" line="299"/>
+         <source>Please fill in player name</source>
+         <translation>Bitte fülle den Spielernamen aus</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.cpp" line="416"/>
+-        <location filename="serverdialog.cpp" line="440"/>
++        <location filename="serverdialog.cpp" line="495"/>
++        <location filename="serverdialog.cpp" line="515"/>
+         <source>Player image</source>
+         <translation>Spielerbild</translation>
+     </message>
+     <message>
+-        <location filename="serverdialog.cpp" line="418"/>
+-        <source>The chosen image won&apos;t be accepted by the server.
+-It is either too large or no PNG image.</source>
+-        <translation>Das ausgewählte Bild wird vom Server nicht akzeptiert werden.
+-Es ist entweder zu groß oder kein PNG-Bild.</translation>
+-    </message>
+-    <message>
+-        <location filename="serverdialog.cpp" line="421"/>
+-        <source>The chosen image won&apos;t be accepted by the server.
+-It is too large.</source>
+-        <translation>Das ausgewählte Bild wird vom Server nicht akzeptiert werden.
+-Es ist zu groß.</translation>
+-    </message>
+-    <message>
+-        <location filename="serverdialog.cpp" line="440"/>
++        <location filename="serverdialog.cpp" line="515"/>
+         <source>Cannot open %1</source>
+         <translation>Kann %1 nicht öffnen</translation>
+     </message>
+@@ -1185,4 +1280,17 @@ Es ist zu groß.</translation>
+         <translation>Ass</translation>
+     </message>
+ </context>
++<context>
++    <name>main</name>
++    <message>
++        <location filename="main.cpp" line="73"/>
++        <source>Warning</source>
++        <translation>Warnung</translation>
++    </message>
++    <message>
++        <location filename="main.cpp" line="74"/>
++        <source>NetMauMau is already running!</source>
++        <translation>NetMauMau läuft bereits!</translation>
++    </message>
++</context>
+ </TS>
+--- nmm-qt-client-0.11.orig/mainwindow.h
++++ nmm-qt-client-0.11/mainwindow.h
+@@ -50,10 +50,14 @@ public:
+ 	explicit MainWindow(QSplashScreen *splash, QWidget *p = 0);
+ 	virtual ~MainWindow();
+ 
++	virtual bool eventFilter(QObject *watched, QEvent *event);
++
+ protected:
+ 	virtual void closeEvent(QCloseEvent *e);
+ 	virtual void timerEvent(QTimerEvent *e);
+ 	virtual void keyPressEvent(QKeyEvent *e);
++	virtual void dragEnterEvent(QDragEnterEvent *event);
++	virtual void dropEvent(QDropEvent *event);
+ 
+ signals:
+ 	void disconnectNow() const;
+@@ -66,7 +70,8 @@ private slots:
+ 	void about();
+ 	void scrollToLastCard();
+ 
+-	void sendingPlayerImageFailed(const QString &) const;
++	void changePlayerName(QAction *);
++	void showPlayerNameSelectMenu(const QPoint &);
+ 	void receivingPlayerImage(const QString &);
+ 	void receivedPlayerImage(const QString &);
+ 	void showReceiveProgress() const;
+@@ -136,6 +141,8 @@ private:
+ 	void clearMyCards(bool del, bool dis = true);
+ 	void updatePlayerStats(const QString &player, const QString &msg = QString::null,
+ 						   bool disable = false);
++	void updatePlayerScores(GameState *gs, const Client::PLAYERINFOS &pl);
++	void updatePlayerScores(GameState *gs, uint attempts = 3);
+ 	QString playerToolTip(GameState *gs, const QString &player) const;
+ 
+ 	QString getAceRoundRankString(const GameState *gs, bool capitalize = false) const;
+@@ -171,6 +178,8 @@ private:
+ 	mutable GameState *m_gameState;
+ 	ScoresDialog *m_scoresDialog;
+ 	FileDownloader *m_clientReleaseDownloader;
++	const QImage m_defaultPlayerImage;
++	QMenu *m_playerNameMenu;
+ };
+ 
+ #endif // MAINWINDOW_H
+--- nmm-qt-client-0.11.orig/playerimageprogressdialog.cpp
++++ nmm-qt-client-0.11/playerimageprogressdialog.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2014 by Heiko Schäfer <heiko@rangun.de>
++ * Copyright 2014-2015 by Heiko Schäfer <heiko@rangun.de>
+  *
+  * This file is part of NetMauMau Qt Client.
+  *
+@@ -25,7 +25,7 @@ PlayerImageProgressDialog::PlayerImagePr
+ 	QProgressDialog(p, Qt::Dialog|Qt::CustomizeWindowHint|Qt::WindowTitleHint) {
+ 
+ 	setWindowModality(Qt::ApplicationModal);
+-	setWindowTitle(trUtf8("Receiving player image…"));
++	setWindowTitle(trUtf8("Receiving player image..."));
+ 	setWindowFlags(windowFlags() & ~(Qt::WindowMinMaxButtonsHint));
+ 	setCancelButton(0L);
+ 	setMinimum(0);
+@@ -39,7 +39,7 @@ PlayerImageProgressDialog::~PlayerImageP
+ void PlayerImageProgressDialog::show(const QString &player) {
+ 
+ 	if(!player.isEmpty()) {
+-		setLabelText(trUtf8("Receiving player image for \"%1\"…").arg(player));
++		setLabelText(trUtf8("Receiving player image for \"%1\"...").arg(player));
+ 		if(!isVisible()) QProgressDialog::show();
+ 	}
+ }
+--- /dev/null
++++ nmm-qt-client-0.11/addserverdialog.h
+@@ -0,0 +1,41 @@
++/*
++ * Copyright 2015 by Heiko Schäfer <heiko@rangun.de>
++ *
++ * This file is part of NetMauMau Qt Client.
++ *
++ * NetMauMau Qt Client is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU Lesser General Public License as
++ * published by the Free Software Foundation, either version 3 of
++ * the License, or (at your option) any later version.
++ *
++ * NetMauMau Qt Client is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public License
++ * along with NetMauMau Qt Client.  If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#ifndef ADDSERVERDIALOG_H
++#define ADDSERVERDIALOG_H
++
++#include "ui_addserverdialog.h"
++
++class AddServerDialog : public QDialog, private Ui::AddServerDialog {
++	Q_OBJECT
++public:
++	explicit AddServerDialog(QWidget *parent = 0);
++
++signals:
++	void addServer(const QString &, const QString &);
++
++private slots:
++	void enableOkButton(const QString &);
++	void addServerClicked();
++
++private:
++	QAbstractButton *m_okButton;
++};
++
++#endif // ADDSERVERDIALOG_H
+--- nmm-qt-client-0.11.orig/serverdialog.cpp
++++ nmm-qt-client-0.11/serverdialog.cpp
+@@ -18,35 +18,33 @@
+  */
+ 
+ #include <QSplashScreen>
++#include <QImageReader>
+ #include <QFileDialog>
+ #include <QMessageBox>
+ #include <QSettings>
++#include <QBuffer>
++#include <QMenu>
+ 
+ #include "serverdialog.h"
+ 
+ #include "deleteserversdialog.h"
++#include "addserverdialog.h"
+ #include "base64bridge.h"
+ #include "serverinfo.h"
+ #include "client.h"
+ 
+ namespace {
+-
+ const char *NA = QT_TRANSLATE_NOOP("ServerDialog", "n/a");
+-const QRegExp hostRex("^(?=.{1,255}$)[0-9A-Za-z]" \
+-					  "(?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?" \
+-					  "(?:\\.[0-9A-Za-z](?:(?:[0-9A-Za-z]|-)" \
+-					  "{0,61}[0-9A-Za-z])?)*\\.?$");
+-
+ const QRegExp nameRex("[^\\+]+.*");
+-
+ }
+ 
+ ServerDialog::ServerDialog(QSplashScreen *splash, QWidget *p) : QDialog(p), m_model(0, 4),
+ 	m_playerNameModel(), m_forceRefresh(false), m_lastServer(QString::null),
+ 	m_deleteServersDlg(new DeleteServersDialog(&m_model, this)),
+-	m_hostRexValidator(new QRegExpValidator(hostRex)),
+ 	m_nameRexValidator(new QRegExpValidator(nameRex)), m_playerImage(), m_autoRefresh(this),
+-	m_mutex(), m_blockAutoRefresh(false), m_splash(splash), m_lastPlayerName(QString::null) {
++	m_mutex(), m_blockAutoRefresh(false), m_splash(splash), m_lastPlayerName(QString::null),
++	m_imageFormats(), m_addServerDialog(new AddServerDialog(this)), m_ctxPopup(new QMenu(this)),
++	m_ctxPoint() {
+ 
+ 	Qt::WindowFlags f = windowFlags();
+ 	f &= ~Qt::WindowContextHelpButtonHint;
+@@ -55,10 +53,27 @@ ServerDialog::ServerDialog(QSplashScreen
+ 
+ 	setupUi(this);
+ 
++	if(!actionAddServer->icon().hasThemeIcon("list-add")) {
++		actionAddServer->setIcon(QIcon(":/list-add.png"));
++	}
++
++	addAction(actionAddServer);
++
++	m_ctxPopup->addAction(actionAddServer);
++	m_ctxPopup->addAction(actionDeleteServer);
++
++	QObject::connect(actionAddServer, SIGNAL(triggered()), m_addServerDialog, SLOT(exec()));
++	QObject::connect(actionDeleteServer, SIGNAL(triggered()), this, SLOT(removeServer()));
++
++	QList<QByteArray> sif(QImageReader::supportedImageFormats());
++	QStringList ssif;
++
++	for(int i = 0; i < sif.count(); ++i) ssif << sif[i];
++	m_imageFormats = "*." + ssif.join(" *.");
++
+ 	QStringList labels;
+ 	labels << tr("Server") << tr("Version") << tr("AI") << tr("Players");
+ 
+-	hostEdit->setValidator(m_hostRexValidator);
+ 	playerName->setValidator(m_nameRexValidator);
+ 	playerName->lineEdit()->setMaxLength(1023);
+ 
+@@ -75,18 +90,21 @@ ServerDialog::ServerDialog(QSplashScreen
+ 
+ 	QStringList servers = settings.value("list", QStringList("localhost")).toStringList();
+ 	QStringList aliases = settings.value("alias", servers.count() == 1 && servers[0] == "localhost"
+-			&& !localhost.isEmpty() ? QStringList(localhost) : servers).toStringList();
++						  && !localhost.isEmpty() ? QStringList(localhost) : servers).toStringList();
+ 	setLastServer(settings.value("lastServer", QVariant("localhost")).toString());
+ 	settings.endGroup();
+ 
+ 	settings.beginGroup("Player");
+ 	m_lastPlayerName = settings.value("name", "Phoenix").toString();
+-	m_playerNameModel.appendRow(new QStandardItem(m_lastPlayerName));
++
++	if(!m_lastPlayerName.isEmpty()) {
++		m_playerNameModel.appendRow(new QStandardItem(m_lastPlayerName));
++	}
+ 
+ 	const QStringList &pNames(settings.value("altNames", QStringList()).toStringList());
+ 
+ 	for(int i = 0; i < pNames.count(); ++i) {
+-		m_playerNameModel.appendRow(new QStandardItem(pNames[i]));
++		if(!pNames.isEmpty()) m_playerNameModel.appendRow(new QStandardItem(pNames[i]));
+ 	}
+ 
+ 	setPlayerImagePath(settings.value("playerImage").toString());
+@@ -97,7 +115,8 @@ ServerDialog::ServerDialog(QSplashScreen
+ 
+ 	QObject::connect(&m_model, SIGNAL(itemChanged(QStandardItem *)),
+ 					 this, SLOT(itemChanged(QStandardItem *)));
+-
++	QObject::connect(availServerView, SIGNAL(customContextMenuRequested(const QPoint &)),
++					 this, SLOT(serverViewContext(const QPoint &)));
+ 	QObject::connect(availServerView->selectionModel(),
+ 					 SIGNAL(selectionChanged(const QItemSelection &, const QItemSelection &)),
+ 					 this, SLOT(enableRemoveAndOkButton(const QItemSelection &,
+@@ -105,7 +124,8 @@ ServerDialog::ServerDialog(QSplashScreen
+ 
+ 	for(int i = 0, j = 0; i < servers.size(); ++i) {
+ 		const QString &tHost(servers[i].trimmed());
+-		if(!tHost.simplified().isEmpty() && hostRex.exactMatch(tHost.left(tHost.indexOf(':')))) {
++		if(!tHost.simplified().isEmpty() &&
++				serverAdd->getHostRex().exactMatch(tHost.left(tHost.indexOf(':')))) {
+ 
+ 			m_model.setItem(j, ServerInfo::SERVER, new QStandardItem(aliases[i]));
+ 			m_model.item(j, ServerInfo::SERVER)->setData(tHost, ServerInfo::HOST);
+@@ -149,6 +169,7 @@ ServerDialog::ServerDialog(QSplashScreen
+ 
+ 	if(!removeButton->icon().hasThemeIcon("list-remove")) {
+ 		removeButton->setIcon(QIcon(":/list-remove.png"));
++		actionDeleteServer->setIcon(QIcon(":/list-remove.png"));
+ 	}
+ 
+ 	if(!picRemoveButton->icon().hasThemeIcon("list-remove")) {
+@@ -159,21 +180,17 @@ ServerDialog::ServerDialog(QSplashScreen
+ 		deleteServers->setIcon(QApplication::style()->standardIcon(QStyle::SP_TrashIcon));
+ 	}
+ 
+-	if(!addButton->icon().hasThemeIcon("list-add")) {
+-		addButton->setIcon(QIcon(":/list-add.png"));
+-	}
+-
+ 	connectButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_DialogOkButton));
+ 	cancelButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_DialogCancelButton));
+ 
+ 	QObject::connect(availServerView, SIGNAL(doubleClicked(const QModelIndex &)),
+ 					 this, SLOT(doubleClick()));
+-	QObject::connect(hostEdit, SIGNAL(textChanged(const QString &)),
+-					 this, SLOT(enableAddButton(const QString &)));
+ 	QObject::connect(connectButton, SIGNAL(clicked()), this, SLOT(doubleClick()));
+ 	QObject::connect(refreshButton, SIGNAL(clicked()), this, SLOT(checkOnline()));
+ 	QObject::connect(removeButton, SIGNAL(clicked()), this, SLOT(removeSelected()));
+-	QObject::connect(addButton, SIGNAL(clicked()), this, SLOT(addServer()));
++	QObject::connect(serverAdd, SIGNAL(addServer()), this, SLOT(addServer()));
++	QObject::connect(m_addServerDialog, SIGNAL(addServer(const QString &, const QString &)),
++					 this, SLOT(addServer(const QString &, const QString &)));
+ 	QObject::connect(imageChooseButton, SIGNAL(clicked()), this, SLOT(choosePlayerImage()));
+ 	QObject::connect(picRemoveButton, SIGNAL(clicked()), this, SLOT(clearPlayerImage()));
+ 	QObject::connect(this, SIGNAL(refresh()), this, SLOT(checkOnline()));
+@@ -181,6 +198,8 @@ ServerDialog::ServerDialog(QSplashScreen
+ 	QObject::connect(m_deleteServersDlg, SIGNAL(deleteRows(const QList<int> &)),
+ 					 this, SLOT(deleteRows(const QList<int> &)));
+ 	QObject::connect(playerImagePath, SIGNAL(textChanged(const QString &)),
++					 this, SLOT(setPlayerImagePath(const QString &)));
++	QObject::connect(playerImagePath, SIGNAL(textChanged(const QString &)),
+ 					 this, SLOT(enableClearButton(const QString &)));
+ 	QObject::connect(&m_autoRefresh, SIGNAL(timeout()), this, SLOT(checkOnline()));
+ 
+@@ -203,16 +222,17 @@ ServerDialog::~ServerDialog() {
+ 
+ 	}
+ 
++	savePlayer();
++
+ 	availServerView->disconnect();
+-	hostEdit->disconnect();
+ 	connectButton->disconnect();
+ 	refreshButton->disconnect();
+ 	removeButton->disconnect();
+-	addButton->disconnect();
+ 	deleteServers->disconnect();
+ 
++	delete m_ctxPopup;
++	delete m_addServerDialog;
+ 	delete m_deleteServersDlg;
+-	delete m_hostRexValidator;
+ 	delete m_nameRexValidator;
+ 
+ 	disconnect();
+@@ -220,12 +240,18 @@ ServerDialog::~ServerDialog() {
+ 
+ void ServerDialog::choosePlayerImage() {
+ 	setPlayerImagePath(QFileDialog::getOpenFileName(this, tr("Choose a player image"),
+-													playerImagePath->text(),
+-													tr("PNG-Images (*.png)")), true);
++													playerImagePath->text(), tr("Images (%1)").
++													arg(m_imageFormats)), true);
+ }
+ 
+ void ServerDialog::clearPlayerImage() {
++
+ 	m_playerImage.clear();
++
++	QSettings settings;
++	settings.beginGroup("Player");
++	settings.remove("playerImage");
++	settings.endGroup();
+ }
+ 
+ void ServerDialog::enableClearButton(const QString &s) {
+@@ -246,8 +272,6 @@ void ServerDialog::doubleClick() {
+ 			uint port = (QString(idx != -1 ? host.mid(idx + 1) :
+ 											 QString::number(Client::getDefaultPort()))).toUInt();
+ 
+-			//			timeval tv = { 0, 800 };
+-
+ 			QByteArray pn = playerName->lineEdit()->text().toUtf8();
+ 			const Client::PLAYERLIST &pl((Client(0L, 0L, pn.constData(),
+ 												 std::string(srv.toStdString()),
+@@ -266,21 +290,7 @@ void ServerDialog::doubleClick() {
+ 
+ 		} catch(const NetMauMau::Common::Exception::SocketException &) {}
+ 
+-		QSettings settings;
+-		settings.beginGroup("Player");
+-		settings.setValue("name", playerName->lineEdit()->text());
+-
+-		QStringList altNames;
+-
+-		for(int i = 0; i < m_playerNameModel.rowCount(); ++i) {
+-			altNames << m_playerNameModel.item(i)->text();
+-		}
+-
+-		altNames.removeAll(playerName->lineEdit()->text());
+-
+-		settings.setValue("altNames", altNames);
+-		settings.setValue("playerImage", playerImagePath->text());
+-		settings.endGroup();
++		savePlayer();
+ 
+ 		accept();
+ 		hide();
+@@ -290,6 +300,30 @@ void ServerDialog::doubleClick() {
+ 	}
+ }
+ 
++void ServerDialog::savePlayer() {
++
++	const QString pName(getPlayerName());
++
++	QSettings settings;
++	settings.beginGroup("Player");
++	settings.setValue("name", pName);
++
++	QStringList altNames;
++
++	for(int i = 0; i < m_playerNameModel.rowCount(); ++i) {
++		if(!m_playerNameModel.item(i)->text().isEmpty()) {
++			altNames << m_playerNameModel.item(i)->text();
++		}
++	}
++
++	altNames.removeAll(pName);
++
++	settings.setValue("altNames", altNames);
++	settings.setValue("playerImage", getPlayerImagePath());
++
++	settings.endGroup();
++}
++
+ QString ServerDialog::getAcceptedServer() const {
+ 
+ 	const QModelIndexList &l(availServerView->selectionModel()->selection().indexes());
+@@ -343,6 +377,10 @@ QStandardItemModel *ServerDialog::getMod
+ 	return &m_model;
+ }
+ 
++void ServerDialog::setPlayerName(const QString &name) {
++	if(!name.isEmpty()) playerName->lineEdit()->setText(name);
++}
++
+ QString ServerDialog::getPlayerName() const {
+ 
+ 	const QString &curPlayerName(playerName->lineEdit()->text());
+@@ -361,6 +399,19 @@ QString ServerDialog::getPlayerName() co
+ 	return curPlayerName;
+ }
+ 
++QStringList ServerDialog::getPlayerAltNames() const {
++
++	QStringList altNames;
++
++	for(int i = 0; i < m_playerNameModel.rowCount(); ++i) {
++		if(!m_playerNameModel.item(i)->text().isEmpty()) {
++			altNames << m_playerNameModel.item(i)->text();
++		}
++	}
++
++	return altNames;
++}
++
+ uint ServerDialog::getMaxPlayerCount() const {
+ 
+ 	const QModelIndexList &mi(availServerView->selectionModel()->selection().indexes());
+@@ -374,8 +425,29 @@ uint ServerDialog::getMaxPlayerCount() c
+ 	return 0;
+ }
+ 
+-const QByteArray &ServerDialog::getPlayerImage() const {
+-	return m_playerImage;
++const QByteArray ServerDialog::getPlayerImage() const {
++	return convertToPNG(m_playerImage);
++}
++
++QString ServerDialog::getPlayerImagePath() const {
++	return playerImagePath->text();
++}
++
++QByteArray ServerDialog::convertToPNG(const QByteArray &ba) const {
++
++	QImage img(QImage::fromData(ba));
++	QByteArray oba = ba;
++
++	if(!img.isNull()) {
++
++		QByteArray tba;
++		QBuffer buffer(&tba);
++
++		buffer.open(QIODevice::WriteOnly);
++		if(scalePlayerPic(img).save(&buffer, "PNG")) oba = tba;
++	}
++
++	return oba;
+ }
+ 
+ void ServerDialog::setPlayerImagePath(const QString &f, bool warn) {
+@@ -394,7 +466,7 @@ void ServerDialog::setPlayerImagePath(co
+ 
+ 			qApp->processEvents();
+ 
+-			m_playerImage = img.readAll();
++			m_playerImage = convertToPNG(img.readAll());
+ 
+ 			if(m_playerImage.isEmpty()) m_playerImage = prevImgData;
+ 
+@@ -410,17 +482,20 @@ void ServerDialog::setPlayerImagePath(co
+ 			QApplication::restoreOverrideCursor();
+ 
+ 			if(ok) {
++
+ 				playerImagePath->setText(f);
++
++				QSettings settings;
++				settings.beginGroup("Player");
++				settings.setValue("playerImage", playerImagePath->text());
++				settings.endGroup();
++
+ 			} else {
+ 				if(warn) {
+ 					if(QMessageBox::warning(this, tr("Player image"),
+-						#ifndef _WIN32
+ 											tr("The chosen image won't be accepted by the server.\n"
+-											   "It is either too large or no PNG image."),
+-						#else
+-											tr("The chosen image won't be accepted by the server.\n"
+-											   "It is too large."),
+-						#endif
++											   "It is either too large or of an unsupported " \
++											   "image format."),
+ 											QMessageBox::Ignore|QMessageBox::Ok) ==
+ 							QMessageBox::Ignore) {
+ 
+@@ -447,10 +522,6 @@ void ServerDialog::enableRemoveAndOkButt
+ 	connectButton->setEnabled(availServerView->selectionModel()->hasSelection());
+ }
+ 
+-void ServerDialog::enableAddButton(const QString &str) {
+-	addButton->setDisabled(str.isEmpty());
+-}
+-
+ void ServerDialog::resize() {
+ 	resizeColumns();
+ 	deleteServers->setEnabled(m_model.rowCount());
+@@ -500,9 +571,11 @@ void ServerDialog::updateOnline(bool ena
+ 
+ 	if(enabled && server->data(ServerInfo::HOST).toString() == m_lastServer) {
+ 		const QModelIndex &idx(m_model.index(row, ServerInfo::SERVER));
+-		availServerView->selectionModel()->select(idx, QItemSelectionModel::ClearAndSelect|
+-												  QItemSelectionModel::Rows);
+-		availServerView->scrollTo(idx);
++		if(!isVisible()) {
++			availServerView->selectionModel()->select(idx, QItemSelectionModel::ClearAndSelect|
++													  QItemSelectionModel::Rows);
++			availServerView->scrollTo(idx);
++		}
+ 		emit reconnectAvailable(m_lastServer);
+ 	}
+ }
+@@ -526,12 +599,15 @@ void ServerDialog::itemChanged(QStandard
+ }
+ 
+ void ServerDialog::addServer() {
++	addServer(serverAdd->getHost(), serverAdd->getPort());
++}
++
++void ServerDialog::addServer(const QString &shost, const QString &sport) {
+ 
+ 	QList<QStandardItem *> row;
+ 
+-	const QString &host(hostEdit->text() + (!portSpin->text().isEmpty() ?
+-												QString(":%1").arg(portSpin->text()) :
+-												QString::null));
++	const QString &host(shost + (!sport.isEmpty() ? QString(":%1").arg(sport) : QString::null));
++
+ 	row << new QStandardItem(host);
+ 	row.back()->setData(host, ServerInfo::HOST);
+ 	row.back()->setEnabled(false);
+@@ -557,12 +633,36 @@ void ServerDialog::addServer() {
+ 
+ }
+ 
++void ServerDialog::removeServer() {
++
++	if(!m_ctxPoint.isNull()) {
++
++		const QModelIndex idx = availServerView->indexAt(m_ctxPoint);
++
++		if(idx.isValid() &&
++				QMessageBox::question(this, tr("Delete server"),
++									  tr("<html><body>Really delete server\n" \
++										 "<b>%1</b>?</body></html>").
++									  arg(m_model.item(idx.row(), ServerInfo::SERVER)->text()),
++									  QMessageBox::Yes|QMessageBox::No,
++									  QMessageBox::No) == QMessageBox::Yes) {
++			deleteRow(availServerView->indexAt(m_ctxPoint));
++		}
++	}
++}
++
+ void ServerDialog::removeSelected() {
+ 	QList<int> r;
+ 	r << (availServerView->selectionModel()->selection().indexes().first().row());
+ 	deleteRows(r);
+ }
+ 
++void ServerDialog::deleteRow(const QModelIndex &idx) {
++	QList<int> r;
++	r << idx.row();
++	deleteRows(r);
++}
++
+ void ServerDialog::deleteRows(const QList<int> &rows) {
+ 
+ 	for(int r = rows.size() - 1; r >= 0; --r) {
+@@ -576,6 +676,23 @@ void ServerDialog::deleteRows(const QLis
+ 	saveServers();
+ }
+ 
++QImage ServerDialog::scalePlayerPic(const QImage &img) {
++
++	if(img.height() > 400) {
++		return img.scaledToHeight(400);
++	} else if(img.width() > 640) {
++		return img.scaledToWidth(640);
++	}
++
++	return img;
++}
++
++void ServerDialog::serverViewContext(const QPoint &p) {
++	m_ctxPoint = p;
++	m_ctxPopup->popup(availServerView->mapToGlobal(p));
++	actionDeleteServer->setEnabled(availServerView->indexAt(p).isValid());
++}
++
+ void ServerDialog::saveServers() {
+ 
+ 	QStringList srvs, alias;
+--- nmm-qt-client-0.11.orig/suitfontchecker.cpp
++++ nmm-qt-client-0.11/suitfontchecker.cpp
+@@ -25,13 +25,14 @@ SuitFontChecker::SuitFontChecker() {}
+ 
+ bool SuitFontChecker::suitsInFont(const QFont &f) {
+ 
+-	QFont testFont(f);
+-
+ #if _WIN32
++	QFont testFont(f);
+ 	testFont.setStyleStrategy(QFont::NoFontMerging);
++#else
++	const QFont testFont(f);
+ #endif
+ 
+-	const QFontMetrics &fm(testFont);
++	const QFontMetrics fm(testFont);
+ 
+ #ifndef _WIN32
+ 	return fm.inFont(L'\u2660') && fm.inFont(L'\u2663') && fm.inFont(L'\u2665') &&
+--- nmm-qt-client-0.11.orig/serverdialog.ui
++++ nmm-qt-client-0.11/serverdialog.ui
+@@ -45,6 +45,12 @@
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QTableView" name="availServerView">
++          <property name="contextMenuPolicy">
++           <enum>Qt::CustomContextMenu</enum>
++          </property>
++          <property name="toolTip">
++           <string>Available servers</string>
++          </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+           </property>
+@@ -230,6 +236,9 @@
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
++          <property name="toolTip">
++           <string>Your player name</string>
++          </property>
+           <property name="editable">
+            <bool>true</bool>
+           </property>
+@@ -248,9 +257,9 @@
+         <item row="1" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+-           <widget class="QLineEdit" name="playerImagePath">
+-            <property name="readOnly">
+-             <bool>true</bool>
++           <widget class="PlayerImageLineEdit" name="playerImagePath">
++            <property name="toolTip">
++             <string>Your player image</string>
+             </property>
+            </widget>
+           </item>
+@@ -268,6 +277,9 @@
+               <height>16777215</height>
+              </size>
+             </property>
++            <property name="toolTip">
++             <string>Choose your player image file</string>
++            </property>
+             <property name="text">
+              <string notr="true">...</string>
+             </property>
+@@ -287,6 +299,9 @@
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
++            <property name="toolTip">
++             <string>Revert your player image to the default image</string>
++            </property>
+             <property name="icon">
+              <iconset resource="nuoveXT2.qrc">
+               <normaloff>:/list-remove.png</normaloff>:/list-remove.png</iconset>
+@@ -299,92 +314,13 @@
+       </widget>
+      </item>
+      <item>
+-      <widget class="QGroupBox" name="groupBox">
++      <widget class="AddServerWidget" name="serverAdd" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+-       <property name="title">
+-        <string>Add server</string>
+-       </property>
+-       <layout class="QFormLayout" name="formLayout_2">
+-        <item row="0" column="0">
+-         <widget class="QLabel" name="label">
+-          <property name="text">
+-           <string>&amp;Server:</string>
+-          </property>
+-          <property name="buddy">
+-           <cstring>hostEdit</cstring>
+-          </property>
+-         </widget>
+-        </item>
+-        <item row="0" column="1">
+-         <widget class="QLineEdit" name="hostEdit">
+-          <property name="focusPolicy">
+-           <enum>Qt::StrongFocus</enum>
+-          </property>
+-          <property name="maxLength">
+-           <number>64</number>
+-          </property>
+-         </widget>
+-        </item>
+-        <item row="1" column="1">
+-         <layout class="QHBoxLayout" name="horizontalLayout_3">
+-          <item>
+-           <widget class="PortSpin" name="portSpin"/>
+-          </item>
+-          <item>
+-           <spacer name="horizontalSpacer_2">
+-            <property name="orientation">
+-             <enum>Qt::Horizontal</enum>
+-            </property>
+-            <property name="sizeHint" stdset="0">
+-             <size>
+-              <width>40</width>
+-              <height>20</height>
+-             </size>
+-            </property>
+-           </spacer>
+-          </item>
+-          <item>
+-           <widget class="QPushButton" name="addButton">
+-            <property name="enabled">
+-             <bool>false</bool>
+-            </property>
+-            <property name="sizePolicy">
+-             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+-              <horstretch>0</horstretch>
+-              <verstretch>0</verstretch>
+-             </sizepolicy>
+-            </property>
+-            <property name="toolTip">
+-             <string>Add server to list</string>
+-            </property>
+-            <property name="text">
+-             <string/>
+-            </property>
+-            <property name="icon">
+-             <iconset theme="list-add">
+-              <normaloff/>
+-             </iconset>
+-            </property>
+-           </widget>
+-          </item>
+-         </layout>
+-        </item>
+-        <item row="1" column="0">
+-         <widget class="QLabel" name="label_2">
+-          <property name="text">
+-           <string>&amp;Port:</string>
+-          </property>
+-          <property name="buddy">
+-           <cstring>portSpin</cstring>
+-          </property>
+-         </widget>
+-        </item>
+-       </layout>
+       </widget>
+      </item>
+     </layout>
+@@ -427,21 +363,47 @@
+     </layout>
+    </item>
+   </layout>
++  <action name="actionAddServer">
++   <property name="icon">
++    <iconset theme="list-add">
++     <normaloff/>
++    </iconset>
++   </property>
++   <property name="text">
++    <string>Add server...</string>
++   </property>
++   <property name="toolTip">
++    <string>Add server</string>
++   </property>
++  </action>
++  <action name="actionDeleteServer">
++   <property name="icon">
++    <iconset theme="list-remove">
++     <normaloff/>
++    </iconset>
++   </property>
++   <property name="text">
++    <string>Delete server...</string>
++   </property>
++  </action>
+  </widget>
+  <customwidgets>
+   <customwidget>
+-   <class>PortSpin</class>
+-   <extends>QSpinBox</extends>
+-   <header>portspin.h</header>
++   <class>AddServerWidget</class>
++   <extends>QWidget</extends>
++   <header>addserverwidget.h</header>
++   <container>1</container>
++  </customwidget>
++  <customwidget>
++   <class>PlayerImageLineEdit</class>
++   <extends>QLineEdit</extends>
++   <header>playerimagelineedit.h</header>
+   </customwidget>
+  </customwidgets>
+  <tabstops>
+   <tabstop>playerName</tabstop>
+   <tabstop>playerImagePath</tabstop>
+   <tabstop>imageChooseButton</tabstop>
+-  <tabstop>hostEdit</tabstop>
+-  <tabstop>portSpin</tabstop>
+-  <tabstop>addButton</tabstop>
+   <tabstop>refreshButton</tabstop>
+   <tabstop>removeButton</tabstop>
+   <tabstop>deleteServers</tabstop>
+--- nmm-qt-client-0.11.orig/scoresdialog.cpp
++++ nmm-qt-client-0.11/scoresdialog.cpp
+@@ -43,6 +43,8 @@ ScoresDialog::ScoresDialog(ServerDialog
+ 	m_model.setHorizontalHeaderLabels(header);
+ 
+ 	scoresView->setModel(&m_model);
++	scoresView->verticalHeader()->setClickable(false);
++	scoresView->horizontalHeader()->setClickable(false);
+ 
+ 	QObject::connect(serverCombo, SIGNAL(currentIndexChanged(const QString &)),
+ 					 this, SLOT(currentIndexChanged(const QString &)));
+@@ -88,8 +90,13 @@ void ScoresDialog::refresh() {
+ void ScoresDialog::currentIndexChanged(const QString &txt) {
+ 
+ 	if(txt != serverCombo->currentText()) {
++
+ 		const int cIdx = serverCombo->findText(txt);
+-		if(cIdx != -1) serverCombo->setCurrentIndex(cIdx);
++
++		if(cIdx != -1) {
++			serverCombo->setCurrentIndex(cIdx);
++			return;
++		}
+ 	}
+ 
+ 	if(serverCombo->itemData(serverCombo->currentIndex(), ServerInfo::HAVESCORES).toBool()) {
+@@ -124,6 +131,7 @@ void ScoresDialog::currentIndexChanged(c
+ 
+ 				items << new QStandardItem(pName);
+ 				if(isMe) items.back()->setBackground(Qt::lightGray);
++				items.back()->setToolTip(pName);
+ 				items << new QStandardItem(QString::number(i->score));
+ 				items.back()->setTextAlignment(Qt::AlignVCenter|Qt::AlignHCenter);
+ 				if(isMe) items.back()->setBackground(Qt::lightGray);
+--- nmm-qt-client-0.11.orig/launchserverdialog.ui
++++ nmm-qt-client-0.11/launchserverdialog.ui
+@@ -7,7 +7,7 @@
+     <x>0</x>
+     <y>0</y>
+     <width>245</width>
+-    <height>321</height>
++    <height>326</height>
+    </rect>
+   </property>
+   <property name="windowTitle">
+@@ -279,6 +279,9 @@ Don't close the client while a game is r
+       </item>
+       <item row="2" column="1">
+        <widget class="QCheckBox" name="launchStartup">
++        <property name="toolTip">
++         <string>The local server will get started automatically</string>
++        </property>
+         <property name="text">
+          <string/>
+         </property>
+--- /dev/null
++++ nmm-qt-client-0.11/addserverwidget.cpp
+@@ -0,0 +1,75 @@
++/*
++ * Copyright 2015 by Heiko Schäfer <heiko@rangun.de>
++ *
++ * This file is part of NetMauMau Qt Client.
++ *
++ * NetMauMau Qt Client is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU Lesser General Public License as
++ * published by the Free Software Foundation, either version 3 of
++ * the License, or (at your option) any later version.
++ *
++ * NetMauMau Qt Client is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public License
++ * along with NetMauMau Qt Client.  If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#include "addserverwidget.h"
++
++namespace {
++const QRegExp hostRex("^(?=.{1,255}$)[0-9A-Za-z]" \
++					  "(?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?" \
++					  "(?:\\.[0-9A-Za-z](?:(?:[0-9A-Za-z]|-)" \
++					  "{0,61}[0-9A-Za-z])?)*\\.?$");
++}
++
++AddServerWidget::AddServerWidget(QWidget *p) : QGroupBox(p),
++	m_hostRexValidator(new QRegExpValidator(hostRex)) {
++
++	setupUi(this);
++
++	if(!addButton->icon().hasThemeIcon("list-add")) {
++		addButton->setIcon(QIcon(":/list-add.png"));
++	}
++
++	hostEdit->setValidator(m_hostRexValidator);
++
++	QObject::connect(hostEdit, SIGNAL(textChanged(const QString &)),
++					 this, SLOT(enableAddButton(const QString &)));
++	QObject::connect(addButton, SIGNAL(clicked()), this, SLOT(addServerClicked()));
++}
++
++AddServerWidget::~AddServerWidget() {
++	delete m_hostRexValidator;
++}
++
++const QRegExp &AddServerWidget::getHostRex() const {
++	return hostRex;
++}
++
++QPushButton *AddServerWidget::getAddButton() const {
++	return addButton;
++}
++
++QLineEdit *AddServerWidget::getHostEdit() const {
++	return hostEdit;
++}
++
++QString AddServerWidget::getHost() const {
++	return getHostEdit()->text();
++}
++
++QString AddServerWidget::getPort() const {
++	return portSpin->text();
++}
++
++void AddServerWidget::enableAddButton(const QString &str) {
++	addButton->setDisabled(str.isEmpty());
++}
++
++void AddServerWidget::addServerClicked() {
++	emit addServer();
++}
+--- nmm-qt-client-0.11.orig/client.cpp
++++ nmm-qt-client-0.11/client.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2014 by Heiko Schäfer <heiko@rangun.de>
++ * Copyright 2014-2015 by Heiko Schäfer <heiko@rangun.de>
+  *
+  * This file is part of NetMauMau Qt Client.
+  *
+@@ -132,7 +132,7 @@ NetMauMau::Common::ICard *Client::playCa
+ 	QObject::connect(m_mainWindow, SIGNAL(disconnectNow()), &waitForCard, SLOT(quit()));
+ 	QObject::connect(this, SIGNAL(jackSuitChoiceAvailable()), &waitForCard, SLOT(quit()));
+ 
+-	waitForCard.exec();
++	waitForCard.exec(QEventLoop::ExcludeUserInputEvents);
+ 
+ 	if(m_disconnectNow) {
+ 		m_cardToPlay = 0L;
+@@ -158,7 +158,7 @@ NetMauMau::Common::ICard::SUIT Client::g
+ 	QObject::connect(m_mainWindow, SIGNAL(disconnectNow()), &waitForSuit, SLOT(quit()));
+ 	QObject::connect(this, SIGNAL(jackSuitChoiceAvailable()), &waitForSuit, SLOT(quit()));
+ 
+-	waitForSuit.exec();
++	waitForSuit.exec(QEventLoop::ExcludeUserInputEvents);
+ 
+ 	log(QString("getJackSuitChoice(%1)").
+ 		arg(QString::fromUtf8(NetMauMau::Common::suitToSymbol(m_chosenSuit, false).c_str())),
+@@ -178,7 +178,7 @@ bool Client::getAceRoundChoice() const {
+ 	QObject::connect(m_mainWindow, SIGNAL(disconnectNow()), &waitForAceRoundChoice, SLOT(quit()));
+ 	QObject::connect(this, SIGNAL(aceRoundChoiceAvailable()), &waitForAceRoundChoice, SLOT(quit()));
+ 
+-	waitForAceRoundChoice.exec();
++	waitForAceRoundChoice.exec(QEventLoop::ExcludeUserInputEvents);
+ 
+ 	log(QString("getAceRoundChoice(%1)").arg(m_aceRoundChoice ? "TRUE" : "FALSE"),
+ 		ConnectionLogDialog::TO_SERVER);
+--- nmm-qt-client-0.11.orig/main.cpp
++++ nmm-qt-client-0.11/main.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2014 by Heiko Schäfer <heiko@rangun.de>
++ * Copyright 2014-2015 by Heiko Schäfer <heiko@rangun.de>
+  *
+  * This file is part of NetMauMau Qt Client.
+  *
+@@ -23,6 +23,9 @@
+ 
+ #ifdef _WIN32
+ #include <QSettings>
++#else
++#include <QSharedMemory>
++#include "netmaumaumessagebox.h"
+ #endif
+ 
+ #include "netmaumauapplication.h"
+@@ -37,17 +40,20 @@ int main(int argc, char *argv[]) {
+ 
+ #ifdef _WIN32
+ 	QSettings::setDefaultFormat(QSettings::IniFormat);
++#else
++	QSharedMemory sharedMemory;
++	sharedMemory.setKey(QCoreApplication::applicationName());
+ #endif
+ 
+ 	NetMauMauApplication a(argc, argv);
+-	QSplashScreen splash(QPixmap(":/splash.png"), Qt::WindowStaysOnTopHint);
+-
+-	splash.show();
+-	a.processEvents();
+ 
+ 	QTranslator qtTranslator;
++#ifndef _WIN32
+ 	qtTranslator.load("qt_" + QLocale::system().name(),
+ 					  QLibraryInfo::location(QLibraryInfo::TranslationsPath));
++#else
++	qtTranslator.load("qt_" + QLocale::system().name());
++#endif
+ 	a.installTranslator(&qtTranslator);
+ 	a.processEvents();
+ 
+@@ -62,6 +68,22 @@ int main(int argc, char *argv[]) {
+ 	a.installTranslator(&myappTranslator);
+ 	a.processEvents();
+ 
++#ifndef _WIN32
++	if(!sharedMemory.create(1)) {
++		NetMauMauMessageBox mb(QApplication::translate("main", "Warning"),
++							   QApplication::translate("main", "NetMauMau is already running!"),
++							   QApplication::style()->standardIcon(QStyle::SP_MessageBoxWarning).
++							   pixmap(48));
++		mb.exec();
++		exit(0);
++	}
++#endif
++
++	QSplashScreen splash(QPixmap(":/splash.png"), Qt::WindowStaysOnTopHint);
++
++	splash.show();
++	a.processEvents();
++
+ 	MainWindow w(&splash);
+ 	a.processEvents();
+ 	w.show();
+--- nmm-qt-client-0.11.orig/cardwidget.cpp
++++ nmm-qt-client-0.11/cardwidget.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2014 by Heiko Schäfer <heiko@rangun.de>
++ * Copyright 2014-2015 by Heiko Schäfer <heiko@rangun.de>
+  *
+  * This file is part of NetMauMau Qt Client.
+  *
+@@ -117,29 +117,38 @@ QString CardWidget::tooltipText(NetMauMa
+ 
+ 		switch(s) {
+ 		case NetMauMau::Common::ICard::HEARTS:
+-		suit = tr("Hearts"); break;
++			suit = tr("Hearts"); break;
+ 		case NetMauMau::Common::ICard::DIAMONDS:
+-		suit = tr("Diamonds"); break;
++			suit = tr("Diamonds"); break;
+ 		case NetMauMau::Common::ICard::CLUBS:
+-		suit = tr("Clubs"); break;
++			suit = tr("Clubs"); break;
+ 		case NetMauMau::Common::ICard::SPADES:
+-		suit = tr("Spades"); break;
++			suit = tr("Spades"); break;
+ 		case NetMauMau::Common::ICard::SUIT_ILLEGAL:
+-		suit = "X"; break;
++			suit = "X"; break;
+ 		}
+ 
+ 		QString rank;
+ 
+ 		switch(r) {
+-		case NetMauMau::Common::ICard::SEVEN: rank.append('7'); break;
+-		case NetMauMau::Common::ICard::EIGHT: rank.append('8'); break;
+-		case NetMauMau::Common::ICard::NINE: rank.append('9'); break;
+-		case NetMauMau::Common::ICard::TEN: rank.append("10"); break;
+-		case NetMauMau::Common::ICard::JACK: rank.append(tr("Jack")); break;
+-		case NetMauMau::Common::ICard::QUEEN: rank.append(tr("Queen")); break;
+-		case NetMauMau::Common::ICard::KING: rank.append(tr("King")); break;
+-		case NetMauMau::Common::ICard::ACE: rank.append(tr("Ace")); break;
+-		case NetMauMau::Common::ICard::RANK_ILLEGAL: rank.append("X"); break;
++		case NetMauMau::Common::ICard::SEVEN:
++			rank.append('7'); break;
++		case NetMauMau::Common::ICard::EIGHT:
++			rank.append('8'); break;
++		case NetMauMau::Common::ICard::NINE:
++			rank.append('9'); break;
++		case NetMauMau::Common::ICard::TEN:
++			rank.append("10"); break;
++		case NetMauMau::Common::ICard::JACK:
++			rank.append(tr("Jack")); break;
++		case NetMauMau::Common::ICard::QUEEN:
++			rank.append(tr("Queen")); break;
++		case NetMauMau::Common::ICard::KING:
++			rank.append(tr("King")); break;
++		case NetMauMau::Common::ICard::ACE:
++			rank.append(tr("Ace")); break;
++		case NetMauMau::Common::ICard::RANK_ILLEGAL:
++			rank.append("X"); break;
+ 		}
+ 
+ 		ttt.append(tr("%1 of %2").arg(rank).arg(suit));
+--- /dev/null
++++ nmm-qt-client-0.11/addserverdialog.ui
+@@ -0,0 +1,82 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<ui version="4.0">
++ <class>AddServerDialog</class>
++ <widget class="QDialog" name="AddServerDialog">
++  <property name="geometry">
++   <rect>
++    <x>0</x>
++    <y>0</y>
++    <width>222</width>
++    <height>128</height>
++   </rect>
++  </property>
++  <property name="windowTitle">
++   <string>Add server</string>
++  </property>
++  <layout class="QVBoxLayout" name="verticalLayout">
++   <item>
++    <widget class="AddServerWidget" name="serverAdd" native="true">
++     <property name="minimumSize">
++      <size>
++       <width>214</width>
++       <height>91</height>
++      </size>
++     </property>
++    </widget>
++   </item>
++   <item>
++    <widget class="QDialogButtonBox" name="buttonBox">
++     <property name="orientation">
++      <enum>Qt::Horizontal</enum>
++     </property>
++     <property name="standardButtons">
++      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
++     </property>
++    </widget>
++   </item>
++  </layout>
++ </widget>
++ <customwidgets>
++  <customwidget>
++   <class>AddServerWidget</class>
++   <extends>QWidget</extends>
++   <header>addserverwidget.h</header>
++   <container>1</container>
++  </customwidget>
++ </customwidgets>
++ <resources/>
++ <connections>
++  <connection>
++   <sender>buttonBox</sender>
++   <signal>accepted()</signal>
++   <receiver>AddServerDialog</receiver>
++   <slot>accept()</slot>
++   <hints>
++    <hint type="sourcelabel">
++     <x>248</x>
++     <y>254</y>
++    </hint>
++    <hint type="destinationlabel">
++     <x>157</x>
++     <y>274</y>
++    </hint>
++   </hints>
++  </connection>
++  <connection>
++   <sender>buttonBox</sender>
++   <signal>rejected()</signal>
++   <receiver>AddServerDialog</receiver>
++   <slot>reject()</slot>
++   <hints>
++    <hint type="sourcelabel">
++     <x>316</x>
++     <y>260</y>
++    </hint>
++    <hint type="destinationlabel">
++     <x>286</x>
++     <y>274</y>
++    </hint>
++   </hints>
++  </connection>
++ </connections>
++</ui>
+--- /dev/null
++++ nmm-qt-client-0.11/playerimagelineedit.h
+@@ -0,0 +1,35 @@
++/*
++ * Copyright 2015 by Heiko Schäfer <heiko@rangun.de>
++ *
++ * This file is part of NetMauMau Qt Client.
++ *
++ * NetMauMau Qt Client is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU Lesser General Public License as
++ * published by the Free Software Foundation, either version 3 of
++ * the License, or (at your option) any later version.
++ *
++ * NetMauMau Qt Client is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public License
++ * along with NetMauMau Qt Client.  If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#ifndef PLAYERIMAGELINEEDIT_H
++#define PLAYERIMAGELINEEDIT_H
++
++#include <QLineEdit>
++
++class PlayerImageLineEdit : public QLineEdit {
++	Q_OBJECT
++public:
++	explicit PlayerImageLineEdit(QWidget *parent = 0);
++
++protected:
++	virtual void dragEnterEvent(QDragEnterEvent *event);
++	virtual void dropEvent(QDropEvent *event);
++};
++
++#endif // PLAYERIMAGELINEEDIT_H
+--- nmm-qt-client-0.11.orig/deleteserversdialog.ui
++++ nmm-qt-client-0.11/deleteserversdialog.ui
+@@ -2,6 +2,14 @@
+ <ui version="4.0">
+  <class>DeleteServersDialog</class>
+  <widget class="QDialog" name="DeleteServersDialog">
++  <property name="geometry">
++   <rect>
++    <x>0</x>
++    <y>0</y>
++    <width>266</width>
++    <height>250</height>
++   </rect>
++  </property>
+   <property name="windowTitle">
+    <string>Delete servers</string>
+   </property>
+@@ -20,6 +28,9 @@
+      </item>
+      <item>
+       <widget class="QListView" name="serversList">
++       <property name="toolTip">
++        <string>Select the servers you want to delete</string>
++       </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+--- nmm-qt-client-0.11.orig/jackchoosedialog.cpp
++++ nmm-qt-client-0.11/jackchoosedialog.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2014 by Heiko Schäfer <heiko@rangun.de>
++ * Copyright 2014-2015 by Heiko Schäfer <heiko@rangun.de>
+  *
+  * This file is part of NetMauMau Qt Client.
+  *
+@@ -41,19 +41,27 @@ JackChooseDialog::~JackChooseDialog() {
+ 
+ QString JackChooseDialog::suitToolTip(NetMauMau::Common::ICard::SUIT s) {
+ 	switch(s) {
+-	case NetMauMau::Common::ICard::HEARTS: return tr("Hearts");
+-	case NetMauMau::Common::ICard::DIAMONDS: return tr("Diamonds");
+-	case NetMauMau::Common::ICard::CLUBS: return tr("Clubs");
+-	default: return tr("Spades");
++	case NetMauMau::Common::ICard::HEARTS:
++		return tr("Hearts");
++	case NetMauMau::Common::ICard::DIAMONDS:
++		return tr("Diamonds");
++	case NetMauMau::Common::ICard::CLUBS:
++		return tr("Clubs");
++	default:
++		return tr("Spades");
+ 	}
+ }
+ 
+ void JackChooseDialog::setSuite(NetMauMau::Common::ICard::SUIT s) {
+ 	switch(s) {
+-	case NetMauMau::Common::ICard::HEARTS: heartsSuit->setChecked(true); break;
+-	case NetMauMau::Common::ICard::DIAMONDS: diamondsSuit->setChecked(true); break;
+-	case NetMauMau::Common::ICard::CLUBS: clubsSuit->setChecked(true); break;
+-	default: spadesSuit->setChecked(true); break;
++	case NetMauMau::Common::ICard::HEARTS:
++		heartsSuit->setChecked(true); break;
++	case NetMauMau::Common::ICard::DIAMONDS:
++		diamondsSuit->setChecked(true); break;
++	case NetMauMau::Common::ICard::CLUBS:
++		clubsSuit->setChecked(true); break;
++	default:
++		spadesSuit->setChecked(true); break;
+ 	}
+ }
+ 
+--- /dev/null
++++ nmm-qt-client-0.11/addserverwidget.h
+@@ -0,0 +1,54 @@
++/*
++ * Copyright 2015 by Heiko Schäfer <heiko@rangun.de>
++ *
++ * This file is part of NetMauMau Qt Client.
++ *
++ * NetMauMau Qt Client is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU Lesser General Public License as
++ * published by the Free Software Foundation, either version 3 of
++ * the License, or (at your option) any later version.
++ *
++ * NetMauMau Qt Client is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public License
++ * along with NetMauMau Qt Client.  If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#ifndef ADDSERVERWIDGET_H
++#define ADDSERVERWIDGET_H
++
++#include <linkercontrol.h>
++
++#include "ui_addserverwidget.h"
++
++class AddServerWidget : public QGroupBox, private Ui::AddServerWidget {
++	Q_OBJECT
++
++public:
++	explicit AddServerWidget(QWidget *parent = 0);
++	virtual ~AddServerWidget();
++
++public:
++	const QRegExp &getHostRex() const _CONST;
++
++	QPushButton *getAddButton() const _PURE;
++	QLineEdit *getHostEdit() const _PURE;
++
++	QString getHost() const;
++	QString getPort() const;
++
++signals:
++	void addServer();
++
++private slots:
++	void enableAddButton(const QString &str);
++	void addServerClicked();
++
++private:
++	const QRegExpValidator *m_hostRexValidator;
++};
++
++#endif // ADDSERVERWIDGET_H
+--- /dev/null
++++ nmm-qt-client-0.11/addserverwidget.ui
+@@ -0,0 +1,115 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<ui version="4.0">
++ <class>AddServerWidget</class>
++ <widget class="QGroupBox" name="AddServerWidget">
++  <property name="geometry">
++   <rect>
++    <x>0</x>
++    <y>0</y>
++    <width>214</width>
++    <height>91</height>
++   </rect>
++  </property>
++  <property name="sizePolicy">
++   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
++    <horstretch>0</horstretch>
++    <verstretch>0</verstretch>
++   </sizepolicy>
++  </property>
++  <property name="title">
++   <string>Add server</string>
++  </property>
++  <layout class="QFormLayout" name="formLayout_2">
++   <item row="0" column="0">
++    <widget class="QLabel" name="label">
++     <property name="text">
++      <string>&amp;Server:</string>
++     </property>
++     <property name="buddy">
++      <cstring>hostEdit</cstring>
++     </property>
++    </widget>
++   </item>
++   <item row="0" column="1">
++    <widget class="QLineEdit" name="hostEdit">
++     <property name="focusPolicy">
++      <enum>Qt::StrongFocus</enum>
++     </property>
++     <property name="toolTip">
++      <string>The server you want to add</string>
++     </property>
++     <property name="maxLength">
++      <number>64</number>
++     </property>
++    </widget>
++   </item>
++   <item row="1" column="1">
++    <layout class="QHBoxLayout" name="horizontalLayout_3">
++     <item>
++      <widget class="PortSpin" name="portSpin">
++       <property name="toolTip">
++        <string>The port to connect to</string>
++       </property>
++      </widget>
++     </item>
++     <item>
++      <spacer name="horizontalSpacer_2">
++       <property name="orientation">
++        <enum>Qt::Horizontal</enum>
++       </property>
++       <property name="sizeHint" stdset="0">
++        <size>
++         <width>40</width>
++         <height>20</height>
++        </size>
++       </property>
++      </spacer>
++     </item>
++     <item>
++      <widget class="QPushButton" name="addButton">
++       <property name="enabled">
++        <bool>false</bool>
++       </property>
++       <property name="sizePolicy">
++        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
++         <horstretch>0</horstretch>
++         <verstretch>0</verstretch>
++        </sizepolicy>
++       </property>
++       <property name="toolTip">
++        <string>Add server to list</string>
++       </property>
++       <property name="text">
++        <string/>
++       </property>
++       <property name="icon">
++        <iconset theme="list-add">
++         <normaloff/>
++        </iconset>
++       </property>
++      </widget>
++     </item>
++    </layout>
++   </item>
++   <item row="1" column="0">
++    <widget class="QLabel" name="label_2">
++     <property name="text">
++      <string>&amp;Port:</string>
++     </property>
++     <property name="buddy">
++      <cstring>portSpin</cstring>
++     </property>
++    </widget>
++   </item>
++  </layout>
++ </widget>
++ <customwidgets>
++  <customwidget>
++   <class>PortSpin</class>
++   <extends>QSpinBox</extends>
++   <header>portspin.h</header>
++  </customwidget>
++ </customwidgets>
++ <resources/>
++ <connections/>
++</ui>
+--- /dev/null
++++ nmm-qt-client-0.11/addserverdialog.cpp
+@@ -0,0 +1,55 @@
++/*
++ * Copyright 2015 by Heiko Schäfer <heiko@rangun.de>
++ *
++ * This file is part of NetMauMau Qt Client.
++ *
++ * NetMauMau Qt Client is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU Lesser General Public License as
++ * published by the Free Software Foundation, either version 3 of
++ * the License, or (at your option) any later version.
++ *
++ * NetMauMau Qt Client is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public License
++ * along with NetMauMau Qt Client.  If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#include "addserverdialog.h"
++
++AddServerDialog::AddServerDialog(QWidget *p) : QDialog(p), m_okButton(0L) {
++
++	Qt::WindowFlags f = windowFlags();
++	f &= ~Qt::WindowContextHelpButtonHint;
++	f &= ~Qt::WindowSystemMenuHint;
++	setWindowFlags(f);
++
++	setupUi(this);
++
++	serverAdd->getAddButton()->hide();
++
++	for(int i = 0; buttonBox->buttons().count(); ++i) {
++		if(buttonBox->buttonRole(buttonBox->buttons()[i]) == QDialogButtonBox::AcceptRole) {
++			m_okButton = buttonBox->buttons()[i];
++			break;
++		}
++	}
++
++	if(m_okButton) {
++		m_okButton->setDisabled(true);
++		QObject::connect(m_okButton, SIGNAL(clicked()), this, SLOT(addServerClicked()));
++	}
++
++	QObject::connect(serverAdd->getHostEdit(), SIGNAL(textChanged(const QString &)),
++					 this, SLOT(enableOkButton(const QString &)));
++}
++
++void AddServerDialog::enableOkButton(const QString &str) {
++	m_okButton->setDisabled(str.isEmpty());
++}
++
++void AddServerDialog::addServerClicked() {
++	emit addServer(serverAdd->getHost(), serverAdd->getPort());
++}
+--- nmm-qt-client-0.11.orig/launchserverdialog.cpp
++++ nmm-qt-client-0.11/launchserverdialog.cpp
+@@ -160,8 +160,8 @@ void LaunchServerDialog::stateChanged(QP
+ 	case QProcess::NotRunning:
+ 		break;
+ 	default:
+-	m_process.waitForStarted(800);
+-	emit serverLaunched(true);
++		m_process.waitForStarted(800);
++		emit serverLaunched(true);
+ 		break;
+ 	}
+ }
+--- /dev/null
++++ nmm-qt-client-0.11/playerimagelineedit.cpp
+@@ -0,0 +1,47 @@
++/*
++ * Copyright 2015 by Heiko Schäfer <heiko@rangun.de>
++ *
++ * This file is part of NetMauMau Qt Client.
++ *
++ * NetMauMau Qt Client is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU Lesser General Public License as
++ * published by the Free Software Foundation, either version 3 of
++ * the License, or (at your option) any later version.
++ *
++ * NetMauMau Qt Client is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public License
++ * along with NetMauMau Qt Client.  If not, see <http://www.gnu.org/licenses/>.
++ */
++
++#include <QUrl>
++#include <QDragEnterEvent>
++
++#include "playerimagelineedit.h"
++
++PlayerImageLineEdit::PlayerImageLineEdit(QWidget *p) : QLineEdit(p) {
++	setReadOnly(true);
++	setAcceptDrops(true);
++}
++
++void PlayerImageLineEdit::dragEnterEvent(QDragEnterEvent *evt) {
++	if(evt->mimeData()->hasUrls() && evt->mimeData()->urls().first().isLocalFile()) {
++		evt->acceptProposedAction();
++	}
++}
++
++void PlayerImageLineEdit::dropEvent(QDropEvent *evt) {
++
++	if(evt->mimeData()->hasUrls()) {
++
++		const QUrl url(evt->mimeData()->urls().first());
++
++		if(url.isLocalFile()) {
++			setText(url.toLocalFile());
++			evt->acceptProposedAction();
++		}
++	}
++}
+--- nmm-qt-client-0.11.orig/serverdialog.h
++++ nmm-qt-client-0.11/serverdialog.h
+@@ -29,12 +29,14 @@
+ #include "ui_serverdialog.h"
+ 
+ class DeleteServersDialog;
++class AddServerDialog;
+ class QSplashScreen;
+ class ServerInfo;
+ 
+ class ServerDialog : public QDialog, public Ui::ServerDialog {
+ 	Q_OBJECT
+ 	Q_PROPERTY(bool forceRefresh READ isForceRefresh WRITE forceRefresh NOTIFY refresh)
++
+ public:
+ 	explicit ServerDialog(QSplashScreen *splash, QWidget *parent = 0);
+ 	virtual ~ServerDialog();
+@@ -43,8 +45,11 @@ public:
+ 	QString getAcceptedServerAlias() const;
+ 	NetMauMau::Common::ICard::RANK getAceRoundRank() const;
+ 	QString getPlayerName() const;
++	void setPlayerName(const QString &name);
++	QStringList getPlayerAltNames() const;
+ 	uint getMaxPlayerCount() const;
+-	const QByteArray &getPlayerImage() const _CONST;
++	const QByteArray getPlayerImage() const;
++	QString getPlayerImagePath() const;
+ 
+ 	void setLastServer(const QString &ls);
+ 	QString getLastServer() const;
+@@ -54,27 +59,35 @@ public:
+ 	void blockAutoRefresh(bool b);
+ 	void forceRefresh(bool b);
+ 
++	static QImage scalePlayerPic(const QImage &img);
++
+ private:
+ 	bool isForceRefresh() const _PURE;
+-	void setPlayerImagePath(const QString &path, bool warn = false);
+-
+ 	void saveServers();
++	void savePlayer();
++	QByteArray convertToPNG(const QByteArray &ba) const;
++
++public slots:
++	void setPlayerImagePath(const QString &path, bool warn = false);
+ 
+ private slots:
+ 	void checkOnline();
+ 	void updateOnline(bool enabled, int row);
+ 	void doubleClick();
+-	void enableAddButton(const QString &str);
+ 	void enableRemoveAndOkButton(const QItemSelection &sel, const QItemSelection &desel);
+ 	void deleteRows(const QList<int> &);
++	void deleteRow(const QModelIndex &);
+ 	void removeSelected();
++	void removeServer();
+ 	void addServer();
++	void addServer(const QString &, const QString &);
+ 	void resize();
+ 	void resizeColumns();
+ 	void choosePlayerImage();
+ 	void clearPlayerImage();
+ 	void enableClearButton(const QString &);
+ 	void itemChanged(QStandardItem *);
++	void serverViewContext(const QPoint &);
+ 
+ signals:
+ 	void refresh();
+@@ -87,7 +100,6 @@ private:
+ 	mutable bool m_forceRefresh;
+ 	QString m_lastServer;
+ 	const DeleteServersDialog *m_deleteServersDlg;
+-	const QRegExpValidator *m_hostRexValidator;
+ 	const QRegExpValidator *m_nameRexValidator;
+ 	QByteArray m_playerImage;
+ 	QTimer m_autoRefresh;
+@@ -95,6 +107,10 @@ private:
+ 	bool m_blockAutoRefresh;
+ 	QSplashScreen *m_splash;
+ 	mutable QString m_lastPlayerName;
++	QString m_imageFormats;
++	AddServerDialog *m_addServerDialog;
++	QMenu *m_ctxPopup;
++	QPoint m_ctxPoint;
+ };
+ 
+ #endif // SERVERDIALOG_H
+--- nmm-qt-client-0.11.orig/src.pro
++++ nmm-qt-client-0.11/src.pro
+@@ -30,16 +30,16 @@ CONFIG(debug, debug|release) {
+ 		QT_NO_CAST_TO_ASCII
+ 	 unix:INCLUDEPATH += "/usr/include/netmaumau"
+ 	 win32:INCLUDEPATH += "/usr/i686-pc-mingw32/usr/include/netmaumau"
+-	 unix:QMAKE_CXXFLAGS += -O3 -g -fno-omit-frame-pointer -march=native -fstrict-aliasing -Wformat \
+-	 -Wformat-security -Wno-packed-bitfield-compat -Wsuggest-attribute=pure \
+-	 -Wsuggest-attribute=const -Wsuggest-attribute=noreturn -Wdisabled-optimization -Wuninitialized
++	 unix:QMAKE_CXXFLAGS += -fomit-frame-pointer -fstrict-aliasing
+ 	 win32:QMAKE_CXXFLAGS += -O2 -fomit-frame-pointer -fstrict-aliasing
+ 	 win32:LIBS    += /usr/i686-pc-mingw32/usr/lib/libnetmaumauclient.a \
+ 				/usr/i686-pc-mingw32/usr/lib/libnetmaumaucommon.a
+ 	 unix:LIBS += -lnetmaumaucommon -lnetmaumauclient
+ }
+ 
+-SOURCES += base64bridge.cpp \
++SOURCES += addserverdialog.cpp \
++	addserverwidget.cpp \
++	base64bridge.cpp \
+ 	cardpixmap.cpp \
+ 	cardwidget.cpp \
+ 	client.cpp \
+@@ -58,6 +58,7 @@ SOURCES += base64bridge.cpp \
+ 	netmaumauapplication.cpp \
+ 	netmaumaumessagebox.cpp \
+ 	playerimagedelegate.cpp \
++    playerimagelineedit.cpp \
+ 	playerimageprogressdialog.cpp \
+ 	portspin.cpp \
+ 	scoresdialog.cpp \
+@@ -68,7 +69,9 @@ SOURCES += base64bridge.cpp \
+ 	suitradiobutton.cpp \
+ 	util.cpp
+ 
+-HEADERS += base64bridge.h \
++HEADERS += addserverdialog.h \
++	addserverwidget.h \
++	base64bridge.h \
+ 	cardpixmap.h \
+ 	cardwidget.h \
+ 	client.h \
+@@ -86,6 +89,7 @@ HEADERS += base64bridge.h \
+ 	netmaumauapplication.h \
+ 	netmaumaumessagebox.h \
+ 	playerimagedelegate.h \
++    playerimagelineedit.h \
+ 	playerimageprogressdialog.h \
+ 	portspin.h \
+ 	scoresdialog.h \
+@@ -94,7 +98,7 @@ HEADERS += base64bridge.h \
+ 	suitfontchecker.h \
+ 	suitlabel.h \
+ 	suitradiobutton.h \
+-	util.h \
++	util.h
+ 
+ FORMS += cardwidget.ui \
+ 	connectionlogdialog.ui \
+@@ -107,7 +111,9 @@ FORMS += cardwidget.ui \
+ 	scoresdialog.ui \
+ 	serverdialog.ui \
+ 	suitlabel.ui \
+-	suitradiobutton.ui
++	suitradiobutton.ui \
++    addserverwidget.ui \
++    addserverdialog.ui
+ 
+ RESOURCES += cards.qrc \
+ 	icons.qrc \
+--- nmm-qt-client-0.11.orig/mainwindow.ui
++++ nmm-qt-client-0.11/mainwindow.ui
+@@ -7,10 +7,13 @@
+    <rect>
+     <x>0</x>
+     <y>0</y>
+-    <width>998</width>
++    <width>1000</width>
+     <height>546</height>
+    </rect>
+   </property>
++  <property name="acceptDrops">
++   <bool>true</bool>
++  </property>
+   <property name="windowTitle">
+    <string>NetMauMau Client</string>
+   </property>
+@@ -121,8 +124,8 @@
+     <rect>
+      <x>0</x>
+      <y>0</y>
+-     <width>998</width>
+-     <height>25</height>
++     <width>1000</width>
++     <height>21</height>
+     </rect>
+    </property>
+    <widget class="QMenu" name="menuFile">
+@@ -154,6 +157,8 @@
+     <addaction name="separator"/>
+     <addaction name="actionConnectionlog"/>
+     <addaction name="actionNetMauMauServerOutput"/>
++    <addaction name="separator"/>
++    <addaction name="actionShowCardTooltips"/>
+    </widget>
+    <addaction name="menuFile"/>
+    <addaction name="menu_View"/>
+@@ -436,6 +441,9 @@
+      <bold>true</bold>
+     </font>
+    </property>
++   <property name="contextMenuPolicy">
++    <enum>Qt::CustomContextMenu</enum>
++   </property>
+    <property name="features">
+     <set>QDockWidget::DockWidgetMovable</set>
+    </property>
+@@ -507,8 +515,8 @@
+               <rect>
+                <x>0</x>
+                <y>0</y>
+-               <width>878</width>
+-               <height>152</height>
++               <width>886</width>
++               <height>158</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="myCardsLayout">
+@@ -795,6 +803,17 @@
+     <string notr="true">Ctrl+H</string>
+    </property>
+   </action>
++  <action name="actionShowCardTooltips">
++   <property name="checkable">
++    <bool>true</bool>
++   </property>
++   <property name="text">
++    <string>Show card tooltips</string>
++   </property>
++   <property name="shortcut">
++    <string notr="true">Ctrl+T</string>
++   </property>
++  </action>
+  </widget>
+  <customwidgets>
+   <customwidget>
+--- nmm-qt-client-0.11.orig/suitradiobutton.cpp
++++ nmm-qt-client-0.11/suitradiobutton.cpp
+@@ -77,6 +77,7 @@ void SuitRadioButton::styleSuit() {
+ 			   font().family().toLocal8Bit().constData());
+ 
+ 		setText(QString::null);
++
+ 		switch (s) {
+ 		case NetMauMau::Common::ICard::HEARTS:
+ 			setIcon(QIcon(":/suit-fallback/hearts.png"));
+--- nmm-qt-client-0.11.orig/mainwindow.cpp
++++ nmm-qt-client-0.11/mainwindow.cpp
+@@ -23,6 +23,7 @@
+ 
+ #include <cardtools.h>
+ #include <scoresexception.h>
++#include <defaultplayerimage.h>
+ #include <playerlistexception.h>
+ 
+ #include "mainwindow.h"
+@@ -76,10 +77,18 @@ MainWindow::MainWindow(QSplashScreen *sp
+ 	m_receivingPlayerImageProgress(new PlayerImageProgressDialog(this)),
+ 	m_licenseDialog(new LicenseDialog(this)), m_aceRoundLabel(), m_gameState(0L),
+ 	m_scoresDialog(new ScoresDialog(static_cast<ServerDialog *>(m_serverDlg), this)),
+-	m_clientReleaseDownloader(0L) {
++	m_clientReleaseDownloader(0L),
++	m_defaultPlayerImage(QImage::fromData
++						 (QByteArray(NetMauMau::Common::DefaultPlayerImage.c_str(),
++									 NetMauMau::Common::DefaultPlayerImage.length()))),
++	m_playerNameMenu(0L) {
+ 
+ 	m_ui->setupUi(this);
+ 
++	m_ui->myCardsScrollArea->installEventFilter(this);
++	m_ui->takeCardsButton->installEventFilter(this);
++	m_ui->suspendButton->installEventFilter(this);
++
+ 	setCorner(Qt::TopLeftCorner, Qt::TopDockWidgetArea);
+ 	setCorner(Qt::TopRightCorner, Qt::TopDockWidgetArea);
+ 	setCorner(Qt::BottomLeftCorner, Qt::BottomDockWidgetArea);
+@@ -168,6 +177,8 @@ MainWindow::MainWindow(QSplashScreen *sp
+ 
+ 	resizeColumns();
+ 
++	QObject::connect(m_ui->localPlayerDock, SIGNAL(customContextMenuRequested(const QPoint &)),
++					 this, SLOT(showPlayerNameSelectMenu(const QPoint &)));
+ 	QObject::connect(m_ui->noSort, SIGNAL(toggled(bool)), this, SLOT(sortNoSort(bool)));
+ 	QObject::connect(m_ui->sortSuitRank, SIGNAL(toggled(bool)), this, SLOT(sortSuitRank(bool)));
+ 	QObject::connect(m_ui->sortRankSuit, SIGNAL(toggled(bool)), this, SLOT(sortRankSuit(bool)));
+@@ -238,6 +249,7 @@ MainWindow::~MainWindow() {
+ 	delete m_messageItemDelegate;
+ 	delete m_receivingPlayerImageProgress;
+ 	delete m_clientReleaseDownloader;
++	delete m_playerNameMenu;
+ 	delete m_gameState;
+ 	delete m_ui;
+ }
+@@ -310,6 +322,7 @@ void MainWindow::sortMyCards(SORTMODE mo
+ 		int k = 1;
+ 		for(QList<CardWidget *>::ConstIterator i(cards.begin()); i != cards.end(); ++i, ++k) {
+ 			m_ui->myCardsLayout->addWidget(*i, 0, Qt::AlignHCenter);
++			(*i)->installEventFilter(this);
+ 			addKeyShortcutTooltip(*i, k);
+ 			(*i)->setVisible(true);
+ 		}
+@@ -322,6 +335,14 @@ void MainWindow::filterMyCards(bool) {
+ 	enableMyCards(m_ui->myCardsDock->isEnabled());
+ }
+ 
++bool MainWindow::eventFilter(QObject *watched, QEvent *e) {
++	if(e->type() == QEvent::ToolTip) {
++		return !m_ui->actionShowCardTooltips->isChecked();
++	} else {
++		return QMainWindow::eventFilter(watched, e);
++	}
++}
++
+ void MainWindow::closeEvent(QCloseEvent *e) {
+ 	writeSettings();
+ 	if(m_connectionLogDlg->isVisible()) m_connectionLogDlg->close();
+@@ -335,7 +356,7 @@ void MainWindow::receivingPlayerImage(co
+ 	gameState()->setCurReceiving(p);
+ 	QTimer::singleShot(1000, this, SLOT(showReceiveProgress()));
+ 
+-	statusBar()->showMessage(trUtf8("Receiving player image for \"%1\"…").arg(p), 1000);
++	statusBar()->showMessage(trUtf8("Receiving player image for \"%1\"...").arg(p), 1000);
+ }
+ 
+ void MainWindow::receivedPlayerImage(const QString &) {
+@@ -353,8 +374,45 @@ void MainWindow::showReceiveProgress() c
+ 	}
+ }
+ 
+-void MainWindow::sendingPlayerImageFailed(const QString &) const {
+-	// TODO: show some broken image and tooltip
++void MainWindow::updatePlayerScores(GameState *gs, uint attempts) {
++
++	gs->playerScores().clear();
++
++	for(uint i = 0; i < attempts; ++i) {
++		try {
++			updatePlayerScores(gs, m_client->playerList(false));
++			break;
++		} catch(const NetMauMau::Common::Exception::SocketException &e) {
++			qDebug("Retrieving scores failed in attempt %u: %s", (i + 1), e.what());
++		}
++	}
++}
++
++void MainWindow::updatePlayerScores(GameState *gs, const Client::PLAYERINFOS &pl) {
++
++	const Client::SCORES &scores(m_client->getScores(Client::SCORE_TYPE::ABS, 0));
++
++	for(Client::PLAYERINFOS::const_iterator i(pl.begin()); i != pl.end(); ++i) {
++
++		const QString &pName(QString::fromUtf8(i->name.c_str()));
++		const Client::SCORES::const_iterator &ps(std::find_if(scores.begin(), scores.end(),
++															  std::bind2nd(scoresPlayer(),
++																		   i->name)));
++
++		if(ps != scores.end()) gs->playerScores()[pName] = QString::number(ps->score);
++
++		const Client::SCORES::const_iterator
++				&myScore(std::find_if(scores.begin(), scores.end(),
++									  std::bind2nd(scoresPlayer(),
++												   static_cast<ServerDialog *>
++												   (m_serverDlg)->getPlayerName().toUtf8().
++												   constData())));
++
++		if(myScore != scores.end()) {
++			gs->playerScores()[static_cast<ServerDialog *>(m_serverDlg)->getPlayerName()] =
++					QString::number(myScore->score);
++		}
++	}
+ }
+ 
+ void MainWindow::serverAccept() {
+@@ -392,41 +450,24 @@ void MainWindow::serverAccept() {
+ 	QObject::connect(m_client, SIGNAL(receivedPlayerImage(const QString &)),
+ 					 this, SLOT(receivedPlayerImage(const QString &)));
+ 
+-	QObject::connect(m_client, SIGNAL(sendingPlayerImageFailed(const QString &)),
+-					 this, SLOT(sendingPlayerImageFailed(const QString &)));
+-
+ 	m_ui->localPlayerDock->setWindowTitle(QString::fromUtf8(m_client->getPlayerName().c_str()));
+ 
+ 	try {
+ 
+ 		const Client::PLAYERINFOS &pl(m_client->playerList(true));
+-		const Client::SCORES &scores(m_client->getScores(Client::SCORE_TYPE::ABS, 0));
+ 
+ 		for(Client::PLAYERINFOS::const_iterator i(pl.begin()); i != pl.end(); ++i) {
+ 			qApp->processEvents();
+ 
+ 			const QString &pName(QString::fromUtf8(i->name.c_str()));
+ 
+-			const Client::SCORES::const_iterator &ps(std::find_if(scores.begin(), scores.end(),
+-																  std::bind2nd(scoresPlayer(),
+-																			   i->name)));
+-
+-			if(ps != scores.end()) gs->playerScores()[pName] = QString::number(ps->score);
+-
+-			const Client::SCORES::const_iterator
+-					&myScore(std::find_if(scores.begin(), scores.end(),
+-										  std::bind2nd(scoresPlayer(),
+-													   sd->getPlayerName().toUtf8().constData())));
+-
+-			if(myScore != scores.end()) {
+-				gs->playerScores()[sd->getPlayerName()] = QString::number(myScore->score);
+-			}
+-
+ 			clientPlayerJoined(pName, i->pngDataLen ?  QImage::fromData(i->pngData,
+ 																		i->pngDataLen) : QImage());
+ 			delete [] i->pngData;
+ 		}
+ 
++		updatePlayerScores(gs, pl);
++
+ 		QObject::connect(m_client, SIGNAL(cPlayCard(const Client::CARDS &, std::size_t)),
+ 						 this, SLOT(clientPlayCardRequest(const Client::CARDS &, std::size_t)));
+ 		QObject::connect(m_client, SIGNAL(cGetJackSuitChoice()),
+@@ -485,6 +526,7 @@ void MainWindow::serverAccept() {
+ 
+ 		m_ui->actionServer->setEnabled(false);
+ 		m_ui->suspendButton->setEnabled(true);
++		m_ui->actionLaunchServer->setEnabled(false);
+ 		m_ui->actionReconnect->setToolTip(reconnectToolTip());
+ 		m_ui->remoteGroup->setTitle(tr("%1 on %2").arg(m_ui->remoteGroup->title()).arg(alias));
+ 
+@@ -707,14 +749,20 @@ void MainWindow::clientPlayerLost(const
+ 
+ 		GameState *gs = gameState();
+ 
++		updatePlayerScores(gs);
++
+ 		gs->setLostDisplaying(true);
+ 
+ 		takeCardsMark(false);
+ 
+ 		NetMauMauMessageBox lost(tr("Sorry"),
+-								 tr("You have lost!\nYour points: %1\n\nPlaying time: %2").arg(pt).
++								 tr("You have lost!\n%1\n\nPlaying time: %2").
++								 arg(gs->playerScores().contains(p) ?
++										 tr("Your score: %1").arg(gs->playerScores()[p]) :
++										 tr("Your deduction of points: %1").arg(pt)).
+ 								 arg(gs->playTime().toString("HH:mm:ss")),
+-								 QIcon::fromTheme("face-sad", QIcon(":/sad.png")).pixmap(48, 48));
++								 QIcon::fromTheme("face-sad", QIcon(":/sad.png")).pixmap(48, 48),
++								 this);
+ 
+ 		if(m_model.rowCount() == 2) lost.addButton(tr("Try &again"), QMessageBox::YesRole);
+ 		lost.setEscapeButton(lost.addButton(QMessageBox::Ok));
+@@ -741,14 +789,22 @@ void MainWindow::clientPlayerWins(const
+ 
+ 	if(!isMe(p)) statusBar()->showMessage(tr("%1 wins!").arg(p), 10000);
+ 
+-	NetMauMauMessageBox gameOver;
++	NetMauMauMessageBox gameOver(this);
+ 
+ 	if(isMe(p) && !gs->lostWonConfirmed()) {
+ 
++		QString yourScore;
++
++		updatePlayerScores(gs);
++
++		if(gs->playerScores().contains(p)) {
++			yourScore = tr("Your score: %1").arg(gs->playerScores()[p]) + "\n";
++		}
++
+ 		gameOver.setIconPixmap(QIcon::fromTheme("face-smile-big",
+ 												QIcon(":/smile.png")).pixmap(48, 48));
+ 		gameOver.setWindowTitle(tr("Congratulations"));
+-		gameOver.setText(tr("You have won!\nPlaying time: %1").
++		gameOver.setText(tr("You have won!\n%1\nPlaying time: %2").arg(yourScore).
+ 						 arg(gs->playTime().toString("HH:mm:ss")));
+ 
+ 		if(m_model.rowCount() == 2) gameOver.addButton(tr("Try &again"), QMessageBox::YesRole);
+@@ -799,15 +855,19 @@ void MainWindow::clientPlayerJoined(cons
+ 
+ 	si.push_back(new QStandardItem(QString::null));
+ 
+-	if(!img.isNull()) {
+-		si.back()->setData(QPixmap::fromImage(img.scaledToHeight(m_ui->remotePlayersView->
+-																 verticalHeader()->
+-																 minimumSectionSize() - 2)),
++	const QImage myImg(!img.isNull() ? img : m_defaultPlayerImage);
++
++	if(!myImg.isNull()) {
++		si.back()->setData(QPixmap::fromImage(myImg.scaledToHeight(m_ui->remotePlayersView->
++																   verticalHeader()->
++																   minimumSectionSize() - 2)),
+ 						   Qt::DisplayRole);
++
+ 		QByteArray ba;
+ 		QBuffer buf(&ba);
+ 		buf.open(QIODevice::WriteOnly);
+-		img.save(&buf, "PNG");
++		ServerDialog::scalePlayerPic(myImg).save(&buf, "PNG");
++
+ 		si.back()->setToolTip(QString("<p align=\"center\">" \
+ 									  "<img src=\"data:image/png;base64,%1\"><br />%2</p>")
+ 							  .arg(ba.toBase64().constData()).arg(p));
+@@ -831,7 +891,7 @@ void MainWindow::clientPlayerJoined(cons
+ 	const long np = static_cast<long>(gameState()->maxPlayerCount()) - m_model.rowCount();
+ 
+ 	if(np > 0L) {
+-		statusBar()->showMessage(trUtf8("Waiting for %n more player(s)…", "", np));
++		statusBar()->showMessage(trUtf8("Waiting for %n more player(s)...", "", np));
+ 	} else {
+ 		statusBar()->clearMessage();
+ 	}
+@@ -858,7 +918,7 @@ void MainWindow::clientNextPlayer(const
+ 
+ void MainWindow::clientPlayCardRequest(const Client::CARDS &cards, std::size_t takeCount) {
+ 
+-	const QString &msg(trUtf8("Play your card…"));
++	const QString &msg(trUtf8("Play your card..."));
+ 
+ 	GameState *gs = gameState();
+ 
+@@ -904,7 +964,7 @@ void MainWindow::clientChooseAceRoundReq
+ 										CardPixmap(QSize(42, 57), gs->lastPlayedCard() ?
+ 													   gs->lastPlayedCard()->getSuit() :
+ 													   NetMauMau::Common::ICard::HEARTS,
+-												   gs->aceRoundRank()));
++												   gs->aceRoundRank()), this);
+ 
+ 		aceRoundBox.setStandardButtons(QMessageBox::Yes|QMessageBox::No);
+ 
+@@ -1228,6 +1288,7 @@ void MainWindow::clientDestroyed() {
+ 
+ 	m_ui->remoteGroup->setTitle(tr("Players"));
+ 	m_ui->actionServer->setEnabled(true);
++	m_ui->actionLaunchServer->setEnabled(true);
+ 	m_ui->suspendButton->setEnabled(false);
+ 
+ 	m_timeLabel.hide();
+@@ -1259,9 +1320,12 @@ void MainWindow::clearStats() {
+ 
+ QString MainWindow::getAceRoundRankString(const GameState *gs, bool capitalize) const {
+ 	switch(gs->aceRoundRank()) {
+-	case NetMauMau::Common::ICard::QUEEN: return capitalize ? tr("Queen round") : tr("queen round");
+-	case NetMauMau::Common::ICard::KING: return capitalize ? tr("King round") : tr("king round");
+-	default: return capitalize ? tr("Ace round") : tr("ace round");
++	case NetMauMau::Common::ICard::QUEEN:
++		return capitalize ? tr("Queen round") : tr("queen round");
++	case NetMauMau::Common::ICard::KING:
++		return capitalize ? tr("King round") : tr("king round");
++	default:
++		return capitalize ? tr("Ace round") : tr("ace round");
+ 	}
+ }
+ 
+@@ -1335,6 +1399,7 @@ void MainWindow::writeSettings() const {
+ 	}
+ 
+ 	settings.setValue("filterCards", m_ui->filterCards->isChecked());
++	settings.setValue("cardTooltips", m_ui->actionShowCardTooltips->isChecked());
+ 	settings.endGroup();
+ 
+ 	settings.beginGroup("ConnectionLog");
+@@ -1367,15 +1432,20 @@ void MainWindow::readSettings() {
+ 	restoreGeometry(settings.value("geometry").toByteArray());
+ 	restoreState(settings.value("windowState").toByteArray());
+ 
+-	switch(static_cast<SORTMODE>(settings.value("sortMode",
+-												QVariant(static_cast<uint>(SUIT_RANK))).toUInt())) {
+-	case SUIT_RANK: m_ui->sortSuitRank->setChecked(true); break;
+-	case RANK_SUIT: m_ui->sortRankSuit->setChecked(true); break;
+-	default: m_ui->noSort->setChecked(true); break;
++	switch(static_cast<SORTMODE>(settings.
++								 value("sortMode",
++									   QVariant(static_cast<uint>(SUIT_RANK))).toUInt())) {
++	case SUIT_RANK:
++		m_ui->sortSuitRank->setChecked(true); break;
++	case RANK_SUIT:
++		m_ui->sortRankSuit->setChecked(true); break;
++	default:
++		m_ui->noSort->setChecked(true); break;
+ 	}
+ 
+ 	m_ui->filterCards->setChecked(settings.value("filterCards", QVariant(false)).toBool());
+-
++	m_ui->actionShowCardTooltips->setChecked(settings.value("cardTooltips",
++															QVariant(true)).toBool());
+ 	settings.endGroup();
+ 
+ 	settings.beginGroup("Player");
+@@ -1421,4 +1491,55 @@ void MainWindow::notifyClientUpdate() {
+ 	}
+ }
+ 
++void MainWindow::dragEnterEvent(QDragEnterEvent *evt) {
++	if(!gameState()->inGame() && evt->mimeData()->hasUrls() &&
++			evt->mimeData()->urls().first().isLocalFile()) {
++		evt->acceptProposedAction();
++	}
++}
++
++void MainWindow::dropEvent(QDropEvent *evt) {
++
++	if(evt->mimeData()->hasUrls()) {
++
++		const QUrl url(evt->mimeData()->urls().first());
++
++		if(url.isLocalFile()) {
++			ServerDialog *sd = static_cast<ServerDialog *>(m_serverDlg);
++			const QString lf(url.toLocalFile());
++
++			sd->setPlayerImagePath(lf, true);
++			evt->acceptProposedAction();
++			if(sd->getPlayerImagePath() == lf) {
++				statusBar()->showMessage(tr("%1 set as player image").arg(lf), 1000);
++			}
++		}
++	}
++}
++
++void MainWindow::changePlayerName(QAction *act) {
++	m_ui->localPlayerDock->setWindowTitle(act->text());
++	static_cast<ServerDialog *>(m_serverDlg)->setPlayerName(act->text());
++}
++
++void MainWindow::showPlayerNameSelectMenu(const QPoint &p) {
++
++	const QStringList &altNames(static_cast<ServerDialog *>(m_serverDlg)->getPlayerAltNames());
++
++	if(!gameState()->inGame() && altNames.size() > 1) {
++
++		delete m_playerNameMenu;
++		m_playerNameMenu = new QMenu();
++
++		QObject::connect(m_playerNameMenu, SIGNAL(triggered(QAction *)),
++						 this, SLOT(changePlayerName(QAction *)));
++
++		for(int i = 0; i < altNames.count(); ++i) {
++			m_playerNameMenu->addAction(altNames[i]);
++		}
++
++		m_playerNameMenu->popup(m_ui->localPlayerDock->mapToGlobal(p));
++	}
++}
++
+ // kate: indent-mode cstyle; indent-width 4; replace-tabs off; tab-width 4;
+--- nmm-qt-client-0.11.orig/release/moc_netmaumaumessagebox.cpp
++++ nmm-qt-client-0.11/release/moc_netmaumaumessagebox.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'netmaumaumessagebox.h'
+ **
+-** Created: Mon Jan 19 17:33:28 2015
++** Created: Fri Jan 23 17:36:20 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_netmaumauapplication.cpp
++++ nmm-qt-client-0.11/release/moc_netmaumauapplication.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'netmaumauapplication.h'
+ **
+-** Created: Mon Jan 19 17:33:24 2015
++** Created: Fri Jan 23 17:36:18 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_cardwidget.cpp
++++ nmm-qt-client-0.11/release/moc_cardwidget.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'cardwidget.h'
+ **
+-** Created: Mon Jan 19 17:31:55 2015
++** Created: Fri Jan 23 17:35:42 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_jackchoosedialog.cpp
++++ nmm-qt-client-0.11/release/moc_jackchoosedialog.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'jackchoosedialog.h'
+ **
+-** Created: Mon Jan 19 17:32:34 2015
++** Created: Fri Jan 23 17:35:57 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_playerimageprogressdialog.cpp
++++ nmm-qt-client-0.11/release/moc_playerimageprogressdialog.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'playerimageprogressdialog.h'
+ **
+-** Created: Mon Jan 19 17:33:48 2015
++** Created: Fri Jan 23 17:36:28 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_deleteserversdialog.cpp
++++ nmm-qt-client-0.11/release/moc_deleteserversdialog.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'deleteserversdialog.h'
+ **
+-** Created: Mon Jan 19 17:32:20 2015
++** Created: Fri Jan 23 17:35:51 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_serverinfo.cpp
++++ nmm-qt-client-0.11/release/moc_serverinfo.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'serverinfo.h'
+ **
+-** Created: Mon Jan 19 17:34:17 2015
++** Created: Fri Jan 23 17:36:38 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- /dev/null
++++ nmm-qt-client-0.11/release/moc_playerimagelineedit.cpp
+@@ -0,0 +1,81 @@
++/****************************************************************************
++** Meta object code from reading C++ file 'playerimagelineedit.h'
++**
++** Created: Fri Jan 23 17:36:25 2015
++**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
++**
++** WARNING! All changes made in this file will be lost!
++*****************************************************************************/
++
++#include "../playerimagelineedit.h"
++#if !defined(Q_MOC_OUTPUT_REVISION)
++#error "The header file 'playerimagelineedit.h' doesn't include <QObject>."
++#elif Q_MOC_OUTPUT_REVISION != 63
++#error "This file was generated using the moc from 4.8.2. It"
++#error "cannot be used with the include files from this version of Qt."
++#error "(The moc has changed too much.)"
++#endif
++
++QT_BEGIN_MOC_NAMESPACE
++static const uint qt_meta_data_PlayerImageLineEdit[] = {
++
++ // content:
++       6,       // revision
++       0,       // classname
++       0,    0, // classinfo
++       0,    0, // methods
++       0,    0, // properties
++       0,    0, // enums/sets
++       0,    0, // constructors
++       0,       // flags
++       0,       // signalCount
++
++       0        // eod
++};
++
++static const char qt_meta_stringdata_PlayerImageLineEdit[] = {
++    "PlayerImageLineEdit\0"
++};
++
++void PlayerImageLineEdit::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
++{
++    Q_UNUSED(_o);
++    Q_UNUSED(_id);
++    Q_UNUSED(_c);
++    Q_UNUSED(_a);
++}
++
++const QMetaObjectExtraData PlayerImageLineEdit::staticMetaObjectExtraData = {
++    0,  qt_static_metacall 
++};
++
++const QMetaObject PlayerImageLineEdit::staticMetaObject = {
++    { &QLineEdit::staticMetaObject, qt_meta_stringdata_PlayerImageLineEdit,
++      qt_meta_data_PlayerImageLineEdit, &staticMetaObjectExtraData }
++};
++
++#ifdef Q_NO_DATA_RELOCATION
++const QMetaObject &PlayerImageLineEdit::getStaticMetaObject() { return staticMetaObject; }
++#endif //Q_NO_DATA_RELOCATION
++
++const QMetaObject *PlayerImageLineEdit::metaObject() const
++{
++    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
++}
++
++void *PlayerImageLineEdit::qt_metacast(const char *_clname)
++{
++    if (!_clname) return 0;
++    if (!strcmp(_clname, qt_meta_stringdata_PlayerImageLineEdit))
++        return static_cast<void*>(const_cast< PlayerImageLineEdit*>(this));
++    return QLineEdit::qt_metacast(_clname);
++}
++
++int PlayerImageLineEdit::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
++{
++    _id = QLineEdit::qt_metacall(_c, _id, _a);
++    if (_id < 0)
++        return _id;
++    return _id;
++}
++QT_END_MOC_NAMESPACE
+--- nmm-qt-client-0.11.orig/release/qrc_license.cpp
++++ nmm-qt-client-0.11/release/qrc_license.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Resource object code
+ **
+-** Created: Mon Jan 19 17:34:44 2015
++** Created: Fri Jan 23 17:36:48 2015
+ **      by: The Resource Compiler for Qt version 4.8.2
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_mainwindow.cpp
++++ nmm-qt-client-0.11/release/moc_mainwindow.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'mainwindow.h'
+ **
+-** Created: Mon Jan 19 17:33:08 2015
++** Created: Fri Jan 23 17:36:12 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindo
+        6,       // revision
+        0,       // classname
+        0,    0, // classinfo
+-      56,   14, // methods
++      57,   14, // methods
+        0,    0, // properties
+        0,    0, // enums/sets
+        0,    0, // constructors
+@@ -41,54 +41,55 @@ static const uint qt_meta_data_MainWindo
+      151,   11,   11,   11, 0x08,
+      159,   11,   11,   11, 0x08,
+      178,   11,   11,   11, 0x08,
+-     212,   11,   11,   11, 0x08,
+-     242,   11,   11,   11, 0x08,
+-     271,   11,   11,   11, 0x08,
+-     293,   11,   11,   11, 0x08,
+-     314,   11,   11,   11, 0x08,
+-     329,   11,   11,   11, 0x08,
+-     348,   11,   11,   11, 0x08,
+-     370,   11,   11,   11, 0x08,
+-     390,   11,   11,   11, 0x28,
+-     406,   11,   11,   11, 0x08,
+-     433,   11,   11,   11, 0x08,
+-     451,   11,   11,   11, 0x08,
+-     477,   11,   11,   11, 0x28,
+-     499,   11,   11,   11, 0x08,
++     205,   11,   11,   11, 0x08,
++     238,   11,   11,   11, 0x08,
++     268,   11,   11,   11, 0x08,
++     297,   11,   11,   11, 0x08,
++     319,   11,   11,   11, 0x08,
++     340,   11,   11,   11, 0x08,
++     355,   11,   11,   11, 0x08,
++     374,   11,   11,   11, 0x08,
++     396,   11,   11,   11, 0x08,
++     416,   11,   11,   11, 0x28,
++     432,   11,   11,   11, 0x08,
++     459,   11,   11,   11, 0x08,
++     477,   11,   11,   11, 0x08,
++     503,   11,   11,   11, 0x28,
+      525,   11,   11,   11, 0x08,
+-     553,   11,   11,   11, 0x08,
+-     563,   11,   11,   11, 0x08,
+-     575,   11,   11,   11, 0x08,
+-     601,  599,   11,   11, 0x08,
+-     650,   11,   11,   11, 0x08,
+-     680,   11,   11,   11, 0x08,
+-     710,   11,   11,   11, 0x08,
+-     731,   11,   11,   11, 0x08,
+-     754,   11,   11,   11, 0x08,
+-     783,   11,   11,   11, 0x08,
+-     807,   11,   11,   11, 0x08,
+-     834,  599,   11,   11, 0x08,
+-     869,   11,   11,   11, 0x08,
+-     891,  599,   11,   11, 0x08,
+-     930,   11,   11,   11, 0x08,
+-     961,  599,   11,   11, 0x08,
+-     996,   11,   11,   11, 0x08,
+-    1026,  599,   11,   11, 0x08,
+-    1067, 1064,   11,   11, 0x08,
+-    1117,  599,   11,   11, 0x08,
+-    1160,  599,   11,   11, 0x08,
+-    1197,   11,   11,   11, 0x08,
+-    1244,   11,   11,   11, 0x08,
++     551,   11,   11,   11, 0x08,
++     579,   11,   11,   11, 0x08,
++     589,   11,   11,   11, 0x08,
++     601,   11,   11,   11, 0x08,
++     627,  625,   11,   11, 0x08,
++     676,   11,   11,   11, 0x08,
++     706,   11,   11,   11, 0x08,
++     736,   11,   11,   11, 0x08,
++     757,   11,   11,   11, 0x08,
++     780,   11,   11,   11, 0x08,
++     809,   11,   11,   11, 0x08,
++     833,   11,   11,   11, 0x08,
++     860,  625,   11,   11, 0x08,
++     895,   11,   11,   11, 0x08,
++     917,  625,   11,   11, 0x08,
++     956,   11,   11,   11, 0x08,
++     987,  625,   11,   11, 0x08,
++    1022,   11,   11,   11, 0x08,
++    1052,  625,   11,   11, 0x08,
++    1093, 1090,   11,   11, 0x08,
++    1143,  625,   11,   11, 0x08,
++    1186,  625,   11,   11, 0x08,
++    1223,   11,   11,   11, 0x08,
+     1270,   11,   11,   11, 0x08,
+-    1301,   11,   11,   11, 0x08,
+-    1330,   11,   11,   11, 0x08,
+-    1343,   11,   11,   11, 0x08,
+-    1359,   11,   11,   11, 0x08,
+-    1376,   11,   11,   11, 0x08,
+-    1395,   11,   11,   11, 0x08,
+-    1414,   11,   11,   11, 0x08,
+-    1436,   11,   11,   11, 0x08,
+-    1456,   11,   11,   11, 0x08,
++    1296,   11,   11,   11, 0x08,
++    1327,   11,   11,   11, 0x08,
++    1356,   11,   11,   11, 0x08,
++    1369,   11,   11,   11, 0x08,
++    1385,   11,   11,   11, 0x08,
++    1402,   11,   11,   11, 0x08,
++    1421,   11,   11,   11, 0x08,
++    1440,   11,   11,   11, 0x08,
++    1462,   11,   11,   11, 0x08,
++    1482,   11,   11,   11, 0x08,
+ 
+        0        // eod
+ };
+@@ -99,7 +100,8 @@ static const char qt_meta_stringdata_Mai
+     "cardToPlay(NetMauMau::Common::ICard*)\0"
+     "chosenSuite(NetMauMau::Common::ICard::SUIT)\0"
+     "chosenAceRound(bool)\0about()\0"
+-    "scrollToLastCard()\0sendingPlayerImageFailed(QString)\0"
++    "scrollToLastCard()\0changePlayerName(QAction*)\0"
++    "showPlayerNameSelectMenu(QPoint)\0"
+     "receivingPlayerImage(QString)\0"
+     "receivedPlayerImage(QString)\0"
+     "showReceiveProgress()\0notifyClientUpdate()\0"
+@@ -150,55 +152,56 @@ void MainWindow::qt_static_metacall(QObj
+         case 4: _t->chosenAceRound((*reinterpret_cast< bool(*)>(_a[1]))); break;
+         case 5: _t->about(); break;
+         case 6: _t->scrollToLastCard(); break;
+-        case 7: _t->sendingPlayerImageFailed((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 8: _t->receivingPlayerImage((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 9: _t->receivedPlayerImage((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 10: _t->showReceiveProgress(); break;
+-        case 11: _t->notifyClientUpdate(); break;
+-        case 12: _t->serverAccept(); break;
+-        case 13: _t->serverDisconnect(); break;
+-        case 14: _t->lostWinConfirmed((*reinterpret_cast< int(*)>(_a[1]))); break;
+-        case 15: _t->destroyClient((*reinterpret_cast< bool(*)>(_a[1]))); break;
+-        case 16: _t->destroyClient(); break;
+-        case 17: _t->destroyClientOffline((*reinterpret_cast< bool(*)>(_a[1]))); break;
+-        case 18: _t->clientDestroyed(); break;
+-        case 19: _t->forceRefreshServers((*reinterpret_cast< bool(*)>(_a[1]))); break;
+-        case 20: _t->forceRefreshServers(); break;
+-        case 21: _t->localServerLaunched((*reinterpret_cast< bool(*)>(_a[1]))); break;
+-        case 22: _t->reconnectAvailable((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 23: _t->suspend(); break;
+-        case 24: _t->takeCards(); break;
+-        case 25: _t->cardChosen((*reinterpret_cast< CardWidget*(*)>(_a[1]))); break;
+-        case 26: _t->clientPlayCardRequest((*reinterpret_cast< const Client::CARDS(*)>(_a[1])),(*reinterpret_cast< std::size_t(*)>(_a[2]))); break;
+-        case 27: _t->clientChooseJackSuitRequest(); break;
+-        case 28: _t->clientChooseAceRoundRequest(); break;
+-        case 29: _t->clientError((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 30: _t->clientMessage((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 31: _t->clientCardSet((*reinterpret_cast< const Client::CARDS(*)>(_a[1]))); break;
+-        case 32: _t->clientTurn((*reinterpret_cast< std::size_t(*)>(_a[1]))); break;
+-        case 33: _t->clientStats((*reinterpret_cast< const Client::STATS(*)>(_a[1]))); break;
+-        case 34: _t->clientOpenCard((*reinterpret_cast< const QByteArray(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+-        case 35: _t->clientTalonShuffled(); break;
+-        case 36: _t->clientCardRejected((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QByteArray(*)>(_a[2]))); break;
+-        case 37: _t->clientCardAccepted((*reinterpret_cast< const QByteArray(*)>(_a[1]))); break;
+-        case 38: _t->clientPlayerJoined((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QImage(*)>(_a[2]))); break;
+-        case 39: _t->clientPlayerSuspends((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 40: _t->clientPlayerWins((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< std::size_t(*)>(_a[2]))); break;
+-        case 41: _t->clientPlayerLost((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< std::size_t(*)>(_a[2])),(*reinterpret_cast< std::size_t(*)>(_a[3]))); break;
+-        case 42: _t->clientPlayerPicksCard((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< std::size_t(*)>(_a[2]))); break;
+-        case 43: _t->clientPlayedCard((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QByteArray(*)>(_a[2]))); break;
+-        case 44: _t->clientJackSuit((*reinterpret_cast< NetMauMau::Common::ICard::SUIT(*)>(_a[1]))); break;
+-        case 45: _t->clientNextPlayer((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 46: _t->clientAceRoundStarted((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 47: _t->clientAceRoundEnded((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 48: _t->clearStats(); break;
+-        case 49: _t->resizeColumns(); break;
+-        case 50: _t->sortNoSort((*reinterpret_cast< bool(*)>(_a[1]))); break;
+-        case 51: _t->sortSuitRank((*reinterpret_cast< bool(*)>(_a[1]))); break;
+-        case 52: _t->sortRankSuit((*reinterpret_cast< bool(*)>(_a[1]))); break;
+-        case 53: _t->sortMyCards((*reinterpret_cast< SORTMODE(*)>(_a[1]))); break;
+-        case 54: _t->filterMyCards((*reinterpret_cast< bool(*)>(_a[1]))); break;
+-        case 55: _t->setOpenCard((*reinterpret_cast< const QByteArray(*)>(_a[1]))); break;
++        case 7: _t->changePlayerName((*reinterpret_cast< QAction*(*)>(_a[1]))); break;
++        case 8: _t->showPlayerNameSelectMenu((*reinterpret_cast< const QPoint(*)>(_a[1]))); break;
++        case 9: _t->receivingPlayerImage((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 10: _t->receivedPlayerImage((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 11: _t->showReceiveProgress(); break;
++        case 12: _t->notifyClientUpdate(); break;
++        case 13: _t->serverAccept(); break;
++        case 14: _t->serverDisconnect(); break;
++        case 15: _t->lostWinConfirmed((*reinterpret_cast< int(*)>(_a[1]))); break;
++        case 16: _t->destroyClient((*reinterpret_cast< bool(*)>(_a[1]))); break;
++        case 17: _t->destroyClient(); break;
++        case 18: _t->destroyClientOffline((*reinterpret_cast< bool(*)>(_a[1]))); break;
++        case 19: _t->clientDestroyed(); break;
++        case 20: _t->forceRefreshServers((*reinterpret_cast< bool(*)>(_a[1]))); break;
++        case 21: _t->forceRefreshServers(); break;
++        case 22: _t->localServerLaunched((*reinterpret_cast< bool(*)>(_a[1]))); break;
++        case 23: _t->reconnectAvailable((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 24: _t->suspend(); break;
++        case 25: _t->takeCards(); break;
++        case 26: _t->cardChosen((*reinterpret_cast< CardWidget*(*)>(_a[1]))); break;
++        case 27: _t->clientPlayCardRequest((*reinterpret_cast< const Client::CARDS(*)>(_a[1])),(*reinterpret_cast< std::size_t(*)>(_a[2]))); break;
++        case 28: _t->clientChooseJackSuitRequest(); break;
++        case 29: _t->clientChooseAceRoundRequest(); break;
++        case 30: _t->clientError((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 31: _t->clientMessage((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 32: _t->clientCardSet((*reinterpret_cast< const Client::CARDS(*)>(_a[1]))); break;
++        case 33: _t->clientTurn((*reinterpret_cast< std::size_t(*)>(_a[1]))); break;
++        case 34: _t->clientStats((*reinterpret_cast< const Client::STATS(*)>(_a[1]))); break;
++        case 35: _t->clientOpenCard((*reinterpret_cast< const QByteArray(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
++        case 36: _t->clientTalonShuffled(); break;
++        case 37: _t->clientCardRejected((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QByteArray(*)>(_a[2]))); break;
++        case 38: _t->clientCardAccepted((*reinterpret_cast< const QByteArray(*)>(_a[1]))); break;
++        case 39: _t->clientPlayerJoined((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QImage(*)>(_a[2]))); break;
++        case 40: _t->clientPlayerSuspends((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 41: _t->clientPlayerWins((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< std::size_t(*)>(_a[2]))); break;
++        case 42: _t->clientPlayerLost((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< std::size_t(*)>(_a[2])),(*reinterpret_cast< std::size_t(*)>(_a[3]))); break;
++        case 43: _t->clientPlayerPicksCard((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< std::size_t(*)>(_a[2]))); break;
++        case 44: _t->clientPlayedCard((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QByteArray(*)>(_a[2]))); break;
++        case 45: _t->clientJackSuit((*reinterpret_cast< NetMauMau::Common::ICard::SUIT(*)>(_a[1]))); break;
++        case 46: _t->clientNextPlayer((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 47: _t->clientAceRoundStarted((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 48: _t->clientAceRoundEnded((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 49: _t->clearStats(); break;
++        case 50: _t->resizeColumns(); break;
++        case 51: _t->sortNoSort((*reinterpret_cast< bool(*)>(_a[1]))); break;
++        case 52: _t->sortSuitRank((*reinterpret_cast< bool(*)>(_a[1]))); break;
++        case 53: _t->sortRankSuit((*reinterpret_cast< bool(*)>(_a[1]))); break;
++        case 54: _t->sortMyCards((*reinterpret_cast< SORTMODE(*)>(_a[1]))); break;
++        case 55: _t->filterMyCards((*reinterpret_cast< bool(*)>(_a[1]))); break;
++        case 56: _t->setOpenCard((*reinterpret_cast< const QByteArray(*)>(_a[1]))); break;
+         default: ;
+         }
+     }
+@@ -236,9 +239,9 @@ int MainWindow::qt_metacall(QMetaObject:
+     if (_id < 0)
+         return _id;
+     if (_c == QMetaObject::InvokeMetaMethod) {
+-        if (_id < 56)
++        if (_id < 57)
+             qt_static_metacall(this, _c, _id, _a);
+-        _id -= 56;
++        _id -= 57;
+     }
+     return _id;
+ }
+--- nmm-qt-client-0.11.orig/release/moc_connectionlogdialog.cpp
++++ nmm-qt-client-0.11/release/moc_connectionlogdialog.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'connectionlogdialog.h'
+ **
+-** Created: Mon Jan 19 17:32:12 2015
++** Created: Fri Jan 23 17:35:48 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_serverdialog.cpp
++++ nmm-qt-client-0.11/release/moc_serverdialog.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'serverdialog.h'
+ **
+-** Created: Mon Jan 19 17:34:09 2015
++** Created: Fri Jan 23 17:36:35 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+@@ -23,8 +23,8 @@ static const uint qt_meta_data_ServerDia
+        6,       // revision
+        0,       // classname
+        0,    0, // classinfo
+-      16,   14, // methods
+-       1,   94, // properties
++      21,   14, // methods
++       1,  119, // properties
+        0,    0, // enums/sets
+        0,    0, // constructors
+        0,       // flags
+@@ -35,23 +35,28 @@ static const uint qt_meta_data_ServerDia
+       24,   13,   13,   13, 0x05,
+ 
+  // slots: signature, parameters, type, tag, flags
+-      52,   13,   13,   13, 0x08,
+-      78,   66,   13,   13, 0x08,
+-     101,   13,   13,   13, 0x08,
+-     119,  115,   13,   13, 0x08,
+-     154,  144,   13,   13, 0x08,
+-     209,   13,   13,   13, 0x08,
+-     232,   13,   13,   13, 0x08,
+-     249,   13,   13,   13, 0x08,
+-     261,   13,   13,   13, 0x08,
+-     270,   13,   13,   13, 0x08,
+-     286,   13,   13,   13, 0x08,
+-     306,   13,   13,   13, 0x08,
+-     325,   13,   13,   13, 0x08,
+-     352,   13,   13,   13, 0x08,
++      62,   52,   13,   13, 0x0a,
++     100,   95,   13,   13, 0x2a,
++     128,   13,   13,   13, 0x08,
++     154,  142,   13,   13, 0x08,
++     177,   13,   13,   13, 0x08,
++     201,  191,   13,   13, 0x08,
++     256,   13,   13,   13, 0x08,
++     279,   13,   13,   13, 0x08,
++     302,   13,   13,   13, 0x08,
++     319,   13,   13,   13, 0x08,
++     334,   13,   13,   13, 0x08,
++     348,  346,   13,   13, 0x08,
++     375,   13,   13,   13, 0x08,
++     384,   13,   13,   13, 0x08,
++     400,   13,   13,   13, 0x08,
++     420,   13,   13,   13, 0x08,
++     439,   13,   13,   13, 0x08,
++     466,   13,   13,   13, 0x08,
++     494,   13,   13,   13, 0x08,
+ 
+  // properties: name, type, flags
+-     385,  380, 0x01495003,
++     525,  520, 0x01495003,
+ 
+  // properties: notify_signal_id
+        0,
+@@ -61,16 +66,19 @@ static const uint qt_meta_data_ServerDia
+ 
+ static const char qt_meta_stringdata_ServerDialog[] = {
+     "ServerDialog\0\0refresh()\0"
+-    "reconnectAvailable(QString)\0checkOnline()\0"
++    "reconnectAvailable(QString)\0path,warn\0"
++    "setPlayerImagePath(QString,bool)\0path\0"
++    "setPlayerImagePath(QString)\0checkOnline()\0"
+     "enabled,row\0updateOnline(bool,int)\0"
+-    "doubleClick()\0str\0enableAddButton(QString)\0"
+-    "sel,desel\0"
++    "doubleClick()\0sel,desel\0"
+     "enableRemoveAndOkButton(QItemSelection,QItemSelection)\0"
+-    "deleteRows(QList<int>)\0removeSelected()\0"
+-    "addServer()\0resize()\0resizeColumns()\0"
+-    "choosePlayerImage()\0clearPlayerImage()\0"
+-    "enableClearButton(QString)\0"
+-    "itemChanged(QStandardItem*)\0bool\0"
++    "deleteRows(QList<int>)\0deleteRow(QModelIndex)\0"
++    "removeSelected()\0removeServer()\0"
++    "addServer()\0,\0addServer(QString,QString)\0"
++    "resize()\0resizeColumns()\0choosePlayerImage()\0"
++    "clearPlayerImage()\0enableClearButton(QString)\0"
++    "itemChanged(QStandardItem*)\0"
++    "serverViewContext(QPoint)\0bool\0"
+     "forceRefresh\0"
+ };
+ 
+@@ -82,20 +90,25 @@ void ServerDialog::qt_static_metacall(QO
+         switch (_id) {
+         case 0: _t->refresh(); break;
+         case 1: _t->reconnectAvailable((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 2: _t->checkOnline(); break;
+-        case 3: _t->updateOnline((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+-        case 4: _t->doubleClick(); break;
+-        case 5: _t->enableAddButton((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 6: _t->enableRemoveAndOkButton((*reinterpret_cast< const QItemSelection(*)>(_a[1])),(*reinterpret_cast< const QItemSelection(*)>(_a[2]))); break;
+-        case 7: _t->deleteRows((*reinterpret_cast< const QList<int>(*)>(_a[1]))); break;
+-        case 8: _t->removeSelected(); break;
+-        case 9: _t->addServer(); break;
+-        case 10: _t->resize(); break;
+-        case 11: _t->resizeColumns(); break;
+-        case 12: _t->choosePlayerImage(); break;
+-        case 13: _t->clearPlayerImage(); break;
+-        case 14: _t->enableClearButton((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+-        case 15: _t->itemChanged((*reinterpret_cast< QStandardItem*(*)>(_a[1]))); break;
++        case 2: _t->setPlayerImagePath((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
++        case 3: _t->setPlayerImagePath((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 4: _t->checkOnline(); break;
++        case 5: _t->updateOnline((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
++        case 6: _t->doubleClick(); break;
++        case 7: _t->enableRemoveAndOkButton((*reinterpret_cast< const QItemSelection(*)>(_a[1])),(*reinterpret_cast< const QItemSelection(*)>(_a[2]))); break;
++        case 8: _t->deleteRows((*reinterpret_cast< const QList<int>(*)>(_a[1]))); break;
++        case 9: _t->deleteRow((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
++        case 10: _t->removeSelected(); break;
++        case 11: _t->removeServer(); break;
++        case 12: _t->addServer(); break;
++        case 13: _t->addServer((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
++        case 14: _t->resize(); break;
++        case 15: _t->resizeColumns(); break;
++        case 16: _t->choosePlayerImage(); break;
++        case 17: _t->clearPlayerImage(); break;
++        case 18: _t->enableClearButton((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 19: _t->itemChanged((*reinterpret_cast< QStandardItem*(*)>(_a[1]))); break;
++        case 20: _t->serverViewContext((*reinterpret_cast< const QPoint(*)>(_a[1]))); break;
+         default: ;
+         }
+     }
+@@ -135,9 +148,9 @@ int ServerDialog::qt_metacall(QMetaObjec
+     if (_id < 0)
+         return _id;
+     if (_c == QMetaObject::InvokeMetaMethod) {
+-        if (_id < 16)
++        if (_id < 21)
+             qt_static_metacall(this, _c, _id, _a);
+-        _id -= 16;
++        _id -= 21;
+     }
+ #ifndef QT_NO_PROPERTIES
+       else if (_c == QMetaObject::ReadProperty) {
+--- nmm-qt-client-0.11.orig/release/qrc_suit-fallback.cpp
++++ nmm-qt-client-0.11/release/qrc_suit-fallback.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Resource object code
+ **
+-** Created: Mon Jan 19 17:34:48 2015
++** Created: Fri Jan 23 17:36:50 2015
+ **      by: The Resource Compiler for Qt version 4.8.2
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/qrc_nuoveXT2.cpp
++++ nmm-qt-client-0.11/release/qrc_nuoveXT2.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Resource object code
+ **
+-** Created: Mon Jan 19 17:34:46 2015
++** Created: Fri Jan 23 17:36:49 2015
+ **      by: The Resource Compiler for Qt version 4.8.2
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_portspin.cpp
++++ nmm-qt-client-0.11/release/moc_portspin.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'portspin.h'
+ **
+-** Created: Mon Jan 19 17:33:54 2015
++** Created: Fri Jan 23 17:36:30 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_messageitemdelegate.cpp
++++ nmm-qt-client-0.11/release/moc_messageitemdelegate.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'messageitemdelegate.h'
+ **
+-** Created: Mon Jan 19 17:33:16 2015
++** Created: Fri Jan 23 17:36:16 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_playerimagedelegate.cpp
++++ nmm-qt-client-0.11/release/moc_playerimagedelegate.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'playerimagedelegate.h'
+ **
+-** Created: Mon Jan 19 17:33:36 2015
++** Created: Fri Jan 23 17:36:22 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- /dev/null
++++ nmm-qt-client-0.11/release/moc_addserverdialog.cpp
+@@ -0,0 +1,107 @@
++/****************************************************************************
++** Meta object code from reading C++ file 'addserverdialog.h'
++**
++** Created: Fri Jan 23 17:35:36 2015
++**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
++**
++** WARNING! All changes made in this file will be lost!
++*****************************************************************************/
++
++#include "../addserverdialog.h"
++#if !defined(Q_MOC_OUTPUT_REVISION)
++#error "The header file 'addserverdialog.h' doesn't include <QObject>."
++#elif Q_MOC_OUTPUT_REVISION != 63
++#error "This file was generated using the moc from 4.8.2. It"
++#error "cannot be used with the include files from this version of Qt."
++#error "(The moc has changed too much.)"
++#endif
++
++QT_BEGIN_MOC_NAMESPACE
++static const uint qt_meta_data_AddServerDialog[] = {
++
++ // content:
++       6,       // revision
++       0,       // classname
++       0,    0, // classinfo
++       3,   14, // methods
++       0,    0, // properties
++       0,    0, // enums/sets
++       0,    0, // constructors
++       0,       // flags
++       1,       // signalCount
++
++ // signals: signature, parameters, type, tag, flags
++      19,   17,   16,   16, 0x05,
++
++ // slots: signature, parameters, type, tag, flags
++      46,   16,   16,   16, 0x08,
++      70,   16,   16,   16, 0x08,
++
++       0        // eod
++};
++
++static const char qt_meta_stringdata_AddServerDialog[] = {
++    "AddServerDialog\0\0,\0addServer(QString,QString)\0"
++    "enableOkButton(QString)\0addServerClicked()\0"
++};
++
++void AddServerDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
++{
++    if (_c == QMetaObject::InvokeMetaMethod) {
++        Q_ASSERT(staticMetaObject.cast(_o));
++        AddServerDialog *_t = static_cast<AddServerDialog *>(_o);
++        switch (_id) {
++        case 0: _t->addServer((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
++        case 1: _t->enableOkButton((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 2: _t->addServerClicked(); break;
++        default: ;
++        }
++    }
++}
++
++const QMetaObjectExtraData AddServerDialog::staticMetaObjectExtraData = {
++    0,  qt_static_metacall 
++};
++
++const QMetaObject AddServerDialog::staticMetaObject = {
++    { &QDialog::staticMetaObject, qt_meta_stringdata_AddServerDialog,
++      qt_meta_data_AddServerDialog, &staticMetaObjectExtraData }
++};
++
++#ifdef Q_NO_DATA_RELOCATION
++const QMetaObject &AddServerDialog::getStaticMetaObject() { return staticMetaObject; }
++#endif //Q_NO_DATA_RELOCATION
++
++const QMetaObject *AddServerDialog::metaObject() const
++{
++    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
++}
++
++void *AddServerDialog::qt_metacast(const char *_clname)
++{
++    if (!_clname) return 0;
++    if (!strcmp(_clname, qt_meta_stringdata_AddServerDialog))
++        return static_cast<void*>(const_cast< AddServerDialog*>(this));
++    return QDialog::qt_metacast(_clname);
++}
++
++int AddServerDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
++{
++    _id = QDialog::qt_metacall(_c, _id, _a);
++    if (_id < 0)
++        return _id;
++    if (_c == QMetaObject::InvokeMetaMethod) {
++        if (_id < 3)
++            qt_static_metacall(this, _c, _id, _a);
++        _id -= 3;
++    }
++    return _id;
++}
++
++// SIGNAL 0
++void AddServerDialog::addServer(const QString & _t1, const QString & _t2)
++{
++    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
++    QMetaObject::activate(this, &staticMetaObject, 0, _a);
++}
++QT_END_MOC_NAMESPACE
+--- nmm-qt-client-0.11.orig/release/moc_licensedialog.cpp
++++ nmm-qt-client-0.11/release/moc_licensedialog.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'licensedialog.h'
+ **
+-** Created: Mon Jan 19 17:32:50 2015
++** Created: Fri Jan 23 17:36:04 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- /dev/null
++++ nmm-qt-client-0.11/release/moc_addserverwidget.cpp
+@@ -0,0 +1,106 @@
++/****************************************************************************
++** Meta object code from reading C++ file 'addserverwidget.h'
++**
++** Created: Fri Jan 23 17:35:39 2015
++**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
++**
++** WARNING! All changes made in this file will be lost!
++*****************************************************************************/
++
++#include "../addserverwidget.h"
++#if !defined(Q_MOC_OUTPUT_REVISION)
++#error "The header file 'addserverwidget.h' doesn't include <QObject>."
++#elif Q_MOC_OUTPUT_REVISION != 63
++#error "This file was generated using the moc from 4.8.2. It"
++#error "cannot be used with the include files from this version of Qt."
++#error "(The moc has changed too much.)"
++#endif
++
++QT_BEGIN_MOC_NAMESPACE
++static const uint qt_meta_data_AddServerWidget[] = {
++
++ // content:
++       6,       // revision
++       0,       // classname
++       0,    0, // classinfo
++       3,   14, // methods
++       0,    0, // properties
++       0,    0, // enums/sets
++       0,    0, // constructors
++       0,       // flags
++       1,       // signalCount
++
++ // signals: signature, parameters, type, tag, flags
++      17,   16,   16,   16, 0x05,
++
++ // slots: signature, parameters, type, tag, flags
++      33,   29,   16,   16, 0x08,
++      58,   16,   16,   16, 0x08,
++
++       0        // eod
++};
++
++static const char qt_meta_stringdata_AddServerWidget[] = {
++    "AddServerWidget\0\0addServer()\0str\0"
++    "enableAddButton(QString)\0addServerClicked()\0"
++};
++
++void AddServerWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
++{
++    if (_c == QMetaObject::InvokeMetaMethod) {
++        Q_ASSERT(staticMetaObject.cast(_o));
++        AddServerWidget *_t = static_cast<AddServerWidget *>(_o);
++        switch (_id) {
++        case 0: _t->addServer(); break;
++        case 1: _t->enableAddButton((*reinterpret_cast< const QString(*)>(_a[1]))); break;
++        case 2: _t->addServerClicked(); break;
++        default: ;
++        }
++    }
++}
++
++const QMetaObjectExtraData AddServerWidget::staticMetaObjectExtraData = {
++    0,  qt_static_metacall 
++};
++
++const QMetaObject AddServerWidget::staticMetaObject = {
++    { &QGroupBox::staticMetaObject, qt_meta_stringdata_AddServerWidget,
++      qt_meta_data_AddServerWidget, &staticMetaObjectExtraData }
++};
++
++#ifdef Q_NO_DATA_RELOCATION
++const QMetaObject &AddServerWidget::getStaticMetaObject() { return staticMetaObject; }
++#endif //Q_NO_DATA_RELOCATION
++
++const QMetaObject *AddServerWidget::metaObject() const
++{
++    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
++}
++
++void *AddServerWidget::qt_metacast(const char *_clname)
++{
++    if (!_clname) return 0;
++    if (!strcmp(_clname, qt_meta_stringdata_AddServerWidget))
++        return static_cast<void*>(const_cast< AddServerWidget*>(this));
++    return QGroupBox::qt_metacast(_clname);
++}
++
++int AddServerWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
++{
++    _id = QGroupBox::qt_metacall(_c, _id, _a);
++    if (_id < 0)
++        return _id;
++    if (_c == QMetaObject::InvokeMetaMethod) {
++        if (_id < 3)
++            qt_static_metacall(this, _c, _id, _a);
++        _id -= 3;
++    }
++    return _id;
++}
++
++// SIGNAL 0
++void AddServerWidget::addServer()
++{
++    QMetaObject::activate(this, &staticMetaObject, 0, 0);
++}
++QT_END_MOC_NAMESPACE
+--- nmm-qt-client-0.11.orig/release/qrc_cards.cpp
++++ nmm-qt-client-0.11/release/qrc_cards.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Resource object code
+ **
+-** Created: Mon Jan 19 17:34:37 2015
++** Created: Fri Jan 23 17:36:45 2015
+ **      by: The Resource Compiler for Qt version 4.8.2
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_launchserverdialog.cpp
++++ nmm-qt-client-0.11/release/moc_launchserverdialog.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'launchserverdialog.h'
+ **
+-** Created: Mon Jan 19 17:32:42 2015
++** Created: Fri Jan 23 17:36:01 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_client.cpp
++++ nmm-qt-client-0.11/release/moc_client.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'client.h'
+ **
+-** Created: Mon Jan 19 17:32:03 2015
++** Created: Fri Jan 23 17:35:44 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_suitradiobutton.cpp
++++ nmm-qt-client-0.11/release/moc_suitradiobutton.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'suitradiobutton.h'
+ **
+-** Created: Mon Jan 19 17:34:29 2015
++** Created: Fri Jan 23 17:36:43 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_filedownloader.cpp
++++ nmm-qt-client-0.11/release/moc_filedownloader.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'filedownloader.h'
+ **
+-** Created: Mon Jan 19 17:32:29 2015
++** Created: Fri Jan 23 17:35:55 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_localserveroutputview.cpp
++++ nmm-qt-client-0.11/release/moc_localserveroutputview.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'localserveroutputview.h'
+ **
+-** Created: Mon Jan 19 17:32:59 2015
++** Created: Fri Jan 23 17:36:07 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_scoresdialog.cpp
++++ nmm-qt-client-0.11/release/moc_scoresdialog.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'scoresdialog.h'
+ **
+-** Created: Mon Jan 19 17:34:01 2015
++** Created: Fri Jan 23 17:36:32 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/qrc_icons.cpp
++++ nmm-qt-client-0.11/release/qrc_icons.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Resource object code
+ **
+-** Created: Mon Jan 19 17:34:42 2015
++** Created: Fri Jan 23 17:36:47 2015
+ **      by: The Resource Compiler for Qt version 4.8.2
+ **
+ ** WARNING! All changes made in this file will be lost!
+--- nmm-qt-client-0.11.orig/release/moc_suitlabel.cpp
++++ nmm-qt-client-0.11/release/moc_suitlabel.cpp
+@@ -1,7 +1,7 @@
+ /****************************************************************************
+ ** Meta object code from reading C++ file 'suitlabel.h'
+ **
+-** Created: Mon Jan 19 17:34:21 2015
++** Created: Fri Jan 23 17:36:39 2015
+ **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
+ **
+ ** WARNING! All changes made in this file will be lost!

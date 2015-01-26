@@ -1,0 +1,35 @@
+Source: nmm-qt-client
+Section: games
+Priority: extra
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: cdbs,
+               debhelper (>= 9),
+               libqt4-dev,
+               libqt4-dev-bin,
+               qt4-dev-tools,
+               qt4-linguist-tools,
+               netmaumau-dev (>= 0.11~)
+Standards-Version: 3.9.5
+Homepage: https://github.com/velnias75/NetMauMau-Qt-Client
+
+Package: nmm-qt-client
+Architecture: any
+Depends: libnetmaumaucommon2 (>= 0.11~),
+         libnetmaumauclient3 (>= 0.11~),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Suggests: netmaumau-server
+Description: Proof of concept Qt client for NetMauMau
+ Qt4 proof of concept client for the NetMauMau server. It offers a complete 
+ playable client for playing against other players or AI opponents over the
+ network.
+ It can start a local server if installed and supports a list of multiple
+ servers.
+
+Package: nmm-qt-client-dbg
+Architecture: any
+Section: debug
+Depends: nmm-qt-client (= ${binary:Version}),
+         ${misc:Depends}
+Description: Proof of concept Qt client for NetMauMau -- debugger symbols
+ A proof of concept Qt client for NetMauMau. Debugger symbols.
