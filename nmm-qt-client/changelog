@@ -1,0 +1,90 @@
+nmm-qt-client (0.11-1~getdeb1) trusty; urgency=medium
+
+  * Upload to PlayDeb (LP: #1413948)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 25 Jan 2015 15:11:44 +0100
+
+nmm-qt-client (0.11-6~utopic) utopic; urgency=medium
+
+  * player images can now be dropped on the main window
+  * all Qt supported image formats are accepted
+  * improved server dialog
+  * card tooltips can get disabled
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sat, 24 Jan 2015 05:50:28 +0100
+
+nmm-qt-client (0.10-5~precise) precise; urgency=medium
+
+  * improved server dialog
+  * using textual card description and fall back pictures if 
+    font doesn't support suit symbols
+  * showing update notification in statusbar
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sat, 17 Jan 2015 03:59:42 +0100
+
+nmm-qt-client (0.9-7~precise) precise; urgency=medium
+
+  * added a "Hall of Fame" scores dialog
+  * remembering used player names
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sat, 10 Jan 2015 06:57:28 +0100
+
+nmm-qt-client (0.8-6~precise) precise; urgency=medium
+
+  * improved handling of win/lost message boxes in multiplayer mode
+  * added options for ace/queen/king rounds to launch server dialog
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sat, 03 Jan 2015 03:39:36 +0100
+
+nmm-qt-client (0.7-9~precise) precise; urgency=medium
+
+  * added shortcut F7 for taking cards and F8 for suspend
+  * implemented ace rounds
+  * added shortcuts for playing cards
+  * updated player stats
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sat, 27 Dec 2014 03:27:23 +0100
+
+nmm-qt-client (0.6-9~precise) precise; urgency=medium
+
+  * fixed https://github.com/velnias75/NetMauMau-Qt-Client/issues/7
+  * fixed reconnect button
+  * added a splash screen
+  * fixed range of allowed server ports
+  * added a "try again" button on game lost/win messagebox
+  * reworked player messages
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sat, 20 Dec 2014 04:00:38 +0100
+
+nmm-qt-client (0.5-9~precise) precise; urgency=medium
+
+  * added player image upload button to server dialog
+  * fixed https://github.com/velnias75/NetMauMau-Qt-Client/issues/6
+  * fixed https://github.com/velnias75/NetMauMau-Qt-Client/issues/8
+  * displaying playing time
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sat, 13 Dec 2014 04:57:27 +0100
+
+nmm-qt-client (0.4-1~precise) precise; urgency=medium
+
+  * Player image display
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sat, 06 Dec 2014 05:43:09 +0100
+
+nmm-qt-client (0.3-11~precise) precise; urgency=medium
+
+  * Added a terminal like output window for locally launched server
+  * Improved server dialog
+  * sorting of cards allow no sorting, sort suite/rank and sort ran/suit
+  * German translations added
+  * Launch local server on startup
+  * Player's cards are bigger and dynamically resize
+  * Loosing players points are displayed
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sat, 29 Nov 2014 05:19:13 +0100
+
+nmm-qt-client (0.2-6~precise) precise; urgency=medium
+
+  * Initial release
+
+ -- Heiko Schäfer <heiko@rangun.de>  Sat, 22 Nov 2014 09:33:23 +0100
