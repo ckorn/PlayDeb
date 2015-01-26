@@ -1,0 +1,9 @@
+Document: netmaumau-dev
+Title: Documentation for developers of clients for NetMauMau
+Author: Heiko Schäfer <heiko@rangun.de>
+Section: Games/Card
+Abstract: This documentation covers the development of clients for NetMauMau
+
+Format: HTML
+Index: /usr/share/doc/netmaumau-dev/client-api-doc/index.html
+Files: /usr/share/doc/netmaumau-dev/client-api-doc/*

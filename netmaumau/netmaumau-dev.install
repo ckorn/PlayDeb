@@ -1,0 +1,4 @@
+/usr/include/netmaumau
+/usr/lib/lib*.a
+/usr/lib/libnetmaumaucommon.so
+/usr/lib/libnetmaumauclient.so
