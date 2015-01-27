@@ -19,7 +19,7 @@ Build-Depends: cdbs,
                lsb-release,
                libsqlite3-dev (>= 3.4.2)
 Standards-Version: 3.9.5
-Homepage: https://github.com/velnias75/NetMauMau/
+Homepage: http://sourceforge.net/projects/netmaumau/
 
 Package: netmaumau-server-common
 Architecture: all
