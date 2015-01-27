@@ -1,3 +1,9 @@
+netmaumau (0.11-1~getdeb2) trusty; urgency=medium
+
+  * Update homepage
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 27 Jan 2015 18:20:13 +0100
+
 netmaumau (0.11-1~getdeb1) trusty; urgency=medium
 
   * Upload to PlayDeb (LP: #1413948)
