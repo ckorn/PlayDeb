@@ -19,8 +19,9 @@ override_dh_auto_install:
 	dh_auto_install
 
 	rm -fv debian/tmp/usr/share/games/sumwars/resources/gui/fonts/DejaVu*.ttf
-	rm -fv debian/tmp/usr/share/games/sumwars/resources/particles/{scale_particles,create_ogre_1_6_particles}
+	rm -fv debian/tmp/usr/share/games/sumwars/resources/gui_0.8/fonts/DejaVu*.ttf
 	rm -fv debian/tmp/usr/share/games/sumwars/resources/gui/imagesets/License.txt
+	rm -fv usr/share/games/sumwars/resources/gui_0.8/imagesets/License.txt
 
 override_dh_install:
 	dh_install --list-missing

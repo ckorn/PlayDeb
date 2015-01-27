@@ -1,3 +1,30 @@
+sumwars (0.5.8-1~getdeb1) utopic; urgency=medium
+
+  * New upstream version (LP: #1406948)
+    * Scripting:
+    - added support for Lua 5.2
+
+    * User Interface:
+    - added support for CEGUI 0.8
+    - removed support dor CEGUI 0.7
+
+    * Graphics:
+    - added support for Ogre 1.9
+
+    * Translation:
+    - spanish translation greatly updated
+
+    * Sound and Music:
+    - sound engine reworked
+    - added sounds for the GUI
+    - added gameplay sounds
+
+    * General:
+    - fixed a number of bugs
+    - Poco dependency replaced with Boost
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 27 Jan 2015 19:20:40 +0100
+
 sumwars (0.5.7-1~getdeb8~utopic) utopic; urgency=medium
 
   * Rebuild for utopic
