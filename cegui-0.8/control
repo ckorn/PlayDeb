@@ -1,0 +1,79 @@
+Source: cegui-0.8
+Section: libs
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               cmake,
+               libgles1-mesa-dev,
+               libx11-dev,
+               x11proto-core-dev,
+               libogre-1.9-dev,
+               libgtk2.0-dev,
+               libois-dev,
+               libirrlicht-dev,
+               libglfw-dev,
+               libfribidi-dev,
+               libxml2-dev,
+               libtinyxml-dev,
+               libxerces-c2-dev,
+               libboost1.55-dev,
+               kdelibs5-dev,
+               libsilly-dev,
+               libdevil-dev,
+               libfreeimage-dev,
+               libfreetype6-dev,
+               libglew-dev,
+               libdirectfb-dev,
+               liblua5.1-0-dev,
+               libtolua++5.1-dev
+Standards-Version: 3.9.5
+Homepage: http://www.cegui.org.uk/
+
+Package: libcegui-0.8
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: libcegui-mk2-0c2a
+Replaces: libcegui-mk2-0c2a
+Description: Crazy Eddie's GUI (libraries)
+ CEGUI is a free library providing windowing and widgets for graphics
+ APIs and engines where such functionality is not natively available
+ or is severely lacking. The library is written in C++, is object
+ oriented, and is primarily targeted at games developers who should be
+ spending their time creating great games, not building GUI sub-systems
+ .
+ This version of CEGUI natively supports the OpenGL rendering target.
+
+Package: libcegui-0.8-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: ${shlibs:Depends},
+         libcegui-0.8 (= ${binary:Version}),
+         ${misc:Depends}
+Conflicts: libcegui-mk2-0-dbg
+Replaces: libcegui-mk2-0c2a-dbg
+Description: Crazy Eddie's GUI (debugging libraries)
+ CEGUI is a free library providing windowing and widgets for graphics
+ APIs and engines where such functionality is not natively available
+ or is severely lacking. The library is written in C++, is object
+ oriented, and is primarily targeted at games developers who should be
+ spending their time creating great games, not building GUI sub-systems
+ .
+ This version of CEGUI natively supports the OpenGL rendering target
+ and provides debugging libraries for it.
+
+Package: libcegui-0.8-dev
+Section: libdevel
+Architecture: any
+Suggests: libcegui-0.8-doc
+Depends: ${misc:Depends},
+         libcegui-0.8 (= ${binary:Version})
+Description: Crazy Eddie's GUI (development files)
+ CEGUI is a free library providing windowing and widgets for graphics
+ APIs and engines where such functionality is not natively available
+ or is severely lacking. The library is written in C++, is object
+ oriented, and is primarily targeted at games developers who should be
+ spending their time creating great games, not building GUI sub-systems
+ .
+ This version of CEGUI natively supports the OpenGL rendering target
+ and contains the development files for CEGUI.

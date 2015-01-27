@@ -1,0 +1,2 @@
+# we really do not want to split them up
+libcegui-0.8: package-name-doesnt-match-sonames libCEGUIBase-0-2 libCEGUICommonDialogs-0-2 libCEGUIIrrlichtRenderer-0-2 libCEGUILuaScriptModule-0-2 libCEGUINullRenderer-0-2 libCEGUIOgreRenderer-0-2

@@ -1,0 +1,388 @@
+cegui-0.8 (0.8.4-1~getdeb1) utopic; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 26 Jan 2015 22:04:17 +0100
+
+cegui-mk2 (0.7.6-3.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Remove unneeded depdendency on liblcms-dev (Closes: #745530) and libmng-dev
+    which would also pull-in lcms.
+
+ -- Tobias Frost <tobi@debian.org>  Sun, 03 Aug 2014 19:09:41 +0200
+
+cegui-mk2 (0.7.6-3.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/control: Switch to automake1.11. (Closes: #724357)
+
+ -- Eric Dorland <eric@debian.org>  Mon, 03 Mar 2014 22:54:44 -0500
+
+cegui-mk2 (0.7.6-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix "boost 1.53 is going away" Removing versioned dependencies
+    (Closes: #731019)
+
+ -- Tobias Frost <tobi@coldtobi.de>  Sat, 11 Jan 2014 14:47:21 +0000
+
+cegui-mk2 (0.7.6-3) unstable; urgency=low
+
+  * Bump Standards-Version to 3.9.4.
+  * debian/control:
+    + OGRE dependency was updated to 1.8. (Closes: #704781)
+    + Boost dependency was updated to 1.53.
+
+ -- Muammar El Khatib <muammar@debian.org>  Sun, 14 Aug 2013 20:41:39 +0200
+
+cegui-mk2 (0.7.6-2) unstable; urgency=low
+
+  * debian/patches:
+    + The patch 01_cegui-mk2_kfreebsd.patch has been updated in order to avoid
+      the FTBFS in kfreebsd caused by d_handle not declared. (Closes: #663152)
+    + The patch 09_addingheaderforgcc4.4.patch was renamed to
+      02_addingheaderforgcc4.4.patch.
+    + The patches 11_ftbfs_ptrdiff.patch and 12_CEGUItinyxmlparser.patch were
+      removed.
+
+ -- Muammar El Khatib <muammar@debian.org>  Fri, 09 Mar 2012 11:25:50 +0100
+
+cegui-mk2 (0.7.6-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #662074)
+  * debian/control:
+    + Build-Depends updated. Now the library depends on libpng-dev instead of
+      libpng12-dev. (Closes: #662284)
+  * Libcegui API documentation contains the CSS files making it show correctly.
+    (Closes: #661222)
+
+ -- Muammar El Khatib <muammar@debian.org>  Mon, 05 Mar 2012 14:01:30 +0100
+
+cegui-mk2 (0.7.5-8) unstable; urgency=low
+
+  * In this revision, the embedded tolua++ library has been deleted in order of
+  making CEGUI explicitly depends on the tolua library in the Debian Archive.
+  (Closes: #656337). Thanks to Stephen M. Webb for providing a solution.
+  * debian/control:
+    + libtolua++5.1-dev (>= 1.0.93) has been added to the Build-Depends field.
+
+ -- Muammar El Khatib <muammar@debian.org>  Thu, 19 Jan 2012 15:04:45 +0100
+
+cegui-mk2 (0.7.5-7) unstable; urgency=low
+
+  * Moved to unstable. (Closes: #645109)
+
+ -- Muammar El Khatib <muammar@debian.org>  Thu, 13 Oct 2011 12:43:12 +0200
+
+cegui-mk2 (0.7.5-6) experimental; urgency=low
+
+  * debian/control: dependencies have been updated to use libxerces-c-dev.
+
+ -- Muammar El Khatib <muammar@debian.org>  Sat, 27 Aug 2011 15:19:56 +0200
+
+cegui-mk2 (0.7.5-5) experimental; urgency=low
+
+  * The change introduced in previous revision of cegui-mk2 has been reverted
+    so that CEGUI can Build-Depends on libxml2-dev in kfreebsd. In order to
+    make it compile with the tinixml parser the 12_CEGUItinyxmlparser patch
+    has been applied.
+  * CEGUI was FTBFS because 'DYNLIB_HANDLE' did not name a type in
+    CEGUIDynamicModule.cpp, this error was fixed by applying again the patch
+    01_cegui-mk2_kfreebsd.patch. (Closes: #621891)
+
+ -- Muammar El Khatib <muammar@debian.org>  Thu, 25 Aug 2011 23:04:39 +0200
+
+cegui-mk2 (0.7.5-4) experimental; urgency=low
+
+  * In FreeBSD CEGUI 0.7.X fails to build from source because of the version
+    of TinyXML (Read: http://www.cegui.org.uk/phpBB2/viewtopic.php?f=3&t=5656)
+    So, the Build-Depends field in debian/control has been modified to make
+    libxml2-dev a dependency only in Linux Kernel.
+
+ -- Muammar El Khatib <muammar@debian.org>  Mon, 23 Aug 2011 16:39:41 +0200
+
+cegui-mk2 (0.7.5-3) experimental; urgency=low
+
+  * Adding libglew1.6-dev to Build-Depends to avoid static link to glew which
+    is already in the Debian archive.
+
+ -- Muammar El Khatib <muammar@debian.org>  Mon, 15 Aug 2011 13:59:29 +0200
+
+cegui-mk2 (0.7.5-2) experimental; urgency=low
+
+  * SILLY image codec has been added in this revision. (Closes: #525445)
+  * Switch to dpkg-source 3.0 (quilt) format.
+  * In this new revision, CEGUI will provide CEGUIOgreRenderer.
+    (Closes: #627626)
+  * Acknowledge NMU. (Closes: #631764)
+  * debian/control:
+    + Change from libois-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386] to
+      libois-dev [linux-any] in Build-Depends field. (Closes: #634727)
+  * CEGUINullRenderer is being provided in this revision as well.
+
+ -- Muammar El Khatib <muammar@debian.org>  Tue, 26 Jul 2011 14:49:26 +0200
+
+cegui-mk2 (0.6.2-5.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Remove references to other libraries from dependency_libs field
+    (Closes: #620579).
+  * Depend on liblua5.1-dev (Closes: #627556).
+  * Add <cstddef> include (Closes: #627558).
+  * Add -llua5.1 -ldl to LDFLAGS (Closes: #618093).
+  * Stop build depending on dbs (Closes: #576064).
+
+ -- Luk Claes <luk@debian.org>  Sun, 26 Jun 2011 23:39:06 +0200
+
+cegui-mk2 (0.7.5-1) experimental; urgency=low
+
+  * New upstream release. (Closes: #597868)
+  * FTBFS with binutils-gold is fixed in this revision by using the LDFLAGS
+    -llua5.1 -ldl. Thanks to Bhavani Shankar for providing a patch.
+    (Closes: #554085)
+  * Bump Standards-Version to 3.9.1.
+  * debian/control:
+    + The next Build-Depends were added: libxcursor-dev, libxpm-dev,
+      libpng12-dev, python-dev, libmng-dev, libxxf86vm-dev, libexpat1-dev, and
+      libxml2-dev.
+  * tar-in-tar source package has been dropped.
+
+ -- Muammar El Khatib <muammar@debian.org>  Tue, 16 Feb 2011 09:19:15 +0100
+
+cegui-mk2 (0.6.2-5) unstable; urgency=low
+
+  * Fix the build on kFreeBSD
+    + debian/patches/01_cegui-mk2_kfreebsd.dpatch
+    + Do not build-depend on libois-dev on kFreeBSD. (Closes: #592952)
+    + Thanks to Gonéri Le Bouder for providing the patch to fix this issue.
+  * Change of maintainer's mail.
+
+ -- Muammar El Khatib <muammar@debian.org>  Thu, 11 Nov 2010 00:06:34 +0200
+
+cegui-mk2 (0.6.2-4) unstable; urgency=low
+
+  * Bump Standards-Version to 3.8.4. No changes were needed.
+  * debian/control: libpcre3-dev, libfreetype6-dev and libfreeimage-dev were
+    added in libcegui-mk2-dev Depends field. (Closes: #560280)
+  * debian/watch: uversionmangle option has been added in order to make uscan
+    report the right version of CEGUI.
+
+ -- Muammar El Khatib <muammarelkhatib@gmail.com>  Sun, 21 Feb 2010 19:29:55 -0430
+
+cegui-mk2 (0.6.2-3) unstable; urgency=low
+
+  * Bug: FTBFS compilation error ('class OIS::InputManager’ has no member named
+    ‘numKeyboards') has been fixed in this revision. A patch has been applied
+    to CEGuiOgreBaseApplication.cpp. (Closes: #557767)
+  * Some improvements to the packaging were done thanks to the collaboration
+    from Ubuntu. Thanks to Alessio Treglia for providing a patch.
+    (Closes: #558136)
+
+ -- Muammar El Khatib <muammarelkhatib@gmail.com>  Tue, 01 Dec 2009 15:26:11 -0430
+
+cegui-mk2 (0.6.2-2) unstable; urgency=low
+
+  * Bump Standards-Version to 3.8.3. No changes were needed.
+  * debian/control: Build-Depends field has been updated to now use:
+    - libboost-signals-dev
+    - libboost-regex-dev
+    With the update shown above we can ensure that CEGUI is built with the
+    newest boost versions. (Closes: #550018)
+  * debian/patches: 09_addingheaderforgcc4.4.dpatch has been added to make
+    CEGUI compile with gcc-4.4. (Closes: #528919)
+  * CEGUI does not FTBFS anymore, this bug was fixed by upstream.
+    (Closes: #457626)
+
+ -- Muammar El Khatib <muammarelkhatib@gmail.com>  Wed, 07 Oct 2009 11:06:38 -0430
+
+cegui-mk2 (0.6.2-1) unstable; urgency=low
+
+  * Bump Standards-Version to 3.8.1
+  * debian/control: libcegui-mk2-1-dbg's section has been changed from libdevel
+    to debug. libcegui-mk2-1's section has been removed because it was a
+    duplicated field.
+  * debian/patches: 06_patching_CEGUIDevILImageCodec.dpatch has been added in
+    order to make CEGUI compile correctly.
+  * CEGUI is now built with TinyXML. (Closes: #502477, #502478)
+  * New upstream version.
+  * FTBFS due to ‘ILvoid’ not declared in the scope has been fixed.
+    (Closes: #525412)
+  * The module loading depended on .so links, which are only found in the -dev
+    package has been changed in order to make it use *.so.* directly. Thanks to
+    Vincent Fourmond for providing a patch.
+    (Closes: #425983, #524933)
+
+ -- Muammar El Khatib <muammarelkhatib@gmail.com>  Thu, 09 Apr 2009 12:07:37 -0430
+
+cegui-mk2 (0.6.1-1) unstable; urgency=low
+
+  * Bump Standards-Version to 3.8.0
+  * New upstream version.
+  * SILLY ImageCodec is now supported. (Closes: #491075)
+
+ -- Muammar El Khatib <muammarelkhatib@gmail.com>  Sun, 07 Sep 2008 17:35:47 -0430
+
+cegui-mk2 (0.5.0-4.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Added dependencies into -dev package for all libs
+    used in .la files, closes: #496320
+
+ -- Riku Voipio <riku.voipio@iki.fi>  Fri, 05 Sep 2008 12:12:53 +0300
+
+cegui-mk2 (0.5.0-4) unstable; urgency=low
+
+  * The version of debhelper was change from >= 5 to >= 6.
+  * CEGUI now Build-depends on libxerces-c2-dev instead of libxerces27-dev.
+    (Closes: #479190)
+  * Lua scripting is now enabled in this new revision of CEGUI. (Closes:
+    #456244)
+
+ -- Muammar El Khatib <muammarelkhatib@gmail.com>  Fri, 09 May 2008 13:24:16 -0430
+
+cegui-mk2 (0.5.0-3) unstable; urgency=low
+
+  * Bump Standards-Version to 3.7.3.
+  * Webpage was moved from cegui-mk2's description to control tag.
+  * Added to Build-depends: dpatch, liblua50, liblua50-dev, liblualib50, lua50
+  * Bug 'FTBFS on GNU/kFreeBSD' has been fixed in this revision. Thanks to
+    Cyril Brulebois for providing a patch.(Closes: #413896)
+  * Bug 'Not detecting Lua at configure time' has been fixed in this revision.
+    Thanks to Erick Vresnev Castellanos Hernández <vresnev@ideasavanzadas.com>
+    (Closes: #456244)
+
+ -- Muammar El Khatib <muammarelkhatib@gmail.com>  Thu, 17 Jan 2008 11:23:53 -0430
+
+cegui-mk2 (0.5.0-2) unstable; urgency=low
+
+  * The problem related to soname change without package name bump has been
+    fixed (Closes: #423502 )
+
+ -- Muammar El Khatib <muammarelkhatib@gmail.com>  Sun, 17 Jun 2007 19:40:45 +0100
+
+cegui-mk2 (0.5.0-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #402445)
+  * Fix Depends: libpcre3-dev was added.
+  * The version of debhelper was changed to >= 5 instead of > 4.0.0,
+    so linda does not complaint.
+  * New maintainer. (Closes: #398108)
+
+ -- Muammar El Khatib <muammarelkhatib@gmail.com>  Tue, 26 Dec 2006 01:02:08 -0400
+
+cegui-mk2 (0.4.1-2) unstable; urgency=low
+
+  * QA upload.
+  * Build depend on libgl1-mesa-dev, libglu1-mesa-dev, libdevil-dev for
+    the OpenGL renderer.  Closes: #341795, #370541.
+
+ -- Matej Vela <vela@debian.org>  Fri, 15 Dec 2006 19:10:20 +0100
+
+cegui-mk2 (0.4.1-1.3) unstable; urgency=low
+
+  * QA upload.
+  * Set Maintainer to Debian QA Group.
+  * Acknowledge NMUs (Closes: #368356).
+  * Fix spelling mistakes in description (Closes: #343157).
+
+ -- Luk Claes <luk@debian.org>  Tue,  5 Dec 2006 20:11:06 +0100
+
+cegui-mk2 (0.4.1-1.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * (Build-)Depends upon xerces27 instead of xerces26 (Closes: #368913).
+  * Bump Standards-Version to 3.7.2.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun,  2 Jul 2006 17:04:02 +0200
+
+cegui-mk2 (0.4.1-1.1) unstable; urgency=low
+
+  * Non-Maintainer Upload.
+  * Fix Depends: for libcegui-mk2-0c2a-dbg, thanks to  Robert Luberda
+    <robert@debian.org> and Matt Kraai <kraai@ftbfs.org> for the fix
+    (Closes: #356491)
+
+ -- Frederik Schüler <fs@debian.org>  Sat, 20 May 2006 16:41:33 +0000
+
+cegui-mk2 (0.4.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added back documentation to -doc package (Closes: #319000).
+  * Added patch 02_cegui-mk2-kfreebsd.diff (Closes: #335686).
+  * Changed library package name into libcegui-mk2-0c2a because
+    of the libstdc++ allocator change (Closes: #339156).
+
+ -- Federico Di Gregorio <fog@debian.org>  Tue, 29 Nov 2005 12:23:21 +0100
+
+cegui-mk2 (0.3.0-3) unstable; urgency=low
+
+  * Added to Build-depends: pkg-config (Closes: #321842).
+  * Added explicit versions of autotools in debian/rules
+    (Closes: #303079, #303072).
+
+ -- Federico Di Gregorio <fog@debian.org>  Sun, 21 Aug 2005 12:56:25 +0200
+
+cegui-mk2 (0.3.0-2) unstable; urgency=low
+
+  * Rebuilt with c2 versions of libboost-xxx and libxerces26.
+  * Added to Build-depends: libtiff4-dev, liblcms1-dev.
+
+ -- Federico Di Gregorio <fog@debian.org>  Sun, 24 Jul 2005 23:10:03 +0200
+
+cegui-mk2 (0.3.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Building with gcc 4.
+  * Source package does not include API documentation anymore (will be
+    fixed by generating documentation in a future release.)
+
+ -- Federico Di Gregorio <fog@debian.org>  Mon, 11 Jul 2005 11:05:56 +0200
+
+cegui-mk2 (0.2.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Removed Build-Depends on Ogre.
+  * Changed description in control to correctly describe this package
+    to support only the OpenGL target. Ogre rendering will be in Ogre
+    packages >= 1.0.0.
+
+ -- Federico Di Gregorio <fog@debian.org>  Sat, 12 Mar 2005 14:51:02 +0100
+
+cegui-mk2 (0.1.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Removed 10fix-pc-version patch (fixed upstream.)
+  * Switched to libxerces26.
+
+ -- Federico Di Gregorio <fog@debian.org>  Sun, 23 Jan 2005 23:09:56 +0100
+
+cegui-mk2 (0.1.0-4) unstable; urgency=low
+
+  * Now the API documentation is really included in the -doc package.
+  * Added Suggests: libcegui-mk2-doc to libcegui-mk2-dev package.
+
+ -- Federico Di Gregorio <fog@debian.org>  Sun,  9 Jan 2005 16:39:26 +0100
+
+cegui-mk2 (0.1.0-3) unstable; urgency=low
+
+  * Added debug package (libcegui-mk2-0-dbg).
+  * Better sections in debian/control.
+  * Fixed problem with wrong version in configure.ac (and CEGUI-OGRE.pc).
+  * Added Build-depends on libxerces25-dev.
+
+ -- Federico Di Gregorio <fog@initd.org>  Sun,  2 Jan 2005 18:47:44 +0100
+
+cegui-mk2 (0.1.0-2) unstable; urgency=low
+
+  * Upstream started versioning releases the Right Way (TM).
+  * First stable release to follow ogre packages in Debian.
+  * Added to Build-depends: libxerces27-dev.
+
+ -- Federico Di Gregorio <fog@debian.org>  Fri, 31 Dec 2004 01:44:19 +0100
+
+cegui-mk2 (0.0.mk2-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Federico Di Gregorio <fog@debian.org>  Mon,  9 Nov 2004 23:12:34 +0200
