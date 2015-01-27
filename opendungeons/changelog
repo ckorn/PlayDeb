@@ -1,0 +1,5 @@
+opendungeons (0.4.9-1~getdeb1) utopic; urgency=low
+
+  * Initial release (LP: #1414001)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 26 Jan 2015 23:13:06 +0100

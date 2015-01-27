@@ -1,0 +1,44 @@
+Source: opendungeons
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               cmake,
+               libogre-1.9-dev,
+               libboost1.55-dev,
+               libsfml-dev,
+               libois-dev,
+               libcegui-0.8-dev,
+               libopenal-dev,
+               libboost-filesystem1.55-dev,
+               libboost-locale1.55-dev
+Standards-Version: 3.9.5
+Homepage: http://opendungeons.sourceforge.net/
+
+Package: opendungeons
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         opendungeons-data (= ${source:Version})
+Description: RTS game with elements from Dungeon Keeper and Evil Genius
+ OpenDungeons is an open source, real time strategy game
+ sharing game elements with the Dungeon Keeper series and
+ Evil Genius. Players build an underground dungeon which is
+ inhabited by creatures. Players fight each other for
+ control of the underground by indirectly commanding their
+ creatures, directly casting spells in combat, and luring
+ enemies into sinister traps. 
+
+Package: opendungeons-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: RTS game with elements from Dungeon Keeper and Evil Genius (data package)
+ OpenDungeons is an open source, real time strategy game
+ sharing game elements with the Dungeon Keeper series and
+ Evil Genius. Players build an underground dungeon which is
+ inhabited by creatures. Players fight each other for
+ control of the underground by indirectly commanding their
+ creatures, directly casting spells in combat, and luring
+ enemies into sinister traps. 
+ .
+ (This package contains the data files).
