@@ -23,6 +23,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          corsix-th-data (= ${source:Version})
+Recommends: theme-hospital-full-data | theme-hospital-demo-data | game-data-packager
 Description: Open source clone of Theme Hospital
  As computers evolve, it is risked losing some
  classic games.
