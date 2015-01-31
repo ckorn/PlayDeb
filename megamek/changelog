@@ -1,3 +1,20 @@
+megamek (0.41.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    + Bug [#4418]: Custom weapon order XML file thinks it's quirks
+    + Bug [#4419]: Support Vee's and Infantry Weapons
+    + Bug [#4297]: Possible NPE in MovePath.findPathTo
+    + Bug [#4420]: Optimization pass on LosEffects, particular losForCoords
+    + Bug [#4420]: Game with a hidden unit carrying ECM causes lagged
+    movement
+    + Bug [#4420]: Removed calls to Game.checkPositionCacheConsistency
+    + Bug: SHA256 check still generating NPEs
+    + Bug: Potential NPE in Compute.allowAimedShotWith
+    + Data: New Sprites and Unit Fixes.
+    + Translation(Russian): Translation of client/messages_ru.properties
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 30 Jan 2015 22:10:18 +0100
+
 megamek (0.41.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
