@@ -11,7 +11,8 @@ Build-Depends: debhelper (>= 9),
                libcegui-0.8-dev,
                libopenal-dev,
                libboost-filesystem1.55-dev,
-               libboost-locale1.55-dev
+               libboost-locale1.55-dev,
+               pkg-config
 Standards-Version: 3.9.5
 Homepage: http://opendungeons.sourceforge.net/
 

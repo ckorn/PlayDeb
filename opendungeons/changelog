@@ -1,3 +1,16 @@
+opendungeons (0.4.9-1~getdeb3) utopic; urgency=medium
+
+  * Put plugins.cfg into /usr/lib/games because
+    it contains an arch-dep path.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 30 Jan 2015 23:43:47 +0100
+
+opendungeons (0.4.9-1~getdeb2) utopic; urgency=medium
+
+  * Fix Ogre (LP: #1415604)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 30 Jan 2015 21:30:09 +0100
+
 opendungeons (0.4.9-1~getdeb1) utopic; urgency=low
 
   * Initial release (LP: #1414001)
