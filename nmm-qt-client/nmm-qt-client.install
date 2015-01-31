@@ -1,4 +1,3 @@
-nmm-qt-client /usr/games
-nmm_qt_client.png /usr/share/icons/hicolor/256x256/apps
-nmm_qt_client.desktop /usr/share/applications
-*.qm /usr/share/nmm-qt-client
+src/nmm-qt-client		usr/games
+src/nmm_qt_client.png		usr/share/icons/hicolor/256x256/apps
+src/nmm_qt_client.desktop	usr/share/applications
