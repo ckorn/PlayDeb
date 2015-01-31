@@ -1,0 +1,26 @@
+Install into usr/games and do not install the desktop file
+from the upstream tarball.
+Index: galaxy2-1.0/Makefile
+===================================================================
+--- galaxy2-1.0.orig/Makefile	2015-01-31 20:28:42.488793203 +0100
++++ galaxy2-1.0/Makefile	2015-01-31 20:28:42.484793203 +0100
+@@ -9,7 +9,7 @@
+ CPPFLAGS ?= -O2
+ 
+ # target install directories
+-BINDIR = $(PREFIX)/bin
++BINDIR = $(PREFIX)/games
+ SHAREDIR = $(PREFIX)/share/$(PROGRAM)
+ DATADIR = $(SHAREDIR)/data
+ ICONDIR = $(SHAREDIR)/icons
+Index: galaxy2-1.0/desktop
+===================================================================
+--- galaxy2-1.0.orig/desktop	2015-01-11 13:22:46.000000000 +0100
++++ galaxy2-1.0/desktop	2015-01-31 20:32:10.048787029 +0100
+@@ -5,5 +5,5 @@
+ Categories=Game;Simulation
+ Type=Application
+ Terminal=false
+-Exec=/usr/bin/galaxy2
++Exec=/usr/games/galaxy2
+ Icon=/usr/share/galaxy2/icons/galaxy2.png

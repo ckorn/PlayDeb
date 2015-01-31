@@ -1,15 +1,16 @@
-Source: galaxy
+Source: galaxy2
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <c_korn@gmx.de>
 Build-Depends: debhelper (>= 9),
                libgtk-3-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://www.kornelix.com/galaxy.html
 
-Package: galaxy
+Package: galaxy2
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
 Description: Stellar Simulation
  Galaxy is a free Linux computer program which simulates
  the motion of stars under the influence of gravity.

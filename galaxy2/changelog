@@ -1,3 +1,9 @@
+galaxy2 (1.0-1~getdeb1) trusty; urgency=medium
+
+  * New release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 31 Jan 2015 20:26:47 +0100
+
 galaxy (2.2-1~getdeb2) precise; urgency=low
 
   * Fix debian/watch file.

@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+%:
+	dh $@ 
+
+override_dh_installchangelogs:
+	dh_installchangelogs doc/changelog
+
+override_dh_install:
+	dh_install
+	rm -r debian/galaxy2/usr/share/appdata debian/galaxy2/usr/share/galaxy2/locales
