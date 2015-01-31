@@ -1,3 +1,10 @@
+corsix-th (0.40-1~getdeb2) trusty; urgency=medium
+
+  * Add Recommends
+    theme-hospital-full-data | theme-hospital-demo-data | game-data-packager
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 30 Jan 2015 21:51:58 +0100
+
 corsix-th (0.40-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
