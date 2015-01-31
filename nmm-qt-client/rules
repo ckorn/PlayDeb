@@ -32,7 +32,7 @@ DH_ALWAYS_EXCLUDE=.svn
 DEB_DH_STRIP_ARGS_DEFAULT = --dbg-package=nmm-qt-client-dbg -n
 
 common-build-arch::
-	/usr/bin/lrelease-qt4 $(CURDIR)/src.pro
+	/usr/bin/lrelease-qt4 $(CURDIR)/nmm-qt-client.pro
 
 clean::
 	-rm $(CURDIR)/*.qm
