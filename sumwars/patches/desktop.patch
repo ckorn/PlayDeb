@@ -1,7 +1,9 @@
 Install the desktop file and icons.
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -516,29 +516,29 @@
+Index: sumwars-0.5.8/CMakeLists.txt
+===================================================================
+--- sumwars-0.5.8.orig/CMakeLists.txt	2015-01-27 19:27:29.410080982 +0100
++++ sumwars-0.5.8/CMakeLists.txt	2015-01-27 19:27:29.406080982 +0100
+@@ -653,29 +653,29 @@
  
  # freedesktop.org icons and desktop files
  # TODO: How do we do this on Windows? Installing start menu items.

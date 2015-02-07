@@ -12,9 +12,10 @@ Build-Depends: debhelper (>= 9),
                libenet-dev,
                libogre-1.8-dev (>= 1.8.0), 
                libois-dev,
-               libcegui-mk2-dev (>= 0.7.0),
+               libcegui-0.8-dev (>= 0.8.0),
                liblua5.1-0-dev,
-               libxrandr-dev
+               libxrandr-dev,
+               libboost-filesystem1.54-dev
 Standards-Version: 3.9.5
 Homepage: http://www.sumwars.org/
 
