@@ -1,0 +1,10 @@
+usr/lib/lib*.so.*
+usr/lib/cegui-0.8/libCEGUICoreWindowRendererSet.so
+usr/lib/cegui-0.8/libCEGUIDevILImageCodec.so
+usr/lib/cegui-0.8/libCEGUIExpatParser.so
+usr/lib/cegui-0.8/libCEGUIFreeImageImageCodec.so
+usr/lib/cegui-0.8/libCEGUILibXMLParser.so
+usr/lib/cegui-0.8/libCEGUIMinesweeper.so
+usr/lib/cegui-0.8/libCEGUISILLYImageCodec.so
+usr/lib/cegui-0.8/libCEGUITinyXMLParser.so
+usr/lib/cegui-0.8/libCEGUIXercesParser.so
