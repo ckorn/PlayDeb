@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --parallel
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DCEGUI_BUILD_RENDERER_NULL:BOOL=true -DCEGUI_BUILD_LUA_MODULE:BOOL=true \
+	                     -DCEGUI_BUILD_LUA_GENERATOR:BOOL=true -DCEGUI_BUILD_XMLPARSER_TINYXML:BOOL=true 
+
+override_dh_install:
+	dh_install --list-missing
+
+override_dh_strip:
+	dh_strip --dbg-package=libcegui-0.8-dbg
