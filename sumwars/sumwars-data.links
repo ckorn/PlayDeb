@@ -1,2 +1,5 @@
 usr/share/fonts/truetype/dejavu/DejaVuSans.ttf		usr/share/games/sumwars/resources/gui/fonts/DejaVuSans.ttf
 usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf		usr/share/games/sumwars/resources/gui/fonts/DejaVuSerif.ttf
+
+usr/share/fonts/truetype/dejavu/DejaVuSans.ttf		usr/share/games/sumwars/resources/gui_0.8/fonts/DejaVuSans.ttf
+usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf		usr/share/games/sumwars/resources/gui_0.8/fonts/DejaVuSerif.ttf
