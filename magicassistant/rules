@@ -3,17 +3,19 @@
 	dh $@
 
 override_dh_auto_clean:
-	rm -rf magicassistant
+	rm -rf MagicAssistant
 
 override_dh_auto_build:
 ifeq ($(DEB_BUILD_ARCH),amd64)
-	unzip *-linux.gtk.x86_64.zip
-
+	unzip *-linux.gtk.x86_64-withjava.zip
+	rm ./MagicAssistant/jre/lib/amd64/libavplugin.so
 else
-	unzip *-linux.gtk.x86.zip
+	unzip *-linux.gtk.x86-withjava.zip
+	rm ./MagicAssistant/jre/lib/i386/libavplugin.so
 endif
 
 	mv MagicAssistant magicassistant
 	find magicassistant -type f -exec chmod -x {} \;
 	chmod +x magicassistant/magicassistant
+	chmod +x magicassistant/jre/bin/*
 	find magicassistant -type d -empty -delete

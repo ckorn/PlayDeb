@@ -9,8 +9,9 @@ Build-Depends: debhelper (>= 9),
                libx11-6,
                libxext6,
                libxrender1,
-               openjdk-7-jre,
-               openjdk-7-jdk
+               openjdk-8-jre,
+               openjdk-8-jdk,
+               libxslt1.1
 Standards-Version: 3.9.5
 Homepage: http://sourceforge.net/apps/mediawiki/mtgbrowser/index.php?title=Main_Page
 
@@ -18,7 +19,6 @@ Package: magicassistant
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         openjdk-7-jre | openjdk-6-jre | java2-common | java-common,
          libcanberra-gtk-module
 Description: Helper for "Magic: the Gathering" (MTG) players
  Magic Assistant is an application that helps
