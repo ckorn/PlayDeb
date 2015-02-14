@@ -1,3 +1,17 @@
+manaplus (1:1.5.2.14-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: camera position if npc dialog was closed by server script command
+    closedialog.
+    fix: make file for android.
+    fix: storing player relations if switch servers.
+    fix: storing attack mobs / pickups filter if switch server.
+    fix: weight bar in inventory and cart window.
+    add: personal sell shops support (hercules).
+    add: improve skill error messages.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 14 Feb 2015 18:10:48 +0100
+
 manaplus (1:1.5.1.31-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
