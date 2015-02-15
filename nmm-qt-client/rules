@@ -20,6 +20,8 @@ DEB_BUILD_MAINT_OPTIONS = hardening=+all
 DEB_CFLAGS_MAINT_APPEND := $(MARCH)
 DEB_CXXFLAGS_MAINT_APPEND := $(MARCH)
 
+DEB_QMAKE_CONFIG_VAL += espeak
+
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/qmake.mk
 -include /usr/share/dpkg/buildflags.mk
@@ -35,4 +37,4 @@ common-build-arch::
 	/usr/bin/lrelease-qt4 $(CURDIR)/nmm-qt-client.pro
 
 clean::
-	-rm $(CURDIR)/*.qm
+	-rm $(CURDIR)/src/*.qm
