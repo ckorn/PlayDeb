@@ -12,8 +12,6 @@ Build-Depends: debhelper (>= 9),
                libsdl2-dev,
                zlib1g-dev
 Standards-Version: 3.9.5
-Vcs-Git: https://github.com/dhewm/dhewm3.git
-Vcs-Browser: https://github.com/dhewm/dhewm3
 Homepage: https://github.com/dhewm/dhewm3
 
 Package: dhewm3
@@ -38,6 +36,8 @@ Description: Doom 3 engine
  .
  This source release does not contain any game data, the game
  data is still covered by the original EULA and must be obeyed as usual.
+ .
+ Put the base/ directory into the $HOME/.local/share/dhewm3 directory.
 
 Package: dhewm3-dedicated
 Architecture: any
