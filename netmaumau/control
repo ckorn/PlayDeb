@@ -33,7 +33,7 @@ Package: netmaumau-server
 Architecture: any
 Suggests: nmm-qt-client
 Depends: netmaumau-server-common (>= ${source:Version}),
-         libnetmaumaucommon2 (>= ${binary:Version}), 
+         libnetmaumaucommon3 (>= ${binary:Version}), 
          ${shlibs:Depends},
          ${misc:Depends}
 Description: Server for the popular card game Mau Mau - server
@@ -42,16 +42,17 @@ Description: Server for the popular card game Mau Mau - server
 
 Package: netmaumau-client
 Architecture: any
-Depends: libnetmaumaucommon2 (>= ${binary:Version}),
+Depends: libnetmaumaucommon3 (>= ${binary:Version}),
          libnetmaumauclient3 (>= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
 Description: Server for the popular card game Mau Mau - CLI client
  A simple CLI client for the NetMauMau server.
  
-Package: libnetmaumaucommon2
+Package: libnetmaumaucommon3
 Replaces: libnetmaumaucommon0,
-          libnetmaumaucommon1
+          libnetmaumaucommon1,
+          libnetmaumaucommon2
 Architecture: any
 Section: libs
 Depends: ${shlibs:Depends},
@@ -62,7 +63,7 @@ Description: Server for the popular card game Mau Mau - common library
 Package: libnetmaumauclient3
 Architecture: any
 Section: libs
-Depends: libnetmaumaucommon2 (>= ${binary:Version}),
+Depends: libnetmaumaucommon3 (>= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
 Replaces: libnetmaumauclient0,
@@ -75,7 +76,7 @@ Package: netmaumau-dev
 Architecture: any
 Section: devel
 Suggests: netmaumau-server
-Depends: libnetmaumaucommon2 (= ${binary:Version}),
+Depends: libnetmaumaucommon3 (= ${binary:Version}),
          libnetmaumauclient3 (= ${binary:Version}), 
          ${misc:Depends}
 Description: Server for the popular card game Mau Mau - developer files
@@ -86,7 +87,7 @@ Architecture: any
 Section: debug
 Depends: netmaumau-server (= ${binary:Version}),
          netmaumau-client (= ${binary:Version}), 
-         libnetmaumaucommon2 (= ${binary:Version}),
+         libnetmaumaucommon3 (= ${binary:Version}),
          libnetmaumauclient3 (= ${binary:Version}), 
          ${misc:Depends}
 Description: Server for the popular card game Mau Mau - debugger symbols
