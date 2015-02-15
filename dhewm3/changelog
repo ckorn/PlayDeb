@@ -1,3 +1,9 @@
+dhewm3 (1.3.1.1304+git20130917-1~getdeb2) trusty; urgency=medium
+
+  * Update scripts to search in all base directories (LP: #1382382)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 15 Feb 2015 19:17:32 +0100
+
 dhewm3 (1.3.1.1304+git20130917-1~getdeb1) trusty; urgency=low
 
   * Upload to PlayDeb

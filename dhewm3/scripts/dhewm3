@@ -1,13 +1,35 @@
 #!/bin/sh
 
-if [ ! -f $HOME/.config/dhewm3/base/default.cfg ] ; then
-	zenity --error --title="No data directory" \
-	       --text="Put the base/ directory into the\n$HOME/.config/dhewm3\ndirectory." \
-	       --window-icon=/usr/share/pixmaps/dhewm3.png
+#Define BASEPATHs where pak00*.pk4 files would be found
+BASEPATH1=$HOME/.config/dhewm3
+BASEPATH2=$HOME/.local/share/dhewm3
+BASEPATH3=/usr/share/games/dhewm3
+
+FOUNDBASE=
+
+#Check each BASEPATH for pak00*.pk4 files in the order of their precedence
+for dir in "$BASEPATH1" "$BASEPATH2" "$BASEPATH3"
+do
+	if [ -z $FOUNDBASE  ] ; then
+		if [ -d "$dir/base" ] ; then
+			if [ $(find "$dir/base" -type f -name "pak00[0-8].pk4" | wc -l) -ge 9 ] ; then
+				FOUNDBASE="$dir/base"
+			fi
+		fi
+	fi
+done
+
+if [ -z $FOUNDBASE ] ; then
+	mkdir -p "$BASEPATH2"
+	zenity --error --title="Missing data files" \
+		--text="Put the base directory containing pak00*.pk4\ndata files into this location:\n$HOME/.local/share/dhewm3\n\nFor more details, type this in terminal:\nman dhewm3" \
+		--window-icon=/usr/share/pixmaps/dhewm3.png
 	exit 1
 fi
 
-mkdir -p $HOME/.config/dhewm3
-cd $HOME/.config/dhewm3
+echo "Base directory: $FOUNDBASE/base"
+
+mkdir -p "$BASEPATH1"
+cd "$BASEPATH1"
 
 /usr/lib/games/dhewm3/dhewm3 "$@"
