@@ -4,18 +4,20 @@ Priority: extra
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: cdbs,
                debhelper (>= 9),
+               pkg-config,
                libqt4-dev,
                libqt4-dev-bin,
                qt4-dev-tools,
                qt4-linguist-tools,
-               netmaumau-dev (>= 0.13~)
+               netmaumau-dev (>= 0.14~),
+               libespeak-dev
 Standards-Version: 3.9.5
 Homepage: http://sourceforge.net/projects/netmaumau/
 
 Package: nmm-qt-client
 Architecture: any
-Depends: libnetmaumaucommon2 (>= 0.13~),
-         libnetmaumauclient3 (>= 0.13~),
+Depends: libnetmaumaucommon3 (>= 0.14~),
+         libnetmaumauclient3 (>= 0.14~),
          ${shlibs:Depends},
          ${misc:Depends}
 Suggests: netmaumau-server
