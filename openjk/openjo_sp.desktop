@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Jedi Outcast: Singleplayer (Experimental)
+Exec=/usr/games/openjo_sp
+Icon=openjk
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=openjo_sp;josp

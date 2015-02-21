@@ -1,0 +1,49 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --parallel
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf CMakeFiles
+	rm -f CMakeCache.txt cmake_install.cmake CPackConfig.cmake CPackSourceConfig.cmake install_manifest.txt Makefile
+	find . -name CMakeFiles -type d -execdir rm -r {} \; || /bin/true
+	find . -name Makefile -type f -delete
+	find . -name cmake_install.cmake -type f -delete
+
+override_dh_auto_configure:
+	cmake .
+
+override_dh_auto_install:
+
+PKD  = $(abspath $(dir $(MAKEFILE_LIST)))
+PKG  = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SSource)
+UDATE = $(shell date +%Y%m%d)
+VER = 0.0.0+git$(UDATE)
+
+## http://wiki.debian.org/onlyjob/get-orig-source
+.PHONY: get-orig-source
+get-orig-source: $(PKG)_$(VER).orig.tar.xz $(info I: $(PKG)_$(VER))
+	@
+
+UURL = https://github.com/JACoders/OpenJK.git
+$(PKG)_$(VER).orig.tar.xz: $(info I: UDATE=$(UDATE))
+	$(if $(wildcard $(PKG)-$(VER)),$(error $(PKG)-$(VER) exist, aborting..))
+	@echo "# Downloading..."
+	git clone $(UURL) $(PKG)-$(VER) \
+	|| $(RM) -r $(PKG)-$(VER)
+	cd $(PKG)-$(VER) \
+	&& [ -s ChangeLog ] || ( echo "# Generating ChangeLog..." \
+	   ; git log --pretty="format:%ad  %aN  <%aE>%n%n%x09* %s%n" --date=short > ChangeLog \
+	   ; touch -d "$$(git log -1 --format='%ci')" ChangeLog) \
+	&& echo "# Setting times..." \
+	&& git ls-tree -r --name-only HEAD | while read F ; do touch --no-dereference -d "$$(git log -1 --format="%ai" -- "$$F")" "$$F"; done \
+	&& echo "# Cleaning-up..." \
+	&& find . -type f -iname '*.dll' -exec $(RM) {} \; -printf 'removed %p\n' \
+	&& find . -type f -iname '*.bat' -exec $(RM) {} \; -printf 'removed %p\n' \
+	&& find . -type f -iname '*.sln' -exec $(RM) {} \; -printf 'removed %p\n' \
+	&& find . -type f -iname '*.vcproj' -exec $(RM) {} \; -printf 'removed %p\n' \
+	&& $(RM) -r .git .git*
+	@echo "# Packing..."
+	find -L "$(PKG)-$(VER)" -xdev -type f -print | sort \
+	| XZ_OPT="-6v" tar -caf "$(PKG)_$(VER).orig.tar.xz" -T- --owner=root --group=root --mode=a+rX \
+	&& $(RM) -r "$(PKG)-$(VER)"

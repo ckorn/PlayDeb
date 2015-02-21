@@ -1,0 +1,16 @@
+#!/bin/sh
+BASE="$(pwd)/.local/share/openjo/base/"
+
+[ -d "$BASE" ] || mkdir -p "$BASE"
+
+PK3=$(find "$BASE" -iname "*.pk3" | head -n1)
+
+if [ -z $PK3 ] ; then
+	zenity --error --title="Missing data files" \
+		--text="Put the base/ directory containing *.pk3\ndata files into this location:\n$HOME/.local/share/openjo" \
+		--window-icon=/usr/share/pixmaps/openjk.png
+	exit 1
+fi
+
+cd /usr/lib/games/openjk
+./openjo_sp "$@"

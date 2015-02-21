@@ -1,0 +1,40 @@
+# also compile support for JK2: Jedi Outcast. Although it is experimental.
+# note that in the desktop file
+Index: openjk-0.0.0+git20150221/CMakeLists.txt
+===================================================================
+--- openjk-0.0.0+git20150221.orig/CMakeLists.txt	2015-02-08 01:53:12.000000000 +0100
++++ openjk-0.0.0+git20150221/CMakeLists.txt	2015-02-21 17:19:06.979273920 +0100
+@@ -21,9 +21,9 @@
+ option(BuildSPGame "Whether to create projects for the SP gamecode (jagamex86.dll)" ON)
+ option(BuildSPRdVanilla "Whether to create projects for the SP default renderer (rdsp-vanilla_x86.dll)" ON)
+ 
+-option(BuildJK2SPEngine "Whether to create projects for the jk2 SP engine (openjo_sp.exe)" OFF)
+-option(BuildJK2SPGame "Whether to create projects for the jk2 sp gamecode mod (jk2gamex86.dll)" OFF)
+-option(BuildJK2SPRdVanilla "Whether to create projects for the jk2 sp renderer (rdjosp-vanilla_x86.dll)" OFF)
++option(BuildJK2SPEngine "Whether to create projects for the jk2 SP engine (openjo_sp.exe)" ON)
++option(BuildJK2SPGame "Whether to create projects for the jk2 sp gamecode mod (jk2gamex86.dll)" ON)
++option(BuildJK2SPRdVanilla "Whether to create projects for the jk2 sp renderer (rdjosp-vanilla_x86.dll)" ON)
+ 
+ # Customizable libraries
+ if(WIN32)
+@@ -92,16 +92,16 @@
+ message("Git revision is ${GIT_SHA1}")
+ 
+ # Binary names
+-set(SPEngine "openjk_sp.${Architecture}")
++set(SPEngine "openjk_sp")
+ set(SPGame "jagame${Architecture}")
+ set(SPRDVanillaRenderer "rdsp-vanilla_${Architecture}")
+-set(MPEngine "openjk.${Architecture}")
++set(MPEngine "openjk")
+ set(MPVanillaRenderer "rd-vanilla_${Architecture}")
+-set(MPDed "openjkded.${Architecture}")
++set(MPDed "openjkded")
+ set(MPGame "jampgame${Architecture}")
+ set(MPCGame "cgame${Architecture}")
+ set(MPUI "ui${Architecture}")
+-set(JK2SPEngine "openjo_sp.${Architecture}")
++set(JK2SPEngine "openjo_sp")
+ set(JK2SPGame "jospgame${Architecture}")
+ set(JK2SPVanillaRenderer "rdjosp-vanilla_${Architecture}")
+ # Library names
