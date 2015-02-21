@@ -1,0 +1,5 @@
+openjk (0.0.0+git20150221-1~getdeb1) trusty; urgency=low
+
+  * Initial release (LP: #1422860)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 21 Feb 2015 15:05:56 +0100
