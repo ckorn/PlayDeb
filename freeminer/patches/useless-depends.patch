@@ -10,11 +10,11 @@ Forwarded: no (we should do it)
  src/CMakeLists.txt |    6 ------
  1 file changed, 6 deletions(-)
 
-Index: freeminer-0.4.11.5/src/CMakeLists.txt
+Index: freeminer-0.4.12.6/src/CMakeLists.txt
 ===================================================================
---- freeminer-0.4.11.5.orig/src/CMakeLists.txt	2014-12-25 20:32:04.000000000 +0100
-+++ freeminer-0.4.11.5/src/CMakeLists.txt	2014-12-26 21:10:20.716195294 +0100
-@@ -331,10 +331,6 @@
+--- freeminer-0.4.12.6.orig/src/CMakeLists.txt	2015-02-21 18:55:46.999101385 +0100
++++ freeminer-0.4.12.6/src/CMakeLists.txt	2015-02-21 18:55:46.995101385 +0100
+@@ -347,10 +347,6 @@
  	# Unix probably
  	if(BUILD_CLIENT)
  		find_package(X11 REQUIRED)
@@ -25,7 +25,7 @@ Index: freeminer-0.4.11.5/src/CMakeLists.txt
  		if(APPLE)
  			FIND_LIBRARY(CARBON_LIB Carbon)
  			FIND_LIBRARY(COCOA_LIB Cocoa)
-@@ -356,7 +352,6 @@
+@@ -372,7 +368,6 @@
  	endif(APPLE)
  	#set(CLIENT_PLATFORM_LIBS -lXxf86vm)
  	# This way Xxf86vm is found on OpenBSD too

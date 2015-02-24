@@ -1,3 +1,10 @@
+freeminer (0.4.12.6-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    * Stability and speed fixes
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 21 Feb 2015 18:55:10 +0100
+
 freeminer (0.4.11.5-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
