@@ -6,11 +6,11 @@ Forwarded: upstream won't take it as they install to non-standard paths
  src/main.cpp |    4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-Index: freeminer-0.4.10.4/src/main.cpp
+Index: freeminer-0.4.12.6/src/main.cpp
 ===================================================================
---- freeminer-0.4.10.4.orig/src/main.cpp
-+++ freeminer-0.4.10.4/src/main.cpp
-@@ -1082,14 +1082,14 @@ static bool init_common(int *log_level,
+--- freeminer-0.4.12.6.orig/src/main.cpp	2015-02-21 18:58:52.803095857 +0100
++++ freeminer-0.4.12.6/src/main.cpp	2015-02-21 18:58:52.799095858 +0100
+@@ -1090,14 +1090,14 @@
  	httpfetch_init(g_settings->getS32("curl_parallel_limit"));
  
  #ifdef _MSC_VER
