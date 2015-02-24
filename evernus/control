@@ -1,0 +1,27 @@
+Source: evernus
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               cmake,
+               qtbase5-dev,
+               qttools5-dev,
+               qttools5-dev-tools,
+               libboost1.55-dev,
+               libx11-dev,
+               libqt5webkit5-dev,
+               qtscript5-dev,
+               libqxt-dev,
+               libqt5xmlpatterns5-dev,
+               qtmultimedia5-dev,
+               libc++-dev,
+               clang,
+               qtbase5-private-dev
+Standards-Version: 3.9.5
+Homepage: http://evernus.com/
+
+Package: evernus
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Ultimate EVE Online trade tool
+ EVE Online next generation trade and market helper.

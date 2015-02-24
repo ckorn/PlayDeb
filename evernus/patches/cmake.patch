@@ -1,0 +1,17 @@
+# executable in /usr/games
+# share dir in /usr/share/games/evernus (lower case)
+Index: evernus-1.26/CMakeLists.txt
+===================================================================
+--- evernus-1.26.orig/CMakeLists.txt	2015-02-17 18:57:36.000000000 +0100
++++ evernus-1.26/CMakeLists.txt	2015-02-21 20:16:53.186956628 +0100
+@@ -798,8 +798,8 @@
+     )
+ elseif(UNIX)
+     foreach(RES ${RESOURCES})
+-        install(DIRECTORY ${RES} DESTINATION "/usr/share/Evernus")
++        install(DIRECTORY ${RES} DESTINATION "/usr/share/games/evernus")
+     endforeach()
+ 
+-    install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "/usr/bin")
++    install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "/usr/games")
+ endif()

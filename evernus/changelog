@@ -1,0 +1,8 @@
+evernus (1.26-1~getdeb1) utopic; urgency=low
+
+  * Initial release
+    Only utopic because requires a fix in libqt5xmlpatterns5-dev
+    which is backported in 5.3.1-4ubuntu3
+    https://codereview.qt-project.org/#/c/92205/
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 21 Feb 2015 19:22:28 +0100

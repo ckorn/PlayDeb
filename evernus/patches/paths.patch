@@ -1,0 +1,25 @@
+# hardcode path to database and translations
+Index: evernus-1.26/EvernusApplication.cpp
+===================================================================
+--- evernus-1.26.orig/EvernusApplication.cpp	2015-02-17 18:57:36.000000000 +0100
++++ evernus-1.26/EvernusApplication.cpp	2015-02-21 20:28:34.330935771 +0100
+@@ -1604,8 +1604,8 @@
+         removeTranslator(&mTranslator);
+         removeTranslator(&mQtTranslator);
+ 
+-        mTranslator.load(locale, "lang", "_", applicationDirPath() + UISettings::translationPath);
+-        mQtTranslator.load(locale, "qt", "_", applicationDirPath() + UISettings::translationPath);
++        mTranslator.load(locale, "lang", "_", "/usr/share/games/evernus/trans/");
++        mQtTranslator.load(locale, "qt", "_", "/usr/share/games/evernus/trans/");
+ 
+         installTranslator(&mQtTranslator);
+         installTranslator(&mTranslator);
+@@ -1618,7 +1618,7 @@
+         if (!mEveDb.isValid())
+             throw std::runtime_error{"Error crating Eve DB object!"};
+ 
+-        auto eveDbPath = applicationDirPath() + "/res/eve.db";
++        QString eveDbPath = "/usr/share/games/evernus/res/eve.db";
+         if (!QFile::exists(eveDbPath))
+         {
+             eveDbPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, applicationName() + "/res/eve.db");

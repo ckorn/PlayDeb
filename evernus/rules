@@ -1,0 +1,5 @@
+#!/usr/bin/make -f
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
+%:
+	dh $@ --parallel

@@ -1,0 +1,3 @@
+version=3
+https://bitbucket.org/krojew/evernus/downloads \
+    (?:.*/)?get/([\d\.]+)-release\.tar\.(?:bz2|gz|xz)
