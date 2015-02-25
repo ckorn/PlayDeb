@@ -1,0 +1,4 @@
+# Upstream uses the cmake tools to build, but forgot (or doesn't want) to
+# remove old config.sub and config.guess files.
+flightgear source: ancient-autotools-helper-file
+flightgear source: outdated-autotools-helper-file
