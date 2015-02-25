@@ -1,0 +1,69 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+#
+# debian/rules for simgear, by Markus Wanner
+# based on the dh7 template provided by dh_make(1)
+
+# Get upstream version for automatic generation of some packaging files
+UVER:=$(shell cat $(CURDIR)/version)
+
+# http://wiki.debian.org/Hardening#Notes_for_packages_using_CMake
+CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
+ifneq (,$(findstring $(DEB_HOST_ARCH) , amd64 i386 mipsel ia64 armel armhf arm64 ))
+
+# Note the spaces in the condition above. They stop 'mips' from
+# matching 'mipsel'
+CFLAGS:=$(shell dpkg-buildflags --get CFLAGS) $(CPPFLAGS)
+CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS) $(CPPFLAGS)
+else
+
+# Required on big-endian architectures, see bug #722115
+CFLAGS:=$(shell dpkg-buildflags --get CFLAGS) $(CPPFLAGS) -fno-strict-aliasing
+CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS) $(CPPFLAGS) -fno-strict-aliasing
+endif
+LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
+
+CMAKE_FLAGS = \
+	-DCMAKE_BUILD_TYPE="RelWithDebInfo" \
+	-DCMAKE_C_FLAGS="$(CFLAGS)" \
+	-DCMAKE_CXX_FLAGS="$(CXXFLAGS)" \
+	-DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-g -DNDEBUG" \
+	-DCMAKE_SIMGEAR_SHARED=ON \
+	-DCMAKE_SHARED_LINKER_FLAGS="$(LDFLAGS)" \
+	-DCMAKE_VERBOSE_MAKEFILE=ON \
+	-DCMAKE_INSTALL_PREFIX:PATH=/usr \
+	-DSYSTEM_EXPAT=ON \
+	-DJPEG_FACTORY=ON
+
+%:
+	dh $@ --buildsystem=cmake --builddirectory=build --parallel
+
+override_dh_auto_clean:
+#	Generate a couple of files automatically, based on the given
+#	upsteram version.
+	cat $(CURDIR)/debian/control.in \
+		| sed 's/\#\#UVER/$(UVER)/' > $(CURDIR)/debian/control
+	rm -f $(CURDIR)/debian/libsimgearcore*.shlibs $(CURDIR)/debian/libsimgearcore*.install
+	echo "libSimGearCore $(UVER) libsimgearcore$(UVER) (>= $(UVER)~)" \
+		> $(CURDIR)/debian/libsimgearcore$(UVER).shlibs
+	echo "usr/lib/*/libSimGearCore.so.*" \
+		> $(CURDIR)/debian/libsimgearcore$(UVER).install
+
+	rm -f $(CURDIR)/debian/libsimgearscene*.shlibs $(CURDIR)/debian/libsimgearscene*.install
+	echo "libSimGearScene $(UVER) libsimgearscene$(UVER) (>= $(UVER)~)" \
+		> $(CURDIR)/debian/libsimgearscene$(UVER).shlibs
+	echo "usr/lib/*/libSimGearScene.so.*" \
+		> $(CURDIR)/debian/libsimgearscene$(UVER).install
+
+	dh_auto_clean
+
+override_dh_auto_configure:
+	mkdir build
+	cd build && cmake .. $(CMAKE_FLAGS)
+
+override_dh_strip:
+	dh_strip -plibsimgearcore$(UVER) --dbg-package=libsimgearcore$(UVER)-dbg
+	dh_strip -plibsimgearscene$(UVER) --dbg-package=libsimgearscene$(UVER)-dbg
+
+get-orig-source:
+	uscan --download-current-version --verbose --rename

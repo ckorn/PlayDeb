@@ -1,0 +1,4 @@
+md5_endianness.patch
+naref_endianness.patch
+kfreebsd.patch
+use_debian_utfcpp.patch

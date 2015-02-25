@@ -1,0 +1,32 @@
+Description: Use utfcpp as provided by Debian
+ Tweak the CMakeLists.txt file of the provided copy of the UTF8-CPP library
+ to use the utfcpp package provided by Debian. Note, however, that this is
+ a headers- only library.
+Forwarded: not-needed
+Author: Markus Wanner <markus@bluegap.ch>
+Last-Update: 2015-02-12
+--- a/3rdparty/utf8/CMakeLists.txt
++++ b/3rdparty/utf8/CMakeLists.txt
+@@ -1,17 +1,13 @@
+ include (SimGearComponent)
+ 
+ set(HEADERS
+-  source/utf8.h
+-)
+-
+-set(HEADERS_utf8
+-  source/utf8/checked.h
+-  source/utf8/core.h
+-  source/utf8/unchecked.h
++  /usr/include/utf8.h
++  /usr/include/utf8/checked.h
++  /usr/include/utf8/core.h
++  /usr/include/utf8/unchecked.h
+ )
+ 
+ set(SOURCES
+ )
+ 
+ simgear_component(utf8 3rdparty/utf8 "${SOURCES}" "${HEADERS}")
+-simgear_component(utf8-internal 3rdparty/utf8/utf8 "" "${HEADERS_utf8}")
+\ No newline at end of file
