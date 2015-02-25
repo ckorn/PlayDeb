@@ -1,0 +1,304 @@
+flightgear-data (3.4.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 24 Feb 2015 19:52:37 +0100
+
+flightgear-data (3.4.0+dfsg-0~exp1) experimental; urgency=medium
+
+  [ Florent Rougon ]
+  * New upstream release 3.2 (Closes: #766251).
+  * Remove 766251.patch which is not necessary anymore.
+  * Adjust dependencies on flightgear.
+  * Drop the obsolete dummy packages fgfs-*.
+  * debian/rules: replace "find ... -exec {} \;" with
+    "find ... -execdir '{}' +" for more efficiency when calling chmod on
+    many files.
+  * Drop the obsolete debian/links file (link from
+    /usr/share/doc/fgfs-base/Docs to /usr/share/games/FlightGear/Docs).
+
+  [ Markus Wanner ]
+  * New upstream almost-release 3.4, tagged 3.4.0~rc99 to avoid confusion
+    with the eventual real 3.4.0 (Closes: #776913, #760698, #760077,
+    #760083).
+  * Drop patch translation-update-pt.diff, it got applied upstream.
+  * Drop references to Textures.high from d/rules. These directories
+    no longer exist. Add the new webgui.
+  * Update debian/copyright and debian/watch.
+  * Repack upstream's tarball: remove jquery, flot and leaflet from
+    webgui's 3rdparty. Also strip the unneeded copies of tzdata and the
+    liberation font.
+  * Add the necessary JavaScript dependencies, instead. Add patch
+    use-system-jslibs.diff to deal with the version-less jquery file
+    name of libjs-jquery.
+  * Add missing-sources for the sprintf js library.
+  * Bump S-V: no changes needed.
+  * Update the watch file.
+  * Use dh_link rather than the former dance in postinst/prerm. Drop
+    these two for flightgear-data-base.
+  * Drop another unnecessary LICENSE file.
+
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 18 Feb 2015 22:59:19 +0100
+
+flightgear-data (3.0.0-2) unstable; urgency=medium
+
+  [ Rebecca N. Palmer ]
+  * Fix type mismatch crash. Closes: #766251.
+
+  [ Markus Wanner ]
+  * Add patch translation-update-pt.diff.
+
+ -- Markus Wanner <markus@bluegap.ch>  Mon, 27 Oct 2014 10:37:02 +0100
+
+flightgear-data (3.0.0-1) unstable; urgency=low
+
+  [ Markus Wanner ]
+  * New upstream release. Closes: #659677, #666783.
+  * Adjust dependencies on flightgear.
+  * Add Replaces on fgfs-aircrafts-base as well.
+  * Make script convert.pl executable.
+  * Drop two more copies of GPL-2+; it's covered in debian/copyright, already.
+  * Correct prerm script. Closes: LP#1262244.
+  * Bump Standards-Version to 3.9.5; no changes needed.
+
+  [ Rebecca Palmer ]
+  * Symlink To Correct Fonts Package. Closes: #724584.
+
+ -- Markus Wanner <markus@bluegap.ch>  Mon, 17 Feb 2014 07:11:32 -0800
+
+flightgear-data (2.10.0-3) unstable; urgency=low
+
+  * Correct the Breaks+Replaces rule on flightgear-data-base to
+    fgfs-scenery-base. Closes: #722513.
+
+ -- Markus Wanner <markus@bluegap.ch>  Fri, 13 Sep 2013 19:57:13 +0200
+
+flightgear-data (2.10.0-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * Correct renaming of fgfs-base-aircraft to flightgear-data-aircrafts.
+    Closes: #721991.
+  * Depend on fonts-liberiation, rather than the deprecated
+    ttf-liberiation.
+
+ -- Markus Wanner <markus@bluegap.ch>  Sat, 07 Sep 2013 23:31:21 +0200
+
+flightgear-data (2.10.0-1) experimental; urgency=low
+
+  * New upstream release. (Closes: #714260).
+  * Rename data source and binary packages for clarity - now including
+    'flightgear' rather than 'fgfs'.
+  * Move all scenery data into the base data package, make it sufficient
+    to run a stripped down variant of Flight Gear.
+  * Drop browser patch - no browser settings in preferences.xml, anymore.
+  * Add a separate 'set -e' in postinst and prerm.
+  * Bump Standards-Version to 3.9.4.
+  * Revamp rules to use debhpler 7, bump compat and debhelper dependency.
+  * Drop the copy of the liberation font, depend on ttf-liberation and
+    symlink it instead (from postinst and prerm).
+  * Update copyright file. Now in DEP-5 style.
+  * Drop Windows executable files and empty directories.
+  * Adjust description of flightgear-data-base (former fgfs-base).
+    Consistently use FlightGear (w/o space) in the descriptions.
+  * Add a virtual flightgear-data-all package.
+  * Add debian/docs.
+  * control: let VCS point to new git repo in collab-maint
+  * Add myself as an uploader.
+
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 28 Aug 2013 09:37:02 +0200
+
+fgfs-base (2.6.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Updated debian/watch, the mirror is now ibiblio.org.
+  * Changed postinst to (hopefully) not fail migration if the
+    source directory is empty. Closes: #671268.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon, 16 Jul 2012 04:40:55 +0200
+
+fgfs-base (2.4.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Changed source package format to "3.0 (quilt)".
+  * Split scenery into a separate fgfs-scenery-base package.
+  * Use Breaks instead of Conflicts to keep the flightgear version
+    in sync.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat, 03 Sep 2011 21:26:40 +0200
+
+fgfs-base (2.0.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Made the pkg-fgfs-crew mailing list the official maintainer of the
+    fgfs-base package, and myself a mere uploader.
+  * Split aircraft models into a separate fgfs-aircraft-base package,
+    and object models into a separate fgfs-models-base package.
+    This reduces the size of the fgfs-base package, and facilitates
+    aircraft and scenery updates between FlightGear releases.
+    Closes: #534839.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat, 01 Jan 2011 00:58:32 +0100
+
+fgfs-base (1.9.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added Vcs-Browser and Vcs-Svn fields to debian/control.
+  * Converted debian/watch to version 3. Closes: #529107.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon, 15 Jun 2009 01:44:31 +0200
+
+fgfs-base (1.0.0-2) unstable; urgency=low
+
+  * Add Homepage field.
+  * Upgrade Standards-Version from 3.5.5 to 3.7.3.
+  * Moved the debhelper build-dependency from Build-Depends-Indep
+    to Build-Depends, as required by new Standards-Version.
+  * Use debian/compat file instead of setting DH_COMPAT in debian/rules.
+    Upgraded DH compatibility level to 5.
+  * Do not install upstream's Timezone directory.
+  * Install link to /usr/share/zoneinfo in postinst (and remove it in
+    prerm) in upstream Timezone's place. Depend on tzdata.
+    Closes: #474574.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon, 07 Apr 2008 21:28:22 +0200
+
+fgfs-base (1.0.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat, 22 Dec 2007 13:00:30 +0100
+
+fgfs-base (0.9.10-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Fri,  5 May 2006 20:57:50 -0400
+
+fgfs-base (0.9.9-1) unstable; urgency=low
+
+  * New upstream release.
+    Seems to no longer have misplaced scenery dirs. Closes: #333062.
+  * No longer depend on flightgear, since circular dependencies
+    are not allowed. Using Conflicts for keeping flightgear version
+    in sync. Added a paragraph to the package description emphasizing
+    that this package does not contain the binaries. Closes: #339931.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon,  2 Jan 2006 15:57:55 -0500
+
+fgfs-base (0.9.8-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Tue, 29 Mar 2005 21:51:05 -0500
+
+fgfs-base (0.9.6-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sun, 30 Jan 2005 18:24:02 -0500
+
+fgfs-base (0.9.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * Moved list of extra doc files from debian/docs directly
+    into debian/rules, so it's easy to change the paths used
+    every time upstream changes which directory is used for
+    unpacking the contents of their tar.gz.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon, 16 Aug 2004 21:08:15 +0200
+
+fgfs-base (0.9.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Wed,  7 Apr 2004 10:48:11 +0200
+
+fgfs-base (0.9.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Removed URL to online copy of getstart.pdf from README,
+    since it is in the package already and don't need to be
+    downloaded. Closes: #185561.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon, 10 Nov 2003 04:26:05 +0100
+
+fgfs-base (0.9.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Fri,  6 Jun 2003 02:54:57 +0200
+
+fgfs-base (0.9.1a-2) unstable; urgency=low
+
+  * Changed default browser "netscape" to "sensible-browser".
+    Closes: #162511, #185505 (fgfs does launch the local docs for me).
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Thu, 17 Apr 2003 13:00:31 +0200
+
+fgfs-base (0.9.1a-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Wed, 11 Dec 2002 14:48:55 +0100
+
+fgfs-base (0.8.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon,  9 Sep 2002 19:40:10 +0200
+
+fgfs-base (0.7.10-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat, 27 Apr 2002 19:10:21 +0200
+
+fgfs-base (0.7.9-1) unstable; urgency=low
+
+  * New upstream release.
+  * Included the HTML help files. Closes: #125710.
+  * Use Build-Depends-Indep instead of Build-Depends.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sun, 17 Feb 2002 12:50:54 +0100
+
+fgfs-base (0.7.8-1) unstable; urgency=low
+
+  * New upstream release. (Taxiways and stuff.)
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat, 14 Jul 2001 21:38:59 +0200
+
+fgfs-base (0.7.7-1) unstable; urgency=low
+
+  * New upstream release.
+  * Build-depend on debhelper v3.
+  * Standards-Version is 3.5.5.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Fri, 22 Jun 2001 15:47:40 +0200
+
+fgfs-base (0.7.6-4) unstable; urgency=low
+
+  * Moved from /usr/share/FlightGear to /usr/share/games/FlightGear.
+  * Added a Depends on flightgear, as requested by a user, even
+    though to me that'd create a dependency loop, but it seems
+    other games are able to get away with that, so...
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Fri, 30 Mar 2001 12:00:52 +0200
+
+fgfs-base (0.7.6-3) unstable; urgency=low
+
+  * This upload will determine whether I'm a third-time loser.
+  * only chmod ordinary files, not directories.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Tue, 20 Feb 2001 14:22:29 +0100
+
+fgfs-base (0.7.6-2) unstable; urgency=low
+
+  * chmod all files to 644.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon, 19 Feb 2001 20:47:32 +0100
+
+fgfs-base (0.7.6-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Tue,  6 Feb 2001 15:56:14 +0100

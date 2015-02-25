@@ -1,0 +1,5 @@
+usr/share/zoneinfo                  usr/share/games/flightgear/Timezone
+usr/share/fonts/truetype/liberation usr/share/games/flightgear/Fonts/LiberationFonts
+usr/share/javascript/jquery         usr/share/games/flightgear/webgui/3rdparty/jquery
+usr/share/javascript/jquery-flot    usr/share/games/flightgear/webgui/3rdparty/flot
+usr/share/javascript/leaflet        usr/share/games/flightgear/webgui/3rdparty/leaflet-0.7.3
