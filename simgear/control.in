@@ -1,0 +1,112 @@
+Source: simgear
+Section: libs
+Priority: extra
+XSBC-Original-Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders: Ove Kaaven <ovek@arcticnet.no>,
+ Markus Wanner <markus@bluegap.ch>
+Build-Depends: debhelper (>= 8.1.3),
+               libx11-dev,
+               libxext-dev,
+               libxi-dev,
+               libice-dev,
+               libsm-dev,
+               libxt-dev,
+               libxmu-dev,
+               zlib1g-dev,
+               libboost-dev,
+               libopenal-dev,
+               libalut-dev,
+               libexpat1-dev,
+               cmake (>= 2.6),
+               libgl1-mesa-dev | libgl-dev,
+               libglu1-mesa-dev | libglu-dev,
+               freeglut3-dev | libglut3-dev,
+               libjpeg-dev,
+               libutfcpp-dev,
+               libopenscenegraph-dev (>= 3.2.0~)
+Standards-Version: 3.9.5
+Homepage: http://www.simgear.org/
+
+Package: libsimgearcore##UVER
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Conflicts: simgear0
+Description: Simulator Construction Gear -- core library
+ SimGear is a collection of libraries useful for constructing
+ simulation and visualization applications such as FlightGear
+ or TerraGear.
+ .
+ This package contains the core library.
+
+Package: libsimgearcore##UVER-dbg
+Architecture: any
+Section: debug
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: libsimgearcore##UVER (= ${binary:Version}),
+         ${misc:Depends}
+Description: debugging symbols for libsimgearcore
+ SimGear is a collection of libraries useful for constructing
+ simulation and visualization applications such as FlightGear
+ or TerraGear.
+ .
+ This package contains the debug symbols for the core library.
+
+Package: libsimgearscene##UVER
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: libsimgearcore##UVER (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Conflicts: simgear0
+Description: Simulator Construction Gear -- scene library
+ SimGear is a collection of libraries useful for constructing
+ simulation and visualization applications such as FlightGear
+ or TerraGear.
+ .
+ This package contains the scene library.
+
+Package: libsimgearscene##UVER-dbg
+Architecture: any
+Section: debug
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: libsimgearcore##UVER (= ${binary:Version}),
+         ${misc:Depends}
+Conflicts: simgear0
+Description: debugging symbols for libsimgearscene
+ SimGear is a collection of libraries useful for constructing
+ simulation and visualization applications such as FlightGear
+ or TerraGear.
+ .
+ This package contains the debug symbols for the scene library.
+
+Package: libsimgear-dev
+Architecture: any
+Section: libdevel
+Depends: libsimgearcore##UVER (= ${binary:Version}),
+         libsimgearscene##UVER (= ${binary:Version}),
+         libopenscenegraph-dev,
+         libc6-dev,
+         ${misc:Depends}
+Replaces: simgear-dev (<< 2.10.0~)
+Breaks: simgear-dev (<< 2.10.0~)
+Description: Simulator Construction Gear -- development files
+ SimGear is a collection of libraries useful for constructing
+ simulation and visualization applications such as FlightGear
+ or TerraGear.
+ .
+ This package contains the headers and static libraries.
+
+Package: simgear-dev
+Depends: libsimgear-dev,
+         ${misc:Depends}
+Architecture: all
+Section: oldlibs
+Description: transitional dummy package
+ This is a transitional dummy package. It can safely be removed.
