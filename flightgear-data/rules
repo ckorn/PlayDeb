@@ -1,0 +1,99 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_installdirs -pflightgear-data-base      usr/share/games/flightgear
+	dh_installdirs -pflightgear-data-ai        usr/share/games/flightgear
+	dh_installdirs -pflightgear-data-aircrafts usr/share/games/flightgear
+	dh_installdirs -pflightgear-data-models    usr/share/games/flightgear
+
+# Contents of flightgear-data-base
+	cp -av \
+		$(CURDIR)/Airports \
+		$(CURDIR)/Astro \
+		$(CURDIR)/ATC \
+		$(CURDIR)/Docs \
+		$(CURDIR)/Effects \
+		$(CURDIR)/Environment \
+		$(CURDIR)/Fonts \
+		$(CURDIR)/gui \
+		$(CURDIR)/HLA \
+		$(CURDIR)/Huds \
+		$(CURDIR)/Input \
+		$(CURDIR)/Lighting \
+		$(CURDIR)/Materials \
+		$(CURDIR)/MP \
+		$(CURDIR)/Nasal \
+		$(CURDIR)/Navaids \
+		$(CURDIR)/Protocol \
+		$(CURDIR)/Scenery \
+		$(CURDIR)/Shaders \
+		$(CURDIR)/Sounds \
+		$(CURDIR)/Textures \
+		$(CURDIR)/Translations \
+		$(CURDIR)/webgui \
+		$(CURDIR)/*.xml \
+		$(CURDIR)/version \
+			debian/flightgear-data-base/usr/share/games/flightgear/
+
+# Contents of flightgear-data-ai
+	cp -av \
+		$(CURDIR)/AI \
+			debian/flightgear-data-ai/usr/share/games/flightgear
+
+# Contents of flightgear-data-aircrafts
+	cp -av \
+		$(CURDIR)/Aircraft \
+			debian/flightgear-data-aircrafts/usr/share/games/flightgear
+
+# Contents of flightgear-data-models
+	cp -av \
+		$(CURDIR)/Models \
+			debian/flightgear-data-models/usr/share/games/flightgear
+
+# Put shared aircraft parts as well as the default aircraft into
+# flightgear-data-base rather than flightgear-aircraft-data
+	dh_installdirs --package=flightgear-data-base usr/share/games/flightgear/Aircraft
+	mv -v $(CURDIR)/debian/flightgear-data-aircrafts/usr/share/games/flightgear/Aircraft/Generic \
+		$(CURDIR)/debian/flightgear-data-aircrafts/usr/share/games/flightgear/Aircraft/Instruments \
+		$(CURDIR)/debian/flightgear-data-aircrafts/usr/share/games/flightgear/Aircraft/Instruments-3d \
+		$(CURDIR)/debian/flightgear-data-aircrafts/usr/share/games/flightgear/Aircraft/c172p \
+			$(CURDIR)/debian/flightgear-data-base/usr/share/games/flightgear/Aircraft
+
+# Also move the performance db back into the base package, as
+# flightgear errs out without it.
+	dh_installdirs --package=flightgear-data-base usr/share/games/flightgear/AI/Aircraft
+	mv -v $(CURDIR)/debian/flightgear-data-ai/usr/share/games/flightgear/AI/Aircraft/performancedb.xml \
+			$(CURDIR)/debian/flightgear-data-base/usr/share/games/flightgear/AI/Aircraft/
+
+# Fix some insane permissions
+	find $(CURDIR)/debian/flightgear-data-*/usr/share/games/flightgear \
+		-type f -execdir chmod 644 '{}' +
+
+# Drop some silly Windows PE32 executable files
+	find $(CURDIR)/debian -type f -iname "*.mdl" -delete
+
+# Drop empty directories
+	find $(CURDIR)/debian -type d -empty -delete
+
+# Drop a couple of extra license files which are not needed due to
+# debian/copyright.
+	rm -f $(CURDIR)/debian/flightgear-data-aircrafts/usr/share/games/flightgear/Aircraft/Cub/copying.txt \
+		$(CURDIR)/debian/flightgear-data-aircrafts/usr/share/games/flightgear/Aircraft/bo105/COPYING \
+		$(CURDIR)/debian/flightgear-data-aircrafts/usr/share/games/flightgear/Aircraft/ASK13/COPYING \
+		$(CURDIR)/debian/flightgear-data-base/usr/share/games/flightgear/Aircraft/Generic/Human/COPYING \
+		$(CURDIR)/debian/flightgear-data-ai/usr/share/games/flightgear/AI/Aircraft/A330-MRTT/COPYING \
+		$(CURDIR)/debian/flightgear-data-base/usr/share/games/flightgear/ATC/Chatter/BR/LICENCE.txt \
+		$(CURDIR)/debian/flightgear-data-base/usr/share/games/flightgear/Aircraft/Generic/Engines/LICENSE \
+		$(CURDIR)/debian/flightgear-data-base/usr/share/games/flightgear/webgui/3rdparty/sprintf/LICENSE
+
+override_dh_installchangelogs:
+	dh_installchangelogs ChangeLog
+
+get-orig-source:
+	. debian/get-orig-source
