@@ -1,0 +1,84 @@
+Description: Correct all references to jquery.
+ The original sources provide a versioned JavaScript file, where
+ as the libjs-jquery package's file is just jquery.min.js.
+Author: Markus Wanner <markus@bluegap.ch>
+Last-Update: 2015-02-18
+Forwarded: not-needed
+
+--- a/Aircraft/SenecaII/WebPanel/Left.html
++++ b/Aircraft/SenecaII/WebPanel/Left.html
+@@ -33,7 +33,7 @@
+ </style>
+ 
+ <script type="text/javascript" charset="utf-8"
+-	src="/gui/3rdparty/jquery/jquery-1.11.1.min.js"></script>
++	src="/gui/3rdparty/jquery/jquery.min.js"></script>
+ <script type="text/javascript" charset="utf-8" src="fgfs.js"></script>
+ <script type="text/javascript" charset="utf-8" src="jquery.fganimate.js"></script>
+ <script type="text/javascript" charset="utf-8">
+--- a/Aircraft/SenecaII/WebPanel/Panel1.html
++++ b/Aircraft/SenecaII/WebPanel/Panel1.html
+@@ -76,7 +76,7 @@
+ </style>
+ 
+ <script type="text/javascript" charset="utf-8"
+-	src="/gui/3rdparty/jquery/jquery-1.11.1.min.js"></script>
++	src="/gui/3rdparty/jquery/jquery.min.js"></script>
+ <script type="text/javascript" charset="utf-8" src="/gui/lib/jquery.fganimate.js"></script>
+ <script type="text/javascript" charset="utf-8" src="/gui/lib/fgfs.js"></script>
+ <script type="text/javascript" charset="utf-8">
+--- a/webgui/examples/FGPanel-Sample.html
++++ b/webgui/examples/FGPanel-Sample.html
+@@ -33,7 +33,7 @@
+ </style>
+ 
+ <script type="text/javascript" charset="utf-8"
+-	src="/gui/3rdparty/jquery/jquery-1.11.1.min.js"></script>
++	src="/gui/3rdparty/jquery/jquery.min.js"></script>
+ <script type="text/javascript" charset="utf-8" src="/gui/lib/jquery.fganimate.js"></script>
+ <script type="text/javascript" charset="utf-8" src="/gui/lib/fgfs.js"></script>
+ </head>
+--- a/webgui/instruments/kingradio.html
++++ b/webgui/instruments/kingradio.html
+@@ -22,7 +22,7 @@
+ 		<div style="clear: both"></div>
+ 	</div>
+ 
+-	<script src="../3rdparty/jquery/jquery-1.11.1.min.js"
++	<script src="../3rdparty/jquery/jquery.min.js"
+ 		type="text/javascript"></script>
+ 	<script src="../lib/fgcommand.js" type="text/javascript"></script>
+   <script src="../lib/props.js" type="text/javascript"></script>
+--- a/webgui/map/index-2.0.html
++++ b/webgui/map/index-2.0.html
+@@ -13,7 +13,7 @@
+ <link rel="shortcut icon" sizes="200x200" href="/img/FlightGear_logo.png">
+ <link rel="icon" sizes="200x200" href="/img/FlightGear_logo.png">
+ 
+-<script src="../3rdparty/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
++<script src="../3rdparty/jquery/jquery.min.js" type="text/javascript"></script>
+ <link rel="stylesheet" href="../3rdparty/leaflet-0.7.3/leaflet.css" />
+ <script src="../3rdparty/leaflet-0.7.3/leaflet.js" type="text/javascript"></script>
+ <script src="../lib/fgfs.js" type="text/javascript"></script>
+--- a/webgui/map/index.html
++++ b/webgui/map/index.html
+@@ -1,7 +1,7 @@
+ <!doctype html>
+ <html>
+ <head>
+-<script src="../3rdparty/jquery/jquery-1.11.1.min.js"
++<script src="../3rdparty/jquery/jquery.min.js"
+ 	type="text/javascript"></script>
+ <link rel="stylesheet"
+ 	href="../3rdparty/leaflet-0.7.3/leaflet.css" />
+--- a/webgui/radio.html
++++ b/webgui/radio.html
+@@ -79,7 +79,7 @@
+       <div id="footer">
+       </div>
+     </div>
+-    <script src="3rdparty/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
++    <script src="3rdparty/jquery/jquery.min.js" type="text/javascript"></script>
+     <script src="lib/fgcommand.js" type="text/javascript"></script>
+     <script src="lib/props.js" type="text/javascript"></script>
+     <script src="radio.js" type="text/javascript"></script>
