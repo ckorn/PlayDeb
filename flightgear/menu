@@ -1,0 +1,13 @@
+?package(flightgear):needs="X11" \
+  section="Games/Simulation"\
+  title="FlightGear" \
+  longtitle="FlightGear - An Open Source Flight Simulator" \
+  icon="/usr/share/pixmaps/flightgear.xpm" \
+  command="/usr/games/fgfs"
+
+?package(flightgear):needs="X11" \
+  section="Games/Simulation"\
+  title="FGCom" \
+  longtitle="FGCom - Communication for FlightGear" \
+  icon="/usr/share/pixmaps/fgcom.xpm" \
+  command="/usr/games/fgcom"

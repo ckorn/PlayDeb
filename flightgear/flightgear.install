@@ -1,0 +1,6 @@
+usr/games
+usr/share
+icons/??x??                usr/share/icons/
+icons/*.xpm                usr/share/pixmaps/
+icons/scalable/*.svg       usr/share/icons/scalable/apps/
+debian/flightgear.desktop  usr/share/applications
