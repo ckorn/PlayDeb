@@ -1,0 +1,13 @@
+I: flightgear source: ored-build-depends-on-obsolete-package build-depends: xlibmesa-gl-dev
+I: flightgear source: ored-build-depends-on-obsolete-package build-depends: libglu1-xorg-dev
+W: flightgear: hardening-no-fortify-functions usr/games/fgviewer
+W: flightgear: binary-without-manpage usr/games/GPSsmooth
+W: flightgear: binary-without-manpage usr/games/MIDGsmooth
+W: flightgear: binary-without-manpage usr/games/UGsmooth
+W: flightgear: binary-without-manpage usr/games/fgviewer
+W: flightgear: binary-without-manpage usr/games/metar
+W: flightgear: binary-without-manpage usr/games/yasim
+I: flightgear: desktop-entry-contains-encoding-key usr/share/applications/flightgear.desktop:2 Encoding
+I: flightgear: possible-documentation-but-no-doc-base-registration
+
+bad tar?

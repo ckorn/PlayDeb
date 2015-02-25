@@ -1,0 +1,323 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: flightgear
+Upstream-Contact: Curtis L. Olson <curt@flightgear.org>
+Source: http://www.flightgear.org
+
+Files: *
+Copyright: 1997-2012 Curtis L. Olson <curt@flightgear.org>
+           1997-1999 Christian Mayer - Vader@t-online.de
+           1997 Michele F. America [micheleamerica#geocities:com]
+           1999-2003 David Megginson, david@megginson.com
+           1999-2000 Anthony K. Peden (apeden@earthlink.net)
+           2000,2003,2008 Alexander R. Perry <alex.perry@ieee.org>
+           2000,2008-2011,2013-2014 James Turner - zakalawe@mac.com
+           2001-2003,2005,2010 David C Luff - daveluff AT ntlworld.com
+           2001 Tony Peden (apeden@earthlink.net)
+           2001 Steve Baker <sbaker@link.com>
+           2001-2003 Jim Wilson - jimw@kelcomaine.com
+           2002 Cameron Moore <cameron@unbeatenpath.net>
+           2003, 2005, 2006, 2008, 2009 Melchior FRANZ - mfranz@aon.at
+           2002-2005 Erik Hofman <erik@ehofman.com>
+           2003-2006 David P. Culp (davidculp2@comcast.net)
+           2003 Alexander Kappes and David Luff
+           2003 Manuel Bessler and Stephen Lowry
+           2003 Airservices Australia
+           2004-2012 Mathias Froehlich - Mathias.Froehlich@web.de
+           2004-2009 Vivain MEAZZA - vivian.meazza@lineone.net
+           1998,2004-2007,2009-2011 Durk Talsma
+           2004 Roy Vegard Ovesen - rvovesen@tiscali.no
+           2004 Aaron Wilson, Aaron.I.Wilson@nasa.gov
+           2004 Phillip Merritt, Phillip.M.Merritt@nasa.gov
+           2005-2006 Jean-Yves Lefort - jylefort@FreeBSD.org
+           2005 Harald JOHNSEN - hjohnsen@evc.net
+           2005 Gregor Richards
+           2005 Oliver Schroeder
+           2006 Stefan Seifert <nine@detonation.org>
+           2007,2008 Tim Moore timoore@redhat.com
+           2007 Csaba Halasz
+           2008 Nicolas VIVIEN
+           2008 GARMIN LTD.
+           2009-2011,2014 Torsten Dreyer - Torsten (at) t3r (dot) de
+           2009 Patrice Poly p.polypa@gmail.com
+           2009 Tasuhiro Nishioka, tat <dot> fgmacosx <at> gmail <dot> com
+           2009 Frederic Bouvier <<fredfgfs01@free.fr>
+           2010-2013 Thorsten Brehm - brehmt (at) gmail com
+           2011 Bruce Hellstrom - http://www.celebritycc.com
+           2011-2012 Adrian Musceac
+           2012-2013 Thomas Geymayer <tomgey@gmail.com>
+           2013 Philosopher (Flightgear forums)
+           2013 Rebecca Palmer
+           2013 Clement de l'Hamaide - clemaez@hotmail.fr
+           2013 The FlightGear Community
+License: GPL-2+
+
+Files: src/FDM/UIUCModel/*
+Copyright: 2000-2003 Jeff Scott (jscott@mail.com)
+           2000-2003 Bipin Sehgal (bsehgal@uiuc.edu)
+           2000-2003 Michael Selig (m-selig@uiuc.edu)
+License: GPL-2+
+Comments: Licensing info retrieved on Jan 8, 2013 from
+ http://www.ae.illinois.edu/m-selig/apasim/Aircraft-uiuc.html
+
+Files: src/FDM/JSBSim/*
+ src/Include/version.h.in
+Copyright: 1999-2014 Jon S. Berndt (jon@jsbsim.org)
+           1999-2010 Curtis L. Olson <curt@flightgear.org>
+           1999 Anthony K. Peden (apeden@earthlink.net)
+           2003,2006 David P. Culp (daveculp2@cox.net)
+           2004 Mathias Froehlich (Mathias.Froehlich@web.de)
+           2006-2013 Anders Gidenstam (anders(at)gidenstam.org)
+           2011 Ola Røer Thorsen (ola@silentwings.no)
+           2004 (javky@email.cz)
+           2011,2013 Bertrand Coconnier
+           2010-2012 T. Kreitler (t.kreitler@web.de)
+License: LGPL-2+
+
+Files: scripts/syntax/gedit/nasal.*
+Copyright: Philosopher (Flightgear forums)
+License: LGPL-2+
+
+Files: src/Main/FGInterpolator.?xx
+ utils/fgai/AIBVHPager.?xx
+ utils/fgai/HLAAircraftClass.?xx
+ utils/fgai/HLAAircraft.?xx
+ utils/fgai/HLAAirVehicleClass.?xx
+ utils/fgai/HLAAirVehicle.?xx
+ utils/fgai/HLABaloonClass.?xx
+ utils/fgai/HLABaloon.?xx
+ utils/fgai/HLAMPAircraftClass.?xx
+ utils/fgai/HLAMPAircraft.?xx
+ utils/fgai/HLASceneObjectClass.?xx
+ utils/fgai/HLASceneObject.?xx
+ utils/fgviewer/HLACameraClass.?xx
+ utils/fgviewer/HLACamera.?xx
+ utils/fgviewer/HLADrawableClass.?xx
+ utils/fgviewer/HLADrawable.?xx
+ utils/fgviewer/HLAEyeTrackerClass.?xx
+ utils/fgviewer/HLAEyeTracker.?xx
+ utils/fgviewer/HLAMPAircraftClass.?xx
+ utils/fgviewer/HLAMPAircraft.?xx
+ utils/fgviewer/HLAOrthographicCameraClass.?xx
+ utils/fgviewer/HLAOrthographicCamera.?xx
+ utils/fgviewer/HLAPerspectiveCameraClass.?xx
+ utils/fgviewer/HLAPerspectiveCamera.?xx
+ utils/fgviewer/HLAPerspectiveViewerClass.?xx
+ utils/fgviewer/HLAPerspectiveViewer.?xx
+ utils/fgviewer/HLARendererClass.?xx
+ utils/fgviewer/HLARenderer.?xx
+ utils/fgviewer/HLASceneObjectClass.?xx
+ utils/fgviewer/HLASceneObject.?xx
+ utils/fgviewer/HLAViewClass.?xx
+ utils/fgviewer/HLAView.?xx
+ utils/fgviewer/HLAViewerClass.?xx
+ utils/fgviewer/HLAViewer.cxx
+ utils/fgviewer/HLAViewerFederate.?xx
+ utils/fgviewer/HLAViewer.hxx
+ utils/fgviewer/HLAWindowDrawableClass.?xx
+ utils/fgviewer/HLAWindowDrawable.?xx
+Copyright: 2009 - 2012  Mathias Froehlich
+ 2013  Thomas Geymayer <tomgey@gmail.com>
+License: LGPL-2+
+
+Files: CMakeModules/FindCrashRpt.cmake
+ CMakeModules/FindGit.cmake
+ CMakeModules/FindPLIB.cmake
+ CMakeModules/FindSimGear.cmake
+ CMakeModules/FindUDev.cmake
+ CMakeModules/OldGNUInstallDirs.cmake
+Copyright: 2005-2011 Kitware, Inc
+           2011 Petr Vanek <petr@scribus.info>
+           2011 Nikita Krupen'ko <krnekit@gmail.com>
+           2014 James Turner <zakalawe at mac dot com>
+License: BSD-3-clause
+
+Files: docs-mini/README.conditions
+ docs-mini/README.xmlsyntax
+ scripts/java/FGClient/src/org/flightgear/fgfsclient/FGFSConnection.java
+ scripts/perl/examples/find_elevations.pl
+ scripts/perl/examples/flyplan.pl
+ scripts/perl/examples/telnet.pl
+ src/AIModel/submodel.cxx
+ src/AIModel/submodel.hxx
+ src/FDM/JSBSim/input_output/net_fdm.hxx
+ src/Instrumentation/adf.cxx
+ src/Instrumentation/adf.hxx
+ src/Instrumentation/airspeed_indicator.cxx
+ src/Instrumentation/airspeed_indicator.hxx
+ src/Instrumentation/altimeter.cxx
+ src/Instrumentation/altimeter.hxx
+ src/Instrumentation/attitude_indicator.cxx
+ src/Instrumentation/attitude_indicator.hxx
+ src/Instrumentation/clock.cxx
+ src/Instrumentation/clock.hxx
+ src/Instrumentation/dme.cxx
+ src/Instrumentation/dme.hxx
+ src/Instrumentation/gps.cxx
+ src/Instrumentation/gps.hxx
+ src/Instrumentation/heading_indicator.cxx
+ src/Instrumentation/heading_indicator.hxx
+ src/Instrumentation/heading_indicator_dg.cxx
+ src/Instrumentation/heading_indicator_dg.hxx
+ src/Instrumentation/heading_indicator_fg.cxx
+ src/Instrumentation/heading_indicator_fg.hxx
+ src/Instrumentation/instrument_mgr.cxx
+ src/Instrumentation/instrument_mgr.hxx
+ src/Instrumentation/mag_compass.cxx
+ src/Instrumentation/mag_compass.hxx
+ src/Instrumentation/mrg.cxx
+ src/Instrumentation/mrg.hxx
+ src/Instrumentation/slip_skid_ball.cxx
+ src/Instrumentation/slip_skid_ball.hxx
+ src/Instrumentation/tacan.cxx
+ src/Instrumentation/tacan.hxx
+ src/Instrumentation/turn_indicator.cxx
+ src/Instrumentation/turn_indicator.hxx
+ src/Instrumentation/vertical_speed_indicator.cxx
+ src/Instrumentation/vertical_speed_indicator.hxx
+ src/Main/fg_props.hxx
+ src/Main/logger.cxx
+ src/Main/logger.hxx
+ src/Model/acmodel.cxx
+ src/Model/acmodel.hxx
+ src/Model/modelmgr.cxx
+ src/Model/modelmgr.hxx
+ src/Network/net_ctrls.hxx
+ src/Network/net_fdm.hxx
+ src/Network/net_fdm_mini.hxx
+ src/Network/net_gui.hxx
+ src/Systems/pitot.cxx
+ src/Systems/pitot.hxx
+ src/Systems/static.cxx
+ src/Systems/static.hxx
+ src/Systems/system_mgr.cxx
+ src/Systems/system_mgr.hxx
+ src/Systems/vacuum.cxx
+ src/Systems/vacuum.hxx
+ tests/alcinfo.cxx
+Copyright: *No copyright*
+License: public-domain
+ These files are in the Public Domain, and come with no warranty.
+
+Files: 3rdparty/iaxclient/*
+Copyright: 1991 Lance Norskog And Sundry Contributors
+ 1992-1994 Jutta Degener and Carsten Bormann
+ 1999 Chris Bagwell And Nick Bailey
+ 1999-2001 Mark Spencer and Linux Support Services
+ 1999-2004 Ross Bencina and Phil Burk
+ 2002-2004 Jean-Marc Valin 
+ 2003 HorizonLive.com
+ 2003 Epic Games
+ 2003-2004 Digium
+ 2003-2006, Horizon Wimba, Inc.
+ 2004 Cyril VELTER
+ 2004 CSIRO Australia
+ 2004 Steve Underwood
+ 2006 Panfilov Dmitry
+ 2006 Gatherworks.com
+ 2007, Wimba, Inc.
+License: BSD-3-clause
+
+Files: 3rdparty/hts_engine_API/*
+Copyright: 2001-2013  Nagoya Institute of Technology
+ 2001-2008  Tokyo Institute of Technology
+License: BSD-3-clause
+
+Files: 3rdparty/flite_hts_engine/*
+Copyright: 1999-2009  Carnegie Mellon University
+ 2005-2013  Nagoya Institute of Technology
+ 2005-2008  Tokyo Institute of Technology
+License: BSD-3-clause
+
+Files: 3rdparty/mongoose/mongoose.?
+Copyright: 2004-2013 Sergey Lyubka <valenok@gmail.com>
+ 2013-2014 Cesanta Software Limited
+License: GPL-2+
+
+Files: 3rdparty/cjson/*
+Copyright: 2009 Dave Gamble
+License: MIT
+
+Files: 3rdparty/sqlite/*
+Copyright: *No copyright*
+License: Public-domain
+
+Files: debian/*
+Copyright: 1997-1999 Joey Hess
+           2001-2012 Ove Kaaven <ovek@arcticnet.no>
+           2013 Scott Howard <showard@debian.org>
+           2013-2015 Markus Wanner <markus@bluegap.ch>
+License: GPL-2+
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License
+ as published by the Free Software Foundation; either version 2
+ of the License, or (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ A copy of the license is available on Debian systems at
+ /usr/share/common-licenses/GPL-2
+
+License: BSD-3-clause
+ Redistributions  of  source  code must retain the above copy‐
+ right notice, this list of  conditions  and  the  following  dis‐
+ claimer.
+ .
+ Redistributions in binary form must reproduce the above copy‐
+ right notice, this list of  conditions  and  the  following  dis‐
+ claimer in the documentation and/or other materials provided with
+ the distribution.
+ .
+ Neither the name of the <ORGANIZATION> nor the names  of  its
+ contributors  may  be used to endorse or promote products derived
+ from this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND  CONTRIBU‐
+ TORS  AS IS AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT
+ NOT LIMITED TO, THE IMPLIED  WARRANTIES  OF  MERCHANTABILITY  AND
+ FITNESS  FOR  A  PARTICULAR  PURPOSE  ARE DISCLAIMED. IN NO EVENT
+ SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY  DI‐
+ RECT,  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS IN‐
+ TERRUPTION) HOWEVER  CAUSED  AND  ON  ANY  THEORY  OF  LIABILITY,
+ WHETHER  IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLI‐
+ GENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF  THE  USE  OF  THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ Library General Public License for more details.
+ .
+ A copy of the license is available on Debian systems at
+ /usr/share/common-licenses/LGPL-2
+
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
