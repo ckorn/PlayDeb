@@ -1,3 +1,9 @@
+openjk (0.0.0+git20150221-1~getdeb2) trusty; urgency=medium
+
+  * Search for libs in current dir (LP: #1424384)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 28 Feb 2015 16:27:22 +0100
+
 openjk (0.0.0+git20150221-1~getdeb1) trusty; urgency=low
 
   * Initial release (LP: #1422860)
