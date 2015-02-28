@@ -1,5 +1,5 @@
 #!/bin/sh
-BASE="$(pwd)/.local/share/openjo/base/"
+BASE="$HOME/.local/share/openjo/base/"
 
 [ -d "$BASE" ] || mkdir -p "$BASE"
 

@@ -1,5 +1,5 @@
 #!/bin/sh
-BASE="$(pwd)/.local/share/openjk/base/"
+BASE="$HOME/.local/share/openjk/base/"
 
 [ -d "$BASE" ] || mkdir -p "$BASE"
 
