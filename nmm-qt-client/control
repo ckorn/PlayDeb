@@ -9,15 +9,15 @@ Build-Depends: cdbs,
                libqt4-dev-bin,
                qt4-dev-tools,
                qt4-linguist-tools,
-               netmaumau-dev (>= 0.14~),
+               netmaumau-dev (>= 0.15~),
                libespeak-dev
 Standards-Version: 3.9.5
 Homepage: http://sourceforge.net/projects/netmaumau/
 
 Package: nmm-qt-client
 Architecture: any
-Depends: libnetmaumaucommon3 (>= 0.14~),
-         libnetmaumauclient3 (>= 0.14~),
+Depends: libnetmaumaucommon3 (>= 0.15~),
+         libnetmaumauclient3 (>= 0.15~),
          ${shlibs:Depends},
          ${misc:Depends}
 Suggests: netmaumau-server
