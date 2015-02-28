@@ -1,3 +1,9 @@
+netmaumau (0.15-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 28 Feb 2015 17:32:21 +0100
+
 netmaumau (0.14-1~getdeb2) trusty; urgency=medium
 
   * New upstream version
