@@ -1,3 +1,9 @@
+nmm-qt-client (0.15-1~getdeb2) trusty; urgency=medium
+
+  * Update lib version (LP: #1426818)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 01 Mar 2015 15:20:38 +0100
+
 nmm-qt-client (0.15-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
