@@ -1,1 +1,2 @@
-/usr/lib/libnetmaumauclient.so.*
+/usr/lib/libnetmaumauclient.so.3
+/usr/lib/libnetmaumauclient.so.3.*
