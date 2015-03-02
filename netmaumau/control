@@ -46,8 +46,10 @@ Depends: libnetmaumaucommon4 (>= ${binary:Version}),
          libnetmaumauclient3 (>= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
-Description: Server for the popular card game Mau Mau - CLI client
- A simple CLI client for the NetMauMau server.
+Suggests: nmm-qt-client
+Description: Server for the popular card game Mau Mau - console client
+ A simple console client for the NetMauMau server.
+ It is intended for testing and not for efficient and joyful game play.
  
 Package: libnetmaumaucommon4
 Replaces: libnetmaumaucommon0,
