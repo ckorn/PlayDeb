@@ -1,3 +1,9 @@
+netmaumau (0.15-1~getdeb3) trusty; urgency=medium
+
+  * Merge pull request (Thanks to Heiko Schäfer)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 02 Mar 2015 20:32:19 +0100
+
 netmaumau (0.15-1~getdeb2) trusty; urgency=medium
 
   * Update lib version (LP: #1426818)
