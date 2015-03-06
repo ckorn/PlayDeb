@@ -2,15 +2,13 @@ Source: nmm-qt-client
 Section: games
 Priority: extra
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+
 Build-Depends: cdbs,
                debhelper (>= 9),
-               pkg-config,
+               libespeak-dev,
                libqt4-dev,
-               libqt4-dev-bin,
-               qt4-dev-tools,
-               qt4-linguist-tools,
                netmaumau-dev (>= 0.15~),
-               libespeak-dev
+               pkg-config
 Standards-Version: 3.9.5
 Homepage: http://sourceforge.net/projects/netmaumau/
 
@@ -22,7 +20,7 @@ Depends: libnetmaumaucommon4 (>= 0.15~),
          ${misc:Depends}
 Suggests: netmaumau-server
 Description: Qt client for NetMauMau
- Qt4 client for the NetMauMau server. It offers a complete
+ Qt client for the NetMauMau server. It offers a complete
  playable client for playing against other players or
  AI opponents over the network.
  It can start a local server if installed and supports a
