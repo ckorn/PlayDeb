@@ -5,19 +5,16 @@ Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: cdbs,
                debhelper (>= 9),
                dh-autoreconf,
-               autotools-dev,
-               pkg-config,
-               debconf,
-               libpopt-dev (>= 1.10),
                doxygen (>= 1.8.0),
                graphviz,
-               automake1.11,
                help2man,
-               vim-common,
-               libmagic-dev,
                libgsl0-dev,
+               libmagic-dev,
+               libpopt-dev (>= 1.10),
+               libsqlite3-dev (>= 3.4.2),
                lsb-release,
-               libsqlite3-dev (>= 3.4.2)
+               pkg-config,
+               vim-common
 Standards-Version: 3.9.5
 Homepage: http://sourceforge.net/projects/netmaumau/
 
