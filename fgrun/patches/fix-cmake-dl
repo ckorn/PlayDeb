@@ -1,0 +1,28 @@
+Description: tell cmake to link against libdl
+Author: Christopher Baines <cbaines8@gmail.com>
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -224,9 +224,11 @@
+     endif()
+ 
+     if ( CMAKE_DL_LIBS )
+-       list(APPEND FLTK_LIBRARIES ${CMAKE_DL_LIBS}) 
++       list(APPEND FLTK_LIBRARIES ${CMAKE_DL_LIBS})
+     endif()
+ 
++    list(APPEND FLTK_LIBRARIES ${CMAKE_DL_LIBS})
++
+     set( CMAKE_REQUIRED_INCLUDES ${FLTK_INCLUDE_DIR} )
+     set( CMAKE_REQUIRED_LIBRARIES ${FLTK_LIBRARIES} )
+     message(STATUS "Using FLTK_LIBRARIES for fgrun: ${FLTK_LIBRARIES}")
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -73,6 +73,7 @@
+     ${OPENPTY_LIBRARY}
+     ${PLATFORM_LIBS}
+     ${OPENGL_LIBRARIES}
++    ${CMAKE_DL_LIBS}
+     )
+ 
+ install(TARGETS fgrun RUNTIME DESTINATION bin)
