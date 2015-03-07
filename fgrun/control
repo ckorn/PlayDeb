@@ -1,0 +1,40 @@
+Source: fgrun
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Christopher Baines <cbaines8@gmail.com>,
+ Markus Wanner <markus@bluegap.ch>
+Build-Depends: debhelper (>= 9),
+               cmake,
+               libfltk1.3-dev,
+               fluid,
+               libsimgear-dev (>= 3.4.0~),
+               libboost-dev,
+               zlib1g-dev (>= 1:1.2.3.4.dfsg-3)
+Standards-Version: 3.9.5
+Homepage: http://fgrun.sourceforge.net/
+
+Package: fgrun
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Recommends: flightgear
+Description: graphical frontend for running FlightGear
+ FlightGear Launch Control (FGRun) is a graphical frontend for running the
+ FlightGear Flight Simulator (fgfs).
+ .
+ It includes the ability to configure your scenery paths FlightGear setup.
+ When selecting an aircraft you are able to view a complete 3d model and see
+ its development status and author. When selecting an airport or carrier to
+ launch from you can chose either by the ICAO ID (International Civilian
+ Aviation Organisation Identifier) or the airport id, with the flexibility of
+ selecting a runway and parking position also.
+ .
+ When launching the simulation FGRun includes a comprehensive configuration
+ system, allowing you to directly configure settings such as screen resolution
+ and multiplayer settings.
+ .
+ FGRun also includes support for TerraSync, a tool included with FlightGear
+ that allows you to download and use scenery while in the simulation, it can
+ also preload the scenery for your selected location as the airport selection
+ screen.
