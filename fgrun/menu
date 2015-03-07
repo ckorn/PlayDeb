@@ -1,0 +1,6 @@
+?package(fgrun):\
+ needs="X11"\
+ section="Games/Simulation"\
+ title="Flightgear Launch Control"\
+ command="fgrun"\
+ hints="Flightgear,Games"

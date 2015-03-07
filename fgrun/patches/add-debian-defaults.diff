@@ -1,0 +1,22 @@
+Description: Add default directories used by Debian
+ If not given, fgrun asks the user to provide several directories. We
+ ease this process by defaulting to the install locations used by Debian.
+Author: Markus Wanner <markus@bluegap.ch>
+
+--- a/src/main.cxx
++++ b/src/main.cxx
+@@ -37,10 +37,10 @@
+ #include "wizard.h"
+ #include "i18n.h"
+ 
+-std::string def_fg_exe = "";
+-std::string def_fg_root = "";
+-std::string def_fg_scenery = "";
+-std::string def_ts_exe = "";
++std::string def_fg_exe = "/usr/games/fgfs";
++std::string def_fg_root = "/usr/share/games/flightgear";
++std::string def_fg_scenery = "/usr/share/games/flightgear/Scenery";
++std::string def_ts_exe = "/usr/games/terrasync";
+ std::string version = "";
+ std::string def_ts_dir = "";
+ std::string def_acft_dir = "";
