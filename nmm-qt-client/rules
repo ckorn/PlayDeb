@@ -30,3 +30,4 @@ common-build-arch::
 
 clean::
 	-rm $(CURDIR)/src/*.qm
+	rm -rf $(CURDIR)/release-moc $(CURDIR)/release-rcc

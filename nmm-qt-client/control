@@ -5,7 +5,7 @@ Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: cdbs,
                debhelper (>= 9),
                libespeak-dev,
-               libqt4-dev,
+               libqt4-dev (>= 4.4.0),
                netmaumau-dev (>= 0.16~),
                pkg-config
 Standards-Version: 3.9.5
