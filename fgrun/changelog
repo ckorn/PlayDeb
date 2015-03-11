@@ -1,3 +1,9 @@
+fgrun (3.4.0-1~getdeb2) trusty; urgency=medium
+
+  * Fix debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 10 Mar 2015 18:52:11 +0100
+
 fgrun (3.4.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
