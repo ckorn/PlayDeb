@@ -1,4 +1,4 @@
 version=3
 opts="filenamemangle=s/.*fgrun-version\/([\d\.]+\S+)$/fgrun-$1/" \
 http://qa.debian.org/cgi-bin/fakeupstream.cgi?upstream=gitorious/fg/fgrun \
-.*=fgrun-version\/(\d+\.\d*[02468]\.\d[^\s/]*)\.(?:tar\.xz|txz|tar\.bz2|tbz2|tar\.gz|tgz)
+.*=fgrun-version\/(\d+\.\d*[02468]\.\d*)\.(?:tar\.xz|txz|tar\.bz2|tbz2|tar\.gz|tgz)
