@@ -1,3 +1,22 @@
+megaglest (3.11.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    - no more false clicks when commanding via mini map
+    - map editor has a more useful and powerful map height randomizer
+    - map editor saves all maps with .mgm ending by default.
+    - fixed map editor ( several linux distributions had trouble )
+    - for missing tilesets and techs optional download from mod center
+    instead of server. (bugfix)
+    - healthbar default set to "if needed"
+    - nicer tilesets as defaults
+    - improved camera startposition on game start ( main building in center
+    ).
+    - attackBoosts: Ep + Hp regeneration is shown in description
+    - MegaGlest can be build easier on MacOS ( sadly noone was willing to
+    test )
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 10 Mar 2015 18:55:10 +0100
+
 megaglest (3.11.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
