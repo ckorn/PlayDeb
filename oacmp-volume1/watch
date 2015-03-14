@@ -1,0 +1,3 @@
+version=3
+http://openarena.wikia.com/wiki/OACMP/Volume_1 \
+    (?:.*/)?oacmp-volume1-v([\d\.])\.zip

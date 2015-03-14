@@ -1,3 +1,9 @@
+oacmp-volume1 (3-1~getdeb1) trusty; urgency=medium
+
+  * Upload to PlayDeb
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 13 Mar 2015 22:32:37 +0100
+
 oacmp-volume1 (3-1) trusty; urgency=low
 
   * Initial release
