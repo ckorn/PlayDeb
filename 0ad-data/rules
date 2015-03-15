@@ -8,7 +8,7 @@ override_dh_install:
 
 override_dh_link:
 	# Remove embedded fonts and use system copies instead
-	rm -f $(CURDIR)/debian/0ad-data-common/usr/share/games/0ad/tools/fontbuilder/fonts/*.{ttf,otf}
+	rm -f $(CURDIR)/debian/0ad-data-common/usr/share/games/0ad/tools/fontbuilder/fonts/{DejaVuSansMono,Free*,texgyrepagella*}.{ttf,otf}
 	dh_link
 
 override_dh_builddeb:
