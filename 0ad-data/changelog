@@ -1,14 +1,24 @@
-0ad-data (0.0.17-1~getdeb1) trusty; urgency=medium
+0ad-data (0.0.18-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 18 Oct 2014 21:05:29 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 14 Mar 2015 16:52:34 +0100
 
-0ad-data (0.0.16-1~getdeb1) trusty; urgency=medium
+0ad-data (0.0.17-1) unstable; urgency=medium
 
-  * New upstream version
+  * New upstream release.
+  * Add dependency on fonts-freefont-ttf | ttf-freefont.
+  * Update Standards version to 3.9.6, no changes required.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 18 May 2014 00:09:08 +0200
+ -- Vincent Cheng <vcheng@debian.org>  Mon, 13 Oct 2014 18:17:13 -0700
+
+0ad-data (0.0.16-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update my email address.
+  * Update Standards version to 3.9.5, no changes required.
+
+ -- Vincent Cheng <vcheng@debian.org>  Sat, 17 May 2014 16:23:59 -0700
 
 0ad-data (0.0.15-1) unstable; urgency=medium
 
