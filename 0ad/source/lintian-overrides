@@ -7,3 +7,6 @@
 # dpkg-gencontrol doesn't provide any other substitution variables for packages
 # to depend on versioned packages built from a separate source package
 0ad source: version-substvar-for-external-package
+# Source for jQuery EasyUI can be found in 
+# source/tools/jsdebugger/js/lib/jquery.easyui/src/
+0ad source: source-is-missing source/tools/jsdebugger/js/lib/jquery.easyui/jquery.easyui.min.js
