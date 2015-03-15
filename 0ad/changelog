@@ -1,20 +1,72 @@
-0ad (0.0.17-1~getdeb1) trusty; urgency=medium
+0ad (0.0.18-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 18 Oct 2014 20:55:58 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 14 Mar 2015 16:50:05 +0100
 
-0ad (0.0.16-1~getdeb1) trusty; urgency=medium
+0ad (0.0.17-1build1.1) vivid; urgency=medium
 
-  * New upstream version
+  * Rebuild with the published binaries
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 18 May 2014 00:05:02 +0200
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 31 Oct 2014 11:45:03 +0100
 
-0ad (0.0.15+dfsg-3build1) utopic; urgency=high
+0ad (0.0.17-1build1) vivid; urgency=medium
 
-  * No change rebuild against boost1.55.
+  * No change rebuild with the new miniupnp soname
 
- -- Dimitri John Ledkov <xnox@ubuntu.com>  Sat, 26 Apr 2014 23:08:04 +0100
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 31 Oct 2014 10:38:48 +0100
+
+0ad (0.0.17-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Drop debian/patches/{support_miniupnpc_1.9.patch,fix_gcc4.9_ftbfs.patch}:
+      applied upstream.
+    - Add debian/patches/allow-build-with-root.patch.
+    - Add debian/patches/fix-bindir.patch. (LP: #1380737)
+    - Refresh remaining patches.
+  * Update Standards version to 3.9.6, no changes required.
+
+ -- Vincent Cheng <vcheng@debian.org>  Mon, 13 Oct 2014 20:01:57 -0700
+
+0ad (0.0.16-4) unstable; urgency=medium
+
+  * Add debian/patches/fix_gcc4.9_ftbfs.patch to fix FTBFS when running the
+    test suite when built with gcc 4.9. (Closes: #746822)
+
+ -- Vincent Cheng <vcheng@debian.org>  Tue, 24 Jun 2014 21:21:36 -0700
+
+0ad (0.0.16-3) unstable; urgency=medium
+
+  * Add debian/patches/support_miniupnpc_1.9.patch to fix FTBFS when built
+    with miniupnpc >= 1.9. (Closes: #751224)
+  * Tighten build-dep on libminiupnpc-dev (>= 1.6).
+
+ -- Vincent Cheng <vcheng@debian.org>  Wed, 11 Jun 2014 19:46:46 -0700
+
+0ad (0.0.16-2) unstable; urgency=medium
+
+  * Remove armel from Architecture list in debian/control.
+
+ -- Vincent Cheng <vcheng@debian.org>  Sun, 18 May 2014 19:14:10 -0700
+
+0ad (0.0.16-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Drop debian/patches/fix-kfreebsd-ftbfs.patch; applied upstream.
+  * Avoid repacking tarball by including missing jquery sources in Debian diff,
+    see debian/missing-sources/jquery-1.8.{0,3}.js. Alternative way of fixing
+    #735349.
+    - Update debian/copyright to include missing license entries for the
+      various javascript libraries contained in the source tarball.
+    - Revert changes made to debian/control in 0ad/0.0.15+dfsg-3, i.e.:
+      revert: debian/control: Hardcode versions of 0ad-data{,-common} to
+              depend on to workaround the fact that 0.0.15+dfsg is strictly
+              greater than 0.0.15.
+  * Build-dep on libgloox-dev (>= 1.0.9) to ensure that 0ad is built with
+    newer enough gloox to avoid lobby connectivity issues.
+  * Add new build-deps: libicu-dev, libmozjs-24-dev.
+
+ -- Vincent Cheng <vcheng@debian.org>  Sat, 17 May 2014 16:30:39 -0700
 
 0ad (0.0.15+dfsg-3) unstable; urgency=medium
 

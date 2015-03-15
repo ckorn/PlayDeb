@@ -18,14 +18,13 @@ override_dh_auto_clean:
 	dh_auto_clean
 
 override_dh_auto_build:
-	build/workspaces/update-workspaces.sh \
+	SHELL=/bin/sh build/workspaces/update-workspaces.sh \
 		--bindir=/usr/games \
 		--libdir=/usr/lib/games/0ad \
 		--datadir=/usr/share/games/0ad \
-		--with-system-enet \
 		--with-system-nvtt \
-		--with-system-miniupnpc \
-		--with-system-mozjs24
+		--with-system-miniupnpc
+#		--with-system-mozjs31
 	
 	$(MAKE) config=release verbose=1 -C build/workspaces/gcc
 
@@ -33,8 +32,7 @@ override_dh_auto_test:
 	# Note: Avoid running tests from root dir of build, otherwise certain
 	# tests (i.e. in testsuite MeshManager) may not work as intended and
 	# create spurious directories above root dir (../data/mods).
-	# do not run tests because passing -libdir is broken.
-	#cd binaries/system/ && LD_LIBRARY_PATH=. ./test -libdir .
+	cd binaries/system/ && LD_LIBRARY_PATH=. ./test -libdir .
 
 override_dh_auto_install:
 	install -Dm 0755 build/resources/0ad.sh $(CURDIR)/debian/tmp/usr/games/0ad
@@ -45,10 +43,3 @@ override_dh_strip:
 
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
-
-get-orig-source:
-	uscan --download-current-version
-	tar xJf ../0ad_0.0.15.orig.tar.xz
-	rm -rf source/tools/jsdebugger # see #735349
-	mv 0ad-0.0.15-alpha 0ad-0.0.15+dfsg
-	tar cJf ../0ad_0.0.15+dfsg.orig.tar.xz 0ad-0.0.15+dfsg/
