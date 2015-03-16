@@ -11,7 +11,7 @@ Files: debian/0ad.6
 Copyright: 2010 Fabio Pedretti <fabio.ped@libero.it>
 License: GPL-2.0+
 
-Files: source/*
+Files: *
 Copyright: 2010 Wildfire Games
 License: GPL-2.0+
 
@@ -31,6 +31,21 @@ License: Expat
 Files: source/tools/fontbuilder2/Packer.py
 Copyright: 2002-2009 Nuclex Development Labs
 License: CPL
+
+Files: source/tools/jsdebugger/js/lib/ace/*
+Copyright: 2010 Ajax.org B.V.
+License: BSD-3-clause
+
+Files: source/tools/jsdebugger/js/lib/jquery.easyui/*
+Copyright: 2009-2014 jQuery EasyUI Team <jeasyui@gmail.com>
+License: GPL-3.0
+
+Files: source/tools/jsdebugger/js/lib/jquery-1.8.3.min.js
+       source/tools/jsdebugger/js/lib/jquery.easyui/jquery-1.8.0.min.js
+       debian/missing-sources/jquery-1.8.3.js
+       debian/missing-sources/jquery-1.8.0.js
+Copyright: 2012-2014 jQuery Foundation and other contributors
+License: Expat
 
 Files: build/premake/*
 Copyright: 2002-2009 Jason Perkins and the Premake project
@@ -432,6 +447,22 @@ License: GPL-2.0+
  .
  On Debian systems, the complete text of the GNU General
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+License: GPL-3.0
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License, version 3 of
+ the License, as published by the Free Software Foundation.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
 
 License: LGPL-2.1
  This library is free software; you can redistribute it and/or
