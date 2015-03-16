@@ -1,0 +1,7 @@
+?package(nmm-qt-client): \
+	needs="X11" \
+	section="Games/Card" \
+	title="NetMauMau Qt Client" \
+	hints="Qt" \
+	command="/usr/games/nmm-qt-client" \
+	icon="/usr/share/pixmaps/nmm_qt_client.xpm"

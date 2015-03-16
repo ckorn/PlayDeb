@@ -6,15 +6,15 @@ Build-Depends: cdbs,
                debhelper (>= 9),
                libespeak-dev,
                libqt4-dev (>= 4.4.0),
-               netmaumau-dev (>= 0.16~),
+               netmaumau-dev (>= 0.17.0~),
                pkg-config
 Standards-Version: 3.9.5
 Homepage: http://sourceforge.net/projects/netmaumau/
 
 Package: nmm-qt-client
 Architecture: any
-Depends: libnetmaumaucommon4 (>= 0.16~),
-         libnetmaumauclient3 (>= 0.16~),
+Depends: libnetmaumaucommon4 (>= 0.17.0~),
+         libnetmaumauclient3 (>= 0.17.0~),
          ${shlibs:Depends},
          ${misc:Depends}
 Suggests: netmaumau-server
