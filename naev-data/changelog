@@ -1,3 +1,9 @@
+naev-data (0.6.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 17 Mar 2015 19:05:08 +0100
+
 naev-data (0.5.3-1~getdeb1) lucid; urgency=low
 
   * New upstream version
