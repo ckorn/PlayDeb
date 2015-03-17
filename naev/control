@@ -10,11 +10,12 @@ Build-Depends: debhelper (>= 9),
                libreadline-gplv2-dev,
                wget,
                libvorbis-dev (>= 1.2.3),
-               libsdl1.2-dev,
+               libsdl2-dev,
                libxml2-dev,
-               libsdl-mixer1.2-dev,
-               libsdl-image1.2-dev,
-               libfreetype6-dev
+               libsdl2-mixer-dev,
+               libsdl2-image-dev,
+               libfreetype6-dev,
+               libzip-dev
 Standards-Version: 3.9.5
 Homepage: http://naev.org
 
@@ -22,7 +23,7 @@ Package: naev
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         naev-data (>= 0.5.3)
+         naev-data (>= 0.6.0)
 Description: 2D space trading combat game
  NAEV is a 2D space trading and combat game, in a similar
  vein to Escape Velocity. 

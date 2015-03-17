@@ -1,3 +1,9 @@
+naev (0.6.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 17 Mar 2015 18:54:46 +0100
+
 naev (0.5.3-1~getdeb7~trusty) trusty; urgency=low
 
   * Rebuild for trusty
