@@ -1,3 +1,19 @@
+manaplus (1:1.5.3.14-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: skills display is some cases.
+    fix: donw request warp names (hercules).
+    fix: show chat message from hidden player (hercules).
+    fix: dont try enable guild bot on servers with native guilds.
+    fix: hair color after reordering sprites (hercules).
+    fix: dont read servers list url from configuration.
+    fix: show pvp/gvg map modes (hercules).
+    add: item links with empty item name.
+    add: ride support (hercules).
+    add: logging unimplimented packets.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 15 Mar 2015 19:33:23 +0100
+
 manaplus (1:1.5.2.28-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
