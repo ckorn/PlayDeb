@@ -1,2 +1,3 @@
 /etc/xinetd.d/netmaumau
 /usr/share/netmaumau/*.PNG
+/usr/share/netmaumau/*.lua
