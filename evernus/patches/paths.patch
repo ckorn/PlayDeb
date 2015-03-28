@@ -1,9 +1,9 @@
 # hardcode path to database and translations
-Index: evernus-1.26/EvernusApplication.cpp
+Index: evernus-1.28/EvernusApplication.cpp
 ===================================================================
---- evernus-1.26.orig/EvernusApplication.cpp	2015-02-17 18:57:36.000000000 +0100
-+++ evernus-1.26/EvernusApplication.cpp	2015-02-21 20:28:34.330935771 +0100
-@@ -1604,8 +1604,8 @@
+--- evernus-1.28.orig/EvernusApplication.cpp	2015-03-25 21:17:38.035293324 +0100
++++ evernus-1.28/EvernusApplication.cpp	2015-03-25 21:17:38.031293324 +0100
+@@ -1609,8 +1609,8 @@
          removeTranslator(&mTranslator);
          removeTranslator(&mQtTranslator);
  
@@ -14,7 +14,7 @@ Index: evernus-1.26/EvernusApplication.cpp
  
          installTranslator(&mQtTranslator);
          installTranslator(&mTranslator);
-@@ -1618,7 +1618,7 @@
+@@ -1623,7 +1623,7 @@
          if (!mEveDb.isValid())
              throw std::runtime_error{"Error crating Eve DB object!"};
  
