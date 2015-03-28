@@ -1,0 +1,7 @@
+# These license files are kept in the data tree because:
+# * They are minimal in comparison to the rest of the content
+# * There is no good distinction between contents of files like readme.txt
+#   mapname.txt and license.txt, and some are useful
+# * This maintains the data tree idential to upstream
+redeclipse-data: extra-license-file usr/share/games/redeclipse/data/crosshairs/license.txt
+redeclipse-data: extra-license-file usr/share/games/redeclipse/data/models/actors/turret/license.txt

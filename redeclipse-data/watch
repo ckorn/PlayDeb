@@ -1,0 +1,3 @@
+version=3
+https://github.com/red-eclipse/data/releases \
+    (?:.*/)?v([\d\.]+)\.tar\.gz
