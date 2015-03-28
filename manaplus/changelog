@@ -1,3 +1,22 @@
+manaplus (1:1.5.3.28-1~getdeb2~utopic) utopic; urgency=medium
+
+  * New upstream version
+    fix: crash in setting gm flag (hercules).
+    fix: timeout disconnect from login server (hercules).
+    fix: crash if switch character with opened storage window.
+    fix: same servers update in servers list with different server type.
+    fix: monster context menu item "remove from attack list".
+    fix: chat tabs visibility in some cases.
+    fix: memory leak in map loading.
+    add: chat command to show equpped hat in chat. Command /hat.
+    add: show exp and job based on special packet (hercules).
+    add: show in pet and homunculus popup intimacy and hungry numbers
+    (hercules)
+    add: impliment skill deletetion (hercules).
+    add: for each skill own levelup and deletion particle effect.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 28 Mar 2015 18:28:06 +0100
+
 manaplus (1:1.5.3.14-1~getdeb2~utopic) utopic; urgency=medium
 
   * New upstream version
