@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+#override_dh_auto_build:
+#	cd fonts/ && \
+#		cube2font /usr/share/fonts/truetype/play/Play-Bold.ttf \
+#			play 4 15 1 1 54 54 512 512 0 0 fonts/
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
+
+VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
+DIR=redeclipse-data-$(VER).orig
+UTAR=redeclipse-data_$(VER).orig.tar.gz
+TAR=redeclipse-data_$(VER).orig.tar.xz
+get-orig-source:
+	uscan --noconf --force-download --download-current-version --destdir=.
+	rm -rf $(DIR)
+	tar -xf $(UTAR)
+	rm -f $(UTAR)
+	mv data-$(VER)/ $(DIR)
+	rm -f $(DIR)/data/fonts/play*
+	rm -f $(DIR)/data/fonts/*.ttf
+	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
+		-f $(TAR) $(DIR)
+	rm -rf $(DIR)
