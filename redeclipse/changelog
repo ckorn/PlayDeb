@@ -1,0 +1,100 @@
+redeclipse (1.5.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version (LP: #1436085)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 27 Mar 2015 23:43:02 +0100
+
+redeclipse (1.4-6) unstable; urgency=medium
+
+  [ Markus Koschany ]
+  * Move Red Eclipse to the main archive since it fully complies with the DFSG.
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 09 Aug 2014 18:32:43 +0200
+
+redeclipse (1.4-5) unstable; urgency=low
+
+  * Standards-Version 3.9.5 (no changes)
+  * Fix FTBFS on hurd-i386: missing link to rt (Closes: #712894)
+    - Add debian/patches/gnu-link-rt.patch
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 17 Dec 2013 18:26:55 +0100
+
+redeclipse (1.4-4) unstable; urgency=low
+
+  * Fix FTBFS due to d/control typo lib{lg->gl}1-mesa-dev (Closes: #707028)
+  * Standards-Version 3.9.4 (no changes)
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 11 May 2013 11:53:10 +0200
+
+redeclipse (1.4-3) unstable; urgency=low
+
+  * Upload to unstable
+  * Remove unused screenshot entries for Ubuntu
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 05 May 2013 22:04:18 +0200
+
+redeclipse (1.4-2) experimental; urgency=low
+
+  * Fix broken server-only installs
+    - Add upstream server install patch
+    - Add upstream patch enabling the server to start without data
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 25 Mar 2013 21:18:33 +0100
+
+redeclipse (1.4-1) experimental; urgency=low
+
+  * New upstream release
+  * Move server examples to /usr/share/games/doc/redeclipse/
+  * Added screenshot URL for Ubuntu
+  * Removed Enet from source package (unused)
+  * Drop dpkg Pre-Depends (upgrades from old Ubuntu versions not relevant)
+  * Include version.cfg in tarball, required for server
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Fri, 15 Feb 2013 00:30:48 +0100
+
+redeclipse (1.3.1-1) experimental; urgency=low
+
+  * New upstream release
+  * XZ compression for orig tarball
+  * No more icon conversion in build
+    - Drop ImageMagick build-dependency
+  * Dropped debian/patches/build-with-ldflags.patch, upstreamed
+  * Add unversioned lib dependency alternatives
+    - libgl1-mesa-dev | libgl-dev
+    - libsdl1.2-dev | libsdl-dev
+    - lib1g-dev | libz-dev
+  * Enable hardening build flags
+    - dh compat level 9
+    - Removed build-with-debug-symbols.patch:
+      Now handled in d/rules instead
+  * Enable paralell build
+  * debian/copyright now generated from upstream equivalent
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 01 Sep 2012 21:11:34 +0200
+
+redeclipse (1.2-3) unstable; urgency=high
+
+  * Add debian/patches/security-text-command-fix.patch
+    - File access security fix (Closes: #684143)
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 27 Feb 2012 13:53:19 +0100
+
+redeclipse (1.2-2) unstable; urgency=low
+
+  * debian/patches/backported-fix-icon-sizes.patch
+    - Fix icon size and location, cherry-picked from upstream SVN
+  * Standards-Version 3.9.3
+    - Set final copyright Format: link
+  * Instruct to use -h before -r in reportbug instrutions
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 26 Feb 2012 00:20:12 +0100
+
+redeclipse (1.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #626161)
+  * debian/patches/:
+    - windowed-by-default.patch: added
+    - build-with-debug-symbols.patch: added
+    - build-with-system-enet.patch: added
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 13 Feb 2012 14:48:41 +0100

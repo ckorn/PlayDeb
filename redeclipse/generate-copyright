@@ -1,0 +1,75 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"/..
+
+# Header
+cat <<EOF > debian/copyright-new
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Red Eclipse
+Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
+                  Lee "Eihrul" Salzman <lsalzman@gmail.com>
+Source: https://redeclipse.svn.sourceforge.net
+ All data content were removed from the source package, they are shipped in
+ redeclipse-data instead.
+ The folders src/include/ src/xcode/ src/lib/ bin/ were also removed, the
+ header files here are already shipped within other Debian packages, or are
+ unnecessary on GNU/Linux.
+License: Red-Eclipse
+EOF
+
+# "Red-Eclipse" summary license, indented
+sed -e 's/^/\ /' -e 's/^\ $/\ \./' doc/license.txt >> debian/copyright-new
+
+# Remove duplicated Format: line and insert upstream license dep5 file
+sed '/Format:.*/d' doc/all-licenses.txt >> debian/copyright-new
+
+# Remove record stating some dirs are omitted (the dirs are removed in Debian)
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: bin\//' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove all records related to data/*
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: data\//' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove all records related to game/*
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: game\//' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove record for "Akashi-Font" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: Akashi-Font$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove record for "OFL-1.1" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: OFL-1.1$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove record for "CC-BY-3.0" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC-BY-3.0$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove record for "CC-BY-SA-3.0-US" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC-BY-3.0-US$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove record for "CC-BY-SA-3.0-AU" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC-BY-SA-3.0-AU$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove record for "Expat" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: Expat$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Add marker for inserting Debian chunk
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 ~ /^License: Zlib$/ { print "INSERT_DEBIAN_HERE" } { print }' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Debian chunk
+ed -s debian/copyright-new <<EOF
+/INSERT_DEBIAN_HERE/c
+Files: debian/*
+Copyright: 2011-2013 Martin Erik Werner <martinerikwerner@gmail.com>
+License: Zlib
+.
+w
+EOF
+
