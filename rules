@@ -33,22 +33,19 @@ override_dh_builddeb:
 
 VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
 DIR=redeclipse-$(VER).orig
-UTAR=redeclipse_$(VER).orig.tar.bz2
-TAR=redeclipse_$(VER).orig.tar.xz
 get-orig-source:
-	uscan --noconf --force-download --download-current-version --destdir=.
+	uscan --noconf --rename --force-download --download-current-version --destdir=.
 	rm -rf $(DIR)
-	tar -xf $(UTAR)
-	rm -f $(UTAR)
-	mv redeclipse-$(VER)/ $(DIR)
+	tar -xf redeclipse_$(VER).orig.tar.gz
+	rm -f redeclipse_$(VER).orig.tar.gz
+	mv base-$(VER)/ $(DIR)
 	rm -rf $(DIR)/src/include/
 	rm -rf $(DIR)/src/enet/
 	rm -rf $(DIR)/src/xcode/
 	rm -rf $(DIR)/src/lib/
 	rm -rf $(DIR)/src/install/win/
 	rm -rf $(DIR)/bin/
-	find $(DIR)/data/ -not -type d -not -iname 'version.cfg' -delete
-	find $(DIR)/data/ -empty -delete
+	find $(DIR) -type f -iname '.git*' -delete
 	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
-		-f $(TAR) $(DIR)
+		-f redeclipse_$(VER).orig.tar.xz $(DIR)
 	rm -rf $(DIR)
