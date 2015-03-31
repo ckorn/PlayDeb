@@ -2,49 +2,19 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Red Eclipse
 Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
                   Lee "Eihrul" Salzman <lsalzman@gmail.com>
-Source: https://redeclipse.svn.sourceforge.net
- All sourcecode-related items have been removed from the source package, they
- are shipped in the redeclipse source package instead.
-License: Red-Eclipse
- THE RED ECLIPSE LICENSE
- .
- Red Eclipse is based on Cube Engine 2, both of which are covered under the ZLIB
- license, you may use the source code so long as you obey this license.
- .
-     Red Eclipse, Copyright (C) 2009-2013 Quinton Reeves, Lee Salzman
-     Cube Engine 2, Copyright (C) 2001-2013 Wouter van Oortmerssen, Lee Salzman,
-         Mike Dysart, Robert Pointon, and Quinton Reeves
-     http://www.opensource.org/licenses/zlib-license.php
- .
- This software is provided 'as-is', without any express or implied warranty.
- In no event will the authors be held liable for any damages arising from
- the use of this software. Permission is granted to anyone to use this
- software for any purpose, including commercial applications, and to alter
- it and redistribute it freely, subject to the following restrictions:
- .
-     * The origin of this software must not be misrepresented; you must not
-         claim that you wrote the original software. If you use this software
-         in a product, an acknowledgment in the product documentation would be
-         appreciated but is not required.
-     * Altered source versions must be plainly marked as such, and must not be
-         misrepresented as being the original software.
-     * This notice may not be removed or altered from any source distribution.
- .
- The license covers the source code, shells scripts, and related config files.
- The included enet network library is covered by an MIT-style license, which
- is however compatible with the above license for all practical purposes.
- .
- Content included in the game (maps, textures, sounds, models etc.) is NOT
- covered by this license, and may have individual copyrights and distribution
- restrictions (see individual readmes), note that all content in Red Eclipse
- is intended to be "open source" friendly.
+Source: https://github.com/red-eclipse/data
+
+License: Summary
+ Content included in the game (maps, textures, sounds, models etc.) may have
+ individual copyrights and distribution restrictions (see individual readmes),
+ note that all content in Red Eclipse is intended to be "open source" friendly.
  .
  In the absence of an explicit license, content is considered to be covered by
  the CC-BY-SA license, either version 3.0 or (at your option) any later version,
  you may use the content in Red Eclipse so long as you obey individual
  licensing criteria.
  .
-     Red Eclipse, Copyright (C) 2009-2013 Red Eclipse Team
+     Red Eclipse, Copyright (C) 2009-2015 Red Eclipse Team
      Creative Commons Attribution ShareAlike 3.0+ License (CC-BY-SA)
      See cc-by-sa.txt or http://creativecommons.org/licenses/by-sa/3.0/
  .
@@ -54,112 +24,93 @@ License: Red-Eclipse
  governed by the Red Eclipse Mark Policy (see trademark.txt).
 
 Files: *
-Copyright: 2009-2013, Red Eclipse Team
+Copyright: 2009-2015, Red Eclipse Team
 License: CC-BY-SA-3.0+
 
-Files: doc/trademark.txt
-Copyright: 2011, The Document Foundation
-           2006-2008, Software Freedom Law Center, Inc.
-           2011-2012, Red Eclipse Team
-License: CC-BY-SA-3.0
-
-Files: doc/examples/*
-Copyright: 2011-2013, Red Eclipse Team
-License: Zlib
-
-Files: doc/man/cube2font.1 doc/man/redeclipse.6.am
-       doc/man/redeclipse-server.6.am src/scripts/*
-Copyright: 2011-2012, Martin Erik "arand" Werner <martinerikwerner@gmail.com>
-License: ZLib
-
-Files: game/fps/maps/biolytic* game/fps/maps/darkness* game/fps/maps/mist*
-       game/fps/maps/nova* game/fps/maps/panic* game/fps/maps/oneiroi*
-       game/fps/maps/processing* game/fps/maps/tranquility*
-       game/fps/maps/vault*
+Files: maps/biolytic* maps/darkness* maps/mist* maps/nova*
+       maps/panic* maps/oneiroi* maps/processing*
+       maps/tranquility* maps/vault*
 Copyright: 2009-2013, Derek "favorito" Ponicki <favorito.redeclipse@gmail.com>
 License: Zlib
 
-Files: game/fps/maps/deadsimple*
+Files: maps/deadsimple*
 Copyright: Jonathan 'Wicked' Roels
            2013 Ulukai <jonathan.denil@gmail.com>
 License: CC-BY-SA-3.0
 
-Files: game/fps/maps/ares* game/fps/maps/canals* game/fps/maps/conflict*
+Files: maps/ares* maps/canals* maps/conflict* maps/enyo*
+       ulukai/*
 Copyright: 2011-2013, Ulukai <jonathan.denil@gmail.com>
 License: CC-BY-SA-3.0
 
-Files: game/fps/maps/keystone2k* game/fps/maps/livefire*
+Files: maps/keystone2k* maps/livefire*
 Copyright: 2012-2013, John_III <snaginneb@yahoo.com>
 License: CC-BY-SA-3.0
 
-Files: game/fps/maps/fourplex* game/fps/maps/pumpstation*
-       game/fps/maps/starlibido*
-Copyright: 2012-2013 D.a.M.i.E.n. <daymeenn@gmail.com>
-License: CC-BY-SA-3.0
-
-Files: game/fps/maps/neodrive* game/fps/maps/hawk*
+Files: maps/neodrive* maps/wardepot*
 Copyright: 2012-2013, Kirill "TristamK" Kolesnikov <tristamk@bk.ru>
 License: CC-BY-SA-3.0
 
-Files: game/fps/maps/cutec*
+Files: maps/cutec*
 Copyright: 2012-2013, Raiden
 License: CC-BY-SA-3.0
 
-Files: game/fps/maps/erosion* game/fps/maps/suspended*
+Files: maps/erosion* maps/suspended*
 Copyright: 2012-2013 Matt "greasepirate" Kalt
 License: CC-BY-3.0
 
-Files: game/fps/maps/battlefield*
+Files: maps/battlefield*
 Copyright: 2012-2013, Quinton Reeves, Ulukai <jonathan.denil@gmail.com>
 License: CC-BY-SA-3.0+
 
-Files: game/fps/maps/cyanide*
+Files: maps/cyanide* maps/decay* maps/octavus*
 Copyright: 2013 Ricky Thomson "unixfreak" <punkalert@gmail.com>
 License: CC-BY-SA-3.0
 
-Files: game/fps/maps/steelrat*
+Files: maps/steelrat*
 Copyright: 2012 Kirill "TristamK" Kolesnikov <tristamk@bk.ru>
            2012-2013 D.a.M.i.E.n. <daymeenn@gmail.com>
 License: CC-BY-SA-3.0
 
-Files: game/fps/maps/venus*
+Files: maps/venus*
 Copyright: 2011-2013, Red Eclipse Team
            2013, Ulukai <jonathan.denil@gmail.com>
 License: CC-BY-SA-3.0
 
-Files: game/fps/maps/bloodlust*
+Files: maps/bloodlust*
 Copyright: 2013 Joseph "ballist1c" Calabria
            2013 Matt "greaserpirate" Kalt
 License: CC-BY-SA-3.0
 
-Files: data/misc/light2*
-Copyright: 2009 Georges "TRaK" Grondin <drognin@gmail.com>
-           2013 D.a.M.i.E.n. <daymeenn@gmail.com>
-License: Expat
+Files: maps/abuse*
+Copyright: 2013, Joseph "ballist1c" Calabria
+License: CC-BY-SA-3.0
 
-Files: data/misc/starllogo*
-Copyright: 2009 Georges "TRaK" Grondin <drognin@gmail.com>
-           2012 Julia Petretta <julia.petretta@googlemail.com>
-           2013 D.a.M.i.E.n. <daymeenn@gmail.com>
-License: Expat
+Files: maps/castle* maps/rooftop*
+Copyright: 2014, Fatony
+License: CC0-1.0
 
-Files: data/jwin/*
+Files: maps/fortitude*
+Copyright: 2014, James "Max Payne" Tonjes <tonjesjames@gmail.com>
+License: CC-BY-SA-3.0
+
+Files: maps/relax* maps/tonatiuh*
+Copyright: 2013-2014, Bonifarz <bonifarz@gmx.ch>
+License: CC-BY-SA-3.0
+
+Files: jwin/*
 Copyright: JWindecker <jacobwindecker@hotmail.com>
 License: CC-BY-3.0
 
-Files: data/appleflap/*
+Files: appleflap/*
 Copyright: Jeroen "appleflap" Boukens
 License: CC-BY-SA-3.0
 
-Files: data/penguins/*
-Copyright: 2009, 2012, skiingpenguins <roy153roy153@yahoo.com>
+Files: penguins/*
+Copyright: 2009, 2012, Zachery "skiingpenguins" Slocum <freezurbern@gmail.com>
 License: CC-BY-SA-3.0
 
-Files: data/ulukai/*
-Copyright: 2013 Ulukai <jonathan.denil@gmail.com>
-License: CC-BY-SA-3.0
-
-Files: data/ulukai/redeclipse*
+Files: ulukai/redeclipse*
 Copyright: 1999 Luc Viatour
            2013 Dratz-C
            2013 Ulukai <jonathan.denil@gmail.com>
@@ -168,152 +119,243 @@ Comment:
  sources: https://commons.wikimedia.org/wiki/File:Solar_eclips_1999_4.jpg
           http://www.lucnix.be/v/Astronomy/Solar+eclipse+1999+Luc+Viatour.jpg.html
 
-Files: data/crosshairs/*
+Files: crosshairs/*
 Copyright: 2011, fluxord <fluxord> at <yahoo.com>
 License: CC-BY-SA-3.0
 
-Files: data/skyboxes/gradient* data/skyboxes/stars*
+Files: crosshairs/fed* crosshairs/trident*
+Copyright: 2014, pyccna
+License: CC-BY-SA-3.0
+
+Files: skyboxes/gradient* skyboxes/stars*
 Copyright: Quinton Reeves <qreeves@gmail.com>
 License: CC-BY-SA-3.0+
 
-Files: data/skyboxes/sunsetflat*
+Files: skyboxes/sunsetflat*
 Copyright: 2009, LedIris
 License: Zlib
 
-Files: data/skyboxes/skyhigh*
+Files: skyboxes/skyhigh*
 Copyright: Pieter Verhoeven
 License: CC-BY-SA-3.0
 
-Files: data/particles/entity.png data/particles/lightning.png
-       data/particles/hint.png data/particles/mflare.png
-       data/particles/sflare.png data/particles/spark.png
+Files: particles/entity.png particles/lightning.png
+       particles/hint.png particles/mflare.png
+       particles/sflare.png particles/spark.png
 Copyright: Quinton Reeves <qreeves@gmail.com>
 License: CC-BY-SA-3.0+
 
-Files: data/particles/bullet.png
-       data/particles/energy.png
-       data/particles/scorch.png
-       data/particles/blob.png
+Files: skyboxes/interstellar* skyboxes/miramar*
+       skyboxes/stormydays*
+Copyright: Jockum "hipshot" Skoglund <hipshot@zfight.com>
+License: CC-BY-3.0
+
+Files: elyvisions/*
+Copyright: 2012 3delyvisions
+License: CC-BY-3.0
+
+Files: mayhem/*
+Copyright: Mayhem
+License: CC-BY-SA-3.0
+
+Files: philipk/
+Copyright: Philip Klevestav <philipk@philipk.net>
+License: CC-BY-3.0
+
+Files: particles/bullet.png
+       particles/energy.png
+       particles/scorch.png
+       particles/blob.png
 Copyright: public-domain
 License: public-domain
  public-domain sources
 
-Files: data/skyboxes/interstellar* data/skyboxes/miramar*
-       data/skyboxes/stormydays*
-Copyright: Jockum "hipshot" Skoglund <hipshot@zfight.com>
-License: CC-BY-3.0
-
-Files: data/elyvisions/*
-Copyright: 2012 3delyvisions
-License: CC-BY-3.0
-
-Files: data/mayhem/*
-Copyright: Mayhem
-License: CC-BY-SA-3.0
-Comment:
- Discussion from content page at http://www.quadropolis.us/node/2696
- .
- Just a quick question, is the license for these CC-BY-SA version 3.0? (And if
- not, can they be used also under this new version?).
- .
- 2.0 and 2.5 is a bit iffy on some points, so hence why I'm asking, we're
- likely including them in the next Red Eclipse release and I'm going around
- being paternicky about licenses ;)
- .
- .
- Yes, I'm pretty sure these are CC-BY-SA version 3.0 and if not, they are now!
- :)
- .
- I would be honored to have them in the RE release.
- .
- Edit: It would seem mediafire didn't keep that file hosted and I can't find it
- on my systems either. I will try to find my source files and re-post it when I
- can.
- .
- Edit2: Done. I upgraded the licenses and used the higher quality PNG format
- which unfortunately brings the zip file over 40 Mb. I've also included the
- much smaller JPG files on this node.
-
-Files: data/philipk/
-Copyright: Philip Klevestav <philipk@philipk.net>
-License: CC-BY-3.0
-
-Files: data/particles/smoke.png data/particles/explosion.png
+Files: particles/smoke.png particles/explosion.png
 Copyright: RaZgRiZ
 License:
  Created by RaZgRiZ Made with Filter Forge II Beta 3
  Licensed publicly for everyone to use, modify and distribute as long as the
  author is credited for the original work.
 
-Files: data/particles/blood.png
-       data/particles/fire.png
+Files: particles/blood.png
+       particles/fire.png
 Copyright: FischKopF
 License: public-domain
  Created by FischKopF, source: http://www.quadropolis.us/node/2693
  Uploaded explicitly as "Public Domain", with the additional comment:
  "Feel free to edit, claim it's yours, use it in own projects"
 
-Files: data/trak/trak4/* data/trak/trak6/* data/trak/trak7/*
+Files: trak/trak4/* trak/trak6/* trak/trak7/*
 Copyright: Georges 'TRaK' Grondin <drognin@gmail.com>
 License: CC-BY-3.0
 
-Files: data/trak/trak5/*
+Files: trak/trak5/*
 Copyright: 2009, Georges 'TRaK' Grondin
            http://trak.mercenariesguild.net/
 License: Expat
 
-Files: data/models/weapons/plasma/* data/models/weapons/flamer/*
-       data/models/actors/turret/*
+Files: models/weapons/flamer/* models/actors/turret/*
 Copyright: Mike Ledger ( mikeplus[i] )
 License: CC-BY-SA-3.0-AU
 
-Files: data/models/john/*
+Files: models/weapons/plasma/* models/weapons/zapper/*
+Copyright: Unnamed <Viktor.Hahn@web.de>
+License: CC-BY-SA-3.0-AU
+
+Files: models/john/*
 Copyright: John_III
 License: CC-BY-SA-3.0
 
-Files: data/mayhem/*
+Files: mayhem/*
 Copyright: Mayhem
 License: CC-BY-SA-3.0
 
-Files: data/textures/lava.jpg
+Files: models/vanities/antenna/* models/vanities/blade/*
+       models/vanities/boots* models/vanities/chestplate/*
+       models/vanities/disc/* models/vanities/mask/*
+       models/vanities/microeye/* models/vanities/prongs/*
+       models/vanities/shoulder2/* models/vanities/shoulder3/*
+Copyright: Unnamed <Viktor.Hahn@web.de>
+License: CC-BY-SA-3.0
+
+Files: nobiax/*
+Copyright: Nobiax
+License: CC0-1.0
+
+Files: fonts/Play*.ttf
+Copyright: 2011, Jonas Hecksher, Playtypes, e-types AS (e-types.com)
+License: OFL-1.1
+Comment:
+ Reserved Font Names "Play", "Playtype", "Playtype Sans".
+
+Files: fonts/play*.png
+Copyright: 2011, Jonas Hecksher, Playtypes, e-types AS (e-types.com)
+           2011, Red Eclipse Team
+License: OFL-1.1
+Comment:
+ Reserved Font Names "Play", "Playtype", "Playtype Sans".
+ .
+ These font image grids are generated from the "Play" font via cube2font.
+
+Files: fonts/akashi*.ttf
+Copyright: 2007-2013 Ten by Twenty
+License: OFL-1.1
+Comment:
+ I, Martin Erik Werner ("arand") have had a longer email discussion with Ed
+ Merrit (the Author of Akashi) regarding the license of the Akashi font
+ available from Ten By Twenty, and the conclusion is that the Akashi font is
+ distibuted under the SIL Open Font License (OFL) 1.1
+ Copyright © 2007 - 2013 Ten by Twenty.
+ .
+ The concluding bits from the email conversation are reproduced below:
+ .
+ Message-ID: <517F948C.8040909@edmerritt.com>
+ Date: Tue, 30 Apr 2013 10:53:16 +0100
+ From: Ed Merritt <ed@edmerritt.com>
+ To: Martin Erik Werner <martinerikwerner@gmail.com>
+ Subject: Re: Fwd: akashi license
+ References: <4EB54D50.30708@gmail.com> <4EB54DF3.30105@edmerritt.com>
+           <1364335792.6577.62.camel@mas> <1367096373.20993.29.camel@mas>
+ In-Reply-To: <1367096373.20993.29.camel@mas>
+ .
+ Hi Martin,
+ I've updated the footer of the site to state that all fonts are
+ distributed under the SIL Open Font License.
+ .
+ Ed
+ .
+ .
+ .
+ On 27/04/2013 21:59, Martin Erik Werner wrote:
+ > Hi,
+ >
+ > I know I'm nagging a bit :) But could you have a look at the questions
+ > in my last email below?
+ >
+ > We'd like to know where to go with our usage of Akashi and things kind
+ > of depend on whether or not we can get a clarification of the license.
+ >
+ > Pretty please? :)
+ .
+ Message-ID: <1364335792.6577.62.camel@mas>
+ Subject: Re: Fwd: akashi license
+ From: Martin Erik Werner <martinerikwerner@gmail.com>
+ To: Ed Merritt <ed@edmerritt.com>
+ Date: Tue, 26 Mar 2013 23:09:52 +0100
+ In-Reply-To: <4EB54DF3.30105@edmerritt.com>
+ References: <4EB54D50.30708@gmail.com> <4EB54DF3.30105@edmerritt.com>
+ .
+ Hi Ed,
+ .
+ (I was using the alias "Arand Nash" with the ienorand@gmail.com email
+ previously. I've since switched over to using the birth name)
+ .
+ We are currently using your typeface "Akashi" for several pieces of
+ "word art" and in the logo of the Free and Open Source FPS game Red
+ Eclipse <http://redeclipse.net>.
+ .
+ It's an awesome font which we really like! :)
+ .
+ I previously contacted you regarding a clarification of the font
+ license, since we tend to be a bit picky with our licenses in order to
+ remain fully open source, the clarification I got at that point we
+ deemed fine.
+ .
+ However, it seems that some distributions, into which we would very much
+ like Red Eclipse to be accepted, wants a more formal license for things
+ (explicitly allowing use, modification, and redistribution with or
+ without modification).
+ .
+ (The discussion in question is on a bug report for the game package in
+ the linux distribution Fedora:
+ https://bugzilla.redhat.com/show_bug.cgi?id=895947)
+ .
+ Would it be possible to get a more formal clarification of the license
+ for the Akashi font covering those bits, or more preferably, would it be
+ possible to use the Akashi font under a well-known license like the
+ OFL-1.1, since this would make sure to avoid all the misinterpretation
+ pitfalls of a custom-written license.
+ .
+ Thanks!
+ --
+ Martin Erik Werner "arand" <martinerikwerner@gmail.com>
+ .
+ <removed previous quoted email conversation>
+
+Files: textures/lava.jpg
 Copyright: RaZgRiZ
 License:
  Created by RaZgRiZ Made with Filter Forge II Beta 3
  Licensed publicly for everyone to use, modify and distribute as long as the
  author is credited for the original work.
 
-Files: data/textures/rewards/*
+Files: textures/logo.png luckystrike/pub2* luckystrike/pub1*
 Copyright: Ed Merrit, Ten by Twenty, <http://www.tenbytwenty.com/>
            2011, Red Eclipse Team
-License: Akashi-Font and CC-BY-SA-3.0+
-Comment:
- The Akashi font is used as a basis for the word art in these images.
+License: CC-BY-SA-3.0+ and Mark-Policy
 
-Files: data/textures/logo.png data/luckystrike/pub2* data/luckystrike/pub1*
-Copyright: Ed Merrit, Ten by Twenty, <http://www.tenbytwenty.com/>
-           2011, Red Eclipse Team
-License: Akashi-Font and CC-BY-SA-3.0+ and Mark-Policy
-Comment:
- The Akashi font is used as a basis for the word art in this image.
-
-Files: data/textures/emblem.png
+Files: textures/emblem.png
 Copyright: 2011, Red Eclipse Team
 License: CC-BY-SA-3.0+ and Mark-Policy
 
-Files: data/torley/*
+Files: torley/*
 Copyright: 2007-2008, Torley Linden
            2010, Red Eclipse Team
 License: CC-BY-SA-3.0
 
-Files: data/sounds/ambience/*
+Files: unnamed/*
+Copyright: 2013-2014, Unnamed <Viktor.Hahn@web.de>
+License: CC-BY-SA-3.0
+
+Files: sounds/ambience/*
 Copyright: Quinton "quin" Reeves, Alex "blackshoe" Anguix
 License: CC-BY-SA-3.0
 
-Files: data/sounds/ambience/morph/*
+Files: sounds/ambience/morph/*
 Copyright: Slawek "Q009" Blauciak
 License: CC-BY-3.0
 
-Files: data/sounds/ambience/water.ogg
+Files: sounds/ambience/water.ogg
 Copyright: Paul Hertz ("ignotus")
            <http://www.freesound.org/usersViewSingle.php?id=13366>
 License: CC-BY-SA-3.0
@@ -324,7 +366,7 @@ Comment:
  Special permission for relicensing under CC-BY-SA-3.0 have been granted by the
  author.
 
-Files: data/sounds/ambience/wind.ogg
+Files: sounds/ambience/wind.ogg
 Copyright: Batuhan Bozkurt
            <http://www.freesound.org/usersViewSingle.php?id=60547>
 License: CC-BY-SA-3.0
@@ -335,7 +377,7 @@ Comment:
  Special permission for relicensing under CC-BY-SA-3.0 have been granted by the
  author.
 
-Files: data/sounds/ambience/hum.ogg
+Files: sounds/ambience/hum.ogg
 Copyright: 2006, Therac-25
            <http://www.freesound.org/usersViewSingle.php?id=173825>
 License: CC-BY-SA-3.0
@@ -346,7 +388,7 @@ Comment:
  Special permission for relicensing under CC-BY-SA-3.0 have been granted by the
  author.
 
-Files: data/sounds/ambience/river.ogg
+Files: sounds/ambience/river.ogg
 Copyright: 2005, Mike "Acclivity" of Freesound.org
            <http://www.freesound.org/usersViewSingle.php?id=37876>
 License: CC-BY-SA-3.0
@@ -357,7 +399,7 @@ Comment:
  Special permission for relicensing under CC-BY-SA-3.0 have been granted by the
  author.
 
-Files: data/sounds/ambience/cavedrip.ogg
+Files: sounds/ambience/cavedrip.ogg
 Copyright: 2006, Mike "Acclivity" of Freesound.org
            <http://www.freesound.org/usersViewSingle.php?id=37876>
            2006 Dob "dobroide" Roide
@@ -371,7 +413,7 @@ Comment:
  Special permission for relicensing under CC-BY-SA-3.0 have been granted by the
  authors.
 
-Files: data/sounds/ambience/distant_cars.ogg
+Files: sounds/ambience/distant_cars.ogg
 Copyright: 2006, fresco
            <http://www.freesound.org/usersViewSingle.php?id=26333>
            2007 WIM
@@ -386,7 +428,7 @@ Comment:
  Special permission for relicensing under CC-BY-3.0 have been granted by the
  authors.
 
-Files: data/sounds/ambience/nightcrickets.ogg data/sounds/ambience/creek.ogg
+Files: sounds/ambience/nightcrickets.ogg sounds/ambience/creek.ogg
 Copyright: 2005, Richard "RHumphries" Humphries
            <http://www.freesound.org/usersViewSingle.php?id=1112>
 License: CC-BY-SA-3.0
@@ -398,7 +440,7 @@ Comment:
  Special permission for relicensing under CC-BY-SA-3.0 have been granted by the
  author.
 
-Files: data/sounds/ambience/waterfall*.ogg
+Files: sounds/ambience/waterfall*.ogg
 Copyright: 2007, Tim "Corsica_S" Kahn
            <http://www.freesound.org/usersViewSingle.php?id=7037>
 License: CC-BY-SA-3.0
@@ -411,7 +453,7 @@ Comment:
  Special permission for relicensing under CC-BY-SA-3.0 have been granted by the
  author.
 
-Files: data/sounds/ambience/forest*.ogg data/sounds/ambience/cycadas.ogg
+Files: sounds/ambience/forest*.ogg sounds/ambience/cycadas.ogg
 Copyright: 2005, 2007, Dob "dobroide" Roide
            <http://www.freesound.org/usersViewSingle.php?id=8043>
 License: CC-BY-3.0
@@ -420,9 +462,20 @@ Comment:
  http://www.freesound.org/samplesViewSingle.php?id=34580
  http://www.freesound.org/samplesViewSingle.php?id=7292
 
-Files: data/sounds/ambience/vapour.ogg
+Files: sounds/ambience/vapour.ogg
 Copyright: 2013 D.a.M.i.E.n. <daymeenn@gmail.com>
 License: CC-BY-SA-3.0
+
+Files: sounds/music/track_01.ogg to sounds/music/track_12.ogg
+Copyright: Copyright Derek "JoJo" Stegall
+License: CC-BY-SA-3.0
+
+Files: sounds/music/track_13.ogg maps/tonatiuh.ogg
+Copyright: Copyright yd
+License: CC0-1.0
+Comment:
+ This track originates from:
+ http://opengameart.org/content/galactic-temple
 
 Files: debian/*
 Copyright: 2011-2013 Martin Erik Werner <martinerikwerner@gmail.com>
@@ -467,83 +520,93 @@ License: Expat
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  DEALINGS IN THE SOFTWARE.
 
-License: Akashi-Font
- Basically, you can use the fonts for whatever you like, the only
- restriction being that:
- If the font is a "paid" one, rather than a free one, you should not make
- the .ttf file available to the public.
+License: OFL-1.1
+ -----------------------------------------------------------
+ SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+ -----------------------------------------------------------
  .
- Other than that I'm happy for you use the font however you like.
+ PREAMBLE
+ The goals of the Open Font License (OFL) are to stimulate worldwide
+ development of collaborative font projects, to support the font creation
+ efforts of academic and linguistic communities, and to provide a free and
+ open framework in which fonts may be shared and improved in partnership
+ with others.
  .
- Note:
- The "akashi" typeface (available from http://www.tenbytwenty.com/akashi.php) is
- made available for free by the author.
+ The OFL allows the licensed fonts to be used, studied, modified and
+ redistributed freely as long as they are not sold by themselves. The
+ fonts, including any derivative works, can be bundled, embedded,
+ redistributed and/or sold with any software provided that any reserved
+ names are not used by derivative works. The fonts and derivatives,
+ however, cannot be released under any other type of license. The
+ requirement for fonts to remain under this license does not apply
+ to any document created using the fonts or their derivatives.
  .
- Background:
- I ("Arand") contacted Ed Merrit (of Ten by Twenty) via email, requesting a
- clarification for the font license, here is a copy of the response:
+ DEFINITIONS
+ "Font Software" refers to the set of files released by the Copyright
+ Holder(s) under this license and clearly marked as such. This may
+ include source files, build scripts and documentation.
  .
- Date: Sat, 05 Nov 2011 14:53:39 +0000
- From: Ed Merritt <ed@edmerritt.com>
- To: Arand Nash <ienorand@gmail.com>
- Subject: Re: Fwd: akashi license
+ "Reserved Font Name" refers to any names specified as such after the
+ copyright statement(s).
  .
- Hi Arand,
+ "Original Version" refers to the collection of Font Software components as
+ distributed by the Copyright Holder(s).
  .
- Basically, you can use the fonts for whatever you like, the only
- restriction being that:
- If the font is a "paid" one, rather than a free one, you should not make
- the .ttf file available to the public.
+ "Modified Version" refers to any derivative made by adding to, deleting,
+ or substituting -- in part or in whole -- any of the components of the
+ Original Version, by changing formats or by porting the Font Software to a
+ new environment.
  .
- Other than that I'm happy for you use the font however you like.
+ "Author" refers to any designer, engineer, programmer, technical
+ writer or other person who contributed to the Font Software.
  .
- Ed
+ PERMISSION & CONDITIONS
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of the Font Software, to use, study, copy, merge, embed, modify,
+ redistribute, and sell modified and unmodified copies of the Font
+ Software, subject to the following conditions:
  .
+ 1) Neither the Font Software nor any of its individual components,
+ in Original or Modified Versions, may be sold by itself.
  .
+ 2) Original or Modified Versions of the Font Software may be bundled,
+ redistributed and/or sold with any software, provided that each copy
+ contains the above copyright notice and this license. These can be
+ included either as stand-alone text files, human-readable headers or
+ in the appropriate machine-readable metadata fields within text or
+ binary files as long as those fields can be easily viewed by the user.
  .
+ 3) No Modified Version of the Font Software may use the Reserved Font
+ Name(s) unless explicit written permission is granted by the corresponding
+ Copyright Holder. This restriction only applies to the primary font name as
+ presented to the users.
  .
- On 05/11/2011 14:50, Arand Nash wrote:
- > Hello, sorry, but would you have time to have a look at these questions?
- >
- > I noticed that you've released the typeface "Jura" under a SIL license,
- > would it be at all feasible, to use the Akashi font under a similar license?
- > I completely understand if this is not possible.
- >
- > I'm still looking for an answer regarding the current license, though:
- >
- > -------- Original Message --------
- > Subject: akashi license
- > Date: Fri, 14 Oct 2011 01:59:44 +0200
- > From: Arand Nash<ienorand@gmail.com>
- > To: ed@edmerritt.com
- >
- > Hello Ed Merrit,
- >
- > I've got a few questions about the license, set for the Ten by twenty
- > products, in particular for the akashi.ttf font:
- > ###
- > By downloading any product from Ten by Twenty, you agree to the following:
- >
- > -All products remain property of Ten by Twenty.
- > -Products may be used by the licensee in any personal or commercial
- > projects (royalty-free).
- > -Products may not be resold or redistributed.
- > ###
- > It is somewhat unclear in what way it may, and may not be used.
- >
- > What is meant by the "used by licensee" wording in this context?
- > Does it mean strictly personal, "off-line" use only?
- > Or displaying (publicly) of the font only (with no access by viewer to
- > .ttf file, somehow)?
- >
- > The "may not be (...) redistributed" seems to imply that one may only
- > receive the .ttf file from your site and that any other propagation of
- > the font must be in some hardcoded-into-image format?
- >
- > Is my interpretation of the main intent of your license correct?
- >
- > --
- > Martin Werner ("arand")
+ 4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+ Software shall not be used to promote, endorse or advertise any
+ Modified Version, except to acknowledge the contribution(s) of the
+ Copyright Holder(s) and the Author(s) or with their explicit written
+ permission.
+ .
+ 5) The Font Software, modified or unmodified, in part or in whole,
+ must be distributed entirely under this license, and must not be
+ distributed under any other license. The requirement for fonts to
+ remain under this license does not apply to any document created
+ using the Font Software.
+ .
+ TERMINATION
+ This license becomes null and void if any of the above conditions are
+ not met.
+ .
+ DISCLAIMER
+ THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+ OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+ COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+ DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 License: CC-BY-3.0
  THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
@@ -1517,7 +1580,7 @@ License: Mark-Policy
  2. Modify this policy to preserve the rights of Red Eclipse, the public, the
     community, and the users.
     The latest version of the Red Eclipse Mark Policy should be available at
-    <http://www.redeclipse.net/wiki/Trademark_Policy>
+    <http://redeclipse.net/wiki/Trademark_Policy>
  .
  3. Grant exceptions to this policy, of any kind and for any reason whatsoever,
     other clauses notwithstanding.
