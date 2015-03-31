@@ -1,2 +1,3 @@
 windowed-by-default.patch
 build-with-system-enet.patch
+system-install-Fix-binary-name.patch
