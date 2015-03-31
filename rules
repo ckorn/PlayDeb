@@ -13,19 +13,13 @@ override_dh_builddeb:
 
 VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
 DIR=redeclipse-data-$(VER).orig
-UTAR=redeclipse-data_$(VER).orig.tar.bz2
-TAR=redeclipse-data_$(VER).orig.tar.xz
 get-orig-source:
-	uscan --noconf --force-download --download-current-version --destdir=.
+	uscan --noconf --rename --force-download --download-current-version \
+		--destdir=.
 	rm -rf $(DIR)
-	tar -xf $(UTAR)
-	rm -f $(UTAR)
-	mv redeclipse-$(VER)/ $(DIR)
-	rm -rf $(DIR)/bin/
-	cd $(DIR) && rm -f redeclipse.sh redeclipse_server.sh
-	rm -f $(DIR)/data/fonts/play*
-	rm -f $(DIR)/data/fonts/*.ttf
-	rm -rf $(DIR)/src/
+	tar -xf redeclipse-data_$(VER).orig.tar.gz
+	rm -f redeclipse-data_$(VER).orig.tar.gz
+	mv data-$(VER)/ $(DIR)
 	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
-		-f $(TAR) $(DIR)
+		-f redeclipse-data_$(VER).orig.tar.xz $(DIR)
 	rm -rf $(DIR)
