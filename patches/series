@@ -1,5 +1,2 @@
 windowed-by-default.patch
 build-with-system-enet.patch
-desktop-file-don-t-quote-icon-app-name.patch
-don-t-check-for-keymap-when-using-standalone.patch
-gnu-link-rt.patch

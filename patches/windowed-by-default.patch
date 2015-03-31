@@ -7,14 +7,16 @@ Forwarded: not-needed
 Author: Martin Erik Werner <martinerikwerner@gmail.com>
 Last-Update: 2011-12-13
 
---- a/src/engine/main.cpp
-+++ b/src/engine/main.cpp
-@@ -258,7 +258,7 @@
+Index: redeclipse-debian/src/engine/main.cpp
+===================================================================
+--- redeclipse-debian.orig/src/engine/main.cpp
++++ redeclipse-debian/src/engine/main.cpp
+@@ -247,7 +247,7 @@ void setfullscreen(bool enable, bool for
  #endif
  }
  
--VARF(0, fullscreen, 0, 1, 1, setfullscreen(fullscreen!=0));
-+VARF(0, fullscreen, 0, 0, 1, setfullscreen(fullscreen!=0));
+-VARF(0, fullscreen, 0, 1, 1, if(!(identflags&IDF_WORLD)) setfullscreen(fullscreen!=0));
++VARF(0, fullscreen, 0, 0, 1, if(!(identflags&IDF_WORLD)) setfullscreen(fullscreen!=0));
  
  void screenres(int *w, int *h)
  {
