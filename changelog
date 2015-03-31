@@ -6,6 +6,7 @@ redeclipse (1.5.0-1) UNRELEASED; urgency=medium
     - Delete gnu-link-rt.patch
   * Add (upstream) patch to fix binary name in install
     - Add system-install-Fix-binary-name.patch
+  * Bump standards-version to 3.9.6, no changes
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 29 Mar 2015 16:02:22 +0200
 
