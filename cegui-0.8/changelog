@@ -1,3 +1,9 @@
+cegui-0.8 (0.8.4-1~getdeb3~trusty) trusty; urgency=medium
+
+  * Rebuild with ogre 1.9
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 29 Mar 2015 22:11:26 +0200
+
 cegui-0.8 (0.8.4-1~getdeb2~trusty) trusty; urgency=medium
 
   * Rebuild for trusty
