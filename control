@@ -21,18 +21,14 @@ Architecture: any
 Depends: redeclipse-data (>= ${source:Upstream-Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Description: multiplayer FPS game based on Cube2
- A single-player and multi-player first-person ego-shooter, built on Cube
- Engine 2, which lends itself toward a balanced gameplay, completely at the
- control of map makers, while maintaining a general theme of agility in a
- variety of environments.
+Description: free, casual arena shooter
+ A fun-filled, casual, first person arena shooter, built as a total conversion
+ of Cube Engine 2, which lends itself toward a balanced gameplay, with a
+ general theme of agility in a variety of environments.
  .
- Features:
-  * Balanced gameplay, with a general theme of agility in a variety of
-    environments
-  * Parkour, impulse boosts, dashing, sliding, and other tricks
-  * Favourite gamemodes with tons of mutators and variables
-  * Available for Windows, Linux/BSD and Mac OSX
+  * Cross-platform multiplayer
+  * Features parkour, impulse boosts, dashing, and other tricks
+  * Favourite gamemodes with an array of mutators and variables
   * Builtin editor lets you create your own maps cooperatively online
 
 Package: redeclipse-dbg
@@ -68,5 +64,5 @@ Priority: extra
 Architecture: all
 Depends: ${misc:Depends}
 Description: common config files for the Red Eclipse FPS game
- This package contains the common version.cfg file for the server and client of
- the Red Eclipse FPS game.
+ This package contains the common config files for the server and client of the
+ Red Eclipse FPS game.
