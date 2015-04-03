@@ -10,6 +10,13 @@ redeclipse (1.5.0-1) UNRELEASED; urgency=medium
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 29 Mar 2015 16:02:22 +0200
 
+redeclipse (1.4-6) unstable; urgency=medium
+
+  [ Markus Koschany ]
+  * Move Red Eclipse to the main archive since it fully complies with the DFSG.
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 09 Aug 2014 18:32:43 +0200
+
 redeclipse (1.4-5) unstable; urgency=low
 
   * Standards-Version 3.9.5 (no changes)
