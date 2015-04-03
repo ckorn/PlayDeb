@@ -59,3 +59,12 @@ Depends: redeclipse-server (= ${binary:Version}), ${misc:Depends}
 Description: debug symbols for the Red Eclipse dedicated server
  This package contains the debugging symbols for the dedicated server of the
  Red Eclipse FPS game.
+
+Package: redeclipse-common
+Section: games
+Priority: extra
+Architecture: all
+Depends: ${misc:Depends}
+Description: common config files for the Red Eclipse FPS game
+ This package contains the common version.cfg file for the server and client of
+ the Red Eclipse FPS game.

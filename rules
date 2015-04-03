@@ -26,7 +26,12 @@ override_dh_auto_install:
 		ICON="" \
 		prefix=/usr games=/games gamesbin=/games \
 		system-install-client system-install-server \
-		system-install-docs system-install-menus
+		system-install-common system-install-docs system-install-menus
+
+override_dh_install:
+	dh_install -predeclipse
+	dh_install -predeclipse-server
+	dh_install -predeclipse-common --exclude=play.cfg
 
 override_dh_compress:
 	dh_compress --exclude=.cfg

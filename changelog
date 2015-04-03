@@ -7,6 +7,8 @@ redeclipse (1.5.0-1) UNRELEASED; urgency=medium
   * Add (upstream) patch to fix binary name in install
     - Add system-install-Fix-binary-name.patch
   * Bump standards-version to 3.9.6, no changes
+  * Add redeclipse-common package for client/server shared files
+    - Add system-install-Add-common-install-target-for-common-.patch
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 29 Mar 2015 16:02:22 +0200
 
