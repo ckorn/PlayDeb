@@ -89,6 +89,10 @@ Files: doc/man/cube2font.1 doc/man/redeclipse.6.am
 Copyright: 2011-2012, Martin Erik "arand" Werner <martinerikwerner@gmail.com>
 License: ZLib
 
+Files: config/*
+Copyright: 2009-2015, Red Eclipse Team
+License: Zlib
+
 Files: debian/*
 Copyright: 2011-2015 Martin Erik Werner <martinerikwerner@gmail.com>
 License: Zlib
