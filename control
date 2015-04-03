@@ -39,13 +39,15 @@ Package: redeclipse-dbg
 Section: debug
 Priority: extra
 Architecture: any
-Depends: redeclipse (= ${binary:Version}), ${misc:Depends}
+Depends: redeclipse (= ${binary:Version}),
+         ${misc:Depends}
 Description: debug symbols for the Red Eclipse FPS game
  This package contains the debugging symbols for the Red Eclipse FPS game.
 
 Package: redeclipse-server
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
 Description: server for the Red Eclipse FPS game
  This package contains the dedicated server for the Red Eclipse FPS game, it
  also includes some example scripts for configuring the server. It contains no
@@ -55,13 +57,13 @@ Package: redeclipse-server-dbg
 Section: debug
 Priority: extra
 Architecture: any
-Depends: redeclipse-server (= ${binary:Version}), ${misc:Depends}
+Depends: redeclipse-server (= ${binary:Version}),
+         ${misc:Depends}
 Description: debug symbols for the Red Eclipse dedicated server
  This package contains the debugging symbols for the dedicated server of the
  Red Eclipse FPS game.
 
 Package: redeclipse-common
-Section: games
 Priority: extra
 Architecture: all
 Depends: ${misc:Depends}
