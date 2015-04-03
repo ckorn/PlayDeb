@@ -12,7 +12,6 @@ Source: https://github.com/red-eclipse/base
  The folders src/include/ src/xcode/ src/lib/ bin/ are removed, the header
  files here are already shipped within other Debian packages, or are
  unnecessary on GNU/Linux.
-
 License: Red-Eclipse
 EOF
 
