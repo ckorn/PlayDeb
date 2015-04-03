@@ -10,7 +10,7 @@ override_dh_auto_build:
 			play 4 15 1 1 54 54 512 512 0 0 fonts/
 
 override_dh_install:
-	mkdir -p debian/redeclipse-data/usr/share/games/iredeclipse/data
+	mkdir -p debian/redeclipse-data/usr/share/games/redeclipse/data
 	find . -mindepth 1 -maxdepth 1 -type d \
 		-not \( -name 'debian' -or -name 'fonts' \) \
 		-exec cp -r '{}' debian/redeclipse-data/usr/share/games/redeclipse/data \;
