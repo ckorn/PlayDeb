@@ -28,6 +28,7 @@ get-orig-source:
 	rm -f redeclipse-data_$(VER).orig.tar.gz
 	mv data-$(VER)/ $(DIR)
 	rm -rf $(DIR)/fonts
+	find . -type f -name '.git*' -delete
 	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
 		-f redeclipse-data_$(VER).orig.tar.xz $(DIR)
 	rm -rf $(DIR)
