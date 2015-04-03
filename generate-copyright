@@ -23,8 +23,7 @@ Upstream-Name: Red Eclipse
 Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
                   Lee "Eihrul" Salzman <lsalzman@gmail.com>
 Source: https://github.com/red-eclipse/data
-
-License: Summary
+License: Red-Eclipse-Data
 EOF
 
 # Data summary license, indented
