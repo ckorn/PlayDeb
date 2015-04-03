@@ -4,7 +4,7 @@ Priority: optional
 Uploaders: Martin Erik Werner <martinerikwerner@gmail.com>
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Build-Depends: cube2font, debhelper (>= 9), fonts-play
-Standards-Version: 3.9.3
+Standards-Version: 3.9.6
 Homepage: http://www.redeclipse.net
 Vcs-Git: git://git.debian.org/pkg-games/redeclipse-data.git
 Vcs-Browser: http://git.debian.org/?p=pkg-games/redeclipse-data.git;a=summary
