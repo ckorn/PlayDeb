@@ -1,4 +1,4 @@
-redeclipse-data (1.5.1-1) UNRELEASED; urgency=medium
+redeclipse-data (1.5.1-1) unstable; urgency=low
 
   * New upstream release 1.5.1
   * Bump standards-version to 3.9.6, no changes
