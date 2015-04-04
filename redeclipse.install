@@ -1,5 +1,7 @@
 usr/games/redeclipse
 usr/lib/games/redeclipse/redeclipse
+usr/lib/games/redeclipse/doc
+usr/share/doc/redeclipse/guidelines.txt
 usr/share/appdata
 usr/share/applications
 usr/share/icons

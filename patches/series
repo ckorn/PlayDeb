@@ -6,3 +6,4 @@ appdata-Upgrade-via-appstream-util.patch
 appdata-Fill-in-remove-FIXMEs.patch
 appdata-Update-description-screenshots.patch
 system-install-Install-appdata.patch
+system-install-Add-doc-link-for-client-finding-guide.patch
