@@ -62,7 +62,6 @@ Description: debug symbols for the Red Eclipse dedicated server
  Red Eclipse FPS game.
 
 Package: redeclipse-common
-Priority: extra
 Architecture: all
 Depends: ${misc:Depends}
 Description: common config files for the Red Eclipse FPS game
