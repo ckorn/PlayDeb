@@ -4,6 +4,7 @@ Priority: optional
 Uploaders: Martin Erik Werner <martinerikwerner@gmail.com>
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Build-Depends: debhelper (>= 9),
+               ed,
                libenet-dev,
                libgl1-mesa-dev | libgl-dev,
                libsdl-image1.2-dev,
