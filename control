@@ -18,7 +18,8 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-games/redeclipse.git
 
 Package: redeclipse
 Architecture: any
-Depends: redeclipse-data (>= ${source:Upstream-Version}),
+Depends: redeclipse-common (>= ${source:Upstream-Version}),
+         redeclipse-data (>= ${source:Upstream-Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Description: free, casual arena shooter
@@ -42,7 +43,8 @@ Description: debug symbols for the Red Eclipse FPS game
 
 Package: redeclipse-server
 Architecture: any
-Depends: ${misc:Depends},
+Depends: redeclipse-common (>= ${source:Upstream-Version}),
+         ${misc:Depends},
          ${shlibs:Depends}
 Description: server for the Red Eclipse FPS game
  This package contains the dedicated server for the Red Eclipse FPS game, it
