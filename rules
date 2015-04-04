@@ -9,7 +9,7 @@ override_dh_auto_clean:
 	$(MAKE) -C src clean-client clean-server
 
 override_dh_auto_build:
-	make -C src/ \
+	dh_auto_build -- \
 		CPPFLAGS="$(CPPFLAGS)" \
 		CFLAGS="$(CFLAGS) $(CPPFLAGS)" \
 		CXXFLAGS="$(CXXFLAGS) $(CPPFLAGS)" \
