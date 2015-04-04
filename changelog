@@ -7,6 +7,12 @@ redeclipse (1.5.1-1) UNRELEASED; urgency=medium
   * Bump standards-version to 3.9.6, no changes
   * Add redeclipse-common package for client/server shared files
     - Add system-install-Add-common-install-target-for-common-.patch
+  * Add AppData file via upstream patches
+    - Add appdate-Use-template-set-at-install-name.patch
+    - Add appdata-Upgrade-via-appstream-util.patch
+    - Add appdata-Fill-in-remove-FIXMEs.patch
+    - Add appdata-Update-description-screenshots.patch
+    - Add system-install-Install-appdata.patch
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 29 Mar 2015 16:02:22 +0200
 
