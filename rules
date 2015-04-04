@@ -4,7 +4,7 @@ DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/default.mk
 
 %:
-	dh $@ --parallell
+	dh $@ --parallel
 
 override_dh_auto_build:
 	mkdir -p fonts
