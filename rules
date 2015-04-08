@@ -2,18 +2,20 @@
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	MAKEFLAGS += -j$(NUMJOBS)
+endif
+
 %:
 	dh $@ --sourcedirectory=src --parallel
 
 override_dh_auto_clean:
-	$(MAKE) -C src clean-client clean-server
+	$(MAKE) -C src/ clean-client clean-server
 
 override_dh_auto_build:
 	dh_auto_build -- \
-		CPPFLAGS="$(CPPFLAGS)" \
-		CFLAGS="$(CFLAGS) $(CPPFLAGS)" \
-		CXXFLAGS="$(CXXFLAGS) $(CPPFLAGS)" \
-		LDFLAGS="$(LDFLAGS)" \
+		CXXFLAGS="$(CXXFLAGS) -ffast-math" \
 		client server
 
 override_dh_strip:
@@ -21,9 +23,8 @@ override_dh_strip:
 	dh_strip -predeclipse-server --dbg-package=redeclipse-server-dbg
 
 override_dh_auto_install:
-	make -C src/ \
-		CXXFLAGS="$(CXXFLAGS)" \
-		DESTDIR=../debian/tmp \
+	$(MAKE) -C src/ \
+		DESTDIR=$(CURDIR)/debian/tmp \
 		prefix=/usr games=/games gamesbin=/games \
 		system-install-client system-install-server \
 		system-install-common system-install-docs system-install-menus
