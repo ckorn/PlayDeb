@@ -1,5 +1,4 @@
 windowed-by-default.patch
-build-with-system-enet.patch
 system-install-Add-common-install-target-for-common-.patch
 appdate-Use-template-set-at-install-name.patch
 appdata-Upgrade-via-appstream-util.patch

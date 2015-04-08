@@ -12,10 +12,13 @@ endif
 
 override_dh_auto_clean:
 	$(MAKE) -C src/ clean-client clean-server
+	rm -rf enet
 
 override_dh_auto_build:
+	mkdir -p enet/include
 	dh_auto_build -- \
 		CXXFLAGS="$(CXXFLAGS) -ffast-math" \
+		LIBENET="" \
 		client server
 
 override_dh_strip:
@@ -24,6 +27,7 @@ override_dh_strip:
 
 override_dh_auto_install:
 	$(MAKE) -C src/ \
+		LIBENET="" \
 		DESTDIR=$(CURDIR)/debian/tmp \
 		prefix=/usr games=/games gamesbin=/games \
 		system-install-client system-install-server \

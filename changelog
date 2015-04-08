@@ -21,6 +21,8 @@ redeclipse (1.5.1-1) experimental; urgency=low
     - Add system-install-Install-appdata.patch
   * Make sure guidelines.txt is accessible by client for first-connect
     - Add system-install-Add-doc-link-for-client-finding-guide.patch
+  * Use make variables instead of patch to build with system Enet
+    - Drop build-with-system-enet.patch
 
  -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 29 Mar 2015 16:02:22 +0200
 
