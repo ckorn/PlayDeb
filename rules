@@ -2,6 +2,9 @@
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/default.mk
+
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 	MAKEFLAGS += -j$(NUMJOBS)
@@ -44,14 +47,13 @@ override_dh_compress:
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
 
-VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
-DIR=redeclipse-$(VER).orig
+DIR=redeclipse-$(DEB_VERSION_UPSTREAM).orig
 get-orig-source:
 	uscan --noconf --rename --force-download --download-current-version --destdir=.
 	rm -rf $(DIR)
-	tar -xf redeclipse_$(VER).orig.tar.gz
-	rm -f redeclipse_$(VER).orig.tar.gz
-	mv base-$(VER)/ $(DIR)
+	tar -xf redeclipse_$(DEB_VERSION_UPSTREAM).orig.tar.gz
+	rm -f redeclipse_$(DEB_VERSION_UPSTREAM).orig.tar.gz
+	mv base-$(DEB_VERSION_UPSTREAM)/ $(DIR)
 	rm -rf $(DIR)/src/include/
 	rm -rf $(DIR)/src/enet/
 	rm -rf $(DIR)/src/xcode/
@@ -62,5 +64,5 @@ get-orig-source:
 	rm -f $(DIR)/*.bat
 	find $(DIR) -type f -iname '.git*' -delete
 	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
-		-f redeclipse_$(VER).orig.tar.xz $(DIR)
+		-f redeclipse_$(DEB_VERSION_UPSTREAM).orig.tar.xz $(DIR)
 	rm -rf $(DIR)
