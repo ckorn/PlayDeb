@@ -32,8 +32,8 @@ sed -e 's/^/\ /' -e 's/^\ $/\ \./' readme.txt >> debian/copyright-new
 # Remove duplicated Format: line and insert upstream license dep5 file
 sed '/Format:.*/d' "$all_licenses"  >> debian/copyright-new
 
-# Remove all records related to bin/*, config/*, doc/* and src/*
-awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: (bin|config|src|doc)\// ' debian/copyright-new > debian/copyright-temp
+# Remove all records related to bin/*, config/*, doc/*, data/fonts/* and src/*
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: (bin|config|doc|data\/fonts|src)\// ' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
 # Remove data/ prefix
