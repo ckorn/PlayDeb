@@ -40,6 +40,10 @@ mv debian/copyright-temp debian/copyright-new
 sed 's/ data\// /g' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
+# Remove record for "OFL-1.1" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: OFL-1.1$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
 # Add marker for inserting Debian chunk
 awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 ~ /^License: Zlib$/ { print "INSERT_DEBIAN_HERE" } { print }' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
