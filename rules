@@ -20,7 +20,7 @@ override_dh_auto_clean:
 override_dh_auto_build:
 	mkdir -p enet/include
 	dh_auto_build -- \
-		CXXFLAGS="$(CXXFLAGS) -ffast-math" \
+		CXXFLAGS="$(CXXFLAGS) $(CPPFLAGS) -ffast-math" \
 		LIBENET="" \
 		client server
 
