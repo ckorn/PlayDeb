@@ -4,7 +4,7 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-SLVERSION=$(shell dpkg-parsechangelog | sed -n 's/^Version: //p' | cut -f1 -d'-')
+SLVERSION=$(shell dpkg-parsechangelog -SVersion | cut -f1 -d'-')
 
 PROGDIR := $(CURDIR)/debian/tmp
 %:
