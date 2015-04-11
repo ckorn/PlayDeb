@@ -1,0 +1,58 @@
+unvanquished (0.24.0-1~~) unstable; urgency=low
+
+  If you're upgrading from 0.23.0 or older, your profile will need to be
+  migrated. You can do this yourself by running unvanquished-migrate-profile,
+  but it will be run for you anyway when you run Unvanquished.
+
+  Old location: ~/.Unvanquished/main/profiles/$NAME/
+  New location: ~/.unvanquished
+
+  keybindings.cfg, pubkey and the ‘name’ cvar from autogen.cfg are retained.
+  ~/.Unvanquished is left intact; do with as you will.
+
+  If you've installed (unmanaged) files in /var/games/unvanquished/main,
+  these will be ignored. You may move them to /var/games/unvanquished.pkg;
+  you may have to rename some when doing so.
+
+  Upgrading from older than 0.5.0 is no longer supported.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Fri, 31 Jan 2014 20:13:19 +0000
+
+unvanquished (0.5.0-1~~) unstable; urgency=low
+
+  If you're upgrading from 0.4.0 or older, your profile will need to be
+  migrated. You can do this yourself by running unvanquished-migrate-profile,
+  but it will be run for you anyway when you run Unvanquished.
+
+  Your profile will appear in ~/.Unvanquished/main/profiles/NAME (where NAME
+  is the name you use in-game, shorn of all but ASCII letters and numbers).
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 02 Jul 2012 03:09:37 +0100
+
+unvanquished (0.4.0-1~~) unstable; urgency=low
+
+  If you're upgrading from 0.3.5 or older or you have Unvanquished
+  configuration files in your home directory, you're likely to need at least
+  one of the following.
+
+  * Parser changes mean that 'bind \ foo' won't work.
+
+    You'll have to change such bindings to 'bind BACKSLASH foo'. These are
+    normally found in ~/.Unvanquished/main/autogen.cfg, but may be found
+    elsewhere.
+
+    The following command will fix them up.
+
+      $ sed -i -e 's/^bind \\/bind BACKSLASH/' ~/.Unvanquished/*/*.cfg
+
+  * Connection to servers will fail.
+
+    Easy to solve, and there are (at least) two easy ways to fix it:
+
+      $ unvanquished +reset protocol
+
+      Press ` (backquote) then type “/reset protocol”
+
+  With these done, all should be well...
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sat, 02 Jun 2012 17:58:40 +0100

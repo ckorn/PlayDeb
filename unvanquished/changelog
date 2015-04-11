@@ -1,0 +1,589 @@
+unvanquished (0.38.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 09 Apr 2015 21:23:22 +0200
+
+unvanquished (0.35.0-1) unstable; urgency=low
+
+  * Release of alpha 35.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 05 Jan 2015 03:27:49 +0000
+
+unvanquished (0.34.0-1) unstable; urgency=low
+
+  * Release of alpha 34.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 08 Dec 2014 03:04:06 +0000
+
+unvanquished (0.33.0-1) unstable; urgency=low
+
+  * Release of alpha 33.
+  * Added antares & forlorn to default rotation.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 02 Nov 2014 19:58:32 +0000
+
+unvanquished (0.32.0-1) unstable; urgency=low
+
+  * Release of alpha 32.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 05 Oct 2014 15:19:01 +0100
+
+unvanquished (0.31.0-1) unstable; urgency=low
+
+  * Release of alpha 31.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 08 Sep 2014 18:35:08 +0100
+
+unvanquished (0.30.0-1) unstable; urgency=low
+
+  * Release of alpha 30.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 04 Aug 2014 23:48:55 +0100
+
+unvanquished (0.29.0-2) unstable; urgency=low
+
+  * Fix pak checksum usage. (git master)
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Tue, 08 Jul 2014 12:23:35 +0100
+
+unvanquished (0.29.0-1) unstable; urgency=low
+
+  * Release of alpha 29.
+  * Update server config & map rotation.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 07 Jul 2014 18:45:18 +0100
+
+unvanquished (0.28.0-1) unstable; urgency=low
+
+  * Release of alpha 28.
+  * Ubuntu have fixed their broken libsdl2-dev; drop the workaround.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 01 Jun 2014 14:38:35 +0100
+
+unvanquished (0.27.2-1) unstable; urgency=low
+
+  * Release of alpha 27.2.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Wed, 07 May 2014 16:55:05 +0100
+
+unvanquished (0.27.1-1) unstable; urgency=low
+
+  * Release of alpha 27.1.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Tue, 06 May 2014 14:25:37 +0100
+
+unvanquished (0.27.0-1) unstable; urgency=low
+
+  * Release of alpha 27.
+  * Update build options to avoid compiling most NaCl code.
+    The exception is the native game code executable, which replaces the
+    native QVM code from previous releases.
+  * Work around an Ubuntu 14.04 problem by using SDL 1.2 there.
+    https://bugs.launchpad.net/ubuntu/+source/libsdl2/+bug/1306629
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 04 May 2014 18:45:24 +0100
+
+unvanquished (0.26.0-1) unstable; urgency=low
+
+  * Release of alpha 26.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 06 Apr 2014 23:24:30 +0100
+
+unvanquished (0.25.0-2) unstable; urgency=low
+
+  * Pull in a few patches from git master, fixing font-related crashes.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 03 Mar 2014 18:40:52 +0000
+
+unvanquished (0.25.0-1) unstable; urgency=low
+
+  * Release of alpha 25.
+  * Clean up build options in debian/rules.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 02 Mar 2014 23:43:19 +0000
+
+unvanquished (0.24.1-1) unstable; urgency=low
+
+  * Point release.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Tue, 11 Feb 2014 17:47:18 +0000
+
+unvanquished (0.24.0-4) unstable; urgency=low
+
+  * Lots of configuration migration fixes.
+    Not perfect, not guaranteed to work(!), but should cover common cases.
+  * Add directories in /etc/unvanquished-server for scripts and per-map
+    configuration files.
+  * Remove vm & lcc directories to debian/clean since they break cleaning.
+    Clean them up properly in debian/rules.
+  * Various bug fixes from git master.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sat, 08 Feb 2014 21:02:44 +0000
+
+unvanquished (0.24.0-3) unstable; urgency=low
+
+  * Fix a bug which prevented install (but not upgrade) from succeeding.
+  * Fix configuration script regarding when it asks for the mirror name.
+  * Add vm & lcc directories to debian/clean.
+  * Enable USE_VOIP; remove build dependency on libxvidcore-dev.
+  * Cherry-picked bug fixes:
+    - Avoid light sampling outside the light grid. This fixes colouring
+      problems in maps such as nano.
+    - Mark fs_extrapaks as a startup variable.
+    - Don't do init for presets which we don't have.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Tue, 04 Feb 2014 14:43:12 +0000
+
+unvanquished (0.24.0-2) unstable; urgency=low
+
+  * Fix unvanquished-download-paks install location.
+  * Fix memory leak in texture loading [cherry-picked].
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 03 Feb 2014 04:38:11 +0000
+
+unvanquished (0.24.0-1) unstable; urgency=low
+
+  * Release of Alpha 24.
+    - This release changes various file locations.
+    - Drop upgrade support for very old versions.
+    - Don't include packaged translations for now (broken, not used).
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Fri, 31 Jan 2014 19:22:17 +0000
+
+unvanquished (0.23.0-2) unstable; urgency=low
+
+  * Server: fix minimum wage.
+  * Server, client: improve space handling in commands.
+  * Server, client: fix “/set a foo bar” not setting a to “foo bar”.
+  * Client: fix music looping if no leading sound.
+  * Game: fix line breaks in rcon output.
+  * Impure cgame: particle system fixes.
+  * Impure/local game: register user-defined admin commands.
+  * Impure/local game: when building overmind or reactor, make sure that a
+    marked one is replaced.
+  * Add a mime file so that unv:// is handled automatically.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sat, 18 Jan 2014 16:39:35 +0000
+
+unvanquished (0.23.0-1) unstable; urgency=low
+
+  * Release of Alpha 23.
+  * Default rotation is updated.
+  * Disabled building of the tty client.
+  * Fixed unvanquished-common behaviour on purge.
+  * Tightened up passing of unv:// URIs to a running instance.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 05 Jan 2014 15:24:57 +0000
+
+unvanquished (0.22.1-1) unstable; urgency=low
+
+  * Alpha 22 point release. Bug fixes.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Tue, 03 Dec 2013 17:06:13 +0000
+
+unvanquished (0.22.0-1) unstable; urgency=low
+
+  * Release of alpha 22.
+  * Dropped unvanquished-dev since it only contains daemonmap and that's now
+    in a separate repository. (It will be repackaged, though.)
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 01 Dec 2013 15:24:32 +0000
+
+unvanquished (0.21.0-2) unstable; urgency=low
+
+  * Have unvanquished-common's config script require bash. The script
+    contains a bashism which was breaking install on systems where /bin/sh
+    points to dash.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 04 Nov 2013 16:46:13 +0000
+
+unvanquished (0.21.0-1) unstable; urgency=low
+
+  * Improve cleanup of /var/games/unvanquished when unvanquished-common is
+    purged. Files not added at install/upgrade/reconfigure are not removed.
+  * /var/games/unvanquished/main is better owned by unvanquished-common.
+  * Some debconf questions: whether to download .pk3s and, if so, from where.
+  * Updated mapotation.cfg.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 03 Nov 2013 15:50:32 +0000
+
+unvanquished (0.20.0-3) unstable; urgency=low
+
+  * ‘Fix’ input of compose sequences (SDL 2.0).
+  * Handle locale selection issues.
+    - We require that a UTF-8 encoding is available for the locale.
+    - We force LC_NUMERIC="C" to avoid problems with generated GLSL etc.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Thu, 17 Oct 2013 17:03:32 +0100
+
+unvanquished (0.20.0-2) unstable; urgency=low
+
+  * Fix some console input regressions specific to SDL 1.2.
+    (This release is built only where SDL 1.2 is used.)
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Thu, 10 Oct 2013 17:34:17 +0100
+
+unvanquished (0.20.0-1) unstable; urgency=low
+
+  * Add unvanquished-dev, initially containing only unvanquishedmap.
+    (No manpages yet.)
+  * Remove some cruft from debian/rules.
+  * Update build flags: use external opus where possible, no GLSL optimiser.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 06 Oct 2013 15:47:12 +0100
+
+unvanquished (0.19.0-2) unstable; urgency=low
+
+  * Fix crashlog file location.
+  * Text console scrolling fixes.
+  * Put the configuration symlinks in the right directory.
+  * Tidy up /etc/default/unvanquished-server; support IPv6.
+  * Update and fix the default configuration.
+  * Update and fix documentation.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sat, 21 Sep 2013 23:56:47 +0100
+
+unvanquished (0.19.0-1) unstable; urgency=low
+
+  * Release of alpha 19.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 01 Sep 2013 21:17:27 +0100
+
+unvanquished (0.18.0-2) unstable; urgency=low
+
+  * .pk3 downloading fixes:
+    - Work around a reported French locale problem by forcing LANG=C.
+    - Tighten up md5sums file validation; fail sooner if download fails.
+    - Properly handle full URLs.
+    - Continue with the next file if a download fails.
+  * Fix an authentication problem which would occur if playing locally then
+    connecting to a server on which you're a registered player.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Fri, 16 Aug 2013 15:55:55 +0100
+
+unvanquished (0.18.0-1) unstable; urgency=low
+
+  * Release of alpha 18.
+  * Launch script:
+    - Only prepend ‘+’ if missing.
+    - Handle URL-escaped ‘[’ and ‘]’ around unv:// IPv6. (Suopid Iceweasel.)
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 05 Aug 2013 04:12:59 +0100
+
+unvanquished (0.17.0-1) unstable; urgency=low
+
+  * Release of alpha 17.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 08 Jul 2013 02:14:05 +0100
+
+unvanquished (0.16.0-1) unstable; urgency=low
+
+  * Release of alpha 16.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 03 Jun 2013 01:38:59 +0100
+
+unvanquished (0.15.0-2) unstable; urgency=low
+
+  * Switch off the GLSL optimiser: rely on mesa or taintware instead.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sat, 25 May 2013 15:25:24 +0100
+
+unvanquished (0.15.0-1) unstable; urgency=low
+
+  * Release of alpha 15.
+  * Implemented ‘unvanquished --gdb’.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 06 May 2013 01:37:58 +0100
+
+unvanquished (0.14.0-2) unstable; urgency=low
+
+  * Bug fixes and optimisations.
+    - GL3: Improve R_AddNormals (image accuracy, some loading speedup).
+    - GL3: Eliminate a few useless calculations when uploading images.
+    - GL: Handle a few keywords which presence caused missing textures.
+    - Fix a possible buffer overflow in the OpenAL code.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sat, 13 Apr 2013 01:26:12 +0100
+
+unvanquished (0.14.0-1) unstable; urgency=low
+
+  * Release of alpha 14.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 08 Apr 2013 01:43:54 +0100
+
+unvanquished (0.13.1-1) unstable; urgency=low
+
+  * Bugfix release.
+    - Fixes QVM string quoting sanity checking. This was, for some, breaking
+      team-joining etc.
+    - Adds some missing QVM string quoting sanity checking.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Wed, 06 Mar 2013 18:54:00 +0000
+
+unvanquished (0.13.0-1) unstable; urgency=low
+
+  * Release of alpha 13.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sat, 02 Mar 2013 03:30:35 +0000
+
+unvanquished (0.12.0-2) unstable; urgency=low
+
+  * Bug fixes (git 872020d..4ff3974) and console updates.
+    Some bugs may still occur: downloaded VM code may not have relevant fixes.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Fri, 08 Feb 2013 15:09:46 +0000
+
+unvanquished (0.12.0-1) unstable; urgency=low
+
+  * Release of alpha 12.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 03 Feb 2013 23:34:15 +0000
+
+unvanquished (0.11.0-2) unstable; urgency=low
+
+  * Pull in some bug fixes...
+    - “exec autoexec.cfg” missing LF terminator
+    - localisation issues with md5sum (unvanquished-download-paks)
+    - IPv6 socket fix
+    - a few off-by-one fixes
+    - some commands require a server to be running
+    - VOIP: demo fix, server ignoring client move commands
+    - clients can no longer respawn via donedl
+    - correct display of overbright info during startup
+    - /alias no longer changes an existing alias
+  * ... and a feature or two.
+    - mute sound when not focused and/or minimised
+    - enable/disable VOIP without restarting
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Wed, 23 Jan 2013 12:55:28 +0000
+
+unvanquished (0.11.0-1) unstable; urgency=low
+
+  * Release of alpha 11.
+  * Build-depend on libncursesw5-dev, not libncurses5-dev.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 06 Jan 2013 17:28:43 +0000
+
+unvanquished (0.10.0-3) unstable; urgency=low
+
+  * Pull in a few more bug fixes:
+    - Avoid “too many target locations” (game.so, on loading)
+    - Fix mirrors.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Wed, 05 Dec 2012 19:32:15 +0000
+
+unvanquished (0.10.0-2) unstable; urgency=low
+
+  * Pull in a few bug fixes:
+    - Fix range markers for blueprints.
+    - Fix direction of trapper and turret range markers.
+    - Add German translations.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Wed, 05 Dec 2012 19:32:15 +0000
+
+unvanquished (0.10.0-1) unstable; urgency=low
+
+  * Release of alpha 10.
+  * Fix a bashism in the launcher script.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 03 Dec 2012 00:33:39 +0000
+
+unvanquished (0.9.0-2) unstable; urgency=low
+
+  * Cope with a pipe file but no running Unvanquished. (Requires lsof.)
+  * Backported a few ‘vanilla’ renderer patches from git master.
+  * Link against libopenal rather than dlopen it. (Fixes a missing dep.)
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Thu, 15 Nov 2012 02:08:57 +0000
+
+unvanquished (0.9.0-1) unstable; urgency=low
+
+  * Release of alpha 9.
+  * Require libwebp-dev 0.2 or newer.
+  * Distribute client translations.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 04 Nov 2012 22:53:10 +0000
+
+unvanquished (0.8.0-1) unstable; urgency=low
+
+  * Release of alpha 8.
+  * Fix renderer loading (broken during the 0.8 dev cycle).
+  * Pull in two ckit fixes (514e834 and 1cb6a55) from master.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 08 Oct 2012 15:46:59 +0100
+
+unvanquished (0.7.0-1) unstable; urgency=low
+
+  * Release of alpha 7.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sat, 01 Sep 2012 12:56:06 +0100
+
+unvanquished (0.6.0-3) unstable; urgency=medium
+
+  * Upstream changes since release:
+    - Expired bans aren't correctly displayed.
+    - Fix a possible hang in string token replacement.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Wed, 15 Aug 2012 21:10:40 +0100
+
+unvanquished (0.6.0-2) unstable; urgency=high
+
+  * Fix a hole in the launcher script.
+  * Upstream changes since release:
+    - Hard-code the protocol number.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Thu, 02 Aug 2012 15:50:32 +0100
+
+unvanquished (0.6.0-1) unstable; urgency=low
+
+  * Release of alpha 6.
+  * Handle unv:// URIs.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Wed, 01 Aug 2012 22:56:26 +0100
+
+unvanquished (0.5.1-1) unstable; urgency=low
+
+  * Bug-fix release.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 02 Jul 2012 03:09:37 +0100
+
+unvanquished (0.5.0-2) unstable; urgency=low
+
+  * The migration script didn't migrate all needed files...
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 02 Jul 2012 14:51:08 +0100
+
+unvanquished (0.5.0-1) unstable; urgency=low
+
+  * Release of alpha 5.
+  * Added a helper script for profile migration.
+    This is run automatically when you run Unvanquished.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Mon, 02 Jul 2012 03:09:37 +0100
+
+unvanquished (0.4.0-2) unstable; urgency=low
+
+  * QVM restart was broken, affecting at least /restart.
+  * Use xz to compress the .debs.
+  * Add a NEWS file, which should have been in -1.
+  * Do a little more cleanup.
+  * Move the dependency on curl to unvanquished-common.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Sun, 03 Jun 2012 01:03:37 +0100
+
+unvanquished (0.4.0-1) unstable; urgency=low
+
+  * Release of alpha 4.
+  * Change of address...
+  * Various packaging issues are fixed:
+    - downloaded data is now in /var/games/unvanquished;
+    - postinst & prerm scripts are set -e and don't contain absolute paths;
+    - launcher scripts no longer have .sh in their names;
+    - unvanquished-dbg depends on either unvanquished or unvanquished-server
+      and belongs in section contrib/debug;
+    - unvanquished-server depends on adduser.
+  * .pk3 downloading is now done in unvanquished-common.
+
+ -- Darren Salt <devspam@moreofthesa.me.uk>  Fri, 01 Jun 2012 20:49:29 +0100
+
+unvanquished (0.3.5-3) unstable; urgency=low
+
+  * Pulled in from master:
+    - Fix console history addition & saving.
+    - Get error reporting working.
+      This fixes things such as reporting that you're banned.
+
+ -- Darren Salt <linux@youmustbejoking.demon.co.uk>  Mon, 14 May 2012 00:18:07 +0100
+
+unvanquished (0.3.5-2) unstable; urgency=low
+
+  * Separate package for the dedicated server.
+    - Uses files from tremulous-server (Debian).
+  * fs_libpath should be in the search path.
+  * Fixed a typo which prevented use of xvid for demo video encoding.
+  * Silence CMP0017 warnings.
+
+ -- Darren Salt <linux@youmustbejoking.demon.co.uk>  Thu, 03 May 2012 22:22:21 +0100
+
+unvanquished (0.3.5-1) unstable; urgency=low
+
+  * Patch pulled in from the master branch:
+    - Walking dretches had footsteps.
+
+ -- Darren Salt <linux@youmustbejoking.demon.co.uk>  Wed, 02 May 2012 02:49:32 +0100
+
+unvanquished (0.3.5-0) unstable; urgency=low
+
+  * Release of alpha 3.
+
+ -- Darren Salt <linux@youmustbejoking.demon.co.uk>  Tue, 01 May 2012 20:10:43 +0100
+
+unvanquished (0.3.0-3) unstable; urgency=low
+
+  * Tidy up Build-Depends.
+    - Get rid of unneeded dependencies (pulled in by others).
+    - Add an alternative, libglew1.6-dev, for Ubuntu users.
+
+ -- Darren Salt <linux@youmustbejoking.demon.co.uk>  Sun, 15 Apr 2012 14:18:26 +0100
+
+unvanquished (0.3.0-2) unstable; urgency=low
+
+  * Enable fs_libpath and use it.
+    This means that the pak?.pk3 symlinks can be dropped, but also means
+    that the downloaded files have to be moved.
+    *** NOTE: downgrades are NOT supported!
+  * Don't load native plugins from the user directory.
+  * Fix r_glForceDriver.
+  * debian/control: Update source repository location.
+
+ -- Darren Salt <linux@youmustbejoking.demon.co.uk>  Mon, 09 Apr 2012 11:30:56 +0100
+
+unvanquished (0.3.0-1) unstable; urgency=low
+
+  * Release of alpha 2.
+  * Build-depend on nettle-dev & libspeexdsp-dev.
+  * Update the menu icon.
+  * Fix the launcher scripts where the arch name doesn't match the CPU name.
+
+ -- Darren Salt <linux@youmustbejoking.demon.co.uk>  Sun, 01 Apr 2012 19:56:35 +0100
+
+unvanquished (0.2.5+git7270e68-4) unstable; urgency=low
+
+  * Build-depend on libpng-dev | libpng12-dev.
+
+ -- Darren Salt <linux@youmustbejoking.demon.co.uk>  Sat, 24 Mar 2012 23:34:23 +0000
+
+unvanquished (0.2.5+git7270e68-4) unstable; urgency=low
+
+  * Work around lack of jpeg_mem_info() in libjpeg62.
+
+ -- Darren Salt <linux@youmustbejoking.demon.co.uk>  Tue, 20 Mar 2012 21:17:09 +0000
+
+unvanquished (0.2.5+git7270e68-3) unstable; urgency=low
+
+  * Menu file, desktop file & icons.
+  * Add unvanquished-dbg (debug info).
+  * Dropped all resource files in favour of the pak files.
+  * Tweaked the download script a little for clarity.
+  * Fixed building on squeeze/i386.
+  * unvanquished: should depend on curl (for the download script).
+
+ -- Darren Salt <linux@youmustbejoking.demon.co.uk>  Mon, 19 Mar 2012 18:24:16 +0000
+
+unvanquished (0.2.5+git7270e68-2) unstable; urgency=low
+
+  * Move unvanquished-download-paks.sh to /usr/sbin.
+  * Inform the user (in a simple, echo-ey way) if the download fails.
+  * Set single-patch format.
+
+ -- Darren Salt <linux@youmustbejoking.demon.co.uk>  Wed, 14 Mar 2012 23:10:48 +0000
+
+unvanquished (0.2.5+git7270e68-1) unstable; urgency=low
+
+  * Initial packaging.
+    - Based on commit 7270e680c2700fa6dbd882adf4912d2052af9830.
+  * Deps on ‘old’ cmake are intended for Debian squeeze to handle missing
+    -dev packages. No libxvidcore-dev without backports...
+
+ -- Darren Salt <linux@youmustbejoking.demon.co.uk>  Sat, 10 Mar 2012 21:40:57 +0000
