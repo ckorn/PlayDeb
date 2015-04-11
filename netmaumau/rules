@@ -16,12 +16,10 @@ DPKG_EXPORT_BUILDFLAGS = 1
 DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 GRAPHITE = -floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-block -ftree-vectorize
-LTO = -flto -fuse-linker-plugin
 
 DEB_CPPFLAGS_MAINT_APPEND := -DNDEBUG
-DEB_CFLAGS_MAINT_APPEND := -fomit-frame-pointer $(GRAPHITE) $(LTO)
-DEB_CXXFLAGS_MAINT_APPEND := -fomit-frame-pointer $(GRAPHITE) $(LTO)
-DEB_LDFLAGS_MAINT_APPEND := $(CXXFLAGS) $(GRAPHITE) $(LTO)
+DEB_CFLAGS_MAINT_APPEND := -fomit-frame-pointer $(GRAPHITE)
+DEB_CXXFLAGS_MAINT_APPEND := -fomit-frame-pointer $(GRAPHITE)
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/autotools.mk
