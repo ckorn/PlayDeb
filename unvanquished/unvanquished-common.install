@@ -1,0 +1,11 @@
+# obj-*-*-*/game-qvm-native.so		usr/lib/games/unvanquished
+obj-*-*-*/cgame-native-exe		usr/lib/games/unvanquished
+#obj-*-*-*/cgame-*.nexe			usr/lib/games/unvanquished
+obj-*-*-*/sgame-native-dll.so		usr/lib/games/unvanquished
+obj-*-*-*/sgame-native-exe		usr/lib/games/unvanquished
+#obj-*-*-*/sgame-*.nexe			usr/lib/games/unvanquished
+
+debian/scripts/unvanquished-download-paks usr/sbin
+download-pk3.sh				usr/lib/games/unvanquished
+# disabled for now - seems broken
+# main/translation/client/*		usr/lib/games/unvanquished/main/translation/client/

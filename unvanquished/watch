@@ -1,0 +1,3 @@
+version=3
+https://github.com/Unvanquished/Unvanquished/releases \
+    (?:.*/)?v([\d\.]+)\.tar\.gz
