@@ -1,3 +1,18 @@
+manaplus (1:1.5.4.11-1~getdeb2~utopic) utopic; urgency=medium
+
+  * New upstream version
+    fix: chat command /me.
+    fix: remove from priority attack list.
+    fix: compilation with code blocks.
+    add: heal popup message if used heal skill (hercules).
+    add: char rooms support (hercules).
+    add: mute/unmute support (hercules).
+    add: different skill related particle effects (hercules).
+    add: variable with player name in away message.
+    Variable name: 'NAME'.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 11 Apr 2015 19:22:34 +0200
+
 manaplus (1:1.5.3.28-1~getdeb2~utopic) utopic; urgency=medium
 
   * New upstream version
