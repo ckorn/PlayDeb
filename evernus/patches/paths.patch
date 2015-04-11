@@ -1,20 +1,26 @@
 # hardcode path to database and translations
-Index: evernus-1.28/EvernusApplication.cpp
+Index: evernus-1.29/EvernusApplication.cpp
 ===================================================================
---- evernus-1.28.orig/EvernusApplication.cpp	2015-03-25 21:17:38.035293324 +0100
-+++ evernus-1.28/EvernusApplication.cpp	2015-03-25 21:17:38.031293324 +0100
-@@ -1609,8 +1609,8 @@
+--- evernus-1.29.orig/EvernusApplication.cpp	2015-04-08 21:41:16.996536131 +0200
++++ evernus-1.29/EvernusApplication.cpp	2015-04-08 21:42:36.684533760 +0200
+@@ -1615,11 +1615,11 @@
          removeTranslator(&mTranslator);
          removeTranslator(&mQtTranslator);
  
 -        mTranslator.load(locale, "lang", "_", applicationDirPath() + UISettings::translationPath);
 -        mQtTranslator.load(locale, "qt", "_", applicationDirPath() + UISettings::translationPath);
+-        mQtBaseTranslator.load(locale, "qtbase", "_", applicationDirPath() + UISettings::translationPath);
+-        mQtScriptTranslator.load(locale, "qtscript", "_", applicationDirPath() + UISettings::translationPath);
+-        mQtXmlPatternsTranslator.load(locale, "qtxmlpatterns", "_", applicationDirPath() + UISettings::translationPath);
 +        mTranslator.load(locale, "lang", "_", "/usr/share/games/evernus/trans/");
 +        mQtTranslator.load(locale, "qt", "_", "/usr/share/games/evernus/trans/");
++        mQtBaseTranslator.load(locale, "qtbase", "_", "/usr/share/games/evernus/trans/");
++        mQtScriptTranslator.load(locale, "qtscript", "_", "/usr/share/games/evernus/trans/");
++        mQtXmlPatternsTranslator.load(locale, "qtxmlpatterns", "_", "/usr/share/games/evernus/trans/");
  
-         installTranslator(&mQtTranslator);
-         installTranslator(&mTranslator);
-@@ -1623,7 +1623,7 @@
+         installTranslator(&mQtXmlPatternsTranslator);
+         installTranslator(&mQtScriptTranslator);
+@@ -1635,7 +1635,7 @@
          if (!mEveDb.isValid())
              throw std::runtime_error{"Error crating Eve DB object!"};
  
