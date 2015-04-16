@@ -1,3 +1,9 @@
+cdogs-sdl (0.5.8-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 15 Apr 2015 20:13:53 +0200
+
 cdogs-sdl (0.5.7-1~getdeb2) trusty; urgency=medium
 
   * Fix debian/watch file
