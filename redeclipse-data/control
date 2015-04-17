@@ -3,11 +3,11 @@ Section: games
 Priority: optional
 Uploaders: Martin Erik Werner <martinerikwerner@gmail.com>
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
-Build-Depends: cube2font,
-               debhelper (>= 9),
-               fonts-play
-Standards-Version: 3.9.5
+Build-Depends: cube2font, debhelper (>= 9), fonts-play
+Standards-Version: 3.9.6
 Homepage: http://www.redeclipse.net
+Vcs-Git: git://anonscm.debian.org/pkg-games/redeclipse-data.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-games/redeclipse-data.git
 
 Package: redeclipse-data
 Architecture: all
