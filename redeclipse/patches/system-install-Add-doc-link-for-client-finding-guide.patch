@@ -1,0 +1,52 @@
+From 38ba0f83dd7a27e90c44cb124f8b34e83429c561 Mon Sep 17 00:00:00 2001
+From: Martin Erik Werner <martinerikwerner@gmail.com>
+Date: Sat, 4 Apr 2015 15:30:08 +0200
+Subject: [PATCH] system-install: Add doc link for client finding
+ guidelines.txt
+
+Since the client needs to read guidelines.txt the first time the user
+connects to the master server, it needs to be installed in an accessible
+location for the client, add a symlink for this purpose.
+
+Also re-arrange so that the install target which has the real data also
+takes care of the link, avoiding broken symlinks.
+---
+ src/system-install.mk | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/src/system-install.mk b/src/system-install.mk
+index eaa3c41..27fc5c1 100644
+--- a/src/system-install.mk
++++ b/src/system-install.mk
+@@ -70,8 +70,6 @@ system-install-client: client
+ 	g,@APPNAME@,\
+ 	s,@APPNAME@,$(appname),g\n\
+ 	w\n" | ed -s $(gamesbindir)/$(appname)
+-	ln -s $(patsubst $(DESTDIR)%,%,$(datadir))/$(appname)/data \
+-		$(libexecdir)/$(appname)/data
+ 
+ system-install-server: server
+ 	$(MKDIR) $(libexecdir)/$(appname)
+@@ -101,7 +99,10 @@ system-install-common:
+ 
+ system-install-data:
+ 	$(MKDIR) $(datadir)/$(appname)
++	$(MKDIR) $(libexecdir)/$(appname)
+ 	cp -r ../data $(datadir)/$(appname)/data
++	ln -s $(patsubst $(DESTDIR)%,%,$(datadir))/$(appname)/data \
++		$(libexecdir)/$(appname)/data
+ 
+ system-install-docs: $(MANPAGES)
+ 	$(MKDIR) $(mandir)/man6
+@@ -122,6 +123,8 @@ system-install-docs: $(MANPAGES)
+ 		gzip -9 -n -c > $(mandir)/man6/$(appname)-server.6.gz
+ 	cp -r ../doc/examples $(docdir)/$(appname)/examples
+ 	cp ../doc/guidelines.txt $(docdir)/$(appname)/guidelines.txt
++	ln -s $(patsubst $(DESTDIR)%,%,$(docdir))/$(appname) \
++		$(libexecdir)/$(appname)/doc
+ 
+ system-install-menus: icons
+ 	$(MKDIR) $(menudir)
+-- 
+2.1.4
+
