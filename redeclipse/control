@@ -4,34 +4,33 @@ Priority: optional
 Uploaders: Martin Erik Werner <martinerikwerner@gmail.com>
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: debhelper (>= 9),
+               ed,
                libenet-dev,
                libgl1-mesa-dev | libgl-dev,
                libsdl-image1.2-dev,
                libsdl-mixer1.2-dev,
                libsdl1.2-dev | libsdl-dev,
                libx11-dev,
-               zlib1g-dev | libz-dev,
-               ed
-Standards-Version: 3.9.5
+               zlib1g-dev | libz-dev
+Standards-Version: 3.9.6
 Homepage: http://www.redeclipse.net
+Vcs-Git: git://anonscm.debian.org/pkg-games/redeclipse.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-games/redeclipse.git
 
 Package: redeclipse
 Architecture: any
-Depends: redeclipse-data (>= ${source:Upstream-Version}),
+Depends: redeclipse-common (>= ${source:Upstream-Version}),
+         redeclipse-data (>= ${source:Upstream-Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Description: multiplayer FPS game based on Cube2
- A single-player and multi-player first-person ego-shooter, built on Cube
- Engine 2, which lends itself toward a balanced gameplay, completely at the
- control of map makers, while maintaining a general theme of agility in a
- variety of environments.
+Description: free, casual arena shooter
+ A fun-filled, casual, first person arena shooter, built as a total conversion
+ of Cube Engine 2, which lends itself toward a balanced gameplay, with a
+ general theme of agility in a variety of environments.
  .
- Features:
-  * Balanced gameplay, with a general theme of agility in a variety of
-    environments
-  * Parkour, impulse boosts, dashing, sliding, and other tricks
-  * Favourite gamemodes with tons of mutators and variables
-  * Available for Windows, Linux/BSD and Mac OSX
+  * Cross-platform multiplayer
+  * Features parkour, impulse boosts, dashing, and other tricks
+  * Favourite gamemodes with an array of mutators and variables
   * Builtin editor lets you create your own maps cooperatively online
 
 Package: redeclipse-dbg
@@ -45,7 +44,8 @@ Description: debug symbols for the Red Eclipse FPS game
 
 Package: redeclipse-server
 Architecture: any
-Depends: ${misc:Depends},
+Depends: redeclipse-common (>= ${source:Upstream-Version}),
+         ${misc:Depends},
          ${shlibs:Depends}
 Description: server for the Red Eclipse FPS game
  This package contains the dedicated server for the Red Eclipse FPS game, it
@@ -60,4 +60,11 @@ Depends: redeclipse-server (= ${binary:Version}),
          ${misc:Depends}
 Description: debug symbols for the Red Eclipse dedicated server
  This package contains the debugging symbols for the dedicated server of the
+ Red Eclipse FPS game.
+
+Package: redeclipse-common
+Architecture: all
+Depends: ${misc:Depends}
+Description: common config files for the Red Eclipse FPS game
+ This package contains the common config files for the server and client of the
  Red Eclipse FPS game.
