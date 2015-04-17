@@ -1,0 +1,65 @@
+From d0d18dad4ed19a8c7ccc24beb6f16c01e6d57978 Mon Sep 17 00:00:00 2001
+From: Martin Erik Werner <martinerikwerner@gmail.com>
+Date: Fri, 3 Apr 2015 20:39:01 +0200
+Subject: [PATCH 2/5] appdata: Upgrade via appstream-util
+
+---
+ src/install/nix/redeclipse.appdata.xml | 37 ++++++++++++++++++++++++++++------
+ 1 file changed, 31 insertions(+), 6 deletions(-)
+
+diff --git a/src/install/nix/redeclipse.appdata.xml b/src/install/nix/redeclipse.appdata.xml
+index d5487f7..d6f2b3e 100644
+--- a/src/install/nix/redeclipse.appdata.xml
++++ b/src/install/nix/redeclipse.appdata.xml
+@@ -1,7 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<application>
+-  <id type="desktop">@APPNAME@.desktop</id>
++<component type="desktop">
++  <id>@APPNAME@.desktop</id>
++
++  <!--FIXME: convert to an SPDX ID-->
+   <metadata_license>CC-BY-SA-3.0+</metadata_license>
++
++  <!--FIXME: convert to an SPDX ID-->
+   <project_license>ZLIB and CC-BY-SA-3.0+</project_license>
+   <description>
+     <p>
+@@ -16,9 +20,30 @@
+   </description>
+   <url type="homepage">http://redeclipse.net/</url>
+   <screenshots>
+-    <screenshot type="default">http://redeclipse.net/bits/images/003.jpg</screenshot>
+-    <screenshot>http://redeclipse.net/bits/images/006.jpg</screenshot>
+-    <screenshot>http://redeclipse.net/bits/images/007.jpg</screenshot>
++    <screenshot type="default">
++      <image>http://redeclipse.net/bits/images/003.jpg</image>
++      <caption><!-- Describe this screenshot in less than ~10 words --></caption>
++    </screenshot>
++    <screenshot>
++      <image>http://redeclipse.net/bits/images/006.jpg</image>
++      <caption><!-- Describe this screenshot in less than ~10 words --></caption>
++    </screenshot>
++    <screenshot>
++      <image>http://redeclipse.net/bits/images/007.jpg</image>
++      <caption><!-- Describe this screenshot in less than ~10 words --></caption>
++    </screenshot>
+   </screenshots>
+   <updatecontact>http://redeclipse.net/forum/</updatecontact>
+-</application>
++
++  <!--FIXME: You can use a project or developer name if there's no company-->
++  <developer_name><!-- Company Name --></developer_name>
++
++  <!--FIXME: where to report bugs for the application-->
++  <url type="bugtracker"><!-- http://www.homepage.com/where-to-report_bug.html --></url>
++
++  <!--FIXME: where to donate to the application-->
++  <url type="donation"><!-- http://www.homepage.com/donation.html --></url>
++
++  <!--FIXME: where to report bugs for the application-->
++  <url type="help"><!-- http://www.homepage.com/docs/ --></url>
++</component>
+-- 
+2.1.4
+
