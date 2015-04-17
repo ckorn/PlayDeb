@@ -9,9 +9,15 @@ Upstream-Name: Red Eclipse
 Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
                   Lee "Eihrul" Salzman <lsalzman@gmail.com>
 Source: https://github.com/red-eclipse/base
- The folders src/include/ src/xcode/ src/lib/ bin/ are removed, the header
- files here are already shipped within other Debian packages, or are
- unnecessary on GNU/Linux.
+ The following directories/files are removed from the upstream tarball:
+ * bin contains various binaries and helper libs not relevant for Debian,
+   auto-update scripts are kept (though not used in Debian)
+ * data is instead shipped as redeclipse-data in Debian
+ * src/enet is instead shipped as libenet in Debian
+ * src/include contains duplicate headers already in other Debian packages
+ * src/lib contains prebuilt duplicate libs already in other Debian packages
+Files-Excluded: bin/amd64 bin/redeclipse.app bin/tools bin/x86  data
+                src/enet src/include src/lib
 License: Red-Eclipse
 EOF
 
@@ -29,23 +35,27 @@ mv debian/copyright-temp debian/copyright-new
 awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: data\//' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
-# Remove record for "OFL-1.1" license
+# Remove record for "OFL-1.1" license (data/* content)
 awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: OFL-1.1$/' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
-# Remove record for "CC-BY-3.0" license
+# Remove record for "CC-BY-3.0" license (data/* content)
 awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC-BY-3.0$/' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
-# Remove record for "CC-BY-SA-3.0-US" license
+# Remove record for "CC-BY-SA-3.0-US" license (data/* content)
 awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC-BY-3.0-US$/' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
-# Remove record for "CC-BY-SA-3.0-AU" license
+# Remove record for "CC-BY-SA-3.0-AU" license (data/* content)
 awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC-BY-SA-3.0-AU$/' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
-# Remove record for "Expat" license
+# Remove record for "CC0-1.0" license (data/* content)
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: CC0-1.0$/' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove record for "Expat" license (src/enet/* content)
 awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: Expat$/' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
@@ -62,3 +72,5 @@ License: Zlib
 .
 w
 EOF
+
+echo "done -> debian/copyright-new"
