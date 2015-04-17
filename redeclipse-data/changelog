@@ -1,3 +1,10 @@
+redeclipse-data (1.5.1-1) experimental; urgency=low
+
+  * New upstream release 1.5.1
+  * Bump standards-version to 3.9.6, no changes
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 13 Apr 2015 18:46:32 +0200
+
 redeclipse-data (1.5.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
