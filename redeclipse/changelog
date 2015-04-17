@@ -1,3 +1,31 @@
+redeclipse (1.5.1-1) experimental; urgency=low
+
+  * New upstream release 1.5 "Aurora Edition" Patch 1
+    - See release announcement at
+      https://github.com/red-eclipse/base/releases/tag/v1.5.0 for upstream
+      changelog
+    - Keep "Red Eclipse" untranslated as a proper name (Closes: #734407)
+  * Update description to read "cross-platform multiplayer" instead of listing
+    supported OS (Closes: #763651)
+  * Drop upstreamed patches
+    - Delete don-t-check-for-keymap-when-using-standalone.patch
+    - Delete gnu-link-rt.patch
+  * Bump standards-version to 3.9.6, no changes
+  * Add redeclipse-common package for client/server shared files
+    - Add system-install-Add-common-install-target-for-common-.patch
+  * Add AppData file via upstream patches
+    - Add appdate-Use-template-set-at-install-name.patch
+    - Add appdata-Upgrade-via-appstream-util.patch
+    - Add appdata-Fill-in-remove-FIXMEs.patch
+    - Add appdata-Update-description-screenshots.patch
+    - Add system-install-Install-appdata.patch
+  * Make sure guidelines.txt is accessible by client for first-connect
+    - Add system-install-Add-doc-link-for-client-finding-guide.patch
+  * Use make variables instead of patch to build with system Enet
+    - Drop build-with-system-enet.patch
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 13 Apr 2015 18:35:56 +0200
+
 redeclipse (1.5.1-1~getdeb2~utopic) utopic; urgency=medium
 
   * New upstream version

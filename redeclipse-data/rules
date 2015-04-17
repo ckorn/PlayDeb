@@ -1,27 +1,36 @@
 #!/usr/bin/make -f
-%:
-	dh $@
 
-#override_dh_auto_build:
-#	cd fonts/ && \
-#		cube2font /usr/share/fonts/truetype/play/Play-Bold.ttf \
-#			play 4 15 1 1 54 54 512 512 0 0 fonts/
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/default.mk
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_build:
+	mkdir -p fonts
+	cd fonts/ && \
+		cube2font /usr/share/fonts/truetype/play/Play-Bold.ttf \
+			play 4 15 1 1 54 54 512 512 0 0 fonts/
+
+override_dh_auto_install:
+	mkdir -p debian/redeclipse-data/usr/share/games/redeclipse/data
+	find . -mindepth 1 -maxdepth 1 -type d \
+		-not \( -name '.git*' -or -name 'debian' -or -name 'fonts' \) \
+		-exec cp -r '{}' debian/redeclipse-data/usr/share/games/redeclipse/data \;
 
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
 
-VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
-DIR=redeclipse-data-$(VER).orig
-UTAR=redeclipse-data_$(VER).orig.tar.gz
-TAR=redeclipse-data_$(VER).orig.tar.xz
+DIR=redeclipse-data-$(DEB_VERSION_UPSTREAM).orig
 get-orig-source:
-	uscan --noconf --force-download --download-current-version --destdir=.
+	uscan --noconf --rename --force-download --download-current-version \
+		--destdir=.
 	rm -rf $(DIR)
-	tar -xf $(UTAR)
-	rm -f $(UTAR)
-	mv data-$(VER)/ $(DIR)
-	rm -f $(DIR)/data/fonts/play*
-	rm -f $(DIR)/data/fonts/*.ttf
+	tar -xf redeclipse-data_$(DEB_VERSION_UPSTREAM).orig.tar.gz
+	rm -f redeclipse-data_$(DEB_VERSION_UPSTREAM).orig.tar.gz
+	mv data-$(DEB_VERSION_UPSTREAM)/ $(DIR)
+	rm -rf $(DIR)/fonts
+	find $(DIR) -type f -name '.git*' -delete
 	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
-		-f $(TAR) $(DIR)
+		-f redeclipse-data_$(DEB_VERSION_UPSTREAM).orig.tar.xz $(DIR)
 	rm -rf $(DIR)

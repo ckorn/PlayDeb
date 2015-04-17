@@ -8,11 +8,9 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Red Eclipse
 Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
                   Lee "Eihrul" Salzman <lsalzman@gmail.com>
-Source: https://redeclipse.svn.sourceforge.net
- All data content were removed from the source package, they are shipped in
- redeclipse-data instead.
- The folders src/include/ src/xcode/ src/lib/ bin/ were also removed, the
- header files here are already shipped within other Debian packages, or are
+Source: https://github.com/red-eclipse/base
+ The folders src/include/ src/xcode/ src/lib/ bin/ are removed, the header
+ files here are already shipped within other Debian packages, or are
  unnecessary on GNU/Linux.
 License: Red-Eclipse
 EOF
@@ -29,14 +27,6 @@ mv debian/copyright-temp debian/copyright-new
 
 # Remove all records related to data/*
 awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: data\//' debian/copyright-new > debian/copyright-temp
-mv debian/copyright-temp debian/copyright-new
-
-# Remove all records related to game/*
-awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: game\//' debian/copyright-new > debian/copyright-temp
-mv debian/copyright-temp debian/copyright-new
-
-# Remove record for "Akashi-Font" license
-awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: Akashi-Font$/' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
 # Remove record for "OFL-1.1" license
@@ -67,9 +57,8 @@ mv debian/copyright-temp debian/copyright-new
 ed -s debian/copyright-new <<EOF
 /INSERT_DEBIAN_HERE/c
 Files: debian/*
-Copyright: 2011-2013 Martin Erik Werner <martinerikwerner@gmail.com>
+Copyright: 2011-2015 Martin Erik Werner <martinerikwerner@gmail.com>
 License: Zlib
 .
 w
 EOF
-

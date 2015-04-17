@@ -2,15 +2,26 @@
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/default.mk
+
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	MAKEFLAGS += -j$(NUMJOBS)
+endif
+
 %:
 	dh $@ --sourcedirectory=src --parallel
 
+override_dh_auto_clean:
+	$(MAKE) -C src/ clean-client clean-server
+	rm -rf enet
+
 override_dh_auto_build:
+	mkdir -p enet/include
 	dh_auto_build -- \
-		CPPFLAGS="$(CPPFLAGS)" \
-		CFLAGS="$(CFLAGS) $(CPPFLAGS)" \
-		CXXFLAGS="$(CXXFLAGS) $(CPPFLAGS)" \
-		LDFLAGS="$(LDFLAGS)" \
+		CXXFLAGS="$(CXXFLAGS) $(CPPFLAGS) -ffast-math" \
+		LIBENET="" \
 		client server
 
 override_dh_strip:
@@ -18,39 +29,40 @@ override_dh_strip:
 	dh_strip -predeclipse-server --dbg-package=redeclipse-server-dbg
 
 override_dh_auto_install:
-	dh_auto_install -- \
-		CXXFLAGS="$(CXXFLAGS)" \
-		ICON="" \
+	$(MAKE) -C src/ \
+		LIBENET="" \
+		DESTDIR=$(CURDIR)/debian/tmp \
 		prefix=/usr games=/games gamesbin=/games \
 		system-install-client system-install-server \
-		system-install-docs system-install-menus
+		system-install-common system-install-docs system-install-menus
 
 override_dh_install:
-	dh_install --list-missing
+	dh_install -predeclipse
+	dh_install -predeclipse-server
+	dh_install -predeclipse-common --exclude=play.cfg
 
 override_dh_compress:
-	dh_compress --exclude=.cfg
+	dh_compress --exclude=.cfg --exclude=guidelines.txt
 
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
 
-VER=$(shell dpkg-parsechangelog | sed -rne 's/^Version: ([^-]+).*/\1/p')
-DIR=redeclipse-$(VER).orig
-UTAR=redeclipse_$(VER).orig.tar.gz
-TAR=redeclipse_$(VER).orig.tar.xz
+DIR=redeclipse-$(DEB_VERSION_UPSTREAM).orig
 get-orig-source:
-	uscan --noconf --force-download --download-current-version --destdir=.
+	uscan --noconf --rename --force-download --download-current-version --destdir=.
 	rm -rf $(DIR)
-	tar -xzf $(UTAR)
-	rm -f $(UTAR)
-	mv base-$(VER)/ $(DIR)
+	tar -xf redeclipse_$(DEB_VERSION_UPSTREAM).orig.tar.gz
+	rm -f redeclipse_$(DEB_VERSION_UPSTREAM).orig.tar.gz
+	mv base-$(DEB_VERSION_UPSTREAM)/ $(DIR)
 	rm -rf $(DIR)/src/include/
 	rm -rf $(DIR)/src/enet/
 	rm -rf $(DIR)/src/xcode/
 	rm -rf $(DIR)/src/lib/
 	rm -rf $(DIR)/src/install/win/
 	rm -rf $(DIR)/bin/
-	rm -rf $(DIR)/data
+	rm -rf $(DIR)/data/
+	rm -f $(DIR)/*.bat
+	find $(DIR) -type f -iname '.git*' -delete
 	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
-		-f $(TAR) $(DIR)
+		-f redeclipse_$(DEB_VERSION_UPSTREAM).orig.tar.xz $(DIR)
 	rm -rf $(DIR)

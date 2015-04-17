@@ -1,0 +1,149 @@
+From c4b2cce04173f1a679d7febd2f3e46b6e6a21c73 Mon Sep 17 00:00:00 2001
+From: Martin Erik Werner <martinerikwerner@gmail.com>
+Date: Fri, 3 Apr 2015 22:18:15 +0200
+Subject: [PATCH 5/5] system-install: Install appdata
+
+---
+ src/install/nix/redeclipse.appdata.xml    | 40 -------------------------------
+ src/install/nix/redeclipse.appdata.xml.am | 40 +++++++++++++++++++++++++++++++
+ src/system-install.mk                     |  9 +++++++
+ 3 files changed, 49 insertions(+), 40 deletions(-)
+ delete mode 100644 src/install/nix/redeclipse.appdata.xml
+ create mode 100644 src/install/nix/redeclipse.appdata.xml.am
+
+diff --git a/src/install/nix/redeclipse.appdata.xml b/src/install/nix/redeclipse.appdata.xml
+deleted file mode 100644
+index 60b9e2f..0000000
+--- a/src/install/nix/redeclipse.appdata.xml
++++ /dev/null
+@@ -1,40 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<component type="desktop">
+-  <id>@APPNAME@.desktop</id>
+-  <metadata_license>CC-BY-SA-3.0+</metadata_license>
+-  <project_license>ZLIB and CC-BY-SA-3.0+</project_license>
+-  <description>
+-    <p>
+-      Red Eclipse is a fun-filled new take on the casual first person arena
+-      shooter, built as a total conversion of Cube Engine 2, which lends itself
+-      toward a balanced gameplay, with a general theme of agility in a variety
+-      of environments.
+-    </p>
+-    <ul>
+-      <li>Cross-platform multiplayer</li>
+-      <li>Features parkour, impulse boosts, dashing, and other tricks</li>
+-      <li>Favourite gamemodes with an array of mutators and variables</li>
+-      <li>Builtin editor lets you create your own maps cooperatively online</li>
+-    </ul>
+-  </description>
+-  <url type="homepage">http://redeclipse.net/</url>
+-  <screenshots>
+-    <screenshot type="default">
+-      <image>http://redeclipse.net/bits/images/053.jpg</image>
+-      <caption>Posing with fire on the map venus</caption>
+-    </screenshot>
+-    <screenshot>
+-      <image>http://redeclipse.net/bits/images/045.jpg</image>
+-      <caption>Mine fireworks on the map vault</caption>
+-    </screenshot>
+-    <screenshot>
+-      <image>http://redeclipse.net/bits/images/019.jpg</image>
+-      <caption>Overlooking friendly fire on the map cutec</caption>
+-    </screenshot>
+-  </screenshots>
+-  <updatecontact>http://redeclipse.net/forum/</updatecontact>
+-  <developer_name>Red Eclipse Team</developer_name>
+-  <url type="bugtracker">https://github.com/red-eclipse/base/issues</url>
+-  <url type="donation">http://redeclipse.net/donate</url>
+-  <url type="help">http://redeclipse.net/faq</url>
+-</component>
+diff --git a/src/install/nix/redeclipse.appdata.xml.am b/src/install/nix/redeclipse.appdata.xml.am
+new file mode 100644
+index 0000000..60b9e2f
+--- /dev/null
++++ b/src/install/nix/redeclipse.appdata.xml.am
+@@ -0,0 +1,40 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<component type="desktop">
++  <id>@APPNAME@.desktop</id>
++  <metadata_license>CC-BY-SA-3.0+</metadata_license>
++  <project_license>ZLIB and CC-BY-SA-3.0+</project_license>
++  <description>
++    <p>
++      Red Eclipse is a fun-filled new take on the casual first person arena
++      shooter, built as a total conversion of Cube Engine 2, which lends itself
++      toward a balanced gameplay, with a general theme of agility in a variety
++      of environments.
++    </p>
++    <ul>
++      <li>Cross-platform multiplayer</li>
++      <li>Features parkour, impulse boosts, dashing, and other tricks</li>
++      <li>Favourite gamemodes with an array of mutators and variables</li>
++      <li>Builtin editor lets you create your own maps cooperatively online</li>
++    </ul>
++  </description>
++  <url type="homepage">http://redeclipse.net/</url>
++  <screenshots>
++    <screenshot type="default">
++      <image>http://redeclipse.net/bits/images/053.jpg</image>
++      <caption>Posing with fire on the map venus</caption>
++    </screenshot>
++    <screenshot>
++      <image>http://redeclipse.net/bits/images/045.jpg</image>
++      <caption>Mine fireworks on the map vault</caption>
++    </screenshot>
++    <screenshot>
++      <image>http://redeclipse.net/bits/images/019.jpg</image>
++      <caption>Overlooking friendly fire on the map cutec</caption>
++    </screenshot>
++  </screenshots>
++  <updatecontact>http://redeclipse.net/forum/</updatecontact>
++  <developer_name>Red Eclipse Team</developer_name>
++  <url type="bugtracker">https://github.com/red-eclipse/base/issues</url>
++  <url type="donation">http://redeclipse.net/donate</url>
++  <url type="help">http://redeclipse.net/faq</url>
++</component>
+diff --git a/src/system-install.mk b/src/system-install.mk
+index 1f0b1cd..eaa3c41 100644
+--- a/src/system-install.mk
++++ b/src/system-install.mk
+@@ -17,6 +17,7 @@ mandir=$(DESTDIR)$(prefix)/share/man
+ menudir=$(DESTDIR)$(prefix)/share/applications
+ icondir=$(DESTDIR)$(prefix)/share/icons/hicolor
+ pixmapdir=$(DESTDIR)$(prefix)/share/pixmaps
++appdatadir=$(DESTDIR)$(prefix)/share/appdata
+ 
+ ICONS= \
+ 	install/nix/$(appsrcname)_x16.png \
+@@ -124,6 +125,7 @@ system-install-docs: $(MANPAGES)
+ 
+ system-install-menus: icons
+ 	$(MKDIR) $(menudir)
++	$(MKDIR) $(appdatadir)
+ 	$(MKDIR) $(icondir)/16x16/apps
+ 	$(MKDIR) $(icondir)/32x32/apps
+ 	$(MKDIR) $(icondir)/48x48/apps
+@@ -136,6 +138,12 @@ system-install-menus: icons
+ 		-e 's,@APPNAME@,$(appname),g' \
+ 		install/nix/$(appsrcname).desktop.am > \
+ 		$(menudir)/$(appname).desktop
++	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
++		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
++		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
++		-e 's,@APPNAME@,$(appname),g' \
++		install/nix/$(appsrcname).appdata.xml.am > \
++		$(appdatadir)/$(appname).appdata.xml
+ 	install -m644 install/nix/$(appsrcname)_x16.png \
+ 		$(icondir)/16x16/apps/$(appname).png
+ 	install -m644 install/nix/$(appsrcname)_x32.png \
+@@ -184,6 +192,7 @@ system-uninstall-docs:
+ 
+ system-uninstall-menus:
+ 	@rm -fv $(menudir)/$(appname).desktop
++	@rm -fv $(appdatadir)/$(appname).appdata.xml
+ 	@rm -fv $(icondir)/16x16/apps/$(appname).png
+ 	@rm -fv $(icondir)/32x32/apps/$(appname).png
+ 	@rm -fv $(icondir)/48x48/apps/$(appname).png
+-- 
+2.1.4
+
