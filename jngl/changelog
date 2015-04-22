@@ -1,3 +1,9 @@
+jngl (1.1.0-1~getdeb3~vivid) vivid; urgency=medium
+
+  * Rebuild for vivid
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 21 Apr 2015 20:36:09 +0200
+
 jngl (1.1.0-1~getdeb2~trusty) trusty; urgency=low
 
   * Rebuild for trusty
