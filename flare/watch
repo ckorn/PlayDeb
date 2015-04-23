@@ -1,4 +1,0 @@
-version=3
-https://github.com/clintbellanger/flare-game/tags .*/v(\d[\d\.]+)\.(?:tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz))|zip)
-#http://githubredir.debian.net/github/clintbellanger/flare-game v(.*).tar.gz
-#https://github.com/clintbellanger/flare-game/downloads flare.*_(\d[\d\.]+)\.(?:tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz))|zip)

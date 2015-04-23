@@ -1,6 +1,0 @@
-*.cfg				usr/share/sandboxgamemaker
-debian/*.desktop		usr/share/applications
-debian/sandboxgamemaker.xpm	usr/share/pixmaps
-sandbox_unix			usr/games
-sandboxgamemaker_glauncher	usr/lib/sandboxgamemaker
-src/sandbox_*			usr/lib/sandboxgamemaker

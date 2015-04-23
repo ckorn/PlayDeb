@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Platinum Arts Sandbox Gamemaker
-Comment=Create 3D games and worlds
-Exec=sandbox_unix --launcher
-Icon=sandboxgamemaker
-Terminal=false
-Type=Application
-Categories=Game;ArcadeGame;RolePlaying;KidsGame;ActionGame;

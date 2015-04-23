@@ -1,8 +1,0 @@
-Document: flightgear
-Title: FlightGear documentation
-Abstract: Varios README and HTML documents describing the FlightGear
- simulation framework.
-Section: Games/Simulation
-
-Format: Text
-Files: /usr/share/doc/flightgear/README*.gz

@@ -1,6 +1,0 @@
-#!/bin/sh
-# generic wesnoth-nolog script
-# copyright 2009 by Gerfried Fuchs <rhonda@debian.at>
-# Licenced under WTFPLv2
-
-$(echo $0 | sed -e s/-nolog$//) $* > /dev/null 2> /dev/null

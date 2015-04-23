@@ -1,3 +1,0 @@
-version=3
-opts="uversionmangle=s/([\d\.]+)-.*/$1/" \
-http://sf.net/freeorion/FreeOrion-v(.+)-Win32-Setup.exe

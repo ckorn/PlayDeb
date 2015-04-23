@@ -1,4 +1,0 @@
-debian/freedm.desktop		usr/share/applications
-debian/scripts/freedm		usr/games
-freedm.xpm			usr/share/pixmaps
-wads/freedm.wad			usr/share/games/doom

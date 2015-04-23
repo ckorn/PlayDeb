@@ -1,5 +1,0 @@
-debian/bin/*                                usr/games
-usr/bin/*                                   usr/lib/freeorion
-usr/lib/freeorion/freeorion/*               usr/lib/freeorion
-usr/share/applications
-usr/share/freeorion/ogre_plugins.cfg        usr/share/games/freeorion

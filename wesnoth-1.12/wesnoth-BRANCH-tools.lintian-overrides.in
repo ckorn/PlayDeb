@@ -1,3 +1,0 @@
-# Wesnoth refuses to run if license file cannot be found; see #697933
-wesnoth-BRANCH-tools: extra-license-file usr/share/games/wesnoth/BRANCH/data/tools/addon_manager/COPYING.txt
-wesnoth-BRANCH-tools: executable-not-elf-or-script usr/share/games/wesnoth/BRANCH/data/tools/*/*.py

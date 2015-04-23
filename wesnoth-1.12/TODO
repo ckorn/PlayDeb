@@ -1,4 +1,0 @@
-add alternative handling
-
-create wesnoth-tools package containing:
- - byte-compile .py modules?

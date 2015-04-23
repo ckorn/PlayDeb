@@ -1,3 +1,0 @@
-# Wesnoth refuses to run if license file cannot be found; see #697933
-wesnoth-1.12-tools: extra-license-file usr/share/games/wesnoth/1.12/data/tools/addon_manager/COPYING.txt
-wesnoth-1.12-tools: executable-not-elf-or-script usr/share/games/wesnoth/1.12/data/tools/*/*.py

@@ -1,6 +1,0 @@
-?package(freeorion):needs="X11" \
-  section="Games/Strategy" \
-  title="FreeOrion" \
-  longtitle="turn-based space empire and galactic conquest game" \
-  icon="/usr/share/pixmaps/freeorion.xpm" \
-  command="/usr/games/freeorion"
