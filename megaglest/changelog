@@ -1,3 +1,9 @@
+megaglest (3.11.1-1~getdeb2~vivid) vivid; urgency=medium
+
+  * Rebuild for vivid
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 22 Apr 2015 21:32:50 +0200
+
 megaglest (3.11.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
