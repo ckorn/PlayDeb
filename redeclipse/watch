@@ -1,3 +1,3 @@
 version=3
-https://github.com/red-eclipse/base/releases \
-    (?:.*/)?v([\d\.]+)\.tar\.gz
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/redeclipse-$1\.tar\.gz/ \
+  https://github.com/red-eclipse/base/tags .*/v?(\d\S*)\.tar\.gz
