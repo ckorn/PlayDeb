@@ -2,30 +2,46 @@
 
 cd "$(dirname "$0")"/..
 
+ver="$(dpkg-parsechangelog -S Version)"
+ver="${ver%%-*}"
+
+all_licenses=redeclipse-base.clone/doc/all-licenses.txt
+
+test -e "$all_licenses" || \
+	{
+		rm -rf redeclipse-base.clone && \
+		git clone https://github.com/red-eclipse/base.git \
+			--branch v"$ver" redeclipse-base.clone || \
+		{ echo "unable to get upstream all-licenses.txt file from base repo"; \
+		exit 1; }
+	}
+
 # Header
 cat <<EOF > debian/copyright-new
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Red Eclipse
 Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
                   Lee "Eihrul" Salzman <lsalzman@gmail.com>
-Source: https://redeclipse.svn.sourceforge.net
- All sourcecode-related items have been removed from the source package, they
- are shipped in the redeclipse source package instead.
-License: Red-Eclipse
+Source: https://github.com/red-eclipse/data
+License: Red-Eclipse-Data
 EOF
 
-# "Red-Eclipse" summary license, indented
-sed -e 's/^/\ /' -e 's/^\ $/\ \./' doc/license.txt >> debian/copyright-new
+# Data summary license, indented
+sed -e 's/^/\ /' -e 's/^\ $/\ \./' readme.txt >> debian/copyright-new
 
 # Remove duplicated Format: line and insert upstream license dep5 file
-sed '/Format:.*/d' doc/all-licenses.txt >> debian/copyright-new
+sed '/Format:.*/d' "$all_licenses"  >> debian/copyright-new
 
-# Remove record stating some dirs are omitted (the dirs are removed in Debian)
-awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: bin\//' debian/copyright-new > debian/copyright-temp
+# Remove all records related to bin/*, config/*, doc/*, data/fonts/* and src/*
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: (bin|config|doc|data\/fonts|src)\// ' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
-# Remove all records related to src/*
-awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: src\//' debian/copyright-new > debian/copyright-temp
+# Remove data/ prefix
+sed 's/ data\// /g' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove record for "OFL-1.1" license
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: OFL-1.1$/' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
 # Add marker for inserting Debian chunk
@@ -36,8 +52,10 @@ mv debian/copyright-temp debian/copyright-new
 ed -s debian/copyright-new <<EOF
 /INSERT_DEBIAN_HERE/c
 Files: debian/*
-Copyright: 2011-2013 Martin Erik Werner <martinerikwerner@gmail.com>
+Copyright: 2011-2015 Martin Erik Werner <martinerikwerner@gmail.com>
 License: Zlib
 .
 w
 EOF
+
+echo "done -> debian/copyright-new"
