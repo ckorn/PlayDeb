@@ -1,3 +1,121 @@
+megamek (41.3-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    + Data: New Sprites
+    + Bug: Air-to-ground fire needs to allow the attacker to pick a path on
+    the targets flight path if multiple hexes are equidistant (this can
+    matter for angle-of-attack calculation)
+    + Bug: in Air-to-ground attacks, the end facing of the Aero was being
+    used, instead of the facing at the position in the flight path
+    + Feature [#1362]: Extras tab in UnitDisplay now shows last targeted unit
+    + Bug [#4437]:  ASFs - "Next target" button selects invalid targets
+    + Bug [#4440]: ASFs - unable to strafe hexes with friendly units
+    + Patch [#465]: Advanced option to turn off displaying hex coordinates
+    + Bug [#3877]: Compiling with JDK 7 breaks Mac releases
+    + Patch [#467]: Antialiasing only works during deployment
+    + Data: New Sprites.
+    + Data: New RATs(Completes the Field Manuals) Thanks Magnus Kerensky.
+    + Feature: Tactical Overlay settings now update board view immediately
+    + Patch [#466]: FoV Shading in with stripes
+    + Translation(Russian): First pass of Russian translation complete.
+    + Bug: Pintle turret weight calculation wrong
+    + Data: New Sprites
+    + Data: XTRO Most Wanted Units/Unit Fixes.
+    + Bug [#4462]: Infantry with support lasers incorrectly labeled as "Heavy
+    Laser"
+    + Bug [#4474]: NPE in 0.41.3 r11674 UnitDisplay$ExtraPanel.displayMech
+    + Patch [#468]: Anti-aliasing for the StepSprites
+    + Feature: Anti-aliasing for CursorSprites
+    + Patch [#469]: StepSprite text gets lost at lower scales
+    + Patch [#470]: Updated movement and facing arrows
+    (StepSprite/EntitySprite)
+    + Data: New Sprites and Neoancient RATs
+    + Bug: M-Pod should be defensive BV for tanks
+    + Bug: AR10 ammo BV should be in total compared to launcher BV, not for
+    each type of missile seperately
+    + Bug: PPC w/ capacitor has wrong BV when combined with drone operating
+    system
+    + Bug [#4467]: Incorrect popup text when mousing over hex targeted by
+    artillery
+    + Bug [#4468]: Path planner doesn't know about elevation change steps
+    + Bug [#4471]: TargetingDisplay centers display on off-board units
+    + Bug [#4476]: Unjam UAC Unofficial Option Not Working
+    + Bug: Potential NPE in Compute.getClosestFlightPath
+    + Bug: wrong BV for medium SCC
+    + Bug: capacitor being added twice for tank ppc BV
+    + Bug [#4480]: Vehicle damage threshold rule prevents criticals when IS
+    is hit
+    + Bug [#4495]: ASFs : Cluster hit weapons still causing multiple critical
+    hits per weapon on a to hit roll of 12 (was listed as fixed)
+    + Bug [#4483]: ASFs : Extra heat from engine hits not shown during firing
+    phase
+    + All non-mechanized Infantry can now make anti-mech attacks, previously
+    they had to have anti-mech training, which is a restriction no longer in
+    TW
+    + Feature: UnitDisplay Pilot tab now says Anti-Mech instead of Piloting
+    for infantry
+    + Bug: Updated UnitDisplay Weapon tab to-hit details for swarm and leg
+    attacks: it now follows the same format as regular weapons attacks
+    + Bug [#4494]: "Navel C3"
+    + Data: New Sprites and unit Fix.
+    + Bug [#4454]: Conventional infantry costs are being calculated
+    incorrectly
+    + Patch [#474]: Cosmetic Changes to CommonSettingsDialog
+    + Reduced default path planner time limit from 2000ms to 500ms
+    + Bug [#4425]: Princess and Precognition share a Game reference
+    + Bug [#4502]: Thunder bombs create minefields with incorrect owners
+    + Data: New Sprites and Infantry unit fixes.
+    + Bug [MML#176] PPC capacitors does not appear in equipment list for
+    aeros
+    + Data: New Sprites and adding HTP:Tortuga Units.
+    + Bug: Potential NPE computing BV for Protomechs with AMS
+    + Bug: Infantry antimek training was getting overriden by default
+    piloting skill
+    + Patch [#476]: Coordinates from Point (more accurate mouse click point
+    to hex conversion)
+    + Patch [#475]: Minimap - display visible area, minimize bug fix, enable
+    AA
+    + Updated how BLKInfantryLoader handles the antimek tag: an empty tag now
+        designates that the unit is AM trained and will get the default AM
+        skill for the unit type, previously it would get an AM skill of 0
+    + Bug [#4518]: VTOL Chin turret weight not being calculated
+    + Data: Couple of Unit fixes and New Sprites.
+    + Made Endo Steel and Endo Composite variable criticals, for super
+    heavies
+    + Bug [#4454] Final Fix for Infantry Costs.
+    + Bug [MML#147] BA mechanical jump boosters take up no weight
+    + Bug: Infantry Weights adjusted to take into account AntiMek Equipment.
+    + Bug [#4513]: NPE in 0.41.3 r11674 Infantry.isLocationProhibited caused
+    by Vee
+    + Bug [#4506]: Deploying minefields - trying to cancel the minefield
+    deploys the minefield with 0 density
+    + Bug: Generated Map Settings Save dialog says Load
+    + Bug: Generated Map Settigns Save Dialog now adds .xml extension if not
+    present
+    + Bug: Generated Map Settings Dialog now sets Map Size drop down to
+    'Custom' if configured map size doesn't exist
+    + Bug [#4501]: ASF : rolling twice to unjam UAC 20
+    + Bug [#4453]: ASF unable to use split S for unknown reason
+    + Bug [#4519]: Cannot Jump Over Water (Path finding)
+    + Bug: Possible to see moving unsee enemies units with double-blind,
+    sensors and Show Movement option
+    + Bug: Sensor return icons displayed info it shouldn't (like facing,
+    prone, etc)
+    + Bug: Added missing default keybind for Toggle Isometric (it's now T)
+    + Feature: Added ability to select default weapon sort order in client
+    settings
+    + Save Weapon Sort Order menu item now sends the Entity's sort order to
+    the server
+    + Added a defaultSkinScrollBars.xml, for the default skin with scroll
+    bars
+    + Data: New Sprites and some unit fixed.
+    + Bug [#4490]: CASE doesn't work correctly for the tac ops taking damage
+    rule.
+    + Bug [#4520]: ProtoMechs and Equipment Modes
+    + Data: New Sprites
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 25 Apr 2015 01:25:18 +0200
+
 megamek (0.41.2-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
