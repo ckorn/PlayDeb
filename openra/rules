@@ -2,6 +2,10 @@
 %:
 	dh $@ --with cli
 
+override_dh_auto_configure:
+	mozroots --import --sync
+	dh_auto_configure
+
 override_dh_auto_install:
 	dh_auto_install -- prefix=/usr datadir=/usr/share/games libexecdir=/usr/share/games bindir=/usr/games
 
