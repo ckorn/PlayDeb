@@ -20,7 +20,7 @@ Build-Depends: debhelper (>= 9.20120417~),
                libboost-thread-dev,
                libboost-system-dev,
                libboost-filesystem-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: http://springlobby.info
 
 Package: springlobby
