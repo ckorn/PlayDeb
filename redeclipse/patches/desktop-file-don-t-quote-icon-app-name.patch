@@ -1,0 +1,25 @@
+From 10da6eef404d0ca0066825e0ba0cec77e418dd5e Mon Sep 17 00:00:00 2001
+From: Martin Erik Werner <martinerikwerner@gmail.com>
+Date: Fri, 22 Mar 2013 20:32:21 +0100
+Subject: [PATCH] desktop file: don't quote icon/app name
+
+---
+ src/install/nix/redeclipse.desktop.am |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/install/nix/redeclipse.desktop.am b/src/install/nix/redeclipse.desktop.am
+index e3215c5..de129da 100644
+--- a/src/install/nix/redeclipse.desktop.am
++++ b/src/install/nix/redeclipse.desktop.am
+@@ -20,6 +20,6 @@ Comment[gl]=Xogo de tiros en primeira persoa con xogo áxil e editor incorporado
+ Comment[it]=Sparatutto in prima persona con agile gameplay ed editor incorporato.
+ Comment[pt]=Jogo de tiros em primeira pessoa com jogabilidade ágil e editor incorporado.
+ Comment[sv]=Förstapersonsskjutare med rörlig spelstil och inbyggd baneditor.
+-Icon="@APPNAME@"
+-Exec="@APPNAME@"
++Icon=@APPNAME@
++Exec=@APPNAME@
+ Categories=Game;ActionGame;
+-- 
+1.7.10.4
+
