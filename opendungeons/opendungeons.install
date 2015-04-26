@@ -1,6 +1,7 @@
+etc/opendungeons
 usr/games
+usr/share/appdata
 usr/share/applications
 usr/share/doc
 usr/share/icons
 usr/share/man
-usr/lib/games/opendungeons

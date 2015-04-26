@@ -12,8 +12,9 @@ Build-Depends: debhelper (>= 9),
                libopenal-dev,
                libboost-filesystem1.55-dev,
                libboost-locale1.55-dev,
+               libboost-test1.55-dev,
                pkg-config
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: http://opendungeons.sourceforge.net/
 
 Package: opendungeons
