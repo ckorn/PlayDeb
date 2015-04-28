@@ -1,10 +1,19 @@
 # executable in /usr/games
 # share dir in /usr/share/games/evernus (lower case)
-Index: evernus-1.26/CMakeLists.txt
+Index: evernus-1.30/CMakeLists.txt
 ===================================================================
---- evernus-1.26.orig/CMakeLists.txt	2015-02-17 18:57:36.000000000 +0100
-+++ evernus-1.26/CMakeLists.txt	2015-02-21 20:16:53.186956628 +0100
-@@ -798,8 +798,8 @@
+--- evernus-1.30.orig/CMakeLists.txt	2015-04-28 19:50:10.089866934 +0200
++++ evernus-1.30/CMakeLists.txt	2015-04-28 20:50:36.408995347 +0200
+@@ -775,7 +775,7 @@
+ 
+ set(RESOURCES
+     "res"
+-    "trans"
++    "${CMAKE_CURRENT_BINARY_DIR}/trans"
+ )
+ 
+ if(APPLE)
+@@ -801,8 +801,8 @@
      )
  elseif(UNIX)
      foreach(RES ${RESOURCES})

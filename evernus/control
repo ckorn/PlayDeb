@@ -17,7 +17,7 @@ Build-Depends: debhelper (>= 9),
                libc++-dev,
                clang,
                qtbase5-private-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: http://evernus.com/
 
 Package: evernus
