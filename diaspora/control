@@ -14,15 +14,16 @@ Build-Depends: debhelper (>= 9),
                cmake,
                libwxgtk2.8-dev,
                libwxgtk2.8-dbg,
-               libjpeg-dev
-Standards-Version: 3.9.3
+               libjpeg-dev,
+               libjansson-dev
+Standards-Version: 3.9.5
 Homepage: http://www.diasporagame.com
 
 Package: diaspora
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         diaspora-data (>= 1.0.4)
+         diaspora-data (>= 1.1.1)
 Description: Single and multiplayer space fighter combat game
  Diaspora is a single and multiplayer space fighter
  combat game set in the reimagined

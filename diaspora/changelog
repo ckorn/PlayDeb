@@ -1,3 +1,9 @@
+diaspora (1.1.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 28 Apr 2015 20:08:25 +0200
+
 diaspora (1.0.4-1~getdeb4) precise; urgency=low
 
   * The problem is still not fixed (LP: #1130659)
