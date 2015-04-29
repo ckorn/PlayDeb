@@ -1,3 +1,9 @@
+diaspora-data (1.1.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 28 Apr 2015 20:29:07 +0200
+
 diaspora-data (1.0.4-1~getdeb2) trusty; urgency=medium
 
   * Remove default config (LP: #1325277)
