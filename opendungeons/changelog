@@ -1,3 +1,9 @@
+opendungeons (0.5.0-1~getdeb2) trusty; urgency=medium
+
+  * Remove cmake.patch
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 02 May 2015 17:27:48 +0200
+
 opendungeons (0.5.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
