@@ -1,4 +1,0 @@
-version=3
-opts="dversionmangle=s/(\d)(?:\.\d)~(.+)([\d]+.*)/$1-$2$3/" \
-https://github.com/stepmania/stepmania/releases \
-    (?:.*/)?archive/SM(.*)\.tar\.gz
