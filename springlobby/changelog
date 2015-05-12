@@ -1,3 +1,15 @@
+springlobby (0.219-1~getdeb2~vivid) vivid; urgency=medium
+
+  * New upstream version
+     - remove /changpassword2: merge into /changepassword
+     - add vote panel
+     - springlobby now requires at least gcc 4.7
+     - fix some minor memleaks
+     - fix crash on lobby server inconsistency
+     - default disable notification popups when ingame
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 10 May 2015 17:02:25 +0200
+
 springlobby (0.218-1~getdeb2~vivid) vivid; urgency=medium
 
   * New upstream version
