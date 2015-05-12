@@ -1,7 +1,10 @@
 #!/usr/bin/make -f
 
+GRAPHITE = -floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-block -ftree-vectorize
+
 CPPFLAGS = -D_GLIBCXX_VISIBILITY=0 -DNDEBUG
-CXXFLAGS = -fomit-frame-pointer -fstrict-aliasing
+CXXFLAGS = -fomit-frame-pointer -fstrict-aliasing $(GRAPHITE)
+LDFLAGS = $(CXXFLAGS) $(GRAPHITE)
 
 DEB_HOST_GNU_CPU   := $(shell dpkg-architecture -qDEB_HOST_GNU_CPU)
 DEB_HOST_GNU_TYPE  := $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
@@ -11,6 +14,11 @@ DEB_HOST_MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 DPKG_EXPORT_BUILDFLAGS = 1
 
 DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+DEB_CPPFLAGS_MAINT_APPEND := -D_GLIBCXX_VISIBILITY=0 -DNDEBUG
+DEB_CFLAGS_MAINT_APPEND := -fomit-frame-pointer -fstrict-aliasing $(GRAPHITE)
+DEB_CXXFLAGS_MAINT_APPEND := -fomit-frame-pointer -fstrict-aliasing $(GRAPHITE)
+DEB_LDFLAGS_MAINT_APPEND := $(CXXFLAGS) $(GRAPHITE)
 
 DEB_QMAKE_CONFIG_VAL += espeak
 
