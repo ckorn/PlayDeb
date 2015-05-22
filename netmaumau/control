@@ -73,6 +73,7 @@ Replaces: libnetmaumauclient0,
           libnetmaumauclient1,
           libnetmaumauclient2,
           libnetmaumauclient3
+Provides: netmaumau-client-api-15
 Description: Server for the popular card game Mau Mau - client library
  Functions for connecting to a NetMauMau server.
 
