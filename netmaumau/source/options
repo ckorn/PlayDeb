@@ -1,2 +1,11 @@
 compression = "xz"
 compression-level = 9
+tar-ignore = .svn
+tar-ignore = .git
+tar-ignore = .gitignore
+tar-ignore = V*.xml
+tar-ignore = netmaumau.ico
+tar-ignore = "DIE\ OFFIZIELLEN\ MAUMAU\ SPIELREGELN.pdf"
+tar-ignore = *.patch
+tar-ignore = config.log
+tar-ignore = nmm-ai.flw
