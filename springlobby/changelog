@@ -1,3 +1,11 @@
+springlobby (0.222-1~getdeb2~vivid) vivid; urgency=medium
+
+  * New upstream version
+     - fix crash when going to tools/download archives
+     - (try to) fix bug: tipwindow consumes first mouse events
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 23 May 2015 18:33:21 +0200
+
 springlobby (0.219-1~getdeb2~vivid) vivid; urgency=medium
 
   * New upstream version
