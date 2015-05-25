@@ -1,3 +1,9 @@
+nmm-qt-client (0.19-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 24 May 2015 02:51:00 +0200
+
 nmm-qt-client (0.18-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
