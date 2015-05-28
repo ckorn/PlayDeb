@@ -1,16 +1,9 @@
-# fix typo
 # add keywords
-Index: vbam-1.8.0.1229/src/gtk/gvbam.desktop
+Index: vbam-1.8.0.1490/src/gtk/gvbam.desktop
 ===================================================================
---- vbam-1.8.0.1229.orig/src/gtk/gvbam.desktop	2014-03-25 22:38:52.051935042 +0100
-+++ vbam-1.8.0.1229/src/gtk/gvbam.desktop	2014-03-25 22:55:07.367906029 +0100
-@@ -3,8 +3,9 @@
- Type=Application
- Name=VBA-M
- GenericName=GameBoy Advance Emulator
--Comment=Nindendo GameBoy Advance Emulator
-+Comment=Nintendo GameBoy Advance Emulator
- Exec=gvbam %f
+--- vbam-1.8.0.1490.orig/src/gtk/gvbam.desktop	2015-05-27 18:14:05.075391410 +0200
++++ vbam-1.8.0.1490/src/gtk/gvbam.desktop	2015-05-27 18:14:56.960527945 +0200
+@@ -8,3 +8,4 @@
  Icon=vbam
  Categories=Game;Emulator;GTK;
  MimeType=application/x-gameboy-rom;application/x-gameboy-advance-rom;application/x-dmg-rom;application/x-agb-rom;application/x-gb-rom;application/x-gba-rom;

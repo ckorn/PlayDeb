@@ -1,5 +1,5 @@
 Source: vbam
-Section: otherosfs
+Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: debhelper (>= 9),
@@ -17,8 +17,9 @@ Build-Depends: debhelper (>= 9),
                libcairo2-dev,
                liblircclient-dev,
                libopenal-dev,
-               libwxgtk2.8-dev
-Standards-Version: 3.9.3
+               libwxgtk3.0-dev,
+               zip
+Standards-Version: 3.9.5
 Homepage: http://vba-m.com
 
 Package: vbam

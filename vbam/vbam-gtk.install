@@ -1,5 +1,6 @@
-usr/bin/gvbam
+usr/bin/wxvbam				usr/games
 usr/share/icons
 usr/share/vbam
-usr/share/locale/*/*/gvbam.*
+usr/share/locale/*/*/wxvbam.*
 usr/share/applications
+usr/share/man/man1/wxvbam.1
