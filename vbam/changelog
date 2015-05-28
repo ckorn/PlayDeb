@@ -1,3 +1,16 @@
+vbam (1.8.0.1490-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 27 May 2015 18:09:22 +0200
+
+vbam (1.8.0.1229-1~getdeb2) trusty; urgency=medium
+
+  * Revert commit 1229 because it is suspected to have
+    issues with old intel micro processors.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 18 May 2014 15:52:07 +0200
+
 vbam (1.8.0.1229-1~getdeb1) precise; urgency=low
 
   * New upstream version
