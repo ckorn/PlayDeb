@@ -1,3 +1,13 @@
+springlobby (0.223-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+     - fix invalid sync check (makes relayhost/hosting work again)
+     - set focus to text input when prompting
+     - allow to select engine version for singleplayer games (thanks
+     OursDesCavernes!)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 28 May 2015 05:04:59 +0200
+
 springlobby (0.222-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
