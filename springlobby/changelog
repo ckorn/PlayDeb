@@ -1,3 +1,10 @@
+springlobby (0.224-1~getdeb2~vivid) vivid; urgency=medium
+
+  * New upstream version
+    - fix startposition type ignored
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 28 May 2015 22:01:35 +0200
+
 springlobby (0.223-1~getdeb2~vivid) vivid; urgency=medium
 
   * New upstream version
