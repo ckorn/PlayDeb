@@ -1,10 +1,7 @@
 #!/usr/bin/make -f
 
-GRAPHITE = -floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-block -ftree-vectorize
-
 CPPFLAGS = -D_GLIBCXX_VISIBILITY=0 -DNDEBUG
-CXXFLAGS = -fomit-frame-pointer -fstrict-aliasing $(GRAPHITE)
-LDFLAGS = $(CXXFLAGS) $(GRAPHITE)
+CXXFLAGS = -fomit-frame-pointer -fstrict-aliasing
 
 DEB_HOST_GNU_CPU   := $(shell dpkg-architecture -qDEB_HOST_GNU_CPU)
 DEB_HOST_GNU_TYPE  := $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
@@ -15,16 +12,21 @@ DPKG_EXPORT_BUILDFLAGS = 1
 
 DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
-DEB_CPPFLAGS_MAINT_APPEND := -D_GLIBCXX_VISIBILITY=0 -DNDEBUG
-DEB_CFLAGS_MAINT_APPEND := -fomit-frame-pointer -fstrict-aliasing $(GRAPHITE)
-DEB_CXXFLAGS_MAINT_APPEND := -fomit-frame-pointer -fstrict-aliasing $(GRAPHITE)
-DEB_LDFLAGS_MAINT_APPEND := $(CXXFLAGS) $(GRAPHITE)
-
-DEB_QMAKE_CONFIG_VAL += espeak
+DEB_QMAKE_CONFIG_VAL += release espeak graphite lto
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/qmake.mk
 -include /usr/share/dpkg/buildflags.mk
+
+export ARFLAGS=ru
+export AR_FLAGS=ru
+export AR=gcc-ar
+export NM=gcc-nm
+export RANLIB=gcc-ranlib
+
+export CFLAGS=-fomit-frame-pointer -fstrict-aliasing -Wl,-fuse-ld=gold
+export CXXFLAGS=-fomit-frame-pointer -fstrict-aliasing -Wl,-fuse-ld=gold
+export LDFLAGS=$(CXXFLAGS) -Wl,-fuse-ld=gold
 
 # Add here any variable or target overrides you need.
 
@@ -35,7 +37,6 @@ DEB_DH_STRIP_ARGS_DEFAULT = --dbg-package=nmm-qt-client-dbg -n
 
 common-build-arch::
 	/usr/bin/lrelease-qt4 $(CURDIR)/nmm-qt-client.pro
-
 clean::
 	-rm $(CURDIR)/src/*.qm
 	rm -rf $(CURDIR)/release-moc $(CURDIR)/release-rcc
