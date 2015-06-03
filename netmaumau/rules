@@ -12,14 +12,18 @@ DPKG_EXPORT_BUILDFLAGS = 1
 
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
-GRAPHITE = -floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-block -ftree-vectorize
-LTO = -flto -fuse-linker-plugin -flto-compression-level=9 -flto-partition=1to1 -fuse-ld=gold
+GRAPHITE = -floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-block \
+	-ftree-vectorize -frename-registers
+LTO = -flto -fwhole-program -fuse-linker-plugin -flto-compression-level=9 -flto-partition=1to1 \
+	-Wl,--strip-lto-sections -ffat-lto-objects -Wl,-fuse-ld=gold
 
 DEB_CPPFLAGS_MAINT_APPEND := -DNDEBUG
 DEB_CFLAGS_MAINT_APPEND := -fomit-frame-pointer $(GRAPHITE) $(LTO)
 DEB_CXXFLAGS_MAINT_APPEND := -fomit-frame-pointer $(GRAPHITE) $(LTO)
-DEB_LDFLAGS_MAINT_APPEND := -fomit-frame-pointer $(GRAPHITE) $(LTO)
+DEB_LDFLAGS_MAINT_APPEND := $(CXXFLAGS) $(GRAPHITE) $(LTO)
 
+export ARFLAGS = ru
+export AR_FLAGS = ru
 export NM=gcc-nm
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -29,12 +33,10 @@ include /usr/share/cdbs/1/class/autotools.mk
 include /usr/share/cdbs/1/rules/autoreconf.mk
 -include /usr/share/dpkg/buildflags.mk
 
-# Add here any variable or target overrides you need.
-
-DEB_CONFIGURE_EXTRA_FLAGS = --bindir=\$${prefix}/games --enable-cli-client \
+DEB_CONFIGURE_EXTRA_FLAGS = --bindir=\$${prefix}/games --enable-console-client \
 	--enable-ai-image=/usr/share/pixmaps/debian-logo.png \
-	--enable-ai-name="`lsb_release -sc | sed 's/.*/\u&/'`" \
-	--localstatedir=/var/games
+	--enable-ai-name="`lsb_release -sc | sed 's/.*/\u&/'`" --localstatedir=/var/games \
+	--with-bashcompletiondir="\$${datarootdir}/bash-completion/completions"
 DEB_MAKE_CHECK_TARGET = check
 INT_INSTALL_TARGET = install-strip
 DEB_DH_BUILDDEB_ARGS_DEFAULT := -- -z9 -Zxz
@@ -44,3 +46,7 @@ DH_ALWAYS_EXCLUDE=.svn
 DEB_DH_INSTALL_ARGS_DEFAULT = --list-missing -Xclient-api-doc -X.la -Xnmm-server.1 -Xai_img
 DEB_DH_MAKESHLIBS_ARGS_netmaumau-server = -n
 DEB_DH_STRIP_ARGS_DEFAULT = --dbg-package=netmaumau-dbg -n
+
+# enable if https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=668254 is fixed
+#install/netmaumau-server-common::
+#	dh_bash-completion -pnetmaumau-server-common

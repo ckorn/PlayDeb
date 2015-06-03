@@ -6,7 +6,7 @@ Build-Depends: cdbs,
                debhelper (>= 9),
                libespeak-dev,
                libqt4-dev (>= 4.4.0),
-               netmaumau-dev (>= 0.17.3~),
+               netmaumau-dev (>= 0.19.1~),
                pkg-config
 Standards-Version: 3.9.5
 Homepage: http://sourceforge.net/projects/netmaumau/
@@ -14,8 +14,8 @@ Homepage: http://sourceforge.net/projects/netmaumau/
 Package: nmm-qt-client
 Architecture: any
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: libnetmaumauclient4 (>= 0.17.3~),
-         libnetmaumaucommon5 (>= 0.17.3~),
+Depends: libnetmaumauclient4 (>= 0.19.1~),
+         libnetmaumaucommon5 (>= 0.19.1~),
          ${misc:Depends},
          ${shlibs:Depends}
 Suggests: netmaumau-server
@@ -31,8 +31,6 @@ Architecture: any
 Section: debug
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends: nmm-qt-client (= ${binary:Version}), ${misc:Depends}
-Recommends: netmaumau-dbg (>= 0.17.3~)
 Description: Qt client for NetMauMau -- debugger symbols
  Qt client for NetMauMau.
- .
  (This package contains the debugging symbols).
