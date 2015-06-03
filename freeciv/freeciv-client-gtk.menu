@@ -1,0 +1,5 @@
+?package(freeciv-client-gtk):needs="x11" \
+ section="Games/Strategy" \
+ title="Freeciv client (GTK version)" \
+ command="/usr/games/freeciv-gtk2" \
+ icon="/usr/share/pixmaps/freeciv.xpm"

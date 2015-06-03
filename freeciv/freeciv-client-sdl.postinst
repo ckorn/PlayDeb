@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+update-alternatives --install /usr/games/freeciv freeciv /usr/games/freeciv-sdl 40
+
+if [ -f /usr/share/applications/freeciv.desktop ]; then
+    rm -f /usr/share/applications/freeciv.desktop
+fi
+
+#DEBHELPER#

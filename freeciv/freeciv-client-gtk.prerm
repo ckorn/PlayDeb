@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+update-alternatives --remove freeciv /usr/games/freeciv-gtk2
+
+if [ -f /etc/ggz.modules ]; then
+	# If we are the only thing in ggz.modules, remove it. This will finally
+	# remove the pipuarts 'file not owned' warning.
+	if [ 1 -eq `grep -c '{prefix}' /etc/ggz.modules` ] && \
+				[ 1 -eq `grep -c 'CommandLine' /etc/ggz.modules` ]; then
+		rm -f /etc/ggz.modules
+	fi
+
+	# If no one else is using it, they can create it when they need it.
+	if [ 1 -eq `wc -l /etc/ggz.modules |cut -d ' ' -f 1` ]; then
+		rm -f /etc/ggz.modules
+	fi
+fi
+
+#DEBHELPER#
+
