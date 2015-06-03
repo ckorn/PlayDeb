@@ -1,10 +1,10 @@
 # add keywords
-Index: vbam-1.8.0.1490/src/gtk/gvbam.desktop
+Index: vbam-1.8.0.1498/src/gtk/gvbam.desktop
 ===================================================================
---- vbam-1.8.0.1490.orig/src/gtk/gvbam.desktop	2015-05-27 18:14:05.075391410 +0200
-+++ vbam-1.8.0.1490/src/gtk/gvbam.desktop	2015-05-27 18:14:56.960527945 +0200
-@@ -8,3 +8,4 @@
- Icon=vbam
+--- vbam-1.8.0.1498.orig/src/gtk/gvbam.desktop	2015-06-02 16:26:18.483901206 +0200
++++ vbam-1.8.0.1498/src/gtk/gvbam.desktop	2015-06-02 16:26:18.479901117 +0200
+@@ -9,3 +9,4 @@
  Categories=Game;Emulator;GTK;
+ Keywords=emulator;Nintendo;gameboy;Game Boy;Game Boy Color;Game Boy Advance;
  MimeType=application/x-gameboy-rom;application/x-gameboy-advance-rom;application/x-dmg-rom;application/x-agb-rom;application/x-gb-rom;application/x-gba-rom;
 +Keywords=vba;vbam;gameboy;emulator;

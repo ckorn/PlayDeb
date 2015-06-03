@@ -1,61 +1,108 @@
-vbam (1.8.0.1490-1~getdeb1) trusty; urgency=medium
+vbam (1.8.0.1498-1~getdeb1) trusty; urgency=medium
 
-  * New upstream version
+  * Rebase with Debian (LP: #1460964)
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 27 May 2015 18:09:22 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 02 Jun 2015 16:14:31 +0200
 
-vbam (1.8.0.1229-1~getdeb2) trusty; urgency=medium
+vbam (1.8.0.1498-1) unstable; urgency=low
 
-  * Revert commit 1229 because it is suspected to have
-    issues with old intel micro processors.
+  * Update to latest svn.
+  * Uploaded to debian mentors (closes: Bug#541157).
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 18 May 2014 15:52:07 +0200
+ -- Sérgio Benjamim <sergio_br2@yahoo.com.br>  Fri, 29 May 2015 19:16:00 -0300
 
-vbam (1.8.0.1229-1~getdeb1) precise; urgency=low
+vbam (1.8.0.1492-1) UNRELEASED; urgency=low
 
-  * New upstream version
+  * Update to latest svn.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 25 Mar 2014 22:46:04 +0100
+ -- Sérgio Benjamim <sergio_br2@yahoo.com.br>  Thu, 28 May 2015 00:16:00 -0300
 
-vbam (1.8.0.1001-1~getdeb3) oneiric; urgency=low
+vbam (1.8.0.1467-1) UNRELEASED; urgency=low
 
-  * Fix debian/watch file
+  * Update some commits of 2.0.0 beta 1.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 27 Nov 2011 16:05:32 +0100
+ -- Sérgio Benjamim <sergio_br2@yahoo.com.br>  Thu, 21 May 2015 10:56:00 -0300
 
-vbam (1.8.0.1001-1~getdeb2) maverick; urgency=low
+vbam (1.8.0.1458-1) UNRELEASED; urgency=low
 
-  * debian/control: Make vbam-gtk also provide and replace the
-    old vbam package to not conflict with files which have been
-    installed by it.
+  * Update some commits of 2.0.0 beta 1.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 26 Feb 2011 13:35:00 +0100
+ -- Sérgio Benjamim <sergio_br2@yahoo.com.br>  Wed, 20 May 2015 18:30:00 -0300
 
-vbam (1.8.0.1001-1~getdeb1~lucid) lucid; urgency=low
+vbam (1.8.0.1447-1) UNRELEASED; urgency=low
 
-  * New upstream version
+  * Update, 2.0.0 beta 1 release.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 26 Feb 2011 10:54:30 +0100
+ -- Sérgio Benjamim <sergio_br2@yahoo.com.br>  Mon, 18 May 2015 17:01:00 -0300
 
-vbam (1.8.0.877-1~getdeb4) maverick; urgency=low
+vbam (1.8.0.1231-3) UNRELEASED; urgency=low
 
-  * debian/vbam.docs: Remove extra license file.
-  * debian/patches/desktop.patch: Remove deprecated Encoding
-    from desktop file.
+  * Revert SDL sound changes to upstream svn 1226, until they fix it (bug #147)
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 22 Feb 2011 23:11:19 +0100
+ -- Sérgio Benjamim <sergio_br2@yahoo.com.br>  Sun, 11 May 2014 11:09:00 +0100
 
-vbam (1.8.0.877-1~getdeb3) maverick; urgency=low
+vbam (1.8.0.1231-2) UNRELEASED; urgency=low
 
-  * Rebuild on new server for amd64.
+  * Manual merge from upstream
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 22 Feb 2011 22:45:00 +0100
+ -- Sérgio Benjamim <sergio_br2@yahoo.com.br>  Sun, 11 May 2014 11:08:00 +0100
 
-vbam (1.8.0.877-1~getdeb2) maverick; urgency=low
+vbam (1.8.0.1231-1) UNRELEASED; urgency=low
 
-  * Initial release (LP: #622552)
+  * Re-added rWindows/other stuff (easy recipe to merge upstream changes to fixes)
+  * New icons
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 24 Dec 2010 16:04:20 +0100
+ -- Sérgio Benjamim <sergio_br2@yahoo.com.br>  Sun, 11 May 2014 09:20:00 +0100
+
+vbam (1.8.0.1230-2) UNRELEASED; urgency=low
+
+  * Added missing Build-Depends
+  * Package for vbam-sdl
+  * Fixed some lintian warnings/errors
+
+ -- Sérgio Benjamim <sergio_br2@yahoo.com.br>  Sun, 27 Apr 2014 15:48:00 +0100
+
+vbam (1.8.0.1230-1) UNRELEASED; urgency=low
+
+  * Fixing launchpad orig.tar.gz error
+
+ -- Sérgio Benjamim <sergio_br2@yahoo.com.br>  Sat, 22 Mar 2014 16:23:00 +0100
+
+vbam (1.8.0.1229-2) UNRELEASED; urgency=low
+
+  * Updated copyright year and fixed homepage link
+
+ -- Sérgio Benjamim <sergio_br2@yahoo.com.br>  Sat, 22 Mar 2014 15:59:00 +0100
+
+vbam (1.8.0.1229-1) UNRELEASED; urgency=low
+
+  * Use new version from upstream
+
+ -- Sérgio Benjamim <sergio_br2@yahoo.com.br>  Thu, 20 Mar 2014 19:30:00 +0100
+
+vbam (1.8.0.1042-1) lucid; urgency=low
+
+  * Use new version from upstream
+
+ -- Bastien Bouclet <bgk@users.sourceforge.net>  Sun, 04 Dec 2011 08:48:11 +0100
+
+vbam (1.8.0.1016-1) unstable; urgency=low
+
+  * Use new version from upstream, with wxwidgets patches
+
+ -- Thomas J. Moore <darktjm@gmail.com>  Sun, 22 May 2011 14:08:05 -0500
+
+vbam (1.8.0.1001-1) unstable; urgency=low
+
+  * Use new version from upstream
+
+ -- Bastien Bouclet <bgk@users.sourceforge.net>  Fri, 25 Feb 2011 12:25:25 +0100
+
+vbam (1.8.0.914-1) unstable; urgency=low
+
+  * Cleanup, packages split into SDL and GTK+ versions
+
+ -- Fernando Tarlá Cardoso Lemos <fernandotcl@gmail.com>  Sun, 04 Oct 2009 19:58:09 -0300
 
 vbam (1.8.0.913-1) unstable; urgency=low
 
