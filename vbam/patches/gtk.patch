@@ -1,0 +1,14 @@
+Description: Enable GTK+ frontend build.
+Index: trunk/CMakeLists.txt
+===================================================================
+--- trunk.orig/CMakeLists.txt	2015-05-18 16:41:21.451551000 -0300
++++ trunk/CMakeLists.txt	2015-05-21 11:00:01.819568422 -0300
+@@ -11,7 +11,7 @@
+ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
+ 
+ option( ENABLE_SDL "Build the SDL port" ON )
+-option( ENABLE_GTK "Build the GTK+ GUI" OFF )
++option( ENABLE_GTK "Build the GTK+ GUI" ON )
+ option( ENABLE_WX "Build the wxWidgets port" ON )
+ option( ENABLE_DEBUGGER "Enable the debugger" ON )
+ option( ENABLE_NLS "Enable translations" ON )

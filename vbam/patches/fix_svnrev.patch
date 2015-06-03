@@ -1,0 +1,14 @@
+Description: temporary fix, upstream should update it soon.
+Index: vbam-code-1497-trunk/src/version.h
+===================================================================
+--- vbam-code-1497-trunk.orig/src/version.h	2015-05-28 20:32:29.902569177 -0300
++++ vbam-code-1497-trunk/src/version.h	2015-05-28 20:33:07.790539651 -0300
+@@ -19,7 +19,7 @@
+ 
+ #define VBA_NAME "VisualBoyAdvance-M"
+ 
+-#ifndef FINAL_BUILD
++#ifdef FINAL_BUILD
+ #include "svnrev.h"
+ #else
+ #ifdef SVN_REV
