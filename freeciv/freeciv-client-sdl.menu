@@ -1,0 +1,5 @@
+?package(freeciv-client-sdl):needs="x11" \
+ section="Games/Strategy" \
+ title="Freeciv client (SDL version)" \
+ command="/usr/games/freeciv-sdl" \
+ icon="/usr/share/pixmaps/freeciv.xpm"

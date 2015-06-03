@@ -1,0 +1,4 @@
+etc/freeciv/database.lua
+usr/games/freeciv-server
+usr/share/applications/freeciv-server.desktop
+usr/share/man/man6/freeciv-server.6
