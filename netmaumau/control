@@ -24,14 +24,14 @@ Homepage: http://sourceforge.net/projects/netmaumau/
 Package: netmaumau-client
 Architecture: any
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: libnetmaumaucommon5 (>= 0.19.1~),
-         libnetmaumauclient4 (>= 0.19.1~),
+Depends: libnetmaumauclient4 (>= 0.20.2~),
+         libnetmaumaucommon5 (>= 0.20.2~),
          ${misc:Depends},
          ${shlibs:Depends}
 Suggests: nmm-qt-client
 Description: Server for the popular card game Mau Mau - console client
  A simple console client for the NetMauMau server.
- It is intended for testing and not for efficient and joyful game play.
+ It is originally intended for testing and not for efficient and joyful game play.
 
 Package: netmaumau-server-common
 Architecture: all
@@ -39,27 +39,48 @@ Recommends: xinetd
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends}
 Description: Server for the popular card game Mau Mau - common server files
- Provides a server for the popular card game NetMauMau. Up to 5 players can 
- play against each other, or against up to 4 tactical AI opponents.
- 
+ Play the popular card game Mau Mau (similar to UNO®) against the computer or over the network
+ with your friends.
+ .
+ Features:
+ .
+  * Play against an unlimited number of tactical playing computer opponents
+  * Play against an unlimited number of human players over the network
+  * Play ace/queen/king rounds (optional)
+  * Support for player images
+  * Server side scores
+  * Away from home, but PC is running? On Linux/BSD you can run the server on demand
+    by using (x)inetd
+  * Highly customizeable rules, even tweak them to your needs with Lua
+
 Package: netmaumau-server
 Architecture: any
 Recommends: xinetd
+Suggests: nmm-qt-client
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends: libnetmaumaucommon5 (>= ${binary:Version}),
          netmaumau-server-common (>= ${source:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Description: Server for the popular card game Mau Mau - server
- Provides a server for the popular card game NetMauMau. Up to 5 players can 
- play against each other, or against up to 4 tactical AI opponents.
-Suggests: nmm-qt-client
+ Play the popular card game Mau Mau (similar to UNO®) against the computer or over the network
+ with your friends.
+ .
+ Features:
+ .
+  * Play against an unlimited number of tactical playing computer opponents
+  * Play against an unlimited number of human players over the network
+  * Play ace/queen/king rounds (optional)
+  * Support for player images
+  * Server side scores
+  * Away from home, but PC is running? On Linux/BSD you can run the server on demand
+    by using (x)inetd
+  * Highly customizeable rules, even tweak them to your needs with Lua
 
 Package: libnetmaumaucommon5
 Architecture: any
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Suggests: nmm-qt-client
 Description: Server for the popular card game Mau Mau - common library
  Common functions shared between the NetMauMau server and NetMauMau clients.
 Replaces: libnetmaumaucommon0,
@@ -76,13 +97,13 @@ Pre-Depends: dpkg (>= 1.15.6~)
 Depends: libnetmaumaucommon5 (>= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Replaces: libnetmaumauclient0, 
-          libnetmaumauclient1, 
+Replaces: libnetmaumauclient0,
+          libnetmaumauclient1,
           libnetmaumauclient2,
           libnetmaumauclient3
 Provides: netmaumau-client-api-15
 Description: Server for the popular card game Mau Mau - client library
- Functions for connecting to a NetMauMau server.
+ Functions for establisching a connection and playing with a NetMauMau server.
 
 Package: netmaumau-dev
 Architecture: any
@@ -105,4 +126,4 @@ Depends: libnetmaumauclient4 (= ${binary:Version}),
          netmaumau-server (= ${binary:Version}),
          ${misc:Depends}
 Description: Server for the popular card game Mau Mau - debugger symbols
- Debugger symbols for the NetMauMau package
+ Debugger symbols for the NetMauMau package.
