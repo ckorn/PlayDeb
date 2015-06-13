@@ -7,7 +7,7 @@ Build-Depends: cdbs,
                libespeak-dev,
                libqt5svg5-dev,
                netmaumau-dev (>= 0.20.2~),
-               pkg-config
+               pkg-config,
                qt5-default,
                qttools5-dev-tools
 Standards-Version: 3.9.5
