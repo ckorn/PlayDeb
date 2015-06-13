@@ -5,9 +5,11 @@ Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: cdbs,
                debhelper (>= 9),
                libespeak-dev,
-               libqt4-dev (>= 4.4.0),
+               libqt5svg5-dev,
                netmaumau-dev (>= 0.20.2~),
-               pkg-config
+               pkg-config,
+               qt5-default,
+               qttools5-dev-tools
 Standards-Version: 3.9.5
 Homepage: http://sourceforge.net/projects/netmaumau/
 
