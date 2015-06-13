@@ -1,3 +1,6 @@
 compression = "xz"
 compression-level = 9
-extend-diff-ignore = release\-moc.*|release\-rcc.*
+extend-diff-ignore = usr|release\-moc.*|release\-rcc.*
+tar-ignore = release-*
+tar-ignore = usr/*
+tar-ignore = *.ico

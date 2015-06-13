@@ -17,10 +17,16 @@ set -e
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
-
 case "$1" in
     configure)
-	chown nobody:nogroup /var/games/netmaumau
+        chown nobody:nogroup /var/games/netmaumau
+
+        if [ -n "`pgrep -f "nmm-server"`" ]; then
+            if [ -n "`pgrep -f "inetd"`" ]; then
+                echo "Stopping nmm-server…"
+				killall nmm-server
+            fi
+        fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
