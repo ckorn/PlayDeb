@@ -16,7 +16,8 @@ Build-Depends: debhelper (>= 9),
                libopenal-dev,
                libalut-dev,
                liblua5.1-0-dev,
-               nuget
+               nuget,
+               curl
 Standards-Version: 3.9.6
 Homepage: http://openra.net/
 

@@ -1,3 +1,9 @@
+openra (20150614-1~getdeb1) vivid; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 15 Jun 2015 21:05:27 +0200
+
 openra (20150424-1~getdeb1) vivid; urgency=medium
 
   * New upstream version

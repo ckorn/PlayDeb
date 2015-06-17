@@ -36,3 +36,8 @@ thirdparty/RestSharp.xml
 thirdparty/SharpFont.dll.config
 thirdparty/SharpFont.xml
 thirdparty/nunit.framework.xml
+MaxMind.Db.xml
+MaxMind.GeoIP2.XML
+Newtonsoft.Json.xml
+RestSharp.xml
+nunit.framework.xml

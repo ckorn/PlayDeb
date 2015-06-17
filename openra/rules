@@ -4,7 +4,13 @@
 
 override_dh_auto_configure:
 	mozroots --import --sync
+	cd thirdparty && ./fetch-thirdparty-deps.sh
+	make dependencies
 	dh_auto_configure
+
+override_dh_auto_test:
+	cp thirdparty/download/* .
+	dh_auto_test
 
 override_dh_auto_install:
 	dh_auto_install -- prefix=/usr datadir=/usr/share/games libexecdir=/usr/share/games bindir=/usr/games
