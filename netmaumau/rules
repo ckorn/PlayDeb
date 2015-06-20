@@ -22,8 +22,6 @@ DEB_CFLAGS_MAINT_APPEND := -fomit-frame-pointer $(GRAPHITE) $(LTO)
 DEB_CXXFLAGS_MAINT_APPEND := -fomit-frame-pointer $(GRAPHITE) $(LTO)
 DEB_LDFLAGS_MAINT_APPEND := $(CXXFLAGS) $(GRAPHITE) $(LTO)
 
-export ARFLAGS = ru
-export AR_FLAGS = ru
 export NM=gcc-nm
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

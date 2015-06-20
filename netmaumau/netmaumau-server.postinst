@@ -23,8 +23,9 @@ case "$1" in
 
         if [ -n "`pgrep -f "nmm-server"`" ]; then
             if [ -n "`pgrep -f "inetd"`" ]; then
-                echo "Stopping nmm-server…"
-				killall nmm-server
+                echo "Detected a NetMauMau server started from (x)inetd."
+                echo "Stopping nmm-server to spawn the newly installed instance at next request …"
+                killall nmm-server 2> /dev/null
             fi
         fi
     ;;
