@@ -9,8 +9,7 @@ Build-Depends: cdbs,
                libqt5svg5-dev,
                netmaumau-dev (>= 0.22.0~),
                pkg-config,
-               qt5-default,
-               qttools5-dev-tools
+               qtbase5-dev
 Standards-Version: 3.9.5
 Homepage: http://sourceforge.net/projects/netmaumau/
 

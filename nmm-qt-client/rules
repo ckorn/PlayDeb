@@ -18,6 +18,7 @@ include /usr/share/dpkg/buildflags.mk
 include /usr/share/cdbs/1/class/qmake.mk
 
 export MULTILIB=$(DEB_HOST_MULTIARCH)
+export QT_SELECT=qt5
 
 DEB_QMAKE_CONFIG_VAL += release espeak graphite lto
 INT_INSTALL_TARGET = install-strip
