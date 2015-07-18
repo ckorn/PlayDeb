@@ -1,8 +1,12 @@
-redeclipse-data (1.5.2+ds1-1~getdeb1) UNRELEASED; urgency=medium
+redeclipse-data (1.5.2-1~getdeb2) trusty; urgency=medium
 
+  [ Martin Erik Werner ]
   * Sync with Debian
 
- -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 21 Jun 2015 23:56:19 +0200
+  [ Christoph Korn ]
+  * Upload to PlayDeb
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 08 Jul 2015 20:59:22 +0200
 
 redeclipse-data (1.5.2+ds1-1) UNRELEASED; urgency=medium
 
