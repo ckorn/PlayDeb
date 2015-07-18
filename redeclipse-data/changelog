@@ -1,3 +1,16 @@
+redeclipse-data (1.5.2+ds1-1~getdeb1) UNRELEASED; urgency=medium
+
+  * Sync with Debian
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sun, 21 Jun 2015 23:56:19 +0200
+
+redeclipse-data (1.5.2+ds1-1) UNRELEASED; urgency=medium
+
+  * New upstream patch release 1.5 "Aurora Edition" Patch 2
+  * Use uscan to repack tarball via Files-Exluded in debian/copyright
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Fri, 19 Jun 2015 17:14:46 +0200
+
 redeclipse-data (1.5.1-1~getdeb2) trusty; urgency=medium
 
   * Sync with Debian

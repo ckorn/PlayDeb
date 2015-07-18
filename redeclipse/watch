@@ -1,3 +1,4 @@
 version=3
-opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/redeclipse-$1\.tar\.gz/ \
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/redeclipse-$1\.tar\.gz/,\
+dversionmangle=s/\+ds\d*$// \
   https://github.com/red-eclipse/base/tags .*/v?(\d\S*)\.tar\.gz

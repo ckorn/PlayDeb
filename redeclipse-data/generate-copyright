@@ -23,6 +23,10 @@ Upstream-Name: Red Eclipse
 Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
                   Lee "Eihrul" Salzman <lsalzman@gmail.com>
 Source: https://github.com/red-eclipse/data
+ The Play font files sources are removed since they are shipped in the
+ fonts-play package in Debian, and the generated png files are removed to
+ simplify the build process.
+Files-Excluded: fonts/Play* fonts/play*
 License: Red-Eclipse-Data
 EOF
 
@@ -33,15 +37,16 @@ sed -e 's/^/\ /' -e 's/^\ $/\ \./' readme.txt >> debian/copyright-new
 sed '/Format:.*/d' "$all_licenses"  >> debian/copyright-new
 
 # Remove all records related to bin/*, config/*, doc/*, data/fonts/* and src/*
-awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: (bin|config|doc|data\/fonts|src)\// ' debian/copyright-new > debian/copyright-temp
+# (not present in the source)
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: (bin|config|doc|src)\// ' debian/copyright-new > debian/copyright-temp
+mv debian/copyright-temp debian/copyright-new
+
+# Remove records for Play font files (deleted from source package)
+awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^Files: data\/fonts\/[Pp]lay/' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
 # Remove data/ prefix
 sed 's/ data\// /g' debian/copyright-new > debian/copyright-temp
-mv debian/copyright-temp debian/copyright-new
-
-# Remove record for "OFL-1.1" license
-awk 'BEGIN{ ORS="\n\n"; RS="" ; FS="\n"} $1 !~ /^License: OFL-1.1$/' debian/copyright-new > debian/copyright-temp
 mv debian/copyright-temp debian/copyright-new
 
 # Add marker for inserting Debian chunk

@@ -21,16 +21,5 @@ override_dh_auto_install:
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
 
-DIR=redeclipse-data-$(DEB_VERSION_UPSTREAM).orig
 get-orig-source:
-	uscan --noconf --rename --force-download --download-current-version \
-		--destdir=.
-	rm -rf $(DIR)
-	tar -xf redeclipse-data_$(DEB_VERSION_UPSTREAM).orig.tar.gz
-	rm -f redeclipse-data_$(DEB_VERSION_UPSTREAM).orig.tar.gz
-	mv data-$(DEB_VERSION_UPSTREAM)/ $(DIR)
-	rm -rf $(DIR)/fonts
-	find $(DIR) -type f -name '.git*' -delete
-	XZ_OPT="-6" tar --create --xz --owner root --group root --mode a+rX \
-		-f redeclipse-data_$(DEB_VERSION_UPSTREAM).orig.tar.xz $(DIR)
-	rm -rf $(DIR)
+	uscan --noconf --rename --repack --compression xz --force-download --download-current-version --destdir=.

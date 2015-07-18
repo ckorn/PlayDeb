@@ -3,9 +3,15 @@ Upstream-Name: Red Eclipse
 Upstream-Contact: Quinton "Quin" Reeves <qreeves@gmail.com>
                   Lee "Eihrul" Salzman <lsalzman@gmail.com>
 Source: https://github.com/red-eclipse/base
- The folders src/include/ src/xcode/ src/lib/ bin/ are removed, the header
- files here are already shipped within other Debian packages, or are
- unnecessary on GNU/Linux.
+ The following directories/files are removed from the upstream tarball:
+ * bin contains various binaries and helper libs not relevant for Debian,
+   auto-update scripts are kept (though not used in Debian)
+ * data is instead shipped as redeclipse-data in Debian
+ * src/enet is instead shipped as libenet in Debian
+ * src/include contains duplicate headers already in other Debian packages
+ * src/lib contains prebuilt duplicate libs already in other Debian packages
+Files-Excluded: bin/amd64 bin/redeclipse.app bin/tools bin/x86  data
+                src/enet src/include src/lib
 License: Red-Eclipse
  THE RED ECLIPSE LICENSE
  .
@@ -540,3 +546,4 @@ License: Mark-Policy
  If you currently have a product that is using the Red Eclipse marks in a way
  that don't follow this policy, don't panic. Let us know, and we'll work it out,
  as described above.
+
