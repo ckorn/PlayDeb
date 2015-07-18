@@ -1,3 +1,9 @@
+redeclipse (1.5.2-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 18 Jun 2015 20:10:28 +0200
+
 redeclipse (1.5.1-1~getdeb2) trusty; urgency=medium
 
   * Sync with Debian
