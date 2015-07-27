@@ -1,3 +1,35 @@
+manaplus (1:1.5.7.18-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: moving with mouse on tiles with height more than zero.
+    fix: crash if warp to map with heights with smaller size.
+    add: support for insert and see cards (hercules).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 18 Jul 2015 19:49:58 +0200
+
+manaplus (1:1.5.7.4-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: draw attack rectange under beings.
+    fix: being position with heights layer.
+    add: some missing checks.
+    remove: outdated code used in evol v1.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 08 Jul 2015 22:34:41 +0200
+
+manaplus (1:1.5.6.20-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: tab colors update.
+    fix: bars context menu.
+    add: use persistent ip option if switch map servers.
+    add: new configurable colors: enemy, team1, team2, team3.
+    add: split configurable colors to groups.
+    add: use nick colors depend on team (pvp for tmwa)
+    add: option minimal gm level for show gm chat tab.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Jun 2015 13:49:17 +0200
+
 manaplus (1:1.5.6.6-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
