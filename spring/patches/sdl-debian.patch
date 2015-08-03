@@ -1,0 +1,74 @@
+From: Markus Koschany <apo@gambaru.de>
+Date: Mon, 2 Jun 2014 20:06:30 +0200
+Subject: sdl debian
+
+---
+ rts/aGui/CMakeLists.txt              | 2 ++
+ rts/builds/dedicated/CMakeLists.txt  | 1 +
+ rts/builds/headless/CMakeLists.txt   | 1 +
+ rts/lib/headlessStubs/CMakeLists.txt | 2 ++
+ tools/unitsync/CMakeLists.txt        | 1 +
+ 5 files changed, 7 insertions(+)
+
+diff --git a/rts/aGui/CMakeLists.txt b/rts/aGui/CMakeLists.txt
+index 0f4dec7..85a38cf 100644
+--- a/rts/aGui/CMakeLists.txt
++++ b/rts/aGui/CMakeLists.txt
+@@ -7,6 +7,8 @@ ELSE  (MINGW OR APPLE)
+ 	INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include/SDL2)
+ ENDIF (MINGW OR APPLE)
+ 
++INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIR})
++
+ include_directories(${GLEW_INCLUDE_DIR})
+ # This list was created using this *nix shell command:
+ # > find . -name "*.cpp"" | sort
+diff --git a/rts/builds/dedicated/CMakeLists.txt b/rts/builds/dedicated/CMakeLists.txt
+index 0cb2005..057f063 100644
+--- a/rts/builds/dedicated/CMakeLists.txt
++++ b/rts/builds/dedicated/CMakeLists.txt
+@@ -62,6 +62,7 @@ ELSE  (MINGW OR APPLE)
+ 	INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include/SDL2)
+ ENDIF (MINGW OR APPLE)
+ 
++INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIR})
+ 
+ ### Assemble the incude dirs
+ INCLUDE_DIRECTORIES(${ENGINE_SRC_ROOT_DIR}/)
+diff --git a/rts/builds/headless/CMakeLists.txt b/rts/builds/headless/CMakeLists.txt
+index 4bebd46..9ac13b1 100644
+--- a/rts/builds/headless/CMakeLists.txt
++++ b/rts/builds/headless/CMakeLists.txt
+@@ -31,6 +31,7 @@ ELSE  (MINGW OR APPLE)
+ 	INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include/SDL2)
+ ENDIF (MINGW OR APPLE)
+ 
++INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIR})
+ 
+ # headlessstubs are our stubs that replace libGL, libGLU, libGLEW, libSDL (yes really!)
+ LIST(APPEND engineHeadlessLibraries headlessStubs)
+diff --git a/rts/lib/headlessStubs/CMakeLists.txt b/rts/lib/headlessStubs/CMakeLists.txt
+index 63c44bb..e5e84d0 100644
+--- a/rts/lib/headlessStubs/CMakeLists.txt
++++ b/rts/lib/headlessStubs/CMakeLists.txt
+@@ -19,6 +19,8 @@ ELSE  (WIN32)
+ 	INCLUDE_DIRECTORIES(BEFORE ${CMAKE_SOURCE_DIR}/include/SDL2)
+ ENDIF (WIN32)
+ 
++INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIR})
++
+ ADD_LIBRARY(headlessStubs STATIC EXCLUDE_FROM_ALL ${headlessStubsSources})
+ TARGET_LINK_LIBRARIES(headlessStubs ${Boost_THREAD_LIBRARY} ${Boost_CHRONO_LIBRARY_WITH_RT})
+ SET_TARGET_PROPERTIES(headlessStubs PROPERTIES COMPILE_FLAGS "${PIC_FLAG}")
+diff --git a/tools/unitsync/CMakeLists.txt b/tools/unitsync/CMakeLists.txt
+index c2f3b91..0380a71 100644
+--- a/tools/unitsync/CMakeLists.txt
++++ b/tools/unitsync/CMakeLists.txt
+@@ -33,6 +33,7 @@ ELSE  (MINGW)
+ 	INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include/SDL2)
+ ENDIF (MINGW)
+ 
++INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIR})
+ 
+ ADD_DEFINITIONS(-DUNITSYNC)
+ ADD_DEFINITIONS(${PIC_FLAG})

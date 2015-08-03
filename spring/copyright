@@ -1,0 +1,265 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Spring
+Upstream-Contact: The Spring Developers:
+ Karl-Robert Ernst (Auswaschbar) <k-r.ernst@my-mail.ch>
+ Robin Vobruba (hoijui) <hoijui.quaero@gmail.com>
+ Christopher Han <xiphux@gmail.com>
+ Marek Baczynski (imbaczek) <imbaczek@gmail.com>
+ kloot <blauw_scherm@hotmail.com>
+ Tobi Vollebregt <tobivollebregt@gmail.com>
+ Mattias Radeskog (zerver) <mr@zerver.net>
+ Dave "trepan" Rodgers
+ tim blokdijk
+ jcnossen
+ victor
+ -jk-
+ abma
+Source: http://springrts.com/wiki/Download
+
+Files: *
+Copyright: 2006-2015,  The Spring Developers
+           2006,2009,  Hugh Perkins
+           2007,       Craig Lawrence, Dave "trepan" Rodgers
+                       Alexander Seizinger
+           2008,2009   Robin Vobruba <hoijui.quaero@gmail.com>
+           2010,       Andreas Löscher
+           2008,       Nicolas Wu
+           2010,       Matthias Ableitner <spam@abma.de>
+           2009,       Wildfire Games
+           2005,       Christopher Han <xiphux@gmail.com>
+           2007,       Dave "trepan" Rodgers
+                       Reth / Michael Vadovszk
+License: GPL-2+
+
+Files: rts/Menu/alphanum.hpp
+Copyright: 2008, Dirk Jagdmann <doj@cubic.org>
+License: ZLIB
+
+Files: rts/build/cmake/FindSDL2.cmake
+Copyright: 2003-2009, Kitware, Inc.
+License: BSD-3-clause
+
+Files: rts/lib/assimp/*
+Copyright: 2006-2012, ASSIMP Development Team
+License: BSD-3-clause
+
+Files: rts/lib/assimp/contrib/clipper/*
+Copyright: 2010-2011, Angus Johnson
+License: BSL-1
+
+Files: rts/lib/assimp/contrib/irrXML/*
+       rts/lib/assimp/code/fast_atof.h
+Copyright: 2002-2007, Nikolaus Gebhardt
+License: ZLIB
+
+Files: rts/lib/assimp/contrib/ConvertUTF/*
+Copyright: 2001-2004, Unicode, Inc
+License: unicode
+
+Files: rts/lib/assimp/contrib/poly2tri/*
+Copyright: 2009-2010, Poly2Tri Contributors
+License: BSD-3-clause
+
+Files: rts/lib/lua/*
+Copyright: 1994-2008, Lua.org, PUC-Rio
+License: Expat
+
+Files: rts/lib/luasocket/*
+Copyright: 2004-2007 Diego Nehab
+License: Expat
+
+Files: rts/lib/streflop/libm/headers/*
+       rts/lib/streflop/*
+Copyright: 1991-1993, 1995-2006, Free Software Foundation, Inc.
+           2006,                 Nicolas Brodu
+           2008, 2009            Tobi Vollebregt
+License: LGPL-2.1+
+
+Files: rts/lib/streflop/libm/flt-32/*
+       rts/lib/streflop/libm/headers/math_private.h
+       rts/lib/streflop/libm/e_expf.c
+Copyright: 1993, Sun Microsystems Inc.
+License: other
+ * Permission to use, copy, modify, and distribute this
+ * software is freely granted, provided that this notice
+ * is preserved.
+
+Files: rts/lib/streflop/libm/flt-32/e_exp2f.cpp
+       rts/lib/streflop/libm/flt-32/e_gammaf_r.cpp
+       rts/lib/streflop/libm/flt-32/s_cbrtf.cpp
+       rts/lib/streflop/libm/flt-32/s_fpclassifyf.cpp
+       rts/lib/streflop/libm/flt-32/s_llrintf.cpp
+       rts/lib/streflop/libm/flt-32/s_llroundf.cpp
+       rts/lib/streflop/libm/flt-32/s_lrintf.cpp
+       rts/lib/streflop/libm/flt-32/s_lroundf.cpp
+       rts/lib/streflop/libm/flt-32/s_remquof.cpp
+       rts/lib/streflop/libm/flt-32/s_roundf.cpp
+       rts/lib/streflop/libm/flt-32/s_signbitf.cpp
+       rts/lib/streflop/libm/flt-32/s_sincosf.cpp
+       rts/lib/streflop/libm/flt-32/s_truncf.cpp
+       rts/lib/streflop/libm/flt-32/t_exp2f.h
+Copyright: 1997, 1999, 2001, 2004 Free Software Foundation, Inc
+  1997, 2000 Free Software Foundation, Inc
+  1997, 2000, 2002, Free Software Foundation, Inc
+  1997, Free Software Foundation, Inc
+  1997-1998, Free Software Foundation, Inc
+  1997-1998,2000-2001,2005-2006, Free Software Foundation, Inc
+  1998, Free Software Foundation, Inc
+License: LGPL-2.1+
+
+Files: rts/lib/streflop/Random.cpp
+Copyright: 1997-2002, Makoto Matsumoto and Takuji Nishimura (BSD)
+           2005, Mutsuo Saito (BSD)
+           2006, Nicolas Brodu
+License: LGPL-2.1+
+
+Files: rts/lib/SOP/SOP.hpp
+Copyright: 2012, Daniel Cornel
+License: BSD-3-clause
+
+Files: tools/unitsync/python/pybindgen/typehandlers/ctypeparser/tokenizer.py
+Copyright: 2007, Google Inc
+           2007, Neal Norwitz
+License: Apache-2.0
+ On Debian systems the complete text of the Apache-2.0 license can be found in
+ /usr/share/common-licenses/Apache-2.0.
+
+Files: rts/lib/squish/*
+Copyright: 2006, Simon Brown si@sjbrown.co.uk
+           2007, Ignacio Castano icastano@nvidia.com
+License: Expat
+
+Files: rts/Map/SM3/terrain/*.h
+       cont/base/springcontent/shaders/GLSL/terrain*
+Copyright: 2006, Jelmer Cnossen <j.cnossen at gmail dot com>
+License: ZLIB
+
+Files: rts/lib/minizip/*
+Copyright: 1998-2005, Gilles Vollant
+           2004, Rolf Kalbermatter
+License: ZLIB
+
+Files: AI/Skirmish/KAIK/MicroPather*
+Copyright: 2000-2005, Lee Thomason (www.grinninglizard.com)
+License: ZLIB
+
+Files: debian/*
+Copyright: 2009-2012, Marco Amadori
+           2010-2012, Jan Dittberner
+           2013-2015, Markus Koschany <apo@gambaru.de>
+License: GPL-2+
+
+License: GPL-2+
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+   1. Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+ .
+   2. Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+ .
+   3. The names of its contributors may not be used to endorse or promote
+      products derived from this software without specific prior written
+      permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: LGPL-2.1+
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License version 2.1 can be found in `/usr/share/common-licenses/LGPL-2.1
+
+License: BSL-1
+ Boost Software License - Version 1.0 - August 17th, 2003
+ .
+ Permission is hereby granted, free of charge, to any person or organization
+ obtaining a copy of the software and accompanying documentation covered by
+ this license (the "Software") to use, reproduce, display, distribute,
+ execute, and transmit the Software, and to prepare derivative works of the
+ Software, and to permit third-parties to whom the Software is furnished to
+ do so, all subject to the following:
+ .
+ The copyright notices in the Software and this entire statement, including
+ the above license grant, this restriction and the following disclaimer,
+ must be included in all copies of the Software, in whole or in part, and
+ all derivative works of the Software, unless such copies or derivative
+ works are solely in the form of machine-executable object code generated by
+ a source language processor.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+ SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+ FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.
+
+License: ZLIB
+ This software is provided 'as-is', without any express or implied
+ warranty. In no event will the authors be held liable for any
+ damages arising from the use of this software.
+ .
+ Permission is granted to anyone to use this software for any
+ purpose, including commercial applications, and to alter it and
+ redistribute it freely, subject to the following restrictions:
+ .
+ 1. The origin of this software must not be misrepresented; you
+    must not claim that you wrote the original software. If you use
+    this software in a product, an acknowledgment in the product
+    documentation would be appreciated but is not required.
+ .
+ 2. Altered source versions must be plainly marked as such, and
+    must not be misrepresented as being the original software.
+ .
+ 3. This notice may not be removed or altered from any source
+    distribution.
+
+License: unicode
+ This source code is provided as is by Unicode, Inc. No claims are made as
+ to fitness for any particular purpose. No warranties of any kind are
+ expressed or implied. The recipient agrees to determine applicability of
+ information provided. If this file has been purchased on magnetic or
+ optical media from Unicode, Inc., the sole remedy for any claim will be
+ exchange of defective media within 90 days of receipt.
+ .
+ Limitations on Rights to Redistribute This Code:
+  Unicode, Inc. hereby grants the right to freely use the information
+  supplied in this file in the creation of products supporting the Unicode
+  Standard, and to make copies of this file in any form for internal or
+  external distribution as long as this notice remains attached.
+

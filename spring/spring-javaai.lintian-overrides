@@ -1,0 +1,8 @@
+# These jar files are not codeless.
+spring-javaai: codeless-jar usr/share/games/spring/AI/Interfaces/Java/0.1/jlib/AIInterface-src.jar
+spring-javaai: codeless-jar usr/share/games/spring/AI/Skirmish/HughAI/0.1/jlib/SkirmishAI-src.jar
+spring-javaai: codeless-jar usr/share/games/spring/AI/Skirmish/NullJavaAI/0.1/jlib/SkirmishAI-src.jar
+spring-javaai: codeless-jar usr/share/games/spring/AI/Skirmish/NullOOJavaAI/0.1/jlib/SkirmishAI-src.jar
+spring-javaai: codeless-jar usr/share/games/spring/AI/Skirmish/HughAI/0.1/jlib/UnderlyingAI-src.jar
+# Target 1.7 is the default and sensible for Jessie and later
+spring-javaai: incompatible-java-bytecode-format Java7 version (Class format: 51)

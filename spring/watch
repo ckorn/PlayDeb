@@ -1,0 +1,3 @@
+version=3
+opts=dversionmangle=s/(\da?)[\+\.\-~](?:dfsg|debian|ds|repack|repacked)\.?\d*$/$1/ \
+ http://sf.net/springrts/spring_([\d\.]+)_src\.(?:tgz|tbz2|txz|tar\.gz|tar\.bz2|tar\.xz)
