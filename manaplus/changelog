@@ -1,3 +1,16 @@
+manaplus (1:1.5.8.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: update tmw address in tmw detection code.
+    fix: not allow broken nicks. show messages from this nicks with warnings.
+    add: enable fast atlases creation (except NVIDIA and Mesa 10.6)
+    add: update xcode files (socapex)
+    add: option to yellow bar for targetting type (travolta)
+    add: calculate heal radius (travolta)
+    add: badges for battle teams, parties, guilds, gms and personal player.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 03 Aug 2015 19:42:54 +0200
+
 manaplus (1:1.5.7.18-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
