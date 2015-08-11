@@ -1,5 +1,10 @@
 #!/usr/bin/make -f
 
+# using the first word here because of the include MAKEFILE_LIST contains more than one path
+PKD   = $(abspath $(dir $(word 1, $(MAKEFILE_LIST))))
+PKG   = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SSource)
+VER   = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SVersion | cut -d- -f1)
+
 DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/default.mk
 
@@ -7,19 +12,32 @@ include /usr/share/dpkg/default.mk
 	dh $@ --parallel
 
 override_dh_auto_build:
+	rm -rf data/fonts
 	mkdir -p fonts
 	cd fonts/ && \
 		cube2font /usr/share/fonts/truetype/play/Play-Bold.ttf \
 			play 4 15 1 1 54 54 512 512 0 0 fonts/
 
-override_dh_auto_install:
-	mkdir -p debian/redeclipse-data/usr/share/games/redeclipse/data
-	find . -mindepth 1 -maxdepth 1 -type d \
-		-not \( -name '.git*' -or -name 'debian' -or -name 'fonts' \) \
-		-exec cp -r '{}' debian/redeclipse-data/usr/share/games/redeclipse/data \;
-
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
 
-get-orig-source:
-	uscan --noconf --rename --repack --compression xz --force-download --download-current-version --destdir=.
+## http://wiki.debian.org/onlyjob/get-orig-source
+.PHONY: get-orig-source
+get-orig-source: $(PKG)_$(VER).orig.tar.xz $(info I: $(PKG)_$(VER))
+	@
+
+UURL = https://github.com/red-eclipse/base.git
+$(PKG)_$(VER).orig.tar.xz: $(info I: $(PKG)_$(VER))
+	$(if $(wildcard $(PKG)-$(VER)),$(error $(PKG)-$(VER) exist, aborting..))
+	@echo "# Downloading..."
+	git clone $(UURL) $(PKG)-$(VER) \
+	|| $(RM) -r $(PKG)-$(VER)
+	cd $(PKG)-$(VER) \
+	&& git checkout v$(VER) && git submodule init && git submodule update \
+	&& echo "# Cleaning-up..." \
+	&& ( find data/ -name .git -type d -exec rm -rf {} \; || /bin/true ) \
+	&& find data/ -iname ".git*" -type f -delete
+	@echo "# Packing..."
+	find -L "$(PKG)-$(VER)/data" -xdev -type f -print | LC_ALL=C sort \
+	| XZ_OPT="-6v" tar -caf "$(PKG)_$(VER)$(DTYPE).orig.tar.xz" -T- --owner=root --group=root --mode=a+rX \
+	&& $(RM) -r "$(PKG)-$(VER)"
