@@ -1,3 +1,9 @@
+redeclipse-data (1.5.3-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 10 Aug 2015 23:44:56 +0200
+
 redeclipse-data (1.5.2-1~getdeb2) trusty; urgency=medium
 
   [ Martin Erik Werner ]

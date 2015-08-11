@@ -1,2 +1,3 @@
-fonts/*.png usr/share/games/redeclipse/data/fonts
-fonts/*.cfg usr/share/games/redeclipse/config/fonts
+fonts/*.png	usr/share/games/redeclipse/data/fonts
+fonts/*.cfg	usr/share/games/redeclipse/config/fonts
+data		usr/share/games/redeclipse
