@@ -7,11 +7,11 @@ Forwarded: not-needed
 Author: Martin Erik Werner <martinerikwerner@gmail.com>
 Last-Update: 2011-12-13
 
-Index: redeclipse-debian/src/engine/main.cpp
+Index: redeclipse-1.5.3/src/engine/main.cpp
 ===================================================================
---- redeclipse-debian.orig/src/engine/main.cpp
-+++ redeclipse-debian/src/engine/main.cpp
-@@ -247,7 +247,7 @@ void setfullscreen(bool enable, bool for
+--- redeclipse-1.5.3.orig/src/engine/main.cpp	2015-08-11 11:58:02.921751832 +0200
++++ redeclipse-1.5.3/src/engine/main.cpp	2015-08-11 11:58:02.917751417 +0200
+@@ -212,7 +212,7 @@
  #endif
  }
  
