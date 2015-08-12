@@ -1,3 +1,9 @@
+marathon2 (20150620-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 12 Aug 2015 00:56:08 +0200
+
 marathon2 (20140104-1~getdeb2) precise; urgency=low
 
   * Fix debian/watch file.
