@@ -1,0 +1,3 @@
+version=3
+http://build.getdeb.net/redirectors/marathon.html \
+    (?:.*/)?Marathon2-([\d]+)-Data\.zip

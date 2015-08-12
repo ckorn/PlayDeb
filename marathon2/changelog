@@ -1,0 +1,47 @@
+marathon2 (20150620-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 12 Aug 2015 00:56:08 +0200
+
+marathon2 (20140104-1~getdeb2) precise; urgency=low
+
+  * Fix debian/watch file.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 06 Jan 2014 21:21:55 +0100
+
+marathon2 (20140104-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 05 Jan 2014 13:18:54 +0100
+
+marathon2 (20130813-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 15 Aug 2013 20:13:08 +0200
+
+marathon2 (20130714-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 15 Jul 2013 22:31:14 +0200
+
+marathon2 (20130707-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 08 Jul 2013 22:17:52 +0200
+
+marathon2 (20120514-1~getdeb1) precise; urgency=low
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 17 May 2012 11:40:28 +0200
+
+marathon2 (20120128-1~getdeb1) oneiric; urgency=low
+
+  * Initial release (LP: #899693)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 12 Mar 2012 19:33:13 +0100
