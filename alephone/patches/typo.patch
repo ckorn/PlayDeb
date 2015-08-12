@@ -1,9 +1,9 @@
 # Just typos.
-Index: alephone-20130707/Source_Files/FFmpeg/SDL_ffmpeg.c
+Index: alephone-20150620/Source_Files/FFmpeg/SDL_ffmpeg.c
 ===================================================================
---- alephone-20130707.orig/Source_Files/FFmpeg/SDL_ffmpeg.c	2013-07-05 02:33:29.000000000 +0200
-+++ alephone-20130707/Source_Files/FFmpeg/SDL_ffmpeg.c	2013-07-08 18:56:17.296034580 +0200
-@@ -1309,7 +1309,7 @@
+--- alephone-20150620.orig/Source_Files/FFmpeg/SDL_ffmpeg.c	2015-08-11 22:41:06.898669407 +0200
++++ alephone-20150620/Source_Files/FFmpeg/SDL_ffmpeg.c	2015-08-11 22:41:12.322772196 +0200
+@@ -1330,7 +1330,7 @@
      }
      else
      {

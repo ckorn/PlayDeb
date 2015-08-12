@@ -7,7 +7,9 @@ Build-Depends: debhelper (>= 9), autotools-dev,
                libsdl-net1.2-dev,
                libsdl-image1.2-dev,
                libmad0-dev,
-               libboost-dev,
+               libboost1.55-dev,
+               libboost-system1.55-dev,
+               libboost-filesystem1.55-dev,
                libvorbis-dev,
                zlib1g-dev,
                libasound2-dev,
@@ -24,7 +26,9 @@ Build-Depends: debhelper (>= 9), autotools-dev,
                libavcodec-dev,
                libavformat-dev,
                libavutil-dev,
-               libswscale-dev
+               libswscale-dev,
+               libsndfile1-dev,
+               libcurl4-openssl-dev
 Standards-Version: 3.9.5
 Homepage: http://marathon.sourceforge.net/
 
