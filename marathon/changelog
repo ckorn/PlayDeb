@@ -1,3 +1,9 @@
+marathon (20150620-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 12 Aug 2015 00:34:56 +0200
+
 marathon (20140104-1~getdeb1) precise; urgency=low
 
   * New upstream version
