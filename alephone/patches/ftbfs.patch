@@ -1,0 +1,21 @@
+# http://sourceforge.net/p/marathon/bugs/576/
+# patches:
+# http://sourceforge.net/p/marathon/code/5002/
+# https://github.com/carstene1ns/PKGBUILDs/blob/master/alephone/alephone-ffmpeg-add-magic-number.diff
+Index: alephone-20150620/Source_Files/FFmpeg/SDL_ffmpeg.c
+===================================================================
+--- alephone-20150620.orig/Source_Files/FFmpeg/SDL_ffmpeg.c	2015-08-12 00:41:36.387331015 +0200
++++ alephone-20150620/Source_Files/FFmpeg/SDL_ffmpeg.c	2015-08-12 00:41:36.387331015 +0200
+@@ -53,6 +53,12 @@
+ #define AVCODEC_MAX_AUDIO_FRAME_SIZE 192000
+ #endif
+ 
++/* set magic number for 1 second of 48khz 32bit audio (removed from upstream) */
++#ifndef AVCODEC_MAX_AUDIO_FRAME_SIZE
++#define AVCODEC_MAX_AUDIO_FRAME_SIZE 192000
++#endif
++
++
+ #include "SDL_ffmpeg.h"
+ 
+ #ifdef MSVC
