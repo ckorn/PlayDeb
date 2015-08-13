@@ -1,3 +1,9 @@
+jbrickshooter (1.6.0-1~getdeb3) trusty; urgency=medium
+
+  * Fix debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 13 Aug 2015 01:21:33 +0200
+
 jbrickshooter (1.6.0-1~getdeb2) lucid; urgency=low
 
   * Update debian/watch file
