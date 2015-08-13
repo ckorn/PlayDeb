@@ -1,3 +1,0 @@
-version=3
-https://aur.archlinux.org/packages.php?ID=25606 \
-    (?:.*/)?nether\.src_([\d\.]+)(?:-[\d]+)?\.tgz
