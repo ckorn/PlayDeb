@@ -17,8 +17,8 @@ Build-Depends: cdbs,
                libopenal-dev,
                libxrandr-dev,
                libbullet-dev
-Standards-Version: 3.9.5
-Homepage: http://code.google.com/p/irrlamb/
+Standards-Version: 3.9.6
+Homepage: https://github.com/jazztickets/irrlamb
 
 Package: irrlamb
 Architecture: any
