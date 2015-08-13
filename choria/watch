@@ -1,3 +1,0 @@
-version=3
-http://code.google.com/p/choria/downloads/list \
-    (?:.*/)?choria-([\d\.]+)-src\.tar\.gz

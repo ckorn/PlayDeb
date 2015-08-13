@@ -4,16 +4,16 @@ Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
                libenet-dev,
-               libirrlicht1.8-dev,
+               libirrlicht-dev,
                libsqlite3-dev,
                cmake,
                libglu1-mesa-dev,
                libxxf86vm-dev,
                libxext-dev,
                libx11-dev,
-               libgl1-mesa-swx11-dev
-Standards-Version: 3.9.3
-Homepage: http://code.google.com/p/choria/
+               libgl1-mesa-dev
+Standards-Version: 3.9.5
+Homepage: https://github.com/jazztickets/choria
 
 Package: choria
 Architecture: any
