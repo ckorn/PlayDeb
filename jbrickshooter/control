@@ -2,13 +2,16 @@ Source: jbrickshooter
 Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
-Build-Depends: cdbs, debhelper (>= 5)
-Homepage: http://code.google.com/p/jbrickshooter/
-Standards-Version: 3.9.1
+Build-Depends: cdbs,
+               debhelper (>= 9)
+Homepage: https://github.com/X-Stranger/jbrickshooter
+Standards-Version: 3.9.5
 
 Package: jbrickshooter
 Architecture: all
-Depends: openjdk-6-jre | java-runtime, fontconfig, ${misc:Depends}
+Depends: openjdk-8-jre | openjdk-7-jre | openjdk-6-jre | java-runtime,
+         fontconfig,
+         ${misc:Depends}
 Description: Absolutely free Brick Shooter game Java implementation
  This project written in Java aims to create
  free implementation of perfect puzzle game

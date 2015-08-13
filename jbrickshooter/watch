@@ -1,3 +1,3 @@
 version=3
-http://code.google.com/p/jbrickshooter/downloads/list \
-    (?:.*/)?JBrickShooter_v([\d\.]+)\.zip
+https://github.com/X-Stranger/jbrickshooter/releases \
+    (?:.*/)?archive/v([\d\.]+)\.tar\.gz
