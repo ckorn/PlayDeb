@@ -1,3 +1,3 @@
 version=3
 https://github.com/DarkFenX/Pyfa/releases \
-    (?:.*/)?pyfa-([\d\.]+)(?:.*)-src\.zip
+    (?:.*/)?archive/v([\d\.]+)\.tar\.gz
