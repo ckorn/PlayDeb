@@ -1,2 +1,3 @@
 version=3
-http://sf.net/crawl-ref/stone_soup-([\d\.]+)(?:-nodeps)?\.tar\.(?:xz|gz|bz2)
+https://github.com/crawl/crawl/releases \
+    (?:.*/)?archive/([\d\.]+)\.tar\.gz

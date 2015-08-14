@@ -1,3 +1,9 @@
+stone-soup (0.16.2-1~getdeb2) trusty; urgency=medium
+
+  * Fix debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 14 Aug 2015 11:29:19 +0200
+
 stone-soup (0.16.2-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
