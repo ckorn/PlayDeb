@@ -1,3 +1,15 @@
+stone-soup (0.16.2-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 13 Aug 2015 20:44:16 +0200
+
+stone-soup (0.16.1-1~getdeb2) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 06 Jun 2015 19:54:55 +0200
+
 stone-soup (0.15.2-1~getdeb2) trusty; urgency=medium
 
   * New upstream version

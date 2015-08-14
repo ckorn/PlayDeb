@@ -1,13 +1,13 @@
 contrib directory does not exist.
-Index: stone-soup-0.15.1/source/Makefile
+Index: stone-soup-0.16.1/source/Makefile
 ===================================================================
---- stone-soup-0.15.1.orig/source/Makefile	2014-09-16 21:47:57.367182755 +0200
-+++ stone-soup-0.15.1/source/Makefile	2014-09-16 21:47:57.363182755 +0200
-@@ -1423,7 +1423,6 @@
+--- stone-soup-0.16.1.orig/source/Makefile	2015-06-06 19:55:42.833739502 +0200
++++ stone-soup-0.16.1/source/Makefile	2015-06-06 19:55:42.833739502 +0200
+@@ -1489,7 +1489,6 @@
  	$(RM) -r build
  
  clean-contrib:
 -	+$(MAKE) -C contrib clean
  
  clean-android:
- 	$(RM) ../icon.png ../libapplication.so
+ ifneq ($(ANDROID),)
