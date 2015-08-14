@@ -47,7 +47,7 @@ $(PKG)_$(VER).orig.tar.xz: $(info I: $(PKG)_$(VER))
 	   ; git log --pretty="format:%ad  %aN  <%aE>%n%n%x09* %s%n" --date=short > ChangeLog \
 	   ; touch -d "$$(git log -1 --format='%ci')" ChangeLog) \
 	&& echo "# Setting version..." \
-	&& mv crawl-ref $(PKG)-$(VER) && cd $(PKG)-$(VER) && mv ../ChangeLog . && cd source/util && git describe --tags > release_ver && cd ../../../ \
+	&& mv crawl-ref $(PKG)-$(VER) && mv ChangeLog $(PKG)-$(VER) && git describe --tags > $(PKG)-$(VER)/source/util/release_ver \
 	&& echo "# Cleaning-up..." \
 	&& $(RM) -r .git .git* $(PKG)-$(VER)/.git*
 	@echo "# Packing..."
