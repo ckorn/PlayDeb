@@ -1,4 +1,9 @@
 #!/usr/bin/make -f
+PKD  = $(abspath $(dir $(MAKEFILE_LIST)))
+PKG  = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SSource)
+VER  = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SVersion | cut -d- -f1)
+
+
 %:
 	dh $@ --parallel -Dsource
 
@@ -10,7 +15,9 @@ override_dh_auto_build:
 override_dh_auto_test:
 
 override_dh_auto_install:
-	dh_auto_install -- TILES=1 prefix=/usr DATADIR=/usr/share/games/stone-soup SAVEDIR='~/.config/stone-soup'
+	# this is very special. LDFLAGS must not be set or there is a segfault when generating the tiles.
+	bash -c "unset LDFLAGS && cd source && DESTDIR=../debian/stone-soup make TILES=y prefix=/usr DATADIR=/usr/share/games/stone-soup SAVEDIR='~/.config/stone-soup' install"
+	#dh_auto_install -- TILES=y prefix=/usr DATADIR=/usr/share/games/stone-soup SAVEDIR='~/.config/stone-soup' install
 	# We need the executable in a different directory.
 	mv debian/stone-soup/usr/games/crawl debian/stone-soup/usr/lib/games/stone-soup/crawl
 
@@ -21,3 +28,29 @@ override_dh_auto_install:
 
 override_dh_installchangelogs:
 	dh_installchangelogs docs/changelog.txt
+
+## http://wiki.debian.org/onlyjob/get-orig-source
+.PHONY: get-orig-source
+get-orig-source: $(PKG)_$(VER).orig.tar.xz $(info I: $(PKG)_$(VER))
+	@
+
+## checkout from git (add "git" to Build-Depends)
+UURL = https://github.com/crawl/crawl.git
+$(PKG)_$(VER).orig.tar.xz: $(info I: $(PKG)_$(VER))
+	$(if $(wildcard $(PKG)-$(VER)),$(error $(PKG)-$(VER) exist, aborting..))
+	@echo "# Downloading..."
+	git clone $(UURL) $(PKG)-$(VER) \
+	|| $(RM) -r $(PKG)-$(VER)
+	cd $(PKG)-$(VER) \
+	&& git checkout $(VER) \
+	&& [ -s ChangeLog ] || ( echo "# Generating ChangeLog..." \
+	   ; git log --pretty="format:%ad  %aN  <%aE>%n%n%x09* %s%n" --date=short > ChangeLog \
+	   ; touch -d "$$(git log -1 --format='%ci')" ChangeLog) \
+	&& echo "# Setting version..." \
+	&& mv crawl-ref $(PKG)-$(VER) && cd $(PKG)-$(VER) && mv ../ChangeLog . && cd source/util && git describe --tags > release_ver && cd ../../../ \
+	&& echo "# Cleaning-up..." \
+	&& $(RM) -r .git .git* $(PKG)-$(VER)/.git*
+	@echo "# Packing..."
+	cd $(PKG)-$(VER) && find -L "$(PKG)-$(VER)" -xdev -type f -print | LC_ALL=C sort \
+	| XZ_OPT="-6v" tar -caf "../$(PKG)_$(VER).orig.tar.xz" -T- --owner=root --group=root --mode=a+rX \
+	&& cd .. && $(RM) -r "$(PKG)-$(VER)"
