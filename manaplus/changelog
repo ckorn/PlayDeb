@@ -1,3 +1,17 @@
+manaplus (1:1.5.8.15-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: download updates if download error happend.
+    fix: key message in outfits window.
+    fix: archer attack range in yellow bar.
+    fix: wrong sprites in char selection dialog (hercules).
+    fix: show all sprites in char selection dialog (hercules).
+    add: for future tmwa guilds fix guild kick.
+    add: new attributes for items description.
+    add: send to client equipped cards (hercules).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 15 Aug 2015 22:36:21 +0200
+
 manaplus (1:1.5.8.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
