@@ -7,7 +7,7 @@ Build-Depends: cdbs,
                libespeak-dev,
                libmarkdown2-dev,
                libqt5svg5-dev,
-               netmaumau-dev (>= 0.22.0~),
+               netmaumau-dev (>= 0.23.7~),
                pkg-config,
                qtbase5-dev,
                qttools5-dev-tools
@@ -17,9 +17,7 @@ Homepage: http://sourceforge.net/projects/netmaumau/
 Package: nmm-qt-client
 Architecture: any
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: libnetmaumauclient4 (>= 0.21.1~),
-         libnetmaumaucommon5 (>= 0.21.1~),
-         ${misc:Depends},
+Depends: ${misc:Depends},
          ${shlibs:Depends}
 Suggests: netmaumau-server
 Description: Qt client for NetMauMau
