@@ -32,7 +32,7 @@ include /usr/share/cdbs/1/rules/autoreconf.mk
 -include /usr/share/dpkg/buildflags.mk
 
 DEB_CONFIGURE_EXTRA_FLAGS = --bindir=\$${prefix}/games --enable-console-client \
-	--enable-ai-image=/usr/share/pixmaps/debian-logo.png \
+	--disable-static --enable-ai-image=/usr/share/pixmaps/debian-logo.png \
 	--enable-ai-name="`lsb_release -sc | sed 's/.*/\u&/'`" --localstatedir=/var/games \
 	--with-bashcompletiondir="\$${datarootdir}/bash-completion/completions"
 DEB_MAKE_CHECK_TARGET = check
