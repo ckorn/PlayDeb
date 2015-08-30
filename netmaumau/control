@@ -91,7 +91,7 @@ Replaces: libnetmaumaucommon0,
           libnetmaumaucommon2,
           libnetmaumaucommon3,
           libnetmaumaucommon4,
-		  libnetmaumaucommon5
+          libnetmaumaucommon5
 Section: libs
 
 Package: libnetmaumauclient5
@@ -105,7 +105,7 @@ Replaces: libnetmaumauclient0,
           libnetmaumauclient1,
           libnetmaumauclient2,
           libnetmaumauclient3,
-		  libnetmaumauclient4
+          libnetmaumauclient4
 Provides: netmaumau-client-api-15
 Description: Server for the popular card game Mau Mau - client library
  Functions for establishing a connection and playing with a NetMauMau server.

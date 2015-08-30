@@ -1,3 +1,9 @@
+netmaumau (0.24.0-1~getdeb2~vivid) vivid; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 28 Aug 2015 21:22:27 +0200
+
 netmaumau (0.23.0-1~getdeb2~vivid) vivid; urgency=medium
 
   * New upstream version
