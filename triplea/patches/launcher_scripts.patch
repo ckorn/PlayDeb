@@ -1,26 +1,42 @@
 Description: Points to Debian installed location, and calls #!/bin/sh
 Author: Scott Howard <showard@debian.org>
 
-Index: triplea-1.8.0.7/run-server.sh
+Index: triplea-1.8.0.7a/run-server.sh
 ===================================================================
---- triplea-1.8.0.7.orig/run-server.sh	2015-08-16 20:01:39.470097217 +0200
-+++ triplea-1.8.0.7/run-server.sh	2015-08-16 20:02:12.906772747 +0200
-@@ -1,2 +1,4 @@
+--- triplea-1.8.0.7a.orig/run-server.sh	2015-08-19 16:35:06.000000000 +0200
++++ triplea-1.8.0.7a/run-server.sh	2015-08-30 03:13:45.945857459 +0200
+@@ -1,2 +1,11 @@
+-cd $(dirname $0)
+-java -server  -Xmx192m -classpath bin/triplea.jar:lib/derby-10.10.1.1.jar -Dtriplea.lobby.port=3303 -Dtriplea.lobby.console=true  games.strategy.engine.lobby.server.LobbyServer 
 +#!/bin/sh
++TOOL_OPTIONS=`echo $JAVA_TOOL_OPTIONS`
++size=${#TOOL_OPTIONS}
++if [ $size -ne 0 ] ; then
++  echo "unset JAVA_TOOL_OPTIONS"
++  unset JAVA_TOOL_OPTIONS
++fi
++
 +cd /usr/share/triplea
- cd $(dirname $0)
- java -server  -Xmx192m -classpath bin/triplea.jar:lib/derby-10.10.1.1.jar -Dtriplea.lobby.port=3303 -Dtriplea.lobby.console=true  games.strategy.engine.lobby.server.LobbyServer 
-Index: triplea-1.8.0.7/triplea_unix.sh
++cd $(dirname $0)
++java -server  -Xmx192m -classpath bin/triplea.jar:lib/derby-10.10.1.1.jar -Dtriplea.lobby.port=3303 -Dtriplea.lobby.console=true  games.strategy.engine.lobby.server.LobbyServer 
+Index: triplea-1.8.0.7a/triplea_unix.sh
 ===================================================================
---- triplea-1.8.0.7.orig/triplea_unix.sh	2015-08-16 20:01:39.470097217 +0200
-+++ triplea-1.8.0.7/triplea_unix.sh	2015-08-16 20:20:31.857645483 +0200
-@@ -1,4 +1,4 @@
+--- triplea-1.8.0.7a.orig/triplea_unix.sh	2015-08-19 16:35:06.000000000 +0200
++++ triplea-1.8.0.7a/triplea_unix.sh	2015-08-30 03:13:49.533931238 +0200
+@@ -1,4 +1,11 @@
 -#!/bin/bash
 +#!/bin/sh
++
++TOOL_OPTIONS=`echo $JAVA_TOOL_OPTIONS`
++size=${#TOOL_OPTIONS}
++if [ $size -ne 0 ] ; then
++  echo "unset JAVA_TOOL_OPTIONS"
++  unset JAVA_TOOL_OPTIONS
++fi
  
  if ! java -version > /dev/null 2>&1
  then
-@@ -7,7 +7,7 @@
+@@ -7,7 +14,7 @@
  exit
  fi
  
