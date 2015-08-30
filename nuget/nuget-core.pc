@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+Libraries=${prefix}/lib/nuget/NuGet.Core.dll ${prefix}/lib/nuget/Microsoft.Web.XmlTransform.dll
+
+Name: nuget-core
+Description: nuget-core - Library for acessing Microsoft NuGet repositories
+Version: 2.8.1
+Libs: -r:${prefix}/lib/nuget/NuGet.Core.dll -r:${prefix}/lib/nuget/Microsoft.Web.XmlTransform.dll
+

@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+
+ACTIVEBRANCH = 2.8.5-monodevelop
+RELEASE = 2.8.5+md59+dhx1
+
+%:
+	dh $@  --with cli
+
+override_dh_auto_build:
+	debian/build-minimal.sh
+
+override_dh_install:
+	dh_install
+	install -D -m 755 debian/nuget.sh debian/nuget/usr/bin/nuget
+
+override_dh_clean:
+	dh_clean
+	rm -fr src/CommandLine/bin/
+	rm -fr src/CommandLine/obj/
+	rm -fr src/Core/bin/
+	rm -fr src/Core/obj/
+	rm -fr xdt/XmlTransform/bin/
+	rm -fr xdt/XmlTransform/obj/
+
+get-orig-source:
+	rm -fr nuget-git/
+	git clone https://github.com/mrward/nuget.git nuget-git
+	cd nuget-git && git checkout $(ACTIVEBRANCH)
+	cd nuget-git && git submodule init && git submodule update
+	rm -fr nuget-git/FxCop/ nuget-git/lib/ nuget-git/test/ nuget-git/Tools/ nuget-git/.git* nuget-git/*/.git*
+	tar cjvf nuget_$(RELEASE).orig.tar.bz2 nuget-git/
+	rm -fr nuget-git/

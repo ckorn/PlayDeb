@@ -1,0 +1,2 @@
+src/CommandLine/bin/Release/NuGet.Core.dll*			/usr/lib/nuget/
+xdt/XmlTransform/bin/Debug/Microsoft.Web.XmlTransform.dll*	/usr/lib/nuget/

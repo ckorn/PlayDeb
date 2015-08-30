@@ -1,0 +1,50 @@
+nuget (2.8.5+md59+dhx1-1~getdeb1) trusty; urgency=medium
+
+  * Upload to trusty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 27 Aug 2015 21:29:07 +0200
+
+nuget (2.8.5+md59+dhx1-1) unstable; urgency=medium
+
+  * [8b67d0e] Imported Upstream version 2.8.5+md59+dhx1
+  * [c5c4c0f] Including build-minimal in orig was dumb. Include in 
+    debian/ instead
+  * [5e42fa6] Add a get-orig-source rule
+  * [adc985e] Include a csproj fix to use locally built XDT, 
+    not bundled assembly.
+
+ -- Jo Shields <jo.shields@xamarin.com>  Mon, 29 Jun 2015 11:10:46 +0100
+
+nuget (2.8.1+md54+dhx3-1) unstable; urgency=medium
+
+  * [5daafdf] Imported Upstream version 2.8.1+md54+dhx3
+    (Fixes Xamarin bug 24095)
+
+ -- Jo Shields <jo.shields@xamarin.com>  Wed, 29 Oct 2014 11:24:44 +0000
+
+nuget (2.8.1+md54+dhx2-1) unstable; urgency=medium
+
+  * [9da60ec] Imported Upstream version 2.8.1+md54+dhx2
+
+ -- Jo Shields <jo.shields@xamarin.com>  Mon, 22 Sep 2014 10:36:30 +0100
+
+nuget (2.8.1+md54+dhx1-3) unstable; urgency=medium
+
+  * [bfc4ec1] Add xdt to Libraries: section of pkg-config file. Having it 
+    in Libs: is enough for "mcs -pkg:nuget-core", but xbuild looks at 
+    Libraries:
+
+ -- Jo Shields <jo.shields@xamarin.com>  Wed, 17 Sep 2014 09:49:51 +0100
+
+nuget (2.8.1+md54+dhx1-2) unstable; urgency=medium
+
+  * [36c7654] Fix debian/copyright URL
+  * [b529fb8] Fix pkg-config file
+
+ -- Jo Shields <jo.shields@xamarin.com>  Wed, 17 Sep 2014 09:37:35 +0100
+
+nuget (2.8.1+md54+dhx1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Jo Shields <directhex@apebox.org>  Tue, 16 Sep 2014 20:05:14 +0100
