@@ -6,21 +6,17 @@ Forwarded: upstream won't take it as they install to non-standard paths
  src/main.cpp |    4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-Index: freeminer-0.4.12.6/src/main.cpp
+Index: freeminer-0.4.13.7/src/main.cpp
 ===================================================================
---- freeminer-0.4.12.6.orig/src/main.cpp	2015-02-21 18:58:52.803095857 +0100
-+++ freeminer-0.4.12.6/src/main.cpp	2015-02-21 18:58:52.799095858 +0100
-@@ -1090,14 +1090,14 @@
+--- freeminer-0.4.13.7.orig/src/main.cpp	2015-08-20 21:55:27.962057910 +0200
++++ freeminer-0.4.13.7/src/main.cpp	2015-08-20 21:56:01.314517707 +0200
+@@ -515,10 +515,10 @@
  	httpfetch_init(g_settings->getS32("curl_parallel_limit"));
  
  #ifdef _MSC_VER
 -	init_gettext((porting::path_share + DIR_DELIM + "locale").c_str(),
 +	init_gettext("/usr/share/locale",
  		g_settings->get("language"), argc, argv);
- 	//Remove windows console window if settings request
- 	if (!g_settings->getBool("console_enabled"))
- 		FreeConsole();
- 
  #else
 -	init_gettext((porting::path_share + DIR_DELIM + "locale").c_str(),
 +	init_gettext("/usr/share/locale",

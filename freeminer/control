@@ -20,8 +20,10 @@ Build-Depends: debhelper (>= 9),
                libjsoncpp-dev,
                libmsgpack-dev,
                libenet-dev,
-               libx11-dev
-Standards-Version: 3.9.5
+               libx11-dev,
+               libleveldb-dev,
+               libhiredis-dev
+Standards-Version: 3.9.6
 Homepage: http://freeminer.org/
 
 Package: freeminer
