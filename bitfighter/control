@@ -13,11 +13,18 @@ Build-Depends: debhelper (>= 9),
                lib32stdc++6 [amd64],
                freeglut3-dev,
                liblua5.1-0-dev,
-               libsdl1.2-dev,
+               libsdl2-dev,
                libspeex-dev,
                libvorbis-dev,
-               libmodplug-dev
-Standards-Version: 3.9.3
+               libmodplug-dev,
+               libsqlite3-dev,
+               libalure-dev,
+               libtomcrypt-dev,
+               libboost-dev,
+               libclipper-dev,
+               libluajit-5.1-dev,
+               libpng12-dev
+Standards-Version: 3.9.5
 Homepage: http://bitfighter.org
 
 Package: bitfighter

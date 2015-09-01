@@ -1,4 +1,48 @@
 #!/usr/bin/make -f
+PKD   = $(abspath $(dir $(MAKEFILE_LIST)))
+PKG   = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SSource)
+VER  = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SVersion | cut -d- -f1 )
+UVER  = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SVersion | cut -d- -f1 | sed 's/0\.0\.\(.*\)/\1/')
+
 %:
 	dh $@ --parallel --buildsystem=cmake
+
+## http://wiki.debian.org/onlyjob/get-orig-source
+.PHONY: get-orig-source
+get-orig-source: $(PKG)_$(VER).orig.tar.xz $(info I: $(PKG)_$(VER))
+	@
+
+UURL = git://github.com/bitfighter/bitfighter.git
+$(PKG)_$(VER).orig.tar.xz: $(info I: VER=$(VER))
+	$(if $(wildcard $(PKG)-$(VER)),$(error $(PKG)-$(VER) exist, aborting..))
+	@echo "# Downloading..."
+	git clone $(UURL) $(PKG)-$(VER) \
+	|| $(RM) -r $(PKG)-$(VER)
+	cd $(PKG)-$(VER) \
+	&& git checkout bitfighter-$(UVER) \
+	&& [ -s ChangeLog ] || ( echo "# Generating ChangeLog..." \
+	   ; git log --pretty="format:%ad  %aN  <%aE>%n%n%x09* %s%n" --date=short > ChangeLog \
+	   ; touch -d "$$(git log -1 --format='%ci')" ChangeLog) \
+	&& echo "# Cleaning-up..." \
+	&& find . -depth -type d -name 'alure' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'boost' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'build' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'lib' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'libmodplug' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'libogg' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'libpng' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'libsdl' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'libspeex' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'libvorbis' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'lua' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'mysql++' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'openal' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'sqlite' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'tomcrypt' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& find . -depth -type d -name 'zlib' -exec $(RM) -r {} \; -printf 'removed %p\n' \
+	&& $(RM) -r .git .git*
+	@echo "# Packing..."
+	find -L "$(PKG)-$(VER)" -xdev -type f -print | LC_ALL=C sort \
+	| XZ_OPT="-6v" tar -caf "$(PKG)_$(VER).orig.tar.xz" -T- --owner=root --group=root --mode=a+rX \
+	&& $(RM) -r "$(PKG)-$(VER)"
 

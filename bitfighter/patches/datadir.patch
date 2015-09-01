@@ -1,14 +1,23 @@
 # the data dir is /usr/share/games/bitfighter
-Index: bitfighter-0.0.019/zap/CMakeLists.txt
+Index: bitfighter-0.0.019e/cmake/Platform/Linux.cmake
 ===================================================================
---- bitfighter-0.0.019.orig/zap/CMakeLists.txt	2013-12-01 04:09:16.000000000 +0100
-+++ bitfighter-0.0.019/zap/CMakeLists.txt	2013-12-01 13:23:52.739798478 +0100
-@@ -6,7 +6,7 @@
- # Define the Linux data dir if not defined in a packaging build script already
- if("${CMAKE_SYSTEM}" MATCHES "Linux")
- 	if(NOT LINUX_DATA_DIR)
--		set(LINUX_DATA_DIR "/usr/share")
-+		set(LINUX_DATA_DIR "/usr/share/games")
- 	endif()
+--- bitfighter-0.0.019e.orig/cmake/Platform/Linux.cmake	2015-08-30 22:06:05.182064089 +0200
++++ bitfighter-0.0.019e/cmake/Platform/Linux.cmake	2015-08-30 22:23:43.459797062 +0200
+@@ -20,7 +20,7 @@
  
- 	message(STATUS "LINUX_DATA_DIR: ${LINUX_DATA_DIR}.  Change this by invoking cmake with -DLINUX_DATA_DIR=<SOME_DIRECTORY>")
+ # Define the Linux data dir if not defined in a packaging build script already
+ if(NOT CMAKE_DATA_PATH)
+-	set(CMAKE_DATA_PATH "${CMAKE_INSTALL_PREFIX}/share")
++	set(CMAKE_DATA_PATH "${CMAKE_INSTALL_PREFIX}/share/games")
+ endif()
+ 
+ message(STATUS "CMAKE_DATA_PATH: ${CMAKE_DATA_PATH}.  Change this by invoking cmake with -DCMAKE_DATA_PATH=<SOME_DIRECTORY>")
+@@ -34,7 +34,7 @@
+ endif()
+ 
+ if(NOT CMAKE_MAN_PATH)
+-	set(CMAKE_MAN_PATH "${CMAKE_DATA_PATH}/man")
++	set(CMAKE_MAN_PATH "${CMAKE_INSTALL_PREFIX}/share/man")
+ endif()
+ 
+ 
