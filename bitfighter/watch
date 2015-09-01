@@ -1,4 +1,4 @@
 version=3
 opts="dversionmangle=s/0\.0\.(.*)/$1/" \
-http://code.google.com/p/bitfighter/downloads/list \
-    (?:.*/)?bitfighter-([\d]+[a-z]?)\.tar\.(?:gz|bz2|xz)
+https://github.com/bitfighter/bitfighter/releases \
+    (?:.*/)?bitfighter-(.*)\.tar\.(?:gz|bz2|xz)
