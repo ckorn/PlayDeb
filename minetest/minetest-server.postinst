@@ -1,0 +1,32 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+  configure)
+    if ! getent passwd Debian-minetest >/dev/null; then
+      adduser \
+          --disabled-password \
+          --quiet \
+          --system \
+          --home /var/games/minetest-server \
+          --no-create-home \
+          --gecos "Minetest dedicated server" \
+          --ingroup games \
+          --force-badname Debian-minetest
+    fi
+    install -d /var/games
+    install -d /var/games/minetest-server
+    install -d /var/log/minetest
+    chown Debian-minetest:games /var/games/minetest-server
+    chown Debian-minetest:games /var/log/minetest
+  ;;
+  abort-upgrade|abort-remove|abort-deconfigure)
+  ;;
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+  ;;
+esac
+
+#DEBHELPER#

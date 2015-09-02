@@ -1,0 +1,23 @@
+From: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Date: Sun, 4 Jan 2015 22:05:51 +0100
+Subject: i18n
+
+Search for translation in the default path
+Forwarded: not-needed
+---
+ src/main.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Index: minetest-0.4.13/src/main.cpp
+===================================================================
+--- minetest-0.4.13.orig/src/main.cpp	2015-09-02 23:06:44.964697509 +0200
++++ minetest-0.4.13/src/main.cpp	2015-09-02 23:06:44.960697425 +0200
+@@ -475,7 +475,7 @@
+ 	init_gettext((porting::path_share + DIR_DELIM + "locale").c_str(),
+ 		g_settings->get("language"), argc, argv);
+ #else
+-	init_gettext((porting::path_share + DIR_DELIM + "locale").c_str(),
++	init_gettext("/usr/share/locale",
+ 		g_settings->get("language"));
+ #endif
+ 

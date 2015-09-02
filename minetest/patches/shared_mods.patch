@@ -1,0 +1,21 @@
+From: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Date: Sun, 4 Jan 2015 20:49:23 +0100
+Subject: shared_mods
+
+Also look under /usr/share/games/minetest for mods, so that minetest-mod-* packages actually work
+---
+ builtin/mainmenu/modmgr.lua | 1 +
+ 1 file changed, 1 insertion(+)
+
+Index: minetest-0.4.13/builtin/mainmenu/modmgr.lua
+===================================================================
+--- minetest-0.4.13.orig/builtin/mainmenu/modmgr.lua	2015-09-02 23:06:50.120806663 +0200
++++ minetest-0.4.13/builtin/mainmenu/modmgr.lua	2015-09-02 23:06:50.116806580 +0200
+@@ -409,6 +409,7 @@
+ 		modpath ~= "" then
+ 		get_mods(modpath,global_mods)
+ 	end
++	get_mods("/usr/share/games/minetest/mods",global_mods)
+ 
+ 	for i=1,#global_mods,1 do
+ 		global_mods[i].typ = "global_mod"

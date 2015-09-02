@@ -1,0 +1,52 @@
+minetest-server for Debian
+==========================
+
+Since version 0.4.10+repack-3 Debian supports running multiple Minetest servers.
+An unprivileged system-wide user, Debian-minetest, controls the server.
+
+    * The home directory of this user is /var/games/minetest-server.
+    * All log files are written to /var/log/minetest.
+    * The default server configuration is located at
+      /etc/minetest/minetest.conf.
+
+systemd (default init system)
+=============================
+
+Debian's Minetest server supports template units. You can start multiple
+servers by specifying the name of your configuration files on the command-line.
+
+    # This command will start the server with the default configuration,
+    # /etc/minetest/minetest.conf
+
+    systemctl start minetest-server@minetest.service
+
+    # For running a second PvP server, you can create another configuration
+    # file /etc/minetest/pvp.conf and then start the server with
+
+    systemctl start minetest-server@pvp.service
+
+The new log file will then be written to /var/log/minetest/pvp.log.
+
+SysV
+====
+
+You can start the server with default minetest.conf configuration by using the
+service command.
+
+    service minetest-server start
+
+and stop it with
+
+    service minetest-server stop
+
+To disable the init script use the facilities provided by your init system. For
+instance, under sysvinit, use
+
+    update-rc.d minetest-server disable
+
+or under systemd, use
+
+    systemctl disable minetest-server@minetest.service
+
+
+ -- Markus Koschany <apo@gambaru.de>  Thu, 20 Nov 2014 17:41:39 +0100

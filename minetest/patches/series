@@ -1,0 +1,4 @@
+i18n.patch
+mapper.patch
+shared_mods.patch
+FindIrrlicht.cmake.patch
