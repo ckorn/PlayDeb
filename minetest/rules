@@ -1,0 +1,121 @@
+#!/usr/bin/make -f
+
+# avoid useless dependencies
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+# upstream version
+version=$(shell uscan --report-status | head -2 | tail -1 | cut -d' ' -f7 | cut -d, -f1)
+tmpdir:=$(shell mktemp -d)
+wrkdir:=$(shell pwd)
+
+# build-hardening flags
+export DEB_BUILD_MAINT_OPTIONS="hardening=+all"
+
+# file names
+sources=$(shell find . -name *.cpp)
+headers=$(shell find . -name *.h)
+dfsgremovals=Makefile.bak \
+	     .gitattributes \
+	     .hg_archival \
+	     .hg_archival.txt \
+	     .hgignore \
+	     .hgtags \
+	     fontlucida.png \
+	     sqlite \
+	     lua
+#	     jthread # upstream patched that lib, which seem dead upstream itself, so use minetest's version even if I don't like it.
+cleanremovals= bin \
+	       CMakeFiles \
+	       src/CMakeFiles \
+	       CMakeCache.txt \
+	       CPackConfig.cmake \
+	       CPackSourceConfig.cmake \
+	       Makefile \
+	       cmake_install.cmake \
+	       src/Makefile \
+	       src/cmake_config.h \
+	       src/cmake_install.cmake \
+	       locale \
+	       install_manifest.txt \
+	       minetest.xpm \
+	       minetest.svg \
+	       minetest.png \
+	       src/cguittfont/CMakeFiles/ \
+	       src/cguittfont/Makefile \
+	       src/cguittfont/cmake_install.cmake \
+	       src/cguittfont/libcguittfont.a
+
+override_dh_clean:
+	dh_clean --exclude old/Makefile.old
+
+override_dh_auto_clean:
+	dh_clean --exclude old/Makefile.old
+	rm -rf ${cleanremovals}
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DBUILD_SERVER=1 \
+		-DRUN_IN_PLACE=0 \
+		-DCMAKE_VERBOSE_MAKEFILE=ON \
+		-DENABLE_GETTEXT=1 \
+		-DENABLE_FREETYPE=1 \
+		-DFREETYPE_INCLUDE_DIR_freetype2=/usr/include/freetype2 \
+		-DFREETYPE_INCLUDE_DIR_ft2build=/usr/include \
+		-DENABLE_LEVELDB=1 \
+		-DLEVELDB_INCLUDE_DIR=/usr/include/leveldb \
+		-DCUSTOM_LOCALEDIR=/usr/share/locale \
+		-DCUSTOM_SHAREDIR=/usr/share/games/minetest \
+		-DCMAKE_INSTALL_PREFIX=/usr
+
+override_dh_installchangelogs:
+	dh_installchangelogs debian/changelog.upstream
+
+override_dh_install:
+	dh_install --list-missing -X.gitignore
+	# copy the logo
+	mkdir -p \
+		debian/minetest/usr/share/icons/hicolor/24x24/apps/ \
+		debian/minetest/usr/share/pixmaps/
+	cp \
+		misc/minetest-icon-24x24.png \
+		debian/minetest/usr/share/icons/hicolor/24x24/apps/minetest-icon.png
+	convert \
+		debian/minetest/usr/share/icons/hicolor/24x24/apps/minetest-icon.png \
+		debian/minetest/usr/share/pixmaps/minetest.xpm
+	mkdir -p debian/minetest/usr/share/icons/hicolor/scalable/apps/
+	cp misc/minetest-icon.svg debian/minetest/usr/share/icons/hicolor/scalable/apps/
+	# take care of the fonts we need
+	mkdir -p debian/minetest-data/usr/share/games/minetest/fonts/
+	ln -s /usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf \
+	      debian/minetest-data/usr/share/games/minetest/fonts/liberationmono.ttf
+	ln -s /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf \
+	      debian/minetest-data/usr/share/games/minetest/fonts/liberationsans.ttf
+	# Install the mapper script
+	mkdir -p debian/minetest-data/usr/games
+	cp util/minetestmapper.py debian/minetest-data/usr/games/minetest-mapper
+	cp util/colors.txt        debian/minetest-data/usr/share/games/minetest/minetestmapper-colors.txt
+
+override_dh_strip:
+	dh_strip --dbg-package=minetest-dbg
+
+get-orig-source:
+	rm -f ${wrkdir}/../minetest_${version}+repack.orig.tar.gz
+	uscan --verbose --force-download && mv ../${version}.tar.gz ${tmpdir} || true
+	set +ex; cd ${tmpdir} && \
+	    tar xf ${version}.tar.gz && rm -f ${version}.tar.gz && \
+	    cd minetest-${version}/games && \
+	    for game in minetest_game ; do \
+	       wget --no-verbose https://github.com/minetest/$${game}/archive/${version}.tar.gz -O - | tar xfz - ; \
+	       mv $${game}-${version} $${game} ; \
+	       done && \
+	    cd .. ; \
+	    for file in ${dfsgremovals}; do \
+	        find . -name $$file -execdir rm -rf {} \; 2>/dev/null || true; \
+		done && \
+	    tar cf ${wrkdir}/../minetest_${version}+repack.orig.tar * ; \
+	    gzip --best ${wrkdir}/../minetest_${version}+repack.orig.tar
+	rm -rf ${tmpdir}
+	@echo "successfully created new tarball: ${wrkdir}/../minetest_${version}+repack.orig.tar.gz"
+
+%:
+	dh ${@} --parallel --with systemd

@@ -1,0 +1,14 @@
+[Unit]
+Description=Minetest multiplayer server minetest.conf server config
+Documentation=man:minetestserver(6)
+After=network.target
+
+[Service]
+Restart=on-failure
+User=Debian-minetest
+Group=games
+ExecStart=/usr/lib/minetest/minetestserver --config /etc/minetest/minetest.conf --logfile /var/log/minetest/minetest.log
+
+[Install]
+WantedBy=multi-user.target
+

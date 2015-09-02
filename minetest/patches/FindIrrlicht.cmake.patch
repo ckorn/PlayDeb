@@ -1,0 +1,22 @@
+From: Markus Koschany <apo@gambaru.de>
+Date: Sat, 21 Feb 2015 16:45:20 +0100
+Subject: FindIrrlicht.cmake
+
+Forwarded: https://github.com/minetest/minetest/pull/2371
+---
+ cmake/Modules/FindIrrlicht.cmake | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Index: minetest-0.4.13/cmake/Modules/FindIrrlicht.cmake
+===================================================================
+--- minetest-0.4.13.orig/cmake/Modules/FindIrrlicht.cmake	2015-09-02 23:13:15.288908965 +0200
++++ minetest-0.4.13/cmake/Modules/FindIrrlicht.cmake	2015-09-02 23:13:55.709754771 +0200
+@@ -10,7 +10,7 @@
+ 		"${IRRLICHT_SOURCE_DIR}/include"
+ 	)
+ 
+-	set(IRRLICHT_LIBRARY_NAMES libIrrlicht.a Irrlicht Irrlicht.lib)
++	set(IRRLICHT_LIBRARY_NAMES libIrrlicht.so libIrrlicht.a Irrlicht)
+ 
+ 	if(WIN32)
+ 		if(MSVC)

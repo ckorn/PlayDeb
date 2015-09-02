@@ -1,0 +1,11 @@
+
+
+usr/share/doc/minetest/README.txt    usr/share/doc/minetest-data
+usr/share/doc/minetest/lua_api.txt   usr/share/doc/minetest-data
+usr/share/doc/minetest/mapformat.txt usr/share/doc/minetest-data
+usr/share/doc/minetest/minetest.conf.example usr/share/doc/minetest-data
+usr/share/games/minetest/builtin/*   usr/share/games/minetest/builtin
+usr/share/games/minetest/client/*    usr/share/games/minetest/client
+usr/share/games/minetest/games/*     usr/share/games/minetest/games
+usr/share/games/minetest/textures/*  usr/share/games/minetest/textures
+usr/share/locale/*                   usr/share/locale
