@@ -1,0 +1,19 @@
+# HG changeset patch
+# User Neos3452
+# Date 1441224449 -7200
+# Node ID e289b006b07dbb7ed30aa9d73da6a8294ef777e2
+# Parent  31a69934cc02ce013c3f7d9df5f781b8947dc7b8
+Compilation error fix
+
+diff --git a/TypeAggregatedMarketDataFilterProxyModel.cpp b/TypeAggregatedMarketDataFilterProxyModel.cpp
+--- a/TypeAggregatedMarketDataFilterProxyModel.cpp
++++ b/TypeAggregatedMarketDataFilterProxyModel.cpp
+@@ -58,7 +58,7 @@
+         const auto source = sourceModel();
+         if (source != nullptr)
+         {
+-            auto checkLimit = [source](auto column, auto min, auto max) {
++            auto checkLimit = [source, sourceRow, &sourceParent](auto column, auto min, auto max) {
+                 if (min || max)
+                 {
+                     using Type = std::remove_reference_t<decltype(*min)>;
