@@ -1,3 +1,9 @@
+liquidwar6 (0.6.3902-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 06 May 2015 23:31:45 +0200
+
 liquidwar6 (0.4.3681-1~getdeb1) precise; urgency=low
 
   * New upstream version
