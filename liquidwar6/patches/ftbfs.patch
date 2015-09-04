@@ -1,0 +1,25 @@
+# fix compilation error
+Index: liquidwar6-0.6.3902/src/lib/lw6-funcssys.c
+===================================================================
+--- liquidwar6-0.6.3902.orig/src/lib/lw6-funcssys.c	2015-05-06 12:53:16.000000000 +0200
++++ liquidwar6-0.6.3902/src/lib/lw6-funcssys.c	2015-09-03 22:02:22.534405814 +0200
+@@ -1363,7 +1363,6 @@
+ _scm_lw6sys_log (SCM level, SCM message)
+ {
+   lw6sys_context_t *sys_context = lw6_global.sys_context;
+-  int c_level;
+   char *c_message;
+ 
+   LW6SYS_SCRIPT_FUNCTION_BEGIN;
+@@ -1372,11 +1371,9 @@
+   SCM_ASSERT (scm_is_integer (level), level, SCM_ARG1, __FUNCTION__);
+   SCM_ASSERT (scm_is_string (message), message, SCM_ARG2, __FUNCTION__);
+ 
+-  c_level = scm_to_int (level);
+   c_message = lw6scm_utils_to_0str (sys_context, message);
+   if (c_message)
+     {
+-      lw6sys_log (sys_context, c_level, __FILE__, __LINE__, "%s", c_message);
+       LW6SYS_FREE (sys_context, c_message);
+     }
+ 

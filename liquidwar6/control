@@ -27,7 +27,7 @@ Build-Depends: debhelper (>= 9),
                libgles2-mesa-dev,
                libgoogle-perftools-dev
 Homepage: http://www.gnu.org/s/liquidwar6/
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 
 Package: liquidwar6
 Architecture: any
