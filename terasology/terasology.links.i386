@@ -1,0 +1,3 @@
+usr/lib/games/terasology/libjinput-linux.so		usr/share/games/terasology/natives/linux/libjinput-linux.so
+usr/lib/games/terasology/liblwjgl.so			usr/share/games/terasology/natives/linux/liblwjgl.so
+usr/lib/games/terasology/libopenal.so			usr/share/games/terasology/natives/linux/libopenal.so

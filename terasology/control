@@ -1,0 +1,22 @@
+Source: terasology
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               openjdk-8-jdk,
+               gradle
+Standards-Version: 3.9.6
+Homepage: http://terasology.org/
+
+Package: terasology
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         openjdk-8-jre,
+         x11-xserver-utils
+Description: Minecraft inspired game
+ Terasology is a game that pays ample tribute to Minecraft
+ in initial look and origin, but stakes out its own niche
+ by aiming for the NPC-helper and caretaker focus from such
+ games as Dwarf Fortress and Dungeon Keeper,
+ while striving for added depth and sophistication.

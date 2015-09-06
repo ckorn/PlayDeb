@@ -1,0 +1,19 @@
+# add fix for java in vivid
+Index: terasology-0.54.1/gradlew
+===================================================================
+--- terasology-0.54.1.orig/gradlew	2015-08-22 22:13:00.000000000 +0200
++++ terasology-0.54.1/gradlew	2015-09-05 02:45:44.671398215 +0200
+@@ -12,6 +12,13 @@
+ APP_NAME="Gradle"
+ APP_BASE_NAME=`basename "$0"`
+ 
++TOOL_OPTIONS=`echo $JAVA_TOOL_OPTIONS`
++size=${#TOOL_OPTIONS}
++if [ $size -ne 0 ] ; then
++  echo "unset JAVA_TOOL_OPTIONS"
++  unset JAVA_TOOL_OPTIONS
++fi
++
+ # Use the maximum available, or set MAX_FD != -1 to use that value.
+ MAX_FD="maximum"
+ 

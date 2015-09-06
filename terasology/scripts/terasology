@@ -1,0 +1,9 @@
+#!/bin/sh
+cd /usr/share/games/terasology
+TOOL_OPTIONS=`echo $JAVA_TOOL_OPTIONS`
+size=${#TOOL_OPTIONS}
+if [ $size -ne 0 ] ; then
+  echo "unset JAVA_TOOL_OPTIONS"
+  unset JAVA_TOOL_OPTIONS
+fi
+java -Xms128m -Xmx1024m -jar libs/Terasology.jar "$@"

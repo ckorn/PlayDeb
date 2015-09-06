@@ -1,0 +1,8 @@
+facades/PC/build/distributions/app/libs					usr/share/games/terasology
+facades/PC/build/distributions/app/modules				usr/share/games/terasology
+facades/PC/build/distributions/app/natives/linux/libjinput-linux64.so	usr/lib/games/terasology
+facades/PC/build/distributions/app/natives/linux/liblwjgl64.so		usr/lib/games/terasology
+facades/PC/build/distributions/app/natives/linux/libopenal64.so		usr/lib/games/terasology
+debian/scripts/terasology						usr/games
+debian/terasology.png							usr/share/pixmaps
+debian/terasology.desktop						usr/share/applications

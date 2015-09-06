@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	rm -rf facades/PC/build
+	rm -rf .gradle
+	rm -rf build
+	rm -rf engine/build
+	rm -rf wrapper
+	rm -rf natives
+	rm -rf modules/CoreSampleGameplay/build
+	rm -rf modules/Core/build
+	rm -rf engine-tests/build
+
+override_dh_auto_configure:
+	GRADLE_USER_HOME=$(CURDIR)/.gradle ./gradlew build
+
+override_dh_auto_build:
+
+override_dh_auto_install:
+	GRADLE_USER_HOME=$(CURDIR)/.gradle ./gradlew distPCZip

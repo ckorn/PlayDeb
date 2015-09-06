@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Terasology
+Exec=/usr/games/terasology
+Icon=terasology
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=tera
