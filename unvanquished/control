@@ -24,7 +24,8 @@ Build-Depends: debhelper (>= 9),
 	libwebp-dev (>> 0.2),
 	libgeoip-dev,
 	nettle-dev,
-	zlib1g-dev
+	zlib1g-dev,
+        liblua5.2-dev
 Standards-Version: 3.9.5
 Homepage: http://www.unvanquished.net/
 
