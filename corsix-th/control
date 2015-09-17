@@ -6,15 +6,14 @@ Build-Depends: debhelper (>= 9),
                cmake,
                libsdl2-dev,
                libsdl2-mixer-dev,
-               liblua5.1-0-dev,
+               liblua5.2-dev,
                libfreetype6-dev,
                wx2.8-headers,
                libavcodec-dev,
                libavformat-dev,
                libavdevice-dev,
                libswscale-dev,
-               libpostproc-dev,
-               libluajit-5.1-dev
+               libpostproc-dev
 Standards-Version: 3.9.5
 Homepage: https://code.google.com/p/corsix-th/
 
@@ -23,7 +22,8 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          corsix-th-data (= ${source:Version}),
-         lua-filesystem
+         lua-filesystem,
+         lua-lpeg
 Recommends: theme-hospital-full-data | theme-hospital-demo-data | game-data-packager
 Description: Open source clone of Theme Hospital
  As computers evolve, it is risked losing some
