@@ -1,3 +1,9 @@
+unvanquished (0.43.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 14 Sep 2015 20:55:39 +0200
+
 unvanquished (0.43.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
