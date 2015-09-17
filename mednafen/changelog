@@ -1,3 +1,9 @@
+mednafen (0.9.38.6-1~getdeb2) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 14 Sep 2015 20:53:45 +0200
+
 mednafen (0.9.38.5-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
