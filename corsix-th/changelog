@@ -1,3 +1,10 @@
+corsix-th (0.50-1~getdeb3) trusty; urgency=medium
+
+  * Add runtime dependency on lua-lpeg
+  * Build against Lua 5.2 (LP: #1494587)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 17 Sep 2015 20:34:35 +0200
+
 corsix-th (0.50-1~getdeb1) trusty; urgency=medium
 
   * New upstream version

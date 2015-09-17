@@ -1,0 +1,16 @@
+# find lua 5.2
+Index: corsix-th-0.50/CMake/FindLua.cmake
+===================================================================
+--- corsix-th-0.50.orig/CMake/FindLua.cmake	2015-08-30 22:29:45.000000000 +0200
++++ corsix-th-0.50/CMake/FindLua.cmake	2015-09-17 21:02:42.749389729 +0200
+@@ -26,8 +26,8 @@
+     SET (LUA_INCLUDE_DIRS include/luajit-2.0 include)
+ ELSE (WITH_LUAJIT)
+     SET (LUA_INTERPRETER_TYPE "Lua")
+-    SET (LUA_LIBRARY_NAME lua53 lua52 lua5.1 lua51 lua lua-5.1 liblua)
+-    SET (LUA_INCLUDE_DIRS include include/lua include/lua5.1 include/lua51 include/lua-5.1)
++    SET (LUA_LIBRARY_NAME lua53 lua5.2 lua52 lua5.1 lua51 lua lua-5.1 liblua)
++    SET (LUA_INCLUDE_DIRS include include/lua include/lua5.2 include/lua5.1 include/lua51 include/lua-5.1)
+ ENDIF(WITH_LUAJIT)
+ 
+ FIND_PATH (LUA_INCLUDE_DIR lua.h
