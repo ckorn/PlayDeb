@@ -1,3 +1,22 @@
+manaplus (1:1.5.9.12-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: closing mail edit window.
+    fix: buttons position in npc dialog with visible avatar and input field.
+    add: received packet name in debug log.
+    add: inhirit attribute in items.xml.
+    add: manamarket bot integration for support /sendmail command.
+    add: /sendmail for quick messages (hercules).
+    add: badges for shop, away, inactive modes.
+    add: packet SMSG_MAP_MASK (tmwa).
+    add: option for creting screenshots on complete trade.
+    add: by default init all possible quests to 0.
+    add: driver AMD HD 15.x to ignore list.
+    add: read packet version from server (hercules).
+    add: named items (hercules).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 14 Sep 2015 21:00:58 +0200
+
 manaplus (1:1.5.8.29-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
