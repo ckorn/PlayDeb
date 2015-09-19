@@ -1,0 +1,75 @@
+Source: freebasic
+Section: devel
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libvlc-dev,
+               linux-libc-dev,
+               libx11-dev,
+               libxpm-dev,
+               x11proto-core-dev,
+               libxext-dev,
+               libxrandr-dev,
+               mesa-common-dev,
+               libgpm-dev,
+               liblockdev1-dev,
+               libffi-dev,
+               libncurses5-dev,
+               gcc-multilib
+Standards-Version: 3.9.5
+Homepage: http://www.freebasic.net
+
+Package: freebasic-bin
+Architecture: i386
+Multi-Arch: foreign
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: BASIC compiler (binary package)
+ Open-source, free, multi-platform BASIC compiler,
+ with syntax similar MS-QuickBASIC
+ (including the GFX statements), that adds new
+ features such as pointers, unsigned data types,
+ inline assembly, a pre-processor and many others.
+ .
+ (This package contains the executable).
+
+Package: freebasic
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+         freebasic-bin (= ${source:Version})
+Description: BASIC compiler
+ Open-source, free, multi-platform BASIC compiler,
+ with syntax similar MS-QuickBASIC
+ (including the GFX statements), that adds new
+ features such as pointers, unsigned data types,
+ inline assembly, a pre-processor and many others.
+
+Package: freebasic-bin-dev
+Architecture: i386
+Multi-Arch: foreign
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         freebasic (= ${source:Version})
+Description: BASIC compiler (binary development files)
+ Open-source, free, multi-platform BASIC compiler,
+ with syntax similar MS-QuickBASIC
+ (including the GFX statements), that adds new
+ features such as pointers, unsigned data types,
+ inline assembly, a pre-processor and many others.
+ .
+ (This package contains the development files for the binary package).
+
+Package: freebasic-dev
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+         freebasic-bin-dev (= ${source:Version})
+Description: BASIC compiler (development files)
+ Open-source, free, multi-platform BASIC compiler,
+ with syntax similar MS-QuickBASIC
+ (including the GFX statements), that adds new
+ features such as pointers, unsigned data types,
+ inline assembly, a pre-processor and many others.
+ .
+ (This package contains the development files).

@@ -1,0 +1,5 @@
+freebasic (1.03.0-1~getdeb2) trusty; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 13 Aug 2015 11:40:48 +0200
