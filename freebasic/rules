@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+# only required for the first build when there is no fbc around yet
+override_dh_auto_build:
+ifeq ($(DEB_BUILD_ARCH),i386)
+	dh_auto_build -- bootstrap
+endif
+
+override_dh_auto_install:
+ifeq ($(DEB_BUILD_ARCH),i386)
+	dh_auto_install -- prefix=/usr
+endif
+
+override_dh_install:
+ifeq ($(DEB_BUILD_ARCH),i386)
+	dh_install --fail-missing
+endif
+

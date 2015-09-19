@@ -1,0 +1,34 @@
+# add DESTDIR support
+Index: freebasic-1.03.0/makefile
+===================================================================
+--- freebasic-1.03.0.orig/makefile	2015-07-01 22:46:19.000000000 +0200
++++ freebasic-1.03.0/makefile	2015-08-13 12:14:52.341845992 +0200
+@@ -636,20 +636,20 @@
+ install:        install-compiler install-includes install-rtlib install-gfxlib2
+ 
+ install-compiler:
+-	mkdir -p $(prefixbindir)
+-	$(INSTALL_PROGRAM) $(FBC_EXE) $(PREFIX_FBC_EXE)
++	mkdir -p $(DESTDIR)/$(prefixbindir)
++	$(INSTALL_PROGRAM) $(FBC_EXE) $(DESTDIR)/$(PREFIX_FBC_EXE)
+ 
+ install-includes:
+-	mkdir -p $(prefixincdir)
+-	cp -r $(rootdir)inc/* $(prefixincdir)
++	mkdir -p $(DESTDIR)/$(prefixincdir)
++	cp -r $(rootdir)inc/* $(DESTDIR)/$(prefixincdir)
+ 
+ install-rtlib:
+-	mkdir -p $(prefixlibdir)
+-	$(INSTALL_FILE) $(RTL_LIBS) $(prefixlibdir)
++	mkdir -p $(DESTDIR)/$(prefixlibdir)
++	$(INSTALL_FILE) $(RTL_LIBS) $(DESTDIR)/$(prefixlibdir)
+ 
+ install-gfxlib2:
+-	mkdir -p $(prefixlibdir)
+-	$(INSTALL_FILE) $(GFX_LIBS) $(prefixlibdir)
++	mkdir -p $(DESTDIR)/$(prefixlibdir)
++	$(INSTALL_FILE) $(GFX_LIBS) $(DESTDIR)/$(prefixlibdir)
+ 
+ ################################################################################
+ 
