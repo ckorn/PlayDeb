@@ -1,0 +1,21 @@
+Source: fbpng
+Section: devel
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               freebasic-dev,
+               libz-dev
+Standards-Version: 3.9.5
+Homepage: https://bitbucket.org/yetifoot2/fbpng
+
+Package: fbpng
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: PNG library for freebasic
+ This library provides easy to use functions for using
+ PNG images in your FreeBASIC programs.
+ The functions provide a way to load PNG images to old
+ or new style PUT buffers and also in a format ready
+ for use with OpenGL.
+ Images can be loaded from file, or memory buffer.
