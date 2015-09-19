@@ -1,0 +1,14 @@
+# use cmake for building
+Index: libjoyrumble-0.2.2/CMakeLists.txt
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ libjoyrumble-0.2.2/CMakeLists.txt	2015-08-12 23:55:46.782751256 +0200
+@@ -0,0 +1,8 @@
++cmake_minimum_required (VERSION 2.8.11)
++project (JOYRUMBLE)
++add_library (joyrumble SHARED libjoyrumble.c)
++SET_TARGET_PROPERTIES(joyrumble PROPERTIES VERSION 0.2.2
++                                       SOVERSION 0)
++install (TARGETS joyrumble DESTINATION lib)
++install (FILES "${PROJECT_SOURCE_DIR}/joyrumble.h"        
++         DESTINATION include)

@@ -1,0 +1,5 @@
+libjoyrumble (0.2.2-1~getdeb1) trusty; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 12 Aug 2015 22:42:22 +0200
