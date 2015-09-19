@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	rm -rf src/o build
+	dh_auto_clean
+
+override_dh_auto_build:
+	mkdir -p src/o build
+	dh_auto_build

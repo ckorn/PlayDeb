@@ -1,0 +1,2 @@
+build/*.a		usr/lib
+inc/*			usr/include/freebasic

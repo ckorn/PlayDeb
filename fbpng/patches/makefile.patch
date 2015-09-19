@@ -1,0 +1,29 @@
+# don't build the tests. they don't compile any longer.
+Index: fbpng-3.2/Makefile
+===================================================================
+--- fbpng-3.2.orig/Makefile	2012-10-06 21:51:16.000000000 +0200
++++ fbpng-3.2/Makefile	2015-08-13 13:19:54.801935759 +0200
+@@ -17,7 +17,6 @@
+ OBJS := $(subst $(SRCDIR)/,,$(SRCS))
+ OBJS := $(patsubst %.bas,%.o,$(OBJS))
+ OBJS := $(patsubst %.o,$(OBJDIR)/%.o,$(OBJS))
+-TSTS := $(wildcard $(TSTDIR)/*.bas)
+ 
+ BACKUPS := $(SRCS) $(INCS) $(TSTS)
+ BACKUPS := $(patsubst %.bas,%.bas~,$(BACKUPS))
+@@ -82,13 +81,13 @@
+ all: $(LIBBIN) $(patsubst %.bas,%$(EXEEXT),$(TSTS))
+ 
+ $(LIBBIN) : $(OBJS) $(ZOBJS)
+-	$(FBC) $(FLAGS) -i $(INCDIR) -lib -x $(LIBXNAME) $(OBJS) $(ZOBJS)
++	$(FBC) $(FLAGS) -i $(INCDIR) -lib -x $(LIBBIN) $(OBJS) $(ZOBJS)
+ 
+ $(OBJDIR)/%.o : $(SRCDIR)/%.bas $(INCS)
+ 	$(FBC) $(FLAGS) -i $(INCDIR) $< -c -o $@
+ 
+ $(TSTDIR)/%$(EXEEXT) : $(TSTDIR)/%.bas $(LIBBIN)
+-	$(FBC) $(FLAGS) -i $(INCDIR) $< -x $@ -p $(BUILDDIR)/
++	#$(FBC) $(FLAGS) -i $(INCDIR) $< -x $@ -p $(BUILDDIR)/
+ 
+ $(ZDIR)/%.o : $(ZDIR)/%.c $(ZINCS)
+ 	$(CC) $(CFLAGS) -c $< -o $@
