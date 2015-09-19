@@ -1,0 +1,38 @@
+Source: numbezzled
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               freebasic-dev [i386],
+               fbpng  [i386],
+               libjoyrumble-dev [i386],
+               libgl1-mesa-dev [i386],
+               libx11-dev [i386],
+               libxpm-dev [i386],
+               libxext-dev [i386],
+               libxrandr-dev [i386],
+               libxrender-dev [i386],
+               zlib1g-dev [i386],
+               libncurses5-dev [i386]
+Standards-Version: 3.9.5
+Homepage: http://cmcgames.darkphear.com/
+
+Package: numbezzled-bin
+Multi-Arch: foreign
+Architecture: i386
+Depends: ${shlibs:Depends},
+          ${misc:Depends},
+         libsdl1.2debian,
+         libsdl-mixer1.2
+Description: Falling blocks puzzle game (binary package)
+ Falling blocks puzzle game
+ .
+ (This package contains the binaries).
+
+Package: numbezzled
+Multi-Arch: foreign
+Architecture: any
+Depends: ${misc:Depends},
+         numbezzled-bin (= ${source:Version})
+Description: Falling blocks puzzle game
+ Falling blocks puzzle game

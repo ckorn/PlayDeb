@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_build:
+ifeq ($(DEB_BUILD_ARCH),i386)
+	cd source && fbc numbezzled.bas ../numbezzled.xpm
+endif
+
+override_dh_install:
+ifeq ($(DEB_BUILD_ARCH),i386)
+	dh_install
+	find debian/numbezzled-bin/usr/lib/games/numbezzled -type f -execdir chmod -x {} \;
+	chmod +x debian/numbezzled-bin/usr/lib/games/numbezzled/numbezzled
+	chmod +x debian/numbezzled-bin/usr/lib/games/numbezzled/music/musopen-org/mp32ogg
+endif
