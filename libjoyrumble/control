@@ -1,0 +1,30 @@
+Source: libjoyrumble
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               linux-libc-dev,
+               cmake
+Standards-Version: 3.9.5
+Section: libs
+Homepage: http://sourceforge.net/projects/libjoyrumble
+
+Package: libjoyrumble-dev
+Section: libdevel
+Architecture: all
+Depends: libjoyrumble0 (= ${binary:Version}),
+         ${misc:Depends}
+Description: Library for joystick rumble (headers)
+ The purpose of this library is to provide
+ game / emulator programmers an extremely simple
+ way to access the joystick "rumble" feature.
+ .
+ (This package contains the header files).
+
+Package: libjoyrumble0
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Library for joystick rumble
+ The purpose of this library is to provide
+ game / emulator programmers an extremely simple
+ way to access the joystick "rumble" feature.
