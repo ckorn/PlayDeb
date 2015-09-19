@@ -2,10 +2,10 @@ dh_clideps does not understand the "dllentry" syntax.
 Take the config files from the Ubuntu package which uses the "target" syntax.
 
 Map libGL.so to libGLU.so.1
-Index: openra-20150614/thirdparty/SDL2-CS.dll.config
+Index: openra-20150919/thirdparty/SDL2-CS.dll.config
 ===================================================================
---- openra-20150614.orig/thirdparty/SDL2-CS.dll.config	2015-06-15 21:34:21.560690837 +0200
-+++ openra-20150614/thirdparty/SDL2-CS.dll.config	2015-06-15 21:34:21.556690761 +0200
+--- openra-20150919.orig/thirdparty/SDL2-CS.dll.config	2015-09-19 15:31:41.209526318 +0200
++++ openra-20150919/thirdparty/SDL2-CS.dll.config	2015-09-19 15:31:41.197525621 +0200
 @@ -2,17 +2,20 @@
  <configuration>
    <dllmap os="osx" dll="SDL2.dll" target="libSDL2.dylib"/>
@@ -35,11 +35,11 @@ Index: openra-20150614/thirdparty/SDL2-CS.dll.config
 +
 +  <dllmap dll="libGL.so" os="!windows,osx" target="libGLU.so.1" />
  </configuration>
-Index: openra-20150614/thirdparty/fetch-thirdparty-deps.sh
+Index: openra-20150919/thirdparty/fetch-thirdparty-deps.sh
 ===================================================================
---- openra-20150614.orig/thirdparty/fetch-thirdparty-deps.sh	2015-06-15 21:34:21.560690837 +0200
-+++ openra-20150614/thirdparty/fetch-thirdparty-deps.sh	2015-06-15 21:34:32.636900039 +0200
-@@ -60,6 +60,7 @@
+--- openra-20150919.orig/thirdparty/fetch-thirdparty-deps.sh	2015-09-19 15:31:41.209526318 +0200
++++ openra-20150919/thirdparty/fetch-thirdparty-deps.sh	2015-09-19 15:31:41.197525621 +0200
+@@ -69,6 +69,7 @@
  	cp ./SharpFont/lib/net20/SharpFont* .
  	cp ./SharpFont/config/SharpFont.dll.config .
  	rm -rf SharpFont SharpFont.Dependencies

@@ -1,72 +1,72 @@
 Set the correct version.
-Index: openra-20150614/mods/cnc/mod.yaml
+Index: openra-20150919/mods/cnc/mod.yaml
 ===================================================================
---- openra-20150614.orig/mods/cnc/mod.yaml	2015-06-15 21:09:07.308355189 +0200
-+++ openra-20150614/mods/cnc/mod.yaml	2015-06-15 21:09:38.608948040 +0200
+--- openra-20150919.orig/mods/cnc/mod.yaml	2015-09-19 15:29:09.276240173 +0200
++++ openra-20150919/mods/cnc/mod.yaml	2015-09-19 15:29:49.585028983 +0200
 @@ -1,7 +1,7 @@
  Metadata:
  	Title: Tiberian Dawn
  	Description: Join the Global Defense Initiative or the Brotherhood of Nod in our\nrecreation of the classic game that started it all.\n\nTiberian Dawn modernizes the original Command & Conquer gameplay\nby introducing features from later games, including per-factory\nproduction queues, unit veterancy, and capturable tech structures.
 -	Version: {DEV_VERSION}
-+	Version: release-20150614
++	Version: release-20150919
  	Author: the OpenRA Developers
  
  Folders:
-@@ -211,4 +211,4 @@
+@@ -213,4 +213,4 @@
  		WINTER: .win
  		SNOW: .sno
  		DESERT: .des
 -		JUNGLE: .jun
 \ No newline at end of file
 +		JUNGLE: .jun
-Index: openra-20150614/mods/ra/mod.yaml
+Index: openra-20150919/mods/ra/mod.yaml
 ===================================================================
---- openra-20150614.orig/mods/ra/mod.yaml	2015-06-15 21:09:07.308355189 +0200
-+++ openra-20150614/mods/ra/mod.yaml	2015-06-15 21:09:50.921183305 +0200
+--- openra-20150919.orig/mods/ra/mod.yaml	2015-09-19 15:29:09.276240173 +0200
++++ openra-20150919/mods/ra/mod.yaml	2015-09-19 15:30:07.474495826 +0200
 @@ -1,7 +1,7 @@
  Metadata:
  	Title: Red Alert
  	Description: In a world where Hitler was assassinated and the Third Reich never\nexisted, the Soviet Union seeks power over all of Europe.  Allied\nagainst this Evil Empire, the free world faces a Cold War turned hot.\n\nRed Alert fuses the quick and fun gameplay of the original\nC&C: Red Alert, with balance improvements and new gameplay\nfeatures inspired by modern RTS games.
 -	Version: {DEV_VERSION}
-+	Version: release-20150614
++	Version: release-20150919
  	Author: the OpenRA Developers
  
  Folders:
-Index: openra-20150614/mods/d2k/mod.yaml
+Index: openra-20150919/mods/d2k/mod.yaml
 ===================================================================
---- openra-20150614.orig/mods/d2k/mod.yaml	2015-06-15 21:09:07.308355189 +0200
-+++ openra-20150614/mods/d2k/mod.yaml	2015-06-15 21:10:08.233516128 +0200
+--- openra-20150919.orig/mods/d2k/mod.yaml	2015-09-19 15:29:09.276240173 +0200
++++ openra-20150919/mods/d2k/mod.yaml	2015-09-19 15:30:02.600266068 +0200
 @@ -1,7 +1,7 @@
  Metadata:
  	Title: Dune 2000
  	Description: Three great houses fight for the precious spice, melange.\nHe who controls the spice controls the universe!\n\nTry to establish a foothold on the desert planet Arrakis\nwith its harsh environmental conditions and protect your\nharvesting operations from giant sandworms as well as\nruthless enemy factions.
 -	Version: {DEV_VERSION}
-+	Version: release-20150614
++	Version: release-20150919
  	Author: the OpenRA Developers
  
  Folders:
-Index: openra-20150614/mods/ts/mod.yaml
+Index: openra-20150919/mods/ts/mod.yaml
 ===================================================================
---- openra-20150614.orig/mods/ts/mod.yaml	2015-06-15 21:09:07.308355189 +0200
-+++ openra-20150614/mods/ts/mod.yaml	2015-06-15 21:10:20.393751911 +0200
+--- openra-20150919.orig/mods/ts/mod.yaml	2015-09-19 15:29:09.276240173 +0200
++++ openra-20150919/mods/ts/mod.yaml	2015-09-19 15:30:09.517755691 +0200
 @@ -1,7 +1,7 @@
  Metadata:
  	Title: Tiberian Sun
  	Description: Developer stub, not yet ready for release!
 -	Version: {DEV_VERSION}
-+	Version: release-20150614
++	Version: release-20150919
  	Author: the OpenRA Developers
  
  Folders:
-Index: openra-20150614/mods/modchooser/mod.yaml
+Index: openra-20150919/mods/modchooser/mod.yaml
 ===================================================================
---- openra-20150614.orig/mods/modchooser/mod.yaml	2015-06-15 21:09:07.308355189 +0200
-+++ openra-20150614/mods/modchooser/mod.yaml	2015-06-15 21:10:45.990250897 +0200
+--- openra-20150919.orig/mods/modchooser/mod.yaml	2015-09-19 15:29:09.276240173 +0200
++++ openra-20150919/mods/modchooser/mod.yaml	2015-09-19 15:30:05.239306796 +0200
 @@ -1,6 +1,6 @@
  Metadata:
  	Title: Mod Chooser
 -	Version: {DEV_VERSION}
-+	Version: release-20150614
++	Version: release-20150919
  	Author: The OpenRA Developers
  	Hidden: true
  
