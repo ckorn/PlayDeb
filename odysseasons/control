@@ -1,0 +1,54 @@
+Source: odysseasons
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               freebasic-dev [i386],
+               fbpng  [i386],
+               libjoyrumble-dev [i386],
+               libgl1-mesa-dev [i386],
+               libx11-dev [i386],
+               libxpm-dev [i386],
+               libxext-dev [i386],
+               libxrandr-dev [i386],
+               libxrender-dev [i386],
+               zlib1g-dev [i386],
+               libncurses5-dev [i386]
+Standards-Version: 3.9.5
+Homepage: http://cmcgames.darkphear.com/
+
+Package: odysseasons-bin
+Multi-Arch: foreign
+Architecture: i386
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         libsdl1.2debian,
+         libsdl-mixer1.2
+Description: Fun platformer game (binary package)
+ Odysseasons is a story of a lonely worm on an alien planet
+ with a mission to save its species by traveling through
+ the perils of 4 seasons (levels).
+ The theme is expressed through both gameplay and setting.
+ It also connects the concept of seasons with passage of
+ time and growth. As the main character goes through the
+ seasons, so it grows and gains new abilities, and levels
+ are designed in that way to challenge the player to
+ exploit these new abilities.
+ .
+ (This package contains the binaries).
+
+Package: odysseasons
+Multi-Arch: foreign
+Architecture: any
+Depends: odysseasons-bin (= ${source:Version}),
+         ${misc:Depends}
+Description: Fun platformer game
+ Odysseasons is a story of a lonely worm on an alien planet
+ with a mission to save its species by traveling through
+ the perils of 4 seasons (levels).
+ The theme is expressed through both gameplay and setting.
+ It also connects the concept of seasons with passage of
+ time and growth. As the main character goes through the
+ seasons, so it grows and gains new abilities, and levels
+ are designed in that way to challenge the player to
+ exploit these new abilities.

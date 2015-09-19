@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Odysseasons
+Exec=/usr/games/odysseasons
+Icon=odysseasons
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=platformer;odys
