@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_build:
+ifeq ($(DEB_BUILD_ARCH),i386)
+	cd source && fbc odysseasons.bas odysseasons.xpm
+endif
+
+override_dh_install:
+ifeq ($(DEB_BUILD_ARCH),i386)
+	dh_install
+	find debian/odysseasons-bin/usr/lib/games/odysseasons -type f -execdir chmod -x {} \;
+	chmod +x debian/odysseasons-bin/usr/lib/games/odysseasons/odysseasons
+	chmod +x debian/odysseasons-bin/usr/lib/games/odysseasons/music/Kevin_MacLeod_Incompetech_dot_com/mp32ogg
+endif

@@ -1,0 +1,12 @@
+graph				usr/lib/games/odysseasons
+map				usr/lib/games/odysseasons
+music				usr/lib/games/odysseasons
+sound				usr/lib/games/odysseasons
+odysseasons.conf		usr/lib/games/odysseasons
+odysseasons.conf.default	usr/lib/games/odysseasons
+odysseasons.xpm			usr/lib/games/odysseasons
+odysseasons-icon.png		usr/lib/games/odysseasons
+source/odysseasons		usr/lib/games/odysseasons
+debian/scripts/odysseasons	usr/games
+odysseasons.xpm			usr/share/pixmaps
+debian/odysseasons.desktop	usr/share/applications
