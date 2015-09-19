@@ -1,0 +1,12 @@
+data				usr/lib/games/numbezzled
+image				usr/lib/games/numbezzled
+music				usr/lib/games/numbezzled
+sound				usr/lib/games/numbezzled
+numbezzled.conf			usr/lib/games/numbezzled
+numbezzled.conf.default		usr/lib/games/numbezzled
+numbezzled.xpm			usr/lib/games/numbezzled
+numbezzled.png			usr/lib/games/numbezzled
+source/numbezzled		usr/lib/games/numbezzled
+debian/scripts/numbezzled	usr/games
+numbezzled.xpm			usr/share/pixmaps
+debian/numbezzled.desktop	usr/share/applications
