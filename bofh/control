@@ -2,11 +2,10 @@ Source: bofh
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50~), libsdl1.2-dev
-Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 9),
+               libsdl1.2-dev
+Standards-Version: 3.9.5
 Homepage: https://github.com/neuromancer/BOFH
-Vcs-Git: https://github.com/neuromancer/BOFH.git
-Vcs-Browser: https://github.com/neuromancer/BOFH
 
 Package: bofh
 Architecture: any
