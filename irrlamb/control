@@ -3,11 +3,10 @@ Section: games
 Priority: optional
 Maintainer: João Pinto <joao.pinto@getdeb.net>
 Uploaders: Marco Rodrigues <gothicx@sapo.pt>
-Build-Depends: cdbs,
-               debhelper (>= 9),
+Build-Depends: debhelper (>= 9),
                cmake,
                libboost-filesystem-dev,
-               liblua5.1-0-dev, 
+               liblua5.2-dev, 
                libglu1-mesa-dev,
                libxxf86vm-dev,
                libxext-dev,
@@ -16,7 +15,9 @@ Build-Depends: cdbs,
                libsqlite3-dev,
                libopenal-dev,
                libxrandr-dev,
-               libbullet-dev
+               libbullet-dev,
+               libfreetype6-dev,
+               libvorbis-dev
 Standards-Version: 3.9.6
 Homepage: https://github.com/jazztickets/irrlamb
 
@@ -30,7 +31,9 @@ Description: 3D Physics Game
 
 Package: irrlamb-data
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends},
+         fonts-croscore,
+         fonts-roboto
 Description: 3D Physics Game - data files
  3D game that involves a lot of physics and frustrating gameplay.
  .

@@ -1,3 +1,4 @@
-bin/Release/irrlamb	usr/lib/games/irrlamb
-debian/irrlamb.xpm	usr/share/pixmaps
-debian/irrlamb.desktop	usr/share/applications
+usr/games
+usr/lib/games/irrlamb
+usr/share/pixmaps
+usr/share/applications

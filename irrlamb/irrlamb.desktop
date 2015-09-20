@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Irrlamb
-Comment=3D game that probably involves a lot of physics and frustrating gameplay
-Exec=irrlamb
-Icon=irrlamb
-Terminal=false
-Type=Application
-Categories=Game;
-StartupNotify=true

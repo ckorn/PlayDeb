@@ -1,0 +1,21 @@
+# install executable in lib dir
+Index: irrlamb-0.2.0/CMakeLists.txt
+===================================================================
+--- irrlamb-0.2.0.orig/CMakeLists.txt	2015-09-20 15:11:02.335791717 +0200
++++ irrlamb-0.2.0/CMakeLists.txt	2015-09-20 15:33:25.103944302 +0200
+@@ -146,7 +146,7 @@
+ else()
+ 
+ 	# linux installation
+-	install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION share/games/${CMAKE_PROJECT_NAME})
++	install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION lib/games/${CMAKE_PROJECT_NAME})
+ 	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/art DESTINATION share/games/${CMAKE_PROJECT_NAME})
+ 	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/fonts DESTINATION share/games/${CMAKE_PROJECT_NAME})
+ 	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/levels DESTINATION share/games/${CMAKE_PROJECT_NAME})
+@@ -163,5 +163,5 @@
+ 
+ 	# generate the script to launch the program
+ 	configure_file(${PROJECT_SOURCE_DIR}/deployment/${CMAKE_PROJECT_NAME} ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles)
+-	install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/${CMAKE_PROJECT_NAME} DESTINATION bin)
++	install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/${CMAKE_PROJECT_NAME} DESTINATION games)
+ endif()

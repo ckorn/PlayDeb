@@ -1,3 +1,9 @@
+irrlamb (0.2.0-1~getdeb1) vivid; urgency=medium
+
+  * New upstream version (LP: #1497656)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 20 Sep 2015 14:54:20 +0200
+
 irrlamb (0.1.1-1~getdeb5~vivid) vivid; urgency=medium
 
   * Fix debian/watch file
