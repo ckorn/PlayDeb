@@ -1,3 +1,9 @@
+bofh (0.0.0.0+20150920-1~getdeb1) trusty; urgency=medium
+
+  * Bug fixes (LP: #1497735)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 20 Sep 2015 16:15:57 +0200
+
 bofh (0.0.0.0+20110602-1~getdeb1) lucid; urgency=low
 
   * Initial release (LP: #790413)
