@@ -1,3 +1,9 @@
+openra (20150919-1~getdeb2) trusty; urgency=medium
+
+  * Apply changes. Thanks to Matthias Mailänder.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 20 Sep 2015 16:08:49 +0200
+
 openra (20150919-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
