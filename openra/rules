@@ -3,32 +3,17 @@
 	dh $@ --with cli
 
 override_dh_auto_configure:
-	mozroots --import --sync
 	cd thirdparty && ./fetch-thirdparty-deps.sh
 	make dependencies
-	dh_auto_configure
 
 override_dh_auto_test:
 	cp thirdparty/download/* .
 	dh_auto_test
 
 override_dh_auto_install:
-	dh_auto_install -- prefix=/usr datadir=/usr/share/games libexecdir=/usr/share/games bindir=/usr/games
-
-override_dh_install:
-	dh_install
-	[ ! -f debian/openra/usr/share/games/openra/mods/cnc/maps/shellmap/map.yaml ] || chmod -x debian/openra/usr/share/games/openra/mods/cnc/maps/shellmap/map.yaml
-	[ ! -f debian/openra/usr/share/games/openra/mods/cnc/maps/shellmap/map.bin ] || chmod -x debian/openra/usr/share/games/openra/mods/cnc/maps/shellmap/map.bin
-	[ ! -f debian/openra/usr/share/games/openra/mods/cnc/maps/the-hot-box/map.yaml ] || chmod -x debian/openra/usr/share/games/openra/mods/cnc/maps/the-hot-box/map.yaml
-	[ ! -f debian/openra/usr/share/games/openra/mods/cnc/maps/the-hot-box/map.bin ] || chmod -x debian/openra/usr/share/games/openra/mods/cnc/maps/the-hot-box/map.bin
-	[ ! -f debian/openra/usr/share/games/openra/mods/d2k/maps/brimstone/map.bin ] || chmod -x debian/openra/usr/share/games/openra/mods/d2k/maps/brimstone/map.bin
-	[ ! -f debian/openra/usr/share/games/openra/mods/d2k/maps/brimstone/map.yaml ] || chmod -x debian/openra/usr/share/games/openra/mods/d2k/maps/brimstone/map.yaml
-	find debian/openra/usr/share/games/openra/mods/ra/maps -name "*.bin" -execdir chmod -x {} \;
-	find debian/openra/usr/share/games/openra/mods/ra/maps -name "*.shp" -execdir chmod -x {} \;
+	dh_auto_install -- prefix=/usr datadir=/usr/share/games libexecdir=/usr/share/games bindir=/usr/games gameinstalldir=/usr/share/games/openra
 
 override_dh_clideps:
 	dh_clideps -d --exclude-moduleref=i:/System/Library/Frameworks/Cocoa.framework/Cocoa \
 	              --exclude-moduleref=i:libobjc.dylib \
-	              --exclude-moduleref=i:libdl.dylib \
-	              --exclude-moduleref=i:cg.dll \
-	              --exclude-moduleref=i:cgGL.dll
+	              --exclude-moduleref=i:libdl.dylib

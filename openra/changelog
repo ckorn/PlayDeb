@@ -1,3 +1,9 @@
+openra (20150919-1~getdeb3~vivid) vivid; urgency=medium
+
+  * Apply changes. Thanks to Matthias Mailänder.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 20 Sep 2015 16:10:12 +0200
+
 openra (20150919-1~getdeb2~vivid) vivid; urgency=medium
 
   * New upstream version
