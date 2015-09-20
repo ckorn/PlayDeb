@@ -29,6 +29,4 @@ override_dh_install:
 override_dh_clideps:
 	dh_clideps -d --exclude-moduleref=i:/System/Library/Frameworks/Cocoa.framework/Cocoa \
 	              --exclude-moduleref=i:libobjc.dylib \
-	              --exclude-moduleref=i:libdl.dylib \
-	              --exclude-moduleref=i:cg.dll \
-	              --exclude-moduleref=i:cgGL.dll
+	              --exclude-moduleref=i:libdl.dylib
