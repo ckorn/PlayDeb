@@ -14,10 +14,12 @@ Build-Depends: debhelper (>= 9),
                libvorbis-dev,
                libfreeimage-dev,
                libbullet-dev,
+               libbullet-extras-dev,
                libenet-dev,
                libxcursor-dev,
                libboost-dev,
-               libboost-wave-dev
+               libboost-wave-dev,
+               libopenal-dev
 Standards-Version: 3.9.5
 Homepage: http://code.google.com/p/vdrift-ogre
 
@@ -26,7 +28,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          stuntrally-data (= ${source:Version}),
-         stuntrally-tracks (>= 2.3),
+         stuntrally-tracks (>= 2.6),
          libfreeimage3,
          libzzip-0-13
 Description: Rally game with stunt elements
