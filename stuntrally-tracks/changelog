@@ -1,3 +1,9 @@
+stuntrally-tracks (2.6-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 21 Sep 2015 19:00:11 +0200
+
 stuntrally-tracks (2.5-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
