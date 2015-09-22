@@ -1,11 +1,11 @@
 # SDL2 does not tell where the mir headers are located:
 # https://bugs.launchpad.net/ubuntu/+source/libsdl2/+bug/1306629
-Index: stuntrally-2.4/CMakeLists.txt
+Index: stuntrally-2.6/CMakeLists.txt
 ===================================================================
---- stuntrally-2.4.orig/CMakeLists.txt	2014-08-08 23:40:06.049247228 +0200
-+++ stuntrally-2.4/CMakeLists.txt	2014-08-08 23:40:06.045247228 +0200
+--- stuntrally-2.6.orig/CMakeLists.txt	2015-09-21 19:05:26.447863645 +0200
++++ stuntrally-2.6/CMakeLists.txt	2015-09-21 19:05:26.439863454 +0200
 @@ -103,7 +103,7 @@
- 	#list(APPEND LIBS ${BULLET_LIBRARIES})
+ 	list(APPEND LIBS ${BULLET_LIBRARIES})
  
  	find_package(SDL2 REQUIRED)
 -	include_directories(${SDL2_INCLUDE_DIR})

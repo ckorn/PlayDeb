@@ -14,10 +14,12 @@ Build-Depends: debhelper (>= 9),
                libvorbis-dev,
                libfreeimage-dev,
                libbullet-dev,
+               libbullet-extras-dev,
                libenet-dev,
                libxcursor-dev,
                libboost-dev,
-               libboost-wave-dev
+               libboost-wave-dev,
+               libopenal-dev
 Standards-Version: 3.9.5
 Homepage: http://code.google.com/p/vdrift-ogre
 

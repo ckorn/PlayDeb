@@ -1,3 +1,9 @@
+stuntrally (2.6-1~getdeb2~vivid) vivid; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 21 Sep 2015 18:59:51 +0200
+
 stuntrally (2.5-1~getdeb3~vivid) vivid; urgency=medium
 
   * Rebuild for vivid
