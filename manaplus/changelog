@@ -1,3 +1,15 @@
+manaplus (1:1.5.9.26-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: away badge.
+    fix: allow set gui opacity to 100% on windows.
+    fix: non local player moving on tiles with height more than zero.
+    fix: saving beings state (hercules).
+    add: select target if missing for attack skill automatically.
+    add: support for packet version 20150226 (hercules).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 26 Sep 2015 21:30:20 +0200
+
 manaplus (1:1.5.9.12-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
