@@ -1,3 +1,14 @@
+choria (0.4.2-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version (LP: #1500975)
+    - Linux save data now in ~/.local/share/choria
+    - Switched to c++11
+    - Added windows release
+    - Cleaned up project
+    - Updated build system
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 29 Sep 2015 20:05:20 +0200
+
 choria (0.4.1-1~getdeb2) trusty; urgency=medium
 
   * Remove debian/watch file
