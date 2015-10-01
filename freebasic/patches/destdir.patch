@@ -1,9 +1,9 @@
 # add DESTDIR support
-Index: freebasic-1.03.0/makefile
+Index: freebasic-1.04.0/makefile
 ===================================================================
---- freebasic-1.03.0.orig/makefile	2015-07-01 22:46:19.000000000 +0200
-+++ freebasic-1.03.0/makefile	2015-08-13 12:14:52.341845992 +0200
-@@ -636,20 +636,20 @@
+--- freebasic-1.04.0.orig/makefile	2015-10-01 20:17:40.256444725 +0200
++++ freebasic-1.04.0/makefile	2015-10-01 20:17:40.256444725 +0200
+@@ -654,20 +654,20 @@
  install:        install-compiler install-includes install-rtlib install-gfxlib2
  
  install-compiler:
