@@ -2,10 +2,9 @@
 %:
 	dh $@
 
-# only required for the first build when there is no fbc around yet
 override_dh_auto_build:
 ifeq ($(DEB_BUILD_ARCH),i386)
-	dh_auto_build -- bootstrap
+	dh_auto_build
 endif
 
 override_dh_auto_install:

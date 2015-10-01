@@ -15,7 +15,8 @@ Build-Depends: debhelper (>= 9),
                liblockdev1-dev,
                libffi-dev,
                libncurses5-dev,
-               gcc-multilib
+               gcc-multilib,
+               freebasic-dev [i386]
 Standards-Version: 3.9.5
 Homepage: http://www.freebasic.net
 
