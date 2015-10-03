@@ -1,3 +1,20 @@
+irrlamb (0.2.1-1~getdeb2~vivid) vivid; urgency=medium
+
+  * New upstream version (LP: #1502357)
+    - Redesigned replay screen
+    - Added new tutorial level
+    - Added installer for windows
+    - Can selectively enable gamepads in config file
+    - Added per-axis deadzone to config
+    - Next-level button works across campaigns now
+    - Added level name and highscore to HUD
+    - Autosave replays for new records
+    - Updated replay format
+    - Switched to c++11
+    - Various fixes to build system
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 03 Oct 2015 15:00:18 +0200
+
 irrlamb (0.2.0-1~getdeb1) vivid; urgency=medium
 
   * New upstream version (LP: #1497656)
