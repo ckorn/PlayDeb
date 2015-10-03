@@ -1,3 +1,38 @@
+irrlamb (0.2.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version (LP: #1502357)
+    - Redesigned replay screen
+    - Added new tutorial level
+    - Added installer for windows
+    - Can selectively enable gamepads in config file
+    - Added per-axis deadzone to config
+    - Next-level button works across campaigns now
+    - Added level name and highscore to HUD
+    - Autosave replays for new records
+    - Updated replay format
+    - Switched to c++11
+    - Various fixes to build system
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 03 Oct 2015 15:00:18 +0200
+
+irrlamb (0.2.0-1~getdeb1) vivid; urgency=medium
+
+  * New upstream version (LP: #1497656)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 20 Sep 2015 14:54:20 +0200
+
+irrlamb (0.1.1-1~getdeb5~vivid) vivid; urgency=medium
+
+  * Fix debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 13 Aug 2015 01:09:57 +0200
+
+irrlamb (0.1.1-1~getdeb4~utopic) utopic; urgency=medium
+
+  * Rebuild for utopic
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 28 Oct 2014 20:06:15 +0100
+
 irrlamb (0.1.1-1~getdeb3~trusty) trusty; urgency=low
 
   * Rebuild for trusty
