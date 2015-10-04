@@ -1,2 +1,3 @@
 version=3
-http://sf.net/opendungeons/opendungeons-([\d\.]+)\.tar\.(?:xz|bz2|gz)
+https://github.com/OpenDungeons/OpenDungeons/releases \
+    (?:.*/)?archive/([\d\.]+)\.tar\.gz
