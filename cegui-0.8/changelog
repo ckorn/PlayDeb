@@ -1,3 +1,21 @@
+cegui-0.8 (0.8.4-1~getdeb4~vivid) vivid; urgency=medium
+
+  * Rebuild for vivid
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 04 Oct 2015 20:44:30 +0200
+
+cegui-0.8 (0.8.4-1~getdeb3~trusty) trusty; urgency=medium
+
+  * Rebuild with ogre 1.9
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 29 Mar 2015 22:11:26 +0200
+
+cegui-0.8 (0.8.4-1~getdeb2~trusty) trusty; urgency=medium
+
+  * Rebuild for trusty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 06 Feb 2015 22:35:02 +0100
+
 cegui-0.8 (0.8.4-1~getdeb1) utopic; urgency=medium
 
   * New upstream version
