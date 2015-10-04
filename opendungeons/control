@@ -13,6 +13,7 @@ Build-Depends: debhelper (>= 9),
                libboost-filesystem1.55-dev,
                libboost-locale1.55-dev,
                libboost-test1.55-dev,
+               libboost-program-options1.55-dev,
                pkg-config
 Standards-Version: 3.9.6
 Homepage: http://opendungeons.sourceforge.net/
