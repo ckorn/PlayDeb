@@ -1,3 +1,9 @@
+springlobby (0.237-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 08 Oct 2015 20:26:00 +0200
+
 springlobby (0.236-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
