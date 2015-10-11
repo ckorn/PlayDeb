@@ -1,0 +1,3 @@
+version=3
+https://github.com/dhewm/dhewm3/releases \
+    (?:.*/)?archive/([\d\.]+)\.tar\.gz

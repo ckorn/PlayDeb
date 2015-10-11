@@ -10,7 +10,8 @@ Build-Depends: debhelper (>= 9),
                libvorbis-dev,
                libsdl1.2-dev,
                libsdl2-dev,
-               zlib1g-dev
+               zlib1g-dev,
+               libcurl-dev
 Standards-Version: 3.9.5
 Homepage: https://github.com/dhewm/dhewm3
 
