@@ -1,12 +1,14 @@
---- a/neo/sys/linux/main.cpp
-+++ b/neo/sys/linux/main.cpp
+Index: dhewm3-1.4.0/neo/sys/linux/main.cpp
+===================================================================
+--- dhewm3-1.4.0.orig/neo/sys/linux/main.cpp	2015-10-11 02:56:15.089666576 +0200
++++ dhewm3-1.4.0/neo/sys/linux/main.cpp	2015-10-11 02:57:14.614774512 +0200
 @@ -62,6 +62,16 @@
  
  		common->Warning("base path '" BUILD_DATADIR "' does not exist");
  
 +		// fallback to vanilla doom3 install
 +		if (stat(LINUX_DEFAULT_PATH, &st) != -1 && S_ISDIR(st.st_mode)) {
-+			common->Warning("using hardcoded default base path");
++			common->Warning("using hardcoded default base path: " LINUX_DEFAULT_PATH);
 +
 +			path = LINUX_DEFAULT_PATH;
 +			return true;
@@ -17,13 +19,13 @@
  		// try next to the executable..
  		if (Sys_GetPath(PATH_EXE, path)) {
  			path = path.StripFilename();
-@@ -73,14 +83,6 @@
+@@ -75,14 +85,6 @@
  			}
  		}
  
 -		// fallback to vanilla doom3 install
 -		if (stat(LINUX_DEFAULT_PATH, &st) != -1 && S_ISDIR(st.st_mode)) {
--			common->Warning("using hardcoded default base path");
+-			common->Warning("using hardcoded default base path: " LINUX_DEFAULT_PATH);
 -
 -			path = LINUX_DEFAULT_PATH;
 -			return true;
