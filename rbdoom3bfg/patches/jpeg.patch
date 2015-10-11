@@ -1,0 +1,11 @@
+# use system jpeg
+Index: rbdoom3bfg-1.0.3/neo/cmake-eclipse-linux-profile.sh
+===================================================================
+--- rbdoom3bfg-1.0.3.orig/neo/cmake-eclipse-linux-profile.sh	2015-10-11 04:05:33.021273684 +0200
++++ rbdoom3bfg-1.0.3/neo/cmake-eclipse-linux-profile.sh	2015-10-11 04:07:21.334763987 +0200
+@@ -2,4 +2,4 @@
+ rm -rf build
+ mkdir build
+ cd build
+-cmake -G "Eclipse CDT4 - Unix Makefiles" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DSDL2=ON ../neo
++cmake -G "Eclipse CDT4 - Unix Makefiles" -DUSE_SYSTEM_LIBJPEG=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DSDL2=ON ../neo

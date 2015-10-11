@@ -1,0 +1,17 @@
+rbdoom3bfg (1.0.3-1~getdeb2~vivid) vivid; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 11 Oct 2015 04:01:20 +0200
+
+rbdoom3bfg (1.0.2-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 18 May 2014 16:45:39 +0200
+
+rbdoom3bfg (0.0.0+git20131116-1~getdeb1) saucy; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 31 Dec 2013 00:55:11 +0100

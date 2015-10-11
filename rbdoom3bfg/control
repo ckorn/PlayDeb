@@ -1,0 +1,31 @@
+Source: rbdoom3bfg
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               cmake,
+               libsdl2-dev,
+               libopenal-dev,
+               libavcodec-dev,
+               libavformat-dev,
+               libavutil-dev,
+               libswscale-dev,
+               libjpeg-turbo8-dev
+Standards-Version: 3.9.6
+Homepage: https://github.com/RobertBeckebans/RBDOOM-3-BFG
+
+Package: rbdoom3bfg
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         zenity
+Description: Doom 3 BFG Edition
+ Doom 3 BFG Edition with cleaned up source,
+ Linux and 64 bit Support.
+ .
+ The game data from a legal copy of the game
+ is required.
+ .
+ Put the base/ directory into the
+ $HOME/.config/rbdoom3bfg
+ directory.
