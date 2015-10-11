@@ -1,3 +1,16 @@
+manaplus (1:1.5.10.10-1~getdeb2~vivid) vivid; urgency=medium
+
+  * New upstream version
+    fix: moving animation lag in moving (hercules)
+    fix: recode buildin sounds to 44100 khz
+    fix: show trade messages with disabled trade tab in general tab.
+    fix: dont show popup in inventory not on items.
+    fix: attack actions on SDL2 builds.
+    add: walkType attribute to all beings.
+    add: extend walkType attribute to support different types.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 11 Oct 2015 02:39:44 +0200
+
 manaplus (1:1.5.9.26-1~getdeb2~vivid) vivid; urgency=medium
 
   * New upstream version
