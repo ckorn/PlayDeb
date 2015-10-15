@@ -1,3 +1,9 @@
+springlobby (0.242-1~getdeb2~vivid) vivid; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 12 Oct 2015 20:40:10 +0200
+
 springlobby (0.237-1~getdeb2~vivid) vivid; urgency=medium
 
   * New upstream version
