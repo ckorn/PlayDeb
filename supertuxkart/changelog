@@ -1,3 +1,20 @@
+supertuxkart (0.9.1-1~getdeb2~vivid) vivid; urgency=medium
+
+  * New upstream version
+    * Many bug fixes
+    * Started to use scripting in tracks
+    * Significant audio performance improvements
+    * Smaller tweaks and improvements to several tracks including 
+    ** Math class
+    ** XR591
+    ** Fort Magma
+    ** Gran Paradiso
+    ** Subsea
+    * Tweak to challenges
+    * Better support for driving tracks in reverse
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 19 Oct 2015 19:29:52 +0200
+
 supertuxkart (0.9-1~getdeb2~vivid) vivid; urgency=medium
 
   * Upload to PlayDeb (LP: #1485235)

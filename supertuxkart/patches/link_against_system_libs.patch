@@ -3,9 +3,11 @@ Forwarded: not-yet
 Author: Vincent Cheng <vcheng@debian.org>
 Last-Update: 2015-05-13
 
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -315,6 +315,11 @@
+Index: supertuxkart-0.9.1/CMakeLists.txt
+===================================================================
+--- supertuxkart-0.9.1.orig/CMakeLists.txt	2015-10-19 19:42:30.838443801 +0200
++++ supertuxkart-0.9.1/CMakeLists.txt	2015-10-19 19:42:30.838443801 +0200
+@@ -339,6 +339,11 @@
      ${OGGVORBIS_LIBRARIES}
      ${OPENAL_LIBRARY}
      ${OPENGL_LIBRARIES}
