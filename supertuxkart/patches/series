@@ -2,7 +2,6 @@ build_against_system_enet.patch
 link_against_system_libs.patch
 remove_irrlicht_embedded_libs.patch
 fix_angelscript_build_on_non-x86_arches.patch
-support_windowed_mode_when_xrandr_not_available.patch
 # Irrlicht patches taken directly from irrlicht source package in Debian
 irrlicht/arch-support.diff
 irrlicht/use-system-libs.diff

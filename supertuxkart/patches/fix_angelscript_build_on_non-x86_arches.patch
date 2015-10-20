@@ -5,45 +5,40 @@ Author: James Cowgill <james410@cowgill.org.uk>,
 Bug: https://github.com/supertuxkart/stk-code/issues/2194
 Last-Update: 2015-06-03
 
---- a/lib/angelscript/projects/cmake/CMakeLists.txt
-+++ b/lib/angelscript/projects/cmake/CMakeLists.txt
-@@ -45,12 +45,13 @@
-             endif()
+Index: supertuxkart-0.9.1/lib/angelscript/projects/cmake/CMakeLists.txt
+===================================================================
+--- supertuxkart-0.9.1.orig/lib/angelscript/projects/cmake/CMakeLists.txt	2015-10-19 19:35:26.713499503 +0200
++++ supertuxkart-0.9.1/lib/angelscript/projects/cmake/CMakeLists.txt	2015-10-19 19:36:33.978853318 +0200
+@@ -102,15 +102,6 @@
+     endif()
  endif()
  
 -if(ANDROID)
-+if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "^arm")
-         enable_language(ASM)
-         if(CMAKE_ASM_COMPILER_WORKS)
-                 set(ANGELSCRIPT_SOURCE ${ANGELSCRIPT_SOURCE} ../../source/as_callfunc_arm.cpp ../../source/as_callfunc_arm_gcc.S)
-+                set_property(SOURCE ../../source/as_callfunc_arm_gcc.S APPEND PROPERTY COMPILE_FLAGS " -Wa,-mimplicit-it=always")
-         else()
--                message(FATAL ERROR "Android target requires a working assembler")
-+                message(FATAL ERROR "ARM target requires a working assembler")
-         endif(CMAKE_ASM_COMPILER_WORKS)
- endif()
+-    enable_language(ASM)
+-    if(CMAKE_ASM_COMPILER_WORKS)
+-        set(ANGELSCRIPT_SOURCE ${ANGELSCRIPT_SOURCE} ../../source/as_callfunc_arm.cpp ../../source/as_callfunc_arm_gcc.S)
+-    else()
+-        message(FATAL ERROR "Android target requires a working assembler")
+-    endif()
+-endif()
+-
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../include)
  
---- a/lib/angelscript/source/as_config.h
-+++ b/lib/angelscript/source/as_config.h
-@@ -555,7 +555,7 @@
- // Use the following command to determine predefined macros: echo . | g++ -dM -E -
- #if (defined(__GNUC__) && !defined(__SNC__)) || defined(EPPC) || defined(__CYGWIN__) // JWC -- use this instead for Wii
- 	#define GNU_STYLE_VIRTUAL_METHOD
--#if !defined( __amd64__ )
-+#if !defined(__LP64__)
- 	#define MULTI_BASE_OFFSET(x) (*((asDWORD*)(&x)+1))
- #else
- 	#define MULTI_BASE_OFFSET(x) (*((asQWORD*)(&x)+1))
-@@ -785,7 +785,7 @@
- 			// Support native calling conventions on Intel 32bit CPU
+ if(MSVC)
+Index: supertuxkart-0.9.1/lib/angelscript/source/as_config.h
+===================================================================
+--- supertuxkart-0.9.1.orig/lib/angelscript/source/as_config.h	2015-10-19 19:35:26.713499503 +0200
++++ supertuxkart-0.9.1/lib/angelscript/source/as_config.h	2015-10-19 19:41:00.080461202 +0200
+@@ -835,7 +835,7 @@
  			#define THISCALL_PASS_OBJECT_POINTER_ON_THE_STACK
  			#define AS_X86
+ 			#undef AS_NO_THISCALL_FUNCTOR_METHOD
 -		#elif defined(__LP64__) && !defined(__arm64__)
 +		#elif defined(__x86_64__)
  			#define AS_X64_GCC
+ 			#undef AS_NO_THISCALL_FUNCTOR_METHOD
  			#define HAS_128_BIT_PRIMITIVES
- 			#define SPLIT_OBJS_BY_MEMBER_TYPES
-@@ -794,7 +794,7 @@
+@@ -845,7 +845,7 @@
  			// STDCALL is not available on 64bit Linux
  			#undef STDCALL
  			#define STDCALL
@@ -51,9 +46,11 @@ Last-Update: 2015-06-03
 +		#elif (defined(__ARMEL__) || defined(__arm__)) && !(defined(__ARM_ARCH_4__) || defined(__ARM_ARCH_4T__))
  			#define AS_ARM
  
- 			#undef STDCALL
---- a/lib/angelscript/source/as_callfunc_arm_gcc.S
-+++ b/lib/angelscript/source/as_callfunc_arm_gcc.S
+ 			// TODO: The stack unwind on exceptions currently fails due to the assembler code in as_callfunc_arm_gcc.S
+Index: supertuxkart-0.9.1/lib/angelscript/source/as_callfunc_arm_gcc.S
+===================================================================
+--- supertuxkart-0.9.1.orig/lib/angelscript/source/as_callfunc_arm_gcc.S	2015-10-19 19:35:26.713499503 +0200
++++ supertuxkart-0.9.1/lib/angelscript/source/as_callfunc_arm_gcc.S	2015-10-19 19:35:26.709499424 +0200
 @@ -85,7 +85,12 @@
      bne     stackargsloop
      mov     sp, r12
@@ -137,7 +134,7 @@ Last-Update: 2015-06-03
      mov    lr, pc
      mov    pc, r4
  #else
-@@ -520,7 +545,7 @@
+@@ -521,7 +546,7 @@
      mov     sp, r12
  
  nomoreargsarmFuncR0ObjLast:
@@ -146,7 +143,7 @@ Last-Update: 2015-06-03
      mov    lr, pc
      mov    pc, r4
  #else
-@@ -596,7 +621,7 @@
+@@ -597,7 +622,7 @@
      mov     sp, r12
  
  nomoreargsarmFuncR0:
@@ -155,7 +152,7 @@ Last-Update: 2015-06-03
      mov    lr, pc
      mov    pc, r4
  #else
-@@ -676,7 +701,7 @@
+@@ -677,7 +702,7 @@
      mov     sp, r12
  
  nomoreargsarmFuncR0R1:
