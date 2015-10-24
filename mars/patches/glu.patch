@@ -1,0 +1,36 @@
+# add missing header
+Index: mars-0.7.5/include/Shaders/postFX.hpp
+===================================================================
+--- mars-0.7.5.orig/include/Shaders/postFX.hpp	2011-01-10 11:58:49.000000000 +0100
++++ mars-0.7.5/include/Shaders/postFX.hpp	2015-10-23 23:32:55.527186219 +0200
+@@ -15,15 +15,15 @@
+ You should have received a copy of the GNU General Public License along with
+ this program.  If not, see <http://www.gnu.org/licenses/>. */
+ 
+-# ifndef POSTFX_HPP_INCLUDED
++# ifndef POSTFX_HPP_INCLUDED
+ # define POSTFX_HPP_INCLUDED
+ 
+ # include "System/Vector2f.hpp"
+-
++# include <GL/glu.h>
+ # include <SFML/Graphics.hpp>
+ 
+ /// A namespace for post processing shaders.
+-
++
+ namespace postFX {
+     /// Updates the internal bumpmap GLSL shader.
+     /// It will not do so, when settings::C_shaders is set to false.
+@@ -43,8 +43,8 @@
+     /// Loads and compiles the post processing shader.
+     /// Has to be called once at the beginnig of the program.
+     void load();
+-}
+-
+-# endif // POSTFX_HPP_INCLUDED
++}
++
++# endif // POSTFX_HPP_INCLUDED
+ 
+ 
