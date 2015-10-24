@@ -1,3 +1,9 @@
+minetest (0.4.13-1~getdeb2~wily) wily; urgency=medium
+
+  * Rebuild for wily
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Oct 2015 21:29:46 +0200
+
 minetest (0.4.13-1~getdeb1) trusty; urgency=medium
 
   * New upstream version (LP: #1490936)
