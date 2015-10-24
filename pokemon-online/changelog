@@ -1,3 +1,9 @@
+pokemon-online (2.6.1-1~getdeb2~wily) wily; urgency=medium
+
+  * Rebuild for wily
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Oct 2015 22:17:45 +0200
+
 pokemon-online (2.6.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
