@@ -22,7 +22,8 @@ Build-Depends: debhelper (>= 9),
                libenet-dev,
                libx11-dev,
                libleveldb-dev,
-               libhiredis-dev
+               libhiredis-dev,
+               pkg-config
 Standards-Version: 3.9.6
 Homepage: http://freeminer.org/
 

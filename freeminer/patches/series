@@ -1,3 +1,4 @@
 i18n.patch
 useless-depends.patch
 mapper.patch
+freetype.patch
