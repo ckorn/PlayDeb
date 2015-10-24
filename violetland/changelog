@@ -1,3 +1,9 @@
+violetland (0.4.3-1~getdeb5~wily) wily; urgency=medium
+
+  * Rebuild for wily
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Oct 2015 22:47:11 +0200
+
 violetland (0.4.3-1~getdeb4~vivid) vivid; urgency=medium
 
   * Rebuild for vivid
