@@ -1,3 +1,9 @@
+openttd (1.5.2-1~getdeb2~wily) wily; urgency=medium
+
+  * Rebuild for wily
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Oct 2015 21:30:51 +0200
+
 openttd (1.5.2-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
