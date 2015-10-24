@@ -1,3 +1,9 @@
+jngl (1.1.0-1~getdeb4~wily) wily; urgency=medium
+
+  * Rebuild for wily
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Oct 2015 21:58:03 +0200
+
 jngl (1.1.0-1~getdeb3~vivid) vivid; urgency=medium
 
   * Rebuild for vivid
