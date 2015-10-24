@@ -1,5 +1,0 @@
-src/nikki/core		usr/lib/games/nikki
-src/nikki/restarter	usr/lib/games/nikki
-debian/scripts/nikki	usr/games
-debian/nikki.png	usr/share/pixmaps
-debian/nikki.desktop	usr/share/applications
