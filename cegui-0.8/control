@@ -15,7 +15,7 @@ Build-Depends: debhelper (>= 9),
                libfribidi-dev,
                libxml2-dev,
                libtinyxml-dev,
-               libxerces-c2-dev,
+               libxerces-c-dev,
                libboost-dev,
                kdelibs5-dev,
                libsilly-dev,
@@ -47,8 +47,7 @@ Package: libcegui-0.8-dbg
 Section: debug
 Priority: extra
 Architecture: any
-Depends: ${shlibs:Depends},
-         libcegui-0.8 (= ${binary:Version}),
+Depends: libcegui-0.8 (= ${binary:Version}),
          ${misc:Depends}
 Conflicts: libcegui-mk2-0-dbg
 Replaces: libcegui-mk2-0c2a-dbg

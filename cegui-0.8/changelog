@@ -1,3 +1,9 @@
+cegui-0.8 (0.8.4-1~getdeb5~wily) wily; urgency=medium
+
+  * Rebuild for wily
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Oct 2015 21:40:05 +0200
+
 cegui-0.8 (0.8.4-1~getdeb4~vivid) vivid; urgency=medium
 
   * Rebuild for vivid
