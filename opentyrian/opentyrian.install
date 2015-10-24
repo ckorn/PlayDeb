@@ -1,4 +1,0 @@
-opentyrian			usr/lib/games/opentyrian
-debian/scripts/opentyrian	usr/games
-debian/opentyrian.desktop	usr/share/applications
-debian/opentyrian.png		usr/share/pixmaps

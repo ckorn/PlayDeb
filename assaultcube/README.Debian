@@ -1,8 +1,0 @@
-assaultcube (1.0.4repack1-3) unstable; urgency=low
-
-  * AssaulCube now use versionized home directory. The incoming 1.1
-    release, the 1.02 and 1.04 setting files are incompatible.
-    If you want to keep your settings from the old ~/.assaultcube directory,
-    please copy init.cfg, servers.cfg and autoexec.cfg in the new directory.
-
- -- Gonéri Le Bouder <goneri@rulezlan.org>  Sat, 03 Apr 2010 20:20:23 +0200

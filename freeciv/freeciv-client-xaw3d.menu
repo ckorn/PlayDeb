@@ -1,5 +1,0 @@
-?package(freeciv-client-xaw3d):needs="x11" \
- section="Games/Strategy" \
- title="Freeciv client (3d Athena version)" \
- command="/usr/games/freeciv-xaw" \
- icon="/usr/share/pixmaps/freeciv.xpm"

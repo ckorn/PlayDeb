@@ -1,3 +1,0 @@
-# see man dpkg-source for details on this file.
-# This is needed to deal with generic stuff like .git
-diff-ignore

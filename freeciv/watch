@@ -1,3 +1,0 @@
-version=3
-opts=uversionmangle=s/(\d)[_\.\-\+]?((RC|rc|pre|dev|beta|alpha|b|a|graphics-materials)[\-\.]?\d*)$/$1~$2/,\
- http://download.gna.org/freeciv/stable/freeciv-(\d.*)\.(?:tgz|tbz2|txz|tar\.gz|tar\.bz2|tar\.xz)

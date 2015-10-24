@@ -1,5 +1,0 @@
-?package(freeciv-server):needs="text" \
- section="Games/Strategy" \
- title="Freeciv server" \
- command="/usr/games/freeciv-server" \
- icon="/usr/share/pixmaps/freeciv-server.xpm"
