@@ -1,3 +1,9 @@
+dangerdeep (0.3.9+git140522-1~getdeb2~wily) wily; urgency=medium
+
+  * Rebuild for wily
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Oct 2015 21:42:14 +0200
+
 dangerdeep (0.3.9+git140522-1~getdeb1) trusty; urgency=low
 
   * Initial release
