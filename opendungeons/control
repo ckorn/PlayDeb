@@ -5,15 +5,15 @@ Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
                cmake,
                libogre-1.9-dev,
-               libboost1.55-dev,
+               libboost-dev,
                libsfml-dev,
                libois-dev,
                libcegui-0.8-dev,
                libopenal-dev,
-               libboost-filesystem1.55-dev,
-               libboost-locale1.55-dev,
-               libboost-test1.55-dev,
-               libboost-program-options1.55-dev,
+               libboost-filesystem-dev,
+               libboost-locale-dev,
+               libboost-test-dev,
+               libboost-program-options-dev,
                pkg-config
 Standards-Version: 3.9.6
 Homepage: http://opendungeons.sourceforge.net/
