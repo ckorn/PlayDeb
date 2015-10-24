@@ -1,3 +1,15 @@
+eternallands (1.9.4.1-1~getdeb1) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 22 Oct 2015 22:31:05 +0200
+
+eternallands (1.9.3-1~getdeb2~wily) wily; urgency=medium
+
+  * Rebuild for wily
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Oct 2015 21:45:38 +0200
+
 eternallands (1.9.3-1~getdeb1) lucid; urgency=low
 
   * New upstream version (LP: #935990)
