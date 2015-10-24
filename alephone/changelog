@@ -1,3 +1,9 @@
+alephone (20150620-1~getdeb3~wily) wily; urgency=medium
+
+  * Rebuild for wily
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Oct 2015 21:35:05 +0200
+
 alephone (20150620-1~getdeb2~vivid) vivid; urgency=medium
 
   * New upstream version
