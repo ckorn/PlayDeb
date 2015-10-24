@@ -1,3 +1,9 @@
+vbam (1.8.0.1498-1~getdeb2~wily) wily; urgency=medium
+
+  * Rebuild for wily
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Oct 2015 22:35:04 +0200
+
 vbam (1.8.0.1498-1~getdeb1) trusty; urgency=medium
 
   * Rebase with Debian (LP: #1460964)
