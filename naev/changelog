@@ -1,3 +1,9 @@
+naev (0.6.0-1~getdeb2~wily) wily; urgency=medium
+
+  * Rebuild for wily
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Oct 2015 22:09:07 +0200
+
 naev (0.6.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
