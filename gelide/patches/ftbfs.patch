@@ -1,0 +1,14 @@
+#include <unistd.h>
+# missing "close"
+Index: gelide-0.1.5/src/gelide.hpp
+===================================================================
+--- gelide-0.1.5.orig/src/gelide.hpp	2011-03-25 19:50:54.000000000 +0100
++++ gelide-0.1.5/src/gelide.hpp	2015-10-22 22:03:37.482172201 +0200
+@@ -29,6 +29,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <iostream>
++#include <unistd.h>
+ #include "gelide_i18n.hpp"
+ 
+ //#define LOCAL_MODE
