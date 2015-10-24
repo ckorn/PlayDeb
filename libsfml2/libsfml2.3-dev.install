@@ -1,0 +1,4 @@
+usr/include/*
+usr/lib/lib*.so
+usr/share/SFML/cmake/Modules/FindSFML.cmake
+usr/share/SFML/readme.txt
