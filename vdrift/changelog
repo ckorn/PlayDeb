@@ -1,3 +1,9 @@
+vdrift (20141020-1~getdeb3~wily) wily; urgency=medium
+
+  * Rebuild for wily
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 21 Oct 2015 22:41:30 +0200
+
 vdrift (20141020-1~getdeb2~utopic) utopic; urgency=medium
 
   * New upstream version
