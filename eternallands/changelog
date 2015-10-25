@@ -1,3 +1,9 @@
+eternallands (1.9.4.1-1~getdeb3~wily) wily; urgency=medium
+
+  * Fix debian/watch file
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 25 Oct 2015 18:08:04 +0100
+
 eternallands (1.9.4.1-1~getdeb1) wily; urgency=medium
 
   * New upstream version
