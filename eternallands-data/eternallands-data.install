@@ -1,0 +1,17 @@
+2dobjects				usr/share/games/EternalLands
+3dobjects				usr/share/games/EternalLands
+*.txt					usr/share/games/EternalLands
+actor_defs				usr/share/games/EternalLands
+animations				usr/share/games/EternalLands
+*.lst					usr/share/games/EternalLands
+*.png					usr/share/games/EternalLands
+*.ini					usr/share/games/EternalLands
+*.xml					usr/share/games/EternalLands
+languages				usr/share/games/EternalLands
+maps					usr/share/games/EternalLands
+meshes					usr/share/games/EternalLands
+particles				usr/share/games/EternalLands
+shaders					usr/share/games/EternalLands
+skeletons				usr/share/games/EternalLands
+skybox					usr/share/games/EternalLands
+textures				usr/share/games/EternalLands

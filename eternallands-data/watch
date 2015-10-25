@@ -1,4 +1,4 @@
 version=3
 opts="dversionmangle=s/\.//g" \
 http://www.eternal-lands.com/page/download.php \
-    (?:.*/)?el_linux_([\d]+)\.zip
+    (?:.*/)?el_linux_installer_([\d]+)\.sh
