@@ -1,4 +1,3 @@
 version=3
-opts="dversionmangle=s/\.//g" \
-http://www.eternal-lands.com/page/download.php \
-    (?:.*/)?el_linux_update_([\d]+)\.zip
+https://github.com/raduprv/Eternal-Lands/releases \
+    (?:.*/)?archive/([\d\.]+)\.tar\.gz
