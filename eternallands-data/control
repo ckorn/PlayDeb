@@ -2,16 +2,17 @@ Source: eternallands-data
 Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
-Build-Depends: debhelper (>= 5),
- unzip
-Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.9.5
 Homepage: http://www.eternal-lands.com
 
 Package: eternallands-data
 Architecture: all
-Depends: ${misc:Depends}, eternallands (>=1.9.1)
+Depends: ${misc:Depends},
+         eternallands (>=1.9.4)
 Recommends: eternallands-sound (>=1.9.1)
-Conflicts: eternallands-rc, eternallands-rc-data
+Conflicts: eternallands-rc,
+           eternallands-rc-data
 Suggests: eternallands-music (>=1.9.1)
 Description: Data package for Eternal Lands, a free MMORPG
  Eternal Lands is a FREE MMORPG (massively multi-player online role playing

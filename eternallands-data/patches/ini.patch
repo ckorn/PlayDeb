@@ -1,0 +1,14 @@
+# set game directory
+Index: eternallands-data-1.9.4/el.ini
+===================================================================
+--- eternallands-data-1.9.4.orig/el.ini	2015-10-25 17:22:11.575063029 +0100
++++ eternallands-data-1.9.4/el.ini	2015-10-25 17:41:36.010064484 +0100
+@@ -242,7 +242,7 @@
+ This needs to be set to where you installed EL.
+ For Windows users, the default is "c:\Program Files\Eternal Lands\".
+ For Gentoo users, the ebuild installs in /usr/share/games/eternal-lands.
+-#data_dir = /home/korn/packages/eternallands/1.9.4
++#data_dir = /usr/share/games/EternalLands
+ 
+ Set render_fog to 1 to show fog in the game.
+ #render_fog= 1

@@ -1,5 +1,0 @@
-#!/bin/sh -e
-cd el_install
-rm -f *.dll *.exe el.*.bin
-sed -i 's/^#data_dir.*$/#data_dir = \/usr\/share\/games\/EternalLands/g' el.ini
-sed -i 's/^#browser.*$/#browser = x-www-browser/g' el.ini
