@@ -1,0 +1,11 @@
+endless-sky (0.8.4-1~getdeb1) trusty; urgency=medium
+
+  * Upload to GetDeb
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 25 Oct 2015 21:35:45 +0100
+
+endless-sky (0.8.4-1) unstable; urgency=low
+
+  * Initial release. (Closes: #782846)
+
+ -- Michael Zahniser <mzahniser@gmail.com>  Tue, 06 Oct 2015 19:14:17 -0400

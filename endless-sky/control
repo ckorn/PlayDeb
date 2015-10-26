@@ -1,0 +1,45 @@
+Source: endless-sky
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Section: games
+Priority: optional
+Build-Depends: debhelper (>= 9),
+               g++ (>=4.6),
+               libgl1-mesa-dev,
+               libglew-dev,
+               libjpeg-turbo8-dev | libjpeg62-turbo-dev,
+               libopenal-dev,
+               libpng12-dev | libpng-dev,
+               libsdl2-dev,
+               scons
+Homepage: https://endless-sky.github.io
+Standards-Version: 3.9.6
+
+Package: endless-sky
+Architecture: any
+Depends: endless-sky-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: space exploration and combat game
+ Endless sky is a 2D space exploration game with action, strategy, and role
+ playing elements.
+ .
+ Explore other star systems. Earn money by trading, carrying passengers, or
+ completing missions. Use your earnings to buy a better ship or to upgrade
+ the weapons and engines on your current one. Blow up pirates. Take sides in
+ a civil war. Or leave human space behind and hope to find some friendly
+ aliens whose culture is more civilized than your own...
+ .
+ Endless Sky requires OpenGL 3.0 or higher.
+
+Package: endless-sky-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: data files for Endless Sky
+ Endless sky is a 2D space exploration game with action, strategy, and role
+ playing elements. This package contains the images, sounds, and data files.
+ .
+ Explore other star systems. Earn money by trading, carrying passengers, or
+ completing missions. Use your earnings to buy a better ship or to upgrade
+ the weapons and engines on your current one. Blow up pirates. Take sides in
+ a civil war. Or leave human space behind and hope to find some friendly
+ aliens whose culture is more civilized than your own...
