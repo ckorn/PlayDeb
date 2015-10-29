@@ -16,7 +16,7 @@ Build-Depends: debhelper (>= 9),
                libwxgtk2.8-dbg,
                libjpeg-dev,
                libjansson-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: http://www.diasporagame.com
 
 Package: diaspora
