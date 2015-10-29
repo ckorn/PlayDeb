@@ -1,0 +1,5 @@
+#!/bin/bash
+CONFIGDIR="$HOME/.config/wyrmgus"
+mkdir -p "$CONFIGDIR"
+cd "$CONFIGDIR"
+/usr/lib/games/wyrmgus/wyrmgus -d /usr/share/games/wyrmsun/ "$@"
