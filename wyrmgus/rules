@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_install:
+	cp doc/stratagus.6 doc/wyrmgus.6
+	dh_install
+	mv debian/wyrmgus/usr/lib/games/wyrmgus/stratagus debian/wyrmgus/usr/lib/games/wyrmgus/wyrmgus
+
+override_dh_strip:
+	dh_strip --dbg-package=wyrmgus-dbg
