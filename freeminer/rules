@@ -100,7 +100,7 @@ override_dh_install:
 	      debian/freeminer-data/usr/share/games/freeminer/fonts/liberationsans.ttf
 	# Install the mapper script
 	mkdir -p debian/freeminer-data/usr/games
-	cp util/minetestmapper.py debian/freeminer-data/usr/games/minetest-mapper
+	cp util/minetestmapper.py debian/freeminer-data/usr/games/freeminer-mapper
 	cp util/colors.txt        debian/freeminer-data/usr/share/games/freeminer/minetestmapper-colors.txt
 
 override_dh_strip:
