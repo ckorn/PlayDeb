@@ -1,3 +1,9 @@
+freeminer (0.4.13.7-1~getdeb2) trusty; urgency=medium
+
+  * debian/rules: rename minetest-mapper to freeminer-mapper
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 29 Oct 2015 23:01:12 +0100
+
 freeminer (0.4.13.7-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
