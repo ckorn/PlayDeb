@@ -1,3 +1,9 @@
+unvanquished (0.45.0-1~getdeb2~wily) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 03 Nov 2015 21:45:17 +0100
+
 unvanquished (0.44.0-1~getdeb2~wily) wily; urgency=medium
 
   * Rebuild for wily
