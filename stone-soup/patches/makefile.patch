@@ -1,9 +1,9 @@
 contrib directory does not exist.
-Index: stone-soup-0.16.1/source/Makefile
+Index: stone-soup-0.17.0/source/Makefile
 ===================================================================
---- stone-soup-0.16.1.orig/source/Makefile	2015-06-06 19:55:42.833739502 +0200
-+++ stone-soup-0.16.1/source/Makefile	2015-06-06 19:55:42.833739502 +0200
-@@ -1489,7 +1489,6 @@
+--- stone-soup-0.17.0.orig/source/Makefile	2015-11-06 20:14:26.559041765 +0100
++++ stone-soup-0.17.0/source/Makefile	2015-11-06 20:14:26.559041765 +0100
+@@ -1506,7 +1506,6 @@
  	$(RM) -r build
  
  clean-contrib:
