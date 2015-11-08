@@ -1,3 +1,17 @@
+manaplus (1:1.5.11.7-1~getdeb2~wily) wily; urgency=medium
+
+  * New upstream version
+    fix: not reduce tiles in conditional layers.
+    fix: cart inventory if it empty.
+    add: separate flag for enable/disable gui opacity.
+    add: npc menu and inventory skins support.
+    add: extend npc inventory.
+    add: dead trick status effect (hercules).
+    add: status effects in player popup.
+    add: buy/sell many items at once from npc (hercules).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 07 Nov 2015 19:32:59 +0100
+
 manaplus (1:1.5.10.24-1~getdeb2~wily) wily; urgency=medium
 
   * New upstream version
