@@ -3,10 +3,10 @@ debian/pyfa.png			usr/share/pixmaps
 debian/pyfa.desktop		usr/share/applications
 eos				usr/share/games/pyfa
 gui				usr/share/games/pyfa
-icons				usr/share/games/pyfa
+imgs				usr/share/games/pyfa
 scripts				usr/share/games/pyfa
 service				usr/share/games/pyfa
-staticdata			usr/share/games/pyfa
 utils				usr/share/games/pyfa
 config.py			usr/share/games/pyfa
+eve.db				usr/share/games/pyfa
 pyfa.py				usr/share/games/pyfa
