@@ -1,3 +1,9 @@
+pyfa (1.16.2-1~getdeb2) trusty; urgency=medium
+
+  * Add missing runtime dependency on python-requests
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 22 Nov 2015 14:58:30 +0100
+
 pyfa (1.16.2-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
