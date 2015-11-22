@@ -15,7 +15,8 @@ Depends: ${python:Depends},
          python-wxglade,
          python-sqlalchemy,
          python-dateutil,
-         libcanberra-gtk-module
+         libcanberra-gtk-module,
+         python-requests
 Recommends: python-matplotlib,
             python-numpy
 Description: Python Fitting Assistant for the EVE-Online SciFi MMORPG
