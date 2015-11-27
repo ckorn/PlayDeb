@@ -6,11 +6,10 @@ Files: *
 Copyright: 2010 Wildfire Games
 License: CC-BY-SA-3.0
 
-Files: binaries/data/tools/fontbuilder/fonts/DejaVuSans.ttf
-       binaries/data/tools/fontbuilder/fonts/DevaVuSansMono.ttf
+Files: binaries/data/tools/fontbuilder/fonts/DejaVuSansMono.ttf
 Copyright: 2003 Bitstream, Inc.
            2006 Tavmjong Bah
-License: Bitstream Vera Fonts and Arev Fonts
+License: Bitstream-Vera-Fonts and Arev-Fonts
 
 Files: binaries/data/tools/fontbuilder/fonts/FreeMono.ttf
        binaries/data/tools/fontbuilder/fonts/FreeSans.ttf
@@ -47,7 +46,7 @@ Copyright: 2010-2012 Rico Tzschichholz <ricotz@ubuntu.com>
            2012-2014 Vincent Cheng <vcheng@debian.org>
 License: GPL-2+
 
-License: Arev Fonts
+License: Arev-Fonts
  Copyright (c) 2006 by Tavmjong Bah. All Rights Reserved.
  .
  Permission is hereby granted, free of charge, to any person obtaining
@@ -93,7 +92,7 @@ License: Arev Fonts
  from Tavmjong Bah. For further information, contact: tavmjong @ free
  . fr.
 
-License: Bitstream Vera Fonts
+License: Bitstream-Vera-Fonts
  Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Bitstream Vera is
  a trademark of Bitstream, Inc.
  .

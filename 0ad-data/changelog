@@ -1,8 +1,14 @@
-0ad-data (0.0.18-1~getdeb1) trusty; urgency=medium
+0ad-data (0.0.19-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 14 Mar 2015 16:52:34 +0100
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 26 Nov 2015 19:59:38 +0100
+
+0ad-data (0.0.18-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Vincent Cheng <vcheng@debian.org>  Wed, 18 Mar 2015 16:44:03 -0700
 
 0ad-data (0.0.17-1) unstable; urgency=medium
 
