@@ -14,18 +14,18 @@ Build-Depends: autoconf,
                libicu-dev,
                libjpeg-dev,
                libminiupnpc-dev (>= 1.6),
+               libnspr4-dev,
                libnvtt-dev (>= 2.0.8-1+dfsg-4~),
                libogg-dev,
                libopenal-dev,
                libpng-dev,
-               libsdl1.2-dev,
+               libsdl2-dev,
                libvorbis-dev,
                libwxgtk3.0-dev | libwxgtk2.8-dev,
                libxcursor-dev,
                libxml2-dev,
                pkg-config,
-               zlib1g-dev,
-               libnspr4-dev
+               zlib1g-dev
 Standards-Version: 3.9.5
 Homepage: http://play0ad.com/
 

@@ -51,111 +51,107 @@ Files: build/premake/*
 Copyright: 2002-2009 Jason Perkins and the Premake project
 License: BSD-3-clause
 
-Files: libraries/cxxtest/*
+Files: libraries/source/cxxtest-4.4/*
 Copyright: 2004 Erez Volk
            2004 Jared Grubb
            2004 Kevin Fitch
 License: LGPL-2.1+
 
-Files: libraries/enet/*
-Copyright: 2002-2011 Lee Salzman
-License: Expat
-
-Files: libraries/fcollada/*
+Files: libraries/source/fcollada/*
 Copyright: 2005-2007 Feeling Software Inc.
            2005-2007 Sony Computer Entertainment America
 License: Expat
 
-Files: libraries/fcollada/include/FCDocument/*
-       libraries/fcollada/include/FUtils/*
-       libraries/fcollada/src/FCollada/FCDocument/*
-       libraries/fcollada/src/FCollada/FUtils/*
-       libraries/fcollada/src/FColladaPlugins/FArchiveXML/*
+Files: libraries/source/fcollada/include/FCDocument/*
+       libraries/source/fcollada/include/FUtils/*
+       libraries/source/fcollada/src/FCollada/FCDocument/*
+       libraries/source/fcollada/src/FCollada/FUtils/*
+       libraries/source/fcollada/src/FColladaPlugins/FArchiveXML/*
 Copyright: 2005-2006 Autodesk Media Entertainment
            2005-2007 Feeling Software Inc.
            2005-2007 Sony Computer Entertainment America
 License: Expat
 
-Files: libraries/nvtt/*
+Files: libraries/source/nvtt/*
 Copyright: 2007 NVIDIA Corporation
 License: Expat
 
-Files: libraries/nvtt/src/src/nvtt/squish/*
+Files: libraries/source/nvtt/src/src/nvtt/squish/*
 Copyright: 2006 Simon Brown <si@sjbrown.co.uk>
 License: Expat
 
-Files: libraries/nvtt/src/src/nvcore/poshlib/posh.c
-       libraries/nvtt/src/src/nvcore/poshlib/posh.h
+Files: libraries/source/nvtt/src/src/nvcore/poshlib/posh.c
+       libraries/source/nvtt/src/src/nvcore/poshlib/posh.h
 Copyright: 2004 Brian Hook
 License: BSD-3-clause
 
-Files: libraries/nvtt/src/src/nvcore/BitArray.h
-       libraries/nvtt/src/src/nvcore/Containers.h
-       libraries/nvtt/src/src/nvcore/Debug.cpp
-       libraries/nvtt/src/src/nvcore/Debug.h
-       libraries/nvtt/src/src/nvcore/Library.h
-       libraries/nvtt/src/src/nvcore/Memory.cpp
-       libraries/nvtt/src/src/nvcore/Memory.h
-       libraries/nvtt/src/src/nvcore/Prefetch.h
-       libraries/nvtt/src/src/nvcore/Ptr.h
-       libraries/nvtt/src/src/nvcore/StrLib.cpp
-       libraries/nvtt/src/src/nvcore/StrLib.h
-       libraries/nvtt/src/src/nvcore/Stream.h
-       libraries/nvtt/src/src/nvcore/TextReader.cpp
-       libraries/nvtt/src/src/nvcore/TextReader.h
-       libraries/nvtt/src/src/nvcore/TextWriter.cpp
-       libraries/nvtt/src/src/nvcore/TextWriter.h
-       libraries/nvtt/src/src/nvcore/Tokenizer.cpp
-       libraries/nvtt/src/src/nvcore/Tokenizer.h
-       libraries/nvtt/src/src/nvcore/nvcore.h
-       libraries/nvtt/src/src/nvimage/ColorBlock.cpp
-       libraries/nvtt/src/src/nvimage/ColorBlock.h
-       libraries/nvtt/src/src/nvimage/Filter.cpp
-       libraries/nvtt/src/src/nvimage/Filter.h
-       libraries/nvtt/src/src/nvimage/FloatImage.cpp
-       libraries/nvtt/src/src/nvimage/FloatImage.h
-       libraries/nvtt/src/src/nvimage/HoleFilling.cpp
-       libraries/nvtt/src/src/nvimage/HoleFilling.h
-       libraries/nvtt/src/src/nvimage/Image.cpp
-       libraries/nvtt/src/src/nvimage/Image.h
-       libraries/nvtt/src/src/nvimage/ImageIO.cpp
-       libraries/nvtt/src/src/nvimage/ImageIO.h
-       libraries/nvtt/src/src/nvimage/NormalMipmap.cpp
-       libraries/nvtt/src/src/nvimage/NormalMipmap.h
-       libraries/nvtt/src/src/nvimage/PsdFile.h
-       libraries/nvtt/src/src/nvimage/Quantize.cpp
-       libraries/nvtt/src/src/nvimage/Quantize.h
-       libraries/nvtt/src/src/nvimage/TgaFile.h
-       libraries/nvtt/src/src/nvimage/nvimage.h
-       libraries/nvtt/src/src/nvmath/Basis.cpp
-       libraries/nvtt/src/src/nvmath/Basis.h
-       libraries/nvtt/src/src/nvmath/Box.h
-       libraries/nvtt/src/src/nvmath/Color.h
-       libraries/nvtt/src/src/nvmath/Matrix.h
-       libraries/nvtt/src/src/nvmath/Montecarlo.cpp
-       libraries/nvtt/src/src/nvmath/Montecarlo.h
-       libraries/nvtt/src/src/nvmath/Plane.cpp
-       libraries/nvtt/src/src/nvmath/Plane.h
-       libraries/nvtt/src/src/nvmath/Quaternion.h
-       libraries/nvtt/src/src/nvmath/Random.cpp
-       libraries/nvtt/src/src/nvmath/Random.h
-       libraries/nvtt/src/src/nvmath/SphericalHarmonic.cpp
-       libraries/nvtt/src/src/nvmath/SphericalHarmonic.h
-       libraries/nvtt/src/src/nvmath/Triangle.cpp
-       libraries/nvtt/src/src/nvmath/Triangle.h
-       libraries/nvtt/src/src/nvmath/Vector.h
-       libraries/nvtt/src/src/nvmath/nvmath.h
+Files: libraries/source/nvtt/src/src/nvcore/BitArray.h
+       libraries/source/nvtt/src/src/nvcore/Containers.h
+       libraries/source/nvtt/src/src/nvcore/Debug.cpp
+       libraries/source/nvtt/src/src/nvcore/Debug.h
+       libraries/source/nvtt/src/src/nvcore/Library.h
+       libraries/source/nvtt/src/src/nvcore/Memory.cpp
+       libraries/source/nvtt/src/src/nvcore/Memory.h
+       libraries/source/nvtt/src/src/nvcore/Prefetch.h
+       libraries/source/nvtt/src/src/nvcore/Ptr.h
+       libraries/source/nvtt/src/src/nvcore/StrLib.cpp
+       libraries/source/nvtt/src/src/nvcore/StrLib.h
+       libraries/source/nvtt/src/src/nvcore/Stream.h
+       libraries/source/nvtt/src/src/nvcore/TextReader.cpp
+       libraries/source/nvtt/src/src/nvcore/TextReader.h
+       libraries/source/nvtt/src/src/nvcore/TextWriter.cpp
+       libraries/source/nvtt/src/src/nvcore/TextWriter.h
+       libraries/source/nvtt/src/src/nvcore/Tokenizer.cpp
+       libraries/source/nvtt/src/src/nvcore/Tokenizer.h
+       libraries/source/nvtt/src/src/nvcore/nvcore.h
+       libraries/source/nvtt/src/src/nvimage/ColorBlock.cpp
+       libraries/source/nvtt/src/src/nvimage/ColorBlock.h
+       libraries/source/nvtt/src/src/nvimage/Filter.cpp
+       libraries/source/nvtt/src/src/nvimage/Filter.h
+       libraries/source/nvtt/src/src/nvimage/FloatImage.cpp
+       libraries/source/nvtt/src/src/nvimage/FloatImage.h
+       libraries/source/nvtt/src/src/nvimage/HoleFilling.cpp
+       libraries/source/nvtt/src/src/nvimage/HoleFilling.h
+       libraries/source/nvtt/src/src/nvimage/Image.cpp
+       libraries/source/nvtt/src/src/nvimage/Image.h
+       libraries/source/nvtt/src/src/nvimage/ImageIO.cpp
+       libraries/source/nvtt/src/src/nvimage/ImageIO.h
+       libraries/source/nvtt/src/src/nvimage/NormalMipmap.cpp
+       libraries/source/nvtt/src/src/nvimage/NormalMipmap.h
+       libraries/source/nvtt/src/src/nvimage/PsdFile.h
+       libraries/source/nvtt/src/src/nvimage/Quantize.cpp
+       libraries/source/nvtt/src/src/nvimage/Quantize.h
+       libraries/source/nvtt/src/src/nvimage/TgaFile.h
+       libraries/source/nvtt/src/src/nvimage/nvimage.h
+       libraries/source/nvtt/src/src/nvmath/Basis.cpp
+       libraries/source/nvtt/src/src/nvmath/Basis.h
+       libraries/source/nvtt/src/src/nvmath/Box.h
+       libraries/source/nvtt/src/src/nvmath/Color.h
+       libraries/source/nvtt/src/src/nvmath/Matrix.h
+       libraries/source/nvtt/src/src/nvmath/Montecarlo.cpp
+       libraries/source/nvtt/src/src/nvmath/Montecarlo.h
+       libraries/source/nvtt/src/src/nvmath/Plane.cpp
+       libraries/source/nvtt/src/src/nvmath/Plane.h
+       libraries/source/nvtt/src/src/nvmath/Quaternion.h
+       libraries/source/nvtt/src/src/nvmath/Random.cpp
+       libraries/source/nvtt/src/src/nvmath/Random.h
+       libraries/source/nvtt/src/src/nvmath/SphericalHarmonic.cpp
+       libraries/source/nvtt/src/src/nvmath/SphericalHarmonic.h
+       libraries/source/nvtt/src/src/nvmath/Triangle.cpp
+       libraries/source/nvtt/src/src/nvmath/Triangle.h
+       libraries/source/nvtt/src/src/nvmath/Vector.h
+       libraries/source/nvtt/src/src/nvmath/nvmath.h
 Copyright: Ignacio Castano <castanyo@yahoo.es>
 License: public-domain
  The license is not specified beyond public-domain.
  The line from the source code is the following:
  "This code is in the public domain -- castanyo@yahoo.es"
 
-Files: libraries/spidermonkey-tip/*
+Files: libraries/source/spidermonkey/*
 Copyright: 1998-2011 Mozilla Corporation
 License: MPL-1.1 and GPL-2.0 and LGPL-2.1
 
-Files: libraries/valgrind/*
+Files: libraries/source/valgrind/*
 Copyright: 2003-2009 Josef Weidendorfer
            2000-2009 Julian Seward
 License: Expat

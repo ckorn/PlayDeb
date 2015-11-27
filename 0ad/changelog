@@ -1,20 +1,24 @@
-0ad (0.0.18-1~getdeb1) trusty; urgency=medium
+0ad (0.0.19-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 14 Mar 2015 16:50:05 +0100
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 26 Nov 2015 19:27:58 +0100
 
-0ad (0.0.17-1build1.1) vivid; urgency=medium
+0ad (0.0.18-2) unstable; urgency=medium
 
-  * Rebuild with the published binaries
+  [ Logan Rosen ]
+  * debian/patches/gcc-5.1.patch: Pull patch from upstream Git to fix build
+    with GCC 5.1.
 
- -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 31 Oct 2014 11:45:03 +0100
+ -- Vincent Cheng <vcheng@debian.org>  Fri, 28 Aug 2015 20:46:34 -0700
 
-0ad (0.0.17-1build1) vivid; urgency=medium
+0ad (0.0.18-1) unstable; urgency=medium
 
-  * No change rebuild with the new miniupnp soname
+  * New upstream release.
+    - Refresh patches.
+    - Replace build-dep on libmozjs-24-dev with libnspr4-dev.
 
- -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 31 Oct 2014 10:38:48 +0100
+ -- Vincent Cheng <vcheng@debian.org>  Wed, 18 Mar 2015 16:58:45 -0700
 
 0ad (0.0.17-1) unstable; urgency=medium
 

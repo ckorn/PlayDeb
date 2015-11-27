@@ -1,7 +1,7 @@
 binaries/data/l10n                              usr/share/games/0ad/
 binaries/system/libAtlasUI.so                   usr/lib/games/0ad/
 binaries/system/libCollada.so                   usr/lib/games/0ad/
-binaries/system/libmozjs31-ps-release.so	usr/lib/games/0ad/
+binaries/system/libmozjs31-ps-release.so        usr/lib/games/0ad/
 binaries/system/ActorEditor                     usr/lib/games/0ad/
 binaries/system/pyrogenesis                     usr/games/
 build/resources/0ad.desktop                     usr/share/applications/

@@ -5,11 +5,11 @@ Forwarded: http://trac.wildfiregames.com/ticket/1416
 Author: Vincent Cheng <vcheng@debian.org>
 Last-Update: 2013-09-05
 
-Index: 0ad-0.0.18/build/premake/premake4.lua
+Index: 0ad-0.0.19/build/premake/premake4.lua
 ===================================================================
---- 0ad-0.0.18.orig/build/premake/premake4.lua	2015-03-14 16:51:20.349192375 +0100
-+++ 0ad-0.0.18/build/premake/premake4.lua	2015-03-14 16:51:20.345192375 +0100
-@@ -281,7 +281,7 @@
+--- 0ad-0.0.19.orig/build/premake/premake4.lua	2015-11-26 19:29:52.342346812 +0100
++++ 0ad-0.0.19/build/premake/premake4.lua	2015-11-26 19:29:52.342346812 +0100
+@@ -282,7 +282,7 @@
  				end
  
  				if os.is("linux") or os.is("bsd") then

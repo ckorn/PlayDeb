@@ -18,13 +18,11 @@ override_dh_auto_clean:
 	dh_auto_clean
 
 override_dh_auto_build:
-	SHELL=/bin/sh build/workspaces/update-workspaces.sh \
+	build/workspaces/update-workspaces.sh \
 		--bindir=/usr/games \
 		--libdir=/usr/lib/games/0ad \
 		--datadir=/usr/share/games/0ad \
-		--with-system-nvtt \
-		--with-system-miniupnpc
-#		--with-system-mozjs31
+		--with-system-nvtt
 	
 	$(MAKE) config=release verbose=1 -C build/workspaces/gcc
 
@@ -40,6 +38,9 @@ override_dh_auto_install:
 
 override_dh_strip:
 	dh_strip -p 0ad --dbg-package=0ad-dbg
+
+overide_dh_makeshlibs:
+	dh_makeshlibs -Xusr/lib/games/0ad
 
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
