@@ -1,3 +1,15 @@
+wyrmgus (1.7.4-1~getdeb2~wily) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 01 Dec 2015 19:33:45 +0100
+
+wyrmgus (1.7.3-1~getdeb2~wily) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 30 Nov 2015 20:41:25 +0100
+
 wyrmgus (1.7.1-1~getdeb2~wily) wily; urgency=medium
 
   * New upstream version
