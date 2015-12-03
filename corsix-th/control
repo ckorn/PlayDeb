@@ -15,7 +15,7 @@ Build-Depends: debhelper (>= 9),
                libswscale-dev,
                libpostproc-dev
 Standards-Version: 3.9.5
-Homepage: https://code.google.com/p/corsix-th/
+Homepage: https://github.com/CorsixTH/CorsixTH/
 
 Package: corsix-th
 Architecture: any
