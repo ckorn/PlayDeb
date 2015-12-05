@@ -1,3 +1,9 @@
+corsix-th (0.50-1~getdeb4) trusty; urgency=medium
+
+  * Change homepage in debian/control
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 05 Dec 2015 00:53:34 +0100
+
 corsix-th (0.50-1~getdeb3) trusty; urgency=medium
 
   * Add runtime dependency on lua-lpeg
