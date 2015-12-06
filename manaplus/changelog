@@ -1,3 +1,17 @@
+manaplus (1:1.5.12.5-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: allow kill infinite life particles if parent was killed.
+    fix: missing selection images in mana theme in windows.
+    add: skill level selection for invoking skills.
+    add: chat command for invoke skills.
+    add: teleport skills location selection (hercules).
+    add: spirit balls (hercules).
+    add: basic OpenGL support in nacl.
+    add: open urls and clipboard support in nacl (vasily_makarov).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 05 Dec 2015 21:42:43 +0100
+
 manaplus (1:1.5.11.21-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
