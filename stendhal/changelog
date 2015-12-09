@@ -1,3 +1,23 @@
+stendhal (1.19-1~getdeb1) wily; urgency=medium
+
+  * New upstream version
+    *world*
+    - new interesting under water zone
+    - new quest for a scuba diving license
+    - new Kraken creature
+    - Zekiel can make enhanced lion shields
+    - Cats can drink milk now
+    - map improvements
+
+    *code*
+    - fixed compiler warnings and code cleanup
+
+    *client*
+    - added cancel buttons on all dialog boxes (for window managers which do
+    not add an X to the title bar)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 08 Dec 2015 22:19:31 +0100
+
 stendhal (1.18-1~getdeb1) vivid; urgency=medium
 
   * New upstream version
