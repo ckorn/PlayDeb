@@ -1,6 +1,6 @@
-source/source/release/warsow_bin	usr/lib/games/warsow
-source/source/release/libs		usr/lib/games/warsow
-source/source/release/basewsw		usr/lib/games/warsow
+source/source/build/warsow		usr/lib/games/warsow
+source/source/build/libs		usr/lib/games/warsow
+source/source/build/basewsw		usr/lib/games/warsow
 debian/scripts/campaign.txt		usr/lib/games/warsow
 debian/scripts/warsow			usr/games
 debian/warsow.xpm			usr/share/pixmaps

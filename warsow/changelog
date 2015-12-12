@@ -1,3 +1,233 @@
+warsow (2.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    General:
+    + Switched to Creative Commons license for media assets.
+    + Added full out-of-the-box gamepad support (XInput on Windows, SDL on
+    Linux and OS X).
+    + The engine automatically lowers the frame rate to 24 FPS and enables
+    sleep state when the game is minimized.
+    + Multi-threading improvements for the following; fixed race conditions,
+    reduced latency and the amount of context switches.
+    + .pk3 files explicitly named as "pure" are now preferred to different
+    .pk3 files.
+    + Restricted downloads of binary modules and "pure" content to official
+    Warsow web mirror.
+    + Greatly reduced memory footprint for fonts (especially for CJK).
+    + Pressing Escape key during the map load or connection set-up will now
+    cancel the process much quicker.
+    + New high resolution "flat" icon.
+    + Maximum refresh rate now defaults to 250 fps.
+    + It is now possible to pause demo playback at the end of a demo file,
+    instead of dropping to main menu (see "demo" command help).
+    + Added "flipped view" mode, set "cl_flip" to "1" to enable.
+    + Use HTTPS for secure authentication to matchmaker.
+
+    Renderer:
+    + 30% to 50% overall performance improvement.
+    + Greatly reduced VRAM footprint for textures.
+    + Added support for texture arrays, used for lightmaps.
+    + Added KTX texture format support.
+    + Enabled binary cache for GLSL programs to speed up startup time by
+    default now.
+    + Enabled multi-threading to speed up map loading by default now.
+    + Curved meshes are now optimized to remove excessive polygons.
+    + Changed rendering order so that the sky is now rendered after world
+    geometry to minimize overdraw.
+    + Fixed infinite far clipping plane calculations.
+    + The renderer now queries the operating system for available screen
+    resolutions.
+    + Shadowmaps now account for normals of geometry they are cast on, making
+    them less prone to be visible through walls and ceilings.
+    + Added "stencilTest" shader keyword.
+    + Added per map colour correction support. Toggle-able with
+    cg_colorCorrection 0/1, maps can define colorCorrection <file path> key
+    in worldspawn to use color correction profile.
+    - Removed "vid_mode", "vid_customwidth" and "vid_customheight" console
+    variables in favour of "vid_width" and "vid_height" for video
+    modesetting.
+    - Dropped support for "noDepthTest" shader keyword.
+    - Dropped "r_colorbits" console variable (used to set desktop colour
+    depth).
+
+    Gameplay:
+    + New Tutorial game mode.
+    + Added 3 new awards:
+    ++ First Frag (awarded to the first fragger);
+    ++ Fair Play (say "gg" to your opponents during the post-match using the
+    chat or the vsay);
+    ++ Man of the Match (You must score the most + achieve the ""Fair Play"
+    award). -See above-.
+    + Added sounds for Lasergun, Electrobolt and Instagun impacts.
+    + New spawn points selection algorithm: returns the furthest point to
+    which there's less than 4 points on the map; otherwise it returns to a
+    random one, excluding the closest 3 points.
+    + Ammo packs dropped on a players deaths, now actually contain strong
+    ammo.
+    + The movement style now defaults to "old movement", set
+    "cg_movementStyle" to "1" for "new movement".
+    + Incorporated a number of movement fixes from Racesow.
+    + Ranked servers will now announce a players profile name at warsow.net
+    alongside the nickname of the players entrance to the server.
+    + On ranked servers, the "players" command now also prints login names
+    for authenticated players.
+    + After joining a server, the game menu is now opened automatically.
+    + On ranked servers, certain votes now require players to be
+    authenticated.
+    + Votes now ignore AFK players.
+    + In round-based game modes, in-active players are not removed until the
+    beginning of the next round.
+    + Added bot navigation files for wda5 and wbomb6.
+    + Player movement prediction now works properly when riding a moving
+    platform.
+    + New RL/GL trail effect, cg_rocketTrail & cg_grenaderTrail merged into
+    cg_projectileTrail.
+    + Bots will now ignore chatting players.
+    + Reduced respawn sound volume by 35%.
+    + Added new callvote options "shuffle" and "rebalance".
+    + Decreased weapon respawn timer to 10 in Duel.
+    + In bomb, players can now move at crouch speed during the pre-round;
+    upped maximum running speed to 320ups.
+    - Removed 'Team Domination' game mode.
+
+    Graphics:
+    + New "illuminati" gibs.
+    + New Instagun & Electrobolt decals.
+    + New "simple items" sprites.
+    + New teleportation\spawn effect.
+    + New EB beam texture for cg_ebbeam_old 1.
+    + New default EB beam effect.
+    + New Lasergun beam, added hit model for LG endpoint.
+    + New bullet hit decal and model.
+    + Improved rocket launcher projectile texture.
+    + Added gloss textures for BigVic and Bobot player models.
+    + Added cg_viewBob, viewport smoothing/bobbing to falling/high jumps.
+    + Bomb model colour follows the planted state dynamic light color (red
+    when planted, orange normally).
+    + Disabling gun "bobbing" now also disables fire and idle gun animations.
+    + New damage hit effect (cg_showBloodTrail).
+
+    Weapons:
+    + Reduced Rocket Launcher pick-up ammo count to 5.
+    + Reduced Lasergun and Plasmagun pick-up ammo count to 50.
+    + Increased Lasergun and Plasmagun ammo box count to 100.
+    + Increased Electrobolt ammo box count to 10.
+    + Removed custom gravity and friction from Grenade Launcher projectiles.
+    + Unified knockback of Grenade Launcher and Rocket Launcher to 100.
+    + Unified minimum knockback of Grenade Launcher and Rocket Launcher to
+    35.
+    + Unified splash radius of Grenade Launcher and Rocket Launcher to 125.
+    + Changed Gunblade full recharge and reload time to 600ms.
+    + Changed Gunblade projectile damage, splash radius and knockback to 40,
+    70 and 90 respectively, self-damage ratio increased to 100%.
+    + Increased Gunblade melee damage to 50 and decreased reload time to
+    600ms.
+    + New Riotgun spread pattern based on Fibonacci/sunflower spirals.
+    + Increased per-pellet knockback for Riotgun to 7 (140 on 100% hit),
+    spread reduced.
+    + Increased Rocket launcher reload, damage and projectile speed to 950ms,
+    80 and 1150ups respectively.
+    + Increased Grenade launcher reload, damage and self-damage ratio to
+    800ms, 80 and 100% respectively.
+    + Increased DPS for Lasergun to 140, knockback increased to 14.
+    + Increased Machinegun bullet damage to 10, reload time increased to
+    100ms, spread removed.
+    + Increased knock-back for Electrobolt to 80.
+    + Increased Plasmagun speed and knockback to 2500ups and 20 respetively.
+
+    Maps:
+    + New Tutorial map.
+    + Improved wdm6.
+    + Improved wdm1 item layout.
+    + Added colour correction profiles for wdm5, wbomb6, wbomb1.
+    - Removed wdm3.
+    - Removed wca2.
+
+    Mapping:
+    + "target_print" entities can now provide overlay help messages/hints to
+    players (use the the "helpmessage" key in Radiant/map editor of choice).
+    + Added support for "target_kill" and "target_teleporter" entities from
+    Quake3.
+    + Use "gravity" attribute on the "worlspawn" object to set map gravity.
+
+    Localizations:
+    + Added 9 new localizations: Belarusian, Bulgarian, Lithuanian,
+    Portuguese (Brazil), Portuguese (Portugal), Romanian, Swedish, Turkish,
+    Ukrainian.
+    + Maps can now be localized individually (drop .po files into
+    l10n/maps/<mapname>).
+    + Centre-printed messages and map locations are now localizable.
+
+    Sound:
+    + Added "s_globalfocus" option: when enabled the game will continue to
+    play its sound and music even if the user switches to another
+    application.
+    + It is now possible to use .ogv video files as background music tracks.
+    + Fixed support for remote .ogg music tracks/streams.
+    + Reduced default sound mixer delay from 200ms to 140ms (snd_qf).
+    + The background music is now not interrupted at demojumps.
+
+    HUD:
+    + Added current time to the HUD in the race mode.
+    + Added text animation for game awards.
+    + All HUD elements are now resolution-independent.
+    + Optimized rendering of scoreboard strings.
+    + Scripting: it's now possible to pass a non-constant math expression to
+    setFontSize.
+    + New spec HUD, added adem HUD.
+
+    UI:
+    + Added voicecomm menu for Team Deathmatch, Bomb, CTF and CTF: Tactics
+    game modes (bound to Left Shift by default).
+    + Revamped title screen, this incorporates a players profile and stats
+    from warsow.net.
+    + Added an option for server browser to open a dialogue with suggested
+    game servers after the search is complete.
+    + Added quit confirmation dialogue.
+    + Added descriptions for game modes.
+    + Added pre-load option, enabled by default (set "ui_preload" to "0" to
+    disable).
+    + Added several new configurable options.
+    + Added confirmation dialogue for "Move to TV" command.
+    - Removed IRC chat tab.
+
+    Server:
+    + The built-in HTTP server now runs in a separate thread.
+    + Optimized file transfers from the built-in HTTP server.
+    + Matchmaker HTTP authentication now respects sv_ip.
+
+    WarsowTV:
+    + Fixed an issue with the automatic chase-cam, which occasionally goes
+    rampant in round-based game modes.
+    + Enabled TCP connections support.
+
+    Linux:
+    + Switched over to SDL2 for video initialization and input.
+    NOTE: versions prior to SDL2 suffer from doubled mouse sensitivity. This
+    is expected to be fixed in SDL 2.0.4.
+    + ALT+Tab works now.
+    + Keyboard input doesn't steal the whole system focus.
+    + The game now respects system keyboard layout.
+    + Switched over to dynamic linking for support libraries.
+
+    Windows:
+    + The window can be minimized when the game is running in windowed mode.
+    + ALT+F4 works again.
+    + The UI now respects system DPI settings.
+    + Added support for Japanese and Korean input to the chat.
+
+    SDK:
+    + Added NetRadiant and Q3Map2 with KTX texture format support, older
+    versions won't load the textures properly.
+    + Added .map files and models for all stock maps.
+    + Added source files for textures and models.
+    + Switched to cmake as the unified build system for C/C++ code.
+    + Added Dockerfiles for cross-compilation.
+    + Added debian meta-package to install all engine dependencies.
+    + Updated to AngelScript 2.29.2. 
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 12 Dec 2015 01:36:11 +0100
+
 warsow (1.51-1~getdeb1) trusty; urgency=medium
 
   * New upstream version

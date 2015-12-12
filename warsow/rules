@@ -31,15 +31,18 @@ patch: from-dos
 build: patch build-stamp
 build-stamp:
 	dh_testdir
-	cd source/source/ && $(MAKE) CFLAGS="-O0" LOCALBASE=/usr DEBUG_BUILD=$(DEBUG) \
-		CC=$(DEB_HOST_GNU_TYPE)-gcc LD=$(DEB_HOST_GNU_TYPE)-gcc
+	#cd source/source/ && $(MAKE) CFLAGS="-O0" LOCALBASE=/usr DEBUG_BUILD=$(DEBUG) \
+	#	CC=$(DEB_HOST_GNU_TYPE)-gcc LD=$(DEB_HOST_GNU_TYPE)-gcc
+	mkdir -p source/source/cmake_build
+	cd source/source/cmake_build && cmake .. && $(MAKE)
 	touch build-stamp
 
 clean: clean-patched to-dos
 clean-patched:
 	dh_testdir
 	dh_testroot
-	cd source/source && $(MAKE) clean
+	#cd source/source && $(MAKE) clean
+	rm -rf source/source/cmake_build
 	cd source/libsrcs/angelscript/sdk/angelscript/projects/gnuc && \
 	  $(MAKE) clean
 	rm -rf source/source/build warsow-0.6-src/source/release \
@@ -74,9 +77,9 @@ binary-arch: build install
 	dh_testroot
 	dh_installchangelogs debian/documentation/changelog.txt
 	dh_installdocs
-	dh_link -pwarsow usr/lib/games/warsow/basewsw/cgame_$(UNAME_ARCH).so usr/share/games/warsow/basewsw/cgame_$(UNAME_ARCH).so
-	dh_link -pwarsow usr/lib/games/warsow/basewsw/game_$(UNAME_ARCH).so usr/share/games/warsow/basewsw/game_$(UNAME_ARCH).so
-	dh_link -pwarsow usr/lib/games/warsow/basewsw/ui_$(UNAME_ARCH).so usr/share/games/warsow/basewsw/ui_$(UNAME_ARCH).so
+	dh_link -pwarsow usr/lib/games/warsow/basewsw/libcgame_$(UNAME_ARCH).so usr/share/games/warsow/basewsw/libcgame_$(UNAME_ARCH).so
+	dh_link -pwarsow usr/lib/games/warsow/basewsw/libgame_$(UNAME_ARCH).so usr/share/games/warsow/basewsw/libgame_$(UNAME_ARCH).so
+	#dh_link -pwarsow usr/lib/games/warsow/basewsw/libui_$(UNAME_ARCH).so usr/share/games/warsow/basewsw/libui_$(UNAME_ARCH).so
 	dh_link -pwarsow usr/lib/games/warsow/libs usr/share/games/warsow/libs
 	dh_installmenu
 	dh_installman -pwarsow debian/warsow.6
@@ -92,9 +95,6 @@ binary-arch: build install
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
-
-get-orig-source:
-	$(dir $_)warsow-get-orig-source
 
 binary: binary-arch
 .PHONY: build binary-indep binary-arch binary install clean

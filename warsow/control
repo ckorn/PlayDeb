@@ -4,13 +4,14 @@ Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Gonéri Le Bouder <goneri@rulezlan.org>, Bruno "Fuddl" Kleinert <fuddl@gmx.de>, Andres Mejia <mcitadel@gmail.com>
 Build-Depends: debhelper (>= 9),
+               cmake,
                tofrodos,
                sharutils,
                libopenal-dev,
                libjpeg-dev,
                libxrandr-dev,
                libvorbis-dev,
-               libsdl-dev,
+               libsdl2-dev,
                libz-dev,
                libxxf86vm-dev,
                libxxf86dga-dev,
@@ -20,13 +21,13 @@ Build-Depends: debhelper (>= 9),
                libtheora-dev,
                libxi-dev
 Standards-Version: 3.9.5
-Homepage: http://www.warsow.net/
+Homepage: https://www.warsow.gg/
 
 Package: warsow
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-         warsow-data (>= 1.51)
+         warsow-data (>= 2.0)
 Description: fast paced 3D first person shooter
  Warsow is a fast paced first person shooter consisting of cel-shaded
  cartoon-like graphics with dark, flashy and dirty textures. Warsow is based on
@@ -55,7 +56,7 @@ Package: warsow-server
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-         warsow-data (>= 1.51)
+         warsow-data (>= 2.0)
 Description: Server and TV server for the Warsow 3D first person shooter
  Warsow is a fast paced first person shooter consisting of cel-shaded
  cartoon-like graphics with dark, flashy and dirty textures. Warsow is based on

@@ -1,3 +1,2 @@
-#disable_update_check.diff
-makefile_modifications.diff
 typos.patch
+cmake.patch
