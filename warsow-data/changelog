@@ -1,3 +1,9 @@
+warsow-data (2.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 12 Dec 2015 03:04:16 +0100
+
 warsow-data (1.51-1~getdeb2) trusty; urgency=medium
 
   * Fix debian/watch file
