@@ -43,7 +43,7 @@ case "$1" in
 esac
 
 if [ ${QUIET} = 1 ]; then
-	exec /usr/lib/games/warsow/warsow_bin $PARAMS "$@" >/dev/null 2>&1
+	exec /usr/lib/games/warsow/warsow $PARAMS "$@" >/dev/null 2>&1
 else
-	exec /usr/lib/games/warsow/warsow_bin $PARAMS "$@"
+	exec /usr/lib/games/warsow/warsow $PARAMS "$@"
 fi

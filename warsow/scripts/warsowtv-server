@@ -35,4 +35,4 @@ case "$1" in
 		;;
 esac
 
-exec /usr/lib/games/warsow/wswtv_server_bin $PARAMS "$@"
+exec /usr/lib/games/warsow/wswtv_server $PARAMS "$@"

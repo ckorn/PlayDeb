@@ -1,10 +1,10 @@
 Just happens :)
-Index: warsow-1.5/source/source/client/cl_serverlist.c
+Index: warsow-2.0/source/source/client/cl_serverlist.c
 ===================================================================
---- warsow-1.5.orig/source/source/client/cl_serverlist.c	2014-05-07 20:59:02.216291061 +0200
-+++ warsow-1.5/source/source/client/cl_serverlist.c	2014-05-07 20:59:02.216291061 +0200
+--- warsow-2.0.orig/source/source/client/cl_serverlist.c	2015-12-12 01:38:37.936594067 +0100
++++ warsow-2.0/source/source/client/cl_serverlist.c	2015-12-12 01:38:37.932593982 +0100
 @@ -296,7 +296,7 @@
- 	requeststring = va( cmdname );
+ 	}
  
  	// send a broadcast packet
 -	Com_DPrintf( "quering %s...\n", server );
@@ -12,16 +12,16 @@ Index: warsow-1.5/source/source/client/cl_serverlist.c
  
  	if( NET_StringToAddress( server, &adr ) )
  	{
-Index: warsow-1.5/source/source/client/cl_sound.c
+Index: warsow-2.0/source/source/client/cl_sound.c
 ===================================================================
---- warsow-1.5.orig/source/source/client/cl_sound.c	2014-05-07 20:59:02.216291061 +0200
-+++ warsow-1.5/source/source/client/cl_sound.c	2014-05-07 20:59:02.216291061 +0200
-@@ -169,7 +169,7 @@
+--- warsow-2.0.orig/source/source/client/cl_sound.c	2015-12-12 01:38:37.936594067 +0100
++++ warsow-2.0/source/source/client/cl_sound.c	2015-12-12 01:38:37.932593982 +0100
+@@ -172,7 +172,7 @@
  	}
  
  	if( verbose )
 -		Com_Printf( "Initialization of %s succesful\n", name );
 +		Com_Printf( "Initialization of %s successful\n", name );
  
- 	return qtrue;
+ 	return true;
  }
