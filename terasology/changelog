@@ -1,3 +1,9 @@
+terasology (0.54.5-1~getdeb1) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 16 Dec 2015 19:28:18 +0100
+
 terasology (0.54.4-1~getdeb1) wily; urgency=medium
 
   * New upstream version
