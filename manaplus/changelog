@@ -1,3 +1,16 @@
+manaplus (1:1.5.12.19-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    fix: custom cursor in nacl.
+    fix: render fallback.
+    add: per char gender (tmwa)
+    add: OpenGL ES 2 renderer.
+    add: nacl OpenGL support.
+    add: screenshots support (nacl).
+    add: full screen support (nacl).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 19 Dec 2015 21:19:36 +0100
+
 manaplus (1:1.5.12.5-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
