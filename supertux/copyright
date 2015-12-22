@@ -1,0 +1,383 @@
+This package was debianized by Gürkan Sengün <gurkan@linuks.mine.nu> on
+Thu,  6 May 2004 10:36:38 +0200.
+
+It was originally downloaded from https://github.com/SuperTux/supertux
+
+
+Upstream Authors: Tobias Glaesser <tobi.web@gmx.de>,
+                  Bill Kendrick <nbs@sonic.net>,
+                  Ricardo Cruz <rick2@aeiou.pt>,
+                  Ingo Ruhnke <grumbel@gmx.de>,
+                  Duong-Khang NGUYEN <neoneurone@users.sourceforge.net>,
+                  Matthias Braun <matze@braunis.de>,
+                  Ryan Flegel <xxdigitalhellxx@hotmail.com>,
+                  Ondrej Hosek <ondra.hosek@gmail.com>,
+                  Wolfgang Becker <uafr@gmx.de>,
+                  Christoph Sommer <supertux@2006.expires.deltadevelopment.de>,
+                  Benjamin P. Jung <litespeed@users.sourceforge.net>,
+                  Bastiaan Zapf <bzapf_tedo@yahoo.de>,
+                  Richard Smith <supertux@metafoo.co.uk>,
+                  Arvid Norlander <anmaster@users.berlios.de>
+				  Florian Forster <supertux at octo.it>
+				  Philipp <balinor@pnxs.de>
+
+                  Graphics:
+                  Ingo Ruhnke <grumbel@gmx.de>,
+                  Christopher A. Webber <creat0r@lingocomic.com>
+
+                  Level Design:
+                  Ingo Ruhnke <grumbel@gmx.de>,
+                  Marek Moeckel <wansti@gmx.de>,
+                  Stephen Groundwater <slacker@gluebox.com>
+				  Kővágó Zoltán <DirtY.iCE.hu@gmail.com>
+
+
+Translators:
+   ca - Antoni Villalonga
+   cs - Ondra Hosek
+   de - Core Team
+   da - Anders
+   es - Javier Beaumont
+   fr - Frederic Rodrigo
+   hu - Kővágó Zoltán
+   it - Iknos
+   nl - Frank van der Loo
+   nn - Karl Ove Hufthammer
+   pt - Ricardo Cruz
+   sv - Arvid Norlander
+
+
+Copyright by authors mentioned above, 2003-2010.
+
+Some additional authors, copyright holders and licenses are listed at the
+bottom of this document.
+
+License:
+     This program is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+     the Free Software Foundation, either version 3 of the License, or
+     (at your option) any later version.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL-3'.
+
+
+
+Other author/licenses:
+
+./data/levels/world1/worldmap.stwm
+./data/levels/bonus1/worldmap.stwm
+./data/levels/world2/keystodoor.stl
+./data/levels/bonus2/worldmap.stwm
+./data/levels/test/magicblocks.stl
+./data/levels/test/newice.stl
+./data/levels/test_old/auto.stl
+./data/levels/test_old/dropcrush.stl
+./data/levels/test_old/scriptdoor.stl
+./data/levels/test_old/break.stl
+./data/levels/test_old/direction.stl
+./data/levels/test_old/water.stl
+./data/levels/test_old/reset.stl
+./data/levels/test_old/grab.stl
+./data/levels/test_old/trampoline.stl
+-------------------------------------
+Same copyright owners as the main game put GPLv2 only
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+    On Debian systems, the complete text of the GNU General Public License
+    version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+The following images are taken from other open source projects:
+
+camera.png from tango-project.org
+
+arrow.png from inkscape
+
+mk/cmake/FindICONV.cmake:
+-------------------------
+ Copyright (c) 2006, Peter Kümmel,
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+
+ 1. Redistributions of source code must retain the copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+src/binreloc/binreloc.c:
+src/binreloc/binreloc.h:
+------------------------
+ * BinReloc - a library for creating relocatable executables
+ * Written by: Hongli Lai <h.lai@chello.nl>
+ * http://autopackage.org/
+ *
+ * This source code is public domain. You can relicense this code
+ * under whatever license you want.
+
+
+src/random_generator.cpp:
+src/random_generator.hpp:
+-------------------------
+// A strong random number generator
+//
+// Copyright (C) 2006 Allen King
+// Copyright (C) 2002 Michael Ringgaard. All rights reserved.
+// Copyright (C) 1983, 1993 The Regents of the University of California.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions
+// are met:
+//
+// 1. Redistributions of source code must retain the above copyright
+//    notice, this list of conditions and the following disclaimer.
+// 2. Redistributions in binary form must reproduce the above copyright
+//    notice, this list of conditions and the following disclaimer in the
+//    documentation and/or other materials provided with the distribution.
+// 3. Neither the name of the project nor the names of its contributors
+//    may be used to endorse or promote products derived from this software
+//    without specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE
+// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+// OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+// HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+// LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+// OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+// SUCH DAMAGE.
+
+// Transliterated into C++ Allen King 060417, from sources on
+//          http://www.jbox.dk/sanos/source/lib/random.c.html
+
+
+tools/png_recompress.sh:
+------------------------
+ Copyright (C) 2007-2008 Arvid Norlander <anmaster AT tele2 DOT se>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+This script recompresses .png files using optipng and
+advpng to get the smallest images. All recompression is
+lossless.
+
+external/squirrel:
+-------------
+All the files in src/squirrel refers to the following file,
+src/squirrel/include/squirrel.h file, which contains the following notice:
+
+/*
+Copyright (c) 2003-2006 Alberto Demichelis
+
+This software is provided 'as-is', without any
+express or implied warranty. In no event will the
+authors be held liable for any damages arising from
+the use of this software.
+
+Permission is granted to anyone to use this software
+for any purpose, including commercial applications,
+and to alter it and redistribute it freely, subject
+to the following restrictions:
+
+               1. The origin of this software must not be
+               misrepresented; you must not claim that
+               you wrote the original software. If you
+               use this software in a product, an
+               acknowledgment in the product
+               documentation would be appreciated but is
+               not required.
+
+               2. Altered source versions must be plainly
+               marked as such, and must not be
+               misrepresented as being the original
+               software.
+
+               3. This notice may not be removed or
+               altered from any source distribution.
+*/
+
+external/squirrel/squirrel/sqtable.h:
+--------------------------------
+
+This file contains an additional copyright note:
+
+/*     see copyright notice in squirrel.h */
+[...]
+/*
+* The following code is based on Lua 4.0 (Copyright 1994-2002 Tecgraf, PUC-Rio.)
+* http://www.lua.org/copyright.html#4
+* http://www.lua.org/source/4.0.1/src_ltable.c.html
+*/
+
+external/findlocale:
+--------------------
+
+Copyright (C) 2004 Adam D. Moss (the "Author").  All Rights Reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is fur-
+nished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT-
+NESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON-
+NECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of the Author of the
+Software shall not be used in advertising or otherwise to promote the sale,
+use or other dealings in this Software without prior written authorization
+from the Author.
+
+external/obstack:
+-----------------
+
+   Copyright (C) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1996, 1997, 1998,
+   1999, 2000, 2001, 2002, 2003, 2004, 2005 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public License
+   along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+   On Debian systems, the complete text of the GNU Lesser General
+   Public License can be found in "/usr/share/common-licenses/LGPL-2.1".
+
+external/tinygettext:
+---------------------
+
+  Copyright (C) 2006 Ingo Ruhnke <grumbel@gmx.de>
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+  On Debian systems, the complete text of the GNU General Public License
+  version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+
+M4 macros:
+==========
+
+Here is the list of macros with authors not listed above, and not in auto* or
+gettext packages.
+
+m4/autoconf/acx_pthread.m4:
+---------------------------
+dnl @category InstalledPackages
+dnl @author Steven G. Johnson <stevenj@alum.mit.edu>
+dnl @version 2005-01-14
+dnl @license GPLWithACException
+
+m4/autoconf/ax_check_gl.m4:
+---------------------------
+dnl @category InstalledPackages
+dnl @author Braden McDaniel <braden@endoframe.com>
+dnl @version 2004-11-15
+dnl @license AllPermissive
+
+m4/autoconf/ax_lang_compiler_ms.m4:
+-----------------------------------
+dnl @category InstalledPackages
+dnl @author Braden McDaniel <braden@endoframe.com>
+dnl @version 2004-11-15
+dnl @license AllPermissive
+
+m4/autoconf/binreloc.m4:
+------------------------
+# Hongli Lai
+#   slightly modified by Matze (don't enable automatically)
+
+m4/autoconf/ogg.m4:
+-------------------
+# Jack Moffitt <jack@icecast.org> 10-21-2000
+# Owen Taylor and Manish Singh
+
+m4/autoconf/sdl.m4:
+-------------------
+# Sam Lantinga 9/21/99
+# Manish Singh, Frank Belew, Owen Taylor
+
+m4/autoconf/vorbis.m4:
+----------------------
+# Jack Moffitt <jack@icecast.org> 10-21-2000
+# Owen Taylor and Manish Singh
+
+m4/jam/macosx.jam:
+------------------
+# Copyright (C) 2003 by Eric Sunshine <sunshine@sunshineco.com>
+# Copyright (C) 2006 by Ondrej Hosek <ondra.hosek@gmail.com>
+(GPL v2 or later)

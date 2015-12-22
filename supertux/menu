@@ -1,0 +1,3 @@
+?package(supertux):needs="X11" section="Games/Action"\
+  title="SuperTux" command="/usr/games/supertux2"\
+  icon="/usr/share/games/supertux2/images/engine/icons/supertux.xpm"
