@@ -1,0 +1,17 @@
+Description: Do not add path to embedded libsquirrel to linker path
+Author: Christoph Egger <christoph@debian.org>
+Bug: https://supertux.lethargik.org/bugs/view.php?id=640
+
+Index: supertux-0.4.0/CMakeLists.txt
+===================================================================
+--- supertux-0.4.0.orig/CMakeLists.txt	2015-12-22 19:23:38.000000000 +0100
++++ supertux-0.4.0/CMakeLists.txt	2015-12-22 19:24:13.681495650 +0100
+@@ -228,7 +228,7 @@
+ 
+ ## Add squirrel lib dir to search path
+ 
+-LINK_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/external/squirrel)
++#LINK_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/external/squirrel)
+ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR}/external/squirrel)
+ 
+ ## Also execute instructions in external/tinygettext/CMakeLists.txt

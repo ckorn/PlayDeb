@@ -1,0 +1,44 @@
+Source: supertux
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Bartosz Fenski <fenio@debian.org>,
+           Christoph Egger <christoph@debian.org>,
+           Vincent Cheng <vcheng@debian.org>
+Build-Depends: autotools-dev,
+               cmake,
+               debhelper (>= 9),
+               libboost-dev,
+               libcurl4-gnutls-dev,
+               libglew-dev,
+               libopenal-dev,
+               libphysfs-dev,
+               libsdl2-dev,
+               libsdl2-image-dev,
+               libvorbis-dev,
+               pkg-config,
+               libgtest-dev
+Standards-Version: 3.9.5
+Homepage: http://supertuxproject.org
+
+Package: supertux
+Architecture: any
+Depends: supertux-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Classic 2D jump 'n run sidescroller with Tux
+ SuperTux is a classic 2D jump 'n run sidescroller game in a similar
+ style like the original SuperMario games. You play the role of Tux the
+ Penguin, who must rescue Penny from the hands of the evil Nolok.
+
+Package: supertux-data
+Architecture: all
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Suggests: supertux
+Description: Classic 2D jump 'n run sidescroller with Tux (data files)
+ SuperTux is a classic 2D jump 'n run sidescroller game in a similar
+ style like the original SuperMario games. You play the role of Tux the
+ Penguin, who must rescue Penny from the hands of the evil Nolok.
+ .
+ This package contains the data files required by SuperTux.
