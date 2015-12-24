@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=FreeCol
+Comment=Turn-based strategy game
+Comment[de]=Rundenbasierendes Strategiespiel
+Exec=freecol
+Icon=freecol
+Terminal=false
+Type=Application
+Categories=Java;Game;StrategyGame;
+Keywords=strategy;colonization;civilization;turn-based;isometric;
