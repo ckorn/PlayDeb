@@ -1,3 +1,248 @@
+openra (20151224-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    General Improvements
+
+    Fixed a crash when checking the player IP in the lobby. 
+    Fixed a crash in the map browser caused by maps with missing Author. 
+    Fixed a long-standing memory-corruption issue that caused sporadic
+    crashes on Windows systems. 
+    Fixed a crash when using the "Select units by type" hotkey just when a
+    selected unit died. 
+    Fixed missing turret recoil. 
+    Fixed attack move not working properly in certain situations. 
+    Fixed replay playback freezing after a player disconnects. 
+    Fixed a collection of targeting and visibility issues. 
+    Fixed a collection of AI bugs and limitations. 
+    Fixed a collection of issues with aircraft behaviour. 
+    Fixed issues with decorations on production buildings after capture. 
+    Fixed rallypoints not being reset after capture. 
+    Fixed long strings overlapping other elements in the UI. 
+    Fixed observer statistics window showing disabled support powers. 
+    Fixed a crash related to capturing enemy production structures in
+    missions. 
+    Fixed an exploit that allowed the color validator to be bypassed. 
+    Fixed queued deployment exploit. 
+    Fixed a crash when spawning resources outside the map borders. 
+    Added a new server browser and lobby designed around a new global chat
+    channel. 
+    Added a game speed selector for both single-player (skirmish/missions)
+    and multi-player games. 
+    Added filtering by number of players to the map chooser. 
+    Added building placement awareness to units. They will move out of the
+    way if they occupy the location at which a player wants to place a
+    building. 
+    Added support for more hotkeys for spectators, and for scrolling the map.
+    
+    Added support for "joystick" scrolling using the right mouse button as in
+    Tiberian Sun and Red Alert 2. 
+    Added logging of players joining servers to the server.log file. 
+    Changed mod asset installation to use the shared mod chooser. 
+    Changed radar notifications to be visible to allies and spectators. 
+    Changed the default unit stance to Defend for human players. 
+    Improved battlefield news updating. 
+    Improved logging and fallback behavior when hardware cursors fail. 
+
+    Tiberian Dawn
+
+    Fixed SAM sites not closing after killing their target or being ordered
+    to stop. 
+    Fixed issues in several mission scripts. 
+    Added several new multi-player maps. 
+    Added more tiles to the DESERT tileset, and fixed some cliff tiles that
+    were incorrectly marked as buildable. 
+    Added two new single-player missions: Special Ops GDI01 from the Nintendo
+    64 version of C&C TD, and GDI06 featuring the Commando. 
+    Changed name of the "Defence" production queue to "Support". 
+    Changed balance: 
+    Reduced price of SAM sites from 750 to 700.
+    Reduced price for the MLRS from 1200 to 1000.
+    Reduced value of blue Tiberium.
+    Increased repair speed of the repair pad.
+    Increased chance of infantry evading being crushed.
+    Increased delay between air strikes from 3:00min to 3:30min.
+    Reduced veterancy bonuses. 
+    Sandbags and chain link barriers no longer block projectiles. 
+    Crates are now hidden under the fog, and spawn only after one minute. 
+    Changed airplane's cruise altitude to twice its former value. 
+
+    Red Alert
+
+    Fixed smudges being displayed on interior clear tiles. 
+    Fixed buildings remaining visible under fog after being destroyed if the
+    player has a GPS. 
+    Fixed a couple of issues related to the identity of spies. 
+    Fixed water palette rotation effects in the DESERT tileset. 
+    Fixed units automatically attacking oil derricks in Arctic Triangle
+    Affair. 
+    Fixed the chinook selection box size. 
+    Fixed a collection of mission issues. 
+    Fixed the health bars of explosive barrels being visible. 
+    Fixed MAD tanks destroying trees. 
+    Fixed a number of GPS-related bugs and inconsistencies with respect to
+    targeting and vision. 
+    Fixed crash when trying to load "Bomber John" minigame. 
+    Fixed the "RushAI" building naval structures despite never producing
+    naval units. 
+    Added new single-player missions: Soviet 02b, 03, 06a, 06b and 07. 
+    Added GPS icons to badger planes. 
+    Added weather effects to Fort Lonestar & Snow Town. 
+    Added two new skirmish maps: "Tabula Rasa" and "Sidestep". 
+    Added difficulty levels to the Fort Lonestar mini-game. 
+    Changed balance:
+    Gap generators remain functional when shroud is disabled in the lobby. 
+    Shock trooper health reduced from 100 to 60. 
+    Sonar pulse no longer reveals shroud. 
+    Sandbags and chain link barriers no longer block projectiles. 
+    Destroyed planes crash at a steeper angle. 
+    MCVs can only be found in crates if the player has lost their last one. 
+    Hijackers now cloak when stationary, are faster and less likely to be
+    crushed. 
+    Reduced chinook vision range from 12 to 10 cells. 
+    Reduced flak truck weapon range against ground targets from 8 to 6 cells.
+    
+    Reduced veterancy bonuses. 
+    Fake structures are no longer revealed by their health bar. 
+    Changed Spy power plant infiltration power to 20 seconds, down from 30. 
+    Chrono Tank teleport charge delay reduced from 20 seconds to 12. 
+    Tesla Tank no longer needs to turn towards the enemy to shoot at targets.
+    
+    Phase Transport passenger count increased from 3 to 4. 
+    Phase Transport movement speed increased to match APC. 
+    Phase Transport vision range increased from 6 cells to 7 cells. 
+    Crates are now hidden under the fog, and spawn only after one minute. 
+    Supply & Demo Truck vision range increased from 3 to 4 cells. 
+    Added a secondary exit to the Kennel to reduce chances of unintentionally
+    blocking production. 
+    Changed chrono tanks to use a support-power-like charge bar instead of
+    pips. 
+    Changed the cloak effect to use tranlucency instead of shadow. 
+    Changed ammo box map prop to not be selectable. 
+
+    Dune 2000
+
+    Fixed some cliffs and rocks in the ARAKIS tileset not blocking paths. 
+    Fixed Fremen sietches being damaged without concrete foundations. 
+    Fixed missing Fremen selection voice. 
+    Fixed missing observer clock. 
+    Fixed semi-transparent shroud overlay. 
+    Fixed spice growing on unsuitable terrain. 
+    Fixed Outpost artwork offsets. 
+    Fixed a crash when placing concrete slabs outside the map borders. 
+    Fixed buildings built on rock shortly showing their damaged frames when
+    repairing. 
+    Added spice blooms. 
+    Added the Thumper infantry. 
+    Added new missions Atreides02a and Atreides02b. 
+    Added upgrade indicator to production structures. 
+    Added suicide bombing behaviour to the Saboteur. 
+    Added production speedup from multiple factories. 
+    Changed internal actor and weapon names to match the original game. Use
+    the utility to upgrade your maps automatically. 
+    Changed game balance to match the original game. 
+
+    Engine / Modding / Scripting
+
+    Fixed move animations freezing after an actor attacks. 
+    Fixed some minor Lua API and trait documentation errors. 
+    Fixed a potential crash in Attack* if no armaments are enabled. 
+    Fixed overlay traits being visible when they are not active. 
+    Fixed queued actions running in a different order to which they were
+    queued. 
+    Fixed actors with large health radii not receiving damage from some
+    warhead impacts. 
+    Fixed map StartingMusic overriding BackgroundMusic. 
+    Fixed a crash when spawning resources near the edges on maps with bogus
+    cordons. 
+    Fixed a bug with newly produced units teleporting outside their factory. 
+    Fixed an issue with some upgrade rules not being run when upgrading a mod
+    or a map from an older engine version. 
+    Fixed a potential crash due to a race condition in UpgradeActorsNear. 
+    Fixed a crash when producing an actor without any IOccupySpace traits in
+    conjunction with UpgradeActorsNear. 
+    Fixed DamagedWithoutFoundation causing more initial damage than it
+    should. 
+    Added support for weather particle effects for maps and missions. 
+    Added support for sequences that combine art from multiple sprites. 
+    Added new lint checks for validating mod and map rules. 
+    Added support for random sprite sequences in the Bullet projectile. 
+    Added support for map-placed actors with plug upgrades. #9159]
+    Added upgrade support to several traits. 
+    Added RangeMultiplier trait to apply a range modifier via an upgrade. 
+    Added a DisableMovementOnUpgrade trait to disable an actors movement via
+    an upgrade. 
+    Added IRulesetLoaded interface for TraitInfos that need to query
+    information during initialization. 
+    Added support for custom icon overlay palettes. 
+    Added the ability to include allies to the HideMapCrateAction trait. 
+    Added a visualisation for warhead spreads to the combat debug overlay. 
+    Added support for defining music tracks in map.yaml. 
+    Added a function to check for prerequisites to the Lua API. 
+    Added a function for changing background audio to the Lua API. 
+    Added Height property to BlocksProjectiles for limiting blockage. 
+    Added support for actor-producing support powers. 
+    Added cursor and stances definitions to the Armament trait. 
+    Added support for configuring the cruise altitude, delayed homing
+    activation, and airbursts to missiles. 
+    Added initial support for tileset depth sprites. 
+    Added information about movement classes to the debug output of the
+    domain calculation. 
+    Added checks for invalid HVA files. 
+    Added an ActorInit for unit stances. 
+    Added the Lua player API properties InternalName, IsNonCombantant and
+    IsLocalPlayer. 
+    Improved logging for OpenGL errors that occur at game start. 
+    Improved in-game performance and memory usage. 
+    Improved support for custom player palettes remap ranges. 
+    Improved DeployToUpgrade trait with various new options. 
+    Changed several trait properties from cell ranges to world ranges. 
+    Changed the way that the map grid type is defined in mod.yaml. Modders
+    will have to manually adjust their mods for this change. 
+    Changed the names of several other render traits to follow existing
+    conventions. 
+    Changed the output logging format for dedicated servers. 
+    Replaced the type-specific Targetable* traits with a new, unified
+    Targetable trait. 
+    Replaced the SpawnViceroid and LeavesHusk traits with the new
+    SpawnActorOnDeath trait. 
+    Replaced the Plane and Helicopter traits with a new, unified Aircraft
+    trait. 
+    Removed engine assumption that 0% versus an armor type means actors with
+    that armor are not targetable. Use ValidTargets/InvalidTargets instead. 
+    Removed the specific Render* traits. Use RenderSprites + WithSpriteBody
+    and its derivatives instead. 
+    Removed WaterPaletteRotation. Use RotationPaletteEffect instead. 
+    Removed the Heal and AutoHeal traits. Use the regular Attack* traits
+    instead. 
+
+    Map Editor
+
+    Fixed maps appearing multiple times in the map chooser after saving. 
+    Fixed spawn point, camera, waypoint and wormspawner symbols not being
+    shown in the player's colour. 
+    Fixed player Creeps having no enemies defined. 
+    Added a cell coordinate display. 
+    Added a map cash counter. 
+    Added more information to actor tooltips. 
+    Added a copy & paste function. 
+    Changed actor rotation to use the mouse scrollwheel instead of
+    left-clicking on them. 
+    Changed the tile/overlay/actor list to use the full screen height. 
+    Changed the default save directory from the game directory to the support
+    one. 
+
+    Packaging & Utility
+
+    Added checks for syntax errors in Lua scripts. 
+    Added a check for missing luac installations. 
+    Added simple argument verification. 
+    Improved the Windows installer options. 
+    Updated the bundled MaxMind GeoIP library to version 2.3.1. 
+    Removed the actor stats export command. 
+    Removed redundant palette and cursor files. 
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 24 Dec 2015 19:37:24 +0100
+
 openra (20150919-1~getdeb2) trusty; urgency=medium
 
   * Apply changes. Thanks to Matthias Mailänder.
