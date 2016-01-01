@@ -1,0 +1,31 @@
+Source: libgames-support
+Section: libs
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               valac,
+               dh-autoreconf,
+               libglib2.0-dev,
+               libgtk-3-dev,
+               libgee-0.8-dev
+Standards-Version: 3.9.6
+Homepage: https://github.com/GNOME/libgames-support/releases
+
+Package: libgames-support1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Library for GNOME games
+ libgames-support is a small library intended for internal
+ use by GNOME Games, but it may be used by others.
+
+Package: libgames-support-dev
+Architecture: any
+Section: libdevel
+Depends: ${misc:Depends},
+         libgames-support1 (= ${binary:Version})
+Description: Library for GNOME games (development files)
+ libgames-support is a small library intended for internal
+ use by GNOME Games, but it may be used by others.
+ .
+ (This package contains the development files.)

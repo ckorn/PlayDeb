@@ -1,0 +1,10 @@
+po/Makefile.in.in
+m4/intltool.m4
+games/gridframe.c
+games/libgames-support-1.0.vapi
+games/libgames-support.h
+games/libgames_support_la_vala.stamp
+games/scores/category.c
+games/scores/context.c
+games/scores/dialog.c
+games/scores/score.c

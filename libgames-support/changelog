@@ -1,0 +1,5 @@
+libgames-support (0.2-1~getdeb1) wily; urgency=low
+
+  * Initial release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 01 Jan 2016 00:56:56 +0100
