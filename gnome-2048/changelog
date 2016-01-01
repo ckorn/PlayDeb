@@ -1,0 +1,5 @@
+gnome-2048 (3.18.2-1~getdeb1) wily; urgency=low
+
+  * Initial release (LP: #1529531)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 01 Jan 2016 00:38:42 +0100
