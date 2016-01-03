@@ -1,3 +1,12 @@
+manaplus (1:1.6.1.2-1~getdeb2~wily) wily; urgency=medium
+
+  * New upstream version
+    fix: sprites animation for just loaded sprites.
+    fix: default beings walk mask.
+    add: refactor some code.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 02 Jan 2016 17:38:47 +0100
+
 manaplus (1:1.5.12.19-1~getdeb2~wily) wily; urgency=medium
 
   * New upstream version
