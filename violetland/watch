@@ -1,5 +1,3 @@
 version=3
-opts=\
-downloadurlmangle=s|.*[?]name=(.*?)&.*|http://violetland.googlecode.com/files/$1|,\
-filenamemangle=s|[^/]+[?]name=(.*?)&.*|$1| \
-http://code.google.com/p/violetland/downloads/detail[?]name=violetland-v([\d\.]+)-src\.zip&.*
+https://github.com/ooxi/violetland/releases \
+    (?:.*/)?([\d\.]+)\.tar\.gz
