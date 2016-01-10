@@ -1,3 +1,9 @@
+wyrmgus (1.9.7-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 10 Jan 2016 00:16:25 +0100
+
 wyrmgus (1.9.6-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
