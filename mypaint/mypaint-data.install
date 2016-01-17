@@ -1,8 +1,0 @@
-usr/share/mypaint/palettes
-usr/share/mypaint/pixmaps
-usr/share/mypaint/backgrounds/README.md
-usr/share/mypaint/backgrounds/*.png
-usr/share/icons
-usr/share/locale
-usr/share/mypaint/brushes/*/*
-usr/share/mypaint/brushes/order.conf
