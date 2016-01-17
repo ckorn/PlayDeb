@@ -1,0 +1,2 @@
+?package(mypaint):needs="X11" section="Applications/Graphics"\
+  title="MyPaint" command="/usr/bin/mypaint"

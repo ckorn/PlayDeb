@@ -1,0 +1,78 @@
+Source: mypaint
+Section: graphics
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Andrew Chadwick <a.t.chadwick@gmail.com>
+Build-Depends: debhelper (>= 9),
+               scons,
+               python-gtk2-dev,
+               python-numpy,
+               swig,
+               python (>= 2.6),
+               liblcms2-dev,
+               libjson0-dev,
+               dpkg-dev (>= 1.16.1~),
+               python-matplotlib,
+               python-tk,
+               python-gi-dev,
+               libgtk-3-dev
+Standards-Version: 3.9.5
+X-Python-Version: >= 2.6
+Homepage: http://mypaint.org/
+
+Package: mypaint
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         ${python:Depends},
+         mypaint-data (>= ${source:Version}),
+         python-numpy,
+         python-gtk2,
+         librsvg2-2,
+         librsvg2-common,
+         python-gobject-cairo | python-gi-cairo,
+         gir1.2-gdkpixbuf-2.0,
+         gir1.2-gtk-3.0,
+         hicolor-icon-theme
+Suggests: mypaint-data-extras
+Recommends: shared-mime-info
+Description: paint program for use with graphics tablets
+ MyPaint is a pressure- and tilt-sensitive painting program which works well
+ with Wacom graphics tablets and other similar devices. It comes with a large
+ brush collection including charcoal and ink to emulate real media, but the
+ highly configurable brush engine allows you to experiment with your own
+ brushes and with not-quite-natural painting.
+ .
+ This package contains the main program.
+
+Package: mypaint-data
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: mypaint (<< 1.1.0)
+Replaces: mypaint (<< 1.1.0)
+Description: runtime data files for MyPaint
+ MyPaint is a pressure- and tilt-sensitive painting program which works well
+ with Wacom graphics tablets and other similar devices. It comes with a large
+ brush collection including charcoal and ink to emulate real media, but the
+ highly configurable brush engine allows you to experiment with your own
+ brushes and with not-quite-natural painting.
+ .
+ This package contains icons and backgrounds for the MyPaint program.
+
+Package: mypaint-data-extras
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: mypaint-data (<< 1.1.0)
+Replaces: mypaint-data-hires,
+          mypaint-data (<< 1.1.0)
+Conflicts: mypaint-data-hires
+Enhances: mypaint
+Description: high resolution backgrounds for mypaint
+ MyPaint is a pressure- and tilt-sensitive painting program which works well
+ with Wacom graphics tablets and other similar devices. It comes with a large
+ brush collection including charcoal and ink to emulate real media, but the
+ highly configurable brush engine allows you to experiment with your own
+ brushes and with not-quite-natural painting.
+ .
+ This package contains high resolution paper texture backgrounds for painting
+ on. Since the files are large, installation is optional.
