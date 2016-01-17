@@ -1,0 +1,10 @@
+usr/bin/mypaint
+usr/bin/mypaint-ora-thumbnailer
+usr/lib/mypaint
+usr/share/applications
+usr/share/mypaint/gui
+usr/share/mypaint/lib
+usr/share/libmypaint/brushsettings.*
+usr/share/libmypaint/__init__.py
+usr/share/thumbnailers/mypaint-ora.thumbnailer
+usr/share/appdata/mypaint.appdata.xml

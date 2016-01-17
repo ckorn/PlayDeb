@@ -1,0 +1,3 @@
+version=3
+https://github.com/mypaint/mypaint/releases \
+     (?:.*/)?v?([\d\.]+)\.tar\.gz
