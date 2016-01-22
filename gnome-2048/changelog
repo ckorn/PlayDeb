@@ -1,3 +1,16 @@
+gnome-2048 (3.19.4-1~getdeb1) wily; urgency=medium
+
+  * New upstream version
+     * Make new game work in if game does not exist (Yanko Kaneti)
+     * Fixed new game glitch (Robert Roth)
+     * Stop using deprecated gnome-common (Sahil Sareen)
+     * Add pre-commit and pre-applypatch hooks (Sahil Sareem)
+     * Fixed congrat message (Robert Roth)
+     * Undo score changes with undo (Robert Roth)
+     * Disable undo on new game (Robert Roth)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 19 Jan 2016 18:17:31 +0100
+
 gnome-2048 (3.18.2-1~getdeb1) wily; urgency=low
 
   * Initial release (LP: #1529531)
