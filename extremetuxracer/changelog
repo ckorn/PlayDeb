@@ -1,3 +1,9 @@
+extremetuxracer (0.7.0-1~getdeb1) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 23 Jan 2016 15:16:31 +0100
+
 extremetuxracer (0.6.0-1~getdeb1) saucy; urgency=low
 
   * New upstream version (LP: #1251469)

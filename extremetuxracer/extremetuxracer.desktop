@@ -9,9 +9,7 @@ Comment=Race a penguin down a mountain
 Comment[de]=Rutsche mit einem Pinguin einen Hügel hinab
 Comment[ro_RO]=Curse cu un pinguin pe munte, la vale
 Icon=etr
-
 Exec=etr
 Terminal=false
 StartupNotify=false
-
 Categories=Game;ArcadeGame;

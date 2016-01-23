@@ -100,10 +100,10 @@ install-arch:
 	dh_prep -s
 	dh_installdirs -s
 	## extremetuxracer
-	dh_install -s etr /usr/games/
+	dh_install -s src/etr /usr/games/
 	dh_install -s debian/extremetuxracer.desktop /usr/share/applications/
 	dh_install -s debian/etr.xpm /usr/share/pixmaps/
-	dh_install -s resources/etracericon.svg /usr/share/pixmaps/
+	dh_install -s resources/etr.svg /usr/share/pixmaps/
 	dh_installman -s etr.6 etr.de.6
 	dh_installdocs -s AUTHORS
 
