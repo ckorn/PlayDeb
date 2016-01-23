@@ -1,3 +1,9 @@
+wyrmsun (1.9.9-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 23 Jan 2016 16:01:12 +0100
+
 wyrmsun (1.9.7-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
