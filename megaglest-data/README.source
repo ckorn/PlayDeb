@@ -1,0 +1,23 @@
+megaglest-data for Debian
+=========================
+
+The megaglest-data source package consists of two upstream tarballs which
+contain all source and blend files to modify the game data.
+
+Please make sure, when preparing new upstream releases, that the following files
+are present where $VER is the current upstream release.
+
+ megaglest-data_$VER.orig-data-source.tar.xz
+ megaglest-data_$VER.orig.tar.xz
+
+debian/watch contains the links to the upstream sources. Download both source
+tarballs and unpack megaglest-data-source into megaglest-data, so that there is
+a directory data-source in the root directory.
+
+Then run dpkg-source -b megaglest-data-$VER.
+
+See also
+http://raphaelhertzog.com/2010/09/07/how-to-use-multiple-upstream-tarballs-in-debian-source-packages/
+
+for how to use multiple upstream tarballs with source format 3.0.
+

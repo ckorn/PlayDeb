@@ -1,14 +1,8 @@
-Almost-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: megaglest-data
 Upstream-Contact: Mark Vejvoda <mark_vejvoda@hotmail.com>
-Source: http://sourceforge.net/projects/megaglest/files/
+Source: https://github.com/MegaGlest/megaglest-data
 Comment:
- This package was debianized by Giuseppe Borzi <gborzi@ieee.org>
- and Mark Vejvoda <mark_vejvoda@hotmail.com>
- on Wed, 25 May 2011 Wed, 25 May 2011 23:31:21 -0700.
- .
- It was downloaded from http://sourceforge.net/projects/megaglest
- .
  ###########################
  # Megaglest Data          #
  ###########################
@@ -100,7 +94,7 @@ Comment:
  ally_resists      by Trappin tweaked by ultifd
  beat_the_enemy    by Philipp Tscharntke
  center_castle     by Titus Tscharntke(titi)
- river_raid2	   by James McCulloch(silnarm)
+ river_raid2       by James McCulloch(silnarm)
  highlands         by Titus Tscharntke(titi)
  team_island       by Titus Tscharntke(titi)
  five_on_three     by Tiger
@@ -161,11 +155,14 @@ Comment:
 
 Files: *
 Copyright: 2001-2008, The Glest Team (<http://glest.org>)
-           2008-2011, The MegaGlest Team (<http://megaglest.org>)
+           2008-2015, The MegaGlest Team (<http://megaglest.org>)
 License: CC-BY-SA-3.0
 
 Files: debian/*
-Copyright: 2011 Vincent Cheng <Vincentc1208@gmail.com>
+Copyright: 2011,      Giuseppe Borzi <gborzi@ieee.org>
+           2011,      Vincent Cheng <Vincentc1208@gmail.com>
+           2011-2014, Mark Vejvoda <mark_vejvoda@hotmail.com>
+           2014-2015, Markus Koschany <apo@gambaru.de>
 License: GPL-2+
 
 License: GPL-2+

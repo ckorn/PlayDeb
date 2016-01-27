@@ -1,20 +1,60 @@
-megaglest-data (3.11.1-1~getdeb1) trusty; urgency=medium
+megaglest-data (3.12.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 10 Mar 2015 18:57:10 +0100
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 26 Jan 2016 19:07:31 +0100
 
-megaglest-data (3.11.0-1~getdeb1) trusty; urgency=medium
+megaglest-data (3.11.1-1) unstable; urgency=medium
 
-  * New upstream version
+  * New upstream release.
+  * Add get-orig-source target to debian/rules.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 24 Jan 2015 22:23:46 +0100
+ -- Markus Koschany <apo@gambaru.de>  Tue, 17 Mar 2015 11:28:07 +0100
 
-megaglest-data (3.9.1-1~getdeb1) saucy; urgency=low
+megaglest-data (3.11.0-2) unstable; urgency=medium
 
-  * New upstream version
+  * Upload to unstable.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 01 Feb 2014 02:03:12 +0100
+ -- Markus Koschany <apo@gambaru.de>  Fri, 06 Feb 2015 20:40:43 +0100
+
+megaglest-data (3.11.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Move the package to Git.
+  * Do not try to insert CountryTexturePath to glest.ini because this file is
+    now provided by megaglest.
+
+ -- Markus Koschany <apo@gambaru.de>  Sat, 31 Jan 2015 20:24:33 +0100
+
+megaglest-data (3.9.1+ds-1) unstable; urgency=medium
+
+  * Add megaglest-data-source-3.9.1.tar.xz tarball which was accidentally
+    dropped by the last upload. (Closes: #771866)
+  * Add README.source and explain how to prepare new upstream releases
+    correctly.
+
+ -- Markus Koschany <apo@gambaru.de>  Sat, 06 Dec 2014 12:43:32 +0100
+
+megaglest-data (3.9.1-1) unstable; urgency=low
+
+  [ Mark Vejvoda ]
+  * New upstream release.
+
+  [ Markus Koschany ]
+  * Add myself to Uploaders.
+  * Remove Giuseppe and rainct from Uploaders at their own request.
+  * wrap-and-sort -sa.
+  * Use compat level 9 and require debhelper >= 9.
+  * Update debian/copyright and point to the new source location at github.
+  * Declare compliance with Debian Policy 3.9.6.
+  * Remove Pre-Depends field. Obsolete.
+  * Suggest megaglest instead of recommending it so that people, who are only
+    interested in the data files, do not have to install the engine as well.
+  * debian/rules:
+    - Remove override for dh_builddeb. xz compression is the default now.
+    - Build with parallel.
+
+ -- Markus Koschany <apo@gambaru.de>  Fri, 03 Oct 2014 15:05:27 +0200
 
 megaglest-data (3.7.1-1) unstable; urgency=low
 
