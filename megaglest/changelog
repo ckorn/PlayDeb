@@ -1,0 +1,433 @@
+megaglest (3.12.0-1~getdeb2~wily) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 26 Jan 2016 18:59:21 +0100
+
+megaglest (3.11.1-3) unstable; urgency=medium
+
+  * Add Breaks and Replaces against versions before 3.11.0+dfsg-1 because the
+    glest.ini file is provided by src:megaglest now. This fixes a dpkg failure
+    when upgrading from Jessie to Stretch. Thanks to Andreas Beckmann for the
+    report. (Closes: #804942)
+  * Vcs-Browser: Switch to https.
+  * Update my e-mail address.
+  * Add reproducible-build.patch and make the build reproducible.
+  * Override Lintian error "source-is-missing" because it is a false-positive.
+
+ -- Markus Koschany <apo@debian.org>  Fri, 13 Nov 2015 20:45:26 +0100
+
+megaglest (3.11.1-2) unstable; urgency=medium
+
+  * Fix lintian warning dep5-copyright-license-name-not-unique.
+  * Add fix-cmake-3.2-X11-FTBFS.patch and ensure that Megaglest can be built
+    from source again with CMake >= 3.2. Cherry-picked from Megaglest's issue
+    tracker.
+
+ -- Markus Koschany <apo@gambaru.de>  Thu, 18 Jun 2015 02:40:05 +0200
+
+megaglest (3.11.1-1) unstable; urgency=medium
+
+  * Imported Upstream version 3.11.1.
+  * Do not repack the tarball anymore. It is DFSG compatible now.
+  * Fix debian/copyright license name not unique issue.
+  * Tighten dependency on megaglest-data to >= 3.11.1.
+
+ -- Markus Koschany <apo@gambaru.de>  Tue, 17 Mar 2015 17:55:49 +0100
+
+megaglest (3.11.0+dfsg-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * debian/rules: Insert CountryTexturePath in glest.ini and use a dh_install
+    override for it.
+  * Switch to new fonts packages fonts-dejavu-core and fonts-wqy-zenhei.
+  * Remove libxerces-c-dev from Build-Depends.
+
+ -- Markus Koschany <apo@gambaru.de>  Fri, 06 Feb 2015 20:09:26 +0100
+
+megaglest (3.11.0+dfsg-1) experimental; urgency=medium
+
+  * Imported Upstream version 3.11.0+dfsg.
+  * Remove prebuilt windows dll file with Files-Excluded mechanism.
+  * Add get-orig-source target and repack the source tarball.
+  * Move the package to Git.
+  * debian/control:
+    - Use Architecture: any. Try to build on all available architectures again.
+    - Adjust the dependency on megaglest-data to >= 3.11.0.
+  * Drop fix-cmake-build-type-none.patch. Merged upstream.
+  * Drop wxWidgets-assertions.patch. Merged upstream.
+  * Update clean file and clean only required files, not the complete mk/linux
+    directory. This prevents a FTBFS.
+  * Update debian/copyright for new release.
+  * Drop source/lintian-overrides. It is obsolete now.
+  * Drop megaglest.dirs. The install files achieve the same.
+
+ -- Markus Koschany <apo@gambaru.de>  Sat, 31 Jan 2015 17:51:32 +0100
+
+megaglest (3.9.1-3) unstable; urgency=medium
+
+  * debian/control: Soften the dependency on megaglest-data to
+    (>= ${source:Version}).
+
+ -- Markus Koschany <apo@gambaru.de>  Sun, 07 Dec 2014 08:50:44 +0100
+
+megaglest (3.9.1-2) unstable; urgency=medium
+
+  * Add wxWidgets-assertions.patch.
+    Fix megaglest_editor and megaglest_g3dviewer assertions with newer versions
+    of wxWidgets that made the tools unusable. (Closes: #768572)
+    Cherry-picked from upstream master branch. Commits c21317a5f, ad0b65272,
+    6faa3dc72. Thanks to Mark Vejvoda for the patch.
+  * debian/rules: Export DEB_CPPFLAGS_MAINT_APPEND = -DNDEBUG and disable
+    wxWidgets assertions.
+
+ -- Markus Koschany <apo@gambaru.de>  Mon, 01 Dec 2014 19:19:07 +0100
+
+megaglest (3.9.1-1) unstable; urgency=low
+
+  [ Mark Vejvoda ]
+  * New upstream release. (Closes: #752338)
+    - Fixed error handling conditions (Closes: #716693)
+    - Includes experimental big-endian support
+  * Fix dependency defects (Closes: #662429, #723790)
+
+  [ Paul Wise ]
+  * Bump Standards-Version, no changes needed.
+
+  [ Markus Koschany ]
+  * Add myself to Uploaders.
+  * Remove Giuseppe and rainct from Uploaders at their own request.
+  * Update debian/copyright for new release.
+  * debian/control: Add arm64 and ppc64el to Architecture field. Remove
+    non-existent arm architecture.
+  * Export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed to avoid useless
+    dependencies.
+  * Drop megaglest_allow-build-with-newer-miniupnpc.patch. Fixed upstream.
+  * Drop megaglest.TODO.
+  * Remove megaglest.manpages. The install file is sufficient.
+  * Add megaglest.lintian-overrides and override manpage-has-errors-from-man
+    warning. It is not an issue.
+
+ -- Markus Koschany <apo@gambaru.de>  Fri, 03 Oct 2014 20:26:05 +0200
+
+megaglest (3.7.1-4) unstable; urgency=medium
+
+  * Team upload.
+  * Allow building with newer miniupnpc (Closes: #751225)
+
+ -- Paul Wise <pabs@debian.org>  Mon, 07 Jul 2014 11:35:01 +0800
+
+megaglest (3.7.1-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Update to use wxWidgets 3.0. (Closes: #741988)
+
+ -- Olly Betts <olly@survex.com>  Thu, 29 May 2014 18:59:08 +1200
+
+megaglest (3.7.1-3) unstable; urgency=medium
+
+  * Team upload.
+  * Fix building with -DCMAKE_BUILD_TYPE=None (Closes: #739068)
+
+ -- Paul Wise <pabs@debian.org>  Wed, 26 Mar 2014 10:54:58 +0800
+
+megaglest (3.7.1-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Update xerces build dependency to libxerces-c-dev. (Closes: #733074)
+
+ -- Jay Berkenbilt <qjb@debian.org>  Wed, 15 Jan 2014 12:20:12 -0500
+
+megaglest (3.7.1-2) unstable; urgency=low
+
+  * Team upload.
+  * Fix the architecture list of megaglest-dbg package (Closes: #725055)
+
+ -- Paul Wise <pabs@debian.org>  Tue, 22 Oct 2013 19:01:38 +0800
+
+megaglest (3.7.1-1) unstable; urgency=low
+
+  [ Mark Vejvoda ]
+  * New upstream release (Closes: #703273) (LP: #1216684)
+    - Fixes upstream reported defects
+    - Fixes FTBFS on non-x86 architectures (Closes: #654283)
+    - Fixes graphics issues (Closes: #534213)
+    - Upstream added vlc dependencies, add to deps/build-deps
+    - Upstream dropped the configurator, don't install it
+    - Drop patch that was included upstream
+  * Bump Standards-Version
+  * Update copyright information
+  * Let upstream code autodetect the miniupnpc version
+
+  [ Eddy Petrișor ]
+  * Remove myself from Uploaders
+
+  [ Paul Wise ]
+  * Upstream switched away from luajit, change build-deps
+  * wrap-and-sort -s
+  * Copyright file is not well-formed, don't claim it is
+  * Bump to debhelper compat 9
+  * Drop glest transitional package
+  * Fix the Vcs-Browser header
+  * Override a lintian warning about substvars, upstream syncs versions
+
+  [ Evgeni Golov ]
+  * Correct Vcs-* URLs to point to anonscm.debian.org
+
+ -- Mark Vejvoda <mark_vejvoda@hotmail.com>  Wed, 18 Sep 2013 21:01:59 +0200
+
+megaglest (3.6.0.3-1.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/copyright:
+    - Adjust copyright information for UTF8-CPP library (Closes: #690371).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Sun, 21 Oct 2012 16:20:21 +0200
+
+megaglest (3.6.0.3-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/patches/gcc4.7.patch: Fix FTBFS with g++ 4.7. (Closes: #672014).
+
+ -- Sebastian Ramacher <s.ramacher@gmx.at>  Mon, 14 May 2012 11:16:09 +0200
+
+megaglest (3.6.0.3-1) unstable; urgency=low
+
+  [ Mark Vejvoda ]
+  * New upstream release
+    - Fixes FTBFS on non-x86 architectures (Closes: #654283)
+    - Fixes crash with some GPU/driver combinations (Closes: #653547)
+
+  [ Paul Wise ]
+  * megaglest should be priority extra since famfam is extra
+  * Drop patches, they were applied upstream
+
+ -- Mark Vejvoda <mark_vejvoda@hotmail.com>  Wed, 25 Jan 2012 08:45:18 +0800
+
+megaglest (3.6.0.2-2) unstable; urgency=low
+
+  * Team upload.
+  * Fix the upstream check for networking so it matches kFreeBSD
+  * Disable the wx-config --prefix=/usr/local since that is the
+    wrong path on Debian GNU/kFreeBSD
+  * Drop the SSE flags since they are redundant on amd64, cause
+    Illegal instruction errors on i386 and cause FBTS on other arches
+  * Add more little-endian architectures
+
+ -- Paul Wise <pabs@debian.org>  Fri, 23 Dec 2011 14:36:25 +0800
+
+megaglest (3.6.0.2-1) unstable; urgency=low
+
+  [ Alexander Reichle-Schmehl ]
+  * Remove myself from uploaders due to time constraints
+
+  [ Ansgar Burchardt ]
+  * Remove myself from Uploaders.
+
+  [ Mark Vejvoda ]
+  * updated for 3.6.0 release
+  * renamed from glest to megaglest and changed build system to cmake
+
+  [ Paul Wise ]
+  * Lots of cleanup and improvements
+
+ -- Mark Vejvoda <mark_vejvoda@hotmail.com>  Tue, 20 Dec 2011 15:46:18 +0800
+
+glest (3.2.2-2) unstable; urgency=low
+
+  [ Paul Wise ]
+  * debian/rules:
+     - Drop use of dh_desktop since it no longer does anything and
+       desktop-file-utils 0.15-2 has a trigger (see #525133).
+
+  [ Siegfried-Angel Gevatter Pujals ]
+  * debian/control:
+     - Add lpia to the Architecture list.
+     - Add "${misc:Depends}" to Depends.
+  * debian/patches/series, debian/patches/missing-cstdio-include:
+     - Fix a FTBFS which happens with new GCC versions; thanks to
+       Steven Susbauer (LP: #376591).
+
+  [ Eddy Petrișor ]
+  * enable tutorials by symlinking to the real tutorial directory
+    (Closes: #528181)
+
+  [ Alexander Reichle-Schmehl ]
+  * Add debian/README.source
+
+ -- Alexander Reichle-Schmehl <tolimar@debian.org>  Fri, 12 Feb 2010 15:10:38 +0100
+
+glest (3.2.2-1) unstable; urgency=low
+
+  * New Upstream release
+   - Repackage the tarball from .zip to .tar.gz.
+  * Updated my name in control file
+  * adopt depends on glest-data
+   - Removed the lintian override
+
+ -- Alexander Reichle-Schmehl <tolimar@debian.org>  Sun, 05 Apr 2009 20:21:04 +0200
+
+glest (3.2.1-1) unstable; urgency=low
+
+  [ Siegfried-Angel Gevatter Pujals ]
+  * New upstream version.
+     - Repackage the tarball from .zip to .tar.gz.
+     - The default resultion is now 640x480 (Closes: #450770).
+  * debian/control:
+     - Change my entry in the Uploaders field.
+     - Add a Build-Depends on liblua5.1-dev, autoconf and automake.
+     - Bump Standards-Version to 3.8.0.
+  * debian/glest.install:
+     - Adjust the origin path.
+  * debian/glest.desktop:
+     - Fix a typo in the Catalan description.
+  * debian/patches/nomapeditor, debian/patches/do-not-link-unneeded-libs:
+     - Update them to apply against the new source.
+  * debian/patches/series, debian/patches/gcc-4.3-fixes:
+     - Remove gcc-4.3-fixes, it has been adopted upstream.
+  * debian/rules:
+     - Update it to work with the changed directory structure.
+  * debian/dirs:
+     - Remove some unnecessary lines (we still need bin/games because the only
+       file there is installed by debian/rules without using dh_install).
+  * debian/copyright:
+     - Update the copyright information and change the formatting of the file.
+     - Change the download location to SourceForge.
+     - Update the copyright to match the directory structure changes.
+  * debian/docs:
+     - Upstream's README files have no interesting content; remove it.
+  * debian/patches/fix-glest-ini:
+     - Change "english.lng" to just "english".
+  * debian/glest.sh:
+     - If there is an existing glest.ini file, change "<langname.lng>" to
+       just "<langname>". Also, if the selected language isn't available
+       anymore change it back to "english", in order to avoid the game refusing
+       to start.
+     - Replace the configuration file (glest.ini) with a new one if it is too
+       old (setting are not preserved).
+     - Create directory ~/.glest/screens for the screenshots (Closes: #505919).
+     - Do not create a "docs" symlink amymore (LP: #226584).
+     - Move configuration files from ~/.glest to ~/.config/glest.
+  * debian/glest.6:
+     - Update the manpage for Glest 3 (Closes: #505917).
+  * debian/menu:
+     - Change formatting to make the file more readable.
+  * debian/glest.desktop:
+     - Add a Spanish translation of the Comment.
+
+  [ Gonéri Le Bouder ]
+  * French translation for the .desktop file.
+
+ -- Siegfried-Angel Gevatter Pujals <rainct@ubuntu.com>  Fri, 13 Mar 2009 16:26:52 +0100
+
+glest (3.1.2-1) unstable; urgency=low
+
+  [ Siegfried-Angel Gevatter Pujals (RainCT)]
+  * Fix debian/watch to work despite the constantly changing filenames.
+  * Update the description:
+     - Mention multiplayer support.
+     - Do not longer speak about two factions, as there will be more
+       somewhen soon.
+
+  [ Gonéri Le Bouder ]
+  * Add armel in arch list (Closes: #476943)
+
+  [ Ansgar Burchardt ]
+  * New upstream release (Closes: #468810)
+  * Updates to wrapper script:
+     - Install servers.ini (Closes: #467247)
+     - Do not create symlink to configuration.xml which does not exist.
+  * New patches:
+     - gcc-4.3-fixes: Add missing includes for gcc-4.3
+     - do-not-link-unneeded-libs: Do not link against libogg, libvorbis
+  * Add missing .TH in manpage
+  * Update libxerces build-depend to libxerces-c2-dev
+  * Don't set CFLAGS, CXXFLAGS (now set by dpkg-buildpackage)
+  * debian/copyright: Update, point to GPL-2
+
+ -- Ansgar Burchardt <ansgar@43-1.org>  Sun, 04 May 2008 17:01:38 +0200
+
+glest (3.1.0-1) unstable; urgency=low
+
+  [ Barry deFreese ]
+  * Add watch file
+
+  [ Jon Dowland ]
+  * Add Homepage: control field to source stanza
+
+  [ Siegfried-Angel Gevatter Pujals (RainCT) ]
+  * Drop patches/10_fix_gcc-4.1_particle.h.dpatch
+  * debian/control:
+     - Replace XS-Vcs-* with Vcs-*
+     - Add myself to Uploaders
+  * debian/glest.desktop:
+     - Update to the latest FD.o standards
+     - Add Catalan translation
+
+  [ Ansgar Burchardt ]
+  * Drop patches/01_addcleanrule.dpatch for new upstream release
+  * Use quilt for patch management instead of dpatch
+  * Remove Homepage field from description
+  * Add myself to Uploaders
+  * Bump Debian Standards version to 3.7.3
+
+  [ Alexander Schmehl ]
+  * New Upstream release (Closes: #463489)
+    + patches/use-fixed-fonts refreshed patch for 3.1.0 release
+  * Made the depends on glest-date a non-hardcoded one
+    + added linitan override for source:version used on package 
+      build not from the same source package; since glest and
+      glest-data are in sync and both maintained by us it's safe
+
+ -- Alexander Schmehl <tolimar@debian.org>  Fri, 15 Feb 2008 16:50:29 +0100
+
+glest (2.0.0-2) unstable; urgency=low
+
+  [ Eddy Petrișor ]
+  * added a disabled dpatch for the endianness issue; it was downloaded from
+    http://kozz.org/files/games/glest/glest-cvs20070102-endian.patch.gz;
+    explanations about the patch are at:
+    http://www.powerdeveloper.org/forums/viewtopic.php?p=6675
+  * changed section to contrib/games since the glest-data package is non-free
+
+  [ Cyril Brulebois ]
+  * Added XS-Vcs-Svn and XS-Vcs-Browser fields in the control file.
+
+  [ Eddy Petrișor ]
+  * added reference links (in debian/TODO) to other distro's packages
+    which seem to have more patches applied
+
+ -- Eddy Petrișor <eddy.petrisor@gmail.com>  Thu, 23 Aug 2007 12:15:02 +0300
+
+glest (2.0.0-1) unstable; urgency=low
+
+  [ Eddy Petrișor ]
+  * Initial official Debian release (Closes: #350391)
+  * changed dependency on libxerces27-dev instead of libxerces26-dev
+  * added myself to uploaders
+  * Debian Games Team is maintainer
+  * Added a Homepage field
+  * added a clean rule to the upstream Jamfile (not as a patch since it
+    brings in unnecessary complications and the rule should be always there)
+  * modified the way the editor building is disabled
+  * do not ignore errors during build and clean; stop on failure
+  * do not run autotools during build and do not depend on automake1.9
+  * nasty tricks with symlinks so that there are no unrepresentable changes in
+    the source
+  * change arch to specify only little endian arches (!hurd) since glest is
+    not big endian friendly :-(
+  * added an unfinished and disabled patch for big endian support in the hope
+    it will be finalized by somebody else
+  * don't use utopia fonts since are not available in Debian
+  * make sure that the configure script is always executable
+
+  [ Gonéri Le Bouder ]
+  * call dh_desktop to run update-desktop-database
+
+ -- Eddy Petrișor <eddy.petrisor@gmail.com>  Mon, 18 Jun 2007 20:34:02 +0100
+
+glest (2.0.0-0ubuntu1) edgy; urgency=low
+
+  * Initial release
+
+ -- Giuseppe Borzi <gborzi@ieee.org>  Mon,  7 Aug 2006 20:02:47 +0200
