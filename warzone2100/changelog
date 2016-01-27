@@ -1,3 +1,32 @@
+warzone2100 (3.1.3-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+     * General:
+       * Change: Ping only displayed for multiplayer games
+       * Change: Rank display removed for now
+       * Change: Better placement of IP dialog
+       * Change: Remove hack to support some old systems that breaks with
+       GLEW 1.12
+       * Change/fix: Change --savegame command line option into two new
+       options that actually work
+       * Change: Config dir is now named after the release's version number
+       inside the main 3.1 directory.
+       * Fix: Crash in campaign
+       * Fix: Update included miniUPNP to version 1.219
+       * Fix: 'kill' command for SP games
+       * Fix: 'Assigned to Commander' voice over issue
+       * Fix: Fix assert failure when Nexus AI tries to build a sensor tower
+       * Fix: Check if received templates are valid when received
+       * Fix: Many potential issues found with static analysis tools closed
+
+     * Translations:
+       * Update: Chinese
+       * Update: German
+       * Update: French
+       * Update: Hungarian
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 25 Jan 2016 20:54:03 +0100
+
 warzone2100 (3.1.2-1~getdeb1) trusty; urgency=medium
 
   * New upstream version (LP: #1406637)
