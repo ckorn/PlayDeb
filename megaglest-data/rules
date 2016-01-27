@@ -1,0 +1,19 @@
+#! /usr/bin/make -f
+%:
+	dh $@ --parallel
+
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/megaglest-data
+	rm debian/megaglest-data/usr/share/megaglest/docs/README.data-license.txt
+	# also in binary package
+	rm debian/megaglest-data/usr/share/menu/megaglest
+	find debian/megaglest-data/usr -type d -empty -delete
+	mkdir debian/megaglest-data/usr/share/games
+	mv debian/megaglest-data/usr/share/megaglest debian/megaglest-data/usr/share/games
+	# Replace duplicate files with symlinks
+	rdfind -outputname /dev/null -makesymlinks true debian/megaglest-data/
+	# Fix those symlinks to make them relative
+	symlinks -r -s -c debian/megaglest-data/
+
+get-orig-source:
+	uscan --verbose --download-current-version --force-download
