@@ -1,0 +1,4 @@
+# That is not an issue. Only the path length exceeds 80 characters.
+# Splitting the path into two lines would make the example even more
+# unreadable.
+manpage-has-errors-from-man

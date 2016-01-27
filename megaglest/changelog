@@ -1,98 +1,135 @@
-megaglest (3.11.1-1~getdeb1) trusty; urgency=medium
+megaglest (3.12.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
-    - no more false clicks when commanding via mini map
-    - map editor has a more useful and powerful map height randomizer
-    - map editor saves all maps with .mgm ending by default.
-    - fixed map editor ( several linux distributions had trouble )
-    - for missing tilesets and techs optional download from mod center
-    instead of server. (bugfix)
-    - healthbar default set to "if needed"
-    - nicer tilesets as defaults
-    - improved camera startposition on game start ( main building in center
-    ).
-    - attackBoosts: Ep + Hp regeneration is shown in description
-    - MegaGlest can be build easier on MacOS ( sadly noone was willing to
-    test )
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 10 Mar 2015 18:55:10 +0100
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 26 Jan 2016 18:59:21 +0100
 
-megaglest (3.11.0-1~getdeb1) trusty; urgency=medium
+megaglest (3.11.1-3) unstable; urgency=medium
 
-  * New upstream version
-    - healthbars with a lot of options
-    - multi shot / multi-projectiles with different timings,sounds and
-    particle systems
-    - several camera shake effects
-    - new tileset "pine rock"
-    - some new maps
-    - improve switching settings when connected to a headless server
-    - support for team unit sharing
-    - team resource sharing
-    - tags feature  
-    - Attack boosts fixed in many ways
-    - Attack boosts and upgrades now support upgrading attack speed
-    - timed particles and mesh bound particles really work now.
-    - unit height independend particle positioning
-     ( flat-particle-positions ) 
-    - CPU players multiplier are displayed in debug view
-    - You can have non commandable units
-    - Units spawned by an attack skill can get an attack command  
-    - Unit and Splash particles can be speeded up ( accelerated )
-    - Looting https://github.com/MegaGlest/megaglest-source/pull/17
-    - HP and EP starting values
-    - <target-height> <burn-height> can be given
-    https://docs.megaglest.org/XML/Unit#target-height
-    - +several bugfixes
+  * Add Breaks and Replaces against versions before 3.11.0+dfsg-1 because the
+    glest.ini file is provided by src:megaglest now. This fixes a dpkg failure
+    when upgrading from Jessie to Stretch. Thanks to Andreas Beckmann for the
+    report. (Closes: #804942)
+  * Vcs-Browser: Switch to https.
+  * Update my e-mail address.
+  * Add reproducible-build.patch and make the build reproducible.
+  * Override Lintian error "source-is-missing" because it is a false-positive.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 24 Jan 2015 22:14:16 +0100
+ -- Markus Koschany <apo@debian.org>  Fri, 13 Nov 2015 20:45:26 +0100
 
-megaglest (3.9.1-1~getdeb3) trusty; urgency=medium
+megaglest (3.11.1-2) unstable; urgency=medium
 
-  * Fix looking up the install directory
+  * Fix lintian warning dep5-copyright-license-name-not-unique.
+  * Add fix-cmake-3.2-X11-FTBFS.patch and ensure that Megaglest can be built
+    from source again with CMake >= 3.2. Cherry-picked from Megaglest's issue
+    tracker.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 22 Apr 2014 22:37:45 +0200
+ -- Markus Koschany <apo@gambaru.de>  Thu, 18 Jun 2015 02:40:05 +0200
 
-megaglest (3.9.1-1~getdeb2~trusty) trusty; urgency=low
+megaglest (3.11.1-1) unstable; urgency=medium
 
-  * Rebuild for trusty
+  * Imported Upstream version 3.11.1.
+  * Do not repack the tarball anymore. It is DFSG compatible now.
+  * Fix debian/copyright license name not unique issue.
+  * Tighten dependency on megaglest-data to >= 3.11.1.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Apr 2014 22:31:32 +0200
+ -- Markus Koschany <apo@gambaru.de>  Tue, 17 Mar 2015 17:55:49 +0100
 
-megaglest (3.9.1-1~getdeb1) saucy; urgency=low
+megaglest (3.11.0+dfsg-2) unstable; urgency=medium
 
-  * New upstream version (LP: #1274532)
-    - we hopefully now really solved the last out of sync problems for cross
-    platform games.
-    - animated tileset object support.
-    - new tileset texturing possibilities
-    - new tilesets birchforest, desert4 and updated mediterran using animated
-    objects and new texture system
-    - greatly improved textures and animations for the roman faction
-    - new maps
-    - better network game performance / management to handle slower clients.
-    - easier ability to download game content from host and masterserver( if
-    available there ).
-    - new arranged options menu with several sub menus
-    - menu gui improvements
-    - attack hotkey toggles through all attack types
-    - single player games can be sped up incrementally in steps. 
-    - color picking is greatly improved and the default selection mode now
-    for better compatibility
-    - greater ability to translate game content into your native language.
-    (including techtrees)
-    - Added Hebrew, Arabic, Vietnamese (and others).
-    - screenshots for savegames without annoying menu in screenshot.
-    - addition of google-breakpad to better track down bugs.
-    - many new lua functions for scenario modders.
-    - cell coordinates are shown in the mapeditor
-    - tilesets can set default air unit heights
-    - added ability for stand alone mod's to customize more of the engine
-    like about screen.
-    - performance improvements.
-    - and as always many bugs were fixed
+  * Upload to unstable.
+  * debian/rules: Insert CountryTexturePath in glest.ini and use a dh_install
+    override for it.
+  * Switch to new fonts packages fonts-dejavu-core and fonts-wqy-zenhei.
+  * Remove libxerces-c-dev from Build-Depends.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 01 Feb 2014 02:16:51 +0100
+ -- Markus Koschany <apo@gambaru.de>  Fri, 06 Feb 2015 20:09:26 +0100
+
+megaglest (3.11.0+dfsg-1) experimental; urgency=medium
+
+  * Imported Upstream version 3.11.0+dfsg.
+  * Remove prebuilt windows dll file with Files-Excluded mechanism.
+  * Add get-orig-source target and repack the source tarball.
+  * Move the package to Git.
+  * debian/control:
+    - Use Architecture: any. Try to build on all available architectures again.
+    - Adjust the dependency on megaglest-data to >= 3.11.0.
+  * Drop fix-cmake-build-type-none.patch. Merged upstream.
+  * Drop wxWidgets-assertions.patch. Merged upstream.
+  * Update clean file and clean only required files, not the complete mk/linux
+    directory. This prevents a FTBFS.
+  * Update debian/copyright for new release.
+  * Drop source/lintian-overrides. It is obsolete now.
+  * Drop megaglest.dirs. The install files achieve the same.
+
+ -- Markus Koschany <apo@gambaru.de>  Sat, 31 Jan 2015 17:51:32 +0100
+
+megaglest (3.9.1-3) unstable; urgency=medium
+
+  * debian/control: Soften the dependency on megaglest-data to
+    (>= ${source:Version}).
+
+ -- Markus Koschany <apo@gambaru.de>  Sun, 07 Dec 2014 08:50:44 +0100
+
+megaglest (3.9.1-2) unstable; urgency=medium
+
+  * Add wxWidgets-assertions.patch.
+    Fix megaglest_editor and megaglest_g3dviewer assertions with newer versions
+    of wxWidgets that made the tools unusable. (Closes: #768572)
+    Cherry-picked from upstream master branch. Commits c21317a5f, ad0b65272,
+    6faa3dc72. Thanks to Mark Vejvoda for the patch.
+  * debian/rules: Export DEB_CPPFLAGS_MAINT_APPEND = -DNDEBUG and disable
+    wxWidgets assertions.
+
+ -- Markus Koschany <apo@gambaru.de>  Mon, 01 Dec 2014 19:19:07 +0100
+
+megaglest (3.9.1-1) unstable; urgency=low
+
+  [ Mark Vejvoda ]
+  * New upstream release. (Closes: #752338)
+    - Fixed error handling conditions (Closes: #716693)
+    - Includes experimental big-endian support
+  * Fix dependency defects (Closes: #662429, #723790)
+
+  [ Paul Wise ]
+  * Bump Standards-Version, no changes needed.
+
+  [ Markus Koschany ]
+  * Add myself to Uploaders.
+  * Remove Giuseppe and rainct from Uploaders at their own request.
+  * Update debian/copyright for new release.
+  * debian/control: Add arm64 and ppc64el to Architecture field. Remove
+    non-existent arm architecture.
+  * Export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed to avoid useless
+    dependencies.
+  * Drop megaglest_allow-build-with-newer-miniupnpc.patch. Fixed upstream.
+  * Drop megaglest.TODO.
+  * Remove megaglest.manpages. The install file is sufficient.
+  * Add megaglest.lintian-overrides and override manpage-has-errors-from-man
+    warning. It is not an issue.
+
+ -- Markus Koschany <apo@gambaru.de>  Fri, 03 Oct 2014 20:26:05 +0200
+
+megaglest (3.7.1-4) unstable; urgency=medium
+
+  * Team upload.
+  * Allow building with newer miniupnpc (Closes: #751225)
+
+ -- Paul Wise <pabs@debian.org>  Mon, 07 Jul 2014 11:35:01 +0800
+
+megaglest (3.7.1-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Update to use wxWidgets 3.0. (Closes: #741988)
+
+ -- Olly Betts <olly@survex.com>  Thu, 29 May 2014 18:59:08 +1200
+
+megaglest (3.7.1-3) unstable; urgency=medium
+
+  * Team upload.
+  * Fix building with -DCMAKE_BUILD_TYPE=None (Closes: #739068)
+
+ -- Paul Wise <pabs@debian.org>  Wed, 26 Mar 2014 10:54:58 +0800
 
 megaglest (3.7.1-2.1) unstable; urgency=low
 

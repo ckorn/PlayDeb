@@ -1,2 +1,2 @@
 version=3
-https://github.com/MegaGlest/megaglest-source/releases/latest (?:.*/)?megaglest-source-([\d\.]+)\.tar\.(?:xz|gz|bz2)
+https://github.com/MegaGlest/megaglest-source/releases .*/megaglest-source-([\d.]+)\.(?:zip|tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz)))
