@@ -3,15 +3,25 @@ PKD = $(abspath $(dir $(MAKEFILE_LIST)))
 PKG = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SSource)
 VER = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SVersion | cut -d- -f1)
 
+# NACL is only for amd64
+BUILD_GAME_NACL=0
+ifeq ($(DEB_BUILD_ARCH),amd64)
+BUILD_GAME_NACL=1
+endif
+
 %:
 	dh $@
 
 override_dh_auto_clean:
 	dh_auto_clean
-	rm -rf daemon/external_deps/linux64-4
+	rm -rf daemon/external_deps/linux64-4 daemon/external_deps/linux32-4
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DBUILD_GAME_NACL=0
+	dh_auto_configure -- -DBUILD_GAME_NACL=$(BUILD_GAME_NACL)
+
+override_dh_install:
+	dh_install
+	rename "s/daemon/unvanquished/" debian/unvanquished*/usr/lib/games/unvanquished/daemon*
 
 ## http://wiki.debian.org/onlyjob/get-orig-source
 .PHONY: get-orig-source

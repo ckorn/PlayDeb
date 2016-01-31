@@ -27,7 +27,7 @@ Build-Depends: debhelper (>= 9),
 	nettle-dev,
 	zlib1g-dev,
         liblua5.2-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: http://www.unvanquished.net/
 
 Package: unvanquished
@@ -39,6 +39,22 @@ Depends: ${shlibs:Depends},
 Description: Team-based FPS game, aliens v. humans
  Build a base, defend it against the other team, gain credits for better
  weapons or more advanced aliens, try to wipe them out.
+
+Package: unvanquished-server
+Architecture: amd64
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         adduser,
+	 unvanquished-common (= ${binary:Version})
+Suggests: unvanquished,
+          geoip-database | geoip-database-contrib
+Conflicts: unvanquished (<< 0.3.5-2~)
+Replaces: unvanquished (<< 0.3.5-2~)
+Description: Team-based FPS game, aliens v. humans - dedicated server
+ Build a base, defend it against the other team, gain credits for better
+ weapons or more advanced aliens, try to wipe them out.
+ .
+ This package contains the dedicated server for Unvanquished.
 
 Package: unvanquished-common
 Architecture: any

@@ -52,4 +52,4 @@ case "$PRECMD$@" in
     ;;
 esac
 
-exec $RUNGDB ./daemon -pakpath /var/games/unvanquished/pkg/ $PREFIX$PRECMD"$@"
+exec $RUNGDB ./unvanquished -pakpath /var/games/unvanquished/pkg/ $PREFIX$PRECMD"$@"
