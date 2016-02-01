@@ -1,3 +1,9 @@
+freebasic (1.05.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 31 Jan 2016 20:43:19 +0100
+
 freebasic (1.04.0-1~getdeb3) trusty; urgency=medium
 
   * New upstream version
