@@ -1,0 +1,41 @@
+This work was packaged for Debian by:
+
+    Pali Rohár <pali.rohar@gmail.com> on Sat, 25 Feb 2012 13:38:30 +0100
+
+It was downloaded from:
+
+    https://launchpad.net/stargus
+
+Upstream Authors:
+
+    Jimmy Salmon <jsalmon3@users.sourceforge.net>
+    Russel Smith <mr-russ@users.sourceforge.net>
+    Nehal Mistry <nehalmistry@users.sourceforge.net>
+    Pali Rohár <pali.rohar@gmail.com>
+
+Copyright:
+
+    (C) 1998-2012 by The Stratagus Project and Pali Rohár
+
+License:
+
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this package; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+The Debian packaging is:
+
+    Copyright (C) 2010-2012 Pali Rohár <pali.rohar@gmail.com>
+
+and is licensed under the GPL version 2,
+see "/usr/share/common-licenses/GPL-2".
