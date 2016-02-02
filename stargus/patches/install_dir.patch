@@ -1,0 +1,14 @@
+# install everything in /usr/games
+Index: stargus-2.3.9/CMakeLists.txt
+===================================================================
+--- stargus-2.3.9.orig/CMakeLists.txt	2016-01-06 22:14:20.000000000 +0100
++++ stargus-2.3.9/CMakeLists.txt	2016-02-02 20:19:44.094189210 +0100
+@@ -204,7 +204,7 @@
+ ########### install files ###############
+ 
+ install(TARGETS stargus DESTINATION games)
+-install(TARGETS scmconvert startool DESTINATION bin)
++install(TARGETS scmconvert startool DESTINATION games)
+ install(FILES stargus.png DESTINATION share/pixmaps)
+ install(FILES stargus.desktop DESTINATION share/applications)
+ 

@@ -1,0 +1,54 @@
+stargus (2.3.9-1~getdeb1) trusty; urgency=medium
+
+  * Upload to PlayDeb
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 02 Feb 2016 20:06:00 +0100
+
+stargus (2.3.9-1) unstable; urgency=low
+
+  * Spawn larva in Zerg hatchery
+  * Initial work on Zerg creep
+  * Run with latest Stratagus
+  * Support Battle.net Installer for extraction
+
+ -- Tim Felgentreff <tim.felgentreff@gmail.com>  Wed, 2 Dec 2015 9:33:12 +0100
+
+stargus (2.2.7-1) unstable; urgency=low
+
+  * Fixed bug #950442 - Fix script when map is loaded
+  * Fixed bug #931215 - Do not extract file which missing on french CD
+
+ -- Pali Rohár <pali.rohar@gmail.com>  Tue, 21 Aug 2012 16:33:12 +0200
+
+stargus (2.2.6-1) unstable; urgency=low
+
+  * Fixed bug #768325 - NSIS: run startool with correct datadir path
+  * Fixed bug #909435 - Rewritten build system to CMake
+  * Fixed bug #910269 - Fixed compilation on OpenBSD 5.0
+  * Fixed bug #914555 - Fixed MPQ code
+  * Rewritten code for supporting 64bit architectures too
+  * Use Huffmann decoding from StormLib library
+  * Rewritten debian files to debhelper 7
+
+ -- Pali Rohár <pali.rohar@gmail.com>  Sat, 25 Feb 2012 13:35:25 +0100
+
+stargus (2.2.5.5-1) unstable; urgency=low
+
+  * Fixed for new Stratagus
+  * Compile startool always 32bit
+  * Added icon
+  * Rewrited debian scripts
+  * Rewrited Makefile
+  * Added launcher starcraft.c
+  * Rewrited Windows NSIS Installer
+  * Fixed Windows resource file
+  * Added more resolutions and OpenGL settings in option menu
+  * Ported to Maemo
+
+ -- Pali Rohár <pali.rohar@gmail.com>  Mon, 22 Nov 2010 23:16:16 +0100
+
+stargus (2.1pre2) unstable; urgency=low
+
+  * Upstream release
+
+ -- M. Gerhardy <tlh2000@users.sf.net>  Sat, 23 May 2009 10:51:08 +0200
