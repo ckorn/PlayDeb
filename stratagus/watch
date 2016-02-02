@@ -1,0 +1,3 @@
+version=3
+https://github.com/Wargus/stratagus/releases \
+    (?:.*/)?Stratagus-([\d\.]+)\.exe

@@ -1,0 +1,18 @@
+# install everything in /usr/games
+Index: stratagus-2.4.0/CMakeLists.txt
+===================================================================
+--- stratagus-2.4.0.orig/CMakeLists.txt	2016-01-15 16:13:49.000000000 +0100
++++ stratagus-2.4.0/CMakeLists.txt	2016-02-02 21:32:43.332408910 +0100
+@@ -1224,10 +1224,10 @@
+ ########### install files ###############
+ 
+ install(TARGETS stratagus DESTINATION ${GAMEDIR})
+-install(TARGETS png2stratagus DESTINATION ${BINDIR})
++install(TARGETS png2stratagus DESTINATION ${GAMEDIR})
+ 
+ if(SQLITE_FOUND)
+-	install(TARGETS metaserver DESTINATION ${SBINDIR})
++	install(TARGETS metaserver DESTINATION ${GAMEDIR})
+ endif()
+ 
+ if(ENABLE_DOC AND DOXYGEN_FOUND)
