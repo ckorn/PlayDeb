@@ -1,3 +1,9 @@
+stargus (2.4.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 03 Feb 2016 19:56:38 +0100
+
 stargus (2.3.9-1~getdeb1) trusty; urgency=medium
 
   * Upload to PlayDeb

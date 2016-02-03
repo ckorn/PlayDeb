@@ -22,6 +22,7 @@ Architecture: any
 Depends: ${stratagus:Depends},
          ${misc:Depends},
          ${shlibs:Depends},
+         zenity,
          stratagus
 Provides: stratagus-data
 Description: Starcraft data game set for the Stratagus engine
