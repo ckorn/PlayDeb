@@ -36,6 +36,8 @@ VER = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SVersion | cut -d- -f1)
 	dh $@
 
 override_dh_install:
+	# move executable to lib dir and replace by script with install instructios
+	mv debian/stargus/usr/games/stargus debian/stargus/usr/lib/games/stargus/
 	dh_install
 	convert stargus.png -resize 32x32 debian/stargus/usr/share/pixmaps/stargus.xpm
 
@@ -59,7 +61,7 @@ $(PKG)_$(VER).orig.tar.xz: $(info I: $(PKG)_$(VER))
 	&& echo "# Setting times..." \
 	&& git ls-tree -r --name-only HEAD | while read F ; do touch --no-dereference -d "$$(git log -1 --format="%ai" -- "$$F")" "$$F"; done \
 	&& echo "# Cleaning-up..." \
-	&& $(RM) -r .git .git* && ( find . -name ".git*" -type d -exec rm -rf {} \; || /bin/true ) \
+	&& $(RM) -r .git .git* debian && ( find . -name ".git*" -type d -exec rm -rf {} \; || /bin/true ) \
 	&& find . -name ".git" -type f -delete
 	@echo "# Packing..."
 	find -L "$(PKG)-$(VER)" -xdev -type f -print | LC_ALL=C sort \

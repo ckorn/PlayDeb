@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ ! -f /usr/share/games/stratagus/stargus/graphics/ui/title.png ] ; then
+	zenity --error --title="Missing data files" \
+		--text="1. You should have these files (file names are case sensitive!): starcraft.mpq stardat.mpq\n2. Put them in a directory (let's say /tmp/)\n3. Run 'sudo /usr/games/startool /tmp /usr/share/games/stratagus/stargus/'\n4. Close this message. The game should start!" \
+		--window-icon=/usr/share/pixmaps/stargus.png
+fi
+
+cd /usr/lib/games/stargus
+./stargus "$@"
+
+
+
