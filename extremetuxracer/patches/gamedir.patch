@@ -1,16 +1,16 @@
 # use the datadir from configure directly.
-Index: extremetuxracer-0.7.0/src/game_config.cpp
+Index: extremetuxracer-0.7.1/src/game_config.cpp
 ===================================================================
---- extremetuxracer-0.7.0.orig/src/game_config.cpp	2014-07-13 21:05:24.000000000 +0200
-+++ extremetuxracer-0.7.0/src/game_config.cpp	2016-01-23 15:23:08.151981513 +0100
-@@ -295,8 +295,8 @@
- 	if (!DirExists(param.config_dir.c_str()))
+--- extremetuxracer-0.7.1.orig/src/game_config.cpp	2016-02-05 20:53:04.883247540 +0100
++++ extremetuxracer-0.7.1/src/game_config.cpp	2016-02-05 20:54:11.268613028 +0100
+@@ -299,8 +299,8 @@
  		mkdir(param.config_dir.c_str(), 0775);
+         }
  	param.data_dir = ETR_DATA_DIR;
 -	param.data_dir += SEP;
 -	param.data_dir += "etr";
 +	/*param.data_dir += SEP;
 +	param.data_dir += "etr";*/
- 	// param.data_dir = param.prog_dir + SEP "data";
+         param.save_dir = param.config_dir;
  	param.configfile = param.config_dir + SEP "options";
  #endif /* WIN32 */

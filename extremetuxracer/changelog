@@ -1,3 +1,15 @@
+extremetuxracer (0.7.1-1~getdeb1) wily; urgency=medium
+
+  * New upstream version
+    - Fixed use of user provided CPPFLAGS
+    - "I Like Spike" course installed to correct location
+    - Added preview images for all courses that were missing one
+    - Added keywords to the desktop file
+    - Do not try to save screenshots to read-only location but to user
+      home directory
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 05 Feb 2016 20:52:30 +0100
+
 extremetuxracer (0.7.0-1~getdeb1) wily; urgency=medium
 
   * New upstream version
