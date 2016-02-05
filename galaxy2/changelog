@@ -1,3 +1,10 @@
+galaxy2 (1.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    + Stop meaningless error messages from latest GTK changes.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 05 Feb 2016 22:38:17 +0100
+
 galaxy2 (1.0-1~getdeb1) trusty; urgency=medium
 
   * New release
