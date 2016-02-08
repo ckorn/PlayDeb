@@ -1,3 +1,9 @@
+unvanquished (0.48.0-1~getdeb1) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 08 Feb 2016 18:58:09 +0100
+
 unvanquished (0.47.0-1~getdeb3~wily) wily; urgency=medium
 
   * Also build the server (LP: #1539290)
