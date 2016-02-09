@@ -2,6 +2,8 @@
 
 #export DH_VERBOSE=1
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_CFLAGS_MAINT_APPEND = -O2 -gstabs -g -g3
+export DEB_CXXFLAGS_MAINT_APPEND = -O2 -gstabs -g -g3
 
 %:
 	dh $@ --parallel --with autoreconf
