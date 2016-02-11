@@ -22,6 +22,8 @@ Homepage: http://evernus.com/
 
 Package: evernus
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+         libqt5sql5-sqlite,
+         ${misc:Depends}
 Description: Ultimate EVE Online trade tool
  EVE Online next generation trade and market helper.
