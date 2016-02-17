@@ -1,3 +1,9 @@
+evernus (1.39-1~getdeb1) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 15 Feb 2016 20:41:38 +0100
+
 evernus (1.38-1~getdeb1) wily; urgency=medium
 
   * New upstream version
