@@ -1,3 +1,10 @@
+freeminer (0.4.13.7-1~getdeb3) trusty; urgency=medium
+
+  * debian/control: Add libsnappy-dev to enable
+    support for leveldb.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 17 Feb 2016 21:27:40 +0100
+
 freeminer (0.4.13.7-1~getdeb2) trusty; urgency=medium
 
   * debian/rules: rename minetest-mapper to freeminer-mapper
