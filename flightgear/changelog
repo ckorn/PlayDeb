@@ -1,8 +1,38 @@
-flightgear (3.4.0-0~1~getdeb1) trusty; urgency=medium
+flightgear (2016.1.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 25 Feb 2015 19:47:37 +0100
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Feb 2016 21:22:56 +0100
+
+flightgear (3.4.0-2) unstable; urgency=medium
+
+  * Recompile with gcc5, link against renamed simgear.
+
+ -- Markus Wanner <markus@bluegap.ch>  Tue, 10 Nov 2015 19:38:40 +0100
+
+flightgear (3.4.0-1) unstable; urgency=medium
+
+  * Upload to unstable. Closes: #786602.
+  * Change public-domain short names to avoid a lintian warning.
+  * Refresh patch 6a30e7.patch.
+  * Add patch add-x11-lib.patch to fix the build on sid.
+
+ -- Markus Wanner <markus@bluegap.ch>  Sun, 24 May 2015 09:29:10 +0200
+
+flightgear (3.4.0-0~exp2) experimental; urgency=high
+
+  [ Markus Wanner ]
+  * Drop the deprecated JPEG_FACTORY option for cmake.
+  * Rebase on 3.0.0-5, effectively adding patch 6a30e70.patch.
+  * Tighten B-D on sqlite3 and htsengine. Versions before the given
+    ones are known to not work.
+  * Add 51bfdc.patch from upstream.
+
+  [ Rebecca N. Palmer ]
+  * Add crashfix.patch from upstream.
+  * Add spelling.patch.
+
+ -- Markus Wanner <markus@bluegap.ch>  Mon, 13 Apr 2015 11:43:06 +0200
 
 flightgear (3.4.0-0~exp1) experimental; urgency=medium
 
@@ -30,11 +60,18 @@ flightgear (3.2.0-1~exp2) UNRELEASED; urgency=medium
 
  -- Markus Wanner <markus@bluegap.ch>  Thu, 30 Oct 2014 10:01:10 +0100
 
+flightgear (3.0.0-5) unstable; urgency=high
+
+  * Add patch 6a30e70.patch to better restrict file access from
+    nasal scripts. Closes: #780712.
+
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 18 Mar 2015 08:45:21 +0100
+
 flightgear (3.0.0-4) unstable; urgency=medium
 
   * Add patch 750939.patch. Closes: #750939.
 
- -- Markus Wanner <markus@bluegap.ch>  Mon, 27 Oct 2014 11:32:03 +0100
+ -- Markus Wanner <markus@bluegap.ch>  Fri, 07 Nov 2014 17:27:44 +0100
 
 flightgear (3.0.0-3) unstable; urgency=medium
 

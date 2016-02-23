@@ -1,0 +1,44 @@
+Description: Fix the build on sid by including X11 libraries.
+ Without -lX11, the build fails with the following symbols missing:
+ XResetScreenSaver (in utils/fgviewer) and XConvertSelection (in src/Main)
+
+Author: Markus Wanner <markus@bluegap.ch>
+Forwarded: no
+Last-Change: 2015-05-24
+
+Index: flightgear-2016.1.1/CMakeLists.txt
+===================================================================
+--- flightgear-2016.1.1.orig/CMakeLists.txt	2016-02-21 21:30:16.736268900 +0100
++++ flightgear-2016.1.1/CMakeLists.txt	2016-02-21 21:31:28.764530483 +0100
+@@ -240,6 +240,7 @@
+ # check required dependencies
+ find_package(Boost   REQUIRED)
+ find_package(ZLIB    REQUIRED)
++find_package(X11     REQUIRED)
+ find_package(OpenGL  REQUIRED)
+ find_package(OpenAL  REQUIRED)
+ find_package(OpenSceneGraph 3.2.0 REQUIRED
+Index: flightgear-2016.1.1/utils/fgviewer/CMakeLists.txt
+===================================================================
+--- flightgear-2016.1.1.orig/utils/fgviewer/CMakeLists.txt	2016-02-21 21:30:16.736268900 +0100
++++ flightgear-2016.1.1/utils/fgviewer/CMakeLists.txt	2016-02-21 21:30:16.732268891 +0100
+@@ -49,6 +49,7 @@
+ target_link_libraries(fgviewer
+ 	${SIMGEAR_LIBRARIES}
+ 	${OPENSCENEGRAPH_LIBRARIES}
++	${X11_LIBRARIES}
+ 	${OPENGL_LIBRARIES}
+ 	${FGVIEWER_RTI_LIBRARIES}
+         ${SIMGEAR_CORE_LIBRARY_DEPENDENCIES}
+Index: flightgear-2016.1.1/src/Main/CMakeLists.txt
+===================================================================
+--- flightgear-2016.1.1.orig/src/Main/CMakeLists.txt	2016-02-21 21:30:16.736268900 +0100
++++ flightgear-2016.1.1/src/Main/CMakeLists.txt	2016-02-21 21:30:16.732268891 +0100
+@@ -138,6 +138,7 @@
+ 	${SIMGEAR_LIBRARIES}
+ 	${OPENSCENEGRAPH_LIBRARIES}
+ 	${OPENGL_LIBRARIES}
++	${X11_LIBRARIES}
+ 	${PLIB_LIBRARIES}
+         ${ZLIB_LIBRARY}
+ 	${HLA_LIBRARIES}

@@ -195,7 +195,7 @@ Files: docs-mini/README.conditions
  src/Systems/vacuum.hxx
  tests/alcinfo.cxx
 Copyright: *No copyright*
-License: public-domain
+License: public-domain-one
  These files are in the Public Domain, and come with no warranty.
 
 Files: 3rdparty/iaxclient/*
@@ -237,9 +237,15 @@ Files: 3rdparty/cjson/*
 Copyright: 2009 Dave Gamble
 License: MIT
 
-Files: 3rdparty/sqlite/*
+Files: 3rdparty/sqlite3/*
 Copyright: *No copyright*
-License: Public-domain
+License: public-domain-two
+ The author disclaims copyright to this source code.  In place of
+ a legal notice, here is a blessing:
+ .
+    May you do good and not evil.
+    May you find forgiveness for yourself and forgive others.
+    May you share freely, never taking more than you give.
 
 Files: debian/*
 Copyright: 1997-1999 Joey Hess

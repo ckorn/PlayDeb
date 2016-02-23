@@ -3,8 +3,8 @@ Section: games
 Priority: extra
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Ove Kaaven <ovek@arcticnet.no>,
- Markus Wanner <markus@bluegap.ch>
-Build-Depends: debhelper (>= 9.20120417),
+           Markus Wanner <markus@bluegap.ch>
+Build-Depends: debhelper (>= 9),
                libx11-dev,
                libxext-dev,
                libxi-dev,
@@ -25,9 +25,9 @@ Build-Depends: debhelper (>= 9.20120417),
                libjpeg-dev,
                libpng12-dev | libpng3-dev | libpng-dev,
                libopenscenegraph-dev (>= 3.2.0~),
-               libsimgear-dev (>= 3.4.0~),
-               libsimgear-dev (<= 3.4.99),
-               libsqlite3-dev,
+               libsimgear-dev (>> 2016.1.1),
+               libsimgear-dev (<= 2016.1.2),
+               libsqlite3-dev (>= 3.7.14~),
                libudev-dev [linux-any],
                libusbhid-dev [kfreebsd-any],
                libdbus-1-dev,
@@ -35,13 +35,13 @@ Build-Depends: debhelper (>= 9.20120417),
                libspeex-dev,
                libspeexdsp-dev,
                flite1-dev,
-               libhtsengine-dev
+               libhtsengine-dev (>= 1.07~)
 Standards-Version: 3.9.5
 Homepage: http://www.flightgear.org/
 
 Package: flightgear
 Architecture: any
-Depends: flightgear-data-all (>= 3.4.0~),
+Depends: flightgear-data-all (>= 2016.1.1),
          ${shlibs:Depends},
          ${misc:Depends}
 Description: Flight Gear Flight Simulator

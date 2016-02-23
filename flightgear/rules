@@ -23,7 +23,6 @@ CMAKE_FLAGS = \
 	-DFG_DATA_DIR:PATH=/usr/share/games/flightgear \
 	-DFGCOM_DATA_PATH=/usr/share/games/flightgear \
 	-DSIMGEAR_SHARED:BOOL=ON \
-	-DJPEG_FACTORY=ON \
 	-DENABLE_FGADMIN=OFF \
 	-DENABLE_LARCSIM=ON \
 	-DENABLE_UIUC_MODEL=ON \
