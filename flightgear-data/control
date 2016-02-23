@@ -1,0 +1,83 @@
+Source: flightgear-data
+Section: games
+Priority: extra
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Ove Kaaven <ovek@arcticnet.no>,
+           Markus Wanner <markus@bluegap.ch>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: http://www.flightgear.org/
+
+Package: flightgear-data-base
+Architecture: all
+Depends: tzdata,
+         fonts-liberation,
+         libjs-jquery,
+         libjs-jquery-flot,
+         libjs-leaflet,
+         ${misc:Depends}
+Replaces: fgfs-base (<< 2.10.0),
+          fgfs-scenery-base (<< 2.10.0),
+          fgfs-aircraft-base (<< 2.10.0~)
+Breaks: flightgear (<< 2016.1.1~),
+        fgfs-base (<< 2.10.0~),
+        fgfs-scenery-base (<< 2.10.0~),
+        fgfs-aircraft-base (<< 2.10.0~)
+Description: FlightGear Flight Simulator -- base files
+ FlightGear is a free and highly sophisticated flight simulator.
+ .
+ This package contains the default aircraft, graphics, sounds, models,
+ and the minimum scenery (San Francisco) you need to start Flight
+ Gear.
+ .
+ This package does not contain the flight simulator itself.
+ If you want to fly, install the flightgear package.
+
+Package: flightgear-data-ai
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: flightgear (<< 2016.1.1~),
+        fgfs-base (<< 2.10.0~)
+Description: FlightGear Flight Simulator -- standard AI data
+ FlightGear is a free and highly sophisticated flight simulator.
+ .
+ This package contains AI data, including AI aircrafts, flight plans,
+ traffic data and scenarios.
+
+Package: flightgear-data-aircrafts
+Architecture: all
+Depends: ${misc:Depends}
+Replaces: fgfs-base (<< 2.0.0),
+          fgfs-aircraft-base (<< 2.10.0~)
+Breaks: flightgear (<< 2016.1.1~),
+        fgfs-aircraft-base (<< 2.10.0~)
+Description: FlightGear Flight Simulator -- standard aircraft
+ FlightGear is a free and highly sophisticated flight simulator.
+ .
+ This package contains more aircrafts that come with the standard
+ FlightGear distribution.
+
+Package: flightgear-data-models
+Architecture: all
+Depends: ${misc:Depends}
+Replaces: fgfs-base (<< 2.0.0),
+          fgfs-models-base (<< 2.10.0)
+Breaks: flightgear (<< 2016.1.1~),
+        fgfs-models-base (<< 2.10.0~)
+Description: FlightGear Flight Simulator -- standard models
+ FlightGear is a free and highly sophisticated flight simulator.
+ .
+ This package contains the object models that come with the standard
+ FlightGear distribution.
+
+Package: flightgear-data-all
+Architecture: all
+Depends: flightgear-data-base (>= 2016.1.1~),
+         flightgear-data-ai (>= 2016.1.1~),
+         flightgear-data-aircrafts (>= 2016.1.1~),
+         flightgear-data-models (>= 2016.1.1~),
+         ${misc:Depends}
+Description: FlightGear Flight Simulator - virtual package
+ FlightGear is a free and highly sophisticated flight simulator.
+ .
+ This virtual package contains all data packages for FlightGear.
