@@ -1,0 +1,64 @@
+Source: flightgear
+Section: games
+Priority: extra
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Ove Kaaven <ovek@arcticnet.no>,
+           Markus Wanner <markus@bluegap.ch>
+Build-Depends: debhelper (>= 9),
+               libx11-dev,
+               libxext-dev,
+               libxi-dev,
+               libice-dev,
+               libsm-dev,
+               libxt-dev,
+               libxmu-dev,
+               zlib1g-dev,
+               libboost-dev,
+               libopenal-dev,
+               libalut-dev,
+               imagemagick,
+               libplib-dev (>= 1.8.5),
+               cmake (>= 2.6),
+               libgl1-mesa-dev | libgl-dev,
+               libglu1-mesa-dev | libglu-dev,
+               freeglut3-dev | libglut3-dev,
+               libjpeg-dev,
+               libpng12-dev | libpng3-dev | libpng-dev,
+               libopenscenegraph-dev (>= 3.2.0~),
+               libsimgear-dev (>> 2016.1.1),
+               libsimgear-dev (<= 2016.1.2),
+               libsqlite3-dev (>= 3.7.14~),
+               libudev-dev [linux-any],
+               libusbhid-dev [kfreebsd-any],
+               libdbus-1-dev,
+               libgsm1-dev,
+               libspeex-dev,
+               libspeexdsp-dev,
+               flite1-dev,
+               libhtsengine-dev (>= 1.07~)
+Standards-Version: 3.9.6
+Homepage: http://www.flightgear.org/
+
+Package: flightgear
+Architecture: any
+Depends: flightgear-data-all (>= 2016.1.1),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: Flight Gear Flight Simulator
+ FlightGear Flight Simulator (often shortened to FlightGear or FGFS)
+ is a sophisticated free, completely open-source flight simulator
+ framework, created by volunteers.
+ .
+ This package contains the runtime binaries.
+
+Package: flightgear-dbg
+Architecture: any
+Section: debug
+Depends: flightgear (= ${binary:Version}),
+         ${misc:Depends}
+Description: Flight Gear Flight Simulator - debugging symbols
+ FlightGear Flight Simulator (often shortened to FlightGear or FGFS)
+ is a sophisticated free, completely open-source flight simulator
+ framework, created by volunteers.
+ .
+ This package contains the debugging symbols.

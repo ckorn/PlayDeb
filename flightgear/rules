@@ -1,0 +1,82 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+#http://wiki.debian.org/Hardening#Notes_for_packages_using_CMake
+CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
+CFLAGS:=$(shell dpkg-buildflags --get CFLAGS) $(CPPFLAGS)
+CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS) $(CPPFLAGS)
+LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
+
+CMAKE_FLAGS = \
+	-DCMAKE_BUILD_TYPE="RelWithDebInfo" \
+	-DCMAKE_C_FLAGS="$(CFLAGS)" \
+	-DCMAKE_CXX_FLAGS="$(CXXFLAGS)" \
+	-DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-g -DNDEBUG" \
+	-DCMAKE_SHARED_LINKER_FLAGS="$(LDFLAGS)" \
+	-DCMAKE_VERBOSE_MAKEFILE=ON \
+	-DCMAKE_INSTALL_PREFIX:PATH=/usr \
+	-DCMAKE_INSTALL_BINDIR:PATH=games \
+	-DFG_DATA_DIR:PATH=/usr/share/games/flightgear \
+	-DFGCOM_DATA_PATH=/usr/share/games/flightgear \
+	-DSIMGEAR_SHARED:BOOL=ON \
+	-DENABLE_FGADMIN=OFF \
+	-DENABLE_LARCSIM=ON \
+	-DENABLE_UIUC_MODEL=ON \
+	-DSP_FDMS=ON \
+	-DSYSTEM_SQLITE=ON
+
+%:
+	dh $@ --buildsystem=cmake --builddirectory=build --parallel
+
+override_dh_auto_configure:
+	mkdir build
+	cd build && cmake .. $(CMAKE_FLAGS)
+
+override_dh_auto_build:
+	dh_auto_build
+	convert -monitor $(CURDIR)/icons/32x32/apps/flightgear.png $(CURDIR)/icons/flightgear.xpm
+	convert -monitor $(CURDIR)/icons/32x32/apps/fgcom.png $(CURDIR)/icons/fgcom.xpm
+
+override_dh_auto_install:
+	dh_auto_install
+
+#	The CMAKE_INSTALL_BINDIR is ignored
+	if [ -d debian/tmp/usr/bin ]; then \
+	  mkdir -p debian/tmp/usr/games; \
+	  mv debian/tmp/usr/bin/* debian/tmp/usr/games/; \
+	fi
+
+#	Remove empty directories
+	find $(CURDIR)/debian/flightgear -type d -empty -delete
+
+override_dh_installdocs:
+	dh_installdocs
+	cp docs-mini/* debian/flightgear/usr/share/doc/flightgear || true
+	cp utils/TerraSync/README.txt debian/flightgear/usr/share/doc/flightgear/README.TerraSync
+	rm $(CURDIR)/debian/flightgear/usr/share/doc/flightgear/README.Cygwin
+	rm $(CURDIR)/debian/flightgear/usr/share/doc/flightgear/README.IRIX
+	rm $(CURDIR)/debian/flightgear/usr/share/doc/flightgear/README.MacOS
+
+#	Drop README.Linux, it's outdated to the point of uselessness.
+	rm $(CURDIR)/debian/flightgear/usr/share/doc/flightgear/README.Linux
+
+override_dh_installchangelogs:
+	dh_installchangelogs ChangeLog
+
+override_dh_auto_clean:
+	rm -f icons/flightgear.xpm icons/fgcom.xpm
+	dh_auto_clean
+
+override_dh_strip:
+	dh_strip --dbg-package=flightgear-dbg
+
+copyright_check:
+	${MAKE} -f /usr/share/cdbs/1/rules/utils.mk debian/stamp-copyright-check
+	rm debian/stamp-copyright-check
+
+get-orig-source:
+	uscan --download-current-version --verbose --rename
