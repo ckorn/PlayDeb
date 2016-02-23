@@ -21,6 +21,7 @@ override_dh_auto_install:
 		$(CURDIR)/Effects \
 		$(CURDIR)/Environment \
 		$(CURDIR)/Fonts \
+		$(CURDIR)/Geodata \
 		$(CURDIR)/gui \
 		$(CURDIR)/HLA \
 		$(CURDIR)/Huds \
@@ -30,13 +31,13 @@ override_dh_auto_install:
 		$(CURDIR)/MP \
 		$(CURDIR)/Nasal \
 		$(CURDIR)/Navaids \
+		$(CURDIR)/Phi \
 		$(CURDIR)/Protocol \
 		$(CURDIR)/Scenery \
 		$(CURDIR)/Shaders \
 		$(CURDIR)/Sounds \
 		$(CURDIR)/Textures \
 		$(CURDIR)/Translations \
-		$(CURDIR)/webgui \
 		$(CURDIR)/*.xml \
 		$(CURDIR)/version \
 			debian/flightgear-data-base/usr/share/games/flightgear/
@@ -49,6 +50,7 @@ override_dh_auto_install:
 # Contents of flightgear-data-aircrafts
 	cp -av \
 		$(CURDIR)/Aircraft \
+		$(CURDIR)/Aircraft-uiuc \
 			debian/flightgear-data-aircrafts/usr/share/games/flightgear
 
 # Contents of flightgear-data-models

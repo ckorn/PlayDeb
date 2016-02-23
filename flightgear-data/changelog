@@ -1,14 +1,23 @@
-flightgear-data (3.4.0-1~getdeb2) trusty; urgency=medium
-
-  * Fix debian/watch file
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 10 Mar 2015 18:54:19 +0100
-
-flightgear-data (3.4.0-1~getdeb1) trusty; urgency=medium
+flightgear-data (2016.1.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 24 Feb 2015 19:52:37 +0100
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Feb 2016 22:05:47 +0100
+
+flightgear-data (3.4.0+dfsg-1) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Markus Wanner <markus@bluegap.ch>  Mon, 25 May 2015 13:04:52 +0200
+
+flightgear-data (3.4.0+dfsg-0~exp2) experimental; urgency=medium
+
+  [ Rebecca N. Palmer ]
+  * Add f14fix.diff from upstream.
+  * Remove FG_SCENERY/* and /tmp/*.xml from allowed Nasal paths.
+    Closes: #780716.
+
+ -- Markus Wanner <markus@bluegap.ch>  Mon, 13 Apr 2015 11:40:10 +0200
 
 flightgear-data (3.4.0+dfsg-0~exp1) experimental; urgency=medium
 
@@ -54,7 +63,7 @@ flightgear-data (3.0.0-2) unstable; urgency=medium
   [ Markus Wanner ]
   * Add patch translation-update-pt.diff.
 
- -- Markus Wanner <markus@bluegap.ch>  Mon, 27 Oct 2014 10:37:02 +0100
+ -- Markus Wanner <markus@bluegap.ch>  Fri, 07 Nov 2014 17:28:09 +0100
 
 flightgear-data (3.0.0-1) unstable; urgency=low
 
