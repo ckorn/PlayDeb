@@ -1,3 +1,9 @@
+pokemon-online (2.6.3-1~getdeb2~wily) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Feb 2016 20:31:42 +0100
+
 pokemon-online (2.6.2-1~getdeb2~wily) wily; urgency=medium
 
   * New upstream version
