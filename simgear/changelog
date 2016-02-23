@@ -1,0 +1,578 @@
+simgear (2016.1.1-1~getdeb2~wily) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Feb 2016 20:49:00 +0100
+
+simgear (3.4.0-2build1) wily; urgency=medium
+
+  * No-change rebuild against libopenscenegraph100v5
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Wed, 12 Aug 2015 11:51:30 +0200
+
+simgear (3.4.0-2) unstable; urgency=medium
+
+  * Really drop the conflicts against simgear0 (in control.in).
+
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 20 May 2015 21:08:44 +0200
+
+simgear (3.4.0-1) unstable; urgency=medium
+
+  [ Markus Wanner ]
+  * Upload 3.4.0 to unstable.
+  * Drop the conflicts against simgear0, it's no longer needed.
+  * Drop the deprecated JPEG_FACTORY cmake option and correctly
+    provide SIMGEAR_SHARED (w/o the CMAKE_ prefix).
+
+  [ Rebecca N. Palmer ]
+  * Add vasi.patch from upstream.
+
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 20 May 2015 20:13:05 +0200
+
+simgear (3.4.0-0~exp1) UNRELEASED; urgency=medium
+
+  [ Markus Wanner ]
+  * New upstream release 3.4.0.
+  * Update debian/watch.
+
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 18 Feb 2015 20:11:41 +0100
+
+simgear (3.4.0~git20150211+eff3df-0~exp1) experimental; urgency=medium
+
+  [ Markus Wanner ]
+  * Add back naref_endianness.patch to fix FTBFS on arm64.
+  * Update debian/copyright.
+  * Use headers from utfcpp as provided by Debian.
+
+  [ Rebecca N. Palmer ]
+  * New upstream pre-release.
+  * Update required libopenscenegraph-dev version.
+
+ -- Markus Wanner <markus@bluegap.ch>  Thu, 12 Feb 2015 18:03:01 +0100
+
+simgear (3.2.0-1~exp1) experimental; urgency=low
+
+  * New upstream release 3.2.0.
+  * Adjust to the new upstream version: dependencies, .shlibs and
+    .install files.
+  * Drop patches invalid-utf8 and sgstream_test_fix_length; both got
+    applied upstream.
+  * Add patch md5_endianness.patch. Closes: #757919.
+
+ -- Markus Wanner <markus@bluegap.ch>  Thu, 23 Oct 2014 12:17:53 +0200
+
+simgear (3.0.0-6) unstable; urgency=medium
+
+  * Add kfreebsd.patch. Closes: #765818.
+  * Bump S-V: no changes required.
+
+ -- Markus Wanner <markus@bluegap.ch>  Thu, 23 Oct 2014 11:37:25 +0200
+
+simgear (3.0.0-5) unstable; urgency=medium
+
+  * Simplify libjpeg dependency. Closes: #763493.
+  * Add patch naref_endianness.patch to fix build on arm64.
+    Closes: #761203.
+
+ -- Markus Wanner <markus@bluegap.ch>  Tue, 07 Oct 2014 09:53:01 +0200
+
+simgear (3.0.0-4) unstable; urgency=low
+
+  * Add patch invalid-utf8.patch. Closes: #750859.
+
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 11 Jun 2014 18:17:10 +0200
+
+simgear (3.0.0-3) unstable; urgency=low
+
+  * Drop the BSD-with-advertising-clause from debian/copyright - upstream
+    removed the files for the 3.0 release. Closes: #737733.
+
+ -- Markus Wanner <markus@bluegap.ch>  Mon, 07 Apr 2014 19:01:15 +0200
+
+simgear (3.0.0-2) unstable; urgency=medium
+
+  * Recompile for openscenegraph in sid.
+
+ -- Markus Wanner <markus@bluegap.ch>  Thu, 20 Feb 2014 18:05:27 +0100
+
+simgear (3.0.0-1) unstable; urgency=medium
+
+  [ Markus Wanner ]
+  * New upstream release.
+  * Drop the md5 replacement patch - applied upstream.
+  * Adjust watchfile to properly account for release candidates.
+
+  [ Rebecca Palmer ]
+  * Replace sgstream_ignore_write_error.patch with a real fix in
+    sgstream_test_fix_length.patch and respect test suite results, again.
+
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 19 Feb 2014 08:35:13 -0800
+
+simgear (3.0.0~git20140204+c99ea4-1) unstable; urgency=low
+
+  [ Markus Wanner ]
+  * New intermediate snapshot pre 3.0.0.
+  * Update debian/copyright. (Doesn't quite close #737733, though).
+  * Temporarily ignore test suite failures to unblock the openscenegraph
+    transition.
+  * Add a patch to replace the given md5 implementation.
+
+  [ Rebecca Palmer ]
+  * Don't fail stream test if unable to set up test file.
+  * Enable verbose test output.
+
+ -- Markus Wanner <markus@bluegap.ch>  Thu, 06 Feb 2014 21:19:24 +0100
+
+simgear (3.0.0~git20140123+f16c99-1) unstable; urgency=low
+
+  * New upstream release.
+  * Automate adjustment of .install and .shlibs via clean target in
+    debian/rules.
+  * Bump Standards-Version to 3.9.5; no changes needed.
+  * Drop patch cppbind-charsignedness.diff, it got applied upstream.
+  * Drop the libsvn-dev dependency, simgear now provides its own svn
+    client.
+
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 22 Jan 2014 22:48:02 +0100
+
+simgear (2.12.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * Adjust .install and .shlibs files accordingly.
+  * Drop patches gcc-macro-correction.diff, osg-compat.diff,
+    CVE-2012-2090.diff CVE-2012-2091.diff. These got applied upstream.
+
+ -- Markus Wanner <markus@bluegap.ch>  Sun, 22 Sep 2013 21:15:48 +0200
+
+simgear (2.10.0-6) unstable; urgency=low
+
+  * Keep using strict-aliasing on mipsel.
+
+ -- Markus Wanner <markus@bluegap.ch>  Fri, 20 Sep 2013 23:04:01 +0200
+
+simgear (2.10.0-5) unstable; urgency=low
+
+  * Drop a superfluous ${shlibs:Depends}.
+  * Accept libopenscenegraph-3.2.0~rc1, again, as per discussion with OSG
+    maintainers.
+  * Use no-strict-aliasing for big-endian architectures, as recommended by
+    Rebecca Palmer. Closes: #722115
+
+ -- Markus Wanner <markus@bluegap.ch>  Fri, 20 Sep 2013 20:13:10 +0200
+
+simgear (2.10.0-4) unstable; urgency=low
+
+  * Mark libopenscenegraph-3.2.0~rc1 as breaking simgear: it uses a
+    library major version different from the final 3.2.0 series.
+  * Add patch cppbind-charsignedness.diff to fix test failures on
+    at least armel.
+  * Add .shlib files so we at least have these.
+
+ -- Markus Wanner <markus@bluegap.ch>  Fri, 13 Sep 2013 17:57:03 +0200
+
+simgear (2.10.0-3) unstable; urgency=low
+
+  * Correct an off-by-one bug in patch CVE-2012-2091.diff.
+
+ -- Markus Wanner <markus@bluegap.ch>  Sun, 08 Sep 2013 10:25:53 +0200
+
+simgear (2.10.0-2) unstable; urgency=low
+
+  [ Scott Kitterman ]
+  * Fix for CVE-2012-2091: add checks against buffer overruns in
+    sg_socket_udp.cxx when reading from UDP sockets.
+
+  [ Markus Wanner ]
+  * Fix for CVE-2012-2090: prevent %n being passed to format
+    strings. Together with the above fix, this closes: #669024.
+  * Update copyright file. Now in DEP-5 style.
+
+ -- Markus Wanner <markus@bluegap.ch>  Sat, 07 Sep 2013 21:18:10 +0200
+
+simgear (2.10.0-1) experimental; urgency=low
+
+  * New upstream release. (Closes: #718380, #701357)
+  * Rename to prepend 'lib' and split into separate core and scene
+    packages, so that the SONAME matches the package name.
+  * Drop patch nasal-endian.patch, it got applied upstream.
+  * Cleanup build dependencies: remove obsolete ORed deps:
+    xlibmesa-gl-dev, xlibmesa-glu-dev, libglu1-xorg-dev.
+  * Update Standards-Version to 3.9.4, no changes.
+  * Use dpkg-buildflags for proper hardening, pass the flags via
+    CMAKE_FLAGS.
+  * Use build type RelWithDebInfo and verbose makefile generation.
+  * Add patch osg-compat.diff for compatibility with OSG 3.1.8 and newer.
+  * Compile against the system's expat library. Closes: #560937.
+  * control: let VCS point to new git repo in collab-maint
+  * Bump compat level to 8.
+  * rules: rewrite to use dh7, simplify a lot, drop the static libraries
+    from the -dev package.
+  * Add myself as an uploader.
+  * Add patch gcc-macro-correction.diff for compatibility with boost1.53.
+
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 28 Aug 2013 09:26:38 +0200
+
+simgear (2.6.0-3) unstable; urgency=low
+
+  * Build-Depend on debhelper 8.1.3.
+  * Changed debian/rules to give /usr/lib/$(DEB_HOST_MULTIARCH)
+    instead of /usr/lib/* to dh_install, to maybe ease any backports.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sun, 05 Aug 2012 18:01:16 +0200
+
+simgear (2.6.0-2) unstable; urgency=low
+
+  * Added multi-arch control fields to debian/control,
+    and build-arch/build-indep rules to debian/rules.
+  * While at it, also updated Standards-Version to 3.9.3.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat, 21 Jul 2012 12:56:08 +0200
+
+simgear (2.6.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Depend on cmake. No longer depend on autotools-dev.
+  * Updated debian/rules for the new cmake-based build
+    system used by upstream, and cleaned it up a bit.
+  * Used upstream's new SIMGEAR_SHARED build option to
+    build the shared libraries. Deleted the previous
+    debian/sorules stuff.
+  * Switched source package format to 3.0 (quilt).
+  * Removed libplib-dev from the build-dependencies
+    and simgear-dev dependencies.
+  * Added the "Thanks" file to debian/docs.
+  * Updated debian/watch, the mirror is now ibiblio.org.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon, 16 Jul 2012 00:55:25 +0200
+
+simgear (2.4.0-1.3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * simgear/math/SGMisc.hxx: Include <cmath> for floor.  Closes: #667373.
+
+ -- Matej Vela <vela@debian.org>  Sun, 20 May 2012 00:10:51 +0100
+
+simgear (2.4.0-1.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix "ftbfs with GCC-4.7": apply patch from Matthias Klose:
+    add this-> qualifier in simgear/structure/SGExpression.hxx.
+    (Closes: #667373)
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 13 May 2012 16:45:34 +0200
+
+simgear (2.4.0-1.1) unstable; urgency=low
+
+  * Non-Maintainer Upload.
+  
+  * simgear/structure/Singleton.hxx: Inline copy of
+    boost/pool/detail/singleton.hpp by copy of that file, since it is no
+    longer present in boost post 1.47.  Closes: #652788, #652775, #652797.
+
+ -- Steve M. Robbins <smr@debian.org>  Sun, 29 Jan 2012 23:19:58 -0600
+
+simgear (2.4.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Build-Depend on OpenSceneGraph 3.0, and the Subversion library.
+  * Updated debian/deps.py and debian/sorules to also make it
+    possible to add redundant dependencies, not just drop them.
+    Because breaking circular dependencies cause some libraries
+    to be underlinked, sometimes this must be compensated by
+    overlinking others, to ensure FlightGear remains buildable.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat, 03 Sep 2011 21:41:04 +0200
+
+simgear (2.0.0-4) unstable; urgency=low
+
+  * Quickfix for subtle memory management bug in SimGear, apparently
+    not discovered or fixed upstream yet. But it seems to me this
+    thing must almost have been working by pure luck all this time...
+    Closes: #636121.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sun, 31 Jul 2011 22:43:05 +0200
+
+simgear (2.0.0-3) unstable; urgency=low
+
+  * Backported a bunch of upstream commits (from their git tree)
+    for support of newer versions of OpenSceneGraph:
+    1ca1f6a 9a96018 7308486 df6badf 956b440 bfe953c 49f418f
+    Closes: #634088
+  * Backported upstream commit for missing -ldl: d81545a
+    Closes: #556348, #622059
+  * Applied patch for SuperH support. Closes: #572428
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Thu, 21 Jul 2011 15:01:44 +0200
+
+simgear (2.0.0-2) unstable; urgency=low
+
+  * Fixed circular dependencies in debian/sorules that were dropped
+    non-deterministically by GNU Make, causing subtle misbuilds.
+    Closes: #609439.
+  * Note to self: always remember to use pbuilder. Closes: #609511.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Tue, 11 Jan 2011 03:50:33 +0100
+
+simgear (2.0.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add a couple of ${misc:Depends} to debian/control.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Fri, 08 Oct 2010 10:44:32 +0200
+
+simgear (1.9.1-2) unstable; urgency=low
+
+  * Updated debian/copyright.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sun, 12 Jul 2009 22:21:32 +0200
+
+simgear (1.9.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Updated debian/control, sorules, and things for SimGear 1.9.1.
+    This includes depending on plib 1.8.5. Closes: #528637, #530638.
+  * debian/rules now supports parallellized builds, and building
+    out of a svn checkout. It also cleans up a bit better.
+  * Added Vcs-Browser and Vcs-Svn fields to debian/control.
+  * Converted debian/watch to version 3. Closes: #529139.
+  * Added patch to compile with g++ 4.4. Closes: #505019.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sun, 14 Jun 2009 20:38:10 +0200
+
+simgear (1.0.0-4) unstable; urgency=low
+
+  * Made the pkg-fgfs-crew mailing list the official maintainer of the
+    SimGear package, and myself a mere uploader.
+  * Updated libglut3-dev build-dependency to freeglut3-dev.
+    Closes: #394503.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat, 21 Jun 2008 12:20:45 +0200
+
+simgear (1.0.0-3) unstable; urgency=low
+
+  * Added Homepage field.
+  * Upgraded Standards-Version to 3.7.3.
+  * Changed the generated sonames to contain the full version of the
+    package, rather than just the major version. (Upstream doesn't care
+    about shared libraries and a stable ABI.)
+  * Accordingly, renamed the shared-library package to simgear1.0.0,
+    and make it conflict with simgear0.
+  * Use debian/compat file instead of setting DH_COMPAT in debian/rules.
+    Upgraded DH build-dependency and compatibility level to 5.
+  * Removed usage of dh_testversion.
+  * Use ${binary:Version} instead of ${Source-Version} in debian/control.
+  * Set optimization level according to DEB_BUILD_OPTIONS.
+  * Implemented a system to add dependency information to the generated
+    .so files, so linking against one of them will pull in whatever else
+    is needed from simgear or plib. Because of circular dependencies,
+    this isn't perfect, but I think I at least achieved my goal of making
+    it possible for stuff to link against SimGear without having to tweak
+    makefiles.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Tue, 08 Apr 2008 08:42:41 +0200
+
+simgear (1.0.0-2) unstable; urgency=low
+
+  * Add definitions for Alpha, HPPA, and S/390 to nasal/naref.h,
+    thanks to Steve Langasek. This should fix FTBFS on those
+    platforms. (Unfortunately, upstream currently doesn't appear
+    willing to fix their stuff themselves.) Closes: #461399.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat, 23 Feb 2008 05:33:40 +0100
+
+simgear (1.0.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat, 22 Dec 2007 15:24:54 +0100
+
+simgear (0.3.10-2) unstable; urgency=low
+
+  * Updated the build dependencies for xorg 7.0. Apparently the
+    amd64 autobuilder doesn't use Provides. Closes: #366223.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Wed, 17 May 2006 17:09:32 -0400
+
+simgear (0.3.10-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.9.10.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Fri,  5 May 2006 20:21:37 -0400
+
+simgear (0.3.9-3) unstable; urgency=low
+
+  * Apply patch from Martin Michlmayr for g++ 4.1 build failure.
+    Closes: #356606.
+  * Build-Depend on libalut-dev, bump flightgear versioned conflict
+    (so that a flightgear built with libalut-dev is required too).
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sun, 19 Mar 2006 06:11:36 -0500
+
+simgear (0.3.9-2) unstable; urgency=low
+
+  * RenderTexture.cpp is updated to revision 1.16 from upstream CVS,
+    in order to support DRI (which is not able to render to texture).
+    Closes: #348268.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon, 30 Jan 2006 05:34:32 -0500
+
+simgear (0.3.9-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.9.9.
+  * Updated debian/copyright to note that the new
+    render-to-texture code is using a BSD-style license
+    (which appears to be the zlib/libpng license).
+    Also changed it to no longer say that the GPL covers
+    a little of this library - it actually covers a lot.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon,  2 Jan 2006 15:58:09 -0500
+
+simgear (0.3.8-2) unstable; urgency=low
+
+  * Allright then, if you absolutely insist on a gcc 4.0-compiled
+    package before the next upstream release. Mumble.
+    Updated Conflicts line to ensure proper flightgear upgrade,
+    no source changes. Closes: #319229.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon, 25 Jul 2005 01:55:18 -0400
+
+simgear (0.3.8-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.9.8.
+  * Changed Build-Depends to depend on plib1.8.4-dev.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sun, 27 Mar 2005 21:56:34 -0500
+
+simgear (0.3.7-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.9.6.
+  * Added autotools-dev to the build-deps and copy
+    config.sub and config.guess from it from debian/rules.
+  * Added --with-jpeg-factory configure option. Closes: #273559.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sun, 30 Jan 2005 15:27:06 -0500
+
+simgear (0.3.6-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.9.5.
+  * Upstream seem to have switched to OpenAL.
+    Added build dependency on libopenal-dev.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon, 16 Aug 2004 21:08:52 +0200
+
+simgear (0.3.5-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.9.4.
+  * Changed Build-Depends for new xlibs package layout.
+  * Changed Build-Depends to depend on plib1.8.3-dev.
+  * Removed MetaKit build-dependency, simgear apparently
+    stopped using it in 0.3.4.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Wed,  7 Apr 2004 10:48:44 +0200
+
+simgear (0.3.4-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.9.3.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sun,  9 Nov 2003 23:12:23 +0100
+
+simgear (0.3.3-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.9.2.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Fri,  6 Jun 2003 02:14:12 +0200
+
+simgear (0.3.1-2) unstable; urgency=low
+
+  * Rebuilt with metakit 2.4.9.2.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Thu, 17 Apr 2003 11:51:25 +0200
+
+simgear (0.3.1-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.9.0.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Thu,  5 Dec 2002 02:41:46 +0100
+
+simgear (0.2.0-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.8.0.
+  * Disabled JPEG image factory support again since its sources
+    aren't in the upstream tarball anymore for some reason.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon,  9 Sep 2002 18:48:40 +0200
+
+simgear (0.0.18-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.7.10.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat, 27 Apr 2002 19:26:02 +0200
+
+simgear (0.0.17-2) unstable; urgency=low
+
+  * Rebuilt with metakit 2.4.3.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Wed, 27 Mar 2002 21:24:21 +0100
+
+simgear (0.0.17-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.7.9.
+    Good, this release don't try to compile metakit on its own anymore.
+  * Make sure to conflict with flightgear (<< 0.7.9) to avoid the
+    mess I got in the testing distribution last time.
+  * Updated copyright file, after discovering that many files are
+    marked with a GPL copyright, though the official license is LGPL.
+  * Compiled with JPEG image factory support for the heck of it.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sun, 17 Feb 2002 11:56:57 +0100
+
+simgear (0.0.16-2) unstable; urgency=low
+
+  * Ensure that the embedded metakit's configure script is
+    not run (it should use the libmetakit-dev I build-depend
+    on anyway, not the embedded one).
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Wed,  7 Nov 2001 21:17:49 +0100
+
+simgear (0.0.16-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.7.8.
+  * Build-depend on plib >= 1.4.1.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat, 14 Jul 2001 20:43:35 +0200
+
+simgear (0.0.15-1) unstable; urgency=low
+
+  * New upstream release, for flightgear 0.7.7.
+  * Added -V option to dh_makeshlibs, so dependencies gets versioned.
+  * Made simgear-dev depend on the current simgear0 version.
+  * Build-depend on debhelper v3.
+  * Standards-Version upgraded to 3.5.5.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Fri, 22 Jun 2001 16:45:55 +0200
+
+simgear (0.0.14-3) unstable; urgency=low
+
+  * Fixed some garbage in debian/control.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Sat,  3 Mar 2001 17:51:07 +0100
+
+simgear (0.0.14-2) unstable; urgency=low
+
+  * Rebuilt with debhelper v3, to fix the "ldconfig in postinst"
+    I had forgotten.
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Mon, 19 Feb 2001 20:17:13 +0100
+
+simgear (0.0.14-1) unstable; urgency=low
+
+  * Initial Release.
+  * Did some involved stuff in debian/rules to build shared libs
+    (upstream sources didn't). At least it looks more elegant than
+    plib's method of doing same...
+
+ -- Ove Kaaven <ovek@arcticnet.no>  Tue,  6 Feb 2001 13:06:57 +0100
+
+Local variables:
+add-log-mailing-address "ovek@arcticnet.no"
+End:

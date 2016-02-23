@@ -1,0 +1,318 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: simgear
+Upstream-Contact: Curtis L. Olson <curt@flightgear.org>
+Source: http://www.flightgear.org
+
+Files: *
+Copyright: 1997-2012 Curtis L. Olson <curt@flightgear.org>
+ 1997,1998 Todd Veldhuizen <tveldhui@seurat.uwaterloo.ca>
+ 1998 Bernie Bright - bbright@c031.aone.net.au
+ 1998,2002 Steve Baker
+ 1999-2000 Brian Paul
+ 2000 Edward A Williams <Ed_Williams@compuserve.com>
+ 2003 Andrew J. Ross - andy@plausible.org
+ 2004-2007 Vivian Meazza
+ 2005 Harald JOHNSEN - hjohnsen@evc.net
+ 2006-2012 Mathias Froehlich - Mathias.Froehlich@web.de
+ 2008-2010 Tim Moore timoore33@gmail.com
+ 2010 Tim Moore moore@bricoworks.com
+ 2003,2010-2014 James Turner
+ 2010-2011 Frederic Bouvier (fredfgfs01@free.fr)
+ 2012-2014 Thomas Geymayer <tomgey@gmail.com>
+ 2012 Thorsten Brehm, brehmt at gmail dt com
+ and the the FlightGear team (see the Thanks file).
+License: LGPL-2+
+
+Files: simgear/canvas/ShivaVG/*
+Copyright: 2007 Ivan Leben
+License: LGPL-2.1+
+
+Files: simgear/environment/*
+ simgear/io/DAVMultiStatus.?xx
+ simgear/io/iochannel.?xx
+ simgear/io/lowlevel.?xx
+ simgear/io/sg_binobj.?xx
+ simgear/io/sg_file.cxx
+ simgear/io/sg_serial.?xx
+ simgear/io/sg_socket.?xx
+ simgear/io/sg_socket_udp.?xx
+ simgear/io/SVNDirectory.hxx
+ simgear/io/SVNReportParser.?xx
+ simgear/io/SVNRepository.?xx
+ simgear/magvar/magvar.?xx
+ simgear/math/beziercurve.hxx
+ simgear/props/tiedpropertylist.hxx
+ simgear/scene/material/EffectCullVisitor.?xx
+ simgear/scene/material/EffectData.hxx
+ simgear/scene/material/EffectElementBuilder.hxx
+ simgear/scene/material/EffectElement.hxx
+ simgear/scene/material/EffectGeode.?xx
+ simgear/scene/material/mat.?xx
+ simgear/scene/material/matlib.?xx
+ simgear/scene/material/matmodel.?xx
+ simgear/scene/material/Pass.hxx
+ simgear/scene/material/Technique.hxx
+ simgear/scene/model/CheckSceneryVisitor.?xx
+ simgear/scene/model/modellib.?xx
+ simgear/scene/model/ModelRegistry.?xx
+ simgear/scene/model/particles.?xx
+ simgear/scene/model/SGClipGroup.?xx
+ simgear/scene/model/SGOffsetTransform.?xx
+ simgear/scene/model/SGPickAnimation.?xx
+ simgear/scene/model/SGReaderWriterXML.?xx
+ simgear/scene/model/SGRotateTransform.?xx
+ simgear/scene/model/SGScaleTransform.?xx
+ simgear/scene/model/SGText.?xx
+ simgear/scene/model/SGTranslateTransform.?xx
+ simgear/scene/model/shadanim.cxx
+ simgear/scene/sky/cloudfield.?xx
+ simgear/scene/sky/CloudShaderGeometry.?xx
+ simgear/scene/sky/newcloud.?xx
+ simgear/scene/tgdb/*
+ simgear/scene/tsync/*
+ simgear/scene/util/NodeAndDrawableVisitor.?xx
+ simgear/scene/util/OptionsReadFileCallback.?xx
+ simgear/scene/util/PrimitiveUtils.?xx
+ simgear/scene/util/QuadTreeBuilder.?xx
+ simgear/scene/util/RenderConstants.hxx
+ simgear/scene/util/SGDebugDrawCallback.hxx
+ simgear/scene/util/SGEnlargeBoundingBox.?xx
+ simgear/scene/util/SGNodeMasks.hxx
+ simgear/scene/util/SGPickCallback.hxx
+ simgear/scene/util/SGReaderWriterOptions.?xx
+ simgear/scene/util/SGSceneFeatures.?xx
+ simgear/scene/util/SGSceneUserData.?xx
+ simgear/scene/util/SGStateAttributeVisitor.?xx
+ simgear/scene/util/SGStateAttributeVisitor.hxx
+ simgear/scene/util/SGTextureStateAttributeVisitor.?xx
+ simgear/scene/util/SGUpdateVisitor.hxx
+ simgear/scene/util/StateAttributeFactory.?xx
+ simgear/scene/util/VectorArrayAdapter.hxx
+ simgear/screen/colors.hxx
+ simgear/sound/sample_group.cxx
+ simgear/sound/sample_openal.cxx
+ simgear/sound/sample_queue.cxx
+ simgear/sound/soundmgr_openal.cxx
+ simgear/sound/soundmgr_openal_private.hxx
+ simgear/sound/xmlsound.cxx
+ simgear/structure/SGAtomic.?xx
+ simgear/structure/SGExpression.?xx
+ simgear/structure/SGPerfMon.?xx
+ simgear/structure/SGReferenced.hxx
+ simgear/structure/StateMachine.?xx
+ simgear/structure/callback.hxx
+ simgear/structure/subsystem_mgr.?xx
+ simgear/threads/SGThread.?xx
+ simgear/timing/timestamp.?xx
+Copyright: 1998-2003 Curtis L. Olson - http://www.flightgear.org/~curt
+ 2000 the plib team
+ 2000 David Megginson, david@megginson.com
+ 2001 Bernard Bright - bbright@bigpond.net.au
+ 2001 Norman Vine - nhv@yahoo.com
+ 2003 FlightGear Flight Simulator
+ 2003 Melchior FRANZ - mfranz@aon.at
+ 2005-2007,2010-2011 Mathias Froehlich
+ 2005 Harald JOHNSEN - hjohnsen@evc.net
+ 2006-2008 Tim Moore <timoore@redhat.com>
+ 2008 Nicolas VIVIEN
+ 2008 Stuart Buchanan
+ 2008 Till Busch buti@bux.at
+ 2008 Alexander R. Perry <alex.perry@ieee.org>
+ 2009 Erik Hofman <erik@ehofman.com>
+ 2009,2010 Torsten Dreyer Torsten (_at_) t3r *dot* de
+ 2008 Tiago Gusmão
+ 2008 Timothy Moore timoore@redhat.com
+ 2011 Thorsten Brehm <brehmt@gmail.com>
+ 2012 Mathias Froehlich
+ 2012 James Turner <zakalawe@mac.com>
+License: GPL-2+
+
+Files: simgear/screen/extensions.?xx
+Copyright: 2001 César Blecua Udías
+License: MIT-CESAR-BLECUA-UDIAS
+
+Files: simgear/scene/util/Noise.?xx
+Copyright: 2002 Ken Perlin, 3Dlabs Inc. Ltd.
+License: MIT-stripped
+
+Files: simgear/structure/singleton.hpp
+Copyright: 2000 Stephen Cleary
+License: BSL-1.0
+
+Files: 3rdparty/expat/*
+Copyright: 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark Cooper
+ 2001, 2002, 2003, 2004, 2005, 2006 Expat maintainers.
+License: MIT
+
+Files: 3rdparty/utf8/*
+Copyright: 2006 Nemanja Trifunovic
+License: MIT
+
+Files: simgear/package/unzip.?
+ simgear/package/ioapi.?
+ simgear/package/ioapi_mem.c
+Copyright: 1998-2009 Gilles Vollant
+ 2003 Justin Fletcher
+License: zlib
+
+Files: simgear/misc/stdint.hxx
+ simgear/scene/model/animation.?xx
+ simgear/scene/model/model.?xx
+ simgear/scene/model/placement.?xx
+ simgear/xml/easyxml.?xx
+Copyright: *No copyright*
+License: public-domain
+ These files are in the Public Domain, and come with no warranty.
+
+Files: CMakeModules/BoostTestTargets.cmake
+ CMakeModules/BoostTestTargetsDynamic.h
+ CMakeModules/BoostTestTargetsIncluded.h
+ CMakeModules/BoostTestTargetsStatic.h
+ CMakeModules/CopyResourcesToBuildTree.cmake
+ CMakeModules/GetForceIncludeDefinitions.cmake
+Copyright: 2009-2010 Ryan Pavlik <rpavlik@iastate.edu> <abiryan@ryand.net>
+           2009-2010 Iowa State University 2009-2010
+License: BSL-1.0
+
+Files: debian/*
+Copyright: 2001-2012 Ove Kaaven <ovek@arcticnet.no>
+           2013 Scott Howard <showard@debian.org>
+           2013 Markus Wanner <markus@bluegap.ch>
+License: LGPL-2+
+
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+ .
+ A copy of the license is available on Debian systems at
+ /usr/share/common-licenses/LGPL-2
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ A copy of the license is available on Debian systems at
+ /usr/share/common-licenses/LGPL-2.1
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ A copy of the license is available on Debian systems at
+ /usr/share/common-licenses/GPL-2
+
+License: BSL-1.0
+ Permission is hereby granted, free of charge, to any person or organization
+ obtaining a copy of the software and accompanying documentation covered by
+ this license (the "Software") to use, reproduce, display, distribute,
+ execute, and transmit the Software, and to prepare derivative works of the
+ Software, and to permit third-parties to whom the Software is furnished to
+ do so, all subject to the following:
+ .
+ The copyright notices in the Software and this entire statement, including
+ the above license grant, this restriction and the following disclaimer,
+ must be included in all copies of the Software, in whole or in part, and
+ all derivative works of the Software, unless such copies or derivative
+ works are solely in the form of machine-executable object code generated by
+ a source language processor.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+ SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+ FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.
+
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: MIT-CESAR-BLECUA-UDIAS
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the
+ Software is furnished to do so, subject to the following conditions: 
+ .
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ CESAR BLECUA UDIAS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+ OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+License: MIT-stripped
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+
+License: zlib
+ This software is provided 'as-is', without any express or implied
+ warranty.  In no event will the authors be held liable for any damages
+ arising from the use of this software.
+ .
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+ .
+ 1. The origin of this software must not be misrepresented; you must not
+ claim that you wrote the original software. If you use this software
+ in a product, an acknowledgment in the product documentation would be
+ appreciated but is not required.
+ 2. Altered source versions must be plainly marked as such, and must not be
+ misrepresented as being the original software.
+ 3. This notice may not be removed or altered from any source distribution.
