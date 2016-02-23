@@ -1,19 +1,41 @@
-simgear (3.4.0-1~getdeb1) trusty; urgency=medium
+simgear (2016.1.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 24 Feb 2015 19:42:21 +0100
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 21 Feb 2016 20:49:00 +0100
 
-simgear (3.4.0-0ubuntu1) vivid; urgency=medium
+simgear (3.4.0-2build1) wily; urgency=medium
+
+  * No-change rebuild against libopenscenegraph100v5
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Wed, 12 Aug 2015 11:51:30 +0200
+
+simgear (3.4.0-2) unstable; urgency=medium
+
+  * Really drop the conflicts against simgear0 (in control.in).
+
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 20 May 2015 21:08:44 +0200
+
+simgear (3.4.0-1) unstable; urgency=medium
+
+  [ Markus Wanner ]
+  * Upload 3.4.0 to unstable.
+  * Drop the conflicts against simgear0, it's no longer needed.
+  * Drop the deprecated JPEG_FACTORY cmake option and correctly
+    provide SIMGEAR_SHARED (w/o the CMAKE_ prefix).
+
+  [ Rebecca N. Palmer ]
+  * Add vasi.patch from upstream.
+
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 20 May 2015 20:13:05 +0200
+
+simgear (3.4.0-0~exp1) UNRELEASED; urgency=medium
 
   [ Markus Wanner ]
   * New upstream release 3.4.0.
   * Update debian/watch.
 
-  [ Timo Jyrinki ]
-  * Upload from Debian git while the packages are hold in NEW queue.
-
- -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Thu, 19 Feb 2015 07:35:11 +0000
+ -- Markus Wanner <markus@bluegap.ch>  Wed, 18 Feb 2015 20:11:41 +0100
 
 simgear (3.4.0~git20150211+eff3df-0~exp1) experimental; urgency=medium
 

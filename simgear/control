@@ -1,11 +1,10 @@
 Source: simgear
 Section: libs
 Priority: extra
-XSBC-Original-Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Ove Kaaven <ovek@arcticnet.no>,
- Markus Wanner <markus@bluegap.ch>
-Build-Depends: debhelper (>= 8.1.3),
+           Markus Wanner <markus@bluegap.ch>
+Build-Depends: debhelper (>= 9),
                libx11-dev,
                libxext-dev,
                libxi-dev,
@@ -28,13 +27,12 @@ Build-Depends: debhelper (>= 8.1.3),
 Standards-Version: 3.9.5
 Homepage: http://www.simgear.org/
 
-Package: libsimgearcore3.4.0
+Package: libsimgearcore2016.1.1
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends},
          ${misc:Depends}
-Conflicts: simgear0
 Description: Simulator Construction Gear -- core library
  SimGear is a collection of libraries useful for constructing
  simulation and visualization applications such as FlightGear
@@ -42,12 +40,12 @@ Description: Simulator Construction Gear -- core library
  .
  This package contains the core library.
 
-Package: libsimgearcore3.4.0-dbg
+Package: libsimgearcore2016.1.1-dbg
 Architecture: any
 Section: debug
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Depends: libsimgearcore3.4.0 (= ${binary:Version}),
+Depends: libsimgearcore2016.1.1 (= ${binary:Version}),
          ${misc:Depends}
 Description: debugging symbols for libsimgearcore
  SimGear is a collection of libraries useful for constructing
@@ -56,14 +54,13 @@ Description: debugging symbols for libsimgearcore
  .
  This package contains the debug symbols for the core library.
 
-Package: libsimgearscene3.4.0
+Package: libsimgearscene2016.1.1
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Depends: libsimgearcore3.4.0 (= ${binary:Version}),
+Depends: libsimgearcore2016.1.1 (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
-Conflicts: simgear0
 Description: Simulator Construction Gear -- scene library
  SimGear is a collection of libraries useful for constructing
  simulation and visualization applications such as FlightGear
@@ -71,14 +68,13 @@ Description: Simulator Construction Gear -- scene library
  .
  This package contains the scene library.
 
-Package: libsimgearscene3.4.0-dbg
+Package: libsimgearscene2016.1.1-dbg
 Architecture: any
 Section: debug
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Depends: libsimgearcore3.4.0 (= ${binary:Version}),
+Depends: libsimgearcore2016.1.1 (= ${binary:Version}),
          ${misc:Depends}
-Conflicts: simgear0
 Description: debugging symbols for libsimgearscene
  SimGear is a collection of libraries useful for constructing
  simulation and visualization applications such as FlightGear
@@ -89,11 +85,9 @@ Description: debugging symbols for libsimgearscene
 Package: libsimgear-dev
 Architecture: any
 Section: libdevel
-Depends: libsimgearcore3.4.0 (= ${binary:Version}),
-         libsimgearscene3.4.0 (= ${binary:Version}),
-         libopenscenegraph-dev,
-         libc6-dev,
-         ${misc:Depends}
+Depends: libsimgearcore2016.1.1 (= ${binary:Version}),
+         libsimgearscene2016.1.1 (= ${binary:Version}),
+         libopenscenegraph-dev, libc6-dev, ${misc:Depends}
 Replaces: simgear-dev (<< 2.10.0~)
 Breaks: simgear-dev (<< 2.10.0~)
 Description: Simulator Construction Gear -- development files

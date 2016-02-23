@@ -1,11 +1,10 @@
 Source: simgear
 Section: libs
 Priority: extra
-XSBC-Original-Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Ove Kaaven <ovek@arcticnet.no>,
- Markus Wanner <markus@bluegap.ch>
-Build-Depends: debhelper (>= 8.1.3),
+           Markus Wanner <markus@bluegap.ch>
+Build-Depends: debhelper (>= 9),
                libx11-dev,
                libxext-dev,
                libxi-dev,
@@ -34,7 +33,6 @@ Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends},
          ${misc:Depends}
-Conflicts: simgear0
 Description: Simulator Construction Gear -- core library
  SimGear is a collection of libraries useful for constructing
  simulation and visualization applications such as FlightGear
@@ -63,7 +61,6 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: libsimgearcore##UVER (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
-Conflicts: simgear0
 Description: Simulator Construction Gear -- scene library
  SimGear is a collection of libraries useful for constructing
  simulation and visualization applications such as FlightGear
@@ -78,7 +75,6 @@ Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: libsimgearcore##UVER (= ${binary:Version}),
          ${misc:Depends}
-Conflicts: simgear0
 Description: debugging symbols for libsimgearscene
  SimGear is a collection of libraries useful for constructing
  simulation and visualization applications such as FlightGear
@@ -91,9 +87,7 @@ Architecture: any
 Section: libdevel
 Depends: libsimgearcore##UVER (= ${binary:Version}),
          libsimgearscene##UVER (= ${binary:Version}),
-         libopenscenegraph-dev,
-         libc6-dev,
-         ${misc:Depends}
+         libopenscenegraph-dev, libc6-dev, ${misc:Depends}
 Replaces: simgear-dev (<< 2.10.0~)
 Breaks: simgear-dev (<< 2.10.0~)
 Description: Simulator Construction Gear -- development files
