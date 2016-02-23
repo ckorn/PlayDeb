@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Witch Blast
+Exec=/usr/games/witchblast
+Icon=witchblast
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=witch;blast;dungeon;

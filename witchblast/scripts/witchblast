@@ -1,0 +1,7 @@
+#!/bin/sh
+
+SAVE_DIR=$HOME/.config/witchblast
+mkdir -p "$SAVE_DIR"
+cd "$SAVE_DIR"
+# saves will be saved in current dir
+/usr/share/games/witchblast/Witch_Blast "$@"

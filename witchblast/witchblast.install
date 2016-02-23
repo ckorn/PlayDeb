@@ -1,0 +1,4 @@
+obj-*-*-*/Witch_Blast		usr/lib/games/witchblast
+debian/scripts/witchblast	usr/games
+debian/witchblast.desktop	usr/share/applications
+debian/witchblast.xpm		usr/share/pixmaps

@@ -1,0 +1,14 @@
+# fix typo
+Index: witchblast-0.7.5/src/ArtefactDescriptionEntity.cpp
+===================================================================
+--- witchblast-0.7.5.orig/src/ArtefactDescriptionEntity.cpp	2015-10-29 09:36:26.000000000 +0100
++++ witchblast-0.7.5/src/ArtefactDescriptionEntity.cpp	2016-02-22 21:24:46.865209232 +0100
+@@ -35,7 +35,7 @@
+   else
+   {
+     artefactName = "Unknown";
+-    artefactDescription = "Report to developper";
++    artefactDescription = "Report to developer";
+   }
+ }
+ 

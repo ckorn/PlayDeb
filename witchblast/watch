@@ -1,0 +1,3 @@
+version=3
+https://github.com/Cirrus-Minor/witchblast/tags \
+    (?:.*/)?v([\d\.]+)\.tar\.gz

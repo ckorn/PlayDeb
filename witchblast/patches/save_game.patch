@@ -1,0 +1,379 @@
+# save files in current dir
+# will be started from $HOME/.config/witchblast
+Index: witchblast-0.7.5/src/Constants.h
+===================================================================
+--- witchblast-0.7.5.orig/src/Constants.h	2015-10-29 09:36:26.000000000 +0100
++++ witchblast-0.7.5/src/Constants.h	2016-02-22 21:46:47.124459892 +0100
+@@ -24,8 +24,8 @@
+ 
+ const std::string CONFIG_FILE =     "config.dat";
+ const std::string SAVE_FILE =       "game.sav";
+-const std::string SAVE_DATA_FILE =  "data/data.sav";
+-const std::string HISCORES_FILE =   "data/scores.dat";
++const std::string SAVE_DATA_FILE =  "data.sav";
++const std::string HISCORES_FILE =   "scores.dat";
+ 
+ const std::string SAVE_VERSION =    "SAVE_0.7";
+ const std::string SCORE_VERSION =   "V075";
+Index: witchblast-0.7.5/src/DungeonMapEntity.cpp
+===================================================================
+--- witchblast-0.7.5.orig/src/DungeonMapEntity.cpp	2015-10-29 09:36:26.000000000 +0100
++++ witchblast-0.7.5/src/DungeonMapEntity.cpp	2016-02-22 22:08:40.714817035 +0100
+@@ -848,16 +848,16 @@
+     switch (roomType)
+     {
+     case roomTypeChallenge:
+-      ImageManager::getInstance().getImage(IMAGE_OVERLAY)->loadFromFile("media/overlay_boss_01.png");
++      ImageManager::getInstance().getImage(IMAGE_OVERLAY)->loadFromFile("/usr/share/games/witchblast/media/overlay_boss_01.png");
+       break;
+     case roomTypeTemple:
+-      ImageManager::getInstance().getImage(IMAGE_OVERLAY)->loadFromFile("media/overlay_temple.png");
++      ImageManager::getInstance().getImage(IMAGE_OVERLAY)->loadFromFile("/usr/share/games/witchblast/media/overlay_temple.png");
+       break;
+     case roomTypeMerchant:
+-      ImageManager::getInstance().getImage(IMAGE_OVERLAY)->loadFromFile("media/overlay_shop.png");
++      ImageManager::getInstance().getImage(IMAGE_OVERLAY)->loadFromFile("/usr/share/games/witchblast/media/overlay_shop.png");
+       break;
+     case roomTypeBoss:
+-      ss << "media/overlay_boss_0" << game().getLevel() << ".png";
++      ss << "/usr/share/games/witchblast/media/overlay_boss_0" << game().getLevel() << ".png";
+       ImageManager::getInstance().getImage(IMAGE_OVERLAY)->loadFromFile(ss.str());
+       break;
+     default:
+@@ -868,9 +868,9 @@
+            || gameMap->getObjectTile(8, 2) == MAPOBJ_BANK
+            || gameMap->getObjectTile(8, 2) == MAPOBJ_BANK_BOTTOM
+          )
+-        ImageManager::getInstance().getImage(IMAGE_OVERLAY)->loadFromFile("media/overlay_temple.png");
++        ImageManager::getInstance().getImage(IMAGE_OVERLAY)->loadFromFile("/usr/share/games/witchblast/media/overlay_temple.png");
+       else
+-        ImageManager::getInstance().getImage(IMAGE_OVERLAY)->loadFromFile("media/overlay_00.png");
++        ImageManager::getInstance().getImage(IMAGE_OVERLAY)->loadFromFile("/usr/share/games/witchblast/media/overlay_00.png");
+       break;
+     }
+     overlaySprite.setTexture(*ImageManager::getInstance().getImage(IMAGE_OVERLAY));
+Index: witchblast-0.7.5/src/TextMapper.cpp
+===================================================================
+--- witchblast-0.7.5.orig/src/TextMapper.cpp	2015-10-29 09:36:26.000000000 +0100
++++ witchblast-0.7.5/src/TextMapper.cpp	2016-02-22 22:10:49.169469003 +0100
+@@ -37,7 +37,7 @@
+ 	void TextMapper::LoadTextFile(const std::string & language)
+ 	{
+ 		// 1. open file
+-		std::ifstream textFile("data/" + textFileName);
++		std::ifstream textFile("/usr/share/games/witchblast/data/" + textFileName);
+ 		if (!textFile)
+ 			std::cout << "[ERROR] No text file !";
+ 
+Index: witchblast-0.7.5/src/WitchBlastGame.cpp
+===================================================================
+--- witchblast-0.7.5.orig/src/WitchBlastGame.cpp	2015-10-29 09:36:26.000000000 +0100
++++ witchblast-0.7.5/src/WitchBlastGame.cpp	2016-02-22 22:09:10.611435941 +0100
+@@ -296,56 +296,56 @@
+   // loading resources
+   const char *const images[] =
+   {
+-    "media/player_0.png",      "media/player_1.png",
+-    "media/player_2.png",
+-    "media/bolt.png",          "media/tiles.png",
+-    "media/rat.png",           "media/minimap.png",
+-    "media/map_background.png",
+-    "media/items.png",         "media/items_equip.png",
+-    "media/items.png",         "media/items_equip.png",
+-    "media/chest.png",         "media/bat.png",
+-    "media/evil_flower.png",   "media/slime.png",
+-    "media/imp.png",           "media/spider_egg.png",
+-    "media/spider_web.png",    "media/little_spider.png",
+-    "media/bubble.png",        "media/eyeball.png",
+-    "media/witch.png",
+-    "media/cauldron.png",      "media/snake.png",
+-    "media/pumpkin.png",       "media/ghost.png",
+-    "media/zombie.png",        "media/bogeyman.png",
+-    "media/sausage.png",
+-    "media/butcher.png",       "media/giant_slime.png",
+-    "media/king_rat.png",      "media/cyclops.png",
+-    "media/giant_spider.png",  "media/francky.png",
+-    "media/vampire.png",       "media/vampire_bat.png",
+-    "media/vampire_part.png",
+-    "media/blood.png",
+-    "media/corpses.png",       "media/corpses_big.png",
+-    "media/star.png",          "media/star2.png",
+-    "media/hurt_impact.png",
+-    "media/interface.png",     "media/hud_shots.png",
+-    "media/explosion.png",     "media/keys_qwer.png",
+-    "media/keys_azer.png",
+-    "media/night.png",         "media/title.png",
+-    "media/overlay_00.png",    "media/light_cone.png",
+-    "media/divinity.png",
+-    "media/pnj.png",           "media/fairy.png",
+-    "media/key_area.png",
+-    "media/ui_life.png",          "media/ui_mana.png",
+-    "media/ui_spells.png",        "media/ui_message.png",
+-    "media/ui_top_layer.png",     "media/ui_achiev.png",
+-    "media/fog.png",              "media/title_animation.png",
+-    "media/splatter.png",         "media/witch_intro.png",
+-    "media/item_description.png", "media/death_certificate.png",
+-    "media/achievements.png",     "media/boss_pictures.png",
+-    "media/portrait_part.png",    "media/dungeon_random.png",
+-    "media/dungeon_objects.png",  "media/shadows_standard.png",
+-    "media/shadows_corners.png",  "media/shadows_medium.png",
+-    "media/shadows_small.png",    "media/doors.png",
+-    "media/destroyable_objects.png",  "media/hall_of_fame.png",
+-    "media/lightning.png",
+-    "media/win_seal.png",         "media/hof_win_seal.png",
+-    "media/bag.png",              "media/ui_pause.png",
+-    "media/score_font.png",
++    "/usr/share/games/witchblast/media/player_0.png",      "/usr/share/games/witchblast/media/player_1.png",
++    "/usr/share/games/witchblast/media/player_2.png",
++    "/usr/share/games/witchblast/media/bolt.png",          "/usr/share/games/witchblast/media/tiles.png",
++    "/usr/share/games/witchblast/media/rat.png",           "/usr/share/games/witchblast/media/minimap.png",
++    "/usr/share/games/witchblast/media/map_background.png",
++    "/usr/share/games/witchblast/media/items.png",         "/usr/share/games/witchblast/media/items_equip.png",
++    "/usr/share/games/witchblast/media/items.png",         "/usr/share/games/witchblast/media/items_equip.png",
++    "/usr/share/games/witchblast/media/chest.png",         "/usr/share/games/witchblast/media/bat.png",
++    "/usr/share/games/witchblast/media/evil_flower.png",   "/usr/share/games/witchblast/media/slime.png",
++    "/usr/share/games/witchblast/media/imp.png",           "/usr/share/games/witchblast/media/spider_egg.png",
++    "/usr/share/games/witchblast/media/spider_web.png",    "/usr/share/games/witchblast/media/little_spider.png",
++    "/usr/share/games/witchblast/media/bubble.png",        "/usr/share/games/witchblast/media/eyeball.png",
++    "/usr/share/games/witchblast/media/witch.png",
++    "/usr/share/games/witchblast/media/cauldron.png",      "/usr/share/games/witchblast/media/snake.png",
++    "/usr/share/games/witchblast/media/pumpkin.png",       "/usr/share/games/witchblast/media/ghost.png",
++    "/usr/share/games/witchblast/media/zombie.png",        "/usr/share/games/witchblast/media/bogeyman.png",
++    "/usr/share/games/witchblast/media/sausage.png",
++    "/usr/share/games/witchblast/media/butcher.png",       "/usr/share/games/witchblast/media/giant_slime.png",
++    "/usr/share/games/witchblast/media/king_rat.png",      "/usr/share/games/witchblast/media/cyclops.png",
++    "/usr/share/games/witchblast/media/giant_spider.png",  "/usr/share/games/witchblast/media/francky.png",
++    "/usr/share/games/witchblast/media/vampire.png",       "/usr/share/games/witchblast/media/vampire_bat.png",
++    "/usr/share/games/witchblast/media/vampire_part.png",
++    "/usr/share/games/witchblast/media/blood.png",
++    "/usr/share/games/witchblast/media/corpses.png",       "/usr/share/games/witchblast/media/corpses_big.png",
++    "/usr/share/games/witchblast/media/star.png",          "/usr/share/games/witchblast/media/star2.png",
++    "/usr/share/games/witchblast/media/hurt_impact.png",
++    "/usr/share/games/witchblast/media/interface.png",     "/usr/share/games/witchblast/media/hud_shots.png",
++    "/usr/share/games/witchblast/media/explosion.png",     "/usr/share/games/witchblast/media/keys_qwer.png",
++    "/usr/share/games/witchblast/media/keys_azer.png",
++    "/usr/share/games/witchblast/media/night.png",         "/usr/share/games/witchblast/media/title.png",
++    "/usr/share/games/witchblast/media/overlay_00.png",    "/usr/share/games/witchblast/media/light_cone.png",
++    "/usr/share/games/witchblast/media/divinity.png",
++    "/usr/share/games/witchblast/media/pnj.png",           "/usr/share/games/witchblast/media/fairy.png",
++    "/usr/share/games/witchblast/media/key_area.png",
++    "/usr/share/games/witchblast/media/ui_life.png",          "/usr/share/games/witchblast/media/ui_mana.png",
++    "/usr/share/games/witchblast/media/ui_spells.png",        "/usr/share/games/witchblast/media/ui_message.png",
++    "/usr/share/games/witchblast/media/ui_top_layer.png",     "/usr/share/games/witchblast/media/ui_achiev.png",
++    "/usr/share/games/witchblast/media/fog.png",              "/usr/share/games/witchblast/media/title_animation.png",
++    "/usr/share/games/witchblast/media/splatter.png",         "/usr/share/games/witchblast/media/witch_intro.png",
++    "/usr/share/games/witchblast/media/item_description.png", "/usr/share/games/witchblast/media/death_certificate.png",
++    "/usr/share/games/witchblast/media/achievements.png",     "/usr/share/games/witchblast/media/boss_pictures.png",
++    "/usr/share/games/witchblast/media/portrait_part.png",    "/usr/share/games/witchblast/media/dungeon_random.png",
++    "/usr/share/games/witchblast/media/dungeon_objects.png",  "/usr/share/games/witchblast/media/shadows_standard.png",
++    "/usr/share/games/witchblast/media/shadows_corners.png",  "/usr/share/games/witchblast/media/shadows_medium.png",
++    "/usr/share/games/witchblast/media/shadows_small.png",    "/usr/share/games/witchblast/media/doors.png",
++    "/usr/share/games/witchblast/media/destroyable_objects.png",  "/usr/share/games/witchblast/media/hall_of_fame.png",
++    "/usr/share/games/witchblast/media/lightning.png",
++    "/usr/share/games/witchblast/media/win_seal.png",         "/usr/share/games/witchblast/media/hof_win_seal.png",
++    "/usr/share/games/witchblast/media/bag.png",              "/usr/share/games/witchblast/media/ui_pause.png",
++    "/usr/share/games/witchblast/media/score_font.png",
+   };
+ 
+   for (const char *const filename : images)
+@@ -353,73 +353,73 @@
+ 
+   const char *const sounds[] =
+   {
+-    "media/sound/blast00.ogg",        "media/sound/blast01.ogg",
+-    "media/sound/blast_elec.ogg",     "media/sound/blast_fire.ogg",
+-    "media/sound/blast_ice.ogg",      "media/sound/blast_illusion.ogg",
+-    "media/sound/blast_poison.ogg",   "media/sound/blast_stone.ogg",
+-    "media/sound/door_closing.ogg",   "media/sound/door_opening.ogg",
+-    "media/sound/chest_opening.ogg",  "media/sound/impact.ogg",
+-    "media/sound/bonus.ogg",          "media/sound/drink.ogg",
+-    "media/sound/eat.ogg",            "media/sound/player_hit.ogg",
+-    "media/sound/player_die.ogg",     "media/sound/ennemy_dying.ogg",
+-    "media/sound/coin.ogg",           "media/sound/pay.ogg",
+-    "media/sound/wall_impact.ogg",    "media/sound/big_wall_impact.ogg",
+-    "media/sound/king_rat_cry_1.ogg", "media/sound/king_rat_cry_2.ogg",
+-    "media/sound/king_rat_die.ogg",   "media/sound/slime_jump.ogg",
+-    "media/sound/slime_impact.ogg",   "media/sound/slime_impact_weak.ogg",
+-    "media/sound/slime_impact_boss.ogg",
+-    "media/sound/slime_smash.ogg",    "media/sound/ice_charge.ogg",
+-    "media/sound/electric.ogg",       "media/sound/select.ogg",
+-    "media/sound/heart.ogg",          "media/sound/rat_die.ogg",
+-    "media/sound/bat_die.ogg",        "media/sound/imp_hurt.ogg",
+-    "media/sound/imp_die.ogg",        "media/sound/rock_impact.ogg",
+-    "media/sound/rock_impact_medium.ogg", "media/sound/rock_impact_heavy.ogg",
+-    "media/sound/throw.ogg",          "media/sound/cyclop00.ogg",
+-    "media/sound/cyclop_die.ogg",     "media/sound/cyclops_impact.ogg",
+-    "media/sound/butcher_00.ogg",     "media/sound/butcher_01.ogg",
+-    "media/sound/butcher_hurt.ogg",   "media/sound/butcher_die.ogg",
+-    "media/sound/vib.ogg",
+-    "media/sound/boom_00.ogg",        "media/sound/clang_00.ogg",
+-    "media/sound/bubble_00.ogg",      "media/sound/bubble_01.ogg",
+-    "media/sound/trap.ogg",           "media/sound/egg_smash_00.ogg",
+-    "media/sound/egg_smash_01.ogg",   "media/sound/spider_walking.ogg",
+-    "media/sound/spider_web.ogg",     "media/sound/spider_hurt.ogg",
+-    "media/sound/spider_die.ogg",     "media/sound/little_spider_die.ogg",
+-    "media/sound/witch_00.ogg",       "media/sound/witch_01.ogg",
+-    "media/sound/witch_die_00.ogg",   "media/sound/witch_die_01.ogg",
+-    "media/sound/witch_02.ogg",       "media/sound/invoke.ogg",
+-    "media/sound/cauldron.ogg",       "media/sound/cauldron_die.ogg",
+-    "media/sound/snake_die.ogg",      "media/sound/pumpkin_00.ogg",
+-    "media/sound/pumpkin_01.ogg",     "media/sound/pumpkin_die.ogg",
+-    "media/sound/critical.ogg",
+-    "media/sound/gong.ogg",           "media/sound/teleport.ogg",
+-    "media/sound/spell_charge.ogg",   "media/sound/fireball.ogg",
+-    "media/sound/message.ogg",        "media/sound/earthquake.ogg",
+-    "media/sound/spell_freeze.ogg",   "media/sound/spell_shield.ogg",
+-    "media/sound/heavy_step_00.ogg",  "media/sound/heavy_step_01.ogg",
+-    "media/sound/night.ogg",          "media/sound/grumble.ogg",
+-    "media/sound/zombie_00.ogg",      "media/sound/zombie_01.ogg",
+-    "media/sound/zombie_attack.ogg",  "media/sound/zombie_die.ogg",
+-    "media/sound/ghost.ogg",          "media/sound/ghost_die.ogg",
+-    "media/sound/electricity.ogg",
+-    "media/sound/electric_blast.ogg", "media/sound/francky_00.ogg",
+-    "media/sound/francky_01.ogg",     "media/sound/francky_02.ogg",
+-    "media/sound/francky_die.ogg",    "media/sound/om.ogg",
+-    "media/sound/glass.ogg",          "media/sound/hiccup.ogg",
+-    "media/sound/splatch.ogg",        "media/sound/intro_witch.ogg",
+-    "media/sound/force_field.ogg",    "media/sound/door_opening_boss.ogg",
+-    "media/sound/achievement.ogg",
+-    "media/sound/vampire_flying.ogg", "media/sound/vampire_flap.ogg",
+-    "media/sound/vampire_sonic.ogg",  "media/sound/vampire_laughing.ogg",
+-    "media/sound/vampire_transform_bolt.ogg", "media/sound/vampire_transform_bat.ogg",
+-    "media/sound/vampire_hypnosis.ogg", "media/sound/vampire_cry.ogg",
+-    "media/sound/vampire_dying.ogg",  "media/sound/ice_block.ogg",
+-    "media/sound/bogeyman_die.ogg",   "media/sound/bogeyman_attack.ogg",
+-    "media/sound/bogeyman_vortex_00.ogg", "media/sound/bogeyman_vortex_01.ogg",
+-    "media/sound/barrel_hit.ogg",     "media/sound/barrel_smash.ogg",
+-    "media/sound/secret.ogg",         "media/sound/scroll.ogg",
+-    "media/sound/tic_tac.ogg",        "media/sound/bottle.ogg",
+-    "media/sound/thunder.ogg",        "media/sound/bonus_score.ogg",
++    "/usr/share/games/witchblast/media/sound/blast00.ogg",        "/usr/share/games/witchblast/media/sound/blast01.ogg",
++    "/usr/share/games/witchblast/media/sound/blast_elec.ogg",     "/usr/share/games/witchblast/media/sound/blast_fire.ogg",
++    "/usr/share/games/witchblast/media/sound/blast_ice.ogg",      "/usr/share/games/witchblast/media/sound/blast_illusion.ogg",
++    "/usr/share/games/witchblast/media/sound/blast_poison.ogg",   "/usr/share/games/witchblast/media/sound/blast_stone.ogg",
++    "/usr/share/games/witchblast/media/sound/door_closing.ogg",   "/usr/share/games/witchblast/media/sound/door_opening.ogg",
++    "/usr/share/games/witchblast/media/sound/chest_opening.ogg",  "/usr/share/games/witchblast/media/sound/impact.ogg",
++    "/usr/share/games/witchblast/media/sound/bonus.ogg",          "/usr/share/games/witchblast/media/sound/drink.ogg",
++    "/usr/share/games/witchblast/media/sound/eat.ogg",            "/usr/share/games/witchblast/media/sound/player_hit.ogg",
++    "/usr/share/games/witchblast/media/sound/player_die.ogg",     "/usr/share/games/witchblast/media/sound/ennemy_dying.ogg",
++    "/usr/share/games/witchblast/media/sound/coin.ogg",           "/usr/share/games/witchblast/media/sound/pay.ogg",
++    "/usr/share/games/witchblast/media/sound/wall_impact.ogg",    "/usr/share/games/witchblast/media/sound/big_wall_impact.ogg",
++    "/usr/share/games/witchblast/media/sound/king_rat_cry_1.ogg", "/usr/share/games/witchblast/media/sound/king_rat_cry_2.ogg",
++    "/usr/share/games/witchblast/media/sound/king_rat_die.ogg",   "/usr/share/games/witchblast/media/sound/slime_jump.ogg",
++    "/usr/share/games/witchblast/media/sound/slime_impact.ogg",   "/usr/share/games/witchblast/media/sound/slime_impact_weak.ogg",
++    "/usr/share/games/witchblast/media/sound/slime_impact_boss.ogg",
++    "/usr/share/games/witchblast/media/sound/slime_smash.ogg",    "/usr/share/games/witchblast/media/sound/ice_charge.ogg",
++    "/usr/share/games/witchblast/media/sound/electric.ogg",       "/usr/share/games/witchblast/media/sound/select.ogg",
++    "/usr/share/games/witchblast/media/sound/heart.ogg",          "/usr/share/games/witchblast/media/sound/rat_die.ogg",
++    "/usr/share/games/witchblast/media/sound/bat_die.ogg",        "/usr/share/games/witchblast/media/sound/imp_hurt.ogg",
++    "/usr/share/games/witchblast/media/sound/imp_die.ogg",        "/usr/share/games/witchblast/media/sound/rock_impact.ogg",
++    "/usr/share/games/witchblast/media/sound/rock_impact_medium.ogg", "/usr/share/games/witchblast/media/sound/rock_impact_heavy.ogg",
++    "/usr/share/games/witchblast/media/sound/throw.ogg",          "/usr/share/games/witchblast/media/sound/cyclop00.ogg",
++    "/usr/share/games/witchblast/media/sound/cyclop_die.ogg",     "/usr/share/games/witchblast/media/sound/cyclops_impact.ogg",
++    "/usr/share/games/witchblast/media/sound/butcher_00.ogg",     "/usr/share/games/witchblast/media/sound/butcher_01.ogg",
++    "/usr/share/games/witchblast/media/sound/butcher_hurt.ogg",   "/usr/share/games/witchblast/media/sound/butcher_die.ogg",
++    "/usr/share/games/witchblast/media/sound/vib.ogg",
++    "/usr/share/games/witchblast/media/sound/boom_00.ogg",        "/usr/share/games/witchblast/media/sound/clang_00.ogg",
++    "/usr/share/games/witchblast/media/sound/bubble_00.ogg",      "/usr/share/games/witchblast/media/sound/bubble_01.ogg",
++    "/usr/share/games/witchblast/media/sound/trap.ogg",           "/usr/share/games/witchblast/media/sound/egg_smash_00.ogg",
++    "/usr/share/games/witchblast/media/sound/egg_smash_01.ogg",   "/usr/share/games/witchblast/media/sound/spider_walking.ogg",
++    "/usr/share/games/witchblast/media/sound/spider_web.ogg",     "/usr/share/games/witchblast/media/sound/spider_hurt.ogg",
++    "/usr/share/games/witchblast/media/sound/spider_die.ogg",     "/usr/share/games/witchblast/media/sound/little_spider_die.ogg",
++    "/usr/share/games/witchblast/media/sound/witch_00.ogg",       "/usr/share/games/witchblast/media/sound/witch_01.ogg",
++    "/usr/share/games/witchblast/media/sound/witch_die_00.ogg",   "/usr/share/games/witchblast/media/sound/witch_die_01.ogg",
++    "/usr/share/games/witchblast/media/sound/witch_02.ogg",       "/usr/share/games/witchblast/media/sound/invoke.ogg",
++    "/usr/share/games/witchblast/media/sound/cauldron.ogg",       "/usr/share/games/witchblast/media/sound/cauldron_die.ogg",
++    "/usr/share/games/witchblast/media/sound/snake_die.ogg",      "/usr/share/games/witchblast/media/sound/pumpkin_00.ogg",
++    "/usr/share/games/witchblast/media/sound/pumpkin_01.ogg",     "/usr/share/games/witchblast/media/sound/pumpkin_die.ogg",
++    "/usr/share/games/witchblast/media/sound/critical.ogg",
++    "/usr/share/games/witchblast/media/sound/gong.ogg",           "/usr/share/games/witchblast/media/sound/teleport.ogg",
++    "/usr/share/games/witchblast/media/sound/spell_charge.ogg",   "/usr/share/games/witchblast/media/sound/fireball.ogg",
++    "/usr/share/games/witchblast/media/sound/message.ogg",        "/usr/share/games/witchblast/media/sound/earthquake.ogg",
++    "/usr/share/games/witchblast/media/sound/spell_freeze.ogg",   "/usr/share/games/witchblast/media/sound/spell_shield.ogg",
++    "/usr/share/games/witchblast/media/sound/heavy_step_00.ogg",  "/usr/share/games/witchblast/media/sound/heavy_step_01.ogg",
++    "/usr/share/games/witchblast/media/sound/night.ogg",          "/usr/share/games/witchblast/media/sound/grumble.ogg",
++    "/usr/share/games/witchblast/media/sound/zombie_00.ogg",      "/usr/share/games/witchblast/media/sound/zombie_01.ogg",
++    "/usr/share/games/witchblast/media/sound/zombie_attack.ogg",  "/usr/share/games/witchblast/media/sound/zombie_die.ogg",
++    "/usr/share/games/witchblast/media/sound/ghost.ogg",          "/usr/share/games/witchblast/media/sound/ghost_die.ogg",
++    "/usr/share/games/witchblast/media/sound/electricity.ogg",
++    "/usr/share/games/witchblast/media/sound/electric_blast.ogg", "/usr/share/games/witchblast/media/sound/francky_00.ogg",
++    "/usr/share/games/witchblast/media/sound/francky_01.ogg",     "/usr/share/games/witchblast/media/sound/francky_02.ogg",
++    "/usr/share/games/witchblast/media/sound/francky_die.ogg",    "/usr/share/games/witchblast/media/sound/om.ogg",
++    "/usr/share/games/witchblast/media/sound/glass.ogg",          "/usr/share/games/witchblast/media/sound/hiccup.ogg",
++    "/usr/share/games/witchblast/media/sound/splatch.ogg",        "/usr/share/games/witchblast/media/sound/intro_witch.ogg",
++    "/usr/share/games/witchblast/media/sound/force_field.ogg",    "/usr/share/games/witchblast/media/sound/door_opening_boss.ogg",
++    "/usr/share/games/witchblast/media/sound/achievement.ogg",
++    "/usr/share/games/witchblast/media/sound/vampire_flying.ogg", "/usr/share/games/witchblast/media/sound/vampire_flap.ogg",
++    "/usr/share/games/witchblast/media/sound/vampire_sonic.ogg",  "/usr/share/games/witchblast/media/sound/vampire_laughing.ogg",
++    "/usr/share/games/witchblast/media/sound/vampire_transform_bolt.ogg", "/usr/share/games/witchblast/media/sound/vampire_transform_bat.ogg",
++    "/usr/share/games/witchblast/media/sound/vampire_hypnosis.ogg", "/usr/share/games/witchblast/media/sound/vampire_cry.ogg",
++    "/usr/share/games/witchblast/media/sound/vampire_dying.ogg",  "/usr/share/games/witchblast/media/sound/ice_block.ogg",
++    "/usr/share/games/witchblast/media/sound/bogeyman_die.ogg",   "/usr/share/games/witchblast/media/sound/bogeyman_attack.ogg",
++    "/usr/share/games/witchblast/media/sound/bogeyman_vortex_00.ogg", "/usr/share/games/witchblast/media/sound/bogeyman_vortex_01.ogg",
++    "/usr/share/games/witchblast/media/sound/barrel_hit.ogg",     "/usr/share/games/witchblast/media/sound/barrel_smash.ogg",
++    "/usr/share/games/witchblast/media/sound/secret.ogg",         "/usr/share/games/witchblast/media/sound/scroll.ogg",
++    "/usr/share/games/witchblast/media/sound/tic_tac.ogg",        "/usr/share/games/witchblast/media/sound/bottle.ogg",
++    "/usr/share/games/witchblast/media/sound/thunder.ogg",        "/usr/share/games/witchblast/media/sound/bonus_score.ogg",
+   };
+ 
+   // AA in fullscreen
+@@ -435,11 +435,11 @@
+     SoundManager::getInstance().addSound(filename);
+   }
+ 
+-  if (font.loadFromFile("media/DejaVuSans-Bold.ttf"))
++  if (font.loadFromFile("/usr/share/games/witchblast/media/DejaVuSans-Bold.ttf"))
+   {
+     myText.setFont(font);
+   }
+-  graphicsFont.loadFromFile("media/Caudex-Bold.ttf");
++  graphicsFont.loadFromFile("/usr/share/games/witchblast/media/Caudex-Bold.ttf");
+ 
+   miniMap = NULL;
+   currentMap = NULL;
+@@ -5544,9 +5544,9 @@
+ 
+       switch (r)
+       {
+-        case 0: ok = music.openFromFile("media/sound/WitchBlastTheme.ogg"); break;
+-        case 1: ok = music.openFromFile("media/sound/SavageLife.ogg"); break;
+-        case 2: ok = music.openFromFile("media/sound/HauntedLighthouse.ogg"); break;
++        case 0: ok = music.openFromFile("/usr/share/games/witchblast/media/sound/WitchBlastTheme.ogg"); break;
++        case 1: ok = music.openFromFile("/usr/share/games/witchblast/media/sound/SavageLife.ogg"); break;
++        case 2: ok = music.openFromFile("/usr/share/games/witchblast/media/sound/HauntedLighthouse.ogg"); break;
+       }
+ 
+       currentStandardMusic = r;
+@@ -5554,19 +5554,19 @@
+     break;
+ 
+   case MusicEnding:
+-    ok = music.openFromFile("media/sound/AmbiantMedieval.ogg");
++    ok = music.openFromFile("/usr/share/games/witchblast/media/sound/AmbiantMedieval.ogg");
+     break;
+ 
+   case MusicBoss:
+-    ok = music.openFromFile("media/sound/ShowMeThePower.ogg");
++    ok = music.openFromFile("/usr/share/games/witchblast/media/sound/ShowMeThePower.ogg");
+     break;
+ 
+   case MusicChallenge:
+-    ok = music.openFromFile("media/sound/HellsFire.ogg");
++    ok = music.openFromFile("/usr/share/games/witchblast/media/sound/HellsFire.ogg");
+     break;
+ 
+   case MusicIntro:
+-    ok = music.openFromFile("media/sound/WitchBlastTheme.ogg");
++    ok = music.openFromFile("/usr/share/games/witchblast/media/sound/WitchBlastTheme.ogg");
+     break;
+   }
+ 
+@@ -5597,7 +5597,7 @@
+   {
+     if (parameters.musicVolume > 0)
+     {
+-      bool ok = music.openFromFile("media/sound/wb.ogg");
++      bool ok = music.openFromFile("/usr/share/games/witchblast/media/sound/wb.ogg");
+       music.setVolume(parameters.musicVolume * VolumeModifier / 100);
+       if (ok) music.play();
+     }
