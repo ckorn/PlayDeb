@@ -1,3 +1,9 @@
+flightgear (2016.1.1-1~getdeb2) trusty; urgency=medium
+
+  * Add Qt5 for the launcher
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 28 Feb 2016 16:27:50 +0100
+
 flightgear (2016.1.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version

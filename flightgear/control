@@ -35,7 +35,11 @@ Build-Depends: debhelper (>= 9),
                libspeex-dev,
                libspeexdsp-dev,
                flite1-dev,
-               libhtsengine-dev (>= 1.07~)
+               libhtsengine-dev (>= 1.07~),
+               qtbase5-dev,
+               qt5-default,
+               libfltk1.3-dev,
+               libbz2-dev
 Standards-Version: 3.9.5
 Homepage: http://www.flightgear.org/
 
