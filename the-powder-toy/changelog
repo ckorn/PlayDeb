@@ -1,3 +1,47 @@
+the-powder-toy (91.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    * Fixed Fix fullscreen on OS X
+    * Fixed Fix bugs creating multiple stickmen, fix stickmen spawning bugs
+    * Fixed Fix FIRE, CO2, and SMKE passing through powder only wall
+    * Fixed Fix FIRE not burning things inside of walls
+    * Fixed Fix empty holes in stamp browser when deleting stamps
+    * Fixed Fix stamp and save thumbnails occasionally getting mixed up
+    * Fixed Fix many obscure crashes
+    * Fixed Cut down the amazon rain forest
+    * Changed CRAY .tmp2 now sets creation offset, just like DRAY
+    * Changed Fix FRZZ/FRZW (didn't work as intended)
+    * Changed Speed improvements to several elements, including EMP, ETRD,
+    and streamlines
+    * Changed Allow DRAY to copy energy particles
+    * Changed STOR automatically transfers to PRTI
+    * Changed CONV tmp value can now be used to set an element to be
+    converted
+    * Changed Tons of other changes and fixes not listed here
+    * Changed Better icon and .desktop file on Linux
+    * Changed Mouse drawing is automatically canceled when moving in / out of
+    the zoom window
+    * Changed Redo profile viewer a bit, and show more information
+    * Changed Default "Large screen" option to on if your screen is large
+    enough
+    * Changed When you are not logged in, you can save local saves without
+    holding ctrl
+    * Changed Disable Newtonian Gravity entirely inside grav wall zones
+    * Added New loop edge mode
+    * Added New ctrl+f shortcut to locate elements
+    * Added Add textbox in save / stamp browsers to jump to any page
+    * Added Ability to publish saves in the browser without resaving
+    * Added Allow PSTN movement amount to be set by PSTN temperature
+    * Added Signs have tooltips now, and have a longer 45 character max
+    * Added New signs: {s:user:jacob1|my saves!} and {aheat}
+    * Added New element: CRMC, melting point gets higher under pressure
+    * Added New wall tool which can erase walls, particles, and signs
+    * Added Deco flood fill, floods decoration based on pixel color
+    * Added .tmp2 shows in the HUD for elements which use it, ambeint heat
+    now shown when enabled
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Mar 2016 14:42:09 +0100
+
 the-powder-toy (90.2-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
