@@ -1,3 +1,12 @@
+libgames-support (0.91-1~getdeb1) wily; urgency=medium
+
+  * New upstream version
+   - Adjust column spacing on scores dialog
+   - Add missing mnemonic to done button on scores dialog
+   - Many new and updated translations
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Mar 2016 21:51:42 +0100
+
 libgames-support (0.90-1~getdeb1) wily; urgency=medium
 
   * New upstream version
