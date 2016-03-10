@@ -1,3 +1,14 @@
+scummvm-tools (1.8.0-1~getdeb2) trusty; urgency=medium
+
+  * New upstream version
+     - Add a tool to compress Tony Tough's ADP files.
+     - Add extraction and packing tools for The Prince and the Coward.
+     - Fix detection and decoding of BS1 big endian speech data in
+     compress_sword1.
+     - Fix inputs handling for extract_gob_stk.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 09 Mar 2016 22:37:22 +0100
+
 scummvm-tools (1.7.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
