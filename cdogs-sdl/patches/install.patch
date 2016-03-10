@@ -1,34 +1,16 @@
 # add missing file
 # change data directory
-Index: cdogs-sdl-0.5.7/INSTALL
+Index: cdogs-sdl-0.6.0/INSTALL
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ cdogs-sdl-0.5.7/INSTALL	2015-01-04 00:54:02.839047081 +0100
++++ cdogs-sdl-0.6.0/INSTALL	2016-03-08 20:49:17.327261839 +0100
 @@ -0,0 +1 @@
 +#empty
-Index: cdogs-sdl-0.5.7/CMakeLists.txt
+Index: cdogs-sdl-0.6.0/CMakeLists.txt
 ===================================================================
---- cdogs-sdl-0.5.7.orig/CMakeLists.txt	2014-11-11 10:49:57.000000000 +0100
-+++ cdogs-sdl-0.5.7/CMakeLists.txt	2015-01-04 01:31:02.050981065 +0100
-@@ -29,7 +29,7 @@
- endif()
- 
- IF(UNIX AND NOT APPLE)
--	SET(CMAKE_INSTALL_PREFIX /usr/local)
-+	SET(CMAKE_INSTALL_PREFIX /usr/share/games/cdogs-sdl)
- ENDIF()
- if(MINGW)
- 	set(CMAKE_RC_COMPILER_INIT windres)
-@@ -129,7 +129,7 @@
- if(GCW0)
- 	set(CDOGS_DATA_DIR "./")
- else()
--	set(CDOGS_DATA_DIR "../")
-+	set(CDOGS_DATA_DIR "/usr/share/games/cdogs-sdl/")
- endif()
- message("Data dir is ${CDOGS_DATA_DIR}")
- if(WIN32)
-@@ -196,9 +196,9 @@
+--- cdogs-sdl-0.6.0.orig/CMakeLists.txt	2016-03-08 20:49:17.327261839 +0100
++++ cdogs-sdl-0.6.0/CMakeLists.txt	2016-03-09 20:42:00.083127843 +0100
+@@ -176,9 +176,9 @@
  		DESTINATION ${INSTALL_PREFIX}/bin
  		USE_SOURCE_PERMISSIONS)
  else()
@@ -41,3 +23,14 @@ Index: cdogs-sdl-0.5.7/CMakeLists.txt
  endif()
  
  INSTALL(DIRECTORY
+@@ -190,10 +190,6 @@
+ 	${CMAKE_SOURCE_DIR}/music
+ 	${CMAKE_SOURCE_DIR}/sounds
+ 	DESTINATION ${INSTALL_PREFIX})
+-INSTALL(FILES
+-	${CMAKE_SOURCE_DIR}/cdogs_icon.bmp
+-	${CMAKE_SOURCE_DIR}/README.md
+-	DESTINATION ${INSTALL_PREFIX})
+ IF(UNIX AND NOT APPLE AND NOT BEOS AND NOT HAIKU)
+ 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/build/linux/cdogs-sdl.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
+ 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/cdogs-sdl.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons)

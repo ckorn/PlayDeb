@@ -1,0 +1,2 @@
+build/linux/cdogs-sdl
+src/cdogs/sys_config.h
