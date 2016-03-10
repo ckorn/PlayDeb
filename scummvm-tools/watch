@@ -1,2 +1,3 @@
 version=3
-http://sf.net/scummvm/scummvm-tools-([\d\.]+)\.tar\.bz2
+http://www.scummvm.org/downloads/ \
+    (?:.*/)?scummvm-tools-([\d\.]+)\.tar\.xz

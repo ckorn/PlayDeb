@@ -12,7 +12,8 @@ Build-Depends: debhelper (>= 9),
                libpng12-dev,
                libwxbase2.8-dev,
                libmad0-dev,
-               libwxgtk2.8-dev
+               libwxgtk2.8-dev,
+               libboost-dev
 Standards-Version: 3.9.5
 Homepage: http://www.scummvm.org
 
