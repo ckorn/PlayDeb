@@ -8,13 +8,14 @@ Comment:
  then adopted by the Debian Games Team by Moritz Muehlenhoff <jmm@debian.org>
 
 Files: *
-Copyright: 2001-2013 The ScummVM Project
+Copyright: 2001-2014 The ScummVM Project
            2002-2011 The DOSBox Team
            1994-1998 Revolution Software Ltd.
            2001-2004 Andrea Mazzoleni
            2003-2005 Andreas 'Sprawl' Karlsso
-           2005      Jurgen 'SumthinWicked' Braam
-           2003-2005 Lars 'AnotherGuest' Persso
+           2002-2008 Jurgen 'SumthinWicked' Braam
+           2003-2014 Lars 'AnotherGuest' Persso
+           2013-2014 Fedor Strizhniou
            1990-2012 Neil Dodwell
            1995-1997 Presto Studios, Inc.
                      and others listed in COPYRIGHT file
@@ -287,7 +288,7 @@ License: LGPL-2.1+
 Files: debian/*
 Copyright: 2002            Bastien Nocera <hadess@hadess.net>
            2003,2006-2008  David Weinehall <tao@debian.org>
-           2012-2013       Dmitry Smirnov <onlyjob@debian.org>
+           2012-2014       Dmitry Smirnov <onlyjob@debian.org>
            2009-2012       Moritz Muehlenhoff <jmm@debian.org>
            2002-2005       Tore Anderson <tore@linpro.no>
 License: GPL-2+
