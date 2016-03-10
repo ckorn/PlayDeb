@@ -6,6 +6,20 @@ VER  = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SVersion | cut -d- -f1)
 %:
 	dh $@
 
+override_dh_auto_configure:
+	dh_auto_configure -- -DCMAKE_INSTALL_PREFIX=/usr/ -DCDOGS_DATA_DIR=./
+
+override_dh_install:
+	dh_install
+	rm -f debian/cdogs-sdl-data/usr/share/games/cdogs/doc/COPYING.*
+	rm -f debian/cdogs-sdl-data/usr/share/games/cdogs/doc/LICENSE.*
+	rm -f debian/cdogs-sdl-data/usr/share/games/cdogs/doc/license.rlutil.txt
+	rm -f debian/cdogs-sdl-data/usr/share/games/cdogs/graphics/LICENSE.md
+	rm -f debian/cdogs-sdl-data/usr/share/games/cdogs/missions/sauer2/LICENSE.txt
+	rm -f debian/cdogs-sdl-data/usr/share/games/cdogs/sounds/footsteps/license.txt
+	[ ! -f debian/cdogs-sdl-data/usr/share/games/cdogs/graphics/make_bullet_spritesheet.sh ] || \
+	    chmod +x debian/cdogs-sdl-data/usr/share/games/cdogs/graphics/make_bullet_spritesheet.sh
+
 ## http://wiki.debian.org/onlyjob/get-orig-source
 .PHONY: get-orig-source
 get-orig-source: $(PKG)_$(VER).orig.tar.xz $(info I: $(PKG)_$(VER))

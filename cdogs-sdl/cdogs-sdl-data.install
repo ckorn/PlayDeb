@@ -1,1 +1,7 @@
-usr/share/games
+usr/data		usr/share/games/cdogs
+usr/doc			usr/share/games/cdogs
+usr/dogfights		usr/share/games/cdogs
+usr/graphics		usr/share/games/cdogs
+usr/missions		usr/share/games/cdogs
+usr/music		usr/share/games/cdogs
+usr/sounds		usr/share/games/cdogs
