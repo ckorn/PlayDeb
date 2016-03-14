@@ -1,8 +1,8 @@
 Just some correction of spelling mistakes.
-Index: eternallands-1.9.3/cal.c
+Index: eternallands-1.9.4.2/cal.c
 ===================================================================
---- eternallands-1.9.3.orig/cal.c	2012-02-05 01:56:13.000000000 +0100
-+++ eternallands-1.9.3/cal.c	2012-02-23 21:30:31.609652500 +0100
+--- eternallands-1.9.4.2.orig/cal.c	2016-03-14 18:21:05.925992491 +0100
++++ eternallands-1.9.4.2/cal.c	2016-03-14 18:21:05.921992372 +0100
 @@ -277,7 +277,7 @@
  				delay+=cal_action_blending_delay;
  		}
@@ -12,11 +12,11 @@ Index: eternallands-1.9.3/cal.c
  		//so we add some delay to blend into new state
  		if(anim.duration>0.0f)
  			delay=anim.duration;
-Index: eternallands-1.9.3/translate.c
+Index: eternallands-1.9.4.2/translate.c
 ===================================================================
---- eternallands-1.9.3.orig/translate.c	2012-02-05 01:56:13.000000000 +0100
-+++ eternallands-1.9.3/translate.c	2012-02-23 21:30:31.613652500 +0100
-@@ -1168,7 +1168,7 @@
+--- eternallands-1.9.4.2.orig/translate.c	2016-03-14 18:21:05.925992491 +0100
++++ eternallands-1.9.4.2/translate.c	2016-03-14 18:21:05.921992372 +0100
+@@ -1310,7 +1310,7 @@
  	add_xml_identifier(video,"safemode",safemode_str,"Video mode %s without a stencil buffer is not available\nTrying the safemode (640x480x32) Full Screen (no stencil)",sizeof(safemode_str));
  	add_xml_identifier(video,"nosdl",no_sdl_str,"Couldn't initialize SDL",sizeof(no_sdl_str));
  	add_xml_identifier(video,"nohwstencil",no_hardware_stencil_str,"Couldn't find a hardware accelerated stencil buffer.\nShadows are not available.",sizeof(no_hardware_stencil_str));
@@ -25,7 +25,7 @@ Index: eternallands-1.9.3/translate.c
  	add_xml_identifier(video,"glmode",fail_opengl_mode,"Couldn't set GL mode",sizeof(fail_opengl_mode));
  	add_xml_identifier(video,"swstencil",stencil_falls_back_on_software_accel,"Hmm... This mode seems to fall back in software 'acceleration'.\nTrying to disable the stencil buffer.",sizeof(stencil_falls_back_on_software_accel));
  	add_xml_identifier(video,"last_try",last_chance_str,"Hmm... No luck without a stencil buffer either...\nLet's try one more thing...",sizeof(last_chance_str));
-@@ -1187,7 +1187,7 @@
+@@ -1329,7 +1329,7 @@
  	add_xml_identifier(video,"fbodrawbuffererror",fbo_draw_buffer_error,"Framebuffer: draw buffer error",sizeof(fbo_draw_buffer_error));
  	add_xml_identifier(video,"fboreadbuffererror",fbo_read_buffer_error,"Framebuffer: read buffer error",sizeof(fbo_read_buffer_error));
  	add_xml_identifier(video,"fbounsupportedfromaterror",fbo_unsupported_fromat_error,"Framebuffer: unsupported format error",sizeof(fbo_unsupported_fromat_error));
@@ -34,10 +34,10 @@ Index: eternallands-1.9.3/translate.c
  	add_xml_identifier(video,"fbosupportedfromat",fbo_supported_format,"Frame buffer format: %s, depth bits: %d, stencil bits: %d is supported",sizeof(fbo_supported_format));
  	add_xml_identifier(video,"extnotfoundemulit",gl_ext_not_found_emul_it,"Couldn't find the %s extension, emulating it...",sizeof(gl_ext_not_found_emul_it));
  	add_xml_identifier(video,"invalid",invalid_video_mode,"Stop playing with the configuration file and select valid modes!",sizeof(invalid_video_mode));
-Index: eternallands-1.9.3/engine/logging.cpp
+Index: eternallands-1.9.4.2/engine/logging.cpp
 ===================================================================
---- eternallands-1.9.3.orig/engine/logging.cpp	2012-02-05 01:56:13.000000000 +0100
-+++ eternallands-1.9.3/engine/logging.cpp	2012-02-23 21:30:31.613652500 +0100
+--- eternallands-1.9.4.2.orig/engine/logging.cpp	2016-03-14 18:21:05.925992491 +0100
++++ eternallands-1.9.4.2/engine/logging.cpp	2016-03-14 18:21:05.921992372 +0100
 @@ -70,7 +70,7 @@
  				case llt_debug_verbose:
  					return "Debug";
@@ -47,10 +47,10 @@ Index: eternallands-1.9.3/engine/logging.cpp
  			}
  		}
  
-Index: eternallands-1.9.3/sendvideoinfo.cpp
+Index: eternallands-1.9.4.2/sendvideoinfo.cpp
 ===================================================================
---- eternallands-1.9.3.orig/sendvideoinfo.cpp	2012-02-05 01:56:13.000000000 +0100
-+++ eternallands-1.9.3/sendvideoinfo.cpp	2012-02-23 21:30:31.613652500 +0100
+--- eternallands-1.9.4.2.orig/sendvideoinfo.cpp	2016-03-14 18:21:05.925992491 +0100
++++ eternallands-1.9.4.2/sendvideoinfo.cpp	2016-03-14 18:21:05.921992372 +0100
 @@ -60,7 +60,7 @@
  		std::string name;
  		int value;
