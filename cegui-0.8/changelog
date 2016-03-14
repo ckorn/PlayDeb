@@ -1,3 +1,9 @@
+cegui-0.8 (0.8.5-1~getdeb2~wily) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 12 Mar 2016 23:47:40 +0100
+
 cegui-0.8 (0.8.4-1~getdeb5~wily) wily; urgency=medium
 
   * Rebuild for wily
