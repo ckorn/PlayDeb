@@ -1,3 +1,9 @@
+eternallands (1.9.4.2-1~getdeb2~trusty) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 14 Mar 2016 18:19:41 +0100
+
 eternallands (1.9.4.1-1~getdeb2~trusty) trusty; urgency=medium
 
   * New upstream version
