@@ -1,3 +1,9 @@
+speed-dreams-base (2.2.0-1~getdeb2~wily) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 16 Mar 2016 21:32:14 +0100
+
 speed-dreams-base (2.1.0-1~getdeb2~utopic) utopic; urgency=medium
 
   * Rebuild for utopic
