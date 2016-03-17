@@ -1,3 +1,9 @@
+pyfa (1.20.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 16 Mar 2016 21:06:14 +0100
+
 pyfa (1.20.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
