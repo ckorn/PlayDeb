@@ -21,9 +21,11 @@ Build-Depends: debhelper (>= 9),
                zlib1g-dev,
                libpng12-dev,
                libenet-dev,
-               libsdl1.2-dev,
+               libsdl2-dev,
                libjpeg62-dev | libjpeg8-dev,
-               chrpath
+               chrpath,
+               libopenscenegraph-dev,
+               libopenthreads-dev
 Standards-Version: 3.9.5
 Homepage: http://speed-dreams.sourceforge.net/
 
