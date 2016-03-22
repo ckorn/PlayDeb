@@ -1,0 +1,43 @@
+Source: trigger-rally
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Stefan Potyra <sistpoty@ubuntu.com>,
+           Barry deFreese <bdefreese@debian.org>,
+           Bertrand Marc <beberking@gmail.com>
+Build-Depends: debhelper (>= 9),
+               dh-exec,
+               autotools-dev,
+               jam,
+               libopenal-dev,
+               libalut-dev,
+               libphysfs-dev,
+               libsdl-image1.2-dev,
+               docbook-to-man,
+               automake (>= 1.9),
+               libglew-dev,
+               libtinyxml-dev,
+               libsdl1.2-dev,
+               mesa-common-dev,
+               libsdl-mixer1.2-dev,
+               libsdl-image1.2-dev
+Standards-Version: 3.9.6
+Homepage: http://sourceforge.net/projects/trigger-rally
+
+Package: trigger-rally
+Architecture: any
+Depends: ${shlibs:Depends},
+         trigger-rally-data (>= 0.6.3),
+         ${misc:Depends}
+Description: free 3D rally racing car game
+ Trigger is a free 3D rally car racing game. Fun for all the family!
+ .
+ Trigger comes with a number of challenges where you have to race several
+ tracks to finish each challenge.
+ .
+ When racing a track, you have to reach several locations marked by pulsating
+ rings in sequence. You win a race if you reach the last location in time.
+ .
+ Trigger is highly customisable, and it's easy to add new levels and vehicles.
+ .
+ System Requirements consist of an OpenGL accelerated video card.

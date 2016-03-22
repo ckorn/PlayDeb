@@ -1,0 +1,15 @@
+# regex_search does not allow temporary strings
+Index: trigger-rally-0.6.3/src/Trigger/main.cpp
+===================================================================
+--- trigger-rally-0.6.3.orig/src/Trigger/main.cpp	2016-01-27 13:11:52.000000000 +0100
++++ trigger-rally-0.6.3/src/Trigger/main.cpp	2016-03-21 21:48:29.265950421 +0100
+@@ -890,7 +890,8 @@
+                 std::smatch mr; // Match Results
+                 std::regex pat(R"(^(\w+)(\..+)$)"); // Pattern
+ 
+-                if (!std::regex_search(std::string(*fname), mr, pat))
++                std::string tmps=std::string(*fname);
++                if (!std::regex_search(tmps, mr, pat))
+                     continue;
+ 
+                 std::string basefname = mr[1];
