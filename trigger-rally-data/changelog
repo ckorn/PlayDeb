@@ -1,0 +1,108 @@
+trigger-rally-data (0.6.3-1~getdeb1) wily; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 20 Mar 2016 22:23:24 +0100
+
+trigger-rally-data (0.6.1-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Tobias Frost ]
+  * Repair watch-file.
+
+  [ Mattia Rizzolo ]
+  * debian/rules: add a call to dh_fixperms inside the override, to allow
+    reproducible builds (Closes: #789308).
+
+  [ Bertrand Marc ]
+  * debian/control: fix Vcs-browser url.
+  * Install icons to /usr/share/pixmaps and add links in /usr/share/icons.
+  * Add myself as uploader.
+
+ -- Bertrand Marc <beberking@gmail.com>  Sun, 15 Nov 2015 15:38:44 +0100
+
+trigger-rally-data (0.6.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * Change packaging repository to git.
+  * Update to SV 3.9.6, except of removing the obsolete DM-Upload-Allowed from
+    d/control no change was necessary.
+  * Fix homepage in debian/control
+  * Switch debian/compat to 9
+     - Simplify d/rules using short debhelper format:
+     - Install files using d/install, removing non-existant dir fonts
+     - Make links using d/links
+     - d/dirs is not required
+     - remove compatibility link, as the affected package is only in o-o-stable
+     - make symlink from README.txt.gz to Changelog.gz -- as it contains the
+       changelog.
+  * d/copyright:
+     - Rewrite using machine readable format
+     - Complete copyright information (Closes: #784343)
+
+ -- Tobias Frost <tobi@debian.org>  Fri, 19 Jun 2015 13:02:38 +0200
+
+trigger-rally-data (0.6.1-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload (as asked for on d-devel-games@ by maintainer)
+  * New upstream release.
+
+ -- Tobias Frost <tobi@debian.org>  Sat, 25 Oct 2014 18:25:41 +0200
+
+trigger-rally-data (0.6.0-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Stefan Potyra ]
+  * New upstream release.
+  * debian/source/format: Switch to 3.0 (quilt) to make use of the
+    upstream .tar.bz2 as is.
+  * debian/control:
+    + Add DM-Upload-Allowed: yes.
+    + Add ${misc:Depends}.
+    + Bump Standards-Version to 3.9.2 (no changes needed).
+  * debian/rules:
+    + Make some level data files non-executable.
+    + add build-arch and build-indep targets, that do not get anything
+      done, as there is nothing to be built.
+    + select xz as compression algorithm as this gives the best results.
+    + provide a compatibility link to work (at least somewhat) with
+      trigger-rally, version 0.5.2.1-2+b1.
+  * debian/TODO.debian: Removed. Doesn't match actual state.
+
+ -- Bruno "Fuddl" Kleinert <fuddl@debian.org>  Thu, 08 Dec 2011 16:52:32 +0100
+
+trigger-rally-data (0.5.2-2) unstable; urgency=low
+
+  [ Stefan Potyra ]
+  * Move trigger.config.defs to /etc, since it's a config file.
+  * debian/rules: don't install crap.obj, not needed.
+  * debian/rules: cleanup
+  * debian/control: bump standards-version.
+
+  [ Gonéri Le Bouder ]
+  * data file are in /usr/share/games/trigger-rally
+  * watch file fixed since upstream files had been moved (Closes: #450395).
+
+  [ Cyril Brulebois ]
+  * Added XS-Vcs-Svn and XS-Vcs-Browser fields in the control file.
+
+  [ Barry deFreese ]
+  * Rename to trigger-rally-data since that is what trigger-rally deps on
+  * Add myself to uploaders.
+
+  [ Jon Dowland ]
+  * add Homepage: to source stanza
+
+  [ Ansgar Burchardt ]
+  * debian/control: Change XS-Vcs-* to Vcs-*
+  * Remove Homepage semi-field from description
+
+ -- Barry deFreese <bdefreese@debian.org>  Tue, 24 Mar 2009 12:13:11 -0400
+
+trigger-data (0.5.2-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Stefan Potyra <sistpoty@ubuntu.com>  Fri, 17 Feb 2006 01:30:11 +0100
