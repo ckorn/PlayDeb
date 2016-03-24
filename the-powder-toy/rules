@@ -18,5 +18,3 @@ override_dh_install:
 	[ ! -f build/powder64 ] || mv build/powder64 build/powder
 	dh_install
 
-get-orig-source:
-	uscan --noconf --force-download --rename --repack --download-current-version --destdir=.

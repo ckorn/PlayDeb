@@ -1,3 +1,18 @@
+the-powder-toy (91.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+        Added In game changelogs! (actually they were added in 91.0)
+        Added Ability to enroll in beta updates on the site (fixed)
+        Changed Loop edge mode now allows particles to have velocities
+        greater than the size of the screen
+        Changed Stickman now has terminal velocity in loop edge mode
+        Changed Don't remder AMTR as a gas
+        Fixed Fix progress bar disappearing on hover in local save browser
+        Fixed Fix PBCN(LIGH)
+        Fixed Fix crash when opening saves on OS X
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 24 Mar 2016 19:48:43 +0100
+
 the-powder-toy (91.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
