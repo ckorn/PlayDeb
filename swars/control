@@ -1,0 +1,37 @@
+Source: swars
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               autotools-dev,
+               libsdl1.2-dev [i386],
+               libvorbis-dev [i386],
+               libpng12-dev [i386],
+               libopenal-dev [i386]
+Standards-Version: 3.9.5
+Homepage: http://swars.vexillium.org/
+
+Package: swars
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         swars-bin (= ${binary:Version})
+Description: Port of Syndicate Wars
+ Syndicate Wars Port is a port of the 1996 DOS game Syndicate Wars to modern
+ operating systems. In particular, it runs on GNU, Mac OS and Windows,
+ but it should also work on any system supported by the SDL library
+ on the i386 architecture.
+
+Package: swars-bin
+Architecture: i386
+Multi-Arch: foreign
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         zenity
+Description: Port of Syndicate Wars (binary package)
+ Syndicate Wars Port is a port of the 1996 DOS game Syndicate Wars to modern
+ operating systems. In particular, it runs on GNU, Mac OS and Windows,
+ but it should also work on any system supported by the SDL library
+ on the i386 architecture.
+ .
+ (This package contains the i386 binary).

@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_configure:
+ifeq ($(DEB_BUILD_ARCH),i386)
+	dh_auto_configure -- --bindir=/usr/lib/games/swars --datadir=/usr/share/games/
+endif
+
