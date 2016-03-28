@@ -1,0 +1,4 @@
+usr/lib/games
+debian/scripts/swars		usr/games
+debian/swars.desktop		usr/share/applications
+debian/swars.png		usr/share/pixmaps

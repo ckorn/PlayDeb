@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ ! -f /usr/share/games/swars/language/text.dat ] ; then
+	zenity --error --title="Missing data files" \
+	--text="Put the data files into /usr/share/games/swars\n such that the file /usr/share/games/swars/language/text.dat exists.\nRun the command 'swars' in a terminal to see what files are required." \
+	--window-icon=/usr/share/pixmaps/swars.png
+fi
+
+cd /usr/lib/games/swars
+./swars "$@"
