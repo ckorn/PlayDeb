@@ -1,0 +1,47 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --parallel
+
+DEJAVU_DIRECTORY := $(shell dirname `readlink -f /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans-Bold.ttf`)
+
+ifeq ($(shell dpkg -s fpc | grep -o installed), installed)
+ BUILD_ENGINE_C := NO
+else
+ BUILD_ENGINE_C := YES
+endif
+
+HEDGEWARS_OPTIONS= \
+ -DCMAKE_INSTALL_PREFIX=/usr/lib/hedgewars \
+ -DDATA_INSTALL_DIR=/usr/share/games/hedgewars \
+ -DCMAKE_BUILD_TYPE=RelWithDebInfo -DPHYSFS_SYSTEM=ON \
+ -DFONTS_DIRS='/usr/share/fonts/truetype/wqy;$(DEJAVU_DIRECTORY)' \
+ -DNOVERSIONINFOUPDATE=1 \
+ -DBUILD_ENGINE_C=$(BUILD_ENGINE_C)
+
+override_dh_clean:
+	rm -rf tmp-icon
+	dh_clean
+
+override_dh_install:
+	mv debian/tmp/usr/lib/hedgewars/share/pixmaps/ debian/tmp/usr/share/
+	rm -Rf debian/tmp/usr/lib/hedgewars/share/
+	# workaround dfsg repack because of #802829
+	cp debian/silence.ogg debian/tmp/usr/share/games/hedgewars/Data/Sounds/Droplet1.ogg
+	cp debian/silence.ogg debian/tmp/usr/share/games/hedgewars/Data/Sounds/Droplet2.ogg
+	cp debian/silence.ogg debian/tmp/usr/share/games/hedgewars/Data/Sounds/Droplet3.ogg
+	dh_install
+
+override_dh_auto_configure:
+	for icon in `find debian/hicolor-icons -type f`; do \
+		dirname=`dirname $$icon`; \
+		dirname=`dirname $$dirname`; \
+		dirname=`basename $$dirname`; \
+		basename=`basename $$icon .xpm`; \
+		mkdir -p tmp-icon/$$dirname/apps; \
+		convert $$icon +set date:create +set date:modify -define png:exclude-chunk=time tmp-icon/$$dirname/apps/$$basename.png; \
+	done
+	dh_auto_configure -- $(HEDGEWARS_OPTIONS)
+
+override_dh_strip:
+	dh_strip --dbg-package=hedgewars-dbg

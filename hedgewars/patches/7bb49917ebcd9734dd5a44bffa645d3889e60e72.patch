@@ -1,0 +1,24 @@
+From 7bb49917ebcd9734dd5a44bffa645d3889e60e72 Mon Sep 17 00:00:00 2001
+From: Vittorio Giovara <vittorio.giovara@gmail.com>
+Date: Tue, 10 Nov 2015 13:53:10 +0100
+Subject: [PATCH] videorec: Make sure the audio packet is considered empty
+
+--HG--
+extra : hg-git-rename-source : git
+---
+ hedgewars/avwrapper/avwrapper.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/hedgewars/avwrapper/avwrapper.c b/hedgewars/avwrapper/avwrapper.c
+index 20b0785..d6a07ab 100644
+--- a/hedgewars/avwrapper/avwrapper.c
++++ b/hedgewars/avwrapper/avwrapper.c
+@@ -192,6 +192,8 @@ static int WriteAudioFrame()
+ 
+     AVPacket Packet;
+     av_init_packet(&Packet);
++    Packet.data = NULL;
++    Packet.size = 0;
+ 
+     int NumSamples = fread(g_pSamples, 2*g_Channels, g_NumSamples, g_pSoundFile);
+ 
