@@ -1,0 +1,35 @@
+spring for Debian
+=================
+
+Please use debian/rules get-orig-source to obtain the dfsg free upstream
+sources.
+
+The engine is not built with all hardening build flags to ensure synchronicity
+between clients.
+
+This source package embeds various patched third party software to ensure
+cross-system compatibility and synchronicity between connected clients from
+different operating systems. Replacing these embedded copies with unpatched
+system libraries will cause sync errors and will make online gaming impossible.
+
+For more information please have a look at these official threads:
+
+http://springrts.com/phpbb/viewtopic.php?f=20&t=31300
+
+http://springrts.com/phpbb/viewtopic.php?f=12&t=24813
+
+Based on feedback by the developers of Spring
+=============================================
+
+Lua and luasocket: The changes are not upstreamable.
+
+7z: -dev packages are not available.
+
+squish: Needed for decompressing terrain textures. Some free software drivers
+rely on this library.
+
+assimp: Needed for keeping the clients in sync.
+
+streflop and libm: Needed for keeping the clients in sync.
+
+ -- Markus Koschany <apo@gambaru.de>  Mon, 06 Jul 2015 15:16:43 +0200

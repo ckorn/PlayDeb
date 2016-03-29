@@ -1,0 +1,7 @@
+# http://springrts.com/mantis/view.php?id=4207
+# This can't be fixed because tables always need a min width
+# Upstream recommends to ignore this issue and I agree.
+manpage-has-errors-from-man
+# only on i386. Those files are not shared libraries but AI components of the
+# spring engine.
+shlib-with-non-pic-code
