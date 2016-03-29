@@ -1,10 +1,10 @@
 Source: hedgewars
 Section: games
-Priority: extra
+Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Dmitry E. Oboukhov <unera@debian.org>,
-           Gianfranco Costamagna <costamagnagianfranco@yahoo.it>
-Standards-Version: 3.9.6
+           Gianfranco Costamagna <locutusofborg@debian.org>
+Standards-Version: 3.9.5
 Build-Depends: clang [arm64 hurd-i386 kfreebsd-amd64 kfreebsd-i386 mips mipsel ppc64el s390x alpha hppa m68k powerpcspe sh4 x32],
                cmake,
                debhelper (>= 9),
@@ -86,3 +86,13 @@ Description: Data files for hedgewars
  This package contains data files for the hedgewars package.
  Examples of files are: maps, scripts, themes, images, sounds,
  level data and other miscellaneous files needed by hedgewars.
+
+Package: hedgewars-dbg
+Section: debug
+Architecture: any
+Priority: extra
+Depends: hedgewars (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Debug symbols for Hedgewars
+ This package contains debug symbols for the hedgewars package.

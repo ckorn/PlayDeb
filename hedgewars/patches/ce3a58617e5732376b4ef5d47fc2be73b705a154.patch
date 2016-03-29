@@ -1,0 +1,24 @@
+From ce3a58617e5732376b4ef5d47fc2be73b705a154 Mon Sep 17 00:00:00 2001
+From: Vittorio Giovara <vittorio.giovara@gmail.com>
+Date: Tue, 10 Nov 2015 13:53:40 +0100
+Subject: [PATCH] videorec: Drop a commented out option
+
+--HG--
+extra : hg-git-rename-source : git
+---
+ hedgewars/avwrapper/avwrapper.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/hedgewars/avwrapper/avwrapper.c b/hedgewars/avwrapper/avwrapper.c
+index 1f48af4..9ed00b4 100644
+--- a/hedgewars/avwrapper/avwrapper.c
++++ b/hedgewars/avwrapper/avwrapper.c
+@@ -273,7 +273,7 @@ static int AddVideoStream()
+        identically 1. */
+     g_pVideo->time_base.den = g_pVStream->time_base.den = g_Framerate.num;
+     g_pVideo->time_base.num = g_pVStream->time_base.num = g_Framerate.den;
+-    //g_pVideo->gop_size = 12; /* emit one intra frame every twelve frames at most */
++
+     g_pVideo->pix_fmt = AV_PIX_FMT_YUV420P;
+ 
+     // set quality

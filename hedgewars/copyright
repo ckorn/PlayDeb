@@ -1,6 +1,8 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: http://hedgewars.org/
 Upstream-Contact: Andrey Korotaev <unC0Rr@gmail.com>, Igor Ulyanov aka Displacer <iulyanov@gmail.com>
+ Repackaged, excluding non-DFSG files: #802829
+Files-Excluded:	*/Droplet*.ogg
 
 Files: *
 Copyright:
@@ -99,7 +101,7 @@ License: LGPL-2.1+
 Files: misc/winutils/include/GL/glut.h
 Copyright:
 	1994-1998 Mark J. Kilgard
-License: custom
+License: glut
  This program is freely distributable without licensing fees  and is
  provided without guarantee or warrantee expressed or  implied. This
  program is -not- in the public domain.
@@ -243,7 +245,7 @@ License: MIT
 
 Files: share/hedgewars/Data/Fonts/DejaVuSans-Bold.ttf
 Copyright: 2003 by Bitstream
-License: custom
+License: fonts
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of the fonts accompanying this license ("Fonts") and associated documentation
  files (the "Font Software"), to reproduce and distribute the Font Software,
@@ -298,8 +300,8 @@ Note: Upstream adds a font embedding exception listed below
  do so, delete this exception statement from your version.
 
 Files: debian/*
-Copyright: 2006      Dmitry E. Oboukhov <dimka@avanto.org>
-           2012-2014 Gianfranco Costamagna <costamagnagianfranco@yahoo.it>
+Copyright: 2006      Dmitry E. Oboukhov <unera@debian.org>
+           2012-2015 Gianfranco Costamagna <locutusofborg@debian.org>
 License: GPL-2
 
 License: GPL-2

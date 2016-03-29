@@ -1,0 +1,39 @@
+From 850e289b11dbe0415ba909ef87e13533c0e6ee41 Mon Sep 17 00:00:00 2001
+From: Vittorio Giovara <vittorio.giovara@gmail.com>
+Date: Tue, 10 Nov 2015 13:53:14 +0100
+Subject: [PATCH] videorec: Always initialize audio and video time bases
+
+In both context and stream.
+
+--HG--
+extra : hg-git-rename-source : git
+---
+ hedgewars/avwrapper/avwrapper.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/hedgewars/avwrapper/avwrapper.c b/hedgewars/avwrapper/avwrapper.c
+index 3941ab6..cc7d712 100644
+--- a/hedgewars/avwrapper/avwrapper.c
++++ b/hedgewars/avwrapper/avwrapper.c
+@@ -149,6 +149,10 @@ static void AddAudioStream()
+     g_pAudio->sample_rate = g_Frequency;
+     g_pAudio->channels = g_Channels;
+ 
++    // set time base as invers of sample rate
++    g_pAudio->time_base.den = g_pAStream->time_base.den = g_Frequency;
++    g_pAudio->time_base.num = g_pAStream->time_base.num = 1;
++
+     // set quality
+     g_pAudio->bit_rate = 160000;
+ 
+@@ -254,8 +258,8 @@ static int AddVideoStream()
+        of which frame timestamps are represented. for fixed-fps content,
+        timebase should be 1/framerate and timestamp increments should be
+        identically 1. */
+-    g_pVideo->time_base.den = g_Framerate.num;
+-    g_pVideo->time_base.num = g_Framerate.den;
++    g_pVideo->time_base.den = g_pVStream->time_base.den = g_Framerate.num;
++    g_pVideo->time_base.num = g_pVStream->time_base.num = g_Framerate.den;
+     //g_pVideo->gop_size = 12; /* emit one intra frame every twelve frames at most */
+     g_pVideo->pix_fmt = AV_PIX_FMT_YUV420P;
+ 

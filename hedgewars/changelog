@@ -1,45 +1,84 @@
-hedgewars (0.9.21.1-1~getdeb1) trusty; urgency=medium
+hedgewars (0.9.22-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
-     + New type of randomly generated maps: Perlin Maps.
-     + Old Random generated maps are more diverse now.
-     + Slider for adjusting land generation detail.
-     + Highlander gamemode can now be used with custom weapon schemes
-     (1-8=How probable to get this weapon. 9=All hogs get it)
-     + New gameplay mode "Construction Mode"
-     + New gameplay mode "TechRacer"
-     + New game play mode "DiagonalMaze" (generates a simple diagonal maze)
-     + Add 7 target practice missions, now with simple scoring
-     + Update RC Plane Challenge: Stats screen reworked and shows now several
-     facts, simple ranking system based on used planes, some taunts in the
-     game
-     + New training/multiplayer mission: "Climb Home"
-     + Game scheme screen has a "Script parameter" field now. This allows
-       one to make more customizable scripts/modes.
-     + Network game rejoining. Note: Your team(s) will vanish after 3 turns.
-     + Visual and gameplay changes to "sea" - world edge, visual change to
-     wrap world edge to allow seeing through the wrap, visual change to
-     bounce worldedge 
-     + The map of the Basketball Mission can be selected for regular games
-     again ("BasketballField")
-     + New engine command: /togglechat will disable/enable chat display (does
-     not affect chat history display)
-     + Change to Racer: first weapon/utility available will be automatically
-     selected on start
-     + Added some visual feedback to failed girder placement.
-     + Various performance tweaks, especially for very large maps.
-     + Allow switching through hogs in reverse order with PRECISE+HOGSWITCH
-     (left shift + tab, by default)
-     + Added support for custom Sudden Death music to theme.cfg (e.g.
-     sd-music=hell.ogg ).
-     + New Hats: policegirl, fr_tomato, cratehider
-     * Fixed drill rockets sometimes exploding on impact.
-     * Fixed trainings broken due to indestructable targets/crates.
-     * Fixes and tweaks for low qualily rendering.
-     * Sinegun won't shoot through -solid- land anymore
-     * Many bug fixes and tweaks.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 18 Jan 2015 18:52:57 +0100
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 28 Mar 2016 18:39:11 +0200
+
+hedgewars (0.9.22-dfsg-3) unstable; urgency=low
+
+  [ Andreas Cadhalpun, Vittorio Giovara, Gianfranco Costamagna ]
+  * update for ffmpeg_2.9 compatibility (Closes: #803825).
+    (cherry-pick from upstream, the patches from the bug report
+     weren't working on older libav implementation, e.g. ubuntu precise)
+    - debian/patches/e8654674c5ee580b2ec8392d3ae732c10195c039.patch:
+    - debian/patches/62e5519664f25ccdbdeb51e3e08c9017c95b25c1.patch:
+    - debian/patches/5de297c5621455b9117aa7caca2785d21ae1bf04.patch:
+    - debian/patches/9da8e039c97c4a52161bd563b75ffa35acd75ec5.patch:
+    - debian/patches/ab7e24456dd3dec808862f14d831c7abb14aadc9.patch:
+    - debian/patches/7bb49917ebcd9734dd5a44bffa645d3889e60e72.patch:
+    - debian/patches/2488090353fc122b4af030ea55bbff494c204c9b.patch:
+    - debian/patches/3e1856bb563ad889e113f5ba440196e1c9e07b50.patch:
+    - debian/patches/850e289b11dbe0415ba909ef87e13533c0e6ee41.patch:
+    - debian/patches/14a48ec6c0e4e7c4c475eacc9ae3b093656c163a.patch:
+    - debian/patches/a0e5bd1d4d77c1558394d9ac6b6b8a5030ef5282.patch:
+    - debian/patches/ce3a58617e5732376b4ef5d47fc2be73b705a154.patch:
+    - debian/patches/93292d80924aeadfda9f327ba78891cc4bab6c3c.patch:
+    - debian/patches/f121e6c350a041a429a57ba4748ad673aa8420ea.patch:
+
+  [ Gianfranco Costamagna ]
+  * change priority for dbg package.
+  * Fix watch file.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 03 Nov 2015 10:38:33 +0100
+
+hedgewars (0.9.22-dfsg-2) unstable; urgency=medium
+
+  * Replace Droplet.ogg CC-3.0 alternative with a 0s ogg file.
+    - this file is provided by upstream developer "nemo", with no associated
+      license, because there is no creativity in an "empty" ogg file.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 02 Nov 2015 14:10:22 +0100
+
+hedgewars (0.9.22-dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Priority optional.
+  * Tweak source code to remove Droplet*.ogg, and provide a dfsg alternative
+    (Closes: #802829)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 29 Sep 2015 17:01:02 +0200
+
+hedgewars (0.9.22~git20150914-3) experimental; urgency=medium
+
+  * Use fp-compiler-2.6.4, hack but should work.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 14 Sep 2015 14:43:17 +0200
+
+hedgewars (0.9.22~git20150914-2) experimental; urgency=medium
+
+  * Use fp-compiler to check if we need to use BUILD_ENGINE_C
+    - aspcud resolver from experimental doesn't install fpc virtual
+      package (optimizing for size).
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 14 Sep 2015 13:25:48 +0200
+
+hedgewars (0.9.22~git20150914-1) experimental; urgency=medium
+
+  * New upstream snapshot.
+    - drop all patches, upstream
+  * Update copyright file.
+  * Update Unera and My uid.
+  * Remove menu file, not needed anymore
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Mon, 01 Jun 2015 16:21:59 +0200
+
+hedgewars (0.9.21.1-5) unstable; urgency=medium
+
+  * Add a debug package, per upstream request.
+    - 0001-Add-RelWithDebInfo-for-debugging-purposes.patch
+      Add RelWithDebInfo support for cmake.
+
+ -- Gianfranco Costamagna <costamagnagianfranco@yahoo.it>  Thu, 15 Jan 2015 16:08:17 +0100
 
 hedgewars (0.9.21.1-4) unstable; urgency=medium
 
@@ -101,8 +140,8 @@ hedgewars (0.9.21-1) unstable; urgency=medium
       facts, simple ranking system based on used planes, some taunts in
       the game
     + New training/multiplayer mission: "Climb Home"
-    + Game scheme screen has a "Script parameter" field now. This allows one
-      to make more customizable scripts/modes.
+    + Game scheme screen has a "Script parameter" field now. This allows to
+      make more customizable scripts/modes.
     + Network game rejoining. Note: Your team(s) will vanish after 3 turns.
     + Visual and gameplay changes to "sea" - world edge, visual change to wrap
       world edge to allow seeing through the wrap, visual change to bounce
