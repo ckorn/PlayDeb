@@ -1,3 +1,9 @@
+gelide (0.1.5-1~getdeb2~trusty) trusty; urgency=medium
+
+  * Add fix b8da37d825b9548ba6548f96ce8efb84cf068001
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 31 Mar 2016 19:40:27 +0200
+
 gelide (0.1.5-1~getdeb1) lucid; urgency=low
 
   * New upstream version (LP: #743575)
