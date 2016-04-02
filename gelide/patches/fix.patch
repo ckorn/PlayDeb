@@ -1,0 +1,178 @@
+commit b8da37d825b9548ba6548f96ce8efb84cf068001
+Author: Juan Ángel Moreno Fernández <jamf@users.sourceforge.net>
+Date:   Thu Jan 24 15:40:02 2013 +0100
+
+    Some bug has been fixed
+    
+    2013-01-24  Juan A. Moreno <gelide.prj@gmail.com>
+        * src/core/system_manager.cpp, src/core/system.cpp, src/utils/utils.cpp:
+        Bug #3600646 has been corrected, thank you Jarred for the patch!!
+    
+        * src/ui/dialog_system_edit.cpp
+        Bug fixed. Now DatFile and BiosFile are not updated if the user select a
+        directory.
+    
+        * src/core/dat_reader_factory.cpp
+        Bug fixed. Now cheks if the path pased is a directory.
+
+Index: gelide-0.1.5/src/core/dat_reader_factory.cpp
+===================================================================
+--- gelide-0.1.5.orig/src/core/dat_reader_factory.cpp	2016-03-31 21:44:08.363929770 +0200
++++ gelide-0.1.5/src/core/dat_reader_factory.cpp	2016-03-31 21:44:08.359929684 +0200
+@@ -30,8 +30,8 @@
+ 	int l_fsize;
+ 	CDatReader* l_reader = NULL;
+ 
+-	// El fichero debe ser válido
+-	if(!p_file.size())
++	// El fichero debe ser válido y no puede ser un directorio
++	if(!p_file.size() || Glib::file_test(p_file, Glib::FILE_TEST_IS_DIR))
+ 		return NULL;
+ 
+ 	l_file.open(p_file.data());
+@@ -58,6 +58,7 @@
+ 
+ 	// Buscamos el lector adecuado
+ 	// Chequeamos CMPro
++	GELIDE_DEBUG("Checking ClrMamePro dat format...");
+ 	l_reader = new CDatReaderClrMamePro();
+ 	if(l_reader->load(l_buffer, l_fsize)){
+ 		delete[] l_buffer;
+@@ -65,6 +66,7 @@
+ 	}
+ 	delete l_reader;
+ 	// Chequeamos Logiqx xml
++	GELIDE_DEBUG("Checking Logiqx xml dat format...");
+ 	l_reader = new CDatReaderLogiqxXml();
+ 	if(l_reader->load(l_buffer, l_fsize)){
+ 		delete[] l_buffer;
+@@ -72,6 +74,7 @@
+ 	}
+ 	delete l_reader;
+ 	// Chequeamos Mame xml
++	GELIDE_DEBUG("Checking Mame xml dat format...");
+ 	l_reader = new CDatReaderMameXml();
+ 	if(l_reader->load(l_buffer, l_fsize)){
+ 		delete[] l_buffer;
+Index: gelide-0.1.5/src/core/system.cpp
+===================================================================
+--- gelide-0.1.5.orig/src/core/system.cpp	2016-03-31 21:44:08.363929770 +0200
++++ gelide-0.1.5/src/core/system.cpp	2016-03-31 21:44:08.359929684 +0200
+@@ -21,7 +21,8 @@
+ 
+ #include <fstream>
+ #include <algorithm>
+-#include <glib/gstdio.h>
++//#include <glib/gstdio.h>
++#include <glib.h>
+ #include <sstream>
+ #include "system.hpp"
+ #include "../utils/tokenizer.hpp"
+Index: gelide-0.1.5/src/core/system_manager.cpp
+===================================================================
+--- gelide-0.1.5.orig/src/core/system_manager.cpp	2016-03-31 21:44:08.363929770 +0200
++++ gelide-0.1.5/src/core/system_manager.cpp	2016-03-31 21:44:08.359929684 +0200
+@@ -22,7 +22,8 @@
+ #include <fstream>
+ #include <stdlib.h>
+ #include <sstream>
+-#include <glib/gstdio.h>
++//#include <glib/gstdio.h>
++#include <glib.h>
+ #include <gtkmm/image.h>
+ #include <giomm/file.h>
+ #include "system_manager.hpp"
+Index: gelide-0.1.5/src/ui/dialog_gamelist_generator.cpp
+===================================================================
+--- gelide-0.1.5.orig/src/ui/dialog_gamelist_generator.cpp	2016-03-31 21:44:08.363929770 +0200
++++ gelide-0.1.5/src/ui/dialog_gamelist_generator.cpp	2016-03-31 21:44:08.359929684 +0200
+@@ -179,6 +179,9 @@
+ 	m_label_status.set_label(_("Loading dat file..."));
+ 	while (Gtk::Main::events_pending())
+ 		Gtk::Main::iteration();
++
++	GELIDE_DEBUG("Dat file: " << m_system->getDatFile());
++
+ 	l_dat_reader = CDatReaderFactory::getDatReader(m_system->getDatFile());
+ 	if(l_dat_reader){
+ 		GELIDE_DEBUG("Dat reader: " << l_dat_reader->getType());
+@@ -199,7 +202,7 @@
+ 		delete l_dat_reader;
+ 	}
+ 	else
+-		GELIDE_DEBUG("Unsupported dat file: " << m_system->getDatFile());
++		GELIDE_DEBUG("Unsupported dat file.");
+ 
+ 
+ 	if(l_preserve){
+Index: gelide-0.1.5/src/ui/dialog_system_edit.cpp
+===================================================================
+--- gelide-0.1.5.orig/src/ui/dialog_system_edit.cpp	2016-03-31 21:44:08.363929770 +0200
++++ gelide-0.1.5/src/ui/dialog_system_edit.cpp	2016-03-31 21:44:08.359929684 +0200
+@@ -257,6 +257,8 @@
+ 	// Establecemos los campos
+ 	m_entry_name.set_text(m_system->getName());
+ 	m_description_buf->set_text(m_system->getDescription());
++
++
+ 	m_button_dat.set_filename(m_system->getDatFile());
+ 	m_button_bios.set_filename(m_system->getBiosFile());
+ 	m_image_icon.set(m_system->getIcon());
+@@ -311,8 +313,13 @@
+ 	// Pasamos la configuración al sistema
+ 	m_system->setName(m_entry_name.get_text());
+ 	m_system->setDescription(m_description_buf->get_text());
+-	m_system->setDatFile(m_button_dat.get_filename());
+-	m_system->setBiosFile(m_button_bios.get_filename());
++
++
++	if(!Glib::file_test(m_button_dat.get_filename(), Glib::FILE_TEST_IS_DIR))
++		m_system->setDatFile(m_button_dat.get_filename());
++	if(!Glib::file_test(m_button_bios.get_filename(), Glib::FILE_TEST_IS_DIR))
++		m_system->setBiosFile(m_button_bios.get_filename());
++
+ 	m_system->setIcon(m_image_icon.get_pixbuf());
+ 	m_system->setIconFile(m_icon_file);
+ 	m_system->setHomeDir(m_entry_home.get_text());
+Index: gelide-0.1.5/src/ui/info_pannel.cpp
+===================================================================
+--- gelide-0.1.5.orig/src/ui/info_pannel.cpp	2016-03-31 21:44:08.363929770 +0200
++++ gelide-0.1.5/src/ui/info_pannel.cpp	2016-03-31 21:44:08.359929684 +0200
+@@ -169,8 +169,9 @@
+ 	m_label_emulator_description.set_label("");
+ }
+ 
++// CHECKME: Esto es una mala solución. El método no localiza bien los ficheros
+ void CInfoPannel::updateImages(CSystem* p_system, CGame* p_game){
+-	Glib::ustring l_exts[] = {"png", "jpg", "jpeg", "gif",  "xpm", "pnm", "tif", "tiff"};
++	Glib::ustring l_exts[] = {"png", "PNG", "jpg", "JPG", "jpeg", "JPEG", "gif", "GIF", "xpm", "XPM", "pnm", "tif", "tiff"};
+ 	int l_tab, l_ind;
+ 	//Gtk::Image* l_image = NULL;
+ 	Glib::RefPtr<Gdk::Pixbuf>* l_pixbuf = NULL;
+Index: gelide-0.1.5/src/utils/process.cpp
+===================================================================
+--- gelide-0.1.5.orig/src/utils/process.cpp	2016-03-31 21:44:08.363929770 +0200
++++ gelide-0.1.5/src/utils/process.cpp	2016-03-31 21:44:08.359929684 +0200
+@@ -23,7 +23,7 @@
+ #include <sys/types.h>
+ #include <sys/wait.h>
+ #include <glibmm.h>
+-
++#include <unistd.h>
+ 
+ CProcess::CProcess(void): m_proc_id(-1){
+ }
+Index: gelide-0.1.5/src/utils/utils.cpp
+===================================================================
+--- gelide-0.1.5.orig/src/utils/utils.cpp	2016-03-31 21:44:08.363929770 +0200
++++ gelide-0.1.5/src/utils/utils.cpp	2016-03-31 21:44:08.363929770 +0200
+@@ -21,7 +21,8 @@
+ #include "utils.hpp"
+ #include "../gelide.hpp"
+ #include <ctime>
+-#include <glib/gfileutils.h>
++//#include <glib/gfileutils.h>
++#include <glib.h>
+ //#include <glibmm.h>
+ //#include <glib/gstdio.h>
+ //#include <stdlib.h>
