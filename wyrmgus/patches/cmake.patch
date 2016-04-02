@@ -1,9 +1,9 @@
 # place config files in the home directory. The game directory is readonly.
-Index: wyrmgus-2.0.0/CMakeLists.txt
+Index: wyrmgus-2.1.2/CMakeLists.txt
 ===================================================================
---- wyrmgus-2.0.0.orig/CMakeLists.txt	2016-03-20 20:34:21.856602766 +0100
-+++ wyrmgus-2.0.0/CMakeLists.txt	2016-03-20 20:34:21.856602766 +0100
-@@ -785,7 +785,7 @@
+--- wyrmgus-2.1.2.orig/CMakeLists.txt	2016-03-30 22:41:11.753607374 +0200
++++ wyrmgus-2.1.2/CMakeLists.txt	2016-03-30 22:41:11.753607374 +0200
+@@ -786,7 +786,7 @@
  option(ENABLE_DEV "Install Stratagus game development headers files" OFF)
  option(ENABLE_UPX "Compress Stratagus executable binary with UPX packer" OFF)
  option(ENABLE_STRIP "Strip all symbols from executables" OFF)
