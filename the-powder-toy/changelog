@@ -1,3 +1,28 @@
+the-powder-toy (91.3-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+    Version 91.3
+     Changed Removed April Fool's joke -- but the setting is still there in
+     options for people who liked it
+     Changed Made 3D mode a little less laggy
+     Changed THDR is no longer an energy particle
+     Fixed Fixed 3D effect not working properly on OS X, fix yellow screens
+     when turned off on OS X
+     Fixed Some fixes to saving edge mode and double scale mode to
+     powder.pref
+
+    Version 91.2
+     Added The feature you've all been waiting for is here! 3-dimensional
+     TPT!
+     Changed Rewrite parts of the save browser to fix crashes on OS X /
+     windows when opening saves
+     Changed Remove virus ---- I mean, fix false virus detection with AVG
+     Changed Note: It has been reported that the 3D doesn't work for some
+     people, and instead TPT turns yellow. Since yellow is such a nice color,
+     this is now a feature.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 03 Apr 2016 01:16:40 +0200
+
 the-powder-toy (91.1-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
