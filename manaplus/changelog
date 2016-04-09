@@ -1,3 +1,15 @@
+manaplus (1:1.6.4.9-1~getdeb2~wily) wily; urgency=medium
+
+  * New upstream version
+    fix: not allow some chat commands exuting by npc scripts.
+    fix: crash in /debugspawn chat command if create beings outside of map.
+    add: improve players draw performance.
+    add: support for multiply packet versions at same time.
+    add: ask before executing remote commands in chat.
+    add: some new and old packets (hercules)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 09 Apr 2016 20:28:52 +0200
+
 manaplus (1:1.6.3.26-1~getdeb2~wily) wily; urgency=medium
 
   * New upstream version
