@@ -1,3 +1,12 @@
+warzone2100 (3.1.5-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+     * General:
+       * Fix: Campaign loads and transport missions visibility should now
+       work again.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 11 Apr 2016 18:58:58 +0200
+
 warzone2100 (3.1.4-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
