@@ -1,8 +1,8 @@
 Don't put the version in the tarball name.
-Index: stendhal-1.18/build.xml
+Index: stendhal-1.20/build.xml
 ===================================================================
---- stendhal-1.18.orig/build.xml	2015-08-19 19:18:07.500393290 +0200
-+++ stendhal-1.18/build.xml	2015-08-19 19:18:07.496393286 +0200
+--- stendhal-1.20.orig/build.xml	2016-04-13 20:31:43.171433071 +0200
++++ stendhal-1.20/build.xml	2016-04-13 20:52:49.265945661 +0200
 @@ -28,16 +28,16 @@
  
  	<property name="build_client" value="${buildroot}/build_client"/>
@@ -28,8 +28,8 @@ Index: stendhal-1.18/build.xml
  	
  	<property name="config_dir" value="data/conf"/>
  
-@@ -624,7 +624,7 @@
- 		<copy todir="${buildroot}/stendhal-server-${version}" file="README.txt"/>
+@@ -605,7 +605,7 @@
+ 		<copy todir="${buildroot}/stendhal-server-${version}" file="README.md"/>
  		<mkdir dir="${buildroot}/stendhal-server-${version}/log" />
  		<touch file="${buildroot}/stendhal-server-${version}/log/empty" />
 -		<zip destfile="${buildroot}/stendhal-server-${version}.zip">
@@ -37,25 +37,25 @@ Index: stendhal-1.18/build.xml
  			<zipfileset dir="${buildroot}/stendhal-server-${version}" excludes="${server_jarname}"/>
  			<zipfileset dir="${buildroot}/stendhal-server-${version}" includes="${server_jarname}" filemode="755"/>
  		</zip>
-@@ -658,7 +658,7 @@
- 		<copy todir="${buildroot}/stendhal-${version}" file="README.txt"/>
- 		<copy todir="${buildroot}/stendhal-${version}" file=".hotspotrc"/>
+@@ -638,7 +638,7 @@
+ 		<touch file="${buildroot}/stendhal-${version}/log/stendhal.txt" />
+ 		<copy todir="${buildroot}/stendhal-${version}" file="README.md"/>
  		<copy todir="${buildroot}/stendhal-${version}" file="icon.ico"/>
 -		<zip destfile="${buildroot}/stendhal-${version}.zip">
 +		<zip destfile="${buildroot}/stendhal.zip">
  			<zipfileset dir="${buildroot}/stendhal-${version}" excludes="stendhal-starter.jar"/>
  			<zipfileset dir="${buildroot}/stendhal-${version}" includes="stendhal-starter.jar" filemode="755"/>
  		</zip>
-@@ -681,7 +681,7 @@
+@@ -660,7 +660,7 @@
+ 			<fileset dir="." includes="LICENSE.txt"/>
  		</copy>
- 		<copy todir="${buildroot}/stendhal-${version}" file="README.txt"/>
- 		<copy todir="${buildroot}/stendhal-${version}" file=".hotspotrc"/>
+ 		<copy todir="${buildroot}/stendhal-${version}" file="README.md"/>
 -		<zip destfile="${buildroot}/stendhal-starter-${version}.zip">
 +		<zip destfile="${buildroot}/stendhal-starter.zip">
  			<zipfileset dir="${buildroot}/stendhal-${version}" excludes="${client_starter_jarname}"/>
  			<zipfileset dir="${buildroot}/stendhal-${version}" includes="${client_starter_jarname}" filemode="755"/>
  		</zip>
-@@ -741,7 +741,7 @@
+@@ -718,7 +718,7 @@
  		</copy>
  
  		<tar destfile="${buildroot}/stendhal-${version}-src.tar.gz" compression="gzip" longfile="gnu">
