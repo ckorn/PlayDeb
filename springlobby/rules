@@ -10,7 +10,7 @@ PROGDIR := $(CURDIR)/debian/tmp
 %:
 	# fail to build on architectures other than amd64 and i386
 	dpkg-architecture -eamd64 || dpkg-architecture -ei386 || exit 1
-	+dh $@ --buildsystem=cmake --parallel
+	+dh $@ --buildsystem=cmake
 
 override_dh_auto_configure:
 	dh_auto_configure -- -DSPRINGLOBBY_REV:STRING=$(SLVERSION) -DCMAKE_BUILD_TYPE=RELWITHDEBINFO
