@@ -1,3 +1,15 @@
+speed-dreams (2.2.1-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 19 Apr 2016 22:24:53 +0200
+
+speed-dreams (2.2.0-1~getdeb1) trusty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 16 Mar 2016 21:22:49 +0100
+
 speed-dreams (2.1.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
