@@ -1,3 +1,9 @@
+popzi (0.1-1~getdeb3~xenial) xenial; urgency=medium
+
+  * Rebuild for xenial
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 20 Apr 2016 23:40:54 +0200
+
 popzi (0.1-1~getdeb2) precise; urgency=low
 
   * Remove debian/watch file.

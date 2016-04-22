@@ -2,16 +2,18 @@ Source: popzi
 Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
-Build-Depends: debhelper (>= 7.0.50~), 
-               python-support, 
+Build-Depends: debhelper (>= 9), 
+               dh-python, 
                python
-Standards-Version: 3.9.1
+Standards-Version: 3.9.6
 Homepage: http://www.osgameseed.org/games/popzi
 
 Package: popzi
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}, ttf-freefont,
- python-pygame
+Depends: ${misc:Depends},
+         ${python:Depends},
+         ttf-freefont,
+         python-pygame
 X-Python-Version: ${python:Versions}
 Description: Simple group and pop object game
  You need to group equal objects close to each other
