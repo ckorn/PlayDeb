@@ -3,7 +3,8 @@ Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
-               python | python-all | python-dev | python-all-dev
+               python | python-all | python-dev | python-all-dev,
+               dh-python
 Standards-Version: 3.9.5
 Homepage: http://pyfa.sourceforge.net/
 
@@ -11,8 +12,7 @@ Package: pyfa
 Architecture: all
 Depends: ${python:Depends},
          ${misc:Depends},
-         python-wxgtk2.8,
-         python-wxglade,
+         python-wxgtk3.0,
          python-sqlalchemy,
          python-dateutil,
          libcanberra-gtk-module,
