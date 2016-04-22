@@ -3,15 +3,15 @@ Section: games
 Priority: optional
 Maintainer: Christoph Korn <c_korn@gmx.de>
 Build-Depends: debhelper (>= 9),
-               openjdk-7-jdk | sun-java6-jdk,
+               openjdk-8-jdk | sun-java6-jdk,
                ant
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: http://megamek.sourceforge.net/
 
 Package: megamek
 Architecture: all
 Depends: ${misc:Depends},
-         openjdk-7-jre | sun-java6-jre,
+         openjdk-8-jre | sun-java6-jre,
          fontconfig
 Description: Networked Java clone of BattleTech
  MegaMek is a networked Java clone of BattleTech, a

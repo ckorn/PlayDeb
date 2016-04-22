@@ -1,3 +1,9 @@
+megamek (41.3-1~getdeb2~xenial) xenial; urgency=medium
+
+  * Rebuild for xenial
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 20 Apr 2016 23:34:32 +0200
+
 megamek (41.3-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
