@@ -6,9 +6,10 @@ override_dh_auto_configure:
 	cd thirdparty && ./fetch-thirdparty-deps.sh
 	make dependencies
 
+# fails with System.UnauthorizedAccessException: Access to the path "/sbuild-nonexistent" is denied.
 override_dh_auto_test:
-	cp thirdparty/download/* .
-	dh_auto_test
+#	cp thirdparty/download/* .
+#	dh_auto_test
 
 override_dh_auto_install:
 	dh_auto_install -- prefix=/usr datadir=/usr/share/games libexecdir=/usr/share/games bindir=/usr/games gameinstalldir=/usr/share/games/openra

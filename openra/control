@@ -3,7 +3,7 @@ Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
-               mono-gmcs,
+               mono-mcs,
                cli-common-dev (>= 0.5.7),
                libgl1-mesa-dev,
                libsdl2-dev,

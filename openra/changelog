@@ -1,3 +1,9 @@
+openra (20151224-1~getdeb3~xenial) xenial; urgency=medium
+
+  * Rebuild for xenial
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 20 Apr 2016 23:37:52 +0200
+
 openra (20151224-1~getdeb2~wily) wily; urgency=medium
 
   * New upstream version
