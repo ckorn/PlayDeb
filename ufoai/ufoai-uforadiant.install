@@ -1,3 +1,0 @@
-debian/scripts/uforadiant           usr/bin
-debian/uforadiant.desktop           usr/share/applications
-radiant/uforadiant                  usr/lib/uforadiant

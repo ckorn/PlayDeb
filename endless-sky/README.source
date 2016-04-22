@@ -1,7 +1,0 @@
-The source package contains image files that were created in GIMP, Inkscape, and
-Blender. If you want to edit those images, the original files are available at:
-
-https://drive.google.com/folderview?id=0B9aK8dG39P29fkdBeUJjSXJYVDdjMEpkOXh3T1NDekFYaTEtbkdTdzVwX2NTUWVVT3BUWVk&usp=sharing
-
-These files add up to roughly 3 GB of data, which is why the source distribution
-only includes the final PNG images and not the raw source files for them.

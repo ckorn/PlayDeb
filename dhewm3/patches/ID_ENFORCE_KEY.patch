@@ -1,9 +1,0 @@
---- a/neo/config.h.in
-+++ b/neo/config.h.in
-@@ -13,4 +13,6 @@
- 
- #cmakedefine ID_ENABLE_CURL
- 
-+#define ID_ENFORCE_KEY			0
-+
- #endif

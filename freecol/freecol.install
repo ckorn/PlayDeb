@@ -1,6 +1,0 @@
-data/* usr/share/games/freecol
-data/freecol.png usr/share/pixmaps
-debian/freecol.desktop usr/share/applications
-debian/wrapper/freecol usr/games
-packaging/common/freecol.appdata.xml usr/share/appdata
-packaging/common/freecol.xpm usr/share/pixmaps

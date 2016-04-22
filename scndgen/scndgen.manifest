@@ -1,4 +1,0 @@
-/usr/share/games/scndgen/ScndGen.jar:
- Main-Class: com.scnd_genesis.loginScreen
- debian-Java-Home: /usr/lib/jvm/default-java
- Class-Path: /usr/share/java/jl.jar /usr/share/java/mysql-connector-java.jar ./assetAllExtra.jar /usr/share/java/jinput.jar /usr/share/games/scndgen/sqlitejdbc-v056.jar

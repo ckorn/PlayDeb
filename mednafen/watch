@@ -1,3 +1,0 @@
-version=3
-opts="uversionmangle=s/-wip//" \
-    http://mednafen.fobby.net/releases/files/mednafen-(\d+.*)\.tar\.bz2

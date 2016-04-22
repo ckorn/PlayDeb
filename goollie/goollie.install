@@ -1,5 +1,0 @@
-debian/scripts/GoOllie			usr/games
-build-dir/GoOllie			usr/share/games/goollie
-src/*.py				usr/share/games/goollie
-debian/goollie.png			usr/share/pixmaps
-debian/GoOllie.desktop			usr/share/applications

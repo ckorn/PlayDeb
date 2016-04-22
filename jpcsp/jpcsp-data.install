@@ -1,8 +1,0 @@
-jpcsp-linux-x86/bin					usr/share/games/jpcsp
-jpcsp-linux-x86/flash0					usr/share/games/jpcsp
-jpcsp-linux-x86/demos					usr/share/games/jpcsp
-jpcsp-linux-x86/umdimages				usr/share/games/jpcsp
-jpcsp-linux-x86/*.xml					usr/share/games/jpcsp
-jpcsp-linux-x86/lib/*.jar				usr/share/games/jpcsp/lib
-jpcsp-linux-x86/ms0/PSP/GAME/JpcspConnector		usr/share/games/jpcsp/ms0/PSP/GAME
-jpcsp-linux-x86/ms0/PSP/GAME/pong			usr/share/games/jpcsp/ms0/PSP/GAME

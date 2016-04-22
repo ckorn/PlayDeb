@@ -1,5 +1,0 @@
-data gamelib snowui simplejson usr/share/games/gondola
-*.py usr/share/games/gondola
-debian/scripts/gondola usr/games
-debian/gondola.xpm usr/share/pixmaps
-debian/gondola.desktop usr/share/applications

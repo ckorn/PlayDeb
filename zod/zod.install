@@ -1,5 +1,0 @@
-zod_launcher_src/zod_launcher		usr/lib/games/zod
-zod_src/zod				usr/lib/games/zod
-debian/scripts/zod_launcher		usr/games
-debian/zod.png				usr/share/pixmaps
-debian/zod.desktop			usr/share/applications

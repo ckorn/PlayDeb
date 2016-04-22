@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Atomic Worm
-Exec=/usr/games/atomicworm
-Icon=atomicworm
-Terminal=false
-Type=Application
-Categories=Game;

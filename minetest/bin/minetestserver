@@ -1,7 +1,0 @@
-#!/bin/sh
-set -e
-
-exec /usr/lib/minetest/minetestserver \
-    --config /etc/minetest/minetest.conf \
-    --logfile /var/log/minetest/minetest.log \
-    "$@"

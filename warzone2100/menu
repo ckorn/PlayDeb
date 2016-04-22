@@ -1,9 +1,0 @@
-?package(warzone2100): \
-  needs="x11" \
-  section="Games/Strategy" \
-  title="Warzone 2100" \
-  longtitle="Postnuclear realtime strategy" \
-  icon="/usr/share/pixmaps/warzone2100-16x16.xpm" \
-  icon16x16="/usr/share/pixmaps/warzone2100-16x16.xpm" \
-  icon32x32="/usr/share/pixmaps/warzone2100-32x32.xpm" \
-  command="/usr/games/warzone2100"

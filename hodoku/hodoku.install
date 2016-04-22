@@ -1,4 +1,0 @@
-dist/*.jar			usr/share/games/hodoku
-debian/*.desktop	usr/share/applications
-debian/*.png		usr/share/pixmaps
-debian/scripts/*	usr/games

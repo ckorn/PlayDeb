@@ -1,2 +1,0 @@
-# FreeCol strictly requires Java 8 to run
-freecol: incompatible-java-bytecode-format

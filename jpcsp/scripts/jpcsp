@@ -1,3 +1,0 @@
-#!/bin/sh
-cd /usr/share/games/jpcsp
-java -Xmx512m -Djava.library.path=lib/linux -jar bin/jpcsp.jar

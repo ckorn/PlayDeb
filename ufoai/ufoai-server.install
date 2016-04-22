@@ -1,3 +1,0 @@
-debian/scripts/ufoai-server     usr/games
-debian/server.cfg               etc/ufoai-server
-ufoded                          usr/lib/ufoai-server

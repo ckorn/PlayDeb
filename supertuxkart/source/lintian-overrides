@@ -1,2 +1,0 @@
-# We use cmake to build supertuxkart; autotools no longer supported by upstream
-supertuxkart source: outdated-autotools-helper-file

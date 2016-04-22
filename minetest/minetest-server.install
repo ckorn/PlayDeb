@@ -1,4 +1,0 @@
-debian/bin/minetestserver usr/games
-debian/minetest-server@.service lib/systemd/system
-debian/minetest.conf /etc/minetest
-usr/bin/minetestserver usr/lib/minetest

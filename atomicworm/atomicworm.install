@@ -1,5 +1,0 @@
-debian/scripts/atomicworm		usr/games
-builddir/AtomicWorm			usr/share/games/atomicworm
-src/*.py				usr/share/games/atomicworm
-debian/atomicworm.png			usr/share/pixmaps
-debian/atomicworm.desktop		usr/share/applications

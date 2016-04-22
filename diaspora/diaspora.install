@@ -1,6 +1,0 @@
-Diaspora/wxlauncher/build/wxlauncher		usr/lib/games/diaspora
-Diaspora/wxlauncher/resources			usr/share/games/diaspora
-Diaspora/fs2_open_diaspora			usr/lib/games/diaspora
-debian/scripts/diaspora				usr/games
-debian/diaspora.png				usr/share/pixmaps
-debian/diaspora.desktop				usr/share/applications

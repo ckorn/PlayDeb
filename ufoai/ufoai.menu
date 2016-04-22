@@ -1,6 +1,0 @@
-?package(ufoai):needs="X11" \
- section="Games/Strategy" \
- title="UFO: Alien Invasion" \
- longtitle="UFO: Alien Invasion - defend earth from alien forces" \
- command="/usr/games/ufoai" \
- icon="/usr/share/pixmaps/ufoai.xpm"

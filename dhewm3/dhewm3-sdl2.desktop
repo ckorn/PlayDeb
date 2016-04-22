@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=dhewm3 (SDL2)
-GenericName=Doom 3 Engine
-Exec=dhewm3-sdl2
-Type=Application
-Categories=Game;
-StartupNotify=true
-Icon=dhewm3

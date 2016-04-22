@@ -1,6 +1,0 @@
-#!/bin/sh
-cd /usr/share/games/diaspora
-./wxlauncher --add-profile --profile=Diaspora --file=pro00099.ini
-./wxlauncher --select-profile --profile=Diaspora
-
-./wxlauncher $@
