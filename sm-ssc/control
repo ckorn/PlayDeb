@@ -17,7 +17,7 @@ Build-Depends: debhelper (>= 9),
                libxrandr-dev,
                libbz2-dev,
                libglew-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: http://code.google.com/p/sm-ssc
 
 Package: sm-ssc
