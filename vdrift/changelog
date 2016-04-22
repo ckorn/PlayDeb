@@ -1,3 +1,9 @@
+vdrift (20141020-1~getdeb4~xenial) xenial; urgency=medium
+
+  * Rebuild for xenial
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 21 Apr 2016 00:26:49 +0200
+
 vdrift (20141020-1~getdeb3~wily) wily; urgency=medium
 
   * Rebuild for wily
