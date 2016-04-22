@@ -1,0 +1,20 @@
+# fix freetype includes for xenial
+Index: jngl-1.1.0/src/freetype.hpp
+===================================================================
+--- jngl-1.1.0.orig/src/freetype.hpp	2016-04-20 23:29:25.000000000 +0200
++++ jngl-1.1.0/src/freetype.hpp	2016-04-21 19:27:17.574549111 +0200
+@@ -9,10 +9,10 @@
+ #include "texture.hpp"
+ 
+ #include <ft2build.h>
+-#include <freetype2/freetype.h>
+-#include <freetype2/ftglyph.h>
+-#include <freetype2/ftoutln.h>
+-#include <freetype2/fttrigon.h>
++#include <freetype2/freetype/freetype.h>
++#include <freetype2/freetype/ftglyph.h>
++#include <freetype2/freetype/ftoutln.h>
++#include <freetype2/freetype/fttrigon.h>
+ 
+ #include <vector>
+ #include <string>

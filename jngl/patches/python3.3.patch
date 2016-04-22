@@ -1,17 +1,17 @@
-### trusty has python3.4. Change accordingly.
+### xenial has python3.5. Change accordingly.
 Index: jngl-1.1.0/SConstruct
 ===================================================================
---- jngl-1.1.0.orig/SConstruct	2014-04-06 01:15:58.000000000 +0200
-+++ jngl-1.1.0/SConstruct	2014-04-06 01:23:01.558564153 +0200
+--- jngl-1.1.0.orig/SConstruct	2016-04-20 23:29:25.000000000 +0200
++++ jngl-1.1.0/SConstruct	2016-04-21 19:32:24.013210505 +0200
 @@ -103,9 +103,9 @@
  	if env['python']:
  		env = env.Clone()
  		env.ParseConfig("pkg-config --cflags --libs jngl.pc")
 -		env.Append(CPPPATH="/usr/include/python3.2",
-+		env.Append(CPPPATH="/usr/include/python3.4m",
++		env.Append(CPPPATH="/usr/include/python3.5m",
  		           LIBPATH=Split("src ./python"),
 -		           LIBS=Split("python3.2mu boost_python-py32"),
-+		           LIBS=Split("python3.4m boost_python-py34"),
++		           LIBS=Split("python3.5m boost_python-py35"),
  		           CPPFLAGS="-std=c++11")
  		env.SharedLibrary(target="python/libjngl.so",
  		                  source="python/main.cpp")
