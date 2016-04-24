@@ -1,3 +1,16 @@
+manaplus (1:1.6.4.23-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: invite to guild from context menu.
+    fix: possible crash in login dialog with opened drop down list.
+    add: by default disable being advanced caching.
+    add: show server and nick in game window title.
+    add: support for different groups of update servers.
+    add: option for disable OpenGL check.
+    add: option for enable/disable chat commands from server.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 24 Apr 2016 04:41:50 +0200
+
 manaplus (1:1.6.4.9-1~getdeb2~wily) wily; urgency=medium
 
   * New upstream version
