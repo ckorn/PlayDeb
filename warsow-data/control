@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Uploaders: Gonéri Le Bouder <goneri@rulezlan.org>, Bruno "Fuddl" Kleinert <fuddl@gmx.de>, Andres Mejia <mcitadel@gmail.com>
 Build-Depends: debhelper (>= 9)
-Standards-Version: 3.9.5
+Standards-Version: 3.9.7
 Homepage: https://www.warsow.gg/
 
 Package: warsow-data
