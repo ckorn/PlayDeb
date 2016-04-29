@@ -1,4 +1,4 @@
 version=3
-opts="dversionmangle=s/\.//" \
-http://www.warsow.net/download \
+opts="uversionmangle=s/(\d)(\d+)/$1.${2}0/,filenamemangle=s/^.*warsow([\d]+)sdk.*$/warsow_$1.tar.gz/" \
+https://www.warsow.gg/download \
     (?:.*/)?download\?dl=warsow([\d]+)sdk

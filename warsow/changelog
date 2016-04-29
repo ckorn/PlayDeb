@@ -1,3 +1,9 @@
+warsow (2.10-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 28 Apr 2016 19:45:51 +0200
+
 warsow (2.01-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
