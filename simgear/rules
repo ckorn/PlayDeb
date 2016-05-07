@@ -64,5 +64,3 @@ override_dh_strip:
 	dh_strip -plibsimgearcore$(UVER) --dbg-package=libsimgearcore$(UVER)-dbg
 	dh_strip -plibsimgearscene$(UVER) --dbg-package=libsimgearscene$(UVER)-dbg
 
-get-orig-source:
-	uscan --download-current-version --verbose --rename

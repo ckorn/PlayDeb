@@ -1,3 +1,9 @@
+simgear (2016.1.2-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 07 May 2016 16:36:33 +0200
+
 simgear (2016.1.1-1~getdeb2~wily) wily; urgency=medium
 
   * New upstream version
