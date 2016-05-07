@@ -19,7 +19,7 @@ Build-Depends: debhelper (>= 9),
                ttf-dejavu-core,
                libncursesw5-dev,
                pkg-config
-Standards-Version: 3.9.5
+Standards-Version: 3.9.7
 Homepage: http://crawl.develz.org/wordpress/
 
 Package: stone-soup
