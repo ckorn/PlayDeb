@@ -7,11 +7,8 @@ VERSION=`dpkg-parsechangelog | sed -ne 's/^Version: \(.*\)-.*/\1/p' | sed -e 's/
 
 uscan --verbose --force-download --no-symlink
 
-bunzip2 -c ../FlightGear-data-${VERSION}.tar.bz2 \
+bunzip2 -c ../FlightGear-${VERSION}-data.tar.bz2 \
  | tar --delete --wildcards -vf - \
- fgdata/webgui/3rdparty/flot \
- fgdata/webgui/3rdparty/jquery \
- fgdata/webgui/3rdparty/leaflet-0.7.3 \
  fgdata/Fonts/LiberationFonts \
  fgdata/Timezone \
  | bzip2 -c > ../${PACKAGE}_${VERSION}+dfsg.orig.tar.bz2
