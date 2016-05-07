@@ -1,3 +1,9 @@
+flightgear (2016.1.2-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 07 May 2016 16:37:38 +0200
+
 flightgear (2016.1.1-1~getdeb3~wily) wily; urgency=medium
 
   * Add Qt5 for the launcher
