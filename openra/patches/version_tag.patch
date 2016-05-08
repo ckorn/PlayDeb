@@ -1,77 +1,23 @@
 Set the correct version.
-Index: openra-20151224/mods/cnc/mod.yaml
+Index: openra-20160508/Makefile
 ===================================================================
---- openra-20151224.orig/mods/cnc/mod.yaml	2015-12-24 19:38:55.567838703 +0100
-+++ openra-20151224/mods/cnc/mod.yaml	2015-12-24 19:40:25.934475724 +0100
-@@ -1,7 +1,7 @@
- Metadata:
- 	Title: Tiberian Dawn
- 	Description: Join the Global Defense Initiative or the Brotherhood of Nod in our\nrecreation of the classic game that started it all.\n\nTiberian Dawn modernizes the original Command & Conquer gameplay\nby introducing features from later games, including per-factory\nproduction queues, unit veterancy, and capturable tech structures.
--	Version: {DEV_VERSION}
-+	Version: release-20151224
- 	Author: the OpenRA Developers
+--- openra-20160508.orig/Makefile	2016-05-08 16:40:05.638662479 +0200
++++ openra-20160508/Makefile	2016-05-08 16:42:20.053230729 +0200
+@@ -89,7 +89,7 @@
+ # program targets
+ CORE = pdefault game utility server
+ TOOLS = gamemonitor
+-VERSION     = $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || echo git-`git rev-parse --short HEAD`)
++VERSION     = release-20160508
  
- Folders:
-Index: openra-20151224/mods/ra/mod.yaml
-===================================================================
---- openra-20151224.orig/mods/ra/mod.yaml	2015-12-24 19:38:55.567838703 +0100
-+++ openra-20151224/mods/ra/mod.yaml	2015-12-24 19:40:29.918591170 +0100
-@@ -1,7 +1,7 @@
- Metadata:
- 	Title: Red Alert
- 	Description: In a world where Hitler was assassinated and the Third Reich never\nexisted, the Soviet Union seeks power over all of Europe.  Allied\nagainst this Evil Empire, the free world faces a Cold War turned hot.\n\nRed Alert fuses the quick and fun gameplay of the original\nC&C: Red Alert, with balance improvements and new gameplay\nfeatures inspired by modern RTS games.
--	Version: {DEV_VERSION}
-+	Version: release-20151224
- 	Author: the OpenRA Developers
+ # dependencies
+ UNAME_S := $(shell uname -s)
+@@ -316,7 +316,7 @@
  
- Folders:
-Index: openra-20151224/mods/d2k/mod.yaml
-===================================================================
---- openra-20151224.orig/mods/d2k/mod.yaml	2015-12-24 19:38:55.567838703 +0100
-+++ openra-20151224/mods/d2k/mod.yaml	2015-12-24 19:39:40.253080058 +0100
-@@ -1,7 +1,7 @@
- Metadata:
- 	Title: Dune 2000
- 	Description: Three great houses fight for the precious spice, melange.\nHe who controls the spice controls the universe!\n\nTry to establish a foothold on the desert planet Arrakis\nwith its harsh environmental conditions and protect your\nharvesting operations from giant sandworms as well as\nruthless enemy factions.
--	Version: {DEV_VERSION}
-+	Version: release-20151224
- 	Author: the OpenRA Developers
+ ########################## MAKE/INSTALL RULES ##########################
+ #
+-default: core
++default: core version
  
- Folders:
-Index: openra-20151224/mods/ts/mod.yaml
-===================================================================
---- openra-20151224.orig/mods/ts/mod.yaml	2015-12-24 19:38:55.567838703 +0100
-+++ openra-20151224/mods/ts/mod.yaml	2015-12-24 19:39:47.205301703 +0100
-@@ -1,7 +1,7 @@
- Metadata:
- 	Title: Tiberian Sun
- 	Description: Developer stub, not yet ready for release!
--	Version: {DEV_VERSION}
-+	Version: release-20151224
- 	Author: the OpenRA Developers
+ core: game platforms mods utility server
  
- Folders:
-Index: openra-20151224/mods/modchooser/mod.yaml
-===================================================================
---- openra-20151224.orig/mods/modchooser/mod.yaml	2015-12-24 19:38:55.567838703 +0100
-+++ openra-20151224/mods/modchooser/mod.yaml	2015-12-24 19:40:34.166713016 +0100
-@@ -1,6 +1,6 @@
- Metadata:
- 	Title: Mod Chooser
--	Version: {DEV_VERSION}
-+	Version: release-20151224
- 	Author: The OpenRA Developers
- 	Hidden: true
- 
-Index: openra-20151224/mods/all/mod.yaml
-===================================================================
---- openra-20151224.orig/mods/all/mod.yaml	2015-12-24 15:38:42.000000000 +0100
-+++ openra-20151224/mods/all/mod.yaml	2015-12-24 19:40:20.650321339 +0100
-@@ -1,6 +1,6 @@
- Metadata:
- 	Title: All mods
--	Version: {DEV_VERSION}
-+	Version: release-20151224
- 	Author: The OpenRA Developers
- 	Hidden: true
- 	Description: Depending on all DLLs.

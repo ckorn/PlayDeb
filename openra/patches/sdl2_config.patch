@@ -1,0 +1,15 @@
+# add missing dllmap entries.
+# has to be applied after nuget so this patch is not in the series file
+diff -Nur openra-20160508.bak/SDL2-CS.dll.config openra-20160508/SDL2-CS.dll.config
+--- openra-20160508.bak/SDL2-CS.dll.config	2016-05-08 15:41:50.309397376 +0200
++++ openra-20160508/SDL2-CS.dll.config	2016-05-08 15:56:19.850571013 +0200
+@@ -2,4 +2,9 @@
+ <configuration>
+ 	<dllmap os="osx" dll="SDL2.dll" target="libSDL2.dylib"/>
+ 	<dllmap os="linux" dll="SDL2.dll" target="libSDL2-2.0.so.0" />
++        <dllmap os="linux" dll="SDL2_image.dll" target="libSDL2_image-2.0.so.0" />
++        <dllmap os="linux" dll="SDL2_mixer.dll" target="libSDL2_mixer-2.0.so.0" />
++        <dllmap os="linux" dll="SDL2_ttf.dll" target="libSDL2_ttf-2.0.so.0" />
++        <dllmap os="linux" dll="libGLES.dll" target="libGLESv1_CM.so.1" />
++        <dllmap os="linux" dll="libGLESv2.dll" target="libGLESv2.so.2" />
+ </configuration>

@@ -2,43 +2,10 @@ dh_clideps does not understand the "dllentry" syntax.
 Take the config files from the Ubuntu package which uses the "target" syntax.
 
 Map libGL.so to libGLU.so.1
-Index: openra-20150919/thirdparty/SDL2-CS.dll.config
+Index: openra-20160508/thirdparty/fetch-thirdparty-deps.sh
 ===================================================================
---- openra-20150919.orig/thirdparty/SDL2-CS.dll.config	2015-09-19 15:31:41.209526318 +0200
-+++ openra-20150919/thirdparty/SDL2-CS.dll.config	2015-09-19 15:31:41.197525621 +0200
-@@ -2,17 +2,20 @@
- <configuration>
-   <dllmap os="osx" dll="SDL2.dll" target="libSDL2.dylib"/>
-   <dllmap os="linux" dll="SDL2.dll" target="libSDL2-2.0.so.0" />
-+  <dllmap os="linux" dll="SDL2_image.dll" target="libSDL2_image-2.0.so.0" />
-+  <dllmap os="linux" dll="SDL2_mixer.dll" target="libSDL2_mixer-2.0.so.0" />
-+  <dllmap os="linux" dll="SDL2_ttf.dll" target="libSDL2_ttf-2.0.so.0" />
-+  <dllmap os="linux" dll="libGLES.dll" target="libGLESv1_CM.so.1" />
-+  <dllmap os="linux" dll="libGLESv2.dll" target="libGLESv2.so.2" />
- 
-   <dllmap dll="soft_oal.dll" os="osx" target="/System/Library/Frameworks/OpenAL.framework/OpenAL"/>
-   <dllmap dll="soft_oal.dll" os="linux" target="libopenal.so.1"/>
- 
--  <dllmap dll="opengl32.dll">
--    <dllentry os="linux" dll="libGL.so.1" />
--    <dllentry os="osx" dll="/System/Library/Frameworks/OpenGL.framework/OpenGL" />
--  </dllmap>
-+  <dllmap dll="opengl32.dll" os="osx" target="/System/Library/Frameworks/OpenGL.framework/OpenGL" />
-+  <dllmap dll="opengl32.dll" os="!windows,osx" target="libGL.so.1" />
- 
--  <dllmap dll="glu32.dll">
--    <dllentry os="linux" dll="libGLU.so.1" />
--    <dllentry os="osx" dll="/System/Library/Frameworks/OpenGL.framework/Libraries/libGLU.dylib" />
--  </dllmap>
-+  <dllmap dll="glu32.dll" os="osx" target="/System/Library/Frameworks/OpenGL.framework/Libraries/libGLU.dylib" />
-+  <dllmap dll="glu32.dll" os="!windows,osx" target="libGLU.so.1" />
-+
-+  <dllmap dll="libGL.so" os="!windows,osx" target="libGLU.so.1" />
- </configuration>
-Index: openra-20150919/thirdparty/fetch-thirdparty-deps.sh
-===================================================================
---- openra-20150919.orig/thirdparty/fetch-thirdparty-deps.sh	2015-09-19 15:31:41.209526318 +0200
-+++ openra-20150919/thirdparty/fetch-thirdparty-deps.sh	2015-09-19 15:31:41.197525621 +0200
+--- openra-20160508.orig/thirdparty/fetch-thirdparty-deps.sh	2016-05-08 15:36:33.905224396 +0200
++++ openra-20160508/thirdparty/fetch-thirdparty-deps.sh	2016-05-08 16:01:24.615886385 +0200
 @@ -69,6 +69,7 @@
  	cp ./SharpFont/lib/net20/SharpFont* .
  	cp ./SharpFont/config/SharpFont.dll.config .
@@ -47,3 +14,11 @@ Index: openra-20150919/thirdparty/fetch-thirdparty-deps.sh
  fi
  
  if [ ! -f nunit.framework.dll ]; then
+@@ -104,6 +105,7 @@
+ 	echo "Fetching SDL2-CS from GitHub."
+ 	curl -s -L -O https://github.com/OpenRA/SDL2-CS/releases/download/20151227/SDL2-CS.dll
+ 	curl -s -L -O https://github.com/OpenRA/SDL2-CS/releases/download/20151227/SDL2-CS.dll.config
++	patch -p1 < ../../debian/patches/sdl2_config.patch
+ fi
+ 
+ if [ ! -f OpenAL-CS.dll -o ! -f OpenAL-CS.dll.config ]; then
