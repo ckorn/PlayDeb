@@ -1,0 +1,3 @@
+debian/trigger-rally.desktop	usr/share/applications
+src/trigger-rally		usr/lib/games/trigger-rally
+debian/scripts/trigger-rally	usr/games
