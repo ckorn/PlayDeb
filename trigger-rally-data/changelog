@@ -1,3 +1,9 @@
+trigger-rally-data (0.6.4-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 14 May 2016 23:05:12 +0200
+
 trigger-rally-data (0.6.3-1~getdeb1) wily; urgency=medium
 
   * New upstream version

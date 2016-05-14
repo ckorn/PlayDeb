@@ -1,8 +1,5 @@
-events/     usr/share/games/trigger-rally
-maps/       usr/share/games/trigger-rally
-plugins/    usr/share/games/trigger-rally
-sounds/     usr/share/games/trigger-rally
-textures/   usr/share/games/trigger-rally
-bin/trigger-rally.config.defs etc
-vehicles/   usr/share/games/trigger-rally
-icon/*      usr/share/pixmaps/
+data/defplayers			usr/share/games/trigger-rally
+data/data.zip			usr/share/games/trigger-rally
+data/data.md5			usr/share/games/trigger-rally
+bin/trigger-rally.config.defs 	etc
+data/icon/*			usr/share/pixmaps
