@@ -25,7 +25,7 @@ Build-Depends: debhelper (>= 9),
                libhiredis-dev,
                pkg-config,
                libsnappy-dev
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: http://freeminer.org/
 
 Package: freeminer

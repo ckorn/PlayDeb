@@ -1,9 +1,9 @@
 # ft2build.h is not found without it
-Index: freeminer-0.4.13.7/src/CMakeLists.txt
+Index: freeminer-0.4.14.8/src/CMakeLists.txt
 ===================================================================
---- freeminer-0.4.13.7.orig/src/CMakeLists.txt	2015-10-21 21:47:16.000000000 +0200
-+++ freeminer-0.4.13.7/src/CMakeLists.txt	2015-10-22 20:37:26.069098648 +0200
-@@ -328,25 +328,25 @@
+--- freeminer-0.4.14.8.orig/src/CMakeLists.txt	2016-05-16 01:01:32.388650857 +0200
++++ freeminer-0.4.14.8/src/CMakeLists.txt	2016-05-16 01:01:32.384650785 +0200
+@@ -358,25 +358,25 @@
  ## CMake. If issues persist, re-enable this workaround specificially for the
  ## failing platforms.
  ##

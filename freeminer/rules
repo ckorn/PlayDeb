@@ -80,6 +80,7 @@ override_dh_auto_build:
 	make VERBOSE=1 ${parallel}
 	
 override_dh_install:
+	rm -rf debian/tmp/usr/include
 	dh_install --list-missing -X.gitignore
 	for bpkg in freeminer freeminer-data freeminer-dbg freeminer-server ; do \
 	  mkdir -p debian/$${bpkg}/usr/share/doc/$${bpkg} ; \
