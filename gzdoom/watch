@@ -1,0 +1,3 @@
+version=3
+https://github.com/coelckers/gzdoom/releases \
+    (?:.*/)?g([\d\.]+)\.tar\.gz

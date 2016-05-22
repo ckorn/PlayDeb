@@ -1,3 +1,9 @@
+gzdoom (2.1.1-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 22 May 2016 04:17:46 +0200
+
 gzdoom (2.0.04-1~getdeb2) trusty; urgency=medium
 
   * Remove debian/watch file

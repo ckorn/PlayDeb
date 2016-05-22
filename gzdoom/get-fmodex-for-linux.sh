@@ -19,7 +19,7 @@ fi
 
 # download fmod ex
 if [ ! -f $fname ] ; then
-    wget "http://www.fmod.org/download/fmodex/api/Linux/$fname"
+    wget "https://bitbucket.org/Fazzo/downloads/downloads/$fname"
 fi
 
 ######

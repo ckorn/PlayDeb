@@ -1,0 +1,16 @@
+# hardcode the version
+# it cannot be fetched by git the tarball does not ship it
+Index: gzdoom-2.1.1/tools/updaterevision/updaterevision.c
+===================================================================
+--- gzdoom-2.1.1.orig/tools/updaterevision/updaterevision.c	2016-02-23 10:20:43.000000000 +0100
++++ gzdoom-2.1.1/tools/updaterevision/updaterevision.c	2016-05-22 04:42:28.877196471 +0200
+@@ -78,7 +78,8 @@
+ 	if (hash == NULL)
+ 	{
+ 		fprintf(stderr, "Failed to get commit info: %s\n", strerror(errno));
+-		strcpy(vertag, "<unknown version>");
++		// hardcoded, because there is not git directory in the tarball
++		strcpy(vertag, "2.1.1");
+ 		lastlog[0] = '\0';
+ 		lastlog[1] = '0';
+ 		lastlog[2] = '\0';
