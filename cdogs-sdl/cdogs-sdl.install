@@ -2,5 +2,5 @@ obj-*-*-*/src/cdogs-sdl			usr/lib/games/cdogs
 obj-*-*-*/src/cdogs-sdl-editor		usr/lib/games/cdogs
 debian/cdogs-sdl.desktop		usr/share/applications
 debian/cdogs-sdl.png			usr/share/pixmaps
-usr/lib/lib*.so.*			usr/lib
+obj-*-*-*/src/cdogs/lib/lib*.so.*	usr/lib
 debian/scripts/*			usr/games

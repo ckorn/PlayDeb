@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 9),
                libphysfs-dev,
                libsdl2-mixer-dev,
                libenet-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.7
 Homepage: http://cxong.github.io/cdogs-sdl/
 
 Package: cdogs-sdl

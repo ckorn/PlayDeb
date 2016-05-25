@@ -1,3 +1,9 @@
+cdogs-sdl (0.6.1-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 24 May 2016 19:24:21 +0200
+
 cdogs-sdl (0.6.0-1~getdeb2) trusty; urgency=medium
 
   * New upstream version
