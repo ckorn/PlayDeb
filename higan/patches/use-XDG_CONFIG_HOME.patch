@@ -1,0 +1,25 @@
+Description: Use $XDG_CONFIG_HOME
+ higan stores its config files in ~/.config.  This patch makes it use
+ XDG_CONFIG_HOME instead, if set.
+Author: Michael Gold <michael@bitplane.org>
+Bug-Debian: http://bugs.debian.org/738270
+
+Index: higan-098/nall/string/platform.hpp
+===================================================================
+--- higan-098.orig/nall/string/platform.hpp	2016-05-26 18:05:14.213147928 +0200
++++ higan-098/nall/string/platform.hpp	2016-05-26 18:05:14.209147848 +0200
+@@ -78,7 +78,13 @@
+   #elif defined(PLATFORM_MACOSX)
+   string result = {userpath(), "Library/Application Support/"};
+   #else
+-  string result = {userpath(), ".config/"};
++  string result;
++  const char *env = getenv("XDG_CONFIG_HOME");
++  if(env) {
++    result.append(env);
++  } else {
++    result = {userpath(), ".config/"};
++  }
+   #endif
+   if(!result) result = ".";
+   if(result.endsWith("/") == false) result.append("/");

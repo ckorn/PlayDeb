@@ -1,0 +1,28 @@
+Description: Makefile fixes
+ * Remove -march=native build flag.
+   - This will cause gcc to use all instruction subsets
+     available on the build machine, meaning that the program
+     will not work on computers where they are not available.
+   - Also the flag is not supported on many architectures
+     (armhf, s390, s390x, powerpc, ia64, ...).
+ * Linking with dl is also required on kfreebsd.
+Author: Tobias Hansen <thansen@debian.org>
+
+
+Index: higan-098/higan/GNUmakefile
+===================================================================
+--- higan-098.orig/higan/GNUmakefile	2016-04-03 05:01:20.000000000 +0200
++++ higan-098/higan/GNUmakefile	2016-05-26 17:24:13.434211237 +0200
+@@ -32,10 +32,10 @@
+ else ifeq ($(platform),macosx)
+   flags += -march=native
+ else ifneq ($(filter $(platform),linux bsd),)
+-  flags += -march=native -fopenmp
++  flags += -fopenmp
+   link += -fopenmp
+   link += -Wl,-export-dynamic
+-  link += -lX11 -lXext
++  link += -lX11 -lXext -ldl
+ else
+   $(error "unsupported platform")
+ endif

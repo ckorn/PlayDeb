@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$1" = "upgrade" ]; then
+  if dpkg --compare-versions "$2" le "093-1"; then
+    set +e
+    update-alternatives --remove-all higan
+    set -e
+	fi;
+fi;
+
+#DEBHELPER#

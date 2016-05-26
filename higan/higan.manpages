@@ -1,0 +1,4 @@
+debian/higan.6
+debian/higan-accuracy.6
+debian/higan-balanced.6
+debian/higan-performance.6

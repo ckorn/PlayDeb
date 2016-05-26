@@ -1,0 +1,8 @@
+nall-makefile-fixes.patch
+makefile-fixes.patch
+load-private-libraries.patch
+desktop-file.patch
+sjlj-declare-xopen-source.patch
+noopt-nostrip.patch
+use-XDG_CONFIG_HOME.patch
+handle-opengl-x-error.patch

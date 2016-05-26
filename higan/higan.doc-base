@@ -1,0 +1,9 @@
+Document: higan
+Title: higan User Guide
+Abstract: This manual describes how to configure and use higan.
+Section: Emulators
+
+Format: HTML
+Index: /usr/share/doc/higan/higan_user_guide.html
+Files: /usr/share/doc/higan/higan_user_guide.html
+       /usr/share/doc/higan/higan_user_guide_files/*

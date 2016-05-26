@@ -1,0 +1,20 @@
+Description: Support DEB_BUILD_OPTIONS='noopt nostrip'
+ This patch adds support for DEB_BUILD_OPTIONS=noopt and
+ DEB_BUILD_OPTIONS=nostrip, which are convenient for debugging.
+Author: Michael Gold <michael@bitplane.org>
+Bug-Debian: http://bugs.debian.org/737364
+
+Index: higan-098/higan/GNUmakefile
+===================================================================
+--- higan-098.orig/higan/GNUmakefile	2016-05-26 17:24:13.434211237 +0200
++++ higan-098/higan/GNUmakefile	2016-05-26 17:46:36.643184315 +0200
+@@ -5,7 +5,8 @@
+ profile := accuracy
+ # console := true
+ 
+-flags += -I. -I.. -O3
++flags += -I. -I..
++flags   += $(if $(filter noopt,$(DEB_BUILD_OPTIONS)),-O0,-O3)
+ objects := libco
+ 
+ # profile-guided optimization mode

@@ -1,0 +1,137 @@
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a[href] {
+  color: #00c;
+}
+
+a[href*="://"] {
+  color: #082;
+}
+
+a[href]:hover {
+  color: #f00;
+  text-decoration: underline;
+}
+
+body {
+  height: 101%;
+  margin: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: 1.0em "Georgia", "Times New Roman", serif;
+  font-weight: bold;
+  margin: 0em;
+  position: relative;
+}
+
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+  bottom: 0em;
+  position: absolute;
+  right: 0em;
+}
+
+h1 {
+  font-family: "Times New Roman", serif;
+  font-size: 3em;
+  font-weight: normal;
+  margin-bottom: 0.25em;
+}
+
+h2 {
+  border-bottom: 3px double #aaa;
+  font-size: 1.9em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  border-bottom: 1px dotted #aaa;
+  font-size: 1.3em;
+  margin-bottom: 0.25em;
+}
+
+h4 {
+  margin-bottom: 0.25em;
+}
+
+p {
+  margin: 0em;
+  margin-bottom: 1em;
+}
+
+pre {
+  background: #fee;
+  border: 1px dashed #888;
+  padding: 0.5em;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table tr th, table tr td {
+  border: 1px dashed #aaa;
+  padding: 0.35em;
+  text-align: left;
+}
+
+ul {
+  list-style-position: outside;
+  list-style-type: circle;
+  margin: 0em 0em 1em 1.2em;
+  padding: 0em;
+}
+
+ul li {
+  margin: 0em;
+  padding: 0em;
+}
+
+#container {
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  box-shadow: 0em 0em 1em #000;
+  -moz-box-shadow: 0em 0em 1em #000;
+  -webkit-box-shadow: 0em 0em 1em #000;
+  font: 0.8em / 1.3em "Verdana", sans-serif;
+  padding: 1em;
+}
+
+#navigation {
+  background: -moz-linear-gradient(100% 100% 90deg, #f7f7f7, #ffffff);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f7f7f7));
+  border: 1px solid #ddd;
+  display: table;
+  margin-bottom: 1em;
+}
+
+#navigation div {
+  border-right: 1px solid #ddd;
+  display: table-cell;
+  padding: 0.5em;
+  padding-right: 2em;
+}
+
+#navigation div:last-of-type {
+  border-right: none;
+  width: 100%;
+}
+
+#navigation div > a {
+  border-bottom: 1px solid #ddd;
+}
+
+#navigation div ul {
+  list-style-type: none;
+  margin: 0em;
+  padding-left: 0.5em;
+}
+
+#footer {
+  border-top: 1px solid #eee;
+  padding-top: 0.5em;
+}

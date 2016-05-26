@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+update-alternatives --install /usr/games/higan higan /usr/games/higan-balanced 70
+update-alternatives --install /usr/games/higan higan /usr/games/higan-accuracy 40
+update-alternatives --install /usr/games/higan higan /usr/games/higan-performance 40
+
+# GNOME checks new .desktop files and only adds them to the menu if
+# the command exists. Now it exists so trigger a new check by GNOME.
+mv /usr/share/applications/higan.desktop /usr/share/applications/higan
+mv /usr/share/applications/higan /usr/share/applications/higan.desktop
+
+#DEBHELPER#

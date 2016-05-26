@@ -1,0 +1,48 @@
+#!/usr/bin/make -f
+
+DEB_BUILD_ARCH_CPU ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH_CPU)
+
+ifeq (,$(findstring $(DEB_BUILD_ARCH_CPU),"amd64 i386 powerpc"))
+	export DEB_BUILD_MAINT_OPTIONS=hardening=-fortify
+endif
+
+%:
+	dh $@ --parallel
+
+# We have to clean manually because the Makefile does not support distclean,
+# and does not remove compiled higan binary
+override_dh_auto_clean:
+	$(MAKE) --directory=higan clean
+	$(MAKE) --directory=icarus clean
+	rm -rf out
+
+override_dh_auto_build:
+	mkdir -p out
+	dh_auto_build -Dhigan -- profile=balanced name=higan-balanced
+	mv higan/out/higan-balanced out/
+# Allow for building higan only once when testing stuff with the build option testbuild.
+ifeq (,$(findstring testbuild,$(DEB_BUILD_OPTIONS)))
+	$(MAKE) --directory=higan clean
+	dh_auto_build -Dhigan -- profile=accuracy name=higan-accuracy
+	mv higan/out/higan-accuracy out/
+	$(MAKE) --directory=higan clean
+	dh_auto_build -Dhigan -- profile=performance name=higan-performance
+	mv higan/out/higan-performance out/
+else
+	cp out/higan-balanced out/higan-accuracy
+	cp out/higan-balanced out/higan-performance
+endif
+	$(MAKE) --directory=icarus
+
+override_dh_auto_install:
+	install -D -m 644 higan/data/higan.png debian/higan/usr/share/pixmaps/higan.png
+	install -D -m 644 higan/data/higan.desktop debian/higan/usr/share/applications/higan.desktop
+	install -D -m 644 higan/data/cheats.bml debian/higan/usr/share/higan/cheats.bml
+	cp -R higan/profile/* debian/higan/usr/share/higan
+	chmod 644 debian/higan/usr/share/higan/*/*
+	mkdir -p debian/higan/usr/share/higan/Database
+	cp -R icarus/Database/*.bml debian/higan/usr/share/higan/Database
+	chmod 644 debian/higan/usr/share/higan/Database/*
+
+override_dh_auto_test:
+override_dh_makeshlibs:

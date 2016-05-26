@@ -1,0 +1,13 @@
+Description: Enhance desktop file
+  * Add keywords entry.
+Author: Tobias Hansen <thansen@debian.org>
+
+Index: higan-098/higan/data/higan.desktop
+===================================================================
+--- higan-098.orig/higan/data/higan.desktop	2016-01-27 05:48:17.000000000 +0100
++++ higan-098/higan/data/higan.desktop	2016-05-26 17:30:08.401934051 +0200
+@@ -6,3 +6,4 @@
+ Terminal=false
+ Type=Application
+ Categories=Game;Emulator;
++Keywords=emulator;Nintendo;SNES;NES;Gameboy;Famicom;Super
