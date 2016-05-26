@@ -23,7 +23,7 @@ Build-Depends: debhelper (>= 9),
                nasm [i386],
                python,
                zip
-Standards-Version: 3.9.5
+Standards-Version: 3.9.7
 Homepage: http://www.scummvm.org
 
 Package: scummvm
