@@ -1,0 +1,5 @@
+2048-cli (0.9.1-1~getdeb1) xenial; urgency=medium
+
+  * Initial release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 29 May 2016 01:22:26 +0200

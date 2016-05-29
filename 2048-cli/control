@@ -1,0 +1,17 @@
+Source: 2048-cli
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>=9),
+               libsdl2-dev,
+               libsdl2-ttf-dev,
+               libncurses5-dev
+Standards-Version: 3.9.7
+Homepage: https://github.com/tiehuis/2048-cli
+
+Package: 2048-cli
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: 2048 for the Linux terminal
+ CLI version/engine of the game 2048 for your Linux terminal.

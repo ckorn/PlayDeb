@@ -1,0 +1,3 @@
+version=3
+https://github.com/tiehuis/2048-cli/releases \
+    (?:.*/)?v([\d\.]+)\.tar\.gz

@@ -1,0 +1,23 @@
+# change name of executable to make clear it is a cli version
+Index: 2048-cli-0.9.1/Makefile
+===================================================================
+--- 2048-cli-0.9.1.orig/Makefile	2016-05-29 01:54:28.000000000 +0200
++++ 2048-cli-0.9.1/Makefile	2016-05-29 01:56:17.914691349 +0200
+@@ -16,14 +16,14 @@
+ 	$(CC) $(CFLAGS) $(FILTERED_C_FILES) $(MERGE_FILE) src/gfx_curses.c -o $(PROGRAM) $(LDFLAGS) -lcurses
+ 
+ terminal: $(FILTERED_C_FILES) src/gfx_terminal.c
+-	$(CC) $(CFLAGS) $(FILTERED_C_FILES) $(MERGE_FILE) src/gfx_terminal.c -o $(PROGRAM) $(LDFLAGS)
++	$(CC) $(CFLAGS) $(FILTERED_C_FILES) $(MERGE_FILE) src/gfx_terminal.c -o $(PROGRAM)-cli $(LDFLAGS)
+ 
+ sdl: $(FILTERED_C_FILES) src/gfx_sdl.c
+-	$(CC) $(CFLAGS) $(FILTERED_C_FILES) $(MERGE_FILE) src/gfx_sdl.c -o $(PROGRAM) $(shell pkg-config --cflags sdl2) $(LDFLAGS) -lSDL2 -lSDL2_ttf
++	$(CC) $(CFLAGS) $(FILTERED_C_FILES) $(MERGE_FILE) src/gfx_sdl.c -o $(PROGRAM)-sdl $(shell pkg-config --cflags sdl2) $(LDFLAGS) -lSDL2 -lSDL2_ttf
+ 
+ remake: clean all
+ 
+ clean:
+-	rm -f $(PROGRAM)
++	rm -f $(PROGRAM) $(PROGRAM)-cli $(PROGRAM)-sdl
+ 
+ .PHONY: clean remake
