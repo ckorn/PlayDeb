@@ -8,13 +8,13 @@ Build-Depends: debhelper (>= 9),
                libsdl2-mixer-dev,
                liblua5.2-dev,
                libfreetype6-dev,
-               wx2.8-headers,
+               wx3.0-headers,
                libavcodec-dev,
                libavformat-dev,
                libavdevice-dev,
                libswscale-dev,
                libpostproc-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.7
 Homepage: https://github.com/CorsixTH/CorsixTH/
 
 Package: corsix-th

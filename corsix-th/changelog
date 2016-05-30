@@ -1,3 +1,9 @@
+corsix-th (0.60-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 30 May 2016 19:50:25 +0200
+
 corsix-th (0.50-1~getdeb4) trusty; urgency=medium
 
   * Change homepage in debian/control
