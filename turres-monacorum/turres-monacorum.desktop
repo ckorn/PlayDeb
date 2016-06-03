@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Turres-Monacorum
+Exec=/usr/games/turres-monacorum
+Icon=turres-monacorum
+Terminal=false
+Type=Application
+Categories=Game;

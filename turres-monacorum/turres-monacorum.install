@@ -1,0 +1,4 @@
+debian/scripts/turres-monacorum		usr/games
+debian/turres-monacorum.png		usr/share/pixmaps
+debian/turres-monacorum.desktop		usr/share/applications
+turres-monacorum.love			usr/share/games/turres-monacorum

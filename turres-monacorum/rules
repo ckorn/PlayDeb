@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+BUILD_DATE=$(shell dpkg-parsechangelog --show-field=Date)
+%:
+	dh $@
+
+override_dh_auto_build:
+	find love2d -type f -exec touch --date='$(BUILD_DATE)' {} \;
+	cd love2d && find -type f | LC_ALL=C sort | \
+	       env TZ=UTC zip -r -q -9 -X ../turres-monacorum.love -@

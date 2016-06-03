@@ -1,0 +1,5 @@
+turres-monacorum (0.7.1-1~getdeb1) xenial; urgency=medium
+
+  * Initial release (LP: #1587632)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 02 Jun 2016 22:19:21 +0200

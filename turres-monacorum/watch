@@ -1,0 +1,3 @@
+version=3
+https://github.com/nczempin/Turres-Monacorum/releases \
+    (?:.*/)?v([\d\.]+)\.tar\.gz
