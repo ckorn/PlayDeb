@@ -1,0 +1,5 @@
+sdlpop (1.16-1~getdeb1) xenial; urgency=medium
+
+  * Initial release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 05 Jun 2016 05:51:44 +0200

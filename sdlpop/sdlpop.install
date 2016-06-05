@@ -1,0 +1,4 @@
+prince			usr/lib/games/sdlpop
+debian/scripts/sdlpop	usr/games
+debian/sdlpop.desktop	usr/share/applications
+debian/sdlpop.png	usr/share/pixmaps

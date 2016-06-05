@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Prince of Persia
+Exec=sdlpop
+Icon=sdlpop
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=pop;sdlpop

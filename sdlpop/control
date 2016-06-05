@@ -1,0 +1,29 @@
+Source: sdlpop
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>=9),
+               pkg-config,
+               libsdl2-dev,
+               libsdl2-image-dev,
+               libsdl2-mixer-dev
+Standards-Version: 3.9.7
+Homepage: https://github.com/NagyD/SDLPoP
+
+Package: sdlpop
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         sdlpop-data (= ${source:Version})
+Description: Open-source port of Prince of Persia
+ An open-source port of Prince of Persia,
+ based on the disassembly of the DOS version.
+
+Package: sdlpop-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Open-source port of Prince of Persia (data package)
+ An open-source port of Prince of Persia,
+ based on the disassembly of the DOS version.
+ .
+ (This package contains the data files).
