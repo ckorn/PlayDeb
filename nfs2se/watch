@@ -1,0 +1,3 @@
+version=3
+https://github.com/zaps166/NFSIISE/releases \
+    (?:.*/)?v([\d\.]+)\.tar\.gz

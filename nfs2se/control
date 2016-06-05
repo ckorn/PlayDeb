@@ -1,0 +1,28 @@
+Source: nfs2se
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>=9),
+               libsdl2-dev [i386],
+               yasm [i386]
+Standards-Version: 3.9.7
+Homepage: https://github.com/zaps166/NFSIISE
+
+Package: nfs2se-bin
+Architecture: i386
+Multi-Arch: foreign
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Need For Speed II SE
+ Linux port with 3D acceleration and TCP protocol!
+ .
+ (This package contains the executable).
+
+Package: nfs2se
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+         nfs2se-bin (= ${source:Version}),
+         zenity
+Description: Need For Speed II SE
+ Linux port with 3D acceleration and TCP protocol!

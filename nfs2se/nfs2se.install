@@ -1,0 +1,6 @@
+Need_For_Speed_II_SE/install.win			usr/share/games/nfs2se
+Need_For_Speed_II_SE/nfs2se.conf.template		usr/share/games/nfs2se
+Need_For_Speed_II_SE/text.*				usr/share/games/nfs2se
+Need_For_Speed_II_SE/nfs2se.png				usr/share/pixmaps
+debian/nfs2se.desktop					usr/share/applications
+debian/scripts/nfs2se					usr/games

@@ -1,0 +1,24 @@
+#!/bin/sh
+
+mkdir -p $HOME/.nfs2se
+
+if [ ! -f $HOME/.nfs2se/fedata/pc/config/config.dat ] ; then
+	zenity --error --title="Missing data files" \
+	--text="Put the data directories 'fedata' and 'gamedata' from the original CD-ROM into the $HOME/.nfs2se directory\nsuch that the file $HOME/.nfs2se/fedata/pc/config/config.dat exists." \
+	--window-icon=/usr/share/pixmaps/nfs2se.png
+
+	exit 1
+fi
+
+# make sure the file is up-to-date
+rm -f $HOME/.nfs2se/nfs2se
+cp /usr/lib/games/nfs2se/nfs2se $HOME/.nfs2se/nfs2se
+for f in /usr/share/games/nfs2se/*
+do
+	name=`basename $f`
+	rm -f $HOME/.nfs2se/$name
+	cp $f $HOME/.nfs2se/
+done
+
+cd $HOME/.nfs2se
+./nfs2se "$@"

@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_clean:
+	[ ! -d Need_For_Speed_II_SE ] || mv Need_For_Speed_II_SE Need\ For\ Speed\ II\ SE
+	rm -f Need\ For\ Speed\ II\ SE/nfs2se
+
+override_dh_auto_build:
+ifeq ($(DEB_BUILD_ARCH),i386)
+	./compile_nfs
+endif 
+	mv Need\ For\ Speed\ II\ SE Need_For_Speed_II_SE

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Need for Speed II SE
+Exec=/usr/games/nfs2se
+Icon=nfs2se
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=nfs2se;nfs;car;racing

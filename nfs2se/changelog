@@ -1,0 +1,5 @@
+nfs2se (1.0.0-1~getdeb1) xenial; urgency=medium
+
+  * Initial release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 05 Jun 2016 04:08:40 +0200
