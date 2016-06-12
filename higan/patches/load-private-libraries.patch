@@ -4,15 +4,15 @@ Description: Search libs in private path
  then in higans private lib path, then in the standard paths.
 Author: Tobias Hansen <thansen@debian.org>
 
-Index: higan-098/nall/dl.hpp
+Index: higan-099/nall/dl.hpp
 ===================================================================
---- higan-098.orig/nall/dl.hpp	2016-05-26 17:26:08.052709716 +0200
-+++ higan-098/nall/dl.hpp	2016-05-26 17:28:44.292107709 +0200
-@@ -38,6 +38,7 @@
+--- higan-099.orig/nall/dl.hpp	2016-06-10 20:43:51.485038755 +0200
++++ higan-099/nall/dl.hpp	2016-06-10 20:45:13.634690465 +0200
+@@ -39,6 +39,7 @@
  inline auto library::open(const string& name, const string& path) -> bool {
    if(handle) close();
    if(path) handle = (uintptr_t)dlopen(string(path, "lib", name, ".so"), RTLD_LAZY);
 +  if(!handle) handle = (uintptr_t)dlopen(string("/usr/lib/higan/lib", name, ".so"), RTLD_LAZY);
-   if(!handle) handle = (uintptr_t)dlopen(string(userpath(), ".local/lib/lib", name, ".so"), RTLD_LAZY);
+   if(!handle) handle = (uintptr_t)dlopen(string(Path::user(), ".local/lib/lib", name, ".so"), RTLD_LAZY);
    if(!handle) handle = (uintptr_t)dlopen(string("/usr/local/lib/lib", name, ".so"), RTLD_LAZY);
    if(!handle) handle = (uintptr_t)dlopen(string("lib", name, ".so"), RTLD_LAZY);

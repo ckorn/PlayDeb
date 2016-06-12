@@ -3,10 +3,10 @@ Description: Handle possible X error when creating OpenGL context
  not support OpenGL 3.2 and context creation fails. 
 Author: Tobias Hansen <thansen@debian.org>
 
-Index: higan-098/ruby/video/glx.cpp
+Index: higan-099/ruby/video/glx.cpp
 ===================================================================
---- higan-098.orig/ruby/video/glx.cpp	2016-05-26 18:48:04.491287258 +0200
-+++ higan-098/ruby/video/glx.cpp	2016-05-26 18:56:26.391451281 +0200
+--- higan-099.orig/ruby/video/glx.cpp	2016-06-10 20:50:04.296499063 +0200
++++ higan-099/ruby/video/glx.cpp	2016-06-10 20:50:04.292498983 +0200
 @@ -1,8 +1,16 @@
  #include "opengl/opengl.hpp"
 +#include "emulator/emulator.hpp"
@@ -35,7 +35,7 @@ Index: higan-098/ruby/video/glx.cpp
      glxcontext = glXCreateContext(display, vi, /* sharelist = */ 0, /* direct = */ GL_TRUE);
      glXMakeCurrent(display, glxwindow = xwindow, glxcontext);
  
-@@ -196,10 +208,11 @@
+@@ -195,10 +207,11 @@
        //glXCreateContextAttribs tends to throw BadRequest errors instead of simply failing gracefully
        auto originalHandler = XSetErrorHandler(VideoGLX_X11ErrorHandler);
        auto context = glXCreateContextAttribs(display, fbConfig[0], nullptr, true, attributes);
@@ -48,7 +48,7 @@ Index: higan-098/ruby/video/glx.cpp
          glXMakeCurrent(display, 0, nullptr);
          glXDestroyContext(display, glxcontext);
          glXMakeCurrent(display, glxwindow, glxcontext = context);
-@@ -212,6 +225,10 @@
+@@ -211,6 +224,10 @@
        return false;
      }
  

@@ -1,3 +1,9 @@
+higan (099-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 10 Jun 2016 20:42:57 +0200
+
 higan (098-1~getdeb1) xenial; urgency=medium
 
   * New upstream version

@@ -4,22 +4,22 @@ Description: Use $XDG_CONFIG_HOME
 Author: Michael Gold <michael@bitplane.org>
 Bug-Debian: http://bugs.debian.org/738270
 
-Index: higan-098/nall/string/platform.hpp
+Index: higan-099/nall/path.hpp
 ===================================================================
---- higan-098.orig/nall/string/platform.hpp	2016-05-26 18:05:14.213147928 +0200
-+++ higan-098/nall/string/platform.hpp	2016-05-26 18:05:14.209147848 +0200
-@@ -78,7 +78,13 @@
+--- higan-099.orig/nall/path.hpp	2016-05-19 02:26:23.000000000 +0200
++++ higan-099/nall/path.hpp	2016-06-10 20:49:51.692248084 +0200
+@@ -80,7 +80,13 @@
    #elif defined(PLATFORM_MACOSX)
-   string result = {userpath(), "Library/Application Support/"};
+   string result = {Path::user(), "Library/Application Support/"};
    #else
--  string result = {userpath(), ".config/"};
+-  string result = {Path::user(), ".config/"};
 +  string result;
 +  const char *env = getenv("XDG_CONFIG_HOME");
 +  if(env) {
 +    result.append(env);
 +  } else {
-+    result = {userpath(), ".config/"};
++    result = {Path::user(), ".config/"};
 +  }
    #endif
    if(!result) result = ".";
-   if(result.endsWith("/") == false) result.append("/");
+   if(!result.endsWith("/")) result.append("/");
