@@ -1,0 +1,3 @@
+version=3
+https://github.com/mangband/mangband/releases \
+    (?:.*/)?v([\d\.]+)\.tar\.gz

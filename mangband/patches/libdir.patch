@@ -1,0 +1,14 @@
+# change path of the lib directory
+Index: mangband-1.1.3/src/config.h.in
+===================================================================
+--- mangband-1.1.3.orig/src/config.h.in	2016-03-31 15:05:35.000000000 +0200
++++ mangband-1.1.3/src/config.h.in	2016-06-11 22:34:22.968673980 +0200
+@@ -471,7 +471,7 @@
+  * or "/usr/games/lib/angband/", or "/pkg/angband/lib".
+  */
+ #ifndef DEFAULT_PATH
+-# define DEFAULT_PATH "./lib/"
++# define DEFAULT_PATH "/usr/share/games/mangband/lib/"
+ #endif
+ 
+ 

@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+%:
+	dh $@ -Dsrc
+
+override_dh_auto_configure:
+	cd src && CFLAGS="-mtune=generic -pipe -fstack-protector-strong" \
+	./configure \
+	 --prefix=/usr \
+	 --with-gcu \
+	 --without-sdl \
+	 --without-x11
+
+override_dh_install:
+	dh_install
+
+	rm -f "debian/mangband/usr/share/games/mangband/*/delete.me"

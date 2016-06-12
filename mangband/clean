@@ -1,0 +1,8 @@
+mangband
+mangclient
+src/mangband
+src/mangclient
+src/Makefile
+src/config.h
+src/config.log
+src/config.status
