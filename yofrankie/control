@@ -1,0 +1,19 @@
+Source: yofrankie
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>=9),
+               imagemagick,
+               libxi6,
+               libglu1-mesa,
+               libsdl1.2debian,
+               libjpeg62
+Standards-Version: 3.9.7
+Homepage: https://apricot.blender.org/
+
+Package: yofrankie
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: 3D platform game
+ 3D platform game based on the bully rodent in Big Buck Bunny

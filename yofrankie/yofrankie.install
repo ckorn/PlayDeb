@@ -1,0 +1,12 @@
+debian/yofrankie.desktop	usr/share/applications
+debian/yofrankie.png		usr/share/pixmaps
+debian/scripts/yofrankie	usr/games
+audio				usr/share/games/yofrankie
+chars				usr/share/games/yofrankie
+effects				usr/share/games/yofrankie
+hud				usr/share/games/yofrankie
+levels				usr/share/games/yofrankie
+menus				usr/share/games/yofrankie
+props				usr/share/games/yofrankie
+textures			usr/share/games/yofrankie
+yo_frankie_stub.blend		usr/share/games/yofrankie

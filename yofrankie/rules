@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+# somehow the compressed textures do not load
+override_dh_auto_build:
+
+override_dh_install:
+	dh_install
+
+ifeq ($(DEB_BUILD_ARCH),amd64)
+	install -Dm 755 yofrankie-linux-x86_64.bin debian/yofrankie/usr/lib/games/yofrankie/yofrankie-linux-x86_64.bin
+else
+	install -Dm 755 yofrankie-linux-i386.bin debian/yofrankie/usr/lib/games/yofrankie/yofrankie-linux-i386.bin
+endif
+
+	find debian/yofrankie/usr/share/games/yofrankie -type f -iname "*.pyc" -delete
+	find debian/yofrankie/usr/share/games/yofrankie -type f -iname "*.py" -execdir chmod -x {} \;
+
+	#make the python scripts executable
+	for i in debian/yofrankie/usr/share/games/yofrankie/*/*_scripts/*; do \
+	 chmod 755 $${i} ; \
+	 done

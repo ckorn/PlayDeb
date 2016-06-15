@@ -1,0 +1,4 @@
+version=3
+opts="uversionmangle=s/_/\./" \
+http://www.graphicall.org/yofrankie/ \
+    (?:.*/)?yofrankie_(.*)_bge\.zip

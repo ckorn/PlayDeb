@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd /usr/lib/games/yofrankie
+./yofrankie-linux-*.bin /usr/share/games/yofrankie/yo_frankie_stub.blend
+
+exit 0
