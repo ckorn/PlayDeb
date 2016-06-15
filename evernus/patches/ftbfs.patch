@@ -1,0 +1,21 @@
+In file included from /PKGBUILDDIR/CRESTManager.h:26:
+/PKGBUILDDIR/CRESTInterface.h:67:15: error: redefinition of 'RegionUrlMap'
+        using RegionUrlMap = QHash<uint, QUrl>;
+              ^
+/PKGBUILDDIR/CRESTInterface.h:66:15: note: previous definition is here
+        using RegionUrlMap = QHash<uint, QUrl>;
+              ^
+1 error generated.
+Index: evernus-1.42/CRESTInterface.h
+===================================================================
+--- evernus-1.42.orig/CRESTInterface.h	2016-06-15 18:04:02.000000000 +0200
++++ evernus-1.42/CRESTInterface.h	2016-06-15 20:18:27.748505810 +0200
+@@ -64,7 +64,7 @@
+     private:
+         using RegionUrlCallbackMap = QHash<QPair<uint, QString>, std::vector<std::function<void (const QUrl &, const QString &)>>>;
+         using RegionUrlMap = QHash<uint, QUrl>;
+-        using RegionUrlMap = QHash<uint, QUrl>;
++        //using RegionUrlMap = QHash<uint, QUrl>;
+ 
+         static const QString regionsUrlName;
+         static const QString itemTypesUrlName;

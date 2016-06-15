@@ -1,8 +1,8 @@
 # hardcode path to database and translations
-Index: evernus-1.41/EvernusApplication.cpp
+Index: evernus-1.42/EvernusApplication.cpp
 ===================================================================
---- evernus-1.41.orig/EvernusApplication.cpp	2016-04-28 19:00:26.238048076 +0200
-+++ evernus-1.41/EvernusApplication.cpp	2016-04-28 19:02:21.682903329 +0200
+--- evernus-1.42.orig/EvernusApplication.cpp	2016-06-15 19:38:40.759765154 +0200
++++ evernus-1.42/EvernusApplication.cpp	2016-06-15 19:38:40.755765057 +0200
 @@ -1755,11 +1755,11 @@
          removeTranslator(&mTranslator);
          removeTranslator(&mQtTranslator);
