@@ -21,7 +21,7 @@ Build-Depends: debhelper (>= 9),
                libexpat1-dev,
                lua5.1,
                premake4
-Standards-Version: 3.9.5
+Standards-Version: 3.9.7
 Homepage: http://te4.org/
 
 Package: tales-of-majeyal

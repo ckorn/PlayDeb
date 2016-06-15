@@ -1,3 +1,15 @@
+tales-of-majeyal (1.4.8-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 14 Jun 2016 19:13:00 +0200
+
+tales-of-majeyal (1.4.7-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 13 Jun 2016 21:48:48 +0200
+
 tales-of-majeyal (1.4.6-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
