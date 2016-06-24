@@ -1,3 +1,16 @@
+manaplus (1:1.6.6.18-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: nuke command.
+    fix: dont send CMSG_WHO_REQUEST for most new tmwa versions.
+    fix: space usage in login dialog if build with SDL2.
+    fix: being transparency with OpenGL renderer.
+    fix: pet hungry level after login.
+    add: check for tilesets in atlases.
+    add: dont backup config file if found issue with disk.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 18 Jun 2016 23:34:41 +0200
+
 manaplus (1:1.6.6.4-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
