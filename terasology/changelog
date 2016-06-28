@@ -1,3 +1,9 @@
+terasology (1.1.0-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 27 Jun 2016 17:51:37 +0200
+
 terasology (1.0.0-1~getdeb1) wily; urgency=medium
 
   * New upstream version

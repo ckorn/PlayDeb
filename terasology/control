@@ -5,7 +5,7 @@ Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
                openjdk-8-jdk,
                gradle
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: http://terasology.org/
 
 Package: terasology
