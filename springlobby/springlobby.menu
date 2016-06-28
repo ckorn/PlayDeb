@@ -1,0 +1,6 @@
+?package(springlobby):needs="X11" \
+  section="Games/Strategy" \
+  title="SpringLobby" \
+  longtitle="SpringLobby - singleplayer and multiplayer lobby for the Spring RTS engine" \
+  icon="/usr/share/pixmaps/springlobby.xpm" \
+  command="/usr/games/springlobby"

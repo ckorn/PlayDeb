@@ -1,0 +1,32 @@
+Source: springlobby
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Uploaders: Markus Koschany <apo@debian.org>
+Build-Depends: asciidoc,
+               cmake,
+               debhelper (>= 9),
+               docbook-xsl,
+               libalure-dev,
+               libboost-all-dev,
+               libcurl4-gnutls-dev,
+               libglib2.0-dev,
+               libjsoncpp-dev,
+               libminizip-dev,
+               libnotify-dev,
+               libopenal-dev,
+               libwxgtk3.0-dev,
+               xsltproc
+Standards-Version: 3.9.7
+Homepage: http://springlobby.info
+
+Package: springlobby
+Architecture: any
+Depends: spring (>= 97.0),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: single/multiplayer lobby for the Spring RTS engine
+ This package provides a single-player and multiplayer lobby for Spring.
+ Other features include a P2P system for downloading maps and mods and
+ a built-in IRC-like chat client.
+
