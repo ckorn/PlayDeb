@@ -13,7 +13,7 @@ Build-Depends: debhelper (>= 9),
                liblzo2-dev,
                liblzma-dev,
                grfcodec (>= 5.1.2)
-Standards-Version: 3.9.5
+Standards-Version: 3.9.7
 Homepage: http://www.openttd.org/
 
 Package: openttd
