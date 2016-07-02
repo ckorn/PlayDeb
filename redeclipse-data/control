@@ -6,7 +6,7 @@ Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Build-Depends: cube2font,
                debhelper (>= 9),
                fonts-play
-Standards-Version: 3.9.5
+Standards-Version: 3.9.7
 Homepage: http://www.redeclipse.net
 
 Package: redeclipse-data
