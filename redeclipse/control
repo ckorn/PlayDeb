@@ -7,12 +7,13 @@ Build-Depends: debhelper (>= 9),
                ed,
                libenet-dev,
                libgl1-mesa-dev | libgl-dev,
-               libsdl-image1.2-dev,
-               libsdl-mixer1.2-dev,
-               libsdl1.2-dev | libsdl-dev,
+               libsdl2-image-dev,
+               libsdl2-mixer-dev,
+               libsdl2-dev,
                libx11-dev,
-               zlib1g-dev | libz-dev
-Standards-Version: 3.9.6
+               zlib1g-dev | libz-dev,
+               libsqlite3-dev
+Standards-Version: 3.9.7
 Homepage: http://www.redeclipse.net
 
 Package: redeclipse

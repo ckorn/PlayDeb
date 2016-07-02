@@ -7,16 +7,16 @@ Forwarded: not-needed
 Author: Martin Erik Werner <martinerikwerner@gmail.com>
 Last-Update: 2011-12-13
 
-Index: redeclipse-1.5.3/src/engine/main.cpp
+Index: redeclipse-1.5.5/src/engine/main.cpp
 ===================================================================
---- redeclipse-1.5.3.orig/src/engine/main.cpp	2015-08-11 11:58:02.921751832 +0200
-+++ redeclipse-1.5.3/src/engine/main.cpp	2015-08-11 11:58:02.917751417 +0200
-@@ -212,7 +212,7 @@
- #endif
+--- redeclipse-1.5.5.orig/src/engine/main.cpp	2016-06-30 21:36:13.797866688 +0200
++++ redeclipse-1.5.5/src/engine/main.cpp	2016-06-30 21:36:13.793866635 +0200
+@@ -235,7 +235,7 @@
+     }
  }
  
 -VARF(0, fullscreen, 0, 1, 1, if(!(identflags&IDF_WORLD)) setfullscreen(fullscreen!=0));
 +VARF(0, fullscreen, 0, 0, 1, if(!(identflags&IDF_WORLD)) setfullscreen(fullscreen!=0));
  
- void screenres(int *w, int *h)
+ void resetfullscreen()
  {
