@@ -1,3 +1,16 @@
+manaplus (1:1.6.7.2-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: issues with translated item names.
+    fix: probably final fix for being paths (hercules).
+    add: show cards in foring items window.
+    add: cards into char creation window (charcreation.xml).
+    add: move equipment slots name into equipmentslots.xml
+    add: move player stats definition into stats.xml
+    add: extend dye unit tests.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 02 Jul 2016 23:50:27 +0200
+
 manaplus (1:1.6.6.18-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
