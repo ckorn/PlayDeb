@@ -1,3 +1,9 @@
+pyfa (1.22.1-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 03 Jul 2016 20:45:29 +0200
+
 pyfa (1.22.0-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
