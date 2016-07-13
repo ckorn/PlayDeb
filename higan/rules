@@ -38,7 +38,7 @@ override_dh_auto_install:
 	install -D -m 644 higan/data/higan.png debian/higan/usr/share/pixmaps/higan.png
 	install -D -m 644 higan/data/higan.desktop debian/higan/usr/share/applications/higan.desktop
 	install -D -m 644 higan/data/cheats.bml debian/higan/usr/share/higan/cheats.bml
-	cp -R higan/profile/* debian/higan/usr/share/higan
+	cp -R higan/systems/* debian/higan/usr/share/higan
 	chmod 644 debian/higan/usr/share/higan/*/*
 	mkdir -p debian/higan/usr/share/higan/Database
 	cp -R icarus/Database/*.bml debian/higan/usr/share/higan/Database

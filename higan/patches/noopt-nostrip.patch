@@ -4,12 +4,12 @@ Description: Support DEB_BUILD_OPTIONS='noopt nostrip'
 Author: Michael Gold <michael@bitplane.org>
 Bug-Debian: http://bugs.debian.org/737364
 
-Index: higan-099/higan/GNUmakefile
+Index: higan-100/higan/GNUmakefile
 ===================================================================
---- higan-099.orig/higan/GNUmakefile	2016-06-10 20:46:19.068002449 +0200
-+++ higan-099/higan/GNUmakefile	2016-06-10 20:47:04.476911266 +0200
-@@ -4,7 +4,8 @@
- # target := loki
+--- higan-100.orig/higan/GNUmakefile	2016-07-08 21:06:18.619022451 +0200
++++ higan-100/higan/GNUmakefile	2016-07-08 21:06:18.619022451 +0200
+@@ -3,7 +3,8 @@
+ target := tomoko
  # console := true
  
 -flags += -I. -I.. -O3
