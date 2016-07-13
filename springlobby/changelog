@@ -1,3 +1,21 @@
+springlobby (0.249-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 12 Jul 2016 20:22:36 +0200
+
+springlobby (0.248-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 10 Jul 2016 02:06:47 +0200
+
+springlobby (0.247-1~getdeb2~xenial) xenial; urgency=medium
+
+  * Build with dbg package
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 04 Jul 2016 21:02:42 +0200
+
 springlobby (0.247-1~getdeb1) xenial; urgency=medium
 
   * Upload to PlayDeb

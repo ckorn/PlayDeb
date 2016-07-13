@@ -30,3 +30,15 @@ Description: single/multiplayer lobby for the Spring RTS engine
  Other features include a P2P system for downloading maps and mods and
  a built-in IRC-like chat client.
 
+Package: springlobby-dbg
+Section: debug
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends},
+         springlobby (= ${binary:Version})
+Description: single/multiplayer lobby for the Spring RTS engine (debugging symbols)
+ This package provides a single-player and multiplayer lobby for Spring.
+ Other features include a P2P system for downloading maps and mods and
+ a built-in IRC-like chat client.
+ .
+ This package contains the debugging symbols for the springlobby binary.

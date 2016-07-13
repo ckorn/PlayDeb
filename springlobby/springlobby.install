@@ -1,2 +1,2 @@
 debian/springlobby.xpm                     usr/share/pixmaps
-debian/springlobby/usr/bin/*               usr/games
+debian/tmp/usr/bin/*               usr/games
