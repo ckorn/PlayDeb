@@ -1,3 +1,9 @@
+nfs2se (1.1.0-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 23 Jul 2016 20:00:20 +0200
+
 nfs2se (1.0.0-1~getdeb1) xenial; urgency=medium
 
   * Initial release

@@ -1,0 +1,11 @@
+# it's bash. really.
+Index: nfs2se-1.1.0/compile_nfs
+===================================================================
+--- nfs2se-1.1.0.orig/compile_nfs	2016-07-20 15:13:57.000000000 +0200
++++ nfs2se-1.1.0/compile_nfs	2016-07-23 20:59:27.911193006 +0200
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/bin/bash
+ 
+ CPU_FLAGS='-mno-sse2 -mno-sse -mno-mmx'
+ 
