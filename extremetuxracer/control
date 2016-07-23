@@ -19,7 +19,7 @@ Build-Depends: debhelper (>= 9),
                autotools-dev,
                dpkg-dev (>= 1.16.0)
 Homepage: http://www.extremetuxracer.com/
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 
 Package: extremetuxracer
 Architecture: any
