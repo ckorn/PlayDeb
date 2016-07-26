@@ -1,3 +1,22 @@
+the-powder-toy (91.4-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    Added New tool: MIX
+    Added Added a favorites menu
+    Added Fixed the OS X Version
+    Changed RPEL's ctype restricts the element it repels
+    Fixed Don't reset edge mode when saving local saves
+    Fixed Fix LIFE tool sampling
+    Fixed Fix 'n' toggle also resetting air
+    Fixed Fix Crash when ctrl+opening a save
+    Fixed Fix blank screen when hitting "Cancel" on double
+         screen prompt
+    Fixed Other changes & fixes listed on the forums:
+         http://tpt.io/:21039
+
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 25 Jul 2016 19:54:17 +0200
+
 the-powder-toy (91.3-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
