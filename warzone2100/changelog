@@ -1,3 +1,18 @@
+warzone2100 (3.2.1-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+     * General:
+       * Fix: Cursor flickering on some hardware
+       * Fix: Assert on burning babas in campaign
+       * Fix: Assert when placing artefacts
+       * Fix: Crash on transition between alpha and beta campaign
+       * Fix: Disappearing commander designs in campaign
+       * Fix: Wrong hit chance for cyborg grenadier, changed from 70 to 65
+       * Fix: Reorder libs to fix linker error
+       * Fix: Incorrect rendering of structure turrets
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 29 Jul 2016 07:08:29 +0200
+
 warzone2100 (3.2.0-1~getdeb1) xenial; urgency=medium
 
   * New upstream version

@@ -14,11 +14,11 @@ Forwarded: no
  src/scriptvals_lexer.lpp         | 21 ++-------------------
  7 files changed, 14 insertions(+), 109 deletions(-)
 
-diff --git a/lib/framework/resource_lexer.lpp b/lib/framework/resource_lexer.lpp
-index b9abf52..352c69d 100644
---- a/lib/framework/resource_lexer.lpp
-+++ b/lib/framework/resource_lexer.lpp
-@@ -52,21 +52,21 @@ static inline bool no_warn_unused_result(int ignore) { if (ignore) {} return tru
+Index: warzone2100-3.2.1/lib/framework/resource_lexer.lpp
+===================================================================
+--- warzone2100-3.2.1.orig/lib/framework/resource_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
++++ warzone2100-3.2.1/lib/framework/resource_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+@@ -52,21 +52,21 @@
  #if !defined(YY_FLEX_SUBMINOR_VERSION) || (YY_FLEX_SUBMINOR_VERSION < 9)
  # define yyget_extra  res_get_extra
  # define yyset_extra  res_set_extra
@@ -46,7 +46,7 @@ index b9abf52..352c69d 100644
  #elif defined(YY_FLEX_SUBMINOR_VERSION) && YY_FLEX_SUBMINOR_VERSION == 33
  extern YY_EXTRA_TYPE yyget_extra(void);
  extern int res_get_lineno(void);
-@@ -149,12 +149,3 @@ YY_EXTRA_TYPE yyget_extra()
+@@ -149,12 +149,3 @@
  /* Older GNU Flex versions don't define yylex_destroy()
   * (and neither define a subminor version)
   */
@@ -59,11 +59,11 @@ index b9abf52..352c69d 100644
 -	return 0;
 -}
 -#endif
-diff --git a/lib/framework/strres_lexer.lpp b/lib/framework/strres_lexer.lpp
-index 4e6b330..11f05e1 100644
---- a/lib/framework/strres_lexer.lpp
-+++ b/lib/framework/strres_lexer.lpp
-@@ -56,21 +56,13 @@ static inline bool no_warn_unused_result(int ignore) { if (ignore) {} return tru
+Index: warzone2100-3.2.1/lib/framework/strres_lexer.lpp
+===================================================================
+--- warzone2100-3.2.1.orig/lib/framework/strres_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
++++ warzone2100-3.2.1/lib/framework/strres_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+@@ -56,21 +56,13 @@
  #if !defined(YY_FLEX_SUBMINOR_VERSION) || (YY_FLEX_SUBMINOR_VERSION < 9)
  # define yyget_extra  strres_get_extra
  # define yyset_extra  strres_set_extra
@@ -87,7 +87,7 @@ index 4e6b330..11f05e1 100644
  #elif defined(YY_FLEX_SUBMINOR_VERSION) && YY_FLEX_SUBMINOR_VERSION == 33
  extern YY_EXTRA_TYPE yyget_extra(void);
  extern int strres_get_lineno(void);
-@@ -146,12 +138,3 @@ YY_EXTRA_TYPE yyget_extra()
+@@ -146,12 +138,3 @@
  /* Older GNU Flex versions don't define yylex_destroy()
   * (and neither define a subminor version)
   */
@@ -100,11 +100,11 @@ index 4e6b330..11f05e1 100644
 -	return 0;
 -}
 -#endif
-diff --git a/lib/gamelib/audp_lexer.lpp b/lib/gamelib/audp_lexer.lpp
-index c60ae9e..e185e96 100644
---- a/lib/gamelib/audp_lexer.lpp
-+++ b/lib/gamelib/audp_lexer.lpp
-@@ -55,21 +55,13 @@ void audp_error(const char* fmt);
+Index: warzone2100-3.2.1/lib/gamelib/audp_lexer.lpp
+===================================================================
+--- warzone2100-3.2.1.orig/lib/gamelib/audp_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
++++ warzone2100-3.2.1/lib/gamelib/audp_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+@@ -55,21 +55,13 @@
  #if !defined(YY_FLEX_SUBMINOR_VERSION) || (YY_FLEX_SUBMINOR_VERSION < 9)
  # define yyget_extra  audp_get_extra
  # define yyset_extra  audp_set_extra
@@ -128,7 +128,7 @@ index c60ae9e..e185e96 100644
  #elif defined(YY_FLEX_SUBMINOR_VERSION) && YY_FLEX_SUBMINOR_VERSION == 33
  extern YY_EXTRA_TYPE yyget_extra(void);
  extern int audp_get_lineno(void);
-@@ -169,12 +161,3 @@ YY_EXTRA_TYPE yyget_extra()
+@@ -169,12 +161,3 @@
  /* Older GNU Flex versions don't define yylex_destroy()
   * (and neither define a subminor version)
   */
@@ -141,11 +141,11 @@ index c60ae9e..e185e96 100644
 -	return 0;
 -}
 -#endif
-diff --git a/lib/script/chat_lexer.lpp b/lib/script/chat_lexer.lpp
-index a3bb359..5fb4289 100644
---- a/lib/script/chat_lexer.lpp
-+++ b/lib/script/chat_lexer.lpp
-@@ -227,12 +227,3 @@ int chat_wrap(void)
+Index: warzone2100-3.2.1/lib/script/chat_lexer.lpp
+===================================================================
+--- warzone2100-3.2.1.orig/lib/script/chat_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
++++ warzone2100-3.2.1/lib/script/chat_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+@@ -227,12 +227,3 @@
  /* Older GNU Flex versions don't define yylex_destroy()
   * (and neither define a subminor version)
   */
@@ -158,11 +158,11 @@ index a3bb359..5fb4289 100644
 -	return 0;
 -}
 -#endif
-diff --git a/lib/script/script_lexer.lpp b/lib/script/script_lexer.lpp
-index cd77412..ea1a8d1 100644
---- a/lib/script/script_lexer.lpp
-+++ b/lib/script/script_lexer.lpp
-@@ -857,12 +857,3 @@ int scr_wrap(void)
+Index: warzone2100-3.2.1/lib/script/script_lexer.lpp
+===================================================================
+--- warzone2100-3.2.1.orig/lib/script/script_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
++++ warzone2100-3.2.1/lib/script/script_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+@@ -857,12 +857,3 @@
  /* Older GNU Flex versions don't define yylex_destroy()
   * (and neither define a subminor version)
   */
@@ -175,11 +175,11 @@ index cd77412..ea1a8d1 100644
 -	return 0;
 -}
 -#endif
-diff --git a/src/level_lexer.lpp b/src/level_lexer.lpp
-index 5e5c803..fcb6650 100644
---- a/src/level_lexer.lpp
-+++ b/src/level_lexer.lpp
-@@ -54,21 +54,13 @@ static char aText[YYLMAX];
+Index: warzone2100-3.2.1/src/level_lexer.lpp
+===================================================================
+--- warzone2100-3.2.1.orig/src/level_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
++++ warzone2100-3.2.1/src/level_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+@@ -54,21 +54,13 @@
  #if !defined(YY_FLEX_SUBMINOR_VERSION) || (YY_FLEX_SUBMINOR_VERSION < 9)
  # define yyget_extra  lev_get_extra
  # define yyset_extra  lev_set_extra
@@ -203,7 +203,7 @@ index 5e5c803..fcb6650 100644
  #elif defined(YY_FLEX_SUBMINOR_VERSION) && YY_FLEX_SUBMINOR_VERSION == 33
  extern YY_EXTRA_TYPE yyget_extra(void);
  extern int lev_get_lineno(void);
-@@ -168,12 +160,3 @@ YY_EXTRA_TYPE yyget_extra()
+@@ -168,12 +160,3 @@
  /* Older GNU Flex versions don't define yylex_destroy()
   * (and neither define a subminor version)
   */
@@ -216,11 +216,11 @@ index 5e5c803..fcb6650 100644
 -	return 0;
 -}
 -#endif
-diff --git a/src/scriptvals_lexer.lpp b/src/scriptvals_lexer.lpp
-index 238ff4c..0a5838e 100644
---- a/src/scriptvals_lexer.lpp
-+++ b/src/scriptvals_lexer.lpp
-@@ -62,21 +62,13 @@ static UDWORD currText=0;
+Index: warzone2100-3.2.1/src/scriptvals_lexer.lpp
+===================================================================
+--- warzone2100-3.2.1.orig/src/scriptvals_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
++++ warzone2100-3.2.1/src/scriptvals_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+@@ -62,21 +62,13 @@
  #if !defined(YY_FLEX_SUBMINOR_VERSION) || (YY_FLEX_SUBMINOR_VERSION < 9)
  # define yyget_extra  scrv_get_extra
  # define yyset_extra  scrv_set_extra
@@ -244,7 +244,7 @@ index 238ff4c..0a5838e 100644
  #elif defined(YY_FLEX_SUBMINOR_VERSION) && YY_FLEX_SUBMINOR_VERSION == 33
  extern YY_EXTRA_TYPE yyget_extra(void);
  extern int scrv_get_lineno(void);
-@@ -198,12 +190,3 @@ YY_EXTRA_TYPE yyget_extra()
+@@ -198,12 +190,3 @@
  /* Older GNU Flex versions don't define yylex_destroy()
   * (and neither define a subminor version)
   */
