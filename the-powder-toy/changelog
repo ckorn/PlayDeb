@@ -1,3 +1,20 @@
+the-powder-toy (91.5-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    Added Allow favoriting elements from the search UI
+    Changed Hidden elements now show up in the favorites menu
+    Changed Allow changing WHOL strengh with .tmp (like BHOL)
+    Fixed Minor fix to GEL<->SPNG water transfer
+    Fixed Fix invisible PIPE bug
+    Fixed Fix crash when using custom lua elements and the favorites menu
+    at the same time
+    Fixed You can now undo stamp placement
+    Fixed Note: you can see the old 91.4 changelog on the forums:
+    http://tpt.io/.293623
+    Fixed Minor text fixes
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 29 Jul 2016 07:04:05 +0200
+
 the-powder-toy (91.4-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
