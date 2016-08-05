@@ -1,3 +1,19 @@
+manaplus (1:1.6.7.30-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: not allow moving while casting if skill not allow moving.
+    fix: update skill in skills window after skill was changed.
+    fix: moving desync distance read.
+    fix: possible player particles leaks.
+    add: show casting effect on ground and on caster and target.
+    add: show skill action effects on caster and target.
+    add: homunculus and mercenary attributes into status window.
+    add: show homunculus and mercenary hp bar.
+    remove: support for outdated equipmentwindow.xml format.
+    remove: native guilds support (tmwa).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 30 Jul 2016 22:43:27 +0200
+
 manaplus (1:1.6.7.16-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
