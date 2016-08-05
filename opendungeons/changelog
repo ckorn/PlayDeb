@@ -1,3 +1,9 @@
+opendungeons (0.7.0-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 30 Jul 2016 22:44:43 +0200
+
 opendungeons (0.6.0-1~getdeb3~wily) wily; urgency=medium
 
   * Rebuild for wily

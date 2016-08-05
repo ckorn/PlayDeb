@@ -15,7 +15,7 @@ Build-Depends: debhelper (>= 9),
                libboost-test-dev,
                libboost-program-options-dev,
                pkg-config
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: http://opendungeons.sourceforge.net/
 
 Package: opendungeons
