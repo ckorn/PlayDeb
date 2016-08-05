@@ -1,3 +1,21 @@
+springlobby (0.255-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 05 Aug 2016 22:00:52 +0200
+
+springlobby (0.254-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 30 Jul 2016 09:23:36 +0200
+
+springlobby (0.253-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 29 Jul 2016 07:00:34 +0200
+
 springlobby (0.252-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
