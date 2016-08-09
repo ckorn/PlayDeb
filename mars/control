@@ -4,13 +4,13 @@ Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
                cmake,
-               libsfml2.3-dev,
+               libsfml2.4-dev,
                libtag1-dev,
                libfribidi-dev,
                mesa-common-dev,
                libgl1-mesa-dev,
                libglu1-mesa-dev
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: http://mars-game.sourceforge.net/
 
 Package: mars

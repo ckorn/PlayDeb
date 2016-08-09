@@ -1,3 +1,9 @@
+mars (0.7.5-1~getdeb5~xenial) xenial; urgency=medium
+
+  * Rebuild against libsfml2.4
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 08 Aug 2016 15:37:00 +0200
+
 mars (0.7.5-1~getdeb3~wily) wily; urgency=medium
 
   * Rebuild for wily
