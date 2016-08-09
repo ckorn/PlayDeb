@@ -1,0 +1,21 @@
+# A workaround for lingering GCC 5.3 errors.
+# See also:
+# * https://github.com/nothings/stb/issues/280
+# * https://bugs.launchpad.net/ubuntu/+source/gcc-5/+bug/1568899
+Index: libsfml2-2.4.0/src/SFML/Graphics/CMakeLists.txt
+===================================================================
+--- libsfml2-2.4.0.orig/src/SFML/Graphics/CMakeLists.txt	2016-08-07 18:37:18.000000000 +0200
++++ libsfml2-2.4.0/src/SFML/Graphics/CMakeLists.txt	2016-08-08 16:08:10.708789492 +0200
+@@ -153,6 +153,12 @@
+     set_source_files_properties(${SRCROOT}/ImageLoader.cpp PROPERTIES COMPILE_FLAGS -fno-strict-aliasing)
+ endif()
+ 
++# see https://bugs.launchpad.net/ubuntu/+source/gcc-5/+bug/1568899
++if(SFML_COMPILER_GCC AND BUILD_SHARED_LIBS)
++    message(WARNING "Applying workaround for https://bugs.launchpad.net/ubuntu/+source/gcc-5/+bug/1568899")
++    list(APPEND GRAPHICS_EXT_LIBS "-lgcc_s -lgcc")
++endif()
++
+ # define the sfml-graphics target
+ sfml_add_library(sfml-graphics
+                  SOURCES ${SRC} ${DRAWABLES_SRC} ${RENDER_TEXTURE_SRC} ${STB_SRC}

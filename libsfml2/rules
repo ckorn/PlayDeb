@@ -1,5 +1,5 @@
 #!/usr/bin/make -f
-version=2.3
+version=2.4
 major=1
 %:
 	dh $@

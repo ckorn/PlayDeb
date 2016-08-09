@@ -1,3 +1,15 @@
+libsfml2 (2.4.0-1~getdeb2) xenial; urgency=medium
+
+  * A workaround for lingering GCC 5.3 errors.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 08 Aug 2016 16:07:02 +0200
+
+libsfml2 (2.4.0-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 08 Aug 2016 12:21:21 +0200
+
 libsfml2 (2.3.2-1~getdeb1) wily; urgency=medium
 
   * New upstream version
