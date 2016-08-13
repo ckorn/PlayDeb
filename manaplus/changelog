@@ -1,3 +1,21 @@
+manaplus (1:1.6.8.14-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: arrow slot in equipment window.
+    fix: compilation with new curl 7.50.
+    fix: freeze with some particle types.
+    fix: particles count in popup.
+    add: show being level at popup.
+    add: shop hp/max hp in being popup.
+    add: support for elemental beings.
+    add: extend stats.xml with attribute names.
+    add: extend riding offsets.
+    add: player wall collision. (player cant walk).
+    add: monster wall collision. (monster cant walk).
+    add: cache most xml files.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 13 Aug 2016 21:39:12 +0200
+
 manaplus (1:1.6.7.30-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
