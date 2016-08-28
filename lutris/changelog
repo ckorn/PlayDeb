@@ -1,0 +1,349 @@
+lutris (0.3.8-1~getdeb1) xenial; urgency=medium
+
+  * Upload to PlayDeb
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 28 Aug 2016 00:12:30 +0200
+
+lutris (0.3.8) xenial; urgency=medium
+
+  * Add option to use the dark GTK theme variant
+  * Add Desmume runner
+  * Add option to limit games to a single CPU core
+  * Fix button mappings on mednafen  
+  * Improve Reicast installation
+  * Add controller support to Reicast
+  * Disable Wine crash dialogs by default
+  * Sync steam games without depending on the remote library
+  * Use inotify to detect changes in Steam folders
+  * Allow to browse for mounted CD images during installation
+
+ -- Mathieu Comandon <strycore@gmail.com>  Thu, 04 Aug 2016 00:13:38 -0700
+
+lutris (0.3.7.5) xenial; urgency=medium
+
+  * Fix a bug where booleans in scripts would be converted to strings
+  * Update Debian package source format
+
+ -- Mathieu Comandon <strycore@gmail.com>  Mon, 07 Mar 2016 09:57:29 -0800
+
+lutris (0.3.7.4) xenial; urgency=medium
+
+  * Add support for Xephyr
+  * Detect Wine versions installed from WineHQ
+  * Update koku-xinput-wine to work with the build provided in the runtime
+  * Always install the required runner when a game is installed
+
+ -- Mathieu Comandon <strycore@gmail.com>  Sun, 06 Mar 2016 14:37:09 -0800
+
+lutris (0.3.7.3) xenial; urgency=medium
+
+  * Add PCSX2 runner
+  * Add PPSSPP runner
+  * Extended kickstart support for Amiga CD32
+  * UI improvements
+  * Regedit fixes
+
+ -- Mathieu Comandon <strycore@gmail.com>  Sun, 21 Feb 2016 21:13:39 -0800
+
+lutris (0.3.7.2) wily; urgency=medium
+
+  * Add button to eject CD-ROMs during installation of Wine games
+  * Prevent MAME and MESS to save config files in home directory
+  * Monitor installation tasks so installers can respawn processes
+  * Randomize extractions folder names to prevent a bug occuring when
+    extracting several archives concurrently
+  * Allow loading environment variables from system config
+
+ -- Mathieu Comandon <strycore@gmail.com>  Tue, 05 Jan 2016 08:41:23 -0800
+
+lutris (0.3.7.1) wily; urgency=medium
+
+  * Improved command line option to list games
+  * Force update of runners
+  * Add support of 64bit wine
+  * Improve MESS runner
+  * Fix Vice runner for non Commodore 64 machines
+  * Fix RPM packaging
+  * Various bugfixes
+
+ -- Mathieu Comandon <strycore@gmail.com>  Tue, 29 Dec 2015 18:47:05 -0800
+
+lutris (0.3.7) wily; urgency=medium
+
+  * Global:
+    - Open a single instance of the program
+    - Improved performance and responsiveness of the UI
+    - New sidebar to filter games by runner
+    - New log window to view output of last launched game
+    - Much improved runtime (cross-distro support for games and emulators)
+    - Initial support for the installation of multiple versions of the same game
+    - Cancelling a game installation will clean up downloaded and installed files
+    - Showing wait cursor when loading a game
+    - Improved config dialogs usability & reliability
+    - Improved monitoring of running game process
+    - Tons of bug fixes and minor improvements
+
+  * Runner specific:
+    - New runner: Dolphin (Wii and GameCube)
+    - New runner: Reicast (Dreamcast)
+    - New runner: ResidualVM (some 3D adventure games)
+    - Gens is replaced by DGen for Sega Genesis games
+    - Fully automate Steam for Windows installation
+    - Installing Steam games now does start the installation in Steam
+    - New option to shut down Steam when quitting a Steam game
+    - Added ability to manage wine versions
+    - Added Winetricks and other config tools for Wine games (in the context menu)
+    - Winetricks now bundled, used as fallback if not installed on the system
+    - New experimental support for Xinput in Wine games
+    - Monitor installation for Steam games
+
+ -- Mathieu Comandon <strycore@gmail.com>  Sat, 21 Nov 2015 18:02:58 -0800
+
+lutris (0.3.6.3) utopic; urgency=medium
+
+  * Added "Custom Steam location" option to winesteam runner
+  * Use Windows Steam from ~/.wine if not installed in Lutris' own prefix
+  * Fixed Winetricks used in installers
+
+ -- Mathieu Comandon <strycore@gmail.com>  Fri, 14 Nov 2014 00:10:00 +0100
+
+lutris (0.3.6.2) utopic; urgency=medium
+
+  * Add gvfs-backend to fix downloads on non-Gnome environments
+  * Fix winesteam install
+
+ -- Mathieu Comandon <strycore@gmail.com>  Tue, 11 Nov 2014 15:05:49 +0100
+
+lutris (0.3.6.1) utopic; urgency=medium
+
+  * Fixed an issue with Steam sync
+  * Fixed an issue with displaying years in listview
+
+ -- Mathieu Comandon <strycore@gmail.com>  Tue, 04 Nov 2014 22:31:47 +0100
+
+lutris (0.3.6) trusty; urgency=medium
+
+  * New:
+    - Lutris Runtime, removing the need to install libraries on the system
+    - Synchronization of installation state of (Linux) Steam games
+    - Real uninstallation of Steam games through Steam
+    - Auto-install of Wine Steam
+    - Better detection of Wine Steam install location
+    - Support for Steam's secondary library folders
+    - Wine version 1.7.29 (including fix for Steam's overlay/keyboard crash)
+    - Tooltips on most configuration options
+    - Wine's desktop integration disabled for newly installed Wine games
+    - DOSBox options: scaler and auto-exit
+    - ScummVM options: aspect correction, subtitles
+    - "Remove" context menu action added to uninstalled games
+    - sdlmame and sdlmess runners renamed to mame and mess
+    - "Prefix command" system option
+    - Button to access runners folder in the Manage runners window
+    - Manually re-synchronize from the menu: Lutris > Synchronize library
+
+  * Fixes:
+    - Fixed inconsistent password field limit to 26 chars, raised to 1024.
+    - Fixed impossibility to use system's Wine when Wine Steam was running.
+    - Fixed Wine games install failing when there is a space in the setup file path
+    - Fixed browser games not launching at all
+    - Fixed PCSX-Reloaded and Vice emulators not launching at all
+    - Fixed Hatari and Mess emulators not launching nor warning when no bios file configured
+    - Fixed Hatari startup fail if there is spaces in bios path
+    - Fixed the "Restore desktop resolution" option and enable it by default
+    - Fixed the Browse Files action on DOSBox games
+    - Fixed Winetricks in installers
+    - Fixed checked by default config options not saving unchecked state
+    - Fixed the "insert disc" part of installers
+    - Fixed renaming games breaking synchronization with the website
+    - Fixed Mupen64Plus fullscreen option not working when unchecked.
+    - More small fixes
+
+  * Website changes since the last version:
+    - Improved the About page
+    - Added a direct link to your Library in the menu
+
+  * For contributors:
+    - New mailing list available at lists.lutris.net/cgi-bin/mailman/listinfo/lutris
+    - Fixed the game submission form
+    - Improved feedback on submissions
+    - New write_config installer directive to write into INI files
+    - Documented how to use tasks from any runner in an installer
+
+ -- Mathieu Comandon <strycore@gmail.com>  Sat, 27 Sep 2014 01:36:10 +0200
+
+lutris (0.3.5) trusty; urgency=medium
+
+  * All runners now use the version hosted on lutris.net (auto-install!)
+  * Desura and Virtual Jaguar support
+  * Browse installed games' files from the context menu
+  * New "Connected" status indicator in the status bar
+  * New small icons and small banners style (switch in View menu)
+  * Better path management
+  * Consistent configuration loading
+  * UI Fixes
+  * Runner fixes
+  * Even more fixes
+
+ -- Mathieu Comandon <strycore@gmail.com>  Wed, 10 Sep 2014 16:41:10 +0200
+
+lutris (0.3.4) quantal; urgency=low
+
+  * Initial SDLMess Support
+  * Fixes for Gens and Hatari runners
+  * Various bugfixes
+
+ -- Mathieu Comandon <strycore@gmail.com>  Sat, 8 Feb 2014 19:14:18 +0200
+
+lutris (0.3.3) quantal; urgency=low
+
+  * Improved design of installer dialog and main window
+  * Prevent users from deleting important files when uninstalling games
+  * Show help screen on first start
+  * Support for Amiga CD32 games
+  * Dosbox install scripts can now run DOS executables
+  * Better xrandr support
+  * Give option to restrict display to a single monitor while in-game
+  * Improve contextual menu in client (Install, uninstall, manually add)
+  * Show dialog when trying to install games with no script.
+
+ -- Mathieu Comandon <strycore@gmail.com>  Sat, 25 Jan 2014 17:58:00 +0200
+
+lutris (0.3.2) quantal; urgency=low
+
+  * Support for Steam for Linux
+  * Allow switching from Steam for Linux <-> Wine
+  * Option to show only installed games in UI
+  * Ability to automatically migrate local database
+  * Misc bugfixes
+
+ -- Mathieu Comandon <strycore@gmail.com>  Sun, 15 Dec 2013 17:51:00 +0200
+
+lutris (0.3.1) quantal; urgency=low
+
+  * Support for Wine installers
+  * Library sync with Lutris.net
+  * Misc bugfixes
+
+ -- Mathieu Comandon <strycore@gmail.com>  Sat, 20 Jul 2013 21:55:37 +0200
+
+lutris (0.3.0) quantal; urgency=low
+
+  * Initial release of Lutris 0.3
+  * Support for game installers
+  * Support for lutris.net authentication
+  * Games are now stored in SQLite database
+  * Basic support for Personnal Game Archives
+
+ -- Mathieu Comandon <strycore@gmail.com>  Wed, 26 Jun 2013 12:05:22 +0200
+
+lutris (0.2.8) quantal; urgency=low
+
+  * Bump version to 0.2.8
+  * Save window size and view type
+  * Let user choose which Web browser to use for Browser runner
+  * Fix search in icon view
+
+ -- Mathieu Comandon <strycore@gmail.com>  Mon, 04 Feb 2013 15:02:47 +0100
+
+lutris (0.2.7ubuntu0) quantal; urgency=low
+
+  * Updated to version 0.2.7
+
+ -- Mathieu Comandon <strycore@gmail.com>  Sat, 10 Nov 2012 03:46:55 +0100
+
+lutris (0.2.6ubuntu1) natty; urgency=low
+
+  * Forgot to actually remove cedega stuff ... Silly me
+
+ -- Mathieu Comandon <strycore@gmail.com>  Thu, 12 May 2011 03:40:27 +0200
+
+lutris (0.2.6) natty; urgency=low
+
+  * Improved appearence of runners dialog
+  * Removed Cedega runner (Not maintained anymore)
+  * Minor Bugfixes
+
+ -- Mathieu Comandon <strycore@gmail.com>  Thu, 12 May 2011 03:32:12 +0200
+
+lutris (0.2.5r2) natty; urgency=low
+
+  * xdg is a build dependency
+
+ -- Mathieu Comandon <strycore@gmail.com>  Mon, 09 May 2011 13:36:55 +0200
+
+lutris (0.2.5r1) natty; urgency=low
+
+  * Oops, forgot to bump the python version
+
+ -- Mathieu Comandon <strycore@gmail.com>  Mon, 09 May 2011 11:25:52 +0200
+
+lutris (0.2.5) natty; urgency=low
+
+  * Bugfixes and code cleanup
+  * Installer enhancement
+  * Added Play button
+
+ -- Mathieu Comandon <strycore@gmail.com>  Mon, 09 May 2011 11:03:43 +0200
+
+lutris (0.2.4) maverick; urgency=low
+
+  * A lot of bug fixes
+  * Better support for the web installers
+  * Initial support for Mupen64+
+  * New logging system inspired by Gwibber
+
+ -- Mathieu Comandon <strycore@gmail.com>  Thu, 06 Jan 2011 02:08:35 +0100
+
+lutris (0.2.2ubuntu2) maverick; urgency=low
+
+  * Fixed a bug in Steam and NullDC runner which prevented to add games.
+
+ -- Mathieu Comandon <strycore@gmail.com>  Wed, 13 Oct 2010 19:54:17 +0200
+
+lutris (0.2.2ubuntu1) maverick; urgency=low
+
+  * Fixed file paths
+
+ -- Mathieu Comandon <strycore@gmail.com>  Tue, 12 Oct 2010 23:33:41 +0200
+
+lutris (0.2.2) maverick; urgency=low
+
+  * Added support for nullDC, joy2key
+  * New common dialogs
+  * Basic steam installer
+  * Many bugfixes
+
+ -- Mathieu Comandon <strycore@gmail.com>  Sat, 25 Sep 2010 12:53:43 +0200
+
+lutris (0.2.1) maverick; urgency=low
+
+  * Cleaned some files to prepare for 0.33 release
+  * First attempt at the Lutris installer
+  * Many bugfixes
+
+ -- Mathieu Comandon <strycore@gmail.com>  Tue, 31 Aug 2010 02:44:47 +0200
+
+lutris (0.2) lucid; urgency=low
+
+  * Initial Quickly release.
+
+ -- Mathieu Comandon <strycore@gmail.com>  Fri, 22 Jan 2010 19:38:42 +0100
+
+lutris (0.1.1)
+
+  * Resize the covers to 250px
+  * Added fullscreen coverflow
+  * Icons show up in the status bar when joysticks are connected
+  * Rewrite of preferences dialog using GTK and not Glade
+  * Implementation of user_wm and game_wm options
+  * Removed the oss boolean option, set the oss_wrapper to none for no oss
+
+lutris (0.1.0)
+
+  * First public release
+  * Support for uae
+  * ScummVM and Cedega import
+  * Search Google Images for covers
+
+ -- Mathieu Comandon <strycore@gmail.com> Sat, 28 Nov 2009 21:57:00
+
