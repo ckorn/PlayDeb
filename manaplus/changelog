@@ -1,3 +1,25 @@
+manaplus (1:1.6.8.27-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: show skill level selection with skills with level 1.
+    fix: leave guild.
+    fix: getting party settings from server.
+    fix: mercenary and homunculus moving.
+    fix: remove stats pages on reconnecting to server.
+    add: skill cast type and offsets into skills and shortcut window.
+    add: default background music by Obani.
+    add: menu in social window.
+    add: change get auto item option in party.
+    add: particle effects for equipment from cards.
+    add: custom ai to homunculus and mercenary.
+    add: in vending (sell) shop allow buy many items at once.
+    add: in vending show for seller what item was sold.
+    add: in item gm menu allow add more same item.
+    add: improve sorting in inventory.
+    remove: local pets support (tmwa).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 28 Aug 2016 00:03:59 +0200
+
 manaplus (1:1.6.8.14-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
