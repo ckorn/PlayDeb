@@ -1,0 +1,5 @@
+braincurses (1.1.0-1~getdeb1) xenial; urgency=medium
+
+  * Initial release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 03 Sep 2016 15:57:05 +0200

@@ -1,0 +1,18 @@
+Source: braincurses
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>=9),
+               libncurses5-dev
+Standards-Version: 3.9.7
+Homepage: https://github.com/bderrly/braincurses
+
+Package: braincurses
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Simple code-breaking game
+ The object of the game is to guess the correct colors in
+ the correct order. Wikipedia has more details about
+ game play, the history of the game, and
+ Donald Knuth's algorithm for solving in under five steps.
