@@ -1,3 +1,13 @@
+manaplus (1:1.6.9.10-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: file handlers leak.
+    fix: running command in chat if not tab selected.
+    add: esperanto translation selection.
+    add: option for create custom OpenGL context.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 10 Sep 2016 19:54:12 +0200
+
 manaplus (1:1.6.8.27-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
