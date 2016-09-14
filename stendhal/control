@@ -3,16 +3,16 @@ Section: games
 Priority: optional
 Maintainer: Christoph Korn <c_korn@gmx.de>
 Build-Depends: debhelper (>= 9),
-               openjdk-8-jdk | openjdk-7-jdk | openjdk-6-jdk | sun-java6-jdk,
+               openjdk-8-jdk,
                ant,
                ant-optional
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: http://stendhal.game-host.org/
 
 Package: stendhal
 Architecture: all
 Depends: ${misc:Depends},
-         openjdk-8-jre | openjdk-7-jre | sun-java6-jre,
+         openjdk-8-jre,
          fontconfig,
          jarwrapper,
          jayatana

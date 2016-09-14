@@ -1,3 +1,36 @@
+stendhal (1.21-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    *world*
+    - Pets can drink 'medicine' even when they aren't hungry. Making them
+    easier to maintain in battle.
+    - New trader NPC (Mizuno) travels around remote parts of Ados selling ice
+    arrows for black pearls.
+    - Rebalancing vampire, chaos swords.
+    - Photo booth at Mine Town Revival festival
+    - Small improvements to maps
+    - Small improvements to item and monster descriptions
+
+    *client*
+    - Default action of chest changed to open/inspect instead of look
+
+    *fixes*
+    - Help For the Harvest quest works again.
+
+    *code*
+    - In TeleporterBehaviour, zoneName.startsWith() 
+      now checks a variable so teleporting NPCs can be a little more
+      customizable.
+    - TeleporterBehaviour can now be passed an array of zones to choose from
+    or leave null for the default list.
+
+    *future changes* 
+    - preparation for testing pet leveling and growing
+    - Fighting pets will attack things along side their owners. Instead of
+    just in self-defense.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 14 Sep 2016 20:00:25 +0200
+
 stendhal (1.20-1~getdeb1) wily; urgency=medium
 
   * New upstream version
