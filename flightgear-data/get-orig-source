@@ -11,4 +11,4 @@ bunzip2 -c ../FlightGear-${VERSION}-data.tar.bz2 \
  | tar --delete --wildcards -vf - \
  fgdata/Fonts/LiberationFonts \
  fgdata/Timezone \
- | bzip2 -c > ../${PACKAGE}_${VERSION}+dfsg.orig.tar.bz2
+ | bzip2 -c > ../${PACKAGE}_${VERSION}.orig.tar.bz2
