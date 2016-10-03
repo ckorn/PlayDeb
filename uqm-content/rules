@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+UQM_MUSIC	=	uqm-0.7.0-3domusic.uqm
+UQM_CONTENT	=	uqm-0.7.0-content.uqm
+UQM_VOICE	=	uqm-0.7.0-voice.uqm
+
+
+clean::
+	rm -fr unpack stamps debian/uqm-*.install
+
+stamps/unpack-dir-stamp:
+	 rm -fr unpack stamps
+	 mkdir -p unpack/uqm-content unpack/uqm-voice unpack/uqm-music stamps
+	 touch $@
+
+
+stamps/unpack-content-stamp:	stamps/unpack-dir-stamp
+	echo 'unpack/uqm-content/* /usr/share/games/uqm/content/' >\
+		debian/uqm-content.install
+	unzip -q $(UQM_CONTENT) -d unpack/uqm-content
+	touch $@
+
+stamps/unpack-voice-stamp:	stamps/unpack-dir-stamp
+	echo 'unpack/uqm-voice/* /usr/share/games/uqm/content/' >\
+		debian/uqm-voice.install
+	unzip -q $(UQM_VOICE) -d unpack/uqm-voice
+	touch $@
+
+stamps/unpack-music-stamp:	stamps/unpack-dir-stamp
+	echo 'unpack/uqm-music/* /usr/share/games/uqm/content/' >\
+		debian/uqm-music.install
+	unzip -q $(UQM_MUSIC) -d unpack/uqm-music
+	touch $@
+
+makebuilddir/uqm-content::	stamps/unpack-content-stamp
+makebuilddir/uqm-voice::	stamps/unpack-voice-stamp
+makebuilddir/uqm-music::	stamps/unpack-music-stamp

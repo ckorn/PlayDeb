@@ -1,0 +1,91 @@
+uqm-content (0.7.0-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 03 Oct 2016 03:43:35 +0200
+
+uqm-content (0.6.0+deb1-6) unstable; urgency=low
+
+  * GIT-repo has been created in git.debian.org.
+  * VCS-* records added to debian/control.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Tue, 03 Feb 2009 00:44:27 +0300
+
+uqm-content (0.6.0+deb1-5) unstable; urgency=low
+
+  * Repackaged uqm-music, uqm-voice, uqm-content to one src-package.
+  * Added debian/watch.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Sat, 05 Jul 2008 11:33:14 +0400
+
+uqm-content (0.6.0-4) unstable; urgency=low
+
+  * New maintainer.
+  * Umask-depends removed.
+  * Standards-Version bumped to 3.8.0.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Mon, 23 Jun 2008 18:49:08 +0400
+
+uqm-content (0.6.0-3) unstable; urgency=low
+
+  * debhelper v7; rules file minimisation
+  * Orphaned the package.
+
+ -- Joey Hess <joeyh@debian.org>  Sat, 26 Apr 2008 18:41:27 -0400
+
+uqm-content (0.6.0-2) unstable; urgency=low
+
+  * Add Homepage field.
+  * Update copyright file, using new format. (Mostly)
+
+ -- Joey Hess <joeyh@debian.org>  Sat, 19 Apr 2008 17:17:33 -0400
+
+uqm-content (0.6.0-1) unstable; urgency=low
+
+  * New upstream release. Requires new uqm.
+  * Copyright update.
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 10 Jan 2007 03:20:21 -0500
+
+uqm-content (0.5.0-1) unstable; urgency=low
+
+  * New upstream release. Requires new uqm.
+  * Policy update.
+
+ -- Joey Hess <joeyh@debian.org>  Tue,  7 Feb 2006 19:41:06 -0500
+
+uqm-content (0.4.0-1) unstable; urgency=low
+
+  * New upstream release. Requires new uqm.
+
+ -- Joey Hess <joeyh@debian.org>  Thu,  2 Jun 2005 08:39:56 -0400
+
+uqm-content (0.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Although upstream lets the zip files be dropped directly into
+    /usr/share/games/uqm/content/packages, I am not doing that, because
+    zip files are not very well compressed; it would double the size of the
+    deb to put a .zip file in it. I feel that the download time/cd space is
+    more important than the disk space on filesystems that don't pack lots of
+    files well (hello ext2!).
+  * Conflict with older versions of uqm.
+  * Move from build-depends-indep to build-depends, to meet current policy.
+  * Add README.source to source package.
+
+ -- Joey Hess <joeyh@debian.org>  Fri, 12 Sep 2003 20:13:57 -0400
+
+uqm-content (0.2-2) unstable; urgency=low
+
+  * Taking over the package to get it into the Debian archive.
+  * Updates and changes to rules, README.Debian, copyright.
+  * Depend on uqm.
+  * Unzip the zip file, this actually makes the tarball 5 mb smaller.
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 18 Jun 2003 20:08:43 -0400
+
+uqm-content (0.2-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Wesley W. Terpstra (Debian) <terpstra@debian.org>  Sun,  6 Apr 2003 01:46:52 +0200

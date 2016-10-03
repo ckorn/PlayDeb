@@ -1,0 +1,49 @@
+Source: uqm-content
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               cdbs
+Build-Depends-Indep: unzip
+Standards-Version: 3.9.7
+Homepage: http://sc2.sourceforge.net/
+
+Package: uqm-content
+Architecture: all
+Depends: uqm (>= 0.7.0)
+Conflicts: uqm (<< 0.4),
+           uqm-voice (<< 0.3),
+           uqm-music (<< 0.3)
+Description: The Ur-Quan Masters - Game data files
+ You return to Earth with a vessel built from technology discovered from an
+ ancient race called the Precursors only to find it enslaved. Gather allies
+ from a wide variety of races, engage in space combat with various foes, and
+ save the galaxy from the Ur-Quan!
+ .
+ This package contains all the game data files for The Ur-Quan Masters.
+
+Package: uqm-music
+Architecture: all
+Depends: uqm (>= 0.7.0)
+Description: The Ur-Quan Masters - Game music files
+ You return to Earth with a vessel built from technology discovered from an
+ ancient race called the Precursors only to find it enslaved. Gather allies
+ from a wide variety of races, engage in space combat with various foes, and
+ save the galaxy from the Ur-Quan!
+ .
+ This package contains higher quality game music files for The Ur-Quan
+ Masters, in ogg vorbis format. If you don't install this package, the game
+ will use lower-quality mod music files.
+
+Package: uqm-voice
+Architecture: all
+Depends: uqm (>= 0.7.0)
+Description: The Ur-Quan Masters - Voice files
+ You return to Earth with a vessel built from technology discovered from an
+ ancient race called the Precursors only to find it enslaved. Gather allies
+ from a wide variety of races, engage in space combat with various foes, and
+ save the galaxy from the Ur-Quan!
+ .
+ This package contains all the voice recordings used in the game.
+ Note that it is over 100Mb! You can play the game without these files
+ if the package is too big.
