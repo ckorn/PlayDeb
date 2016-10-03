@@ -1,0 +1,64 @@
+#!/usr/bin/make -f
+
+export MAKE_VERBOSE = 1
+
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	cp debian/config.state .
+	echo | (./build.sh uqm config)
+	touch configure-stamp
+
+build: build-stamp
+
+build-stamp: configure-stamp
+	dh_testdir
+	./build.sh uqm
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	./build.sh uqm clean
+	rm -rf obj uqm
+	dh_clean config.status build-stamp configure-stamp build.vars \
+		build/unix/uqm uqm-wrapper
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs usr/games usr/share/games
+	DESTDIR=${CURDIR}/debian/uqm ./build.sh uqm install
+	install -m 0755 -d ${CURDIR}/debian/uqm/usr/share/pixmaps/
+	install -m 0644 debian/uqm.xpm ${CURDIR}/debian/uqm/usr/share/pixmaps/
+	install -m 0755 -d ${CURDIR}/debian/uqm/usr/share/applications/
+	install -m 0644 debian/uqm.desktop \
+		 ${CURDIR}/debian/uqm/usr/share/applications/
+
+binary-indep: build install
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs ChangeLog
+	dh_installdocs AUTHORS README BUGS \
+		WhatsNew Contributing
+	dh_installman debian/uqm.6
+	dh_installmenu
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure

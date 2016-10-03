@@ -1,0 +1,33 @@
+Description: various changes from the uqm packaging in source format 1.0
+
+Index: uqm-0.7.0/build.sh
+===================================================================
+--- uqm-0.7.0.orig/build.sh	2011-05-20 21:37:50.000000000 +0200
++++ uqm-0.7.0/build.sh	2016-10-03 03:54:43.085848965 +0200
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/bin/bash
+ # Build helper
+ # Copyright (c) 2002 Serge van den Boom
+ #
+Index: uqm-0.7.0/build.vars.in
+===================================================================
+--- uqm-0.7.0.orig/build.vars.in	2011-05-20 21:37:50.000000000 +0200
++++ uqm-0.7.0/build.vars.in	2016-10-03 03:56:13.343753403 +0200
+@@ -29,11 +29,11 @@
+ SED='@SED@'
+ REZ='@REZ@'
+ WINDRES='@WINDRES@'
+-uqm_CFLAGS='@CFLAGS@'
+-uqm_LDFLAGS='@LDFLAGS@'
+-uqm_INSTALL_BINDIR='@INSTALL_BINDIR@'
+-uqm_INSTALL_LIBDIR='@INSTALL_LIBDIR@'
+-uqm_INSTALL_SHAREDIR='@INSTALL_SHAREDIR@'
++uqm_CFLAGS='@CFLAGS@ -g'" $CPPFLAGS"
++uqm_LDFLAGS='@LDFLAGS@ -lm'
++uqm_INSTALL_BINDIR=$DESTDIR'@INSTALL_BINDIR@'
++uqm_INSTALL_LIBDIR=$DESTDIR'@INSTALL_LIBDIR@'
++uqm_INSTALL_SHAREDIR=$DESTDIR'@INSTALL_SHAREDIR@'
+ 
+ # Exported variables are available from all the Makeinfo files
+ # Non-exported files only where build.vars is explicitely included.

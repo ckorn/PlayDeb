@@ -1,0 +1,21 @@
+This package was debianized by Wesley W. Terpstra <terpstra@debian.org>
+and is currently maintained by Joey Hess <joeyh@debian.org>.
+
+It was downloaded from http://sc2.sourceforge.net/downloads.php
+
+Files: *
+Copyright: (C) 1992, 2002 Toys for Bob, Inc.
+License: GPL-2+
+ The full text of the GPL is distributed in /usr/share/common-licenses/GPL-2
+ on Debian systems.
+
+Files: sc2/doc/*
+Copyright: 
+License: other
+ The documentation -- excluding documentation that is part of the
+ code or otherwise clearly governed by the preceding licenses --
+ may be used freely under the terms of the Creative Commons
+ Attribution 2.0 license
+ .
+ Said documentation has been removed from the Debian version of this package,
+ as the CC Attribution 2.0 license is not DFSG free.

@@ -1,0 +1,133 @@
+.TH UR-QUAN\ MASTERS 6 2004-03-07
+.SH NAME
+uqm \- Ur-Quan Masters
+.SH SYNOPSIS
+.B uqm
+.RB [ options ]
+.SH DESCRIPTION
+The Ur-Quan Masters is a 2D inter-galatic adventure game.
+You return to Earth with a vessel built from technology discovered from an
+ancient race called the Precursors only to find it enslaved. Gather allies
+from a wide variety of races, engage in space combat with various foes, and
+save the galaxy from the Ur-Quan!
+.SH OPTIONS
+Valid command line options:
+.TP
+.B \-h, \-\-help
+Display a help message.
+.TP
+.B \-r, \-\-res \fIresolution\fR
+Sets the screen resolution.  Unless \-\-opengl is set, the only valid
+values are 640x480 and 320x240.
+.TP
+.B \-f, \-\-fullscreen
+Uses full screen mode.  Pretty straightforward.  Usually good to
+combine with -r 320x240.
+.TP
+.B \-o, \-\-opengl
+Use OpenGL drivers.  This produces higher-quality graphics, and may be
+faster as well -- but it also may not work on older cards.
+.TP
+.B \-c, \-\-scale=\fImode\fR
+Graphics scaling mode (linear, biadapt, biadv, triscan, hq). Default is none.
+Try these to get smoother graphics with cost on performance.
+.TP
+.B \-b, \-\-meleezoom=\fImode\fR
+Melee scaling mode (step, aka pc, or smooth, aka 3do). Default is 3do.
+Slower machine owners can set it to nearest to get better performance
+in melee but degraded visual quality.
+.TP
+.B \-s, \-\-scanlines
+Simulates interlaced displays.
+.TP
+.B \-p, \-\-fps
+Print fps information in the status window.
+.TP
+.B \-g, \-\-gamma \fIvalue\fR
+Sets gamma correction. 1.0 causes no change (unless your graphics card
+is originally set to a different value). Higher than 1.0 makes the
+image brighter, lower than 1.0 makes it darker.
+.TP
+.B \-C. \-\-configdir \fIdirectory\fR
+Set the directory where the game will seek its configuration files.
+.TP
+.B \-n, \-\-contentdir \fIdirectory\fR
+Set the directory where the game will seek its data.
+.TP
+.B \-M, \-\-musicvol \fIvolume\fR
+Set music volume (0-100).
+.TP
+.B \-S, \-\-sfxvol \fIvolume\fR
+Set sound effects volume (0-100).
+.TP
+.B \-T, \-\-speechvol \fIvolume\fR
+Set speech volume (0-100). If set to 0, game runs in 'no speech' mode and
+oscilloscope reacts to the music.
+.TP
+.B \-q, \-\-audioquality high | medium | low
+Specifies how nice the audio sounds. Slower machines should lower
+the audio quality.
+.TP
+.B \-u, \-\-nosubtitles
+Disables subtitles.
+.TP
+.B \-l, \-\-logfile \fIfile\fR
+Sends console output to a logfile.
+.TP
+.B \-\-addon \fIaddon\fR
+Replace \fIaddon\fR by the name of an add-on to enable in the game. May be
+specified multiple times.
+.TP
+.B \-\-sound openal | mixsdl | none
+Specifies which driver/mixer to use. Default is mixsdl.
+openal is only available when it has been  compiled in.
+It may produce higher-quality sound and will probably be faster,
+but it is not very stable on linux platforms, and may not work
+well with some sound cards.
+Use "none" as a last resort if you cannot get other drivers to work,
+or if you have no soundcard.
+.TP
+.B \-\-stereosfx
+Enables positional sound effects in melee. Currently works only when
+using openal.
+.TP
+.B \-\-nethostN \fIhostname\fR
+Server to connect to for player N (1=bottom, 2=top)
+.TP
+.B \-\-netportN \fIport\fR
+port to connect to/listen on for player N (1=bottom, 2=top)
+The default port is 21837.
+.TP
+.B \-\-netdelay \fIframes\fR
+Number of frames to buffer/delay network input for.
+.TP
+.B \-m, \-\-music 3do | pc
+Controls use of the 3DO remixed soundtrack for songs that were in fact remixed.
+3DO is the default.
+.TP
+.B \-i, \-\-intro 3do | pc
+Controls the intro/ending version. 3DO is the default.
+.TP
+.B \-\-cscan pc | 3do
+Use either PC (text) or 3DO (pictograms) style planet information when scanning.
+The default is PC.
+.TP
+.B \-\-menu pc | 3do
+Use either PC style (text and 'CREW'/'BATT') or 3DO (pictograms) in melee.
+The default is PC.
+.TP
+.B \-\-font pc | 3do
+Use either PC or 3DO style fonts and colors. The default is PC.
+.TP
+.B \-\-shield pc | 3do
+Use either PC style (static) or 3DO style (throbbing) slave shield. The
+default is PC.
+.TP
+.B \-\-scroll pc | 3do
+Scroll voice-over/subtitles 1 page at a time (PC style) or smoothly (3DO
+style) when using left/right arrow keys. The default is PC.
+.SH AUTHOR
+The Ur-Quan Masters was derived from code
+written by Toys for Bob, Inc. for the 3DO version of 'Star Control II', with
+their permission and encouragement.
+See \fI/usr/share/doc/uqm/AUTHORS.gz\fR for a complete list of authors.

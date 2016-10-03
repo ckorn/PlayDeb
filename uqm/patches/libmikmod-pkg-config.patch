@@ -1,0 +1,20 @@
+Description: Use pkg-config to find libmikmod
+Author: Stephen Kitt <skitt@debian.org>
+
+Index: uqm-0.7.0/build/unix/config_proginfo_host
+===================================================================
+--- uqm-0.7.0.orig/build/unix/config_proginfo_host	2016-10-03 04:00:10.052738445 +0200
++++ uqm-0.7.0/build/unix/config_proginfo_host	2016-10-03 04:01:14.834100871 +0200
+@@ -248,9 +248,9 @@
+ 		;;
+ 	*)
+ 		LIB_libmikmod_DETECT="have_command libmikmod-config"
+-		LIB_libmikmod_CFLAGS="$(libmikmod-config --cflags)"
+-		LIB_libmikmod_LDFLAGS="$(libmikmod-config --libs)"
+-		LIB_libmikmod_VERSION="$(libmikmod-config --version)"
++		LIB_libmikmod_CFLAGS="$(pkg-config --cflags libmikmod)"
++		LIB_libmikmod_LDFLAGS="$(pkg-config --libs libmikmod)"
++		LIB_libmikmod_VERSION="$(pkg-config --modversion libmikmod)"
+ 		;;
+ esac
+ 

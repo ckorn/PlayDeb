@@ -1,0 +1,36 @@
+Source: uqm
+Section: games
+Priority: optional
+Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+Build-Depends: debhelper (>= 9),
+               libogg-dev,
+               libvorbis-dev,
+               libsdl-image1.2-dev,
+               libsdl1.2-dev,
+               libz-dev,
+               zlib1g-dev,
+               libmikmod-dev,
+               pkg-config
+Standards-Version: 3.9.7
+Homepage: http://sc2.sourceforge.net/
+
+Package: uqm
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         uqm-content (>= 0.7.0),
+Replaces: uqm-content
+Recommends: uqm-music (>= 0.7)
+Suggests: uqm-voice (>= 0.7)
+Description: The Ur-Quan Masters - An inter-galactic adventure game
+ You return to Earth with a vessel built from technology discovered from an
+ ancient race called the Precursors only to find it enslaved. Gather allies
+ from a wide variety of races, engage in space combat with various foes, and
+ save the galaxy from the Ur-Quan!
+ .
+ The Ur-Quan Masters is derived from the classic game Star Control II.
+ It includes both the adventure game described above and a fast-paced
+ Super Melee.
+ .
+ See the README.Debian once you have installed this package for information
+ about where to get the uqm-music and uqm-voice packages.

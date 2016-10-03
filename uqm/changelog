@@ -1,0 +1,501 @@
+uqm (0.7.0-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    - Build with debug info in strict-debug mode (bug #1127), from Scott A.
+    Colcord
+    - Added spoken Slylandro probe coordinates (bug #732) - Nic, Alex
+    - Added the missing bits to the no-voice versions of Mycon, Syreen and
+      Utwig dialogue (bug #327) - Alex
+    - Syreen dialog tree no longer resets after visiting the Syreen Vault
+      for the very first time (bug #891) - Alex
+    - Fixed lander report at the Syreen Vault inconsistency (bug #1121) -
+    Alex
+    - Added lander reports for Supox ruins and Ultron. The reports text
+      is new content from TFB. (bug #1120) - Alex
+    - Fixed 'caster comm with Ilwrath after they die off (bug #850) - Alex
+    - Fixed Syreen Vault lander report infinite loop (bug #1118) - Alex
+    - Same captain names are used on both net sides (bug #989) - Alex
+    - Fixed sync loss in netplay games having duplicate ships (bug #1081) -
+    Alex
+    - Fixed loading of melee.cfg (bug #1099) - Alex
+    - Fixed the 64KB size limitation on key-value files (bug #1112) - Alex
+    - Update download paths for the new SourceForge File Release system -
+    Michael
+    - Fix UAC issues with installer for cleaner Vista/Win7 installs - Michael
+    - Fixed compilation with Netplay disabled (bug #1091), from Sze Howe Koh
+    - Fixed ship picking order after a simultaneous destruction, e.g.
+      Shofixti picks last after Glory device (bugs #1087, #1088) - Alex
+    - Game no longer locks up after quickly escaping melee (bug #1003) - Alex
+    - Reset input delay upon leaving Supermelee (bug #1022) - Alex
+    - Properly account for simultaneous destruction of last ships
+      in each fleet in Supermelee (bug #437) - Alex
+    - Do not match singular stars when given a prefix in star search
+      (bug #1071) - Alex
+    - Preserve character case when editing with joystick (bug #1080) - Alex
+    - Fixed misaligned cargo count (bug #1092) - Coredev
+    - Fixed the network SuperMelee team configuration protocol - SvdB
+    - Fixed fuel reserve bounds checks - SvdB
+    - Fixed a crash when filling fuel tanks over 10 (bug #1082) - Alex
+    - Got rid of many warnings - SvdB
+    - Clean up and some refactoring of the SuperMelee code - SvdB
+    - Fixed concurrent screen fades regression (bug #1079) - Alex
+    - Removed some legacy source code files related to resources - SvdB
+    - Put SuperMelee source files in separate subdirectory - SvdB
+    - Added additive and alpha drawing modes to graphics lib - Alex
+    - Fixed black pixel gaps between the planet and shield when entering the
+      orbit of a shielded planet (bug #32) - Alex
+    - Split off SDL-specific colormap bits into SDL domain - Alex
+    - Fixed planet blinking when exiting scan (bug #799) - Alex
+    - Restore menu sounds after editing a control set name (bug #1066) - Alex
+    - Use an own 'UniChar' rather than 'wchar_t', which may not be large
+      enough, depending on the platform - SvdB
+    - Added 'COLOR' resource type - SvdB
+    - All graphics operations use 24-bits colors at the game level too now,
+      instead of 16 bits colors. - SvdB
+    - Cross-platform safemode (ignores uqm.cfg, bug #946) - Michael
+    - Correct Chmmr response when asking about Sa-Matra (bug #1073) - Alex
+    - Refactored universe generation - SvdB
+    - Comm animation processing rewrite, bugs fixed - Alex
+    - Added graphics context debugging function - SvdB
+    - Thread down-throttling and game sleep when inactive (currently
+    disabled),
+      (bug #1070), from Flandry
+    - Internal changes: GOOD_GUY/BAD_GUY ship flags retired - Alex
+    - Fixed Melee menu timeout when both sides are Cyborgs (bug #1067) - Alex
+    - Fixed AI ship not moving on warp in (bug #648) - Alex
+    - Revert gfx settings entirely when a mode switch fails (bug #1056) -
+    Alex
+    - Fixed the Syreen lights-out scene timing (bug #1011) - Alex
+    - Added a native error box for MacOSX (like we have for Windows) - Alex
+    - Fix for weird colors problem on MacOSX w/ SDL 1.2.14; also improves
+      overall compatibility on all platforms - Alex
+    - Unix build system cleanups, fix detection of SDL, libmikmod, pthread -
+    SvdB
+    - Make DoPopupWindow() work over faded out screens. - SvdB
+    - Trackplayer rewrite; fixed many bugs - Alex
+    - Source tree reorg: libs/ moved out of sc2code/, msvc++/ moved to
+      build/msvc6/, src/sc2code/ renamed to src/uqm/ - Coredev
+    - Druuge no longer turn hostile after attempting a salvage (bug #1013) -
+    Alex
+    - Process subtitles correctly with no timestamp file (bug #1060) - Alex
+    - Lander will no longer hang when killed on planets with a lot of
+      natural disasters (bug #584) - Alex
+    - Canceling load from the main menu returns to main menu (bug #679) -
+    Alex
+    - Fixed inputting numbers with the numpad, except directx (bug #934) -
+    Alex
+    - Better location description in savegame summaries (bug #844) - Alex
+    - Fixed crash when saving a game into the last slot while having
+      too many devices on board - Alex
+    - Allow any sound data format to be graphed by comm oscilloscope; also
+      auto-adjust the scope for different gain levels (bug #1064) - Alex
+    - Game settings Quit menu now delegates to F10 quit (bug #462) - Alex
+    - Do not pause the game in places where not relevant (bug #984) - Alex
+    - Fixed crashes and potential weirdness when loading savegames from
+      a Homeworld encounter screen (bug #997) - Alex
+    - Cleanup of GLOBAL(ShipStamp.frame) abuse; fixes bug #1054 - Alex
+    - Game attempts to exit cleanly under normal circustances (bug #52) -
+    Alex
+    - Fixed Mmrnmhrm's X-Form transformation without energy use (bug #1004) -
+    Alex
+    - Added missing sleeps in DoInput() functions (bug #893) - Alex
+    - Starmap unit conversion corrections; fixes bug #970 - Alex
+    - Rounding-error correction in log(x|y)ToUniverse (bug #1046), from Nic
+    - Change hardcoded Starbase and Sa-Matra values to pretty enum values
+      (bug #1047), from Nic
+    - Load override.cfg from user's dir to add or override menu controls -
+    Alex
+    - Allow addons to override any content by placing zips into their
+      'shadow-content' dir - Alex
+    - Content reorg: font chars now use hexadecimal numbering - Alex
+    - Content reorg: some race comm and ships renamed, ship files renamed,
+      many ani files renamed, new naming scheme for ani frames and voice -
+      Alex
+    - .cfg files are now kept as subtrees of the resource map - Michael
+    - Flight control data no longer unnecessarily copied to config directory
+    - Michael
+    - Index loading/saving now can operate on subtrees - Michael
+    - Videos vs. slide now controlled by a '3dovideo' addon - Michael
+    - New video resource type for 3DO videos - Michael
+    - Allow reaching 999.9:999.9 in HyperSpace (bug #628), from Nic
+    - Use system getopt_long() when available - SvdB
+    - Added --addondir commandline option - Mika
+    - Case insensitive matching when looking for .zip/.uqm/.rmp files - SvdB
+    - Added read-ahead buffering when reading zip index files. - SvdB
+    - Added support for packed ani and font files - Mika
+    - DrawTracedText abstraction (bug #1029), from Nic
+    - Experimental support for Symbian S60 3rd edition - Mika & SvdB
+    - Pthread support - Mika
+    - Content Dirs completely reorganized; 3DO and PC segregation - Coredev
+    - Voiceovers controlled by a synthetic '3dovoice' addon - Michael
+    - CONVERSATION explicitly names text/voice/timestamps - Michael
+    - Replaced stricmp() by the POSIX compatible strcasecmp() - SvdB
+    - Split STRTAB further into STRTAB and CONVERSATION - Michael
+    - INT32, BOOLEAN, and STRING resource types - Michael
+    - UNKNOWNRES is now safe to load, and "loads" as its resvalue - Michael
+    - CODE is now SHIP, and uses an integer descriptor instead of a one-byte
+      .cod file - Michael
+    - ResourceLoadFun is now descriptor-based, not stream-based - Michael
+    - Removed RES_TYPE enum, folded into ResourceDesc - Michael
+    - Split STRTAB into STRTAB (strings) and BINTAB (color/xlat tables) -
+    Michael
+    - Removed internal references to defunct resource types - Michael
+    - Revamped resource system to only use .rmp files - Michael
+    - Isolated all constructed resources into cons_res.c - Michael
+    - Fixed a crash when conversing with music disabled - Michael
+    - Moved all resources into starcon.ls2 - Michael
+    - Fixed compile errors when compiling without joystick support - Michael
+    - Added endian-aware integer read functions to uio - SvdB
+    - Introduce the concept of an "InputContext" - SvdB
+    - Don't use alloca() in uio. - SvdB
+    - Replace PlayerOne/PlayerTwo by PlayerControls[0]/PlayerControls[1] -
+    SvdB
+    - Moved comm resources into starcon.ls2 - Michael
+    - Repackaged static comm/ship data to it all uniquely named - Michael
+    - On MacOS X, search for the content in the application bundle, from Nic
+    - Planetside resource names are now consistent and generatable - Michael
+    - Androsynth ruins freeing condition now uses cycles (Bug #1028) -
+    Michael
+    - .rmp files now carry the types of the targets - Michael
+    - Joystick threshold defaults to 10,000, not 0 (Bug #1046) - Michael
+    - Remove MEM_HANDLEs from everywhere outside of memlib - Michael
+    - Split out RESOURCEs from the loaded data in RACE_DESC and LOCDATA
+      structures - Michael
+    - Prevent overflow for planet weight when scanning a planet (bug #1025)
+      - from Benjamin Alan Weaver
+    - Don't set _POSIX_THREAD_SAFE_FUNCTIONS - SvdB
+    - Support for Windows CE. - SvdB with Pavel Chernikov
+    - Added support to the unix build system for explicitly specifying the
+    name
+      of the define to set to show when a symbol is found.
+      Also a fix for when 'strcasecmp' is #define'd by the system. - SvdB
+    - Rewrote mapres.c to use uio's hashtables instead of its own
+      association lists - Michael
+    - Added a Remix option to the setup menu - Michael
+    - Addon zips can live in content/addons directly - Michael
+    - 3DO music separated into an addon pack - Michael
+    - Major change in resource index scheme - Michael
+      - .lst replaced (mapping to IDs instead of to files)
+      - .rmp files give the mapping from IDs to files. 
+      - Addons provide additional files instead of overriding UIO
+      - Addons must provide .rmp files to do the necessary overrides.
+    - Removed unnecessary _ALIGNED_ON macro usage - SvdB
+    - The current directory is now among the locations searched for the
+    content
+      when no explicit location has been specified. (bug fix) - from Nic
+    - Non-3DO Shipspin anims now use Presentations - Michael
+    - Added presentation commands TEXT, TE (text effect), MOVIE - Alex
+    - Increased the size of display queue (elements were sometimes missing
+      in e.g. Nemesis vs. Nemesis battles with many marines out) - Alex
+    - ShowPresentation() no longer clears the screen by force; presentations
+      now do this by request - Michael
+    - Added match_matchPatternOnce() - SvdB
+    - Fixed a problem with blue ships after Avatar's tractor beam,
+      along with some other fill-stamp situations; bug #929 - Alex
+    - Added TFB_Canvas_Lock(), TFB_Canvas_Unlock() and TFB_Canvas_GetStride()
+      - SvdB
+    - Scaling images with respect to their hotspots: stabilizes compound
+      Melee objects; re-added bilinear Melee scaler; zooming planet uses
+      bilinear; fixes bug #685 - Alex
+    - Added --keepaspectratio to keep correct aspect ratio when using
+      custom resolutions in OpenGL mode - Mika
+    - Add /var/tmp as possible location for temporary files. Don't try
+      /tmp and /var/tmp at all on MS Windows (Cygwin excepted) - SvdB
+    - Added fullscreen/windowed toggle key F11 (bug #578) - Mika
+    - Allow building without ogg vorbis support (bug #852) - SvdB
+    - Reworked SuperMelee fleet loading (fixes bug #823) - SvdB
+    - Fixed enemy ships getting recrewed between ecnounters in HyperSpace
+      (bug #996) - Alex
+    - Removed mouse_err.c since DoPopupWindow() is used now - SvdB
+    - (debugging) Fixed instant-move towards the current location - SvdB
+    - Fixed wrong Sa-Matra guards icons after Kohr-Ah win (bug #1001) - Alex
+    - Internal ship structures and queues refactoring and cleanup - Alex
+    - Fix quitting out of IP before the IP is fully set (bug #987) - Michael
+    - Fixed speech looping with long tracks at high sampling rates;
+      scope supports higher rates for speech now; bug 999 - Alex
+    - Basic support for .ani-based shipspin animations - Michael
+    - Fixed some Melnorme history info timestamps - Alex
+    - Fixed Ur-Quan story timestamps, from Vlad-Ceru Opran
+    - Removed the 256-frame limit on .ani files - Michael
+    - Renamed PlaySpeech/StopSpeech to work around name collisions
+      on OSX - Alex
+    - Ending the battle with a simultaneous death no longer triggers an
+      assertion - SvdB
+    - Concurrent supermelee ship selection - SvdB
+    - New generic, unthreaded flashing code - SvdB
+    - Cleanup of 3DO ship spin support; spin speech works now - Alex
+    - No longer creating and mounting a temporary directory. It is no longer
+      used, but it might be again at some point, for loadable modules. - SvdB
+    - Added RNG functions that work on a supplied state - SvdB
+    - Fixed a crash on startup if uqm.cfg did not exist, flagged and fixed 
+      by jdorje - Michael
+    - Support for 3do "ship spin" videos (Bug #733, patch by Jan Lönnberg) 
+      -Michael
+    - Major refactoring of input configuration to use the resource system 
+      instead of custom files (bugs #961 and #949) - Michael
+    - Added ability to remove entries from ALists - Michael
+    - Cleaned up FRAME, CONTEXT, and FONT abstraction layers - Michael
+    - Added Input Frames to pause code to stop infinite loops - Michael
+    - Added more netplay debug code - SvdB
+    - Added uio_fprintf() and uio_vfprintf() - SvdB
+    - Any input will register for at least one frame (Bug #864) - Michael
+    - Many VControl cleanups - Michael
+    - Fix compilation without Netplay support - SvdB
+    - Added limited AIFF sound file decoder for playing 3DO originals;
+      SDX2 decoder by SvdB - Alex
+    - Typo fix in Starbase speech (bug #959) - Michael
+    - (MacOS) Don't package up .svn dirs with 'build.sh uqm install' (bug
+    #958),
+      from Nic.
+    - No more extra newlines to log_add() calls for libs/network/ code - SvdB
+    - DUCK videos now play correctly after a video mode change; bug #734 -
+    Alex
+    - Cancel key will now quit out of the Manifest Menu (Bug #838) - Michael
+    - Added -w and -x commandline options, to counter -f and -o; used these 
+      to implement "Safe Mode" links in the Win32 installer (Bug #946)
+      - Michael
+    - OpenGL texture loading uses surface pitch instead of screen width.  
+      This should head off future bugs similar to Bug #740 (this issue was 
+      reported as Bug #956) - Michael
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 03 Oct 2016 02:30:11 +0200
+
+uqm (0.6.2.dfsg-9.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Use pkg-config to pull in the libmikmod configuration, closes:
+    #745094.
+
+ -- Stephen Kitt <skitt@debian.org>  Tue, 31 May 2016 12:53:09 +0200
+
+uqm (0.6.2.dfsg-9.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Switch to source format 3.0 (quilt).
+  * Switch to debhelper compat level 5.  (Closes: #817308, #817709)
+  * B-D on libmikmod-dev instead of libmikmod2-dev.  (Closes: #745094)
+  * Fix typo in short description.  (Closes: #751601)
+  * Move icon to /usr/share/pixmaps.  (Closes: #680262)
+  * Fix German desktop entry.  (Closes: #769945)
+  * Use canonical https URLs for Vcs-*.
+  * Enable hardened and verbose build.
+
+ -- Andreas Beckmann <anbe@debian.org>  Thu, 07 Apr 2016 17:27:25 +0200
+
+uqm (0.6.2.dfsg-9.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix missing -lm, thanks to Peter Piwowarski.  (Closes: #792920)
+
+ -- Andreas Beckmann <anbe@debian.org>  Fri, 18 Sep 2015 12:37:50 +0200
+
+uqm (0.6.2.dfsg-9) unstable; urgency=low
+
+  * Added .desktop file, closes: #452650,
+    thanks "Emmet Hikory" <emmet.hikory@gmail.com>
+  * GIT-repo has been created in git.debian.org.
+  * Added VCS-* records to debian/control.
+  * Added icon to debian's menu.
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Mon, 02 Feb 2009 12:38:13 +0300
+
+uqm (0.6.2.dfsg-8) unstable; urgency=low
+
+  * New maintainer, closes: #487476.
+  * Standards-Version bumped to 3.8.0.
+  * Obsolete package `libglu1-xorg-dev' has been removed from build-depends.
+  * README.Debian has been removed (uqm-music/voice uploaded to non-free).
+
+ -- Dmitry E. Oboukhov <unera@debian.org>  Mon, 23 Jun 2008 18:27:47 +0400
+
+uqm (0.6.2.dfsg-7) unstable; urgency=low
+
+  * Orphaned the package.
+
+ -- Joey Hess <joeyh@debian.org>  Sat, 21 Jun 2008 22:04:57 -0400
+
+uqm (0.6.2.dfsg-6) unstable; urgency=low
+
+  * Add Homepage field.
+  * Update copyright file to new format.
+  * Fix man page whatis entry.
+
+ -- Joey Hess <joeyh@debian.org>  Sat, 19 Apr 2008 16:54:22 -0400
+
+uqm (0.6.2.dfsg-5) unstable; urgency=low
+
+  * The patch applied in -3 was broken, since uio_MOUNT_TOP is not the inverse
+    of uio_MOUNT_BELOW. The correct thing to use is uio_MOUNT_ABOVE. This
+    fixes support for zipped addons. Closes: #437612
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 13 Aug 2007 14:09:09 -0400
+
+uqm (0.6.2.dfsg-4) unstable; urgency=low
+
+  * Update to new menu policy and de-hardcode path in menu file.
+    Closes: #432135
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 08 Jul 2007 16:36:56 -0400
+
+uqm (0.6.2.dfsg-3) unstable; urgency=low
+
+  * Since the debian packages ship content uncompressed from the zip files to
+    save 2x the space in the packages, support add-on zips by making files
+    from zips override unpacked files. The default behavior is the other way
+    around. Closes: #425524 Thanks, Emmet Hikory.
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 22 May 2007 13:55:14 -0400
+
+uqm (0.6.2.dfsg-2) unstable; urgency=low
+
+  * Add replaces on uqm-content due to moved file. Closes: #415348
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 18 Mar 2007 15:32:52 -0400
+
+uqm (0.6.2.dfsg-1) unstable; urgency=low
+
+  * Forgot to remove the CC licensed docs from 0.6.2. Repackage the upstream
+    tarball, and tack on a "dfsg" to the version so I won't forget this in the
+    future.
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 25 Jan 2007 20:25:27 -0500
+
+uqm (0.6.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 25 Jan 2007 04:47:05 -0500
+
+uqm (0.6.1-2) unstable; urgency=low
+
+  * Add -g to CFLAGS.
+  * Pull fix from svn for a crasher when saving a game. Closes: #406777
+
+ -- Joey Hess <joeyh@debian.org>  Sat, 13 Jan 2007 19:44:08 -0500
+
+uqm (0.6.1-1) unstable; urgency=low
+
+  * New upstream release. Closes: #404152
+    - Featuring networked Super Melee!
+    - Now usable on 64 bit systems. Closes: #350129
+  * Now needs a build dep on libmikmod2-dev.
+  * In this version, documentation, excluding documentation that is
+    "part of the code or otherwise clearly governed" by the license of the
+    code, is licensed under the Creative Commons Attribution 2.0 license.
+    Since that license is not DFSG free, this documentation has been stripped
+    from the source tarball. I'm considering the README, changelog, etc, to
+    be clearly part of the code, but docs in sc2/doc/devel and sc2/doc/users
+    (including the manual) are not, and thus appear to be licensed under the CC
+    license now, and are removed.
+  * Removed text in the man page that was originally copied from the manual.
+    Sigh.
+  * Updated the man page to document new options.
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 10 Jan 2007 02:33:57 -0500
+
+uqm (0.5.0-3) unstable; urgency=low
+
+  * Remove CVS directories in clean, they're in the upstream tarball
+    and leaked into the deb. Closes: #400614
+  * Update FSF address in copyright file.
+  * Current policy.
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 27 Nov 2006 15:46:14 -0500
+
+uqm (0.5.0-2) unstable; urgency=low
+
+  * Patch from Andreas Jochens to fix amd64 FTBFS.  Closes: #352588
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 28 Feb 2006 11:55:00 -0800
+
+uqm (0.5.0-1) unstable; urgency=low
+
+  * New upstream release with many improvements and features.
+  * Depends on uqm-content version 0.5.0.
+  * uqm-voice is not changed at all from 0.4.0 and will not be updated.
+  * uqm-music has a minor change that is not worth changing the version in the
+    Recommends.
+  * Switch watch file to sf redirector.
+  * Build dep update.
+  * Policy update.
+  * Document new hq scaler and consetallation search key in man page
+    and make many other updates to the man page.
+  * Add info to README.Debian about where to get the uqm.debian.net repo key.
+
+ -- Joey Hess <joeyh@debian.org>  Tue,  7 Feb 2006 12:40:38 -0500
+
+uqm (0.4.0-1) unstable; urgency=low
+
+  * New upstream release. Closes: #311408
+  * Removed obsolete bits from README.Debian.
+  * Actually install the man page.
+  * Increase versioned relationships to 0.4.0 versions, although I think
+    old uqm-voice will work ok, so I've not added conflicts for old versions
+    of that, and the old uqm-music is certianly ok.
+  * Switch mirror url to preferred err.no.
+
+ -- Joey Hess <joeyh@debian.org>  Wed,  1 Jun 2005 22:27:58 -0400
+
+uqm (0.3-3) unstable; urgency=low
+
+  * Patch from Andreas Jochens to fix static prototypes and other problems
+    so it will build with gcc 4.0. Closes: #298335
+  * Document in README.Debian some unfinished things.
+    Closes: #204689, #204713, #231993
+
+ -- Joey Hess <joeyh@debian.org>  Sat,  9 Apr 2005 17:07:28 -0400
+
+uqm (0.3-2) unstable; urgency=low
+
+  * Add a man page, contributed by Jeronimo Pellegrini. Closes: #236612
+
+ -- Joey Hess <joeyh@debian.org>  Sun,  7 Mar 2004 08:10:44 -0900
+
+uqm (0.3-1) unstable; urgency=low
+
+  * New upstream release. Closes: #210476
+    - Should work on powerpc. Closes: #205910
+    - With a different, presumably better fix for bug #200975
+  * Moved uqm binary out of /usr/share.
+  * Depends on new version of content package.
+  * Build-depends on libz-dev, so the binary can have support for .zip files.
+    I'm not using this for the content, but it may be useful for addons.
+  * Added a watch file.
+
+ -- Joey Hess <joeyh@debian.org>  Fri, 12 Sep 2003 00:00:49 -0400
+
+uqm (0.2-4) unstable; urgency=low
+
+  * Switch mixSDL_Object over to a long int, which makes it big enough to
+    also contain a 64 bit pointer. This is probably not the best approach,
+    but it'll compile now on ia64. Closes: #200975
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 20 Jul 2003 01:08:14 +0200
+
+uqm (0.2-3) unstable; urgency=low
+
+  * Added a menu file.
+  * Added Contributing and WhatsNew to binary package.
+
+ -- Joey Hess <joeyh@debian.org>  Tue,  1 Jul 2003 22:41:32 -0400
+
+uqm (0.2-2) unstable; urgency=low
+
+  * Taking over the package to get it into Debian.
+  * Removed the uqm-all package. As it depends on packages that will not be
+    in the main Debian archive, it's not useful and indeed was blocking
+    uqm from being accepted.
+  * Added a pointer to README.Debian about the uqm.debian.net apt repository.
+  * Minor rules file changes.
+  * Update copyright, control files.
+  * Don't include empty NEWS file.
+  * Mention Star Control II in the package description, and also super melee.
+  * build/unix/build.sh has bashisms, so always run it using bash.
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 18 Jun 2003 20:08:35 -0400
+
+uqm (0.2-1) unstable; urgency=low
+
+  * Initial Release (closes: #171314).
+
+ -- Wesley W. Terpstra (Debian) <terpstra@debian.org>  Sat,  5 Apr 2003 23:48:59 +0200
