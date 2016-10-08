@@ -1,4 +1,5 @@
 version=3
-opts="uversionmangle=s/(\d)(\d)/$1\.$2/" \
+opts="uversionmangle=s/(\d)(\d)(\d)/$1\.$2\.$3/" \
 http://files.cucurb.net/UrbanTerror/ \
-    (?:.*/)?UrbanTerror([\d]+)_full_(?:[\d]+)\.zip
+    (?:.*/)?UrbanTerror([\d]+)_full\.zip
+http://files.cucurb.net/UrbanTerror/UrbanTerror431_full.zip
