@@ -1,3 +1,15 @@
+manaplus (1:1.6.10.8-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: fix modal dialogs if update window is open.
+    fix: theme info dialog.
+    fix: removing particle effect after it was disabled on server.
+    add: in quest texts add fields for data from server.
+    add: support for links to monsters, pets, homunculuses.
+    add: more than one image support in one animation action.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 08 Oct 2016 21:10:00 +0200
+
 manaplus (1:1.6.9.24-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
