@@ -1,5 +1,0 @@
-version=3
-opts=uversionmangle=s/(\d)(\d)(\d)/$1.$2.$3/ \
-ftp://ftp.snt.utwente.nl/pub/games/urbanterror/patches/41_to_411/UrbanTerror([\d]+)_update\.zip
-
-#ftp://ftp.snt.utwente.nl/pub/games/urbanterror/UrbanTerror_(.*)\_FULL.zip

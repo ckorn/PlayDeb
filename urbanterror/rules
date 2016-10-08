@@ -26,6 +26,7 @@ else
 #	 cp UrTUpdater.x86_64 debian/urbanterror/usr/lib/games/UrTUpdater
 	 cp Quake3-UrT-Ded.x86_64 debian/urbanterror-server/usr/lib/games/urbanterror/Quake3-UrT-Ded
 endif
+	 chmod +x debian/urbanterror/usr/lib/games/urbanterror/Quake3-UrT debian/urbanterror-server/usr/lib/games/urbanterror/Quake3-UrT-Ded
 
 ## http://wiki.debian.org/onlyjob/get-orig-source
 .PHONY: get-orig-source
