@@ -1,3 +1,9 @@
+nazghul (0.7.1-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * Rebuild for yakkety
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 27 Oct 2016 18:14:30 +0200
+
 nazghul (0.7.1-1~getdeb1) precise; urgency=low
 
   * New upstream version
