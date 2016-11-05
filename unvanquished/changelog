@@ -1,3 +1,9 @@
+unvanquished (0.50.0-1~getdeb3~yakkety) yakkety; urgency=medium
+
+  * Rebuild for yakkety
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 27 Oct 2016 19:02:57 +0200
+
 unvanquished (0.50.0-1~getdeb2~xenial) xenial; urgency=medium
 
   * Rebuild for xenial
