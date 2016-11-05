@@ -1,3 +1,9 @@
+sm-ssc (5.0~beta3-1~getdeb4~yakkety) yakkety; urgency=medium
+
+  * Rebuild for yakkety
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 27 Oct 2016 18:34:54 +0200
+
 sm-ssc (5.0~beta3-1~getdeb3~xenial) xenial; urgency=medium
 
   * Rebuild for xenial
