@@ -1,3 +1,9 @@
+glc (0.5.8-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * Rebuild for yakkety
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 27 Oct 2016 17:59:55 +0200
+
 glc (0.5.8-1~getdeb1) precise; urgency=low
 
   * New upstream version

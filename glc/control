@@ -2,20 +2,20 @@ Source: glc
 Section: video
 Priority: optional
 Maintainer: Christoph Korn <c_korn@gmx.de>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                cmake,
                libasound2-dev,
                x11proto-core-dev,
                libx11-dev,
                x11proto-xf86vidmode-dev,
                mesa-common-dev,
-               libpng12-dev,
+               libpng-dev,
                gcc-multilib [amd64],
                libelfhacks-dev,
                libpacketstream-dev,
                libxxf86vm-dev,
                libgl1-mesa-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.8
 Homepage: http://nullkey.ath.cx/projects/glc
 
 Package: glc
