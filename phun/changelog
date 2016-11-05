@@ -1,3 +1,9 @@
+phun (5.28-1~getdeb7~yakkety) yakkety; urgency=medium
+
+  * Rebuild for yakkety
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 27 Oct 2016 18:26:49 +0200
+
 phun (5.28-1~getdeb6~precise) precise; urgency=low
 
   * Rebuild for precise.
