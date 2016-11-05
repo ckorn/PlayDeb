@@ -1,3 +1,9 @@
+alephone (20150620-1~getdeb4~yakkety) yakkety; urgency=medium
+
+  * Rebuild for yakkety
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 25 Oct 2016 18:23:12 +0200
+
 alephone (20150620-1~getdeb3~wily) wily; urgency=medium
 
   * Rebuild for wily

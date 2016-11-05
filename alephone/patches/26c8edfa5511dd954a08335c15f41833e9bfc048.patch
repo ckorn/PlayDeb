@@ -1,0 +1,99 @@
+From 26c8edfa5511dd954a08335c15f41833e9bfc048 Mon Sep 17 00:00:00 2001
+From: Hopper262 <hopper@whpress.com>
+Date: Wed, 6 Jan 2016 00:59:21 -0500
+Subject: [PATCH] update old ffmpeg enums (should fix #10, #11)
+
+---
+ Source_Files/FFmpeg/Movie.cpp    |  4 ++--
+ Source_Files/FFmpeg/SDL_ffmpeg.c | 14 +++++++-------
+ 2 files changed, 9 insertions(+), 9 deletions(-)
+
+Index: alephone-20150620/Source_Files/FFmpeg/Movie.cpp
+===================================================================
+--- alephone-20150620.orig/Source_Files/FFmpeg/Movie.cpp	2016-10-25 19:28:03.923090993 +0200
++++ alephone-20150620/Source_Files/FFmpeg/Movie.cpp	2016-10-25 19:28:03.919090894 +0200
+@@ -420,7 +420,7 @@
+         video_stream->codec->width = view_rect.w;
+         video_stream->codec->height = view_rect.h;
+         video_stream->codec->time_base = (AVRational){1, TICKS_PER_SECOND};
+-        video_stream->codec->pix_fmt = PIX_FMT_YUV420P;
++        video_stream->codec->pix_fmt = AV_PIX_FMT_YUV420P;
+         video_stream->codec->flags |= CODEC_FLAG_CLOSED_GOP;
+         video_stream->codec->thread_count = get_cpu_count();
+         
+@@ -539,7 +539,7 @@
+     // initialize conversion context
+     if (success)
+     {
+-        av->sws_ctx = sws_getContext(temp_surface->w, temp_surface->h, PIX_FMT_RGB32,
++        av->sws_ctx = sws_getContext(temp_surface->w, temp_surface->h, AV_PIX_FMT_RGB32,
+                                      video_stream->codec->width,
+                                      video_stream->codec->height,
+                                      video_stream->codec->pix_fmt,
+Index: alephone-20150620/Source_Files/FFmpeg/SDL_ffmpeg.c
+===================================================================
+--- alephone-20150620.orig/Source_Files/FFmpeg/SDL_ffmpeg.c	2016-10-25 19:28:03.923090993 +0200
++++ alephone-20150620/Source_Files/FFmpeg/SDL_ffmpeg.c	2016-10-25 19:28:03.923090993 +0200
+@@ -92,7 +92,7 @@
+  *  Provide a fast way to get the correct context.
+  *  \returns The context matching the input values.
+  */
+-struct SwsContext* getContext( SDL_ffmpegConversionContext **context, int inWidth, int inHeight, enum PixelFormat inFormat, int outWidth, int outHeight, enum PixelFormat outFormat )
++struct SwsContext* getContext( SDL_ffmpegConversionContext **context, int inWidth, int inHeight, enum AVPixelFormat inFormat, int outWidth, int outHeight, enum AVPixelFormat outFormat )
+ {
+     SDL_ffmpegConversionContext *ctx = *context;
+ 
+@@ -627,7 +627,7 @@
+     {
+         case 24:
+             sws_scale( getContext( &file->videoStream->conversionContext,
+-                                   frame->w, frame->h, PIX_FMT_RGB24,
++                                   frame->w, frame->h, AV_PIX_FMT_RGB24,
+                                    file->videoStream->_ffmpeg->codec->width,
+                                    file->videoStream->_ffmpeg->codec->height,
+                                    file->videoStream->_ffmpeg->codec->pix_fmt ),
+@@ -640,7 +640,7 @@
+             break;
+         case 32:
+             sws_scale( getContext( &file->videoStream->conversionContext,
+-                                   frame->w, frame->h, PIX_FMT_BGR32,
++                                   frame->w, frame->h, AV_PIX_FMT_BGR32,
+                                    file->videoStream->_ffmpeg->codec->width,
+                                    file->videoStream->_ffmpeg->codec->height,
+                                    file->videoStream->_ffmpeg->codec->pix_fmt ),
+@@ -1611,7 +1611,7 @@
+     stream->codec->gop_size = 12;
+ 
+     /* set pixel format */
+-    stream->codec->pix_fmt = PIX_FMT_YUV420P;
++    stream->codec->pix_fmt = AV_PIX_FMT_YUV420P;
+ 
+     /* set mpeg2 codec parameters */
+     if ( stream->codec->codec_id == AV_CODEC_ID_MPEG2VIDEO )
+@@ -2229,7 +2229,7 @@
+                                    file->videoStream->_ffmpeg->codec->height,
+                                    file->videoStream->_ffmpeg->codec->pix_fmt,
+                                    frame->overlay->w, frame->overlay->h,
+-                                   PIX_FMT_YUYV422 ),
++                                   AV_PIX_FMT_YUYV422 ),
+                        ( const uint8_t* const* )file->videoStream->decodeFrame->data,
+                        file->videoStream->decodeFrame->linesize,
+                        0,
+@@ -2251,7 +2251,7 @@
+                                            file->videoStream->_ffmpeg->codec->height,
+                                            file->videoStream->_ffmpeg->codec->pix_fmt,
+                                            frame->surface->w, frame->surface->h,
+-                                           PIX_FMT_RGB32 ),
++                                           AV_PIX_FMT_RGB32 ),
+                                ( const uint8_t* const* )file->videoStream->decodeFrame->data,
+                                file->videoStream->decodeFrame->linesize,
+                                0,
+@@ -2265,7 +2265,7 @@
+                                            file->videoStream->_ffmpeg->codec->height,
+                                            file->videoStream->_ffmpeg->codec->pix_fmt,
+                                            frame->surface->w, frame->surface->h,
+-                                           PIX_FMT_RGB24 ),
++                                           AV_PIX_FMT_RGB24 ),
+                                ( const uint8_t* const* )file->videoStream->decodeFrame->data,
+                                file->videoStream->decodeFrame->linesize,
+                                0,
