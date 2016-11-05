@@ -2,7 +2,7 @@ Source: stratagus
 Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                cmake (>= 2.6),
                doxygen,
                imagemagick,
@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 9),
                libtolua++5.1-dev,
                zlib1g-dev,
                libbz2-dev,
-               libpng12-dev (>= 1.2.5),
+               libpng-dev (>= 1.2.5),
                libmng-dev,
                libmikmod2-dev,
                libogg-dev,
@@ -22,7 +22,7 @@ Build-Depends: debhelper (>= 9),
                libsqlite3-dev,
                libglu1-mesa-dev,
                libfluidsynth-dev
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Homepage: https://github.com/Wargus/stratagus
 
 Package: stratagus

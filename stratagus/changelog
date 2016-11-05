@@ -1,3 +1,9 @@
+stratagus (2.4.0-1~getdeb3~yakkety) yakkety; urgency=medium
+
+  * Rebuild for yakkety
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 27 Oct 2016 18:48:35 +0200
+
 stratagus (2.4.0-1~getdeb2~wily) wily; urgency=medium
 
   * Upload to PlayDeb
