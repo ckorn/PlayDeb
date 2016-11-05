@@ -1,3 +1,9 @@
+manaplus (1:1.6.10.8-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * Rebuild for yakkety
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 30 Oct 2016 21:41:58 +0100
+
 manaplus (1:1.6.10.8-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
