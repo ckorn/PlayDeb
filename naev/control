@@ -2,8 +2,8 @@ Source: naev
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <c_korn@gmx.de>
-Build-Depends: debhelper (>= 9),
-               libpng12-dev,
+Build-Depends: debhelper (>= 10),
+               libpng-dev,
                libopenal-dev,
                binutils-dev,
                libiberty-dev,
@@ -16,7 +16,7 @@ Build-Depends: debhelper (>= 9),
                libsdl2-image-dev,
                libfreetype6-dev,
                libzip-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.8
 Homepage: http://naev.org
 
 Package: naev

@@ -10,6 +10,8 @@ override_dh_auto_clean:
 	find . -name '*.o' -delete
 	find . -name 'Makefile' -delete
 
+override_dh_autoreconf:
+
 override_dh_auto_configure:
 	dh_auto_configure -- --with-ndata-path=/usr/share/games/naev/dat --enable-debug=no
 
