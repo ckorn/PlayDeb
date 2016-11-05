@@ -2,15 +2,15 @@ Source: forsaken
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                liblua5.1-0-dev,
                libminiupnpc-dev,
                libsdl1.2-dev,
                libopenal-dev,
-               libpng12-dev,
+               libpng-dev,
                lua-socket-dev,
                libenet-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.8
 Homepage: http://fly.thruhere.net/
 
 Package: forsaken

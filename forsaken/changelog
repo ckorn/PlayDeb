@@ -1,3 +1,9 @@
+forsaken (1.18+git20140805-1~getdeb3~yakkety) yakkety; urgency=medium
+
+  * Rebuild for yakkety
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 26 Oct 2016 18:52:21 +0200
+
 forsaken (1.18+git20140805-1~getdeb2~utopic) utopic; urgency=medium
 
   * Rebuild for utopic
