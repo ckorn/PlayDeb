@@ -1,3 +1,0 @@
-version=3
-opts=dversionmangle=s/\-(debian|dfsg|ds|deb)(\.\d+)?$// \
- http://hedgewars.org/download.html .*/hedgewars-src-(\d.*)\.(?:tgz|tbz2|tar\.(?:gz|bz2|xz))

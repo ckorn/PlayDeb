@@ -1,3 +1,0 @@
-version=3
-https://github.com/stuntrally/stuntrally/tags \
-    (?:.*/)?archive/([\d\.]+)(?:\.tar\.gz|\.tar\.bz2|\.tar\.xz)

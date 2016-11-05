@@ -1,3 +1,0 @@
-version=3
-opts="dversionmangle=s/~/\./" \
-http://sf.net/vegastrike/vegastrike-src-(.*)\.tar\.(?:bz2|gz|xz)

@@ -1,8 +1,0 @@
-slashem/dat/nhshare			usr/lib/games/vulture-slashem
-slashem/dat/nhushare			usr/lib/games/vulture-slashem
-debian/scripts/vulture-slashem		usr/games
-slashem/src/vulture-slashem		usr/lib/games/vulture-slashem
-slashem/util/recover			usr/lib/games/vulture-slashem
-debian/etc/vulture-slashemrc		etc/vulture
-debian/vulture-slashem.desktop		usr/share/applications
-debian/pixmaps/vulture-slashem.xpm	usr/share/pixmaps

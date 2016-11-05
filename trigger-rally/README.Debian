@@ -1,9 +1,0 @@
-Note on installing plugins:
-
-If you want to install any plugins, like new levels, it's sufficient
-to copy the zip files into your ~/.trigger directory.
-
-For a system wide installation, please copy plugins to
-/usr/share/games/trigger/plugins.
-
- -- Stefan Potyra <sistpoty@ubuntu.com>  Wed, 26 Jul 2006 17:04:18 +0200

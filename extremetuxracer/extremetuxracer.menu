@@ -1,7 +1,0 @@
-?package(extremetuxracer): \
-	needs="X11" \
-	section="Games/Action" \
-	title="etr" \
-	longtitle="Extreme Tux Racer" \
-	command="/usr/games/etr" \
-	icon="/usr/share/pixmaps/etr.xpm"

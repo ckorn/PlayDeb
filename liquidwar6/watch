@@ -1,3 +1,0 @@
-version=3
-opts="dversionmangle=s/~//" \
-http://ftp.gnu.org/gnu/liquidwar6/liquidwar6-(\d.+)\.tar\.gz

@@ -1,2 +1,0 @@
-version=3
-http://sf.net/trigger-rally/trigger-rally-([\d\.]+)(?:-src)?\.(?:zip|tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz)))

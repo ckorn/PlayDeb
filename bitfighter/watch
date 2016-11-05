@@ -1,4 +1,0 @@
-version=3
-opts="dversionmangle=s/0\.0\.(.*)/$1/" \
-https://github.com/bitfighter/bitfighter/releases \
-    (?:.*/)?bitfighter-(.*)\.tar\.(?:gz|bz2|xz)

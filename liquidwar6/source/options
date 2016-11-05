@@ -1,1 +1,0 @@
-extend-diff-ignore=config.sub|pkg/Info.plist|pkg/Makefile|pkg/liquidwar6.nsi|doc/.*

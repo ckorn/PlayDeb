@@ -1,3 +1,0 @@
-version=3
-opts="dversionmangle=s/^.*$/1490/g" \
-    http://sf.net/vbam/VisualBoyAdvanceM([\d]+)\.7z

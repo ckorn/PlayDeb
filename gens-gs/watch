@@ -1,4 +1,0 @@
-version=3
-opts="uversionmangle=s/([\d]+)/2\.16\.$1/" \
-http://www.dusers.drexel.edu/gitweb/gitweb.cgi?p=~korth/gens.git;a=summary \
-    (?:.*/)?gens.git/log/refs/tags/release-([\d]+)

@@ -1,3 +1,0 @@
--when derby is packaged, get triplea-server working
-
--when triplea-server is working & derby, use junit tests during build

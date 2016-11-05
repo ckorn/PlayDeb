@@ -1,4 +1,0 @@
-usr/games/stratagus			usr/lib/games/wyrmgus
-debian/scripts/wyrmgus			usr/games
-debian/wyrmgus.png			usr/share/pixmaps
-debian/wyrmgus.desktop			usr/share/applications

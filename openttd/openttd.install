@@ -1,8 +1,0 @@
-# Only /usr/share/games goes into openttd-data, the rest ends up in the
-# main package.
-debian/tmp/usr/games
-debian/tmp/usr/share/man
-debian/tmp/usr/share/icons
-debian/tmp/usr/share/pixmaps
-debian/tmp/usr/share/applications
-debian/tmp/usr/share/doc

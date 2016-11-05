@@ -1,4 +1,0 @@
-?package(triplea):needs="X11" \
-        section="Games/Strategy"\
-        title="triplea" command="/usr/games/triplea"\
-        icon="/usr/share/pixmaps/triplea.xpm"

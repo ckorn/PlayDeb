@@ -1,4 +1,0 @@
-bin/Linux/Release/srb2			usr/lib/games/srb2
-debian/scripts/srb2			usr/games
-debian/srb2.png				usr/share/pixmaps
-debian/srb2.desktop			usr/share/applications

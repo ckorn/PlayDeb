@@ -1,3 +1,0 @@
-usr/share/triplea/triplea.jar:
- Main-Class: games.strategy.engine.framework.GameRunner
- Debian-Java-Home: /usr/lib/jvm/default-java

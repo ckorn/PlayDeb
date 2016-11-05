@@ -1,4 +1,0 @@
-?package(vulture-slashem):needs="X11" section="Games/Adventure"\
-  title="Vulture-SLASH'em" \
-  	icon="/usr/share/pixmaps/vulture-slashem.xpm" \
-	command="/usr/games/vulture-slashem"

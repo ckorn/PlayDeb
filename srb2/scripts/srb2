@@ -1,3 +1,0 @@
-#!/bin/sh
-cd /usr/share/games/srb2
-./srb2 $@

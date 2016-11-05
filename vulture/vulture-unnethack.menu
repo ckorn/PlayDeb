@@ -1,4 +1,0 @@
-?package(vulture-unnethack):needs="X11" section="Games/Adventure"\
-  title="Vulture-UnNetHack" \
-  	icon="/usr/share/pixmaps/vulture-unnethack.xpm" \
-	command="/usr/games/vulture-unnethack"

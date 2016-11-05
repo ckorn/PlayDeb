@@ -1,9 +1,0 @@
-#!/usr/bin/make -f
-%:
-	dh --with quilt $@
-
-override_dh_auto_build:
-	cd src && chmod +x build && ./build
-
-override_dh_auto_clean:
-	rm -f src/makefile src/*.o bin/caph src/caph

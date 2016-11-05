@@ -1,4 +1,0 @@
-bin/caph			usr/lib/games/caph
-share/caph			usr/share/games
-debian/scripts/caph		usr/games
-debian/caph.desktop		usr/share/applications

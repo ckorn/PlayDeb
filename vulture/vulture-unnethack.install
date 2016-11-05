@@ -1,7 +1,0 @@
-unnethack/dat/nhdat			usr/lib/games/vulture-unnethack
-debian/scripts/vulture-unnethack	usr/games
-unnethack/src/vulture-unnethack		usr/lib/games/vulture-unnethack
-unnethack/util/recover			usr/lib/games/vulture-unnethack
-debian/etc/vulture-unnethackrc		etc/vulture
-debian/vulture-unnethack.desktop	usr/share/applications
-debian/pixmaps/vulture-unnethack.xpm	usr/share/pixmaps

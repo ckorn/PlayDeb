@@ -1,3 +1,0 @@
-version=3
-http://alam.srb2.org/debian/pool/contrib/s/srb2/ \
-    (?:.*/)?srb2_([\d\.]+)(?:.*)\.tar\.(?:gz|bz2|xz)
