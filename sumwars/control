@@ -2,7 +2,7 @@ Source: sumwars
 Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                cmake (>= 2.6),
                libphysfs-dev (>= 2.0),
                libtinyxml-dev (>= 2.6),
@@ -16,7 +16,7 @@ Build-Depends: debhelper (>= 9),
                liblua5.1-0-dev,
                libxrandr-dev,
                libboost-filesystem-dev
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Homepage: http://www.sumwars.org/
 
 Package: sumwars
