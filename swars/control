@@ -2,13 +2,13 @@ Source: swars
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                autotools-dev,
                libsdl1.2-dev [i386],
                libvorbis-dev [i386],
-               libpng12-dev [i386],
+               libpng-dev [i386],
                libopenal-dev [i386]
-Standards-Version: 3.9.5
+Standards-Version: 3.9.8
 Homepage: http://swars.vexillium.org/
 
 Package: swars

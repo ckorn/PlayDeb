@@ -1,3 +1,9 @@
+swars (0.3-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * Rebuild for yakkety
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 27 Oct 2016 18:53:49 +0200
+
 swars (0.3-1~getdeb1) trusty; urgency=low
 
   * Initial release
