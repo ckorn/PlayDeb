@@ -2,15 +2,15 @@ Source: pushover
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                autotools-dev,
                zlib1g-dev,
                libsdl1.2-dev,
                libsdl-mixer1.2-dev,
                libsdl-ttf2.0-dev,
-               libpng12-dev,
+               libpng-dev,
                liblua5.1-0-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.8
 Homepage: http://pushover.sourceforge.net/
 
 Package: pushover
