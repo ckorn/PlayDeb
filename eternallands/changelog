@@ -1,3 +1,9 @@
+eternallands (1.9.4.3-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * Rebuild for yakkety
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 26 Oct 2016 18:48:39 +0200
+
 eternallands (1.9.4.3-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
