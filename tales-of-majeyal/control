@@ -2,7 +2,7 @@ Source: tales-of-majeyal
 Section: games
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                libreadline6-dev,
                libglew-dev,
                zlib1g-dev,
@@ -17,11 +17,11 @@ Build-Depends: debhelper (>= 9),
                linux-libc-dev,
                libsdl2-ttf-dev,
                libsdl2-image-dev,
-               libpng12-dev,
+               libpng-dev,
                libexpat1-dev,
                lua5.1,
                premake4
-Standards-Version: 3.9.7
+Standards-Version: 3.9.8
 Homepage: http://te4.org/
 
 Package: tales-of-majeyal

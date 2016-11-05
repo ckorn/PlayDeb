@@ -1,3 +1,9 @@
+tales-of-majeyal (1.4.8-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * Rebuild for yakkety
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 27 Oct 2016 19:04:20 +0200
+
 tales-of-majeyal (1.4.8-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
