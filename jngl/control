@@ -1,12 +1,12 @@
 Source: jngl
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                libboost-dev,
                libopenal-dev,
                libogg-dev,
                libfreetype6-dev,
-               libpng12-dev,
+               libpng-dev,
                libjpeg-dev,
                libvorbis-dev,
                libglu1-mesa-dev,
@@ -22,7 +22,7 @@ Build-Depends: debhelper (>= 9),
                libboost-python-dev,
                libglew-dev,
                libwebp-dev
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Section: libs
 Homepage: http://jngl.watteimdocht.de
 
