@@ -2,11 +2,11 @@ dh_clideps does not understand the "dllentry" syntax.
 Take the config files from the Ubuntu package which uses the "target" syntax.
 
 Map libGL.so to libGLU.so.1
-Index: openra-20160508/thirdparty/fetch-thirdparty-deps.sh
+Index: openra-20161019/thirdparty/fetch-thirdparty-deps.sh
 ===================================================================
---- openra-20160508.orig/thirdparty/fetch-thirdparty-deps.sh	2016-05-08 15:36:33.905224396 +0200
-+++ openra-20160508/thirdparty/fetch-thirdparty-deps.sh	2016-05-08 16:01:24.615886385 +0200
-@@ -69,6 +69,7 @@
+--- openra-20161019.orig/thirdparty/fetch-thirdparty-deps.sh	2016-11-06 17:16:03.849736109 +0100
++++ openra-20161019/thirdparty/fetch-thirdparty-deps.sh	2016-11-06 17:16:03.845736037 +0100
+@@ -66,6 +66,7 @@
  	cp ./SharpFont/lib/net20/SharpFont* .
  	cp ./SharpFont/config/SharpFont.dll.config .
  	rm -rf SharpFont SharpFont.Dependencies
@@ -14,7 +14,7 @@ Index: openra-20160508/thirdparty/fetch-thirdparty-deps.sh
  fi
  
  if [ ! -f nunit.framework.dll ]; then
-@@ -104,6 +105,7 @@
+@@ -101,6 +102,7 @@
  	echo "Fetching SDL2-CS from GitHub."
  	curl -s -L -O https://github.com/OpenRA/SDL2-CS/releases/download/20151227/SDL2-CS.dll
  	curl -s -L -O https://github.com/OpenRA/SDL2-CS/releases/download/20151227/SDL2-CS.dll.config
