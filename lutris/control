@@ -2,28 +2,30 @@ Source: lutris
 Section: games
 Priority: optional
 Build-Depends: debhelper (>= 9),
-               python,
+               python3-setuptools,
+               python3,
                dh-python,
+               python3-all-dev,
                gir1.2-gtk-3.0,
                gir1.2-glib-2.0,
-               python-gi,
+               python3-gi,
                libgirepository1.0-dev
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
 Standards-Version: 3.9.7
 Homepage: https://lutris.net
-X-Python-Version: >= 2.7
+X-Python-Version: >= 3.4
 
 Package: lutris
 Architecture: any
 Depends: ${misc:Depends},
          ${python:Depends},
-         python-yaml,
-         python-dbus,
-         python-gi,
-         python-pyinotify,
+         python3-yaml,
+         python3-dbus,
+         python3-gi,
+         python3-pyinotify,
          gir1.2-gtk-3.0,
          xdg-user-dirs,
-         python-xdg,
+         python3-xdg,
          psmisc,
          libc6-i386 [amd64],
          lib32gcc1 [amd64]
