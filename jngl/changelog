@@ -1,3 +1,9 @@
+jngl (1.2.0-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Nov 2016 16:33:48 +0100
+
 jngl (1.1.0-1~getdeb6~yakkety) yakkety; urgency=medium
 
   * Rebuild for yakkety

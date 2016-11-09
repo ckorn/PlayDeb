@@ -1,10 +1,10 @@
 # Don't use installers which are not for Linux.
-Index: jngl-1.1.0/SConstruct
+Index: jngl-1.2.0/SConstruct
 ===================================================================
---- jngl-1.1.0.orig/SConstruct	2013-02-16 13:03:27.284284604 +0100
-+++ jngl-1.1.0/SConstruct	2013-02-16 13:19:02.480256783 +0100
-@@ -3,7 +3,7 @@
- version = "1.1.1"
+--- jngl-1.2.0.orig/SConstruct	2016-11-06 16:28:57.017566706 +0100
++++ jngl-1.2.0/SConstruct	2016-11-06 16:28:57.013566630 +0100
+@@ -5,7 +5,7 @@
+ version = "1.2.0"
  
  #Replace @VERSION@ in certain files
 -files = ["jngl.pc.in", "installer/mingw.nsi.in", 'installer/msvc.nsi.in', 'installer/python.nsi.in']

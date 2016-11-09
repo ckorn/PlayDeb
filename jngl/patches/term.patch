@@ -1,0 +1,16 @@
+#    env['ENV']['TERM'] = os.environ['TERM']
+#  File "/usr/lib/python2.7/UserDict.py", line 40:
+#    raise KeyError(key)
+Index: jngl-1.2.0/SConstruct
+===================================================================
+--- jngl-1.2.0.orig/SConstruct	2016-11-06 16:30:26.539309306 +0100
++++ jngl-1.2.0/SConstruct	2016-11-06 16:50:13.490870026 +0100
+@@ -22,7 +22,7 @@
+ vars.Add(BoolVariable('clang', "Compile with Clang", 0))
+ 
+ env = Environment(variables = vars)
+-env['ENV']['TERM'] = os.environ['TERM']
++#env['ENV']['TERM'] = os.environ['TERM']
+ Help(vars.GenerateHelpText(env))
+ try:
+ 	import multiprocessing

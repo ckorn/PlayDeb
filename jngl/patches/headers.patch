@@ -1,19 +1,16 @@
-Index: jngl-1.1.0/src/freetype.hpp
+Index: jngl-1.2.0/src/freetype.hpp
 ===================================================================
---- jngl-1.1.0.orig/src/freetype.hpp	2013-02-16 13:03:27.000000000 +0100
-+++ jngl-1.1.0/src/freetype.hpp	2014-04-06 01:20:27.882565465 +0200
-@@ -9,10 +9,10 @@
+--- jngl-1.2.0.orig/src/freetype.hpp	2016-11-06 16:30:36.479507169 +0100
++++ jngl-1.2.0/src/freetype.hpp	2016-11-06 16:31:52.697050194 +0100
+@@ -9,7 +9,10 @@
  #include "texture.hpp"
  
  #include <ft2build.h>
--#include <freetype/freetype.h>
--#include <freetype/ftglyph.h>
--#include <freetype/ftoutln.h>
--#include <freetype/fttrigon.h>
-+#include <freetype2/freetype.h>
-+#include <freetype2/ftglyph.h>
-+#include <freetype2/ftoutln.h>
-+#include <freetype2/fttrigon.h>
+-#include FT_FREETYPE_H
++#include <freetype2/freetype/freetype.h>
++#include <freetype2/freetype/ftglyph.h>
++#include <freetype2/freetype/ftoutln.h>
++#include <freetype2/freetype/fttrigon.h>
  
  #include <vector>
  #include <string>

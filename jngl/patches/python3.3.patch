@@ -1,16 +1,16 @@
 ### xenial has python3.5. Change accordingly.
-Index: jngl-1.1.0/SConstruct
+Index: jngl-1.2.0/SConstruct
 ===================================================================
---- jngl-1.1.0.orig/SConstruct	2016-04-20 23:29:25.000000000 +0200
-+++ jngl-1.1.0/SConstruct	2016-04-21 19:32:24.013210505 +0200
-@@ -103,9 +103,9 @@
+--- jngl-1.2.0.orig/SConstruct	2016-11-06 16:29:15.889927859 +0100
++++ jngl-1.2.0/SConstruct	2016-11-06 16:29:43.658465453 +0100
+@@ -119,9 +119,9 @@
  	if env['python']:
  		env = env.Clone()
  		env.ParseConfig("pkg-config --cflags --libs jngl.pc")
--		env.Append(CPPPATH="/usr/include/python3.2",
+-		env.Append(CPPPATH="/usr/include/python3.4",
 +		env.Append(CPPPATH="/usr/include/python3.5m",
  		           LIBPATH=Split("src ./python"),
--		           LIBS=Split("python3.2mu boost_python-py32"),
+-		           LIBS=Split("python3.4m boost_python-py34"),
 +		           LIBS=Split("python3.5m boost_python-py35"),
  		           CPPFLAGS="-std=c++11")
  		env.SharedLibrary(target="python/libjngl.so",

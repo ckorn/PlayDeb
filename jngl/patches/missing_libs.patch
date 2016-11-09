@@ -1,9 +1,9 @@
 ### Add missing libs to compile the test program.
-Index: jngl-1.1.0/SConstruct
+Index: jngl-1.2.0/SConstruct
 ===================================================================
---- jngl-1.1.0.orig/SConstruct	2013-05-08 21:06:32.840405664 +0200
-+++ jngl-1.1.0/SConstruct	2013-05-08 21:15:42.008389328 +0200
-@@ -99,7 +99,7 @@
+--- jngl-1.2.0.orig/SConstruct	2016-11-06 16:30:26.539309306 +0100
++++ jngl-1.2.0/SConstruct	2016-11-06 16:30:26.539309306 +0100
+@@ -115,7 +115,7 @@
  	env.Append(LIBPATH='.', CPPPATH='src')
  	testEnv = env.Clone()
  	testEnv.ParseConfig("pkg-config --cflags --libs jngl.pc")
