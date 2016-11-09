@@ -2,14 +2,14 @@ Source: libgames-support
 Section: libs
 Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                valac,
                dh-autoreconf,
                libglib2.0-dev,
                libgtk-3-dev,
                libgee-0.8-dev,
                intltool
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Homepage: https://github.com/GNOME/libgames-support/releases
 
 Package: libgames-support2

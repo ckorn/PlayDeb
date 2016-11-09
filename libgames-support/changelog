@@ -1,3 +1,9 @@
+libgames-support (1.0.2-1~getdeb1) yakkety; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Nov 2016 16:41:18 +0100
+
 libgames-support (0.91-1~getdeb1) wily; urgency=medium
 
   * New upstream version
