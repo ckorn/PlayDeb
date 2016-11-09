@@ -1,3 +1,11 @@
+manaplus (1:1.6.11.5-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * New upstream version
+    fix: legacy status effects with block-id.
+    fix: some packets for some packet versions.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 06 Nov 2016 17:13:40 +0100
+
 manaplus (1:1.6.10.8-1~getdeb2~yakkety) yakkety; urgency=medium
 
   * Rebuild for yakkety
