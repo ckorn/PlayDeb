@@ -1,3 +1,9 @@
+stratagus (2.4.1-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 07 Nov 2016 18:58:00 +0100
+
 stratagus (2.4.0-1~getdeb2~wily) wily; urgency=medium
 
   * Upload to PlayDeb
