@@ -1,3 +1,9 @@
+stargus (2.4.1-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 09 Nov 2016 19:38:43 +0100
+
 stargus (2.4.0-1~getdeb1) trusty; urgency=medium
 
   * New upstream version
