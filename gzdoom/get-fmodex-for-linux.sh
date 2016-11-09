@@ -1,14 +1,14 @@
 #!/bin/sh
 
-changelog=revision_4.44.txt
+#changelog=revision_4.44.txt
 
 # get latest fmod ex version
-wget http://www.fmod.org/files/$changelog
+#wget http://www.fmod.org/files/$changelog
 
-pointversion=$(grep -e "Stable branch update" $changelog | cut -d' ' -f2 | head -n1)
-version=$(echo $pointversion | sed -e 's/\.//g')
-rm -f $changelog
-
+#pointversion=$(grep -e "Stable branch update" $changelog | cut -d' ' -f2 | head -n1)
+#version=$(echo $pointversion | sed -e 's/\.//g')
+#rm -f $changelog
+version=44461
 dirname=fmodapi${version}linux
 fname=${dirname}.tar.gz
 

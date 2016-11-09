@@ -1,16 +1,46 @@
 # hardcode the version
 # it cannot be fetched by git the tarball does not ship it
-Index: gzdoom-2.1.1/tools/updaterevision/updaterevision.c
+Index: gzdoom-2.2.0/tools/updaterevision/updaterevision.c
 ===================================================================
---- gzdoom-2.1.1.orig/tools/updaterevision/updaterevision.c	2016-02-23 10:20:43.000000000 +0100
-+++ gzdoom-2.1.1/tools/updaterevision/updaterevision.c	2016-05-22 04:42:28.877196471 +0200
-@@ -78,7 +78,8 @@
+--- gzdoom-2.2.0.orig/tools/updaterevision/updaterevision.c	2016-09-19 17:58:12.986982479 +0200
++++ gzdoom-2.2.0/tools/updaterevision/updaterevision.c	2016-09-19 18:00:13.107912788 +0200
+@@ -47,38 +47,10 @@
+ 		return 1;
+ 	}
+ 
+-	// Use git describe --tags to get a version string. If we are sitting directly
+-	// on a tag, it returns that tag. Otherwise it returns <most recent tag>-<number of
+-	// commits since the tag>-<short hash>.
+-	// Use git log to get the time of the latest commit in ISO 8601 format and its full hash.
+-	stream = popen("git describe --tags && git log -1 --format=%ai*%H", "r");
+-
+-	if (NULL != stream)
+-	{
+-		if (fgets(vertag, sizeof vertag, stream) == vertag &&
+-			fgets(lastlog, sizeof lastlog, stream) == lastlog)
+-		{
+-			stripnl(vertag);
+-			stripnl(lastlog);
+-			gotrev = 1;
+-		}
+-
+-		pclose(stream);
+-	}
+-
+-	if (gotrev)
+-	{
+-		hash = strchr(lastlog, '*');
+-		if (hash != NULL)
+-		{
+-			*hash = '\0';
+-			hash++;
+-		}
+-	}
  	if (hash == NULL)
  	{
  		fprintf(stderr, "Failed to get commit info: %s\n", strerror(errno));
 -		strcpy(vertag, "<unknown version>");
-+		// hardcoded, because there is not git directory in the tarball
-+		strcpy(vertag, "2.1.1");
++		strcpy(vertag, "2.2.0");
  		lastlog[0] = '\0';
  		lastlog[1] = '0';
  		lastlog[2] = '\0';

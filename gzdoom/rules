@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 
-fmodrevision = $(shell debian/get-fmodex-for-linux.sh getrevision)
+#fmodrevision = $(shell debian/get-fmodex-for-linux.sh getrevision)
+fmodrevision = 61
 
 ifeq ($(DEB_HOST_ARCH), amd64)
 LIB64 = 64
