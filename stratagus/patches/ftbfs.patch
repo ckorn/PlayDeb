@@ -1,0 +1,36 @@
+# sdl.cpp:856:26: error: format not a string literal and no format arguments [-Werror=format-security]
+Index: stratagus-2.4.1/src/ui/interface.cpp
+===================================================================
+--- stratagus-2.4.1.orig/src/ui/interface.cpp	2016-01-07 16:33:08.000000000 +0100
++++ stratagus-2.4.1/src/ui/interface.cpp	2016-11-07 20:40:18.831111091 +0100
+@@ -757,7 +757,7 @@
+ 			ThisPlayer->Type = PlayerPerson;
+ 			SetMessage("AI is off, Normal Player");
+ #else
+-			SetMessage("Cannot disable 'ai me' cheat");
++			SetMessage("%s", "Cannot disable 'ai me' cheat");
+ #endif
+ 		} else {
+ 			ThisPlayer->AiEnabled = true;
+@@ -765,7 +765,7 @@
+ 			if (!ThisPlayer->Ai) {
+ 				AiInit(*ThisPlayer);
+ 			}
+-			SetMessage("I'm the BORG, resistance is futile!");
++			SetMessage("%s", "I'm the BORG, resistance is futile!");
+ 		}
+ 		return 1;
+ 	}
+Index: stratagus-2.4.1/src/video/sdl.cpp
+===================================================================
+--- stratagus-2.4.1.orig/src/video/sdl.cpp	2016-05-26 01:55:39.000000000 +0200
++++ stratagus-2.4.1/src/video/sdl.cpp	2016-11-07 20:39:40.638315223 +0100
+@@ -853,7 +853,7 @@
+ 				&& event.key.keysym.mod & KMOD_CTRL) {
+ 				char shadername[1024] = { '\0' };
+ 				LoadShaders(event.key.keysym.sym == SDLK_SLASH ? 1 : -1, shadername);
+-				SetMessage(shadername);
++				SetMessage("%s", shadername);
+ 				break;
+ 			}
+ 			InputKeyButtonPress(callbacks, SDL_GetTicks(),

@@ -1,9 +1,9 @@
 # install everything in /usr/games
-Index: stratagus-2.4.0/CMakeLists.txt
+Index: stratagus-2.4.1/CMakeLists.txt
 ===================================================================
---- stratagus-2.4.0.orig/CMakeLists.txt	2016-01-15 16:13:49.000000000 +0100
-+++ stratagus-2.4.0/CMakeLists.txt	2016-02-02 21:32:43.332408910 +0100
-@@ -1224,10 +1224,10 @@
+--- stratagus-2.4.1.orig/CMakeLists.txt	2016-11-07 19:08:52.565290514 +0100
++++ stratagus-2.4.1/CMakeLists.txt	2016-11-07 19:08:52.561290411 +0100
+@@ -1237,10 +1237,10 @@
  ########### install files ###############
  
  install(TARGETS stratagus DESTINATION ${GAMEDIR})

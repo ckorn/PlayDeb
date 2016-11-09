@@ -1,3 +1,9 @@
+stratagus (2.4.1-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 07 Nov 2016 19:10:32 +0100
+
 stratagus (2.4.0-1~getdeb3~yakkety) yakkety; urgency=medium
 
   * Rebuild for yakkety
