@@ -1,0 +1,3 @@
+version=3
+https://github.com/Novum/vkQuake/releases \
+    (?:.*/)?([\d\.]+)\.tar\.gz

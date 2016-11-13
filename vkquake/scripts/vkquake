@@ -1,0 +1,16 @@
+#!/bin/sh
+BASE="$HOME/.config/vkquake/id1/"
+
+[ -d "$BASE" ] || mkdir -p "$BASE"
+
+PAK0=$(find "$BASE" -iname "pak0.pak" | head -n1)
+
+if [ -z $PAK0 ] ; then
+	zenity --error --title="Missing data files" \
+		--text="Put the game directory containing the pak0.pak\ndata file directly into this location:\n$BASE" \
+		--window-icon=/usr/share/pixmaps/vkquake.png
+	exit 1
+fi
+
+cd "$HOME/.config/vkquake/"
+/usr/lib/games/vkquake/vkquake "$@"

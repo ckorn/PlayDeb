@@ -1,0 +1,11 @@
+vkquake (0.72-1~getdeb1) yakkety; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 12 Nov 2016 01:21:56 +0100
+
+vkquake (0.60-1~getdeb1) xenial; urgency=medium
+
+  * Initial release
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 14 Aug 2016 16:07:12 +0200

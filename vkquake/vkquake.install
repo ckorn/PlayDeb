@@ -1,0 +1,4 @@
+Quake/vkquake		usr/lib/games/vkquake
+debian/vkquake.png	usr/share/pixmaps
+debian/vkquake.desktop	usr/share/applications
+debian/scripts/vkquake	usr/games
