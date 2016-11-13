@@ -1,0 +1,23 @@
+Source: doom64ex
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>=10),
+               cmake,
+               libpng-dev,
+               libgtest-dev,
+               linux-libc-dev,
+               libsdl2-net-dev,
+               libfluidsynth-dev
+Standards-Version: 3.9.8
+Homepage: https://doom64ex.wordpress.com/
+
+Package: doom64ex
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         zenity
+Description: Recreation of Doom64
+ Doom64EX is a reverse-engineering project aimed to
+ recreate Doom64 as close as possible with additional
+ modding features.
