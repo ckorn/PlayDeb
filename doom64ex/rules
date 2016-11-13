@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+	mkdir -p debian/doom64ex/usr/lib/games/doom64ex
+	mv debian/doom64ex/usr/bin/doom64ex debian/doom64ex/usr/lib/games/doom64ex/
+	rmdir debian/doom64ex/usr/bin

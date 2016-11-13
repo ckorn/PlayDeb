@@ -1,0 +1,11 @@
+#!/bin/sh
+FILE="$HOME/.local/share/doom64ex/doom64.wad"
+
+if [ ! -f $FILE ] ; then
+	zenity --error --title="Missing data files" \
+		--text="You have to acquire a Doom64 ROM and run:\n$ /usr/lib/games/doom64ex/doom64ex -wadgen PATH_TO_ROM\nAfter this you can play." \
+		--window-icon=/usr/share/pixmaps/doom64ex.png
+	exit 1
+fi
+
+/usr/lib/games/doom64ex/doom64ex "$@"

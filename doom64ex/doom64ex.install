@@ -1,0 +1,3 @@
+debian/doom64ex.png		usr/share/pixmaps
+distrib/doom64ex.desktop	usr/share/applications
+debian/scripts/doom64ex		usr/games
