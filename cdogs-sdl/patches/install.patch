@@ -1,29 +1,29 @@
 # add missing file
 # change data directory
-Index: cdogs-sdl-0.6.0/INSTALL
+Index: cdogs-sdl-0.6.3/INSTALL
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ cdogs-sdl-0.6.0/INSTALL	2016-03-08 20:49:17.327261839 +0100
++++ cdogs-sdl-0.6.3/INSTALL	2016-11-14 18:59:13.400290004 +0100
 @@ -0,0 +1 @@
 +#empty
-Index: cdogs-sdl-0.6.0/CMakeLists.txt
+Index: cdogs-sdl-0.6.3/CMakeLists.txt
 ===================================================================
---- cdogs-sdl-0.6.0.orig/CMakeLists.txt	2016-03-08 20:49:17.327261839 +0100
-+++ cdogs-sdl-0.6.0/CMakeLists.txt	2016-03-09 20:42:00.083127843 +0100
-@@ -176,9 +176,9 @@
+--- cdogs-sdl-0.6.3.orig/CMakeLists.txt	2016-11-14 18:59:13.404290084 +0100
++++ cdogs-sdl-0.6.3/CMakeLists.txt	2016-11-14 19:00:19.369553192 +0100
+@@ -177,9 +177,9 @@
  		DESTINATION ${INSTALL_PREFIX}/bin
  		USE_SOURCE_PERMISSIONS)
  else()
 -	install(
--		PROGRAMS src/cdogs-sdl${EXE_EXTENSION} src/cdogs-sdl-editor${EXE_EXTENSION}
+-		PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/src/cdogs-sdl${EXE_EXTENSION} ${CMAKE_CURRENT_BINARY_DIR}/src/cdogs-sdl-editor${EXE_EXTENSION}
 -		DESTINATION ${INSTALL_PREFIX}/bin)
 +#	install(
-+#		PROGRAMS src/cdogs-sdl${EXE_EXTENSION} src/cdogs-sdl-editor${EXE_EXTENSION}
++#		PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/src/cdogs-sdl${EXE_EXTENSION} ${CMAKE_CURRENT_BINARY_DIR}/src/cdogs-sdl-editor${EXE_EXTENSION}
 +#		DESTINATION ${INSTALL_PREFIX}/bin)
  endif()
  
  INSTALL(DIRECTORY
-@@ -190,10 +190,6 @@
+@@ -191,10 +191,6 @@
  	${CMAKE_SOURCE_DIR}/music
  	${CMAKE_SOURCE_DIR}/sounds
  	DESTINATION ${INSTALL_PREFIX})
@@ -32,5 +32,5 @@ Index: cdogs-sdl-0.6.0/CMakeLists.txt
 -	${CMAKE_SOURCE_DIR}/README.md
 -	DESTINATION ${INSTALL_PREFIX})
  IF(UNIX AND NOT APPLE AND NOT BEOS AND NOT HAIKU)
- 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/build/linux/cdogs-sdl.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
- 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/cdogs-sdl.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons)
+ 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/build/linux/cdogs-sdl.desktop DESTINATION ${INSTALL_PREFIX}/share/applications)
+ 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/build/linux/cdogs-sdl.appdata.xml DESTINATION ${INSTALL_PREFIX}/share/appdata)
