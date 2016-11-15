@@ -1,0 +1,13 @@
+Index: megamario-1.7/Makefile
+===================================================================
+--- megamario-1.7.orig/Makefile	2006-06-16 21:18:14.000000000 +0200
++++ megamario-1.7/Makefile	2016-11-15 20:09:37.455880919 +0100
+@@ -13,7 +13,7 @@
+ TARGET  = megamario
+ 
+ $(TARGET): $(OBJS)
+-	$(CXX) $(LDFLAGS) -o $@ $^
++	$(CXX) -o $@ $^ $(LDFLAGS)
+ 
+ %.o: %.c
+ 	$(CC) $(CFLAGS) $(DEFINES) -o $@ -c $<

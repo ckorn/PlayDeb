@@ -1,0 +1,19 @@
+Index: megamario-1.7/megamario.desktop
+===================================================================
+--- megamario-1.7.orig/megamario.desktop	2007-03-07 10:34:56.000000000 +0100
++++ megamario-1.7/megamario.desktop	2016-11-15 20:18:56.435858030 +0100
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+-Exec=megamario %u
++Exec=megamario
+ Icon=/usr/share/pixmaps/megamario.png
+ Type=Application
+ Categories=Game;ArcadeGame;
+@@ -8,4 +7,4 @@
+ GenericName=Mega Mario
+ GenericName[fr]=Clone de Mario Bros
+ GenericName[de]=Mega Mario
+-StartupNotify=false
+\ No newline at end of file
++StartupNotify=false

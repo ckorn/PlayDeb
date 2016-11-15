@@ -1,0 +1,12 @@
+Index: megamario-1.7/src/Global.h
+===================================================================
+--- megamario-1.7.orig/src/Global.h	2016-11-15 20:04:26.929691157 +0100
++++ megamario-1.7/src/Global.h	2016-11-15 20:04:52.394178193 +0100
+@@ -13,6 +13,7 @@
+ //C++'s
+ 
+ #include <stdlib.h>
++#include <limits.h>
+ //#include <stdio.h>
+ 
+ //#ifndef __unix__
