@@ -1,0 +1,5 @@
+fix-logfile-path.patch
+fix-mp3-path.patch
+fix-compile-error.patch
+linker.patch
+desktop.patch

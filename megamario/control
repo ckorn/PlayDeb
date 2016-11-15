@@ -1,0 +1,21 @@
+Source: megamario
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>=9),
+               libsdl1.2-dev,
+               libsdl-mixer1.2-dev,
+               libsdl-image1.2-dev,
+               libsdl-ttf2.0-dev
+Standards-Version: 3.9.7
+Homepage: https://sourceforge.net/projects/mmario/
+
+Package: megamario
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Super Mario Bros. 1 clone
+ Mega Mario is a Super Mario Bros. 1 clone. It features everything the
+ original features - with better graphics, higher resolution, smoother
+ movement and new levels. The story of Mario and Luigi continues,
+ in old-school style. 

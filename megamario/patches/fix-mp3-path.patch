@@ -1,0 +1,26 @@
+Index: megamario-1.7/src/main.cpp
+===================================================================
+--- megamario-1.7.orig/src/main.cpp	2016-11-15 20:01:55.390894797 +0100
++++ megamario-1.7/src/main.cpp	2016-11-15 20:03:15.096342441 +0100
+@@ -416,7 +416,7 @@
+ 
+ 
+ fstream fin;
+-fin.open("mp3music/music_available.dat",ios::in);
++fin.open(DATADIR "mp3music/music_available.dat",ios::in);
+ if( fin.is_open() )
+ {
+ 	HighQualityMusicFound=1;
+Index: megamario-1.7/src/functions.cpp
+===================================================================
+--- megamario-1.7.orig/src/functions.cpp	2016-11-15 20:01:55.390894797 +0100
++++ megamario-1.7/src/functions.cpp	2016-11-15 20:04:03.773252191 +0100
+@@ -447,7 +447,7 @@
+ 	}
+ 	else
+ 	{
+-		sprintf(tmp, "mp3music/%s",filename);
++		sprintf(tmp, DATADIR "mp3music/%s",filename);
+ 		tmp[strlen(tmp)-3]='m';
+ 		tmp[strlen(tmp)-2]='p';
+ 		tmp[strlen(tmp)-1]='3';

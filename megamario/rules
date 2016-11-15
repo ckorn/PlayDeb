@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+PKD  = $(abspath $(dir $(MAKEFILE_LIST)))
+PKG  = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SSource)
+VER  = $(shell dpkg-parsechangelog -l$(PKD)/changelog -SVersion | cut -d- -f1)
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	make PREFIX=/usr
+
+override_dh_auto_install:
+	make PREFIX=debian/megamario/usr install
+	mv debian/megamario/usr/bin debian/megamario/usr/games
+
+override_dh_install:
+	dh_install
+	sed -i 's/\r//g' debian/megamario/usr/share/applications/megamario.desktop
+
+# http://wiki.debian.org/onlyjob/get-orig-source
+get-orig-source: $(PKG)_$(VER).orig.tar.xz $(info I: $(PKG)_$(VER))
+	@
+
+$(PKG)_$(VER).orig.tar.xz:
+	@echo "# Downloading..."
+	uscan --noconf --verbose --rename --destdir=$(CURDIR) --check-dirname-level=0 --force-download --download-version $(VER) $(PKD)
+	$(if $(wildcard $(PKG)-$(VER)),$(error $(PKG)-$(VER) exist, aborting..))
+	@echo "# Extracting..."
+	mkdir $(PKG)-$(VER) \
+	&& tar -xf $(PKG)_$(VER).orig.tar.* --directory $(PKG)-$(VER) \
+	|| $(RM) -r $(PKG)-$(VER)
+	@echo "# Cleaning-up..."
+	cd $(PKG)-$(VER) \
+	&& find . -type f -iname "*.dll" -delete \
+	&& find . -type f -iname "*.exe" -delete
+	@echo "# Packing..."
+	find -L "$(PKG)-$(VER)" -xdev -type f -print | LC_ALL=C sort \
+	| XZ_OPT="-6v" tar -caf "$(PKG)_$(VER)$(DTYPE).orig.tar.xz" -T- --owner=root --group=root --mode=a+rX \
+	&& $(RM) -r "$(PKG)-$(VER)"

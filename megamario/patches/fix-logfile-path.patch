@@ -1,0 +1,26 @@
+Index: megamario-1.7/src/main.cpp
+===================================================================
+--- megamario-1.7.orig/src/main.cpp	2016-11-15 19:59:44.996659971 +0100
++++ megamario-1.7/src/main.cpp	2016-11-15 20:01:31.830477909 +0100
+@@ -28,6 +28,7 @@
+ int targetfps=60;
+ 
+ 	static char szIniFile [MAX_PATH];
++	static char szLogFile [MAX_PATH];
+ 	static char szAppName [MAX_PATH];	
+ 	
+ 
+@@ -58,10 +59,12 @@
+ 	check_and_create_dir(szIniFile);
+ 	snprintf(szIniFile, MAX_PATH, "%s/.megamario/mario.ini",
+ 		home_dir? home_dir:".");
++	snprintf(szLogFile, MAX_PATH, "%s/.megamario/log.txt",
++		home_dir? home_dir:".");
+ 
+ #endif /* defined __unix__ */
+ 
+-	out_logfile.open ("log.txt");
++	out_logfile.open (szLogFile);
+ 
+ 	dictionary * d = iniparser_new(szIniFile);
+ 	pixelation = iniparser_getboolean (d, "Mario:Pixelation", 1);
