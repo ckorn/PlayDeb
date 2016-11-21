@@ -3,7 +3,7 @@
 # Repack tarball to strip duplicate stuff.
 
 PACKAGE=`dpkg-parsechangelog | sed -n 's/^Source: //p'`
-VERSION=`dpkg-parsechangelog | sed -ne 's/^Version: \(.*\)-.*/\1/p' | sed -e 's/\+.*//'`
+VERSION=`dpkg-parsechangelog | sed -ne 's/^Version: [0-9]\+:\(.*\)-.*/\1/p'`
 
 uscan --verbose --force-download --no-symlink
 

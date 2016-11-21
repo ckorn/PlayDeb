@@ -38,6 +38,7 @@ override_dh_auto_install:
 		$(CURDIR)/Sounds \
 		$(CURDIR)/Textures \
 		$(CURDIR)/Translations \
+		$(CURDIR)/Video \
 		$(CURDIR)/*.xml \
 		$(CURDIR)/version \
 			debian/flightgear-data-base/usr/share/games/flightgear/
