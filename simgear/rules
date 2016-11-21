@@ -60,6 +60,9 @@ override_dh_auto_configure:
 	mkdir build
 	cd build && cmake .. $(CMAKE_FLAGS)
 
+override_dh_install:
+	dh_install --list-missing
+
 override_dh_strip:
 	dh_strip -plibsimgearcore$(UVER) --dbg-package=libsimgearcore$(UVER)-dbg
 	dh_strip -plibsimgearscene$(UVER) --dbg-package=libsimgearscene$(UVER)-dbg
