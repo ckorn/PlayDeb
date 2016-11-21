@@ -6,39 +6,15 @@ Author: Markus Wanner <markus@bluegap.ch>
 Forwarded: no
 Last-Change: 2015-05-24
 
-Index: flightgear-2016.3.1/CMakeLists.txt
+Index: flightgear-2016.4.1/src/Main/CMakeLists.txt
 ===================================================================
---- flightgear-2016.3.1.orig/CMakeLists.txt	2016-09-13 18:39:09.084917165 +0200
-+++ flightgear-2016.3.1/CMakeLists.txt	2016-09-13 18:39:09.080917090 +0200
-@@ -248,6 +248,7 @@
- # check required dependencies
- find_package(Boost   REQUIRED)
- find_package(ZLIB    REQUIRED)
-+find_package(X11     REQUIRED)
- find_package(OpenGL  REQUIRED)
- find_package(OpenAL  REQUIRED)
- find_package(OpenSceneGraph 3.2.0 REQUIRED
-Index: flightgear-2016.3.1/utils/fgviewer/CMakeLists.txt
-===================================================================
---- flightgear-2016.3.1.orig/utils/fgviewer/CMakeLists.txt	2016-09-13 18:39:09.084917165 +0200
-+++ flightgear-2016.3.1/utils/fgviewer/CMakeLists.txt	2016-09-13 18:39:09.080917090 +0200
-@@ -49,6 +49,7 @@
- target_link_libraries(fgviewer
- 	${SIMGEAR_LIBRARIES}
- 	${OPENSCENEGRAPH_LIBRARIES}
-+	${X11_LIBRARIES}
- 	${OPENGL_LIBRARIES}
- 	${FGVIEWER_RTI_LIBRARIES}
-         ${SIMGEAR_CORE_LIBRARY_DEPENDENCIES}
-Index: flightgear-2016.3.1/src/Main/CMakeLists.txt
-===================================================================
---- flightgear-2016.3.1.orig/src/Main/CMakeLists.txt	2016-09-13 18:39:09.084917165 +0200
-+++ flightgear-2016.3.1/src/Main/CMakeLists.txt	2016-09-13 18:39:09.080917090 +0200
-@@ -138,6 +138,7 @@
+--- flightgear-2016.4.1.orig/src/Main/CMakeLists.txt	2016-11-19 12:45:10.263301037 +0100
++++ flightgear-2016.4.1/src/Main/CMakeLists.txt	2016-11-19 12:45:10.259300966 +0100
+@@ -139,6 +139,7 @@
  	${SIMGEAR_LIBRARIES}
  	${OPENSCENEGRAPH_LIBRARIES}
  	${OPENGL_LIBRARIES}
 +	${X11_LIBRARIES}
  	${PLIB_LIBRARIES}
-         ${ZLIB_LIBRARY}
  	${HLA_LIBRARIES}
+ 	${EVENT_INPUT_LIBRARIES}
