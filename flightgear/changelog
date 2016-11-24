@@ -1,3 +1,9 @@
+flightgear (1:2016.4.2-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 23 Nov 2016 21:46:32 +0100
+
 flightgear (1:2016.4.1-1~getdeb2) xenial; urgency=medium
 
   * New upstream version
