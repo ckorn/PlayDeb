@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/-/\./g" \
+http://sf.net/hodoku/hodoku-([\d-]+)-src.zip
