@@ -25,8 +25,8 @@ Build-Depends: debhelper (>= 10),
                libjpeg-dev,
                libpng-dev | libpng3-dev,
                libopenscenegraph-dev (>= 3.2.0~),
-               libsimgear-dev (>> 1:2016.4.1),
-               libsimgear-dev (<= 1:2016.4.3),
+               libsimgear-dev (>> 1:2016.4.2),
+               libsimgear-dev (<= 1:2016.4.4),
                libsqlite3-dev (>= 3.7.14~),
                libudev-dev [linux-any],
                libusbhid-dev [kfreebsd-any],
@@ -47,7 +47,7 @@ Homepage: http://www.flightgear.org/
 
 Package: flightgear
 Architecture: any
-Depends: flightgear-data-all (>= 2016.4.1),
+Depends: flightgear-data-all (>= 2016.4.3),
          ${shlibs:Depends},
          ${misc:Depends}
 Description: Flight Gear Flight Simulator
