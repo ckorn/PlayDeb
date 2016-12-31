@@ -1,3 +1,9 @@
+flightgear (1:2016.4.4-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 29 Dec 2016 17:56:52 +0100
+
 flightgear (1:2016.4.3-1~getdeb2~yakkety) yakkety; urgency=medium
 
   * New upstream version

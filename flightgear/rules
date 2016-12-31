@@ -53,6 +53,9 @@ override_dh_auto_install:
 #	Remove empty directories
 	find $(CURDIR)/debian/flightgear -type d -empty -delete
 
+override_dh_install:
+	dh_install --list-missing
+
 override_dh_installdocs:
 	dh_installdocs
 	cp docs-mini/* debian/flightgear/usr/share/doc/flightgear || true
