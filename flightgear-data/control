@@ -36,7 +36,7 @@ Description: FlightGear Flight Simulator -- base files
 Package: flightgear-data-ai
 Architecture: all
 Depends: ${misc:Depends}
-Breaks: flightgear (<< 2016.4.3~),
+Breaks: flightgear (<< 2016.4.4~),
         fgfs-base (<< 2.10.0~)
 Description: FlightGear Flight Simulator -- standard AI data
  FlightGear is a free and highly sophisticated flight simulator.
@@ -49,7 +49,7 @@ Architecture: all
 Depends: ${misc:Depends}
 Replaces: fgfs-base (<< 2.0.0),
           fgfs-aircraft-base (<< 2.10.0~)
-Breaks: flightgear (<< 2016.4.3~),
+Breaks: flightgear (<< 2016.4.4~),
         fgfs-aircraft-base (<< 2.10.0~)
 Description: FlightGear Flight Simulator -- standard aircraft
  FlightGear is a free and highly sophisticated flight simulator.
@@ -62,7 +62,7 @@ Architecture: all
 Depends: ${misc:Depends}
 Replaces: fgfs-base (<< 2.0.0),
           fgfs-models-base (<< 2.10.0)
-Breaks: flightgear (<< 2016.4.3~),
+Breaks: flightgear (<< 2016.4.4~),
         fgfs-models-base (<< 2.10.0~)
 Description: FlightGear Flight Simulator -- standard models
  FlightGear is a free and highly sophisticated flight simulator.
@@ -72,10 +72,10 @@ Description: FlightGear Flight Simulator -- standard models
 
 Package: flightgear-data-all
 Architecture: all
-Depends: flightgear-data-base (>= 2016.4.3~),
-         flightgear-data-ai (>= 2016.4.3~),
-         flightgear-data-aircrafts (>= 2016.4.3~),
-         flightgear-data-models (>= 2016.4.3~),
+Depends: flightgear-data-base (>= 2016.4.4~),
+         flightgear-data-ai (>= 2016.4.4~),
+         flightgear-data-aircrafts (>= 2016.4.4~),
+         flightgear-data-models (>= 2016.4.4~),
          ${misc:Depends}
 Description: FlightGear Flight Simulator - virtual package
  FlightGear is a free and highly sophisticated flight simulator.
