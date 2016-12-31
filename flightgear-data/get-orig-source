@@ -5,7 +5,7 @@
 PACKAGE=`dpkg-parsechangelog | sed -n 's/^Source: //p'`
 VERSION=`dpkg-parsechangelog | sed -ne 's/^Version: [0-9]\+:\(.*\)-.*/\1/p'`
 
-uscan --verbose --force-download --no-symlink
+#uscan --verbose --force-download --no-symlink
 
 bunzip2 -c ../FlightGear-${VERSION}-data.tar.bz2 \
  | tar --delete --wildcards -vf - \
