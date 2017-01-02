@@ -1,3 +1,9 @@
+gzdoom (2.3.0-1~getdeb1) yakkety; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 01 Jan 2017 14:48:39 +0100
+
 gzdoom (2.2.0-1~getdeb1) yakkety; urgency=medium
 
   * New upstream version
