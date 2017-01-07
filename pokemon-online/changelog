@@ -1,3 +1,9 @@
+pokemon-online (2.7.0-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 03 Jan 2017 17:46:33 +0100
+
 pokemon-online (2.6.3-1~getdeb2~wily) wily; urgency=medium
 
   * New upstream version
