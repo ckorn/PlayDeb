@@ -1,3 +1,14 @@
+manaplus (1:1.7.1.7-1~getdeb3~yakkety) yakkety; urgency=medium
+
+  * New upstream version
+    fix: compilation for kFreeBSD.
+    fix: wrong dye with OpenGL and rectangular textures enabled.
+    fix: possible issue with sprite replaces.
+    add: improve a bit performance.
+    add: unblacklist auto detect OpenGL modes with LLVM in driver.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 08 Jan 2017 10:26:31 +0100
+
 manaplus (1:1.6.12.24-1~getdeb2~yakkety) yakkety; urgency=medium
 
   * New upstream version
