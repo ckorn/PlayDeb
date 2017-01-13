@@ -1,3 +1,9 @@
+vkquake (0.94-1~getdeb1) yakkety; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 11 Jan 2017 18:05:26 +0100
+
 vkquake (0.93-1~getdeb1) yakkety; urgency=medium
 
   * New upstream version
