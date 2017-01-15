@@ -1,0 +1,2 @@
+# CEGUI operates placing some *.so files in /usr/lib/cegui-0.8 and this is the rationale behind this override.
+tsc: binary-or-shlib-defines-rpath usr/games/tsc /usr/lib/cegui-0.8
