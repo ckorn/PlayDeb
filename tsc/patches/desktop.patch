@@ -1,15 +1,16 @@
 # make changes to the file so we do not have to ship an own file
-Index: tsc-0.0.0+git170115/tsc/extras/tsc.desktop
+Index: tsc-2.1.0+git20170115/tsc/extras/tsc.desktop
 ===================================================================
---- tsc-0.0.0+git170115.orig/tsc/extras/tsc.desktop	2017-01-13 08:28:15.743129000 +0100
-+++ tsc-0.0.0+git170115/tsc/extras/tsc.desktop	2017-01-15 11:47:17.035779000 +0100
+--- tsc-2.1.0+git20170115.orig/tsc/extras/tsc.desktop	2015-02-25 23:27:38.000000000 +0100
++++ tsc-2.1.0+git20170115/tsc/extras/tsc.desktop	2017-01-16 18:49:17.653635804 +0100
 @@ -1,10 +1,11 @@
  [Desktop Entry]
 +Version=1.0
  Type=Application
- Name=The Secret Chronicles of Dr. M.
+-Name=The Secret Chronicles of Dr. M.
 -Comment=Pursue Dr. M. in this two-dimensional platform game
 -Comment[de]=In diesem zweidimensionalen Plattformer jagen Sie Dr. M.
++Name=The Secret Chronicles of Dr. M. (development version)
 +GenericName=Platform Game
 +Comment=A 2D platform game with style similar to classic sidescroller games
 +Comment[de]=Ein 2D-Plattformspiel, vom Stil her ähnlich klassischen seitlaufenden Spielen

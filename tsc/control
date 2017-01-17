@@ -32,7 +32,7 @@ Depends: ${shlibs:Depends},
          ${misc:Depends},
          tsc-data (= ${source:Version}),
          tsc-music (= ${source:Version})
-Description: Jump and Run game like Super Mario World
+Description: Jump and Run game like Super Mario World (development version)
  The Secret Chronicles of Dr. M. (TSC) is an Open Source two-dimensional
  platform game with a style designed similar to classic sidescroller games.
  .
@@ -45,6 +45,8 @@ Description: Jump and Run game like Super Mario World
  that our goals are different from those of the original SMC project, most
  notably we are working towards our own type of game rather than being solely
  inspired by one specific existing game.
+ .
+ This is the development version of the game.
 
 Package: tsc-data
 Architecture: all

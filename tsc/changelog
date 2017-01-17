@@ -1,3 +1,9 @@
+tsc (2.1.0+git20170115-1~getdeb2) yakkety; urgency=medium
+
+  * Add hint about development version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 16 Jan 2017 18:46:50 +0100
+
 tsc (2.1.0+git20170115-1~getdeb1) yakkety; urgency=medium
 
   * Upload to PlayDeb
