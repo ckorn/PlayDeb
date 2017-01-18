@@ -1,8 +1,8 @@
 # use system sqlite3
-Index: redeclipse-1.5.5/src/Makefile
+Index: redeclipse-1.5.8/src/Makefile
 ===================================================================
---- redeclipse-1.5.5.orig/src/Makefile	2016-07-01 19:48:00.000000000 +0200
-+++ redeclipse-1.5.5/src/Makefile	2016-07-01 21:07:49.223921890 +0200
+--- redeclipse-1.5.8.orig/src/Makefile	2017-01-16 19:08:26.703156338 +0100
++++ redeclipse-1.5.8/src/Makefile	2017-01-16 19:10:25.209574623 +0100
 @@ -83,7 +83,7 @@
  endif
  endif
@@ -47,15 +47,16 @@ Index: redeclipse-1.5.5/src/Makefile
  $(CLIENT_OBJS): CXXFLAGS += $(CLIENT_INCLUDES)
  $(filter shared/%,$(CLIENT_OBJS)): $(filter shared/%,$(CLIENT_PCH))
  $(filter engine/%,$(CLIENT_OBJS)): $(filter engine/%,$(CLIENT_PCH))
-@@ -387,7 +382,6 @@
- engine/master.o: shared/glemu.h shared/iengine.h shared/igame.h engine/irc.h
- engine/master.o: engine/sound.h engine/world.h engine/octa.h
- engine/master.o: engine/lightmap.h engine/bih.h engine/texture.h
--engine/master.o: engine/model.h support/sqlite3.h
- engine/material.o: engine/engine.h engine/version.h shared/cube.h shared/tools.h
- engine/material.o: shared/command.h shared/geom.h shared/ents.h
- engine/material.o: shared/glexts.h shared/glemu.h shared/iengine.h
-@@ -682,7 +676,6 @@
+@@ -389,7 +384,7 @@
+ engine/master.o: shared/glexts.h shared/glemu.h shared/iengine.h
+ engine/master.o: shared/igame.h engine/irc.h engine/sound.h engine/world.h
+ engine/master.o: engine/octa.h engine/lightmap.h engine/bih.h
+-engine/master.o: engine/texture.h engine/model.h support/sqlite3.h
++engine/master.o: engine/texture.h
+ engine/material.o: engine/engine.h engine/version.h shared/cube.h
+ engine/material.o: shared/tools.h shared/command.h shared/geom.h
+ engine/material.o: shared/ents.h shared/glexts.h shared/glemu.h
+@@ -693,7 +688,6 @@
  engine/master-standalone.o: engine/engine.h engine/version.h shared/cube.h
  engine/master-standalone.o: shared/tools.h shared/command.h shared/geom.h
  engine/master-standalone.o: shared/ents.h shared/iengine.h shared/igame.h
