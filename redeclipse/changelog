@@ -1,3 +1,9 @@
+redeclipse (1.5.8-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 16 Jan 2017 19:01:37 +0100
+
 redeclipse (1.5.6-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
