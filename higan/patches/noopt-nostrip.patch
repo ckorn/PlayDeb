@@ -4,10 +4,10 @@ Description: Support DEB_BUILD_OPTIONS='noopt nostrip'
 Author: Michael Gold <michael@bitplane.org>
 Bug-Debian: http://bugs.debian.org/737364
 
-Index: higan-100/higan/GNUmakefile
+Index: higan-102/higan/GNUmakefile
 ===================================================================
---- higan-100.orig/higan/GNUmakefile	2016-07-08 21:06:18.619022451 +0200
-+++ higan-100/higan/GNUmakefile	2016-07-08 21:06:18.619022451 +0200
+--- higan-102.orig/higan/GNUmakefile	2017-01-19 18:11:50.553737157 +0100
++++ higan-102/higan/GNUmakefile	2017-01-19 18:12:34.045086801 +0100
 @@ -3,7 +3,8 @@
  target := tomoko
  # console := true
@@ -15,6 +15,6 @@ Index: higan-100/higan/GNUmakefile
 -flags += -I. -I.. -O3
 +flags += -I. -I..
 +flags   += $(if $(filter noopt,$(DEB_BUILD_OPTIONS)),-O0,-O3)
- objects := libco audio video resource
+ objects := libco emulator audio video resource
  
  # profile-guided optimization mode

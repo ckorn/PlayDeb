@@ -4,15 +4,15 @@ Description: Search libs in private path
  then in higans private lib path, then in the standard paths.
 Author: Tobias Hansen <thansen@debian.org>
 
-Index: higan-099/nall/dl.hpp
+Index: higan-102/nall/dl.hpp
 ===================================================================
---- higan-099.orig/nall/dl.hpp	2016-06-10 20:43:51.485038755 +0200
-+++ higan-099/nall/dl.hpp	2016-06-10 20:45:13.634690465 +0200
+--- higan-102.orig/nall/dl.hpp	2017-01-19 18:09:26.020139600 +0100
++++ higan-102/nall/dl.hpp	2017-01-19 18:10:32.106987487 +0100
 @@ -39,6 +39,7 @@
  inline auto library::open(const string& name, const string& path) -> bool {
    if(handle) close();
-   if(path) handle = (uintptr_t)dlopen(string(path, "lib", name, ".so"), RTLD_LAZY);
-+  if(!handle) handle = (uintptr_t)dlopen(string("/usr/lib/higan/lib", name, ".so"), RTLD_LAZY);
-   if(!handle) handle = (uintptr_t)dlopen(string(Path::user(), ".local/lib/lib", name, ".so"), RTLD_LAZY);
-   if(!handle) handle = (uintptr_t)dlopen(string("/usr/local/lib/lib", name, ".so"), RTLD_LAZY);
-   if(!handle) handle = (uintptr_t)dlopen(string("lib", name, ".so"), RTLD_LAZY);
+   if(path) handle = (uintptr)dlopen(string(path, "lib", name, ".so"), RTLD_LAZY);
++  if(!handle) handle = (uintptr)dlopen(string("/usr/lib/higan/lib", name, ".so"), RTLD_LAZY);
+   if(!handle) handle = (uintptr)dlopen(string(Path::user(), ".local/lib/lib", name, ".so"), RTLD_LAZY);
+   if(!handle) handle = (uintptr)dlopen(string("/usr/local/lib/lib", name, ".so"), RTLD_LAZY);
+   if(!handle) handle = (uintptr)dlopen(string("lib", name, ".so"), RTLD_LAZY);
