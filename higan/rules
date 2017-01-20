@@ -44,5 +44,8 @@ override_dh_auto_install:
 	cp -R icarus/Database/*.bml debian/higan/usr/share/higan/Database
 	chmod 644 debian/higan/usr/share/higan/Database/*
 
+override_dh_install:
+	dh_install --list-missing
+
 override_dh_auto_test:
 override_dh_makeshlibs:
