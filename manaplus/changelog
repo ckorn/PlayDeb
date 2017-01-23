@@ -1,3 +1,18 @@
+manaplus (1:1.7.1.21-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: minor issues in map layers drawing.
+    fix: dont clean online list if http error happened (legacy server).
+    fix: vsync for mesa drivers.
+    fix: use pkg-config for linking with libpng.
+    fix: crash with map without tmx file.
+    add: detect cpu features avx and avx2.
+    add: used font sources.
+    add: logging about compiled and linked libraries versions on startup.
+    remove: herculs plugin support version 6.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 22 Jan 2017 14:02:40 +0100
+
 manaplus (1:1.7.1.7-1~getdeb2) xenial; urgency=medium
 
   * New upstream version
