@@ -26,6 +26,9 @@ override_dh_auto_install:
 	                           usr/share/games/stone-soup/docs/license/pcre_license.txt && \
 	                        chmod -x usr/share/games/stone-soup/dat/tiles/title_psiweapon_kiku.png
 
+override_dh_install:
+	dh_install --list-missing
+
 override_dh_installchangelogs:
 	dh_installchangelogs docs/changelog.txt
 
