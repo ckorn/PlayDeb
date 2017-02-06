@@ -1,3 +1,18 @@
+manaplus (1:1.7.2.4-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: compilation with very old libcurl versions.
+    fix: compilation with very new SDL2 versions.
+    fix: possible crash in buydialog.
+    fix: unit tests compilation.
+    add: unit tests for detect physfs bugs with new zlib.
+    add: use pkg-config for all libs.
+    add: impliment buy many items at once from cash shops.
+    add: different currencies for npcs.
+    add: impove map draw performance.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 05 Feb 2017 13:54:51 +0100
+
 manaplus (1:1.7.1.21-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
