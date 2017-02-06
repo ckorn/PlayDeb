@@ -1,3 +1,9 @@
+urbanterror (1:4.3.2-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 05 Feb 2017 15:23:55 +0100
+
 urbanterror (1:4.3.1-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
