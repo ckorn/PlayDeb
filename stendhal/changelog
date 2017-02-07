@@ -1,3 +1,15 @@
+stendhal (1.23-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    *world*
+    - Mizuno sells ice, fire, and light arrows. 
+    - Because of a bad curse, many creatures, animals and people have lost
+      their appearance
+    - Please join us at https://stendhalgame.org/chat/ if you want to help
+      with creating new graphics
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 06 Feb 2017 18:58:33 +0100
+
 stendhal (1.22-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
