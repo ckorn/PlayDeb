@@ -1,3 +1,9 @@
+libsfml2 (2.4.2-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 11 Feb 2017 17:28:55 +0100
+
 libsfml2 (2.4.1-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
