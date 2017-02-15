@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 
-fmodrevision = $(shell debian/get-fmodex-for-linux.sh getrevision)
+#fmodrevision = $(shell debian/get-fmodex-for-linux.sh getrevision)
+fmodrevision = 61
 
 ifeq ($(DEB_HOST_ARCH), amd64)
 LIB64 = 64
@@ -46,6 +47,9 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 	# will be handled by dh_install
+
+override_dh_install:
+	dh_install --list-missing
 
 override_dh_shlibdeps:
 	dh_shlibdeps -l$(CURDIR)/debian/gzdoom/usr/lib/games/gzdoom
