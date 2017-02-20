@@ -1,3 +1,15 @@
+manaplus (1:1.7.2.18-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * New upstream version
+    fix: wrong buffer access.
+    fix: custom currency in shop items list.
+    fix: compilation warnings in some libs.
+    fix: possible use after free in web requests.
+    add: quests links in npc window.
+    add: show manaplus.log path in console at start.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 19 Feb 2017 15:31:50 +0100
+
 manaplus (1:1.7.2.4-1~getdeb2~yakkety) yakkety; urgency=medium
 
   * New upstream version
