@@ -1,0 +1,14 @@
+# replay.c:274:20: error: format not a string literal and no format arguments [-Werror=format-security]
+Index: sdlpop-1.17/src/replay.c
+===================================================================
+--- sdlpop-1.17.orig/src/replay.c	2017-02-05 08:38:56.000000000 +0100
++++ sdlpop-1.17/src/replay.c	2017-02-20 18:03:30.237943218 +0100
+@@ -271,7 +271,7 @@
+ 			snprintf(error_message, REPLAY_HEADER_ERROR_MESSAGE_MAX,
+ 					 "Error opening replay file: %s\n",
+ 					 header_error_message);
+-			fprintf(stderr, error_message);
++			fprintf(stderr, "%s", error_message);
+ 			fclose(replay_fp);
+ 			replay_fp = NULL;
+ 			replay_file_open = 0;
