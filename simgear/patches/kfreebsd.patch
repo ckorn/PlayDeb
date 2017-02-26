@@ -8,8 +8,10 @@ is used without also GLX_GLXEXT_LEGACY.
 And GNU/kFreeBSD should better use the GNU/Linux VG_API_LINUX
 rather than VG_API_FREEBSD anyway.
 
---- a/simgear/canvas/ShivaVG/src/shConfig.h
-+++ b/simgear/canvas/ShivaVG/src/shConfig.h
+Index: simgear-2017.1.1/simgear/canvas/ShivaVG/src/shConfig.h
+===================================================================
+--- simgear-2017.1.1.orig/simgear/canvas/ShivaVG/src/shConfig.h	2017-02-24 19:13:48.635980362 +0100
++++ simgear-2017.1.1/simgear/canvas/ShivaVG/src/shConfig.h	2017-02-24 19:13:48.631980416 +0100
 @@ -16,7 +16,7 @@
          #define NOMINMAX
      #endif
@@ -28,9 +30,11 @@ rather than VG_API_FREEBSD anyway.
  
      // FreeBSD
      #define VG_API_FREEBSD
---- a/simgear/canvas/ShivaVG/src/shDefs.h
-+++ b/simgear/canvas/ShivaVG/src/shDefs.h
-@@ -166,6 +166,7 @@
+Index: simgear-2017.1.1/simgear/canvas/ShivaVG/src/shDefs.h
+===================================================================
+--- simgear-2017.1.1.orig/simgear/canvas/ShivaVG/src/shDefs.h	2017-02-24 19:13:48.635980362 +0100
++++ simgear-2017.1.1/simgear/canvas/ShivaVG/src/shDefs.h	2017-02-24 19:13:48.631980416 +0100
+@@ -171,6 +171,7 @@
  #else
      #define GL_GLEXT_LEGACY /* don't include glext.h */
      #include <GL/gl.h>
