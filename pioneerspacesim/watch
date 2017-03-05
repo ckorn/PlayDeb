@@ -1,0 +1,3 @@
+version=3
+https://github.com/pioneerspacesim/pioneer/releases \
+    (?:.*/)?([\d]+)\.tar\.gz

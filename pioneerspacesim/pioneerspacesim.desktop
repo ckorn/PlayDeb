@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Pioneer
+Exec=/usr/games/pioneer
+Icon=pioneerspacesim
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=space
