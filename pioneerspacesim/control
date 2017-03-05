@@ -1,0 +1,48 @@
+Source: pioneerspacesim
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>=10),
+               dh-autoreconf,
+               pkg-config,
+               libsigc++-2.0-dev,
+               libsdl2-dev,
+               libsdl2-image-dev,
+               libassimp-dev,
+               libfreetype6-dev,
+               libcurl4-openssl-dev,
+               libpng-dev,
+               libvorbis-dev,
+               libreadline-dev,
+               mesa-common-dev
+Standards-Version: 3.9.8
+Homepage: http://pioneerspacesim.net/
+
+Package: pioneerspacesim
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         pioneerspacesim-data (= ${source:Version})
+Description: space adventure game, reminiscent of 'Frontier: Elite 2'
+ Pioneer is a space adventure game set in the Milky Way galaxy at the turn of
+ the 31st Century.
+ .
+ The game is open-ended, and you are free to explore the millions of star
+ systems in the game. You can land on planets, slingshot past gas giants, and
+ burn yourself to a crisp flying between binary star systems.
+ .
+ When Pioneer is finished there will be many ways to make ends meet: piracy,
+ smuggling, bounty-hunting, mining, doing missions for the various factions
+ fighting for power, freedom or self-determination.
+ .
+ Pioneer has a sneaking resemblance to Frontier: Elite 2.
+
+Package: pioneerspacesim-data
+Architecture: all
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: space adventure game, reminiscent of 'Frontier: Elite 2' (data files)
+ Pioneer is a space adventure game set in the Milky Way galaxy at the turn of
+ the 31st Century.
+ .
+ This package contains the data files.
