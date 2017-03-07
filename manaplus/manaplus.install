@@ -3,4 +3,5 @@ usr/share/applications/manaplustest.desktop	usr/share/applications
 usr/games
 usr/share/pixmaps
 usr/share/man
+usr/share/appdata
 debian/manaplus.xpm		usr/share/pixmaps

@@ -1,3 +1,14 @@
+manaplus (1:1.7.3.4-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * New upstream version
+    fix: memory leaks in xml parsing.
+    fix: pointers alias issues.
+    fix: space and enter key press in updates window.
+    add: option in client data for set overwight percent for message.
+    add: option to build without physfs (experimantal).
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 05 Mar 2017 18:45:39 +0100
+
 manaplus (1:1.7.2.18-1~getdeb2~yakkety) yakkety; urgency=medium
 
   * New upstream version
