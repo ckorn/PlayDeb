@@ -1,3 +1,9 @@
+tales-of-majeyal (1.5.1-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 17 Mar 2017 18:14:04 +0100
+
 tales-of-majeyal (1.5.0-1~getdeb2~yakkety) yakkety; urgency=medium
 
   * New upstream version
