@@ -1,3 +1,24 @@
+manaplus (1:1.7.3.18-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * New upstream version
+    fix: add missing include for BSD systems.
+    fix: some issues in unit tests in some systems.
+    fix: unit tests on windows.
+    fix: zip archives reading on big endian systems.
+    fix: sound at first run.
+    fix: wrong transparency level if open and close setting at first run.
+    fix: compilation autoconf files with mingw.
+    fix: memory leak in buy dialog.
+    add: stack generation in asserts for all supported platforms.
+    add: update hercules packets for prevent warnings from new hercules
+    builds.
+    add: option for disable moving character by mouse.
+    add: report about depricated sfx file paths.
+    add: windows 64 builds.
+    remove: physfs from dependencies.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 18 Mar 2017 18:58:11 +0100
+
 manaplus (1:1.7.3.4-1~getdeb2~yakkety) yakkety; urgency=medium
 
   * New upstream version
