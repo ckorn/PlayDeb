@@ -1,4 +1,10 @@
-gzdoom (2.3.2-1~getdeb1) yakkety; urgency=medium
+gzdoom (2.4.0-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 20 Mar 2017 18:00:11 +0100
+
+gzdoom (2.3.2-1~getdeb2~xenial) xenial; urgency=medium
 
   * New upstream version
 
