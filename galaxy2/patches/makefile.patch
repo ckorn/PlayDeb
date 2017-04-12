@@ -1,10 +1,10 @@
 Install into usr/games and do not install the desktop file
 from the upstream tarball.
-Index: galaxy2-1.0/Makefile
+Index: galaxy2-1.2/Makefile
 ===================================================================
---- galaxy2-1.0.orig/Makefile	2015-01-31 20:28:42.488793203 +0100
-+++ galaxy2-1.0/Makefile	2015-01-31 20:28:42.484793203 +0100
-@@ -9,7 +9,7 @@
+--- galaxy2-1.2.orig/Makefile	2017-04-03 17:46:51.743504710 +0200
++++ galaxy2-1.2/Makefile	2017-04-04 17:41:37.019675395 +0200
+@@ -8,16 +8,16 @@
  CPPFLAGS ?= -O2
  
  # target install directories
@@ -12,11 +12,22 @@ Index: galaxy2-1.0/Makefile
 +BINDIR = $(PREFIX)/games
  SHAREDIR = $(PREFIX)/share/$(PROGRAM)
  DATADIR = $(SHAREDIR)/data
- ICONDIR = $(SHAREDIR)/icons
-Index: galaxy2-1.0/desktop
+-ICONDIR = $(SHAREDIR)/icons
++ICONDIR = $(PREFIX)/share/pixmaps
+ LOCALESDIR = $(SHAREDIR)/locales
+ DOCDIR = $(PREFIX)/share/doc/$(PROGRAM)
+ MANDIR = $(PREFIX)/share/man/man1
+ APPDATADIR = $(PREFIX)/share/appdata
+ MENUFILE = $(PREFIX)/share/applications/$(PROGRAM).desktop
+-ICONFILE = $(PREFIX)/share/icons/$(PROGRAM).png
++ICONFILE = $(PREFIX)/share/pixmaps/$(PROGRAM).png
+ 
+ CFLAGS = $(CXXFLAGS) -c `pkg-config --cflags gtk+-3.0`
+ CFLAGS += $(CPPFLAGS)
+Index: galaxy2-1.2/galaxy2.desktop
 ===================================================================
---- galaxy2-1.0.orig/desktop	2015-01-11 13:22:46.000000000 +0100
-+++ galaxy2-1.0/desktop	2015-01-31 20:32:10.048787029 +0100
+--- galaxy2-1.2.orig/galaxy2.desktop	2017-04-01 19:36:22.000000000 +0200
++++ galaxy2-1.2/galaxy2.desktop	2017-04-03 17:47:42.454873213 +0200
 @@ -5,5 +5,5 @@
  Categories=Game;Simulation
  Type=Application

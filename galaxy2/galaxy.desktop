@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Galaxy
-Categories=Game
-Type=Application
-Terminal=false
-Exec=/usr/games/galaxy
-Icon=galaxy
-GenericName=Stellar Simulation
