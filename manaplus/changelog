@@ -1,3 +1,14 @@
+manaplus (1:1.7.4.1-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    add: optional support for tinyxml2 (by default used libxml2)
+    add: update readme.
+    add: improve some file operations.
+    add: configure flag for build binary for unit tests but not run it.
+    remove: completly remove physfs usage.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 03 Apr 2017 18:08:56 +0200
+
 manaplus (1:1.7.3.18-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
