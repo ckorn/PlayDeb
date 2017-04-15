@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Christoph Korn <christoph.korn@getdeb.net>
 Build-Depends: debhelper (>= 9),
               zlib1g-dev,
-              libsdl1.2-dev,
+              libsdl2-dev,
               libmodplug-dev,
               libasound2-dev,
               linux-libc-dev,
@@ -22,7 +22,7 @@ Build-Depends: debhelper (>= 9),
               libglu1-mesa-dev,
               libxxf86dga-dev,
               libd0-blind-id0-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.7
 Homepage: http://www.xonotic.org/
 
 Package: xonotic
