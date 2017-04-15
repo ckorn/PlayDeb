@@ -1,9 +1,9 @@
 Just a typo.
-Index: xonotic-0.8.0/source/darkplaces/cmd.c
+Index: xonotic-0.8.2/source/darkplaces/cmd.c
 ===================================================================
---- xonotic-0.8.0.orig/source/darkplaces/cmd.c	2015-01-17 17:56:47.490457994 +0100
-+++ xonotic-0.8.0/source/darkplaces/cmd.c	2015-01-17 17:56:47.486457995 +0100
-@@ -1612,7 +1612,7 @@
+--- xonotic-0.8.2.orig/source/darkplaces/cmd.c	2017-04-03 18:12:51.284322154 +0200
++++ xonotic-0.8.2/source/darkplaces/cmd.c	2017-04-03 18:12:51.280322233 +0200
+@@ -1614,7 +1614,7 @@
  			l = (int)strlen(com_token) + 1;
  			if (cmd_tokenizebufferpos + l > CMD_TOKENIZELENGTH)
  			{
