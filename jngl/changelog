@@ -1,3 +1,9 @@
+jngl (1.2.0-1~getdeb3~zesty) zesty; urgency=medium
+
+  * Rebuild for zesty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 17 Apr 2017 12:47:05 +0200
+
 jngl (1.2.0-1~getdeb2~yakkety) yakkety; urgency=medium
 
   * New upstream version
