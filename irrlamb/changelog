@@ -1,3 +1,9 @@
+irrlamb (0.2.1-1~getdeb5~zesty) zesty; urgency=medium
+
+  * Rebuild for zesty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 17 Apr 2017 12:45:19 +0200
+
 irrlamb (0.2.1-1~getdeb4~xenial) xenial; urgency=medium
 
   * Rebuild for xenial
