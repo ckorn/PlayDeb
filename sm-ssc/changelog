@@ -1,3 +1,9 @@
+sm-ssc (5.0~beta3-1~getdeb5~zesty) zesty; urgency=medium
+
+  * Rebuild for zesty
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 17 Apr 2017 12:54:37 +0200
+
 sm-ssc (5.0~beta3-1~getdeb4~yakkety) yakkety; urgency=medium
 
   * Rebuild for yakkety
