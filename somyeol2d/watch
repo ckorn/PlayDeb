@@ -1,3 +1,0 @@
-version=3
-http://www.somyeol.com/somyeol2d/?page=download \
-    (?:.*/)?Somyeol2d_([\d]+)_source\.tar\.gz

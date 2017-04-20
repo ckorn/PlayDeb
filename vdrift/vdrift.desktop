@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=VDrift
-Exec=/usr/games/vdrift
-Icon=/usr/share/pixmaps/vdrift.xpm
-Terminal=false
-Type=Application
-Categories=Game;

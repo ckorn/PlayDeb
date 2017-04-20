@@ -1,3 +1,0 @@
-version=3
-opts="dversionmangle=s/([\d]{4})([\d]{2})([\d]{2})/$1-$2-$3/" \
-http://sf.net/vdrift/vdrift-([-\d]+)\.tar\.bz2

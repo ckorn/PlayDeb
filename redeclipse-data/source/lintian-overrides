@@ -1,7 +1,0 @@
-# The license is CC-BY-SA-3.0+, meaning "or later", albeit valid, is not a
-# recognised license shortname.
-# The stand-alone license paragraph has the standard CC-BY-SA-3.0 version.
-missing-license-paragraph-in-dep5-copyright cc-by-sa-3.0+ (paragraph at line 319)
-# A summary license field in the header should be allowed according to the
-# specification, probable false positive, see #769818.
-dep5-file-paragraph-reference-header-paragraph red-eclipse-data (paragraph at line 29)

@@ -1,1 +1,0 @@
-x-scheme-handler/unv; unvanquished %s; description=Unvanquished; test=test -n "$DISPLAY"; priority=1

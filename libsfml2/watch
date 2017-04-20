@@ -1,4 +1,0 @@
-version=3
-opts="dversionmangle=s/(.*)\+(?:.*)/$1/,uversionmangle=s/-rc/~rc/" \
-  https://github.com/LaurentGomila/SFML/tags \
-    (?:.*/)?(\d.*)\.tar\.(?:gz|bz2|xz)
