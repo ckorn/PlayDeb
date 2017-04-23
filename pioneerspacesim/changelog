@@ -1,3 +1,9 @@
+pioneerspacesim (20170415-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 22 Apr 2017 15:22:07 +0200
+
 pioneerspacesim (20170304-1~getdeb1) xenial; urgency=medium
 
   * Initial release (LP: #1669289)
