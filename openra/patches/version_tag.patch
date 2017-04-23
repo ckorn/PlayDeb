@@ -1,23 +1,23 @@
 Set the correct version.
-Index: openra-20161019/Makefile
+Index: openra-20170421/Makefile
 ===================================================================
---- openra-20161019.orig/Makefile	2016-11-06 17:16:07.677805075 +0100
-+++ openra-20161019/Makefile	2016-11-06 17:17:15.651034489 +0100
+--- openra-20170421.orig/Makefile	2017-04-22 17:02:41.350353213 +0200
++++ openra-20170421/Makefile	2017-04-22 17:03:22.760930041 +0200
 @@ -89,7 +89,7 @@
  # program targets
  CORE = pdefault game utility server
  TOOLS = gamemonitor
 -VERSION     = $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || echo git-`git rev-parse --short HEAD`)
-+VERSION     = release-20161019
++VERSION     = release-20170421
  
  # dependencies
  UNAME_S := $(shell uname -s)
-@@ -316,7 +316,7 @@
+@@ -293,7 +293,7 @@
  
  ########################## MAKE/INSTALL RULES ##########################
  #
 -default: core
 +default: core version
  
- core: game platforms mods utility server
+ core: dependencies game platforms mods utility server
  
