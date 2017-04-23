@@ -2,22 +2,14 @@ dh_clideps does not understand the "dllentry" syntax.
 Take the config files from the Ubuntu package which uses the "target" syntax.
 
 Map libGL.so to libGLU.so.1
-Index: openra-20161019/thirdparty/fetch-thirdparty-deps.sh
+Index: openra-20170421/thirdparty/fetch-thirdparty-deps.sh
 ===================================================================
---- openra-20161019.orig/thirdparty/fetch-thirdparty-deps.sh	2016-11-06 17:16:03.849736109 +0100
-+++ openra-20161019/thirdparty/fetch-thirdparty-deps.sh	2016-11-06 17:16:03.845736037 +0100
-@@ -66,6 +66,7 @@
- 	cp ./SharpFont/lib/net20/SharpFont* .
- 	cp ./SharpFont/config/SharpFont.dll.config .
- 	rm -rf SharpFont SharpFont.Dependencies
-+	patch -p1 < ../../debian/patches/sharpfont.patch
- fi
- 
- if [ ! -f nunit.framework.dll ]; then
-@@ -101,6 +102,7 @@
+--- openra-20170421.orig/thirdparty/fetch-thirdparty-deps.sh	2017-04-22 17:01:19.329348744 +0200
++++ openra-20170421/thirdparty/fetch-thirdparty-deps.sh	2017-04-22 17:17:15.215624485 +0200
+@@ -96,6 +96,7 @@
  	echo "Fetching SDL2-CS from GitHub."
- 	curl -s -L -O https://github.com/OpenRA/SDL2-CS/releases/download/20151227/SDL2-CS.dll
- 	curl -s -L -O https://github.com/OpenRA/SDL2-CS/releases/download/20151227/SDL2-CS.dll.config
+ 	curl -s -L -O https://github.com/OpenRA/SDL2-CS/releases/download/20161223/SDL2-CS.dll
+ 	curl -s -L -O https://github.com/OpenRA/SDL2-CS/releases/download/20161223/SDL2-CS.dll.config
 +	patch -p1 < ../../debian/patches/sdl2_config.patch
  fi
  
