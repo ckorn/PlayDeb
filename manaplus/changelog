@@ -1,3 +1,13 @@
+manaplus (1:1.7.4.15-1~getdeb2~zesty) zesty; urgency=medium
+
+  * New upstream version
+    add: server language flag on client
+    add: quick messages with auto translation from player server language to
+    english.
+    add: update packets acording to hercules changes.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 22 Apr 2017 16:57:21 +0200
+
 manaplus (1:1.7.4.1-1~getdeb2~yakkety) yakkety; urgency=medium
 
   * New upstream version
