@@ -1,34 +1,37 @@
 # add missing file
 # change data directory
-Index: cdogs-sdl-0.6.4/INSTALL
+Index: cdogs-sdl-0.6.5/INSTALL
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ cdogs-sdl-0.6.4/INSTALL	2017-03-04 17:11:08.087959270 +0100
++++ cdogs-sdl-0.6.5/INSTALL	2017-04-23 13:32:22.505792841 +0200
 @@ -0,0 +1 @@
 +#empty
-Index: cdogs-sdl-0.6.4/CMakeLists.txt
+Index: cdogs-sdl-0.6.5/CMakeLists.txt
 ===================================================================
---- cdogs-sdl-0.6.4.orig/CMakeLists.txt	2017-03-04 17:11:08.087959270 +0100
-+++ cdogs-sdl-0.6.4/CMakeLists.txt	2017-03-04 17:13:21.462109489 +0100
-@@ -176,11 +176,7 @@
+--- cdogs-sdl-0.6.5.orig/CMakeLists.txt	2017-04-23 13:32:22.509792900 +0200
++++ cdogs-sdl-0.6.5/CMakeLists.txt	2017-04-23 13:34:06.706637926 +0200
+@@ -185,16 +185,6 @@
+ else()
  	set(LIB_EXTENSION ".so")
- 	set(INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
  endif()
 -install(
 -  PROGRAMS
 -    ${CMAKE_CURRENT_BINARY_DIR}/src/cdogs-sdl${EXE_EXTENSION}
--    ${CMAKE_CURRENT_BINARY_DIR}/src/cdogs-sdl-editor${EXE_EXTENSION}
 -  DESTINATION ${INSTALL_PREFIX}/bin)
-+
+-if(NOT "${GCW0}")
+-	install(
+-	  PROGRAMS
+-	    ${CMAKE_CURRENT_BINARY_DIR}/src/cdogs-sdl-editor${EXE_EXTENSION}
+-	  DESTINATION ${INSTALL_PREFIX}/bin)
+-endif()
  
  INSTALL(DIRECTORY
  	${CMAKE_SOURCE_DIR}/doc
-@@ -191,10 +187,6 @@
+@@ -205,9 +195,6 @@
  	${CMAKE_SOURCE_DIR}/music
  	${CMAKE_SOURCE_DIR}/sounds
  	DESTINATION ${DATA_INSTALL_DIR})
 -INSTALL(FILES
--	${CMAKE_SOURCE_DIR}/cdogs_icon.bmp
 -	${CMAKE_SOURCE_DIR}/README.md
 -	DESTINATION ${DATA_INSTALL_DIR})
  IF(UNIX AND NOT APPLE AND NOT BEOS AND NOT HAIKU)
