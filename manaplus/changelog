@@ -1,3 +1,16 @@
+manaplus (1:1.7.4.29-1~getdeb2~zesty) zesty; urgency=medium
+
+  * New upstream version
+    fix: loading map atlases on windows.
+    fix: slow or wrong drawing with atlases enabled but without atlas for
+    current map.
+    fix: opening npc buy shop from invisible npc.
+    add: support for item options.
+    add: improve performance in some files operations.
+    remove: drop support for old hercules plugin versions (before 2016 year)
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 06 May 2017 00:20:58 +0200
+
 manaplus (1:1.7.4.15-1~getdeb2~zesty) zesty; urgency=medium
 
   * New upstream version
