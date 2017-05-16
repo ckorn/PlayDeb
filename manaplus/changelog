@@ -1,3 +1,9 @@
+manaplus (1:1.7.5.14-1~getdeb2~zesty) zesty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 16 May 2017 13:42:13 +0200
+
 manaplus (1:1.7.4.29-1~getdeb2~zesty) zesty; urgency=medium
 
   * New upstream version
