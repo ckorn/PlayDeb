@@ -12,6 +12,8 @@ Files: debian/*
 Copyright: 2006-2007 Linas Žvirblis <0x0007@gmail.com>
  2007-2012 Paul Wise <pabs@debian.org>
  2009 Christoph Egger <debian@christoph-egger.org>
+ 2016 Russel Coker <russell@coker.com.au>
+ 2016 Markus Koschany <apo@debian.org>
 License: GPL-2+
 
 Files: lib/exceptionhandler/dumpinfo.*
@@ -34,7 +36,6 @@ Files: 3rdparty/SDL/mac/include/SDL*.h
  lib/framework/i18n.*
  lib/framework/physfs_ext.h
  lib/framework/vector.h
- lib/framework/wzfs.h
  lib/netplay/nettypes.*
  lib/sequence/sequence.*
  lib/sequence/timer.*
@@ -49,18 +50,35 @@ Files: 3rdparty/quesoglc/*
 Copyright: 2002-2009, Bertrand Coconnier
 License: LGPL-2.1+
 
+Files: 3rdparty/glm/*
+Copyright: 2005 - 2013 G-Truc Creation
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+
 Files: 3rdparty/quesoglc/GL/glc.h
 Copyright: 2002, 2004-2007, Bertrand Coconnier
            1999-2001, Brian Paul
-License: LGPL-2.1+ and MIT-(Brian-Paul)
+License: LGPL-2.1+ and MIT-Brian-Paul
 
 Files: 3rdparty/miniupnpc/*
 Copyright: 2005-2010, Thomas Bernard
-License: BSD-3-clause-(miniupnpc)
-
-Files: 3rdparty/miniupnpc/bsdqueue.h
-Copyright: 1991, 1993, the Regents of the University of California
-License: BSD-3-clause
+License: BSD-3-clause-miniupnpc
 
 Files: */*_parser.cpp
        */*_parser.h
@@ -85,11 +103,7 @@ License: GAP
 
 Files: install-sh
 Copyright: 1994 X Consortium
-License: MIT-(X11)
-
-Files: win32/download.pl
-Copyright: 2006 OpenWrt.org
-License: GPL-2
+License: MIT-X11
 
 Files: lib/exceptionhandler/include/*
        lib/framework/gettext.h
@@ -117,7 +131,7 @@ License: GPL-2+
 Files: lib/sequence/sequence.cpp
 Copyright: 2008-2013 Warzone 2100 Project
            2002-2007 Xiph.org Foundation
-License: GPL-2+ and BSD-3-clause-(Xiph)
+License: GPL-2+ and BSD-3-clause-Xiph
 
 Files: m4/*.m4
 Copyright: 1995-2007, Free Software Foundation, Inc.
@@ -145,6 +159,10 @@ License: GAP-other
 Files: m4/ax_compare_version.m4
 Copyright: 2008 Tim Toolan
 License: GAP-other
+
+Files: 3rdparty/miniupnpc/minixml.c
+Copyright: 2003-2014, Thomas Bernard
+License: BSD-3-clause
 
 Files: m4/ax_tls.m4
 Copyright: 2008 Alan Woodland
@@ -233,12 +251,6 @@ License: GAP-other
  Copying and distribution of this file, with or without modification, are
  permitted in any medium without royalty provided the copyright notice
  and this notice are preserved.
-
-License: GPL-2
- This is free software, licensed under the GNU General Public License v2.
- .
- On Debian systems, the complete text of the GNU General Public License
- can be found in `/usr/share/common-licenses/GPL-2'.
 
 License: GPL-2+
  Warzone 2100 is free software; you can redistribute it and/or modify
@@ -359,15 +371,14 @@ License: BSD-3-clause
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
- 1. Redistributions of source code must retain the above copyright
+ *  Redistributions of source code must retain the above copyright
     notice, this list of conditions and the following disclaimer.
- 2. Redistributions in binary form must reproduce the above copyright
+ *  Redistributions in binary form must reproduce the above copyright
     notice, this list of conditions and the following disclaimer in the
     documentation and/or other materials provided with the distribution.
- 3. Neither the name of the University nor the names of its contributors
-    may be used to endorse or promote products derived from this software
-    without specific prior written permission.
- .
+ *  The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+  .
  THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -380,7 +391,7 @@ License: BSD-3-clause
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
 
-License: BSD-3-clause-(miniupnpc)
+License: BSD-3-clause-miniupnpc
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
  .
@@ -404,7 +415,7 @@ License: BSD-3-clause-(miniupnpc)
  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
 
-License: BSD-3-clause-(Xiph)
+License: BSD-3-clause-Xiph
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
@@ -432,7 +443,7 @@ License: BSD-3-clause-(Xiph)
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-License: MIT-(Brian-Paul)
+License: MIT-Brian-Paul
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
  to deal in the Software without restriction, including without limitation
@@ -450,7 +461,7 @@ License: MIT-(Brian-Paul)
  AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-License: MIT-(X11)
+License: MIT-X11
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to
  deal in the Software without restriction, including without limitation the

@@ -1,202 +1,78 @@
-warzone2100 (3.2.1-1~getdeb1) xenial; urgency=medium
+warzone2100 (3.2.3-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
      * General:
-       * Fix: Cursor flickering on some hardware
-       * Fix: Assert on burning babas in campaign
-       * Fix: Assert when placing artefacts
-       * Fix: Crash on transition between alpha and beta campaign
-       * Fix: Disappearing commander designs in campaign
-       * Fix: Wrong hit chance for cyborg grenadier, changed from 70 to 65
-       * Fix: Reorder libs to fix linker error
-       * Fix: Incorrect rendering of structure turrets
-
- -- Christoph Korn <christoph.korn@getdeb.net>  Fri, 29 Jul 2016 07:08:29 +0200
-
-warzone2100 (3.2.0-1~getdeb1) xenial; urgency=medium
-
-  * New upstream version
-    2016-07-10: Version 3.2.0
-     * General:
-       * Fix: Clear factory indicators when switching between commanders
-       * Fix: Do not clear chat on setting structure limits
-       * Fix: Crash while loading map
-       * Fix: Saving/loading of command and repair droids
-     * AI:
-       * Change: Update the NullBot AI to version 3.06
-
-    2016-06-19: Version 3.2.0 beta4
-     * General:
-       * Change: Add default teams for Clover, Manhattan and MizaMaze
-       * Fix: Crash if construction droids were doing construction without
-       being ordered to
-       * Fix: Loading of default teams, given non-default starting positions
-       * Fix: Desynch on destroying droids while trying to build droids at
-       droid limit
+       * Fix: Rescale body points if players have different armour levels
+       when transferring units 
+       * Fix: Occasional crash when entering host game menu 
+       * Fix: Game freeze on clicking on start game in menu 
+       * Fix: Never put scavengers on human teams by accident 
      * Graphics:
-       * Change: Add team colour to repair facility turret
-       * Fix: Stretch to ground of defensive and wall structures did not work
-       * Fix: Structure direction not taken into account when stretching to
-       ground
-     * Balance:
-       * Fix: Weapon rate of fire upgrades did not take effect on burst-fire
-       weapons
-
-    2016-05-28: Version 3.2.0 beta3
-     * General:
-       * Fix: Some maps would not load or give wrong minimap resolution
-       * Fix: Several issues related to saving and loading templates
-       * Fix: Superfluous templates removed and cyborgs added to cam2/cam3
-       starts
-       * Fix: Lobby console output
-       * Fix: Default template should not be present in tutorial
-       * Fix: Broken warning on exiting multiplayer games
-       * Fix: Skewed video playback resolution
-       * Fix: Dangling tooltip on removing owning widget
-       * Fix: Cycle through menu lists consistently
-     * Balance:
-       * Fix: Improve repair droid targeting
-       * Fix: Factory upgrades were set to incorrect values
-     * Graphics:
-       * Fix: Resolution and screen settings
-     * Translations:
-       * Fix: Garbled translations in scripts due to parsing as Latin1
-       instead of UTF-8
-       * Fix: Language names for NSIS installer
-       * Fix: Untranslatable text in lobby
-
-    2016-05-16: Version 3.2.0 beta2
-     * Balance:
-       * Fix: Some weapon accuracy values tweaked to be closer to the 3.1
-       experience
-       * Fix: Inconsistent application of body upgrades
-     * General:
-       * Fix: Crash on choosing AI while another player clicks ready
-       * Fix: Small bodied droids did not count for transport capacity
-       * Fix: Designed templates did not survive save and load
-       * Fix: Droid selection bounding box improvements
-       * Fix: Allied research time display
-       * Fix: Alphabetical map name sorting, was reversed
-       * Fix: Visibility issues in loaded games
-       * Fix: Building aborted on burning oil wells
-       * Fix: Let idle trucks help with building structures as well as
-       repairing them
-       * Fix: Specific .png files which were causing libpng warnings
-       * Fix: WzScript-based AIs were trying to build illegal cyborgs
-     * Graphics:
-       * Change: Enable coloured cursors by default
-       * Fix: Shadow rendering
-
-    2016-05-07: Version 3.2.0 beta1
-     * UI:
-       * Add: Add teams mode without shared research
-       * Add: Add Shift+V to select all fully-armed VTOLs
-       * Add: Default map team setups supported, added for some maps
-       * Add: Enable ECM Jammer tech. Increase radar detector cost to 2000,
-       from 900
-       * Add: Add minipod tower research to full base starts
-       * Change: Move Command HUD to make more room for more items
-       * Change: Make VTOLs return to rearm when out of ammo, if told to
-       patrol or circle
-       * Change: Allow designing and building obsolete tanks
-       * Change: Make smooth water bed generation, instead of random jitter
-       * Change: Default stop/hold/hq hotkeys changed
-       * Change: Only play 'power resource' message once for each research
-       * Change: No armour bonus while building is in construction
-       * Remove: Secondary orders hold and pursue removed, use primary order
-       hold and attack instead
-       * Remove: The optimal/short/long range GUI elements have been removed
-     * Balance:
-       * Change: Always use latest armour upgrade value for already built
-       droids
-       * Change: Improved doomed target calculations
-       * Change: Make easy difficulty AIs get 25% less power from derricks
-       * Change: Make insane difficulty give 2x power income to AIs
-       * Change: Improved counterbattery target checking, can also now use
-       allied counterbattery sensors
-       * Fix: Fix wrong calculation of rate in some cases
-       * Remove: Command turret upgrades
-       * Remove: Transports no longer have weapons
-       * Remove: Remove the distinction between short and long range for
-       accuracy purposes
-     * Graphics:
-       * Add: Now possible to render multiple levels for all features,
-       structures and walls
-       * Add: Generalized support for standing still and moving effects for
-       propulsions
-       * Add: Can now set a shader program for each model level
-       * Change: Significantly improve model rendering performance
+       * Add: We now support higher than 8x MSAA, if supported by driver - do
+       not show 8x if not supported 
+       * Change: Optimizing graphics rendering 
+       * Change: Increase default resolution to 1024x720 rather than 640x480 
+       * Fix: Avoiding some techniques to hopefully run with more drivers 
+       * Fix: Fix clipped letters 
+       * Fix: Fix text rendering blend mode, makes progress bar more readable
+       
+       * Fix: Still/moving helicopter/VTOL animations were reversed 
+       * Fix: Prevent structure turret stretching again 
+     * Campaign:
+       * Change: Lots of initial campaign ported to Javascript. Discuss these
+       changes in our new porting forum here:
+       http://forums.wz2100.net/viewforum.php?f=51
      * Scripting:
-       * Add eventGroupSeen() and improve eventArea(), rename resetArea() to
-       resetLabel()
-       * Add: New functions setReticuleButton(), showInterface() and
-       hideInterface() to control the UI
-       * Add: New function syncRequest() and event eventSyncRequest for
-       synced game updates
-       * Add: New structure flag which requires it to be built adjacent to
-       another completed structure the player owns
-       * Add: New functions addSpotter() and removeSpotter() to add and
-       remove temporary areas of vision
-       * Add: New event 'eventObjectRecycled(object)' for demolish and
-       recycle actions
-       * Add: New cheat 'jsload' which allows you to load any AI script you
-       want from the 'scripts' directory
-       * Add: Two new functions for transporter handling in campaign
-       startTransporterEntry() and setTransporterExit()
-       * Add: New function makeTemplate()
-       * Add: New events eventPlayerLeft() and eventDesignCreated()
-       * Add: New function propulsionCanReach()
-       * Add: New function removeLabel()
-       * Add: New event enumSelectionChanged() and new function
-       enumSelected()
-       * Add: New functions missionTime() and extraPowerTime()
-       * Add: New function getLabel(object) function for retrieving the label
-       of an object
-       * Add: New event eventBeaconRemoved()
-       * Add: New function function cameraZoom() to change camera zoom
-       * Add: New function setPowerModifier() to change the power modifier
-       * Add: New event eventArea<label>() and new function resetArea()
-       * Add: New functions getExperienceGain() and setExperienceGain()
-       * Add: New functions addBeacon() and removeBeacon(), and new event
-       eventBeacon()
-       * Add: New function addLabel() for dynamic creation of script labels
-       * Add: New function setSky() to change the skybox on the fly
-       * Add: New event eventCheatMode()
-       * Add: New events eventGameLoaded(), eventGameSaving(), and
-       eventGameSaved()
-       * Add: New function setDroidLimit() that sets game build limits
-       * Add: New function enumTemplates() to list the templates of a player
-       * Add: New function getDroidProduction() for virtual representation of
-       production
-       * Add: New event eventPickup() for whenever an object is picked up
-       * Add: New functions setAlliance() and removeObject()
-       * Change: New function groupAdd(group, object) that deprecates
-       groupAddDroid()
-       * Change: Rename setScrollParams() -> setScrollLimits(), new function
-       getScrollLimits()
-       * Change: Rename label() to getObject() and make it more flexible
-       * Change: Rename missionTimer() -> getMissionTimer() for consistency
-     * Modding:
-       * Change: Savegames and stats are now in JSON format
-       * Change: Lazy loading of textures and PIE files,  no longer any need
-       to add them in WRF files
-       * Add: The minimum damage that a weapon causes is now moddable
-     * Testing:
-       * Support for autogames using command line --autogame
-       * For analysing graphics performance issues, there is a new hotkey
-       ctrl+k in debug mode to get info on what takes time
-     * Other:
-       * We now require OpenGL 2.0
-       * Parts of the campaign has been ported to javascript
-       * The entire codebase has been run through astyle to clean it up
+       * Add: donateObject() works on structures. findResearch() works on
+       other players 
+       * Add: New function hackDoNotSave(global name) to prevent variable
+       from being put in savegames 
+       * Add: Add setHealth(object, health %) to set a game object's health 
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 11 Jul 2016 19:45:59 +0200
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 06 May 2017 00:15:05 +0200
 
-warzone2100 (3.1.5-1~getdeb2~xenial) xenial; urgency=medium
+warzone2100 (3.2.1-2) unstable; urgency=medium
 
-  * New upstream version
+  * Team upload.
+  * Add openssl-1.1.patch and fix FTBFS with OpenSSL 1.1. (Closes: #844870)
+  * Fix Lintian warning space-in-std-shortname-in-dep5-copyright.
+  * Really use compat level 10.
 
- -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 21 Jun 2016 22:33:40 +0200
+ -- Markus Koschany <apo@debian.org>  Mon, 28 Nov 2016 20:51:47 +0100
+
+warzone2100 (3.2.1-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Russell Coker ]
+  * New upstream version 3.2.1. (Closes: #814248)
+  * Build-depend on qtbase5-dev qtscript5-dev libsdl2-dev instead of
+    libqt4-dev.
+  * Patch for too many parameters for upnpDiscover() to fix a FTBFS.
+  * Change patches to apply to latest upstream.
+  * Update revert-372eff6693e633e8d0d1d0b8a9ceb996a5c3f49f.patch and call
+    automake1.11 directly. (Closes: #824011)
+
+  [ Markus Koschany ]
+  * Add missing libssl-dev to Build-Depends.
+  * Disable the tests by overriding dh_auto_test and work around a FTBFS.
+  * Use compat level 10.
+  * d/rules: Pass --with-appdatadir option to dh_auto_configure.
+  * Add appdata.patch and install the missing appdata file.
+  * Remove libsdl1.2-dev from B-D.
+  * Use embedded version of glm to build the game because Debian's version
+    causes graphical glitches (rotating units). It also does not provide a
+    shared library which might cause further work in the future.
+  * Update debian/copyright for new release.
+  * Update debian/clean and ensure that the package can be built twice in a
+    row.
+  * Remove wkhtmltopdf from Build-Depends and add quickstartguide.patch for now
+    because building the pdf documentation from source is causing a FTBFS at the
+    moment.
+  * d/rules: Replace --disable-debug with --enable-debug=no. The former option
+    did nothing.
+
+ -- Markus Koschany <apo@debian.org>  Tue, 20 Sep 2016 20:34:59 +0200
 
 warzone2100 (3.1.1-3) unstable; urgency=medium
 

@@ -1,91 +1,82 @@
-Author: Paul Wise <pabs@debian.org>
-Description: use system libraries instead of embedded code copies
+From: Paul Wise <pabs@debian.org>
+Date: Mon, 19 Sep 2016 23:24:24 +0200
+Subject: use-system-libraries
+
+use system libraries instead of embedded code copies
 Forwarded: no
-Index: warzone2100-3.2.1/configure.ac
+---
+ Makefile.am     |  2 --
+ configure.ac    | 12 +++++++-----
+ po/update-po.sh |  2 +-
+ src/Makefile.am |  7 +++----
+ 4 files changed, 11 insertions(+), 12 deletions(-)
+
+Index: warzone2100-3.2.3/Makefile.am
 ===================================================================
---- warzone2100-3.2.1.orig/configure.ac	2016-07-29 07:10:18.621845901 +0200
-+++ warzone2100-3.2.1/configure.ac	2016-07-29 07:10:18.621845901 +0200
-@@ -399,6 +399,9 @@
+--- warzone2100-3.2.3.orig/Makefile.am	2017-05-16 18:45:39.278322526 +0200
++++ warzone2100-3.2.3/Makefile.am	2017-05-16 18:45:39.270322644 +0200
+@@ -6,7 +6,6 @@
+ 
+ SUBDIRS = \
+ 	win32 \
+-	3rdparty/miniupnpc \
+ 	lib/framework \
+ 	lib/exceptionhandler \
+ 	lib/script \
+Index: warzone2100-3.2.3/configure.ac
+===================================================================
+--- warzone2100-3.2.3.orig/configure.ac	2017-05-16 18:45:39.278322526 +0200
++++ warzone2100-3.2.3/configure.ac	2017-05-16 18:45:39.270322644 +0200
+@@ -403,6 +403,10 @@
  
  # Checks for modules:
  
-+
-+PKG_CHECK_MODULES([QUESOGLC], [quesoglc])
++# Look for minupnpc
++AC_CHECK_HEADER(miniupnpc/miniupnpc.h, , AC_MSG_ERROR([miniupnpc header not found.]))
++AC_CHECK_LIB(miniupnpc, UPNP_GetExternalIPAddress, AC_SUBST([MINIUPNPC_LIBS], [-lminiupnpc]), AC_MSG_ERROR([miniupnpc not found.]), [${WIN32_LIBS}])
 +
  if test "$backend" = "sdl"; then
  	PKG_CHECK_MODULES([SDL], [sdl2 >= 2.0.0])
  fi
-@@ -475,8 +478,7 @@
- WZ_CPPFLAGS="${WZ_CPPFLAGS} -I\$(top_srcdir)"
- 
- # 3rdparty libs
--WZ_CPPFLAGS="${WZ_CPPFLAGS} -I\$(top_srcdir)/3rdparty -I\$(top_srcdir)/3rdparty/quesoglc"
--
-+WZ_CPPFLAGS="${WZ_CPPFLAGS} -I\$(top_srcdir)/3rdparty"
- 
- AC_SUBST([WZ_CPPFLAGS], [${WZ_CPPFLAGS}])
- AC_SUBST([WZ_CFLAGS], [${WZ_CFLAGS}])
-@@ -495,7 +497,6 @@
+@@ -497,7 +501,6 @@
+ 		pkg/nsis/Makefile
  		win32/Makefile
  		tests/Makefile
- 		3rdparty/miniupnpc/Makefile
--		3rdparty/quesoglc/Makefile
+-		3rdparty/miniupnpc/Makefile
  		lib/framework/Makefile
  		lib/exceptionhandler/Makefile
  		lib/gamelib/Makefile
-Index: warzone2100-3.2.1/Makefile.am
+Index: warzone2100-3.2.3/po/update-po.sh
 ===================================================================
---- warzone2100-3.2.1.orig/Makefile.am	2016-07-29 07:10:18.621845901 +0200
-+++ warzone2100-3.2.1/Makefile.am	2016-07-29 07:10:18.621845901 +0200
-@@ -7,7 +7,6 @@
- SUBDIRS = \
- 	win32 \
- 	3rdparty/miniupnpc \
--	3rdparty/quesoglc \
- 	lib/framework \
- 	lib/exceptionhandler \
- 	lib/script \
-Index: warzone2100-3.2.1/src/Makefile.am
-===================================================================
---- warzone2100-3.2.1.orig/src/Makefile.am	2016-07-29 07:10:18.621845901 +0200
-+++ warzone2100-3.2.1/src/Makefile.am	2016-07-29 07:10:18.621845901 +0200
-@@ -1,4 +1,4 @@
--AM_CPPFLAGS = -DYY_NO_INPUT $(SDL_CFLAGS) $(PHYSFS_CFLAGS) $(PNG_CFLAGS) $(VORBISFILE_CFLAGS) $(VORBIS_CFLAGS) $(OPENAL_CFLAGS) $(OPENGLC_CFLAGS) $(OPENGL_CFLAGS) $(WZ_CPPFLAGS) $(GLEW_CFLAGS) $(LIBCRYPTO_CFLAGS)
-+AM_CPPFLAGS = -DYY_NO_INPUT $(SDL_CFLAGS) $(PHYSFS_CFLAGS) $(PNG_CFLAGS) $(VORBISFILE_CFLAGS) $(VORBIS_CFLAGS) $(OPENAL_CFLAGS) $(OPENGLC_CFLAGS) $(OPENGL_CFLAGS) $(WZ_CPPFLAGS) $(GLEW_CFLAGS) $(LIBCRYPTO_CFLAGS) $(QUESOGLC_CFLAGS)
- AM_CFLAGS = $(WZ_CFLAGS)
- AM_CXXFLAGS = $(WZ_CXXFLAGS) $(QT5_CFLAGS)
+--- warzone2100-3.2.3.orig/po/update-po.sh	2017-05-16 18:45:39.278322526 +0200
++++ warzone2100-3.2.3/po/update-po.sh	2017-05-16 18:45:39.270322644 +0200
+@@ -14,6 +14,6 @@
  
-@@ -297,8 +297,7 @@
+ find lib src data po -type f |
+ 	grep -e '\.c\(pp\|xx\)\?$' -e 'data.*strings.*\.txt$' -e 'data.*sequenceaudio.*\.tx.$' -e '\.slo$' -e '\.rmsg$' -e 'po/custom/.*\.txt' -e '\.js$' |
+-	grep -v -e '\.lex\.c\(pp\|xx\)\?$' -e '\.tab\.c\(pp\|xx\)\?$' -e 'lib/netplay/miniupnpc/*' -e 'lib/betawidget/*' -e '_moc\.' -e 'po/custom/files.js' |
++	grep -v -e '\.lex\.c\(pp\|xx\)\?$' -e '\.tab\.c\(pp\|xx\)\?$' -e 'lib/betawidget/*' -e '_moc\.' -e 'po/custom/files.js' |
+ 	grep -v -e '_lexer\.cpp' -e '_parser\.cpp' |
+ 	sort >> po/POTFILES.in
+Index: warzone2100-3.2.3/src/Makefile.am
+===================================================================
+--- warzone2100-3.2.3.orig/src/Makefile.am	2017-05-16 18:45:39.278322526 +0200
++++ warzone2100-3.2.3/src/Makefile.am	2017-05-16 18:51:07.793581397 +0200
+@@ -290,8 +290,7 @@
+ 	$(top_builddir)/lib/netplay/libnetplay.a \
  	$(top_builddir)/lib/ivis_opengl/libivis_opengl.a \
  	$(top_builddir)/lib/gamelib/libgamelib.a \
- 	$(top_builddir)/lib/exceptionhandler/libexceptionhandler.a \
--	$(top_builddir)/3rdparty/miniupnpc/libminiupnpc.a \
--	$(top_builddir)/3rdparty/quesoglc/libquesoglc.a
-+	$(top_builddir)/3rdparty/miniupnpc/libminiupnpc.a
+-	$(top_builddir)/lib/exceptionhandler/libexceptionhandler.a \
+-	$(top_builddir)/3rdparty/miniupnpc/libminiupnpc.a
++	$(top_builddir)/lib/exceptionhandler/libexceptionhandler.a
  
  if PORTABLE
  warzone2100_portable_SOURCES = $(COMMONSOURCES) $(nodist_COMMONSOURCES)
-@@ -343,6 +342,7 @@
+@@ -336,6 +335,7 @@
  else
  warzone2100_LDADD = $(warzone2100_LIBS) $(LTLIBINTL) $(SDL_LIBS) $(PHYSFS_LIBS) $(PNG_LIBS) $(VORBISFILE_LIBS) $(VORBIS_LIBS) \
- 	$(THEORA_LIBS) $(OPENAL_LIBS) $(OPENGLC_LIBS) $(OPENGL_LIBS) $(SQT5_LIBS) $(QT5_LIBS) $(GLEW_LIBS) \
-+	$(QUESOGLC_LIBS) \
+ 	$(THEORA_LIBS) $(OPENAL_LIBS) $(FONT_LIBS) $(OPENGL_LIBS) $(SQT5_LIBS) $(QT5_LIBS) $(GLEW_LIBS) \
++	$(MINIUPNPC_LIBS) \
  	$(X_LIBS) $(X_EXTRA_LIBS) $(LIBCRYPTO_LIBS) $(LDFLAGS)
  endif
- 
-Index: warzone2100-3.2.1/tests/Makefile.am
-===================================================================
---- warzone2100-3.2.1.orig/tests/Makefile.am	2016-07-29 07:10:18.621845901 +0200
-+++ warzone2100-3.2.1/tests/Makefile.am	2016-07-29 07:12:17.147283840 +0200
-@@ -22,9 +22,9 @@
- 
- ivis_linktest_SOURCES = ivis_linktest.cpp
- ivis_linktest_LDADD = $(top_builddir)/lib/sdl/libsdl.a $(top_builddir)/lib/framework/libframework.a \
--	$(top_builddir)/lib/ivis_opengl/libivis_opengl.a $(top_builddir)/3rdparty/quesoglc/libquesoglc.a  \
-+	$(top_builddir)/lib/ivis_opengl/libivis_opengl.a \
- 	$(PHYSFS_LIBS) $(LIBCRYPTO_LIBS) $(QT5_LIBS) $(SDL_LIBS) $(OPENGL_LIBS) $(OPENGLC_LIBS) $(GLEW_LIBS) \
--	$(X_LIBS) $(X_EXTRA_LIBS) $(LDFLAGS) $(PNG_LIBS)
-+	$(QUESOGLC_LIBS) $(X_LIBS) $(X_EXTRA_LIBS) $(LDFLAGS) $(PNG_LIBS)
- 
- modeltest_SOURCES = modeltest.c
  

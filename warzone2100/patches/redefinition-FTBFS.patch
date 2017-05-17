@@ -14,10 +14,10 @@ Forwarded: no
  src/scriptvals_lexer.lpp         | 21 ++-------------------
  7 files changed, 14 insertions(+), 109 deletions(-)
 
-Index: warzone2100-3.2.1/lib/framework/resource_lexer.lpp
+Index: warzone2100-3.2.3/lib/framework/resource_lexer.lpp
 ===================================================================
---- warzone2100-3.2.1.orig/lib/framework/resource_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
-+++ warzone2100-3.2.1/lib/framework/resource_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+--- warzone2100-3.2.3.orig/lib/framework/resource_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
++++ warzone2100-3.2.3/lib/framework/resource_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
 @@ -52,21 +52,21 @@
  #if !defined(YY_FLEX_SUBMINOR_VERSION) || (YY_FLEX_SUBMINOR_VERSION < 9)
  # define yyget_extra  res_get_extra
@@ -59,10 +59,10 @@ Index: warzone2100-3.2.1/lib/framework/resource_lexer.lpp
 -	return 0;
 -}
 -#endif
-Index: warzone2100-3.2.1/lib/framework/strres_lexer.lpp
+Index: warzone2100-3.2.3/lib/framework/strres_lexer.lpp
 ===================================================================
---- warzone2100-3.2.1.orig/lib/framework/strres_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
-+++ warzone2100-3.2.1/lib/framework/strres_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+--- warzone2100-3.2.3.orig/lib/framework/strres_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
++++ warzone2100-3.2.3/lib/framework/strres_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
 @@ -56,21 +56,13 @@
  #if !defined(YY_FLEX_SUBMINOR_VERSION) || (YY_FLEX_SUBMINOR_VERSION < 9)
  # define yyget_extra  strres_get_extra
@@ -100,10 +100,10 @@ Index: warzone2100-3.2.1/lib/framework/strres_lexer.lpp
 -	return 0;
 -}
 -#endif
-Index: warzone2100-3.2.1/lib/gamelib/audp_lexer.lpp
+Index: warzone2100-3.2.3/lib/gamelib/audp_lexer.lpp
 ===================================================================
---- warzone2100-3.2.1.orig/lib/gamelib/audp_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
-+++ warzone2100-3.2.1/lib/gamelib/audp_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+--- warzone2100-3.2.3.orig/lib/gamelib/audp_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
++++ warzone2100-3.2.3/lib/gamelib/audp_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
 @@ -55,21 +55,13 @@
  #if !defined(YY_FLEX_SUBMINOR_VERSION) || (YY_FLEX_SUBMINOR_VERSION < 9)
  # define yyget_extra  audp_get_extra
@@ -128,7 +128,7 @@ Index: warzone2100-3.2.1/lib/gamelib/audp_lexer.lpp
  #elif defined(YY_FLEX_SUBMINOR_VERSION) && YY_FLEX_SUBMINOR_VERSION == 33
  extern YY_EXTRA_TYPE yyget_extra(void);
  extern int audp_get_lineno(void);
-@@ -169,12 +161,3 @@
+@@ -164,12 +156,3 @@
  /* Older GNU Flex versions don't define yylex_destroy()
   * (and neither define a subminor version)
   */
@@ -141,10 +141,10 @@ Index: warzone2100-3.2.1/lib/gamelib/audp_lexer.lpp
 -	return 0;
 -}
 -#endif
-Index: warzone2100-3.2.1/lib/script/chat_lexer.lpp
+Index: warzone2100-3.2.3/lib/script/chat_lexer.lpp
 ===================================================================
---- warzone2100-3.2.1.orig/lib/script/chat_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
-+++ warzone2100-3.2.1/lib/script/chat_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+--- warzone2100-3.2.3.orig/lib/script/chat_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
++++ warzone2100-3.2.3/lib/script/chat_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
 @@ -227,12 +227,3 @@
  /* Older GNU Flex versions don't define yylex_destroy()
   * (and neither define a subminor version)
@@ -158,10 +158,10 @@ Index: warzone2100-3.2.1/lib/script/chat_lexer.lpp
 -	return 0;
 -}
 -#endif
-Index: warzone2100-3.2.1/lib/script/script_lexer.lpp
+Index: warzone2100-3.2.3/lib/script/script_lexer.lpp
 ===================================================================
---- warzone2100-3.2.1.orig/lib/script/script_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
-+++ warzone2100-3.2.1/lib/script/script_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+--- warzone2100-3.2.3.orig/lib/script/script_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
++++ warzone2100-3.2.3/lib/script/script_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
 @@ -857,12 +857,3 @@
  /* Older GNU Flex versions don't define yylex_destroy()
   * (and neither define a subminor version)
@@ -175,10 +175,10 @@ Index: warzone2100-3.2.1/lib/script/script_lexer.lpp
 -	return 0;
 -}
 -#endif
-Index: warzone2100-3.2.1/src/level_lexer.lpp
+Index: warzone2100-3.2.3/src/level_lexer.lpp
 ===================================================================
---- warzone2100-3.2.1.orig/src/level_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
-+++ warzone2100-3.2.1/src/level_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+--- warzone2100-3.2.3.orig/src/level_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
++++ warzone2100-3.2.3/src/level_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
 @@ -54,21 +54,13 @@
  #if !defined(YY_FLEX_SUBMINOR_VERSION) || (YY_FLEX_SUBMINOR_VERSION < 9)
  # define yyget_extra  lev_get_extra
@@ -216,10 +216,10 @@ Index: warzone2100-3.2.1/src/level_lexer.lpp
 -	return 0;
 -}
 -#endif
-Index: warzone2100-3.2.1/src/scriptvals_lexer.lpp
+Index: warzone2100-3.2.3/src/scriptvals_lexer.lpp
 ===================================================================
---- warzone2100-3.2.1.orig/src/scriptvals_lexer.lpp	2016-07-29 07:12:27.815685249 +0200
-+++ warzone2100-3.2.1/src/scriptvals_lexer.lpp	2016-07-29 07:12:27.811685100 +0200
+--- warzone2100-3.2.3.orig/src/scriptvals_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
++++ warzone2100-3.2.3/src/scriptvals_lexer.lpp	2017-05-06 00:08:51.375788040 +0200
 @@ -62,21 +62,13 @@
  #if !defined(YY_FLEX_SUBMINOR_VERSION) || (YY_FLEX_SUBMINOR_VERSION < 9)
  # define yyget_extra  scrv_get_extra

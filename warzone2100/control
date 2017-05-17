@@ -21,6 +21,7 @@ Build-Depends: asciidoc,
                libfribidi-dev,
                libglc-dev,
                libglew-dev,
+               libminiupnpc-dev,
                libopenal-dev,
                libphysfs-dev,
                libpng-dev,
@@ -35,11 +36,11 @@ Build-Depends: asciidoc,
                libxrandr-dev,
                pkg-config,
                unzip,
-               wkhtmltopdf,
                xauth,
                xsltproc,
                xvfb,
-               zip
+               zip,
+               libharfbuzz-dev
 Standards-Version: 3.9.7
 Homepage: http://www.wz2100.net/
 
