@@ -1,0 +1,22 @@
+From: Markus Koschany <apo@debian.org>
+Date: Tue, 20 Sep 2016 18:46:44 +0200
+Subject: quickstartguide
+
+Don't remove upstream's quickstartguide.pdf file in clean target as long as
+wkhtmltopdf is buggy.
+---
+ doc/Makefile.am | 1 -
+ 1 file changed, 1 deletion(-)
+
+Index: warzone2100-3.2.3/doc/Makefile.am
+===================================================================
+--- warzone2100-3.2.3.orig/doc/Makefile.am	2017-05-06 00:11:56.216240871 +0200
++++ warzone2100-3.2.3/doc/Makefile.am	2017-05-06 00:11:56.212240944 +0200
+@@ -65,7 +65,6 @@
+ 
+ DISTCLEANFILES = \
+ 	quickstartguide.html \
+-	quickstartguide.pdf \
+ 	warzone2100.6
+ 
+ if A2X_AVAILABLE

@@ -1,0 +1,23 @@
+From: Russell Coker <russell@coker.com.au>
+Date: Mon, 19 Sep 2016 23:24:25 +0200
+Subject: fix-upnpDiscover
+
+remove extra arg from upnpDiscover()
+Forwarded: no
+---
+ lib/netplay/netplay.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Index: warzone2100-3.2.3/lib/netplay/netplay.cpp
+===================================================================
+--- warzone2100-3.2.3.orig/lib/netplay/netplay.cpp	2017-05-06 00:09:08.647438071 +0200
++++ warzone2100-3.2.3/lib/netplay/netplay.cpp	2017-05-06 00:09:44.662721646 +0200
+@@ -952,7 +952,7 @@
+ 	memset(&data, 0, sizeof(struct IGDdatas));
+ 
+ 	debug(LOG_NET, "Searching for UPnP devices for automatic port forwarding...");
+-	devlist = upnpDiscover(3000, NULL, NULL, 0, 0, 2, &result);
++	devlist = upnpDiscover(3000, NULL, NULL, 0, 0, &result);
+ 	debug(LOG_NET, "UPnP device search finished.");
+ 
+ 	if (devlist)

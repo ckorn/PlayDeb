@@ -1,0 +1,6 @@
+use-system-libraries.patch
+redefinition-FTBFS.patch
+fix-upnpDiscover.patch
+add-needed-const.patch
+quickstartguide.patch
+ftbfs.patch

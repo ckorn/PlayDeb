@@ -1,0 +1,36 @@
+From: Russell Coker <russell@coker.com.au>
+Date: Mon, 19 Sep 2016 23:24:25 +0200
+Subject: add-needed-const
+
+Add a const because there's no need to write and caller is const
+---
+ lib/script/chat_lexer.lpp  | 2 +-
+ lib/script/chat_parser.ypp | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/lib/script/chat_lexer.lpp b/lib/script/chat_lexer.lpp
+index 5fb4289..2acbaea 100644
+--- a/lib/script/chat_lexer.lpp
++++ b/lib/script/chat_lexer.lpp
+@@ -203,7 +203,7 @@ static SDWORD playerIndex;
+ %%
+ 
+ /* Set the current input buffer for the lexer */
+-void chatSetInputBuffer(char *pBuffer, UDWORD size)
++void chatSetInputBuffer(char const *pBuffer, UDWORD size)
+ {
+ 	pInputBuffer = pBuffer;
+ 	pEndBuffer = pBuffer + size;
+diff --git a/lib/script/chat_parser.ypp b/lib/script/chat_parser.ypp
+index 6d25261..abe2963 100644
+--- a/lib/script/chat_parser.ypp
++++ b/lib/script/chat_parser.ypp
+@@ -721,7 +721,7 @@ R_WAIT_FOR_ME:								_T_WAIT R_EOD				/* wait */
+ %%
+ 
+ /* Initialize Bison and start chat processing */
+-bool chatLoad(char *pData, UDWORD size)
++bool chatLoad(char const *pData, UDWORD size)
+ {
+ 	SDWORD	cmdIndex,parseResult;
+ 
