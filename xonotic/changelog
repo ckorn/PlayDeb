@@ -1,3 +1,9 @@
+xonotic (0.8.2-1~getdeb2) xenial; urgency=medium
+
+  * dh_strip_nondeterminism corrupts the pk3 files
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Thu, 18 May 2017 12:30:56 +0200
+
 xonotic (0.8.2-1~getdeb1) xenial; urgency=medium
 
   * New upstream version

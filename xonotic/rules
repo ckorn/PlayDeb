@@ -14,6 +14,10 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 
+# it corrupts the files. gg
+override_dh_strip_nondeterminism:
+	dh_strip_nondeterminism -Xpk3
+
 ## http://wiki.debian.org/onlyjob/get-orig-source
 .PHONY: get-orig-source
 get-orig-source: $(PKG)_$(VER).orig.tar.xz $(info I: $(PKG)_$(VER))
