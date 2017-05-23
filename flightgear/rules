@@ -41,6 +41,9 @@ override_dh_auto_build:
 	convert -monitor $(CURDIR)/icons/32x32/apps/flightgear.png $(CURDIR)/icons/flightgear.xpm
 	convert -monitor $(CURDIR)/icons/32x32/apps/fgcom.png $(CURDIR)/icons/fgcom.xpm
 
+# tests require the game data
+override_dh_auto_test:
+
 override_dh_auto_install:
 	dh_auto_install
 

@@ -6,15 +6,15 @@ Author: Markus Wanner <markus@bluegap.ch>
 Forwarded: no
 Last-Change: 2015-05-24
 
-Index: flightgear-2016.4.1/src/Main/CMakeLists.txt
+Index: flightgear-2017.2.1/src/Main/CMakeLists.txt
 ===================================================================
---- flightgear-2016.4.1.orig/src/Main/CMakeLists.txt	2016-11-19 12:45:10.263301037 +0100
-+++ flightgear-2016.4.1/src/Main/CMakeLists.txt	2016-11-19 12:45:10.259300966 +0100
-@@ -139,6 +139,7 @@
+--- flightgear-2017.2.1.orig/src/Main/CMakeLists.txt	2017-05-22 15:52:20.521712312 +0200
++++ flightgear-2017.2.1/src/Main/CMakeLists.txt	2017-05-22 15:52:20.517712369 +0200
+@@ -146,6 +146,7 @@
  	${SIMGEAR_LIBRARIES}
  	${OPENSCENEGRAPH_LIBRARIES}
  	${OPENGL_LIBRARIES}
 +	${X11_LIBRARIES}
  	${PLIB_LIBRARIES}
  	${HLA_LIBRARIES}
- 	${EVENT_INPUT_LIBRARIES}
+ 	${GDAL_LIBRARIES}
