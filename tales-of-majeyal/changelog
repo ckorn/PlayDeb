@@ -1,3 +1,21 @@
+tales-of-majeyal (1.5.5-1~getdeb2~zesty) zesty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 23 May 2017 23:27:40 +0200
+
+tales-of-majeyal (1.5.4-1~getdeb2~zesty) zesty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 23 May 2017 21:02:04 +0200
+
+tales-of-majeyal (1.5.4-1~getdeb2~yakkety) yakkety; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 23 May 2017 21:01:28 +0200
+
 tales-of-majeyal (1.5.3-1~getdeb2~yakkety) yakkety; urgency=medium
 
   * New upstream version
