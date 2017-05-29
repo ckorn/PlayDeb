@@ -1,14 +1,14 @@
 Set the correct version.
-Index: openra-20170421/Makefile
+Index: openra-20170527/Makefile
 ===================================================================
---- openra-20170421.orig/Makefile	2017-04-22 17:02:41.350353213 +0200
-+++ openra-20170421/Makefile	2017-04-22 17:03:22.760930041 +0200
+--- openra-20170527.orig/Makefile	2017-05-28 18:20:21.873421420 +0200
++++ openra-20170527/Makefile	2017-05-28 18:21:36.068725367 +0200
 @@ -89,7 +89,7 @@
  # program targets
  CORE = pdefault game utility server
  TOOLS = gamemonitor
 -VERSION     = $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || echo git-`git rev-parse --short HEAD`)
-+VERSION     = release-20170421
++VERSION     = $(shell echo release-`dpkg-parsechangelog -SVersion | cut -d- -f1`)
  
  # dependencies
  UNAME_S := $(shell uname -s)
