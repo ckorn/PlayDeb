@@ -1,9 +1,9 @@
 Always include curses.h. Else functions are not found.
-Index: stone-soup-0.16.1/source/libunix.cc
+Index: stone-soup-0.20.0/source/libunix.cc
 ===================================================================
---- stone-soup-0.16.1.orig/source/libunix.cc	2015-06-06 19:55:35.405528445 +0200
-+++ stone-soup-0.16.1/source/libunix.cc	2015-06-06 19:55:35.401528385 +0200
-@@ -45,16 +45,7 @@
+--- stone-soup-0.20.0.orig/source/libunix.cc	2017-05-28 18:42:10.713112177 +0200
++++ stone-soup-0.20.0/source/libunix.cc	2017-05-28 18:42:10.713112177 +0200
+@@ -47,16 +47,7 @@
  
  #include <time.h>
  
@@ -20,4 +20,4 @@ Index: stone-soup-0.16.1/source/libunix.cc
 +#include <curses.h>
  
  // Globals holding current text/backg. colours
- static short FG_COL = WHITE;
+ // Note that these are internal colours, *not* curses colors.

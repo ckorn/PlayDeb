@@ -42,7 +42,7 @@ UURL = https://github.com/crawl/crawl.git
 $(PKG)_$(VER).orig.tar.xz: $(info I: $(PKG)_$(VER))
 	$(if $(wildcard $(PKG)-$(VER)),$(error $(PKG)-$(VER) exist, aborting..))
 	@echo "# Downloading..."
-	git clone $(UURL) $(PKG)-$(VER) \
+	git clone --recursive $(UURL) $(PKG)-$(VER) \
 	|| $(RM) -r $(PKG)-$(VER)
 	cd $(PKG)-$(VER) \
 	&& git checkout $(VER) \
