@@ -1,3 +1,15 @@
+manaplus (1:1.7.5.27-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: default configuration files in NaCl builds.
+    fix: simd functions working with LTO compilation flags.
+    add: assert in debug tab about non 32 bit images.
+    add: support for testing library doctest.
+    add: improve load speed in Android builds.
+    add: different chat commands.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 28 May 2017 18:27:43 +0200
+
 manaplus (1:1.7.5.14-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
