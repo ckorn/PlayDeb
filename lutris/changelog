@@ -1,3 +1,9 @@
+lutris (0.4.11.1-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Wed, 31 May 2017 20:27:11 +0200
+
 lutris (0.4.10-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
