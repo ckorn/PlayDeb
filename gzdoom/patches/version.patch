@@ -1,9 +1,9 @@
 # hardcode the version
 # it cannot be fetched by git the tarball does not ship it
-Index: gzdoom-2.2.0/tools/updaterevision/updaterevision.c
+Index: gzdoom-3.1.0/tools/updaterevision/updaterevision.c
 ===================================================================
---- gzdoom-2.2.0.orig/tools/updaterevision/updaterevision.c	2016-09-19 17:58:12.986982479 +0200
-+++ gzdoom-2.2.0/tools/updaterevision/updaterevision.c	2016-09-19 18:00:13.107912788 +0200
+--- gzdoom-3.1.0.orig/tools/updaterevision/updaterevision.c	2017-05-31 20:24:35.023079624 +0200
++++ gzdoom-3.1.0/tools/updaterevision/updaterevision.c	2017-05-31 20:25:36.606420977 +0200
 @@ -47,38 +47,10 @@
  		return 1;
  	}
@@ -12,7 +12,7 @@ Index: gzdoom-2.2.0/tools/updaterevision/updaterevision.c
 -	// on a tag, it returns that tag. Otherwise it returns <most recent tag>-<number of
 -	// commits since the tag>-<short hash>.
 -	// Use git log to get the time of the latest commit in ISO 8601 format and its full hash.
--	stream = popen("git describe --tags && git log -1 --format=%ai*%H", "r");
+-	stream = popen("git describe --tags --dirty=-m && git log -1 --format=%ai*%H", "r");
 -
 -	if (NULL != stream)
 -	{
@@ -40,7 +40,7 @@ Index: gzdoom-2.2.0/tools/updaterevision/updaterevision.c
  	{
  		fprintf(stderr, "Failed to get commit info: %s\n", strerror(errno));
 -		strcpy(vertag, "<unknown version>");
-+		strcpy(vertag, "2.2.0");
++		strcpy(vertag, "3.1.0");
  		lastlog[0] = '\0';
  		lastlog[1] = '0';
  		lastlog[2] = '\0';
