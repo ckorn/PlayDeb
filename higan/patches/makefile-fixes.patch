@@ -9,11 +9,11 @@ Description: Makefile fixes
 Author: Tobias Hansen <thansen@debian.org>
 
 
-Index: higan-100/higan/GNUmakefile
+Index: higan-103/higan/GNUmakefile
 ===================================================================
---- higan-100.orig/higan/GNUmakefile	2016-07-08 21:06:12.374917034 +0200
-+++ higan-100/higan/GNUmakefile	2016-07-08 21:06:12.370916967 +0200
-@@ -30,10 +30,10 @@
+--- higan-103.orig/higan/GNUmakefile	2017-06-24 16:33:01.834006191 +0200
++++ higan-103/higan/GNUmakefile	2017-06-24 16:33:01.830006239 +0200
+@@ -19,10 +19,10 @@
  else ifeq ($(platform),macosx)
    flags += -march=native
  else ifneq ($(filter $(platform),linux bsd),)
