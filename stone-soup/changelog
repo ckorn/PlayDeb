@@ -1,3 +1,9 @@
+stone-soup (0.20.1-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sun, 02 Jul 2017 14:23:36 +0200
+
 stone-soup (0.20.0-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
