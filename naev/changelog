@@ -1,3 +1,9 @@
+naev (0.7.0-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 04 Jul 2017 15:16:20 +0200
+
 naev (0.6.1-1~getdeb2~wily) wily; urgency=medium
 
   * New upstream version
