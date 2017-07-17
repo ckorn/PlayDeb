@@ -1,3 +1,16 @@
+manaplus (1:1.7.7.8-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: flushing background logs.
+    fix: stats in item popups.
+    fix: workaround to build with libicu-59 (need by libxml2)
+    add: new hercules packets.
+    add: allow open chat window before connection to server.
+    add: update readmes.
+    add: update doctest library.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Sat, 15 Jul 2017 16:23:54 +0200
+
 manaplus (1:1.7.6.24-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
