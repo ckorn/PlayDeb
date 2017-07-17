@@ -1,3 +1,9 @@
+naev (0.7.0-1~getdeb2~zesty) zesty; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 04 Jul 2017 15:15:25 +0200
+
 naev (0.6.1-1~getdeb3~yakkety) yakkety; urgency=medium
 
   * Rebuild for yakkety
