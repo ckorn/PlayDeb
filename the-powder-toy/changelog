@@ -1,3 +1,9 @@
+the-powder-toy (92.1-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 24 Jul 2017 17:59:51 +0200
+
 the-powder-toy (91.5-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
