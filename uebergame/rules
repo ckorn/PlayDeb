@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_install:
+	dh_install
+	find debian/uebergame/usr/share/games/uebergame -iname ".gitignore" -delete

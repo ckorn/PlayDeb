@@ -1,0 +1,17 @@
+#!/bin/sh
+if [ ! -d $HOME/.config/uebergame ] ; then
+	mkdir -p $HOME/.config/uebergame
+	cd $HOME/.config/uebergame
+
+	ln -s /usr/share/games/uebergame/art
+	ln -s /usr/share/games/uebergame/levels
+	ln -s /usr/share/games/uebergame/main.cs
+	ln -s /usr/share/games/uebergame/scripts
+	ln -s /usr/share/games/uebergame/tools
+	mkdir shaders
+	cd shaders/
+	ln -s /usr/share/games/uebergame/shaders/common
+	mkdir procedural
+fi
+cd $HOME/.config/uebergame
+LD_LIBRARY_PATH=/usr/lib/games/torque3d /usr/lib/games/torque3d/Uebergame
