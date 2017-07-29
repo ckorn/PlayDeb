@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --parallel
+
+override_dh_auto_clean:
+	cd "My Projects" && rm -rf Uebergame
+
+override_dh_auto_configure:
+	cd "My Projects" && mkdir -p Uebergame/buildFiles/ubuntu
+	cd "My Projects/Uebergame/buildFiles/ubuntu" && cmake ../../../.. -DTORQUE_APP_NAME=Uebergame -DCMAKE_BUILD_TYPE=Release -DTORQUE_BUILD_TYPE=Release
+
+override_dh_auto_build:
+	dh_auto_build --sourcedirectory=My\ Projects/Uebergame/buildFiles/ubuntu
+
+override_dh_install:
+	chrpath -d My\ Projects/Uebergame/game/Uebergame
+	cp My\ Projects/Uebergame/game/Uebergame debian/torque3d/usr/lib/games/torque3d/
+	cp My\ Projects/Uebergame/game/libSDL2-2.0.so.* debian/torque3d/usr/lib/games/torque3d/
+
+override_dh_shlibdeps:
+	dh_shlibdeps -l$(CURDIR)/debian/torque3d/usr/lib/games/torque3d/
