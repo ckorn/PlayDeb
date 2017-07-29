@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Übergame
+Exec=/usr/games/uebergame
+Icon=uebergame
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=uebergame;ueber;fps

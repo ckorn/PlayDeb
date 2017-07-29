@@ -1,0 +1,19 @@
+Source: uebergame
+Section: games
+Priority: optional
+Maintainer: Christoph Korn <christoph.korn@getdeb.net>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.7
+Homepage: http://duion.com/games/uebergame/main
+
+Package: uebergame
+Architecture: all
+Depends: ${misc:Depends},
+         torque3d
+Description: Free, realism like, multi-purpose, multiplayer, casual FPS
+ A truly free and open source multiplayer shooter,
+ no strings attached.
+ Have casual deathmatch matches on various scenarios.
+ Build your own levels with the ingame editor and assets
+ that come with the game, or just play around and use
+ it as a sandbox.

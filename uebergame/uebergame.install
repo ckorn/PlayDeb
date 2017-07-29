@@ -1,0 +1,9 @@
+art				usr/share/games/uebergame
+levels				usr/share/games/uebergame
+scripts				usr/share/games/uebergame
+shaders				usr/share/games/uebergame
+tools				usr/share/games/uebergame
+main.cs				usr/share/games/uebergame
+debian/scripts/uebergame	usr/games
+debian/uebergame.desktop	usr/share/applications
+debian/uebergame.png		usr/share/pixmaps
