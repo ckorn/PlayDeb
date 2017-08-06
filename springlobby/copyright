@@ -23,7 +23,6 @@ License: GFDL-1.3
 
 Files: cmake/FindAlure.cmake
        doc/UseDoxygen.cmake
-       src/lsl/doc/UseDoxygen.cmake
 Copyright: 2004-2009, Kitware, Inc.
            2007-2009, Miguel A. Figueroa-Villanueva <miguelf at ieee dot org>
            2011,      Laszlo Papp <djszapi@archlinux.us>
@@ -113,12 +112,12 @@ License: sha1-license
 Comment:
  See also https://bugs.debian.org/730758 for the clarification of Paul E. Jones.
 
-Files: src/lsl/lib/cimg/*
+Files: src/downloader/lib/src/lib/cimg/*
 Copyright: David Tschumperle  http://www.greyc.ensicaen.fr/~dtschump/
 License: CeCILL-v2.0
 
 Files: src/utils/md5.*
-       src/lsl/src/lslutils/md5.*
+       src/downloader/lib/src/lsl/lslutils/md5.*
        src/downloader/lib/src/lib/minizip/*
        src/downloader/lib/src/lib/base64/base64.*
 Copyright: 1999,2000,2002 Aladdin Enterprises
@@ -127,7 +126,6 @@ Copyright: 1999,2000,2002 Aladdin Enterprises
 License: zlib/libpng
 
 Files: src/downloader/lib/src/lib/jsoncpp/*
-       src/lsl/lib/jsoncpp/*
 Copyright: 2007-2010, Baptiste Lepilleur
 License: jsoncpp-License
 

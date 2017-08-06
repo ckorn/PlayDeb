@@ -2,6 +2,7 @@ Source: springlobby
 Section: games
 Priority: optional
 Maintainer: GetDeb Package Ninjas <package.ninjas@getdeb.net>
+XSBC-Original-Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Uploaders: Markus Koschany <apo@debian.org>
 Build-Depends: asciidoc,
                cmake,
@@ -22,23 +23,11 @@ Homepage: http://springlobby.info
 
 Package: springlobby
 Architecture: any
-Depends: spring (>= 97.0),
-         ${misc:Depends},
+Depends: ${misc:Depends},
          ${shlibs:Depends}
+Recommends: spring (>= 97.0)
 Description: single/multiplayer lobby for the Spring RTS engine
  This package provides a single-player and multiplayer lobby for Spring.
  Other features include a P2P system for downloading maps and mods and
  a built-in IRC-like chat client.
 
-Package: springlobby-dbg
-Section: debug
-Architecture: any
-Priority: extra
-Depends: ${misc:Depends},
-         springlobby (= ${binary:Version})
-Description: single/multiplayer lobby for the Spring RTS engine (debugging symbols)
- This package provides a single-player and multiplayer lobby for Spring.
- Other features include a P2P system for downloading maps and mods and
- a built-in IRC-like chat client.
- .
- This package contains the debugging symbols for the springlobby binary.

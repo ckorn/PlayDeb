@@ -6,10 +6,10 @@ export DEB_CPPFLAGS_MAINT_APPEND = -DNDEBUG
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
-PROGDIR := $(CURDIR)/debian/tmp
+PROGDIR := $(CURDIR)/debian/springlobby
 
 %:
-	dh $@ --buildsystem=cmake
+	dh $@ --parallel --buildsystem=cmake
 
 override_dh_auto_configure:
 	dh_auto_configure --  \
@@ -32,9 +32,6 @@ override_dh_auto_clean:
 	# Ensure we don't build against the embedded version of jsoncpp
 	$(RM) -r src/downloader/lib/src/lib/jsoncpp
 	$(RM) -r src/lsl/lib/jsoncpp
-
-override_dh_strip:
-	+dh_strip --dbg-package=springlobby-dbg
 
 get-orig-source:
 	uscan --download-current-version --force-download --repack --compression xz
