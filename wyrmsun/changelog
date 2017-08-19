@@ -1,3 +1,9 @@
+wyrmsun (2.8.0-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 14 Aug 2017 18:43:05 +0200
+
 wyrmsun (2.7.3-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
