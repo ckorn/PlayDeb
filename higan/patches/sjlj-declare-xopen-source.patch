@@ -3,15 +3,15 @@ Description: Declare that sjlj.c requires X/Open 7
  be declared when building with -std=c99.
 Author: Tobias Hansen <thansen@debian.org>
 
-Index: higan-102/libco/sjlj.c
+Index: higan-104/libco/sjlj.c
 ===================================================================
---- higan-102.orig/libco/sjlj.c	2017-01-19 18:11:39.077913411 +0100
-+++ higan-102/libco/sjlj.c	2017-01-19 18:11:39.077913411 +0100
-@@ -10,6 +10,7 @@
+--- higan-104.orig/libco/sjlj.c	2017-08-14 18:34:29.416330411 +0200
++++ higan-104/libco/sjlj.c	2017-08-14 18:34:29.416330411 +0200
+@@ -4,6 +4,7 @@
  */
  
  #define LIBCO_C
 +#define _XOPEN_SOURCE 700
  #include "libco.h"
+ #include "settings.h"
  
- #include <stdlib.h>
