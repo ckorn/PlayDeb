@@ -1,3 +1,21 @@
+manaplus (1:1.7.8.19-1~getdeb1) xenial; urgency=medium
+
+  * New upstream version
+    fix: drawing language badge.
+    fix: hide item popup in context menu.
+    fix: item containers scrolling if some items hidden by filter.
+    fix: compilation on systems with missing bswap_16/32.
+    add: debug window before connecting to server.
+    add: attributes to missile particles.
+    add: context menu way to add skill into shortcuts bar.
+    add: custom context menu for items. Separate for inventory, storage,
+    cart.
+    add: more than one use action for items.
+    add: packets for new mail system, but without gui.
+    add: id offset for server plugin custom packets.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Tue, 29 Aug 2017 18:53:30 +0200
+
 manaplus (1:1.7.8.5-1~getdeb1) xenial; urgency=medium
 
   * New upstream version
