@@ -1,3 +1,16 @@
+manaplus (1:1.7.9.2-1~getdeb2~zesty) zesty; urgency=medium
+
+  * New upstream version
+    fix: duplicates for some assert messages.
+    fix: mouse selection in some lists.
+    fix: leaks and relations in unit tests.
+    fix: some asserts on first run.
+    add: support for new mail system.
+    add: extend packets logging.
+    add: unit tests for detect broken sdl features.
+
+ -- Christoph Korn <christoph.korn@getdeb.net>  Mon, 04 Sep 2017 18:22:48 +0200
+
 manaplus (1:1.7.8.19-1~getdeb2~zesty) zesty; urgency=medium
 
   * New upstream version
